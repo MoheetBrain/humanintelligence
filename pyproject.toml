@@ -42,7 +42,7 @@ where = ["src"]
 
 [tool.pytest.ini_options]
 minversion = "8.0"
-testpaths = ["tests"]
+testpaths = ["tests", "pipelines"]
 pythonpath = ["src", "."]
 addopts = "-ra --strict-markers"
 markers = [

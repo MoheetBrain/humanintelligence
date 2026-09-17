@@ -136,6 +136,23 @@
     - CLM:power:SLC6A8:001
     - CLM:power:SLC6A8:002
     - CLM:power:SLC6A8:003
+  claim_status_changes:
+  - claim_id: CLM:power:creatine_human:001
+    from: active
+    to: contested
+    reason: 'agent:power self-declared this claim contested with replication_status: conflicting, and
+      nominated it for audit on the ground that a reader wanting a positive result will quote it. The
+      red team independently confirms the contestation. The claim is a single 2003 crossover trial in
+      45 young adult VEGETARIANS reporting p < 0.0001 on Raven''s Advanced Progressive Matrices. Two pooled
+      analyses retrieved independently in this audit place it against a null: SRC:PMID:35984306 reports
+      the younger band (11-31 years) at a standardised mean difference of 0.03, 95% CI -0.14 to 0.20,
+      with I-squared of 0 percent - a tight null with no between-study heterogeneity - while the benefit
+      sits in the 66-76 year subgroup; and SRC:PMID:39070254, which no atlas cited, finds no significant
+      improvement in overall cognitive function or executive function across 16 trials. The trial''s population
+      is the reconciling detail rather than a refutation: vegetarians have lower baseline creatine, so
+      this is the low-baseline-benefit pattern the rest of the creatine literature shows, not an enhancement
+      result in a normal-baseline adult. Contested rather than withdrawn: the trial is real, correctly
+      described, and informative about baseline dependence.'
   verdict: retain_with_downgrade
   provenance:
     created_by: agent:red_team

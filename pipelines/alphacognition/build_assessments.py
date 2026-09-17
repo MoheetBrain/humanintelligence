@@ -90,6 +90,8 @@ from _common import (  # type: ignore[import-not-found]  # noqa: E402
     REPO_ROOT,
     load_panel,
     load_seed_targets,
+    partition_by_eligibility,
+    trait_use,
 )
 from _provenance import INTERIM_DIR  # type: ignore[import-not-found]  # noqa: E402
 
@@ -104,9 +106,16 @@ SUMMARY_PATH = GENERATED_DIR / "assessment_summary.json"
 RUBRIC = "facet_rubric_v0_1"
 AGENT = "agent:alphacognition"
 
-DIRECTLY_RELEVANT = {"g_factor", "fluid_reasoning"}
-SINGLE_DOMAIN = {"processing_speed", "episodic_memory", "working_memory", "executive_function"}
-PROXY = {"educational_attainment", "clinical_cognitive_composite"}
+# Trait eligibility is NOT decided here. It is decided by `_common.trait_use` /
+# `_common.partition_by_eligibility`, which read `use_in_ranking` from the curated panel and
+# fail closed. Branching on `phenotype_class` alone is the bug the red team found: it let
+# "mathematical ability" — whose records are self-reported math ability and highest math class
+# taken, from a 1.1M-person educational attainment GWAS — award fluid-reasoning-grade levels.
+SUPPORTING_NEVER_ALONE = (
+    "a `supporting` trait may corroborate a grade but may never be its sole basis "
+    "(atlases/alphacognition/cognitive_trait_panel.yaml), and a `proxy_only` trait may not "
+    "contribute to an intelligence-relevant facet at all"
+)
 
 # A level-0 grade means SEARCHED AND FOUND NOTHING, so the schema asks for accountability
 # rather than a citation: what was searched, at what scope, and what would have counted.
@@ -171,6 +180,73 @@ SEARCH_BASIS = {
         "measured no cognitive endpoint is a coverage gap, not a hit and not a miss (R5)."
     ),
 }
+
+
+# --------------------------------------------------- the rules, as pure functions ----
+# These two facets are the ones whose level depends on WHICH TRAIT was hit, so they are the
+# ones the `use_in_ranking` guard has to gate. They live here as pure functions for two
+# reasons: pipelines/alphacognition/test_facet_guardrails.py can test them directly, and
+# main() cross-checks the level its prose branch produced against the level the rule function
+# returns and aborts on divergence. The bug the red team found was exactly a divergence
+# between a guard expressed in data and a decision expressed in code, so that divergence is
+# now a hard error rather than a silent downgrade of honesty.
+
+
+def genetic_association_level(
+    part: dict[str, list[dict[str, Any]]], *, has_l2g: bool, has_any_catalogued: bool
+) -> int:
+    """Level for `human_genetic_association` (contract §5.3 semantics).
+
+    3  >=1 catalogued association on a PRIMARY g_factor / fluid_reasoning trait
+    2  >=1 catalogued association on a PRIMARY single-domain cognitive trait
+    1  only `supporting` traits, only `proxy_only` traits, only L2G candidacy, or only
+       associations outside the panel. A `supporting` trait can corroborate a grade but can
+       never be its sole basis, and a `proxy_only` trait cannot contribute at all.
+    0  nothing found anywhere
+    """
+    if part["primary_direct"]:
+        return 3
+    if part["primary_domain"]:
+        return 2
+    weak = (
+        part["supporting_direct"]
+        or part["supporting_domain"]
+        or part["proxy"]
+        or part["eligible_other_class"]
+        or has_l2g
+        or has_any_catalogued
+    )
+    return 1 if weak else 0
+
+
+def causal_attribution_level(
+    gwas_part: dict[str, list[dict[str, Any]]],
+    l2g_part: dict[str, list[dict[str, Any]]],
+    *,
+    has_coloc: bool,
+) -> int:
+    """Level for `causal_gene_attribution`.
+
+    3  L2G candidacy at a PRIMARY cognitive-trait locus PLUS molecular-QTL colocalisation
+    2  L2G candidacy at a PRIMARY cognitive-trait locus
+    1  a PRIMARY cognitive association exists, but attribution to this gene rests on
+       positional (nearest-gene) annotation only
+    0  no primary cognitive-trait signal exists, so there is nothing to attribute
+
+    Locus-to-gene candidacy on a `supporting` or `proxy_only` trait does NOT raise this facet
+    above 0 on its own. Partially resolving the gene behind an educational-attainment signal
+    is not partial resolution of an intelligence signal, and treating it as such is the
+    laundering route the red team found. It is recorded in the rationale and the
+    limiting_factor, not in the level.
+    """
+    l2g_eligible = l2g_part["primary_direct"] + l2g_part["primary_domain"]
+    gwas_primary = gwas_part["primary_direct"] + gwas_part["primary_domain"]
+    if l2g_eligible and has_coloc:
+        return 3
+    if l2g_eligible:
+        return 2
+    return 1 if gwas_primary else 0
+
 
 ANCESTRY_LIMIT = (
     "cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither the "
@@ -256,28 +332,36 @@ def main(argv: list[str] | None = None) -> int:
 
         # ---- evidence counts -------------------------------------------------
         rows = [r for g in genes for r in gwas_by_gene.get(g, [])]
-        cognitive = [r for r in rows if not r["is_educational_attainment"]]
+        part = partition_by_eligibility(rows)
+        direct = part["primary_direct"]                 # may carry a grade on its own
+        domain = part["primary_domain"]                 # may carry a grade on its own
+        supporting = part["supporting_direct"] + part["supporting_domain"]
+        proxy = part["proxy"]                           # EA, literacy, clinical, unmapped
+        cognitive = direct + domain + supporting        # everything not proxy_only
         ea = [r for r in rows if r["is_educational_attainment"]]
-        direct = [r for r in cognitive if r["phenotype_class"] in DIRECTLY_RELEVANT]
-        domain = [r for r in cognitive if r["phenotype_class"] in SINGLE_DOMAIN]
-        proxy_only_rows = [r for r in cognitive if r["phenotype_class"] in PROXY]
         pmids = sorted({r["pubmed_id"] for r in rows if r["pubmed_id"]})
         cognitive_pmids = sorted({r["pubmed_id"] for r in cognitive if r["pubmed_id"]})
         traits_hit = sorted({r["efo_label"] for r in cognitive})
+        supporting_traits = sorted({r["efo_label"] for r in supporting})
+        proxy_traits = sorted({r["efo_label"] for r in proxy})
 
         l2g_rows = [r for g in genes for r in l2g_by_gene.get(g, [])]
-        l2g_cognitive = [r for r in l2g_rows if not r.get("is_educational_attainment")]
+        l2g_part = partition_by_eligibility(l2g_rows)
+        l2g_eligible = l2g_part["primary_direct"] + l2g_part["primary_domain"]
+        l2g_supporting = l2g_part["supporting_direct"] + l2g_part["supporting_domain"]
+        l2g_cognitive = l2g_eligible + l2g_supporting
         l2g_ea = [r for r in l2g_rows if r.get("is_educational_attainment")]
+        l2g_proxy = l2g_part["proxy"]
         coloc_rows = [
             r
-            for r in l2g_cognitive
+            for r in l2g_eligible
             for g in genes
             if (r.get("seed_gene_qtl_colocalisations") or {}).get(g)
         ]
         competitors = sorted(
             {
                 str(c["symbol"])
-                for r in l2g_cognitive
+                for r in l2g_eligible
                 for c in (r.get("top_l2g_genes") or [])
                 if c.get("symbol") and c["symbol"] not in genes
             }
@@ -332,12 +416,18 @@ def main(argv: list[str] | None = None) -> int:
                 f"({', '.join(sorted({r['efo_label'] for r in domain}))}); a relevant but not "
                 f"directly relevant human endpoint"
             )
-        elif proxy_only_rows or ea or l2g_rows or (total_assoc or 0):
+        elif supporting or proxy or l2g_rows or (total_assoc or 0):
             bits = []
-            if ea:
-                bits.append(f"{len(ea)} educational-attainment/literacy association(s)")
-            if proxy_only_rows:
-                bits.append(f"{len(proxy_only_rows)} clinical-proxy association(s)")
+            if supporting:
+                bits.append(
+                    f"{len(supporting)} association(s) on `supporting` traits only "
+                    f"({', '.join(supporting_traits)}), which cannot carry a level alone"
+                )
+            if proxy:
+                bits.append(
+                    f"{len(proxy)} association(s) on proxy_only traits "
+                    f"({', '.join(proxy_traits)}), which may not contribute at all"
+                )
             if l2g_rows:
                 bits.append(
                     f"locus-to-gene candidacy at {len(l2g_rows)} credible set(s) "
@@ -347,17 +437,26 @@ def main(argv: list[str] | None = None) -> int:
                 bits.append(f"{total_assoc} catalogued association(s) on non-panel traits only")
             hga_level, hga_reason = 1, (
                 "weak or indirect only: " + "; ".join(bits) + ". No catalogued genome-wide "
-                "association on a cognitive-ability trait."
+                "association on a PRIMARY cognitive-ability trait — " + SUPPORTING_NEVER_ALONE + "."
             )
         else:
             hga_level, hga_reason = 0, "searched, nothing found"
 
+        expected_hga = genetic_association_level(
+            part, has_l2g=bool(l2g_rows), has_any_catalogued=bool(total_assoc)
+        )
+        if hga_level != expected_hga:
+            raise SystemExit(
+                f"{symbol}: human_genetic_association prose branch produced level {hga_level} but "
+                f"genetic_association_level() says {expected_hga}. The guard and the decision have "
+                f"diverged; fix the rule, do not adjust the prose."
+            )
         hga_claims = with_fallback(
             (gwas_cognitive_claim_refs or gwas_claim_refs) + l2g_claim_refs, gap_claim_refs
         )
 
         # ---- facet 2: causal_gene_attribution --------------------------------
-        if not cognitive and not l2g_cognitive:
+        if not direct and not domain and not l2g_eligible:
             cga_level, cga_reason = 0, (
                 "no cognitive-trait human genetic signal was found for this gene, so there is no "
                 "attribution question to answer yet"
@@ -369,10 +468,10 @@ def main(argv: list[str] | None = None) -> int:
                 f"with molecular-QTL colocalisation for this gene at {len(coloc_rows)} of them"
             )
             cga_limit = "colocalisation supports the gene assignment, not a causal effect on the trait"
-        elif l2g_cognitive:
+        elif l2g_eligible:
             cga_level, cga_reason = 2, (
                 f"Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the "
-                f"candidates at {len(l2g_cognitive)} fine-mapped credible set(s) for cognitive-panel "
+                f"candidates at {len(l2g_eligible)} fine-mapped credible set(s) for PRIMARY cognitive-panel "
                 f"traits, with {len(competitors)} competing candidate gene(s) at the same loci "
                 f"({', '.join(competitors[:8])}{'...' if len(competitors) > 8 else ''}); no "
                 f"molecular-QTL colocalisation for this gene was found at those loci"
@@ -381,21 +480,37 @@ def main(argv: list[str] | None = None) -> int:
                 "attribution is a published statistical model's output with competing candidates and "
                 "no QTL corroboration; not a demonstrated gene-level effect"
             )
-        elif l2g_ea and not cognitive:
-            cga_level, cga_reason = 1, (
-                f"locus-to-gene candidacy exists at {len(l2g_ea)} credible set(s) but only for "
-                f"educational-attainment traits, which are not intelligence endpoints, so the level "
-                f"is capped at 1"
+        elif (l2g_supporting or l2g_ea or l2g_proxy) and not direct and not domain:
+            cga_level, cga_reason = 0, (
+                f"no primary cognitive-trait signal exists for this gene, so there is nothing to "
+                f"attribute. Locus-to-gene candidacy DOES exist at "
+                f"{len(l2g_supporting) + len(l2g_proxy)} credible set(s), but only for "
+                f"`supporting` or `proxy_only` traits ({len(l2g_ea)} of them educational "
+                f"attainment). Partially resolving the gene behind an educational-attainment "
+                f"signal is not partial resolution of an intelligence signal: "
+                + SUPPORTING_NEVER_ALONE
             )
-            cga_limit = "educational attainment is not an intelligence endpoint"
+            cga_limit = (
+                "educational attainment is not an intelligence endpoint, and a supporting trait "
+                "cannot carry a grade alone"
+            )
         else:
             cga_level, cga_reason = 1, (
-                f"{len(cognitive)} cognitive-trait association record(s) exist, but attribution to "
+                f"{len(direct) + len(domain)} primary cognitive-trait association record(s) exist, "
+                f"but attribution to "
                 f"this gene rests entirely on the GWAS Catalog's positional (nearest-gene) "
                 f"annotation: locus_to_gene_resolved is 'no' on every one of them, and no "
                 f"fine-mapped credible set for a cognitive trait ranks this gene"
             )
             cga_limit = "a locus is not a gene; no fine-mapping or colocalisation evidence for this gene"
+
+        expected_cga = causal_attribution_level(part, l2g_part, has_coloc=bool(coloc_rows))
+        if cga_level != expected_cga:
+            raise SystemExit(
+                f"{symbol}: causal_gene_attribution prose branch produced level {cga_level} but "
+                f"causal_attribution_level() says {expected_cga}. The guard and the decision have "
+                f"diverged; fix the rule, do not adjust the prose."
+            )
 
         # ---- facet 3: human_phenotype_specificity ----------------------------
         if total_assoc in (None, 0):
@@ -403,11 +518,13 @@ def main(argv: list[str] | None = None) -> int:
                 "searched: all catalogued GWAS Catalog associations for this gene symbol "
                 "(unfiltered by trait). None found, so there is no phenotype profile to assess."
             )
-        elif not cognitive:
+        elif not direct and not domain:
             hps_level, hps_reason = 1, (
                 f"the gene carries {total_assoc} catalogued association(s) across "
-                f"{distinct_other} distinct non-cognitive trait(s) and none on a cognitive-panel "
-                f"trait; whatever this locus does, the catalogue does not connect it to cognition"
+                f"{distinct_other} distinct non-cognitive trait(s) and none on a PRIMARY "
+                f"cognitive-panel trait ({len(supporting)} on supporting traits, {len(proxy)} on "
+                f"proxy_only traits); whatever this locus does, the catalogue does not connect it "
+                f"to cognitive ability. " + SUPPORTING_NEVER_ALONE
             )
         elif direct and not other_trait_assoc:
             hps_level, hps_reason = 3, (
@@ -415,15 +532,18 @@ def main(argv: list[str] | None = None) -> int:
                 f"cognitive/educational panel, including {len(direct)} on a directly relevant "
                 f"cognitive-ability trait; the catalogued signal is cognition-specific"
             )
-        elif ea and not direct and not domain:
+        elif (ea or supporting) and not direct and not domain:
             hps_level, hps_reason = 1, (
-                f"the gene's only panel associations are educational-attainment or literacy "
-                f"({len(ea)} record(s)), alongside {other_trait_assoc} non-panel association(s)"
+                f"the gene's only panel associations are educational-attainment/literacy "
+                f"({len(ea)} record(s)) or `supporting` traits ({len(supporting)}), alongside "
+                f"{other_trait_assoc} non-panel association(s). " + SUPPORTING_NEVER_ALONE
             )
         else:
             hps_level, hps_reason = 2, (
-                f"{len(cognitive)} cognitive-panel association(s) ({len(direct)} directly relevant, "
-                f"{len(domain)} single-domain) alongside {other_trait_assoc} association(s) with "
+                f"{len(direct) + len(domain)} primary cognitive-panel association(s) "
+                f"({len(direct)} directly relevant, {len(domain)} single-domain; plus "
+                f"{len(supporting)} on supporting traits, which corroborate but cannot carry the "
+                f"grade) alongside {other_trait_assoc} association(s) with "
                 f"{distinct_other} distinct trait(s) outside the panel; cognition-specificity is "
                 f"qualified by that pleiotropy"
             )
@@ -600,14 +720,20 @@ def main(argv: list[str] | None = None) -> int:
             f"Evidence basis for the four genetics facets. Genes covered by this target: "
             f"{', '.join(genes)}. GWAS Catalog release 2026-09-13, {len(panel)} panel terms of "
             f"which 22 queried; Open Targets data version 26.06; GTEx dataset gtex_v8. "
-            f"Association records for this target: {len(rows)} total, of which {len(cognitive)} on "
-            f"cognitive-panel traits ({len(direct)} on a g_factor/fluid_reasoning trait, "
-            f"{len(domain)} single-domain) and {len(ea)} on educational-attainment or literacy "
-            f"traits, across {len(pmids)} distinct publications ({len(cognitive_pmids)} for the "
-            f"cognitive associations). Cognitive traits hit: "
+            f"Association records for this target: {len(rows)} total. Partitioned by the panel's "
+            f"`use_in_ranking` field (fail-closed; see _common.trait_use): {len(direct)} on PRIMARY "
+            f"g_factor/fluid_reasoning traits, {len(domain)} on PRIMARY single-domain cognitive "
+            f"traits, {len(supporting)} on `supporting` traits which may corroborate but never "
+            f"carry a grade alone ({', '.join(supporting_traits) if supporting_traits else 'none'}), "
+            f"and {len(proxy)} on `proxy_only` traits which may not contribute to an "
+            f"intelligence-relevant facet at all ({', '.join(proxy_traits) if proxy_traits else 'none'}; "
+            f"{len(ea)} of them educational-attainment or literacy). Across {len(pmids)} distinct "
+            f"publications ({len(cognitive_pmids)} for the non-proxy associations). Traits hit: "
             f"{', '.join(traits_hit) if traits_hit else 'none'}. "
             f"Fine-mapped credible sets in which Open Targets' L2G model ranks this gene: "
-            f"{len(l2g_rows)} in total, {len(l2g_cognitive)} on cognitive-panel traits, with "
+            f"{len(l2g_rows)} in total, {len(l2g_eligible)} on PRIMARY cognitive-panel traits "
+            f"({len(l2g_supporting)} on supporting traits, {len(l2g_proxy)} on proxy_only or "
+            f"unmapped traits, both excluded from the grade), with "
             f"{len(coloc_rows)} molecular-QTL colocalisations for this gene at those loci and "
             f"{len(competitors)} competing candidate gene(s) there"
             + (f" ({', '.join(competitors)})" if competitors else "")

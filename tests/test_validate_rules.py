@@ -1198,7 +1198,9 @@ def test_v22_reports_uncited_sources(make_root: RootFactory) -> None:
     violation = for_rule(report, "V22")[0]
     assert violation.severity == "info"
     assert "SRC:PMID:00000002" in violation.message
-    assert "agent:ontology" in violation.message
+    # Attribution is per registering FILE, not per the indexed record's `added_by`:
+    # see test_v22_reports_a_shared_uncited_source_to_every_registering_file.
+    assert violation.path == "evidence/sources/ontology.yaml"
 
 
 def test_v22_never_fails_a_run_even_under_strict(make_root: RootFactory) -> None:
@@ -1351,3 +1353,139 @@ def test_reporting_gap_refs_may_appear_at_any_level() -> None:
         search_basis="registry plus literature; two further trials posted no results",
         reporting_gap_refs=["SRC:NCT:NCT02024789", "SRC:NCT:NCT02024790"],
     )
+
+
+# ============ V-DIR2: `no_change` is a MEASURED null, never "no direction" =======
+
+def test_direction_has_a_value_for_no_direction_at_all() -> None:
+    """Three states, three values. The fifth instance of this conflation in one sprint.
+
+    `no_change` = measured and none found; `unclear` = a direction exists and we do not
+    know it; `not_applicable` = none applies. Without the third, an expression claim had
+    to borrow `no_change` and then read as a measured null.
+    """
+    from blueprint import vocab
+
+    assert "not_applicable" in vocab.values("direction")
+    assert vocab.subset("direction", "measured_null_values") == ["no_change"]
+    assert vocab.subset("direction", "no_direction_values") == ["not_applicable"]
+    directionless = vocab.meta("direction", "directionless_claim_types")
+    assert set(directionless) == {
+        "expression", "theoretical_construct", "evidence_gap", "methodological"
+    }
+    for claim_type in directionless:
+        assert claim_type in vocab.values("claim_type")
+    # And the distinction is documented where a curator will read it.
+    description = vocab.meta("direction", "description")
+    assert "MEASURED, and no change was found" in description
+    assert "NO DIRECTION APPLIES" in description
+
+
+def test_vdir2_flags_no_change_on_a_directionless_claim(make_root: RootFactory) -> None:
+    """An `expression` claim asserts no direction, whatever was measured."""
+    root = make_root("valid_minimal")
+    path = root / "evidence" / "claims" / "ontology" / "PLACEHOLDER.yaml"
+    body = path.read_text(encoding="utf-8")
+    body = body.replace("  direction: unclear", "  direction: no_change")
+    body = body.replace(
+        "      endpoint_category: molecular_readout",
+        "      endpoint_category: molecular_readout\n      endpoint_measured: measured",
+    )
+    path.write_text(body, encoding="utf-8")
+
+    report = validate.run(root, strict=False, only=("V-DIR2",))
+    assert "V-DIR2" in rules_fired(report)
+    violation = for_rule(report, "V-DIR2")[0]
+    assert violation.severity == "warning", "tracked debt, not a blocking error"
+    assert "asserts NO DIRECTION AT ALL" in violation.message
+    assert "not_applicable" in violation.message
+    assert "TRACKED DEBT" in violation.message
+    assert violation.context["reason"] == "directionless_claim_type"
+
+
+def test_vdir2_flags_no_change_with_nothing_measured(make_root: RootFactory) -> None:
+    """`no_change` without a measured endpoint is a null nobody performed."""
+    root = make_root("valid_minimal")
+    path = root / "evidence" / "claims" / "ontology" / "PLACEHOLDER.yaml"
+    body = path.read_text(encoding="utf-8")
+    body = body.replace("  claim_type: expression", "  claim_type: causal_perturbation")
+    body = body.replace("  direction: unclear", "  direction: no_change")
+    body = body.replace("      design: expression_atlas", "      design: pharmacological_perturbation")
+    path.write_text(body, encoding="utf-8")
+
+    report = validate.run(root, strict=False, only=("V-DIR2",))
+    assert "V-DIR2" in rules_fired(report)
+    violation = for_rule(report, "V-DIR2")[0]
+    assert violation.context["reason"] == "no_measured_endpoint"
+    assert "nobody performed" in violation.message
+
+
+def test_vdir2_accepts_not_applicable(make_root: RootFactory) -> None:
+    """The value the rule asks for must be accepted by the schema and the rule."""
+    root = make_root("valid_minimal")
+    path = root / "evidence" / "claims" / "ontology" / "PLACEHOLDER.yaml"
+    body = path.read_text(encoding="utf-8").replace(
+        "  direction: unclear", "  direction: not_applicable"
+    )
+    path.write_text(body, encoding="utf-8")
+    report = validate.run(root, strict=True, only=("V-DIR2", "V1", "V-DIR"))
+    assert report.ok, [str(v) for v in report.violations]
+
+
+def test_vdir2_accepts_a_genuine_measured_null(make_root: RootFactory) -> None:
+    """A real measured null must pass, or the rule would punish the honest record."""
+    root = make_root("valid_minimal")
+    path = root / "evidence" / "claims" / "ontology" / "PLACEHOLDER.yaml"
+    body = path.read_text(encoding="utf-8")
+    body = body.replace("  claim_type: expression", "  claim_type: clinical_null")
+    body = body.replace("  direction: unclear", "  direction: no_change")
+    body = body.replace(
+        "      endpoint_category: molecular_readout",
+        "      endpoint_category: molecular_readout\n      endpoint_measured: measured",
+    )
+    body = body.replace("      evidence_role: supports", "      evidence_role: null_result")
+    path.write_text(body, encoding="utf-8")
+    report = validate.run(root, strict=False, only=("V-DIR2",))
+    assert report.ok, [str(v) for v in report.violations]
+
+
+def test_vdir2_is_never_an_error(make_root: RootFactory) -> None:
+    """Warnings by design: finished atlases are not re-opened mid-sprint for a misread."""
+    report = validate.run(only=("V-DIR2",))
+    assert all(v.severity == "warning" for v in report.violations)
+
+
+# ============ V22 attribution is per registering FILE, not per source_id =========
+
+def test_v22_reports_a_shared_uncited_source_to_every_registering_file(
+    make_root: RootFactory,
+) -> None:
+    """Both agents must be told: each can only edit its own file.
+
+    Duplicate registration across agents is what the contract prefers (§1.3), so one
+    source_id can live in several files. An earlier version read `added_by` off the one
+    record the loader keeps, which attributed a shared uncited source to whichever agent
+    sorted first and told the other nothing it could act on.
+    """
+    root = make_root("valid_minimal")
+    source = (root / "evidence" / "sources" / "ontology.yaml").read_text(encoding="utf-8")
+    extra = source.replace("SRC:PMID:00000001", "SRC:PMID:00000002").replace(
+        'pmid: "00000001"', 'pmid: "00000002"'
+    )
+    uncited = extra[extra.index("- schema_version") :]
+    # The same uncited source registered by two different agents.
+    (root / "evidence" / "sources" / "ontology.yaml").write_text(
+        source + "\n" + uncited, encoding="utf-8"
+    )
+    (root / "evidence" / "sources" / "brakes.yaml").write_text(uncited, encoding="utf-8")
+
+    report = validate.run(root, strict=True, only=("V22",))
+    paths = sorted(v.path for v in for_rule(report, "V22"))
+    assert paths == [
+        "evidence/sources/brakes.yaml",
+        "evidence/sources/ontology.yaml",
+    ], f"only these files were told: {paths}"
+    for violation in for_rule(report, "V22"):
+        assert "SRC:PMID:00000002" in violation.message
+        assert "must be reported to both" in violation.message
+        assert violation.severity == "info"

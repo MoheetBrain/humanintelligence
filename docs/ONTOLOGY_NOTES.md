@@ -38,9 +38,34 @@ graph/
                            --update-lock, --list-rules)
 ```
 
-Phase 2 modules (`blueprint/graph/`, `blueprint/store/`, `graph/build_graph.py`,
-`graph/query_graph.py`, `graph/export_graph.py`, `blueprint/reports/`) slot in beside
-these and consume `loaders`, `ontology` and `records` without changing them.
+Phase 2 added, beside these and consuming `loaders`, `ontology` and `records` without
+changing any of them:
+
+```
+src/blueprint/graph/
+  model.py      GraphNodeRecord / GraphEdgeRecord; order-independent merges
+  compile.py    the three-layer compiler + per-target coverage
+  reference.py  reference-data edges and dossier identifiers from the HGNC index
+  traversal.py  null-aware, direction-aware traversal helpers
+  export.py     GraphML, node-link JSON, Neo4j CSV + Cypher
+src/blueprint/store/
+  tables.py     11 table builders
+  views.py      12 SQL views
+  build.py      deterministic Parquet, DuckDB, provenance table, MANIFEST.json
+src/blueprint/reports/
+  layout.py     dependency-free Fruchterman-Reingold placement
+  graph_html.py the self-contained interactive report
+  build.py      `make reports` entry point
+graph/
+  build_graph.py  query_graph.py  export_graph.py
+```
+
+One Phase-2 implementation note worth recording: `networkx.spring_layout` requires SciPy
+above 500 nodes, SciPy is not a dependency of this project, and adding one for a picture
+would have been a blocking schema-change request. So `reports/layout.py` implements
+Fruchterman-Reingold directly (~40 lines). That also bought exact control over
+determinism — starting positions come from the sorted node index rather than from a
+PRNG, so the layout does not depend on the platform's random implementation.
 
 ### Design rules the package obeys
 
@@ -110,6 +135,7 @@ authoritative.
 | V21 | **full** | *(§5.3)* Human-proposition facets need human evidence at level ≥3, threshold read from the vocabulary. |
 | V22 | **full** | *(added)* Registered-but-uncited sources. **Informational**, never escalated. |
 | V23 | **full** | *(added, R13)* `clinical_harm` requires human evidence; non-human harm is `preclinical_harm`. |
+| V-DIR2 | **full, warning-only** | *(added)* `direction: no_change` must be a MEASURED null, and is never correct on a directionless claim type. 31 `expression` claims are in this state. Emitted as **warnings** by deliberate choice: re-opening three finished atlases to correct a latent misread is a worse use of the sprint than finishing the ranking, and a warning keeps the debt in front of anyone who runs the validator rather than buried in a summary. |
 | V3c | **full** | *(added)* A claim's `claim_type` must be in its relation's `allowed_claim_types` — for **every** relation, not only the effect-asserting ones. This was the gap that let the validator accept `preclinical_harm` on `INCREASES_RISK` while `ontology/edges.yaml` rejected it, and pushed an atlas into building a local check that mirrored the validator. A record could then pass one tool and fail another depending on which agent ran which. `tests/test_ontology.py` now asserts the two agree for every relation, and that every claim type is admitted by at least one relation — a claim type no relation accepts is unusable by construction, and that class of gap appeared twice. |
 | ONT1 | **full** | Schema/vocabulary drift. |
 | ONT2 | **full** | State-variable type conformance, no invented dynamics, polarity convention. |
@@ -204,8 +230,20 @@ that happens to contain "we will administer" is flagged. `tests/test_validate_ru
 pins 6 true positives and 6 true negatives drawn from real records. When the heuristic
 is wrong the fix is to sharpen the pattern, not to lower the severity.
 
-**Three times I demanded a citation for the absence of evidence.** This was my most
-persistent mistake and it is worth recording as a pattern rather than three bugs. I
+**FIVE TIMES a "we looked and found nothing" value was pressed into service for "there
+was nothing to look for."** This is the single most persistent error mode of the whole
+sprint, it recurred across four different agents and the contract itself, and it is
+worth recording as a pattern rather than as five bugs. The instances:
+V16c (`clinical_null` for a trial that never measured cognition), R11 (a level-0 facet
+asked for a citation it could not have), R14 (a zero could not distinguish "nobody
+tried" from "tried, nothing published"), the state-variable annotation checks (an
+explicitly-empty annotation treated as an assertion) and V-DIR2 (`direction: no_change`
+on an `expression` claim that asserts no direction at all). Every one of them made an
+*absence* look like a *finding*, and in every case the enum simply lacked a value for
+the third state.
+
+**Three of the five were mine, and all three were the same demand: a citation for the
+absence of evidence.** I
 required `claim_refs` on a level-0 facet (which means *searched and found nothing*, so
 there is nothing to cite); I treated a `response_shape` block with `shape: unknown` as
 an assertion; and I treated a `desirability_note` saying "no claim links sparseness to

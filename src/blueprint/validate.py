@@ -1906,6 +1906,103 @@ def check_human_proposition_facets(ctx: ValidationContext) -> list[Violation]:
     return out
 
 
+# ============== V-DIR2: `no_change` means MEASURED and no change was found =========
+
+@rule("V-DIR2", "direction: no_change must be a MEASURED null, and never on a directionless claim.")
+def check_measured_null_direction(ctx: ValidationContext) -> list[Violation]:
+    """`no_change` is a finding. Two ways a record can misuse it, both checked.
+
+    1. **Nothing was measured.** `no_change` means MEASURED AND NO CHANGE WAS FOUND, so
+       at least one evidence item must report `endpoint_measured: measured`. Without
+       that, a record nobody measured reads as a measured null.
+    2. **The claim asserts no direction at all.** An `expression` claim says a gene is
+       expressed somewhere; a `theoretical_construct` defines a notion; a
+       `methodological` claim is about a method. None of them has a sign. Here the
+       endpoint genuinely WAS measured — expression was measured in a tissue — so limb 1
+       passes and the record still says the wrong thing: `no_change` claims a null result
+       the study never reported. `direction: not_applicable` is the value for this.
+
+    Reported as WARNINGS and deliberately so. The affected records are in finished
+    atlases, and re-opening three of them to correct a latent misread is a worse use of
+    the remaining sprint than finishing the ranking. A warning keeps the debt in front of
+    anyone who runs the validator instead of buried in a summary — which is the whole
+    difference between tracked debt and an unrecorded defect.
+
+    This is the FIFTH place in one sprint where a "we looked and found nothing" value was
+    pressed into service for "there was nothing to look for" (after V16c, R11, R14 and
+    the state-variable annotation checks). The recurrence is the finding; the rule is
+    only the fix.
+    """
+    out: list[Violation] = []
+    measured_nulls = set(vocab.subset("direction", "measured_null_values", ctx.root))
+    measured = set(vocab.subset("endpoint_measured", "measured_values", ctx.root))
+    directionless = set(vocab.meta("direction", "directionless_claim_types", ctx.root) or [])
+    if not measured_nulls:
+        return out
+
+    unmeasured: list[tuple[str, str, str]] = []
+    directionless_hits: list[tuple[str, str, str]] = []
+    for claim_id, record in ctx.claims.items():
+        raw = record.raw
+        if raw.get("direction") not in measured_nulls:
+            continue
+        claim_type = str(raw.get("claim_type"))
+        items = [i for i in (raw.get("evidence") or []) if isinstance(i, dict)]
+        any_measured = any(
+            str(i.get("endpoint_measured", "unknown")) in measured for i in items
+        )
+        if claim_type in directionless:
+            directionless_hits.append((claim_id, record.path, claim_type))
+        elif not any_measured:
+            unmeasured.append((claim_id, record.path, claim_type))
+
+    total = len(unmeasured) + len(directionless_hits)
+
+    for claim_id, path, claim_type in directionless_hits:
+        out.append(
+            warning(
+                "V-DIR2",
+                f"{path}#/direction",
+                f"direction is `no_change` on a {claim_type} claim, which asserts NO "
+                "DIRECTION AT ALL. `no_change` means measured and no change was found, so "
+                "this record claims a null result the study never reported — the same "
+                "conflation rule V16c prevents one level up, one level down. Set "
+                "`direction: not_applicable`. TRACKED DEBT: "
+                f"{len(directionless_hits)} directionless claim(s) are in this state "
+                f"({total} V-DIR2 findings in total); they are a latent misread rather "
+                "than a wrong fact, and are warnings so finished atlases are not "
+                "re-opened mid-sprint.",
+                record_id=claim_id,
+                context={
+                    "claim_type": claim_type,
+                    "reason": "directionless_claim_type",
+                    "affected_total": total,
+                },
+            )
+        )
+
+    for claim_id, path, claim_type in unmeasured:
+        out.append(
+            warning(
+                "V-DIR2",
+                f"{path}#/direction",
+                f"direction is `no_change` but no evidence item reports "
+                f"endpoint_measured in {sorted(measured)}. `no_change` means MEASURED AND "
+                "NO CHANGE WAS FOUND; without a measured endpoint this reads as a "
+                "measured null that nobody performed. Either add the evidence item that "
+                "found no change, or use `unclear` if a direction exists and is unknown. "
+                f"TRACKED DEBT: {total} V-DIR2 finding(s) repository-wide.",
+                record_id=claim_id,
+                context={
+                    "claim_type": claim_type,
+                    "reason": "no_measured_endpoint",
+                    "affected_total": total,
+                },
+            )
+        )
+    return out
+
+
 # ======================================= V22: sources registered but never cited ===
 
 @rule("V22", "Sources registered but cited by no claim (informational).")
@@ -1936,24 +2033,33 @@ def check_uncited_sources(ctx: ValidationContext) -> list[Violation]:
         if isinstance(record.raw.get("database_source_id"), str):
             cited.add(record.raw["database_source_id"])
 
-    by_agent: dict[str, list[str]] = {}
+    # Attribution is PER REGISTERING FILE, not per indexed record. Duplicate
+    # registration across agents is allowed (contract §1.3), so one source_id can be
+    # registered in several files; the loader keeps one record per id, and reading
+    # `added_by` off that survivor attributed a shared uncited source to whichever agent
+    # happened to sort first while telling the other nothing. An agent can only edit its
+    # own file, so it has to be told about its own registration.
+    by_file: dict[str, list[str]] = {}
     for source_id, record in ctx.sources.items():
         if source_id in cited:
             continue
-        agent = str(record.raw.get("added_by") or "unknown")
-        by_agent.setdefault(agent, []).append(source_id)
+        files = ctx.repo.shared_sources.get(source_id) or (record.path.split("#", 1)[0],)
+        for owning_file in files:
+            by_file.setdefault(owning_file, []).append(source_id)
 
     return [
         info(
             "V22",
-            f"evidence/sources/{agent.split(':')[-1]}.yaml",
-            f"{len(source_ids)} source(s) registered by {agent} are cited by no claim, "
-            f"assessment or intervention: {sorted(source_ids)}. Either a claim was "
+            owning_file,
+            f"{len(source_ids)} source(s) registered in {owning_file} are cited by no "
+            f"claim, assessment or intervention: {sorted(source_ids)}. Either a claim was "
             "dropped and left its source behind, or a claim was meant to exist. Neither "
-            "is an error — registering before curating is a legitimate order of work.",
-            record_id=agent,
+            "is an error — registering before curating is a legitimate order of work. "
+            "Reported per FILE because a source registered by two agents (which the "
+            "contract prefers) must be reported to both: each can only edit its own.",
+            record_id=owning_file,
         )
-        for agent, source_ids in sorted(by_agent.items())
+        for owning_file, source_ids in sorted(by_file.items())
     ]
 
 

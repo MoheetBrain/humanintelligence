@@ -53,6 +53,7 @@ from _common import (  # type: ignore[import-not-found]  # noqa: E402
     GENERATED_DIR,
     REPO_ROOT,
     SCHEMA_VERSION,
+    partition_by_eligibility,
     resolve_species_id,
     seed_gene_symbols,
     write_yaml_doc,
@@ -261,11 +262,17 @@ def main(argv: list[str] | None = None) -> int:
     l2g = read_jsonl(INTERIM_DIR / "opentargets_l2g.jsonl")
     pleio = {r["gene_symbol"]: r for r in read_jsonl(INTERIM_DIR / "gwas_catalog_gene_pleiotropy.jsonl")}
 
-    cognitive_genes = {r["gene_symbol"] for r in gwas if not r["is_educational_attainment"]}
+    # Eligibility comes from _common.partition_by_eligibility, which reads the panel's
+    # `use_in_ranking` and fails closed. A gene whose only panel hit is a `supporting` or
+    # `proxy_only` trait has no primary cognitive signal and therefore DOES need a gap record.
+    gwas_part = partition_by_eligibility(gwas)
+    cognitive_genes = {
+        r["gene_symbol"] for r in gwas_part["primary_direct"] + gwas_part["primary_domain"]
+    }
+    l2g_part = partition_by_eligibility(l2g)
     l2g_cognitive_genes = {
         str(h["symbol"])
-        for r in l2g
-        if not r.get("is_educational_attainment")
+        for r in l2g_part["primary_direct"] + l2g_part["primary_domain"]
         for h in (r.get("seed_gene_l2g_hits") or [])
     }
 

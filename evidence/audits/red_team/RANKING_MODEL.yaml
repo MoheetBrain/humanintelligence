@@ -1,0 +1,263 @@
+# Red-team audit of the ranking specification. agent:red_team, 2026-09-17.
+#
+# The brief asked: does the ranking spec's weighting smuggle in a conclusion?
+#
+# Largely no, and in several places the spec anticipates the attack and instruments
+# against it. The one real exposure is structural rather than a weighting choice, and it
+# is the place where this audit's own genetics finding lands: D1 aggregates ADDITIVELY
+# over four facets, so a level-3 positional association contributes support at weight
+# 0.25 no matter how low the gene-attribution grade beside it is - and gene attribution
+# reaches 3 or 4 for NO target in this repository.
+#
+# This audit also records, once and explicitly, the downstream effect of the red team's
+# own grades, so agent:integration is not surprised by it.
+
+- audit_id: AUD:red_team:RANKING_MODEL:001
+  schema_version: 0.1.0
+  scope:
+    kind: model
+    id: models/ranking/ranking_spec_v0_1.yaml
+  audited_by: agent:red_team
+  audited_on: "2026-09-17"
+  checks:
+    - check: association_mistaken_for_causation
+      result: flag
+      note: >-
+        THE ONE STRUCTURAL EXPOSURE. D1 is a weighted sum over causal_gene_attribution
+        (0.30), human_genetic_association (0.25), mechanistic_causal_perturbation (0.25) and
+        human_phenotype_specificity (0.20). The spec's own comment names the exact risk in
+        the right words - "A strong association with an unresolved gene assignment is a
+        claim about a REGION, and ranking a target on it is exactly the error this project
+        is built to avoid" - and it weights the attribution facet highest BECAUSE of that.
+        But weighting is trading, and an additive aggregation lets a level-3 association
+        substitute for gene attribution at a 0.25-to-0.30 exchange rate. Since
+        causal_gene_attribution is 0 x 14, 1 x 1, 2 x 12 and 3-4 x 0 across all 27 targets,
+        EVERY target's D1 is carried disproportionately by facets that do not establish
+        gene-level causation. There is a gate for a maximal developmental confound, for
+        absent human evidence, for absent human intervention and for high safety liability,
+        but there is NO gate on unresolved gene attribution - so the weakest link in the
+        whole evidence chain, which the spec itself identifies as the weakest link, is the
+        one thing that is fully tradeable. Recorded as a flag and not a fail because the
+        spec discloses the risk, weights against it, and multiplies the six dimensions so a
+        near-zero D1 still collapses the composite.
+    - check: overclaiming
+      result: pass
+      note: >-
+        The composite is a product over six gated dimensions with semantics stated as a
+        joint probability "under an EXPLICIT INDEPENDENCE ASSUMPTION", and the spec records
+        that absolute magnitudes are meaningless and only ordering and interval are to be
+        read. Every weight carries an inline `# subjective` marker and a written rationale.
+        The contract's mandated `symmetric_caps` sensitivity variant exists, with
+        cap_sensitivity Kendall tau-b, per-target rank delta, a sensitive-targets list and a
+        `polarity_aware_was_a_no_op` grader cross-check - so the cost of the deliberate
+        polarity asymmetry is measured rather than assumed, which is what contract section
+        5.4 requires. The `unresolved_critical_finding_caps_composite` gate carries a
+        `cap_scale_note` explaining that a flat cap would be silently INERT under the product
+        operator and that the test suite asserts the gate still binds. That is a model
+        author auditing their own gate for the failure mode of "enforcement that looks
+        present and is not".
+    - check: provenance_integrity
+      result: pass
+      note: >-
+        `not_assessed` handling is the strongest part of the file and it answers
+        agent:comparative's explicit worry that 46 not_assessed facets might be coerced to
+        zero downstream. Five numbered rules: never coerced to 0; mapped to Beta(1,1), the
+        widest distribution in the mapping, so it visibly widens the interval; kept in the
+        denominator, because dropping it "would let a target with one strong assessed facet
+        and fourteen unexamined ones score as if it were fully characterised - rewarding
+        absence of scrutiny", which the file calls its single most important structural
+        decision; never rewarded, with the Beta(1,1) median sitting between the level-1 and
+        level-2 medians and a named test asserting it; and made visible through a required
+        `coverage` column plus explicit tier demotion. Verified against the comparative
+        atlas's 25 not_assessed cross_species_convergence and 23 not_assessed
+        human_lineage_divergence_risk grades: those targets will widen, not sink.
+    - check: duplicated_evidence
+      result: flag
+      note: >-
+        The spec consumes ordinal facet levels rather than claim counts, which is the right
+        defence and makes the ranking structurally invariant to citing one paper twice. The
+        residual exposure is upstream and this audit found it in three places: SLC16A1,
+        SLC16A3 and SLC16A7 share all their founding sources, so three facet grades rest on
+        one literature; KCNQ2 and KCNQ3 rest on one experiment with one construct; and
+        EIF2S1 and EIF2B_COMPLEX are the substrate and the GEF of one pathway. The ranking
+        cannot detect that four or five "independent" targets are one evidence base, because
+        it sees only their grades. tests/test_ranking_invariance.py tests invariance to
+        duplicated EVIDENCE, not to duplicated TARGETS, and the second is the live risk here.
+      evidence_refs: [CLM:power:anls:001, CLM:brakes:KCNQ3:001]
+    - check: dose_response_inversion
+      result: pass
+      note: >-
+        Handled correctly and non-obviously. Resolution R8 makes dose_response_knowledge a
+        secondary input to D3 precisely so that knowing the shape of an inverted U whose
+        optimum sits at the healthy baseline counts as ABSENT supra-normal potential rather
+        than as strength. That closes the trap DRD1 would otherwise set: its
+        dose_response_knowledge grade of 3 records that the shape is KNOWN, not that the
+        target can be pushed, and a naive model would have rewarded it for the opposite of
+        the right reason.
+    - check: citation_dependence
+      result: flag
+      note: >-
+        The spec cannot see cohort overlap, because it consumes grades rather than sources.
+        Two educational-attainment GWAS carry 40 of the repository's 289 curated claims and
+        the largest single cohort appears in 14 evidence items, so
+        human_genetic_association grades across many targets are not statistically
+        independent of one another. Nothing in the model represents that, and nothing
+        should be expected to - it is a defect of the evidence layer that the ranking
+        faithfully inherits. Worth stating where ranks are reported.
+      evidence_refs: [SRC:PMID:30038396]
+    - check: educational_attainment_mistaken_for_intelligence
+      result: flag
+      note: >-
+        The spec weights human_genetic_association at 0.25 within D1 and does not inspect
+        which TRAIT produced the grade, so the trait-classification defect recorded in
+        evidence/audits/red_team/GENETICS_FACET_RULE.yaml propagates into D1 wherever it
+        affects a grade. It affects one grade materially - TGT:CRTC1, downgraded from 3 to 1
+        in this audit - so the propagation is bounded, but the model has no defence of its
+        own against an education measure entering as a fluid-reasoning grade.
+      evidence_refs: [CLM:alphacognition:gwas.CRTC1:002]
+    - check: developmental_effect_mistaken_for_adult
+      result: pass
+      note: >-
+        `developmental_confound_caps_d2` caps D2 at 0.25 when developmental_confound_risk is
+        at least 4 and counter_level is at most 2, with a `counter_level_at_most` release
+        clause so the gate lifts when replicated adult-onset evidence actually answers the
+        confound. The red team's grades fire it for exactly two targets: TGT:SLC6A8 (level 4,
+        counter_level 0) and TGT:OTX2 (level 4, counter_level 1). Both are correct firings -
+        SLC6A8's adult-deletion arm is a measured null and OTX2's demonstrated function is to
+        close a critical period.
+    - check: rescue_mistaken_for_enhancement
+      result: pass
+      note: >-
+        D3's proposition is written as "Modulation can move a HEALTHY adult above their own
+        baseline, rather than only restoring a deficit", so the distinction is in the
+        dimension's definition rather than in a caveat, and R8 gave it a second input so one
+        grader's ordinal judgement is no longer simply relabelled as a dimension.
+    - check: animal_memory_mistaken_for_human_intelligence
+      result: pass
+      note: >-
+        `no_human_evidence_caps_d6` caps D6 at 0.35 when no human-proposition facet reaches
+        level 2, and its rationale states that contract P4 is "enforced here as a ceiling
+        rather than a caveat". Two details are right and easy to get wrong: `not_assessed`
+        explicitly does not satisfy the threshold, because "an unasked question is not human
+        evidence"; and the cap sits BELOW the uninformative midpoint on purpose, so having no
+        human evidence never scores better than an honest unknown.
+    - check: seizure_liability
+      result: pass
+      note: >-
+        Routed through `safety_liability_caps_d5`, which reads the red team's own facet. The
+        spec calls safety "a constraint, not a cost" and notes that its cap of 0.20 is
+        deliberately the lowest in the file, which is the correct treatment of a constraint
+        that may not be traded.
+    - check: psychiatric_liability
+      result: flag
+      note: >-
+        The model has one safety facet, so a psychiatric liability and a haematological one
+        enter at the same weight through the same channel. That is a real loss of resolution
+        for an enhancement context, where abuse liability and persisting perceptual change
+        are categorically different problems from anaemia. DRD1 and HTR2A both carry heavy
+        psychiatric annotation and are graded 3, one level below the gate, so neither fires
+        it. Not a defect in the spec - it is a consequence of the facet catalogue having one
+        safety slot - but worth recording as a limit.
+      evidence_refs: [CLM:red_team:HTR2A:001, CLM:red_team:DRD1:001]
+    - check: systemic_adverse_effects
+      result: flag
+      note: >-
+        Same single-channel limit as above. Note also that the gate threshold of level 4
+        means the six targets this audit graded 2 or 3 on safety - including HDAC2 with the
+        oncology HDAC-inhibitor class burden and SLC16A1 with on-target human retinopathy -
+        pass through ungated and are traded against favourable evidence elsewhere at D5's
+        ordinary weights.
+      evidence_refs: [CLM:red_team:SLC16A1:001]
+    - check: negative_clinical_evidence
+      result: pass
+      note: >-
+        Handled through `no_human_intervention_caps_d6` and through counter_level entering
+        the facet mapping, so a tested-and-failed target is representable distinctly from an
+        untested one - which is the asymmetry contract section 5.2 exists to preserve. The
+        red team's GABRA5 counter_level raises from 3 to 4 on two facets will therefore
+        register as strengthened contradicting evidence rather than as absent support.
+      evidence_refs: [CLM:red_team:GABRA5:001]
+    - check: publication_bias
+      result: flag
+      note: >-
+        A level-0 grade and a `reporting_gap_refs` entry are different epistemic states and
+        the assessment schema now distinguishes them, but the ranking consumes the LEVEL and
+        not the reporting-gap list, so a zero caused by a completed unreported trial ranks
+        identically to a zero caused by nobody having tried. The schema comment on
+        `reporting_gap_refs` makes exactly this point - "'graded 0 because a completed trial
+        reported nothing' is a different statement from 'graded 0 because nobody tried', and
+        only one of them is usually true". Surfacing the count as a report column would close
+        this.
+      evidence_refs: [SRC:NCT:NCT01455376]
+    - check: model_organism_translation_failure
+      result: pass
+      note: >-
+        D6 carries cross_species_convergence and the inverse-polarity
+        human_lineage_divergence_risk, and the polarity-aware cap helper exists because
+        agent:comparative found that a uniform cap on the divergence facet made a target
+        with documented human/mouse divergence look MORE translatable. That defect was found
+        in use and fixed in the model rather than noted in prose.
+    - check: proposes_prohibited_work
+      result: pass
+      note: >-
+        The spec ranks targets for further COMPUTATIONAL scrutiny and says so; the gate
+        `eligible_for_chemistry` in the pharmacology layer is what stands between a rank and
+        any downstream action, and it requires surviving this audit.
+  findings:
+    - finding_id: AUD:red_team:RANKING_MODEL:001#f1
+      severity: major
+      category: association_mistaken_for_causation
+      description: >-
+        D1 aggregates additively, so a level-3 positional GWAS association contributes
+        support at weight 0.25 regardless of the gene-attribution grade beside it - and
+        causal_gene_attribution reaches 3 or 4 for none of the 27 targets. There are gates
+        for developmental confound, absent human evidence, absent human intervention and
+        high safety liability, but no gate on unresolved gene attribution, so the item the
+        spec itself names as "the single weakest link in the whole evidence chain" is the
+        one thing fully tradeable within its dimension. A gate analogous to
+        `no_human_evidence_caps_d6` - capping D1 where no facet establishes gene-level
+        causation - would close it, and on current grades it would apply to all 27 targets,
+        which is itself the argument for and against adding it now.
+    - finding_id: AUD:red_team:RANKING_MODEL:001#f2
+      severity: minor
+      category: duplicated_evidence
+      description: >-
+        The ranking is invariant to duplicated EVIDENCE but not to duplicated TARGETS. Three
+        MCT transporters share all their founding sources, KCNQ2 and KCNQ3 rest on one
+        experiment with one construct, and EIF2S1 and EIF2B_COMPLEX are two handles on one
+        pathway. Up to seven of the 27 seed targets are fewer than seven independent
+        evidence bases, and the model cannot see it because it consumes grades.
+      evidence_refs: [CLM:power:anls:001, CLM:brakes:KCNQ3:001]
+    - finding_id: AUD:red_team:RANKING_MODEL:001#f3
+      severity: minor
+      category: publication_bias
+      description: >-
+        `reporting_gap_refs` records that a zero was caused by a completed unreported trial
+        rather than by nobody trying, but the ranking reads only the level, so the two zeros
+        rank identically. Exposing a reporting-gap count as a report column alongside
+        `coverage` would make the distinction visible where ranks are read.
+      evidence_refs: [SRC:NCT:NCT01455376]
+    - finding_id: AUD:red_team:RANKING_MODEL:001#f4
+      severity: info
+      category: other
+      description: >-
+        Stated so agent:integration is not surprised by the red team's downstream effect.
+        The gates that now fire from red-team output are: `developmental_confound_caps_d2`
+        for TGT:SLC6A8 (developmental_confound_risk 4, counter_level 0) and TGT:OTX2 (4, 1);
+        `safety_liability_caps_d5` for TGT:CHRM1 (safety_liability_burden 4, counter_level 1)
+        and TGT:KCNQ2 (4, 0); and
+        `unresolved_critical_finding_caps_composite` for the targets carrying a critical
+        finding - TGT:GABRA5, TGT:CRTC1 and TGT:GRM5. Three targets additionally carry a
+        `deprioritise` verdict (TGT:GPR158, TGT:OTX2, TGT:GRM5) and two carry
+        `insufficient_evidence` (TGT:EIF2S1, TGT:PTPN5). The KCNQ2 safety grade is flagged
+        in its own assessment as the red team's most contestable, because it rests partly on
+        a market withdrawal whose cause is undisclosed and whose direction of modulation is
+        the opposite of the one this project proposes; at level 3 the gate would not fire.
+  adjustments: []
+  claim_status_changes: []
+  verdict: retain
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: derived_from_claims
+    run_id: sprint1-red-team-01

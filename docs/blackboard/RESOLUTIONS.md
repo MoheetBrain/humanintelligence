@@ -295,3 +295,78 @@ rather than cross a lane.
 Raw snapshots are keyed by **registry, not by agent**; they are immutable once written;
 and attribution already lives in `MANIFEST.jsonl`, which records the tool, query and
 timestamp per entry. `data/raw/**` is now `shared_append_only`.
+
+## R17 — The declared-gap mechanism worked, and it produced the sprint's most important finding
+
+*Not a schema change; recorded because it is the clearest evidence about whether this
+architecture earns its overhead.*
+
+`agent:brakes` could not determine whether three α5-GABA-A trials had recorded their
+protocol cognitive endpoints. Rather than guess, it left claim id
+`CLM:brakes:GABRA5:009` permanently unused and wrote a marked audit item naming exactly
+what it could not determine and exactly what would settle it — including that
+`NCT02953639` (n=214, MATRICS composite, completed) **had results posted that it had not
+retrieved**, calling that the largest unresolved item in its atlas and noting it could
+move the facet either way.
+
+`agent:red_team` retrieved them. The α5-GABA-A negative-modulation mechanism produced a
+treatment difference of **+0.28 MCCB composite T-score points (95% CI −1.47 to +2.02,
+p = 0.793)** on a scale whose population standard deviation is 10, with target engagement
+demonstrated in the companion trial. That is not an absence of evidence; it is a
+*precise* null. Together with CLEMATIS, the human null on this mechanism is
+**replicated**.
+
+Two things follow. First, the repository's most-studied brake target now carries
+replicated human negative evidence, which is a real scientific result and the opposite of
+what a seed list implies. Second — and this is why it is recorded here — the mechanism
+that produced it was an agent **declining to assert something it could not verify**, in a
+form precise enough for another agent to act on. A swarm that chatted would have produced
+a plausible paragraph about α5 modulation. The blackboard produced a claim id left
+deliberately empty, a named trial, and a retrieved 95% confidence interval.
+
+## R18 — Educational attainment was laundered into fluid reasoning by a guard that lived in data while the decision lived in code · **CRITICAL, fix assigned**
+
+`atlases/alphacognition/cognitive_trait_panel.yaml` marks "mathematical ability" as
+`use_in_ranking: supporting`, with the explicit note that it is "never a stand-alone
+basis for a facet level". But `pipelines/alphacognition/build_assessments.py` tests
+`phenotype_class` and never reads `use_in_ranking`, so the guard was inert. The
+underlying records are "Self-reported math ability" and "Highest math class taken" from a
+1.1-million-person **educational attainment** GWAS, and they were supporting
+intelligence-relevant facet levels.
+
+This is the precise failure principle P4 exists to block, and the lesson generalises past
+the fix: **a guard expressed as a data field is not a guard until some code reads it.**
+The panel was written carefully, the caveat was correct, and it protected nothing. The
+remedy is to make the generating code honour `use_in_ranking`, fail closed on a missing
+value, and carry a test that fails the old behaviour — not merely to correct the affected
+grades.
+
+Found because `agent:alphacognition` nominated its own generated-facet rule as the thing
+to attack hardest ("if it is wrong it is wrong 108 times identically") and the red team
+audited the rule rather than sampling its outputs.
+
+## R19 — `direction: no_change` was doing duty for "no direction applies" · **VOCABULARY DEFECT, fixed forward**
+
+Found by the orchestrator while checking the compiler's report that 528 of 627
+claim-derived edges are "claim-derived but not support". That number turned out to be
+mostly legitimate — a GWAS association or an `evidence_gap` genuinely states no
+direction — but **31 `expression` claims carried `direction: no_change`**, and an
+expression claim asserts no change at all.
+
+`no_change` means *measured, and no change was found*. Using it for *no direction
+applies* makes a record nobody measured look like a measured null — the identical
+conflation as R5 and V16c, one level down, and the fifth time this sprint that a value
+meaning "we looked and found nothing" was pressed into service for "there was nothing to
+look for". The direction enum simply had no value for the third state.
+
+Added `direction: not_applicable`, and rule **V-DIR2**: `no_change` requires at least one
+evidence item with `endpoint_measured: measured`. The 31 pre-existing records are
+reported as **warnings rather than errors**, deliberately — re-opening three finished
+atlases to correct a latent misread was judged a worse use of the remaining sprint than
+finishing the ranking, and a warning keeps the debt in front of anyone who runs the
+validator instead of buried in a summary. The precise remediation is a named Sprint-2
+task.
+
+*Also checked and found legitimate:* 5 `causal_perturbation` claims carry `unclear`,
+which is a curation gap worth a Sprint-2 pass — a perturbation study that measured an
+outcome should be able to state which way it moved.

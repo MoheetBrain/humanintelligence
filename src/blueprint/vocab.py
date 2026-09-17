@@ -57,6 +57,8 @@ SUBSET_KEYS: tuple[str, ...] = (
     "human_harm_values",
     "harm_values",
     "evidential_classes",
+    "measured_null_values",
+    "no_direction_values",
     "tool_mediated_values",
     "measured_values",
     "gap_values",

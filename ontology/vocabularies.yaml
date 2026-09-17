@@ -162,12 +162,30 @@ vocabularies:
     contract_ref: "§4"
     ordinal: false
     description: >-
-      Sign of the asserted relationship. `unclear` is a legitimate, common answer and
-      must never be silently read as `increases`. `state_dependent` is for a
-      relationship whose SIGN depends on the rest of the state — benefit only from a
-      low baseline or under stress, nothing or harm otherwise. It is distinct from
-      `unclear` (sign not established) and from `inverted_u` (one curve with an
-      interior optimum): state dependence means there is no single curve.
+      Sign of the asserted relationship.
+
+      THREE VALUES MEAN THREE DIFFERENT THINGS AND ARE ROUTINELY CONFLATED. This is the
+      fifth time in one sprint that a "we looked and found nothing" value has been
+      pressed into service for "there was nothing to look for", so the distinction is
+      written out here rather than left to a reviewer:
+
+        * `no_change`      MEASURED, and no change was found. A finding. Rule V-DIR2
+                           requires an evidence item with `endpoint_measured: measured`.
+        * `unclear`        a direction EXISTS and we do not know which way it runs.
+                           Genuine ignorance about a real quantity.
+        * `not_applicable` NO DIRECTION APPLIES. The claim asserts nothing directional:
+                           an `expression` claim says a gene is expressed somewhere, a
+                           `theoretical_construct` defines a notion, an `evidence_gap`
+                           records that nobody measured, a `methodological` claim is
+                           about a method. Using `no_change` for these makes a record
+                           nobody measured look like a measured null — the same
+                           conflation rule V16c prevents one level up.
+
+      `state_dependent` is for a relationship whose SIGN depends on the rest of the
+      state — benefit only from a low baseline or under stress, nothing or harm
+      otherwise. It is distinct from `unclear` (sign not established) and from
+      `inverted_u` (one curve with an interior optimum): state dependence means there is
+      no single curve, and it requires `direction_context` naming what it depends on.
     values:
       - increases
       - decreases
@@ -177,6 +195,10 @@ vocabularies:
       - u_shaped
       - state_dependent
       - unclear
+      - not_applicable
+    measured_null_values: [no_change]
+    no_direction_values: [not_applicable]
+    directionless_claim_types: [expression, theoretical_construct, evidence_gap, methodological]
 
   life_stage:
     contract_ref: "§4"

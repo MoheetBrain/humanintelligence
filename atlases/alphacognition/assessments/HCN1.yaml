@@ -39,8 +39,8 @@ facets:
   assessment_status: assessed
   level: 2
   rationale: Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the candidates
-    at 2 fine-mapped credible set(s) for cognitive-panel traits, with 1 competing candidate gene(s) at
-    the same loci (MRPS30); no molecular-QTL colocalisation for this gene was found at those loci
+    at 2 fine-mapped credible set(s) for PRIMARY cognitive-panel traits, with 1 competing candidate gene(s)
+    at the same loci (MRPS30); no molecular-QTL colocalisation for this gene was found at those loci
   claim_refs:
   - CLM:alphacognition:l2g.HCN1:001
   - CLM:alphacognition:l2g.HCN1:003
@@ -58,8 +58,9 @@ facets:
 - facet: human_phenotype_specificity
   assessment_status: assessed
   level: 2
-  rationale: 3 cognitive-panel association(s) (2 directly relevant, 1 single-domain) alongside 210 association(s)
-    with 89 distinct trait(s) outside the panel; cognition-specificity is qualified by that pleiotropy
+  rationale: 2 primary cognitive-panel association(s) (2 directly relevant, 0 single-domain; plus 1 on
+    supporting traits, which corroborate but cannot carry the grade) alongside 210 association(s) with
+    89 distinct trait(s) outside the panel; cognition-specificity is qualified by that pleiotropy
   claim_refs:
   - CLM:alphacognition:gwas.HCN1:001
   - CLM:alphacognition:gwas.HCN1:002
@@ -101,11 +102,15 @@ facets_not_owned_by_this_agent:
 - human_intervention_evidence
 notes: 'Evidence basis for the four genetics facets. Genes covered by this target: HCN1. GWAS Catalog
   release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
-  gtex_v8. Association records for this target: 7 total, of which 3 on cognitive-panel traits (2 on a
-  g_factor/fluid_reasoning trait, 1 single-domain) and 4 on educational-attainment or literacy traits,
-  across 6 distinct publications (3 for the cognitive associations). Cognitive traits hit: cognitive function
-  measurement, intelligence, memory performance. Fine-mapped credible sets in which Open Targets'' L2G
-  model ranks this gene: 4 in total, 2 on cognitive-panel traits, with 0 molecular-QTL colocalisations
+  gtex_v8. Association records for this target: 7 total. Partitioned by the panel''s `use_in_ranking`
+  field (fail-closed; see _common.trait_use): 2 on PRIMARY g_factor/fluid_reasoning traits, 0 on PRIMARY
+  single-domain cognitive traits, 1 on `supporting` traits which may corroborate but never carry a grade
+  alone (memory performance), and 4 on `proxy_only` traits which may not contribute to an intelligence-relevant
+  facet at all (educational attainment, self reported educational attainment; 4 of them educational-attainment
+  or literacy). Across 6 distinct publications (3 for the non-proxy associations). Traits hit: cognitive
+  function measurement, intelligence, memory performance. Fine-mapped credible sets in which Open Targets''
+  L2G model ranks this gene: 4 in total, 2 on PRIMARY cognitive-panel traits (0 on supporting traits,
+  2 on proxy_only or unmapped traits, both excluded from the grade), with 0 molecular-QTL colocalisations
   for this gene at those loci and 1 competing candidate gene(s) there (MRPS30). Unfiltered GWAS Catalog
   sweep for this gene symbol: 216 catalogued association(s) in total, 210 of them with traits outside
   the cognitive/educational panel, spanning 89 distinct such trait(s). GTEx reports 13 brain region(s);

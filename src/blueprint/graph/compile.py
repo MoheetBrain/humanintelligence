@@ -706,7 +706,37 @@ def _target_coverage(repo: loaders.Repository, compiled: CompiledGraph) -> dict[
             "evidence_gap_count": 0,
             "distinct_source_count": 0,
             "human_claim_count": 0,
+            "audit_count": 0,
+            "audit_verdicts": [],
+            "audit_checks_flagged": 0,
+            "audit_checks_failed": 0,
+            "audit_critical_findings": 0,
+            "audit_major_findings": 0,
         }
+
+    # Audit verdicts, attached to the target they bear on. A verdict that lived only on
+    # its own node would be one click away from the target a reader is looking at, and
+    # the whole point of an audit is that it travels with what it audited.
+    for record in repo.audits.values():
+        raw = record.raw
+        scope = raw.get("scope") or {}
+        if scope.get("kind") != "target":
+            continue
+        entry = coverage.get(str(scope.get("id") or ""))
+        if entry is None:
+            continue
+        checks = [c for c in (raw.get("checks") or []) if isinstance(c, dict)]
+        findings = [f for f in (raw.get("findings") or []) if isinstance(f, dict)]
+        entry["audit_count"] += 1
+        entry["audit_verdicts"] = sorted(
+            set(entry["audit_verdicts"]) | {str(raw.get("verdict"))}
+        )
+        entry["audit_checks_flagged"] += sum(1 for c in checks if c.get("result") == "flag")
+        entry["audit_checks_failed"] += sum(1 for c in checks if c.get("result") == "fail")
+        entry["audit_critical_findings"] += sum(
+            1 for f in findings if f.get("severity") == "critical"
+        )
+        entry["audit_major_findings"] += sum(1 for f in findings if f.get("severity") == "major")
 
     for record in repo.assessments:
         target_id = str(record.raw.get("target_id") or "")

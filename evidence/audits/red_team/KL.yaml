@@ -133,6 +133,19 @@
       `power_node: systemic_modifier` is not supported by the located evidence.'
     evidence_refs:
     - CLM:power:KL:001
+  claim_status_changes:
+  - claim_id: CLM:power:KL:001
+    from: active
+    to: contested
+    reason: 'agent:power self-declared this claim contested and the red team independently confirms the
+      contestation, which is what makes it reviewable under rule V14. Two grounds, both established in
+      this audit. First, the perturbation is transgenic SYSTEMIC OVEREXPRESSION FROM DEVELOPMENT, so it
+      cannot separate a developmental mechanism from an adult one, and systemic lifelong overexpression
+      of an endocrine modifier is a particularly poor model of adult administration. Second, and the reason
+      the contestation should stand rather than be resolved: the mechanism this claim asserts is synaptic
+      and glutamatergic, not metabolic, so it does not connect to any power- or efficiency-domain state
+      variable, and agent:power says so in its own dossier. Contested rather than withdrawn: the experiment
+      is real and correctly described, and what is in dispute is what it licenses.'
   verdict: retain_with_downgrade
   provenance:
     created_by: agent:red_team

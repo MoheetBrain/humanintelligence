@@ -114,11 +114,20 @@ def format_report(report: validate.ValidationReport, *, max_examples: int = MAX_
 
     catalogue = validate.rule_catalogue()
     for rule_id, violations in grouped.items():
+        # Counted per severity rather than by subtraction: `info` is neither an error
+        # nor a warning, and labelling it one would misreport a finding that never
+        # fails a run.
         errors = sum(1 for v in violations if v.severity == "error")
-        warnings = len(violations) - errors
-        headline = f"{rule_id}: {len(violations)} violation(s)"
-        if warnings:
-            headline += f" ({errors} error, {warnings} warning)"
+        warnings = sum(1 for v in violations if v.severity == "warning")
+        infos = sum(1 for v in violations if v.severity == "info")
+        headline = f"{rule_id}: {len(violations)} finding(s)"
+        detail = [
+            f"{count} {name}"
+            for count, name in ((errors, "error"), (warnings, "warning"), (infos, "info"))
+            if count
+        ]
+        if len(detail) > 1 or infos or warnings:
+            headline += f" ({', '.join(detail)})"
         lines.append(headline)
         description = catalogue.get(rule_id)
         if description:
@@ -138,13 +147,26 @@ def format_report(report: validate.ValidationReport, *, max_examples: int = MAX_
 
     total_errors = sum(1 for v in report.violations if v.severity == "error")
     total_warnings = len(report.warnings)
+    total_infos = len(report.infos)
     lines.append(
-        f"TOTAL: {len(report.violations)} violation(s) across {len(grouped)} rule(s) — "
-        f"{total_errors} error, {total_warnings} warning"
+        f"TOTAL: {len(report.violations)} finding(s) across {len(grouped)} rule(s) — "
+        f"{total_errors} error, {total_warnings} warning, {total_infos} info"
     )
     if report.strict:
-        lines.append("--strict: warnings are treated as errors.")
-    lines.append("FAIL" if not report.ok else "PASS (warnings only)")
+        lines.append(
+            "--strict: warnings are treated as errors; info findings never fail a run."
+        )
+    if not report.ok:
+        lines.append("FAIL")
+    elif total_warnings or total_infos:
+        lines.append(
+            "PASS — nothing failing. "
+            + ("Warnings present. " if total_warnings else "")
+            + ("Info findings are not defects in any state of the repository."
+               if total_infos else "")
+        )
+    else:
+        lines.append("PASS")
     return "\n".join(lines)
 
 

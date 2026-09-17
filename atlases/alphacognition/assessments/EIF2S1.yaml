@@ -15,7 +15,9 @@ facets:
   assessment_status: assessed
   level: 1
   rationale: 'weak or indirect only: locus-to-gene candidacy at 1 credible set(s) (0 on cognitive traits,
-    1 on educational attainment). No catalogued genome-wide association on a cognitive-ability trait.'
+    1 on educational attainment). No catalogued genome-wide association on a PRIMARY cognitive-ability
+    trait — a `supporting` trait may corroborate a grade but may never be its sole basis (atlases/alphacognition/cognitive_trait_panel.yaml),
+    and a `proxy_only` trait may not contribute to an intelligence-relevant facet at all.'
   claim_refs:
   - CLM:alphacognition:l2g.EIF2S1:001
   counter_level: 0
@@ -87,17 +89,20 @@ facets_not_owned_by_this_agent:
 - human_intervention_evidence
 notes: 'Evidence basis for the four genetics facets. Genes covered by this target: EIF2S1. GWAS Catalog
   release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
-  gtex_v8. Association records for this target: 0 total, of which 0 on cognitive-panel traits (0 on a
-  g_factor/fluid_reasoning trait, 0 single-domain) and 0 on educational-attainment or literacy traits,
-  across 0 distinct publications (0 for the cognitive associations). Cognitive traits hit: none. Fine-mapped
-  credible sets in which Open Targets'' L2G model ranks this gene: 1 in total, 0 on cognitive-panel traits,
-  with 0 molecular-QTL colocalisations for this gene at those loci and 0 competing candidate gene(s) there.
-  Unfiltered GWAS Catalog sweep for this gene symbol: 0 catalogued association(s) in total, 0 of them
-  with traits outside the cognitive/educational panel, spanning 0 distinct such trait(s). GTEx reports
-  13 brain region(s); detected above zero median in all of them: True. Adult brain cell-type resolution
-  was not available in this release and is deferred to docs/TASK_DAG.yaml Q003. The level rules applied
-  here are in pipelines/alphacognition/build_assessments.py; lead-atlas facets for this target are owned
-  by agent:brakes and are not graded here.'
+  gtex_v8. Association records for this target: 0 total. Partitioned by the panel''s `use_in_ranking`
+  field (fail-closed; see _common.trait_use): 0 on PRIMARY g_factor/fluid_reasoning traits, 0 on PRIMARY
+  single-domain cognitive traits, 0 on `supporting` traits which may corroborate but never carry a grade
+  alone (none), and 0 on `proxy_only` traits which may not contribute to an intelligence-relevant facet
+  at all (none; 0 of them educational-attainment or literacy). Across 0 distinct publications (0 for the
+  non-proxy associations). Traits hit: none. Fine-mapped credible sets in which Open Targets'' L2G model
+  ranks this gene: 1 in total, 0 on PRIMARY cognitive-panel traits (0 on supporting traits, 1 on proxy_only
+  or unmapped traits, both excluded from the grade), with 0 molecular-QTL colocalisations for this gene
+  at those loci and 0 competing candidate gene(s) there. Unfiltered GWAS Catalog sweep for this gene symbol:
+  0 catalogued association(s) in total, 0 of them with traits outside the cognitive/educational panel,
+  spanning 0 distinct such trait(s). GTEx reports 13 brain region(s); detected above zero median in all
+  of them: True. Adult brain cell-type resolution was not available in this release and is deferred to
+  docs/TASK_DAG.yaml Q003. The level rules applied here are in pipelines/alphacognition/build_assessments.py;
+  lead-atlas facets for this target are owned by agent:brakes and are not graded here.'
 provenance:
   created_by: agent:alphacognition
   created_on: '2026-09-17'

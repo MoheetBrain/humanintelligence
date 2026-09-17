@@ -1,9 +1,9 @@
 # Project Status
 
-*Snapshot generated 2026-09-17 (UTC) — Sprint 1: all four atlases, the red-team audit
-of all 27 targets, the graph compiler, the DuckDB store and the interactive graph report
-are complete. Repository validates with zero errors. The post-audit ranking run and two
-export CLIs remain.*
+*Snapshot generated 2026-09-17 (UTC) — **Sprint 1 complete.** All ten deliverables
+exist. Repository validates with 0 errors and 0 warnings; 832 tests pass. The headline
+result is negative: no target has a defensible causal case for adult cognitive
+enhancement, and `tier_1_analyse_next` is empty.*
 
 ## Project Objective
 
@@ -24,12 +24,11 @@ Sprint 1 — *infrastructure and first evidence ingestion*. The type system, 12 
 a 31-rule validator, the state model, the ranking/uncertainty model, `THEORY.md` and all
 four evidence atlases are complete. **The repository validates with zero errors** (39
 warnings, all of them known incompleteness waiting on the red team). Two deliverables
-all 27 targets have been audited (29 audit records: 20 retain-with-downgrade, 4 retain,
-3 deprioritise, 2 insufficient-evidence), and the graph compiler, DuckDB/Parquet store
-and `reports/intelligence_graph_v0_1.html` are built. Remaining: the two export CLIs and
-the **post-audit ranking run**. No ranking has been published yet — the pre-audit table
-was generated under a superseded aggregation operator and deleted, because a ranking with
-no audit behind it is the artefact most likely to be read as a result.
+all 27 targets are audited (30 audit records), the graph compiler, DuckDB/Parquet store,
+exporters and all four reports are built, and the post-audit ranking has been run and
+published as PRELIMINARY. **Sprint 1 is complete.** The next sprint's first task is not a
+feature: three of the four atlases never ran a target-directed registry search, so the
+repository's zeros are currently less trustworthy than its ones.
 
 ## Current Branch
 
@@ -155,7 +154,11 @@ All results below were executed; none are projected.
 | Check | Command | Result (2026-09-17) |
 |-------|---------|---------------------|
 | Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **740 passed, 0 failed** in 35.6 s |
-| Validator | `.venv/bin/python graph/validate_graph.py` | **PASS (warnings only)** — 0 errors, 39 warnings across 4 rules, 31 rules run |
+| Validator | `.venv/bin/python graph/validate_graph.py --strict` | **PASS, exit 0** — 0 errors, 0 warnings, 2 info findings, 32 rules run |
+| Store | `make store` | 11 tables + provenance, 12 views; nodes 1284, edges 1703 |
+| Graph | `make graph` | 1284 nodes / 1703 edges; 636 claim-derived, 942 reference-data, 125 axiom |
+| Reports | `make reports` | interactive graph 1.67 MB, **0 remote references**, byte-identical across renders |
+| Ranking | `models/ranking/rank_targets.py` | 27 rows, all PRELIMINARY; **tier_1 empty**; gates fired 23/3/2/2 |
 | Ownership | `.venv/bin/python scripts/check_ownership.py` | **all 1550 paths owned as expected** |
 | Claim registry lock | `graph/validate_graph.py --update-lock` | 289 claim ids locked; V13 now protects provenance |
 | Source verification (offline rebuild, no network) | `scripts/fetch_source_metadata.py --all --offline` | **117/117 verified** from committed snapshots |
@@ -201,22 +204,44 @@ All results below were executed; none are projected.
 
 ## Current Blockers
 
-None external. AlphaGenome remains deferred for want of an API key, which was already
-planned for a later sprint.
+**None.** AlphaGenome remains deferred for want of an API key (`ALPHAGENOME_API_KEY`),
+which was already planned for Sprint 2 (Q001); the module is interface-only and cannot
+emit a number. Several MCP connectors in the working environment are unauthorised
+(GitHub, Linear, Notion, Slack, Figma, and the bio-research Synapse/Wiley/Owkin servers);
+none was needed, because every data source this sprint used is a public API requiring no
+key. Synapse and Wiley would widen literature access in later sprints and need
+authorising outside this session.
 
 ## Exact Next Actions
 
-1. Genetics atlas: run its merge scripts so `evidence/sources/alphacognition.yaml` and
-   `atlases/alphacognition/assessments/` exist, then verify sources and clear V4.
-2. Ontology agent: finish the outstanding test files, triage the remaining V1
-   violations into schema-side versus record-side, write its handoff note.
-3. Integration agent: `THEORY.md`, `models/causal/` interfaces,
-   `docs/PHARMACOLOGY_INTERFACES.md`, and confirm the `symmetric_caps` variant.
-4. Get `graph/validate_graph.py --strict` to exit 0, then commit the atlases.
-5. Spawn the red team (agent 7 of 7) once the atlases are stable; require the full
-   mandatory check catalogue for all 27 targets (gate G4).
-6. Ontology agent Phase 2: graph compiler, DuckDB/Parquet store, exporters,
-   `reports/intelligence_graph_v0_1.html`.
-7. Integration Stage 2: the post-audit ranking run producing
-   `reports/target_ranking_v0_1.csv` (PRELIMINARY) with rank intervals.
-8. Orchestrator: `reports/sprint1_summary.md`, README status refresh, final test run.
+Ranked by how much they would change what this repository can honestly claim.
+
+1. **Target-directed registry searches for the three atlases that never ran one**
+   (brakes, comparative, alphacognition). Four of the red team's five headline findings
+   came from `whyStopped` and `resultsSection` fields no literature search returns, and
+   the power atlas overturned two of its own published statements this way. Every
+   `human_intervention_evidence: 0` in those atlases carries that exposure. Until this is
+   done, the repository's zeros are less trustworthy than its ones.
+2. **Resolve `causal_gene_attribution` above level 2 or accept that it cannot be** —
+   brain eQTL/sQTL colocalisation (GTEx, PsychENCODE, MetaBrain) for cognitive-trait
+   credible sets (Q002). Seventeen of 27 targets sit at level 0 and nothing exceeds 2;
+   this is the binding constraint on the entire causal case.
+3. **Fix the 5 `causal_perturbation` claims carrying `direction: unclear`** where the
+   study measured a direction, and re-check the other atlases for the `no_change`
+   misuse that V-DIR2 now catches.
+4. **Adult cell-type expression ingestion** (Allen / Human Brain Cell Atlas, Q003), to
+   separate adult-expressed from developmentally-expressed targets properly rather than
+   from GTEx bulk tissue.
+5. **Calibrate or drop the probabilities.** Either find a calibration set for the
+   ordinal→Beta mapping or restrict published output to ordinal levels and rank
+   intervals. Currently every number is an uncalibrated subjective prior.
+6. **Model dimension dependence**, or state the interval inflation quantitatively. The
+   independence assumption is false in a known direction.
+7. **Unify the three surviving field spellings** and clear the 10 implementation
+   deviations in `docs/ONTOLOGY_NOTES.md` §4 as contract v0.2.0.
+8. **Agent-proposed targets.** Every current target came from the brief; the seed list
+   has never been tested against a systematic sweep, so its composition is an anchoring
+   risk the ranking cannot detect.
+9. **AlphaGenome integration** (Q001) once `ALPHAGENOME_API_KEY` exists.
+10. **Re-run the red team on the corrected records.** The genetics grades fell after its
+    audit, so its own findings were written against superseded levels.

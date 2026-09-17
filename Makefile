@@ -7,7 +7,11 @@
 # The offline chain must succeed with no network access. That is the
 # reproducibility contract for this repository.
 
-PY ?= .venv/bin/python
+# PYTHONPATH=src keeps `python -m blueprint.…` working even in a tree where the
+# project has not been installed editable (a fresh clone that skipped `make setup`).
+# Without it those targets fail while graph/*.py still works, because the scripts
+# bootstrap sys.path themselves and a -m invocation cannot.
+PY ?= PYTHONPATH=src .venv/bin/python
 PIP ?= .venv/bin/pip
 
 .DEFAULT_GOAL := help

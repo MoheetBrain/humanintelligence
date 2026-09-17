@@ -324,3 +324,107 @@ reaches level 4, and the power hypothesis is not currently supportable in health
 Finish the red-team audit (gate G4), then the graph compiler, DuckDB/Parquet store,
 exporters and `reports/intelligence_graph_v0_1.html`, then the post-audit ranking run
 that produces `reports/target_ranking_v0_1.csv` marked PRELIMINARY.
+
+---
+
+## 2026-09-17T23:55Z — Sprint 1 complete: post-audit ranking published, all ten deliverables exist
+
+* **Branch:** `sprint-1/foundation`
+* **Project stage:** Sprint 1 complete; Sprint 2 not started
+* **Objective of the change:** run the post-audit ranking, publish the four reports, and
+  close Sprint 1 with an honest account of what the repository can and cannot support.
+
+### Files and systems changed
+
+* `reports/target_ranking_v0_1.csv` + `.meta.json`: 27 rows, every row `PRELIMINARY`,
+  conjunctive (product) primary composite with `minimum` and `weighted_additive` variants.
+* `reports/integration_v0_1.md`, `reports/red_team_audit_v0_1.md`,
+  `reports/intelligence_graph_v0_1.html`, `reports/sprint1_summary.md`.
+* `graph/query_graph.py`, `graph/export_graph.py`; `src/blueprint/graph/`,
+  `src/blueprint/store/`; DuckDB store (11 tables + provenance, 12 views).
+* `pyproject.toml`: `testpaths` now includes `pipelines`, so agent-owned guardrail tests
+  actually execute. `Makefile`: `PY ?= PYTHONPATH=src .venv/bin/python` so
+  `python -m blueprint.…` works in a tree that skipped `make setup`; project installed
+  editable.
+* `docs/DATA_CONTRACT.md`: principle **P9** (a guard is not a guard until code reads it),
+  `direction: not_applicable`, rule **V-DIR2**. `docs/DECISIONS.md`: **D014** (the
+  sprint's dominant error mode). `docs/blackboard/RESOLUTIONS.md`: R17–R19.
+* Genetics atlas corrected after the laundering fix; 31 `expression` claims moved from
+  `direction: no_change` to `not_applicable`.
+
+### What was completed
+
+**All ten Sprint-1 deliverables.** README, THEORY.md, formal ontology, JSON schemas +
+validators, graph compiler, DuckDB/Parquet store, seed dataset (27 targets), red-team
+audit of every target, interactive graph visualisation, and the ranked table.
+
+### Decisions made and why
+
+1. **P9 and D014 recorded as standing lessons.** Five times this sprint a "we looked and
+   found nothing" value was used for "there was nothing to look for", across four agents
+   and the contract itself; and separately an eligibility guard written in data was never
+   read by the code that consumed it, laundering educational attainment into fluid
+   reasoning across 10 grades. Both are recorded as reusable review questions rather than
+   as individual fixes.
+2. **Agent-owned guardrail tests must run.** The genetics agent wrote a 12-case guardrail
+   test that pytest never discovered. A guard that does not run is decoration, so
+   `testpaths` was widened rather than the test relocated into another agent's lane.
+3. **The ranking is published, the interpretation is constrained.** Tier 1 is empty and
+   the narrative leads with what the table cannot support, because a ranked CSV is the
+   artefact most likely to be read as a recommendation.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **838 passed, 0 failed** (71 s) |
+| Validator | `graph/validate_graph.py --strict` | **exit 0, PASS** — 0 errors, 0 warnings, 2 info, 32 rules |
+| Ownership | `scripts/check_ownership.py` | all paths owned as expected |
+| Store | `make store` | 11 tables + provenance, 12 views; nodes 1284, edges 1703 |
+| Graph | `make graph` | 1284 nodes / 1703 edges; 636 claim-derived, 942 reference-data, 125 axiom, 10 null-result |
+| Reports | `make reports` | graph HTML 1.67 MB, **0 remote references**, byte-identical across renders |
+| Ranking | `models/ranking/rank_targets.py` | 27 rows; **tier_1 empty**; gates fired: D6 cap 23, critical-finding cap 3, safety cap 2, developmental cap 2 |
+| Guardrail test | `pytest pipelines/alphacognition/test_facet_guardrails.py` | 12 passed; 4 fail if the guard is stubbed permissive |
+| Manifest integrity | sha256 per entry vs disk | 0 mismatches |
+
+### Failures or unresolved uncertainty
+
+* **Three of four atlases never ran a target-directed registry search.** Four of the red
+  team's five headline findings came from `whyStopped`/`resultsSection` fields no
+  literature search returns, and the power atlas overturned two of its own published
+  statements this way. The repository's zeros are currently less trustworthy than its
+  ones. This is the top Sprint-2 action.
+* **The ranking model was silently discarding red-team downgrades** until this run:
+  three of five adjustments raise `counter_level` rather than lowering `level`, and the
+  ranking's input type rejected those as forbidden upgrades. It failed closed and logged
+  nothing; only reconciling counts against the audit surfaced it. Fixed, with a test.
+* **The ordering is materially operator-dependent**: tau-b 0.719 product/minimum, 0.765
+  product/additive, **0.473** minimum/additive.
+* **Every interval is too narrow** by an unquantified amount (dimension independence
+  assumed and known false).
+* **P8 does not hold at the composite** under a product; asserted where it holds, pinned
+  where it does not.
+* No tau-b was quoted against the Stage-1 ordering: the operator change, the laundering
+  fix and the audit are confounded, and a single number would invite a causal reading it
+  cannot carry.
+* The red team's findings were written against genetics grades that subsequently fell, so
+  a re-audit on corrected records is queued.
+* 5 `causal_perturbation` claims still carry `direction: unclear`; 10 implementation
+  deviations survive (`docs/ONTOLOGY_NOTES.md` §4), two material.
+* AlphaGenome never called (no key); module is interface-only by construction.
+
+### Effect on the overall project
+
+Sprint 1 delivered an instrument and a negative result. The instrument caught five
+contract defects, one silent data-loss bug in the ranking, one laundering bug that had
+inflated a third of the genetics grades, a tautological sensitivity variant, an inert
+gate and a mislabelled severity count — most of them found by agents auditing their own
+or each other's work against machine-checkable rules. The result is that no seed target
+has a defensible causal case for adult cognitive enhancement, `tier_1_analyse_next` is
+empty, and the most-studied brake target carries a replicated human null.
+
+### Next intended step
+
+Sprint 2, starting with target-directed registry searches across the three atlases that
+never ran one, then brain QTL colocalisation to resolve `causal_gene_attribution` above
+level 2 or accept that it cannot be resolved with current public data.

@@ -22,6 +22,7 @@ disagree, that is a bug to be reported, not a licence to improvise.
 | P5 | **Paper count is not evidence quality.** Ranking consumes ordinal, rubric-defined evidence levels and is tested to be invariant to duplicated evidence. | `models/ranking/ranking_spec_v0_1.yaml`, `tests/test_ranking_invariance.py` |
 | P6 | **The red team can downgrade, never delete.** Provenance is append-only; withdrawal is a status change with a reason, never a deletion. | validator rules V12–V14, `evidence/claims/claim_registry.lock` |
 | P7 | **Reproducible and offline-rebuildable.** Network steps write immutable snapshots to `data/raw/`; every derived artefact is rebuilt from those snapshots with no network. | `Makefile`, `data/raw/MANIFEST.jsonl`, `tests/test_raw_immutability.py` |
+| P9 | **A guard is not a guard until code reads it.** A constraint expressed only as a data field (an eligibility flag, a caveat, a `use_in_ranking` marker) must be enforced by the code path that consumes that data, and carry a test that fails the permissive behaviour. Otherwise the constraint documents an intention while permitting its violation. | R18; `pipelines/*/test_*.py` guardrail tests, which run because `pyproject.toml` lists `pipelines` in `testpaths` |
 | P8 | **Unknown is a first-class value.** `unknown` / `not_assessed` must never be silently coerced to zero, and must widen uncertainty rather than lower a score by stealth. | `models/uncertainty/`, `coverage` columns in reports |
 
 ---
@@ -166,6 +167,15 @@ A claim is one machine-readable assertion plus the evidence for it. The triple
   claim_type: causal_perturbation # see §4.1
   direction: decreases            # increases | decreases | no_change | bidirectional
                                   # | inverted_u | u_shaped | state_dependent | unclear
+                                  # | not_applicable
+                                  # THREE DISTINCT STATES, easy to collapse:
+                                  #   no_change      = measured, and no change was found
+                                  #   unclear        = a direction exists but we do not know it
+                                  #   not_applicable = the claim asserts no direction at all
+                                  #                    (expression, theoretical_construct,
+                                  #                     evidence_gap, methodological)
+                                  # `no_change` is a FINDING and requires an evidence item
+                                  # with endpoint_measured: measured (rule V-DIR2).
   direction_context: null         # REQUIRED when direction is state_dependent: name the
                                   # context the sign or magnitude depends on — physiological
                                   # state, cell subpopulation, cortical layer, compartment or
@@ -604,6 +614,7 @@ Gene identifiers are resolved the same way by `scripts/fetch_gene_identifiers.py
 | V16 | No efficacy assertion from binding alone: an edge into `EFFECT:*` or a `CHANGES_STATE` edge needs ≥1 claim with `claim_type ∈ {causal_perturbation, pharmacodynamic, clinical_efficacy}`. |
 | V16b | **Null results must be representable as edges.** The relation `NO_DETECTED_EFFECT_ON` (biological and intervention layers; `requires_claim: true`; `allowed_claim_types: {clinical_null, causal_perturbation, pharmacodynamic, association}`) asserts that a *performed and reported* attempt detected no effect. It requires ≥1 evidence item with `evidence_role ∈ {null_result, contradicts}`. It must never be used for absence of evidence — an untested relationship is represented by the *absence* of an edge, not by a null edge. The graph compiler and the visualisation must render these edges distinguishably, and no traversal may count a `NO_DETECTED_EFFECT_ON` edge as support. |
 | V16b-sym | **A null must be expressible wherever the positive claim is expressible.** The domain and range of `NO_DETECTED_EFFECT_ON` must be at least the union of the domains and ranges of every relation it can negate (`MODULATES`, `CONSTRAINS`, `ASSOCIATED_WITH`, `PREDICTS`, `CHANGES_STATE`, `POSITIVELY_REGULATES`, `NEGATIVELY_REGULATES`, and any relation added later). A claim using `NO_DETECTED_EFFECT_ON` must name the relation it negates in `negated_relation`, so the record says what was tested and found absent rather than merely that something was absent. An ontology in which a positive edge is expressible and its corresponding null is not is biased towards positive findings, which is the exact asymmetry V16b exists to remove. |
+| V-DIR2 | **`direction: no_change` is a measured finding, not a default.** It requires ≥1 evidence item with `endpoint_measured: measured`. A claim that asserts no direction at all (`expression`, `theoretical_construct`, `evidence_gap`, `methodological`) uses `not_applicable`. Using `no_change` for "no direction applies" makes a record that nobody measured look like a measured null — the same conflation as V16c, one level down. Existing records predating this rule are reported as **warnings** so the debt stays visible in every validation run rather than in a footnote. |
 | V16c | **A measured absence is not an absence of measurement.** A claim using `NO_DETECTED_EFFECT_ON` requires ≥1 evidence item with `endpoint_measured: measured` *and* `evidence_role ∈ {null_result, contradicts}`. If every evidence item has `endpoint_measured: not_measured_in_protocol`, the claim must be `claim_type: evidence_gap` instead, which compiles to no biological or intervention edge and may not contribute to any facet's `counter_level`. |
 | V17 | Compiled graph edges each carry `provenance_class ∈ {claim_derived, reference_data, ontology_axiom}` and, when `claim_derived`, ≥1 resolvable claim id. |
 | V18 | No secrets: no API keys, tokens or `.env` content in any tracked file. |

@@ -63,6 +63,16 @@ supporting its assignment at a cognitive-trait credible set. This is the single 
 important honest output of the milestone. Genes that "come up in intelligence GWAS" are, on
 current public evidence, genes that happen to sit near intelligence-associated variants.
 
+**And the result is stronger than first reported.** A red-team audit of the generated facet rule
+found that `build_assessments.py` branched on `phenotype_class` and never read the panel's
+`use_in_ranking` field, so "mathematical ability" — whose records are *self-reported math
+ability* and *highest math class taken* from a 1.1-million-person **educational attainment**
+GWAS — was awarding fluid-reasoning-grade levels. With the guard active, only **6** seed genes
+(CKB, GABRA5, GPR158, GRM5, HCN1, HTR2A) retain locus-to-gene candidacy on a *primary* cognitive
+trait, not 12; of the 70 seed-gene credible sets, 20 are on primary cognitive traits, 14 on
+`supporting` traits (all "mathematical ability") and 36 on educational attainment or unmapped
+traits. Ten facet grades moved, all downward. §5.3 records the fix.
+
 ### 1.4 Cognitive GWAS are overwhelmingly European-ancestry
 
 Every large discovery cohort behind the trait panel — UK Biobank, COGENT, CHARGE, SSGAC and
@@ -460,6 +470,35 @@ Both measured cognitive nulls now use the null relation rather than an ordinary 
 `CLM:alphacognition:HTR2A:003` (`NO_DETECTED_EFFECT_ON`, `negated_relation: MODULATES`). The
 second had been a `MODULATES` edge with `direction: no_change`, which would have let a measured
 human null compile into the graph as an ordinary edge.
+
+### 5.3 The guard that did not fire, and why the fix is structural
+
+`use_in_ranking` was curated correctly and ignored completely: the panel said "mathematical
+ability" may never be the sole basis for a facet level, and the code that assigned facet levels
+read only `phenotype_class`. **A guard expressed in data is not a guard.** The repair is
+therefore not a patched condition but a change in where the decision lives:
+
+* Eligibility is decided by **one** function every consumer imports — `_common.trait_use` and
+  `partition_by_eligibility` — which **fails closed**: `primary` may carry a grade alone,
+  `supporting` may only corroborate, `proxy_only` may not contribute to an intelligence-relevant
+  facet, and anything unrecognised *including a missing field* is `proxy_only`.
+* The two trait-dependent rules are pure functions (`genetic_association_level`,
+  `causal_attribution_level`), and the generator **cross-checks the level its prose branch
+  produced against the rule function and aborts on divergence**. Guard-versus-decision drift is
+  the bug class that occurred, so it is now a hard error rather than a silent loss of honesty.
+  It fired on CRTC1 during the fix and forced the rule to be stated properly.
+* `pipelines/alphacognition/test_facet_guardrails.py` covers it with 12 cases; 4 of them fail
+  when the guard is stubbed back to the pre-fix behaviour, including the exact finding.
+* `build_coverage_gaps.py` shares the same eligibility function, so a gene whose only panel hit
+  is a `supporting` or `proxy_only` trait now correctly receives a coverage-gap record (21 such
+  genes, up from 18).
+
+Two judgement calls inside the fix are worth challenging. `causal_gene_attribution` now returns
+**0** rather than 1 when the only locus-to-gene candidacy is on a `supporting` or `proxy_only`
+trait — partially resolving the gene behind an educational-attainment signal is not partial
+resolution of an intelligence signal — which loses the information that fine mapping happened
+there at all (it survives in the rationale). And a gene with five supporting-trait associations
+scores the same as a gene with none.
 
 ### 5.2 Coverage gaps as first-class records
 

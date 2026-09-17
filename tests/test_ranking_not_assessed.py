@@ -369,6 +369,7 @@ def test_the_sidecar_records_per_facet_evidence_state(spec, tmp_path) -> None:
         "polarity": "normal",
         "n_claim_refs": 0,
         "n_counter_claim_refs": 0,
+        "reporting_gap_refs": [],
         "limiting_factor": None,
     }
     assert facets["transfer_breadth"]["level"] == 2

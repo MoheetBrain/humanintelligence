@@ -153,9 +153,29 @@ make test             # offline test suite
 Optional environment variables (never committed): `NCBI_API_KEY` (raises the NCBI rate
 limit), `ALPHAGENOME_API_KEY` (not used in Sprint 1).
 
-## 9. Current status
+## 9. Current status — Sprint 1 complete
 
-See [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) for the authoritative snapshot
-and [`docs/PROJECT_LEDGER.md`](docs/PROJECT_LEDGER.md) for the chronological record.
-Sprint 1 is in progress; nothing in `reports/` should be read as a finding about
-biology until it carries a red-team audit and an explicit uncertainty statement.
+Authoritative snapshot: [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). Chronological
+record: [`docs/PROJECT_LEDGER.md`](docs/PROJECT_LEDGER.md). Sprint summary:
+[`reports/sprint1_summary.md`](reports/sprint1_summary.md).
+
+| | |
+|---|---|
+| Validator | PASS, exit 0 — 0 errors, 0 warnings, 32 rules |
+| Tests | 832 passing |
+| Evidence | 182 sources (all verified), 293 claims, 400 evidence items, 30 audits |
+| Graph | 1284 nodes / 1703 edges across three layers |
+| Reports | interactive graph, ranked table (PRELIMINARY), red-team audit, integration narrative |
+
+**The first milestone's result is negative.** 17 of 27 seed targets sit at level 0 for
+causal-gene attribution, nothing exceeds level 2, no target has QTL colocalisation
+supporting its gene assignment, and `tier_1_analyse_next` is **empty** — no target earns
+"analyse next" even at the optimistic end of its own rank interval. The human null on the
+most-studied brake target (α5-GABA-A) is replicated. Power is not demonstrably limiting
+in healthy adults, which weakens one factor of this project's own organising hypothesis
+(`THEORY.md` §1.4).
+
+Read `reports/target_ranking_v0_1.csv` as a prioritisation of **what to analyse next**,
+never as a claim that any target is promising, safe or effective. Every probability in it
+is an uncalibrated subjective prior, and the rank intervals — not the composite values —
+are the honest output.

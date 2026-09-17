@@ -143,5 +143,41 @@ items:
   resolution_note: R5 added structural_biology to evidence.design but no value for targeted protein or
     transcript quantification; CLM:alphacognition:GRIN2B:006 still uses expression_atlas with the mismatch
     stated in its evidence note.
+- id: 8
+  request: Give agent:alphacognition a carve-out under tests/ so its guardrail test can live with the
+    suite.
+  motivation: docs/OWNERSHIP.yaml assigns tests/** to agent:ontology, with carve-outs only for agent:integration
+    (tests/test_ranking*.py, tests/test_uncertainty*.py). The red team found that pipelines/alphacognition/build_assessments.py
+    ignored the panel's `use_in_ranking` field, letting educational-attainment-derived records award fluid-reasoning
+    facet levels. The fix needs a regression test, and the generated rule is applied identically to 27
+    targets and 108 facet grades, so an error in it replicates silently. The test currently lives at pipelines/alphacognition/test_facet_guardrails.py
+    to stay in lane, which means it is not picked up by the repository suite and can rot unnoticed.
+  affected_records:
+  - pipelines/alphacognition/test_facet_guardrails.py
+  proposed_change: Add tests/test_alphacognition_facets.py (or tests/test_facet_guardrails.py) to this
+    agent's globs, matching the pattern already granted to agent:integration, and move the file.
+  workaround_in_use: The test lives in this agent's pipeline directory and is runnable standalone (.venv/bin/python
+    pipelines/alphacognition/test_facet_guardrails.py) as well as under pytest. It passes 12/12, and 4
+    of the 12 fail when the eligibility guard is stubbed back to the pre-fix permissive behaviour.
+  resolution_status: open
+  resolution_note: Filed after the red-team audit of 2026-09-17.
+- id: 9
+  request: Note in the contract that a guard expressed only in curated data will be ignored by code.
+  motivation: 'The `use_in_ranking` failure is a design lesson, not just a bug: the panel carried the
+    sentence ''never a stand-alone basis for a facet level'' and the grading code never read the field.
+    Contract §5.2 and §4.2 describe several such guards (phenotype_class, use_in_ranking, life_stage,
+    baseline_context) and none of them says which component is obliged to honour them. R4 already mechanised
+    the risk/margin polarity convention for exactly this reason: ''a convention that is only written down
+    will be broken by the next agent.'''
+  affected_records: []
+  proposed_change: State in §5.2 that any curated field intended to constrain a grade must be consumed
+    by the validator or by a test, and add a validator check that a facet level above 1 on an intelligence-relevant
+    facet cites at least one claim whose phenotype_class belongs to a trait marked `primary`. That makes
+    the guard enforceable across atlases rather than per agent.
+  workaround_in_use: This atlas centralised eligibility in _common.trait_use (fail-closed), extracted
+    the rules as pure functions, cross-checks the prose branch against the rule function at generation
+    time and aborts on divergence, and covers all of it with 12 tests.
+  resolution_status: open
+  resolution_note: Filed after the red-team audit of 2026-09-17.
 resolved_on: '2026-09-17'
 resolution_reference: docs/blackboard/RESOLUTIONS.md

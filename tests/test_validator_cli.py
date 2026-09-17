@@ -84,10 +84,12 @@ def test_warnings_alone_exit_zero_without_strict(make_root: RootFactory) -> None
         path.unlink()
     lenient = run_cli("--root", str(root))
     assert lenient.returncode == 0, lenient.stdout
-    assert "warning" in lenient.stdout
+    assert "1 warning" in lenient.stdout
+    assert "PASS" in lenient.stdout
     strict = run_cli("--root", str(root), "--strict")
     assert strict.returncode == 1
-    assert "--strict: warnings are treated as errors." in strict.stdout
+    assert "warnings are treated as errors" in strict.stdout
+    assert "info findings never fail a run" in strict.stdout
 
 
 # ------------------------------------------------------------ output shapes ------
@@ -148,7 +150,7 @@ def test_human_output_groups_by_rule_and_caps_examples(make_root: RootFactory) -
 
     result = run_cli("--root", str(root), "--strict")
     assert result.returncode == 1
-    assert "V3: 12 violation(s)" in result.stdout
+    assert "V3: 12 finding(s)" in result.stdout
     assert "and 2 more under V3" in result.stdout
     assert "use --json for the full list" in result.stdout
 
@@ -290,3 +292,25 @@ def test_deterministic_output(make_root: RootFactory) -> None:
     first = run_cli("--root", str(root), "--json", "--strict").stdout
     second = run_cli("--root", str(root), "--json", "--strict").stdout
     assert first == second
+
+
+def test_info_findings_are_labelled_info_not_warning(make_root: RootFactory) -> None:
+    """`info` is neither an error nor a warning, and must not be reported as one.
+
+    The headline once computed warnings by subtracting errors from the total, which
+    labelled every informational finding a warning — misreporting a finding that never
+    fails a run as one that `--strict` would escalate.
+    """
+    root = make_root("valid_minimal")
+    source = (root / "evidence" / "sources" / "ontology.yaml").read_text(encoding="utf-8")
+    extra = source.replace("SRC:PMID:00000001", "SRC:PMID:00000002").replace(
+        'pmid: "00000001"', 'pmid: "00000002"'
+    )
+    (root / "evidence" / "sources" / "ontology.yaml").write_text(
+        source + "\n" + extra[extra.index("- schema_version") :], encoding="utf-8"
+    )
+    result = run_cli("--root", str(root), "--strict", "--rule", "V22")
+    assert result.returncode == 0, "an info finding must never fail a --strict run"
+    assert "1 info" in result.stdout
+    assert "0 warning" in result.stdout
+    assert "Info findings are not defects" in result.stdout

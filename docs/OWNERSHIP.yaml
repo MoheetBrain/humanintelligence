@@ -20,6 +20,10 @@ owners:
     - "requirements-lock.txt"
     - "reports/sprint1_summary.md"
 
+  # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
+  # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because
+  # pyproject.toml lists "pipelines" in testpaths — a guard that does not run is
+  # decoration.
   agent:ontology:
     - "ontology/**"
     - "schemas/**"

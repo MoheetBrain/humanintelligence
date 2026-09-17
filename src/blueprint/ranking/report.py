@@ -89,6 +89,7 @@ CSV_COLUMNS: tuple[str, ...] = (
     "facets_not_assessed",
     "facets_level_zero",
     "facets_contradicted",
+    "reporting_gap_count",
     "claim_count",
     "independent_source_count",
     "red_team_verdict",
@@ -192,6 +193,7 @@ def render_csv(
             "facets_not_assessed": scored.facets_not_assessed,
             "facets_level_zero": scored.facets_level_zero,
             "facets_contradicted": scored.facets_contradicted,
+            "reporting_gap_count": scored.reporting_gap_count,
             "claim_count": scored.claim_count,
             "independent_source_count": scored.independent_source_count,
             "red_team_verdict": scored.red_team_verdict or "not_audited",
@@ -589,6 +591,10 @@ def _coverage_summary(result: CohortResult) -> dict[str, object]:
         "total_facets_not_assessed": sum(t.facets_not_assessed for t in result.targets),
         "total_facets_level_zero": sum(t.facets_level_zero for t in result.targets),
         "total_facets_contradicted": sum(t.facets_contradicted for t in result.targets),
+        "total_reporting_gaps": sum(t.reporting_gap_count for t in result.targets),
+        "targets_with_reporting_gaps": [
+            t.target_id for t in result.targets if t.reporting_gap_count
+        ],
         "reading": (
             "coverage = facets assessed / facets applicable. Below the threshold a row is "
             "tiered tier_3_insufficient_coverage and its rank is a statement about curation "

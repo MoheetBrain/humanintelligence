@@ -136,6 +136,7 @@ class TargetScore:
     facets_not_assessed: int = 0
     facets_level_zero: int = 0
     facets_contradicted: int = 0
+    reporting_gap_count: int = 0
     claim_count: int = 0
     independent_source_count: int = 0
     tractability_level: int | None = None
@@ -551,6 +552,12 @@ def evidence_state_counts(spec: ModelSpec, target: TargetInput) -> dict[str, flo
     * **tested and contradicted** -> ``contradicted``: graded, with ``counter_level``
       at 2 or above, which is a different and stronger statement than either.
 
+    A fourth state sits alongside them and is counted separately: **tried, nothing
+    published** -> ``reporting_gaps``, the distinct registered interventions that
+    completed without posted results (contract §5.2, R14). That is a fact about
+    reporting bias rather than about the target, so it never touches a level or a
+    ``counter_level``.
+
     Returns:
         ``{"coverage", "applicable", "assessed", "not_assessed", "level_zero",
         "contradicted"}``. ``contradicted`` counts applicable facets whose
@@ -561,6 +568,7 @@ def evidence_state_counts(spec: ModelSpec, target: TargetInput) -> dict[str, flo
     assessed = 0
     level_zero = 0
     contradicted = 0
+    reporting_gaps: set[str] = set()
     for facet_name in spec.facet_names:
         assessment = target.facet(facet_name)
         if not assessment.is_applicable:
@@ -572,6 +580,12 @@ def evidence_state_counts(spec: ModelSpec, target: TargetInput) -> dict[str, flo
                 level_zero += 1
         if assessment.counter_level is not None and int(assessment.counter_level) >= 2:
             contradicted += 1
+        # Deduplicated at SOURCE level across facets, for the same reason
+        # `independent_source_count` is: one unreported trial listed against three
+        # facets is one reporting gap, not three (contract P5, and R15's scope
+        # judgement — inflating a bias count by re-counting one study is the same
+        # error as inflating evidence by re-citing one paper).
+        reporting_gaps.update(assessment.reporting_gap_refs)
     return {
         "coverage": (assessed / applicable) if applicable else 0.0,
         "applicable": applicable,
@@ -579,6 +593,7 @@ def evidence_state_counts(spec: ModelSpec, target: TargetInput) -> dict[str, flo
         "not_assessed": applicable - assessed,
         "level_zero": level_zero,
         "contradicted": contradicted,
+        "reporting_gaps": len(reporting_gaps),
     }
 
 
@@ -599,6 +614,7 @@ def facet_evidence_state(spec: ModelSpec, target: TargetInput) -> dict[str, dict
             "polarity": spec.facets[facet_name].polarity,
             "n_claim_refs": len(assessment.claim_refs),
             "n_counter_claim_refs": len(assessment.counter_claim_refs),
+            "reporting_gap_refs": list(assessment.reporting_gap_refs),
             "limiting_factor": assessment.limiting_factor,
         }
     return state
@@ -745,6 +761,7 @@ def score_cohort(
                 facets_not_assessed=int(state["not_assessed"]),
                 facets_level_zero=int(state["level_zero"]),
                 facets_contradicted=int(state["contradicted"]),
+                reporting_gap_count=int(state["reporting_gaps"]),
                 claim_count=claims,
                 independent_source_count=sources,
                 tractability_level=(

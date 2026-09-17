@@ -7,22 +7,97 @@ dossiers for the six targets assigned to this atlas (`GRIN2B`, `CRTC1`, `CHRM1` 
 
 ---
 
+## 0. Correction after red-team audit — educational attainment was being laundered into fluid reasoning
+
+**The defect.** `atlases/alphacognition/cognitive_trait_panel.yaml` marked "mathematical
+ability" (`EFO_0004875`) as `use_in_ranking: supporting`, with the explicit note that it is
+"never a stand-alone basis for a facet level". `pipelines/alphacognition/build_assessments.py`
+branched on `phenotype_class` alone and **never read `use_in_ranking`**. The guard was inert.
+The records behind that trait are *"Self-reported math ability"* and *"Highest math class
+taken"* from **PMID 30038396 — a 1.1-million-person educational attainment GWAS** — and they
+were awarding fluid-reasoning-grade facet levels. That is the
+`educational_attainment_mistaken_for_intelligence` failure principle P4 exists to block, and it
+survived because **the guard lived in data while the decision lived in code**. It was in my
+lane; the fix is too.
+
+**The fix, structural rather than local.**
+1. Eligibility now lives in **one** function every consumer imports — `_common.trait_use` and
+   `_common.partition_by_eligibility` — and it **fails closed**: `primary` may carry a grade
+   alone, `supporting` may only corroborate, `proxy_only` may not contribute to an
+   intelligence-relevant facet at all, and anything else *including a missing field* is treated
+   as `proxy_only`.
+2. The two trait-dependent rules are extracted as pure functions
+   (`genetic_association_level`, `causal_attribution_level`), and `build_assessments.py` now
+   **cross-checks the level its prose branch produced against the rule function and aborts on
+   divergence**. Guard-versus-decision drift is the bug class that just occurred, so it is now a
+   hard error. It fired immediately on CRTC1 during development and forced the rule to be
+   stated properly rather than the prose adjusted.
+3. `build_coverage_gaps.py` uses the same eligibility function, so a gene whose only panel hit
+   is a `supporting` or `proxy_only` trait now correctly receives a coverage-gap record.
+4. **Test:** `pipelines/alphacognition/test_facet_guardrails.py`, 12 cases, all passing. Run
+   against the pre-fix behaviour (guard stubbed to permissive) **4 of them fail**, including the
+   exact finding — *"a `supporting` trait alone produced level 3; it may only corroborate"*. It
+   also asserts panel-level invariants: every trait declares an eligibility, and every
+   EA-classed trait is `proxy_only`. It sits in `pipelines/alphacognition/` because
+   `docs/OWNERSHIP.yaml` gives `tests/**` to `agent:ontology`; relocation under a carve-out is
+   requested as item 8 of the schema-change request.
+
+**Grades moved: 10 of 144, all 10 downward. None upward.**
+
+| Target | Facet | level/counter |
+|---|---|---|
+| CRTC1 | `human_genetic_association` | **3 → 1** |
+| CRTC1 | `causal_gene_attribution` | 2 → 0 |
+| CRTC1 | `human_phenotype_specificity` | 2 → 1 |
+| DRD1 | `causal_gene_attribution` | 2 → 0 (counter 2 → 0) |
+| GRIN2B | `causal_gene_attribution` | 2 → 1 (counter 2 → 0) |
+| KCNQ3 | `causal_gene_attribution` | 1 → 0 |
+| KCNQ3 | `human_phenotype_specificity` | 2 → 1 |
+| OTX2 | `causal_gene_attribution` | 2 → 1 |
+| PDE4B | `causal_gene_attribution` | 2 → 1 (counter 2 → 0) |
+| SLC16A7 | `causal_gene_attribution` | 2 → 1 |
+
+**Verified independently, and the damage was wider than reported.** The red team predicted
+CRTC1 would fall and that GRIN2B, OTX2, PDE4B and SLC16A7 would survive on other evidence.
+That is correct **for `human_genetic_association`** — those four do have primary-trait
+associations and hold their grade. It is **not** correct for `causal_gene_attribution`: the same
+laundering was running through the locus-to-gene path, and checking it directly rather than
+trusting the summary showed that **every one of the 12 genes previously reported as having
+"L2G candidacy on a cognitive trait" was in fact on `mathematical ability` or on educational
+attainment itself**. Of the 70 seed-gene credible sets: **20 on primary cognitive traits
+(intelligence, cognitive function measurement, episodic memory), 14 on `supporting` traits (all
+"mathematical ability"), 36 on `proxy_only` or unmapped traits.**
+
+**Corrected count: 6 seed genes — not 12 — have locus-to-gene candidacy on a primary cognitive
+trait: CKB, GABRA5, GPR158, GRM5, HCN1, HTR2A.** A latent bug was fixed in the same place:
+credible sets whose study mapped to no panel trait carried `is_educational_attainment: None`,
+which the old filter read as falsy and therefore counted as cognitive. Fail-closed eligibility
+removes them.
+
+A separate rule, **V-DIR2**, landed during the same pass and is also fixed: the 31 expression
+claims carried `direction: no_change`, which would assert a null result GTEx never reported.
+They now carry `direction: not_applicable` — a tissue abundance measurement asserts no
+direction at all.
+
+---
+
 ## 1. The headline finding
 
 **Not one of the 27 seed targets has locus-to-gene evidence strong enough to attribute a
 cognitive GWAS signal to it.**
 
-`causal_gene_attribution` across all 27 targets: **level 0 × 14, level 1 × 1, level 2 × 12,
-level 3 × 0, level 4 × 0.** Nobody reached level 3 because **zero** seed genes have a
-molecular-QTL colocalisation supporting their assignment at any cognitive-trait credible set. Of
-the 34 cognitive-trait credible sets in which Open Targets' L2G model ranks a seed gene at all,
-none has a QTL coloc for that gene; the colocalisations that do exist at those loci are
-GWAS-to-GWAS, which speak to pleiotropy rather than to gene assignment.
+`causal_gene_attribution` across all 27 targets, after the §0 correction: **level 0 × 17,
+level 1 × 4, level 2 × 6, level 3 × 0, level 4 × 0.** Nobody reached level 3 because **zero**
+seed genes have a molecular-QTL colocalisation supporting their assignment at any
+cognitive-trait credible set. Of the **20** primary-cognitive-trait credible sets in which Open
+Targets' L2G model ranks a seed gene, none has a QTL coloc for that gene; the colocalisations
+that do exist at those loci are GWAS-to-GWAS, which speak to pleiotropy rather than to gene
+assignment.
 
-Read together with `human_genetic_association` (level 3 × 9, level 2 × 1, level 1 × 17), the
-picture is: nine of these genes sit near a variant associated with a directly relevant cognitive
-endpoint, twelve are ranked by a statistical model as one of several candidates at such a locus,
-and **none** of them has been shown to be the gene the signal acts through. Genes that "come up in
+Read together with `human_genetic_association` (level 3 × 8, level 2 × 1, level 1 × 18), the
+picture is: eight of these genes sit near a variant associated with a directly relevant
+cognitive endpoint, six are ranked by a statistical model as one of several candidates at such a
+locus, and **none** of them has been shown to be the gene the signal acts through. Genes that "come up in
 intelligence GWAS" are, on current public evidence, genes that happen to be near
 intelligence-associated variants. This is a statement about the state of public data, not about
 the genes — brain QTL coverage is thin and the relevant cell types are largely absent from QTL
@@ -60,9 +135,13 @@ Level 4 is unreachable for all four genetics facets in v0.1, and every assessmen
 ### Open Targets locus-to-gene (22 traits → 716 GWAS studies → 13,730 credible sets)
 * **70 credible sets** rank a seed gene among L2G candidates; **34 of those are cognitive-trait**
   credible sets.
-* **15 seed genes** have L2G candidacy on any panel trait; **12 on a cognitive trait** (CKB, CRTC1,
-  DRD1, GABRA5, GPR158, GRIN2B, GRM5, HCN1, HTR2A, OTX2, PDE4B, SLC16A7). The other three
-  (EIF2B4, EIF2S1, HDAC2) appear only on educational-attainment traits and are capped at level 1.
+* **15 seed genes** have L2G candidacy on any panel trait; **6 on a PRIMARY cognitive trait**
+  (CKB, GABRA5, GPR158, GRM5, HCN1, HTR2A). Trait breakdown of the 70 seed-gene credible sets:
+  **20 primary** (intelligence 10, cognitive function measurement 9, episodic memory 1),
+  **14 `supporting`** (all "mathematical ability"), **36 `proxy_only` or unmapped** (educational
+  attainment 23, self-reported educational attainment 13). The nine genes whose only candidacy
+  is on supporting or EA traits — CRTC1, DRD1, GRIN2B, OTX2, PDE4B, SLC16A7, EIF2B4, EIF2S1,
+  HDAC2 — get no attribution credit for it; see §0.
 * **0 seed genes** have any molecular-QTL colocalisation.
 
 ### Expression
@@ -78,12 +157,12 @@ Level 4 is unreachable for all four genetics facets in v0.1, and every assessmen
 |---|---|
 | hand-curated | **21** (GRIN2B 6, CHRM1 5, CRTC1 3, HTR2A 3, DRD1 2, GRM5 2) |
 | machine-generated from databases | **104** (GWAS Catalog 38, Open Targets L2G 35, expression 31) |
-| machine-generated coverage gaps (`claim_type: evidence_gap`, graph-inert) | **24** (18 genetics-sweep gaps, 6 lead-atlas literature gaps) |
-| **total** | **149** |
+| machine-generated coverage gaps (`claim_type: evidence_gap`, graph-inert) | **27** (21 genetics-sweep gaps, 6 lead-atlas literature gaps) |
+| **total** | **152** |
 
-`endpoint_measured` across all 234 evidence items: **189 `measured`, 42
+`endpoint_measured` across all 240 evidence items: **189 `measured`, 48
 `not_measured_in_protocol`, 3 `unknown`** (two ClinicalTrials.gov registry records and one
-narrative review). The 42 unmeasured items are all inside `evidence_gap` claims, which is what
+narrative review). The 48 unmeasured items are all inside `evidence_gap` claims, which is what
 rule V16c requires and what keeps them out of every `counter_level`.
 
 ### Sources
@@ -95,7 +174,7 @@ the verifier checks against the same authority that supplied the strings.
 
 ### Validator
 `.venv/bin/python graph/validate_graph.py --strict` → **0 violations in any file owned by this
-agent** (136 remain repository-wide, all in other agents' lanes, dominated by V15 red-team audit
+agent** (2 remain repository-wide, all in other agents' lanes, dominated by V15 red-team audit
 coverage, which has not run yet). This was re-run after each of the four schema amendments that
 landed mid-session (`NO_DETECTED_EFFECT_ON` + `negated_relation`, `endpoint_measured`,
 the assessed-facet-must-cite-evidence rule, and `search_basis` for level-0 grades) and the
@@ -125,13 +204,15 @@ curl .../ebi.ac.uk/chembl/api/data/status.json          → ChEMBL_37, released 
 .venv/bin/python pipelines/alphacognition/build_sources.py
     → evidence/sources/alphacognition.yaml: 58 records (52 PMID, 2 NCT, 4 database release)
 .venv/bin/python pipelines/alphacognition/build_coverage_gaps.py
-    → 24 evidence_gap claims (18 genetics-sweep, 6 lead-atlas)
+    → 27 evidence_gap claims (21 genetics-sweep, 6 lead-atlas)
+.venv/bin/python pipelines/alphacognition/test_facet_guardrails.py
+    → 12/12 passed; 4 of the 12 fail when the eligibility guard is stubbed permissive
 .venv/bin/python pipelines/alphacognition/build_assessments.py
     → 27 targets assessed, 0 facets left without cited evidence
 .venv/bin/python scripts/fetch_source_metadata.py --agent alphacognition
     → 58/58 sources verified
 .venv/bin/python graph/validate_graph.py --strict
-    → 0 violations in alphacognition-owned files (136 remain repo-wide, other agents' lanes)
+    → 0 violations in alphacognition-owned files (2 remain repo-wide, other agents' lanes)
 .venv/bin/python scripts/check_ownership.py --agent alphacognition
     → 119 flags attributable to this agent, all UNCLAIMED-path (see §6), 0 lane violations
 ```
@@ -150,9 +231,9 @@ both are given. All 27 targets, four genetics facets:
 
 | Facet | lvl 0 | 1 | 2 | 3 | 4 | counter 0 | 1 | 2 | 3 |
 |---|---|---|---|---|---|---|---|---|---|
-| `human_genetic_association` | 0 | 17 | 1 | 9 | 0 | 27 | 0 | 0 | 0 |
-| **`causal_gene_attribution`** | **14** | **1** | **12** | **0** | **0** | 19 | 0 | 8 | 0 |
-| `human_phenotype_specificity` | 1 | 15 | 11 | 0 | 0 | 27 | 0 | 0 | 0 |
+| `human_genetic_association` | 0 | 18 | 1 | 8 | 0 | 27 | 0 | 0 | 0 |
+| **`causal_gene_attribution`** | **17** | **4** | **6** | **0** | **0** | 23 | 0 | 4 | 0 |
+| `human_phenotype_specificity` | 1 | 17 | 9 | 0 | 0 | 27 | 0 | 0 | 0 |
 | `adult_expression_and_timing` | 0 | 1 | 25 | 1 | 0 | 26 | 0 | 1 | 0 |
 
 Lead-atlas facets, 6 targets only (the other 21 carry `facets_not_owned_by_this_agent` naming
@@ -303,10 +384,25 @@ Two further consequences were applied:
    effects (anxiety, ego dissolution, blood pressure, heart rate). A systematic psychiatric-liability
    search — persisting perceptual changes, psychosis risk — was **not** run by this agent.
    `SV:safety.psychosis_risk` is deliberately *not* asserted because psychosis was not measured.
-9. **The generated-facet rule itself.** Four facets × 27 targets were graded by code, not by
-   reading. The rule is auditable and the rationale strings quote the counts, but the mapping from
-   evidence pattern to ordinal level is one agent's curatorial decision. If it is wrong it is
-   wrong 108 times identically.
+9. **The generated-facet rule itself — you already found one bug here, and the fix may have its
+   own.** See §0. The rule is now in two pure functions with 12 tests and a generation-time
+   divergence check, but the mapping from evidence pattern to ordinal level is still one agent's
+   curatorial decision applied 108 times identically. Two judgement calls in the fix are worth
+   attacking: (a) `causal_gene_attribution` now returns **0**, not 1, when the only L2G candidacy
+   is on a `supporting`/`proxy_only` trait — I decided that partially resolving the gene behind
+   an EA signal is not partial resolution of an intelligence signal, which loses the information
+   that fine mapping did happen there (it survives in the rationale); (b) `supporting` traits
+   corroborate but never raise a level, so a gene with five supporting-trait associations and no
+   primary one scores the same as a gene with none.
+10. **Registry coverage — this atlas has run no ClinicalTrials.gov *search*.** Noted from your
+   report that three of four atlases never ran one and that four of your five headline findings
+   came from `whyStopped` and `resultsSection`, which no literature search returns. This atlas
+   fetched two NCT records **by id** (NCT02920892, NCT03604744) and never queried
+   `filter.overallStatus=TERMINATED,WITHDRAWN,SUSPENDED` for any target. So every `level: 0` on
+   `human_intervention_evidence` here — CRTC1, DRD1, GRIN2B, GRM5, HTR2A — carries the same
+   exposure `agent:power` had when it overturned two of its own statements. A terminated M1,
+   D1 or mGluR5 cognition trial with an informative `whyStopped` would change those grades and
+   would not have been found by anything this atlas ran. Queued as the first Sprint-2 action.
 
 ---
 
@@ -351,11 +447,12 @@ evidence/sources/alphacognition.yaml                   58 records, assembled, al
 evidence/claims/alphacognition/{GRIN2B,CRTC1,CHRM1,GRM5,DRD1,HTR2A}.yaml   21 hand-curated claims
 evidence/claims/alphacognition/{gwas_catalog,opentargets_l2g,expression}_derived.yaml  104 machine claims
 targets/candidates/{GRIN2B,CRTC1,CHRM1,GRM5,DRD1,HTR2A}.yaml               6 dossiers
-evidence/claims/alphacognition/coverage_gaps.yaml                          24 evidence_gap claims
+evidence/claims/alphacognition/coverage_gaps.yaml                          27 evidence_gap claims
 pipelines/alphacognition/{_common,fetch_gwas_catalog,fetch_gene_pleiotropy,
                           fetch_opentargets_genetics,fetch_expression,
                           build_sources,build_coverage_gaps,
                           build_assessments}.py                            8 modules
+pipelines/alphacognition/test_facet_guardrails.py                          12 guardrail tests
 data/interim/{gwas_catalog_associations,gwas_catalog_gene_pleiotropy,
               opentargets_l2g,adult_brain_expression}.jsonl                4 derived tables
 data/raw/{gwas_catalog,opentargets_genetics,gtex,chembl}/2026-09-17/       immutable snapshots

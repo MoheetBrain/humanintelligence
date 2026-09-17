@@ -155,6 +155,21 @@
     evidence_refs:
     - CLM:power:SLC16A7:001
     - CLM:power:anls:001
+  claim_status_changes:
+  - claim_id: CLM:power:anls:001
+    from: active
+    to: contested
+    reason: 'agent:power registered the founding astrocyte-neuron lactate shuttle result as contested
+      alongside the published critique of it (CLM:power:anls:002), withdrawing neither. The red team was
+      asked to say which side it takes and declines to take either, for a stated reason: the critique
+      is a methodological argument rather than a failed replication, so it contests the interpretation
+      without refuting the measurement, and nothing retrieved in this audit resolves it. What the red
+      team DOES record, because it is the decision-relevant consequence, is that FOUR of the seven power-atlas
+      targets - SLC16A1, SLC16A3, SLC16A7 and HCAR1 - inherit this claim''s credibility, and SRC:PMID:21376239
+      alone carries this claim plus the founding claim of three of those targets. So the shuttle is not
+      one contested claim among many; it is a single point of failure beneath four targets, and a downgrade
+      of it should cascade to all four rather than to none. Ratified as contested so that rule V14 has
+      an audit record and so the cascade is on the record before the ranking runs.'
   verdict: retain
   provenance:
     created_by: agent:red_team

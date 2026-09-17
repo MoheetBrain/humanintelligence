@@ -44,6 +44,7 @@
       - "antipsychotic co-medication could in principle occlude an effect of alpha5 negative modulation, and the retrieved text does not exclude that"
       - "the report states that practice and learning effects were not observed at week 12, which removes one common explanation for a null but not all of them"
       - "no receptor-occupancy measurement is reported for this trial in the retrieved text, so adequate target engagement at the tested doses is inferred from the wider programme rather than demonstrated here"
+      - "the terminated paediatric study (SRC:NCT:NCT02484703, n=45) carries endpoint_measured: unknown deliberately. Its whyStopped text is the sponsor stating that it stopped because ANOTHER study showed no efficacy and that safety was not the reason, which is a fact about the programme rather than a result from this trial; no results were posted and whether its protocol cognitive endpoints were ever administered cannot be determined. agent:brakes reached the same `unknown` determination and refused to write a claim on it; that determination is confirmed here, and the record is included only as a qualifying evidence item so the registered source is not left dangling. A terminated trial is not a reported null and this evidence item must never be read as one."
       - "one secondary sub-score was nominally significant in the posted results (Wechsler Memory Scale IV Verbal Paired Associates, treatment difference 0.91, 95% CI 0.23 to 1.58, p=0.028) among many secondary comparisons with no correction reported, alongside p-values of 0.211, 0.787 and 0.477 on the other sub-scores of the same instrument and 0.556, 0.848, 0.973 and 0.651 across the MCCB cognitive domains; the red team records this because it is the one result a reader seeking a positive finding would quote, and treats it as consistent with chance"
   evidence:
     - source_id: SRC:PMID:41983730
@@ -93,6 +94,32 @@
         p_value: 0.793
       replication_status: not_assessed
       evidence_role: null_result
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:NCT:NCT02484703
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "children with Down syndrome aged 6-11 in a 26-week dose-investigating study; registry-reported actual enrolment 45, terminated, no results posted"
+      sample_size:
+        reported_as: "45"
+        value: 45
+        unit: participants
+      endpoint: "registry status and whyStopped field; the protocol declared pharmacodynamic and efficacy outcomes, and whether the cognitive endpoints were administered and recorded before termination cannot be determined from the record"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: "Study was terminated due to data from another study showing no efficacy. There were no safety issues of concern."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
       extraction:
         basis: registry_record
         extracted_by: agent:red_team

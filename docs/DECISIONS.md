@@ -283,3 +283,43 @@ finding, not a regression.
 the dimensions share evidence, so the true joint probability is lower and every reported
 interval narrower than reality. That is disclosed in the report rather than corrected,
 because correcting it would require a dependence model we have no basis to fit.
+
+---
+
+## D014 — The sprint's dominant error mode, and the check that would have caught all of it
+
+*2026-09-17 · recorded as a standing lesson*
+
+**Observation.** Five separate times in one sprint, a value meaning *"we looked and
+found nothing"* was pressed into service for *"there was nothing to look for"*. The
+occurrences span four agents and the contract itself:
+
+| # | Where | The conflation |
+|---|-------|----------------|
+| 1 | `clinical_null` / V16c | A trial that never measured a cognitive endpoint recorded as a failed trial |
+| 2 | Facet `level: 0` / R11 | A citation demanded for the absence of evidence, so an honest zero could not be written |
+| 3 | `reporting_gap_refs` / R14 | A completed-but-unreported trial indistinguishable from nobody having tried |
+| 4 | State-variable annotations | Evidence required for a field whose honest value was "nothing asserted yet" |
+| 5 | `direction: no_change` / V-DIR2 | An `expression` claim asserting a null that the source never reported |
+
+In every case the enum lacked a value for a **third state**, and in every case the
+pressure the gap created was worse than the gap: an agent facing "this field requires a
+value none of whose options are true" either picks the closest false one or silently
+downgrades its record to a weaker, differently-wrong category.
+
+**The check.** Before requiring a value for a field, enumerate the states the field must
+distinguish, and confirm that an honest value exists for each and does not trip the
+rule. Specifically: does the field need to separate *measured and absent* from *not
+measured* from *not applicable*? Those are three states, and most enums ship with two.
+
+**Why this is D-level rather than a note.** It is the highest-yield review question this
+project has found, it cost five rounds of agent rework to learn, and it generalises
+beyond this repository: any schema that encodes negative findings will have the same
+three-state problem. It belongs in the next sprint's brief, and in the brief of any
+project that asks a model to record what is *not* known.
+
+**Companion principle.** P9 ("a guard is not a guard until code reads it") came from the
+same sprint by a different route — an eligibility flag correctly written in data and
+never read by the code that generated grades, which laundered educational attainment
+into fluid reasoning across 10 facet grades. Together: **state the states, then make
+something executable enforce them.**

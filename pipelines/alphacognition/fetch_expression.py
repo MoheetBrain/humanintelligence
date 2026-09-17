@@ -280,7 +280,10 @@ def build_claims(rows: list[dict[str, Any]], *, run_id: str, species: str | None
                 "predicate": "EXPRESSED_IN",
                 "object": region_ids[0] if region_ids else "REGION:brain",
                 "claim_type": "expression",
-                "direction": "no_change",
+                # `not_applicable`, not `no_change`: a tissue abundance measurement asserts no
+                # direction at all, and `no_change` would claim a null result GTEx never
+                # reported (rule V-DIR2).
+                "direction": "not_applicable",
                 "context": {
                     "species": [species] if species else [],
                     "life_stage": "adult",

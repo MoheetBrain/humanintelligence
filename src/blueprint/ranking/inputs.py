@@ -96,6 +96,11 @@ class FacetAssessment:
             ``evidence_basis: database_release`` (contract §5.2, R7).
         evidence_basis: ``database_release`` when the grade rests on a pinned database
             release rather than on curated claims; ``None`` otherwise.
+        reporting_gap_refs: Registered interventions that COMPLETED WITHOUT POSTED
+            RESULTS (contract §5.2, R14). Not counter-evidence, and it may never raise
+            ``counter_level``: it is a finding about the evidence base — reporting bias
+            — rather than about the target. Surfaced per target as
+            ``reporting_gap_count``.
         assessed_by: Agent id that graded it (ownership is checked elsewhere).
         rationale: The grader's stated reason. Carried for reporting, never parsed.
         counter_rationale: The grader's reason for ``counter_level``.
@@ -110,6 +115,7 @@ class FacetAssessment:
     counter_claim_refs: tuple[str, ...] = ()
     source_refs: tuple[str, ...] = ()
     evidence_basis: str | None = None
+    reporting_gap_refs: tuple[str, ...] = ()
     assessed_by: str | None = None
     rationale: str | None = None
     counter_rationale: str | None = None
@@ -156,10 +162,19 @@ class FacetAssessment:
 
 @dataclass(frozen=True, slots=True)
 class AuditAdjustment:
-    """A red-team downgrade of one facet level (contract §6, rule V12).
+    """A red-team adjustment to one facet grade (contract §6, rule V12).
 
-    ``to_level < from_level`` always: the contract forbids upgrades, and this class
-    enforces it so a malformed audit cannot silently raise a score.
+    An adjustment names the FIELD it moves, and "downgrade only" is a statement about
+    the target's STANDING rather than about the integer:
+
+    * ``field: level`` must DECREASE — less support for the facet proposition.
+    * ``field: counter_level`` must INCREASE — more evidence against it.
+
+    Both lower the target. The second is the more common red-team action and the one a
+    naive reading of "to_level < from_level" gets backwards: a null result that is now
+    replicated raises the contradicting grade, and rejecting that as an "upgrade" would
+    discard the downgrade the red team was making. This class mirrors the shared record
+    model in ``blueprint.records.AuditAdjustment``, which is the authority.
     """
 
     audit_id: str
@@ -168,13 +183,33 @@ class AuditAdjustment:
     from_level: int
     to_level: int
     reason: str = ""
+    field: str = "level"
 
     def __post_init__(self) -> None:
-        if int(self.to_level) >= int(self.from_level):
+        if self.field not in ("level", "counter_level"):
             raise ValueError(
-                f"{self.audit_id}: adjustment on {self.facet} is not a downgrade "
-                f"({self.from_level} -> {self.to_level}); contract rule V12 permits downgrades only"
+                f"{self.audit_id}: adjustment on {self.facet} names field "
+                f"{self.field!r}; expected 'level' or 'counter_level'"
             )
+        if self.field == "level" and int(self.to_level) >= int(self.from_level):
+            raise ValueError(
+                f"{self.audit_id}: adjustment on {self.facet} moves level "
+                f"{self.from_level} -> {self.to_level}, which is not a downgrade. The red "
+                "team may downgrade, never upgrade (contract P6, rule V12). To record "
+                "contradicting evidence, raise counter_level instead."
+            )
+        if self.field == "counter_level" and int(self.to_level) <= int(self.from_level):
+            raise ValueError(
+                f"{self.audit_id}: adjustment on {self.facet} moves counter_level "
+                f"{self.from_level} -> {self.to_level}. Lowering the contradicting-evidence "
+                "grade would be an UPGRADE of the target's standing, which the red team "
+                "may not do (contract P6, rule V12)."
+            )
+
+    @property
+    def lowers_standing(self) -> bool:
+        """Always true by construction; kept explicit because it is the real rule."""
+        return True
 
 
 @dataclass(frozen=True, slots=True)
@@ -335,28 +370,48 @@ class TargetInput:
         return replace(self, facets=facets), tuple(sorted(neutralised))
 
     def with_audit_adjustments_applied(self) -> TargetInput:
-        """Apply the red team's downgrades to the facet levels.
+        """Apply the red team's adjustments to the facet grades.
 
-        Downgrades are applied to the *inputs*, before any scoring, because they
-        change the evidence grade itself rather than capping a score. When several
-        audits touch the same facet the lowest ``to_level`` wins, so provenance is
-        append-only and re-auditing can only ratchet a grade down (contract P6).
+        They are applied to the *inputs*, before any scoring, because they change the
+        evidence grade itself rather than capping a score.
+
+        Each adjustment names the field it moves. When several audits touch the same
+        field of the same facet the MOST DOWNGRADING value wins — the lowest for
+        ``level``, the highest for ``counter_level`` — so provenance stays append-only
+        and re-auditing can only ratchet a target's standing down (contract P6). An
+        adjustment never loosens a grade the atlas already set more strictly.
         """
         if not self.audit.adjustments:
             return self
-        lowest: dict[str, int] = {}
+        strictest_level: dict[str, int] = {}
+        strictest_counter: dict[str, int] = {}
         for adjustment in self.audit.adjustments:
-            current = lowest.get(adjustment.facet)
-            level = int(adjustment.to_level)
-            lowest[adjustment.facet] = level if current is None else min(current, level)
+            value = int(adjustment.to_level)
+            if adjustment.field == "level":
+                current = strictest_level.get(adjustment.facet)
+                strictest_level[adjustment.facet] = value if current is None else min(current, value)
+            else:
+                current = strictest_counter.get(adjustment.facet)
+                strictest_counter[adjustment.facet] = value if current is None else max(current, value)
+
         facets = dict(self.facets)
-        for name, level in lowest.items():
+        for name in {*strictest_level, *strictest_counter}:
             existing = facets.get(name, FacetAssessment(facet=name))
             if existing.assessment_status == "not_applicable":
                 continue
-            if existing.level is not None and existing.level <= level:
-                continue
-            facets[name] = replace(existing, assessment_status="assessed", level=level)
+            level, counter = existing.level, existing.counter_level
+            status = existing.assessment_status
+            if name in strictest_level:
+                capped = strictest_level[name]
+                if level is None or level > capped:
+                    level, status = capped, "assessed"
+            if name in strictest_counter:
+                raised = strictest_counter[name]
+                if counter is None or counter < raised:
+                    counter = raised
+            facets[name] = replace(
+                existing, assessment_status=status, level=level, counter_level=counter
+            )
         return replace(self, facets=facets)
 
 
@@ -591,6 +646,7 @@ def _from_loaded_repository(repository: Any, *, root: Path) -> RepositoryInputs:
                         claim_refs=_as_tuple(raw.get("claim_refs")),
                         counter_claim_refs=_as_tuple(raw.get("counter_claim_refs")),
                         source_refs=_as_tuple(raw.get("source_refs")),
+                    reporting_gap_refs=_as_tuple(raw.get("reporting_gap_refs")),
                         evidence_basis=(
                             str(raw["evidence_basis"]) if raw.get("evidence_basis") else None
                         ),
@@ -761,6 +817,7 @@ def from_repository_direct(root: str | Path) -> RepositoryInputs:
                     claim_refs=_as_tuple(raw.get("claim_refs")),
                     counter_claim_refs=_as_tuple(raw.get("counter_claim_refs")),
                     source_refs=_as_tuple(raw.get("source_refs")),
+                    reporting_gap_refs=_as_tuple(raw.get("reporting_gap_refs")),
                     evidence_basis=(
                         str(raw["evidence_basis"]) if raw.get("evidence_basis") else None
                     ),
@@ -904,6 +961,7 @@ def _merge_audit(
                     from_level=int(raw["from_level"]),
                     to_level=int(raw["to_level"]),
                     reason=str(raw.get("reason", "")),
+                    field=str(raw.get("field", "level")),
                 )
             )
         except (KeyError, TypeError, ValueError) as error:

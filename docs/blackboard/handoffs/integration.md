@@ -1,9 +1,19 @@
 # Handoff — `agent:integration` (Causal Integration / Ranking)
 
-**Stage 1 complete.** Model, code, theory and the inactive pharmacology interfaces are
-in place. `symmetric_caps` (contract §5.4) and resolutions R7 and R8 are implemented.
-**Stage 2 has NOT been run**: the red team has not audited any target, so every ranking
-produced so far is pre-audit and every row is tiered `tier_3_insufficient_coverage`.
+**Stage 2 complete.** The ranking has been run over all 27 audited targets and
+published: `reports/target_ranking_v0_1.csv`, its sidecar, and the narrative at
+`reports/integration_v0_1.md`. 388 of my tests pass; 0 ownership violations; 0 validator
+violations in my lane; reruns are byte-identical.
+
+**The headline is a negative result.** No target in this repository currently has a
+defensible causal case for adult human cognitive enhancement: 17 of 27 targets sit at
+causal-gene attribution level 0, nothing in the cohort exceeds level 2, the highest D1
+median is 0.544, and `tier_1_analyse_next` is **empty** — no target ranks in the top
+quartile even at the pessimistic end of its own rank interval. §1 of the narrative leads
+with this. The table's job is to say where further *computational* analysis is better
+value, and it does not carry a claim about biology.
+
+Sections 3 onward below describe the model as built in Stage 1 and remain current.
 
 ---
 
@@ -183,60 +193,86 @@ level 0 is narrower *and* lower than `not_assessed`; and level 1 with `counter_l
 
 ---
 
-## 5. Does `models/ranking/rank_targets.py` run?
-
-**Yes, and it now has real data to read.** Latest run over the repository as it stands:
+## 5. The Stage-2 run
 
 ```
 27 rows, status=PRELIMINARY, reader=blueprint.loaders.load_repository
-facet slots filled          : 289/405 (71.4%)
-coverage min / median / max : 0.6 / 0.7333 / 0.8667
-below min_coverage (0.4)    : 0/27
-unaudited targets           : 27/27  -> every row tier_3_insufficient_coverage
-facets never graded         : 116   (scored wide and uninformative)
-facets level 0              : 65    (documented negative search)
-facets counter_level >= 2   : 65    (tested and contradicted)
-aggregation tau-b vs primary: geometric_mean 0.825 · product 0.825 · minimum 0.5992
-cap tau-b polarity vs symmetric: 0.9971   (6 caps derived; HCN1 rank_delta -1.0)
+seed 20260917, 4000 draws, composite operator = product
+facet slots filled            343/405 (84.7%)
+coverage min/median/max       0.733 / 0.867 / 1.000   (below min_coverage: 0/27)
+audited                       27/27          (gate G4 met)
+tiers                         tier_1: 0 | tier_2: 13 | tier_4: 5 | tier_5: 9
+facets never graded           62
+facets level 0                85   (documented negative search)
+facets counter_level >= 2     83   (tested and contradicted)
+reporting gaps                3    (KL, HCAR1, SLC16A1)
+pairwise tau-b                product/minimum 0.719 | product/additive 0.765
+                              minimum/additive 0.473
+cap sensitivity               6 caps derived, policy re-application a no-op,
+                              tau-b 0.994, HCN1 -1.00, nothing over the 2.0 threshold
 ```
 
-These numbers moved during Stage 1 as the atlases landed records (coverage rose from
-37.8% to 71.4% in a few hours), so treat them as a snapshot of the run recorded in
-`reports/target_ranking_v0_1.meta.json` rather than as a stable result.
+**Gates fired, all for the first time:** `no_human_intervention_caps_d6` 23 ·
+`unresolved_critical_finding_caps_composite` 3 (CRTC1, GABRA5, GRM5) ·
+`safety_liability_caps_d5` 2 (CHRM1, KCNQ2) · `developmental_confound_caps_d2` 2
+(OTX2, SLC6A8) · `no_human_evidence_caps_d6` 0 (released for every target).
 
-It also still exits gracefully with nothing to read: given an empty repository it
-prints a `NOTHING TO RANK YET` block naming the missing artefacts and their owners and
-exits 0 (or 3 with `--require-data`), and it writes no CSV. That path is covered by
-tests.
+**The dimension-equivalent cap conversion is confirmed load-bearing.** The composite
+cap converts to 0.35^6 = 0.001838 under the product operator, and all three
+critical-finding targets sit exactly there. Applied as a raw 0.35 it would have bound
+on **0 of 27 rows**. The gate that was inert before the fix is enforcing now.
 
-**This ranking is pre-audit and must not be read as a result.** `minimum` at tau-b 0.5992
-also says plainly that the ordering is materially sensitive to the aggregation choice.
+**How much the audit moved the ranking** (same seed and draws):
+
+| counterfactual | tau-b vs published | mean move | max |
+|---|---|---|---|
+| without the 5 adjustments | 0.997 | 0.07 | 1.0 |
+| red-team facets blanked | 0.763 | 2.11 | 7.0 (KCNQ2, CHRM1) |
+
+The adjustments barely move the order because the atlases had already applied most of
+them; the audit's *facet contributions* move it substantially. A comparison against the
+Stage-1 pre-audit run is **not attributable** — the operator change, the
+educational-attainment fix and the audit are confounded — and the narrative says so
+rather than quoting a tau-b across them.
+
+**A defect this run exposed in my own code.** Three of the five audit adjustments raise
+`counter_level` rather than lowering `level` — the natural way to record a null that is
+now replicated. My input type enforced V12 as "`to_level < from_level`" and rejected all
+three as forbidden upgrades, silently discarding the downgrades the red team was making.
+The shared record model in `blueprint.records` already had the right rule; mine did not.
+Fixed: an adjustment names the field it moves, `level` must decrease, `counter_level`
+must increase, both lower standing, and a test asserts no repository adjustment raises a
+composite. Worth recording because it failed *closed* — it kept the old grade and
+produced no error, so nothing would have surfaced it but reconciling the counts.
 
 ---
 
-## 6. What Stage 2 needs
+## 6. What would change the table (Sprint 2)
 
-**From the red team (blocking).** No target is audited, so `safety_liability_burden` and
-`developmental_confound_risk` are `not_assessed` for all 27, both D5 gates and the D2
-gate are untested against real grades, and every row is tiered
-`tier_3_insufficient_coverage`. The information-gain sweep now names
-`safety_liability_burden` as the highest-value next analysis for **all 27 targets** —
-correctly, since it is the largest single weight in D5 and uniformly missing. Also
-needed: `verdict` per target, `adjustments` (downgrade-only), and
-`resolution_status` on any `critical` finding, because an unresolved critical finding
-caps the composite and refuses gate G5.
+In order of how much they would move it:
 
-**From the atlases.** Mostly landed (71.4% coverage). Still thin: `transfer_breadth` and
-`dose_response_knowledge`, which now matters more because `dose_response_knowledge`
-feeds D3 as well as D5. `agent:comparative` graded 6 facets across 4 targets and left
-the rest honestly `not_assessed`; that is the correct record and the model reports the
-cost as width.
+1. **A causal-gene attribution above level 2 for any target.** 17 of 27 at level 0,
+   none above 2, so D1 (cohort median 0.346, max 0.544) is the binding dimension for
+   the whole cohort. `ROADMAP.md` Sprint 2's exit criterion — fine-mapping,
+   colocalisation or an allelic series instead of positional mapping — is the single
+   highest-value piece of work available anywhere in this repository.
+2. **Any above-healthy-baseline result with a healthy comparison arm.** D3's cohort
+   median is 0.277, graded largely from studies that had no healthy arm at all.
+3. **Far-transfer measurement.** `transfer_breadth` is the most frequent
+   highest-value next analysis (9 of 27 targets) precisely because almost nothing has
+   measured it.
+4. **A dependence model for the intervals.** It would not move the ordering, but it
+   would stop the intervals being wrong in a known direction.
 
-**From `agent:ontology`.** `assessment.schema.json` accepting `source_refs` /
-`evidence_basis` and reading `database_gradable` from my rubric (the flag is published
-in a stable shape — see §7). The Phase-2 graph compiler, for
-`src/blueprint/ranking/convergence.py`, which is written against
-`node_type` / `relation` / `provenance_class` and tested on a synthetic graph.
+**Information gain re-checked, and it improved.** Pre-audit the sweep named
+`safety_liability_burden` for all 27 targets — unanimity that was a symptom of the
+binding gap rather than a result. With the audit landed it resolves into five distinct
+facets: `transfer_breadth` 9 · `above_baseline_enhancement` 6 ·
+`human_phenotype_specificity` 6 · `dose_response_knowledge` 4 ·
+`safety_liability_burden` 2. Repository-wide top rows: KCNQ3
+`dose_response_knowledge` (7.00), KCNQ3 `transfer_breadth` (6.00), then
+`transfer_breadth` for EIF2S1, HDAC2 and PTPN5 (5.00 each). That the metric stopped
+being unanimous the moment the real gap was filled is a useful check on it.
 
 ---
 
@@ -345,22 +381,17 @@ claim rests on them) · `evidence/sources/integration.yaml`
 
 ---
 
-## 10. One blocking follow-up for the orchestrator
+## 10. Published artefacts are current
 
-`docs/OWNERSHIP.yaml` has not yet been updated for R7. `atlases/integration/**` is
-absent from this agent's lane, so `scripts/check_ownership.py` flags all 27 files in
-`atlases/integration/assessments/` as `UNCLAIMED` — 27 violations, all of them this one
-missing glob. The resolution text grants the lane; the file does not yet say so.
+`reports/target_ranking_v0_1.csv`, `reports/target_ranking_v0_1.meta.json` and
+`reports/integration_v0_1.md` were all written by the Stage-2 run described in §5,
+under the conjunctive primary and over the full audited cohort. Reruns are
+byte-identical, so the table diffs cleanly. The earlier warning in this handoff about a
+stale pre-audit CSV no longer applies — it was regenerated as the first action of
+Stage 2.
 
-I have not edited it: `docs/*.yaml` belongs to `agent:orchestrator`, and writing into
-another agent's lane to fix a lane problem would be the wrong move. Adding
-
-```yaml
-    - "atlases/integration/**"
-```
-
-to `agent:integration` in `docs/OWNERSHIP.yaml` clears all 27. Nothing else in my lane
-is flagged.
+Ownership is clean: `atlases/integration/**` is in the lane and
+`scripts/check_ownership.py` reports 0 violations.
 
 ---
 

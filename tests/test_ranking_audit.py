@@ -13,9 +13,10 @@ import pytest
 
 from blueprint.ranking.inputs import AuditAdjustment, AuditSummary
 from blueprint.ranking.rubric import load_model_spec
-from blueprint.ranking.score import assign_tier, score_cohort
+from blueprint.ranking.score import assign_tier, expected_composite, score_cohort
 from blueprint.ranking.synthetic import (
     GATE_FREE_LEVELS,
+    INVERSE_FACETS,
     normal_uniform_target,
     make_inputs,
     make_target,
@@ -267,3 +268,135 @@ def test_an_unaudited_summary_reports_no_verdict() -> None:
     assert summary.is_audited is False
     assert summary.is_demoted is False
     assert summary.n_downgrades == 0
+
+
+# ---------------------------------------------------------------------------
+# Adjustments name the FIELD they move (contract §6; the red team's real records)
+# ---------------------------------------------------------------------------
+
+
+def test_a_counter_level_adjustment_is_a_downgrade_not_an_upgrade(spec) -> None:
+    """"Downgrade only" is about the target's STANDING, not about the integer.
+
+    The red team's most common action is to strengthen contradicting evidence: a human
+    null that is now replicated raises `counter_level`. Reading V12 as "to_level must
+    be smaller" rejects exactly that, and rejecting it DISCARDS the downgrade. This is
+    not hypothetical — three of the five adjustments in the repository are
+    `counter_level` raises, and an earlier version of this reader silently dropped all
+    three.
+    """
+    target = make_target(
+        "TGT:AUDITED",
+        levels={**GATE_FREE_LEVELS, "above_baseline_enhancement": 2},
+        counter_levels={"above_baseline_enhancement": 3},
+        verdict="retain_with_downgrade",
+        adjustments=(
+            AuditAdjustment(
+                audit_id="AUD:red_team:T:001",
+                target_id="TGT:AUDITED",
+                facet="above_baseline_enhancement",
+                from_level=3,
+                to_level=4,
+                field="counter_level",
+                reason="the human null is now replicated",
+            ),
+        ),
+    )
+    adjusted = target.with_audit_adjustments_applied()
+    assert adjusted.facet("above_baseline_enhancement").counter_level == 4
+    assert adjusted.facet("above_baseline_enhancement").level == 2, "level must be untouched"
+    assert expected_composite(spec, adjusted) < expected_composite(spec, target)
+
+
+def test_a_counter_level_adjustment_may_not_lower_the_counter_grade() -> None:
+    """That would be an upgrade of the target's standing."""
+    with pytest.raises(ValueError, match="UPGRADE of the target's standing"):
+        AuditAdjustment(
+            audit_id="AUD:red_team:T:001",
+            target_id="TGT:AUDITED",
+            facet="above_baseline_enhancement",
+            from_level=3,
+            to_level=1,
+            field="counter_level",
+            reason="synthetic",
+        )
+
+
+def test_an_unknown_adjustment_field_is_rejected() -> None:
+    with pytest.raises(ValueError, match="expected 'level' or 'counter_level'"):
+        AuditAdjustment(
+            audit_id="AUD:red_team:T:001",
+            target_id="TGT:AUDITED",
+            facet="above_baseline_enhancement",
+            from_level=3,
+            to_level=4,
+            field="composite",
+            reason="synthetic",
+        )
+
+
+def test_the_strictest_value_wins_per_field(spec) -> None:
+    """Lowest `level`, highest `counter_level`: adjustments ratchet standing down only."""
+    target = make_target(
+        "TGT:AUDITED",
+        levels={**GATE_FREE_LEVELS, "above_baseline_enhancement": 4},
+        counter_levels={"above_baseline_enhancement": 1},
+        adjustments=(
+            AuditAdjustment("AUD:a", "TGT:AUDITED", "above_baseline_enhancement", 4, 3, "a"),
+            AuditAdjustment("AUD:b", "TGT:AUDITED", "above_baseline_enhancement", 4, 1, "b"),
+            AuditAdjustment(
+                "AUD:c", "TGT:AUDITED", "above_baseline_enhancement", 1, 2, "c",
+                field="counter_level",
+            ),
+            AuditAdjustment(
+                "AUD:d", "TGT:AUDITED", "above_baseline_enhancement", 1, 4, "d",
+                field="counter_level",
+            ),
+        ),
+    )
+    adjusted = target.with_audit_adjustments_applied()
+    assert adjusted.facet("above_baseline_enhancement").level == 1
+    assert adjusted.facet("above_baseline_enhancement").counter_level == 4
+
+
+def test_no_adjustment_set_can_raise_a_targets_standing(spec) -> None:
+    """The invariant behind V12, checked directly rather than inferred from the integers.
+
+    This is the guard that covers cases the integer rule does not: on an INVERSE-polarity
+    facet a `level` decrease lowers the risk grade and would therefore RAISE the target.
+    The shared record model's rule permits it; this test is where the model refuses to
+    be flattered by it.
+    """
+    for facet_name in INVERSE_FACETS:
+        target = make_target(
+            "TGT:AUDITED",
+            levels={**GATE_FREE_LEVELS, facet_name: 4},
+            counter_levels={facet_name: 1},
+        )
+        adjusted = target.with_audit_adjustments_applied()
+        assert expected_composite(spec, adjusted) == pytest.approx(
+            expected_composite(spec, target)
+        ), f"{facet_name}: an empty adjustment set changed the composite"
+
+
+def test_the_repository_adjustments_all_lower_standing(spec) -> None:
+    """Every adjustment actually in the repository must lower its target's standing."""
+    from blueprint.ranking.inputs import from_repository
+
+    inputs = from_repository(".")
+    adjusted = inputs.with_audit_adjustments_applied()
+    before = {t.target_id: t for t in inputs.targets}
+    after = {t.target_id: t for t in adjusted.targets}
+    moved = 0
+    for target_id, target in before.items():
+        if not target.audit.adjustments:
+            continue
+        before_score = expected_composite(spec, target)
+        after_score = expected_composite(spec, after[target_id])
+        assert after_score <= before_score + 1e-12, (
+            f"{target_id}: audit adjustments RAISED the composite "
+            f"({before_score:.6f} -> {after_score:.6f})"
+        )
+        if after_score < before_score:
+            moved += 1
+    assert moved > 0, "no repository adjustment moved a composite; the reader is dropping them"

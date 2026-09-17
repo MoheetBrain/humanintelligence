@@ -215,3 +215,67 @@ def resolve_species_id(name: str = HUMAN_SCIENTIFIC_NAME, *, offline: bool = Fal
     )
     ids = payload.get("esearchresult", {}).get("idlist") or []
     return f"SPECIES:NCBITaxon:{ids[0]}" if ids else None
+
+
+# ------------------------------------------------- trait eligibility guard ----
+# The red team found `use_in_ranking` being ignored: the panel marked "mathematical
+# ability" (EFO_0004875) as `supporting` with the note "never a stand-alone basis for a
+# facet level", while build_assessments.py branched on `phenotype_class` alone. The
+# underlying records are "Self-reported math ability" and "Highest math class taken" from
+# PMID 30038396, a 1.1-million-person EDUCATIONAL ATTAINMENT GWAS, and they were awarding
+# fluid-reasoning-grade facet levels. That is the
+# `educational_attainment_mistaken_for_intelligence` failure principle P4 exists to block,
+# and it survived because the guard lived in data while the decision lived in code.
+#
+# The guard now lives in ONE function that every consumer imports, and
+# pipelines/alphacognition/test_facet_guardrails.py fails if it stops firing.
+#
+# Semantics:
+#   primary     may be the sole basis for a facet level
+#   supporting  may CORROBORATE but may never be the sole basis for a facet level
+#   proxy_only  may not contribute to an intelligence-relevant facet at all
+# Anything else — including a missing field — is treated as `proxy_only`. FAIL CLOSED:
+# a trait whose eligibility is unknown must not be able to raise a grade.
+
+RANKING_USES = ("primary", "supporting", "proxy_only")
+DIRECTLY_RELEVANT_CLASSES = frozenset({"g_factor", "fluid_reasoning"})
+SINGLE_DOMAIN_CLASSES = frozenset(
+    {"processing_speed", "episodic_memory", "working_memory", "executive_function"}
+)
+
+
+def trait_use(row: dict[str, Any]) -> str:
+    """`use_in_ranking` for a derived-table row, defaulting to ``proxy_only``.
+
+    ``row`` is a row of data/interim/gwas_catalog_associations.jsonl or of
+    data/interim/opentargets_l2g.jsonl; both carry the field copied from the panel. A row
+    whose trait could not be mapped to a panel term carries ``None`` and is therefore
+    ineligible, which is the correct answer: a credible set for a trait outside the panel
+    is not evidence about cognitive ability.
+    """
+    value = row.get("use_in_ranking")
+    return str(value) if value in RANKING_USES else "proxy_only"
+
+
+def partition_by_eligibility(rows: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    """Split rows into the buckets the facet rules are allowed to reason from."""
+    out: dict[str, list[dict[str, Any]]] = {
+        "primary_direct": [],
+        "primary_domain": [],
+        "supporting_direct": [],
+        "supporting_domain": [],
+        "proxy": [],
+        "eligible_other_class": [],
+    }
+    for row in rows:
+        use = trait_use(row)
+        klass = str(row.get("phenotype_class"))
+        if use == "proxy_only":
+            out["proxy"].append(row)
+        elif klass in DIRECTLY_RELEVANT_CLASSES:
+            out[f"{use}_direct"].append(row)
+        elif klass in SINGLE_DOMAIN_CLASSES:
+            out[f"{use}_domain"].append(row)
+        else:
+            out["eligible_other_class"].append(row)
+    return out

@@ -596,6 +596,29 @@ _TEMPLATE = """<!DOCTYPE html>
       html.push(box("evidence gaps (never measured)", cov.evidence_gap_count, false, cov.evidence_gap_count > 0));
       html.push(box("reporting gaps (completed, unpublished)", cov.reporting_gap_count, false, cov.reporting_gap_count > 0));
       html.push("</div>");
+      if (cov.audit_count) {{
+        html.push("<h2>Red-team audit</h2>");
+        html.push('<p class="hint">The audit travels with what it audited. A verdict of' +
+          " retain_with_downgrade or deprioritise means the evidence above survived" +
+          " adversarial review only in a weakened form.</p>");
+        html.push('<dl class="kv">');
+        html.push("<dt>audits</dt><dd>" + cov.audit_count + "</dd>");
+        html.push("<dt>verdict</dt><dd><strong>" +
+          esc((cov.audit_verdicts || []).join(", ")) + "</strong></dd>");
+        html.push("<dt>checks flagged</dt><dd>" + cov.audit_checks_flagged + "</dd>");
+        html.push("<dt>checks failed</dt><dd>" + cov.audit_checks_failed + "</dd>");
+        html.push("<dt>critical findings</dt><dd>" +
+          (cov.audit_critical_findings ? '<span style="color:var(--null)">' +
+            cov.audit_critical_findings + "</span>" : "0") + "</dd>");
+        html.push("<dt>major findings</dt><dd>" +
+          (cov.audit_major_findings ? '<span style="color:var(--warn)">' +
+            cov.audit_major_findings + "</span>" : "0") + "</dd>");
+        html.push("</dl>");
+      }} else if (DATA.coverage[n.id]) {{
+        html.push('<p class="hint" style="border-left:3px solid var(--warn);' +
+          'padding-left:8px">NOT YET AUDITED. Nothing here has survived adversarial' +
+          " review, so read every count above as provisional.</p>");
+      }}
       if (cov.reporting_gap_refs && cov.reporting_gap_refs.length) {{
         html.push('<p class="hint">Registered and completed without posted results: ' +
           cov.reporting_gap_refs.map(esc).join(", ") +

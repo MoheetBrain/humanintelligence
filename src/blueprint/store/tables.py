@@ -210,6 +210,12 @@ def targets_rows(repo: loaders.Repository, compiled: CompiledGraph) -> list[dict
                 "evidence_gap_count": coverage.get("evidence_gap_count", 0),
                 "reporting_gap_count": coverage.get("reporting_gap_count", 0),
                 "reporting_gap_refs": _json(coverage.get("reporting_gap_refs") or []),
+                "audit_count": coverage.get("audit_count", 0),
+                "audit_verdicts": _json(coverage.get("audit_verdicts") or []),
+                "audit_checks_flagged": coverage.get("audit_checks_flagged", 0),
+                "audit_checks_failed": coverage.get("audit_checks_failed", 0),
+                "audit_critical_findings": coverage.get("audit_critical_findings", 0),
+                "audit_major_findings": coverage.get("audit_major_findings", 0),
                 "record_path": record.path,
             }
         )
