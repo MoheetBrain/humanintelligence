@@ -1,0 +1,172 @@
+# Task DAG — Sprint 1 and the queue behind it.
+#
+# `action_type` is a CLOSED enum of computational actions only. There is no value in
+# this enum that denotes laboratory, animal or human experimentation, and adding one
+# is a policy violation (docs/COMPUTATIONAL_ONLY_POLICY.md). Ingesting someone else's
+# experimental result is `evidence_ingestion`, which is a computational action.
+schema_version: 0.1.0
+sprint: 1
+updated_on: "2026-09-17"
+updated_by: agent:orchestrator
+
+action_type_enum:
+  - schema_design
+  - ontology_design
+  - software_engineering
+  - evidence_ingestion
+  - literature_synthesis
+  - database_query
+  - statistical_genetics_analysis
+  - causal_inference_analysis
+  - knowledge_graph_construction
+  - comparative_genomics_analysis
+  - structural_bioinformatics
+  - cheminformatics
+  - virtual_screening
+  - molecular_simulation
+  - machine_learning
+  - uncertainty_modelling
+  - adversarial_audit
+  - documentation
+  - reporting
+
+status_enum: [blocked, ready, in_progress, needs_review, done, deferred, abandoned]
+
+tasks:
+  - id: T001
+    title: Scaffold repository, contracts and provenance tooling
+    action_type: software_engineering
+    owner: agent:orchestrator
+    depends_on: []
+    status: in_progress
+    deliverables:
+      - docs/DATA_CONTRACT.md
+      - docs/BLACKBOARD_PROTOCOL.md
+      - docs/OWNERSHIP.yaml
+      - targets/seed_registry.yaml
+      - scripts/fetch_source_metadata.py
+      - scripts/fetch_gene_identifiers.py
+      - .githooks/pre-commit
+
+  - id: T002
+    title: Formal ontology, JSON schemas, pydantic models and validators
+    action_type: ontology_design
+    owner: agent:ontology
+    depends_on: [T001]
+    status: blocked
+    gate: G1
+    deliverables: [ontology/, schemas/, state_model/, src/blueprint/, graph/validate_graph.py, tests/]
+
+  - id: T003
+    title: Graph compiler (NetworkX, three layers), DuckDB/Parquet store, exporters
+    action_type: knowledge_graph_construction
+    owner: agent:ontology
+    depends_on: [T002]
+    status: blocked
+    deliverables: [graph/build_graph.py, graph/query_graph.py, graph/export_graph.py, src/blueprint/store/]
+
+  - id: T004
+    title: AlphaCognition v0.1 — human genetics ingestion and genetics facets
+    action_type: statistical_genetics_analysis
+    owner: agent:alphacognition
+    depends_on: [T002]
+    status: blocked
+    deliverables:
+      - pipelines/alphacognition/
+      - atlases/alphacognition/
+      - docs/ALPHACOGNITION_ARCHITECTURE.md
+
+  - id: T005
+    title: Cognitive Brake Atlas — 14 seed targets
+    action_type: literature_synthesis
+    owner: agent:brakes
+    depends_on: [T002]
+    status: blocked
+    deliverables: [atlases/brakes/, evidence/claims/brakes/, targets/candidates/*]
+
+  - id: T006
+    title: Cognitive Power Atlas — 7 seed targets + competing power-limitation models
+    action_type: literature_synthesis
+    owner: agent:power
+    depends_on: [T002]
+    status: blocked
+    deliverables: [atlases/power/, evidence/claims/power/, targets/candidates/*]
+
+  - id: T007
+    title: Comparative intelligence — species panel and convergence assessment
+    action_type: comparative_genomics_analysis
+    owner: agent:comparative
+    depends_on: [T002]
+    status: blocked
+    deliverables: [atlases/comparative/, evidence/claims/comparative/]
+
+  - id: T008
+    title: Ranking + uncertainty model (rubric, Beta mapping, Monte Carlo, information gain)
+    action_type: uncertainty_modelling
+    owner: agent:integration
+    depends_on: [T002]
+    status: blocked
+    deliverables: [models/ranking/, models/uncertainty/, src/blueprint/ranking/, THEORY.md]
+
+  - id: T009
+    title: Red-team audit of every seed target and of the ranking model
+    action_type: adversarial_audit
+    owner: agent:red_team
+    depends_on: [T004, T005, T006, T007]
+    status: blocked
+    gate: G4
+    deliverables: [evidence/audits/, reports/red_team_audit_v0_1.md, docs/RED_TEAM_METHOD.md]
+
+  - id: T010
+    title: Causal integration run — pathway convergence, centrality, ranked table
+    action_type: causal_inference_analysis
+    owner: agent:integration
+    depends_on: [T003, T008, T009]
+    status: blocked
+    deliverables: [reports/target_ranking_v0_1.csv, reports/integration_v0_1.md]
+
+  - id: T011
+    title: First graph visualisation and Sprint-1 report
+    action_type: reporting
+    owner: agent:orchestrator
+    depends_on: [T003, T010]
+    status: blocked
+    deliverables: [reports/intelligence_graph_v0_1.html, reports/sprint1_summary.md]
+
+  - id: T012
+    title: Virtual pharmacology interfaces (inactive; gated on integration + audit)
+    action_type: cheminformatics
+    owner: agent:orchestrator
+    depends_on: [T002]
+    status: ready
+    deliverables: [src/blueprint/pharmacology/, docs/PHARMACOLOGY_INTERFACES.md]
+    note: "Interfaces and gate function only. No molecule is optimised in Sprint 1."
+
+# ---------------------------------------------------------------- next sprint --
+queued:
+  - id: Q001
+    title: AlphaGenome integration — variant effect prediction for fine-mapped credible sets
+    action_type: machine_learning
+    depends_on: [T004]
+    blocked_by: "requires ALPHAGENOME_API_KEY (env var); no key present in this environment"
+
+  - id: Q002
+    title: Brain eQTL/sQTL colocalisation (GTEx/PsychENCODE/MetaBrain) for cognition GWAS
+    action_type: statistical_genetics_analysis
+    depends_on: [T004]
+
+  - id: Q003
+    title: Adult cell-type expression atlas ingestion (Allen/Human Brain Cell Atlas)
+    action_type: evidence_ingestion
+    depends_on: [T004]
+
+  - id: Q004
+    title: Structural retrieval + pocket detection for surviving targets
+    action_type: structural_bioinformatics
+    depends_on: [T010, T012]
+    gate: G5
+
+  - id: Q005
+    title: Dynamical state-model identification from public longitudinal cognitive datasets
+    action_type: causal_inference_analysis
+    depends_on: [T010]

@@ -1,0 +1,112 @@
+# Agent registry — which roles were spawned, what they were asked for, what they
+# returned. Updated by the orchestrator only. This is the audit trail for the
+# blackboard run, and it is the honest record of who asserted what.
+schema_version: 0.1.0
+sprint: 1
+max_subagents: 8
+spawned_subagents: 7   # + the orchestrator role, which is this session
+policy:
+  - "Agents never spawn subagents."
+  - "Agents never run git commit/push/checkout/reset."
+  - "Agents write only paths they own (docs/OWNERSHIP.yaml)."
+  - "Every citation is tool-verified; unverifiable claims are not written."
+  - "The orchestrator makes no independent scientific claims."
+
+agents:
+  - id: agent:orchestrator
+    role: Orchestrator
+    spawned: false
+    responsibilities:
+      - task DAG, milestones, gates, merge coordination
+      - schema enforcement and ownership checks
+      - progress ledger and commits
+    scientific_claims_permitted: false
+
+  - id: agent:ontology
+    role: Ontology / Graph Architect
+    spawned: true
+    status: pending
+    responsibilities:
+      - ontology (nodes, edges, primitives, state-variable type system)
+      - JSON schemas + pydantic models + validators
+      - graph compiler, DuckDB/Parquet store, exporters, interactive HTML
+    scientific_claims_permitted: false
+    handoff: docs/blackboard/handoffs/ontology.md
+
+  - id: agent:alphacognition
+    role: AlphaCognition (human genetics)
+    spawned: true
+    status: pending
+    responsibilities:
+      - GWAS Catalog / Open Targets ingestion for seed genes x cognitive traits
+      - genetics facets for all 27 seed targets
+      - AlphaGenome + brain QTL + colocalisation integration architecture (design only)
+      - lead atlas for GRIN2B, CRTC1, CHRM1, GRM5, DRD1, HTR2A
+    scientific_claims_permitted: true
+    handoff: docs/blackboard/handoffs/alphacognition.md
+
+  - id: agent:brakes
+    role: Cognitive Brake Atlas
+    spawned: true
+    status: pending
+    responsibilities:
+      - endogenous limits on arousal, excitation, workspace, plasticity, critical
+        periods, consolidation, translation, homeostasis
+      - lead atlas for 14 brake-side seed targets
+    scientific_claims_permitted: true
+    handoff: docs/blackboard/handoffs/brakes.md
+
+  - id: agent:power
+    role: Cognitive Power Atlas
+    spawned: true
+    status: pending
+    responsibilities:
+      - neural energy constraints, astrocyte-neuron coupling, creatine/lactate systems
+      - competing models of power limitation, stated as falsifiable alternatives
+      - lead atlas for 7 power-side seed targets
+    scientific_claims_permitted: true
+    handoff: docs/blackboard/handoffs/power.md
+
+  - id: agent:comparative
+    role: Comparative Intelligence
+    spawned: true
+    status: pending
+    responsibilities:
+      - species panel with resolved NCBI taxonomy ids
+      - convergent-mechanism assessment with explicit phylogenetic controls
+      - active suppression of "smart animal" narrative inference
+    scientific_claims_permitted: true
+    handoff: docs/blackboard/handoffs/comparative.md
+
+  - id: agent:integration
+    role: Causal Integration / Ranking
+    spawned: true
+    status: pending
+    responsibilities:
+      - facet rubric, level-to-distribution mapping, Monte Carlo rank intervals
+      - pathway convergence, state-variable centrality, information-gain priority
+      - THEORY.md (conceptual models, explicitly unproven)
+    scientific_claims_permitted: true
+    handoff: docs/blackboard/handoffs/integration.md
+
+  - id: agent:red_team
+    role: Red Team / Evidence Auditor
+    spawned: true
+    status: pending
+    responsibilities:
+      - independent adversarial search for contradiction, nulls, failed trials
+      - mandatory check catalogue per target; downgrades only
+      - audit of THEORY.md and the ranking model for overclaiming
+    scientific_claims_permitted: true
+    powers:
+      may_downgrade_confidence: true
+      may_delete_provenance: false
+      may_upgrade_confidence: false
+    handoff: docs/blackboard/handoffs/red_team.md
+
+not_spawned_this_sprint:
+  - role: Virtual pharmacology / molecular design
+    reason: >-
+      Deliberately inactive in Sprint 1. Target ranking must survive causal
+      integration and red-team review before any chemistry is prioritised
+      (gate G5). Interfaces are prepared; no molecule is optimised.

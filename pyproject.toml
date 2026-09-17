@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "intelligence-blueprint"
+version = "0.1.0"
+description = "Computational causal-control framework for adult human cognitive capacity (computational analysis only)."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "UNLICENSED — internal research code" }
+authors = [{ name = "Intelligence Blueprint project" }]
+keywords = [
+  "computational-neuroscience",
+  "knowledge-graph",
+  "causal-inference",
+  "statistical-genetics",
+  "evidence-synthesis",
+]
+
+# Runtime dependencies are deliberately small and all pure-analysis.
+# No dependency in this project performs, schedules or supports any wet-lab,
+# in-vitro, ex-vivo, animal or human experiment. See docs/COMPUTATIONAL_ONLY_POLICY.md.
+dependencies = [
+  "pydantic>=2.6",
+  "pyyaml>=6.0",
+  "jsonschema>=4.21",
+  "pandas>=2.2",
+  "pyarrow>=15.0",
+  "duckdb>=1.0",
+  "networkx>=3.2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+addopts = "-ra --strict-markers"
+markers = [
+  "network: test requires outbound network access (deselected by default with -m 'not network')",
+  "slow: test takes more than a few seconds",
+]
+filterwarnings = ["ignore::DeprecationWarning:jsonschema.*"]

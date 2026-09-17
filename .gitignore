@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+
+# Environments (never commit)
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Generated data layer (rebuildable offline from data/raw/ via `make build`)
+data/interim/**
+!data/interim/.gitkeep
+data/processed/**
+!data/processed/.gitkeep
+!data/processed/MANIFEST.json
+*.duckdb
+*.duckdb.wal
+
+# OS / editor
+.DS_Store
+*.swp

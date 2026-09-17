@@ -1,0 +1,269 @@
+# Seed target registry — Sprint 1.
+#
+# These are WORK ASSIGNMENTS AND STARTING HYPOTHESES, not conclusions and not a
+# shortlist of "intelligence genes". The list originates from the project brief
+# (user_seed_list) plus the brake/power exemplars named in it. Nothing here is
+# privileged: a seed target that fails causal integration or red-team review is
+# expected to be downgraded, and that outcome is a result, not a failure.
+#
+# Identifiers are deliberately absent: they are resolved from HGNC by
+# scripts/fetch_gene_identifiers.py so that no agent hand-writes an accession.
+#
+# dossier_depth:
+#   deep    — full dossier, >=4 verified claims incl. >=1 human-relevant claim where
+#             one exists, all owner facets graded
+#   shallow — registered seed, >=2 verified claims, facets graded only where the
+#             evidence was actually reviewed; the rest stay `not_assessed`
+schema_version: 0.1.0
+registry_version: 0.1.0
+created_by: agent:orchestrator
+created_on: "2026-09-17"
+sprint: 1
+
+conventions:
+  target_id_prefix: TGT
+  state_domains: [cognition, power, efficiency, plasticity, workspace, consolidation, stability, safety]
+
+targets:
+
+  # ---------------------------------------------------------------- brakes ----
+  - target_id: TGT:GABRA5
+    symbol: GABRA5
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: excitation_and_workspace_gain
+    primary_state_domains: [plasticity, workspace]
+    note: "alpha5-GABA-A subunit; extrasynaptic tonic inhibition; NAM/inverse-agonist clinical history exists (including failures) — high-value red-team target."
+
+  - target_id: TGT:RGS14
+    symbol: RGS14
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: plasticity_suppression
+    primary_state_domains: [plasticity, consolidation]
+    note: "reported natural suppressor of CA2 synaptic plasticity; rodent-only evidence base — translation distance must be assessed explicitly."
+
+  - target_id: TGT:EIF2S1
+    symbol: EIF2S1
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: translational_control
+    primary_state_domains: [consolidation, plasticity]
+    note: "eIF2-alpha; phosphorylation state gates cap-dependent translation required for memory consolidation."
+
+  - target_id: TGT:EIF2B_COMPLEX
+    symbol: EIF2B_COMPLEX
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: translational_control
+    member_genes: [EIF2B1, EIF2B2, EIF2B3, EIF2B4, EIF2B5]
+    primary_state_domains: [consolidation, plasticity]
+    note: "eIF2B decameric GEF; ISRIB-class modulators; integrated stress response brake."
+
+  - target_id: TGT:PTPN5
+    symbol: PTPN5
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: synaptic_signalling_brake
+    primary_state_domains: [plasticity]
+    note: "STEP tyrosine phosphatase; dephosphorylates plasticity substrates."
+
+  - target_id: TGT:HCN1
+    symbol: HCN1
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: dendritic_integration_and_excitability
+    primary_state_domains: [workspace, efficiency]
+    note: "h-current; dendritic integration; reported human/mouse divergence makes this a comparative-intelligence anchor too."
+
+  - target_id: TGT:KCNQ2
+    symbol: KCNQ2
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: excitability_homeostasis
+    primary_state_domains: [workspace, safety]
+    note: "M-current; excitability brake with direct seizure-liability coupling in both directions."
+
+  - target_id: TGT:KCNQ3
+    symbol: KCNQ3
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: excitability_homeostasis
+    primary_state_domains: [workspace, safety]
+
+  - target_id: TGT:RTN4R
+    symbol: RTN4R
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: structural_plasticity_brake
+    primary_state_domains: [plasticity]
+    note: "NgR1, receptor for RTN4/Nogo-A; structural-plasticity brake; consider RTN4 ligand as a separate node."
+
+  - target_id: TGT:OTX2
+    symbol: OTX2
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: critical_period_closure
+    primary_state_domains: [plasticity, stability]
+    note: "perineuronal-net / critical-period machinery; developmental-vs-adult distinction is the central question."
+
+  - target_id: TGT:ADORA1
+    symbol: ADORA1
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: arousal_and_sleep_pressure
+    primary_state_domains: [cognition, power, stability]
+    note: "adenosine A1; caffeine literature is the canonical rescue-vs-enhancement and withdrawal-confound test case."
+
+  - target_id: TGT:HDAC2
+    symbol: HDAC2
+    lead_atlas: brakes
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    brake_category: transcriptional_brake
+    primary_state_domains: [plasticity, consolidation, safety]
+    note: "HDAC-related brake on plasticity gene programmes; oncology-derived safety burden must be carried explicitly."
+
+  - target_id: TGT:PDE4B
+    symbol: PDE4B
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: second_messenger_brake
+    primary_state_domains: [consolidation, plasticity]
+    note: "cAMP degradation; PDE4 inhibitor human trials exist (with emetic dose-limiting liability)."
+
+  - target_id: TGT:GPR158
+    symbol: GPR158
+    lead_atlas: brakes
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    brake_category: metabotropic_negative_regulator
+    primary_state_domains: [plasticity, stability]
+
+  # ----------------------------------------------------------------- power ----
+  - target_id: TGT:SLC6A8
+    symbol: SLC6A8
+    lead_atlas: power
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    power_node: creatine_transport
+    primary_state_domains: [power, efficiency]
+    note: "creatine transporter; deficiency causes intellectual disability — canonical rescue-vs-enhancement boundary."
+
+  - target_id: TGT:CKB
+    symbol: CKB
+    lead_atlas: power
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    power_node: phosphocreatine_shuttle
+    primary_state_domains: [power, efficiency]
+
+  - target_id: TGT:SLC16A1
+    symbol: SLC16A1
+    lead_atlas: power
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    power_node: lactate_transport_mct1
+    primary_state_domains: [power]
+
+  - target_id: TGT:SLC16A7
+    symbol: SLC16A7
+    lead_atlas: power
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    power_node: lactate_transport_mct2_neuronal
+    primary_state_domains: [power, consolidation]
+
+  - target_id: TGT:SLC16A3
+    symbol: SLC16A3
+    lead_atlas: power
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    power_node: lactate_transport_mct4_astrocytic
+    primary_state_domains: [power]
+
+  - target_id: TGT:HCAR1
+    symbol: HCAR1
+    lead_atlas: power
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    power_node: lactate_receptor_signalling
+    primary_state_domains: [power, plasticity]
+
+  - target_id: TGT:KL
+    symbol: KL
+    lead_atlas: power
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    power_node: systemic_modifier
+    primary_state_domains: [cognition, stability]
+    note: "klotho; systemic/endocrine modifier with reported human cohort associations and non-human-primate administration studies."
+
+  # ------------------------------------------- neuromodulatory / plasticity ---
+  # (lead atlas = alphacognition, which also supplies genetics facets for all targets)
+  - target_id: TGT:GRIN2B
+    symbol: GRIN2B
+    lead_atlas: alphacognition
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    modulator_class: ionotropic_glutamate_receptor_subunit
+    primary_state_domains: [plasticity, workspace, safety]
+
+  - target_id: TGT:CRTC1
+    symbol: CRTC1
+    lead_atlas: alphacognition
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    modulator_class: transcriptional_coactivator
+    primary_state_domains: [consolidation]
+
+  - target_id: TGT:CHRM1
+    symbol: CHRM1
+    lead_atlas: alphacognition
+    dossier_depth: deep
+    seed_origin: user_seed_list
+    modulator_class: muscarinic_receptor
+    primary_state_domains: [cognition, workspace]
+
+  - target_id: TGT:GRM5
+    symbol: GRM5
+    lead_atlas: alphacognition
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    modulator_class: metabotropic_glutamate_receptor
+    primary_state_domains: [plasticity]
+
+  - target_id: TGT:DRD1
+    symbol: DRD1
+    lead_atlas: alphacognition
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    modulator_class: dopamine_receptor
+    primary_state_domains: [workspace, cognition]
+    note: "inverted-U dose-response is the textbook case against 'maximise the state variable'."
+
+  - target_id: TGT:HTR2A
+    symbol: HTR2A
+    lead_atlas: alphacognition
+    dossier_depth: shallow
+    seed_origin: user_seed_list
+    modulator_class: serotonin_receptor
+    primary_state_domains: [plasticity, stability, safety]
+
+counts:
+  total: 27
+  deep: 13
+  shallow: 14
+  by_lead_atlas: {brakes: 14, power: 7, alphacognition: 6}

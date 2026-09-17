@@ -1,0 +1,126 @@
+# Path ownership for the blackboard. Checked by scripts/check_ownership.py.
+# An agent may create/modify only paths whose owner is itself.
+# "orchestrator" owns anything not listed.
+schema_version: 0.1.0
+
+owners:
+  agent:orchestrator:
+    - "README.md"
+    - "ROADMAP.md"
+    - "CONTRIBUTING.md"
+    - "Makefile"
+    - "pyproject.toml"
+    - ".gitignore"
+    - ".githooks/**"
+    - "scripts/**"
+    - "docs/*.md"
+    - "docs/*.yaml"
+    - "docs/blackboard/**"          # read-write for all, see note below
+    - "targets/seed_registry.yaml"
+    - "requirements-lock.txt"
+    - "data/raw/hgnc/**"
+    - "data/raw/hgnc_search/**"
+
+  agent:ontology:
+    - "ontology/**"
+    - "schemas/**"
+    - "state_model/**"
+    - "src/blueprint/**"
+    - "graph/*.py"
+    - "tests/**"
+    - "docs/ONTOLOGY_NOTES.md"
+
+  agent:alphacognition:
+    - "atlases/alphacognition/**"
+    - "pipelines/alphacognition/**"
+    - "evidence/sources/alphacognition.yaml"
+    - "evidence/claims/alphacognition/**"
+    - "targets/candidates/GRIN2B.yaml"
+    - "targets/candidates/CRTC1.yaml"
+    - "targets/candidates/CHRM1.yaml"
+    - "targets/candidates/GRM5.yaml"
+    - "targets/candidates/DRD1.yaml"
+    - "targets/candidates/HTR2A.yaml"
+    - "data/raw/gwas_catalog/**"
+    - "data/raw/gtex/**"
+    - "docs/ALPHACOGNITION_ARCHITECTURE.md"
+
+  agent:brakes:
+    - "atlases/brakes/**"
+    - "pipelines/brake_atlas/**"
+    - "evidence/sources/brakes.yaml"
+    - "evidence/claims/brakes/**"
+    - "targets/candidates/GABRA5.yaml"
+    - "targets/candidates/RGS14.yaml"
+    - "targets/candidates/EIF2S1.yaml"
+    - "targets/candidates/EIF2B_COMPLEX.yaml"
+    - "targets/candidates/PTPN5.yaml"
+    - "targets/candidates/HCN1.yaml"
+    - "targets/candidates/KCNQ2.yaml"
+    - "targets/candidates/KCNQ3.yaml"
+    - "targets/candidates/RTN4R.yaml"
+    - "targets/candidates/OTX2.yaml"
+    - "targets/candidates/ADORA1.yaml"
+    - "targets/candidates/HDAC2.yaml"
+    - "targets/candidates/PDE4B.yaml"
+    - "targets/candidates/GPR158.yaml"
+
+  agent:power:
+    - "atlases/power/**"
+    - "pipelines/power_atlas/**"
+    - "evidence/sources/power.yaml"
+    - "evidence/claims/power/**"
+    - "targets/candidates/SLC6A8.yaml"
+    - "targets/candidates/CKB.yaml"
+    - "targets/candidates/SLC16A1.yaml"
+    - "targets/candidates/SLC16A7.yaml"
+    - "targets/candidates/SLC16A3.yaml"
+    - "targets/candidates/HCAR1.yaml"
+    - "targets/candidates/KL.yaml"
+
+  agent:comparative:
+    - "atlases/comparative/**"
+    - "pipelines/comparative/**"
+    - "evidence/sources/comparative.yaml"
+    - "evidence/claims/comparative/**"
+    - "data/raw/ncbi_taxonomy/**"
+
+  agent:integration:
+    - "models/**"
+    - "pipelines/integration/**"
+    - "evidence/sources/integration.yaml"
+    - "evidence/claims/integration/**"
+    - "THEORY.md"
+    - "src/blueprint/ranking/**"
+    - "src/blueprint/integration/**"
+    - "tests/test_ranking*.py"
+    - "tests/test_uncertainty*.py"
+    - "data/raw/opentargets/**"
+    - "reports/*.md"
+
+  agent:red_team:
+    - "evidence/audits/**"
+    - "evidence/sources/red_team.yaml"
+    - "evidence/claims/red_team/**"
+    - "atlases/red_team/**"
+    - "reports/red_team_audit_v0_1.md"
+    - "docs/RED_TEAM_METHOD.md"
+    - "data/raw/ctgov_v2/**"
+
+# Shared, append-only areas (any agent may add its own file; nobody edits another's):
+shared_append_only:
+  - "docs/blackboard/handoffs/{agent}.md"
+  - "docs/blackboard/schema_change_requests/{agent}-*.yaml"
+  - "data/raw/pubmed_esummary/**"    # written by scripts/fetch_source_metadata.py
+  - "data/raw/pubmed_esearch/**"     # written by scripts/fetch_source_metadata.py
+  - "data/raw/gwas_catalog_study/**" # written by scripts/fetch_source_metadata.py
+  - "data/raw/MANIFEST.jsonl"        # append-only manifest
+
+# Generated-only (no agent hand-edits these):
+generated_only:
+  - "data/interim/**"
+  - "data/processed/**"
+  - "reports/intelligence_graph_v0_1.html"
+  - "reports/target_ranking_v0_1.csv"
+  - "reports/*.meta.json"
+  - "evidence/claims/claim_registry.lock"

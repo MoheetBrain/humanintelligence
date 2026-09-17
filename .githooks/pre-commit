@@ -1,0 +1,155 @@
+#!/usr/bin/env python3
+"""Repository pre-commit gate (fallback layer of the Commit Continuity Protocol).
+
+Two independent responsibilities:
+
+1. **Continuity protocol** — ``docs/PROJECT_STATUS.md`` and ``docs/PROJECT_LEDGER.md``
+   must exist, be non-empty and be staged with the change. Secrets, virtualenvs,
+   caches and oversized blobs are refused. This layer catches commits made outside
+   Claude Code, where the session-level guard does not run.
+
+2. **Blackboard format gate** — when curated evidence records are part of the commit,
+   the repository validator must pass. An invalid record never reaches history.
+
+Install with ``bash scripts/install-git-hooks.sh`` (sets ``core.hooksPath``).
+Dependency-free: standard library only.
+"""
+
+from __future__ import annotations
+
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+STATUS_DOC = "docs/PROJECT_STATUS.md"
+LEDGER_DOC = "docs/PROJECT_LEDGER.md"
+MAX_BYTES = 5 * 1024 * 1024
+
+FORBIDDEN_SEGMENTS = (
+    ".venv",
+    "venv",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    ".ruff_cache",
+    ".mypy_cache",
+    "site-packages",
+)
+FORBIDDEN_SUFFIXES = (".pem", ".key", ".pfx", ".p12", ".keystore", ".jks", ".ppk")
+FORBIDDEN_BASENAMES = {"credentials", "credentials.json", "service-account.json", ".netrc", ".pypirc"}
+
+VALIDATED_PREFIXES = (
+    "evidence/",
+    "targets/",
+    "atlases/",
+    "ontology/",
+    "schemas/",
+    "state_model/",
+    "models/",
+)
+
+
+def git(*args: str) -> str:
+    return subprocess.run(["git", *args], capture_output=True, text=True, check=False).stdout
+
+
+def repo_root() -> Path:
+    return Path(git("rev-parse", "--show-toplevel").strip() or ".")
+
+
+def staged_paths() -> list[str]:
+    return [line.strip() for line in git("diff", "--cached", "--name-only").splitlines() if line.strip()]
+
+
+def staged_size(path: str) -> int | None:
+    out = git("cat-file", "-s", f":{path}").strip()
+    return int(out) if out.isdigit() else None
+
+
+def forbidden_reason(path: str) -> str | None:
+    parts = [p for p in path.split("/") if p]
+    if not parts:
+        return None
+    base = parts[-1]
+    for segment in parts:
+        if segment in FORBIDDEN_SEGMENTS:
+            return f"environment/cache directory ({segment}/)"
+    if base == ".env" or base.startswith(".env.") and base != ".env.example":
+        return "environment/secrets file"
+    if base in FORBIDDEN_BASENAMES:
+        return "credential file"
+    if base.endswith(FORBIDDEN_SUFFIXES):
+        return "key/certificate file"
+    return None
+
+
+def main() -> int:
+    root = repo_root()
+    os.chdir(root)
+    problems: list[str] = []
+    staged = staged_paths()
+
+    if not staged:
+        problems.append("Nothing is staged; there is no change to record.")
+
+    for doc in (STATUS_DOC, LEDGER_DOC):
+        path = root / doc
+        if not path.is_file():
+            problems.append(f"{doc} does not exist. Create it before committing.")
+            continue
+        if not path.read_text(encoding="utf-8", errors="replace").strip():
+            problems.append(f"{doc} is empty. It must contain the real project record.")
+        if doc not in staged:
+            problems.append(f"{doc} is not staged. Update it for this change and `git add {doc}`.")
+
+    for path in staged:
+        reason = forbidden_reason(path)
+        if reason:
+            problems.append(f"Staged path {path!r} is a {reason} and must not be committed.")
+            continue
+        size = staged_size(path)
+        if size is not None and size > MAX_BYTES:
+            problems.append(f"Staged file {path!r} is {size / 1048576:.1f} MiB (limit 5 MiB).")
+
+    # Blackboard format gate: only when curated records are involved and the
+    # validator + interpreter are actually available.
+    touches_records = any(path.startswith(VALIDATED_PREFIXES) for path in staged)
+    validator = root / "graph" / "validate_graph.py"
+    interpreter = root / ".venv" / "bin" / "python"
+    if touches_records and validator.is_file() and interpreter.is_file():
+        result = subprocess.run(
+            [str(interpreter), str(validator), "--strict", "--quiet"],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode != 0:
+            tail = (result.stdout + result.stderr).strip().splitlines()[-25:]
+            problems.append(
+                "Repository validation failed (graph/validate_graph.py --strict):\n      "
+                + "\n      ".join(tail)
+            )
+
+    if not problems:
+        return 0
+
+    print("BLOCKED by the repository pre-commit gate.\n", file=sys.stderr)
+    for index, problem in enumerate(problems, 1):
+        print(f"  {index}. {problem}", file=sys.stderr)
+    print(
+        "\nRequired sequence before any commit:\n"
+        "  1. Inspect: git branch --show-current; git log -1; git diff --cached; git diff\n"
+        "  2. Run the relevant tests and record what actually happened.\n"
+        f"  3. Rewrite {STATUS_DOC} as a complete current snapshot of the project.\n"
+        f"  4. Append exactly one new dated entry to {LEDGER_DOC}.\n"
+        f"  5. git add {STATUS_DOC} {LEDGER_DOC} <implementation changes>\n"
+        "  6. Commit using the required message format.\n\n"
+        "Never claim a test passed unless it was executed. Record failures and blockers.",
+        file=sys.stderr,
+    )
+    return 1
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
