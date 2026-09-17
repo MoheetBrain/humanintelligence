@@ -1,0 +1,69 @@
+# Schema change request integration-002
+
+request_id: integration-002
+requested_by: agent:integration
+requested_on: "2026-09-17"
+blocking: false
+status: open
+affects:
+  - docs/DATA_CONTRACT.md#5-target-dossier-and-facet-assessment
+
+request: >-
+  Dimension D3 (P(supra-normal potential)) is fed by exactly one facet in the
+  contract's facet catalogue. Consider adding a second input so the dimension has
+  internal redundancy, and consider whether `tractability` should also feed D5.
+
+motivation: >-
+  Facet -> dimension counts in the current catalogue: D1 has 4 inputs, D2 has 3, D4
+  has 2, D5 has 2, D6 has 4, and D3 has 1 (`above_baseline_enhancement`). D3 is
+  therefore not an aggregate at all — it is a relabelling of a single agent's ordinal
+  grade, with no cross-check, no redundancy and no way for a disagreement between two
+  lines of evidence to show up. It carries 0.15 of the composite under
+  models/ranking/ranking_spec_v0_1.yaml, so one grader's single judgement moves every
+  ranking by that much. Two consequences are already visible in the model's own
+  behaviour: D3 is the dimension most sensitive to a one-level change, and the
+  information-gain sweep structurally over-values its single facet.
+
+  The second point is smaller but concrete. `tractability` currently feeds D6 only.
+  Whether a usable exposure window plausibly exists (D5) depends in part on whether
+  any modality can engage the target with adequate selectivity at all — a target whose
+  only known modulators hit the whole family has a narrower window by construction.
+  The rubric already asks the grader to record family selectivity for level 3-4, so
+  the information is there and unused by D5.
+
+proposed_change:
+  d3_second_input:
+    preferred: >-
+      Add `dose_response_knowledge` as a secondary input to D3. Rationale: "can this
+      move a healthy adult above baseline" is not answerable without knowing the shape
+      of the exposure-response relation, and an inverted-U whose optimum sits at the
+      healthy baseline is precisely a case where supra-normal potential is absent.
+      This makes D3 a genuine aggregate and gives it a falsifier that does not depend
+      on one grader.
+    alternative: >-
+      Add a new facet `healthy_baseline_arm_quality`, graded on whether the retrieved
+      studies had a healthy comparison arm at all, separately from what that arm
+      showed. This splits "was the right experiment done" from "what did it find",
+      which is the distinction `above_baseline_enhancement` currently conflates.
+      More faithful, but it adds a facet to the catalogue and so is the larger change.
+  tractability_into_d5:
+    summary: "Add `tractability` as a low-weight secondary input to D5."
+    detail: >-
+      Selectivity is a precondition for a controllable window. If accepted, the weight
+      should be small relative to `safety_liability_burden`, and the rubric's
+      `tractability` counter_level guidance already covers the case that matters
+      (a dose-limiting adverse effect below the CNS-active exposure range).
+
+not_blocking_because: >-
+  models/ranking/ranking_spec_v0_1.yaml implements the contract's facet table exactly
+  and adds no off-table edges; tests/test_ranking_spec_consistency.py asserts that
+  the implemented edge set equals the contract's. The D3 weakness is instead
+  DECLARED in the spec file, under the heading "STRUCTURAL WEAKNESS, STATED PLAINLY",
+  which points at this request. Sprint-1 ranking proceeds with D3 as a single-facet
+  dimension and the limitation stated on the face of the model.
+
+if_accepted: >-
+  The change is a weights edit plus a `feeds` edit; the loader's cross-checks
+  (src/blueprint/ranking/rubric.py) would fail until both files agree, and the
+  contract-table assertions in tests/test_ranking_spec_consistency.py would need
+  updating in the same commit. No code change is required.

@@ -84,6 +84,15 @@ Prefixes are closed: a new prefix requires an ontology change.
 Preferred source ranking: PMID > DOI > NCT > GCST. A paper that has a PMID **must**
 be registered under its PMID (prevents the same paper appearing twice under two ids).
 
+**Duplicate registration across agents is allowed and preferred.** Two agents citing
+the same paper should each register it in their own `evidence/sources/{agent}.yaml`, so
+that every agent's claims are self-contained and no agent depends on a file it cannot
+edit. The store, the graph compiler and `independent_source_count` all deduplicate by
+`source_id`, so duplication cannot inflate evidence counts. What is *not* allowed is
+divergence: if two registrations of the same `source_id` disagree on the verified
+registry fields (`registry_title`, `registry_year`, `registry_doi`), that is a hard
+error, because it means one of them was written from a different record.
+
 ---
 
 ## 2. Record types, owners and locations
@@ -155,7 +164,7 @@ A claim is one machine-readable assertion plus the evidence for it. The triple
   object: SV:plasticity.ltp_threshold
   claim_type: causal_perturbation # see §4.1
   direction: decreases            # increases | decreases | no_change | bidirectional
-                                  # | inverted_u | u_shaped | unclear
+                                  # | inverted_u | u_shaped | state_dependent | unclear
   context:
     species: [SPECIES:NCBITaxon:10090]
     life_stage: adult             # prenatal | postnatal_developmental | adolescent | adult
@@ -328,11 +337,72 @@ assessed_on: "2026-09-17"
 rubric: facet_rubric_v0_1
 facets:
   - facet: mechanistic_causal_perturbation
-    level: 3
+    assessment_status: assessed      # assessed | not_assessed | not_applicable
+    level: 3                         # supporting-evidence strength, 0..4, null iff not assessed
     rationale: "..."
     claim_refs: [CLM:brakes:GABRA5:001, CLM:brakes:GABRA5:004]
+    counter_level: 2                 # CONTRADICTING-evidence strength, 0..4, same scale
+    counter_rationale: "one adult pharmacological study found no effect on ..."
+    counter_claim_refs: [CLM:brakes:GABRA5:007]
     limiting_factor: "no adult-inducible genetic evidence"
 ```
+
+**Evidence and counter-evidence are graded separately.** `level` measures how strong
+the evidence *for* the facet proposition is; `counter_level` measures how strong the
+evidence *against* it is. This is deliberate: "nobody looked" (`level: 0`,
+`counter_level: 0`) must never be representable in the same way as "it was tested and
+failed" (`level: 1`, `counter_level: 3`). A facet the agent did not review is
+`assessment_status: not_assessed` with `level: null` — writing `0` for unexamined
+evidence is a contract violation.
+
+### 5.3 Ordinal scale `evidence_strength_v1` (shared by every facet)
+
+| Level | Meaning |
+|-------|---------|
+| 0 | searched, nothing found |
+| 1 | weak or indirect only: correlational, in-vitro only, single small study, or a distant model system |
+| 2 | moderate: replicated non-human causal evidence, **or** one human study with a relevant endpoint |
+| 3 | substantial: converging causal evidence across designs or species, **or** one human interventional/genetic result with a directly relevant endpoint |
+| 4 | strong: replicated human evidence bearing directly on this facet's proposition, consistent in direction |
+
+`agent:integration` refines per-facet criteria in `models/ranking/facet_rubric_v0_1.yaml`
+without changing these level semantics. A level of 3 or 4 that cites no human evidence
+is a contract violation for the facets whose proposition is about humans
+(`human_genetic_association`, `human_phenotype_specificity`,
+`human_intervention_evidence`, `adult_expression_and_timing`).
+
+### 5.4 Methodological-weakness caps are polarity-aware
+
+Some facets are **inverse-polarity**: a higher level is *worse* for the target
+(`safety_liability_burden`, `developmental_confound_risk`,
+`human_lineage_divergence_risk`). Others are normal-polarity: a higher level is better
+for the target.
+
+When a cap is imposed because the underlying evidence is methodologically weak — for
+example the comparative rule "a claim with `phylogenetic_control: none` may not be
+graded above level 2" — **the cap applies only in the direction that favours the
+target**:
+
+* **Normal-polarity facet** → cap `level`. Weak method cannot establish strong support.
+* **Inverse-polarity facet** → cap `counter_level`, **never** `level`. Weak method
+  cannot establish the *absence* of a risk. Capping the risk itself would convert a
+  methodological weakness into an optimistic conclusion, which is precisely backwards.
+
+This rule was added after `agent:comparative` found that applying the phylogenetic cap
+to `human_lineage_divergence_risk` made a target with documented human/mouse
+physiological divergence appear *more* translatable than its evidence supports. Any new
+cap must state its polarity handling explicitly, and `models/ranking/` must implement
+caps through a polarity-aware helper rather than ad hoc clipping.
+
+**The asymmetry is deliberate, and it has a cost.** Because caps bite only in the
+favourable direction, methodologically weak evidence can raise doubt about a target
+while being unable to establish support for it. That is a precautionary choice for a
+project whose dominant risk is over-optimism about cognitive enhancement. It is not
+neutral: it will systematically under-rank a genuinely promising target whose evidence
+base happens to be methodologically weak in both directions. Two obligations follow:
+the asymmetry must be stated wherever ranks are reported, and
+`models/ranking/ranking_spec_v0_1.yaml` must include a `symmetric_caps` sensitivity
+variant so the size of the effect on ranks is **measured rather than assumed**.
 
 Facet catalogue and owners (levels 0–4 defined in `models/ranking/facet_rubric_v0_1.yaml`):
 
@@ -459,6 +529,7 @@ Gene identifiers are resolved the same way by `scripts/fetch_gene_identifiers.py
 | V14 | Withdrawal requires `status: withdrawn` **and** a superseding audit finding; records are never removed. |
 | V15 | Every seed target has ≥1 audit record with the full mandatory check catalogue. |
 | V16 | No efficacy assertion from binding alone: an edge into `EFFECT:*` or a `CHANGES_STATE` edge needs ≥1 claim with `claim_type ∈ {causal_perturbation, pharmacodynamic, clinical_efficacy}`. |
+| V16b | **Null results must be representable as edges.** The relation `NO_DETECTED_EFFECT_ON` (biological and intervention layers; `requires_claim: true`; `allowed_claim_types: {clinical_null, causal_perturbation, pharmacodynamic, association}`) asserts that a *performed and reported* attempt detected no effect. It requires ≥1 evidence item with `evidence_role ∈ {null_result, contradicts}`. It must never be used for absence of evidence — an untested relationship is represented by the *absence* of an edge, not by a null edge. The graph compiler and the visualisation must render these edges distinguishably, and no traversal may count a `NO_DETECTED_EFFECT_ON` edge as support. |
 | V17 | Compiled graph edges each carry `provenance_class ∈ {claim_derived, reference_data, ontology_axiom}` and, when `claim_derived`, ≥1 resolvable claim id. |
 | V18 | No secrets: no API keys, tokens or `.env` content in any tracked file. |
 | V19 | `data/raw/` checksums match `MANIFEST.jsonl` (immutability). |

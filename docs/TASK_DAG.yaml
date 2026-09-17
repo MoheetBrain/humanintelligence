@@ -38,7 +38,7 @@ tasks:
     action_type: software_engineering
     owner: agent:orchestrator
     depends_on: []
-    status: in_progress
+    status: done
     deliverables:
       - docs/DATA_CONTRACT.md
       - docs/BLACKBOARD_PROTOCOL.md
@@ -53,7 +53,7 @@ tasks:
     action_type: ontology_design
     owner: agent:ontology
     depends_on: [T001]
-    status: blocked
+    status: in_progress
     gate: G1
     deliverables: [ontology/, schemas/, state_model/, src/blueprint/, graph/validate_graph.py, tests/]
 
@@ -70,7 +70,7 @@ tasks:
     action_type: statistical_genetics_analysis
     owner: agent:alphacognition
     depends_on: [T002]
-    status: blocked
+    status: in_progress
     deliverables:
       - pipelines/alphacognition/
       - atlases/alphacognition/
@@ -81,7 +81,7 @@ tasks:
     action_type: literature_synthesis
     owner: agent:brakes
     depends_on: [T002]
-    status: blocked
+    status: in_progress
     deliverables: [atlases/brakes/, evidence/claims/brakes/, targets/candidates/*]
 
   - id: T006
@@ -89,7 +89,7 @@ tasks:
     action_type: literature_synthesis
     owner: agent:power
     depends_on: [T002]
-    status: blocked
+    status: in_progress
     deliverables: [atlases/power/, evidence/claims/power/, targets/candidates/*]
 
   - id: T007
@@ -97,7 +97,7 @@ tasks:
     action_type: comparative_genomics_analysis
     owner: agent:comparative
     depends_on: [T002]
-    status: blocked
+    status: in_progress
     deliverables: [atlases/comparative/, evidence/claims/comparative/]
 
   - id: T008
@@ -105,7 +105,7 @@ tasks:
     action_type: uncertainty_modelling
     owner: agent:integration
     depends_on: [T002]
-    status: blocked
+    status: in_progress
     deliverables: [models/ranking/, models/uncertainty/, src/blueprint/ranking/, THEORY.md]
 
   - id: T009
@@ -136,7 +136,7 @@ tasks:
   - id: T012
     title: Virtual pharmacology interfaces (inactive; gated on integration + audit)
     action_type: cheminformatics
-    owner: agent:orchestrator
+    owner: agent:integration
     depends_on: [T002]
     status: ready
     deliverables: [src/blueprint/pharmacology/, docs/PHARMACOLOGY_INTERFACES.md]

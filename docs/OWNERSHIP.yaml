@@ -18,6 +18,7 @@ owners:
     - "docs/blackboard/**"          # read-write for all, see note below
     - "targets/seed_registry.yaml"
     - "requirements-lock.txt"
+    - "reports/sprint1_summary.md"
     - "data/raw/hgnc/**"
     - "data/raw/hgnc_search/**"
 
@@ -93,10 +94,13 @@ owners:
     - "THEORY.md"
     - "src/blueprint/ranking/**"
     - "src/blueprint/integration/**"
+    - "src/blueprint/pharmacology/**"
+    - "docs/PHARMACOLOGY_INTERFACES.md"
     - "tests/test_ranking*.py"
     - "tests/test_uncertainty*.py"
     - "data/raw/opentargets/**"
-    - "reports/*.md"
+    - "reports/integration_v0_1.md"
+    - "reports/state_variable_centrality_v0_1.md"
 
   agent:red_team:
     - "evidence/audits/**"

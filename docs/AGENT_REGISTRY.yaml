@@ -5,6 +5,14 @@ schema_version: 0.1.0
 sprint: 1
 max_subagents: 8
 spawned_subagents: 7   # + the orchestrator role, which is this session
+spawn_log:
+  - {agent: agent:ontology, launched: "2026-09-17T14:40Z", phase: "1 of 2 (type system, schemas, validators)"}
+  - {agent: agent:brakes, launched: "2026-09-17T14:52Z"}
+  - {agent: agent:power, launched: "2026-09-17T14:52Z"}
+  - {agent: agent:alphacognition, launched: "2026-09-17T14:55Z"}
+  - {agent: agent:comparative, launched: "2026-09-17T14:55Z"}
+  - {agent: agent:integration, launched: "2026-09-17T14:58Z", phase: "1 of 2 (model + code + theory)"}
+  - {agent: agent:red_team, launched: null, note: "launched after the atlases land (gate G4 depends on them)"}
 policy:
   - "Agents never spawn subagents."
   - "Agents never run git commit/push/checkout/reset."
@@ -25,7 +33,7 @@ agents:
   - id: agent:ontology
     role: Ontology / Graph Architect
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - ontology (nodes, edges, primitives, state-variable type system)
       - JSON schemas + pydantic models + validators
@@ -36,7 +44,7 @@ agents:
   - id: agent:alphacognition
     role: AlphaCognition (human genetics)
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - GWAS Catalog / Open Targets ingestion for seed genes x cognitive traits
       - genetics facets for all 27 seed targets
@@ -48,7 +56,7 @@ agents:
   - id: agent:brakes
     role: Cognitive Brake Atlas
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - endogenous limits on arousal, excitation, workspace, plasticity, critical
         periods, consolidation, translation, homeostasis
@@ -59,7 +67,7 @@ agents:
   - id: agent:power
     role: Cognitive Power Atlas
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - neural energy constraints, astrocyte-neuron coupling, creatine/lactate systems
       - competing models of power limitation, stated as falsifiable alternatives
@@ -70,7 +78,7 @@ agents:
   - id: agent:comparative
     role: Comparative Intelligence
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - species panel with resolved NCBI taxonomy ids
       - convergent-mechanism assessment with explicit phylogenetic controls
@@ -81,7 +89,7 @@ agents:
   - id: agent:integration
     role: Causal Integration / Ranking
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - facet rubric, level-to-distribution mapping, Monte Carlo rank intervals
       - pathway convergence, state-variable centrality, information-gain priority

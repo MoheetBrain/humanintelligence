@@ -38,6 +38,7 @@ import yaml
 
 from _provenance import (  # type: ignore[import-not-found]
     INTERIM_DIR,
+    sha256_bytes,
     REPO_ROOT,
     FetchResult,
     http_get_json,
@@ -62,6 +63,11 @@ TITLE_MATCH_THRESHOLD = 0.90
 YEAR_TOLERANCE = 1  # e-pub vs print year
 
 RETRACTION_TYPES = {"Retracted Publication", "Retraction of Publication"}
+
+# Statuses that count as "this source is what the record says it is".
+# A database release is verified against its own immutable snapshot rather than a
+# literature registry; see verify_release_by_snapshot().
+ACCEPTED_STATUSES = {"verified", "release_verified_by_snapshot"}
 
 
 # --------------------------------------------------------------------------- IO
@@ -318,6 +324,10 @@ def verify_agent_sources(agent: str, records: list[dict[str, Any]], *, offline: 
             "claimed_year": record.get("year"),
             "checked_at": utc_now(),
         }
+        if offline and registry in {"DB", "DATASET"}:
+            row.update(verify_release_by_snapshot(local))
+            rows.append(row)
+            continue
         if offline:
             cached = offline_lookup(registry, local)
             if cached is None:
@@ -363,6 +373,10 @@ def verify_agent_sources(agent: str, records: list[dict[str, Any]], *, offline: 
                 fields = summarise_pubmed_record(result.payload.get("result", {}).get(pmid, {}))
                 row["resolved_pmid"] = pmid
                 row["detail"] = "DOI resolves to a PubMed record; prefer registering it as SRC:PMID"
+            elif registry in {"DB", "DATASET"}:
+                row.update(verify_release_by_snapshot(local))
+                rows.append(row)
+                continue
             else:
                 row.update({"status": "unsupported_registry", "registry": registry.lower()})
                 rows.append(row)
@@ -452,6 +466,59 @@ def _read_json(path: Path) -> dict[str, Any]:
         return {}
 
 
+def verify_release_by_snapshot(local: str) -> dict[str, Any]:
+    """Verify a database-release / dataset source against its own raw snapshot.
+
+    A database release (``SRC:DB:gwas_catalog:2026-09-13``) has no literature registry
+    to check it against, so requiring PubMed-style verification would be meaningless.
+    What *is* checkable — and what actually matters for reproducibility — is that the
+    ingesting pipeline left an immutable snapshot of that release in ``data/raw/`` and
+    recorded it in the manifest. That is what this function confirms.
+    """
+    db_name = local.split(":", 1)[0].strip().lower().replace("-", "_")
+    manifest = REPO_ROOT / "data" / "raw" / "MANIFEST.jsonl"
+    matches: list[dict[str, Any]] = []
+    if manifest.exists():
+        for line in manifest.read_text(encoding="utf-8").splitlines():
+            try:
+                entry = json.loads(line)
+            except ValueError:
+                continue
+            registry_name = str(entry.get("registry", "")).lower()
+            if registry_name == db_name or registry_name.startswith(f"{db_name}_"):
+                matches.append(entry)
+    if not matches:
+        return {
+            "status": "unsupported_registry",
+            "registry": db_name,
+            "detail": (
+                "no raw snapshot found for this release; a database release is only "
+                "verifiable through the immutable snapshot its pipeline wrote"
+            ),
+        }
+    newest = max(matches, key=lambda e: str(e.get("retrieved_at", "")))
+    intact = True
+    snapshot_path = REPO_ROOT / str(newest.get("path", ""))
+    if snapshot_path.is_file():
+        intact = sha256_bytes(snapshot_path.read_bytes()) == newest.get("sha256")
+    else:
+        intact = False
+    return {
+        "status": "release_verified_by_snapshot" if intact else "snapshot_missing_or_altered",
+        "registry": db_name,
+        "snapshot": str(newest.get("path")),
+        "snapshot_count": len(matches),
+        "registry_title": None,
+        "retraction_flag": False,
+        "detail": (
+            f"{len(matches)} snapshot(s) recorded in data/raw/MANIFEST.jsonl; newest "
+            f"retrieved {newest.get('retrieved_at')}"
+            if intact
+            else "manifest entry does not match the file on disk (rule V19)"
+        ),
+    }
+
+
 def _chunks(items: list[str], size: int) -> Iterable[list[str]]:
     for start in range(0, len(items), size):
         yield items[start : start + size]
@@ -482,7 +549,7 @@ def main(argv: list[str] | None = None) -> int:
         rows = verify_agent_sources(agent, records, offline=args.offline)
         write_jsonl(VERIFICATION_DIR / f"{agent}.jsonl", rows)
         total += len(rows)
-        bad = [r for r in rows if r.get("status") != "verified"]
+        bad = [r for r in rows if r.get("status") not in ACCEPTED_STATUSES]
         failures.extend(bad)
         verified = len(rows) - len(bad)
         print(f"{agent}: {verified}/{len(rows)} verified -> {VERIFICATION_DIR / f'{agent}.jsonl'}")

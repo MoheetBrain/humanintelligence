@@ -73,13 +73,21 @@ def owner_of(path: str, owners: dict[str, list[str]], shared: list[str], generat
         concrete = pattern.replace("{agent}", "*")
         if matches(path, [concrete]):
             return "shared_append_only"
-    claimants = [owner for owner, globs in owners.items() if matches(path, globs)]
-    if len(claimants) == 1:
-        return claimants[0]
-    if len(claimants) > 1:
-        # most specific (longest matching glob) wins; report ambiguity explicitly
-        return "AMBIGUOUS:" + ",".join(sorted(claimants))
-    return "UNCLAIMED"
+    # Score each claimant by the specificity of its best matching pattern, measured
+    # as pattern length: "tests/test_ranking*.py" beats a blanket "tests/**".
+    scored: list[tuple[int, str]] = []
+    for owner, globs in owners.items():
+        best = max((len(p) for p in globs if matches(path, [p])), default=0)
+        if best:
+            scored.append((best, owner))
+    if not scored:
+        return "UNCLAIMED"
+    top = max(score for score, _ in scored)
+    winners = sorted(owner for score, owner in scored if score == top)
+    if len(winners) == 1:
+        return winners[0]
+    # Genuinely equal specificity: the ownership map itself is ambiguous.
+    return "AMBIGUOUS:" + ",".join(winners)
 
 
 def main(argv: list[str] | None = None) -> int:

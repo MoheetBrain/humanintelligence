@@ -13,7 +13,7 @@ PIP ?= .venv/bin/pip
 .DEFAULT_GOAL := help
 .PHONY: help setup validate build store graph rank reports test test-network all \
         fetch-sources fetch-identifiers fetch-gwas fetch-tractability clean-derived \
-        check-ownership hooks
+        check-ownership hooks index-sources
 
 help: ## Show available targets
 	@grep -hE '^[a-zA-Z_-]+:.*?## ' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "  \033[36m%-20s\033[0m %s\n", $$1, $$2}'
@@ -36,7 +36,12 @@ fetch-tractability: ## Ingest Open Targets tractability / safety annotations (ne
 	$(PY) pipelines/integration/fetch_target_annotations.py
 
 # ---------------------------------------------------------------- offline -----
-validate: ## Validate ontology, schemas, records, provenance and audit rules
+index-sources: ## Rebuild the source-verification index from raw snapshots (offline)
+	-$(PY) scripts/fetch_source_metadata.py --all --offline
+# A non-zero exit here only means some source is unverified; that is the validator's
+# call to make (rule V6), not the index builder's, hence the leading '-'.
+
+validate: index-sources ## Validate ontology, schemas, records, provenance and audit rules
 	$(PY) graph/validate_graph.py --strict
 
 store: ## Build the Parquet + DuckDB evidence store from curated records

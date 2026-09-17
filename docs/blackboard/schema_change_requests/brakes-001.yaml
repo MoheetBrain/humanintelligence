@@ -1,0 +1,149 @@
+# Schema-change request — agent:brakes, request 001.
+#
+# Raised per BLACKBOARD_PROTOCOL section 2.3. The atlas was completed under the
+# existing contract by mapping onto declared ids and predicates; nothing here blocks
+# Sprint 1. Each item records what was expressible, what this agent wrote instead, and
+# what a reader loses by the substitution.
+#
+schema_version: 0.1.0
+request_id: brakes-001
+raised_by: agent:brakes
+raised_on: "2026-09-17"
+blocking: false
+run_id: sprint1-brakes-01
+
+summary: >-
+  Four small gaps found while curating the Cognitive Brake Atlas. Three are missing
+  vocabulary terms and one is a semantic asymmetry in the safety state variables. All
+  four were worked around; the workarounds are recorded in the affected records so the
+  substitution is visible rather than silent.
+
+requests:
+
+  - item: 1
+    kind: missing_computational_primitives
+    request: >-
+      Declare computational primitives for gain control, temporal integration and
+      dendritic coincidence detection in ontology/computational_primitives.yaml.
+    motivation: >-
+      Four of this atlas's brake classes are defined by what they do to gain and to the
+      temporal window of integration: alpha5 tonic inhibition, the h-current, the
+      M-current and the GPR158-Kv4.2 complex. The declared primitive set is rich in
+      memory and reasoning operations but has no term for a divisive or subtractive gain
+      operation and no term for the integration window itself.
+    proposed_change:
+      add_primitives:
+        - id: PRIM:gain_control
+          definition_sketch: >-
+            Scaling of a population's input-output relation without changing what the
+            population represents.
+        - id: PRIM:temporal_integration
+          definition_sketch: >-
+            Summation of inputs arriving within a bounded time window, where the window
+            width is itself the controlled quantity.
+        - id: PRIM:dendritic_coincidence_detection
+          definition_sketch: >-
+            Detection that two or more inputs arrived close enough in time and space
+            within a dendritic compartment to produce a supralinear response.
+    workaround_used: >-
+      PRIM:gain_control was mapped to PRIM:pattern_separation where the brake's function
+      is sparsity, and to PRIM:distractor_suppression where it is interference control.
+      PRIM:temporal_integration and PRIM:dendritic_coincidence_detection were both mapped
+      to PRIM:relational_binding.
+    what_is_lost: >-
+      The dossiers for HCN1, KCNQ2 and KCNQ3 now name a binding primitive where the
+      evidence is about an integration window. A reader looking for the atlas's claim
+      that these are timing brakes will find it in the brake taxonomy and in the claim
+      statements, not in the primitive list.
+
+  - item: 2
+    kind: missing_safety_state_variable
+    request: >-
+      Declare a generic dose-limiting-tolerability state variable in
+      state_model/safety.yaml, alongside the organ- and syndrome-specific ones.
+    motivation: >-
+      For two of this atlas's consolidation brakes the binding human constraint is not
+      an organ-specific risk but the plain fact that the dose which produces adverse
+      events is close to, or below, the dose that produces a cognitive effect. A phase I
+      dose escalation established a maximum tolerated dose with dose-limiting headache
+      and nausea; a separate crossover study reported mild adverse events only at the
+      highest of three doses. That pattern is the single most decision-relevant safety
+      fact in the atlas and there is no variable for it.
+    proposed_change:
+      add_state_variable:
+        id: SV:safety.dose_limiting_tolerability_margin
+        domain: safety
+        definition_sketch: >-
+          The separation between the exposure that produces the intended effect and the
+          exposure at which adverse events become dose-limiting. Lower margin is worse.
+        desirability: higher_is_better
+        response_shape: unknown
+    workaround_used: >-
+      The PDE4B annotation was re-pointed to the declared SV:safety.insomnia_risk, which
+      covers one of the four reported adverse events. The HDAC2 annotation's coupling was
+      set to SV:safety.proliferative_risk with direction `unclear` and no claim
+      references, because no claim in this atlas measures a proliferative endpoint.
+    what_is_lost: >-
+      The tolerability constraint now appears only in claim statements and in each
+      dossier's known_liabilities, not as a state variable the ranking model can consume.
+      agent:integration should not conclude from the state-variable layer that PDE4B has
+      a favourable safety profile; it has a narrow one.
+
+  - item: 3
+    kind: semantic_asymmetry
+    request: >-
+      Record, in state_model/safety.yaml or docs/ONTOLOGY_NOTES.md, that the safety
+      domain is expressed as RISK (higher is worse) rather than as THRESHOLD or MARGIN
+      (higher is better), except for SV:stability.network_criticality_margin and
+      SV:stability.ionic_homeostasis_margin which are margins.
+    motivation: >-
+      This atlas first wrote its excitability constraint as a seizure THRESHOLD, which is
+      the convention the electrophysiology literature uses, and had to invert every
+      direction field when re-pointing to the declared SV:safety.seizure_risk. That is an
+      easy and silent error to make: an agent writing `direction: increases` against a
+      threshold and against a risk means opposite things. A one-line convention statement
+      would prevent it.
+    proposed_change:
+      add_note: >-
+        Safety variables are risks unless their id ends in `_margin`. An intervention
+        that protects the brain DECREASES a risk variable and INCREASES a margin
+        variable.
+    workaround_used: >-
+      All six affected coupling directions in this atlas were inverted by hand and the
+      inversion is recorded in the desirability_note of SV:safety.seizure_risk.
+    what_is_lost: >-
+      Nothing in this atlas, now that the inversion is done. The request is to stop the
+      next agent making the same mistake.
+
+  - item: 4
+    kind: vocabulary_gap
+    request: >-
+      Consider adding a structural-biology term to the evidence.design vocabulary, and a
+      term for "endpoint not measured" distinct from a tested null.
+    motivation: >-
+      Two gaps met in curation. First, a cryo-EM or crystallographic structure has no
+      design term: the closest available were `in_vivo_imaging`, which is wrong, and
+      `narrative_review`, which describes what was read rather than what was done.
+      Second, and more consequentially, the contract can express "tested and found no
+      effect" (claim_type clinical_null with NO_DETECTED_EFFECT_ON) but cannot express
+      "the only human trial of this mechanism never measured a cognitive endpoint". Those
+      are very different epistemic states and the ranking model should treat them
+      differently.
+    proposed_change:
+      add_designs: [structural_biology]
+      add_claim_type_or_flag: >-
+        Either a claim_type `endpoint_not_measured`, or a boolean on the evidence item
+        such as `endpoint_absent_from_protocol`, so that an absence of measurement is
+        distinguishable from a measured absence.
+    workaround_used: >-
+      The structural claim (CLM:brakes:EIF2B_COMPLEX:002) was recorded with design
+      `narrative_review` and extraction basis `abstract`, which is literally what this
+      agent read. The two not-measured claims (CLM:brakes:EIF2B_COMPLEX:004 and
+      CLM:brakes:GABRA5:009) were recorded as claim_type clinical_null with predicate
+      NO_DETECTED_EFFECT_ON, and each carries an explicit alternative_explanations entry
+      stating that the absence is an absence of measurement rather than a tested null.
+    what_is_lost: >-
+      Read mechanically, two clinical_null claims in this atlas look like failed trials
+      and are not. This is the most likely way the brake atlas could be misread by a
+      downstream model, and it is why the caveat is in a required field rather than a
+      comment. The red team should check those two claims first.

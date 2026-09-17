@@ -1,0 +1,94 @@
+# Schema-change request — agent:power, 001
+# Protocol: docs/BLACKBOARD_PROTOCOL.md §2.3. Filed because the contract could not
+# express something; work continued with existing fields and the affected records say
+# what was done instead.
+
+schema_version: 0.1.0
+request_id: power-001
+raised_by: agent:power
+raised_on: "2026-09-17"
+blocking: false
+
+request: >-
+  No predicate in ontology/edges.yaml admits claim_type `clinical_null`, and no
+  intervention-layer predicate admits a no-effect assertion from a
+  MetabolicIntervention, Compound, Drug or Biologic node at all. A null randomised
+  human trial of an intervention therefore has no legal triple in the current
+  ontology.
+
+motivation: >-
+  docs/DATA_CONTRACT.md §4.1 defines `clinical_null` as a claim type, README §4 and
+  docs/BLACKBOARD_PROTOCOL.md §5.6 both require null and negative results to be
+  curated with the same rigour as positive ones, and CONTRIBUTING.md lists null
+  results among what makes a claim acceptable. But scanning `allowed_claim_types`
+  across every edge in ontology/edges.yaml, `clinical_null` appears nowhere, and
+  `clinical_harm` appears only on INCREASES_RISK. Meanwhile the only relation whose
+  domain contains the intervention node types and whose range contains StateVariable
+  is CHANGES_STATE, which carries `asserts_effect: true` and is explicitly documented
+  as "THE EFFICACY RELATION".
+
+  The consequence is asymmetric and it biases the graph in the exact direction this
+  repository exists to resist: a positive trial of an intervention compiles into an
+  edge, and a null trial of the same intervention cannot. A ranking model consuming
+  compiled edges would see only the positives.
+
+  This is not hypothetical for this atlas. Two of the most decision-relevant records
+  in the Cognitive Power Atlas are human randomised nulls:
+    * CLM:power:creatine_human:003 - no cognitive effect in rested, fed, young,
+      omnivorous, physically active adults, with a positive physical-performance arm in
+      the same participants confirming the intervention was biologically active.
+    * CLM:power:creatine_human:002 - a pooled subgroup estimate centred essentially on
+      zero in the younger age band.
+  Together they are the strongest human evidence in this atlas, and their direction is
+  toward H0 in atlases/power/competing_models.yaml. They must be representable.
+
+proposed_change:
+  option_a_preferred: >-
+    Add `clinical_null` (and, for symmetry, `safety`) to `allowed_claim_types` on
+    MODULATES, and extend the MODULATES domain to include the intervention node types
+    (Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention,
+    Neurotechnology). MODULATES already carries `asserts_effect: false` and its
+    documented semantics state that the claim's `direction` field is the authority on
+    sign, with `no_change` in the direction enum. That makes it the natural home for a
+    measured null: an intervention was applied, an outcome was measured, and the sign
+    was zero.
+  option_b: >-
+    Introduce an explicit `DOES_NOT_CHANGE_STATE` relation with
+    `asserts_effect: false`, the same domain as CHANGES_STATE, and
+    `allowed_claim_types: [clinical_null, causal_perturbation]`. More expressive and
+    easier for a ranking model to weight deliberately, but it adds a relation to a
+    closed vocabulary, which is the heavier change.
+  option_c_rejected: >-
+    Recording nulls only in `evidence[].evidence_role: null_result` under a positive
+    claim. Rejected because it makes a null a footnote on somebody else's claim rather
+    than an assertion in its own right, and because a null with no positive claim to
+    attach to would then be unrepresentable.
+
+workaround_applied_meanwhile: >-
+  The two affected claims use `subject: MECH:creatine_substrate_loading` (a Mechanism
+  node, which IS in the MODULATES domain) with `predicate: MODULATES`,
+  `claim_type: causal_perturbation`, `direction: no_change` and
+  `evidence[].evidence_role: null_result`. The intervention entity is recorded
+  separately at atlases/power/interventions/creatine_substrate_loading.yaml and names
+  this request. The workaround is semantically defensible - the mechanism was engaged
+  and the state variable did not move - but it loses the fact that the manipulation
+  was a randomised human intervention on a specific administered substance, and it
+  forces `claim_type: causal_perturbation` onto a record whose true type is
+  `clinical_null`.
+
+affected_records:
+  - CLM:power:creatine_human:002
+  - CLM:power:creatine_human:003
+  - atlases/power/interventions/creatine_substrate_loading.yaml
+
+secondary_observation: >-
+  A smaller instance of the same pattern: no predicate admits claim_type
+  `methodological`, although the contract defines it and PREDICTS lists it. The
+  methodological critique of the astrocyte-neuron lactate shuttle
+  (CLM:power:anls:002, from a published review arguing that lactate shuttling was
+  never measured and the pharmacological tools are not specific) had to be recorded as
+  `theoretical_construct` on a MODULATES edge, because PREDICTS does not accept a
+  MolecularProcess subject. Adding `methodological` to MODULATES and CONSTRAINS would
+  fix this at no cost to the closed vocabulary.
+
+status: open

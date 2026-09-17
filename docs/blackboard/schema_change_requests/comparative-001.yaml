@@ -1,0 +1,164 @@
+schema_version: 0.1.0
+request_id: comparative-001
+requested_by: agent:comparative
+requested_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Add three fields to the claim record's `context` block, and add one relation to
+  ontology/edges.yaml, so that a comparative-evolutionary claim can state the
+  phylogenetic control it actually used and can express a between-species difference
+  without borrowing a causal relation that overstates the evidence.
+
+motivation: >-
+  Contract §4 makes each anti-laundering distinction a required field rather than a
+  prose caveat (P4). Comparative biology has one dominant failure mode that the current
+  claim schema cannot express, and one whole class of assertion it cannot represent
+  at all.
+
+  (1) PHYLOGENETIC CONTROL. A cross-species correlation between a trait and a cognitive
+  measure is not independent evidence unless the analysis accounted for shared ancestry.
+  Species are not independent data points: closely related species resemble each other
+  because of descent, so an uncontrolled cross-species regression can be driven entirely
+  by one clade. Of the 20 claims in evidence/claims/comparative/, 18 rest on analyses
+  with no phylogenetic control whatsoever — in several cases confirmed from the methods
+  text (for example SRC:PMID:27298365 used reduced major axis regression to power
+  functions, and SRC:PMID:34759318 used ordinary log-log linear regression and ANCOVA).
+  Without a field for this, all 20 claims look alike to the validator and to the ranking
+  model, and "brains of parrots contain twice as many neurons as primate brains of the
+  same mass" becomes indistinguishable in status from a result that survived a
+  phylogenetic mixed model. `causal_attribution.basis` does not capture it: none of its
+  values distinguishes a phylogenetically controlled comparative analysis from an
+  uncontrolled one, and `evidence.design.phylogenetic_comparative_analysis` records that
+  a comparative design was used, not whether ancestry was modelled.
+
+  (2) SPECIES COUNT. The number of species in a comparative analysis is the single most
+  informative number about it, and it is not a probability or a score, so it is safe
+  under P3/V9. It currently has nowhere to live except prose.
+
+  (3) A BETWEEN-SPECIES RELATION. ontology/edges.yaml has no relation whose meaning is
+  "this property differs between species" or "this mechanism is conserved across these
+  species". `ORTHOLOGOUS_TO` is sequence orthology and explicitly disclaims functional
+  equivalence; `ASSOCIATED_WITH` is the only relation admitting
+  `claim_type: comparative_evolutionary` and its domain excludes Species, BrainRegion,
+  CellType and Circuit, which is where most comparative findings actually sit. The
+  consequence is that a claim such as "the minke whale cerebral cortex contains far
+  fewer neurons than stereology had estimated" has to be encoded with a causal or
+  capacity relation that asserts more than the measurement does. This atlas worked
+  around it (see atlases/comparative/README.md, "Triple conventions and their
+  limitations") by choosing the weakest legal relation, setting `direction: unclear`,
+  and naming every interpretive leap in `risks` — but the workaround means the compiled
+  graph will carry `CONSTRAINS` and `MODULATES` edges whose claims are purely
+  descriptive anatomy. The red team should treat those edges as suspect by construction.
+
+proposed_change:
+  - target: schemas/claim.schema.json (and contract §4)
+    change: >-
+      Add `context.phylogenetic_control`, required on any claim whose `claim_type` is
+      `comparative_evolutionary` or whose `evidence[].design` is
+      `phylogenetic_comparative_analysis`, `comparative_anatomy` or
+      `comparative_genomics`. Closed enum:
+      `none` | `sister_taxa_pair` | `pgls` | `phylogenetic_mixed_model` |
+      `ancestral_state_reconstruction` | `other`.
+  - target: schemas/claim.schema.json (and contract §4)
+    change: >-
+      Add `context.phylogenetic_control_basis`, a free-text string recording how the
+      control was established — which methods sentence was read, or that the retrieved
+      text does not report one. This exists because `none` is ambiguous between "the
+      authors report an uncontrolled analysis" and "the abstract does not say", and
+      those two must not be conflated.
+  - target: schemas/claim.schema.json (and contract §4)
+    change: >-
+      Add `context.species_count`, a non-negative integer or null: the number of species
+      in the analysis as stated by the source. Needed because `context.species` can only
+      list species whose taxid was actually resolved, which for a 36-species study is
+      usually a subset, and an unenumerated list must not read as a small study.
+  - target: models/ranking/facet_rubric_v0_1.yaml
+    change: >-
+      Encode the rule this atlas applies: a claim with `phylogenetic_control: none` may
+      not support a `cross_species_convergence` level above 2, regardless of how many
+      species it covers or how large the reported difference is. Species count without
+      phylogenetic control inflates apparent evidence; it does not strengthen it.
+  - target: contract §4.3 `causal_attribution.basis` enum
+    change: >-
+      Add `animal_observational_association` and `animal_randomised_intervention`. The
+      enum currently offers `human_observational_association` and
+      `human_randomised_intervention` but no non-human equivalents, so a 36-species
+      animal behavioural study (SRC:PMID:24753565) and a randomised two-treatment
+      training experiment in pheasant chicks (SRC:PMID:31758353) have no honest label.
+      Using the human values would be precisely the species laundering that contract P4
+      exists to prevent, so this atlas wrote `theoretical_argument` on
+      CLM:comparative:SELF_REGULATION:001, :002 and :003 — which UNDERSTATES all three
+      designs, one of them a genuine randomised manipulation. Understating was chosen
+      deliberately as the safe direction, and each affected claim says so in `risks`.
+  - target: contract §4.4 `evidence.design` enum
+    change: >-
+      Add `animal_behavioural_experiment` and `animal_behavioural_observation`. The enum
+      has `rct_parallel` and `rct_crossover` (clinically connoted) and
+      `observational_cohort`, but nothing for a controlled behavioural experiment in
+      non-human animals, which is the entire design space of comparative cognition.
+      CLM:comparative:SELF_REGULATION:003 currently carries `rct_parallel` for a
+      pheasant-chick training experiment for want of anything better.
+  - target: ontology/edges.yaml
+    change: >-
+      Add a `DIFFERS_BETWEEN_SPECIES` relation (or widen `ASSOCIATED_WITH`'s domain to
+      include Species, BrainRegion, CellType, Circuit and Network for
+      `claim_type: comparative_evolutionary` only), with
+      `asserts_effect: false`, `requires_claim: true`, and semantics stating that a
+      measured between-species difference licenses no inference that the difference
+      causes any cognitive difference, and no inference that a mechanism demonstrated in
+      one species operates in the other.
+
+interim_handling: >-
+  All three `context` fields are written on every claim in evidence/claims/comparative/.
+  Records stay `status: active`; nothing is withheld pending this request.
+  Requested non-blocking.
+
+status: partially_satisfied
+status_updated_on: "2026-09-17"
+status_note: >-
+  RESOLVED DURING THE SAME SPRINT, for the three `context` fields. agent:ontology's
+  schemas/claim.schema.json (written 2026-09-17, after this request was filed) already
+  defines `context.phylogenetic_control`, `context.phylogenetic_control_basis` and
+  `context.species_count`, with `context.additionalProperties: false`. The enum chosen
+  differs from the one proposed here and is BETTER: it is
+  `none | outgroup_comparison | sister_taxon_comparison | phylogenetic_comparative_model
+  | ancestral_state_reconstruction | other | not_reported`, and the addition of
+  `not_reported` fixes a real defect in the proposal — the proposed enum forced
+  "the authors report an uncontrolled analysis" and "the retrieved text does not say" to
+  share the value `none`, which is exactly the conflation contract principle P3 forbids.
+  This atlas conformed to the schema's vocabulary rather than its own proposal: 14 claims
+  are `none`, 4 are `not_reported`, 1 is `outgroup_comparison`, 2 are `other`.
+  `pipelines/comparative/check_phylogenetic_cap.py` caps `not_reported` alongside `none`,
+  because an unverified control is not a control.
+  `context.species_count` is typed `integer` with no null, so the key is OMITTED on the
+  three claims whose source did not state a species count; the reason is recorded in
+  `phylogenetic_control_basis` instead.
+  ALL 21 CLAIMS, 20 SOURCES, 27 ASSESSMENTS AND 2 ANNOTATIONS NOW VALIDATE AGAINST
+  schemas/*.json WITH ZERO ERRORS.
+
+still_outstanding:
+  - >-
+    The `DIFFERS_BETWEEN_SPECIES` relation (or a widened `ASSOCIATED_WITH` domain).
+    ontology/edges.yaml still has no relation meaning "this property differs between
+    species", so 21 comparative claims borrow CONSTRAINS, MODULATES, IMPLEMENTS,
+    EXPRESSED_IN or PREDICTS with `direction: unclear`. This is the largest remaining
+    modelling defect in the atlas and is documented in
+    atlases/comparative/README.md §6.7.
+  - >-
+    `causal_attribution.basis` values for non-human work: no
+    `animal_observational_association` and no `animal_randomised_intervention`.
+    CLM:comparative:SELF_REGULATION:001, :002 and :003 carry `theoretical_argument`,
+    which understates all three designs, because the only alternatives were the
+    `human_*` values and using those on animal studies would be species laundering.
+  - >-
+    `evidence.design` has no `animal_behavioural_experiment`.
+    CLM:comparative:SELF_REGULATION:003 carries `rct_parallel` for a randomised
+    pheasant-chick training experiment.
+  - >-
+    The facet-rubric encoding of the cap in models/ranking/facet_rubric_v0_1.yaml, which
+    belongs to agent:integration. Until then the cap lives only in this atlas's own
+    checker, and note the consequence recorded in
+    atlases/comparative/assessments/HCN1.yaml: applying the cap to
+    `human_lineage_divergence_risk` suppresses a level in the OPTIMISTIC direction,
+    because that facet feeds D6 inversely.

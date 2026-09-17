@@ -1,0 +1,105 @@
+# Schema change request integration-001
+#
+# Filed per docs/BLACKBOARD_PROTOCOL.md §2.3 and the Stage-1 brief's instruction to
+# file a request rather than improvise when the contract blocks a deliverable.
+
+request_id: integration-001
+requested_by: agent:integration
+requested_on: "2026-09-17"
+blocking: true
+status: open
+affects:
+  - docs/DATA_CONTRACT.md#2-record-types-owners-and-locations
+  - docs/DATA_CONTRACT.md#52-facet-assessment
+  - docs/OWNERSHIP.yaml
+
+request: >-
+  agent:integration owns the `tractability` facet (contract §5 facet catalogue) but
+  has no contract-legal location to write its facet assessment, and no contract-legal
+  way to satisfy §5.2's `claim_refs` requirement for a facet graded from a pinned
+  database release rather than from papers. Two decisions are needed: (1) where
+  agent:integration writes tractability assessments, and (2) what counts as a
+  `claim_ref` for a database-derived grade.
+
+motivation: >-
+  Contract §2 places facet assessments at `atlases/{domain}/assessments/{SYMBOL}.yaml`
+  and assigns them to "domain agent for its own facets". agent:integration is not a
+  domain atlas and docs/OWNERSHIP.yaml grants it no path under `atlases/`, so every
+  legal assessment file belongs to another agent. Writing into another agent's lane
+  is forbidden (protocol §2.1/§2.2), so the facet this agent owns is currently
+  ungradeable by the agent that owns it.
+
+  Separately, §5.2 requires `claim_refs` on every graded facet. A tractability grade's
+  evidence is a DatabaseRelease annotation (`SRC:DB:opentargets:26.06`), not a
+  biological assertion. Forcing it into a claim record would mean inventing a
+  `(subject, predicate, object)` triple for "this target has a high-quality ligand",
+  choosing a `claim_type` that does not fit any of the §4.1 values, and populating
+  `translation.*` fields (adult_relevance, supra_normal, human_relevance) that are
+  meaningless for a druggability annotation. That would be schema abuse producing a
+  record that looks like biological evidence and is not — exactly the failure mode
+  contract rule V16 exists to prevent.
+
+  This is a real gap, not a preference: 31 targets have been annotated from a pinned
+  Open Targets release (data version 26.06, 31 immutable snapshots under
+  data/raw/opentargets/2026-09-17/, derived index at
+  data/interim/opentargets_tractability.jsonl) and the grades cannot legally be
+  recorded anywhere.
+
+proposed_change:
+  option_a_preferred:
+    summary: "Give agent:integration its own assessment directory."
+    detail: >-
+      Add `atlases/integration/**` to agent:integration in docs/OWNERSHIP.yaml and
+      allow `atlases/integration/assessments/{SYMBOL}.yaml` in contract §2. There is
+      precedent: `atlases/red_team/**` is already allocated to a non-domain agent,
+      and the red team likewise owns two facets (`safety_liability_burden`,
+      `developmental_confound_risk`) without being a domain atlas. Validator rule V11
+      already restricts each agent to the facets it owns, so this does not weaken any
+      guarantee.
+  option_b:
+    summary: "Let the lead atlas transcribe the grade."
+    detail: >-
+      agent:integration publishes only the derived index, and each lead atlas copies
+      the tractability grade into its own assessment file. Rejected as a preference
+      because it makes one agent's grade appear under another agent's `assessed_by`,
+      which breaks the attribution that V11 exists to enforce, and because it creates
+      a manual transcription step that will silently drift from the pinned release.
+  database_derived_claim_refs:
+    summary: "Permit a facet to cite a source id directly when its evidence is a database release."
+    detail: >-
+      Add an optional `source_refs: [SRC:DB:...]` field to the facet assessment
+      record, and relax §5.2 so a facet is valid with `claim_refs` OR `source_refs`
+      non-empty. A facet using `source_refs` must also carry
+      `evidence_basis: database_release` so the distinction stays machine-readable and
+      a database annotation can never be mistaken for a curated biological claim.
+      Alternative considered and rejected: extend §4.1 `claim_type` with
+      `tractability_annotation`. Rejected because it would place a non-biological
+      annotation in the claim layer, where every downstream consumer treats records as
+      evidence about biology.
+
+proceeding_with: >-
+  Best interpretation, pending resolution: the grade is DERIVED AND PUBLISHED BUT NOT
+  ASSERTED. pipelines/integration/fetch_target_annotations.py writes
+  data/interim/opentargets_tractability.jsonl with a `suggested_level` per target, the
+  exact (modality, label) buckets that produced it, the data version, the snapshot
+  path and an explicit field stating that a suggestion is not an assessment. The
+  pinned release is registered as `SRC:DB:opentargets:26.06` in
+  evidence/sources/integration.yaml. No facet assessment file is written, so
+  `tractability` currently reads as `not_assessed` for every target and the
+  uncertainty model treats it as wide and uninformative (contract P8) rather than as
+  a zero. The ranking model therefore UNDER-uses real data it already holds, which is
+  the correct failure direction: nothing is asserted in a lane this agent does not
+  own, and nothing is invented.
+
+impact_if_unresolved: >-
+  The `tractability` facet stays unassessed for all 31 targets in Stage 2. D6 loses
+  0.25 of its weight to an uninformative prior for every target, which widens every
+  D6 interval and weakens the whole ranking's discrimination on human translation —
+  while the data needed to fix it is already snapshotted in the repository.
+
+evidence_that_the_work_is_done:
+  snapshots: "data/raw/opentargets/2026-09-17/*.json (31 files, registered in data/raw/MANIFEST.jsonl)"
+  derived_index: "data/interim/opentargets_tractability.jsonl (31 rows)"
+  source_registration: "evidence/sources/integration.yaml (SRC:DB:opentargets:26.06)"
+  suggested_level_distribution: {level_0: 1, level_1: 6, level_2: 13, level_3: 11}
+  note: "No target reaches level 4; this release reports neither family selectivity profiles nor human CNS exposure."
