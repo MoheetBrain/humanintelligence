@@ -1,0 +1,303 @@
+# Hand-curated claims — HTR2A (lead atlas: alphacognition, dossier_depth: shallow)
+#
+# HTR2A is the target where a cognitive-flexibility story and a psychiatric-liability story
+# run through the same receptor, and the literature mixes them freely. This file keeps them
+# apart:
+#   rodent flexibility pharmacology           CLM:...:HTR2A:001 (with its own regional null)
+#   acute human 5-HT2A agonism, healthy adults CLM:...:HTR2A:002 (self-reported impairment)
+#   acute human null on cognitive endpoints    CLM:...:HTR2A:003
+# No claim here supports 5-HT2A agonism as a cognitive enhancer in healthy adults.
+# schema_version: 0.1.0 (carried per claim below; contract §2 requires this file to be a YAML list)
+
+- claim_id: CLM:alphacognition:HTR2A:001
+  schema_version: 0.1.0
+  statement: In rats, systemic administration of a 5-HT2A receptor antagonist significantly impaired spatial
+    reversal learning while a 5-HT2C antagonist enhanced it; when the selective 5-HT2A antagonist M100907
+    was infused directly into orbitofrontal cortex, medial prefrontal cortex or nucleus accumbens, no
+    significant effect on any behavioural measure was observed, so the systemic 5-HT2A effect was not
+    localised to any of the three regions tested.
+  subject: GENE:HTR2A
+  predicate: MODULATES
+  object: PHENO:animal_reversal_learning
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10116
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions:
+    - REGION:orbitofrontal_cortex
+    - REGION:medial_prefrontal_cortex
+    - REGION:nucleus_accumbens
+    cell_types: []
+  phenotype_class: animal_reversal_learning
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - 'the direction here is inferential: blocking 5-HT2A impaired reversal learning, which is consistent
+      with endogenous 5-HT2A activity supporting flexibility, but it is not evidence that increasing 5-HT2A
+      activity would improve it'
+    - the three targeted infusions produced no significant effect, so the systemic result may act outside
+      those regions, or via a non-5-HT2A mechanism at systemic doses
+    - the paper's primary subject is 5-HT2C; the 5-HT2A arm is the comparison condition
+  evidence:
+  - source_id: SRC:PMID:20089901
+    design: pharmacological_perturbation
+    species: SPECIES:NCBITaxon:10116
+    population: male rats, systemic and intracerebral (orbitofrontal cortex, medial prefrontal cortex,
+      nucleus accumbens) infusions of SB 242084 (5-HT2C) or M100907 (5-HT2A)
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: trials and perseverative errors to criterion in spatial reversal learning; retention before
+      the reversal phase
+    endpoint_category: animal_reversal_learning
+    endpoint_measured: measured
+    effect_direction: mixed
+    effect_size:
+      metric: not_extracted
+      as_reported: 'all doses: 0.1, 0.3, and 1.0 microg'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: The doses copied into as_reported are the intra-orbitofrontal SB 242084 doses (the 5-HT2C arm),
+      which is the only dose series the abstract states numerically. No dose is stated there for M100907,
+      so none is recorded.
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: single rodent study; the 5-HT2A finding is a systemic antagonism result whose regional
+      localisation attempt was null
+    calibration_status: uncalibrated_subjective
+  risks:
+  - an antagonist impairing a task is frequently reported as evidence that an agonist would improve it;
+    this claim records that inference as unsupported
+  confounders:
+  - 5-HT2A/5-HT2C receptor cross-talk
+  - systemic versus regional dose equivalence
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:HTR2A:002
+  schema_version: 0.1.0
+  statement: In a double-blind, randomised, placebo-controlled crossover study in 28 healthy subjects,
+    psilocybin at 15 and 30 mg and LSD at 100 and 200 micrograms produced comparable subjective effects
+    overall, and the 200 microgram LSD dose induced higher ratings of ego dissolution, impairments in
+    control and cognition, and anxiety than the 100 microgram dose; both drugs also produced cardiostimulant
+    effects, with psilocybin increasing blood pressure more and LSD increasing heart rate more.
+  subject: GENE:HTR2A
+  predicate: MODULATES
+  object: PHENO:executive_function
+  claim_type: pharmacodynamic
+  direction: decreases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - psilocybin's mechanism is recorded in ChEMBL as 5-HT2A agonism, but it and LSD act at multiple serotonin
+      receptors; the impairment is attributable to the compounds, not strictly to HTR2A
+    - the impairment measure is a self-rating scale item, not an objective cognitive test, and self-report
+      under a psychedelic is of uncertain validity
+    - acute intoxication effects say nothing about post-acute or repeated-dose cognition
+  evidence:
+  - source_id: SRC:PMID:35217796
+    design: rct_crossover
+    species: SPECIES:NCBITaxon:9606
+    population: 28 healthy subjects (14 women, 14 men), five 25-hour sessions each, placebo / LSD 100
+      and 200 micrograms / psilocybin 15 and 30 mg, sessions at least 10 days apart
+    sample_size:
+      reported_as: 28 healthy subjects (14 women, 14 men) who underwent five 25 h sessions
+      value: 28
+      unit: participants
+    endpoint: self-rating scales for subjective effects including impairments in control and cognition;
+      autonomic effects; plasma BDNF, prolactin, cortisol, oxytocin; pharmacokinetics
+    endpoint_category: electrophysiological_proxy
+    endpoint_measured: measured
+    effect_direction: decrease
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: contradicts
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: impairment of control and cognition was measured, as a self-rating scale item rather than an
+      objective test
+  - source_id: SRC:NCT:NCT03604744
+    design: registry_record
+    species: SPECIES:NCBITaxon:9606
+    population: healthy subjects
+    sample_size:
+      reported_as: enrolment 28
+      value: 28
+      unit: participants
+    endpoint: 'registry record: EARLY_PHASE1, status COMPLETED, start date 2019-03-27, sponsor University
+      Hospital Basel'
+    endpoint_category: not_applicable
+    endpoint_measured: unknown
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: registry_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: a registry record is not a measurement
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: randomised placebo-controlled human crossover in healthy adults, but the cognitive readout
+      is self-report and the exposure is acute intoxication
+    calibration_status: uncalibrated_subjective
+  risks:
+  - the only direct human interventional evidence retrieved for 5-HT2A agonism and cognition points to
+    acute impairment, not enhancement
+  - cardiostimulant effects are a safety consideration independent of any cognitive question
+  confounders:
+  - receptor promiscuity of psilocybin and LSD
+  - self-report under altered state
+  - unblinding is essentially guaranteed
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:HTR2A:003
+  schema_version: 0.1.0
+  statement: In healthy human subjects given psilocybin 0.215 mg/kg orally, emotional empathy increased
+    relative to placebo on the multifaceted empathy test while cognitive empathy did not change, and performance
+    on a hypothetical moral dilemma task was unaffected.
+  subject: GENE:HTR2A
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: MODULATES
+  object: PHENO:executive_function
+  claim_type: pharmacodynamic
+  direction: no_change
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the authors attribute the emotional-empathy effect to 5-HT2A/1A activation, so the receptor attribution
+      is itself compound-level and shared with 5-HT1A
+    - small samples (n = 32 for the empathy test, n = 24 for the moral dilemma task) give limited power
+      to detect a cognitive-empathy effect, so 'no change' is weak evidence of absence
+  evidence:
+  - source_id: SRC:PMID:28637246
+    design: rct_crossover
+    species: SPECIES:NCBITaxon:9606
+    population: healthy human subjects; multifaceted empathy test n = 32, moral dilemma task n = 24; psilocybin
+      0.215 mg/kg orally versus placebo
+    sample_size:
+      reported_as: the multifaceted empathy test (n=32) and the moral dilemma task (n=24)
+      value: 32
+      unit: participants
+    endpoint: explicit and implicit emotional empathy, cognitive empathy, hypothetical moral decision-making
+    endpoint_category: executive_function
+    endpoint_measured: measured
+    effect_direction: no_change
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: null_result
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: cognitive empathy and moral decision-making were measured and reported as unchanged, which is
+      what licenses NO_DETECTED_EFFECT_ON rather than evidence_gap (R5, rule V16c)
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: small randomised human study; a null on the cognitive measures with limited power, recorded
+      so the dissociation from the affective effect is visible
+    calibration_status: uncalibrated_subjective
+  risks:
+  - affective effects of 5-HT2A agonism are frequently reported in language that sounds cognitive ('insight',
+    'openness'); this claim marks the boundary where a measured cognitive endpoint did not move
+  confounders:
+  - small samples
+  - 5-HT1A co-activation
+  - acute exposure only
+  dependencies:
+  - CLM:alphacognition:HTR2A:002
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01

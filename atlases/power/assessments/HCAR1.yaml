@@ -1,0 +1,130 @@
+# Facet assessment — HCAR1 (GPR81). Contract §5.2 / §5.3.
+#
+# Note on direction: for this target the supporting and contradicting evidence are
+# about DIFFERENT PROPOSITIONS. There is good evidence that HCAR1 causally modulates
+# neural function; there is evidence pointing the opposite way from the one the power
+# -limitation hypothesis wants, because activation lowers cortical gain and promotes
+# central fatigue. `level` grades "HCAR1 causally modulates the outcome",
+# `counter_level` grades "activating HCAR1 raises usable capacity".
+schema_version: 0.1.0
+target_id: TGT:HCAR1
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Converging causal evidence across designs and laboratories with receptor-null
+      controls: agonist effects on cortical firing and calcium activity absent in
+      knockout neurons, knockout-dependent neurogenesis in one niche, knockout effects
+      on endurance and cortical excitatory-inhibitory ratio, and a knockout-verified
+      developmental axon-growth phenotype. The receptor demonstrably does something.
+    claim_refs: [CLM:power:HCAR1:001, CLM:power:HCAR1:003, CLM:power:HCAR1:004, CLM:power:HCAR1:006]
+    counter_level: 1
+    counter_rationale: >-
+      A review argues that several proposed lactate-signalling mechanisms would need
+      extracellular lactate above the physiological range, which if correct would
+      restrict HCAR1's physiological relevance to ischaemia, seizure or unmeasured
+      microdomains.
+    counter_claim_refs: [CLM:power:HCAR1:005]
+    limiting_factor: "the receptor's reported cross-talk with adenosine A1, GABA-B and adrenergic receptors means no retrieved result is a clean single-receptor readout"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Adult-onset manipulations exist and produced effects in three independent
+      studies: acute systemic agonist administration in adult rats changed memory,
+      seven weeks of adult exercise or lactate changed neurogenesis in a
+      receptor-dependent way, and acute intracortical agonist administration in adult
+      mice changed PKA phosphorylation and endurance.
+    claim_refs: [CLM:power:HCAR1:002, CLM:power:HCAR1:003, CLM:power:HCAR1:004]
+    counter_level: 1
+    counter_rationale: >-
+      In the hippocampal neurogenic niche, adult lactate administration had no effect
+      at all and adult exercise worked in both genotypes, so the adult-onset result is
+      niche-specific rather than general.
+    counter_claim_refs: [CLM:power:HCAR1:003]
+    limiting_factor: "the two in-vivo knockout studies used germline nulls, so raised baseline activity in nulls may be developmental compensation rather than acute receptor loss"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      One adult pharmacological experiment in healthy animals at normal baseline
+      showed better retention than saline controls after post-training agonist
+      administration, and one showed exercise- and lactate-driven neurogenesis above
+      sedentary wild-type levels. Both are single non-human studies.
+    claim_refs: [CLM:power:HCAR1:002, CLM:power:HCAR1:003]
+    counter_level: 3
+    counter_rationale: >-
+      The direction of the strongest results is the wrong way for an enhancement
+      story. Receptor activation reduced cortical firing and spontaneous calcium
+      activity while receptor-null neurons were MORE active at baseline; and deleting
+      the receptor INCREASED exercise endurance while preserving cortical excitability,
+      with the authors identifying the lactate-HCAR1 axis as a contributor to central
+      fatigue. The same agonist that helped after training impaired performance when
+      given before training.
+    counter_claim_refs: [CLM:power:HCAR1:001, CLM:power:HCAR1:004, CLM:power:HCAR1:002]
+    limiting_factor: "no study tests HCAR1 agonism or antagonism against a cognitive-capacity endpoint in an unstressed animal, and the two clearest in-vivo results favour antagonism if anything"
+
+  - facet: transfer_breadth
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak: effects were observed on distinct readouts (aversive memory retention,
+      neurogenesis, motor endurance, axon growth), which shows the receptor is not
+      confined to one system, but no study measures benefit across cognitive domains
+      in the same animals and the signs are not consistent across readouts.
+    claim_refs: [CLM:power:HCAR1:002, CLM:power:HCAR1:003, CLM:power:HCAR1:004]
+    counter_level: 2
+    counter_rationale: >-
+      Where the same manipulation was applied to two niches, one responded and one did
+      not; where it was applied at two time points, the sign reversed. Both argue
+      against any coherent breadth of benefit.
+    counter_claim_refs: [CLM:power:HCAR1:003, CLM:power:HCAR1:002]
+    limiting_factor: "no multi-domain cognitive battery in any HCAR1 study"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak and indirect. What is known is qualitative and awkward: the effect sign
+      depends on TIMING rather than on amount, and a review argues the receptor may
+      not be reachable at physiological concentrations. No study retrieved reports a
+      concentration-response or dose-response curve for any HCAR1 agonist in brain.
+    claim_refs: [CLM:power:HCAR1:002, CLM:power:HCAR1:005]
+    counter_level: 0
+    counter_rationale: "no conflicting dose-response data, because none exists"
+    counter_claim_refs: []
+    limiting_factor: "no in-vivo brain concentration-response curve for any HCAR1 ligand"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing: no human intervention, human genetic association or
+      human imaging study of HCAR1 was retrieved.
+    search_basis: >-
+      PubMed searched across the whole index via 'HCAR1 GPR81 lactate receptor brain neuron
+      cerebral' (18 results, all screened) and 'lactate receptor HCAR1 deficient mice
+      cerebral capillary density exercise brain'; ClinicalTrials.gov searched for
+      interventions matching lactate or monocarboxylate against conditions matching
+      cognition, memory or cognitive function (19 trials, all screened). Every human trial
+      returned manipulates CIRCULATING lactate - infusion, exercise intensity, sodium
+      bicarbonate - and none targets the receptor. SRC:NCT:NCT01455376 is registered as the
+      concrete example. A hit would have been a human study administering an HCAR1 agonist
+      or antagonist, or a human HCAR1 genetic cohort, with any cognitive endpoint. No human
+      HCAR1 record of any kind exists in this atlas. One of the trials returned IS a
+      reporting gap and is listed below: SRC:NCT:NCT01455376 infused exogenous lactate -
+      this receptor's endogenous ligand, so target engagement is direct rather than by
+      proxy - against a neurocognitive primary outcome in 60 patients, completed in 2010,
+      and has posted no results in the sixteen years since.
+    reporting_gap_refs: [SRC:NCT:NCT01455376]
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "unaddressed in humans"
+    counter_claim_refs: []
+    limiting_factor: "complete absence of human data"

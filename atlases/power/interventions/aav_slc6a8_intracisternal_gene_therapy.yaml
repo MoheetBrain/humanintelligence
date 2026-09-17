@@ -1,0 +1,27 @@
+schema_version: 0.1.0
+id: GREG:aav_slc6a8_intracisternal_gene_therapy
+node_type: GeneRegulation
+label: "Slc6a8 gene-therapy vector delivered into the cisterna magna"
+identifiers:
+  identifier_provenance: >-
+    No accession exists for this construct. A slug identifier is the contract's
+    permitted fallback for GREG nodes (§1.2).
+# Contract §5.5 / resolution R12: `attributes` is the string-valued holding area for
+# domain metadata the schema does not model. The serotype belongs here rather than
+# being dropped, and "not_stated_in_retrieved_text" is the honest value - the abstract
+# describes an adeno-associated-virus-based Slc6a8 vector without naming the serotype.
+attributes:
+  vector_serotype: "not_stated_in_retrieved_text"
+  vector_platform: "adeno-associated virus, as described in the retrieved abstract"
+  delivery_route: "intra-cisterna magna injection"
+targets: [TGT:SLC6A8]
+mechanism_as_reported: "re-establishment of a functional Slc6a8 transporter in central nervous system tissue by vector transduction"
+state_variables_touched: [SV:power.phosphocreatine_reserve]
+cited_by_claims: [CLM:power:SLC6A8:006]
+scope_limits: >-
+  Delivered to postnatal day 11 rat pups, so developmental rather than adult;
+  transduction and creatine recovery were regional and partial, and the authors state
+  forebrain-associated phenotypes were not corrected. Rescued endpoints were locomotor
+  and muscular, not cognitive.
+dose_information: omitted_by_policy
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

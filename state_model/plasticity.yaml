@@ -1,0 +1,413 @@
+# State variables — domain: plasticity
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: plasticity
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  The capacity of synapses, cells and circuits to change, and the machinery that permits or
+  blocks that change. Several variables here are explicitly BRAKES: a high value means less
+  change is possible, not that something is wrong.
+
+variables:
+
+  - id: SV:plasticity.ltp_threshold
+    name: "LTP induction threshold"
+    definition: >-
+      Amount of coincident or patterned activity required to induce lasting synaptic
+      potentiation at a stated synapse class.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "stimulation intensity or frequency at threshold"
+    measurement_proxies:
+      - name: "ex-vivo slice induction-curve electrophysiology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "paired-associative stimulation response in humans"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.ltp_magnitude
+    name: "LTP magnitude"
+    definition: >-
+      Size of the lasting potentiation produced once induction has occurred, at a stated synapse
+      class and induction protocol. Distinct from ltp_threshold: how much change, not how much
+      activity is needed to start it.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "fraction change in synaptic response"
+    measurement_proxies:
+      - name: "ex-vivo slice field-potential amplitude change"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "non-invasive stimulation aftereffect magnitude"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.ltd_threshold
+    name: "LTD induction threshold"
+    definition: >-
+      Amount of activity of the appropriate pattern required to induce lasting synaptic
+      depression at a stated synapse class.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "stimulation intensity or frequency at threshold"
+    measurement_proxies:
+      - name: "ex-vivo slice induction-curve electrophysiology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.metaplasticity_setpoint
+    name: "metaplasticity setpoint"
+    definition: >-
+      The activity level around which the direction of plastic change flips, i.e. the crossover
+      point of the plasticity induction function.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "activity level at crossover"
+    measurement_proxies:
+      - name: "priming-then-induction protocols ex vivo"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "repeated non-invasive stimulation response curves"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.synaptic_tagging_capacity
+    name: "synaptic tagging capacity"
+    definition: >-
+      Number of synapses that can concurrently hold a tag awaiting plasticity-related products,
+      per unit dendritic tree.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "tagged synapses per neuron"
+    measurement_proxies:
+      - name: "ex-vivo tagging-and-capture protocols"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:memory_allocation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.plasticity_related_translation_capacity
+    name: "plasticity-related translation capacity"
+    definition: >-
+      Rate at which the local protein synthesis required for lasting synaptic change can be
+      sustained, per unit dendritic compartment.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "protein synthesis rate per compartment"
+    measurement_proxies:
+      - name: "ex-vivo puromycin or radiolabel incorporation"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "integrated stress response marker panel"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.dendritic_spine_turnover_rate
+    name: "dendritic spine turnover rate"
+    definition: >-
+      Fraction of dendritic spines gained and lost per unit time in a stated region and cell
+      class.
+    kind: latent_biological
+    timescale: days
+    level: cellular
+    units: "fraction per day"
+    measurement_proxies:
+      - name: "in-vivo two-photon imaging"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.structural_plasticity_rate
+    name: "structural plasticity rate"
+    definition: >-
+      Rate of change of axonal, dendritic and synaptic structure in adult tissue, aggregated
+      over a stated region.
+    kind: latent_biological
+    timescale: weeks
+    level: circuit
+    units: "structural change per unit time"
+    measurement_proxies:
+      - name: "longitudinal structural MRI change"
+        modality: fmri_bold
+        status: research_proxy
+      - name: "post-mortem or animal histology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.perineuronal_net_density
+    name: "perineuronal net density"
+    definition: >-
+      Density of extracellular matrix structures enveloping cell bodies and proximal processes
+      in a stated region.
+    kind: latent_biological
+    timescale: weeks
+    level: circuit
+    units: "fraction of cells enveloped"
+    measurement_proxies:
+      - name: "post-mortem or animal histology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "candidate MRI matrix-sensitive contrast"
+        modality: fmri_bold
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.critical_period_permissiveness
+    name: "critical-period permissiveness"
+    definition: >-
+      Degree to which a circuit is in a state that permits large-scale experience-driven
+      reorganisation, as opposed to a state that restricts change to fine adjustment.
+    kind: latent_biological
+    timescale: developmental
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "developmental reorganisation assays"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "perceptual learning plateau in humans"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.plasticity_brake_load
+    name: "plasticity brake load"
+    definition: >-
+      Aggregate strength of the mechanisms that actively restrict plastic change in a stated
+      circuit. A CONSTRAINT-like quantity: higher means less change is permitted.
+    kind: latent_biological
+    timescale: weeks
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "no established aggregate measurement"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.synaptic_scaling_gain
+    name: "synaptic scaling gain"
+    definition: >-
+      Magnitude of multiplicative, cell-wide adjustment of synaptic strength applied in response
+      to a sustained change in average activity.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "relative strength change per unit activity deviation"
+    measurement_proxies:
+      - name: "activity-deprivation protocols ex vivo"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.neuromodulatory_plasticity_gating
+    name: "neuromodulatory plasticity gating"
+    definition: >-
+      Degree to which neuromodulatory tone currently permits or blocks the induction of lasting
+      synaptic change, independent of the activity pattern itself.
+    kind: latent_biological
+    timescale: minutes
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "pharmacological modulation of induction protocols"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "pupillometry as an arousal-linked index"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:plasticity.adult_neurogenesis_rate
+    name: "adult neurogenesis rate"
+    definition: >-
+      Rate of generation and functional integration of new neurons in adult tissue, in the
+      regions where this occurs. Its existence and magnitude in adult humans is contested and
+      this definition takes no position.
+    kind: latent_biological
+    timescale: weeks
+    level: cellular
+    units: "new integrated neurons per unit volume per unit time"
+    measurement_proxies:
+      - name: "post-mortem histology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "candidate imaging or CSF markers"
+        modality: blood_or_csf_biomarker
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:pattern_separation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

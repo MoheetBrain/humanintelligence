@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214584512/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214584512"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs11173363"
+          }
+        },
+        "accession_id": "GCST90448143",
+        "association_id": 214584512,
+        "beta": "2.693 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 1.73,
+        "ci_upper": 3.65,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008354",
+            "efo_trait": "cognitive function measurement"
+          }
+        ],
+        "first_author": "Hopkins LN",
+        "locations": [
+          "12:60208067"
+        ],
+        "mapped_genes": [
+          "SLC16A7",
+          "Y_RNA"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6.000000000000001e-08,
+        "pubmed_id": "41413636",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 6,
+        "range": "[1.73-3.65]",
+        "reported_trait": [
+          "PC1 of Congitive Measures"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "G",
+            "rs_id": "rs11173363"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs11173363-G"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=SLC16A7&efo_id=EFO_0008354&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,584 @@
+# Node type system — Intelligence Blueprint v0.1.0
+#
+# Executable form of docs/DATA_CONTRACT.md §1. Every node that may appear in the
+# compiled graph is declared here, exactly once, with the identifier prefixes that
+# may carry it and a regex the validator compiles.
+#
+# Design rules
+# ------------
+# * `layer` is the node's HOME layer. A node type used by more than one layer also
+#   lists `shared_with_layers` (Species is shared by evidence/biological;
+#   StateVariable by biological/intervention). The contract's prose "Species
+#   (shared)" is encoded this way rather than by duplicating the type.
+# * `parent` declares a specialisation (Receptor is-a Protein). A child inherits its
+#   parent's identifier prefixes and is accepted anywhere the parent is accepted by
+#   `blueprint.ontology.is_legal_triple`; the reverse is NOT true.
+# * `id_pattern` is anchored and matched against the WHOLE node id, prefix included.
+#   Where the contract prefers a registry accession but permits a slug fallback, the
+#   pattern accepts both and `blueprint.ids` exposes `uses_preferred_accession()` so a
+#   report can count how much of the graph is accession-grade.
+# * `required_attributes` / `optional_attributes` are node attributes in the compiled
+#   graph (Phase 2), not record fields. `id` and `node_type` are implicit on every
+#   node and are not repeated in these lists.
+# * NOTHING in this file is a scientific claim. Descriptions are type definitions.
+#   Attributes that would carry empirical content (expression, effect, risk) are not
+#   node attributes at all: they arrive as claim-derived edges.
+#
+# Deviations from the contract are recorded in docs/ONTOLOGY_NOTES.md and in
+# docs/blackboard/schema_change_requests/ontology-00*.yaml.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+
+layers: [evidence, biological, intervention]
+
+# Identifier prefixes are CLOSED (contract §1). `blueprint.ids` resolves a node id to
+# its prefix by longest match, so the two-segment source prefixes work.
+prefixes:
+  - GENE
+  - VAR
+  - TX
+  - PROT
+  - COMPLEX
+  - PROC
+  - PATHWAY
+  - CELL
+  - REGION
+  - CIRCUIT
+  - NET
+  - SV
+  - SVDOM
+  - PRIM
+  - PHENO
+  - SPECIES
+  - TGT
+  - CPD
+  - DRUG
+  - BIO
+  - RNAI
+  - GREG
+  - METAB
+  - NTECH
+  - MECH
+  - EFFECT
+  - AE
+  - SRC:PMID
+  - SRC:DOI
+  - SRC:NCT
+  - SRC:GCST
+  - SRC:DB
+  - SRC:DATASET
+  - CLM
+  - EVD
+  - AUD
+
+nodes:
+
+  # ================================================================ biological ===
+
+  - name: Variant
+    layer: biological
+    description: >-
+      A specific germline sequence variant at a defined genomic position, identified by
+      a dbSNP rsID or by GRCh38 coordinates. A variant is a position, not a gene and
+      not a mechanism.
+    id_prefixes: [VAR]
+    id_pattern: '^VAR:(rs[0-9]+|chr(?:[1-9]|1[0-9]|2[0-2]|X|Y|MT)_[0-9]+_[ACGTN]+_[ACGTN]+)$'
+    parent: null
+    required_attributes: [variant_id_source]
+    optional_attributes: [chromosome, position_grch38, reference_allele, alternate_allele, rsid, consequence_annotation_source]
+
+  - name: Gene
+    layer: biological
+    description: >-
+      A human (or, with an explicit species context on the claim, non-human) gene
+      identified by its HGNC-approved symbol. Identifier fields are machine-filled from
+      HGNC and are never hand-written (contract §7).
+    id_prefixes: [GENE]
+    id_pattern: '^GENE:[A-Z0-9][A-Z0-9_.-]*$'
+    parent: null
+    required_attributes: [symbol]
+    optional_attributes: [hgnc_id, ensembl_gene_id, entrez_id, gene_name, locus_type, location, identifier_provenance, species]
+
+  - name: Transcript
+    layer: biological
+    description: >-
+      One Ensembl transcript isoform of a gene. Distinct isoforms are distinct nodes
+      because an intervention or a variant may act on one isoform only.
+    id_prefixes: [TX]
+    id_pattern: '^TX:ENST[0-9]{11}(\.[0-9]+)?$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [gene_id, transcript_biotype, mane_select, identifier_provenance]
+
+  - name: Protein
+    layer: biological
+    description: >-
+      A protein product, identified by UniProt accession where one is known and by gene
+      symbol otherwise. The specialisations below exist so that pharmacological
+      relations can be range-restricted to the right kind of molecular entity.
+    id_prefixes: [PROT]
+    id_pattern: '^PROT:[A-Za-z0-9][A-Za-z0-9_.-]*$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [uniprot_accession, gene_id, protein_name, identifier_provenance, species]
+
+  - name: Receptor
+    layer: biological
+    description: >-
+      A protein whose type-level function is to bind an extracellular or intracellular
+      ligand and transduce that binding. Declared as a specialisation so that AGONISES
+      and ANTAGONISES can be restricted to receptors.
+    id_prefixes: [PROT]
+    id_pattern: '^PROT:[A-Za-z0-9][A-Za-z0-9_.-]*$'
+    parent: Protein
+    required_attributes: []
+    optional_attributes: [uniprot_accession, gene_id, receptor_family, identifier_provenance]
+
+  - name: IonChannel
+    layer: biological
+    description: >-
+      A protein or subunit forming a transmembrane ion-conduction pathway. Specialised
+      so that channel-modulation relations (POTENTIATES, NEGATIVELY_MODULATES) have a
+      well-typed range.
+    id_prefixes: [PROT]
+    id_pattern: '^PROT:[A-Za-z0-9][A-Za-z0-9_.-]*$'
+    parent: Protein
+    required_attributes: []
+    optional_attributes: [uniprot_accession, gene_id, channel_family, permeant_ion_annotation_source, identifier_provenance]
+
+  - name: Transporter
+    layer: biological
+    description: >-
+      A protein that moves a solute across a membrane. Specialised because
+      transport-capacity state variables attach to transporters rather than to receptors.
+    id_prefixes: [PROT]
+    id_pattern: '^PROT:[A-Za-z0-9][A-Za-z0-9_.-]*$'
+    parent: Protein
+    required_attributes: []
+    optional_attributes: [uniprot_accession, gene_id, transporter_family, substrate_annotation_source, identifier_provenance]
+
+  - name: Enzyme
+    layer: biological
+    description: >-
+      A protein that catalyses a reaction. Specialised so that INHIBITS can be
+      range-restricted to entities for which inhibition is a defined notion.
+    id_prefixes: [PROT]
+    id_pattern: '^PROT:[A-Za-z0-9][A-Za-z0-9_.-]*$'
+    parent: Protein
+    required_attributes: []
+    optional_attributes: [uniprot_accession, gene_id, ec_number, identifier_provenance]
+
+  - name: ProteinComplex
+    layer: biological
+    description: >-
+      A multi-subunit functional unit treated as one causal entity, named by a
+      snake_case slug. Its subunits are linked by PART_OF and its member genes are
+      recorded as an attribute so the compiler can expand it.
+    id_prefixes: [COMPLEX]
+    id_pattern: '^COMPLEX:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [member_genes]
+    optional_attributes: [complex_name, stoichiometry_annotation_source, identifier_provenance]
+
+  - name: Pathway
+    layer: biological
+    description: >-
+      A curated reaction/signalling pathway from a pathway database (Reactome
+      accession preferred), used for convergence analysis rather than as a mechanism
+      in its own right.
+    id_prefixes: [PATHWAY]
+    id_pattern: '^PATHWAY:(REACT:R-[A-Z]{3}-[0-9]+|[a-z0-9][a-z0-9_]*)$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [pathway_name, database, release, identifier_provenance]
+
+  - name: MolecularProcess
+    layer: biological
+    description: >-
+      A molecular or subcellular process (Gene Ontology accession preferred), such as
+      a translation, trafficking or post-translational modification process. Finer
+      grained than Pathway and the usual object of UPREGULATES/DOWNREGULATES.
+    id_prefixes: [PROC]
+    id_pattern: '^PROC:(GO:[0-9]{7}|[a-z0-9][a-z0-9_]*)$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [process_name, ontology_source, identifier_provenance]
+
+  - name: CellType
+    layer: biological
+    description: >-
+      A cell type (Cell Ontology accession preferred), the level at which expression
+      and excitability evidence is usually reported.
+    id_prefixes: [CELL]
+    id_pattern: '^CELL:(CL:[0-9]{7}|[a-z0-9][a-z0-9_]*)$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [cell_type_name, ontology_source, identifier_provenance]
+
+  - name: BrainRegion
+    layer: biological
+    description: >-
+      An anatomical brain region (UBERON accession preferred, snake_case slug
+      otherwise). Region-to-region containment is expressed with PART_OF and only for
+      gross anatomy that is uncontroversial.
+    id_prefixes: [REGION]
+    id_pattern: '^REGION:(UBERON:[0-9]{7}|[a-z0-9][a-z0-9_]*)$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [region_name, ontology_source, hemisphere, identifier_provenance]
+
+  - name: Circuit
+    layer: biological
+    description: >-
+      A defined synaptic circuit or projection between identified cell populations,
+      named by a snake_case slug. Smaller than a Network and larger than a CellType.
+    id_prefixes: [CIRCUIT]
+    id_pattern: '^CIRCUIT:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [circuit_name, source_population, target_population, definition_source]
+
+  - name: Network
+    layer: biological
+    description: >-
+      A large-scale, systems-level network as defined by a named parcellation or
+      imaging convention (for example a control or salience network), named by a
+      snake_case slug.
+    id_prefixes: [NET]
+    id_pattern: '^NET:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [network_name, parcellation_source, definition_source]
+
+  - name: StateVariable
+    layer: biological
+    shared_with_layers: [intervention]
+    description: >-
+      One dimension of the dynamic state X in state_model/dynamics.yaml, declared in
+      state_model/{domain}.yaml. Instances are typed by ontology/state_variables.yaml;
+      this node type only says that a state variable may appear in the graph.
+    id_prefixes: [SV]
+    id_pattern: '^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\.[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [domain, kind, timescale, level, response_shape, desirability, status]
+    optional_attributes: [units, measurement_proxies, safety_coupling, definition, provenance]
+
+  - name: StateDomain
+    layer: biological
+    shared_with_layers: [intervention]
+    description: >-
+      One of the eight state domains. Exists only so that the definitional fact
+      "this state variable belongs to this domain" can be written as a triple in
+      ontology/definitional_edges.yaml instead of being implicit in the identifier.
+    id_prefixes: [SVDOM]
+    id_pattern: '^SVDOM:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [domain_description]
+
+  - name: ComputationalPrimitive
+    layer: biological
+    description: >-
+      A mechanism-agnostic computational operation the brain must perform, declared in
+      ontology/computational_primitives.yaml. Primitives are the interface between
+      biology and cognition: they are defined computationally so that a rodent task and
+      a human task can be compared without being equated.
+    id_prefixes: [PRIM]
+    id_pattern: '^PRIM:[a-z][a-z0-9_]*$'
+    parent: null
+    required_attributes: [definition_status]
+    optional_attributes: [related_state_variables, human_measurement_paradigms, animal_analogue_caveat]
+
+  - name: CognitivePhenotype
+    layer: biological
+    description: >-
+      A measurable cognitive outcome at the level of a whole organism, such as a
+      psychometric construct or a task-derived score family. Distinct from a
+      ComputationalPrimitive (which is an operation) and from a StateVariable (which is
+      a system state).
+    id_prefixes: [PHENO]
+    id_pattern: '^PHENO:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [phenotype_class]
+    optional_attributes: [phenotype_name, measurement_family, species_applicability]
+
+  - name: Species
+    layer: biological
+    shared_with_layers: [evidence]
+    description: >-
+      A species, identified by an NCBI Taxonomy accession resolved through a tool call
+      and never from memory. Present in both layers: biological entities are
+      species-scoped and every measurement is made in some species.
+    id_prefixes: [SPECIES]
+    id_pattern: '^SPECIES:NCBITaxon:[0-9]+$'
+    parent: null
+    required_attributes: []
+    optional_attributes: [scientific_name, common_name, identifier_provenance]
+
+  # ================================================================== evidence ===
+
+  - name: Paper
+    layer: evidence
+    description: >-
+      A peer-reviewed publication registered under its PubMed id where one exists and
+      under its DOI otherwise. Registering the same paper twice under two prefixes is a
+      validation failure (contract §1.3).
+    id_prefixes: ["SRC:PMID", "SRC:DOI"]
+    id_pattern: '^SRC:(PMID:[0-9]{1,9}|DOI:10\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\[\]]+)$'
+    parent: null
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status]
+
+  - name: Preprint
+    layer: evidence
+    description: >-
+      A manuscript posted to a preprint server and not (yet) linked to a peer-reviewed
+      record, registered under its DOI. A separate type because evidence weighting must
+      be able to see that peer review has not happened.
+    id_prefixes: ["SRC:DOI"]
+    id_pattern: '^SRC:DOI:10\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\[\]]+$'
+    parent: Paper
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status]
+
+  - name: Review
+    layer: evidence
+    description: >-
+      A narrative review, systematic review or meta-analysis. Specialised from Paper so
+      that citation-dependence auditing can find evidence that rests on secondary
+      reporting.
+    id_prefixes: ["SRC:PMID", "SRC:DOI"]
+    id_pattern: '^SRC:(PMID:[0-9]{1,9}|DOI:10\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\[\]]+)$'
+    parent: Paper
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status, review_subtype]
+
+  - name: Dataset
+    layer: evidence
+    description: >-
+      A named dataset or study accession (GWAS Catalog study, expression atlas, cohort
+      release) cited as evidence in its own right.
+    id_prefixes: ["SRC:GCST", "SRC:DATASET"]
+    id_pattern: '^SRC:(GCST:GCST[0-9]+|DATASET:[a-z0-9][a-z0-9_.-]*)$'
+    parent: null
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status, access_url_source]
+
+  - name: DatabaseRelease
+    layer: evidence
+    description: >-
+      One dated release of a database, cited when a fact comes from the database rather
+      than from a paper. Pinning the release is what makes a database-derived edge
+      reproducible.
+    id_prefixes: ["SRC:DB"]
+    id_pattern: '^SRC:DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+$'
+    parent: null
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status, release_date]
+
+  - name: ClinicalTrial
+    layer: evidence
+    description: >-
+      A registered clinical trial, cited by its registry accession. Registered as a
+      source in its own right so that a trial with no publication — in particular a
+      terminated or null trial — can still be evidence.
+    id_prefixes: ["SRC:NCT"]
+    id_pattern: '^SRC:NCT:NCT[0-9]{8}$'
+    parent: null
+    required_attributes: [source_type, title, year, first_author, container]
+    optional_attributes: [identifiers, added_by, added_on, retrieval, verification_status, trial_phase, trial_status]
+
+  - name: Experiment
+    layer: evidence
+    description: >-
+      One experiment reported by a source, as an evidence item attached to a claim. The
+      project never performs an experiment; this type records somebody else's
+      (docs/COMPUTATIONAL_ONLY_POLICY.md).
+    id_prefixes: [EVD]
+    id_pattern: '^EVD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#[0-9]+$'
+    parent: null
+    required_attributes: [source_id, design, extraction]
+    optional_attributes: [species, population, sample_size, endpoint, endpoint_category, effect_direction, effect_size, replication_status, evidence_role]
+
+  - name: Measurement
+    layer: evidence
+    description: >-
+      One measured endpoint extracted from a source, as an evidence item attached to a
+      claim. The unit of evidence accounting: claims are supported by measurements, not
+      by papers.
+    id_prefixes: [EVD]
+    id_pattern: '^EVD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#[0-9]+$'
+    parent: Experiment
+    required_attributes: [source_id, design, extraction]
+    optional_attributes: [species, population, sample_size, endpoint, endpoint_category, effect_direction, effect_size, replication_status, evidence_role]
+
+  - name: Claim
+    layer: evidence
+    description: >-
+      One machine-readable assertion whose (subject, predicate, object) triple is legal
+      under ontology/edges.yaml, together with the evidence, context, causal
+      attribution, translation and uncertainty fields the contract requires.
+    id_prefixes: [CLM]
+    id_pattern: '^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$'
+    parent: null
+    required_attributes: [statement, subject, predicate, object, claim_type, causal_attribution, translation, uncertainty, status, provenance]
+    optional_attributes: [direction, context, phenotype_class, risks, confounders, dependencies]
+
+  - name: Replication
+    layer: evidence
+    description: >-
+      An evidence item recorded specifically as an attempt to reproduce another claim.
+      It is not a separate registry object: a replication is an evidence item whose
+      replication_status marks it as such. The type exists so REPLICATED_BY and
+      FAILED_TO_REPLICATE_BY have a range.
+    id_prefixes: [EVD]
+    id_pattern: '^EVD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#[0-9]+$'
+    parent: Experiment
+    required_attributes: [source_id, design, extraction, replication_status]
+    optional_attributes: [species, population, sample_size, endpoint, endpoint_category, effect_direction, effect_size, evidence_role]
+
+  - name: Audit
+    layer: evidence
+    description: >-
+      One red-team audit of a target, claim, document or model: a check catalogue,
+      findings, downgrade-only adjustments and a verdict. Audits are append-only and can
+      never raise a level (contract P6, V12).
+    id_prefixes: [AUD]
+    id_pattern: '^AUD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$'
+    parent: null
+    required_attributes: [scope, audited_by, audited_on, checks, verdict, provenance]
+    optional_attributes: [findings, adjustments, claim_status_changes]
+
+  # ============================================================== intervention ===
+
+  - name: Compound
+    layer: intervention
+    description: >-
+      A small molecule used as a research probe and not approved as a medicine
+      anywhere. Registering it is a cheminformatics act; it is never an instruction to
+      obtain or administer anything.
+    id_prefixes: [CPD]
+    id_pattern: '^CPD:(CHEMBL[0-9]+|[a-z0-9][a-z0-9_]*)$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, chembl_id, identifier_provenance, development_stage_source]
+
+  - name: Drug
+    layer: intervention
+    description: >-
+      A small molecule approved somewhere for some indication. The approval is recorded
+      as an attribute with its source; it is never treated as evidence of cognitive
+      efficacy.
+    id_prefixes: [DRUG]
+    id_pattern: '^DRUG:(CHEMBL[0-9]+|[a-z0-9][a-z0-9_]*)$'
+    parent: Compound
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, chembl_id, identifier_provenance, approval_status_source, approved_indication_source]
+
+  - name: Biologic
+    layer: intervention
+    description: >-
+      A protein, peptide, antibody or other biologic entity considered as an
+      intervention modality.
+    id_prefixes: [BIO]
+    id_pattern: '^BIO:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, biologic_class, identifier_provenance]
+
+  - name: RNAIntervention
+    layer: intervention
+    description: >-
+      An oligonucleotide-based intervention modality (siRNA, shRNA, antisense
+      oligonucleotide, miRNA mimic or inhibitor).
+    id_prefixes: [RNAI]
+    id_pattern: '^RNAI:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, oligo_class, intended_transcript]
+
+  - name: GeneRegulation
+    layer: intervention
+    description: >-
+      A genetic intervention modality that changes expression or sequence (viral
+      overexpression, knockdown, conditional or inducible allele, base or epigenome
+      editing). Recorded as a modality that other people have used; never proposed here.
+    id_prefixes: [GREG]
+    id_pattern: '^GREG:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, regulation_class, delivery_class, intended_gene]
+
+  - name: MetabolicIntervention
+    layer: intervention
+    description: >-
+      A nutritional, substrate or metabolic-state intervention modality (substrate
+      supplementation, dietary pattern, fasting state, exercise-induced metabolic
+      state). Registration carries no dose, route or regimen.
+    id_prefixes: [METAB]
+    id_pattern: '^METAB:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, substrate_class, intended_state_variables]
+
+  - name: Neurotechnology
+    layer: intervention
+    description: >-
+      A device-based or stimulation-based intervention modality (transcranial
+      electrical or magnetic stimulation, ultrasound, implanted stimulation,
+      closed-loop neurofeedback). No parameter set is recorded.
+    id_prefixes: [NTECH]
+    id_pattern: '^NTECH:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [modality]
+    optional_attributes: [preferred_name, technology_class, intended_regions]
+
+  - name: Target
+    layer: intervention
+    description: >-
+      A gene, protein or complex considered as a point of intervention. Distinct from
+      Gene and Protein: a Target is a project-level unit of work with a dossier and a
+      lead atlas, and it REPRESENTS one or more biological entities.
+    id_prefixes: [TGT]
+    id_pattern: '^TGT:[A-Z0-9][A-Z0-9_.-]*$'
+    parent: null
+    required_attributes: [symbol, lead_atlas, status]
+    optional_attributes: [target_class, represented_entities, member_genes, seed_origin, dossier_depth, identifier_provenance]
+
+  - name: Mechanism
+    layer: intervention
+    description: >-
+      A named mode of molecular action (for example negative allosteric modulation of a
+      specified receptor subtype). A Mechanism is how an intervention acts on a Target;
+      it is not an effect on a state variable or a phenotype.
+    id_prefixes: [MECH]
+    id_pattern: '^MECH:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [mechanism_class]
+    optional_attributes: [preferred_name, acts_on_target, molecular_action_source]
+
+  - name: DesiredEffect
+    layer: intervention
+    description: >-
+      A named cognitive outcome that an intervention would have to produce to be
+      interesting. Any edge whose object is a DesiredEffect is an efficacy assertion and
+      is gated by contract rule V16.
+    id_prefixes: [EFFECT]
+    id_pattern: '^EFFECT:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [effect_statement]
+    optional_attributes: [state_variables, computational_primitives, phenotype_class, baseline_qualifier]
+
+  - name: AdverseEffect
+    layer: intervention
+    description: >-
+      A named adverse outcome, in plain clinical terms. Adverse effects are constraints
+      on the search, not costs to be traded against a benefit.
+    id_prefixes: [AE]
+    id_pattern: '^AE:[a-z0-9][a-z0-9_]*$'
+    parent: null
+    required_attributes: [term]
+    optional_attributes: [severity_class, organ_system, safety_state_variables, term_source]

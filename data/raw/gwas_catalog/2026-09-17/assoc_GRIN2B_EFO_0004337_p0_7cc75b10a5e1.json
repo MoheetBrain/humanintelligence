@@ -1,0 +1,68 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34835792/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34835792"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs141426703"
+          }
+        },
+        "accession_id": "GCST006269",
+        "association_id": 34835792,
+        "beta": "4.76 z-score increase",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004337",
+            "efo_trait": "intelligence"
+          }
+        ],
+        "first_author": "Davies G",
+        "locations": [
+          "12:13930003"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-06,
+        "pubmed_id": "29844566",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 2,
+        "range": "-",
+        "reported_trait": [
+          "General cognitive ability"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs141426703"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs141426703-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRIN2B&efo_id=EFO_0004337&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

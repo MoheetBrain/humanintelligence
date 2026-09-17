@@ -1,0 +1,497 @@
+{
+  "data": {
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    },
+    "target": {
+      "approvedSymbol": "CHRM1",
+      "biotype": "protein_coding",
+      "chemicalProbes": [
+        {
+          "drugId": "CHEMBL3041160",
+          "id": "CHEMBL2377385",
+          "isHighQuality": false,
+          "probeMinerScore": 31
+        },
+        {
+          "drugId": "CHEMBL3616501",
+          "id": "CHEMBL3616501",
+          "isHighQuality": false,
+          "probeMinerScore": 42
+        },
+        {
+          "drugId": "CHEMBL1531873",
+          "id": "ML012",
+          "isHighQuality": false,
+          "probeMinerScore": null
+        },
+        {
+          "drugId": "CHEMBL1083203",
+          "id": "ML137",
+          "isHighQuality": false,
+          "probeMinerScore": null
+        },
+        {
+          "drugId": "CHEMBL1357815",
+          "id": "ML169",
+          "isHighQuality": false,
+          "probeMinerScore": null
+        },
+        {
+          "drugId": "CHEMBL1800285",
+          "id": "MSD-M1PAM",
+          "isHighQuality": true,
+          "probeMinerScore": 44
+        },
+        {
+          "drugId": "CHEMBL1624037",
+          "id": "VU 0357017 hydrochloride",
+          "isHighQuality": false,
+          "probeMinerScore": 10
+        }
+      ],
+      "id": "ENSG00000168539",
+      "safetyLiabilities": [
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "acidosis",
+          "eventId": "MONDO_0006022",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "exhaustion",
+          "eventId": "EFO_0009852",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "gastrointestinal side effects",
+          "eventId": "HP_0012719",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased gastric acid secretion",
+          "eventId": "GO_0060454",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "proconvulsant",
+          "eventId": "EFO_0009853",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "decreased gastric acid secretion",
+          "eventId": "GO_0060455",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased gastric acid secretion",
+          "eventId": "GO_0060455",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "increased blood pressure",
+          "eventId": "HP_0032263",
+          "literature": null
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "hyperthermia",
+          "eventId": "HP_0001945",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "abdominal cramps",
+          "eventId": "HP_0032155",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased/decreased blood pressure",
+          "eventId": "HP_0030972",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased convulsions",
+          "eventId": "EFO_0009853",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased body temperature",
+          "eventId": "HP_0001945",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "frothing",
+          "eventId": "",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased memory",
+          "eventId": "EFO_0004874",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "blurred vision",
+          "eventId": "HP_0000622",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "ToxCast",
+          "event": "receptor binding",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "increased gastric acid secretion",
+          "eventId": "GO_0060454",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "tachycardia",
+          "eventId": "HP_0001649",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "decreased cognitive function",
+          "eventId": "HP_0100543",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "regulation of circadian rhythm",
+          "eventId": "GO_0042752",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "liver failure",
+          "eventId": "HP_0001399",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "bronchorrhea",
+          "eventId": "",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased heart rate",
+          "eventId": "HP_0001649",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "increased heart rate",
+          "eventId": "HP_0001649",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "blurred vision",
+          "eventId": "HP_0000622",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased respiratory rate",
+          "eventId": "HP_0002789",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased convulsions",
+          "eventId": "EFO_0009853",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "disruption of cognitive functions such as learning and memory",
+          "eventId": "HP_0100543",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "lacrimation",
+          "eventId": "HP_0000632",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "irritability",
+          "eventId": "HP_0000737",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "centrilobular liver congestion",
+          "eventId": "MONDO_0005154",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased locomotor activity",
+          "eventId": "GO_0040013",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "cough",
+          "eventId": "HP_0012735",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased salivation",
+          "eventId": "GO_0046878",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "muscle cramps",
+          "eventId": "EFO_0009846",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased pupil diameter",
+          "eventId": "HP_0000616",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased memory",
+          "eventId": "EFO_0001072",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "bronchospasm",
+          "eventId": "HP_0025428",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased cognitive function",
+          "eventId": "HP_0100543",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased locomotor activity",
+          "eventId": "GO_0040017",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased/decreased heart rate",
+          "eventId": "HP_0031860",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "vomiting",
+          "eventId": "HP_0002017",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Bowes et al. (2012)",
+          "event": "hypertension",
+          "eventId": "MONDO_0005044",
+          "literature": "23197038"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "sweating",
+          "eventId": "HP_0000975",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "ptosis",
+          "eventId": "MONDO_0000728",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "increased sympathetic outflow",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "neutrophil collection within the sinusoids",
+          "eventId": "GO_2000428",
+          "literature": "28216264"
+        }
+      ],
+      "tractability": [
+        {
+          "label": "Approved Drug",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Structure with Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Med-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Druggable Family",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt loc high conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "GO CC high conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "UniProt loc med conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "UniProt SigP or TMHMM",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "GO CC med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Human Protein Atlas loc",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Literature",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "UniProt Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Database Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Half-life Data",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Small Molecule Binder",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "OC",
+          "value": false
+        }
+      ]
+    }
+  }
+}

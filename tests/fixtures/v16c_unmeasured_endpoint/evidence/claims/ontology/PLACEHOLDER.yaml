@@ -1,0 +1,57 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY V16c: a null edge must cite evidence with evidence_role null_result or contradicts. Here the only evidence item says `supports`, so the record could be describing absence of evidence rather than a reported null.
+- schema_version: "0.1.0"
+  claim_id: CLM:ontology:PLACEHOLDER:001
+  statement: "Synthetic placeholder statement used only to exercise the validator rules."
+  subject: CPD:placeholder_probe
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: SV:cognition.processing_speed
+  claim_type: clinical_null
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: "not_applicable"
+    alternative_explanations: ["synthetic placeholder alternative explanation"]
+  evidence:
+    - source_id: SRC:PMID:00000001
+      design: rct_parallel
+      endpoint_category: processing_speed
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: no_change
+      effect_size: {metric: not_extracted, as_reported: null, value: null,
+                    ci_lower: null, ci_upper: null, p_value: null}
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:ontology
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "synthetic fixture, no real evidence"
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:ontology
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: fixture

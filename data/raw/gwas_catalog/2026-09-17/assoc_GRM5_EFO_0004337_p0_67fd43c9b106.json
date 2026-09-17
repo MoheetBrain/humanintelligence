@@ -1,0 +1,68 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/222410560/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/222410560"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs7481199"
+          }
+        },
+        "accession_id": "GCST90827739",
+        "association_id": 222410560,
+        "beta": "0.015 unit decrease",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004337",
+            "efo_trait": "intelligence"
+          }
+        ],
+        "first_author": "Londono-Correa D",
+        "locations": [
+          "11:88625376"
+        ],
+        "mapped_genes": [
+          "GRM5"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 5e-09,
+        "pubmed_id": "42062297",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 5,
+        "range": "-",
+        "reported_trait": [
+          "Crystallized knowledge (multivariate analysis)"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs7481199"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs7481199-A"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRM5&efo_id=EFO_0004337&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

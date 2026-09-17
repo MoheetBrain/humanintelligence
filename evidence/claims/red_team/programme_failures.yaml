@@ -1,0 +1,349 @@
+# Red-team claims recording HUMAN PROGRAMME OUTCOMES that no atlas recorded.
+# Contract: docs/DATA_CONTRACT.md section 4. schema_version 0.1.0.
+#
+# Each of these is a registry-recorded fact about what happened to the only human
+# pharmacology that exists for a seed target's mechanism. They are registry records, so
+# each one is graded on what the registry actually establishes and no further.
+#
+# A NOTE ON WHAT A TERMINATION IS AND IS NOT, because agent:brakes got this right and
+# the distinction must survive into this file. A trial that stopped is not a trial that
+# failed. Three of the four records below name an EFFICACY failure or a market withdrawal
+# explicitly in the registry's own words; that is why they are claims rather than audit
+# prose. Terminations whose stated reason was low enrolment or an unexplained "company
+# decision" are NOT recorded as claims anywhere - they appear only as audit-check notes,
+# because a sponsor's silence is not evidence about biology.
+
+- claim_id: CLM:red_team:KCNQ2:001
+  schema_version: 0.1.0
+  statement: >-
+    A long-term open-label safety and efficacy extension study of retigabine in adults
+    with partial-onset seizures was terminated, and the registry gives as the reason that
+    retigabine has been withdrawn from market; retigabine is the only KCNQ2/KCNQ3 channel
+    opener to have reached marketing authorisation, so the sole marketed pharmacology for
+    this channel family is no longer available.
+  subject: DRUG:CHEMBL41355
+  predicate: INCREASES_RISK
+  object: AE:systemic_tolerability_burden
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the registry states the fact of market withdrawal but not its cause; no reason for the withdrawal was retrieved from any source in this session, so the nature of the limiting liability is NOT established here"
+      - "commercial factors can contribute to a market withdrawal and the registry does not separate commercial from safety reasons"
+      - "retigabine is a channel OPENER, which is the opposite of the direction a brake-release strategy would propose for KCNQ2/KCNQ3; its fate therefore bears on the druggability and tolerability of this channel family in humans rather than directly on the proposed direction"
+      - "a companion GlaxoSmithKline post-marketing surveillance study of urinary retention in retigabine users (NCT01462656) was itself terminated for insufficient numbers, so no incidence estimate for that liability was produced"
+  evidence:
+    - source_id: SRC:NCT:NCT00310388
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "adult epilepsy patients with partial-onset seizures enrolled in a long-term open-label extension; registry-reported actual enrolment 376"
+      sample_size:
+        reported_as: "376"
+        value: 376
+        unit: participants
+      endpoint: "registry status and whyStopped field for a long-term safety, tolerability and efficacy extension"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: "No longer any benefit in collecting data since retigabine has been withdrawn from market."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      one registry record, but the fact it states - the market withdrawal of the only
+      marketed modulator of this channel family - is both unambiguous and directly
+      relevant to whether a usable human window exists; the cause of the withdrawal is
+      not established, which caps this at moderate
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this claim establishes that the drug was withdrawn, NOT why. Reporting a specific cause would go beyond the retrieved text."
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_accessions: ["NCT00310388", "NCT01462656"]
+
+- claim_id: CLM:red_team:GRM5:001
+  schema_version: 0.1.0
+  statement: >-
+    A long-term open-label study of the mGluR5 negative allosteric modulator AFQ056 in
+    148 adults with fragile X syndrome was terminated, and the registry gives as the
+    reason that the study treatment failed to demonstrate efficacy in the adult fragile X
+    population in two other named clinical studies; a parallel adolescent open-label
+    study was terminated for the same stated reason.
+  subject: MECH:mglur5_negative_allosteric_modulation
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: PHENO:clinical_cognitive_composite
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the two studies named in the registry as having failed were not themselves retrieved in this session, so the failed endpoints are known only as the sponsor's summary of them, not read directly"
+      - "the fragile X primary endpoints in that programme were behavioural rather than cognitive, so 'failed to demonstrate efficacy' does not by itself establish a cognitive null; the endpoint category recorded here is the sponsor's population-level efficacy judgement"
+      - "fragile X syndrome is a monogenic developmental disorder, so this is a rescue setting and a null in it does not test enhancement in healthy adults"
+  evidence:
+    - source_id: SRC:NCT:NCT01348087
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "adult patients with fragile X syndrome in a long-term open-label safety, tolerability and efficacy study; registry-reported actual enrolment 148"
+      sample_size:
+        reported_as: "148"
+        value: 148
+        unit: participants
+      endpoint: "registry status and whyStopped field for a long-term safety, tolerability and efficacy study"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "Study treatment AFQ056 failed to demonstrate efficacy in the adult patient with Fragile X Syndrome in 2 other clinical studies (CAFQ056B2214 and CAFQ056A2212)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: null_result
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      a sponsor's registry-stated summary of two efficacy failures it does not itself
+      report; the fact of the programme failure is well evidenced, the specific endpoints
+      that failed are not, so this is moderate rather than substantial
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "agent:alphacognition separately recorded the FXLEARN trial as a genuine measured cognitive null for this mechanism (CLM:alphacognition:GRM5:001). This claim is ADDITIONAL programme-level evidence, not a second reading of the same trial, and the two must not be counted as three."
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_accessions: ["NCT01348087", "NCT01433354", "NCT01813019"]
+
+- claim_id: CLM:red_team:PDE4B:001
+  schema_version: 0.1.0
+  statement: >-
+    In a double-blind placebo-controlled four-way crossover study in healthy young adults,
+    the pan-PDE4 inhibitor roflumilast improved immediate recall on a verbal learning task
+    at the lowest of three doses tested, with no benefit reported at the higher doses and
+    no benefit reported at the 45-minute or 24-hour recall timepoints that were also
+    measured; the authors note that no PDE4-typical side effects occurred at that lowest
+    effective dose.
+  subject: DRUG:CHEMBL193240
+  predicate: CHANGES_STATE
+  object: PHENO:episodic_memory
+  claim_type: pharmacodynamic
+  direction: inverted_u
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "roflumilast is a pan-PDE4 inhibitor and does not isolate PDE4B, so this result is evidence about a drug and a family, not about this gene"
+      - "the benefit was on one of three recall timepoints of one task in a four-way crossover, so multiplicity is a live concern and the abstract reports no correction"
+      - "a benefit at the lowest of three doses with none at higher doses is a non-monotone exposure-response; an alternative reading is that the finding is a chance result at one dose rather than a real inverted-U"
+      - "this study shares its senior authorship with the other PDE4 cognitive-enhancement reports in this repository, so the three results are not independent replications"
+  evidence:
+    - source_id: SRC:PMID:29241652
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "healthy young adults, three capsulated doses of roflumilast and placebo in four study periods, dosed one hour before testing"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "number of words recalled on a 30-word Verbal Learning Task immediately and after 45 minutes and 24 hours, with concurrent event-related potentials"
+      endpoint_category: episodic_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "Memory performance was significantly improved after acute administration of 100 μg roflumilast. Specifically, immediate recall performance on the VLT increased 2-3 words"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      one randomised crossover study in healthy adults with a genuine above-baseline
+      improvement, but on a single endpoint of a single task at a single dose, with a
+      non-selective drug, unreplicated outside one research group
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "This record is deliberately typed `qualifies` rather than `supports`. The red team retrieved it in order to TEST the brake atlas's only above-baseline human enhancement grade, and what it establishes is narrower than that grade assumes: a 2-3 word gain on immediate recall only, at the lowest dose only, with a drug that does not isolate PDE4B."
+    - "the non-monotone dose pattern is the reason this claim's `direction` is inverted_u; anyone reading PDE4 inhibition as monotonically pro-cognitive has committed a dose-response inversion"
+  confounders:
+    - "acute single-dose design cannot speak to sustained use"
+    - "overlapping authorship across the PDE4 cognitive literature in this repository"
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_pubmed_ids: ["29241652"]
+
+- claim_id: CLM:red_team:creatine:001
+  schema_version: 0.1.0
+  statement: >-
+    A second, independent systematic review and meta-analysis of sixteen randomised
+    controlled trials of creatine monohydrate in adults, not cited by any atlas in this
+    repository, found no significant improvement in overall cognitive function or in
+    executive function, and reports that the benefit was larger in individuals with
+    disease than in healthy participants.
+  subject: METAB:creatine_monohydrate_supplementation
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: PHENO:executive_function
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: mixed
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "this pooled analysis overlaps substantially with the one already cited by agent:power (SRC:PMID:35984306), so the two are not independent replications; they share primary trials"
+      - "the pooled population mixes healthy individuals with patients, which the authors state, so the overall null is an average across baselines rather than a healthy-adult estimate"
+      - "the authors report positive pooled effects on memory, attention time and processing speed alongside the null on overall cognitive function and executive function, and rate the certainty of those positive findings as low"
+  evidence:
+    - source_id: SRC:PMID:39070254
+      design: meta_analysis
+      species: SPECIES:NCBITaxon:9606
+      population: "sixteen randomised controlled trials, 492 participants aged 20.8-76.4 years, including healthy individuals and patients with specific diseases"
+      sample_size:
+        reported_as: "Sixteen RCTs involving 492 participants aged 20.8-76.4 years"
+        value: 492
+        unit: participants
+      endpoint: "pooled standardised mean differences for overall cognitive function, memory, executive function, attention and information processing speed"
+      endpoint_category: executive_function
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: smd
+        as_reported: "no significant improvements were found on overall cognitive function or executive function"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      a pooled analysis of sixteen randomised trials, but overlapping in primary studies
+      with the meta-analysis the power atlas already cites, so it corroborates rather
+      than independently replicates
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "This record CORROBORATES agent:power's headline conclusion rather than contradicting it. It is filed here because the power atlas did not cite it and because a second pooled analysis reaching the same place is worth having on the record; it must not be double-counted with SRC:PMID:35984306."
+  confounders:
+    - "overlapping primary trials with the other pooled analysis"
+    - "mixed healthy and patient populations"
+  dependencies: [CLM:power:creatine_human:002]
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_pubmed_ids: ["39070254"]

@@ -1,0 +1,285 @@
+# Human-lineage specialisations. Contract: docs/DATA_CONTRACT.md §4.
+#
+# THE STANDING WARNING FOR THIS FILE
+#
+# Every well-characterised human-lineage neural specialisation in this file acts during
+# DEVELOPMENT, and most act by slowing it. `context.life_stage` is
+# postnatal_developmental or prenatal on every claim, and
+# `translation.adult_relevance` is developmental_only unless a source specifically
+# tested adults.
+#
+# This project cares about adult modifiability. A gene that made human synapses mature
+# more slowly between birth and adolescence is, on the present evidence, not a target
+# an adult intervention can act on to reproduce the human-specific outcome: the window
+# in which it acted has closed. These claims are therefore recorded as
+# DIVERGENCE-RISK EVIDENCE — reasons that non-human causal evidence may not transfer —
+# and not as intervention hypotheses. They raise `human_lineage_divergence_risk`; they
+# do not raise `cross_species_convergence`.
+
+- claim_id: CLM:comparative:SRGAP2:001
+  schema_version: 0.1.0
+  statement: >-
+    Charrier and colleagues found that the human-specific partial duplication SRGAP2C
+    dimerises with ancestral SRGAP2 and inhibits it, and that expressing SRGAP2C in
+    mouse neocortex reproduced SRGAP2 deficiency, slowing dendritic spine maturation and
+    increasing the density of longer spines.
+  subject: GENE:SRGAP2
+  predicate: NEGATIVELY_REGULATES
+  object: SV:plasticity.dendritic_spine_turnover_rate
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      The duplication is identified as human-specific by comparison with non-human
+      primate genomes, which is a phylogenetic observation, but the functional
+      experiments are mouse perturbations with no comparative model. No phylogenetic
+      comparative analysis is reported.
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "SRGAP2C was expressed in MOUSE cortex; the result shows what the human paralog does to mouse neurons, not what it does in a human brain"
+      - "'neoteny' names the observed delay in spine maturation; it is not evidence that the delay produced any cognitive consequence, which was not measured"
+      - "SRGAP2B and SRGAP2C are near-identical duplications in a segmental-duplication region that is hard to genotype and copy-number variable between people"
+      - "an increase in the density of longer spines is a morphological change; spine length and density do not have a fixed relationship to synaptic strength or to learning"
+  evidence:
+    - source_id: SRC:PMID:22559944
+      design: overexpression
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:10090
+      population: "developing mouse neocortex with SRGAP2C expression or SRGAP2 deficiency; human brain tissue for SRGAP2C expression profiling"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "dendritic spine maturation rate, spine density, spine length and radial neuronal migration"
+      endpoint_category: molecular_readout
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "In the mouse neocortex, SRGAP2 promotes spine maturation and limits spine density."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Causal perturbation in vivo with a clear molecular mechanism and a human-specific
+      genomic basis, replicated in outline by SRC:PMID:39352808 from a partly overlapping
+      author group. Held at 2 because the functional work is entirely in mouse, the
+      endpoint is morphological, and the life stage is developmental.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "HIGH DEVELOPMENTAL CONFOUND. This is the textbook case of a human-specific change that acts during postnatal synaptic maturation. Nothing here suggests an adult intervention on SRGAP2 would reproduce or extend the human phenotype, and the developmental timing makes the opposite more likely."
+    - "the phrase 'contributed to the evolution of the human neocortex' in the source is an evolutionary inference from a mouse experiment plus a genomic comparison"
+    - "SRGAP2 is not in targets/seed_registry.yaml; this claim exists to calibrate divergence risk, not to propose a target"
+  confounders: ["mouse genetic background", "developmental stage at perturbation", "segmental-duplication genotyping difficulty", "expression level of the transgene"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:CTNND2:001
+  schema_version: 0.1.0
+  statement: >-
+    Assendorp and colleagues identified CTNND2 as an SRGAP2 partner that slows synaptic
+    maturation and moderates neuronal excitation and excitability during postnatal
+    development while supporting synapse maintenance in adults, and reported that the
+    human-specific protein SRGAP2C increases CTNND2 accumulation at synapses in human
+    neurons.
+  subject: GENE:CTNND2
+  predicate: NEGATIVELY_REGULATES
+  object: SV:plasticity.structural_plasticity_rate
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      No comparative phylogenetic analysis; the human-specificity claim is inherited from
+      the SRGAP2C literature.
+    life_stage: mixed
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "CTNND2 deficiency causes intellectual disability in Cri-du-Chat syndrome, so the gene sits on the deficit-to-normal axis; a loss-of-function phenotype is not evidence that more function raises capacity above the healthy baseline"
+      - "CTNND2 deficiency caused synaptic loss of SYNGAP1, so effects may be mediated by a network of intellectual-disability proteins rather than by CTNND2's own action"
+      - "the human-neuron arm used cultured human neurons, where maturation timing and activity differ from an intact human cortex"
+  evidence:
+    - source_id: SRC:PMID:39352808
+      design: knockdown
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:10090
+      population: "mouse cortical neurons with CTNND2 deficiency across postnatal development and adulthood; human neurons expressing SRGAP2C"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "synaptic maturation rate, neuronal excitation and excitability, synapse maintenance, and CTNND2 synaptic accumulation"
+      endpoint_category: molecular_readout
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "We demonstrate that CTNND2 slows synaptic maturation and promotes neuronal integrity."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Causal perturbation with an explicit adult component (synapse maintenance), which
+      is rare in this literature and the reason this claim is recorded separately from
+      CLM:comparative:SRGAP2:001. One study, mouse for the causal work, molecular
+      endpoints.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "the only adult-relevant element is 'supports synapse maintenance', which is a maintenance function; maintaining synapses is not enhancing cognition, and the abstract reports no adult cognitive endpoint"
+    - "this claim and CLM:comparative:SRGAP2:001 share the senior author group and the SRGAP2C reagent, so they are not independent"
+    - "CTNND2 is not in targets/seed_registry.yaml"
+  confounders: ["mouse genetic background", "culture conditions for human neurons", "developmental stage", "SYNGAP1 co-dependence"]
+  dependencies: [CLM:comparative:SRGAP2:001]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:HAR:001
+  schema_version: 0.1.0
+  statement: >-
+    Pal and colleagues mapped chromatin interactions for 1,590 human accelerated regions
+    and their chimpanzee orthologues in neural stem cells, found 2,963 conserved gene
+    targets enriched for neurodevelopmental processes, and found that human-specific
+    targets converged on no function and were not enriched among differentially expressed
+    genes.
+  subject: PROC:human_accelerated_region_enhancer_activity
+  predicate: MODULATES
+  object: PROC:neurogenesis
+  claim_type: expression
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:9598]
+    species_count: 2
+    phylogenetic_control: outgroup_comparison
+    phylogenetic_control_basis: >-
+      Human accelerated regions are defined by a phylogenetic test for excess
+      human-specific substitution in otherwise conserved sequence, so the REGION
+      DEFINITION is phylogenetically controlled. The interactome comparison itself is a
+      two-species contrast with no phylogenetic model, which is what this field records.
+    life_stage: prenatal
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "neural stem cells in culture are a model of early neurodevelopment, not of a developing brain and certainly not of an adult one"
+      - "chromatin contact is not regulation; a HAR contacting a gene does not establish that it controls that gene"
+      - "the HAR set is defined by a substitution-rate test that is sensitive to alignment quality, GC-biased gene conversion and recombination-rate variation, all of which generate false positives"
+  evidence:
+    - source_id: SRC:PMID:39889695
+      design: comparative_genomics
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "human and chimpanzee neural stem cells"
+      sample_size:
+        reported_as: "2,963 conserved gene targets for 1,590 HARs and their orthologs in human and chimpanzee neural stem cells"
+        value: 1590
+        unit: human_accelerated_regions
+      endpoint: "chromatin-interaction gene targets of HARs, functional enrichment of target sets, and overlap with genes differentially expressed between species"
+      endpoint_category: molecular_readout
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: "Species-specific gene targets do not converge on any function and are not enriched among DEGs."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Large, systematic, directly human-and-chimpanzee, with a pre-registered-style
+      negative test of the competing hypothesis. Held at 2 because the system is cultured
+      neural stem cells, the endpoint is chromatin contact and expression rather than any
+      phenotype, and it is one study.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "CONTAINS A DELIBERATE NEGATIVE RESULT. The enhancer-hijacking hypothesis — that HARs gained new gene targets in humans — was tested and not supported. Human-specific HAR targets converged on no function. This should temper any account in which human cognition rests on novel human regulatory connections."
+    - "the positive half of the result is that HARs act on gene targets shared with chimpanzee; that is a conservation finding and, read carefully, it reduces rather than increases the case for human regulatory uniqueness at these loci"
+    - "entirely prenatal and in vitro; it has no bearing on adult modifiability and must not be cited as if it did"
+  confounders: ["cultured cell state", "HAR definition method", "chromatin-capture resolution", "cross-species alignment quality"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

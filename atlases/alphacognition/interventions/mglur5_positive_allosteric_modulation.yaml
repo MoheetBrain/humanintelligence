@@ -1,0 +1,34 @@
+# Intervention entity — AlphaCognition v0.1.
+# Registering an intervention is a bibliographic/cheminformatics act and NEVER an instruction
+# to obtain, administer or self-apply anything. `dose_information` is `omitted_by_policy` on
+# every record: no dose, route, regimen or schedule is recorded anywhere in this repository.
+# Identifiers come only from ChEMBL tool responses in this session; a compound ChEMBL does not
+# know by name is recorded under a snake_case slug (contract §1.2) and says so.
+# Numeric database facts (max_clinical_phase, first_approval_year) name the pinned release they
+# came from in `database_source_id`, which is what makes them admissible under rule V9 — and
+# they describe DEVELOPMENT STATUS, never efficacy and never a cognitive effect (rule V16).
+intervention_id: MECH:mglur5_positive_allosteric_modulation
+schema_version: 0.1.0
+name: mGluR5 positive allosteric modulation
+node_type: Mechanism
+mechanism_class: positive_allosteric_modulation
+modality: small_molecule
+domain: alphacognition
+dose_information: omitted_by_policy
+identifiers:
+  chembl_id: null
+  inn: null
+  identifier_provenance: mechanism slug; no registry identifier applies to a mechanism class
+targets:
+- TGT:GRM5
+exemplar_interventions:
+- CPD:cdppb
+claim_refs:
+- CLM:alphacognition:GRM5:002
+known_liabilities: []
+efficacy_status: No efficacy. Rodent disease-model evidence only, internally conflicting on the cognitive
+  endpoint.
+notes:
+- 'Direction: increases mGluR5 signalling.'
+added_by: agent:alphacognition
+added_on: '2026-09-17'

@@ -1,0 +1,163 @@
+# Red-team audit - HTR2A. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:HTR2A:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:HTR2A
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: The human evidence is acute adult dosing. The dossier records the developmental question as
+      not assessed rather than as clean, which the red team now grades.
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:002
+  - check: rescue_mistaken_for_enhancement
+    result: pass
+    note: The human studies are in healthy adults, so the design is right; what they found was no cognitive
+      benefit.
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:003
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: pass
+    note: The load-bearing evidence for this target is human, and it is null.
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:003
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'HTR2A''s human_genetic_association is level 1, so no education measure is doing intelligence
+      work. One gwas record is labelled educational_attainment and one l2g record likewise. Repository-level:
+      the trait panel classes GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class
+      fluid_reasoning while marking it use_in_ranking: supporting with the note ''never a stand-alone
+      basis for a facet level''. pipelines/alphacognition/build_assessments.py tests phenotype_class,
+      not use_in_ranking, so that restriction never fires. The underlying records are ''Self-reported
+      math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association
+      study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003,
+      gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.HTR2A:003
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: Every Open Targets safetyLiabilities row used in this audit traces to one of two PMIDs, SRC:PMID:28216264
+      and SRC:PMID:23197038, and both are pharmaceutical-industry safety-pharmacology curation reviews
+      over overlapping published literature. Two rows agreeing is therefore close to one source agreeing
+      with itself. The target-level safety layer for the six annotated seed targets rests on two review
+      papers.
+    evidence_refs:
+    - CLM:red_team:HTR2A:001
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: pass
+    note: Two randomised healthy-adult studies measured cognition and found no benefit, recorded as a
+      genuine measured null with level 0 / counter_level 3. Verified correct.
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:002
+    - CLM:alphacognition:HTR2A:003
+  - check: dose_response_inversion
+    result: flag
+    note: No cognitive exposure-response relation exists for this mechanism, and the acute psychological
+      effects are strongly dose-dependent in a way that makes a monotone cognitive reading implausible.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: fail
+    note: 'agent:alphacognition recorded that it did NOT run a systematic psychiatric-liability search
+      and deliberately declined to assert SV:safety.psychosis_risk because psychosis was not measured
+      in the acute human study it read. That restraint was correct. The red team ran the search. Two independent
+      curation reviews both annotate HALLUCINATIONS to 5-HT2A activation; the same rows add psychosis,
+      schizophrenia, serotonin syndrome, agitation, myoclonus, hyperreflexia, drug abuse or dependence
+      and decreased memory. This is now citeable evidence rather than an acknowledged gap. It does NOT
+      close the measurement gap: no psychosis endpoint has been measured anywhere in this repository.'
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:001
+    - CLM:red_team:HTR2A:001
+  - check: systemic_adverse_effects
+    result: flag
+    note: Increased blood pressure, increased heart rate, sweating, hyperthermia and platelet aggregation
+      are annotated to activation, and the dossier already carries AE:blood_pressure_increase and AE:heart_rate_increase
+      from the acute human study's own reported effects.
+    evidence_refs:
+    - CLM:red_team:HTR2A:001
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: pass
+    note: Read this target's dossier and facet rationales against its claims. No facet level exceeds what
+      its cited claims support, and the limiting_factor fields state what would have to change.
+  - check: provenance_integrity
+    result: pass
+    note: 'agent:alphacognition''s determination that CLM:alphacognition:HTR2A:003 is a MEASURED null
+      rather than an evidence gap is verified correct: it is typed pharmacodynamic with predicate NO_DETECTED_EFFECT_ON,
+      endpoint_measured `measured` and evidence_role `null_result`, so it satisfies V16c. Its migration
+      from a plain MODULATES edge to the null relation is also confirmed, and that migration mattered:
+      as MODULATES, a measured human null would have compiled as SUPPORT. A repository-wide scan for the
+      same shape - null or contradicting evidence carried by a non-null relation - found no remaining
+      case where a MEASURED human null wears a positive relation.'
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:003
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:HTR2A:001#f1
+    severity: major
+    category: psychiatric_liability
+    description: 'Two curation reviews independently annotate hallucinations, and one adds psychosis and
+      schizophrenia, to 5-HT2A activation. agent:alphacognition had flagged that it ran no systematic
+      psychiatric-liability search and declined to assert psychosis risk without one; the red team ran
+      it and the liability is now citeable. The measurement gap remains: no psychosis endpoint has been
+      measured in any study in this repository.'
+    evidence_refs:
+    - CLM:red_team:HTR2A:001
+  - finding_id: AUD:red_team:HTR2A:001#f2
+    severity: info
+    category: provenance_integrity
+    description: The HTR2A:003 migration from MODULATES to NO_DETECTED_EFFECT_ON is verified, and a repository-wide
+      scan confirms no remaining case of a MEASURED human null wearing a positive relation. Twenty-five
+      claims do carry contradicting or null evidence on non-null relations, but in each the claim's own
+      assertion is a positive finding that happens to contradict a different proposition, which is correct
+      use.
+    evidence_refs:
+    - CLM:alphacognition:HTR2A:003
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

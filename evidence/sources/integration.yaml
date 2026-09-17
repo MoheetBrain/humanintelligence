@@ -1,0 +1,92 @@
+# Source registrations for the Causal Integration / Ranking agent (agent:integration).
+#
+# This agent curates no biological literature. It owns exactly one facet
+# (`tractability`, contract §5) and that facet is graded from a PINNED DATABASE
+# RELEASE, not from papers. So this file is short by design, and its shortness is
+# the correct outcome rather than a coverage gap.
+#
+# VERIFICATION ROUTE FOR A DatabaseRelease
+# ----------------------------------------
+# `scripts/fetch_source_metadata.py` reports `SRC:DB:*` as `unsupported_registry`:
+# there is no bibliographic registry to match a title against, and that is not a
+# verification failure. The verification for a database release is instead the
+# IMMUTABLE SNAPSHOT plus the manifest checksum (contract §7, P7), and the release
+# identity is taken from the API's own `meta.dataVersion` block rather than from
+# anything this agent believes.
+#
+# PROVENANCE FOR SRC:DB:opentargets:26.06 (recorded here because the Source record
+# schema is strict and has no field for it; the machine-readable form is the
+# manifest plus the derived index):
+#
+#   endpoint            https://api.platform.opentargets.org/api/v4/graphql
+#   graphql operation   TargetAnnotations (docs/API_RECIPES.md §5.1)
+#   meta.dataVersion    {year: "26", month: "06"}  -> 26.06
+#   meta.apiVersion     {x: 26, y: 6, z: 3}        -> 26.6.3
+#   targets queried     31 (every seed symbol with an HGNC-resolved Ensembl gene id)
+#   retrieved           2026-09-17T15:27:17Z .. 2026-09-17T15:27:19Z
+#   snapshots           data/raw/opentargets/2026-09-17/*.json  (31 files)
+#   example snapshot    data/raw/opentargets/2026-09-17/ADORA1_d84b88c6bb13.json
+#   its sha256          9575b22079fcad509fa8b8667ea17ece3b73ab5fae746009f8879a8a268ab38a
+#   manifest            data/raw/MANIFEST.jsonl  (31 rows for registry "opentargets")
+#   derived index       data/interim/opentargets_tractability.jsonl  (31 rows)
+#   safety candidates   data/interim/opentargets_safety_pmid_candidates.jsonl (191 rows)
+#   rebuilt offline by  pipelines/integration/fetch_target_annotations.py --offline
+#
+# WHAT THIS RELEASE IS USED FOR
+#   Grading the `tractability` facet, per the level criteria in
+#   models/ranking/facet_rubric_v0_1.yaml. Nothing else.
+#
+# WHAT IT IS NOT USED FOR
+#   * Safety grading. The 191 `safetyLiabilities` rows retrieved alongside the
+#     tractability buckets are staged as CANDIDATES ONLY, with the PMIDs Open Targets
+#     cites. agent:red_team owns `safety_liability_burden` and must register and
+#     machine-verify those PMIDs itself before any claim rests on them: "Open Targets
+#     says so" is not provenance (docs/API_RECIPES.md §5.1).
+#   * Efficacy of any kind. A tractability bucket says a modality exists, never that
+#     engaging the target does anything (contract rule V16).
+#   * Any statement about a compound, exposure, route or regimen
+#     (docs/COMPUTATIONAL_ONLY_POLICY.md).
+#
+# KNOWN LIMITATIONS
+#   * Tractability buckets are themselves third-party model and annotation outputs.
+#     They are ingested as a source-reported classification, not as this project's
+#     assessment of anything.
+#   * The bucket vocabulary is release-specific. The (modality, label) groupings in
+#     pipelines/integration/fetch_target_annotations.py were derived from the 28
+#     buckets this release returns; an unrecognised pair in a later release is
+#     reported as `unclassified_buckets` rather than silently ignored.
+#   * Level 4 of the `tractability` rubric requires a published family selectivity
+#     profile AND documented human CNS exposure. This release reports neither, so no
+#     target can reach level 4 from this source alone, and none does.
+#
+# schema_version: 0.1.0
+
+- source_id: SRC:DB:opentargets:26.06
+  source_type: database_release
+  title: "Open Targets Platform data release 26.06 — target annotations (tractability buckets, chemical probes, safety liabilities)."
+  year: 2026
+  first_author: "Open Targets"          # organisation, per contract §3 for datasets
+  container: "Open Targets Platform"
+  identifiers:
+    database_release: "opentargets:26.06"
+  added_by: agent:integration
+  added_on: "2026-09-17"
+  retrieval:
+    method: opentargets_api
+  notes: >-
+    GraphQL operation TargetAnnotations (docs/API_RECIPES.md §5.1) against
+    https://api.platform.opentargets.org/api/v4/graphql, 31 seed targets, retrieved
+    2026-09-17T15:27:17Z to 2026-09-17T15:27:19Z. Release identity taken from the
+    response's own meta.dataVersion ({year 26, month 06}); api.apiVersion 26.6.3.
+    Snapshots: data/raw/opentargets/2026-09-17/*.json, 31 files, all registered in
+    data/raw/MANIFEST.jsonl. Derived index: data/interim/opentargets_tractability.jsonl,
+    rebuildable offline via pipelines/integration/fetch_target_annotations.py --offline.
+    Used ONLY to grade the `tractability` facet. The 191 safetyLiabilities rows are
+    staged as candidate PMIDs for agent:red_team at
+    data/interim/opentargets_safety_pmid_candidates.jsonl and carry no weight until
+    that agent registers and verifies them. A tractability bucket is never efficacy
+    (contract V16), and no target reaches rubric level 4 from this source because the
+    release reports neither family selectivity profiles nor human CNS exposure.
+    Verification route for SRC:DB:* is the immutable snapshot plus the manifest
+    checksum, not a registry title match; fetch_source_metadata.py correctly reports
+    it as unsupported_registry.

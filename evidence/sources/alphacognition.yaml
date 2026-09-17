@@ -1,0 +1,1044 @@
+# ASSEMBLED FILE — do not hand-edit.
+# Built by pipelines/alphacognition/build_sources.py from:
+#   atlases/alphacognition/sources_curated.yaml        (hand-curated, 23 records)
+#   pipelines/alphacognition/generated/sources_*.yaml  (machine-generated, 45 records)
+#
+# Every PMID here was discovered through a tool call in this session and its
+# title/year/journal/first author were read from the registry of record (NCBI ESummary,
+# ClinicalTrials.gov API v2) rather than authored, so scripts/fetch_source_metadata.py
+# verifies against the same authority that supplied the strings.
+#
+# Known verification gap: `SRC:DB:*` records (database releases) are reported by
+# scripts/fetch_source_metadata.py as `unsupported_registry`, because that script's
+# dispatch handles PMID/DOI/NCT/GCST only. The releases are real and are recorded from the
+# APIs' own metadata endpoints; see docs/blackboard/schema_change_requests/
+# alphacognition-001.yaml for the requested fix.
+#
+# Total records: 58
+- source_id: SRC:DB:chembl:ChEMBL_37
+  schema_version: 0.1.0
+  source_type: database_release
+  title: ChEMBL database release ChEMBL_37
+  year: 2026
+  first_author: EMBL-EBI ChEMBL
+  container: ChEMBL
+  identifiers:
+    database_release: ChEMBL_37
+  retrieval:
+    method: known_identifier
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: Release string read from https://www.ebi.ac.uk/chembl/api/data/status.json (chembl_db_version
+    "ChEMBL_37", chembl_release_date "2026-05-01"), snapshotted to data/raw/chembl/2026-09-17/. Pinned
+    by every intervention record in this atlas that reports a ChEMBL numeric field (max_clinical_phase,
+    first_approval_year) so those numbers have a visible provenance, per rule V9. The compound and mechanism
+    records themselves came from mcp__plugin_bio-research_chembl__* tool responses in this session.
+- source_id: SRC:DB:gtex:v8
+  schema_version: 0.1.0
+  source_type: database_release
+  title: GTEx Portal API v2 median gene expression, dataset gtex_v8
+  year: 2026
+  first_author: GTEx Consortium
+  container: GTEx Portal
+  identifiers:
+    dataset_id: gtex_v8
+  retrieval:
+    method: opentargets_api
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'dataset id read from the API response''s own datasetId field, not assumed. | endpoint: https://gtexportal.org/api/v2/expression/medianGeneExpression
+    | note: retrieval.method enum in docs/DATA_CONTRACT.md §3 has no gtex_api value; see docs/blackboard/schema_change_requests/alphacognition-001.yaml'
+- source_id: SRC:DB:gwas_catalog:2026-09-13
+  schema_version: 0.1.0
+  source_type: database_release
+  title: GWAS Catalog REST API v2 data release 2026-09-13
+  year: 2026
+  first_author: EMBL-EBI GWAS Catalog
+  container: GWAS Catalog
+  identifiers:
+    database_release: '2026-09-13'
+  retrieval:
+    method: gwas_catalog_api
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Release recorded by pipelines/alphacognition/fetch_gwas_catalog.py from /v2/metadata. | endpoint:
+    https://www.ebi.ac.uk/gwas/rest/api/v2/metadata'
+- source_id: SRC:DB:opentargets:26.06
+  schema_version: 0.1.0
+  source_type: database_release
+  title: Open Targets Platform data release 26.06 — target annotations (tractability buckets, chemical
+    probes, safety liabilities).
+  year: 2026
+  first_author: Open Targets
+  container: Open Targets Platform
+  identifiers:
+    database_release: '26.06'
+  retrieval:
+    method: opentargets_api
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Data version read from the GraphQL meta.dataVersion block on every response by pipelines/alphacognition/fetch_opentargets_genetics.py.
+    Title string adopted verbatim from agent:integration''s registration of the same release so the identifier
+    does not diverge (rule V4); this atlas used the genetics endpoints (studies, credibleSets, l2GPredictions,
+    colocalisation, baselineExpression), not the target-annotation ones. | endpoint: https://api.platform.opentargets.org/api/v4/graphql'
+- source_id: SRC:NCT:NCT02920892
+  schema_version: 0.1.0
+  source_type: clinical_trial_registration
+  title: Effects of AFQ056 on Language Learning in Young Children With Fragile X Syndrome (FXS)
+  year: 2017
+  first_author: Elizabeth Berry-Kravis
+  container: ClinicalTrials.gov
+  identifiers:
+    nct: NCT02920892
+  retrieval:
+    method: ctgov_api
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Registry record for the FXLEARN trial: status COMPLETED, PHASE2, enrolment 110, start 2017-08-17.
+    | endpoint: https://clinicaltrials.gov/api/v2/studies/NCT02920892'
+- source_id: SRC:NCT:NCT03604744
+  schema_version: 0.1.0
+  source_type: clinical_trial_registration
+  title: Direct Comparison of Altered States of Consciousness Induced by LSD and Psilocybin in a Random-order
+    Placebo-controlled Cross-over Study in Healthy Subjects
+  year: 2019
+  first_author: University Hospital, Basel, Switzerland
+  container: ClinicalTrials.gov
+  identifiers:
+    nct: NCT03604744
+  retrieval:
+    method: ctgov_api
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Registry record: status COMPLETED, EARLY_PHASE1, enrolment 28, start 2019-03-27. | endpoint:
+    https://clinicaltrials.gov/api/v2/studies/NCT03604744'
+- source_id: SRC:PMID:10485705
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genetic enhancement of learning and memory in mice.
+  year: 1999
+  first_author: Tang YP
+  container: Nature
+  identifiers:
+    pmid: '10485705'
+    doi: 10.1038/43432
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement'
+- source_id: SRC:PMID:12454947
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'D1 dopamine receptors in the mouse prefrontal cortex: Immunocytochemical and cognitive neuropharmacological
+    analyses.'
+  year: 2003
+  first_author: Lidow MS
+  container: Synapse
+  identifiers:
+    pmid: '12454947'
+    doi: 10.1002/syn.10143
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: dopamine D1 receptor agonist working memory inverted U dose response
+    prefrontal'
+- source_id: SRC:PMID:12483218
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Selective cognitive dysfunction in acetylcholine M1 muscarinic receptor mutant mice.
+  year: 2003
+  first_author: Anagnostaras SG
+  container: Nat Neurosci
+  identifiers:
+    pmid: '12483218'
+    doi: 10.1038/nn992
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: M1 muscarinic receptor knockout mice learning memory hippocampus'
+- source_id: SRC:PMID:20089901
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Enhancement of spatial reversal learning by 5-HT2C receptor antagonism is neuroanatomically specific.
+  year: 2010
+  first_author: Boulougouris V
+  container: J Neurosci
+  identifiers:
+    pmid: '20089901'
+    doi: 10.1523/JNEUROSCI.4312-09.2010
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'The title is about 5-HT2C. It is cited here for its 5-HT2A arm: the paper reports that systemic
+    5-HT2A antagonism impaired spatial reversal learning while intra-OFC, -mPFC and -NAc infusion of the
+    5-HT2A antagonist produced no significant effect. | discovered_via: pubmed search: 5-HT2A receptor
+    reversal learning cognitive flexibility rat prefrontal antagonist'
+- source_id: SRC:PMID:23223304
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Increasing CRTC1 function in the dentate gyrus during memory formation or reactivation increases
+    memory strength without compromising memory quality.
+  year: 2012
+  first_author: Sekeres MJ
+  container: J Neurosci
+  identifiers:
+    pmid: '23223304'
+    doi: 10.1523/JNEUROSCI.1419-12.2012
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: CRTC1 memory consolidation hippocampus mice'
+- source_id: SRC:PMID:24607229
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Memory enhancement by targeting Cdk5 regulation of NR2B.
+  year: 2014
+  first_author: Plattner F
+  container: Neuron
+  identifiers:
+    pmid: '24607229'
+    doi: 10.1016/j.neuron.2014.01.022
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement'
+- source_id: SRC:PMID:26118841
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Forebrain NR2B overexpression enhancing fear acquisition and long-term potentiation in the lateral
+    amygdala.
+  year: 2015
+  first_author: Duan Y
+  container: Eur J Neurosci
+  identifiers:
+    pmid: '26118841'
+    doi: 10.1111/ejn.13008
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement'
+- source_id: SRC:PMID:26946382
+  schema_version: 0.1.0
+  source_type: review
+  title: Novel Dopamine Therapeutics for Cognitive Deficits in Schizophrenia.
+  year: 2017
+  first_author: Arnsten AF
+  container: Biol Psychiatry
+  identifiers:
+    pmid: '26946382'
+    doi: 10.1016/j.biopsych.2015.12.028
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'PubMed publication types include Review. Cited only for the statements it makes about the shape
+    of the D1 dose-response relation and about the existence of dihydrexidine testing in patient populations;
+    a review can never carry a claim on its own here, so every claim citing it also cites a primary source
+    or is graded at level 1. | discovered_via: pubmed search: dopamine D1 receptor agonist working memory
+    inverted U dose response prefrontal'
+- source_id: SRC:PMID:27025552
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A lasting effect of postnatal sevoflurane anesthesia on the composition of NMDA receptor subunits
+    in rat prefrontal cortex.
+  year: 2016
+  first_author: Zhang X
+  container: Int J Dev Neurosci
+  identifiers:
+    pmid: '27025552'
+    doi: 10.1016/j.ijdevneu.2016.01.008
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Cited ONLY for its rat developmental-composition measurements and for its own background statement
+    of the NR2B-to-NR2A postnatal switch. It is a rodent anaesthesia study, not a human developmental
+    atlas; the claim built on it is graded accordingly. | discovered_via: pubmed search: NR2A NR2B developmental
+    switch NMDA receptor subunit'
+- source_id: SRC:PMID:27225129
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association study identifies 74 loci associated with educational attainment
+  year: 2016
+  first_author: Okbay A
+  container: Nature
+  identifiers:
+    pmid: '27225129'
+    doi: 10.1038/nature17671
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST003676''] | gwas_catalog_initial_sample_size: [''405,072 European ancestry individuals\r\n'']'
+- source_id: SRC:PMID:27587263
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: CRTC1 Function During Memory Encoding Is Disrupted in Neurodegeneration.
+  year: 2017
+  first_author: Parra-Damas A
+  container: Biol Psychiatry
+  identifiers:
+    pmid: '27587263'
+    doi: 10.1016/j.biopsych.2016.06.025
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: Crtc1 knockout mice deficit long-term memory'
+- source_id: SRC:PMID:28377535
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'GRIN2B encephalopathy: novel findings on phenotype, variant clustering, functional consequences
+    and treatment aspects.'
+  year: 2017
+  first_author: Platzer K
+  container: J Med Genet
+  identifiers:
+    pmid: '28377535'
+    doi: 10.1136/jmedgenet-2016-104509
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: GRIN2B encephalopathy phenotype spectrum variants'
+- source_id: SRC:PMID:28637246
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Effect of Psilocybin on Empathy and Moral Decision-Making.
+  year: 2017
+  first_author: Pokorny T
+  container: Int J Neuropsychopharmacol
+  identifiers:
+    pmid: '28637246'
+    doi: 10.1093/ijnp/pyx047
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Cited as a null/dissociation result: cognitive empathy and moral decision-making were unaffected
+    while emotional empathy changed. | discovered_via: pubmed search: psilocybin cognitive function healthy
+    volunteers double-blind acute impairment'
+- source_id: SRC:PMID:29186694
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Large-Scale Cognitive GWAS Meta-Analysis Reveals Tissue-Specific Neural Expression and Potential
+    Nootropic Drug Targets
+  year: 2017
+  first_author: Lam M
+  container: Cell Rep
+  identifiers:
+    pmid: '29186694'
+    doi: 10.1016/j.celrep.2017.11.028
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST005141'',
+    ''GCST005142'']'
+- source_id: SRC:PMID:29274321
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association study of Alzheimer's disease endophenotypes at prediagnosis stages
+  year: 2018
+  first_author: Chung J
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '29274321'
+    doi: 10.1016/j.jalz.2017.11.006
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST007005'', ''GCST007006''] | gwas_catalog_initial_sample_size: [''305 European ancestry cognitively
+    normal individuals'']'
+- source_id: SRC:PMID:29326435
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A combined analysis of genetically correlated traits identifies 187 loci and a role for neurogenesis
+    and myelination in intelligence
+  year: 2019
+  first_author: Hill WD
+  container: Mol Psychiatry
+  identifiers:
+    pmid: '29326435'
+    doi: 10.1038/s41380-017-0001-5
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST005316''] | gwas_catalog_initial_sample_size: [''120,934 British ancestry individuals, 127,548
+    individuals\r\n'']'
+- source_id: SRC:PMID:29844566
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Study of 300,486 individuals identifies 148 independent genetic loci influencing general cognitive
+    function
+  year: 2018
+  first_author: Davies G
+  container: Nat Commun
+  identifiers:
+    pmid: '29844566'
+    doi: 10.1038/s41467-018-04362-x
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST006268'', ''GCST006269''] | gwas_catalog_initial_sample_size: [''330,069 European ancestry
+    individuals'', ''up to 300,486 European ancestry individuals'']'
+- source_id: SRC:PMID:29892013
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Mixed-model association for biobank-scale datasets
+  year: 2018
+  first_author: Loh PR
+  container: Nat Genet
+  identifiers:
+    pmid: '29892013'
+    doi: 10.1038/s41588-018-0144-6
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90029012'',
+    ''GCST90029013'']'
+- source_id: SRC:PMID:29942086
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association meta-analysis in 269,867 individuals identifies new genetic and functional
+    links to intelligence
+  year: 2018
+  first_author: Savage JE
+  container: Nat Genet
+  identifiers:
+    pmid: '29942086'
+    doi: 10.1038/s41588-018-0152-6
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST006250''] | gwas_catalog_initial_sample_size: [''269,867 European ancestry individuals'']'
+- source_id: SRC:PMID:30038396
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Gene discovery and polygenic prediction from a genome-wide association study of educational attainment
+    in 1.1 million individuals
+  year: 2018
+  first_author: Lee JJ
+  container: Nat Genet
+  identifiers:
+    pmid: '30038396'
+    doi: 10.1038/s41588-018-0147-3
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST006442'', ''GCST006568'', ''GCST006569'', ''GCST006571'', ''GCST006573'', ''GCST006574''] |
+    gwas_catalog_initial_sample_size: [''1,311,438 European ancestry individuals'', ''430,445 European
+    ancestry individuals'', ''564,698 European ancestry individuals'', ''670,471 European ancestry individuals'',
+    ''811,539 European ancestry individuals'', ''up to 1,131,881 European ancestry individuals'']'
+- source_id: SRC:PMID:31374203
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Pleiotropic Meta-Analysis of Cognition, Education, and Schizophrenia Differentiates Roles of
+    Early Neurodevelopmental and Adult Synaptic Pathways
+  year: 2019
+  first_author: Lam M
+  container: Am J Hum Genet
+  identifiers:
+    pmid: '31374203'
+    doi: 10.1016/j.ajhg.2019.06.012
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST008595''] | gwas_catalog_initial_sample_size: [''328,917 individuals with educational attainment
+    measurements, 107,207 individuals with cognitive ability measurements, 77,096 European ancestry schizophrenia
+    cases, 43,456 European ancestry controls'']'
+- source_id: SRC:PMID:31541651
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A positive allosteric modulator of mGluR5 promotes neuroprotective effects in mouse models of
+    Alzheimer's disease.
+  year: 2019
+  first_author: Bellozi PMQ
+  container: Neuropharmacology
+  identifiers:
+    pmid: '31541651'
+    doi: 10.1016/j.neuropharm.2019.107785
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: mGluR5 positive allosteric modulator cognition rodent memory
+    GRM5'
+- source_id: SRC:PMID:31596458
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide Association of Endophenotypes for Schizophrenia From the Consortium on the Genetics
+    of Schizophrenia (COGS) Study
+  year: 2019
+  first_author: Greenwood TA
+  container: JAMA Psychiatry
+  identifiers:
+    pmid: '31596458'
+    doi: 10.1001/jamapsychiatry.2019.2850
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST009307''] | gwas_catalog_initial_sample_size: [''523 European ancestry schizophrenia cases,
+    100 Latino schizophrenia cases, 827 European ancestry controls, 83 Latino controls'']'
+- source_id: SRC:PMID:32573913
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association study of rate of cognitive decline in Alzheimer's disease patients identifies
+    novel genes and pathways
+  year: 2020
+  first_author: Sherva R
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '32573913'
+    doi: 10.1002/alz.12106
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST010567''] | gwas_catalog_initial_sample_size: [''3,946 European ancestry cases'']'
+- source_id: SRC:PMID:32895543
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A general dimension of genetic sharing across diverse cognitive traits inferred from molecular
+    data
+  year: 2021
+  first_author: de la Fuente J
+  container: Nat Hum Behav
+  identifiers:
+    pmid: '32895543'
+    doi: 10.1038/s41562-020-00936-2
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90011298''] | gwas_catalog_initial_sample_size: [''171,304 British ancestry individuals'']'
+- source_id: SRC:PMID:33414549
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Investigating the genetic architecture of noncognitive skills using GWAS-by-subtraction
+  year: 2021
+  first_author: Demange PA
+  container: Nat Genet
+  identifiers:
+    pmid: '33414549'
+    doi: 10.1038/s41588-020-00754-2
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90011874'',
+    ''GCST90011875'']'
+- source_id: SRC:PMID:33883008
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'Safety, pharmacokinetics and exploratory pro-cognitive effects of HTL0018318, a selective M(1)
+    receptor agonist, in healthy younger adult and elderly subjects: a multiple ascending dose study.'
+  year: 2021
+  first_author: Bakker C
+  container: Alzheimers Res Ther
+  identifiers:
+    pmid: '33883008'
+    doi: 10.1186/s13195-021-00816-5
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'The only healthy-adult human interventional study in this atlas. Registered as Netherlands Trial
+    Register NTR5781; that registry is not machine-verifiable by scripts/fetch_source_metadata.py, so
+    the source is registered by PMID only and the NTR id appears solely inside the claim''s database_record
+    for traceability. | discovered_via: pubmed search: HTL0018318 muscarinic M1 receptor agonist healthy
+    subjects cognition'
+- source_id: SRC:PMID:34615535
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Prevalence and phenotypic impact of rare potentially damaging variants in autism spectrum disorder.
+  year: 2021
+  first_author: Mahjani B
+  container: Mol Autism
+  identifiers:
+    pmid: '34615535'
+    doi: 10.1186/s13229-021-00465-3
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: GRIN2B de novo variants intellectual disability neurodevelopmental
+    disorder cohort'
+- source_id: SRC:PMID:34737426
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A generalized linear mixed model association tool for biobank-scale data
+  year: 2021
+  first_author: Jiang L
+  container: Nat Genet
+  identifiers:
+    pmid: '34737426'
+    doi: 10.1038/s41588-021-00954-4
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90042727'',
+    ''GCST90043989'', ''GCST90044291'', ''GCST90044292'', ''GCST90044293'', ''GCST90044294'', ''GCST90044295'',
+    ''GCST90044296'', ''GCST90044297'']'
+- source_id: SRC:PMID:34743297
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'Pleiotropic predisposition to Alzheimer''s disease and educational attainment: insights from
+    the summary statistics analysis'
+  year: 2022
+  first_author: Kulminski AM
+  container: Geroscience
+  identifiers:
+    pmid: '34743297'
+    doi: 10.1007/s11357-021-00484-1
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90095190''] | gwas_catalog_initial_sample_size: [''(see Lambert 2013 and Okbay 2016)'']'
+- source_id: SRC:PMID:34855049
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'Genetic Risk for Smoking: Disentangling Interplay Between Genes and Socioeconomic Status'
+  year: 2022
+  first_author: Pasman JA
+  container: Behav Genet
+  identifiers:
+    pmid: '34855049'
+    doi: 10.1007/s10519-021-10094-4
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90100570'']'
+- source_id: SRC:PMID:35217796
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Direct comparison of the acute effects of lysergic acid diethylamide and psilocybin in a double-blind
+    placebo-controlled study in healthy subjects.
+  year: 2022
+  first_author: Holze F
+  container: Neuropsychopharmacology
+  identifiers:
+    pmid: '35217796'
+    doi: 10.1038/s41386-022-01297-2
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Registered as NCT03604744. Cited for acute self-reported impairment of control and cognition
+    in healthy adults. | discovered_via: pubmed search: psilocybin cognitive function healthy volunteers
+    double-blind acute impairment'
+- source_id: SRC:PMID:35361970
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Polygenic prediction of educational attainment within and between families from genome-wide association
+    analyses in 3 million individuals
+  year: 2022
+  first_author: Okbay A
+  container: Nat Genet
+  identifiers:
+    pmid: '35361970'
+    doi: 10.1038/s41588-022-01016-z
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90105038''] | gwas_catalog_initial_sample_size: [''3,037,499 European ancestry individuals'']'
+- source_id: SRC:PMID:35386118
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-Wide Association Study of Alzheimer's Disease Brain Imaging Biomarkers and Neuropsychological
+    Phenotypes in the European Medical Information Framework for Alzheimer's Disease Multimodal Biomarker
+    Discovery Dataset
+  year: 2022
+  first_author: Homann J
+  container: Front Aging Neurosci
+  identifiers:
+    pmid: '35386118'
+    doi: 10.3389/fnagi.2022.840651
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90104689''] | gwas_catalog_initial_sample_size: [''429 European ancestry individuals'']'
+- source_id: SRC:PMID:35764056
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genetic Relationships between Attention-Deficit/Hyperactivity Disorder, Autism Spectrum Disorder,
+    and Intelligence
+  year: 2022
+  first_author: Rao S
+  container: Neuropsychobiology
+  identifiers:
+    pmid: '35764056'
+    doi: 10.1159/000525411
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90134330''] | gwas_catalog_initial_sample_size: [''20,183 European ancestry ADHD cases, 18,381
+    European ancestry ASD cases, up to 63,160 European ancestry controls, 269,867 European ancestry individuals
+    with intelligence measurements'']'
+- source_id: SRC:PMID:36150907
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide Association Study Shows That Executive Functioning Is Influenced by GABAergic Processes
+    and Is a Neurocognitive Genetic Correlate of Psychiatric Disorders
+  year: 2023
+  first_author: Hatoum AS
+  container: Biol Psychiatry
+  identifiers:
+    pmid: '36150907'
+    doi: 10.1016/j.biopsych.2022.06.034
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90162547'',
+    ''GCST90162548'', ''GCST90162549'', ''GCST90179114'', ''GCST90179115'', ''GCST90179116'', ''GCST90179117'',
+    ''GCST90179118'', ''GCST90179119'', ''GCST90179120'']'
+- source_id: SRC:PMID:36378351
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: A General Cognitive Ability Factor for the UK Biobank
+  year: 2023
+  first_author: Williams CM
+  container: Behav Genet
+  identifiers:
+    pmid: '36378351'
+    doi: 10.1007/s10519-022-10127-6
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90264174''] | gwas_catalog_initial_sample_size: [''223,731 British ancestry individuals'']'
+- source_id: SRC:PMID:36931707
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Activity-Dependent Nr4a2 Induction Modulates Synaptic Expression of AMPA Receptors and Plasticity
+    via a Ca(2+/)CRTC1/CREB Pathway.
+  year: 2023
+  first_author: Català-Solsona J
+  container: J Neurosci
+  identifiers:
+    pmid: '36931707'
+    doi: 10.1523/JNEUROSCI.1341-22.2023
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'discovered_via: pubmed search: CRTC1 memory consolidation hippocampus mice'
+- source_id: SRC:PMID:36973338
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association study of population-standardised cognitive performance phenotypes in
+    a rural South African community
+  year: 2023
+  first_author: Soo CC
+  container: Commun Biol
+  identifiers:
+    pmid: '36973338'
+    doi: 10.1038/s42003-023-04636-1
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90246330''] | gwas_catalog_initial_sample_size: [''1,887 Sub-Saharan African ancestry individuals'']'
+- source_id: SRC:PMID:37089073
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Meta-analysis of age-related cognitive decline reveals a novel locus for the attention domain
+    and implicates a COVID-19-related gene for global cognitive function
+  year: 2023
+  first_author: Acharya V
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '37089073'
+    doi: 10.1002/alz.13064
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90270904''] | gwas_catalog_initial_sample_size: [''2,995 European ancestry individuals aged
+    65 years or older'']'
+- source_id: SRC:PMID:37365406
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Multivariate genetic analysis of personality and cognitive traits reveals abundant pleiotropy
+  year: 2023
+  first_author: Hindley G
+  container: Nat Hum Behav
+  identifiers:
+    pmid: '37365406'
+    doi: 10.1038/s41562-023-01630-9
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90270074''] | gwas_catalog_initial_sample_size: [''337,125 British ancestry individuals'']'
+- source_id: SRC:PMID:37651202
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Effects of AFQ056 on language learning in fragile X syndrome.
+  year: 2023
+  first_author: Berry-Kravis E
+  container: J Clin Invest
+  identifiers:
+    pmid: '37651202'
+    doi: 10.1172/JCI171723
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Negative randomised result; PubMed publication types include Randomized Controlled Trial. Registered
+    as NCT02920892. | discovered_via: pubmed search: mavoglurant fragile X syndrome randomized placebo
+    phase 2 mGluR5'
+- source_id: SRC:PMID:37984853
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Sex-specific genetic architecture of late-life memory performance
+  year: 2024
+  first_author: Eissman JM
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '37984853'
+    doi: 10.1002/alz.13507
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90448446'', ''GCST90448470''] | gwas_catalog_initial_sample_size: [''4,478 European ancestry
+    males, 373 African ancestry males'', ''8,465 European ancestry individuals'']'
+- source_id: SRC:PMID:39880004
+  schema_version: 0.1.0
+  source_type: meta_analysis
+  title: 'Xanomeline-Trospium for Adults with Schizophrenia Experiencing Acute Psychosis: A Systematic
+    Review and Meta-analysis of Safety and Tolerability Outcomes.'
+  year: 2025
+  first_author: Kishi T
+  container: Pharmacopsychiatry
+  identifiers:
+    pmid: '39880004'
+    doi: 10.1055/a-2506-7022
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Psychosis endpoints in a patient population; cited for safety/tolerability and for the fact
+    of approval-supporting efficacy, never as cognitive-enhancement evidence. | discovered_via: pubmed
+    search: xanomeline trospium KarXT schizophrenia randomized controlled trial efficacy'
+- source_id: SRC:PMID:39901012
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Fine-scale population structure and widespread conservation of genetic effect sizes between human
+    groups across traits
+  year: 2025
+  first_author: Hu S
+  container: Nat Genet
+  identifiers:
+    pmid: '39901012'
+    doi: 10.1038/s41588-024-02035-8
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90310157'',
+    ''GCST90310159'', ''GCST90429578'', ''GCST90429598'', ''GCST90429604'']'
+- source_id: SRC:PMID:40360725
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: 'Deciphering the influence of socioeconomic status on brain structure: insights from Mendelian
+    randomization'
+  year: 2025
+  first_author: Xia C
+  container: Mol Psychiatry
+  identifiers:
+    pmid: '40360725'
+    doi: 10.1038/s41380-025-03047-4
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90566695'',
+    ''GCST90566696'', ''GCST90566697'']'
+- source_id: SRC:PMID:40374629
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Combining cross-sectional and longitudinal genomic approaches to identify determinants of cognitive
+    and physical decline
+  year: 2025
+  first_author: Schoeler T
+  container: Nat Commun
+  identifiers:
+    pmid: '40374629'
+    doi: 10.1038/s41467-025-59383-0
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90565836'',
+    ''GCST90565838'', ''GCST90565842'', ''GCST90565846'', ''GCST90565851'', ''GCST90565852'', ''GCST90565856'',
+    ''GCST90565861'', ''GCST90565862'', ''GCST90652250'', ''GCST90652253'', ''GCST90652255'', ''GCST90652256'']'
+- source_id: SRC:PMID:40968291
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Pan-UK Biobank genome-wide association analyses enhance discovery and resolution of ancestry-enriched
+    effects
+  year: 2025
+  first_author: Karczewski KJ
+  container: Nat Genet
+  identifiers:
+    pmid: '40968291'
+    doi: 10.1038/s41588-025-02335-7
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary. | discovered_via: opentargets_api | open_targets_study_ids: [''GCST90691678'',
+    ''GCST90691679'', ''GCST90691680'', ''GCST90691682'', ''GCST90691683'', ''GCST90691684'', ''GCST90691685'',
+    ''GCST90691686'', ''GCST90691687'', ''GCST90691758'', ''GCST90691760'', ''GCST90691844'', ''GCST90691845'',
+    ''GCST90691846'', ''GCST90691881'', ''GCST90692043'', ''GCST90692044'', ''GCST90692094'', ''GCST90692189'',
+    ''GCST90692190'', ''GCST90692191'', ''GCST90692192'', ''GCST90692193'', ''GCST90692194'', ''GCST90692329'',
+    ''GCST90692473'', ''GCST90692474'', ''GCST90692475'', ''GCST90692552'', ''GCST90692553'', ''GCST90692554'',
+    ''GCST90692555'', ''GCST90692655'', ''GCST90692681'', ''GCST90692721'', ''GCST90692739'', ''GCST90692786'',
+    ''GCST90692787'', ''GCST90692873'', ''GCST90692874'', ''GCST90692875'', ''GCST90692909'', ''GCST90692910'',
+    ''GCST90692939'', ''GCST90692940'', ''GCST90693038'', ''GCST90693039'']'
+- source_id: SRC:PMID:41413636
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Genome-wide association study identifies novel variants in olfactory, vitamin A, vitamin B, and
+    cadherin pathways associated with learning and memory
+  year: 2025
+  first_author: Hopkins LN
+  container: Sci Rep
+  identifiers:
+    pmid: '41413636'
+    doi: 10.1038/s41598-025-32828-8
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90448143'', ''GCST90448144''] | gwas_catalog_initial_sample_size: [''597 European ancestry,
+    Asian ancestry, NR ancestry individuals'']'
+- source_id: SRC:PMID:42062297
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Crystallized and fluid cognitive abilities have different genetic associations with neuropsychiatric
+    disorders
+  year: 2026
+  first_author: Londono-Correa D
+  container: Nat Commun
+  identifiers:
+    pmid: '42062297'
+    doi: 10.1038/s41467-026-72477-7
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90827739'', ''GCST90860823''] | gwas_catalog_initial_sample_size: [''438,582 European ancestry
+    individuals'', ''597,090 European ancestry individuals'']'
+- source_id: SRC:PMID:42092107
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Shared genetic architecture between the topology of brain white matter structural connectome
+    and fluid intelligence
+  year: 2026
+  first_author: Dong X
+  container: Commun Biol
+  identifiers:
+    pmid: '42092107'
+    doi: 10.1038/s42003-026-10131-0
+  retrieval:
+    method: pubmed_metadata
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent. | discovered_via: gwas_catalog_api | gwas_catalog_accessions:
+    [''GCST90832687''] | gwas_catalog_initial_sample_size: [''182,798 British ancestry individuals'']'
+- source_id: SRC:PMID:9109749
+  schema_version: 0.1.0
+  source_type: journal_article
+  title: Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral
+    symptoms in Alzheimer disease.
+  year: 1997
+  first_author: Bodick NC
+  container: Arch Neurol
+  identifiers:
+    pmid: '9109749'
+    doi: 10.1001/archneur.1997.00550160091022
+  retrieval:
+    method: pubmed_search
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  notes: 'PubMed publication types include Randomized Controlled Trial; patient population (probable Alzheimer
+    disease), not healthy adults. | discovered_via: pubmed search: xanomeline muscarinic M1 cognition
+    Alzheimer randomized trial'

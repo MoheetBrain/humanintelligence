@@ -1,0 +1,132 @@
+# Comparative claim bearing on the seed target TGT:RGS14.
+# Contract: docs/DATA_CONTRACT.md §4. Lead atlas for the RGS14 dossier is agent:brakes.
+#
+# targets/seed_registry.yaml flags RGS14 as having a "rodent-only evidence base —
+# translation distance must be assessed explicitly". That assessment is this agent's job,
+# and this is the result: the ANATOMICAL SUBSTRATE is conserved (RGS-14 is a CA2-specific
+# marker in adult human hippocampus, as it is in mouse), while the FUNCTIONAL evidence
+# remains entirely rodent. Those two facts pull in opposite directions and the assessment
+# in atlases/comparative/assessments/RGS14.yaml records both.
+#
+# Note carefully what the human evidence is: an immunohistochemical study whose purpose
+# was to parcellate the human hippocampus for neuropathology and imaging, which used
+# RGS-14 as a convenient CA2 stain. Nobody set out to test whether RGS14 does the same
+# thing in humans, and nobody did test it.
+
+- claim_id: CLM:comparative:RGS14:001
+  schema_version: 0.1.0
+  statement: >-
+    RGS14 protein is enriched in CA2 pyramidal neurons in both species where it has been
+    localised: Lee and colleagues reported high enrichment in mouse CA2, and
+    Gonzalez-Arnay and colleagues used RGS-14 immunostaining as a CA2-specific marker for
+    parcellating the adult human hippocampus.
+  subject: GENE:RGS14
+  predicate: EXPRESSED_IN
+  object: CELL:ca2_pyramidal_neuron
+  claim_type: expression
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      Two species, from two independent studies that were not designed as a comparison.
+      No phylogenetic control is possible with two species and none is claimed. No
+      non-rodent, non-human species has been examined: PubMed searches for RGS14 with
+      primate, monkey, non-human and species-comparison terms returned one record
+      (SRC:PMID:38180568, human only) and no non-human-primate functional study.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:ca2_pyramidal_neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "conserved protein localisation is not conserved function: the mouse work shows RGS14 suppresses CA2 plasticity, and nothing comparable has been done in human or any non-rodent"
+      - "the human study's purpose was anatomical parcellation, so RGS-14 staining was a tool rather than a hypothesis; antibody specificity in human tissue was not the study's endpoint"
+      - "human CA2 itself differs from rodent CA2 in size and in its boundaries, which is precisely why the human study needed markers to find it"
+      - "two independent studies with different fixation, antibodies and detection methods; the apparent agreement is qualitative"
+  evidence:
+    - source_id: SRC:PMID:20837545
+      design: expression_atlas
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:10090
+      population: "adult mouse hippocampus, wild-type and RGS14-knockout littermates"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "regional and cellular enrichment of RGS14 protein in hippocampal subfields"
+      endpoint_category: molecular_readout
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "the signaling protein RGS14 is highly enriched in CA2 pyramidal neurons"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:38180568
+      design: expression_atlas
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "adult human hippocampus, immunohistochemistry along the antero-posterior axis"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "field and subfield localisation of RGS-14 immunoreactivity in the human hippocampus"
+      endpoint_category: molecular_readout
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "Chromogranin A and RGS-14 give specific staining of CA2"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Two species, two independent laboratories, agreeing on cell-type-specific
+      localisation, one of them adult human tissue. That is genuine convergent expression
+      evidence and reaches 2. It cannot go higher: it is localisation only, the two
+      studies were not designed to be compared, and no functional evidence exists outside
+      rodents.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "THE OVER-READING RISK FOR RGS14: conserved CA2 localisation invites the conclusion that the mouse knockout phenotype — enhanced spatial learning and object recognition memory — would transfer to humans. Nothing in this claim supports that. The mouse phenotype is a germline knockout measured on rodent memory tasks, and CLM:comparative:DENDRITE:001 and CLM:comparative:HCN1:003 give direct reasons to doubt quantitative transfer of rodent single-neuron results."
+    - "the mouse result is a germline knockout, so the rodent evidence is itself developmentally confounded; agent:brakes and agent:red_team own that judgement"
+    - "no non-human primate has been examined at all, so the panel's macaque and chimpanzee entries carry no RGS14 evidence"
+  confounders: ["antibody specificity across species", "fixation and staining protocol", "definition of CA2 boundaries in human tissue"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

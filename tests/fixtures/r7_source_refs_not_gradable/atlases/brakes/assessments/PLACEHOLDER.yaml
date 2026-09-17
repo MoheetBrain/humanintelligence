@@ -1,0 +1,17 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY V11/R7: graded from source_refs alone on a facet the rubric does not flag `database_gradable: true`.
+schema_version: "0.1.0"
+target_id: TGT:PLACEHOLDER
+assessed_by: agent:brakes
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 3
+    rationale: "synthetic fixture: graded from a database release alone"
+    claim_refs: []
+    source_refs: [SRC:DB:placeholder_db:2026-09-17]
+    evidence_basis: database_release
+    counter_level: 0
+    counter_rationale: null

@@ -1,0 +1,68 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34836820/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34836820"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs564109448"
+          }
+        },
+        "accession_id": "GCST006269",
+        "association_id": 34836820,
+        "beta": "4.591 z-score decrease",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004337",
+            "efo_trait": "intelligence"
+          }
+        ],
+        "first_author": "Davies G",
+        "locations": [
+          "1:65857086"
+        ],
+        "mapped_genes": [
+          "PDE4B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-06,
+        "pubmed_id": "29844566",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 4,
+        "range": "-",
+        "reported_trait": [
+          "General cognitive ability"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs564109448"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs564109448-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=PDE4B&efo_id=EFO_0004337&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

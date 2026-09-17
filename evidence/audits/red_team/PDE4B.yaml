@@ -1,0 +1,191 @@
+# Red-team audit - PDE4B. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:PDE4B:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:PDE4B
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: Every located human result is acute adult dosing and there is no developmental manipulation
+      in the evidence base at all. The developmental confound genuinely is not the issue for this target.
+    evidence_refs:
+    - CLM:brakes:PDE4B:001
+  - check: rescue_mistaken_for_enhancement
+    result: pass
+    note: 'Genuinely an enhancement design: healthy young adults, placebo-controlled, above-baseline improvement.
+      Narrow, but not a rescue. Recorded as a pass because it is one.'
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: pass
+    note: The load-bearing evidence is human verbal recall, not an animal task.
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'PDE4B''s level-3 human_genetic_association SURVIVES on a genuine intelligence association (SRC:PMID:29844566).
+      But its rationale counts gwas.PDE4B:003 among the directly-relevant records and all four of that
+      claim''s records are ''Highest math class taken'' or ''Self-reported math ability'' rows from an
+      educational-attainment GWAS. ''Highest math class taken'' is a measure of which course a person
+      enrolled in. Repository-level: the trait panel classes GWAS Catalog trait ''mathematical ability''
+      (EFO_0004875) as phenotype_class fluid_reasoning while marking it use_in_ranking: supporting with
+      the note ''never a stand-alone basis for a facet level''. pipelines/alphacognition/build_assessments.py
+      tests phenotype_class, not use_in_ranking, so that restriction never fires. The underlying records
+      are ''Self-reported math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396,
+      a genome-wide association study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records:
+      gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.PDE4B:003
+    - SRC:PMID:30038396
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: fail
+    note: All three PDE4 cognitive studies in the repository come from overlapping authorship in one group,
+      which agent:brakes stated. Three results that move together are one result.
+    evidence_refs:
+    - CLM:brakes:PDE4B:001
+    - CLM:brakes:PDE4B:002
+    - CLM:brakes:PDE4B:003
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: pass
+    note: agent:brakes recorded a human clinical null for this target (CLM:brakes:PDE4B:003) with a measured
+      endpoint, alongside the two positive results. Balanced.
+    evidence_refs:
+    - CLM:brakes:PDE4B:003
+  - check: dose_response_inversion
+    result: fail
+    note: Confirmed from the primary source, retrieved independently. The benefit occurred at the LOWEST
+      of three doses tested, and the authors note that no PDE4-typical side effects were reported at that
+      lowest effective dose - implying the higher doses produced side effects without the benefit. That
+      is a non-monotone exposure-response, and any consumer reading PDE4 inhibition as monotonically pro-cognitive
+      has committed the exact error this check exists for. The benefit was also confined to IMMEDIATE
+      recall; 45-minute and 24-hour recall were measured and are not reported as improved.
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+    - SRC:PMID:29241652
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: flag
+    note: Insomnia is in the dossier list; the PDE4 class carries psychiatric labelling in marketed use.
+      Open Targets returns only a single ClinPGx 'alcoholism' row for this gene, which is not usable as
+      a liability grade.
+  - check: systemic_adverse_effects
+    result: flag
+    note: Emesis is the recognised dose-limiting liability of the PDE4 class and the dossier carries it
+      along with nausea, headache, insomnia, diarrhoea and dizziness. The informative detail from the
+      primary source is that the effective dose was BELOW the threshold for those effects, which is the
+      most favourable possible reading of a narrow window - but it is a single acute study.
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: fail
+    note: 'This is the highest above-baseline enhancement grade anywhere in the brake atlas and the only
+      above-baseline human enhancement in it. What it rests on, read from the primary source: one acute
+      four-way crossover study, a 2-3 word gain on ONE of three recall timepoints of ONE task, at ONE
+      of three doses, with roflumilast - a PAN-PDE4 inhibitor that does not isolate PDE4B - from a single
+      research group with industry co-authorship. agent:brakes set mechanistic_causal_perturbation to
+      level 1 for this target precisely because no PDE4B-selective evidence was reviewed, and warned agent:integration
+      not to let the human facets carry a gene-level conclusion the mechanism facet refuses. That warning
+      is the ground for the downgrade below.'
+    evidence_refs:
+    - CLM:brakes:PDE4B:001
+    - CLM:red_team:PDE4B:001
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:PDE4B:001#f1
+    severity: major
+    category: overclaiming
+    description: PDE4B's above_baseline_enhancement grade of 3 is the highest enhancement grade in the
+      brake atlas and rests on one acute crossover study showing a 2-3 word gain on immediate recall only,
+      at the lowest of three doses, with a pan-PDE4 inhibitor that does not isolate PDE4B, from one research
+      group. As evidence about TGT:PDE4B the target attribution is family-level, not gene-level.
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+    - SRC:PMID:29241652
+  - finding_id: AUD:red_team:PDE4B:001#f2
+    severity: major
+    category: dose_response_inversion
+    description: The benefit is at the lowest of three doses and confined to one of three recall timepoints.
+      A non-monotone exposure-response in the only above-baseline human enhancement result in the repository.
+    evidence_refs:
+    - CLM:red_team:PDE4B:001
+  adjustments:
+  - kind: facet
+    target_id: TGT:PDE4B
+    facet: above_baseline_enhancement
+    field: level
+    from_level: 3
+    to_level: 2
+    reason: The facet grades TGT:PDE4B. The intervention is roflumilast, a pan-PDE4 inhibitor that does
+      not isolate PDE4B, so as evidence ABOUT THIS GENE the result is 'one human study with a relevant
+      endpoint' (level 2) rather than 'one human interventional result with a directly relevant endpoint'
+      (level 3) - the endpoint is directly relevant, the target attribution is not. agent:brakes reached
+      the same conclusion for mechanistic_causal_perturbation, grading it 1 because no PDE4B-selective
+      evidence exists, and warned explicitly that the human facets should not carry a gene-level conclusion
+      the mechanism facet refuses. This downgrade applies that warning. Not lowered further to 1, because
+      the study is a properly conducted randomised crossover in healthy adults and the above-baseline
+      improvement is real.
+  - kind: facet
+    target_id: TGT:PDE4B
+    facet: dose_response_knowledge
+    field: counter_level
+    from_level: 1
+    to_level: 2
+    reason: The primary source states that the benefit occurred at the lowest of three doses and that
+      no PDE4-typical side effects were reported at that dose, which implies the higher doses gave side
+      effects without benefit. That is a directly measured non-monotone exposure-response in a human randomised
+      crossover - moderate contradicting evidence about how well the exposure-response relation supports
+      a usable window, rather than the weak inference the previous counter_level rested on.
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

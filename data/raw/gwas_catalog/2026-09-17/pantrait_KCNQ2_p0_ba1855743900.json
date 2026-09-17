@@ -1,0 +1,601 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/218088263/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/218088263"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs80210908"
+          }
+        },
+        "accession_id": "GCST90838669",
+        "association_id": 218088263,
+        "beta": "-",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004503",
+            "efo_trait": "hematological measurement"
+          }
+        ],
+        "first_author": "Troubat L",
+        "locations": [
+          "20:63432801"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-11,
+        "pubmed_id": "38627641",
+        "pvalue_description": "",
+        "pvalue_exponent": -11,
+        "pvalue_mantissa": 4,
+        "range": "-",
+        "reported_trait": [
+          "Hematological traits (multi-trait analysis)"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs80210908"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs80210908-?"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214310751/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214310751"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1409928359"
+          }
+        },
+        "accession_id": "GCST90624094",
+        "association_id": 214310751,
+        "beta": "-",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "MONDO_0004975",
+            "efo_trait": "Alzheimer disease"
+          },
+          {
+            "efo_id": "EFO_0009268",
+            "efo_trait": "family history of Alzheimer’s disease"
+          }
+        ],
+        "first_author": "Willett JDS",
+        "locations": [
+          "20:63461662"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-09,
+        "pubmed_id": "39998322",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 4,
+        "range": "-",
+        "reported_trait": [
+          "Alzheimer's disease or family history of Alzheimer's disease"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "G",
+            "rs_id": "rs1409928359"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1409928359-G"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/119125176/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/119125176"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs71325435"
+          }
+        },
+        "accession_id": "GCST90244095",
+        "association_id": 119125176,
+        "beta": "6.347 z score increase",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0009718",
+            "efo_trait": "peak expiratory flow"
+          }
+        ],
+        "first_author": "Shrine N",
+        "locations": [
+          "20:63380027"
+        ],
+        "mapped_genes": [
+          "CHRNA4",
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-10,
+        "pubmed_id": "36914875",
+        "pvalue_description": "",
+        "pvalue_exponent": -10,
+        "pvalue_mantissa": 2,
+        "range": "-",
+        "reported_trait": [
+          "Peak expiratory flow"
+        ],
+        "risk_frequency": "0.269",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs71325435"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs71325435-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/91642665/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/91642665"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs149329391"
+          }
+        },
+        "accession_id": "GCST90027248",
+        "association_id": 91642665,
+        "beta": "0.7690801 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.48,
+        "ci_upper": 1.06,
+        "efo_traits": [
+          {
+            "efo_id": "MONDO_0100096",
+            "efo_trait": "COVID-19"
+          }
+        ],
+        "first_author": "Shelton JF",
+        "locations": [
+          "20:63421491"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 3e-07,
+        "pubmed_id": "33888907",
+        "pvalue_description": "",
+        "pvalue_exponent": -7,
+        "pvalue_mantissa": 3,
+        "range": "[0.48-1.06]",
+        "reported_trait": [
+          "COVID-19 (covid respiratory support vs population)"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs149329391"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs149329391-?"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/91641844/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/91641844"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs149329391"
+          }
+        },
+        "accession_id": "GCST90027246",
+        "association_id": 91641844,
+        "beta": "0.6872664 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.42,
+        "ci_upper": 0.96,
+        "efo_traits": [
+          {
+            "efo_id": "MONDO_0100096",
+            "efo_trait": "COVID-19"
+          }
+        ],
+        "first_author": "Shelton JF",
+        "locations": [
+          "20:63421491"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-07,
+        "pubmed_id": "33888907",
+        "pvalue_description": "",
+        "pvalue_exponent": -7,
+        "pvalue_mantissa": 6,
+        "range": "[0.42-0.96]",
+        "reported_trait": [
+          "COVID-19 (hospitalized covid vs population)"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs149329391"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs149329391-?"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/90826003/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/90826003"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs78606172"
+          }
+        },
+        "accession_id": "GCST90026531",
+        "association_id": 90826003,
+        "beta": "7.6094 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 5.45,
+        "ci_upper": 9.76,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0600056",
+            "efo_trait": "complement factor H-related protein 3 measurement"
+          }
+        ],
+        "first_author": "Cipriani V",
+        "locations": [
+          "20:63456323"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-11,
+        "pubmed_id": "34260948",
+        "pvalue_description": "",
+        "pvalue_exponent": -11,
+        "pvalue_mantissa": 4,
+        "range": "[5.45-9.76]",
+        "reported_trait": [
+          "Complement factor H-related protein 3 levels"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs78606172"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs78606172-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/90824536/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/90824536"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs78606172"
+          }
+        },
+        "accession_id": "GCST90026528",
+        "association_id": 90824536,
+        "beta": "0.84448 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.49,
+        "ci_upper": 1.2,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0600092",
+            "efo_trait": "Complement factor H-like 1 protein measurement"
+          }
+        ],
+        "first_author": "Cipriani V",
+        "locations": [
+          "20:63456323"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-06,
+        "pubmed_id": "34260948",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 6,
+        "range": "[0.49-1.2]",
+        "reported_trait": [
+          "Complement factor H-like 1 protein levels"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs78606172"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs78606172-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/45186593/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/45186593"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs62208042"
+          }
+        },
+        "accession_id": "GCST008764",
+        "association_id": 45186593,
+        "beta": "0.21 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.13,
+        "ci_upper": 0.29,
+        "efo_traits": [
+          {
+            "efo_id": "GO_0050916",
+            "efo_trait": "sensory perception of sweet taste"
+          }
+        ],
+        "first_author": "Hwang LD",
+        "locations": [
+          "20:63464400"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-06,
+        "pubmed_id": "31005972",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 2,
+        "range": "[0.13-0.29]",
+        "reported_trait": [
+          "Perceived intensity of neohesperidin dihydrochalcone"
+        ],
+        "risk_frequency": "0.8",
+        "snp_allele": [
+          {
+            "effect_allele": "G",
+            "rs_id": "rs62208042"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs62208042-G"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/41274654/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/41274654"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs6089904"
+          }
+        },
+        "accession_id": "GCST007460",
+        "association_id": 41274654,
+        "beta": "0.06418339 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.046,
+        "ci_upper": 0.082,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004319",
+            "efo_trait": "smoking cessation"
+          }
+        ],
+        "first_author": "Liu M",
+        "locations": [
+          "20:63386937"
+        ],
+        "mapped_genes": [
+          "CHRNA4",
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-12,
+        "pubmed_id": "30643251",
+        "pvalue_description": "",
+        "pvalue_exponent": -12,
+        "pvalue_mantissa": 4,
+        "range": "[0.046-0.082]",
+        "reported_trait": [
+          "Smoking cessation"
+        ],
+        "risk_frequency": "0.047486",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs6089904"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs6089904-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/41249760/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/41249760"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs6089904"
+          }
+        },
+        "accession_id": "GCST007464",
+        "association_id": 41249760,
+        "beta": "0.0325419 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.025,
+        "ci_upper": 0.04,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004319",
+            "efo_trait": "smoking cessation"
+          }
+        ],
+        "first_author": "Liu M",
+        "locations": [
+          "20:63386937"
+        ],
+        "mapped_genes": [
+          "CHRNA4",
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-16,
+        "pubmed_id": "30643251",
+        "pvalue_description": "",
+        "pvalue_exponent": -16,
+        "pvalue_mantissa": 4,
+        "range": "[0.025-0.04]",
+        "reported_trait": [
+          "Smoking cessation (MTAG)"
+        ],
+        "risk_frequency": "0.047",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs6089904"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs6089904-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/24777389/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/24777389"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs12479598"
+          }
+        },
+        "accession_id": "GCST005006",
+        "association_id": 24777389,
+        "beta": "0.3909 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.21,
+        "ci_upper": 0.57,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008407",
+            "efo_trait": "susceptibility to Mycobacterium tuberculosis infection measurement"
+          }
+        ],
+        "first_author": "Tian C",
+        "locations": [
+          "20:63418835"
+        ],
+        "mapped_genes": [
+          "KCNQ2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-06,
+        "pubmed_id": "28928442",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 6,
+        "range": "[0.21-0.57]",
+        "reported_trait": [
+          "Tuberculosis"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs12479598"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs12479598-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=KCNQ2&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 11,
+    "totalPages": 1
+  }
+}

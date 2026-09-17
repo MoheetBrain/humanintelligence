@@ -1,0 +1,746 @@
+# Facet rubric v0.1.0 — Intelligence Blueprint
+#
+# WHAT THIS FILE IS
+# -----------------
+# Per-facet refinement of the shared ordinal scale `evidence_strength_v1`
+# (docs/DATA_CONTRACT.md §5.3) for all 15 facets in the contract's facet catalogue
+# (§5, table "Facet catalogue and owners").
+#
+# The LEVEL SEMANTICS ARE NOT CHANGED here, and must never be changed here:
+#
+#   0  searched, nothing found
+#   1  weak or indirect only: correlational, in-vitro only, single small study, or a
+#      distant model system
+#   2  moderate: replicated non-human causal evidence, OR one human study with a
+#      relevant endpoint
+#   3  substantial: converging causal evidence across designs or species, OR one human
+#      interventional/genetic result with a directly relevant endpoint
+#   4  strong: replicated human evidence bearing directly on this facet's proposition,
+#      consistent in direction
+#
+# What this file adds is, for each facet: the falsifiable PROPOSITION the level grades,
+# the owning agent, the dimension(s) the facet feeds, its POLARITY, explicit level
+# criteria phrased in terms of STUDY DESIGN and SPECIES, whether it is a
+# human-proposition facet (level >= 3 requires human evidence, contract §5.3), and how
+# `counter_level` is to be read for that facet specifically.
+#
+# THIS FILE IS THE SOURCE OF TRUTH FOR FACET POLARITY (contract §5.4)
+# ------------------------------------------------------------------
+# Other agents' checkers read it, so the following keys are a STABLE CONTRACT for
+# v0.1.x and will not be renamed or restructured within that series. Additive keys may
+# appear; these will not change meaning:
+#
+#   facets[].facet                          facet name (matches the contract catalogue)
+#   facets[].owner                          owning agent id, or the role `lead_atlas`
+#   facets[].feeds                           list of dimension ids (D1..D6)
+#   facets[].polarity                        `normal` | `inverse`   <-- polarity authority
+#   facets[].human_proposition               bool (contract §5.3)
+#   facets[].methodological_cap_applies_to   `level` | `counter_level`
+#   facets[].level_criteria                  mapping 0..4 -> criterion text
+#   facets[].counter_level_guidance          how to read counter_level for this facet
+#
+# A one-line polarity lookup for a checker:
+#   yq '.facets[] | select(.facet=="human_lineage_divergence_risk") | .polarity'
+#   -> inverse
+#
+# `polarity_index` near the end of this file carries the same information in a flat
+# mapping, for consumers that do not want to walk the facet list.
+#
+# WHAT THIS FILE IS NOT
+# ---------------------
+# It contains no probabilities, no weights and no scores. Levels are ORDINAL GRADES of
+# evidence strength, not quantities. Weights live in ranking_spec_v0_1.yaml and are
+# labelled there as subjective. Level-to-distribution mapping lives in
+# models/uncertainty/uncertainty_spec_v0_1.yaml.
+#
+# A level is a statement about the EVIDENCE, never about the biology: `level: 4` means
+# "the evidence bearing on this proposition is strong and human and replicated", not
+# "this target works".
+#
+# HOW TO GRADE (applies to every facet)
+# -------------------------------------
+# 1. Grade the evidence you actually retrieved and recorded as claims. A level with no
+#    `claim_refs` is a contract violation (§5.2).
+# 2. Grade `level` (evidence FOR the proposition) and `counter_level` (evidence AGAINST
+#    it) SEPARATELY and independently. Never net them off. "Nobody looked" is
+#    `assessment_status: not_assessed`, `level: null` — never `level: 0`.
+# 3. `level: 0` means you searched and found nothing. Record what you searched in
+#    `rationale`; that sentence is the difference between 0 and not_assessed.
+# 4. Take the MODAL design, not the best single paper. One outlier study in a distant
+#    model system does not lift a facet above 1.
+# 5. Species distance is a level constraint, not a caveat: rodent-only causal evidence
+#    cannot reach 3 on a human-proposition facet, no matter how strong it is.
+# 6. Where a facet's proposition is about ADULTS, developmental evidence grades the
+#    developmental proposition, i.e. not this facet. Put it in the rationale and
+#    grade this facet on what adult evidence exists (often 0).
+# 7. `limiting_factor` is required whenever you grade below 4: name the single missing
+#    study design that would raise the grade. That string is what
+#    src/blueprint/ranking/information_gain.py is trying to prioritise.
+
+schema_version: 0.1.0
+rubric_id: facet_rubric_v0_1
+rubric_version: 0.1.0
+scale: evidence_strength_v1
+scale_source: docs/DATA_CONTRACT.md#53-ordinal-scale-evidence_strength_v1
+defined_by: agent:integration
+defined_on: "2026-09-17"
+calibration_status: uncalibrated_subjective
+subjectivity: >-
+  The LEVEL BOUNDARIES are subjective design choices about what counts as
+  "moderate" versus "substantial" evidence. They are not derived from any calibration
+  exercise, and no empirical study has established that a level-3 facet is more often
+  correct than a level-2 facet. They exist to make grading auditable and comparable
+  across agents, not to be accurate.
+
+levels:
+  - level: 0
+    label: searched_nothing_found
+    meaning: "searched, nothing found"
+  - level: 1
+    label: weak_or_indirect
+    meaning: "weak or indirect only: correlational, in-vitro only, single small study, or a distant model system"
+  - level: 2
+    label: moderate
+    meaning: "moderate: replicated non-human causal evidence, OR one human study with a relevant endpoint"
+  - level: 3
+    label: substantial
+    meaning: "substantial: converging causal evidence across designs or species, OR one human interventional/genetic result with a directly relevant endpoint"
+  - level: 4
+    label: strong
+    meaning: "strong: replicated human evidence bearing directly on this facet's proposition, consistent in direction"
+
+polarities:
+  # Vocabulary is the contract's (§5.4): `normal` or `inverse`. `direct` is accepted
+  # by the loader as a deprecated alias for `normal` and normalised on read, so an
+  # older checker does not break, but new records must use `normal`.
+  normal: >-
+    Higher `level` means MORE support for the dimension the facet feeds. The dimension
+    consumes the facet belief as-is.
+  inverse: >-
+    The proposition graded is a RISK or a DISTANCE. Higher `level` means STRONGER
+    evidence that the risk is real, which REDUCES the dimension the facet feeds. The
+    dimension consumes (1 - belief). Note the consequence, which is deliberate: a
+    completely unexamined inverse facet is NOT scored as safe. It is scored as unknown
+    and widens the interval (contract P8).
+
+methodological_cap_rule: >-
+  Contract §5.4. When a cap is imposed because the UNDERLYING METHOD is weak — the
+  comparative rule "a claim with `phylogenetic_control: none` may not be graded above
+  level 2" is the motivating case — the cap applies ONLY in the direction that
+  disfavours the target:
+
+    * `polarity: normal`  -> cap `level`. A weak method cannot establish strong SUPPORT.
+    * `polarity: inverse` -> cap `counter_level`, NEVER `level`. A weak method cannot
+      establish the ABSENCE of a risk.
+
+  Capping `level` on an inverse facet converts a methodological weakness into an
+  optimistic conclusion: it makes a target with documented human/model divergence look
+  MORE translatable than its evidence supports. That is the exact bug §5.4 was added
+  to forbid. Each facet below states the field a cap may touch in
+  `methodological_cap_applies_to`, and the rule is implemented once, in
+  `src/blueprint/ranking/caps.py::apply_methodological_cap` — never by clipping at a
+  call site.
+
+human_proposition_rule: >-
+  For facets marked `human_proposition: true`, a `level` of 3 or 4 that cites no human
+  evidence is a CONTRACT VIOLATION (docs/DATA_CONTRACT.md §5.3), not a stylistic
+  preference. "Human evidence" means a claim whose
+  `translation.human_relevance` is one of
+  {direct_human_interventional, human_genetic, human_observational} — nonhuman_primate
+  does NOT satisfy it. The validator, not the curator, is the arbiter.
+
+counter_level_reading: >-
+  `counter_level` grades the strength of the evidence AGAINST this facet's proposition
+  on the same 0..4 scale, judged by the same design/species criteria. Its per-facet
+  interpretation is given in each facet's `counter_level_guidance`. Two rules are
+  global: (a) a null result in an underpowered study is counter_level 1, not 3 —
+  absence of a detected effect is only strong counter-evidence when the study could
+  have detected one; (b) a failed HUMAN trial with a relevant endpoint is
+  counter_level >= 3 even when the animal literature is unanimous the other way.
+
+# ---------------------------------------------------------------------------------
+# FACETS
+# ---------------------------------------------------------------------------------
+
+facets:
+
+  # =============================================================== D1 genetics ===
+  - facet: human_genetic_association
+    owner: agent:alphacognition
+    feeds: [D1]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: true
+    applicability: all_targets
+    proposition: >-
+      Common or rare human genetic variation at this locus is statistically associated
+      with a cognitive phenotype that is not merely educational attainment.
+    falsifier: >-
+      Well-powered human genetic studies of cognitive ability that include this locus
+      report no association above the study's own significance threshold.
+    level_criteria:
+      0: "Searched GWAS Catalog / Open Targets / rare-variant literature for this gene x cognitive traits; no association records returned. The searched traits must be named in the rationale."
+      1: "Sub-threshold or candidate-gene-era association only; or association exclusively with `educational_attainment`; or a single small cohort; or association reported only in a disease population without a healthy-baseline replication."
+      2: "One genome-wide-significant association in a human cognitive-ability GWAS with the gene assigned positionally (`mapped_genes`), i.e. locus-level evidence only; or a rare-variant burden signal in one cohort."
+      3: "Genome-wide-significant association in a human cognitive GWAS replicated across independent cohorts or meta-analysed, with a cognitive (not educational-attainment) reported trait."
+      4: "Replicated, direction-consistent human genetic association with a g/fluid-reasoning or multi-domain cognitive endpoint across independent samples, AND the association survives in at least one analysis that is not the discovery cohort."
+    species_rule: "Human only. Non-human genetic evidence does not grade this facet at any level."
+    design_ladder: [gwas, gwas_meta_analysis, gene_based_test, rare_variant_association, polygenic_score_analysis]
+    counter_level_guidance: >-
+      Grade the strength of human genetic evidence of NO association: a well-powered
+      cognitive-ability GWAS meta-analysis in which the locus is present and null is
+      counter_level 3; a single underpowered null cohort is 1. Note explicitly that a
+      null common-variant result does not counter a rare-variant proposition, and vice
+      versa — if the counter-evidence is about a different variant class, say so in
+      `counter_rationale` and grade conservatively.
+    limiting_factor_examples:
+      - "no independent replication cohort"
+      - "trait is educational attainment, not cognitive ability"
+
+  - facet: causal_gene_attribution
+    owner: agent:alphacognition
+    feeds: [D1]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      The human association signal at this locus is attributable to THIS gene rather
+      than to a neighbouring gene or to the locus as an unresolved region.
+    falsifier: >-
+      Fine-mapping, colocalisation or an allelic series assigns the signal to a
+      different gene in the region.
+    level_criteria:
+      0: "Searched for fine-mapping, colocalisation, L2G and rare-variant evidence; none exists for this locus."
+      1: "Positional mapping only (`causal_attribution.basis: gwas_association_only`, `locus_to_gene_resolved: no`), or a nearest-gene assignment, or a published locus-to-gene model score with no orthogonal support."
+      2: "One orthogonal line of attribution: a brain eQTL/sQTL colocalisation, or a credible set in which this gene is the top locus-to-gene candidate, or a coding variant in the credible set."
+      3: "Two or more independent attribution lines agree (e.g. brain-tissue colocalisation AND a fine-mapped coding variant), or a monogenic human disorder of this gene produces a cognitive phenotype in the same direction."
+      4: "Converging human attribution: an allelic series (multiple independent variants of graded effect) or a monogenic disorder plus colocalisation, all assigning the signal to this gene, with no competing gene assignment left unexplained."
+    species_rule: >-
+      Human genetic architecture only. A mouse knockout phenotype is mechanistic
+      evidence (see `mechanistic_causal_perturbation`); it never resolves which human
+      gene at a human locus carries a human association signal.
+    design_ladder: [fine_mapping, colocalisation, eqtl, sqtl, rare_variant_association, mendelian_randomisation]
+    counter_level_guidance: >-
+      Grade the evidence that the signal belongs to a DIFFERENT gene: a published
+      fine-mapping or colocalisation assigning the region's signal to a neighbouring
+      gene is counter_level 3-4 and should also raise a red-team flag. Note that
+      `counter_level: 0` here is common and means only "nobody has assigned it
+      elsewhere", not "the assignment is secure".
+    limiting_factor_examples:
+      - "positional mapping only; no fine-mapping published for this region"
+      - "colocalisation available in blood but not in brain tissue"
+
+  - facet: human_phenotype_specificity
+    owner: agent:alphacognition
+    feeds: [D1, D4]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: true
+    applicability: all_targets
+    proposition: >-
+      The human phenotype linked to this target is a domain-general cognitive
+      capacity (g, fluid reasoning, or a consistent multi-domain profile) rather than
+      one narrow task, an educational proxy, or a disease-specific deficit.
+    falsifier: >-
+      Human evidence shows the effect is confined to a single narrow task or to a
+      disease population, with no signal on domain-general measures that were
+      measured.
+    level_criteria:
+      0: "Searched for human phenotype breadth information (which cognitive measures were used); nothing found."
+      1: "Single narrow endpoint only, or `educational_attainment` only, or a clinical composite in a disease population only, or a neuroimaging/electrophysiological proxy with no behavioural endpoint."
+      2: "One human study with a single-domain cognitive endpoint of clear relevance (e.g. working memory or processing speed), or multi-domain measures in one small sample."
+      3: "One human study measuring g or fluid reasoning directly, or consistent effects across >=2 cognitive domains in independent human samples."
+      4: "Replicated human evidence on g/fluid reasoning or a consistent multi-domain profile, with the pattern direction-consistent across samples, AND at least one study in which domain-general and domain-specific measures were compared head-to-head."
+    species_rule: "Human phenotyping only. Animal task batteries grade `transfer_breadth`, not this facet."
+    design_ladder: [gwas_meta_analysis, observational_cohort, rct_parallel, rct_crossover, meta_analysis]
+    counter_level_guidance: >-
+      Grade human evidence for NARROWNESS: a study that measured g and found the effect
+      only on a single subtest is counter_level 2-3. `educational_attainment`-only
+      evidence is never counter-evidence here — it is simply not evidence for this
+      facet (grade `level: 1` and say so).
+    limiting_factor_examples:
+      - "only educational attainment measured"
+      - "g not measured; single working-memory task only"
+
+  - facet: adult_expression_and_timing
+    owner: agent:alphacognition
+    feeds: [D2]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: true
+    applicability: all_targets
+    proposition: >-
+      The target is expressed in the ADULT human brain, in cell types and regions
+      plausibly relevant to the asserted mechanism — not only in development.
+    falsifier: >-
+      Adult human brain expression atlases show expression below detection in the
+      relevant cell types while developmental atlases show it clearly.
+    level_criteria:
+      0: "Searched adult human expression resources (bulk and single-cell) for this gene; no usable record."
+      1: "Adult expression inferred from a non-human adult dataset, or from human bulk tissue only with no cell-type resolution, or from a developmental human dataset with adult status untested."
+      2: "Adult human bulk brain expression documented in a reference dataset, with region-level but not cell-type-level resolution; or adult human single-cell data in one region only."
+      3: "Adult human single-cell/single-nucleus expression documented in the specific cell types the mechanism requires, in at least one adult cortical or hippocampal dataset."
+      4: "Adult human cell-type expression replicated across independent adult atlases, in the mechanism-relevant cell types, with the developmental-versus-adult contrast explicitly reported."
+    species_rule: >-
+      This is a human-proposition facet because the claim is about adult HUMAN brain.
+      Mouse adult expression may support level 1 only, and must be labelled as such.
+    design_ladder: [expression_atlas, single_cell_atlas]
+    counter_level_guidance: >-
+      Grade the evidence that adult human expression is absent or developmentally
+      restricted: an adult human single-cell atlas showing non-detection in the
+      required cell types is counter_level 3. A mouse developmental-restriction result
+      is counter_level 1-2 and must be flagged as a cross-species inference.
+    limiting_factor_examples:
+      - "no adult human single-cell data for the required cell type"
+      - "developmental-vs-adult contrast not reported"
+
+  # ============================================================ D1 mechanism =====
+  - facet: mechanistic_causal_perturbation
+    owner: lead_atlas
+    owner_note: "brakes / power / alphacognition, whichever is the target's lead_atlas in targets/seed_registry.yaml"
+    feeds: [D1]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      Perturbing this target CAUSES a change in a cognition-relevant state variable or
+      behaviour, in the direction the control-point hypothesis asserts.
+    falsifier: >-
+      Well-powered causal perturbation of this target produces no change in the
+      asserted state variable or behaviour, or a change in the opposite direction.
+    level_criteria:
+      0: "Searched for knockout / knockdown / overexpression / pharmacological / opto-chemogenetic perturbation studies of this target; none found."
+      1: "In-vitro or slice perturbation only; or a single small in-vivo study; or perturbation in a distant model system (invertebrate, cell line); or a molecular readout with no circuit or behavioural consequence measured."
+      2: "Replicated in-vivo causal perturbation in a non-human mammal with a plasticity, circuit or behavioural readout, consistent in direction; OR one human pharmacological challenge study with a mechanistic readout."
+      3: "Converging causal perturbation across DESIGNS (e.g. genetic and pharmacological) or across SPECIES, direction-consistent; OR one human interventional study with a mechanistic endpoint directly on the asserted mechanism."
+      4: "Replicated human causal evidence on the asserted mechanism, direction-consistent, with at least one independent group."
+    species_rule: >-
+      Non-human evidence can reach level 3 here (via cross-design/cross-species
+      convergence) because the proposition is about the mechanism, not about humans.
+      Level 4 still requires replicated human evidence.
+    design_ladder: [knockout, conditional_knockout, knockdown, overexpression, pharmacological_perturbation, optogenetic, chemogenetic, electrophysiology]
+    counter_level_guidance: >-
+      Grade the strength of failed or opposite-direction perturbations. A well-powered
+      knockout with no phenotype on the asserted readout is counter_level 3; a null
+      result in an n=6 pharmacology study is counter_level 1. Direction REVERSALS
+      (the perturbation moves the state variable the other way) are counter_level >= 3
+      regardless of sample size, and should also be recorded as a claim with
+      `direction` set accordingly so the contradiction is visible in the graph.
+    limiting_factor_examples:
+      - "single study, no independent replication"
+      - "slice electrophysiology only; no behavioural consequence measured"
+
+  # ================================================== D2 adult modifiability =====
+  - facet: adult_onset_perturbation
+    owner: lead_atlas
+    feeds: [D2]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      Perturbation started in ADULTHOOD — after the relevant developmental window has
+      closed — changes the asserted state variable or behaviour.
+    falsifier: >-
+      Adult-onset perturbation produces no change while germline or developmental
+      perturbation of the same target does.
+    level_criteria:
+      0: "Searched for adult-onset (inducible genetic, acute pharmacological, adult viral, adult circuit) perturbation; none found."
+      1: "Adult perturbation in vitro or in acute slice only; or a single adult in-vivo study with a molecular readout only; or adult perturbation in a distant model system."
+      2: "Replicated adult-onset in-vivo perturbation in a non-human mammal with a cognition-relevant readout; OR one adult human acute pharmacological challenge with a relevant endpoint."
+      3: "Converging adult-onset evidence across designs (e.g. adult-inducible knockout AND adult pharmacology) or across species; OR one adult human interventional study with a directly relevant cognitive endpoint."
+      4: "Replicated adult HUMAN interventional evidence that adult-onset modulation changes a relevant cognitive endpoint, direction-consistent."
+    species_rule: >-
+      The distinguishing requirement is TIMING, not species: a germline knockout never
+      grades above 0 on this facet no matter how strong its phenotype, because it
+      cannot separate development from adulthood. Record it under
+      `mechanistic_causal_perturbation` instead.
+    design_ladder: [conditional_knockout, knockdown, overexpression, pharmacological_perturbation, chemogenetic, optogenetic, rct_crossover, rct_parallel]
+    counter_level_guidance: >-
+      Grade the evidence that adult-onset perturbation FAILS while developmental
+      perturbation works — the single most important counter-signal for this whole
+      project. An adult-inducible perturbation with a clear negative result against a
+      positive developmental control is counter_level 4. This is also the pattern the
+      red-team check `developmental_effect_mistaken_for_adult` looks for.
+    limiting_factor_examples:
+      - "only germline knockout evidence exists"
+      - "adult pharmacology exists but the readout is molecular, not behavioural"
+
+  # ================================================ D3 supra-normal potential ====
+  - facet: above_baseline_enhancement
+    owner: lead_atlas
+    feeds: [D3]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      Modulating this target improves performance ABOVE a healthy, rested, unimpaired
+      baseline — as opposed to rescuing a deficit back toward normal.
+    falsifier: >-
+      Every observed improvement is confined to deficit states (disease model, aged,
+      sleep-deprived, stressed, lesioned), with no effect or a decrement in healthy
+      controls tested in the same study.
+    level_criteria:
+      0: "Searched for studies including a healthy, unimpaired comparison arm; none found (this includes the common case where every study used a disease model)."
+      1: "Improvement in a deficit state only, with healthy controls untested; or a healthy-baseline improvement on a molecular/synaptic readout with no behavioural consequence; or improvement in a distant model system."
+      2: "Replicated improvement above healthy wild-type baseline in a non-human mammal, with a behavioural readout and a healthy control arm present in the same study; OR one human study showing improvement over healthy baseline on a relevant endpoint."
+      3: "Converging above-healthy-baseline improvement across designs or species with healthy comparison arms; OR one human interventional result above healthy baseline on a directly relevant cognitive endpoint."
+      4: "Replicated human evidence of improvement above a healthy, non-deprived baseline on a relevant cognitive endpoint, direction-consistent, with practice/expectancy controls."
+    species_rule: >-
+      The critical requirement is the BASELINE, not the species: a study without a
+      healthy comparison arm cannot grade above 1 whatever its species. Withdrawal
+      reversal (restoring performance in a state the intervention itself created,
+      the caffeine case) is NOT enhancement: grade 0 or 1 and name the confound.
+    design_ladder: [pharmacological_perturbation, overexpression, chemogenetic, rct_crossover, rct_parallel, meta_analysis]
+    counter_level_guidance: >-
+      Grade the evidence that the effect is rescue-only or harmful at baseline: a study
+      in which healthy controls show no change or a decrement while the deficit group
+      improves is counter_level 3; an inverted-U in which healthy subjects are already
+      near the optimum is counter_level 3 and must be recorded with
+      `direction: inverted_u`. This facet's counter_level is the primary home of the
+      red-team check `rescue_mistaken_for_enhancement`.
+    limiting_factor_examples:
+      - "no healthy comparison arm in any retrieved study"
+      - "improvement observed only in aged animals"
+
+  # ==================================================== D4 far transfer ==========
+  - facet: transfer_breadth
+    owner: lead_atlas
+    feeds: [D4]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      The effect generalises beyond the trained or tested task to untrained domains —
+      far transfer — rather than being task-specific.
+    falsifier: >-
+      Effects are confined to the trained task and its near variants, with untrained
+      domains measured and unchanged.
+    level_criteria:
+      0: "Searched for studies measuring more than one task/domain; none found (single-task designs only)."
+      1: "Single task only, or several near-identical variants of one task; or transfer claimed but untrained domains not actually measured."
+      2: "Replicated effects across >=2 clearly distinct task domains in a non-human mammal (e.g. spatial memory AND reversal learning); OR one human study with >=2 distinct cognitive domains measured."
+      3: "Converging cross-domain effects across designs or species, with untrained domains explicitly measured; OR one human interventional result with a far-transfer or fluid-reasoning endpoint."
+      4: "Replicated human evidence of far transfer (untrained domain, or g/fluid reasoning), direction-consistent, with active control conditions."
+    species_rule: >-
+      Animal multi-task batteries can reach level 2-3. They cannot reach 4: animal
+      cross-task generalisation is not human far transfer (contract P4).
+    design_ladder: [pharmacological_perturbation, conditional_knockout, rct_parallel, rct_crossover, meta_analysis]
+    counter_level_guidance: >-
+      Grade the evidence for task-specificity: a study measuring untrained domains and
+      finding nothing is counter_level 3 if adequately powered. A meta-analysis of the
+      cognitive-training literature showing near- but not far-transfer is
+      counter_level 3-4 when the mechanism is the same.
+    limiting_factor_examples:
+      - "only one task measured in every retrieved study"
+      - "untrained domains not measured"
+
+  # ================================================= D5 safe controllable window =
+  - facet: dose_response_knowledge
+    owner: lead_atlas
+    feeds: [D3, D5]                        # D3 added by R8 (docs/blackboard/RESOLUTIONS.md)
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      The SHAPE of the exposure-response relation for this target is known well enough
+      to say whether a usable window exists between no effect and harm — including
+      whether the relation is monotone, threshold or inverted-U.
+    falsifier: >-
+      The relation turns out to be inverted-U or non-monotone with its optimum at or
+      below the healthy baseline, i.e. there is no window above baseline at all.
+    level_criteria:
+      0: "Searched for exposure-response, concentration-response or graded-perturbation data; none found."
+      1: "A single exposure level tested (the common case), or two levels with no shape inference possible; or an in-vitro concentration-response only."
+      2: "Multi-level exposure-response characterised in a non-human mammal with a cognition-relevant readout, replicated; OR one human graded-exposure study."
+      3: "Exposure-response shape converging across designs or species, with the shape (monotone / threshold / inverted-U) explicitly identified; OR one human graded-exposure study with a relevant cognitive endpoint and >=3 exposure levels."
+      4: "Replicated human exposure-response characterisation with the shape identified and the separation between the effect range and the adverse range explicitly reported."
+    species_rule: >-
+      Non-human exposure-response reaches at most 3 and must be labelled as such;
+      cross-species extrapolation of a WINDOW is an especially unsafe inference and
+      the rationale must say so.
+    design_ladder: [pharmacological_perturbation, electrophysiology, rct_parallel, rct_crossover, observational_cohort, meta_analysis]
+    counter_level_guidance: >-
+      Grade the evidence that NO usable window exists: an inverted-U whose optimum is
+      at healthy baseline is counter_level 3-4; an adverse effect occurring at or below
+      the effective exposure range is counter_level 4. This is the home of the
+      red-team check `dose_response_inversion`.
+    limiting_factor_examples:
+      - "single exposure level tested in every retrieved study"
+      - "shape unidentified; monotonicity assumed rather than measured"
+    note: >-
+      This facet grades KNOWLEDGE OF THE SHAPE, never a recommended exposure. No level
+      of this facet licenses a dose, a route or a regimen, and none may be written
+      anywhere in this repository (docs/COMPUTATIONAL_ONLY_POLICY.md).
+
+  # ==================================================== D6 human translation =====
+  - facet: human_intervention_evidence
+    owner: lead_atlas
+    feeds: [D6]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: true
+    applicability: all_targets
+    proposition: >-
+      A human intervention engaging this target has been tested against a cognitive
+      endpoint, and the result is known (positive OR negative — both grade this facet).
+    falsifier: >-
+      Not applicable in the usual sense: this facet grades whether the human test
+      EXISTS. The direction of its result is carried by `level` versus `counter_level`.
+    level_criteria:
+      0: "Searched ClinicalTrials.gov and the trial/challenge literature for human interventions engaging this target with a cognitive endpoint; none found."
+      1: "Human exposure exists but with no cognitive endpoint (safety/PK only); or a case series; or an open-label study with no control; or a registered trial with no posted or published results."
+      2: "One controlled human study (RCT or crossover) with a cognitive endpoint engaging this target, in any population."
+      3: "One controlled human study with a directly relevant cognitive endpoint in a healthy or mixed population, with target engagement documented; OR converging controlled evidence across populations."
+      4: "Replicated controlled human trials with relevant cognitive endpoints, direction-consistent, with documented target engagement."
+    species_rule: "Human only, by definition. Non-human-primate studies do not grade this facet."
+    design_ladder: [rct_parallel, rct_crossover, open_label_trial, clinical_case_series, meta_analysis, registry_record]
+    counter_level_guidance: >-
+      Grade the strength of FAILED human evidence: a completed adequately-powered RCT
+      with a null or negative cognitive result is counter_level 3-4; a trial terminated
+      for futility or for an adverse-effect signal is counter_level 3-4 and the
+      `whyStopped` field must be quoted in the claim's rationale. A HIGH `level`
+      together with a HIGH `counter_level` on this facet is the correct, informative
+      representation of "well studied in humans and it did not work" — do not net them
+      off, and do not let a high `level` alone imply success.
+    limiting_factor_examples:
+      - "registered trial exists but no results posted"
+      - "human exposure documented but no cognitive endpoint measured"
+
+  - facet: cross_species_convergence
+    owner: agent:comparative
+    feeds: [D6]
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      The mechanism operates in the same direction across evolutionarily distant
+      species, which makes it more likely to operate in humans too.
+    falsifier: >-
+      The mechanism is present in one lineage only, or acts in opposite directions in
+      different lineages.
+    level_criteria:
+      0: "Searched for the mechanism in >1 species (orthology plus functional evidence); nothing beyond the single original species."
+      1: "Orthologue present in other species (sequence conservation only), with no functional evidence outside the original species; or functional evidence in two closely related rodents only."
+      2: "Direction-consistent functional evidence in >=2 distantly related species (e.g. rodent and non-human primate, or mammal and bird/fish), replicated in at least one of them."
+      3: "Direction-consistent functional evidence across >=3 lineages, OR across rodent and non-human primate WITH a human observational or genetic result pointing the same way; convergence survives an explicit phylogenetic control."
+      4: "Direction-consistent evidence across multiple lineages INCLUDING replicated human evidence, with phylogenetic non-independence explicitly controlled for."
+    species_rule: >-
+      Multi-species by construction. Sequence orthology alone is level 1 forever: a
+      conserved gene is not a conserved mechanism. Convergence that has not survived
+      phylogenetic correction cannot exceed 2 (ROADMAP Sprint 5).
+    design_ladder: [comparative_genomics, comparative_anatomy, phylogenetic_comparative_analysis, electrophysiology, pharmacological_perturbation]
+    counter_level_guidance: >-
+      Grade the evidence for lineage-specificity or direction reversal: a documented
+      opposite-direction effect in another lineage is counter_level 3-4. Overlaps with
+      `human_lineage_divergence_risk`; the distinction is that THIS facet's
+      counter_level is about ANY between-lineage inconsistency, while that facet is
+      specifically about the human lineage.
+    limiting_factor_examples:
+      - "orthology only; no functional evidence outside mouse"
+      - "convergence not phylogenetically controlled"
+
+  - facet: human_lineage_divergence_risk
+    owner: agent:comparative
+    feeds: [D6]
+    polarity: inverse
+    methodological_cap_applies_to: counter_level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      Human biology at this target DIFFERS from the model species that carry its
+      evidence, in a way that would break the inference to humans — divergent
+      expression pattern, divergent cell-type distribution, divergent
+      pharmacology/isoform, or human-specific regulatory architecture.
+    falsifier: >-
+      Direct human data show the same expression pattern, cell-type distribution and
+      pharmacology as the model species.
+    level_criteria:
+      0: "Searched for human-versus-model-species differences at this target (expression, cell type, isoform, pharmacology, regulatory architecture); none reported."
+      1: "Divergence suggested only by sequence-level differences, or by a single comparative dataset, or inferred from a distant species rather than measured in human tissue."
+      2: "Replicated non-human comparative evidence of a relevant difference; OR one human dataset showing a divergent expression or cell-type pattern versus the model species."
+      3: "Converging evidence of divergence across designs or datasets; OR one direct human-versus-model comparison of the mechanism-relevant property (e.g. human cortical neuron physiology differing from mouse)."
+      4: "Replicated direct human-versus-model comparisons showing a divergence that bears on the asserted mechanism, consistent across datasets."
+    species_rule: >-
+      Requires an explicit HUMAN-versus-model comparison. A human-only dataset with no
+      model-species comparator cannot grade above 1, because divergence is a relation,
+      not a property.
+    design_ladder: [comparative_genomics, comparative_anatomy, single_cell_atlas, expression_atlas, electrophysiology]
+    counter_level_guidance: >-
+      Here `counter_level` grades the evidence that human and model biology AGREE,
+      which RAISES the dimension (inverse polarity). Direct human-versus-model
+      concordance on the mechanism-relevant property is counter_level 3-4. Because this
+      facet is inverse, an unassessed facet does not read as "no divergence risk": it
+      reads as unknown and widens the interval.
+    limiting_factor_examples:
+      - "no human-versus-mouse comparison for the relevant cell type"
+      - "divergence asserted from sequence only"
+
+  - facet: tractability
+    owner: agent:integration
+    feeds: [D5, D6]                        # D5 added by R8 (docs/blackboard/RESOLUTIONS.md)
+    database_gradable: true                # R7: the ONLY facet that may be graded from
+                                           # `source_refs` + `evidence_basis: database_release`
+                                           # instead of `claim_refs` (contract §5.2).
+    polarity: normal
+    methodological_cap_applies_to: level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    data_source: "Open Targets Platform target annotations (tractability buckets, chemical probes); see docs/API_RECIPES.md §5.1"
+    proposition: >-
+      A means of modulating this target with adequate specificity exists or is
+      reachable — a characterised modality with ligands, probes or clinical precedent.
+    falsifier: >-
+      Systematic effort has produced no selective modulator for this target or its
+      family, or every known modulator fails the selectivity requirement.
+    level_criteria:
+      0: "Open Targets returns no tractability buckets and no chemical probes for this target in the pinned data release, and no modality-specific literature was found."
+      1: "Predicted tractability only: `Druggable Family` / homology-based bucket, or `Predicted Tractable` with no ligand, probe or structure. Being a member of a druggable family is a PRIOR, not a tool."
+      2: "A characterised chemical or biological tool exists: `Structure with Ligand` or `High-Quality Ligand`, or a high-quality chemical probe, or an established antibody/oligonucleotide modality — but no clinical precedent."
+      3: "Clinical precedent for the target or a close family member: `Clinical Precedence` / `Approved Drug` bucket, or a modulator that has entered human trials; OR a high-quality probe plus a published selectivity profile across the family."
+      4: "Approved or late-clinical-stage modulator for this specific target with a published selectivity profile across the relevant family AND documented CNS exposure in humans."
+    species_rule: >-
+      Not species-graded; graded on modality maturity. CNS exposure is required for
+      level 4 because a peripherally-restricted modulator is not a tool for a
+      cognition proposition.
+    design_ladder: [database_release, registry_record, pharmacological_perturbation, rct_parallel]
+    counter_level_guidance: >-
+      Grade the evidence that adequate modulation is NOT achievable: a documented
+      failure to obtain family selectivity is counter_level 3; a modulator whose
+      dose-limiting adverse effect occurs below its CNS-active exposure is
+      counter_level 4 (and belongs in `safety_liability_burden` too). Absence of a
+      probe is `level: 0/1`, not counter-evidence.
+    provenance_rule: >-
+      Graded from a PINNED Open Targets data release snapshotted under
+      data/raw/opentargets/ and registered as `SRC:DB:opentargets:<dataVersion>` in
+      evidence/sources/integration.yaml. Never graded from memory of what is druggable,
+      and never from a tractability bucket whose data version is unrecorded.
+    limiting_factor_examples:
+      - "druggable-family prediction only; no ligand or probe in the pinned release"
+      - "probe exists but no published family selectivity profile"
+
+  # ============================================================ red team (D5/D2) =
+  - facet: safety_liability_burden
+    owner: agent:red_team
+    feeds: [D5]
+    polarity: inverse
+    methodological_cap_applies_to: counter_level   # contract §5.4
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      Modulating this target carries a documented burden of adverse effects —
+      seizure liability, psychiatric effects, systemic toxicity, oncological risk, or
+      a known dose-limiting effect.
+    falsifier: >-
+      Adequately monitored human exposure at target-engaging levels shows no adverse
+      signal. Note: absence of a reported adverse effect is NEVER graded as evidence of
+      safety (docs/COMPUTATIONAL_ONLY_POLICY.md); it is graded as level 0 with the
+      search recorded.
+    level_criteria:
+      0: "Searched Open Targets safetyLiabilities, the trial record (including `whyStopped`) and the adverse-effect literature; no liability reported. This is an EVIDENCE statement, not a safety statement."
+      1: "Mechanistic or in-vitro concern only; or a liability reported for the target family rather than this target; or a single case report; or a preclinical finding at exposures far above the effective range."
+      2: "Replicated preclinical adverse findings at relevant exposures; OR one human study/pharmacovigilance signal reporting an adverse effect attributable to engaging this target."
+      3: "Converging adverse evidence across designs or species; OR one human trial with a dose-limiting or serious adverse effect attributable to this mechanism; OR a trial terminated for a safety reason."
+      4: "Replicated human adverse evidence attributable to engaging this target, direction-consistent, including at least one dose-limiting or serious event; OR a regulatory action on this mechanism."
+    species_rule: >-
+      Preclinical liabilities reach at most 2 on their own; human adverse evidence is
+      required for 3-4. The asymmetry is deliberate and is NOT symmetric with the
+      benefit facets: a preclinical safety signal is never dismissed for being
+      preclinical — it is carried at level 2 and named in `risks`.
+    design_ladder: [pharmacological_perturbation, knockout, rct_parallel, rct_crossover, observational_cohort, case_control, registry_record, database_release]
+    counter_level_guidance: >-
+      Here `counter_level` grades evidence that the liability is ABSENT or not
+      mechanism-attributable — adequately powered and monitored human exposure with no
+      signal (counter_level 3), or a demonstration that the adverse effect is
+      off-target (counter_level 2-3). Because the polarity is inverse, counter_level
+      RAISES D5. Grade this conservatively: the project's asymmetry rule is that
+      evidence of harm is easier to accumulate than evidence of safety, and an
+      unassessed safety facet must never be read as a clean bill of health.
+    limiting_factor_examples:
+      - "no human exposure data; preclinical signal only"
+      - "liability reported for the family, not this target"
+
+  - facet: developmental_confound_risk
+    owner: agent:red_team
+    feeds: [D2]
+    polarity: inverse
+    methodological_cap_applies_to: counter_level   # contract §5.4
+    gate: D2
+    human_proposition: false
+    applicability: all_targets
+    proposition: >-
+      The evidence base for this target reflects DEVELOPMENTAL biology being mistaken
+      for adult modifiability: the phenotypes come from germline or developmental
+      perturbation, or from a critical-period mechanism, and there is no adult-onset
+      demonstration.
+    falsifier: >-
+      An adult-onset perturbation reproduces the phenotype, which shows the effect does
+      not depend on the developmental window.
+    level_criteria:
+      0: "Searched: the evidence base contains adult-onset perturbations, or there is no reason to suspect a developmental mechanism, and the search is recorded."
+      1: "Some developmental dependence suspected on mechanistic grounds (e.g. the target is expressed developmentally) but not demonstrated; or the evidence base is mixed with adult-onset work present."
+      2: "Replicated evidence that the phenotype arises from developmental or germline perturbation, with adult-onset perturbation untested; OR one demonstration that the mechanism is critical-period-restricted."
+      3: "Converging evidence of developmental dependence across designs or species; OR one adult-onset perturbation that FAILED to reproduce a clear developmental phenotype."
+      4: "Replicated evidence that the phenotype is developmental only — adult-onset perturbation tested and negative in independent studies, or the mechanism is established as critical-period-restricted with an adult null."
+    species_rule: >-
+      Timing evidence, not species evidence. A germline knockout with a strong
+      phenotype and no adult-onset counterpart is level 2 by construction — that
+      configuration IS the confound.
+    design_ladder: [knockout, conditional_knockout, pharmacological_perturbation, chemogenetic, expression_atlas]
+    counter_level_guidance: >-
+      Here `counter_level` grades the evidence AGAINST a developmental confound, i.e.
+      positive adult-onset demonstrations: a replicated adult-inducible perturbation
+      reproducing the phenotype is counter_level 3-4 and lifts D2 back up. This facet
+      and `adult_onset_perturbation` are deliberately redundant: one is graded by the
+      lead atlas from the positive evidence, the other by the red team from the
+      confound side, and disagreement between them is a signal worth a finding.
+    gate_note: >-
+      At `level: 4` this facet CAPS D2 (see ranking_spec_v0_1.yaml `gates`). The cap is
+      a subjective modelling choice recorded in that file, and it is a cap on the
+      SCORE, never a claim that adult modification is impossible.
+    limiting_factor_examples:
+      - "no adult-onset perturbation has been attempted"
+      - "critical-period restriction demonstrated in mouse, untested in human tissue"
+
+
+# ---------------------------------------------------------------------------------
+# FLAT POLARITY INDEX (contract §5.4) — same information as facets[].polarity,
+# duplicated in a flat mapping for consumers that do not walk the facet list.
+# tests/test_ranking_polarity_caps.py asserts the two agree, so they cannot drift.
+# ---------------------------------------------------------------------------------
+polarity_index:
+  above_baseline_enhancement: normal
+  adult_expression_and_timing: normal
+  adult_onset_perturbation: normal
+  causal_gene_attribution: normal
+  cross_species_convergence: normal
+  developmental_confound_risk: inverse
+  dose_response_knowledge: normal
+  human_genetic_association: normal
+  human_intervention_evidence: normal
+  human_lineage_divergence_risk: inverse
+  human_phenotype_specificity: normal
+  mechanistic_causal_perturbation: normal
+  safety_liability_burden: inverse
+  tractability: normal
+  transfer_breadth: normal
+# ---------------------------------------------------------------------------------
+# CROSS-CHECKS the loader enforces (src/blueprint/ranking/rubric.py)
+# ---------------------------------------------------------------------------------
+consistency_requirements:
+  - "Every facet named in ranking_spec_v0_1.yaml facet_weights must appear here, and vice versa."
+  - "Every facet's `feeds` list must match the dimensions that give it a non-zero weight in the ranking spec."
+  - "Every facet declares polarity in {normal, inverse} (contract §5.4; `direct` accepted as a deprecated alias) and human_proposition in {true, false}."
+  - "Every facet declares methodological_cap_applies_to, and it is `level` for polarity normal and `counter_level` for polarity inverse (contract §5.4)."
+  - "polarity_index agrees with facets[].polarity for all 15 facets."
+  - "Level criteria must be present for all of 0,1,2,3,4 on every facet."
+  - "Facets with `human_proposition: true` are exactly: human_genetic_association, human_phenotype_specificity, human_intervention_evidence, adult_expression_and_timing (contract §5.3)."
+  - "Owners must match the contract §5 facet catalogue; `lead_atlas` is a role, resolved per target from targets/seed_registry.yaml."
+
+facet_count: 15

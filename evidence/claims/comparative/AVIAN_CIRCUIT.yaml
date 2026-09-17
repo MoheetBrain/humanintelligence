@@ -1,0 +1,100 @@
+# Convergent circuit architecture in the avian pallium. Contract: docs/DATA_CONTRACT.md §4.
+#
+# This is the atlas's strongest candidate for genuine mechanistic convergence — a
+# repeated circuit motif in a lineage that has no laminated neocortex at all — and it is
+# recorded at a low evidence level because it is fibre-architecture anatomy in two bird
+# species with no physiology and no behaviour. That combination is the whole point:
+# "convergent mechanism" and "well-evidenced" are independent properties, and this atlas
+# will not let the appeal of the first substitute for the second.
+
+- claim_id: CLM:comparative:AVIAN_CIRCUIT:001
+  schema_version: 0.1.0
+  statement: >-
+    Stacho and colleagues imaged fibre architecture with three-dimensional polarised
+    light imaging and traced connections in pigeon and barn owl pallium, describing an
+    iteratively repeated column-like circuit crossing the layer-like nuclear boundaries
+    of the hyperpallium and sensory dorsal ventricular ridge, linked to neighbouring
+    columns and to associative and motor areas.
+  subject: CIRCUIT:avian_pallial_column
+  predicate: IMPLEMENTS
+  object: PRIM:composition
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:8932, SPECIES:NCBITaxon:56313]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      Two bird species, chosen for tractability and for differing sensory
+      specialisations, compared qualitatively against mammalian cortical architecture.
+      No phylogenetic model, and with two species none is possible. The PubMed record's
+      MeSH terms include Columbidae, Strigiformes, Rats, Chlorocebus aethiops and Humans,
+      indicating mammalian comparison material was also examined.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:pallium]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a repeated wiring motif is not a repeated computation; the functional equivalence to a mammalian canonical microcircuit is asserted by structural analogy, and the source itself says the circuitry 'might constitute' the structural basis of neuronal computation"
+      - "convergence versus deep homology is not settled by this design: amniote pallial fields may share an ancestral organisation, in which case the similarity is inherited rather than independently evolved"
+      - "polarised light imaging resolves fibre orientation, not synaptic connectivity, and the tracing was done in a subset of the same material"
+      - "pigeons and barn owls are not the species the avian-cognition literature is built on; neither is a corvid or a parrot, so the panel members with the strongest behavioural records were not examined"
+  evidence:
+    - source_id: SRC:PMID:32973004
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:8932
+      population: "adult pigeon and barn owl pallium, with mammalian comparison material"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: species
+      endpoint: "fibre orientation from three-dimensional polarised light imaging and local and associative connectivity from tract tracing"
+      endpoint_category: molecular_readout
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: "We discovered an iteratively repeated, column-like neuronal circuitry across the layer-like nuclear boundaries of the hyperpallium and the sensory dorsal ventricular ridge."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      One anatomical study in two species, no physiology, no behaviour, and the link to
+      a computational primitive is structural analogy. The claim is interesting, not
+      well evidenced, and the level says so.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "OVER-READING RISK: the abstract's opening sentence pairs the absence of cortex-like organisation with 'extraordinary cognitive skills that are comparable to those of mammals'. That comparison is imported from other literature on other species; no cognition was measured here."
+    - "the object PRIM:composition is this agent's mapping, not the paper's, and is the weakest link in the record; the red team should test whether this edge should exist at all"
+    - "if the similarity is deep homology rather than convergence, this claim supports the opposite of what it appears to: a conserved amniote plan rather than an independent solution"
+    - "`sample_size.value` is null, not 2: the retrieved abstract gives no verbatim species count, so a number here could not be audited against the source. The two species are named in `context.species` and counted in `context.species_count`, both of which are this agent's own derivation from the abstract and the PubMed MeSH terms rather than a quoted figure."
+  confounders: ["species choice", "imaging modality resolution", "tract-tracing coverage", "homology versus analogy of pallial fields"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

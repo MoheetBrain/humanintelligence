@@ -1,0 +1,138 @@
+# Red-team audit - KCNQ3. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:KCNQ3:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:KCNQ3
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: The same developmental dissociation applies and for the same reason - the same manipulation
+      produced it. Correctly inherited by the dossier rather than re-derived.
+    evidence_refs:
+    - CLM:brakes:KCNQ3:001
+  - check: rescue_mistaken_for_enhancement
+    result: not_applicable
+    note: No enhancement result exists for this target.
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Rodent spatial memory only; no human cognitive endpoint.
+    evidence_refs:
+    - CLM:brakes:KCNQ3:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'KCNQ3 has a cognitive-trait association but no Open Targets L2G candidacy, which agent:alphacognition
+      records. Its human_genetic_association grade is not carried by an education measure. Repository-level:
+      the trait panel classes GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class
+      fluid_reasoning while marking it use_in_ranking: supporting with the note ''never a stand-alone
+      basis for a facet level''. pipelines/alphacognition/build_assessments.py tests phenotype_class,
+      not use_in_ranking, so that restriction never fires. The underlying records are ''Self-reported
+      math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association
+      study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003,
+      gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+  - check: duplicated_evidence
+    result: fail
+    note: 'KCNQ3''s causal evidence is THE SAME EXPERIMENT as KCNQ2''s: one dominant-negative KCNQ2 construct
+      acting on the KCNQ2/KCNQ3 heteromer, cited to the same source. These are not two targets with independent
+      evidence; they are one experiment attributed twice. agent:brakes graded every KCNQ3 facet one level
+      below the identical KCNQ2 evidence for exactly this reason, which is the correct response and is
+      worth naming as good practice.'
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+    - CLM:brakes:KCNQ3:001
+  - check: citation_dependence
+    result: fail
+    note: One source, one experiment, two targets, and no subtype-selective evidence anywhere. This is
+      the thinnest evidence base among the brake targets.
+    evidence_refs:
+    - CLM:brakes:KCNQ3:001
+    - CLM:brakes:KCNQ3:002
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: fail
+    note: 'Same as KCNQ2: the only marketed modulator of this channel family was withdrawn from market.
+      Because the evidence for the two targets is one experiment, this is one programme failure bearing
+      on both, not two.'
+    evidence_refs:
+    - CLM:red_team:KCNQ2:001
+    - SRC:NCT:NCT00310388
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: fail
+    note: KCNQ3 is implicated in the same M-current heteromer whose suppression produced spontaneous seizures,
+      and the dossier carries AE:seizure. Bidirectional liability.
+    evidence_refs:
+    - CLM:brakes:KCNQ3:001
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: flag
+    note: Urinary retention is in the dossier list and belongs to the opener direction, i.e. the opposite
+      of brake release.
+    evidence_refs:
+    - CLM:red_team:KCNQ2:001
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: pass
+    note: agent:brakes graded this target one level below KCNQ2 throughout, on the stated ground that
+      the evidence is about a heteromer rather than this subunit. Correct restraint.
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:KCNQ3:001#f1
+    severity: major
+    category: duplicated_evidence
+    description: KCNQ2 and KCNQ3 rest on one experiment with one construct acting on their shared heteromer.
+      Any consumer treating them as two independently evidenced targets doubles one observation. agent:brakes
+      anticipated this and graded KCNQ3 down accordingly.
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+    - CLM:brakes:KCNQ3:001
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

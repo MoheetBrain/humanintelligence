@@ -1,0 +1,268 @@
+{
+  "data": {
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    },
+    "target": {
+      "approvedSymbol": "HDAC2",
+      "biotype": "protein_coding",
+      "chemicalProbes": [
+        {
+          "drugId": null,
+          "id": "FK228",
+          "isHighQuality": true,
+          "probeMinerScore": 40
+        },
+        {
+          "drugId": "CHEMBL48310",
+          "id": "HINOKITIOL",
+          "isHighQuality": false,
+          "probeMinerScore": 61
+        },
+        {
+          "drugId": "CHEMBL5084955",
+          "id": "JPS016",
+          "isHighQuality": false,
+          "probeMinerScore": null
+        },
+        {
+          "drugId": "CHEMBL2408247",
+          "id": "PD080688",
+          "isHighQuality": false,
+          "probeMinerScore": 62
+        },
+        {
+          "drugId": "CHEMBL2408238",
+          "id": "PD081051",
+          "isHighQuality": false,
+          "probeMinerScore": 60
+        },
+        {
+          "drugId": "CHEMBL2023528",
+          "id": "PD081107",
+          "isHighQuality": false,
+          "probeMinerScore": 53
+        },
+        {
+          "drugId": "CHEMBL2408243",
+          "id": "PD081295",
+          "isHighQuality": false,
+          "probeMinerScore": 67
+        },
+        {
+          "drugId": "CHEMBL2408241",
+          "id": "PD081975",
+          "isHighQuality": false,
+          "probeMinerScore": 66
+        },
+        {
+          "drugId": "CHEMBL2408244",
+          "id": "PD082650",
+          "isHighQuality": false,
+          "probeMinerScore": 64
+        },
+        {
+          "drugId": "CHEMBL3086768",
+          "id": "PD082670",
+          "isHighQuality": false,
+          "probeMinerScore": 63
+        },
+        {
+          "drugId": "CHEMBL2408239",
+          "id": "PD082947",
+          "isHighQuality": false,
+          "probeMinerScore": 63
+        },
+        {
+          "drugId": "CHEMBL2408242",
+          "id": "PD083384",
+          "isHighQuality": false,
+          "probeMinerScore": 68
+        },
+        {
+          "drugId": "CHEMBL2408240",
+          "id": "PD083802",
+          "isHighQuality": false,
+          "probeMinerScore": 65
+        },
+        {
+          "drugId": "CHEMBL2408245",
+          "id": "PD084637",
+          "isHighQuality": false,
+          "probeMinerScore": 73
+        },
+        {
+          "drugId": "CHEMBL2408246",
+          "id": "PD085132",
+          "isHighQuality": false,
+          "probeMinerScore": 72
+        },
+        {
+          "drugId": "CHEMBL1213457",
+          "id": "pandacostat",
+          "isHighQuality": false,
+          "probeMinerScore": 17
+        },
+        {
+          "drugId": "CHEMBL3086767",
+          "id": "santacruzamate A",
+          "isHighQuality": false,
+          "probeMinerScore": 71
+        }
+      ],
+      "id": "ENSG00000196591",
+      "safetyLiabilities": [],
+      "tractability": [
+        {
+          "label": "Approved Drug",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Structure with Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Med-Quality Pocket",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Druggable Family",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt loc high conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "GO CC high conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt loc med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt SigP or TMHMM",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "GO CC med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Human Protein Atlas loc",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Literature",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "UniProt Ubiquitination",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Database Ubiquitination",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Half-life Data",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Small Molecule Binder",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "OC",
+          "value": true
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "OC",
+          "value": false
+        }
+      ]
+    }
+  }
+}

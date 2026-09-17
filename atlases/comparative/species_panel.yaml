@@ -1,0 +1,440 @@
+# Comparative Intelligence species panel — Sprint 1.
+#
+# WHAT THIS PANEL IS
+# A declared, auditable list of the species this atlas reasons about, with the evidence
+# that actually exists for each one. It is NOT a ranking, NOT a list of "intelligent
+# species", and NOT a claim that these species share a cognitive construct. Several
+# entries are here precisely because they are the standard counter-examples.
+#
+# HOW THE TAXIDS GOT HERE
+# Every taxid was resolved from the NCBI taxonomy API by
+# pipelines/comparative/fetch_taxonomy.py, which requires the registry's own
+# `scientificname` to match the queried name exactly and the rank to be `species` before
+# it will accept a hit. Responses are snapshotted immutably under
+# data/raw/ncbi_taxonomy/2026-09-17/ with a data/raw/MANIFEST.jsonl line each, and the
+# derived index is data/interim/comparative_species_taxonomy.jsonl. Nothing here was
+# typed from memory (contract §1.1, §7). The resolver is offline-rebuildable
+# (`--offline`) and reproduced all 26 taxids from snapshots with no network.
+#
+# The guard earned its keep once: the Eurasian jackdaw, which every source in this atlas
+# calls *Corvus monedula*, is *Coloeus monedula* in NCBI. The strict matcher refused the
+# synonym hit rather than silently accepting it, and the name was corrected after a
+# separate lookup confirmed taxid 30423. A resolver that took the first hit would have
+# recorded a taxid under a name NCBI does not accept.
+#
+# EVIDENCE FIELDS
+# `cognitive_evidence` and `neuroanatomical_evidence` list only claim ids in
+# evidence/claims/comparative/ that genuinely cover that species — not literature this
+# agent knows exists but did not curate. `[]` means this atlas holds nothing, and says
+# so rather than gesturing at the wider literature.
+#
+# `genome_assembly` is `not_verified_this_session` on every entry. This is deliberate:
+# assembly accessions are identifiers, and contract §1.1 and BLACKBOARD_PROTOCOL §5.3
+# forbid writing an identifier not seen in a tool response. The NCBI Assembly/Datasets
+# endpoint was not queried because its snapshot path (data/raw/ncbi_assembly/**) is not
+# owned by agent:comparative under docs/OWNERSHIP.yaml, and this agent will not write
+# outside its lane to fill a field. Requested in
+# docs/blackboard/handoffs/comparative.md as a follow-up.
+
+schema_version: 0.1.0
+panel_version: 0.1.0
+assembled_by: agent:comparative
+assembled_on: "2026-09-17"
+run_id: sprint1-comparative-01
+
+taxonomy_provenance:
+  resolver: pipelines/comparative/fetch_taxonomy.py
+  api: "NCBI E-utilities esearch + esummary, db=taxonomy"
+  snapshot_dir: data/raw/ncbi_taxonomy/2026-09-17/
+  derived_index: data/interim/comparative_species_taxonomy.jsonl
+  manifest: data/raw/MANIFEST.jsonl
+  shared_esummary_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esummary_n26_74f4a9cf5d3f.json
+  acceptance_rule: >-
+    A candidate taxid is accepted only when the registry scientificname equals the
+    queried scientific name after normalisation AND rank == species. Ambiguous,
+    mismatching or synonym-only hits are recorded as failures and the run exits non-zero.
+  resolved: "26 of 26 requested species (13 panel members, 13 cited-only species)"
+  offline_rebuild_verified: true
+
+species:
+
+  - id: SPECIES:NCBITaxon:9606
+    scientific_name: "Homo sapiens"
+    registry_common_name: "human"
+    clade: primate_hominid
+    role: reference_target_species
+    taxid_provenance:
+      taxid: "9606"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_homo-sapiens_948479161f67.json
+      registry_rank: species
+    why_in_panel: >-
+      The species the project is about. It is in the panel as the comparison's endpoint,
+      not as its top entry: every other species is here to test whether evidence
+      collected in it can be carried to this one.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:NEURON_SCALING:003
+      - CLM:comparative:NEURON_SCALING:004
+      - CLM:comparative:HCN1:001
+      - CLM:comparative:HCN1:002
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:HCN1:004
+      - CLM:comparative:DENDRITE:001
+      - CLM:comparative:RGS14:001
+    molecular_evidence:
+      - CLM:comparative:SRGAP2:001
+      - CLM:comparative:CTNND2:001
+      - CLM:comparative:HAR:001
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      HIGH, and in an unusual direction. All human cellular electrophysiology in this
+      atlas comes from epilepsy and tumour neurosurgical tissue, so every "human neuron"
+      claim here is a claim about diseased adult human tissue. Meanwhile
+      CLM:comparative:NEURON_SCALING:004 argues the human brain is cellularly
+      unexceptional for a primate of its size while CLM:comparative:HCN1:003 finds human
+      layer 5 neurons significant biophysical outliers. Both are in this atlas and they
+      are not reconciled.
+
+  - id: SPECIES:NCBITaxon:9598
+    scientific_name: "Pan troglodytes"
+    registry_common_name: "chimpanzee"
+    clade: primate_hominid
+    role: closest_outgroup
+    taxid_provenance:
+      taxid: "9598"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_pan-troglodytes_4dc8c8850be4.json
+      registry_rank: species
+    why_in_panel: >-
+      The nearest living outgroup, and therefore the only species against which a
+      "human-specific" claim can be tested at all. Without it, human-specific means
+      human-versus-mouse, which is a 90-million-year comparison.
+    cognitive_evidence:
+      - CLM:comparative:SELF_REGULATION:002
+    neuroanatomical_evidence: []
+    molecular_evidence:
+      - CLM:comparative:HAR:001
+      - CLM:comparative:NEURON_SCALING:006
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      MODERATE. Chimpanzee cognitive data enter this atlas only as a great-ape
+      comparison group in a single detour task (CLM:comparative:SELF_REGULATION:002),
+      collected in a different study from the birds it is compared with. No chimpanzee
+      neurophysiology is curated here.
+
+  - id: SPECIES:NCBITaxon:9544
+    scientific_name: "Macaca mulatta"
+    registry_common_name: "Rhesus monkey"
+    clade: primate_cercopithecid
+    role: translational_model
+    taxid_provenance:
+      taxid: "9544"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_macaca-mulatta_d550410bdaf0.json
+      registry_rank: species
+    why_in_panel: >-
+      The standard non-human primate model, and one of the ten species in the layer 5
+      allometric dataset, so it is the nearest point to human on the only quantitative
+      cross-species cellular-biophysics curve this atlas has.
+    cognitive_evidence:
+      - CLM:comparative:SELF_REGULATION:001
+    neuroanatomical_evidence:
+      - CLM:comparative:HCN1:003
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      MODERATE. The macaque's value here is that it sits between rodents and human on
+      the allometric curve while human sits off it — but the macaque contributed somatic
+      data only in parts of that analysis, and the headline exponent rests on n = 5
+      Glires, not on the primates.
+
+  - id: SPECIES:NCBITaxon:10090
+    scientific_name: "Mus musculus"
+    registry_common_name: "house mouse"
+    clade: rodent_murid
+    role: primary_causal_model
+    taxid_provenance:
+      taxid: "10090"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_mus-musculus_7f17b94fe76a.json
+      registry_rank: species
+    why_in_panel: >-
+      Not because mice are cognitively impressive, but because almost all causal
+      evidence in this repository was generated in them. The mouse is the species whose
+      transferability the whole atlas exists to assess.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:HCN1:001
+      - CLM:comparative:HCN1:002
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:HCN1:004
+      - CLM:comparative:RGS14:001
+    molecular_evidence:
+      - CLM:comparative:SRGAP2:001
+      - CLM:comparative:CTNND2:001
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      LOW for over-claiming mouse intelligence; HIGH for the reverse error of treating
+      mouse mechanism as human mechanism. Two claims here bear directly on that:
+      CLM:comparative:HCN1:003 (human layer 5 off the mammalian conductance rule the
+      mouse helps define) and CLM:comparative:DENDRITE:001 (weaker dendrite-to-soma
+      coupling in human than rodent).
+
+  - id: SPECIES:NCBITaxon:10116
+    scientific_name: "Rattus norvegicus"
+    registry_common_name: "Norway rat"
+    clade: rodent_murid
+    role: primary_causal_model
+    taxid_provenance:
+      taxid: "10116"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_rattus-norvegicus_a0d8ef8fff1b.json
+      registry_rank: species
+    why_in_panel: >-
+      The second rodent workhorse, and the direct comparator in the only study that
+      recorded from human and rodent dendrites with the same method.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:DENDRITE:001
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:HCN1:004
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      As for mouse. Note that mouse and rat are not independent evidence about
+      "rodents": they are congeneric-family murids, so agreement between them constrains
+      much less than it appears to.
+
+  - id: SPECIES:NCBITaxon:9739
+    scientific_name: "Tursiops truncatus"
+    registry_common_name: "common bottlenose dolphin"
+    clade: cetacean_odontocete
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "9739"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_tursiops-truncatus_5a8c800099ec.json
+      registry_rank: species
+    why_in_panel: >-
+      Required by the panel specification as the canonical cetacean case, and retained
+      as an explicit COVERAGE GAP: this atlas curated no dolphin evidence at all.
+    cognitive_evidence: []
+    neuroanatomical_evidence: []
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      VERY HIGH, and unmitigated here. The dolphin carries the heaviest popular
+      cognitive narrative of any species in the panel and has the least curated evidence
+      in this atlas: zero claims. The one cetacean claim
+      (CLM:comparative:NEURON_SCALING:005) is a MYSTICETE, the northern minke whale, and
+      it reports that published cetacean cortical neuron counts have been grossly
+      overestimated by stereology. It must not be transferred to Tursiops, which is an
+      odontocete. Any downstream statement about dolphin neuron numbers is unsupported
+      by this repository.
+
+  - id: SPECIES:NCBITaxon:9785
+    scientific_name: "Loxodonta africana"
+    registry_common_name: "African savanna elephant"
+    clade: proboscidean
+    role: negative_control
+    taxid_provenance:
+      taxid: "9785"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_loxodonta-africana_ceddd97fac53.json
+      registry_rank: species
+    why_in_panel: >-
+      As a NEGATIVE CONTROL on the brain-size and total-neuron-count hypotheses. The
+      elephant has three times the human brain's neurons and about a third of the human
+      cortical neuron count, so it separates "more neurons" from "more cortical neurons"
+      and falsifies the simplest version of the scaling story.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:NEURON_SCALING:003
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      HIGH in both directions. The elephant is used to argue that total neuron count
+      does not matter AND that cortical neuron count does — from the same single
+      specimen, on a measure chosen after the cognitive ranking was assumed. The
+      evidence is n = 1.
+
+  - id: SPECIES:NCBITaxon:1196302
+    scientific_name: "Corvus moneduloides"
+    registry_common_name: "New Caledonian crow"
+    clade: bird_corvid
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "1196302"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_corvus-moneduloides_d756baa39d12.json
+      registry_rank: species
+    why_in_panel: >-
+      The most-studied tool-using bird, and one of the three corvids that matched great
+      apes on the cylinder detour task, which is the single clearest cross-clade
+      behavioural result in this atlas.
+    cognitive_evidence:
+      - CLM:comparative:SELF_REGULATION:002
+      - CLM:comparative:SELF_REGULATION:003
+    neuroanatomical_evidence: []
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      VERY HIGH. This is the species around which the "bird intelligence" narrative is
+      built. Two things in this atlas cut against uncritical use of it: its cylinder-task
+      score (92 per cent) is at ceiling, so the task cannot resolve capacity; and
+      CLM:comparative:SELF_REGULATION:003 shows detour-task scores partly index motor
+      response learning, with the paper's own authors noting their birds had lifelong
+      experience of transparent surfaces.
+
+  - id: SPECIES:NCBITaxon:56781
+    scientific_name: "Corvus corax"
+    registry_common_name: "Common raven"
+    clade: bird_corvid
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "56781"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_corvus-corax_9cf08bf9b271.json
+      registry_rank: species
+    why_in_panel: >-
+      Largest absolute brain among corvids, and the species that most sharply breaks the
+      absolute-brain-volume rule: 100 per cent cylinder-task success with a brain
+      reported as roughly 26 times smaller than a chimpanzee's.
+    cognitive_evidence:
+      - CLM:comparative:SELF_REGULATION:002
+      - CLM:comparative:SELF_REGULATION:003
+    neuroanatomical_evidence: []
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      VERY HIGH. n = 5 birds, at a 100 per cent ceiling, in one task, at one research
+      station. The brain-size ratios quoted alongside the result are literature values,
+      not measurements made in that study.
+
+  - id: SPECIES:NCBITaxon:57247
+    scientific_name: "Psittacus erithacus"
+    registry_common_name: "grey parrot"
+    clade: bird_psittacid
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "57247"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_psittacus-erithacus_728ec722a34b.json
+      registry_rank: species
+    why_in_panel: >-
+      A confirmed member of the 28-species avian neuron-count dataset (verified from the
+      source's own species table), so it is one of the few panel birds with curated
+      neuroanatomical rather than only behavioural evidence.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:NEURON_SCALING:001
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      VERY HIGH. The grey parrot carries a large popular cognitive literature, none of
+      which is curated here. Its only entry in this atlas is a neuron count, and
+      CLM:comparative:NEURON_SCALING:002 shows that within Aves such counts range over
+      roughly a factor of two between clades, so a parrot count is not an avian count.
+
+  - id: SPECIES:NCBITaxon:176057
+    scientific_name: "Nestor notabilis"
+    registry_common_name: "Kea"
+    clade: bird_psittacid
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "176057"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_nestor-notabilis_abc630d31ce7.json
+      registry_rank: species
+    why_in_panel: >-
+      The second confirmed psittacid in the avian neuron-count dataset, included so the
+      parrot evidence is not resting on a single species.
+    cognitive_evidence: []
+    neuroanatomical_evidence:
+      - CLM:comparative:NEURON_SCALING:001
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      HIGH. Kea are a staple of exploratory-behaviour and innovation studies, none of it
+      curated here; the atlas holds only a neuron count for this species.
+
+  - id: SPECIES:NCBITaxon:6645
+    scientific_name: "Octopus vulgaris"
+    registry_common_name: "common octopus"
+    clade: cephalopod_octopod
+    role: convergence_test_case
+    taxid_provenance:
+      taxid: "6645"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_octopus-vulgaris_0769522b4ff0.json
+      registry_rank: species
+    why_in_panel: >-
+      Required by the panel specification as the canonical cephalopod, and kept distinct
+      from O. bimaculoides so that molecular findings in one are not attributed to the
+      other. This atlas curated NO evidence for O. vulgaris specifically.
+    cognitive_evidence: []
+    neuroanatomical_evidence: []
+    molecular_evidence: []
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      VERY HIGH, and this entry is the panel's clearest worked example of species
+      laundering. "Octopus" molecular findings in the popular and review literature are
+      overwhelmingly O. bimaculoides, and O. vulgaris is the species the behavioural
+      literature is built on. Nothing in this atlas licenses moving a result between
+      them.
+
+  - id: SPECIES:NCBITaxon:37653
+    scientific_name: "Octopus bimaculoides"
+    registry_common_name: "California two-spot octopus"
+    clade: cephalopod_octopod
+    role: molecular_reference_species
+    taxid_provenance:
+      taxid: "37653"
+      esearch_snapshot: data/raw/ncbi_taxonomy/2026-09-17/esearch_octopus-bimaculoides_a52acfd20f33.json
+      registry_rank: species
+    why_in_panel: >-
+      Added by this agent, beyond the required panel, because it is the species the
+      cephalopod reference genome and most of the RNA-recoding work were done in. Without
+      it, every cephalopod molecular claim would have had to be filed under a species it
+      was not measured in.
+    cognitive_evidence: []
+    neuroanatomical_evidence: []
+    molecular_evidence:
+      - CLM:comparative:CEPHALOPOD_GENOME:001
+      - CLM:comparative:CEPHALOPOD_RNA_EDITING:001
+    genome_assembly: not_verified_this_session
+    narrative_risk: >-
+      HIGH. The genome paper's two most useful findings are negative — no whole-genome
+      duplication, and a core neuronal gene repertoire broadly similar to other
+      invertebrate bilaterians — and those are the findings least often repeated. The
+      RNA-editing claim's own species set could not be enumerated because the full text
+      was behind a CAPTCHA, which this agent did not attempt to bypass.
+
+coverage_summary:
+  panel_species: 13
+  species_with_at_least_one_claim: 11
+  species_with_zero_claims: 2
+  zero_claim_species:
+    - SPECIES:NCBITaxon:9739   # Tursiops truncatus — no dolphin evidence curated
+    - SPECIES:NCBITaxon:6645   # Octopus vulgaris — all cephalopod evidence is O. bimaculoides
+  species_with_cognitive_evidence: 4
+  species_with_neuroanatomical_evidence: 8
+  species_with_molecular_evidence: 6
+  note: >-
+    Counts are of curated claims in evidence/claims/comparative/, not of the literature.
+    Two panel members required by the specification carry no evidence at all, and both
+    are the species with the strongest popular cognitive narratives. That asymmetry is
+    the single most important thing this panel records.
+
+cited_only_species:
+  note: >-
+    Species named in a claim's context but not panel members. Resolved by the same
+    resolver, under the same acceptance rule, and listed in
+    data/interim/comparative_species_taxonomy.jsonl with role `cited_only`.
+  members:
+    - {id: "SPECIES:NCBITaxon:9767", scientific_name: "Balaenoptera acutorostrata", note: "northern minke whale; the only cetacean with curated evidence"}
+    - {id: "SPECIES:NCBITaxon:30423", scientific_name: "Coloeus monedula", note: "Eurasian jackdaw; sources call it Corvus monedula, which NCBI treats as a synonym"}
+    - {id: "SPECIES:NCBITaxon:9054", scientific_name: "Phasianus colchicus", note: "common pheasant; the detour-task construct-validity experiment and the galliform scaling study"}
+    - {id: "SPECIES:NCBITaxon:8932", scientific_name: "Columba livia", note: "rock dove; avian canonical-circuit anatomy"}
+    - {id: "SPECIES:NCBITaxon:56313", scientific_name: "Tyto alba", note: "barn owl; avian canonical-circuit anatomy"}
+    - {id: "SPECIES:NCBITaxon:9597", scientific_name: "Pan paniscus", note: "bonobo; great-ape detour-task comparison group"}
+    - {id: "SPECIES:NCBITaxon:9593", scientific_name: "Gorilla gorilla", note: "western gorilla; great-ape detour-task comparison group"}
+    - {id: "SPECIES:NCBITaxon:9483", scientific_name: "Callithrix jacchus", note: "common marmoset; layer 5 allometric dataset"}
+    - {id: "SPECIES:NCBITaxon:109475", scientific_name: "Suncus etruscus", note: "Etruscan shrew; smallest neurons in the layer 5 allometric dataset"}
+    - {id: "SPECIES:NCBITaxon:10047", scientific_name: "Meriones unguiculatus", note: "Mongolian gerbil; layer 5 allometric dataset"}
+    - {id: "SPECIES:NCBITaxon:10141", scientific_name: "Cavia porcellus", note: "guinea pig; layer 5 allometric dataset"}
+    - {id: "SPECIES:NCBITaxon:9986", scientific_name: "Oryctolagus cuniculus", note: "European rabbit; layer 5 allometric dataset"}
+    - {id: "SPECIES:NCBITaxon:9668", scientific_name: "Mustela putorius", note: "the laboratory ferret is the domestic form M. putorius furo, which is a subspecies rank record; the species-rank taxid is used because a SPECIES: node may only carry a species"}
+  orangutan_not_resolved: >-
+    SRC:PMID:27152224 reports an orangutan cylinder-task score. No taxid is recorded
+    because the retrieved text gives only the common name and the genus Pongo contains
+    more than one species. Guessing would have been a fabricated identifier.

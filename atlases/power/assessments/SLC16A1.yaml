@@ -1,0 +1,138 @@
+# Facet assessment — SLC16A1 (MCT1). Contract §5.2 / §5.3. Declared depth: shallow,
+# so facets not actually reviewed are recorded as not_assessed rather than graded 0.
+schema_version: 0.1.0
+target_id: TGT:SLC16A1
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Replicated non-human causal evidence: knockdown of astrocytic MCT1 in rat
+      hippocampus impaired long-term memory and LTP maintenance with substrate-
+      specific rescue, reproduced with different rescue metabolites by a second study
+      and in a second brain region by an independent group.
+    claim_refs: [CLM:power:SLC16A1:001, CLM:power:SLC16A1:002, CLM:power:anls:005]
+    counter_level: 2
+    counter_rationale: >-
+      The tool-specificity critique applies in full, and a separate rodent study
+      found dorsal hippocampal acquisition depended on direct neuronal glucose uptake
+      rather than a monocarboxylate route.
+    counter_claim_refs: [CLM:power:anls:002, CLM:power:anls:003]
+    limiting_factor: "MCT1 is endothelial as well as astrocytic and no retrieved study separates the compartments"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      The rodent knockdowns were performed acutely in adult animals with behavioural
+      testing within days, and the pattern is reproduced by an independent group in a
+      different region, so adult dependence of loss of function is established in
+      rodents.
+    claim_refs: [CLM:power:SLC16A1:001, CLM:power:anls:005]
+    counter_level: 0
+    counter_rationale: "no adult-onset experiment on this target returned a null"
+    counter_claim_refs: []
+    limiting_factor: "rodent only; the human phenotype is developmental in presentation"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 0
+    rationale: "Searched and found nothing: no study raises MCT1 above normal or tests enhancement in an intact animal or person."
+    search_basis: >-
+      Scope: PubMed across the whole index for MCT1 and SLC16A1 - 'astrocyte neuron lactate
+      transport memory consolidation monocarboxylate transporter' (10 results, all
+      screened), 'SLC16A1 mutations ketone body utilization disorder patients' (3 results),
+      'MCT1 monocarboxylate transporter 1 mouse brain white matter axon function deficiency'
+      (0 results) - read specifically for gain-of-function arms. A hit would have been any
+      experiment raising MCT1 above normal, in any species, with any functional readout, or
+      any human study in a non-deficient population. Every retrieved manipulation reduces
+      transport and then restores substrate against that reduced background.
+    claim_refs: []
+    counter_level: 2
+    counter_rationale: >-
+      Human loss of function presents as an acid-base and ketone-utilisation disorder
+      rather than as a cognitive syndrome, which is direct human evidence that this
+      transporter is not the binding constraint on cognition in people and therefore
+      that relieving it would not raise capacity.
+    counter_claim_refs: [CLM:power:SLC16A1:003]
+    limiting_factor: "no gain-of-function experiment; the human argument is from a non-cognitive presentation, which is weak"
+
+  - facet: transfer_breadth
+    assessment_status: not_assessed
+    level: null
+    rationale: >-
+      Not reviewed. This is a shallow dossier and no retrieved study for SLC16A1
+      measured more than one endpoint family, so there was nothing to review. Recorded
+      as not_assessed rather than 0 because the search was not directed at breadth.
+    claim_refs: []
+    counter_level: null
+    counter_rationale: null
+    counter_claim_refs: []
+    limiting_factor: "shallow dossier; breadth not searched"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak and indirect: the human genetic series reports that mutational status
+      correlated with ketoacidosis severity, MCT1 protein level and transport
+      capacity, which is a genotype-to-function gradient. It is a gradient in a
+      disease endpoint, not in a cognitive one.
+    claim_refs: [CLM:power:SLC16A1:003]
+    counter_level: 0
+    counter_rationale: "nothing contradicts the reported gradient"
+    counter_claim_refs: []
+    limiting_factor: "the dose axis is genotype severity against a metabolic endpoint, with no cognitive measure"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Graded 0, but NOT because nobody tried. A human MCT1-directed intervention exists
+      and has reported: a completed phase 1 trial of the MCT1 inhibitor AZD3965 in 53
+      patients, which measured no cognitive endpoint of any kind
+      (CLM:power:SLC16A1:005, claim_type evidence_gap, graph-inert and never
+      counter-evidence). So there is no supporting evidence to grade, and the reason is
+      that the question was not asked rather than that it was asked and answered
+      negatively. The other human evidence for this gene is genetic and observational,
+      which belongs to a different facet. This wording replaces a first-round rationale
+      that said "no human intervention on MCT1 was retrieved" - that was false, and it
+      was false because the first-round search was literature-only (resolution R14).
+    search_basis: >-
+      PubMed searched for the human SLC16A1 literature via 'SLC16A1 mutations ketone body
+      utilization disorder patients' (3 results, all retrieved and read);
+      ClinicalTrials.gov searched for interventions matching lactate or monocarboxylate
+      against cognition, memory or cognitive function (19 trials, all screened). The human
+      evidence that exists for this gene is genetic and observational, which belongs to a
+      different facet. A hit here would have been a human study administering an
+      MCT1-directed intervention with a cognitive endpoint. A third search, added in the
+      second round and absent from the first, looked for interventions matching
+      monocarboxylate, MCT1, MCT2, MCT4, GPR81, HCAR1 or lactate receptor with no
+      condition filter (20 trials, all screened) - and it returned a direct hit that
+      changes what this zero means. SRC:NCT:NCT01791595 gave AZD3965, an MCT1 inhibitor,
+      to 53 patients, completed, and posted results; every primary outcome is toxicity or
+      adverse events and every secondary outcome is pharmacokinetic, a cell-death marker
+      or tumour response. A human MCT1-directed intervention has therefore been performed
+      AND reported, and it did not ask this atlas's question. That is an EVIDENCE GAP
+      (CLM:power:SLC16A1:005), which is a different thing from a reporting gap and is
+      recorded as such. Separately, SRC:NCT:NCT01455376 completed in 2010 with a
+      neurocognitive primary outcome and no posted results: that IS a reporting gap, but
+      it is listed in reporting_gap_refs on the HCAR1 facet rather than here, because it
+      infuses circulating lactate and so engages this transporter's SUBSTRATE rather than
+      the transporter, and listing one shared trial against four lactate-axis targets
+      would inflate reporting_gap_count from one gap into four. A red-team reviewer who
+      thinks that attribution is too narrow should add it here.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: >-
+      Still 0. The MCT1 inhibitor trial is not counter-evidence: it measured no cognitive
+      endpoint, so nothing was tested and nothing failed. V16c forbids an evidence_gap
+      from raising counter_level and that is the correct treatment here.
+    counter_claim_refs: []
+    limiting_factor: >-
+      A human MCT1-directed intervention exists and measured no cognitive endpoint. The
+      limiting factor for this target is no longer absence of a human trial but absence
+      of a cognitive endpoint in the human trial that was run.

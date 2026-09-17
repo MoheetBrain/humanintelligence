@@ -1,0 +1,160 @@
+# Red-team audit - GRM5. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:GRM5:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:GRM5
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: 'The developmental logic runs BACKWARDS for this target and the dossier spotted it: the human
+      cognitive trial was run in 3-to-6-year-old children, designed on the expectation that younger brains
+      would have more learning plasticity than the ADULTS in whom earlier mGluR5 NAM trials had already
+      failed. So the only cognitive-endpoint trial deliberately moved away from the adult population this
+      project cares about, because the adult population had already not responded. A null in children
+      therefore cannot be read as evidence about adults - and the adult evidence that does exist is the
+      prior failure.'
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:red_team:GRM5:001
+  - check: rescue_mistaken_for_enhancement
+    result: fail
+    note: Every human study of this mechanism is in fragile X syndrome or another disorder, so the entire
+      clinical record is rescue, and the rescue failed. No healthy-adult study exists.
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: The preclinical mGluR5 literature is extensive and positive; the human record is a series of
+      failures. The gap is the finding, and it is one of the largest in the repository.
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'GRM5''s level-3 human_genetic_association survives on two genuine cognitive-function/intelligence
+      associations. One l2g record is labelled educational_attainment and correctly capped. Repository-level:
+      the trait panel classes GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class
+      fluid_reasoning while marking it use_in_ranking: supporting with the note ''never a stand-alone
+      basis for a facet level''. pipelines/alphacognition/build_assessments.py tests phenotype_class,
+      not use_in_ranking, so that restriction never fires. The underlying records are ''Self-reported
+      math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association
+      study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003,
+      gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:l2g.GRM5:002
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The programme-failure evidence is one sponsor's summary of two studies the red team did not
+      retrieve; the cognitive null is one trial.
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:red_team:GRM5:001
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: fail
+    note: 'The mGluR5 negative allosteric modulator mechanism has a documented record of human failure
+      that no atlas recorded. Registry whyStopped fields state that AFQ056 ''failed to demonstrate efficacy
+      in the adult patient with Fragile X Syndrome in 2 other clinical studies'', terminating a 148-patient
+      adult open-label study and a 119-patient adolescent one; an OCD study was terminated at interim
+      for not meeting its primary efficacy objective; a Huntington chorea study and a cocaine-interaction
+      study were also terminated or withdrawn. agent:alphacognition independently recorded FXLEARN as
+      a genuine MEASURED cognitive null, which the red team verifies as correctly typed. Together: a mechanism
+      that failed on behavioural endpoints in adults, then on cognitive endpoints in children.'
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:red_team:GRM5:001
+    - SRC:NCT:NCT01348087
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this mechanism in any population.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: flag
+    note: Open Targets returns an empty safetyLiabilities list for GRM5, and the terminated trials record
+      efficacy rather than safety as the reason for stopping, so no psychiatric liability was located.
+      Absence of a safety-driven stop across several terminated programmes is weak positive evidence on
+      tolerability.
+    evidence_refs:
+    - CLM:red_team:GRM5:001
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: fail
+    note: 'A textbook, historically documented translation failure: strong mouse-model rescue data for
+      mGluR5 modulation in fragile X, followed by repeated failure in human trials across adults and children.
+      This is the single best-documented instance in the repository of preclinical promise not translating.'
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:red_team:GRM5:001
+  - check: overclaiming
+    result: pass
+    note: The dossier's status is already `downgraded` and it states the developmental-design problem
+      explicitly. Nothing to correct.
+  - check: provenance_integrity
+    result: pass
+    note: 'agent:alphacognition''s determination that GRM5''s record is a MEASURED null rather than an
+      evidence gap is verified correct by direct inspection: CLM:alphacognition:GRM5:001 is typed clinical_null
+      with predicate NO_DETECTED_EFFECT_ON, has an evidence item with endpoint_measured `measured` and
+      evidence_role `null_result`, and therefore satisfies V16c. Keeping level 0 / counter_level 3 is
+      right.'
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:GRM5:001#f1
+    severity: critical
+    category: model_organism_translation_failure
+    description: 'The mGluR5 NAM mechanism has failed in humans repeatedly and in both directions of the
+      developmental argument: on behavioural endpoints in adults with fragile X (two studies, per the
+      sponsor''s registry statement, terminating two further studies totalling 267 participants), then
+      on a measured cognitive endpoint in young children in a trial designed on the expectation that younger
+      brains would respond where adults had not. None of the registry evidence was in the repository.'
+    evidence_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:red_team:GRM5:001
+    - SRC:NCT:NCT01348087
+  verdict: deprioritise
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

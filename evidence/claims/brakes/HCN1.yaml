@@ -1,0 +1,455 @@
+# Claims — HCN1 (hyperpolarisation-activated cyclic-nucleotide-gated channel 1),
+# Cognitive Brake Atlas.
+#
+# Brake class: dendritic integration and intrinsic excitability. The h-current shunts
+# distal dendritic inputs and shortens the temporal window for synaptic summation.
+# The organising fact of this file is that the same current is recruited by activity as
+# a negative-feedback homeostat, so the brake is part of a stability loop rather than a
+# free parameter.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:HCN1:001
+  statement: >-
+    Deleting HCN1 from forebrain neurons enhanced hippocampus-dependent learning and
+    memory, increased the power of theta oscillations, and enhanced long-term potentiation
+    specifically at the direct perforant-path input to distal CA1 dendrites while leaving
+    proximal Schaffer-collateral potentiation largely unchanged.
+  subject: GENE:HCN1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:workspace.dendritic_integration_gain
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "forebrain-restricted deletion is genetically specific but not temporally restricted to adulthood, so developmental reorganisation of dendritic excitability is not excluded"
+      - "increased theta power could itself drive the behavioural change, making the dendritic-integration account one of several consistent readings"
+      - "general and forebrain-restricted knockouts were used; compensation by HCN2 is not excluded by the retrieved abstract"
+  evidence:
+    - source_id: SRC:PMID:15550252
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with general or forebrain-restricted HCN1 deletion and controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "hippocampus-dependent learning and memory; theta oscillation power; long-term potentiation at distal versus proximal CA1 inputs"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "influential, mechanistically detailed and input-specific, but a single study, one species, and a conditional deletion that is not adult-onset"
+    calibration_status: uncalibrated_subjective
+  risks: ["reducing an excitability brake in cortical and hippocampal neurons carries an untested seizure-threshold cost in this study"]
+  confounders: ["theta power", "developmental compensation by other HCN subunits"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HCN1:002
+  statement: >-
+    In rat hippocampal slices, the same theta-burst protocol that potentiates synapses also
+    produced an NMDA-receptor-dependent and protein-synthesis-dependent increase in the
+    h-current and a fall in cellular excitability, which the authors interpreted as negative
+    feedback that normalises output firing and promotes network stability.
+  subject: GENE:HCN1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:stability.intrinsic_excitability
+  claim_type: mechanistic
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the causal chain from backpropagating action potentials to increased h-current was inferred from pharmacological blockade rather than from genetic manipulation of HCN1"
+      - "HCN1 protein increase was measured after raising network activity with high extracellular potassium, a non-physiological manipulation"
+      - "slices were taken from young animals, so the same homeostatic coupling in mature brain is not established here"
+  evidence:
+    - source_id: SRC:PMID:16234810
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10116
+      population: "hippocampal slices from Sprague-Dawley rats, including newborn animals"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "cellular excitability and h-current amplitude after theta-burst pairing; HCN1 protein level after raising network activity"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "single study, but it is the load-bearing evidence that this brake is a homeostatic controller; if correct, chronic pharmacological suppression should be opposed by the loop"
+    calibration_status: uncalibrated_subjective
+  risks: ["a homeostatic brake is the class of target most likely to defeat chronic modulation by compensating"]
+  confounders: ["slice health", "age of donor animals", "pharmacological specificity of h-channel blockade"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HCN1:003
+  statement: >-
+    In mice exposed to witnessed social defeat, susceptibility was accompanied by raised
+    HCN1 expression, a larger h-current and reduced CA1 excitability; conditional
+    overexpression of Hcn1 reproduced susceptibility-like behaviour including altered
+    spatial working memory, and conditional deletion promoted resilience-like behaviour.
+  subject: GENE:HCN1
+  predicate: NEGATIVELY_REGULATES
+  object: PHENO:animal_working_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_working_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the retrieved abstract states that conditional overexpression or deletion was used but does not specify the age at which it was induced, so adult onset is probable rather than established"
+      - "the primary readouts are stress-related social behaviours; the working-memory result is one of several endpoints in a stress model, not a healthy-baseline cognitive test"
+      - "male mice only"
+  evidence:
+    - source_id: SRC:PMID:40210080
+      design: overexpression
+      species: SPECIES:NCBITaxon:10090
+      population: "male C57BL/6 mice subjected to witnessing social defeat stress or physical defeat stress"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "social avoidance, fear memory, spatial working memory; CA1 excitability, h-current and AMPA-receptor transmission at distal dendrites"
+      endpoint_category: animal_working_memory
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "bidirectional genetic manipulation with a matching electrophysiological mechanism, but a stress-model baseline and a single recent study"
+    calibration_status: uncalibrated_subjective
+  risks: ["a manipulation that reduces stress susceptibility is not thereby an enhancement of healthy cognition"]
+  confounders: ["stress-hormone state", "social behaviour confounds on maze performance"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HCN1:004
+  statement: >-
+    In the fmr1-null mouse model of fragile X syndrome, dendritic HCN1 expression and
+    h-current were elevated and the homeostatic increase in h-current that normally follows
+    potentiation was absent, which the authors described as a dendritic channelopathy.
+  subject: GENE:HCN1
+  predicate: MODULATES
+  object: SV:stability.intrinsic_excitability
+  claim_type: expression
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "HCN1 elevation in a disease model is a correlate; the study does not show that normalising it rescues cognition"
+      - "germline fmr1 deletion has widespread developmental consequences"
+  evidence:
+    - source_id: SRC:PMID:22662315
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10090
+      population: "fmr1-null male mice and wild-type controls on a C57BL/6 background"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "dendritic input resistance, voltage sag, resonance frequency, temporal summation, HCN1 and HCN2 expression, and h-current plasticity after potentiation"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "single disease-model study; included because it establishes that this brake is set differently in a disease state, which makes a fixed-direction intervention state-dependent"
+    calibration_status: uncalibrated_subjective
+  risks: ["the same nominal intervention would be rescue in one state and enhancement in another"]
+  confounders: ["fmr1 deletion pleiotropy"]
+  dependencies: [CLM:brakes:HCN1:002]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HCN1:005
+  statement: >-
+    Adult HCN1-null mice were more susceptible to chemically induced seizures and, after
+    those were terminated with an anticonvulsant, developed spontaneous behavioural
+    seizures more rapidly than wild-type littermates, with entorhinal layer III dendrites
+    lacking the h-current becoming so excitable that a normal-frequency train of synaptic
+    potentials triggered action potentials.
+  subject: GENE:HCN1
+  predicate: INCREASES_RISK
+  object: AE:seizure
+  claim_type: preclinical_harm
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a constitutive null could have altered circuit development in ways that raise seizure susceptibility independently of the missing current in adults"
+      - "chemically induced seizure susceptibility is a provoked measure; the spontaneous-seizure result was obtained after such provocation rather than in naive animals"
+      - "recorded as preclinical_harm (contract section 4.1, resolution R13): the harm is observed in mice and must not be read as a human safety signal. This atlas filed the observation that the enum had no animal-harm type; it now does"
+  evidence:
+    - source_id: SRC:PMID:19726656
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "adult HCN1-null mice and wild-type littermates"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "susceptibility to kainic-acid-induced seizures, rate of developing spontaneous behavioural seizures, spontaneous activity and dendritic excitability in entorhinal layer III neurons, and spontaneous excitatory synaptic current frequency"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "a 50 Hz train of EPSPs produced action potentials in HCN1(-/-) neurons"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "single study, but it supplies the safety cost that the enhancement study did not measure, in the same gene and the same species"
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this is the cost side of CLM:brakes:HCN1:001: the same deletion that improved learning raised seizure susceptibility and produced an excitation-inhibition imbalance"
+  confounders: ["germline deletion", "provoked seizure model"]
+  dependencies: [CLM:brakes:HCN1:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HCN1:006
+  statement: >-
+    Direct electrical recordings from human layer 5 pyramidal dendrites showed that
+    distal human dendrites deliver less excitation to the soma than rat dendrites do, with
+    less dendritically driven bursting, and that lower ion-channel densities produce the
+    higher input resistance underlying that weaker coupling.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: SV:workspace.dendritic_integration_gain
+  claim_type: comparative_evolutionary
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the source attributes the difference to decreased ion channel densities in general and does not name HCN1; this claim therefore bears on the state variable HCN1 helps set, not on HCN1 itself"
+      - "human tissue came from neurosurgical resections, so donor pathology and tissue handling are unavoidable confounds"
+      - "the facets that grade cross-species convergence and human-lineage divergence risk belong to agent:comparative; this claim is recorded here only because it caps the translation of this atlas's HCN1 reasoning"
+  evidence:
+    - source_id: SRC:PMID:30340039
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:9606
+      population: "adult human layer 5 cortical pyramidal neurons from neurosurgical tissue, compared with Sprague-Dawley rat neurons"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "dendrite-to-soma coupling, dendritic spike propagation, somatic bursting, input resistance and ion-channel density"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "direct recordings from adult human dendrites with an explicit rat comparison, which is the best available human evidence about the state variable this target sets; it is not evidence about HCN1 itself"
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "if human distal dendrites are already weakly coupled for reasons of length and channel density, a rodent result obtained by removing one channel may not transfer at all"
+  confounders: ["neurosurgical donor tissue", "channel identity not resolved"]
+  dependencies: [CLM:brakes:HCN1:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

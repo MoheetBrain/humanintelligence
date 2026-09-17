@@ -1,0 +1,402 @@
+# Claims — SLC16A7 (MCT2, the predominantly neuronal monocarboxylate transporter)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# The MCT2 evidence is the strongest single strand of the astrocyte-neuron lactate
+# shuttle hypothesis, because the same laboratories that could rescue astrocytic
+# transporter knockdown with lactate could NOT rescue neuronal MCT2 knockdown with
+# lactate, pyruvate, ketone body or glucose. That asymmetry is the argument.
+#
+# It is also entirely rodent, entirely knockdown-of-normal, and entirely within the
+# antisense-oligodeoxynucleotide / viral-knockdown toolkit whose specificity is
+# directly disputed - see CLM:power:anls:002 in
+# evidence/claims/power/astrocyte_neuron_lactate_shuttle.yaml. There is NO human
+# evidence of any kind for SLC16A7 in this atlas, and no evidence at any level that
+# increasing MCT2 above normal improves anything.
+
+- claim_id: CLM:power:SLC16A7:001
+  schema_version: 0.1.0
+  statement: >-
+    Disrupting expression of the neuronal lactate transporter MCT2 in rat hippocampus
+    produced amnesia for an inhibitory avoidance task that, unlike amnesia from
+    astrocytic MCT1 or MCT4 disruption, was not reversed by L-lactate or by
+    equicaloric glucose.
+  subject: PROT:SLC16A7
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:neuron]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "antisense oligodeoxynucleotide knockdown specificity is disputed; MCT inhibition can block mitochondrial pyruvate transport and so impose a general energy crisis rather than block lactate import"
+      - "failure of lactate rescue is also consistent with the knockdown damaging neurons non-specifically"
+      - "a single behavioural paradigm and a single time point"
+  evidence:
+    - source_id: SRC:PMID:21376239
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "adult rats with hippocampal antisense knockdown of MCT2"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "long-term memory retention in inhibitory avoidance, with L-lactate or glucose rescue attempts"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Causal loss-of-function with an internal rescue control, independently
+      reproduced by at least two other groups, but rodent only and dependent on a
+      knockdown toolkit whose specificity is contested.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["non-specific neuronal toxicity of knockdown", "mitochondrial pyruvate transport inhibition by MCT blockers"]
+  dependencies: [CLM:power:anls:001, CLM:power:anls:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A7:002
+  schema_version: 0.1.0
+  statement: >-
+    Using transgenic mice and a cell-type-specific viral approach in dorsal
+    hippocampus, the investigators report that neuronal MCT2 was required both for
+    spatial information acquisition and retention at 24 hours after training and,
+    unlike astroglial MCT4, for long-term memory 7 days after training, and that
+    intracerebral lactate infusion rescued the MCT4 but not the MCT2 animals.
+  subject: PROT:SLC16A7
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.systems_consolidation_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:neuron]
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the authors themselves identify a heterologous effect: reduced MCT2 in mature neurons blunted hippocampal neurogenesis, so the memory phenotype may be partly indirect"
+      - "cell-type specificity of the viral vector is asserted rather than quantified in the retrieved text"
+  evidence:
+    - source_id: SRC:PMID:32693190
+      design: knockdown
+      species: SPECIES:NCBITaxon:10090
+      population: "transgenic mice with cell-specific viral reduction of MCT2 in dorsal hippocampus"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "spatial acquisition and retention at 24 hours and long-term memory at 7 days in hippocampus-dependent tasks"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Converging causal evidence in a second species with an independent method and a
+      within-study dissociation from the astroglial transporter; still rodent only and
+      with an author-acknowledged indirect mechanism.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["hippocampal neurogenesis reduction as a mediator"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A7:003
+  schema_version: 0.1.0
+  statement: >-
+    Pyruvate and the ketone body beta-hydroxybutyrate rescued memory impairment caused
+    by knockdown of glial MCT1 and MCT4 in rat dorsal hippocampus but neither
+    metabolite rescued impairment caused by knockdown of the neuronal transporter
+    MCT2, which the authors read as evidence that neuronal monocarboxylate import
+    provides energy for learning-induced translation.
+  subject: PROT:SLC16A7
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:neuron]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "any manipulation that blocks all monocarboxylate entry into neurons will also block the rescue metabolites, so this asymmetry is expected under a non-specific-toxicity account too"
+      - "the read-out couples memory to learning-induced translation, which introduces an additional inferential step"
+  evidence:
+    - source_id: SRC:PMID:31286064
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "Long-Evans rats with expression knockdown of MCT1, MCT4 or MCT2 in dorsal hippocampus"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term memory, learning-induced mRNA translation and Arc/Arg3.1 expression"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Mechanistically informative rescue design, but from the same laboratory lineage
+      as the founding study and subject to the same specificity critique.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: [CLM:power:anls:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A7:004
+  schema_version: 0.1.0
+  statement: >-
+    In the same cell-type-specific study, reducing MCT2 expression in mature neurons
+    blunted the hippocampal neurogenesis associated with memory consolidation, which
+    the authors describe as a heterologous effect and which makes the memory phenotype
+    of MCT2 knockdown partly attributable to a route other than neuronal lactate
+    import.
+  subject: PROT:SLC16A7
+  predicate: MODULATES
+  object: SV:plasticity.adult_neurogenesis_rate
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:neuron]
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the direction of mediation is not established: blunted neurogenesis could be a consequence of the same energetic disruption rather than the cause of the memory deficit"
+      - "reported within one study without independent confirmation"
+  evidence:
+    - source_id: SRC:PMID:32693190
+      design: knockdown
+      species: SPECIES:NCBITaxon:10090
+      population: "mice with reduced neuronal MCT2 expression in dorsal hippocampus"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "hippocampal neurogenesis associated with memory consolidation"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "Single-study secondary observation that complicates rather than supports the primary interpretation."
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: [CLM:power:SLC16A7:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A7:005
+  schema_version: 0.1.0
+  statement: >-
+    In mice trained for methamphetamine-induced conditioned place preference,
+    oligodeoxynucleotide knockdown of MCT1, MCT2 or MCT4 in dorsal hippocampus
+    abolished the preference and reduced plasticity-associated gene expression,
+    dendritic arborisation and spine density, and co-administered L-lactate rescued
+    every condition except the MCT2 knockdown.
+  subject: PROT:SLC16A7
+  predicate: POSITIVELY_REGULATES
+  object: SV:plasticity.structural_plasticity_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:neuron]
+  phenotype_class: animal_operant_task
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the behavioural readout is drug-induced conditioned place preference, an appetitive drug memory, not a cognitive-capacity measure"
+      - "same oligodeoxynucleotide specificity critique applies"
+  evidence:
+    - source_id: SRC:PMID:36112231
+      design: knockdown
+      species: SPECIES:NCBITaxon:10090
+      population: "C57BL/6J mice trained for methamphetamine conditioned place preference with dorsal hippocampal transporter knockdown"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "conditioned place preference score, Npas4 and plasticity gene expression, neuronal calcium levels, dendritic arborisation and spine density"
+      endpoint_category: animal_operant_task
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Independent group reproducing the MCT2-no-rescue asymmetry with additional
+      cellular readouts, but in a drug-memory paradigm with the same tool limitations.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["psychostimulant exposure"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

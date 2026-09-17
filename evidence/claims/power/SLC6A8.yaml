@@ -1,0 +1,511 @@
+# Claims — SLC6A8 (creatine transporter, SLC6 family)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# SLC6A8 is the canonical rescue-vs-enhancement boundary case in this repository.
+# Loss of function causes a severe developmental syndrome; that fact says almost
+# nothing about whether adding creatine transport capacity to a healthy adult brain
+# raises capacity. The claims below therefore separate:
+#   (a) the human deficiency phenotype                       -> 001
+#   (b) developmental vs adult-onset loss in rodents          -> 002 (adult loss: NO deficit)
+#   (c) brain-autonomous vs whole-body loss                   -> 003
+#   (d) cell-type locus of the deficit                        -> 004
+#   (e) partial rescue of a deficit state                     -> 005, 006
+# NOT ONE of these claims is evidence for above-baseline enhancement. 002 is the
+# single most important record in this file and it argues AGAINST adult modifiability.
+
+- claim_id: CLM:power:SLC6A8:001
+  schema_version: 0.1.0
+  statement: >-
+    In a multi-year observational study of 50 males with genetically confirmed
+    creatine transporter deficiency, the investigators found persistent significant
+    intellectual disability with slower-than-average absolute developmental gains,
+    establishing that loss of SLC6A8 function constrains human cognitive development.
+  subject: PROT:SLC6A8
+  predicate: ASSOCIATED_WITH
+  object: PHENO:general_cognitive_ability
+  claim_type: association
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: mixed
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: monogenic_disorder
+    locus_to_gene_resolved: "yes"
+    alternative_explanations:
+      - "natural-history cohort with no untreated comparator group; severity may be confounded by seizure burden, growth failure and gastrointestinal comorbidity reported in the same cohort"
+      - "a cohort effect on cross-sectional age differences is reported by the authors themselves, so between-person age gradients cannot be read as within-person decline"
+  evidence:
+    - source_id: SRC:PMID:41260060
+      design: observational_cohort
+      species: SPECIES:NCBITaxon:9606
+      population: "males with creatine transporter deficiency, age 6 months to 65 years"
+      sample_size:
+        reported_as: "Fifty participants (median age, 7.6 years) were enrolled."
+        value: 50
+        unit: participants
+      endpoint: "norm-referenced neurodevelopmental assessment of intellectual and adaptive functioning over up to 4 years"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:NCT:NCT02931682
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "males with a confirmed pathogenic SLC6A8 mutation, 6 months to 65 years, male only"
+      sample_size:
+        reported_as: "enrollment: 50"
+        value: 50
+        unit: participants
+      endpoint: "Change Over Time Through Month 48 in the Bayley Scales of Infant and Toddler Development, 4th Edition"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured_but_not_reported
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: registry_record
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Direct human genetic evidence with a directly relevant endpoint, but a single
+      natural-history cohort with no comparator and a registry record that is
+      TERMINATED with no posted results.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["seizure history", "growth failure", "gastrointestinal comorbidity", "age heterogeneity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC6A8:002
+  schema_version: 0.1.0
+  statement: >-
+    Using tamoxifen-inducible ubiquitous deletion, the investigators report that mice
+    losing Slc6a8 at postnatal day 5 developed Morris water maze and novel object
+    recognition deficits whereas mice losing the same gene at postnatal day 60 showed
+    no such deficits, so creatine transport was required during a developmental window
+    rather than continuously in adulthood.
+  subject: PROT:SLC6A8
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: POSITIVELY_REGULATES
+  object: SV:cognition.learning_rate
+  claim_type: causal_perturbation
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the abstract does not report how completely brain creatine was depleted after adult-onset deletion; incomplete depletion within the 60-day test window would produce the same null"
+      - "absence of an effect on these two tasks does not exclude effects on untested cognitive domains or at longer post-deletion intervals"
+      - "the authors identify a tamoxifen administration artefact affecting dark-phase locomotor activity in control mice, indicating the paradigm carries drug-related confounds"
+  evidence:
+    - source_id: SRC:PMID:31209903
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "mice with a tamoxifen-inducible ubiquitin-C-promoter-driven Cre deleting Slc6a8 at postnatal day 60, tested 60 days later"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "Morris water maze, novel object recognition and conditioned fear performance"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: contradicted
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A single, well-designed adult-onset genetic perturbation with a within-study
+      developmental comparator; not replicated, rodent only, and sample sizes are not
+      given in the retrieved text.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["tamoxifen administration effects on locomotor activity", "unmeasured residual brain creatine"]
+  dependencies: [CLM:power:SLC6A8:003]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC6A8:003
+  schema_version: 0.1.0
+  statement: >-
+    Brain-specific Nestin-Cre deletion of Slc6a8 lowered cerebral creatine while
+    leaving peripheral creatine normal and still produced longer Morris water maze
+    latencies without reduced swim speed, plus novel object recognition and
+    contextual and cued fear deficits, indicating the learning phenotype follows loss
+    of cerebral rather than peripheral creatine.
+  subject: PROT:SLC6A8
+  predicate: POSITIVELY_REGULATES
+  object: SV:cognition.learning_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: postnatal_developmental
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "Nestin-Cre deletes from early neural development, so the phenotype is developmental and cannot be attributed to ongoing adult creatine transport"
+      - "brain guanidinoacetic acid was increased in the same animals, so the phenotype may reflect precursor accumulation rather than creatine loss alone"
+      - "the same animals were hyperactive, which can confound task performance"
+  evidence:
+    - source_id: SRC:PMID:29384270
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "brain-specific Slc6a8 knockout mice generated by crossing floxed Slc6a8 with Nestin-Cre"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "Morris water maze latency and path length, novel object recognition, contextual and cued fear conditioning"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Clean conditional causal design that removes the swim-speed and body-size
+      confounds of the ubiquitous knockout, but from the same laboratory as the prior
+      work and rodent only.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["hyperactivity", "elevated brain guanidinoacetic acid"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC6A8:004
+  schema_version: 0.1.0
+  statement: >-
+    Deleting Slc6a8 selectively in Gad2-expressing GABAergic neurons reproduced the
+    reduced contextual and cued freezing seen in whole-body Slc6a8 knockouts but
+    produced only a mild reversal-phase spatial deficit and no radial water maze
+    change, locating part of the creatine-dependent phenotype in inhibitory neurons.
+  subject: PROT:SLC6A8
+  predicate: MODULATES
+  object: SV:consolidation.engram_stability
+  claim_type: causal_perturbation
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: postnatal_developmental
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: [CELL:gabaergic_neuron]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the Gad2-Cre control line itself spent less time with the novel object, so the novel-object result cannot be attributed to Slc6a8 deletion"
+      - "Gad2-Cre is active from development, so this is not an adult-restricted manipulation"
+      - "the dissociation between strong freezing deficits and weak spatial deficits could reflect task sensitivity rather than cell-type specificity"
+  evidence:
+    - source_id: SRC:PMID:38030104
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "Gad2-Cre x floxed Slc6a8 conditional knockout mice compared with ubiquitous knockout, Gad2-Cre and wild-type mice"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "contextual and cued freezing, Morris water maze reversal, novel object recognition, radial water maze"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single study, mixed results, and an acknowledged Cre-line control confound on
+      one of the two positive endpoints.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["Gad2-Cre line behavioural phenotype"]
+  dependencies: [CLM:power:SLC6A8:003]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC6A8:005
+  schema_version: 0.1.0
+  statement: >-
+    A chemoproteomic campaign produced reversible small molecules that promoted
+    trafficking of mutant SLC6A8 to the cell surface and rescued creatine uptake, with
+    activity limited to a minority of the most prevalent patient missense variants and
+    with an oral, brain-penetrant tool compound raising brain creatine in heterozygous
+    female mice carrying a patient-defined variant.
+  subject: CPD:slc6a8_corrector_tool_compound
+  predicate: UPREGULATES
+  object: PROT:SLC6A8
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    life_stage: not_reported
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "corrector activity is variant-specific by construction, so it is not a general way to raise creatine transport in a wild-type transporter"
+      - "the in-vivo readout is a brain creatine level in a deficient heterozygous animal, not a cognitive endpoint"
+  evidence:
+    - source_id: SRC:PMID:39418577
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:9606
+      population: "HEK293 cells expressing SLC6A8 missense variants plus CRISPR knock-in cells; in-vivo arm in a knock-in mouse model"
+      sample_size:
+        reported_as: "the 27 most prevalent SLC6A8 missense variants"
+        value: 27
+        unit: variants
+      endpoint: "mutant SLC6A8 cell-surface trafficking and creatine uptake; brain creatine level in vivo"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: percent_change
+        as_reported: "10-20% of patient mutations were amenable to correction by our molecules"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      In-vitro and single-animal-model pharmacology with a molecular endpoint; no
+      cognitive outcome and no healthy-baseline arm.
+    calibration_status: uncalibrated_subjective
+  risks: ["industry-sponsored discovery programme; publication incentive toward positive correction results"]
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC6A8:006
+  schema_version: 0.1.0
+  statement: >-
+    Intra-cisterna magna delivery of an Slc6a8 gene-therapy vector to postnatal day 11
+    rat pups transduced cerebellum, medulla oblongata and spinal cord with partial
+    regional creatine recovery and fully prevented locomotor and myocyte-development
+    defects, while the authors state that forebrain-associated phenotypes were not
+    corrected.
+  subject: GREG:aav_slc6a8_intracisternal_gene_therapy
+  predicate: CHANGES_STATE
+  object: SV:power.phosphocreatine_reserve
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: postnatal_developmental
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "delivery was to postnatal day 11 pups, which is a developmental not an adult intervention despite the inducible vector"
+      - "creatine recovery was partial and regionally restricted; forebrain regions most relevant to the cognitive phenotype were not corrected"
+      - "the rescued readouts are locomotor and muscular, not cognitive"
+  evidence:
+    - source_id: SRC:PMID:38745894
+      design: overexpression
+      species: SPECIES:NCBITaxon:10116
+      population: "Slc6a8-deficient male rats, vector injected at postnatal day 11"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "regional brain creatine content, locomotion, myocyte development"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: disease_model_only
+    supra_normal: rescue_only
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single proof-of-concept study in one species, partial rescue, no cognitive
+      endpoint, developmental timing.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

@@ -1,0 +1,125 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35905083/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35905083"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs35551159"
+          }
+        },
+        "accession_id": "GCST007006",
+        "association_id": 35905083,
+        "beta": "0.55 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.33,
+        "ci_upper": 0.77,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004874",
+            "efo_trait": "memory performance"
+          }
+        ],
+        "first_author": "Chung J",
+        "locations": [
+          "12:60075450"
+        ],
+        "mapped_genes": [
+          "SLC16A7",
+          "Y_RNA"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-07,
+        "pubmed_id": "29274321",
+        "pvalue_description": "",
+        "pvalue_exponent": -7,
+        "pvalue_mantissa": 2,
+        "range": "[0.33-0.77]",
+        "reported_trait": [
+          "Logical memory (delayed recall) in normal cognition"
+        ],
+        "risk_frequency": "0.03",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs35551159"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs35551159-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35904933/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35904933"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs56158317"
+          }
+        },
+        "accession_id": "GCST007005",
+        "association_id": 35904933,
+        "beta": "0.59 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.34,
+        "ci_upper": 0.84,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004874",
+            "efo_trait": "memory performance"
+          }
+        ],
+        "first_author": "Chung J",
+        "locations": [
+          "12:60307649"
+        ],
+        "mapped_genes": [
+          "SLC16A7",
+          "Y_RNA"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 3e-06,
+        "pubmed_id": "29274321",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 3,
+        "range": "[0.34-0.84]",
+        "reported_trait": [
+          "Logical memory (immediate recall) in normal cognition"
+        ],
+        "risk_frequency": "0.04",
+        "snp_allele": [
+          {
+            "effect_allele": "C",
+            "rs_id": "rs56158317"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs56158317-C"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=SLC16A7&efo_id=EFO_0004874&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

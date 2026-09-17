@@ -1,0 +1,721 @@
+# ============================================================================
+# Ranking specification v0.1.0 — Intelligence Blueprint
+# ============================================================================
+#
+# READ THIS BEFORE READING ANY NUMBER IN THIS FILE.
+#
+# EVERY NUMERIC PARAMETER IN THIS FILE IS A SUBJECTIVE, UNCALIBRATED MODELLING
+# CHOICE. Not one of them was fitted, validated, or derived from data. They were
+# chosen by agent:integration to make a prioritisation reproducible and arguable,
+# and they are expected to be argued with. Where a weight is stated, the comment
+# beside it gives the reason it was chosen; the reason is an argument, not a
+# measurement.
+#
+# WHAT THE OUTPUT IS
+#   A prioritisation of WHAT TO ANALYSE NEXT. A high composite means "the evidence
+#   accounting for this control point is comparatively more complete and more
+#   favourable, so further COMPUTATIONAL analysis of it is comparatively better
+#   value". Nothing more.
+#
+# WHAT THE OUTPUT IS NOT
+#   * Not a claim about biology. The model never estimates a causal effect; it
+#     aggregates ordinal grades of other people's evidence (see models/causal/).
+#   * Not a claim about safety. A high P(safe controllable window) means the
+#     EVIDENCE about the window is comparatively more favourable, never that
+#     modulating the target is safe. Absence of reported harm is never evidence of
+#     safety.
+#   * Not an endorsement of any target, mechanism, compound, exposure or action.
+#     No output of this model is a protocol, a dose, a route or a regimen, and none
+#     may ever be derived from it (docs/COMPUTATIONAL_ONLY_POLICY.md).
+#   * Not calibrated. `calibration_status: uncalibrated_subjective` appears on every
+#     row of every report this spec produces, and must not be removed until someone
+#     states what the probabilities were calibrated AGAINST.
+#
+# WHY A MODEL AT ALL, IF IT IS UNCALIBRATED
+#   Because the alternative is an implicit ranking in someone's head. An explicit,
+#   versioned, testable, wrong model can be audited, perturbed and falsified. An
+#   implicit one cannot. The invariance tests in tests/test_ranking_invariance.py
+#   are the point: they hold whatever the weights are.
+# ============================================================================
+
+schema_version: 0.1.0
+spec_id: ranking_spec_v0_1
+spec_version: 0.1.0
+defined_by: agent:integration
+defined_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+rubric_path: models/ranking/facet_rubric_v0_1.yaml
+uncertainty_spec: uncertainty_spec_v0_1
+uncertainty_spec_path: models/uncertainty/uncertainty_spec_v0_1.yaml
+calibration_status: uncalibrated_subjective
+subjectivity: subjective_design_choice
+output_claim_class: prioritisation_of_analysis_only
+
+# ---------------------------------------------------------------------------
+# 1. The six dimensions
+# ---------------------------------------------------------------------------
+# Each dimension is a BELIEF ABOUT THE EVIDENCE for a proposition, expressed as a
+# distribution on [0,1]. Read "P(...)" as "how strongly the recorded evidence
+# supports ...", never as a frequency.
+
+dimensions:
+  - id: D1
+    name: causal_cognition_relevance
+    label: "P(causal cognition relevance)"
+    proposition: >-
+      Variation in this target causally affects human cognitive capacity — as opposed
+      to being correlated with it, or being the nearest gene to something that is.
+  - id: D2
+    name: adult_modifiability
+    label: "P(adult modifiability)"
+    proposition: >-
+      The relevant biology can still be moved in an ADULT brain, after the
+      developmental window has closed.
+  - id: D3
+    name: supra_normal_potential
+    label: "P(supra-normal potential)"
+    proposition: >-
+      Modulation can move a HEALTHY adult above their own baseline, rather than only
+      restoring a deficit.
+  - id: D4
+    name: far_transfer_potential
+    label: "P(far transfer potential)"
+    proposition: >-
+      The effect generalises to untrained domains rather than to the tested task only.
+  - id: D5
+    name: safe_controllable_window
+    label: "P(safe controllable window)"
+    proposition: >-
+      The exposure-response relation is known well enough, and the liability burden low
+      enough, that a usable window between no effect and harm plausibly exists.
+  - id: D6
+    name: human_translation
+    label: "P(human translation)"
+    proposition: >-
+      The mechanism and the means of modulating it carry over to humans, and a human
+      test is reachable.
+
+# ---------------------------------------------------------------------------
+# 2. Facet -> dimension weights
+# ---------------------------------------------------------------------------
+# The facet -> dimension EDGES are fixed by docs/DATA_CONTRACT.md §5 (facet
+# catalogue, column "Feeds") and are NOT a free choice here. Only the WEIGHTS on
+# those edges are chosen, and every one of them is subjective.
+#
+# Weights are positive and sum to 1 within each dimension. Renormalisation over
+# applicable facets is described in §3.
+#
+# `polarity: inverse` facets contribute (1 - belief): see the rubric. They are
+# listed with a positive weight and the inversion is applied by the implementation,
+# so a weight here always reads as "how much this facet matters to this dimension".
+
+facet_weights:
+
+  D1:
+    # RATIONALE FOR THE ORDERING (subjective):
+    # causal_gene_attribution is weighted highest because locus-to-gene resolution is
+    # the single weakest link in the whole evidence chain (ROADMAP Sprint 2 exists to
+    # fix it). A strong association with an unresolved gene assignment is a claim
+    # about a REGION, and ranking a target on it is exactly the error this project
+    # is built to avoid.
+    causal_gene_attribution: 0.30          # subjective: the weakest link, so the most decisive
+    human_genetic_association: 0.25        # subjective: human relevance, but locus-level by default
+    mechanistic_causal_perturbation: 0.25  # subjective: equal to genetics — a mechanism
+                                           # demonstrated by perturbation is a different and
+                                           # comparably strong kind of causal evidence
+    human_phenotype_specificity: 0.20      # subjective: lowest of the four because it grades
+                                           # WHAT was measured rather than whether the link is causal
+
+  D2:
+    # RATIONALE: adult ONSET is the defining constraint of the whole project ("adult
+    # modifiable"), so it carries the largest weight. Expression is necessary but far
+    # from sufficient — a gene can be expressed in the adult brain and still be
+    # functionally locked — hence its lower weight. The red team's confound facet is
+    # weighted above expression because it is the check that catches the specific
+    # error (developmental biology read as adult modifiability) that would most
+    # damage this project's conclusions.
+    adult_onset_perturbation: 0.45         # subjective: the direct test of the proposition
+    developmental_confound_risk: 0.30      # subjective, INVERSE: contributes (1 - belief)
+    adult_expression_and_timing: 0.25      # subjective: necessary, not sufficient
+
+  D3:
+    # RESOLVED (R8, docs/blackboard/RESOLUTIONS.md; request integration-002). D3 was a
+    # single-facet dimension carrying 0.15 of the composite — not an aggregate but a
+    # relabelling of one grader's ordinal judgement, with no cross-check and no way for
+    # two lines of evidence to disagree. It is now a genuine aggregate.
+    #
+    # RATIONALE FOR THE SPLIT: "can this move a healthy adult above baseline" is not
+    # answerable without the shape of the exposure-response relation. An inverted-U
+    # whose optimum sits at the healthy baseline is precisely a case where supra-normal
+    # potential is absent, however good the enhancement evidence looks. But the shape is
+    # a PRECONDITION rather than the thing itself — knowing the curve does not show that
+    # anyone went above baseline — so it is weighted well below the facet that measures
+    # the proposition directly.
+    above_baseline_enhancement: 0.75       # subjective: measures the proposition directly
+    dose_response_knowledge: 0.25          # subjective, secondary: a precondition for
+                                           # supra-normal potential, not evidence of it
+    # KNOWN LIMITATION, deferred not forgotten: the more faithful fix is a separate
+    # `healthy_baseline_arm_quality` facet splitting "was the right experiment done"
+    # from "what did it find", which `above_baseline_enhancement` still conflates.
+    # Deferred to Sprint 2 (ROADMAP.md) because adopting it now would force every atlas
+    # to re-grade. Recorded in R8.
+
+  D4:
+    # RATIONALE: transfer_breadth is the direct measurement of transfer;
+    # human_phenotype_specificity is a weaker human-side proxy for the same thing
+    # (domain-general phenotype implies breadth), so it is weighted lower.
+    transfer_breadth: 0.60                 # subjective: measures transfer directly
+    human_phenotype_specificity: 0.40      # subjective: human-side proxy for breadth
+
+  D5:
+    # RATIONALE FOR THE ASYMMETRY: the liability facet outweighs the window facet
+    # because a documented harm is a harder fact than a characterised exposure-response
+    # curve, and because safety is a CONSTRAINT in this project rather than a cost to
+    # be traded (README §3). The gate in §4 exists because a weight alone still allows
+    # trading; a cap does not.
+    safety_liability_burden: 0.55          # subjective, INVERSE: contributes (1 - belief)
+    dose_response_knowledge: 0.30          # subjective: knowing the shape is worth less than
+                                           # knowing there is a documented harm
+    tractability: 0.15                     # subjective, secondary (R8): a target whose only
+                                           # known modulators hit the whole family has a
+                                           # narrower controllable window by construction.
+                                           # Weighted lowest of the three because family
+                                           # selectivity bounds the window without being a
+                                           # measurement of it.
+
+  D6:
+    # RATIONALE: an actual human test dominates, because D6 is about human translation
+    # and a human result is the thing itself rather than an argument for it.
+    # tractability is weighted above the two comparative facets because "there is no
+    # way to modulate this with adequate specificity" ends the translation question
+    # regardless of how conserved the mechanism is.
+    human_intervention_evidence: 0.35      # subjective: the direct human test
+    tractability: 0.25                     # subjective: means of modulation gates everything
+                                           # else. Also feeds D5 (R8), where it bounds the
+                                           # controllable window rather than translatability.
+    cross_species_convergence: 0.20        # subjective: conservation as an argument for carry-over
+    human_lineage_divergence_risk: 0.20    # subjective, INVERSE: contributes (1 - belief)
+
+# ---------------------------------------------------------------------------
+# 3. How a dimension is computed
+# ---------------------------------------------------------------------------
+dimension_aggregation:
+  form: weighted_arithmetic_mean_of_facet_beliefs
+  formula: "D_d = sum_f ( w_fd * x_fd ) / sum_f ( w_fd )   over applicable facets f"
+  facet_belief: >-
+    x_fd = p_f for polarity `direct`, and x_fd = (1 - p_f) for polarity `inverse`,
+    where p_f is a draw from the facet's Beta distribution as specified in
+    models/uncertainty/uncertainty_spec_v0_1.yaml (level -> Beta parameters,
+    counter_level -> additional pseudo-counts on the failure side).
+  counter_level_mechanism: >-
+    `counter_level` NEVER subtracts from a score directly. It enters as pseudo-counts
+    on the FAILURE side of the facet's Beta distribution, which both lowers the facet
+    belief and narrows it — because "tested and contradicted" is more informative than
+    "untested". For a `direct` facet this lowers the dimension. For an `inverse` facet
+    it RAISES the dimension, because the thing being contradicted is a risk.
+  renormalisation: >-
+    The denominator runs over facets that are APPLICABLE to the target. A facet
+    recorded `assessment_status: not_applicable` is removed from both numerator and
+    denominator. A facet recorded `not_assessed` is KEPT in both, with its full weight
+    and its uninformative prior.
+  determinism: >-
+    Facet draws are keyed by (seed, target_id, facet) so a target's draws do not depend
+    on the order in which targets are processed. Two runs with the same seed and the
+    same inputs produce byte-identical output.
+
+not_assessed_handling:
+  principle: "contract P8 — unknown is a first-class value that WIDENS, never a zero."
+  rule_1_never_zero: >-
+    `not_assessed` is never coerced to level 0. Level 0 means "searched, nothing found",
+    which is real (weak) evidence; not_assessed means the question was not asked.
+  rule_2_wide_and_uninformative: >-
+    `not_assessed` maps to Beta(1,1): the maximum-entropy distribution on [0,1]. It is
+    the widest distribution in the whole mapping, so every unassessed facet visibly
+    widens that target's composite interval and its rank interval.
+  rule_3_not_dropped: >-
+    Unassessed facets keep their weight in the denominator. Dropping them would let a
+    target with one strong assessed facet and fourteen unexamined ones score as if it
+    were fully characterised — rewarding absence of scrutiny. This is the single most
+    important structural decision in this file.
+  rule_4_not_rewarded: >-
+    Beta(1,1) has median 0.500, which sits BELOW the level-2 median (0.560) and above
+    the level-1 median (0.314). So an unassessed facet is never better than moderate real
+    evidence, and never worse than a documented absence of evidence. Asserted here, and
+    PROVEN by tests/test_ranking_not_assessed.py.
+  rule_5_visible: >-
+    `coverage` (facets assessed / facets applicable) is a required column of every
+    report, so a high-ranked target with low coverage is identifiable at a glance,
+    and `tier` demotes it explicitly (§6).
+
+# ---------------------------------------------------------------------------
+# 4. Gates (hard caps)
+# ---------------------------------------------------------------------------
+# A gate is a CAP, applied per Monte Carlo draw after the weighted mean, so the
+# reported interval reflects it. Gates exist because weights permit trading and some
+# things must not be tradeable: no amount of favourable evidence elsewhere should let
+# a target with a maximal developmental confound look adult-modifiable, and no amount
+# of mechanistic elegance should let a target with no human-relevant evidence look
+# translatable.
+#
+# Every cap VALUE below is a subjective modelling choice. A cap is a statement about
+# the SCORE, never a claim about the biology: `cap: 0.25` on D2 does not assert that
+# adult modification is impossible, only that this model refuses to rank as though it
+# were established.
+
+gates:
+
+  - id: developmental_confound_caps_d2
+    dimension: D2
+    condition:
+      facet: developmental_confound_risk
+      level_at_least: 4
+      counter_level_at_most: 2
+    cap: 0.25                              # subjective cap value
+    rationale: >-
+      Maximal developmental-confound risk means adult-onset perturbation was tested and
+      failed, or the mechanism is established as critical-period-restricted. Contract P4
+      makes "development != adulthood" a required distinction; this gate makes it
+      un-tradeable. The `counter_level_at_most` clause releases the gate when there IS
+      replicated adult-onset evidence, because then the confound has been answered.
+    contract_ref: "docs/DATA_CONTRACT.md §5 (developmental_confound_risk: D2 inverse, gate)"
+
+  - id: no_human_evidence_caps_d6
+    dimension: D6
+    condition:
+      human_proposition_facets_max_level_below: 2
+      note: >-
+        Evaluated over the four human-proposition facets (human_genetic_association,
+        human_phenotype_specificity, human_intervention_evidence,
+        adult_expression_and_timing). `not_assessed` does not satisfy any threshold —
+        an unasked question is not human evidence.
+    cap: 0.35                              # subjective cap value
+    rationale: >-
+      A target whose entire evidence base is non-human cannot be ranked as translatable.
+      Contract P4 ("animal memory != human intelligence") is enforced here as a ceiling
+      rather than a caveat. The cap sits below the uninformative midpoint on purpose:
+      no human evidence should score WORSE than an honest "unknown".
+
+  - id: no_human_intervention_caps_d6
+    dimension: D6
+    condition:
+      facet: human_intervention_evidence
+      level_below: 2
+    cap: 0.60                              # subjective cap value
+    rationale: >-
+      Softer ceiling than the gate above. Human genetics plus conservation can make a
+      target translatable-looking without anyone ever having given a human a modulator
+      with a cognitive endpoint. That gap should bound D6 without collapsing it.
+
+  - id: safety_liability_caps_d5
+    dimension: D5
+    condition:
+      facet: safety_liability_burden
+      level_at_least: 4
+      counter_level_at_most: 2
+    cap: 0.20                              # subjective cap value
+    rationale: >-
+      Replicated human adverse evidence attributable to engaging the target, or a
+      regulatory action on the mechanism. Safety is a constraint, not a cost (README
+      §3), so this is a cap and not a weight adjustment. The cap is the lowest in this
+      file, deliberately.
+
+  - id: unresolved_critical_finding_caps_composite
+    dimension: COMPOSITE
+    condition:
+      audit_unresolved_critical_findings_at_least: 1
+    cap: 0.35                              # subjective cap value, on the scale below
+    cap_scale: dimension_equivalent
+    cap_scale_note: >-
+      MUST be read on the DIMENSION-EQUIVALENT scale, not as an absolute composite
+      value. `cap: 0.35` means "cap the composite at the value it would take if every
+      one of the six dimensions were 0.35", and the implementation converts that per
+      operator: 0.35^6 under `product`, 0.35 under `minimum`, `geometric_mean` and
+      `weighted_additive`. This indirection exists because a cap is a number on the
+      composite's scale and the composite's scale depends on the operator: a flat 0.35
+      was a meaningful ceiling under the superseded additive primary, where rows sat
+      around 0.5, and is entirely INERT under the product primary, where a row of six
+      sub-1 dimensions already sits far below it. A gate that silently stopped binding
+      when the operator changed would be the worst kind of defect — enforcement that
+      looks present and is not — so the scale is declared and
+      tests/test_ranking_gates.py asserts the gate still binds.
+    rationale: >-
+      An unresolved red-team finding of severity `critical` means the evidence base for
+      the target is under active dispute. Ranking it as a priority for further analysis
+      before that dispute is resolved inverts the point of having a red team.
+      Red-team VERDICTS are handled separately, through `tier` (§6), so that a numeric
+      cap and a categorical demotion stay distinguishable in the report.
+
+gate_application_order:
+  - "1. compute each dimension as the weighted mean over applicable facets (per draw)"
+  - "2. apply every dimension-level cap for that dimension: D = min(D, cap) (per draw)"
+  - "3. compute the composite from the capped dimensions (per draw)"
+  - "4. apply COMPOSITE-level caps (per draw)"
+  - "5. rank within the draw; summarise across draws"
+note_on_downgrades: >-
+  Red-team `adjustments` (contract §6) are applied to the INPUT levels before any of
+  this, are downgrade-only by contract rule V12, and are counted in the report column
+  `n_downgrades`. They are not gates: they change the evidence grade itself.
+
+# ---------------------------------------------------------------------------
+# 5. Composite across dimensions
+# ---------------------------------------------------------------------------
+composite:
+  # =========================================================================
+  # CONJUNCTIVE SEMANTICS (ruling, superseding the additive primary of v0.1.0-draft)
+  # =========================================================================
+  # The six dimensions are NOT capacity factors to be averaged. They are CONDITIONS
+  # THAT MUST ALL HOLD for a target to be worth pursuing:
+  #
+  #   P(causal cognition relevance) AND P(adult modifiability)
+  #   AND P(supra-normal potential) AND P(far transfer potential)
+  #   AND P(safe controllable window) AND P(human translation)
+  #
+  # A target whose adult modifiability is near zero is useless however strong the other
+  # five are. A weighted mean lets the other five COMPENSATE for it, and that is exactly
+  # the inference this project must not license. Under conjunctive semantics the PRODUCT
+  # is the faithful aggregation and a weighted mean is simply the wrong operator for the
+  # question — not a more conservative or less conservative choice, a different question.
+  #
+  # The change was made on the semantics, not on the outcome. Weights were NOT retuned to
+  # preserve the previous ordering; where the ranking moved, the movement is the finding.
+
+  primary:
+    id: product
+    formula: "C = prod_d D_d           over the six gated dimensions D1..D6"
+    semantics: joint_probability_under_independence
+    reading: >-
+      C is the joint probability that all six conditions hold, computed as a product
+      under an EXPLICIT INDEPENDENCE ASSUMPTION between the dimensions. It is the
+      conjunction the project actually cares about, expressed in the only way a product
+      can express it.
+    unweighted_on_purpose: >-
+      There are no dimension weights in the primary composite, because a conjunction has
+      none: a condition either has to hold or it does not. The subjective weights that
+      used to carry the composite now appear only inside the `weighted_additive` variant
+      (below), where they are what makes that variant a different model rather than a
+      rescaling of this one.
+
+    independence_assumption:
+      stated: "The six dimensions are treated as independent."
+      truth_value: false
+      direction_of_error: known
+      why_false: >-
+        The dimensions share evidence. `human_phenotype_specificity` feeds D1 and D4;
+        `dose_response_knowledge` feeds D3 and D5; `tractability` feeds D5 and D6. Beyond
+        the shared facets, the facets themselves share claims, share sources, share
+        cohorts, and share the judgement of a single grading agent per domain. The true
+        joint distribution is therefore strongly positively correlated.
+      consequence_for_the_point_estimate: >-
+        Positive dependence means the TRUE JOINT PROBABILITY IS HIGHER than the product
+        of the marginals for a target whose dimensions are favourable together, and the
+        product therefore UNDERSTATES such a target. The direction is known; the size is
+        not.
+      consequence_for_the_interval: >-
+        The reported 90% intervals are TOO NARROW by an unknown amount, because the
+        Monte Carlo draws facets independently
+        (models/uncertainty/uncertainty_spec_v0_1.yaml §4) and independent errors cancel
+        where correlated errors do not. This is the single largest known weakness in the
+        whole model and it is stated on every report, not only here.
+      what_would_fix_it: >-
+        A dependence model: at minimum a shared per-target grader effect, better a
+        claim-level source-overlap copula. Until then the independence assumption is
+        declared rather than defended.
+
+    consequences_accepted:
+      - >-
+        A single near-zero dimension drives the composite to near zero. That is the
+        intended behaviour and the reason for the change.
+      - >-
+        An UNASSESSED dimension pulls the composite down more than it did under the
+        additive form, because Beta(1,1) contributes a factor centred at 0.5 to a
+        product of six. Coverage therefore matters more to the composite than it used
+        to. This is a real cost of conjunctive semantics: it partially conflates "we
+        know this condition fails" with "nobody checked whether it holds". The
+        mitigations are that `coverage`, `facets_not_assessed`, `facets_level_zero` and
+        `facets_contradicted` are required report columns, that the per-facet state is
+        in the sidecar, and that `tier_3_insufficient_coverage` demotes a thin row
+        outright. The mitigation is NOT that the effect is small — it is not.
+      - >-
+        Composite values are much smaller in absolute terms (a product of six numbers
+        below 1). Absolute magnitudes are meaningless under any of these operators; only
+        the ordering and the interval are read.
+      - >-
+        THE COMPOSITE'S OWN INTERVAL WIDTH IS NOT A MEASURE OF EPISTEMIC UNCERTAINTY
+        UNDER THIS OPERATOR. The spread of a product is dominated by the MAGNITUDE of
+        its smallest factor, not by how uncertain that factor is. Measured consequence:
+        a level-0 facet (Beta(1,4), mean 0.200) yields a composite whose relative width
+        EXCEEDS that of an unassessed facet (Beta(1,1), mean 0.500), although the
+        unassessed facet is strictly the more uncertain of the two. So "unknown widens
+        the interval" (contract P8) holds at the FACET level and at the DIMENSION level,
+        and does not hold on the composite's width. It is not a defect in the
+        uncertainty model; it is a property of conjunction. Three consequences follow,
+        all already in force: the RANK interval is the headline output because it is
+        scale-free; `coverage`, `facets_not_assessed`, `facets_level_zero` and
+        `facets_contradicted` are required report columns rather than something a reader
+        should try to infer from interval width; and
+        tests/test_ranking_not_assessed.py asserts the property where it holds and pins
+        the artefact where it does not, so neither can be rediscovered as a surprise.
+
+  variants_for_sensitivity:
+    # Every variant is computed every run and all three orderings are compared
+    # pairwise. If the ordering is an artefact of the operator, these numbers say so.
+    - id: minimum
+      formula: "C = min_d D_d"
+      interpretation: >-
+        Liebig's law of the minimum: the target is exactly as good as its worst
+        condition. The strictest conjunction — it ignores everything except the binding
+        constraint, where the product still lets a second weak dimension matter.
+    - id: weighted_additive
+      formula: "C = sum_d ( v_d * D_d ) / sum_d ( v_d )"
+      interpretation: >-
+        The superseded primary, retained as the COMPENSATORY counterfactual: it is what
+        the ranking looks like if the six dimensions are allowed to substitute for one
+        another. Its distance from the primary is the measured size of the
+        compensation the conjunctive reading refuses.
+      weights:
+        # All subjective. These no longer drive the primary composite; they exist so the
+        # compensatory counterfactual is a specific model rather than a vague one, and
+        # they are unchanged from the superseded primary ON PURPOSE — retuning them
+        # would obscure how much of any ranking change came from the operator.
+        D1: 0.25   # subjective: causal relevance unestablished = not a control point at all
+        D2: 0.20   # subjective: "adult-modifiable" is the project's defining scope
+        D3: 0.15   # subjective: the project's objective, but the thinnest evidence base
+        D5: 0.15   # subjective: no plausible window = not analysable even computationally
+        D6: 0.15   # subjective: translation distance decides whether analysis can proceed
+        D4: 0.10   # subjective, and CONTINGENT: transfer evidence is near-absent, so D4 is
+                   # near-uniform and carries little discriminating information. Revisit
+                   # the moment transfer evidence exists.
+
+  geometric_mean_deliberately_omitted: >-
+    `geometric_mean` was a sensitivity variant in the previous draft and is removed, not
+    forgotten. C = (prod_d D_d)^(1/6) is a STRICTLY MONOTONE transform of the product, so
+    it induces an IDENTICAL ordering and an identical Kendall tau-b by construction. That
+    it reported exactly the same tau-b as `product` on every run was not a coincidence, it
+    was a tautology, and carrying it as a "variant" overstated how many independent
+    operators the ordering had been tested against. Three orderings are compared now, and
+    all three are genuinely different.
+
+  sensitivity_statistic:
+    name: kendall_tau_b
+    implemented_in: "src/blueprint/ranking/uncertainty.py::kendall_tau_b"
+    reason_for_own_implementation: "scipy is not available in this environment; ties must be handled (tau-b, not tau-a)."
+    comparisons: all_pairs
+    pairs:
+      - "product vs minimum"
+      - "product vs weighted_additive"
+      - "minimum vs weighted_additive"
+    reporting: >-
+      All three pairwise tau-b values, over median ranks, in the report sidecar
+      `reports/target_ranking_v0_1.meta.json` under
+      `sensitivity.pairwise_aggregation_kendall_tau_b`, together with the per-operator
+      median rank of every target under `sensitivity.rank_by_aggregation` so a reader can
+      see WHICH targets the operator choice moves rather than only that it moves some.
+      A tau-b far from 1 means the ordering is a property of this file rather than of the
+      evidence. On Sprint-1 data it is: the product-versus-minimum tau-b has been in the
+      0.6 range, so THE ORDERING IS MATERIALLY AGGREGATION-SENSITIVE and any prose
+      quoting a rank must say so. The same statistic is reported for the cap variants
+      (§5.2) under `cap_sensitivity.kendall_tau_b`.
+
+# ---------------------------------------------------------------------------
+# 5.2 Cap variants — measuring the cost of the precautionary asymmetry
+# ---------------------------------------------------------------------------
+# Required by contract §5.4. Methodological-weakness caps apply only in the direction
+# that favours the target: a normal-polarity facet has its `level` capped, an
+# inverse-polarity facet has its `counter_level` capped and NEVER its `level`.
+#
+# That asymmetry is a deliberate precaution for a project whose dominant risk is
+# over-optimism about cognitive enhancement. It is NOT neutral. Weak method can raise
+# doubt about a target while being unable to establish support for it, so a genuinely
+# promising target whose evidence base is methodologically weak in BOTH directions is
+# systematically under-ranked. The contract obliges this file to measure the size of
+# that effect rather than assume it is small.
+
+cap_variants:
+  implemented_in: "src/blueprint/ranking/caps.py"
+  caps_derived_from: >-
+    `context.phylogenetic_control` on the claims each facet cites
+    (atlases/comparative/phylogenetic_controls.md §4: `none` or `not_reported` caps the
+    facet at level 2). Derived from the study record rather than declared in a list, so
+    a cap cannot drift from the method it describes.
+
+  variants:
+    - id: polarity_aware
+      default: true
+      contract_ref: "docs/DATA_CONTRACT.md §5.4"
+      rule: "normal polarity -> cap `level`; inverse polarity -> cap `counter_level`, never `level`."
+      note: >-
+        This is the POLICY and the only variant a published ranking is produced under.
+        Because the grading agents already apply the rule when they write a level,
+        re-deriving and re-applying it should be a NO-OP. It is, on the Sprint-1 data:
+        six derived caps across four targets, none binding. When it is not a no-op, the
+        grader did not apply the rule, and that discrepancy is reported rather than
+        silently corrected.
+    - id: symmetric_caps
+      default: false
+      rule: "cap `level` and `counter_level` alike, ignoring polarity."
+      note: >-
+        A COUNTERFACTUAL, not an alternative policy. It exists so the rank effect of the
+        asymmetry is measured. It is never used as the primary ranking, and a number
+        produced under it is not a ranking of anything — it is a measurement of this
+        model's own precaution.
+
+  reporting:
+    csv_column: rank_delta_symmetric_caps
+    csv_column_meaning: >-
+      rank_median(symmetric_caps) - rank_median(polarity_aware), on the same seed and
+      draws. NEGATIVE means the target ranks BETTER under symmetric caps, i.e. the
+      precautionary asymmetry is costing it rank. Blank when the target has no derived
+      cap, which is not the same as zero: zero means the caps did not move it, blank
+      means no cap applied to it at all.
+    sidecar_keys:
+      - "cap_sensitivity.kendall_tau_b            (polarity_aware vs symmetric_caps orderings)"
+      - "cap_sensitivity.rank_delta               (per target)"
+      - "cap_sensitivity.sensitive_targets        (those over the threshold below)"
+      - "cap_sensitivity.polarity_aware_was_a_no_op (the grader cross-check)"
+      - "cap_sensitivity.cap_applications         (what each cap did, per mode)"
+
+  sensitivity_threshold:
+    rank_positions: 2.0                    # subjective: chosen as the smallest movement
+                                           # that is not Monte Carlo noise at 4000 draws
+                                           # on a cohort of ~30. It is a reporting
+                                           # trigger, not a significance test.
+    narrative_flag: "rank is sensitive to the precautionary capping rule"
+    reading: >-
+      A flagged target is a FINDING ABOUT OUR METHOD, not a defect to hide: it says this
+      target's position depends on a modelling choice about how to treat weak
+      comparative method, and a reader should look at the target's
+      `phylogenetic_control` evidence directly rather than trust the rank.
+
+  worked_example_hcn1: >-
+    HCN1 is the target where polarity handling is most visible, and the only seed target
+    for which agent:comparative found direct quantitative adult-human-versus-rodent
+    measurements of the target's own biophysics. Its comparative facets are
+    `cross_species_convergence` (NORMAL polarity) at level 2 with counter_level 3, and
+    `human_lineage_divergence_risk` (INVERSE polarity) at level 3 with counter_level 1.
+    All the comparative claims behind both facets carry
+    `context.phylogenetic_control: none`, so the level-2 cap applies to both facets.
+
+    Under `polarity_aware` the cap binds on neither facet, because the grader already
+    applied it: `cross_species_convergence.level` is already 2, and on the inverse facet
+    the cap may only touch `counter_level`, which is 1 and already under the cap. The
+    divergence-risk `level` of 3 stands — which is the whole point of §5.4, since
+    capping it would assert that weak comparative method makes the human/mouse
+    divergence smaller.
+
+    Under `symmetric_caps` the cap binds twice, and both times in HCN1's favour:
+    `cross_species_convergence.counter_level` 3 -> 2 (less evidence against conserved
+    function) and `human_lineage_divergence_risk.level` 3 -> 2 (less evidence that human
+    biology diverges). Both feed D6. The rank difference between the two variants is
+    therefore a direct measurement of what the precautionary rule costs HCN1, and it is
+    reported per run rather than argued about.
+
+# ---------------------------------------------------------------------------
+# 6. Tiers
+# ---------------------------------------------------------------------------
+# Tiers are labels for ANALYSIS PRIORITY. Every tier name says "analyse", never
+# "modulate". Evaluated in the order listed; the first match wins.
+
+tiers:
+  min_coverage: 0.40                       # subjective threshold: below this, the row is a
+                                           # statement about curation, not about the target
+  top_fraction: 0.25                       # subjective: fraction of the cohort eligible for tier 1
+  mid_fraction: 0.50                       # subjective: fraction eligible for tier 2
+  rules:
+    - id: tier_4_deprioritised_by_audit
+      order: 1
+      when: "red_team_verdict in {deprioritise, insufficient_evidence}"
+      tier: tier_4_deprioritised_by_audit
+      meaning: "The red team has demoted this target. No further analysis is prioritised."
+    - id: tier_3_insufficient_coverage
+      order: 2
+      when: "coverage < min_coverage OR no audit record exists"
+      tier: tier_3_insufficient_coverage
+      meaning: >-
+        Not enough of the facet catalogue was assessed (or the target is unaudited) for
+        the composite to mean anything. The next action is CURATION, not analysis.
+    - id: tier_1_analyse_next
+      order: 3
+      when: "rank_p95 <= ceil(top_fraction * n_targets)"
+      tier: tier_1_analyse_next
+      meaning: >-
+        Ranks in the top band even at the pessimistic end of its own rank interval.
+        The highest-value next COMPUTATIONAL analyses in the cohort.
+    - id: tier_2_promising_underdetermined
+      order: 4
+      when: "rank_median <= ceil(mid_fraction * n_targets)"
+      tier: tier_2_promising_underdetermined
+      meaning: >-
+        Median rank is respectable but the interval is wide: the ordering is not
+        resolved. `most_informative_facet` names the analysis that would resolve it.
+    - id: tier_5_lower_priority
+      order: 5
+      when: "otherwise"
+      tier: tier_5_lower_priority
+      meaning: >-
+        Ranks below the middle of the cohort on current evidence. NOT a statement that
+        the target is uninteresting — several of these are simply unstudied.
+
+# ---------------------------------------------------------------------------
+# 7. Information gain (what to analyse next, per facet)
+# ---------------------------------------------------------------------------
+information_gain:
+  method: one_level_perturbation
+  description: >-
+    For each target and each facet, re-run the model with that facet's level moved +1
+    and -1 (clipped to 0..4; a `not_assessed` facet is perturbed from the
+    uninformative prior to level 1 and level 3 as its down/up cases), holding every
+    other facet and every other target fixed and reusing the same random draws. The
+    facet whose resolution would move this target's rank the most is the
+    highest-value next analysis for that target.
+  primary_criterion: "rank_swing = | rank_median(facet +1) - rank_median(facet -1) |"
+  secondary_criterion: "interval_reduction = baseline(rank_p95 - rank_p05) - min over the two perturbations of (rank_p95 - rank_p05)"
+  tie_break: "facet name, ascending — for determinism only, with no scientific meaning"
+  unresolved_multiplier:
+    # Subjective weighting of how much a facet's resolution is worth given its current
+    # state. An unassessed facet is worth more to resolve than an assessed one, because
+    # assessing it is cheap relative to overturning an existing grade.
+    not_assessed: 1.00                     # subjective
+    assessed: 0.50                         # subjective
+    not_applicable: 0.00                   # structural zero, not a subjective weight: a facet
+                                           # that does not apply cannot be resolved at all
+  repository_level_output: >-
+    A ranked list of (target, facet) pairs across the whole repository, written to the
+    report sidecar under `information_gain.top_next_analyses`. This is the model's
+    answer to "what should the next sprint curate first".
+  honest_limitation: >-
+    This measures sensitivity of THIS model's ranking to THIS facet's grade. It does
+    not measure scientific importance, and it systematically favours facets with large
+    weights and dimensions with few inputs. Read it as "where is the ranking
+    unresolved", not "what matters most".
+
+# ---------------------------------------------------------------------------
+# 8. Provenance requirements on every artefact produced under this spec
+# ---------------------------------------------------------------------------
+provenance_requirements:
+  required_on_every_report_row:
+    - status                  # always PRELIMINARY in Sprint 1
+    - calibration_status      # always uncalibrated_subjective under this spec
+    - rubric_version
+    - ranking_spec_version
+    - uncertainty_spec_version
+    - model_run_seed
+    - generated_on
+    - coverage
+    - independent_source_count
+    - red_team_verdict
+    - n_downgrades
+  required_in_sidecar:
+    - spec_sha256             # sha256 of each of the three spec files as loaded
+    - seed
+    - n_draws
+    - generated_at
+    - git_commit              # read from .git/HEAD and the ref file; null when unavailable
+    - reader                  # which repository reader supplied the inputs
+    - sensitivity
+    - information_gain
+    - gates_triggered
+  independent_source_count_rule: >-
+    Distinct SOURCE ids across every claim referenced by the target's facet
+    assessments, deduplicated at source level. Citing the same paper five times counts
+    once (contract P5). Implemented in src/blueprint/ranking/score.py and proven by
+    tests/test_ranking_invariance.py.

@@ -1,0 +1,199 @@
+# Facet assessment — generated file.
+# The four genetics facets are produced deterministically by
+# pipelines/alphacognition/build_assessments.py from the derived tables under
+# data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
+# present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
+# Re-run the script rather than editing this file.
+target_id: TGT:HTR2A
+schema_version: 0.1.0
+assessed_by: agent:alphacognition
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: human_genetic_association
+  assessment_status: assessed
+  level: 2
+  rationale: 3 catalogued association record(s) on single-domain cognitive traits (episodic memory, memory
+    performance); a relevant but not directly relevant human endpoint
+  claim_refs:
+  - CLM:alphacognition:gwas.HTR2A:001
+  - CLM:alphacognition:gwas.HTR2A:002
+  - CLM:alphacognition:l2g.HTR2A:001
+  - CLM:alphacognition:l2g.HTR2A:002
+  counter_level: 0
+  counter_rationale: 'No study reporting a null or opposite-direction association for this gene on a panel
+    trait was found by this sweep. That is a property of the sweep, not of the literature: the GWAS Catalog
+    records associations that passed a significance threshold and does not record non-associations, so
+    absence of a catalogued negative is uninformative and is recorded as 0 for that reason.'
+  counter_claim_refs: []
+  limiting_factor: 'level 4 is unreachable from this evidence: the catalogue''s `beta` field is heterogeneous
+    free text and effect alleles are often reported as ''?'', so direction consistency across studies
+    cannot be established. cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither
+    the association nor any locus-to-gene assignment built on it is established as transportable.'
+- facet: causal_gene_attribution
+  assessment_status: assessed
+  level: 2
+  rationale: Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the candidates
+    at 1 fine-mapped credible set(s) for cognitive-panel traits, with 2 competing candidate gene(s) at
+    the same loci (ESD, LRCH1); no molecular-QTL colocalisation for this gene was found at those loci
+  claim_refs:
+  - CLM:alphacognition:l2g.HTR2A:001
+  - CLM:alphacognition:gwas.HTR2A:001
+  - CLM:alphacognition:gwas.HTR2A:002
+  counter_level: 2
+  counter_rationale: 2 other gene(s) are ranked as candidates at the same cognitive-trait credible set(s),
+    which is direct evidence against a confident assignment to this gene
+  counter_claim_refs:
+  - CLM:alphacognition:l2g.HTR2A:001
+  limiting_factor: attribution is a published statistical model's output with competing candidates and
+    no QTL corroboration; not a demonstrated gene-level effect
+- facet: human_phenotype_specificity
+  assessment_status: assessed
+  level: 2
+  rationale: 3 cognitive-panel association(s) (0 directly relevant, 3 single-domain) alongside 30 association(s)
+    with 27 distinct trait(s) outside the panel; cognition-specificity is qualified by that pleiotropy
+  claim_refs:
+  - CLM:alphacognition:gwas.HTR2A:001
+  - CLM:alphacognition:gwas.HTR2A:002
+  - CLM:alphacognition:gwas.HTR2A:003
+  counter_level: 0
+  counter_rationale: No citable contradicting claim exists in this atlas for this facet. The observation
+    that would have argued against it is recorded in limiting_factor instead, because a counter-grade
+    may not rest on evidence no record identifies.
+  counter_claim_refs: []
+  limiting_factor: 'specificity is assessed from positional annotation, so ''this gene is pleiotropic''
+    and ''this locus is gene-dense'' are not separated. Mendelian randomisation and pan-phenome gene-level
+    testing were not run in v0.1. Uncited observation that would argue against this facet: the same positional
+    locus carries 30 catalogued association(s) with 27 distinct non-cognitive trait(s), which argues against
+    reading the cognitive hit as specific to this gene''s cognitive function'
+- facet: adult_expression_and_timing
+  assessment_status: assessed
+  level: 2
+  rationale: detected in all 13 sampled adult human brain regions (GTEx v8, adult post-mortem donors);
+    direct human adult tissue measurement, but bulk-tissue resolution and no evidence that the gene's
+    cognitive relevance extends into adulthood
+  claim_refs:
+  - CLM:alphacognition:expr.HTR2A:001
+  counter_level: 0
+  counter_rationale: 'no evidence that this gene''s action is confined to development was retrieved. Developmental-restriction
+    evidence was NOT systematically searched for this target: no human developmental transcriptome (BrainSpan/PsychENCODE)
+    was ingested in v0.1, so this 0 means ''not found by the sweep that was run''.'
+  counter_claim_refs: []
+  limiting_factor: adult human brain CELL-TYPE resolution is unavailable in this release and is deferred
+    to docs/TASK_DAG.yaml Q003; developmental timing was not ingested from any atlas. Level 4 is therefore
+    unreachable for every target in v0.1.
+- facet: mechanistic_causal_perturbation
+  assessment_status: assessed
+  level: 1
+  rationale: One rodent study in which systemic 5-HT2A antagonism impaired spatial reversal learning.
+    The direction of the underlying proposition is inferred from a blockade experiment, which is weak.
+  claim_refs:
+  - CLM:alphacognition:HTR2A:001
+  counter_level: 1
+  counter_rationale: In the same study, targeted infusion of the 5-HT2A antagonist into orbitofrontal
+    cortex, medial prefrontal cortex and nucleus accumbens produced no significant effect, so the systemic
+    result was not localised and may not be a 5-HT2A mechanism at all.
+  counter_claim_refs:
+  - CLM:alphacognition:HTR2A:001
+  limiting_factor: single rodent study whose own localisation attempt failed
+- facet: adult_onset_perturbation
+  assessment_status: assessed
+  level: 2
+  rationale: Acute pharmacological 5-HT2A agonism in healthy adult humans demonstrably changes self-rated
+    cognition and control, and the rodent pharmacology is also adult-onset. The target is unambiguously
+    modifiable in adults; the question is the sign.
+  claim_refs:
+  - CLM:alphacognition:HTR2A:002
+  - CLM:alphacognition:HTR2A:001
+  counter_level: 0
+  counter_rationale: no developmental-window requirement was retrieved
+  counter_claim_refs: []
+  limiting_factor: all human exposure is acute; nothing about repeated or post-acute dosing
+- facet: above_baseline_enhancement
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: no result showing cognitive performance above a healthy human or animal baseline
+    from 5-HT2A agonism was retrieved'
+  claim_refs:
+  - CLM:alphacognition:gap.HTR2A:002
+  counter_level: 3
+  counter_rationale: 'Two randomised placebo-controlled studies in healthy adults point away from enhancement:
+    acute dose-dependent increases in self-rated impairment of control and cognition, and no change in
+    measured cognitive empathy or moral decision-making while emotional empathy changed.'
+  counter_claim_refs:
+  - CLM:alphacognition:HTR2A:002
+  - CLM:alphacognition:HTR2A:003
+  limiting_factor: the human counter-evidence is acute intoxication; a post-acute enhancement window is
+    untested here, not excluded
+  search_basis: 'Searched: PubMed for studies of this target reporting performance ABOVE an intact healthy
+    baseline, in any species. A hit would have been a healthy-baseline arm improving on a cognitive measure;
+    a deficit-state or disease-model improvement would NOT have counted.'
+- facet: transfer_breadth
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: nothing supporting breadth'
+  claim_refs:
+  - CLM:alphacognition:gap.HTR2A:002
+  counter_level: 1
+  counter_rationale: 'A measured dissociation argues against breadth: emotional empathy changed while
+    cognitive empathy and moral reasoning did not, in the same participants.'
+  counter_claim_refs:
+  - CLM:alphacognition:HTR2A:003
+  limiting_factor: small samples in the dissociation study (n = 32 and n = 24)
+  search_basis: 'Searched: the endpoint lists of every study retrieved for this target, for a second cognitive
+    domain or an explicit transfer measure. A hit would have been improvement on two or more distinct
+    cognitive domains, or on an untrained real-world endpoint.'
+- facet: dose_response_knowledge
+  assessment_status: assessed
+  level: 1
+  rationale: Two dose levels each of psilocybin and LSD were compared in the same healthy participants,
+    and the higher LSD dose produced higher impairment ratings, so a dose ordering exists — for impairment,
+    not for benefit.
+  claim_refs:
+  - CLM:alphacognition:HTR2A:002
+  counter_level: 0
+  counter_rationale: no non-monotonic cognitive response for 5-HT2A agonism was retrieved
+  counter_claim_refs: []
+  limiting_factor: the dose-response that is characterised is for subjective drug effect, not for a cognitive
+    endpoint
+- facet: human_intervention_evidence
+  assessment_status: assessed
+  level: 0
+  rationale: 'Searched: no human interventional evidence that 5-HT2A modulation improves cognition was
+    found. Level 0 with a high counter_level is deliberate: substantial randomised human data exist and
+    they are not supportive.'
+  claim_refs:
+  - CLM:alphacognition:gap.HTR2A:002
+  counter_level: 3
+  counter_rationale: Two randomised placebo-controlled healthy-adult studies (28 and 32/24 participants)
+    report acute impairment and a cognitive null respectively.
+  counter_claim_refs:
+  - CLM:alphacognition:HTR2A:002
+  - CLM:alphacognition:HTR2A:003
+  limiting_factor: both human studies used psychedelic agonists, which are receptor-promiscuous and unblindable;
+    a selective 5-HT2A ligand with a cognitive endpoint in healthy adults was not found
+  search_basis: 'Searched: PubMed for human interventional studies of this target with a cognitive endpoint,
+    and ClinicalTrials.gov API v2 for registered trials. A hit would have been a randomised or open-label
+    human study reporting a cognitive endpoint. A trial that measured no cognitive endpoint is a coverage
+    gap, not a hit and not a miss (R5).'
+facets_not_owned_by_this_agent: []
+notes: 'Evidence basis for the four genetics facets. Genes covered by this target: HTR2A. GWAS Catalog
+  release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
+  gtex_v8. Association records for this target: 5 total, of which 3 on cognitive-panel traits (0 on a
+  g_factor/fluid_reasoning trait, 3 single-domain) and 2 on educational-attainment or literacy traits,
+  across 3 distinct publications (2 for the cognitive associations). Cognitive traits hit: episodic memory,
+  memory performance. Fine-mapped credible sets in which Open Targets'' L2G model ranks this gene: 2 in
+  total, 1 on cognitive-panel traits, with 0 molecular-QTL colocalisations for this gene at those loci
+  and 2 competing candidate gene(s) there (ESD, LRCH1). Unfiltered GWAS Catalog sweep for this gene symbol:
+  35 catalogued association(s) in total, 30 of them with traits outside the cognitive/educational panel,
+  spanning 27 distinct such trait(s). GTEx reports 13 brain region(s); detected above zero median in all
+  of them: True. Adult brain cell-type resolution was not available in this release and is deferred to
+  docs/TASK_DAG.yaml Q003. The level rules applied here are in pipelines/alphacognition/build_assessments.py;
+  lead-atlas facets for this target are hand-written in atlases/alphacognition/lead_atlas_facets.yaml.'
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  method: derived_from_claims
+  pipeline: pipelines/alphacognition/build_assessments.py
+  run_id: sprint1-alphacognition-facets-01

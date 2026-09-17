@@ -1,0 +1,45 @@
+# Intervention entity — AlphaCognition v0.1.
+# Registering an intervention is a bibliographic/cheminformatics act and NEVER an instruction
+# to obtain, administer or self-apply anything. `dose_information` is `omitted_by_policy` on
+# every record: no dose, route, regimen or schedule is recorded anywhere in this repository.
+# Identifiers come only from ChEMBL tool responses in this session; a compound ChEMBL does not
+# know by name is recorded under a snake_case slug (contract §1.2) and says so.
+# Numeric database facts (max_clinical_phase, first_approval_year) name the pinned release they
+# came from in `database_source_id`, which is what makes them admissible under rule V9 — and
+# they describe DEVELOPMENT STATUS, never efficacy and never a cognitive effect (rule V16).
+intervention_id: CPD:htl0018318
+schema_version: 0.1.0
+name: HTL0018318
+node_type: Compound
+modality: small_molecule
+domain: alphacognition
+dose_information: omitted_by_policy
+identifiers:
+  chembl_id: null
+  inn: null
+  identifier_provenance: not found in ChEMBL by name on 2026-09-17; snake_case slug used per contract
+    §1.2
+mechanisms:
+- mechanism_of_action: selective M1 muscarinic receptor partial agonist, as described by the source publication
+    and not by a drug database
+  action_type: PARTIAL AGONIST
+  target_chembl_id: null
+  direct_interaction: null
+  disease_efficacy: null
+  mechanism_ref_pmid: '33883008'
+targets:
+- TGT:CHRM1
+claim_refs:
+- CLM:alphacognition:CHRM1:001
+known_liabilities: []
+efficacy_status: Exploratory pharmacodynamic cognitive endpoints moved in one randomised placebo-controlled
+  study in healthy adults (CLM:alphacognition:CHRM1:001). That is a single unreplicated result from a
+  safety and pharmacokinetics study, not established efficacy.
+notes:
+- ChEMBL compound_search returned 0 results for the name HTL0018318, so no ChEMBL id exists to record
+  and a slug is used. No ChEMBL id was guessed.
+- The mechanism string is the source publication's own description, NOT a curated database mechanism record,
+  and must not be treated as one.
+- This is the compound behind the only healthy-adult human cognitive result in this atlas.
+added_by: agent:alphacognition
+added_on: '2026-09-17'

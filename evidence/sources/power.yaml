@@ -1,0 +1,691 @@
+# Source registrations — agent:power (Cognitive Power Atlas)
+#
+# Contract: docs/DATA_CONTRACT.md §3. Every record here is what the agent BELIEVES
+# the source is; scripts/fetch_source_metadata.py --agent power asks the registry
+# what it actually is and the validator enforces status: verified.
+#
+# No abstract text and no passage from any source is stored in this repository.
+# Titles are transcribed for the machine title-similarity check only.
+#
+# schema_version: 0.1.0
+
+# ------------------------------------------------- creatine / phosphocreatine ---
+
+- source_id: SRC:PMID:14561278
+  source_type: journal_article
+  title: "Oral creatine monohydrate supplementation improves brain performance: a double-blind, placebo-controlled, cross-over trial."
+  year: 2003
+  first_author: "Rae C"
+  container: "Proc Biol Sci"
+  identifiers:
+    pmid: "14561278"
+    doi: "10.1098/rspb.2003.2492"
+    pmc: "PMC1691485"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:35984306
+  source_type: meta_analysis
+  title: "Effects of creatine supplementation on memory in healthy individuals: a systematic review and meta-analysis of randomized controlled trials."
+  year: 2023
+  first_author: "Prokopidis K"
+  container: "Nutr Rev"
+  identifiers:
+    pmid: "35984306"
+    doi: "10.1093/nutrit/nuac064"
+    pmc: "PMC9999677"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:41960895
+  source_type: journal_article
+  title: "Creatine monohydrate improved cycling Wingate performance but not cognitive function in young active males and females."
+  year: 2026
+  first_author: "Silva JV"
+  container: "Res Sports Med"
+  identifiers:
+    pmid: "41960895"
+    doi: "10.1080/15438627.2026.2656695"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:42075005
+  source_type: journal_article
+  title: "Single-Dose Creatine Reduces Sleep Deprivation-Induced Deterioration in Cognitive Performance."
+  year: 2026
+  first_author: "Gordji-Nejad A"
+  container: "Nutrients"
+  identifiers:
+    pmid: "42075005"
+    doi: "10.3390/nu18081192"
+    pmc: "PMC13119191"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25632150
+  source_type: journal_article
+  title: "Creatine supplementation enhances corticomotor excitability and cognitive performance during oxygen deprivation."
+  year: 2015
+  first_author: "Turner CE"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "25632150"
+    doi: "10.1523/JNEUROSCI.3113-14.2015"
+    pmc: "PMC6795258"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------- SLC6A8 perturbation ---
+
+- source_id: SRC:PMID:31209903
+  source_type: journal_article
+  title: "Deletion of the creatine transporter gene in neonatal, but not adult, mice leads to cognitive deficits."
+  year: 2019
+  first_author: "Udobi KC"
+  container: "J Inherit Metab Dis"
+  identifiers:
+    pmid: "31209903"
+    doi: "10.1002/jimd.12137"
+    pmc: "PMC6739135"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:29384270
+  source_type: journal_article
+  title: "Cognitive deficits and increases in creatine precursors in a brain-specific knockout of the creatine transporter gene Slc6a8."
+  year: 2018
+  first_author: "Udobi KC"
+  container: "Genes Brain Behav"
+  identifiers:
+    pmid: "29384270"
+    doi: "10.1111/gbb.12461"
+    pmc: "PMC6696915"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:38030104
+  source_type: journal_article
+  title: "A Gad2 specific Slc6a8 deletion recapitulates the contextual and cued freezing deficits seen in Slc6a8 mice."
+  year: 2023
+  first_author: "Sugimoto C"
+  container: "Brain Res"
+  identifiers:
+    pmid: "38030104"
+    doi: "10.1016/j.brainres.2023.148690"
+    pmc: "PMC10875619"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ---------------------------------------------------------- creatine kinases ---
+
+- source_id: SRC:PMID:19624717
+  source_type: journal_article
+  title: "Complete brain-type creatine kinase deficiency in mice blocks seizure activity and affects intracellular calcium kinetics."
+  year: 2010
+  first_author: "Streijger F"
+  container: "Epilepsia"
+  identifiers:
+    pmid: "19624717"
+    doi: "10.1111/j.1528-1167.2009.02182.x"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:14977190
+  source_type: journal_article
+  title: "Mice lacking the UbCKmit isoform of creatine kinase reveal slower spatial learning acquisition, diminished exploration and habituation, and reduced acoustic startle reflex responses."
+  year: 2004
+  first_author: "Streijger F"
+  container: "Mol Cell Biochem"
+  identifiers:
+    pmid: "14977190"
+    doi: "10.1023/b:mcbi.0000009877.90129.e3"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# --------------------------------------- human high-energy phosphate imaging ---
+
+- source_id: SRC:PMID:26891040
+  source_type: journal_article
+  title: "Brain levels of high-energy phosphate metabolites and executive function in geriatric depression."
+  year: 2016
+  first_author: "Harper DG"
+  container: "Int J Geriatr Psychiatry"
+  identifiers:
+    pmid: "26891040"
+    doi: "10.1002/gps.4439"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:29876246
+  source_type: journal_article
+  title: "Altered brain high-energy phosphate metabolism in mild Alzheimer's disease: A 3-dimensional 31P MR spectroscopic imaging study."
+  year: 2018
+  first_author: "Rijpma A"
+  container: "Neuroimage Clin"
+  identifiers:
+    pmid: "29876246"
+    doi: "10.1016/j.nicl.2018.01.031"
+    pmc: "PMC5987799"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ----------------------------------- lactate transport and the lactate shuttle ---
+
+- source_id: SRC:PMID:21376239
+  source_type: journal_article
+  title: "Astrocyte-neuron lactate transport is required for long-term memory formation."
+  year: 2011
+  first_author: "Suzuki A"
+  container: "Cell"
+  identifiers:
+    pmid: "21376239"
+    doi: "10.1016/j.cell.2011.02.018"
+    pmc: "PMC3073831"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:32693190
+  source_type: journal_article
+  title: "Neuronal and astroglial monocarboxylate transporters play key but distinct roles in hippocampus-dependent learning and memory formation."
+  year: 2020
+  first_author: "Netzahualcoyotzi C"
+  container: "Prog Neurobiol"
+  identifiers:
+    pmid: "32693190"
+    doi: "10.1016/j.pneurobio.2020.101888"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:31286064
+  source_type: journal_article
+  title: "Lactate from astrocytes fuels learning-induced mRNA translation in excitatory and inhibitory neurons."
+  year: 2019
+  first_author: "Descalzi G"
+  container: "Commun Biol"
+  identifiers:
+    pmid: "31286064"
+    doi: "10.1038/s42003-019-0495-2"
+    pmc: "PMC6606643"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30667077
+  source_type: review
+  title: "Does shuttling of glycogen-derived lactate from astrocytes to neurons take place during neurotransmission and memory consolidation?"
+  year: 2019
+  first_author: "Dienel GA"
+  container: "J Neurosci Res"
+  identifiers:
+    pmid: "30667077"
+    doi: "10.1002/jnr.24387"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:29209168
+  source_type: journal_article
+  title: "Direct Neuronal Glucose Uptake Is Required for Contextual Fear Acquisition in the Dorsal Hippocampus."
+  year: 2017
+  first_author: "Kong L"
+  container: "Front Mol Neurosci"
+  identifiers:
+    pmid: "29209168"
+    doi: "10.3389/fnmol.2017.00388"
+    pmc: "PMC5702440"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:26293178
+  source_type: journal_article
+  title: "Inhibition of Lactate Transport Erases Drug Memory and Prevents Drug Relapse."
+  year: 2016
+  first_author: "Zhang Y"
+  container: "Biol Psychiatry"
+  identifiers:
+    pmid: "26293178"
+    doi: "10.1016/j.biopsych.2015.07.007"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:36112231
+  source_type: journal_article
+  title: "Astrocyte-derived lactate/NADH alters methamphetamine-induced memory consolidation and retrieval by regulating neuronal synaptic plasticity in the dorsal hippocampus."
+  year: 2022
+  first_author: "Tan X"
+  container: "Brain Struct Funct"
+  identifiers:
+    pmid: "36112231"
+    doi: "10.1007/s00429-022-02563-1"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:26865611
+  source_type: journal_article
+  title: "Aerobic Glycolysis in the Frontal Cortex Correlates with Memory Performance in Wild-Type Mice But Not the APP/PS1 Mouse Model of Cerebral Amyloidosis."
+  year: 2016
+  first_author: "Harris RA"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "26865611"
+    doi: "10.1523/JNEUROSCI.3131-15.2016"
+    pmc: "PMC4748073"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------- MCT1 / SLC16A1 ---
+
+- source_id: SRC:PMID:25390740
+  source_type: journal_article
+  title: "Monocarboxylate transporter 1 deficiency and ketone utilization."
+  year: 2014
+  first_author: "van Hasselt PM"
+  container: "N Engl J Med"
+  identifiers:
+    pmid: "25390740"
+    doi: "10.1056/NEJMoa1407778"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:40464101
+  source_type: journal_article
+  title: "Genotype and Clinical Phenotype of Monocarboxylate Transporter 1 Deficiency in Three Palestinian Children: Report of Two Novel Variants in the SLC16A1 Gene."
+  year: 2025
+  first_author: "Dweikat I"
+  container: "Am J Med Genet A"
+  identifiers:
+    pmid: "40464101"
+    doi: "10.1002/ajmg.a.64135"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------ HCAR1 / GPR81 ---
+
+- source_id: SRC:PMID:30926749
+  source_type: journal_article
+  title: "The Lactate Receptor HCAR1 Modulates Neuronal Network Activity through the Activation of Galpha and Gbetagamma Subunits."
+  year: 2019
+  first_author: "de Castro Abrantes H"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "30926749"
+    doi: "10.1523/JNEUROSCI.2092-18.2019"
+    pmc: "PMC6554634"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:31881352
+  source_type: journal_article
+  title: "Differential effects of L- and D-lactate on memory encoding and consolidation: Potential role of HCAR1 signaling."
+  year: 2020
+  first_author: "Scavuzzo CJ"
+  container: "Neurobiol Learn Mem"
+  identifiers:
+    pmid: "31881352"
+    doi: "10.1016/j.nlm.2019.107151"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:33244894
+  source_type: journal_article
+  title: "L-lactate induces neurogenesis in the mouse ventricular-subventricular zone via the lactate receptor HCA1."
+  year: 2021
+  first_author: "Lambertus M"
+  container: "Acta Physiol (Oxf)"
+  identifiers:
+    pmid: "33244894"
+    doi: "10.1111/apha.13587"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:41500517
+  source_type: journal_article
+  title: "The lactate-GPR81-PKA axis regulates exercise-induced central fatigue in male mice."
+  year: 2026
+  first_author: "Li J"
+  container: "Am J Physiol Regul Integr Comp Physiol"
+  identifiers:
+    pmid: "41500517"
+    doi: "10.1152/ajpregu.00103.2025"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:34208876
+  source_type: journal_article
+  title: "Participation of L-Lactate and Its Receptor HCAR1/GPR81 in Neurovisual Development."
+  year: 2021
+  first_author: "Laroche S"
+  container: "Cells"
+  identifiers:
+    pmid: "34208876"
+    doi: "10.3390/cells10071640"
+    pmc: "PMC8303161"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25920953
+  source_type: review
+  title: "Is L-lactate a novel signaling molecule in the brain?"
+  year: 2015
+  first_author: "Mosienko V"
+  container: "J Cereb Blood Flow Metab"
+  identifiers:
+    pmid: "25920953"
+    doi: "10.1038/jcbfm.2015.77"
+    pmc: "PMC4640281"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------- brain energy budgets ---
+
+- source_id: SRC:PMID:11598490
+  source_type: review
+  title: "An energy budget for signaling in the grey matter of the brain."
+  year: 2001
+  first_author: "Attwell D"
+  container: "J Cereb Blood Flow Metab"
+  identifiers:
+    pmid: "11598490"
+    doi: "10.1097/00004647-200110000-00001"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22434069
+  source_type: review
+  title: "Updated energy budgets for neural computation in the neocortex and cerebellum."
+  year: 2012
+  first_author: "Howarth C"
+  container: "J Cereb Blood Flow Metab"
+  identifiers:
+    pmid: "22434069"
+    doi: "10.1038/jcbfm.2012.35"
+    pmc: "PMC3390818"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22219296
+  source_type: journal_article
+  title: "The energetics of CNS white matter."
+  year: 2012
+  first_author: "Harris JJ"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "22219296"
+    doi: "10.1523/JNEUROSCI.3430-11.2012"
+    pmc: "PMC3272449"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:28589753
+  source_type: journal_article
+  title: "Evaluating the gray and white matter energy budgets of human brain function."
+  year: 2018
+  first_author: "Yu Y"
+  container: "J Cereb Blood Flow Metab"
+  identifiers:
+    pmid: "28589753"
+    doi: "10.1177/0271678X17708691"
+    pmc: "PMC6092772"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:34741806
+  source_type: journal_article
+  title: "Neocortex saves energy by reducing coding precision during food scarcity."
+  year: 2022
+  first_author: "Padamsey Z"
+  container: "Neuron"
+  identifiers:
+    pmid: "34741806"
+    doi: "10.1016/j.neuron.2021.10.024"
+    pmc: "PMC8788933"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ---------------------------------------------------------- KL / klotho ---
+
+- source_id: SRC:PMID:24813892
+  source_type: journal_article
+  title: "Life extension factor klotho enhances cognition."
+  year: 2014
+  first_author: "Dubal DB"
+  container: "Cell Rep"
+  identifiers:
+    pmid: "24813892"
+    doi: "10.1016/j.celrep.2014.03.076"
+    pmc: "PMC4176932"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25815349
+  source_type: journal_article
+  title: "Variation in longevity gene KLOTHO is associated with greater cortical volumes."
+  year: 2015
+  first_author: "Yokoyama JS"
+  container: "Ann Clin Transl Neurol"
+  identifiers:
+    pmid: "25815349"
+    doi: "10.1002/acn3.161"
+    pmc: "PMC4369272"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:28539162
+  source_type: journal_article
+  title: "Longevity Klotho gene polymorphism and the risk of dementia in older men."
+  year: 2017
+  first_author: "Almeida OP"
+  container: "Maturitas"
+  identifiers:
+    pmid: "28539162"
+    doi: "10.1016/j.maturitas.2017.04.005"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:37400721
+  source_type: journal_article
+  title: "Longevity factor klotho enhances cognition in aged nonhuman primates."
+  year: 2023
+  first_author: "Castner SA"
+  container: "Nat Aging"
+  identifiers:
+    pmid: "37400721"
+    doi: "10.1038/s43587-023-00441-x"
+    pmc: "PMC10432271"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# --------------------------------- SLC6A8 human natural history and correction ---
+
+- source_id: SRC:PMID:41260060
+  source_type: journal_article
+  title: "Longitudinal Characterization of Males With X-Linked Creatine Transporter Deficiency: Final Results of a Multiyear Observational Study."
+  year: 2025
+  first_author: "Miller JS"
+  container: "Pediatr Neurol"
+  identifiers:
+    pmid: "41260060"
+    doi: "10.1016/j.pediatrneurol.2025.10.023"
+    pmc: "PMC12905711"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:NCT:NCT02931682
+  source_type: clinical_trial_registration
+  title: "Observational Study of Males With Creatine Transporter Deficiency"
+  year: 2016
+  first_author: "Ultragenyx Pharmaceutical Inc"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT02931682"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+
+- source_id: SRC:PMID:39418577
+  source_type: journal_article
+  title: "Novel Corrector for Variants of SLC6A8: A Therapeutic Opportunity for Creatine Transporter Deficiency."
+  year: 2024
+  first_author: "Gechijian LN"
+  container: "ACS Chem Biol"
+  identifiers:
+    pmid: "39418577"
+    doi: "10.1021/acschembio.4c00571"
+    pmc: "PMC11574759"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:38745894
+  source_type: journal_article
+  title: "Rescue of myocytes and locomotion through intracisternal gene therapy in a rat model of creatine transporter deficiency."
+  year: 2024
+  first_author: "Fernandes-Pires G"
+  container: "Mol Ther Methods Clin Dev"
+  identifiers:
+    pmid: "38745894"
+    doi: "10.1016/j.omtm.2024.101251"
+    pmc: "PMC11091509"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ----------------- trial-registry records that GROUND level-0 facet zeros ----------
+# Neither carries a claim. Both are registered so that the identifiers named in
+# `search_basis` fields in atlases/power/assessments/ are machine-verified rather than
+# asserted, and so a later agent can check the zeros rather than trusting them.
+
+- source_id: SRC:NCT:NCT07285629
+  source_type: clinical_trial_registration
+  title: "Evaluating the Safety and Efficacy of Injectable Combination Klotho and Follistatin Plasmid Gene Therapy in Humans -- An Interventional, Non-Placebo Controlled Pilot Phase Study"
+  year: 2025
+  first_author: "Minicircle"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT07285629"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+  notes: >-
+    Registered so that the KL human_intervention_evidence zero can name it. A completed
+    interventional study in healthy adults whose secondary outcomes include five NIH
+    Toolbox cognitive measures, with no results posted, no placebo control, fourteen
+    participants, and klotho co-administered with follistatin so that klotho's own
+    contribution is unidentifiable by design.
+
+- source_id: SRC:NCT:NCT01455376
+  source_type: clinical_trial_registration
+  title: "Effect of Exogenous Lactate Infusion on Neurocognitive Function of Patients With Mild Traumatic Brain Injury"
+  year: 2010
+  first_author: "Universitas Padjadjaran"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT01455376"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+  notes: >-
+    Registered so that the monocarboxylate-transporter and HCAR1
+    human_intervention_evidence zeros can name what a trial-registry search DID return:
+    human trials manipulating systemic lactate against cognitive endpoints exist, but
+    they intervene on circulating substrate in a disease population, not on a
+    transporter or on the lactate receptor.
+
+- source_id: SRC:NCT:NCT01791595
+  source_type: clinical_trial_registration
+  title: "A Cancer Research UK Phase I Trial of AZD3965, a Monocarboxylate Transporter 1 Inhibitor (MCT1) in Patients With Advanced Cancer"
+  year: 2013
+  first_author: "Cancer Research UK"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT01791595"
+  added_by: agent:power
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+  notes: >-
+    The only human MCT1-directed pharmacological intervention retrieved in this atlas.
+    Completed, results posted, 53 participants. Every primary outcome is dose-limiting
+    toxicity or adverse events and every secondary outcome is pharmacokinetic, cell-death
+    marker or tumour response: there is NO cognitive endpoint anywhere in the protocol.
+    That makes it an evidence gap rather than a reporting gap, and it carries
+    CLM:power:SLC16A1:005.

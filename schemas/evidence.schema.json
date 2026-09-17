@@ -1,0 +1,361 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/evidence",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One measurement or experiment extracted from one source and attached to a claim (contract \u00a74). The unit of evidence accounting: claims are supported by measurements, not by papers. Numbers appear only in `effect_size` and `sample_size`, and only when read verbatim (rule V9).",
+  "examples": [
+    {
+      "design": "electrophysiology",
+      "effect_direction": "not_reported",
+      "effect_size": {
+        "as_reported": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "metric": "not_extracted",
+        "p_value": null,
+        "value": null
+      },
+      "endpoint": "synthetic placeholder endpoint",
+      "endpoint_category": "molecular_readout",
+      "evidence_role": "supports",
+      "extraction": {
+        "basis": "abstract",
+        "content_checked": false,
+        "extracted_by": "agent:ontology",
+        "extracted_on": "2026-09-17"
+      },
+      "population": "synthetic placeholder population",
+      "replication_status": "not_assessed",
+      "sample_size": {
+        "reported_as": null,
+        "unit": null,
+        "value": null
+      },
+      "source_id": "SRC:PMID:00000001",
+      "species": "SPECIES:NCBITaxon:0"
+    }
+  ],
+  "properties": {
+    "database_record": {
+      "description": "Verbatim fields of the database record this item was read from. THE ONE OPEN OBJECT IN THESE SCHEMAS: its keys are the source database's, not this project's, so closing it would mean rewriting the schema per database release. Numbers inside it are machine-copied and are permitted by rule V9 ONLY when the claim's provenance names a `database_release` or `pipeline`; it is not a place to park a hand-written figure.",
+      "type": "object"
+    },
+    "design": {
+      "$comment": "vocabulary: design",
+      "description": "Study design somebody else used. This project runs none of these.",
+      "enum": [
+        "gwas",
+        "gwas_meta_analysis",
+        "gene_based_test",
+        "fine_mapping",
+        "eqtl",
+        "sqtl",
+        "colocalisation",
+        "mendelian_randomisation",
+        "polygenic_score_analysis",
+        "rare_variant_association",
+        "clinical_case_series",
+        "rct_parallel",
+        "rct_crossover",
+        "open_label_trial",
+        "observational_cohort",
+        "case_control",
+        "meta_analysis",
+        "systematic_review",
+        "narrative_review",
+        "knockout",
+        "conditional_knockout",
+        "knockdown",
+        "overexpression",
+        "pharmacological_perturbation",
+        "optogenetic",
+        "chemogenetic",
+        "electrophysiology",
+        "in_vivo_imaging",
+        "expression_atlas",
+        "single_cell_atlas",
+        "comparative_genomics",
+        "comparative_anatomy",
+        "phylogenetic_comparative_analysis",
+        "structural_biology",
+        "biophysical_model",
+        "simulation",
+        "registry_record",
+        "database_release"
+      ],
+      "type": "string"
+    },
+    "effect_direction": {
+      "$comment": "vocabulary: effect_direction",
+      "description": "Direction of the measured effect.",
+      "enum": [
+        "increase",
+        "decrease",
+        "no_change",
+        "mixed",
+        "not_reported"
+      ],
+      "type": "string"
+    },
+    "effect_size": {
+      "additionalProperties": false,
+      "description": "Effect size copied from the source. The ONLY place a free number may appear in a curated record, and only when it was read verbatim (contract P3, rule V9).",
+      "properties": {
+        "as_reported": {
+          "description": "VERBATIM string from the source, or null. Never paraphrased.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "ci_lower": {
+          "description": "As reported, or null.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "ci_upper": {
+          "description": "As reported, or null.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "metric": {
+          "$comment": "vocabulary: effect_size_metric",
+          "description": "Which statistic `value` holds. `not_extracted` is the default.",
+          "enum": [
+            "not_extracted",
+            "beta",
+            "odds_ratio",
+            "hazard_ratio",
+            "cohens_d",
+            "smd",
+            "correlation_r",
+            "percent_change",
+            "p_value_only",
+            "mean_difference"
+          ],
+          "type": "string"
+        },
+        "p_value": {
+          "description": "As reported, or null.",
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "value": {
+          "description": "Only when `as_reported` states it explicitly. Never estimated (P3).",
+          "type": [
+            "number",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "metric"
+      ],
+      "type": "object"
+    },
+    "endpoint": {
+      "description": "The measured endpoint, named plainly.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "endpoint_category": {
+      "$comment": "vocabulary: endpoint_category",
+      "description": "Class of the measured endpoint.",
+      "enum": [
+        "g_factor",
+        "fluid_reasoning",
+        "working_memory",
+        "processing_speed",
+        "episodic_memory",
+        "executive_function",
+        "learning_rate",
+        "far_transfer",
+        "metacognition",
+        "educational_attainment",
+        "clinical_cognitive_composite",
+        "neuroimaging_proxy",
+        "electrophysiological_proxy",
+        "metabolic_proxy",
+        "animal_spatial_memory",
+        "animal_recognition_memory",
+        "animal_fear_conditioning",
+        "animal_reversal_learning",
+        "animal_working_memory",
+        "animal_operant_task",
+        "synaptic_plasticity_ltp_ltd",
+        "cellular_excitability",
+        "molecular_readout",
+        "not_applicable",
+        "not_reported"
+      ],
+      "type": "string"
+    },
+    "endpoint_measured": {
+      "$comment": "vocabulary: endpoint_measured",
+      "description": "Whether the endpoint was MEASURED AT ALL in the study behind this item. ABSENCE OF MEASUREMENT IS NOT MEASURED ABSENCE: a trial that never measured cognition is not a failed trial, and rule V16c enforces the difference. Use `not_measured_in_protocol` with claim_type `evidence_gap`.",
+      "enum": [
+        "measured",
+        "not_measured_in_protocol",
+        "measured_but_not_reported",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "evidence_id": {
+      "description": "Derived id EVD:{claim_local}#{n}; never hand-written.",
+      "pattern": "^EVD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#[0-9]+$",
+      "type": "string"
+    },
+    "evidence_role": {
+      "$comment": "vocabulary: evidence_role",
+      "description": "How this item bears on the claim.",
+      "enum": [
+        "supports",
+        "contradicts",
+        "qualifies",
+        "null_result"
+      ],
+      "type": "string"
+    },
+    "extraction": {
+      "additionalProperties": false,
+      "description": "Provenance of the extraction itself, not of the source.",
+      "properties": {
+        "basis": {
+          "$comment": "vocabulary: extraction_basis",
+          "description": "What the agent actually read.",
+          "enum": [
+            "abstract",
+            "full_text",
+            "database_record",
+            "registry_record",
+            "secondary_report"
+          ],
+          "type": "string"
+        },
+        "content_checked": {
+          "description": "False means the agent could not read enough to be sure; the red team downgrades those automatically.",
+          "type": "boolean"
+        },
+        "extracted_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "extracted_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        }
+      },
+      "required": [
+        "basis",
+        "extracted_by",
+        "extracted_on",
+        "content_checked"
+      ],
+      "type": "object"
+    },
+    "note": {
+      "description": "The agent's own short note about the extraction, e.g. why a number was left in the derived table. NEVER source text.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "population": {
+      "description": "Population/preparation in the source's own terms.",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "replication_status": {
+      "$comment": "vocabulary: replication_status",
+      "description": "Replication standing of this item.",
+      "enum": [
+        "single_study",
+        "replicated_independent",
+        "replicated_same_group",
+        "failed_replication",
+        "conflicting",
+        "not_assessed"
+      ],
+      "type": "string"
+    },
+    "sample_size": {
+      "additionalProperties": false,
+      "description": "Sample size as reported. `value: null` is correct whenever the source is not explicit.",
+      "properties": {
+        "reported_as": {
+          "description": "Verbatim sample-size text from the source, or null.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "unit": {
+          "description": "What was counted: participants, animals, cells, slices, studies.",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "description": "Integer or null. NEVER estimated. ZERO IS A REAL AND IMPORTANT VALUE: a trial withdrawn before enrolling anyone has an enrolment of exactly 0, and the registry reports it as 0. Forcing that to null would erase the difference between 'we do not know the enrolment' and 'the enrolment was zero because nobody was ever enrolled' \u2014 the same measured-absence-versus-absence-of-measurement distinction as R5 and R14. A registered programme that never ran is exactly the record the red team exists to bring in.",
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "source_id": {
+      "description": "Registered source this item was extracted from (rule V5).",
+      "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+      "type": "string"
+    },
+    "species": {
+      "description": "Species the measurement was made in; null when the source does not say, which is different from not applicable.",
+      "pattern": "^SPECIES:NCBITaxon:[0-9]+$",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "source_id",
+    "design",
+    "endpoint_category",
+    "effect_direction",
+    "effect_size",
+    "replication_status",
+    "evidence_role",
+    "extraction"
+  ],
+  "title": "Evidence item",
+  "type": "object"
+}

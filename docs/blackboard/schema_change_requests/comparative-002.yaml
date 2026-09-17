@@ -1,0 +1,85 @@
+schema_version: 0.1.0
+request_id: comparative-002
+requested_by: agent:comparative
+requested_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Widen the domain of `NO_DETECTED_EFFECT_ON` (ontology/edges.yaml, contract rule V16b)
+  to include `BrainRegion`, `CellType`, `Circuit`, `Network` and `ComputationalPrimitive`,
+  so that a comparative null result can be expressed as a null edge instead of
+  compiling as a capacity edge that a traversal may read as support.
+
+motivation: >-
+  V16b exists to remove a specific asymmetry, and its own semantics state it plainly: a
+  positive result compiles into an edge while an equally well-powered null compiles into
+  nothing, so the graph drifts positive however honest each record is. That asymmetry is
+  not removed for comparative biology, because the relation's domain is restricted to
+  molecular and intervention-layer entities plus `MolecularProcess`, while every null
+  this atlas holds has an anatomical or computational subject.
+
+  THE WORKED CASE. `CLM:comparative:SELF_REGULATION:002` is the one genuine null in
+  evidence/claims/comparative/: Kabadayi and colleagues ran the cylinder detour task in
+  three corvid species and found performance matching published great-ape scores despite
+  brains reported as 26 to 94 times smaller, which is a PERFORMED AND REPORTED cross-clade
+  test in which absolute brain volume predicted nothing. The record already satisfies
+  every condition V16b asks for — `effect_direction: no_change`,
+  `evidence_role: contradicts`, and `claim_type: association`, which the relation permits.
+  It is blocked on one thing only: the tested predictor is brain volume, so the subject is
+  `REGION:brain`, and `BrainRegion` is not in the domain.
+
+  The consequence is the exact drift V16b was written to stop. The claim still compiles as
+  `REGION:brain -CONSTRAINS-> PRIM:distractor_suppression` with `direction: unclear`, and a
+  traversal that does not read `direction` will count this atlas's most-cited deflationary
+  claim as SUPPORT for "bigger brain implies better inhibition" — the opposite of what the
+  study found. `direction: unclear` and the `risks` prose are the only things preventing
+  that, and neither is machine-enforced the way a null edge would be.
+
+  Three further claims are blocked by the same restriction on the object or subject side
+  (`CLM:comparative:NEURON_SCALING:003`, `:005` — `BrainRegion` subject;
+  `CLM:comparative:SELF_REGULATION:003` — `ComputationalPrimitive` subject), though those
+  three are findings of a difference rather than nulls, so widening the domain would not
+  by itself make them null edges.
+
+  This is the same underlying gap as comparative-001's `DIFFERS_BETWEEN_SPECIES` request,
+  seen from the null side: the biological-causal relations that admit anatomical subjects
+  (`CONSTRAINS`, `MODULATES`, `IMPLEMENTS`) all assert something, and the one relation that
+  asserts nothing does not admit them.
+
+proposed_change:
+  - target: ontology/edges.yaml, relation `NO_DETECTED_EFFECT_ON`
+    change: >-
+      Add `BrainRegion`, `CellType`, `Circuit`, `Network` and `ComputationalPrimitive` to
+      `domain`. `range` already covers `StateVariable`, `ComputationalPrimitive`,
+      `CognitivePhenotype` and `DesiredEffect` and needs no change. Everything else about
+      the relation should stay exactly as it is — `asserts_effect: false`,
+      `requires_claim: true`, the evidence-role requirement, the prohibition on encoding
+      absence of evidence, and the rule that no traversal may count it as support.
+  - target: contract rule V16b
+    change: >-
+      No change to the rule's text is needed if the domain widens. If the restriction is
+      deliberate — for instance because Phase 2's null-edge rendering assumes an
+      intervention-layer subject — then say so in the semantics, so the next agent does
+      not spend the effort this one did establishing that the restriction exists.
+
+what_this_request_does_not_ask_for: >-
+  It does not ask for a null edge on `CLM:comparative:CEPHALOPOD_GENOME:001`. That claim
+  IS eligible today (`COMPLEX:protocadherin_cluster` is a `ProteinComplex`, and
+  `SV:plasticity.structural_plasticity_rate` is in range) and this agent refused to
+  migrate it, because nobody tested whether protocadherin expansion affects structural
+  plasticity rate. Its negatives are the absence of a whole-genome duplication and a
+  neuronal gene repertoire similar to other invertebrate bilaterians — neither is a null
+  result about that triple. Writing a null edge there would manufacture a finding out of a
+  gap, which the relation's semantics forbid. Recorded here so that a later reader does
+  not "fix" the omission.
+
+interim_handling: >-
+  `CLM:comparative:SELF_REGULATION:002` stays as a `CONSTRAINS` claim with
+  `direction: unclear`, `effect_direction: no_change` and `evidence_role: contradicts`,
+  with the blocked migration recorded in its own `risks` block and in
+  atlases/comparative/README.md §6.7. Nothing is withheld pending this request.
+  Requested non-blocking, but note that until it is resolved the graph carries a
+  positive-reading edge for a negative finding, which is a correctness problem rather
+  than a presentational one.
+
+related: [comparative-001]

@@ -1,0 +1,236 @@
+# Dynamic state model — FORMAL STRUCTURE ONLY
+#
+#     X(t+1) = F(X(t), U(t), E(t), Theta) + noise
+#
+# This file declares what the symbols mean, which declared state variables occupy
+# which slot, and what would have to be true for the equation to be usable. It fits
+# nothing, simulates nothing and predicts nothing.
+#
+# THE CENTRAL HONESTY STATEMENT
+# ----------------------------
+# No F is specified, fitted, identified or simulated in Sprint 1. There is no
+# transition function in this repository, no parameter estimate, and no trajectory.
+# Writing the equation down is a statement about the FORM the project believes a
+# usable answer would take, not a claim that this form is correct. Anyone who reads a
+# prediction out of this file has misread it.
+
+schema_version: 0.1.0
+model_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+status: formal_structure_only
+fitted: false
+simulated: false
+identified: false
+
+equation:
+  form: "X(t+1) = F(X(t), U(t), E(t), Theta) + noise"
+  time_index: t
+  time_step:
+    value: unspecified
+    note: >-
+      Deliberately unspecified. The declared variables span milliseconds to years
+      (see each variable's `timescale`), so a single step size does not exist. Any
+      future identification must either pick a step and state which variables are
+      quasi-static at that step, or move to a continuous-time / multi-rate form. This
+      is an open design question, not an oversight.
+
+symbols:
+
+  X:
+    name: state
+    description: >-
+      The vector of state variables that change on the timescale of the modelled
+      process. Membership is decided by timescale, not by importance.
+    members:
+      description: >-
+        All variables declared in state_model/{domain}.yaml whose `timescale` is
+        milliseconds..weeks, i.e. everything that is not slow enough to be treated as
+        a parameter. Resolved programmatically by blueprint.loaders so that adding a
+        variable cannot silently leave it out of the model.
+      rule: "timescale in [milliseconds, seconds, minutes, hours, days, weeks, multi_timescale]"
+      domains_included: [cognition, power, efficiency, plasticity, workspace, consolidation, stability, safety]
+    note: >-
+      Safety variables are included in X because they evolve, but they enter the
+      problem as CONSTRAINTS on the admissible region of state space, never as terms
+      in an objective. No admissible formulation trades a safety variable against a
+      cognitive one.
+
+  Theta:
+    name: slow individual parameters
+    description: >-
+      Individual biological parameters that are approximately constant over the
+      modelled horizon and differ between people.
+    members:
+      description: >-
+        Variables whose `timescale` is months, years or developmental, plus
+        individual-level quantities that are not state variables at all (genotype,
+        developmental history, age, structural anatomy). The latter group has no
+        declared representation in v0.1.0.
+      rule: "timescale in [months, years, developmental]"
+    unrepresented_in_v0_1_0:
+      - genotype and polygenic background
+      - developmental history and critical-period history
+      - chronological and biological age
+      - structural anatomy and connectome
+    note: >-
+      The X/Theta split is a MODELLING CHOICE driven by timescale separation, not a
+      fact about biology. A variable can move between X and Theta when the horizon
+      changes, and `multi_timescale` variables violate the separation outright.
+
+  U:
+    name: intervention input
+    description: >-
+      Exogenous intervention applied to the system. In this repository U is a TYPE,
+      never a quantity: an intervention is identified by its node id and modality.
+    range:
+      representation: "intervention node ids from the intervention layer"
+      node_types: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology]
+      magnitude:
+        value: not_represented
+        note: >-
+          NO DOSE, ROUTE, REGIMEN, INTENSITY OR SCHEDULE IS REPRESENTED, HERE OR
+          ANYWHERE IN THIS REPOSITORY (docs/COMPUTATIONAL_ONLY_POLICY.md). U therefore
+          cannot be used to compute a response to an amount of anything. This is a
+          hard boundary of the model, not a gap to be filled later.
+      zero_element: "no intervention"
+    note: >-
+      Because U has no magnitude, the model cannot express a dose-response curve even
+      in principle. Dose-response KNOWLEDGE is graded as a facet
+      (`dose_response_knowledge`) from external evidence; it is never simulated here.
+
+  E:
+    name: experience, environment and task
+    description: >-
+      Everything that acts on the system that is not an intervention by this
+      project's definition: task demands, training, sleep opportunity, light
+      schedule, nutrition state, stressors, social and educational environment.
+    range:
+      representation: not_represented
+      note: >-
+        v0.1.0 declares E to keep the equation honest — omitting it would imply that
+        intervention effects are context-free, which is precisely the error the
+        project is built to avoid — but provides no vocabulary for it. Any future
+        encoding needs its own node types and a change request.
+    note: >-
+      E is the term that makes "education is not intelligence" a modelling statement
+      rather than a slogan: educational attainment is an E-driven outcome measure, and
+      the contract weights it separately and lower (§4.2).
+
+  F:
+    name: transition function
+    status: not_specified
+    description: >-
+      The map from the current state, intervention and experience to the next state.
+    what_would_be_required:
+      - a declared time step and a resolution of the multi-timescale problem
+      - identifiability analysis for the parameters implied by the chosen form
+      - longitudinal human data with repeated measures of the X variables involved
+      - a stated functional family with its assumptions written down and testable
+      - out-of-sample validation and a calibration statement
+    v0_1_0_position: >-
+      None of the above exists. F is absent from the repository. There is no
+      placeholder implementation, because a placeholder would be run by somebody.
+
+  noise:
+    name: noise model
+    status: placeholder
+    description: >-
+      Stochastic component covering unmodelled dynamics, measurement error and genuine
+      biological variability, which are NOT the same thing and should not share one
+      term forever.
+    placeholder_form:
+      family: unspecified
+      additive: "assumed in the written form above, for notational convenience only"
+      covariance: unspecified
+      stationarity: unspecified
+    note: >-
+      The additive form in the equation is notation, not a modelling commitment. Both
+      the measurement channel and the process channel need separating before anything
+      can be estimated; conflating them would make uncertainty look smaller than it is,
+      which contract P8 exists to prevent.
+
+# ---------------------------------------------------------------------------------
+# Structural hypotheses stated so they can be attacked. NONE is a finding.
+# ---------------------------------------------------------------------------------
+conceptual_hypotheses:
+
+  - id: HYP:power_envelope
+    statement: >-
+      Achievable cognitive output is bounded by a multiplicative combination of a
+      power term and an efficiency term, so that raising one factor while another is
+      limiting produces little or no change.
+    form_sketch: "capacity ~ power x efficiency x workspace x stability (all normalised)"
+    status: conceptual_hypothesis_not_a_law
+    fitted: false
+    tested: false
+    why_it_is_stated: >-
+      It generates a falsifiable prediction (interventions on non-binding factors
+      should do nothing) and it explains why the project ranks control points rather
+      than stacking them. It is written down to be tested and discarded if wrong.
+    known_problems:
+      - >-
+        Multiplicative forms are chosen for analytical convenience, and the
+        convenience is not evidence. Additive-with-saturation and
+        minimum-of-constraints forms make similar qualitative predictions.
+      - >-
+        The normalisation implied by "all normalised" has no empirical basis: there is
+        no established scale on which these factors are commensurable.
+      - >-
+        It invites a single-number capacity score, which the project explicitly
+        refuses (README §3).
+    owner_for_falsification: agent:integration
+
+  - id: HYP:binding_constraint
+    statement: >-
+      At any moment a small number of state variables are binding constraints on
+      cognitive output, and which ones bind depends on the current state.
+    status: conceptual_hypothesis_not_a_law
+    fitted: false
+    tested: false
+    why_it_is_stated: >-
+      It is the reason CONSTRAINS exists as a relation distinct from
+      POSITIVELY_REGULATES, and the reason a target's value is context-dependent.
+    known_problems:
+      - >-
+        "Binding constraint" is borrowed from optimisation and presupposes a
+        well-defined objective, which this project does not have.
+      - >-
+        It is close to unfalsifiable as stated: any null result can be explained by
+        "that variable was not binding". Making it testable requires committing in
+        advance to which variable is predicted to bind in a stated condition.
+
+  - id: HYP:brake_release_asymmetry
+    statement: >-
+      Removing an endogenous constraint and adding drive are not equivalent
+      operations, and may differ in transfer breadth and in safety profile.
+    status: conceptual_hypothesis_not_a_law
+    fitted: false
+    tested: false
+    why_it_is_stated: >-
+      The project's brake/power split assumes this. If it is false, the two atlases are
+      organising the same evidence twice.
+    known_problems:
+      - >-
+        "Brake" and "drive" are frequently the same mechanism described from opposite
+        ends, so the distinction may be linguistic rather than biological.
+
+# ---------------------------------------------------------------------------------
+what_this_file_does_not_do:
+  - It does not predict the effect of any intervention on any person.
+  - It does not contain a dose, route, regimen, intensity or schedule.
+  - It does not assert that any state variable is causally related to any other.
+  - It does not assert that cognitive capacity is one-dimensional or scalar.
+  - It does not license reading any rank or score in reports/ as a physical quantity.
+
+next_steps_for_phase_2_and_beyond:
+  - >-
+    Resolve the X/Theta split programmatically from the declared timescales and expose
+    it through blueprint.loaders, so the membership rule above is executable rather
+    than descriptive.
+  - >-
+    Decide whether the model is discrete multi-rate or continuous-time, and record
+    the decision in docs/DECISIONS.md.
+  - >-
+    Separate the measurement channel from the process channel before any estimation is
+    attempted (task Q005 in docs/TASK_DAG.yaml).

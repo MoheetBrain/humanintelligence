@@ -1,0 +1,440 @@
+# Claims — topic: human creatine supplementation and cognition
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# THIS FILE CONTAINS NO DOSES, REGIMENS OR SOURCING INFORMATION, BY DESIGN
+# ------------------------------------------------------------------------
+# docs/COMPUTATIONAL_ONLY_POLICY.md forbids it and this atlas is a constraint map,
+# not advice. Where a source reported a dose, the paraphrase omits it.
+#
+# THE SHAPE OF THIS EVIDENCE BASE IS THE FINDING
+# ----------------------------------------------
+# 001  low-baseline group (vegetarians), normal state   -> positive, fluid reasoning
+# 002  meta-analysis: positive overall, but the young-adult subgroup is NULL
+# 003  young healthy active omnivores, normal state     -> NULL on every task
+# 004  sleep-deprived state                             -> reduced deterioration
+# 005  acute hypoxia                                    -> restored attention
+#
+# Read together, these say something specific and much narrower than "creatine
+# improves cognition": the effect appears where the substrate baseline is low or the
+# energetic state is stressed, and is absent in rested, fed, omnivorous young adults.
+# That pattern is the single strongest piece of HUMAN evidence in this whole atlas,
+# and its direction is toward H0 for the healthy-adult case and toward H2/H5 for
+# stressed states. The response shape is recorded as `state_dependent`, not `linear`.
+
+- claim_id: CLM:power:creatine_human:001
+  schema_version: 0.1.0
+  statement: >-
+    In a double-blind placebo-controlled crossover trial in 45 young adult vegetarians,
+    oral creatine supplementation improved backward digit span and Raven's Advanced
+    Progressive Matrices scores relative to placebo, which the authors attribute to a
+    role for brain energy capacity in tasks requiring speed of processing.
+  subject: METAB:creatine_monohydrate_supplementation
+  predicate: CHANGES_STATE
+  object: SV:cognition.fluid_reasoning_capacity
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "vegetarians have low dietary creatine intake, so this is a low-baseline population and the result is repletion rather than demonstrated enhancement above a normal baseline"
+      - "a crossover design on Raven's matrices carries a practice-effect risk that the retrieved text does not describe controlling for"
+      - "the later meta-analysis found no effect in the 11-31 year age band, which includes this cohort, so this single positive result is not corroborated by the pooled young-adult evidence"
+      - "single site, single trial, 2003, and no independent replication was retrieved"
+  evidence:
+    - source_id: SRC:PMID:14561278
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "45 young adult vegetarian subjects"
+      sample_size:
+        reported_as: "45 young adult, vegetarian subjects in a double-blind, placebo-controlled, cross-over design"
+        value: 45
+        unit: participants
+      endpoint: "backward digit span and Raven's Advanced Progressive Matrices"
+      endpoint_category: fluid_reasoning
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: p_value_only
+        as_reported: "Creatine supplementation had a significant positive effect (p < 0.0001) on both working memory (backward digit span) and intelligence (Raven's Advanced Progressive Matrices)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A randomised human intervention with a fluid-reasoning endpoint, which is the
+      most directly relevant design and endpoint pair in this atlas; but a single
+      small trial in a low-baseline population, unreplicated, and not corroborated by
+      the later pooled young-adult subgroup.
+    calibration_status: uncalibrated_subjective
+  risks: ["this claim is the most likely single record in the atlas to be over-read as proof of enhancement; it is a low-baseline repletion result"]
+  confounders: ["dietary creatine baseline", "practice effects in crossover", "publication era"]
+  dependencies: [CLM:power:creatine_human:002]
+  status: contested
+  status_reason: >-
+    Self-contested by agent:power on curation, not by audit. This single 2003 crossover
+    trial is not corroborated by CLM:power:creatine_human:002, whose pooled estimate for
+    the age band containing this cohort is centred essentially on zero, nor by the
+    independent randomised null CLM:power:creatine_human:003. Both records stand;
+    neither is withdrawn. Awaiting a red-team audit record.
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:creatine_human:002
+  schema_version: 0.1.0
+  statement: >-
+    A systematic review and meta-analysis of ten randomised controlled trials in
+    healthy individuals, eight of them pooled, found a small overall improvement in
+    memory measures with creatine supplementation, but subgroup analysis showed the
+    effect was carried by older adults while the younger band spanning roughly
+    adolescence to early adulthood showed no effect at all, with dose, duration, sex
+    and geographical origin not influencing the findings.
+  subject: MECH:creatine_substrate_loading
+  predicate: MODULATES
+  object: PHENO:episodic_memory
+  claim_type: causal_perturbation
+  direction: state_dependent
+  direction_context: >-
+    Sign and magnitude depend on the baseline state of the substrate pool and on age
+    band. In this pooled analysis the effect was carried by adults aged 66-76 and was
+    absent in the 11-31 band; across the wider human evidence in this file, benefit
+    appears where dietary creatine intake is low (vegetarians,
+    CLM:power:creatine_human:001) or where the energetic state is stressed (sleep
+    deprivation, CLM:power:creatine_human:004; acute hypoxia,
+    CLM:power:creatine_human:005), and is absent in rested, fed, omnivorous young
+    adults (CLM:power:creatine_human:003). The dependency is therefore on substrate
+    baseline, age, and imposed energetic stress - not unknown.
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: mixed
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "substantial heterogeneity is reported for the overall and older-adult estimates, so the pooled point estimates are unstable"
+      - "the overall confidence interval nearly touches the null, so the aggregate positive finding is fragile"
+      - "subgroup analysis by age is observational within a meta-analysis and is not a randomised comparison"
+      - "only eight trials were pooled, which is too few to assess small-study effects or publication bias reliably"
+  evidence:
+    - source_id: SRC:PMID:35984306
+      design: meta_analysis
+      species: SPECIES:NCBITaxon:9606
+      population: "healthy individuals across ten randomised controlled trials; subgroups aged 66-76 years and 11-31 years"
+      sample_size:
+        reported_as: "Ten RCTs examining the effect of creatine supplementation compared with placebo on measures of memory in healthy individuals met the inclusion criteria for systematic review, 8 of which were included in the meta-analysis."
+        value: 10
+        unit: trials
+      endpoint: "pooled standardised mean difference in memory measures, overall and by age subgroup"
+      endpoint_category: episodic_memory
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: smd
+        as_reported: "Overall, creatine supplementation improved measures of memory compared with placebo (standard mean difference [SMD] = 0.29, 95%CI, 0.04-0.53; I2 = 66%; P = 0.02). Subgroup analyses revealed a significant improvement in memory in older adults (66-76 years) (SMD = 0.88; 95%CI, 0.22-1.55; I2 = 83%; P = 0.009) compared with their younger counterparts (11-31 years) (SMD = 0.03; 95%CI, -0.14 to 0.20; I2 = 0%; P = 0.72)."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Pooled randomised human evidence with a relevant endpoint and a prospectively
+      registered protocol; high heterogeneity, few trials, and the decisive
+      young-adult null comes from a subgroup analysis rather than a dedicated trial.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["between-trial heterogeneity", "age composition", "baseline dietary creatine not reported in the pooled analysis"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:creatine_human:003
+  schema_version: 0.1.0
+  statement: >-
+    In a parallel-group placebo-controlled trial in forty young, healthy, omnivorous
+    and physically active men and women, creatine monohydrate improved mean and peak
+    cycling power output but had no effect on Stroop or Trail Making performance either
+    before or after high-intensity exercise, and the authors note an apparent learning
+    effect across the cognitive tests that may have masked any effect.
+  subject: METAB:creatine_monohydrate_supplementation
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: SV:cognition.attentional_control
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the authors themselves raise an unaddressed practice effect, so this is a null in a design that may have lacked sensitivity"
+      - "twenty per group is small for detecting a small cognitive effect, so absence of evidence here is weak evidence of absence"
+      - "Stroop and Trail Making are executive/speed measures, not fluid reasoning, so this does not directly contradict the Raven's result"
+      - "omnivorous and physically active participants are a high-baseline group by construction"
+  evidence:
+    - source_id: SRC:PMID:41960895
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "forty healthy volunteers, twenty men and twenty women, young, omnivorous and physically active"
+      sample_size:
+        reported_as: "Forty healthy volunteers (20 males [age 23 ± 5 y] and 20 females [age 24 ± 5 y])"
+        value: 40
+        unit: participants
+      endpoint: "Stroop Colour and Word Test and Trail Making Test A and B before and after a 30-second Wingate test"
+      endpoint_category: executive_function
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A recent randomised human null in exactly the population that matters for the
+      enhancement question, with a positive physical-performance control showing the
+      supplement did something; small, single study, acknowledged practice effect.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["cognitive test practice effects", "small per-group sample", "high baseline dietary creatine"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:creatine_human:004
+  schema_version: 0.1.0
+  statement: >-
+    In twenty-nine healthy adults undergoing twenty-one hours of total sleep
+    deprivation, a single creatine administration was associated with less
+    deterioration than placebo on logical and numerical tasks, language-related
+    processing speed and the Psychomotor Vigilance Test, with the authors reporting a
+    smaller benefit than their earlier higher-exposure study and a larger benefit in
+    women than men.
+  subject: METAB:creatine_monohydrate_supplementation
+  predicate: CHANGES_STATE
+  object: SV:cognition.processing_speed
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the outcome is reduced deterioration from a sleep-deprived state, which is restoration toward the rested baseline, not enhancement above it"
+      - "no rested-control arm is described in the retrieved text, so the ceiling is unknown"
+      - "multiple cognitive outcomes across four time points invites multiplicity, and the retrieved text does not describe correction"
+      - "the sex difference is a secondary observation in a sample of twenty-nine"
+  evidence:
+    - source_id: SRC:PMID:42075005
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "twenty-nine healthy subjects during 21 hours of total sleep deprivation"
+      sample_size:
+        reported_as: "Twenty-nine healthy subjects"
+        value: 29
+        unit: participants
+      endpoint: "logical and numerical task performance, language-related processing speed, Psychomotor Vigilance Test"
+      endpoint_category: processing_speed
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: percent_change
+        as_reported: "there is still an improvement of up to 12%"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: rescue_only
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Randomised human intervention with multiple relevant endpoints and an internal
+      exposure-response comparison against the group's prior study; small, same
+      group, and a deprivation state rather than a normal baseline.
+    calibration_status: uncalibrated_subjective
+  risks: ["a sleep-deprivation rescue result must never be reported as an enhancement result"]
+  confounders: ["sleep deprivation itself", "time-of-day effects", "multiple comparisons", "sex composition"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:creatine_human:005
+  schema_version: 0.1.0
+  statement: >-
+    In fifteen healthy young adults given creatine and placebo in a crossover design,
+    supplementation raised brain creatine, and during ninety minutes of breathing a
+    hypoxic gas mixture it restored the attentional capacity that hypoxia otherwise
+    degraded while also increasing corticomotor excitability.
+  subject: METAB:creatine_monohydrate_supplementation
+  predicate: CHANGES_STATE
+  object: SV:cognition.attentional_control
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the benefit is specific to an experimentally imposed oxygen deficit; the retrieved text describes restoration of a hypoxia-induced decrement, not improvement in normoxia"
+      - "fifteen participants is very small and the study reports a range of neuropsychological processes, raising multiplicity concerns"
+      - "increased corticomotor excitability is a physiological change of unknown desirability, not an unambiguous benefit"
+  evidence:
+    - source_id: SRC:PMID:25632150
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "fifteen healthy adults, supplemented and placebo, exposed to a hypoxic gas mixture for 90 minutes"
+      sample_size:
+        reported_as: "Fifteen healthy adults"
+        value: 15
+        unit: participants
+      endpoint: "neuropsychological performance including attentional capacity, and corticomotor excitability, under acute hypoxia"
+      endpoint_category: executive_function
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: percent_change
+        as_reported: "which increased brain creatine on average by 9.2%"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: rescue_only
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Randomised human crossover with a measured brain-creatine change linking the
+      exposure to the substrate, which most supplementation trials lack; very small
+      and restricted to an imposed energetic insult.
+    calibration_status: uncalibrated_subjective
+  risks: ["an oxygen-deprivation rescue result must never be reported as an enhancement result"]
+  confounders: ["hypoxia severity", "very small sample", "multiplicity across neuropsychological measures"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

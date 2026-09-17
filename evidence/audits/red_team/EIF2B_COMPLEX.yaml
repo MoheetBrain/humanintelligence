@@ -1,0 +1,150 @@
+# Red-team audit - EIF2B_COMPLEX. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:EIF2B_COMPLEX:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:EIF2B_COMPLEX
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: Genuinely clean. The enhancing manipulation is an acute systemic small molecule given to adult
+      mice, which cannot depend on developmental history, and the human genetic evidence located includes
+      an ADULT-onset form of the disease with a stated mean age at onset. One of the best-evidenced adult-onset
+      cases in the repository.
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:003
+    - CLM:brakes:EIF2B_COMPLEX:006
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: The acute small-molecule result is in normal adult animals, so above-baseline in design; most
+      of the wider ISR literature is in deficit models.
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:003
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Rodent memory tasks on the benefit side; a human neurological disorder on the harm side. No
+      human cognitive endpoint has been measured against this mechanism.
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:003
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The enhancement case rests on one acute small-molecule study; the human genetic case on one
+      disorder.
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:003
+    - CLM:brakes:EIF2B_COMPLEX:006
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: flag
+    note: 'The clinical fate of the ISR-inhibitor class is mixed and unfavourable, and no atlas recorded
+      it. Fosigotifator (ABBV-CLS-7262) trials in ALS (NCT04948645, n=31) and in major depressive disorder
+      (NCT06618118, n=20) are both TERMINATED with whyStopped recorded only as ''Company Decision'', and
+      an expanded-access programme is NO LONGER AVAILABLE. Two HEALEY ALS platform regimens completed.
+      Because the stated reason is a bare company decision, these are NOT recorded as claims anywhere:
+      a sponsor''s silence is not evidence about biology, and a termination is not a reported null. They
+      are recorded here as programme context. No trial of this class with a cognitive endpoint in healthy
+      adults was located.'
+    evidence_refs:
+    - SRC:NCT:NCT02024789
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: 'Untested rather than failed: the ISR-inhibitor class has been dosed in humans but never with
+      a cognitive endpoint, so there is nothing yet to translate to.'
+  - check: overclaiming
+    result: flag
+    note: 'agent:brakes asked the right question about CLM:brakes:EIF2B_COMPLEX:006: whether a progressive
+      leukoencephalopathy had been laundered into ''eIF2B is required for cognition''. Reading the record,
+      it has not been - the claim describes the disorder, and the dossier carries the adult-onset form
+      as the relevant datum rather than generalising. But the inference chain from ''loss-of-function
+      causes a leukoencephalopathy'' to ''pharmacological activation improves cognition'' is long, and
+      the direction of the human evidence is loss-of-function harm, not gain-of-function benefit.'
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:006
+  - check: provenance_integrity
+    result: pass
+    note: 'CLM:brakes:EIF2B_COMPLEX:004 is correctly typed evidence_gap and is one of the two records
+      the R5 ruling exists for. Verified: all its evidence is not_measured_in_protocol and its predicate
+      is ABOUT, so it compiles to no biological edge and cannot reach a counter_level. Retyping confirmed
+      correct.'
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:004
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:EIF2B_COMPLEX:001#f1
+    severity: info
+    category: negative_clinical_evidence
+    description: 'The integrated-stress-response inhibitor class has human exposure that no atlas recorded:
+      two terminated fosigotifator trials (ALS, major depressive disorder), an expanded-access programme
+      no longer available, and two completed HEALEY ALS platform regimens. All stated reasons are bare
+      company decisions, so none is recorded as a claim; the point is that the clinical history exists
+      and a literature-only search missed it entirely.'
+  - finding_id: AUD:red_team:EIF2B_COMPLEX:001#f2
+    severity: info
+    category: provenance_integrity
+    description: 'CLM:brakes:EIF2B_COMPLEX:004''s retyping from clinical_null to evidence_gap is verified
+      correct: every evidence item is not_measured_in_protocol, the predicate is ABOUT, and it contributes
+      to no counter_level. The R5 distinction is being applied as intended.'
+    evidence_refs:
+    - CLM:brakes:EIF2B_COMPLEX:004
+  verdict: retain
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

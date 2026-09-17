@@ -1,0 +1,275 @@
+# ============================================================================
+# Causal model interfaces — Sprint 2 and later. NOTHING IS ESTIMATED IN SPRINT 1.
+# ============================================================================
+#
+# Machine-readable companion to models/causal/README.md. It declares, for each method
+# the project intends to use: what it identifies, what it does NOT identify, the
+# assumptions it rests on, which assumption is most at risk in THIS domain, the
+# sensitivity analyses that must accompany it, and how its output is recorded.
+#
+# THE ONE THING TO READ FIRST
+#   No causal effect is estimated anywhere in Sprint 1. The ranking model in
+#   models/ranking/ is an EVIDENCE-ACCOUNTING DEVICE, not a causal estimator: it reads
+#   ordinal grades that other agents assigned to other people's published evidence,
+#   maps them to subjective Beta distributions, and aggregates them under declared
+#   weights. It never touches individual-level data and never fits a model to
+#   observations. Its inputs are integers between 0 and 4.
+#
+#   A high `P(causal cognition relevance)` in reports/target_ranking_v0_1.csv means the
+#   EVIDENCE BASE for a causal claim is comparatively more complete and more favourable.
+#   It does not mean a causal effect has been estimated, and it does not license the
+#   sentence "this target causally affects cognition".
+#
+# NOTHING HERE PERFORMS OR PROPOSES AN EXPERIMENT. Published results are ingested as
+# evidence; ingestion is never endorsement (docs/COMPUTATIONAL_ONLY_POLICY.md).
+# ============================================================================
+
+schema_version: 0.1.0
+spec_id: causal_model_interface_v0_1
+spec_version: 0.1.0
+defined_by: agent:integration
+defined_on: "2026-09-17"
+sprint_1_status: interfaces_only_no_estimation
+calibration_status: not_applicable_nothing_is_estimated
+
+ranking_model_is_not_a_causal_estimator:
+  what_it_is: >-
+    An evidence-accounting device. Ordinal facet grades in, a prioritisation of what to
+    analyse next out, with an explicit uncalibrated interval.
+  what_it_is_not: >-
+    A causal estimator. It has no exposure, no outcome, no instrument, no adjustment
+    set, no individual-level data and no identification strategy. Reading a dimension
+    median as a causal probability is a category error.
+  why_this_matters_here: >-
+    The project's dominant failure mode is not a bad estimate but a RANKING MISTAKEN FOR
+    AN ESTIMATE. A table of numbers in [0,1] under six headings beginning "P(" reads like
+    posterior probabilities. It is not. Guardrails: `status: PRELIMINARY` and
+    `calibration_status: uncalibrated_subjective` on every row, the interpretation block
+    in the report sidecar, contract P3/V9, and this file.
+
+# ---------------------------------------------------------------------------
+# 1. Colocalisation
+# ---------------------------------------------------------------------------
+methods:
+
+  - id: colocalisation
+    sprint: 2
+    status: interface_only
+    question: >-
+      Are a trait association signal and a molecular signal at the same locus consistent
+      with sharing a single causal variant?
+    identifies:
+      - "That two SIGNALS are consistent with one shared causal variant, under the method's own model."
+    does_not_identify:
+      - >-
+        That the gene MEDIATES the trait. Colocalisation is a statement about signals,
+        not about a mediation path.
+      - >-
+        Direction of causation. A shared variant is compatible with the molecular
+        phenotype being downstream of the trait rather than upstream.
+      - >-
+        Relevance of the assayed tissue or cell type. A colocalisation in whole blood
+        says nothing about adult cortex.
+      - >-
+        Anything about ADULT modifiability. A lifelong regulatory difference is not an
+        adult intervention (contract P4).
+    assumptions:
+      - id: single_causal_variant
+        statement: "One causal variant per trait per locus (the standard formulation)."
+        risk_here: moderate
+        note: "Allelic heterogeneity at cognition-associated loci would violate it."
+      - id: causal_tissue_assayed
+        statement: "The tissue or cell type assayed is the causal one."
+        risk_here: high
+        note: >-
+          Brain eQTL sample sizes are small relative to cognitive GWAS, and adult
+          cell-type-resolved data is scarcer still.
+      - id: adequate_power
+        statement: "The molecular dataset can detect the QTL if it exists."
+        risk_here: high
+        note: "A null colocalisation in brain tissue is very often a power statement."
+    sensitivity_analyses_required:
+      - "Report the posterior for every hypothesis the method distinguishes, not only the shared-causal one."
+      - "Vary the prior on shared causality and report the range; the posterior is sensitive to it."
+      - "Repeat across available brain tissues and cell types, and report disagreement rather than the best one."
+      - "Report the credible-set size: a colocalisation over a 200-variant credible set localises little."
+    how_output_is_recorded:
+      as: source_reported_model_output
+      fields: "derived_from names the method and its data version; never recorded as this project's probability"
+      contract_ref: "P3; docs/API_RECIPES.md §5.2 says the same about Open Targets L2G scores"
+    feeds_facet: causal_gene_attribution
+
+  # -------------------------------------------------------------------------
+  # 2. Mendelian randomisation
+  # -------------------------------------------------------------------------
+  - id: mendelian_randomisation
+    sprint: 2
+    status: interface_only
+    question: >-
+      What is the causal effect of an exposure on an outcome, using genetic variants as
+      instruments?
+    identifies:
+      - >-
+        Under all three assumptions below: the effect of a LIFELONG, genetically
+        determined difference in the exposure on the outcome.
+    does_not_identify:
+      - >-
+        A MODIFIABLE effect. MR estimates the consequence of lifelong genetic
+        difference, not the consequence of changing the exposure in an adult. This is
+        the project's own D1-versus-D2 distinction and the single most common misreading
+        of MR in this literature (contract P4: development is not adulthood).
+      - "An effect for any exposure with no valid instrument, which describes most state variables in state_model/."
+      - "A dose-response shape. MR gives a linear contrast unless explicitly extended, and non-linear MR needs far larger samples."
+      - "Anything about a target, as opposed to an exposure. A gene is not an exposure without a mediating measurement."
+    assumptions:
+      - id: relevance
+        statement: "The instrument is associated with the exposure."
+        testable: true
+        risk_here: low
+        note: "Testable and usually satisfiable; weak-instrument bias is quantifiable."
+      - id: independence_exchangeability
+        statement: "The instrument is not associated with confounders of the exposure-outcome relation."
+        testable: partially
+        risk_here: high
+        note: >-
+          Population structure and ASSORTATIVE MATING both threaten it. Assortative
+          mating is substantial for cognitive and educational phenotypes and is NOT
+          removed by standard ancestry adjustment.
+      - id: exclusion_restriction
+        statement: "The instrument affects the outcome only through the exposure."
+        testable: false
+        risk_here: highest
+        note: >-
+          THE ASSUMPTION MOST AT RISK FOR EVERY EXPOSURE THIS PROJECT CARES ABOUT.
+          Brain-expressed genes are overwhelmingly pleiotropic, and a variant in a
+          cognition-associated locus plausibly acts through many routes at once. It also
+          cannot be tested directly — only probed.
+    sensitivity_analyses_required:
+      - id: mr_egger
+        detects: "directional pleiotropy, via the intercept"
+      - id: weighted_median
+        detects: "validity when up to half the instrument weight is invalid"
+      - id: weighted_mode
+        detects: "validity when the largest cluster of instruments is valid"
+      - id: mr_presso
+        detects: "outlier instruments and horizontal pleiotropy"
+      - id: steiger_directionality
+        detects: "reverse causation, by comparing instrument strength for exposure vs outcome"
+      - id: leave_one_out
+        detects: "dependence of the estimate on a single instrument"
+      - id: heterogeneity
+        detects: "instrument disagreement (Cochran's Q, I-squared)"
+      - id: within_family_mr
+        detects: "assortative-mating and population-structure confounding"
+        mandatory_when: "the exposure is behavioural, cognitive or educational"
+        note: >-
+          The ONLY design that removes these rather than adjusting for them. An MR
+          result on a cognitive phenotype without a within-family arm should be read as
+          provisional.
+    reporting_requirement: >-
+      All of the above are reported TOGETHER, plus an explicit statement of which
+      assumption is most at risk for that specific analysis. An MR estimate presented
+      without its sensitivity panel is not admissible in this repository.
+    how_output_is_recorded:
+      as: source_reported_model_output
+      claim_type: association
+      causal_attribution_basis: mendelian_randomisation
+    feeds_facet: causal_gene_attribution
+
+  # -------------------------------------------------------------------------
+  # 3. Structural causal model of the state dynamics
+  # -------------------------------------------------------------------------
+  - id: structural_causal_model
+    sprint: 3
+    status: specification_only_not_fitted
+    form: "X(t+1) = F(X(t), U(t), E(t), Theta) + noise"
+    variables:
+      X: "latent biological and cognitive state (state_model/)"
+      U: "intervention"
+      E: "experience, environment, task demand"
+      Theta: "slower individual biological parameters"
+      noise: "everything unmodelled, including measurement error and unmeasured drivers"
+    question: >-
+      What does an intervention U do to the state TRAJECTORY — not to a single
+      timepoint?
+    identifies_if_it_could_be_fitted:
+      - "Whether an effect persists, or decays back to the previous operating point."
+      - "Whether it saturates, and where."
+      - "Whether it trades against a safety or stability variable."
+      - "Whether the system returns to its previous operating point after U is removed."
+    does_not_identify:
+      - "Anything at all in Sprint 1. It is not fitted."
+      - "Any quantity whose state variable has no human proxy (declared per variable in ontology/state_variables.yaml)."
+    identifiability_problems:
+      - id: latent_state
+        problem: "X is latent and observed only through proxies, several of which do not exist for humans."
+      - id: theta_confounded_with_initial_state
+        problem: "Theta is confounded with X(0); a cross-sectional difference cannot separate them."
+      - id: unknown_functional_form
+        problem: >-
+          F is unknown in form, so any fit is a JOINT claim about the functional form and
+          the parameters, and a good fit supports neither on its own.
+      - id: insufficient_sampling
+        problem: >-
+          Available public longitudinal data has neither the sampling frequency nor the
+          intervention variation to separate a genuine state change from measurement
+          drift or practice effects.
+      - id: practice_and_expectancy
+        problem: >-
+          Repeated cognitive measurement changes the thing being measured, so an
+          uncontrolled trajectory confounds learning with state change.
+    sequencing_commitment: >-
+      ROADMAP.md Sprint 3 puts a no-free-lunch PREDICTIVE BASELINE before anything
+      mechanistic, and commits to demoting unidentifiable parameters regardless of
+      biological appeal. The state model's main present-day use is negative: it says
+      which quantities the project is not yet entitled to talk about.
+    honest_summary: >-
+      Currently a specification of what would need to be identified, not a model of
+      anything.
+
+# ---------------------------------------------------------------------------
+# 4. What would move a target from "accounted" to "estimated"
+# ---------------------------------------------------------------------------
+promotion_criteria:
+  note: "Recorded so the bar cannot drift downward."
+  all_four_required:
+    - id: causal_gene_attribution_beyond_association
+      requirement: >-
+        An attribution that is not `gwas_association_only`: fine-mapping, colocalisation
+        or an allelic series (ROADMAP.md Sprint 2 exit criterion).
+    - id: mr_with_full_sensitivity_panel
+      requirement: >-
+        An MR estimate with every sensitivity analysis above reported, a within-family
+        arm where the exposure is behavioural, and an explicit statement of which
+        assumption is most at risk.
+    - id: adult_onset_evidence
+      requirement: >-
+        An adult-onset perturbation result. A lifelong-difference estimate does not
+        answer the adult-modifiability question at all.
+    - id: human_proxy_for_the_state_variable
+      requirement: >-
+        A human proxy for the state variable the mechanism is supposed to move, so the
+        claim is about a measurable quantity.
+  until_then: >-
+    The correct output is a rank with an interval and a named next analysis — which is
+    what reports/target_ranking_v0_1.csv is.
+
+# ---------------------------------------------------------------------------
+# 5. Boundaries applying to everything in this directory
+# ---------------------------------------------------------------------------
+boundaries:
+  computational_only: >-
+    Nothing here performs, plans, designs or recommends any wet-lab, in-vitro, ex-vivo,
+    animal or human experiment, including self-experimentation
+    (docs/COMPUTATIONAL_ONLY_POLICY.md).
+  no_protocols: "No output is a protocol, dose, route or regimen, and none may be derived from one."
+  safety_is_a_constraint: >-
+    No causal or optimisation model here may trade a safety variable against a benefit.
+    The ranking model enforces this with caps rather than weights; Sprint-4
+    multi-objective work is specified the same way.
+  calibration_visible: >-
+    Every model output records its calibration status. A number whose calibration status
+    is unstated is not publishable from this repository.
+  no_estimate_without_its_assumptions: >-
+    An estimate recorded without the assumption most at risk for it named in the same
+    record is not admissible.

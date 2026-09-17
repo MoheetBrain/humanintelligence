@@ -1,0 +1,376 @@
+{
+  "derivedSection": {
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D008237",
+          "term": "Lysergic Acid"
+        },
+        {
+          "id": "D004873",
+          "term": "Ergolines"
+        },
+        {
+          "id": "D004876",
+          "term": "Ergot Alkaloids"
+        },
+        {
+          "id": "D000470",
+          "term": "Alkaloids"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D006576",
+          "term": "Heterocyclic Compounds, 4 or More Rings"
+        },
+        {
+          "id": "D000072471",
+          "term": "Heterocyclic Compounds, Fused-Ring"
+        },
+        {
+          "id": "D026121",
+          "term": "Indole Alkaloids"
+        },
+        {
+          "id": "D007211",
+          "term": "Indoles"
+        },
+        {
+          "id": "D006574",
+          "term": "Heterocyclic Compounds, 2-Ring"
+        },
+        {
+          "id": "D014363",
+          "term": "Tryptamines"
+        },
+        {
+          "id": "D054836",
+          "term": "Indolizidines"
+        },
+        {
+          "id": "D007212",
+          "term": "Indolizines"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D008238",
+          "term": "Lysergic Acid Diethylamide"
+        },
+        {
+          "id": "D011562",
+          "term": "Psilocybin"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Cross-over within-subjects design with all treatment conditions, separated by a wash-out phase",
+          "interventionNames": [
+            "Drug: LSD",
+            "Drug: Psilocybin"
+          ],
+          "label": "LSD-100, LSD-200, Psilocybin-15, Psilocybin-30, Placebo",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Cross-over within-subjects design with all treatment conditions, separated by a wash-out phase",
+          "interventionNames": [
+            "Drug: LSD",
+            "Drug: Psilocybin"
+          ],
+          "label": "LSD-200, Psilocybin-15, Psilocybin-30, Placebo, LSD-100",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "description": "Cross-over within-subjects design with all treatment conditions, separated by a wash-out phase",
+          "interventionNames": [
+            "Drug: LSD",
+            "Drug: Psilocybin"
+          ],
+          "label": "Psilocybin-15, Psilocybin-30, Placebo, LSD-100, LSD-200",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "description": "Cross-over within-subjects design with all treatment conditions, separated by a wash-out phase",
+          "interventionNames": [
+            "Drug: LSD",
+            "Drug: Psilocybin"
+          ],
+          "label": "Psilocybin-30, Placebo, LSD-100, LSD-200, Psilocybin-15",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "description": "Cross-over within-subjects design with all treatment conditions, separated by a wash-out phase",
+          "interventionNames": [
+            "Drug: LSD",
+            "Drug: Psilocybin"
+          ],
+          "label": "Placebo, LSD-100, LSD-200, Psilocybin-15, Psilocybin-30",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "LSD-100, LSD-200, Psilocybin-15, Psilocybin-30, Placebo",
+            "LSD-200, Psilocybin-15, Psilocybin-30, Placebo, LSD-100",
+            "Placebo, LSD-100, LSD-200, Psilocybin-15, Psilocybin-30",
+            "Psilocybin-15, Psilocybin-30, Placebo, LSD-100, LSD-200",
+            "Psilocybin-30, Placebo, LSD-100, LSD-200, Psilocybin-15"
+          ],
+          "description": "LSD 0.1 mg per os, single dose",
+          "name": "LSD",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "LSD-100, LSD-200, Psilocybin-15, Psilocybin-30, Placebo",
+            "LSD-200, Psilocybin-15, Psilocybin-30, Placebo, LSD-100",
+            "Placebo, LSD-100, LSD-200, Psilocybin-15, Psilocybin-30",
+            "Psilocybin-15, Psilocybin-30, Placebo, LSD-100, LSD-200",
+            "Psilocybin-30, Placebo, LSD-100, LSD-200, Psilocybin-15"
+          ],
+          "description": "LSD 0.2 mg per os, single dose",
+          "name": "LSD",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "LSD-100, LSD-200, Psilocybin-15, Psilocybin-30, Placebo",
+            "LSD-200, Psilocybin-15, Psilocybin-30, Placebo, LSD-100",
+            "Placebo, LSD-100, LSD-200, Psilocybin-15, Psilocybin-30",
+            "Psilocybin-15, Psilocybin-30, Placebo, LSD-100, LSD-200",
+            "Psilocybin-30, Placebo, LSD-100, LSD-200, Psilocybin-15"
+          ],
+          "description": "Psilocybin 15 mg per os, single dose",
+          "name": "Psilocybin",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "LSD-100, LSD-200, Psilocybin-15, Psilocybin-30, Placebo",
+            "LSD-200, Psilocybin-15, Psilocybin-30, Placebo, LSD-100",
+            "Placebo, LSD-100, LSD-200, Psilocybin-15, Psilocybin-30",
+            "Psilocybin-15, Psilocybin-30, Placebo, LSD-100, LSD-200",
+            "Psilocybin-30, Placebo, LSD-100, LSD-200, Psilocybin-15"
+          ],
+          "description": "Psilocybin 30 mg per os, single dose",
+          "name": "Psilocybin",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Healthy"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Basel",
+          "country": "Switzerland",
+          "facility": "Clinical Pharmacology & Toxicology, University Hospital Basel",
+          "geoPoint": {
+            "lat": 47.55839,
+            "lon": 7.57327
+          },
+          "zip": "4056"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "University Hospital, Basel, Switzerland",
+          "name": "Matthias E Liechti, MD, MAS",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "LSD (lysergic acid diethylamide) and psilocybin (the active substance in \"magic mushrooms\") are widely used for recreational purposes. Both substances are also increasingly used in psychiatric and psychological research to induce and investigate alterations in waking consciousness and associated brain functions (functional brain imaging, \"model psychosis\") . However, it has never been studied whether there are differences in the alterations in mind produced by these two substances. Both LSD and psilocybin are thought to induce hallucinations primarily via stimulation of the 5-HT2A receptor. However, there are differences in the receptor activation profiles between the two substances that may also induce different subjective effects. LSD potently stimulates the 5-HT2A receptor but also 5-HT2B/C, 5-HT1 and D1-3 receptors . Psilocin (the active metabolite of the prodrug psilocybin) also stimulates the 5-HT2A receptor but additionally inhibits the 5-HT transporter. In contrast to LSD, psilocybin has no affinity for D2 receptors. Both substances are used in neuroscience as pharmacological tools. However, there are no modern studies comparing these two substances directly within the same clinical study and research subjects and using validated psychometric tools. Therefore, the investigators will compare the acute effects of LSD, psilocybin and placebo."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "BASIC_SCIENCE"
+      },
+      "enrollmentInfo": {
+        "count": 28,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "EARLY_PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n1. Age between 25 and 65 years.\n2. Understanding of the German language.\n3. Understanding the procedures and the risks that are associated with the study.\n4. Participants must be willing to adhere to the protocol and sign the consent form.\n5. Participants must be willing to refrain from taking illicit psychoactive substances during the study.\n6. Participants must be willing to drink only alcohol-free liquids and no coffee, black or green tea, or energy drink after midnight of the evening before the study session, as well as during the study day.\n7. Participants must be willing not to drive a traffic vehicle or to operate machines within 48 h after substance administration.\n8. Women of childbearing potential must have a negative pregnancy test at the beginning of the study. Pregnancy tests are repeated before each study session.\n9. Women of childbearing potential must be willing to use double-barrier birth control\n10. Body mass index 18-29 kg/m2.\n\nExclusion Criteria:\n\n1. Chronic or acute medical condition\n2. Current or previous major psychiatric disorder\n3. Psychotic disorder in first-degree relatives\n4. Illicit substance use (with the exception of cannabis) more than 10 times or any time within the previous two months.\n5. Pregnant or nursing women.\n6. Participation in another clinical trial (currently or within the last 30 days)\n7. Use of medications that may interfere with the effects of the study medications (any psychiatric medications)\n8. Tobacco smoking (\\>10 cigarettes/day)\n9. Consumption of alcoholic drinks (\\>10/week)\n10. Bodyweight \\< 50 kg",
+      "healthyVolunteers": true,
+      "maximumAge": "65 Years",
+      "minimumAge": "25 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "LSD-psilo",
+      "briefTitle": "Direct Comparison of Altered States of Consciousness Induced by LSD and Psilocybin",
+      "nctId": "NCT03604744",
+      "officialTitle": "Direct Comparison of Altered States of Consciousness Induced by LSD and Psilocybin in a Random-order Placebo-controlled Cross-over Study in Healthy Subjects",
+      "orgStudyIdInfo": {
+        "id": "BASEC 2018-00985"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "University Hospital, Basel, Switzerland"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    },
+    "outcomesModule": {
+      "otherOutcomes": [
+        {
+          "description": "assessment of plasma levels of LSD and psilocin",
+          "measure": "Plasma levels of LSD and psilocin",
+          "timeFrame": "18 Months"
+        }
+      ],
+      "primaryOutcomes": [
+        {
+          "description": "total 5D-ASC score (5-Dimensional Altered States of Consciousness Rating Scale)",
+          "measure": "Altered states of consciousness",
+          "timeFrame": "18 Months"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "VAS (Visual analog scale)",
+          "measure": "Subjective effects assessed by VAS",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "AMRS scales (Adjective mood Rating scale)",
+          "measure": "Subjective effects assessed by AMRS scales",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "ESI (Eppendorf Schizophrenia Inventory)",
+          "measure": "Psychotomimetic effects",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "SCQ (States of consciousness questionnaire)",
+          "measure": "Mystical-type experiences assessed by SCQ",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "MS scales (Mysticism scale)",
+          "measure": "Mystical-type experiences assessed by MS scales",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "FERT (Face Emotion Recognition Task)",
+          "measure": "Effects on emotion processing",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "Heart rate",
+          "measure": "Autonomic effects assessed by heart rate",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "Blood pressure (diastolic and systolic)",
+          "measure": "Autonomic effects assessed by blood pressure",
+          "timeFrame": "18 Months"
+        },
+        {
+          "description": "Body temperature",
+          "measure": "Autonomic effects assessed by body temperature",
+          "timeFrame": "18 Months"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": false,
+      "oversightHasDmc": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Holze F, Becker AM, Kolaczynska KE, Duthaler U, Liechti ME. Pharmacokinetics and Pharmacodynamics of Oral Psilocybin Administration in Healthy Participants. Clin Pharmacol Ther. 2023 Apr;113(4):822-831. doi: 10.1002/cpt.2821. Epub 2022 Dec 31.",
+          "pmid": "36507738",
+          "type": "DERIVED"
+        },
+        {
+          "citation": "Holze F, Ley L, Muller F, Becker AM, Straumann I, Vizeli P, Kuehne SS, Roder MA, Duthaler U, Kolaczynska KE, Varghese N, Eckert A, Liechti ME. Direct comparison of the acute effects of lysergic acid diethylamide and psilocybin in a double-blind placebo-controlled study in healthy subjects. Neuropsychopharmacology. 2022 May;47(6):1180-1187. doi: 10.1038/s41386-022-01297-2. Epub 2022 Feb 25.",
+          "pmid": "35217796",
+          "type": "DERIVED"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "University Hospital, Basel, Switzerland"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2021-04-15",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2021-04-27",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2021-04-26",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2021-04-10",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2019-03-27",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2021-04",
+      "studyFirstPostDateStruct": {
+        "date": "2018-07-27",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2018-07-19",
+      "studyFirstSubmitQcDate": "2018-07-26"
+    }
+  }
+}

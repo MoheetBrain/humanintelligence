@@ -1,0 +1,98 @@
+# Comparative claims on human-versus-rodent cortical neuron biophysics that are not
+# specific to a seed target. Contract: docs/DATA_CONTRACT.md §4.
+#
+# These bear on the same question as evidence/claims/comparative/HCN1.yaml — how much
+# rodent single-neuron causal evidence transfers to adult humans — but the measured
+# variable is the whole dendrite rather than one channel, so they qualify every rodent
+# dendritic-integration result in this repository, not just the h-current ones.
+#
+# The object is SV:workspace.dendritic_integration_gain, which the source measured
+# directly. It was originally PRIM:composition; see the retargeting note in `risks`.
+
+- claim_id: CLM:comparative:DENDRITE:001
+  schema_version: 0.1.0
+  statement: >-
+    Beaulieu-Laroche and colleagues recorded directly from human layer 5 pyramidal
+    dendrites and found greater electrical compartmentalisation than in rat: distal human
+    dendrites delivered limited excitation to the soma even when dendritic spikes
+    occurred, human somas burst less, and lower ion channel densities gave higher input
+    resistance.
+  subject: CELL:layer5_pyramidal_neuron
+  predicate: MODULATES
+  object: SV:workspace.dendritic_integration_gain
+  claim_type: mechanistic
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10116]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      Two-species contrast (human versus rat). No phylogenetic control is possible with
+      two species and none is claimed.
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: [CELL:layer5_pyramidal_neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "human tissue is neurosurgical and the rat tissue is not, so disease state is confounded with species across the whole comparison"
+      - "the authors attribute the difference to increased human neuron LENGTH; if so this is a consequence of cell geometry that any large-neuroned mammal would show, not a human specialisation — CLM:comparative:HCN1:003 tests exactly that and finds human neurons off the size relationship, which is a different conclusion"
+      - "dendritic recording is technically selective: only dendrites large enough to patch are sampled, in both species, and the selection bias differs with neuron size"
+      - "the computational reading — that compartmentalisation supports more independent subunit computations — is an interpretation; no computational or behavioural quantity was measured, which is why this claim's object is a state variable (dendritic integration gain, which WAS measured) and not a computational primitive"
+  evidence:
+    - source_id: SRC:PMID:30340039
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "human layer 5 cortical pyramidal neurons from neurosurgical tissue; rat (Sprague-Dawley) layer 5 cortical pyramidal neurons"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "dendrite-to-soma voltage coupling, dendritic spike propagation, somatic bursting, input resistance and ion channel density from direct dendritic recording"
+      endpoint_category: cellular_excitability
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "Compared to rat dendrites, distal human dendrites provide limited excitation to the soma, even in the presence of dendritic spikes."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Direct dendritic recording in adult human tissue with a rat comparison is strong
+      for a comparative cellular claim, but it is one study, two species, disease-derived
+      human tissue, and a cellular endpoint.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "QUALIFIES A LARGE CLASS OF EVIDENCE. If human distal dendrites couple to the soma more weakly than rat, then rodent results in which a dendritic manipulation changed somatic output do not transfer quantitatively, and may not transfer in sign. This applies to dendritic-excitability targets generally, including HCN1 and the KCNQ channels."
+    - "RETARGETED 2026-09-17 after graph/validate_graph.py --strict raised V16: this claim originally asserted CELL:layer5_pyramidal_neuron MODULATES PRIM:composition, and the validator correctly held that a MODULATES edge into a ComputationalPrimitive is an efficacy-grade assertion that `theoretical_construct` cannot license. The object is now SV:workspace.dendritic_integration_gain, which is what the study actually measured, and claim_type is `mechanistic`. This agent had independently flagged the primitive edge as the weakest link in the atlas; the validator agreed, and the fix removes the overreach rather than upgrading the claim_type to match it."
+    - "'stretched to perform better' is the framing a commentary on this paper used; the paper measured input-output properties and did not measure performance of anything"
+  confounders: ["neurosurgical tissue in the human arm only", "neuron length", "dendrite patchability", "slice conditions"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

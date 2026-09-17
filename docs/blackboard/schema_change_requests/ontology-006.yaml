@@ -1,0 +1,36 @@
+# Schema change request ontology-006
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-006
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Permit an EXTERNAL published model's output to carry a number.
+
+motivation: >-
+  Contract P3 permits a number that is 'the output of a named model implementation under
+  models/', and V9 requires `derived_from` to point at a file under models/. But agents
+  legitimately carry Open Targets L2G scores, which are an external published model's output
+  and will never live under models/. The alternative was to drop the number or to launder it,
+  and the agent that hit this attached data_version and interpretation_limits rather than
+  doing either.
+
+proposed_change: >-
+  Read P3's 'named model' as including an external published model, provided the record names
+  it and states what the number is NOT.
+
+implemented_as: >-
+  uncertainty.model_outputs[] requires `derived_from`, `kind` and an `interpretation_limits`
+  of at least 40 characters. V9 exempts numbers under that subtree and nowhere else. The
+  length floor is deliberate: an unqualified model output becomes a fake probability the
+  moment somebody reads it.

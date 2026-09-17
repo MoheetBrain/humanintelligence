@@ -1,0 +1,636 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D008607",
+          "term": "Intellectual Disability"
+        },
+        {
+          "id": "D019954",
+          "term": "Neurobehavioral Manifestations"
+        },
+        {
+          "id": "D009461",
+          "term": "Neurologic Manifestations"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D000015",
+          "term": "Abnormalities, Multiple"
+        },
+        {
+          "id": "D000013",
+          "term": "Congenital Abnormalities"
+        },
+        {
+          "id": "D009358",
+          "term": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+        },
+        {
+          "id": "D025063",
+          "term": "Chromosome Disorders"
+        },
+        {
+          "id": "D030342",
+          "term": "Genetic Diseases, Inborn"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D004314",
+          "term": "Down Syndrome"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "interventionNames": [
+            "Drug: RG1662"
+          ],
+          "label": "RG1662 120 mg bid",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "interventionNames": [
+            "Drug: RG1662"
+          ],
+          "label": "RG1662 240 mg bid",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Orally twice daily, 26 weeks",
+          "name": "Placebo",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "RG1662 120 mg bid"
+          ],
+          "description": "120 mg (80 mg for subjects 12 and 13 years of age) orally twice daily, 26 weeks",
+          "name": "RG1662",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "RG1662 240 mg bid"
+          ],
+          "description": "240 mg (160 mg for subjects 12 and 13 years of age) orally twice daily, 26 weeks",
+          "name": "RG1662",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Down Syndrome"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "La Jolla",
+          "country": "United States",
+          "facility": "Univ of CA San Diego; Neurosciences Comp.Alzheimer's",
+          "geoPoint": {
+            "lat": 32.84727,
+            "lon": -117.2742
+          },
+          "state": "California",
+          "zip": "92037"
+        },
+        {
+          "city": "Sacramento",
+          "country": "United States",
+          "facility": "University of California DAVIS Medical Center; M.I.N.D. Institute, Section of Developmental Behavior",
+          "geoPoint": {
+            "lat": 38.58157,
+            "lon": -121.4944
+          },
+          "state": "California",
+          "zip": "95817"
+        },
+        {
+          "city": "Decatur",
+          "country": "United States",
+          "facility": "Emory University School of Medicine; Department of Human Genetics & Pediatrics",
+          "geoPoint": {
+            "lat": 33.77483,
+            "lon": -84.29631
+          },
+          "state": "Georgia",
+          "zip": "30033"
+        },
+        {
+          "city": "Chicago",
+          "country": "United States",
+          "facility": "Rush University Medical Center",
+          "geoPoint": {
+            "lat": 41.85003,
+            "lon": -87.65005
+          },
+          "state": "Illinois",
+          "zip": "60612"
+        },
+        {
+          "city": "Baltimore",
+          "country": "United States",
+          "facility": "Johns Hopkins Hospital.",
+          "geoPoint": {
+            "lat": 39.29038,
+            "lon": -76.61219
+          },
+          "state": "Maryland",
+          "zip": "21287"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Massachusette General Hospital; Medical Genetics",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02114"
+        },
+        {
+          "city": "Durham",
+          "country": "United States",
+          "facility": "Duke Clin Rsch Institute",
+          "geoPoint": {
+            "lat": 35.99403,
+            "lon": -78.89862
+          },
+          "state": "North Carolina",
+          "zip": "27710"
+        },
+        {
+          "city": "Salt Lake City",
+          "country": "United States",
+          "facility": "University of Utah School of Medicine; Department of Pediatrics",
+          "geoPoint": {
+            "lat": 40.76078,
+            "lon": -111.89105
+          },
+          "state": "Utah",
+          "zip": "84112"
+        },
+        {
+          "city": "Madison",
+          "country": "United States",
+          "facility": "University of Wisconsin Madison, Waisman Center",
+          "geoPoint": {
+            "lat": 43.07305,
+            "lon": -89.40123
+          },
+          "state": "Wisconsin",
+          "zip": "53705"
+        },
+        {
+          "city": "CABA",
+          "country": "Argentina",
+          "facility": "FLENI",
+          "zip": "C1428AQK"
+        },
+        {
+          "city": "Ciudad Autonoma de Bs As",
+          "country": "Argentina",
+          "facility": "Instituto Neurologia Bs As",
+          "zip": "1426"
+        },
+        {
+          "city": "Kentville",
+          "country": "Canada",
+          "facility": "True North Clinical Research Kentville",
+          "geoPoint": {
+            "lat": 45.0771,
+            "lon": -64.49605
+          },
+          "state": "Nova Scotia",
+          "zip": "B4N 4K9"
+        },
+        {
+          "city": "Bron",
+          "country": "France",
+          "facility": "Groupement Hospitalier Est-Hopital Femme Mere enfant/Hospice civils de lyon",
+          "geoPoint": {
+            "lat": 45.73865,
+            "lon": 4.91303
+          },
+          "zip": "69003"
+        },
+        {
+          "city": "Montpellier",
+          "country": "France",
+          "facility": "CHU de Montpellier Hopital Arnaud de Villeneuve; de Génétique",
+          "geoPoint": {
+            "lat": 43.61093,
+            "lon": 3.87635
+          },
+          "zip": "34295"
+        },
+        {
+          "city": "Paris",
+          "country": "France",
+          "facility": "Institut Jérôme Lejeune; Neuropsychology",
+          "geoPoint": {
+            "lat": 48.85341,
+            "lon": 2.3488
+          },
+          "zip": "75015"
+        },
+        {
+          "city": "Saint-Etienne",
+          "country": "France",
+          "facility": "CHU de Saint Etienne; Service de Génétique",
+          "geoPoint": {
+            "lat": 45.43389,
+            "lon": 4.39
+          },
+          "zip": "42055"
+        },
+        {
+          "city": "Rome",
+          "country": "Italy",
+          "facility": "Ospedale Pediatrico Bambino Gesù",
+          "geoPoint": {
+            "lat": 41.89193,
+            "lon": 12.51133
+          },
+          "state": "Lazio",
+          "zip": "00165"
+        },
+        {
+          "city": "Rome",
+          "country": "Italy",
+          "facility": "Policlinico Universitario \"Agostino Gemelli\";Dip. Tutela Salute Donna Bambino Adolescente",
+          "geoPoint": {
+            "lat": 41.89193,
+            "lon": 12.51133
+          },
+          "state": "Lazio",
+          "zip": "00168"
+        },
+        {
+          "city": "Cagliari",
+          "country": "Italy",
+          "facility": "Ospedale Microcitemico; Clinica Pediatrica",
+          "geoPoint": {
+            "lat": 39.23054,
+            "lon": 9.11917
+          },
+          "state": "Sardinia",
+          "zip": "09121"
+        },
+        {
+          "city": "Guadalajara",
+          "country": "Mexico",
+          "facility": "Hospital Dr. Angel Leaño; Pediatria",
+          "geoPoint": {
+            "lat": 20.67738,
+            "lon": -103.34749
+          },
+          "state": "Jalisco",
+          "zip": "45200"
+        },
+        {
+          "city": "Aguascalientes",
+          "country": "Mexico",
+          "facility": "Clínica Para la Atención del Neurodesarrollo",
+          "geoPoint": {
+            "lat": 21.88262,
+            "lon": -102.2843
+          },
+          "zip": "20030"
+        },
+        {
+          "city": "Monterrey",
+          "country": "Mexico",
+          "facility": "Hospital Universitario Dr. Jose Eleuterio Gonzalez; Pediatria",
+          "geoPoint": {
+            "lat": 25.68435,
+            "lon": -100.31721
+          },
+          "zip": "64460"
+        },
+        {
+          "city": "Querétaro",
+          "country": "Mexico",
+          "facility": "Hospital Médica Tec 100",
+          "geoPoint": {
+            "lat": 15.83752,
+            "lon": -92.75774
+          },
+          "zip": "76000"
+        },
+        {
+          "city": "Auckland",
+          "country": "New Zealand",
+          "facility": "Auckland Clinical Studies",
+          "geoPoint": {
+            "lat": -36.84853,
+            "lon": 174.76349
+          },
+          "zip": "1142"
+        },
+        {
+          "city": "Dunedin",
+          "country": "New Zealand",
+          "facility": "University of Otago; Psychological Medicine Department",
+          "geoPoint": {
+            "lat": -45.87416,
+            "lon": 170.50361
+          },
+          "zip": "9016"
+        },
+        {
+          "city": "Wellington",
+          "country": "New Zealand",
+          "facility": "Wellington Hospital Research Office",
+          "geoPoint": {
+            "lat": -41.28664,
+            "lon": 174.77557
+          },
+          "zip": "6021"
+        },
+        {
+          "city": "Singapore",
+          "country": "Singapore",
+          "facility": "KK Women's and Children's Hospital; Department of Neonatology",
+          "geoPoint": {
+            "lat": 1.28967,
+            "lon": 103.85007
+          },
+          "zip": "229899"
+        },
+        {
+          "city": "Salt",
+          "country": "Spain",
+          "facility": "UVaMID Hospital Santa Caterina;; Servicio de Neurología",
+          "geoPoint": {
+            "lat": 41.97489,
+            "lon": 2.79281
+          },
+          "state": "Girona",
+          "zip": "17090"
+        },
+        {
+          "city": "Santiago de Compostela",
+          "country": "Spain",
+          "facility": "Complejo Hospitalario Universitario de Santiago (CHUS); Area Asistencial Integrada de Pediatría",
+          "geoPoint": {
+            "lat": 42.88052,
+            "lon": -8.54569
+          },
+          "state": "La Coruña",
+          "zip": "15706"
+        },
+        {
+          "city": "Barcelona",
+          "country": "Spain",
+          "facility": "IMIM, Human Pharmacology and Clinical Neurosciences,",
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          },
+          "zip": "08009"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Hospital Universitario de la Princesa; Medicina Interna",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28006"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Hospital Infantil Universitario Niño Jesus; Pediatria Social",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28009"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Fundación Síndrome de Down; Fundación Síndrome de Down",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          },
+          "zip": "28016"
+        },
+        {
+          "city": "Blackpool",
+          "country": "United Kingdom",
+          "facility": "Blackpool Teaching Hospitals NHS Foundation Trust; Child Development and Family Support Centre",
+          "geoPoint": {
+            "lat": 53.81667,
+            "lon": -3.05
+          }
+        },
+        {
+          "city": "Dartford, Kent",
+          "country": "United Kingdom",
+          "facility": "Mental Health of Learning Disability, Kent & Medway NHS and Social Care Partnership Trust",
+          "zip": "DA2 6PB"
+        },
+        {
+          "city": "Doncaster",
+          "country": "United Kingdom",
+          "facility": "Doncaster and Bassetlaw Hospitals NHS Foundation Trust; Doncaster Royal Infirmary",
+          "geoPoint": {
+            "lat": 53.52285,
+            "lon": -1.13116
+          },
+          "zip": "DN2 5LT"
+        },
+        {
+          "city": "Redruth",
+          "country": "United Kingdom",
+          "facility": "Cornwall Partnership NHS Foundation Trust",
+          "geoPoint": {
+            "lat": 50.23315,
+            "lon": -5.22434
+          },
+          "zip": "TR15 2SP"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Hoffmann-La Roche",
+          "name": "Clinical Trials",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This multi-center, randomized, double-blind, 3-arm, parallel-group, placebo-controlled study will evaluate the efficacy and safety of RG1662 in adults and adolescents with Down syndrome. Subjects will be randomized to receive RG1662 either at low or high dose or placebo orally twice daily for 26 weeks."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 173,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Individuals aged 12-30 years of age inclusive\n* Clinical diagnosis of Down syndrome (trisomy 21) confirmed by chromosomal analysis (karyotyping)\n* Males, or non-pregnant, non-lactating females. For females of childbearing potential, strict contraceptive prevention is required.\n* Body-mass Index (BMI) 18-42 and 15-30 kg/m2 inclusive for adults and adolescents respectively\n* Ability to complete the Clinical Evaluation of Language Fundamentals (CELF)-preschool 2 word classes task\n* Subjects must have a parent, or other reliable caregiver who agrees to accompany the subject to all clinic visits, provide information about the subject as required by the protocol, and ensure compliance with the medication schedule\n* Study participants must have sufficient language, vision and hearing to participate in study evaluations, as judged clinically by investigator\n\nExclusion Criteria:\n\n* Subjects with a current DSM 5 diagnosis of any primary psychiatric diagnosis (including ASD or MDD)\n* Subjects with a history of infantile spasms, of West syndrome, Lennox-Gastaut syndrome, Early Infantile Epileptic Encephalopathy or any treatment-refractory epilepsy associated with cognitive or developmental regression, of severe head trauma or CNS infections (e.g. meningitis)\n* Subjects with a known or suspected clinical seizure event of any type within 24 months prior to screening\n* Clinically relevant ECG abnormalities at screening or baseline; QTcF above 450 ms; personal or family history (first degree relatives) of congenital long QT syndrome\n* Inadequate renal or hepatic function",
+      "healthyVolunteers": false,
+      "maximumAge": "30 Years",
+      "minimumAge": "12 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD",
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "A Study of RG1662 in Adults and Adolescents With Down Syndrome (CLEMATIS)",
+      "nctId": "NCT02024789",
+      "officialTitle": "A MULTI-CENTER, RANDOMIZED, DOUBLE-BLIND, PLACEBO-CONTROLLED PHASE 2 STUDY OF THE EFFICACY, SAFETY AND TOLERABILITY OF RG1662 IN ADULTS AND ADOLESCENTS WITH DOWN SYNDROME (CLEMATIS)",
+      "orgStudyIdInfo": {
+        "id": "BP27832"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Hoffmann-La Roche"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "2013-001263-23",
+          "type": "EUDRACT_NUMBER"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Cognition as assessed by the Repeatable Battery for the Assessment of Neuropsychological Status (RBANS) sub-tests",
+          "timeFrame": "26 weeks"
+        },
+        {
+          "measure": "Adaptive behavior as assessed by the Vineland Adaptive Behavior Scales-II (VABS-II) standard scores",
+          "timeFrame": "26 weeks"
+        },
+        {
+          "measure": "Clinical global impression as assessed by Clinician Rated Global Improvement (CGI-I) scale",
+          "timeFrame": "26 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Incidence of abnormal ECG changes",
+          "timeFrame": "26 weeks"
+        },
+        {
+          "measure": "Abnormal ECG changes in adolescents as compared to baseline",
+          "timeFrame": "from baseline to Week 26"
+        },
+        {
+          "measure": "Safety: Incidence of adverse events",
+          "timeFrame": "approximately 32 weeks"
+        },
+        {
+          "measure": "Incidence of abnormal blood pressure",
+          "timeFrame": "26 weeks"
+        },
+        {
+          "measure": "RG1662 plasma concentrations",
+          "timeFrame": "26 weeks"
+        }
+      ]
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Goeldner C, Kishnani PS, Skotko BG, Casero JL, Hipp JF, Derks M, Hernandez MC, Khwaja O, Lennon-Chrimes S, Noeldeke J, Pellicer S, Squassante L, Visootsak J, Wandel C, Fontoura P, d'Ardhuy XL; Clematis Study Group. A randomized, double-blind, placebo-controlled phase II trial to explore the effects of a GABAA-alpha5 NAM (basmisanil) on intellectual disability associated with Down syndrome. J Neurodev Disord. 2022 Feb 5;14(1):10. doi: 10.1186/s11689-022-09418-0.",
+          "pmid": "35123401",
+          "type": "DERIVED"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Hoffmann-La Roche"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2016-05-04",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2017-10-25",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2017-10-24",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2016-05-04",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2014-05-05",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2017-10",
+      "studyFirstPostDateStruct": {
+        "date": "2013-12-31",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2013-12-27",
+      "studyFirstSubmitQcDate": "2013-12-27"
+    }
+  }
+}

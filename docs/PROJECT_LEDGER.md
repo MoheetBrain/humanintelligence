@@ -195,3 +195,132 @@ exercised end to end, including a fully offline rebuild.
 
 Get `graph/validate_graph.py --strict` to exit 0 with the resumed agents' records, then
 commit the atlases, spawn the red team, and only then allow the first ranking run.
+
+---
+
+## 2026-09-17T22:10Z — Four evidence atlases, type system, models, THEORY.md, red-team audit of all 27 targets, graph compiler, DuckDB store and interactive graph report
+
+* **Branch:** `sprint-1/foundation`
+* **Project stage:** Sprint 1 — infrastructure and first evidence ingestion
+* **Objective of the change:** land the substantive Sprint-1 content — the formal type
+  system, 12 JSON Schemas, the 31-rule validator, the state model, the
+  ranking/uncertainty model, `THEORY.md`, and all four evidence atlases — in the first
+  state where the repository validates with zero errors.
+
+### Files and systems changed
+
+* `ontology/` (6 files): node and edge type systems with domain/range constraints, 27
+  computational primitives (24 from the brief plus three agent-proposed), the
+  state-variable type system, controlled vocabularies, definitional edges.
+* `schemas/` (12 JSON Schemas) and `src/blueprint/` (ids, ontology, schemas, records,
+  loaders, validate, verification, policy, vocab, violations, ranking/, pharmacology/).
+* `graph/validate_graph.py`: 31 rules with `--strict`, `--json`, `--root`, `--update-lock`.
+* `state_model/` (9 files): 101 state variables across 8 domains plus `dynamics.yaml`.
+* `models/ranking/` (facet rubric, ranking spec, CLI), `models/uncertainty/`,
+  `models/causal/` (Sprint-2 interfaces, no estimation).
+* `THEORY.md`: Cognitive Power Envelope and OPEN→WRITE→SELECT→LOCK as conceptual models,
+  each with an explicit falsification section.
+* Four atlases: `atlases/{brakes,power,comparative,alphacognition}/`, `evidence/sources/`,
+  `evidence/claims/`, `targets/candidates/` (27 dossiers), plus
+  `atlases/integration/assessments/` (27 tractability grades from a pinned release).
+* `pipelines/`: GWAS Catalog and Open Targets genetics ingestion, taxonomy resolution,
+  atlas self-checks, migration scripts.
+* `scripts/record_tool_snapshot.py` (new): provenance for MCP-tool-derived payloads.
+* `evidence/claims/claim_registry.lock` (new): 289 locked claim ids, so V13 protects
+  provenance rather than nothing.
+* `.githooks/pre-commit`: the validation gate now blocks on **errors** only.
+* `docs/blackboard/RESOLUTIONS.md`: R1–R16. `docs/DECISIONS.md`: D001–D013.
+
+### What was completed
+
+Deliverables 1–9 of the Sprint-1 list. The red team audited all 27 seed targets (29
+records: 20 retain-with-downgrade, 4 retain, 3 deprioritise, 2 insufficient-evidence; 5
+downgrades applied; 4 critical, 31 major, 11 minor, 7 info findings). The graph compiler,
+DuckDB/Parquet store and `reports/intelligence_graph_v0_1.html` (1.6 MB, self-contained,
+zero remote references, null-result edges rendered distinctly) are built. Two export
+CLIs remain.
+Deliverable 10 (ranked table) is deliberately **unpublished**: the pre-audit table was
+generated and then deleted, because a ranking with no audit behind it, computed under a
+superseded aggregation operator, is exactly the artefact that gets read as a result.
+
+### Decisions made and why
+
+1. **The ranking composite is conjunctive (D013).** The six dimensions are conditions
+   that must all hold, and a weighted mean lets five strong dimensions compensate for a
+   near-zero sixth — the inference this project must not license. Product under an
+   explicit (and knowingly false) independence assumption, with `minimum` and
+   `weighted_additive` as reported variants at unchanged weights. Ranks moved by up to
+   nine places; `SLC16A7` fell from 9 to 16 because it had scored on compensation.
+2. **Five contract constraints turned out to forbid a true record** and were fixed:
+   demanding a citation for the absence of evidence (R11); no way to express a null
+   result as an edge (V16b) or to express one where the positive claim was expressible
+   (V16b-sym); no way to distinguish a tested null from an unmeasured endpoint (R5); no
+   way to record a completed-but-unreported trial (R14); `sample_size` forbidding the
+   zero enrolment of a withdrawn trial.
+3. **The pre-commit gate blocks on errors, not warnings.** Requiring zero warnings
+   would mean no commit until an entire sprint finishes, which destroys incremental
+   history. Invalidity must never reach history; incompleteness is what this ledger and
+   `docs/PROJECT_STATUS.md` record.
+4. **Raw snapshot directories are shared append-only (R16).** They are keyed by
+   registry, not by agent; per-agent ownership made the new tool-snapshot script
+   unusable by whichever agent did not own the registry it needed.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **740 passed, 0 failed** (35.6 s), re-run after the audit landed |
+| Validator | `.venv/bin/python graph/validate_graph.py` | **PASS (warnings only)** — 0 errors, 39 warnings, 31 rules |
+| Ownership | `.venv/bin/python scripts/check_ownership.py` | all **1550** paths owned as expected |
+| Source verification | `scripts/fetch_source_metadata.py --all --offline` | 117/117 at the time of the last full offline run; per-agent live runs: brakes 53/53, power 44/44, comparative 20/20, genetics 58/58 |
+| Manifest integrity (V19) | sha256 of every entry vs disk | 1119 entries, **0 mismatches** |
+| Claim registry | `--update-lock` | 289 ids locked |
+| Independent citation spot-check | live PubMed ESummary, PMID 14561278 | matches stored record exactly |
+
+### Failures or unresolved uncertainty
+
+* **Gate G4 is met**: all 27 targets audited. 12 warnings remain — 9 red-team sources
+  awaiting their end-of-run verification pass (V6), 3 self-declared contested claims
+  (V14), 2 deliberate registry-only registrations (V22).
+* **The post-audit ranking has not been run**, so the 4 critical findings and 5
+  downgrades are recorded but not yet reflected in any target ordering.
+* **Zero of 27 targets reach level 3 on `causal_gene_attribution`; zero have QTL
+  colocalisation** supporting their gene assignment at any cognitive-trait credible set.
+* The power atlas **cannot reject** the hypothesis that healthy, rested, well-fed adult
+  cognition is not power-limited, weakening the POWER factor of this project's own
+  organising hypothesis. `THEORY.md` §1.4 says so explicitly.
+* Principle **P8 does not hold at the composite** under a product: a level-0 facet
+  yields a wider relative interval than an unassessed facet, though the latter is more
+  uncertain. Asserted where it holds, pinned where it does not; this is why the rank
+  interval is the headline output.
+* The independence assumption in the composite is **false in a known direction**, so
+  every reported interval is narrower than reality by an unquantified amount.
+* Ten contract deviations survive in the implementation (`docs/ONTOLOGY_NOTES.md` §4),
+  two material: V9's non-probability case is a warning rather than an error, and three
+  field spellings survive because unifying them would invalidate ~60 records. v0.2.0
+  must pick one each.
+* `arousal_level`'s `polarity` is nominal — it is non-monotone, so neither `risk` nor
+  `margin` is honest, and the rule required a binary.
+* `database_gradable` is unset in the facet rubric, so R7's `source_refs`-only grading
+  is currently licensed for no facet; the validator fails closed, which blocks the
+  intended use until `agent:integration` sets the flag.
+* The V20 prohibited-work text heuristic has known holes in both directions, pinned by
+  12 cases from real records.
+* A literature-only search systematically misses interventions performed and never
+  published. This was found twice, in the same atlas, by forcing zeros to declare what
+  they searched — and both times it overturned a statement that atlas had already made.
+
+### Effect on the overall project
+
+The repository now holds a machine-checked evidence base: 182 sources (all verified or
+release-verified), 289 claims, 392 evidence items, 27 target dossiers, 102 facet
+assessments, and a type system strict enough that five of its own constraints had to be
+corrected when they forbade true records. The most valuable outputs of the sprint are
+negative: no target has causal-gene evidence at level 3, nothing in the brake atlas
+reaches level 4, and the power hypothesis is not currently supportable in healthy adults.
+
+### Next intended step
+
+Finish the red-team audit (gate G4), then the graph compiler, DuckDB/Parquet store,
+exporters and `reports/intelligence_graph_v0_1.html`, then the post-audit ranking run
+that produces `reports/target_ranking_v0_1.csv` marked PRELIMINARY.

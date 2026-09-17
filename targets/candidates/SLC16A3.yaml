@@ -1,0 +1,53 @@
+# Target dossier — SLC16A3 (MCT4). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:SLC16A3
+symbol: SLC16A3
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: shallow
+identifiers: {}
+target_class: solute_carrier_transporter
+represented_entities: [GENE:SLC16A3, PROT:SLC16A3]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    MCT4 is the low-affinity high-capacity exporter that would move glycolytically
+    produced lactate out of astrocytes, making it the supply side of the proposed
+    shuttle. Three rodent studies agree that knocking it down impairs learning and that
+    exogenous lactate, pyruvate or ketone body restores performance. That rescue
+    pattern is the most repeated observation in the field and also the one the critical
+    literature says is most easily produced by non-specific energetic disruption.
+  proposed_modulation: unknown
+  mechanism_chain:
+    - CLM:power:anls:001
+    - CLM:power:SLC16A3:001
+    - CLM:power:SLC16A3:002
+  state_variables:
+    - id: SV:power.lactate_flux
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A3:003, CLM:power:anls:001]
+    - id: SV:consolidation.synaptic_consolidation_efficiency
+      asserted_relation: modulates
+      direction: increases
+      response_shape: threshold
+      claim_refs: [CLM:power:SLC16A3:001]
+    - id: SV:cognition.learning_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A3:002]
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: low
+developmental_confound_rationale: >-
+  All three claims come from adult, acute knockdown in adult animals. There is no
+  developmental evidence for this target either way, which is itself a gap rather than
+  a clean bill of health.
+open_questions:
+  - "No human evidence of any kind was retrieved for SLC16A3: no genetic phenotype, no imaging proxy, no intervention."
+  - "Does the 24-hour versus 7-day dissociation between MCT4 and MCT2 (CLM:power:SLC16A3:002) replicate?"
+  - "Astrocytic lactate export is coupled to potassium and calcium handling; no retrieved study separates the fuel-export role from the ion-homeostasis role."
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

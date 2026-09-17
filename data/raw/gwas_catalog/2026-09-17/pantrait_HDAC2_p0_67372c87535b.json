@@ -1,0 +1,177 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/226261651/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/226261651"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs547441777"
+          }
+        },
+        "accession_id": "GCST90480258",
+        "association_id": 226261651,
+        "beta": "2.96 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 2.93,
+        "ci_upper": 2.99,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0009866",
+            "efo_trait": "pulmonary vascular congestion"
+          }
+        ],
+        "first_author": "Verma A",
+        "locations": [
+          "6:113969482"
+        ],
+        "mapped_genes": [
+          "HDAC2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 9e-12,
+        "pubmed_id": "39024449",
+        "pvalue_description": "",
+        "pvalue_exponent": -12,
+        "pvalue_mantissa": 9,
+        "range": "[2.93-2.99]",
+        "reported_trait": [
+          "Pulmonary congestion and hypostasis (PheCode 503)"
+        ],
+        "risk_frequency": "0.9996",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs547441777"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs547441777-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/105011352/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/105011352"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1016378028"
+          }
+        },
+        "accession_id": "GCST90255648",
+        "association_id": 105011352,
+        "beta": "0.3546 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.2,
+        "ci_upper": 0.51,
+        "efo_traits": [
+          {
+            "efo_id": "MONDO_0005148",
+            "efo_trait": "type 2 diabetes mellitus"
+          }
+        ],
+        "first_author": "Huerta-Chagoya A",
+        "locations": [
+          "6:113966586"
+        ],
+        "mapped_genes": [
+          "HDAC2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 8e-06,
+        "pubmed_id": "37148359",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 8,
+        "range": "[0.2-0.51]",
+        "reported_trait": [
+          "Type 2 diabetes (adjusted for BMI)"
+        ],
+        "risk_frequency": "0.014",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs1016378028"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1016378028-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/103248291/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/103248291"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs717388"
+          }
+        },
+        "accession_id": "GCST90245848",
+        "association_id": 103248291,
+        "beta": "0.0043 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0031,
+        "ci_upper": 0.0055,
+        "efo_traits": [
+          {
+            "efo_id": "OBA_VT0001253",
+            "efo_trait": "body height"
+          }
+        ],
+        "first_author": "Yengo L",
+        "locations": [
+          "6:113987626"
+        ],
+        "mapped_genes": [
+          "HDAC2",
+          "HDAC2-AS2"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-12,
+        "pubmed_id": "36224396",
+        "pvalue_description": "",
+        "pvalue_exponent": -12,
+        "pvalue_mantissa": 6,
+        "range": "[0.0031-0.0055]",
+        "reported_trait": [
+          "Height"
+        ],
+        "risk_frequency": "0.4202",
+        "snp_allele": [
+          {
+            "effect_allele": "G",
+            "rs_id": "rs717388"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs717388-G"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=HDAC2&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 3,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,497 @@
+# MACHINE-GENERATED source records — merged into evidence/sources/alphacognition.yaml
+# by pipelines/alphacognition/build_sources.py. Produced by fetch_gwas_catalog.py.
+# PMIDs were discovered in GWAS Catalog association records; titles/years/journals come
+# from PubMed ESummary. Records: 23
+- source_id: SRC:DB:gwas_catalog:2026-09-13
+  source_type: database_release
+  title: GWAS Catalog REST API v2 data release 2026-09-13
+  year: 2026
+  first_author: EMBL-EBI GWAS Catalog
+  container: GWAS Catalog
+  identifiers:
+    data_release_date: '2026-09-13'
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: gwas_catalog_api
+    endpoint: https://www.ebi.ac.uk/gwas/rest/api/v2/metadata
+  note: Release recorded by pipelines/alphacognition/fetch_gwas_catalog.py from /v2/metadata.
+- source_id: SRC:PMID:27225129
+  source_type: journal_article
+  title: Genome-wide association study identifies 74 loci associated with educational attainment
+  year: 2016
+  first_author: Okbay A
+  container: Nature
+  identifiers:
+    pmid: '27225129'
+    doi: 10.1038/nature17671
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST003676
+    gwas_catalog_initial_sample_size:
+    - "405,072 European ancestry individuals\r\n"
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:29274321
+  source_type: journal_article
+  title: Genome-wide association study of Alzheimer's disease endophenotypes at prediagnosis stages
+  year: 2018
+  first_author: Chung J
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '29274321'
+    doi: 10.1016/j.jalz.2017.11.006
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST007005
+    - GCST007006
+    gwas_catalog_initial_sample_size:
+    - 305 European ancestry cognitively normal individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:29326435
+  source_type: journal_article
+  title: A combined analysis of genetically correlated traits identifies 187 loci and a role for neurogenesis
+    and myelination in intelligence
+  year: 2019
+  first_author: Hill WD
+  container: Mol Psychiatry
+  identifiers:
+    pmid: '29326435'
+    doi: 10.1038/s41380-017-0001-5
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST005316
+    gwas_catalog_initial_sample_size:
+    - "120,934 British ancestry individuals, 127,548 individuals\r\n"
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:29844566
+  source_type: journal_article
+  title: Study of 300,486 individuals identifies 148 independent genetic loci influencing general cognitive
+    function
+  year: 2018
+  first_author: Davies G
+  container: Nat Commun
+  identifiers:
+    pmid: '29844566'
+    doi: 10.1038/s41467-018-04362-x
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST006268
+    - GCST006269
+    gwas_catalog_initial_sample_size:
+    - 330,069 European ancestry individuals
+    - up to 300,486 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:29942086
+  source_type: journal_article
+  title: Genome-wide association meta-analysis in 269,867 individuals identifies new genetic and functional
+    links to intelligence
+  year: 2018
+  first_author: Savage JE
+  container: Nat Genet
+  identifiers:
+    pmid: '29942086'
+    doi: 10.1038/s41588-018-0152-6
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST006250
+    gwas_catalog_initial_sample_size:
+    - 269,867 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:30038396
+  source_type: journal_article
+  title: Gene discovery and polygenic prediction from a genome-wide association study of educational attainment
+    in 1.1 million individuals
+  year: 2018
+  first_author: Lee JJ
+  container: Nat Genet
+  identifiers:
+    pmid: '30038396'
+    doi: 10.1038/s41588-018-0147-3
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST006442
+    - GCST006568
+    - GCST006569
+    - GCST006571
+    - GCST006573
+    - GCST006574
+    gwas_catalog_initial_sample_size:
+    - 1,311,438 European ancestry individuals
+    - 430,445 European ancestry individuals
+    - 564,698 European ancestry individuals
+    - 670,471 European ancestry individuals
+    - 811,539 European ancestry individuals
+    - up to 1,131,881 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:31374203
+  source_type: journal_article
+  title: Pleiotropic Meta-Analysis of Cognition, Education, and Schizophrenia Differentiates Roles of
+    Early Neurodevelopmental and Adult Synaptic Pathways
+  year: 2019
+  first_author: Lam M
+  container: Am J Hum Genet
+  identifiers:
+    pmid: '31374203'
+    doi: 10.1016/j.ajhg.2019.06.012
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST008595
+    gwas_catalog_initial_sample_size:
+    - 328,917 individuals with educational attainment measurements, 107,207 individuals with cognitive
+      ability measurements, 77,096 European ancestry schizophrenia cases, 43,456 European ancestry controls
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:31596458
+  source_type: journal_article
+  title: Genome-wide Association of Endophenotypes for Schizophrenia From the Consortium on the Genetics
+    of Schizophrenia (COGS) Study
+  year: 2019
+  first_author: Greenwood TA
+  container: JAMA Psychiatry
+  identifiers:
+    pmid: '31596458'
+    doi: 10.1001/jamapsychiatry.2019.2850
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST009307
+    gwas_catalog_initial_sample_size:
+    - 523 European ancestry schizophrenia cases, 100 Latino schizophrenia cases, 827 European ancestry
+      controls, 83 Latino controls
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:32573913
+  source_type: journal_article
+  title: Genome-wide association study of rate of cognitive decline in Alzheimer's disease patients identifies
+    novel genes and pathways
+  year: 2020
+  first_author: Sherva R
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '32573913'
+    doi: 10.1002/alz.12106
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST010567
+    gwas_catalog_initial_sample_size:
+    - 3,946 European ancestry cases
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:32895543
+  source_type: journal_article
+  title: A general dimension of genetic sharing across diverse cognitive traits inferred from molecular
+    data
+  year: 2021
+  first_author: de la Fuente J
+  container: Nat Hum Behav
+  identifiers:
+    pmid: '32895543'
+    doi: 10.1038/s41562-020-00936-2
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90011298
+    gwas_catalog_initial_sample_size:
+    - 171,304 British ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:34743297
+  source_type: journal_article
+  title: 'Pleiotropic predisposition to Alzheimer''s disease and educational attainment: insights from
+    the summary statistics analysis'
+  year: 2022
+  first_author: Kulminski AM
+  container: Geroscience
+  identifiers:
+    pmid: '34743297'
+    doi: 10.1007/s11357-021-00484-1
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90095190
+    gwas_catalog_initial_sample_size:
+    - (see Lambert 2013 and Okbay 2016)
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:35361970
+  source_type: journal_article
+  title: Polygenic prediction of educational attainment within and between families from genome-wide association
+    analyses in 3 million individuals
+  year: 2022
+  first_author: Okbay A
+  container: Nat Genet
+  identifiers:
+    pmid: '35361970'
+    doi: 10.1038/s41588-022-01016-z
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90105038
+    gwas_catalog_initial_sample_size:
+    - 3,037,499 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:35386118
+  source_type: journal_article
+  title: Genome-Wide Association Study of Alzheimer's Disease Brain Imaging Biomarkers and Neuropsychological
+    Phenotypes in the European Medical Information Framework for Alzheimer's Disease Multimodal Biomarker
+    Discovery Dataset
+  year: 2022
+  first_author: Homann J
+  container: Front Aging Neurosci
+  identifiers:
+    pmid: '35386118'
+    doi: 10.3389/fnagi.2022.840651
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90104689
+    gwas_catalog_initial_sample_size:
+    - 429 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:35764056
+  source_type: journal_article
+  title: Genetic Relationships between Attention-Deficit/Hyperactivity Disorder, Autism Spectrum Disorder,
+    and Intelligence
+  year: 2022
+  first_author: Rao S
+  container: Neuropsychobiology
+  identifiers:
+    pmid: '35764056'
+    doi: 10.1159/000525411
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90134330
+    gwas_catalog_initial_sample_size:
+    - 20,183 European ancestry ADHD cases, 18,381 European ancestry ASD cases, up to 63,160 European ancestry
+      controls, 269,867 European ancestry individuals with intelligence measurements
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:36378351
+  source_type: journal_article
+  title: A General Cognitive Ability Factor for the UK Biobank
+  year: 2023
+  first_author: Williams CM
+  container: Behav Genet
+  identifiers:
+    pmid: '36378351'
+    doi: 10.1007/s10519-022-10127-6
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90264174
+    gwas_catalog_initial_sample_size:
+    - 223,731 British ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:36973338
+  source_type: journal_article
+  title: Genome-wide association study of population-standardised cognitive performance phenotypes in
+    a rural South African community
+  year: 2023
+  first_author: Soo CC
+  container: Commun Biol
+  identifiers:
+    pmid: '36973338'
+    doi: 10.1038/s42003-023-04636-1
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90246330
+    gwas_catalog_initial_sample_size:
+    - 1,887 Sub-Saharan African ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:37089073
+  source_type: journal_article
+  title: Meta-analysis of age-related cognitive decline reveals a novel locus for the attention domain
+    and implicates a COVID-19-related gene for global cognitive function
+  year: 2023
+  first_author: Acharya V
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '37089073'
+    doi: 10.1002/alz.13064
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90270904
+    gwas_catalog_initial_sample_size:
+    - 2,995 European ancestry individuals aged 65 years or older
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:37365406
+  source_type: journal_article
+  title: Multivariate genetic analysis of personality and cognitive traits reveals abundant pleiotropy
+  year: 2023
+  first_author: Hindley G
+  container: Nat Hum Behav
+  identifiers:
+    pmid: '37365406'
+    doi: 10.1038/s41562-023-01630-9
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90270074
+    gwas_catalog_initial_sample_size:
+    - 337,125 British ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:37984853
+  source_type: journal_article
+  title: Sex-specific genetic architecture of late-life memory performance
+  year: 2024
+  first_author: Eissman JM
+  container: Alzheimers Dement
+  identifiers:
+    pmid: '37984853'
+    doi: 10.1002/alz.13507
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90448446
+    - GCST90448470
+    gwas_catalog_initial_sample_size:
+    - 4,478 European ancestry males, 373 African ancestry males
+    - 8,465 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:41413636
+  source_type: journal_article
+  title: Genome-wide association study identifies novel variants in olfactory, vitamin A, vitamin B, and
+    cadherin pathways associated with learning and memory
+  year: 2025
+  first_author: Hopkins LN
+  container: Sci Rep
+  identifiers:
+    pmid: '41413636'
+    doi: 10.1038/s41598-025-32828-8
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90448143
+    - GCST90448144
+    gwas_catalog_initial_sample_size:
+    - 597 European ancestry, Asian ancestry, NR ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:42062297
+  source_type: journal_article
+  title: Crystallized and fluid cognitive abilities have different genetic associations with neuropsychiatric
+    disorders
+  year: 2026
+  first_author: Londono-Correa D
+  container: Nat Commun
+  identifiers:
+    pmid: '42062297'
+    doi: 10.1038/s41467-026-72477-7
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90827739
+    - GCST90860823
+    gwas_catalog_initial_sample_size:
+    - 438,582 European ancestry individuals
+    - 597,090 European ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.
+- source_id: SRC:PMID:42092107
+  source_type: journal_article
+  title: Shared genetic architecture between the topology of brain white matter structural connectome
+    and fluid intelligence
+  year: 2026
+  first_author: Dong X
+  container: Commun Biol
+  identifiers:
+    pmid: '42092107'
+    doi: 10.1038/s42003-026-10131-0
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: gwas_catalog_api
+    gwas_catalog_accessions:
+    - GCST90832687
+    gwas_catalog_initial_sample_size:
+    - 182,798 British ancestry individuals
+  note: Discovered as the publication behind a GWAS Catalog study; title/year/journal come from PubMed
+    ESummary, not from the catalogue and not from the agent.

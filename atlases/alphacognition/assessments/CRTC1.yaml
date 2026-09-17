@@ -1,0 +1,189 @@
+# Facet assessment — generated file.
+# The four genetics facets are produced deterministically by
+# pipelines/alphacognition/build_assessments.py from the derived tables under
+# data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
+# present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
+# Re-run the script rather than editing this file.
+target_id: TGT:CRTC1
+schema_version: 0.1.0
+assessed_by: agent:alphacognition
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: human_genetic_association
+  assessment_status: assessed
+  level: 3
+  rationale: 1 catalogued genome-wide association record(s) on a g_factor or fluid_reasoning trait (mathematical
+    ability) across 1 publication(s); one human genetic result with a directly relevant endpoint
+  claim_refs:
+  - CLM:alphacognition:gwas.CRTC1:002
+  - CLM:alphacognition:l2g.CRTC1:001
+  - CLM:alphacognition:l2g.CRTC1:002
+  counter_level: 0
+  counter_rationale: 'No study reporting a null or opposite-direction association for this gene on a panel
+    trait was found by this sweep. That is a property of the sweep, not of the literature: the GWAS Catalog
+    records associations that passed a significance threshold and does not record non-associations, so
+    absence of a catalogued negative is uninformative and is recorded as 0 for that reason.'
+  counter_claim_refs: []
+  limiting_factor: 'level 4 is unreachable from this evidence: the catalogue''s `beta` field is heterogeneous
+    free text and effect alleles are often reported as ''?'', so direction consistency across studies
+    cannot be established. cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither
+    the association nor any locus-to-gene assignment built on it is established as transportable.'
+- facet: causal_gene_attribution
+  assessment_status: assessed
+  level: 2
+  rationale: Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the candidates
+    at 1 fine-mapped credible set(s) for cognitive-panel traits, with 0 competing candidate gene(s) at
+    the same loci (); no molecular-QTL colocalisation for this gene was found at those loci
+  claim_refs:
+  - CLM:alphacognition:l2g.CRTC1:001
+  - CLM:alphacognition:gwas.CRTC1:002
+  counter_level: 0
+  counter_rationale: no competing gene assignment was found, because no fine-mapped cognitive-trait credible
+    set implicates this gene at all
+  counter_claim_refs: []
+  limiting_factor: attribution is a published statistical model's output with competing candidates and
+    no QTL corroboration; not a demonstrated gene-level effect
+- facet: human_phenotype_specificity
+  assessment_status: assessed
+  level: 2
+  rationale: 1 cognitive-panel association(s) (1 directly relevant, 0 single-domain) alongside 147 association(s)
+    with 58 distinct trait(s) outside the panel; cognition-specificity is qualified by that pleiotropy
+  claim_refs:
+  - CLM:alphacognition:gwas.CRTC1:001
+  - CLM:alphacognition:gwas.CRTC1:002
+  counter_level: 0
+  counter_rationale: No citable contradicting claim exists in this atlas for this facet. The observation
+    that would have argued against it is recorded in limiting_factor instead, because a counter-grade
+    may not rest on evidence no record identifies.
+  counter_claim_refs: []
+  limiting_factor: 'specificity is assessed from positional annotation, so ''this gene is pleiotropic''
+    and ''this locus is gene-dense'' are not separated. Mendelian randomisation and pan-phenome gene-level
+    testing were not run in v0.1. Uncited observation that would argue against this facet: the same positional
+    locus carries 147 catalogued association(s) with 58 distinct non-cognitive trait(s), which argues
+    against reading the cognitive hit as specific to this gene''s cognitive function'
+- facet: adult_expression_and_timing
+  assessment_status: assessed
+  level: 2
+  rationale: detected in all 13 sampled adult human brain regions (GTEx v8, adult post-mortem donors);
+    direct human adult tissue measurement, but bulk-tissue resolution and no evidence that the gene's
+    cognitive relevance extends into adulthood
+  claim_refs:
+  - CLM:alphacognition:expr.CRTC1:001
+  counter_level: 0
+  counter_rationale: 'no evidence that this gene''s action is confined to development was retrieved. Developmental-restriction
+    evidence was NOT systematically searched for this target: no human developmental transcriptome (BrainSpan/PsychENCODE)
+    was ingested in v0.1, so this 0 means ''not found by the sweep that was run''.'
+  counter_claim_refs: []
+  limiting_factor: adult human brain CELL-TYPE resolution is unavailable in this release and is deferred
+    to docs/TASK_DAG.yaml Q003; developmental timing was not ingested from any atlas. Level 4 is therefore
+    unreachable for every target in v0.1.
+- facet: mechanistic_causal_perturbation
+  assessment_status: assessed
+  level: 2
+  rationale: Causal adult perturbations in two directions of context (healthy enhancement and disease
+    rescue) plus an in vitro pathway mechanism, all rodent, each from a single group.
+  claim_refs:
+  - CLM:alphacognition:CRTC1:001
+  - CLM:alphacognition:CRTC1:002
+  - CLM:alphacognition:CRTC1:003
+  counter_level: 1
+  counter_rationale: The enhancement study reports that CREB overexpression produced strikingly similar
+    effects, so the retrieved evidence does not establish that CRTC1 is the control point rather than
+    an interchangeable entry into the CREB programme.
+  counter_claim_refs:
+  - CLM:alphacognition:CRTC1:001
+  limiting_factor: no independent replication of any CRTC1 cognitive result was retrieved
+- facet: adult_onset_perturbation
+  assessment_status: assessed
+  level: 2
+  rationale: Both behavioural results use viral delivery into adult mouse hippocampus, one around training
+    in intact animals and one as gene therapy in an adult degeneration model. This is the cleanest adult-onset
+    evidence in this atlas outside CHRM1.
+  claim_refs:
+  - CLM:alphacognition:CRTC1:001
+  - CLM:alphacognition:CRTC1:002
+  counter_level: 0
+  counter_rationale: searched; no evidence was found that CRTC1's cognitive role requires a developmental
+    window
+  counter_claim_refs: []
+  limiting_factor: rodent only; no human adult-onset evidence of any kind
+- facet: above_baseline_enhancement
+  assessment_status: assessed
+  level: 2
+  rationale: Memory strength increased above an intact healthy-wildtype baseline, and the study explicitly
+    tested and reported that memory quality (context specificity) was not degraded, which is the control
+    that most enhancement claims omit.
+  claim_refs:
+  - CLM:alphacognition:CRTC1:001
+  counter_level: 0
+  counter_rationale: searched; no study reporting failure to exceed a healthy baseline was found
+  counter_claim_refs: []
+  limiting_factor: single unreplicated rodent study on one fear-conditioning task
+- facet: transfer_breadth
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: only context fear conditioning was tested; no second domain, no transfer measure'
+  claim_refs:
+  - CLM:alphacognition:gap.CRTC1:002
+  counter_level: 1
+  counter_rationale: The enhancement was reported as context-specific and did not generalise to a non-trained
+    context. Specificity is desirable for memory quality and is simultaneously weak evidence AGAINST breadth
+    of transfer.
+  counter_claim_refs:
+  - CLM:alphacognition:CRTC1:001
+  limiting_factor: one task, one paradigm
+  search_basis: 'Searched: the endpoint lists of every study retrieved for this target, for a second cognitive
+    domain or an explicit transfer measure. A hit would have been improvement on two or more distinct
+    cognitive domains, or on an untrained real-world endpoint.'
+- facet: dose_response_knowledge
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: no dose-response or expression-level-response characterisation was retrieved for
+    CRTC1'
+  claim_refs:
+  - CLM:alphacognition:gap.CRTC1:002
+  counter_level: 0
+  counter_rationale: no evidence of non-monotonicity was retrieved either
+  counter_claim_refs: []
+  limiting_factor: viral overexpression magnitude is uncontrolled and unreported
+  search_basis: 'Searched: the retrieved studies for a dose series, an exposure-response relation or an
+    expression-level-response relation with a cognitive readout. A hit would have been three or more exposure
+    levels with a cognitive endpoint, or an explicitly characterised response shape.'
+- facet: human_intervention_evidence
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: no human interventional study of CRTC1 for any endpoint was retrieved'
+  claim_refs:
+  - CLM:alphacognition:gap.CRTC1:002
+  counter_level: 0
+  counter_rationale: no human study exists to contradict it either; this is a genuine absence of evidence,
+    not negative evidence
+  counter_claim_refs: []
+  limiting_factor: a transcriptional coactivator is not an obvious small-molecule target; no probe or
+    candidate was retrieved
+  search_basis: 'Searched: PubMed for human interventional studies of this target with a cognitive endpoint,
+    and ClinicalTrials.gov API v2 for registered trials. A hit would have been a randomised or open-label
+    human study reporting a cognitive endpoint. A trial that measured no cognitive endpoint is a coverage
+    gap, not a hit and not a miss (R5).'
+facets_not_owned_by_this_agent: []
+notes: 'Evidence basis for the four genetics facets. Genes covered by this target: CRTC1. GWAS Catalog
+  release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
+  gtex_v8. Association records for this target: 2 total, of which 1 on cognitive-panel traits (1 on a
+  g_factor/fluid_reasoning trait, 0 single-domain) and 1 on educational-attainment or literacy traits,
+  across 2 distinct publications (1 for the cognitive associations). Cognitive traits hit: mathematical
+  ability. Fine-mapped credible sets in which Open Targets'' L2G model ranks this gene: 2 in total, 1
+  on cognitive-panel traits, with 0 molecular-QTL colocalisations for this gene at those loci and 0 competing
+  candidate gene(s) there. Unfiltered GWAS Catalog sweep for this gene symbol: 149 catalogued association(s)
+  in total, 147 of them with traits outside the cognitive/educational panel, spanning 58 distinct such
+  trait(s). GTEx reports 13 brain region(s); detected above zero median in all of them: True. Adult brain
+  cell-type resolution was not available in this release and is deferred to docs/TASK_DAG.yaml Q003. The
+  level rules applied here are in pipelines/alphacognition/build_assessments.py; lead-atlas facets for
+  this target are hand-written in atlases/alphacognition/lead_atlas_facets.yaml.'
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  method: derived_from_claims
+  pipeline: pipelines/alphacognition/build_assessments.py
+  run_id: sprint1-alphacognition-facets-01

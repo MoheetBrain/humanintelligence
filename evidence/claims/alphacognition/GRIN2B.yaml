@@ -1,0 +1,520 @@
+# Hand-curated claims — GRIN2B (lead atlas: alphacognition, dossier_depth: deep)
+#
+# The organising tension in this file, and the reason GRIN2B is in the seed list at all:
+# rodent OVEREXPRESSION of the Grin2b product enhances learning above wild-type baseline,
+# while human PERTURBATION of GRIN2B causes a neurodevelopmental disorder with intellectual
+# disability. Those are different species, different life stages, different directions of
+# change and different endpoints. Nothing in this file licenses the inference that
+# increasing GRIN2B function in an adult human would increase intelligence.
+# schema_version: 0.1.0 (carried per claim below; contract §2 requires this file to be a YAML list)
+
+- claim_id: CLM:alphacognition:GRIN2B:001
+  schema_version: 0.1.0
+  statement: Transgenic forebrain overexpression of the NMDA receptor NR2B subunit in mice facilitated
+    synaptic potentiation and produced better performance than wild-type littermates across several learning
+    and memory tasks, which the authors interpreted as NR2B gating an age-dependent threshold for plasticity.
+  subject: GENE:GRIN2B
+  predicate: MODULATES
+  object: PHENO:animal_recognition_memory
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_recognition_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - transgenic overexpression is constitutive from development, so the adult phenotype may be a developmental
+      consequence rather than an adult-modifiable one
+    - forebrain-wide overexpression is not a physiological perturbation and has no dose analogue in a
+      human intervention
+    - improved task performance can reflect changes in motivation, exploration or sensory processing rather
+      than memory
+  evidence:
+  - source_id: SRC:PMID:10485705
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: transgenic mice with forebrain-specific NR2B overexpression and wild-type littermates
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: multiple behavioural learning and memory tasks; synaptic potentiation at 10-100 Hz stimulation
+    endpoint_category: animal_recognition_memory
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_independent
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: The abstract's own closing sentence proposes that genetic enhancement of mental and cognitive
+      attributes in mammals is feasible. That is the authors' inference from a mouse experiment, not a
+      human result, and it is recorded here as an authors' interpretation rather than as evidence.
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: landmark rodent causal experiment with an independent later replication of the same direction,
+      but constitutive transgenic perturbation in one species and an animal task endpoint
+    calibration_status: uncalibrated_subjective
+  risks:
+  - this is the single most over-cited result in the genetic-enhancement literature; the red team should
+    check citation_dependence on it
+  - the enhancement was measured against a wild-type rodent baseline in a laboratory environment, which
+    is not a supra-normal human baseline
+  confounders:
+  - constitutive developmental overexpression
+  - transgene insertion site effects
+  - background strain
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:GRIN2B:002
+  schema_version: 0.1.0
+  statement: An independent group reported that forebrain NR2B overexpression in transgenic mice enhanced
+    long-term potentiation at thalamus-lateral amygdala synapses, increased the amplitude and decay time
+    of NMDA-receptor-mediated currents, and improved acquisition of auditory cued fear memory relative
+    to wild-type littermates, while leaving long-term depression unchanged.
+  subject: GENE:GRIN2B
+  predicate: MODULATES
+  object: SV:plasticity.ltp_magnitude
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - constitutive overexpression again; the adult measurement does not isolate an adult-modifiable mechanism
+    - enhanced fear acquisition is a valenced, amygdala-dependent learning measure and is not a general
+      cognitive ability measure
+  evidence:
+  - source_id: SRC:PMID:26118841
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: transgenic mice with forebrain-specific NR2B overexpression and wild-type littermates
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: LTP and LTD at thalamus-lateral amygdala synapses; AMPA- and NMDA-receptor-mediated postsynaptic
+      currents; auditory cued fear memory acquisition
+    endpoint_category: synaptic_plasticity_ltp_ltd
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_independent
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: independent replication of the direction of CLM:alphacognition:GRIN2B:001 with an electrophysiological
+      mechanism, still rodent and still constitutive
+    calibration_status: uncalibrated_subjective
+  risks:
+  - enhanced fear learning is a plausible liability as well as a benefit; stronger aversive learning is
+    not obviously desirable
+  confounders:
+  - constitutive developmental overexpression
+  dependencies:
+  - CLM:alphacognition:GRIN2B:001
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:GRIN2B:003
+  schema_version: 0.1.0
+  statement: Disrupting the interaction between NR2B and Cdk5 with a small interfering peptide increased
+    NR2B surface levels, facilitated synaptic transmission and improved memory formation in vivo, which
+    the authors present as a druggable route to potentiating NMDA receptor function without overexpressing
+    the subunit.
+  subject: GENE:GRIN2B
+  predicate: MODULATES
+  object: PHENO:animal_recognition_memory
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    - SPECIES:NCBITaxon:10116
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_recognition_memory
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the perturbation is of a Cdk5-dependent regulatory step, not of GRIN2B itself; Cdk5 has many other
+      substrates and the behavioural effect need not be NR2B-mediated
+    - an interfering peptide delivered in vivo has unquantified brain exposure and off-target interactions
+  evidence:
+  - source_id: SRC:PMID:24607229
+    design: pharmacological_perturbation
+    species: SPECIES:NCBITaxon:10090
+    population: mice and rats; primary neuronal cultures and in vivo behavioural testing
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: NR2B serine 1116 phosphorylation, NR2B cell-surface expression, synaptic transmission, memory
+      formation in vivo
+    endpoint_category: animal_recognition_memory
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: single rodent study; the intervention is adult-onset, which is what makes it interesting,
+      but the causal chain runs through Cdk5 rather than through GRIN2B directly
+    calibration_status: uncalibrated_subjective
+  risks:
+  - potentiating NMDA receptor function carries excitotoxicity and seizure liability that this study does
+    not address
+  confounders:
+  - Cdk5 substrate promiscuity
+  - peptide delivery
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:GRIN2B:004
+  schema_version: 0.1.0
+  statement: De novo GRIN2B variants classified as pathogenic or likely pathogenic in 86 individuals were
+    associated with neurodevelopmental disorder presenting with intellectual disability, epilepsy, autism,
+    hypotonia, movement disorder, cortical visual impairment and, in six individuals, a malformation of
+    cortical development; functional testing of the variants revealed both gain-of-function and loss-of-function
+    mechanisms.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:clinical_cognitive_composite
+  claim_type: association
+  direction: decreases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: prenatal
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: monogenic_disorder
+    locus_to_gene_resolved: 'yes'
+    alternative_explanations:
+    - ascertainment is through clinically affected individuals, so the phenotypic range of GRIN2B variation
+      in the general population is unknown from this design
+    - variant-level functional consequences were heterogeneous in direction, so 'GRIN2B perturbation'
+      is not a single exposure
+  evidence:
+  - source_id: SRC:PMID:28377535
+    design: clinical_case_series
+    species: SPECIES:NCBITaxon:9606
+    population: 86 individuals with de novo GRIN2B variants (48 from diagnostic/research cohorts plus
+      43 from the literature) classified as pathogenic or likely pathogenic
+    sample_size:
+      reported_as: de novo variants in 86 patients were classified as pathogenic/likely pathogenic
+      value: 86
+      unit: individuals
+    endpoint: clinical neurodevelopmental phenotype including intellectual disability and epilepsy; in
+      vitro functional consequence of each variant; retained sensitivity to memantine
+    endpoint_category: clinical_cognitive_composite
+    endpoint_measured: measured
+    effect_direction: decrease
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_independent
+    evidence_role: contradicts
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: the clinical cognitive phenotype WAS measured; the memantine treatment response was NOT — the
+      source states an objectifiable beneficial response remains to be demonstrated. That part of the
+      record is an evidence GAP about intervention, not evidence against it, and contributes no counter_level
+      (R5) — The paper reports retained in vitro sensitivity of variant receptors to memantine (CPD:CHEMBL807)
+      and states explicitly that an objectifiable beneficial treatment response in patients still remains
+      to be demonstrated. That absence is recorded here so that the memantine observation is never read
+      as clinical efficacy.
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: disease_model_only
+    supra_normal: contradicted
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: large, gene-resolved human genetic series with functional validation; a directly relevant
+      human cognitive endpoint, though a clinical one and developmental in onset
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'this is the direction-reversing evidence for GRIN2B: in humans, perturbing this gene during development
+    reduces cognitive ability, and both gain- and loss-of-function do so'
+  - a gene whose disruption causes a developmental encephalopathy is a poor candidate for adult enhancement
+    without a mechanism for restricting the perturbation in time and magnitude
+  confounders:
+  - clinical ascertainment
+  - variant heterogeneity
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:GRIN2B:005
+  schema_version: 0.1.0
+  statement: In a population-based Swedish autism cohort, GRIN2B was one of six genes in which three or
+    more individuals carried potentially damaging single-nucleotide variants, and carriers of such variants
+    across the gene set were more likely than non-carriers to have intellectual disability and epilepsy.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:clinical_cognitive_composite
+  claim_type: association
+  direction: decreases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: postnatal_developmental
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: rare_variant_burden
+    locus_to_gene_resolved: 'yes'
+    alternative_explanations:
+    - the intellectual-disability association is reported for the pooled gene set, not for GRIN2B alone,
+      so the gene-specific effect is not isolated by this design
+    - phenotypes were defined from medical registers rather than from direct cognitive testing
+    - de novo status was not available, so some variants may be inherited and non-penetrant
+  evidence:
+  - source_id: SRC:PMID:34615535
+    design: rare_variant_association
+    species: SPECIES:NCBITaxon:9606
+    population: population-based Swedish autism cohort; 808 individuals with whole-exome sequencing and
+      996 with copy-number calls
+    sample_size:
+      reported_as: Of 808 individuals assessed by sequencing, 69 (9%) had pdSNV in the 102 ASC genes
+      value: 808
+      unit: individuals
+    endpoint: register-defined intellectual disability, epilepsy, scholastic skill disorders and congenital
+      anomalies in carriers of potentially damaging variants
+    endpoint_category: clinical_cognitive_composite
+    endpoint_measured: measured
+    effect_direction: decrease
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_same_group
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: register-derived intellectual disability and epilepsy status, not direct cognitive testing
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: disease_model_only
+    supra_normal: contradicted
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: human, gene-resolved and epidemiologically sampled, but the cognitive association is reported
+      for a pooled gene set and the endpoint is register-derived
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'single-cohort dependence: one Swedish register-linked cohort'
+  confounders:
+  - register-based phenotyping
+  - autism-only ascertainment
+  dependencies:
+  - CLM:alphacognition:GRIN2B:004
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:GRIN2B:006
+  schema_version: 0.1.0
+  statement: NMDA receptor subunit composition in rodent cortex changes with postnatal age, with NR2B
+    slowly decreasing and NR2A gradually increasing, a switch the source describes as marking the transition
+    from immature to adult neural processing; the study's own measurements found that repeated postnatal
+    sevoflurane exposure lastingly raised NR2B and lowered NR2A in rat prefrontal cortex and impaired
+    working memory.
+  subject: GENE:GRIN2B
+  predicate: EXPRESSED_IN
+  object: REGION:prefrontal_cortex
+  claim_type: expression
+  direction: decreases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10116
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions:
+    - REGION:prefrontal_cortex
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the developmental switch statement is background in the source rather than its own primary finding;
+      the source's own experiment is about anaesthetic exposure
+    - rat protein-level measurements in two brain regions at two ages do not establish the human developmental
+      trajectory
+  evidence:
+  - source_id: SRC:PMID:27025552
+    design: expression_atlas
+    species: SPECIES:NCBITaxon:10116
+    population: six-day-old male Sprague Dawley rats, control and sevoflurane groups, assessed at end
+      of exposure and at postnatal day 21
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: membrane protein expression of NR1, NR2A and NR2B in prefrontal cortex and hippocampus;
+      Y maze working memory at postnatal day 28
+    endpoint_category: molecular_readout
+    endpoint_measured: measured
+    effect_direction: mixed
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: Recorded deliberately as weak, indirect and non-human. It is the only developmental timing evidence
+      retrieved for GRIN2B in v0.1; a human developmental transcriptome (BrainSpan / PsychENCODE) was
+      NOT ingested, and that gap is stated in atlases/alphacognition/assessments/GRIN2B.yaml rather than
+      filled by inference.
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'indirect: a background statement plus rodent protein measurements from a study designed
+      to answer a different question'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - a developmental expression switch is the mechanism by which GRIN2B's cognitive role could be confined
+    to development; this claim is too weak to settle that, and says so
+  confounders:
+  - anaesthetic exposure in the study design
+  - species
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01

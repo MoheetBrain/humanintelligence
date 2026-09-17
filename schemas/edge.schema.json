@@ -1,0 +1,221 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/edge",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "A claim_derived edge needs at least one claim id (rule V17).",
+      "if": {
+        "properties": {
+          "provenance_class": {
+            "const": "claim_derived"
+          }
+        },
+        "required": [
+          "provenance_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claim_refs": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "claim_refs"
+        ]
+      }
+    },
+    {
+      "$comment": "An ontology_axiom edge needs its definitional basis and no claims.",
+      "if": {
+        "properties": {
+          "provenance_class": {
+            "const": "ontology_axiom"
+          }
+        },
+        "required": [
+          "provenance_class"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claim_refs": {
+            "maxItems": 0
+          }
+        },
+        "required": [
+          "basis"
+        ]
+      }
+    },
+    {
+      "$comment": "A reference_data edge names the release it came from.",
+      "if": {
+        "properties": {
+          "provenance_class": {
+            "const": "reference_data"
+          }
+        },
+        "required": [
+          "provenance_class"
+        ]
+      },
+      "then": {
+        "required": [
+          "reference_source"
+        ]
+      }
+    }
+  ],
+  "description": "One edge in the compiled graph, and the shape of an entry in ontology/definitional_edges.yaml. Every edge carries a `provenance_class` (rule V17); a `claim_derived` edge carries at least one resolvable claim id, a `reference_data` edge names the database release it came from, and an `ontology_axiom` edge carries the definitional argument in `basis` and may only come from ontology/definitional_edges.yaml. BINDING IS NEVER EFFICACY: an edge whose relation asserts an effect, or whose object is a DesiredEffect, needs a claim of an efficacy-licensing type (rule V16).",
+  "examples": [
+    {
+      "basis": "the domain is the first segment of the identifier",
+      "defined_by": "agent:ontology",
+      "object": "SVDOM:cognition",
+      "predicate": "MEMBER_OF_STATE_DOMAIN",
+      "provenance_class": "ontology_axiom",
+      "subject": "SV:cognition.placeholder_variable"
+    }
+  ],
+  "properties": {
+    "basis": {
+      "description": "For ontology_axiom edges: the definitional argument, attackable.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "claim_refs": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "defined_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "direction": {
+      "$comment": "vocabulary: direction",
+      "description": "Sign, when the supporting claim asserts one.",
+      "enum": [
+        "increases",
+        "decreases",
+        "no_change",
+        "bidirectional",
+        "inverted_u",
+        "u_shaped",
+        "state_dependent",
+        "unclear"
+      ],
+      "type": "string"
+    },
+    "layer": {
+      "$comment": "ontology/nodes.yaml: layers",
+      "enum": [
+        "evidence",
+        "biological",
+        "intervention"
+      ],
+      "type": "string"
+    },
+    "object": {
+      "description": "Object node id.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "predicate": {
+      "$comment": "ontology/edges.yaml: relation names",
+      "description": "Relation name; the triple must be legal (rule V3).",
+      "enum": [
+        "ABOUT",
+        "AGONISES",
+        "ANTAGONISES",
+        "ASSOCIATED_WITH",
+        "AUDITS",
+        "CHANGES_STATE",
+        "CONSERVED_ACROSS_SPECIES",
+        "CONSTRAINS",
+        "CONTRADICTS",
+        "DECREASES_RISK",
+        "DIFFERS_BETWEEN_SPECIES",
+        "DOWNREGULATES",
+        "ENCODES",
+        "EXPRESSED_IN",
+        "FAILED_TO_REPLICATE_BY",
+        "HAS_MECHANISM",
+        "IMPLEMENTS",
+        "INCREASES_RISK",
+        "INHIBITS",
+        "LOCATED_IN",
+        "MAPS_TO_GENE",
+        "MEASURED_IN",
+        "MEMBER_OF_STATE_DOMAIN",
+        "MODULATES",
+        "NEGATIVELY_MODULATES",
+        "NEGATIVELY_REGULATES",
+        "NO_DETECTED_EFFECT_ON",
+        "ORTHOLOGOUS_TO",
+        "PARTICIPATES_IN",
+        "PART_OF",
+        "POSITIVELY_REGULATES",
+        "POTENTIATES",
+        "PREDICTS",
+        "QUALIFIES",
+        "REPLICATED_BY",
+        "REPORTS",
+        "REPRESENTS",
+        "SUPPORTS",
+        "SUPPORTS_PRIMITIVE",
+        "TARGETS",
+        "TRANSCRIBED_AS",
+        "UPREGULATES"
+      ],
+      "type": "string"
+    },
+    "provenance_class": {
+      "$comment": "vocabulary: provenance_class",
+      "description": "Why this edge exists (rule V17).",
+      "enum": [
+        "claim_derived",
+        "reference_data",
+        "tool_mediated",
+        "ontology_axiom"
+      ],
+      "type": "string"
+    },
+    "reference_source": {
+      "description": "For reference_data edges: the pinned DatabaseRelease or dataset.",
+      "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+      "type": "string"
+    },
+    "subject": {
+      "description": "Subject node id.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "subject",
+    "predicate",
+    "object",
+    "provenance_class"
+  ],
+  "title": "Compiled graph edge",
+  "type": "object"
+}

@@ -1,0 +1,487 @@
+# MACHINE-GENERATED source records — merged into evidence/sources/alphacognition.yaml
+# by pipelines/alphacognition/build_sources.py. Produced by fetch_opentargets_genetics.py.
+# Records: 21
+- source_id: SRC:DB:opentargets:26.06
+  source_type: database_release
+  title: Open Targets Platform data release 26.06 — target annotations (tractability buckets, chemical
+    probes, safety liabilities).
+  year: 2026
+  first_author: Open Targets
+  container: Open Targets Platform
+  identifiers:
+    data_version: '26.06'
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: opentargets_api
+    endpoint: https://api.platform.opentargets.org/api/v4/graphql
+  note: Data version read from the GraphQL meta.dataVersion block on every response by pipelines/alphacognition/fetch_opentargets_genetics.py.
+    Title string adopted verbatim from agent:integration's registration of the same release so the identifier
+    does not diverge (rule V4); this atlas used the genetics endpoints (studies, credibleSets, l2GPredictions,
+    colocalisation, baselineExpression), not the target-annotation ones.
+- source_id: SRC:PMID:27225129
+  source_type: journal_article
+  title: Genome-wide association study identifies 74 loci associated with educational attainment
+  year: 2016
+  first_author: Okbay A
+  container: Nature
+  identifiers:
+    pmid: '27225129'
+    doi: 10.1038/nature17671
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST003676
+    - GCST003677
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:29186694
+  source_type: journal_article
+  title: Large-Scale Cognitive GWAS Meta-Analysis Reveals Tissue-Specific Neural Expression and Potential
+    Nootropic Drug Targets
+  year: 2017
+  first_author: Lam M
+  container: Cell Rep
+  identifiers:
+    pmid: '29186694'
+    doi: 10.1016/j.celrep.2017.11.028
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST005141
+    - GCST005142
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:29326435
+  source_type: journal_article
+  title: A combined analysis of genetically correlated traits identifies 187 loci and a role for neurogenesis
+    and myelination in intelligence
+  year: 2019
+  first_author: Hill WD
+  container: Mol Psychiatry
+  identifiers:
+    pmid: '29326435'
+    doi: 10.1038/s41380-017-0001-5
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST005316
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:29892013
+  source_type: journal_article
+  title: Mixed-model association for biobank-scale datasets
+  year: 2018
+  first_author: Loh PR
+  container: Nat Genet
+  identifiers:
+    pmid: '29892013'
+    doi: 10.1038/s41588-018-0144-6
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90029012
+    - GCST90029013
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:29942086
+  source_type: journal_article
+  title: Genome-wide association meta-analysis in 269,867 individuals identifies new genetic and functional
+    links to intelligence
+  year: 2018
+  first_author: Savage JE
+  container: Nat Genet
+  identifiers:
+    pmid: '29942086'
+    doi: 10.1038/s41588-018-0152-6
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST006250
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:30038396
+  source_type: journal_article
+  title: Gene discovery and polygenic prediction from a genome-wide association study of educational attainment
+    in 1.1 million individuals
+  year: 2018
+  first_author: Lee JJ
+  container: Nat Genet
+  identifiers:
+    pmid: '30038396'
+    doi: 10.1038/s41588-018-0147-3
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST006442
+    - GCST006568
+    - GCST006569
+    - GCST006570
+    - GCST006571
+    - GCST006572
+    - GCST006573
+    - GCST006574
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:31374203
+  source_type: journal_article
+  title: Pleiotropic Meta-Analysis of Cognition, Education, and Schizophrenia Differentiates Roles of
+    Early Neurodevelopmental and Adult Synaptic Pathways
+  year: 2019
+  first_author: Lam M
+  container: Am J Hum Genet
+  identifiers:
+    pmid: '31374203'
+    doi: 10.1016/j.ajhg.2019.06.012
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST008595
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:33414549
+  source_type: journal_article
+  title: Investigating the genetic architecture of noncognitive skills using GWAS-by-subtraction
+  year: 2021
+  first_author: Demange PA
+  container: Nat Genet
+  identifiers:
+    pmid: '33414549'
+    doi: 10.1038/s41588-020-00754-2
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90011874
+    - GCST90011875
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:34737426
+  source_type: journal_article
+  title: A generalized linear mixed model association tool for biobank-scale data
+  year: 2021
+  first_author: Jiang L
+  container: Nat Genet
+  identifiers:
+    pmid: '34737426'
+    doi: 10.1038/s41588-021-00954-4
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90042727
+    - GCST90043989
+    - GCST90044291
+    - GCST90044292
+    - GCST90044293
+    - GCST90044294
+    - GCST90044295
+    - GCST90044296
+    - GCST90044297
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:34855049
+  source_type: journal_article
+  title: 'Genetic Risk for Smoking: Disentangling Interplay Between Genes and Socioeconomic Status'
+  year: 2022
+  first_author: Pasman JA
+  container: Behav Genet
+  identifiers:
+    pmid: '34855049'
+    doi: 10.1007/s10519-021-10094-4
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90100570
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:35361970
+  source_type: journal_article
+  title: Polygenic prediction of educational attainment within and between families from genome-wide association
+    analyses in 3 million individuals
+  year: 2022
+  first_author: Okbay A
+  container: Nat Genet
+  identifiers:
+    pmid: '35361970'
+    doi: 10.1038/s41588-022-01016-z
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90105038
+    - GCST90105039
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:35764056
+  source_type: journal_article
+  title: Genetic Relationships between Attention-Deficit/Hyperactivity Disorder, Autism Spectrum Disorder,
+    and Intelligence
+  year: 2022
+  first_author: Rao S
+  container: Neuropsychobiology
+  identifiers:
+    pmid: '35764056'
+    doi: 10.1159/000525411
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90134330
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:36150907
+  source_type: journal_article
+  title: Genome-wide Association Study Shows That Executive Functioning Is Influenced by GABAergic Processes
+    and Is a Neurocognitive Genetic Correlate of Psychiatric Disorders
+  year: 2023
+  first_author: Hatoum AS
+  container: Biol Psychiatry
+  identifiers:
+    pmid: '36150907'
+    doi: 10.1016/j.biopsych.2022.06.034
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90162547
+    - GCST90162548
+    - GCST90162549
+    - GCST90179114
+    - GCST90179115
+    - GCST90179116
+    - GCST90179117
+    - GCST90179118
+    - GCST90179119
+    - GCST90179120
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:36378351
+  source_type: journal_article
+  title: A General Cognitive Ability Factor for the UK Biobank
+  year: 2023
+  first_author: Williams CM
+  container: Behav Genet
+  identifiers:
+    pmid: '36378351'
+    doi: 10.1007/s10519-022-10127-6
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90264174
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:36973338
+  source_type: journal_article
+  title: Genome-wide association study of population-standardised cognitive performance phenotypes in
+    a rural South African community
+  year: 2023
+  first_author: Soo CC
+  container: Commun Biol
+  identifiers:
+    pmid: '36973338'
+    doi: 10.1038/s42003-023-04636-1
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90246330
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:37365406
+  source_type: journal_article
+  title: Multivariate genetic analysis of personality and cognitive traits reveals abundant pleiotropy
+  year: 2023
+  first_author: Hindley G
+  container: Nat Hum Behav
+  identifiers:
+    pmid: '37365406'
+    doi: 10.1038/s41562-023-01630-9
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90270074
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:39901012
+  source_type: journal_article
+  title: Fine-scale population structure and widespread conservation of genetic effect sizes between human
+    groups across traits
+  year: 2025
+  first_author: Hu S
+  container: Nat Genet
+  identifiers:
+    pmid: '39901012'
+    doi: 10.1038/s41588-024-02035-8
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90310157
+    - GCST90310159
+    - GCST90429578
+    - GCST90429598
+    - GCST90429604
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:40360725
+  source_type: journal_article
+  title: 'Deciphering the influence of socioeconomic status on brain structure: insights from Mendelian
+    randomization'
+  year: 2025
+  first_author: Xia C
+  container: Mol Psychiatry
+  identifiers:
+    pmid: '40360725'
+    doi: 10.1038/s41380-025-03047-4
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90566695
+    - GCST90566696
+    - GCST90566697
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:40374629
+  source_type: journal_article
+  title: Combining cross-sectional and longitudinal genomic approaches to identify determinants of cognitive
+    and physical decline
+  year: 2025
+  first_author: Schoeler T
+  container: Nat Commun
+  identifiers:
+    pmid: '40374629'
+    doi: 10.1038/s41467-025-59383-0
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90565836
+    - GCST90565838
+    - GCST90565842
+    - GCST90565846
+    - GCST90565851
+    - GCST90565852
+    - GCST90565856
+    - GCST90565861
+    - GCST90565862
+    - GCST90652250
+    - GCST90652253
+    - GCST90652255
+    - GCST90652256
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.
+- source_id: SRC:PMID:40968291
+  source_type: journal_article
+  title: Pan-UK Biobank genome-wide association analyses enhance discovery and resolution of ancestry-enriched
+    effects
+  year: 2025
+  first_author: Karczewski KJ
+  container: Nat Genet
+  identifiers:
+    pmid: '40968291'
+    doi: 10.1038/s41588-025-02335-7
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: pubmed_metadata
+    discovered_via: opentargets_api
+    open_targets_study_ids:
+    - GCST90691678
+    - GCST90691679
+    - GCST90691680
+    - GCST90691682
+    - GCST90691683
+    - GCST90691684
+    - GCST90691685
+    - GCST90691686
+    - GCST90691687
+    - GCST90691758
+    - GCST90691760
+    - GCST90691844
+    - GCST90691845
+    - GCST90691846
+    - GCST90691881
+    - GCST90692043
+    - GCST90692044
+    - GCST90692094
+    - GCST90692189
+    - GCST90692190
+    - GCST90692191
+    - GCST90692192
+    - GCST90692193
+    - GCST90692194
+    - GCST90692329
+    - GCST90692473
+    - GCST90692474
+    - GCST90692475
+    - GCST90692552
+    - GCST90692553
+    - GCST90692554
+    - GCST90692555
+    - GCST90692655
+    - GCST90692681
+    - GCST90692721
+    - GCST90692739
+    - GCST90692786
+    - GCST90692787
+    - GCST90692873
+    - GCST90692874
+    - GCST90692875
+    - GCST90692909
+    - GCST90692910
+    - GCST90692939
+    - GCST90692940
+    - GCST90693038
+    - GCST90693039
+  note: Publication behind an Open Targets GWAS study whose fine-mapped credible sets were used; title/year/journal
+    come from PubMed ESummary.

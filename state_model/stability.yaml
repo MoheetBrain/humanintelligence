@@ -1,0 +1,453 @@
+# State variables — domain: stability
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: stability
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Homeostatic and dynamical regulation. Stability variables are what keep the other domains
+  inside their operating range; they are not performance quantities and moving them is not an
+  improvement by default.
+
+variables:
+
+  - id: SV:stability.excitation_inhibition_balance
+    name: "excitation/inhibition balance"
+    definition: >-
+      Ratio of excitatory to inhibitory drive in a stated circuit, relative to that circuit's
+      own regulated operating point.
+    kind: latent_biological
+    timescale: seconds
+    level: circuit
+    units: "dimensionless ratio"
+    measurement_proxies:
+      - name: "MRS glutamate and GABA concentrations"
+        modality: mrs
+        status: research_proxy
+      - name: "EEG spectral slope as a candidate index"
+        modality: eeg_meg
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    polarity_note: >-
+      POLARITY IS NOMINAL and relative to the circuit's own regulated operating point, which is
+      what the definition measures against. Deviation in either direction is a loss of margin.
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.network_criticality_margin
+    name: "network criticality margin"
+    definition: >-
+      Distance between a network's current dynamical regime and the boundary at which activity
+      becomes self-amplifying or silent.
+    kind: latent_biological
+    timescale: seconds
+    level: systems
+    units: "dimensionless distance"
+    measurement_proxies:
+      - name: "avalanche statistics from neural recordings"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "long-range temporal correlation indices"
+        modality: eeg_meg
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.intrinsic_excitability
+    name: "intrinsic excitability"
+    definition: >-
+      Readiness of a neuron to fire in response to a given input, set by its own membrane
+      conductances rather than by the synaptic drive it receives.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "spikes per unit injected current"
+    measurement_proxies:
+      - name: "ex-vivo input-output curve electrophysiology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "motor threshold to non-invasive stimulation"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    polarity_note: >-
+      Polarity is `risk`: a higher value means less margin before excitability becomes self-
+      amplifying, so it reads with the safety constraints rather than against them.
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.representational_stability
+    name: "representational stability"
+    definition: >-
+      Degree to which the neural code for a fixed stimulus or task remains the same over hours
+      to days, as opposed to drifting while behaviour is preserved.
+    kind: latent_biological
+    timescale: days
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "longitudinal population recording decoder transfer"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "session-to-session pattern similarity in fMRI"
+        modality: fmri_bold
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:persistent_representation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.oscillatory_coordination_integrity
+    name: "oscillatory coordination integrity"
+    definition: >-
+      Consistency of phase and amplitude relationships between rhythms across regions, as an
+      index of coordinated timing.
+    kind: observable_proxy
+    timescale: seconds
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "cross-frequency and inter-regional coupling measures"
+        modality: eeg_meg
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.homeostatic_setpoint_integrity
+    name: "homeostatic setpoint integrity"
+    definition: >-
+      Degree to which regulatory mechanisms return a perturbed circuit to its prior operating
+      point rather than settling at a new one.
+    kind: latent_biological
+    timescale: days
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "perturbation-and-recovery protocols"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "repeated-stimulation aftereffect decay"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.arousal_level
+    name: "arousal level"
+    definition: >-
+      Current global activation state of the organism, from drowsiness through alert wakefulness
+      to agitation.
+    kind: observable_proxy
+    timescale: minutes
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "pupil diameter"
+        modality: device_or_wearable
+        status: established_human_proxy
+      - name: "EEG arousal staging"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "self-reported alertness scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    polarity_note: >-
+      POLARITY IS NOMINAL. Arousal is not monotone in either direction — too little and too much
+      are both bad — so neither `risk` nor `margin` describes it honestly. It is recorded as
+      `margin` so that annotations have a declared reference direction, and `response_shape`
+      stays `unknown`: read the shape, not the polarity, before inferring anything about
+      benefit.
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.sleep_pressure
+    name: "sleep pressure"
+    definition: >-
+      Homeostatic drive to sleep accumulated as a function of prior wakefulness and its
+      intensity.
+    kind: latent_biological
+    timescale: hours
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "slow-wave activity in subsequent sleep"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "sleep-onset latency testing"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "self-reported sleepiness scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.circadian_alignment
+    name: "circadian alignment"
+    definition: >-
+      Phase agreement between the internal circadian oscillator and the organism's actual sleep,
+      activity and light schedule.
+    kind: observable_proxy
+    timescale: days
+    level: systems
+    units: "hours of phase difference"
+    measurement_proxies:
+      - name: "dim-light melatonin onset"
+        modality: blood_or_csf_biomarker
+        status: established_human_proxy
+      - name: "actigraphy-derived rhythm stability"
+        modality: device_or_wearable
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.affective_stability
+    name: "affective stability"
+    definition: >-
+      Degree to which affective state remains within its usual range and returns to baseline
+      after perturbation.
+    kind: latent_cognitive
+    timescale: days
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "ecological momentary assessment variability"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "validated mood rating scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.stress_axis_load
+    name: "stress axis load"
+    definition: >-
+      Cumulative activation of the neuroendocrine stress response over a stated window.
+    kind: observable_proxy
+    timescale: days
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "diurnal cortisol profile"
+        modality: blood_or_csf_biomarker
+        status: established_human_proxy
+      - name: "hair or nail cortisol accumulation"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.neuroimmune_activation
+    name: "neuroimmune activation"
+    definition: >-
+      Degree of activation of resident immune signalling in neural tissue, relative to the
+      quiescent state.
+    kind: latent_biological
+    timescale: days
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "TSPO positron emission tomography"
+        modality: pet
+        status: research_proxy
+      - name: "CSF or plasma cytokine panels"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.blood_brain_barrier_integrity
+    name: "blood-brain barrier integrity"
+    definition: >-
+      Degree to which the barrier restricts passage of substances between blood and neural
+      tissue, relative to its intact state.
+    kind: observable_proxy
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "dynamic contrast-enhanced MRI permeability"
+        modality: fmri_bold
+        status: research_proxy
+      - name: "CSF-to-serum albumin ratio"
+        modality: blood_or_csf_biomarker
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:stability.ionic_homeostasis_margin
+    name: "ionic homeostasis margin"
+    definition: >-
+      Headroom available to the mechanisms that restore transmembrane and extracellular ion
+      concentrations before they fail to keep pace with demand.
+    kind: latent_biological
+    timescale: seconds
+    level: cellular
+    units: null
+    measurement_proxies:
+      - name: "extracellular ion-sensitive electrode recordings"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "biophysical model estimate"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

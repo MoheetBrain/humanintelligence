@@ -1,0 +1,141 @@
+# Red-team audit - KL. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:KL:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:KL
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: The human evidence is cohort association. CLM:power:KL:003 carries evidence_role `contradicts`
+      on an INCREASES_RISK edge into a dementia-related outcome, which is the correct shape for an association
+      that runs against the target.
+    evidence_refs:
+    - CLM:power:KL:002
+    - CLM:power:KL:003
+  - check: developmental_effect_mistaken_for_adult
+    result: flag
+    note: The mouse causal arm is transgenic systemic overexpression FROM DEVELOPMENT, so it cannot separate
+      developmental from adult mechanisms. Against that, the authors note the human association did not
+      correlate with age and the primate administration is adult and acute.
+    evidence_refs:
+    - CLM:power:KL:001
+    - CLM:power:KL:004
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: The primate benefit is in aged animals, so restoration cannot be separated from enhancement,
+      and the low-dose-only pattern is consistent with restoring a declining baseline.
+    evidence_refs:
+    - CLM:power:KL:004
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Mouse and non-human-primate memory tasks plus human cohort association; no human interventional
+      cognitive endpoint.
+    evidence_refs:
+    - CLM:power:KL:004
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The non-human-primate administration result is a single study with a commercially-interested
+      author, and it is the only interventional evidence for this target. agent:power recorded the conflict
+      in its intervention record rather than leaving it in prose.
+    evidence_refs:
+    - CLM:power:KL:004
+  - check: publication_bias
+    result: flag
+    note: agent:power reports that its literature-only search initially concluded that NO human klotho
+      intervention existed, and a later target-directed REGISTRY search overturned that. A literature-only
+      search systematically misses interventions performed and never published, and that generalises to
+      every atlas.
+    evidence_refs:
+    - CLM:power:KL:004
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of this target with a relevant endpoint was located in ClinicalTrials.gov
+      or in the literature, so there is no clinical evidence to be negative. This is an absence of clinical
+      evidence, not evidence of absence.
+  - check: dose_response_inversion
+    result: fail
+    note: 'agent:power nominated this and the red team confirms it: CLM:power:KL:004 reports a benefit
+      at a LOW dose and NONE at a high dose, in a non-human-primate study. Any consumer reading klotho
+      as monotonically beneficial has committed a dose-response inversion. The same atlas also records
+      that the primate study''s author list includes a commercial developer of klotho therapeutics.'
+    evidence_refs:
+    - CLM:power:KL:004
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: flag
+    note: Klotho is a systemic endocrine modifier with established roles in phosphate and vitamin D handling,
+      so a systemic liability is mechanistically expected - but Open Targets returns no annotation and
+      no claim in the repository measures one.
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: fail
+    note: 'agent:power states in the dossier that KL MAY NOT BELONG IN A POWER ATLAS AT ALL: its reported
+      mechanism is synaptic and glutamatergic (GluN2B, LTP), not metabolic, and nothing links it to any
+      power- or efficiency-domain state variable. Its presence is inherited from the seed registry. The
+      red team endorses that self-assessment: a target whose mechanism does not touch its atlas''s domain
+      is mis-filed, and saying so is a legitimate finding.'
+    evidence_refs:
+    - CLM:power:KL:001
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:KL:001#f1
+    severity: major
+    category: dose_response_inversion
+    description: CLM:power:KL:004 reports benefit at a low dose and none at a high dose in non-human primates,
+      with a commercially interested author on the study. Klotho is not monotonically beneficial on its
+      own evidence.
+    evidence_refs:
+    - CLM:power:KL:004
+  - finding_id: AUD:red_team:KL:001#f2
+    severity: major
+    category: overclaiming
+    description: 'KL''s reported mechanism is synaptic and glutamatergic rather than metabolic, and nothing
+      links it to any power- or efficiency-domain state variable. agent:power says so in its own dossier.
+      The target is mis-filed relative to the atlas it sits in, and its seed-registry placement under
+      `power_node: systemic_modifier` is not supported by the located evidence.'
+    evidence_refs:
+    - CLM:power:KL:001
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

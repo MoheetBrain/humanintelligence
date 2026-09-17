@@ -1,7 +1,9 @@
 # Project Status
 
-*Snapshot generated 2026-09-17 (UTC) — Sprint 1, mid-run: contracts amended, five
-domain/infrastructure agents in flight.*
+*Snapshot generated 2026-09-17 (UTC) — Sprint 1: all four atlases, the red-team audit
+of all 27 targets, the graph compiler, the DuckDB store and the interactive graph report
+are complete. Repository validates with zero errors. The post-audit ranking run and two
+export CLIs remain.*
 
 ## Project Objective
 
@@ -18,16 +20,21 @@ planned or recommended by this project.
 
 ## Current Stage
 
-Sprint 1 — *infrastructure and first evidence ingestion*. Type system, schemas,
-validators, ranking/uncertainty model and three of four atlases have landed. The
-genetics atlas has not yet merged its authored records into the contract paths, so the
-repository does **not** currently validate. No red-team audit has run, so no ranking
-has been produced.
+Sprint 1 — *infrastructure and first evidence ingestion*. The type system, 12 schemas,
+a 31-rule validator, the state model, the ranking/uncertainty model, `THEORY.md` and all
+four evidence atlases are complete. **The repository validates with zero errors** (39
+warnings, all of them known incompleteness waiting on the red team). Two deliverables
+all 27 targets have been audited (29 audit records: 20 retain-with-downgrade, 4 retain,
+3 deprioritise, 2 insufficient-evidence), and the graph compiler, DuckDB/Parquet store
+and `reports/intelligence_graph_v0_1.html` are built. Remaining: the two export CLIs and
+the **post-audit ranking run**. No ranking has been published yet — the pre-audit table
+was generated under a superseded aggregation operator and deleted, because a ranking with
+no audit behind it is the artefact most likely to be read as a result.
 
 ## Current Branch
 
 `sprint-1/foundation` (base `main` @ `9f0d552`, which contained only a README).
-One commit so far: the scaffolding/contracts commit.
+Two commits so far: the scaffolding/contracts commit and the contract-amendment/tooling commit.
 
 ## Current System Architecture
 
@@ -53,19 +60,27 @@ disjoint path sets, the orchestrator enforces gates and performs all commits.
 
 ## Capabilities Implemented
 
-* **Contract v0.1.0** (`docs/DATA_CONTRACT.md`), amended four times during the run in
-  response to defects found in use: separate evidence/counter-evidence grading,
-  null-result edges (V16b), polarity-aware methodological caps (§5.4), duplicate source
-  registration policy (§1.3).
+* **Contract v0.1.0** (`docs/DATA_CONTRACT.md`), amended repeatedly during the run in
+  response to defects the agents found in use — 16 rulings recorded in
+  `docs/blackboard/RESOLUTIONS.md`. The substantive ones: separate
+  evidence/counter-evidence grading; null-result edges (V16b) and the symmetry rule that
+  a null must be expressible wherever the positive claim is (V16b-sym); the
+  measured-absence versus absence-of-measurement distinction (`evidence_gap`, V16c);
+  polarity-aware methodological caps (§5.4) with the precautionary asymmetry declared and
+  measured; `search_basis` instead of demanding a citation for the absence of evidence;
+  `reporting_gap_refs` for completed-but-unreported trials; `preclinical_harm` so animal
+  harm cannot wear a clinical label; duplicate source registration policy (§1.3).
 * **Machine-checked provenance**: PubMed ESummary, ClinicalTrials.gov v2, GWAS Catalog
   v2, DOI→PMID resolution, and snapshot-based verification for database releases.
   Immutable raw snapshots plus a sha256 manifest; full offline rebuild.
 * **HGNC identifier resolution** — no agent hand-writes an accession.
 * **Formal ontology**: node/edge type system with domain/range constraints,
   24 computational primitives, state-variable type system, controlled vocabularies.
-* **12 JSON Schemas** + pydantic record models + a 24-rule validator with
+* **12 JSON Schemas** + pydantic record models + a **31-rule validator** with
   actionable messages (including nearest-declared-id suggestions on dangling refs).
-* **State model**: 100 state variables across 8 domains + a dynamics specification.
+* **Provenance for tool-mediated data** (`scripts/record_tool_snapshot.py`), so MCP tool
+  payloads can be snapshotted and verified like an HTTP fetch.
+* **State model**: 101 state variables across 8 domains + a dynamics specification.
 * **Ranking + uncertainty model**: facet rubric, facet→dimension spec, ordinal→Beta
   mapping, Monte Carlo rank intervals, polarity-aware caps, information-gain priority,
   convergence/centrality analysis.
@@ -85,18 +100,30 @@ disjoint path sets, the orchestrator enforces gates and performs all commits.
 4. Triaged 581 validator violations; fixed the contract/tooling share (intervention
    schema too narrow for real ChEMBL data, V6 failing open on cross-agent duplicates,
    database releases unverifiable by literature registry).
-5. Recorded 12 architecture decisions with rationale and consequences
-   (`docs/DECISIONS.md`).
+5. Recorded 13 architecture decisions (`docs/DECISIONS.md`) and 16 schema-change
+   rulings (`docs/blackboard/RESOLUTIONS.md`), each with rationale, alternatives and the
+   cost the fix accepts.
+6. Drove the repository from 581 validation violations to **zero errors**, with the
+   majority of the fixes landing on the contract rather than on the records — five
+   separate constraints turned out to forbid a true record.
+7. Ruled that the ranking composite must be **conjunctive** rather than additive, since
+   the six dimensions are conditions that must all hold; this moved ranks by up to nine
+   places and exposed three further defects (a tautological sensitivity variant, an inert
+   composite gate, and the fact that principle P8 does not hold at the composite).
+8. Completed all four evidence atlases and the red team's launch; the red team is
+   running.
 
 ## Important Files and Artifacts
 
 | Path | Role |
 |------|------|
 | `docs/DATA_CONTRACT.md` | authoritative record/ID/validation contract (v0.1.0, amended) |
-| `docs/DECISIONS.md` | D001–D012, including the defects found in use |
+| `docs/DECISIONS.md` | D001–D013, including the defects found in use |
+| `docs/blackboard/RESOLUTIONS.md` | R1–R16: every schema-change request and its ruling |
+| `THEORY.md` | Cognitive Power Envelope + OPEN→WRITE→SELECT→LOCK, with falsification sections |
 | `docs/API_RECIPES.md` | verified live query patterns for all five external APIs |
 | `ontology/`, `schemas/`, `state_model/` | type system, 12 schemas, 100 state variables |
-| `graph/validate_graph.py` | 24-rule validator, `--strict`/`--json`/`--root`/`--update-lock` |
+| `graph/validate_graph.py` | 31-rule validator, `--strict`/`--json`/`--root`/`--update-lock` |
 | `models/ranking/`, `models/uncertainty/` | facet rubric, ranking spec, ordinal→Beta model |
 | `scripts/fetch_source_metadata.py` | citation verification, offline rebuild |
 | `scripts/fetch_gene_identifiers.py` | HGNC resolution |
@@ -127,14 +154,19 @@ All results below were executed; none are projected.
 
 | Check | Command | Result (2026-09-17) |
 |-------|---------|---------------------|
-| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **508 passed** in 10.28 s |
-| Validator | `.venv/bin/python graph/validate_graph.py` | **FAIL** — 235 V1 + ~180 V4 violations, dominated by the genetics atlas not having merged its sources (mid-flight) |
+| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **740 passed, 0 failed** in 35.6 s |
+| Validator | `.venv/bin/python graph/validate_graph.py` | **PASS (warnings only)** — 0 errors, 39 warnings across 4 rules, 31 rules run |
+| Ownership | `.venv/bin/python scripts/check_ownership.py` | **all 1550 paths owned as expected** |
+| Claim registry lock | `graph/validate_graph.py --update-lock` | 289 claim ids locked; V13 now protects provenance |
 | Source verification (offline rebuild, no network) | `scripts/fetch_source_metadata.py --all --offline` | **117/117 verified** from committed snapshots |
 | Source verification (live) | `scripts/fetch_source_metadata.py --agent power` | 41/41 verified |
 | Independent citation spot-check | live PubMed ESummary for PMID 14561278 | title/journal/DOI match the stored record exactly (similarity 1.0) |
 | Seed symbol resolution | `scripts/fetch_gene_identifiers.py` | 31/31 HGNC-approved |
 | Ownership | `scripts/check_ownership.py --paths …` | clean after specificity fix |
-| Record counts (validator census) | — | 116 sources, 251 claims, 328 evidence items, 27 targets, 48 assessments, 0 audits |
+| Record counts (validator census) | — | 182 sources, 290 claims, 393 evidence items, 27 targets, 129 assessments, **29 audits** |
+| Audit outcomes | — | 20 retain-with-downgrade · 4 retain · 3 deprioritise · 2 insufficient-evidence; 5 downgrades applied; findings 4 critical / 31 major / 11 minor / 7 info |
+| Per-atlas sources/claims | — | genetics 58/149 · brakes 53/57 · power 44/50 · comparative 20/21 · red team 17/12 (in progress) |
+| Facet assessments | — | genetics 27 · comparative 27 · integration 27 · brakes 14 · power 7 · red team 0 (in progress) |
 
 ## Known Failures and Limitations
 

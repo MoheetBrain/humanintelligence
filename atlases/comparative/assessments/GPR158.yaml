@@ -1,0 +1,38 @@
+# Comparative facet assessment for TGT:GPR158.
+# Contract: docs/DATA_CONTRACT.md §5.2, §5.3. agent:comparative owns exactly two facets:
+# cross_species_convergence and human_lineage_divergence_risk.
+#
+# BOTH FACETS ARE not_assessed WITH level: null, AND THAT IS THE CORRECT RECORD.
+# Contract §5.2 is explicit that writing 0 for evidence nobody examined is a violation:
+# level 0 means "searched, nothing found", which is a positive finding about the
+# literature. It is not what happened here. Per contract P8, agent:integration must treat
+# these as wide and uninformative, never as zero.
+
+target_id: TGT:GPR158
+assessed_by: agent:comparative
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+schema_version: 0.1.0
+notes: "run_id sprint1-comparative-01"
+
+facets:
+  - facet: cross_species_convergence
+    assessment_status: not_assessed
+    level: null
+    rationale: >-
+      No comparative search was run. No claim in evidence/claims/comparative/ touches this target or orphan GPCR signalling.
+    claim_refs: []
+    counter_level: null
+    counter_claim_refs: []
+    limiting_factor: >-
+      Sprint-1 comparative curation prioritised (a) the neuron-count and cellular-scaling literature, (b) human-versus-rodent cortical neuron biophysics, which is where the seed list's HCN1 anchor sits, and (c) the cross-clade behavioural-measurement literature. Per-target comparative sweeps for the remaining 23 seed targets were not within the sprint's search budget.
+  - facet: human_lineage_divergence_risk
+    assessment_status: not_assessed
+    level: null
+    rationale: >-
+      No comparative search was run. No claim in evidence/claims/comparative/ touches this target or orphan GPCR signalling.
+    claim_refs: []
+    counter_level: null
+    counter_claim_refs: []
+    limiting_factor: >-
+      Assessing this facet for this target needs either a direct human-versus-non-human measurement of the target's own biology, or a well-characterised class-level divergence it can inherit. Neither was curated in sprint 1. The generic human-versus-rodent cellular findings in this atlas (CLM:comparative:DENDRITE:001, CLM:comparative:HCN1:003) were NOT extended to this target, because applying an ion-channel-conductance result to an unrelated target class would be exactly the kind of unsupported generalisation this atlas exists to prevent.

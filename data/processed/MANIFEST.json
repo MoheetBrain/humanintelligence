@@ -1,0 +1,97 @@
+{
+  "artefacts": {
+    "parquet/annotations.parquet": {
+      "bytes": 13627,
+      "rows": 43,
+      "sha256": "8fe2da573b72049b92a3d53ff40cf172d50bd4c7b79e8b3707f217ff26d7e66c"
+    },
+    "parquet/assessments.parquet": {
+      "bytes": 61321,
+      "rows": 351,
+      "sha256": "57c49eebe51deefd25216a39be93e2cfec4611393c6fd155e7c03d62af4aa593"
+    },
+    "parquet/audits.parquet": {
+      "bytes": 347,
+      "rows": 0,
+      "sha256": "fdb6a6f2bbe5d0777ee2405bf3d29e39543517ed62dcca4aaf18e3678aaa5d27"
+    },
+    "parquet/claims.parquet": {
+      "bytes": 45868,
+      "rows": 290,
+      "sha256": "401e3bf5b829f7c4be28fb1c4b4e387bc208ae3257fd7b1e56cd1392ff032a1c"
+    },
+    "parquet/edges.parquet": {
+      "bytes": 31863,
+      "rows": 1652,
+      "sha256": "9c53bcbf282cebea53d3b0198e3e1946f3acdc16a25befe767f4fdef2250a507"
+    },
+    "parquet/evidence_items.parquet": {
+      "bytes": 45885,
+      "rows": 393,
+      "sha256": "1c566efe4bea34d1eaf7ee1244e5ce73c8d5c9407a29bd8e16cb7b9f0bb8ad28"
+    },
+    "parquet/interventions.parquet": {
+      "bytes": 6877,
+      "rows": 36,
+      "sha256": "893ab8bc09757e7fad7261a3bc0aa153c4382c5c1ced2b24b70d09afe6536e69"
+    },
+    "parquet/nodes.parquet": {
+      "bytes": 142029,
+      "rows": 1244,
+      "sha256": "8fbbb2e02c025746df767f26fc60dd59cf42d40d9319357af3559ca60b051151"
+    },
+    "parquet/provenance.parquet": {
+      "bytes": 12220,
+      "rows": 13,
+      "sha256": "7a0f57e2702908de63b486128b96eb5008cbe86ec61deb6dbbf3024ba1cf017e"
+    },
+    "parquet/sources.parquet": {
+      "bytes": 22107,
+      "rows": 182,
+      "sha256": "4b120cdf2875071baaf33223b70ad808f1320e7a1cd93e84fd03f6acb8037ada"
+    },
+    "parquet/state_variables.parquet": {
+      "bytes": 15189,
+      "rows": 101,
+      "sha256": "36822714181cad0a6eba87f9af5f09a4a445f8f616a229a499e5c939a8dea922"
+    },
+    "parquet/targets.parquet": {
+      "bytes": 9099,
+      "rows": 27,
+      "sha256": "ee8f32612b44a45d84fbd4d6dcb996588652a57b5195fe1b8ccd7cef02c9981b"
+    }
+  },
+  "generated_at_utc": "2026-09-17T18:02:49Z",
+  "git_commit": "3fcc11396cf4cf18373135c0368878baf5012430",
+  "input_digest": "5b4be8cf2cd5b50b00926e4a10a34541aecfb4bf30eb5b0cdc795be3f7cfb6eb",
+  "note": "Every artefact here is DERIVED. data/processed/ is git-ignored and is rebuilt by `make store`; the checksums let a rebuild be compared against the build it replaced.",
+  "row_counts": {
+    "annotations": 43,
+    "assessments": 351,
+    "audits": 0,
+    "claims": 290,
+    "edges": 1652,
+    "evidence_items": 393,
+    "interventions": 36,
+    "nodes": 1244,
+    "provenance": 13,
+    "sources": 182,
+    "state_variables": 101,
+    "targets": 27
+  },
+  "schema_version": "0.1.0",
+  "views": [
+    "v_claims_per_target",
+    "v_evidence_by_species_and_life_stage",
+    "v_null_results_by_target",
+    "v_evidence_gaps",
+    "v_reporting_gaps",
+    "v_sources_shared_across_agents",
+    "v_uncited_sources",
+    "v_coverage_by_facet",
+    "v_edges_by_provenance",
+    "v_unsupported_edges",
+    "v_state_variable_measurability",
+    "v_claims_by_human_relevance"
+  ]
+}

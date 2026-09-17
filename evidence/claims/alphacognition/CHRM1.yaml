@@ -1,0 +1,458 @@
+# Hand-curated claims — CHRM1 (lead atlas: alphacognition, dossier_depth: deep)
+#
+# CHRM1 is the only target in this atlas with a randomised, placebo-controlled,
+# HEALTHY-ADULT human interventional result on cognitive endpoints (HTL0018318). It also
+# has a long patient-population history (xanomeline in Alzheimer disease; the
+# xanomeline-trospium combination in schizophrenia) whose cognitive and psychosis endpoints
+# must not be pooled with healthy-adult enhancement, and a dose-limiting peripheral
+# cholinergic safety burden that is part of the same pharmacology.
+#
+# Three separations are enforced explicitly below:
+#   healthy adult enhancement   CLM:...:CHRM1:001
+#   patient-population efficacy CLM:...:CHRM1:002 (cognition, AD), CLM:...:CHRM1:004 (psychosis)
+#   safety / dose ceiling       CLM:...:CHRM1:003
+# and one direction-reversing rodent result: CLM:...:CHRM1:005.
+# schema_version: 0.1.0 (carried per claim below; contract §2 requires this file to be a YAML list)
+
+- claim_id: CLM:alphacognition:CHRM1:001
+  schema_version: 0.1.0
+  statement: In a randomised, double-blind, placebo-controlled multiple-ascending-dose study of the selective
+    M1 receptor partial agonist HTL0018318 in 36 healthy younger adults and 50 healthy elderly subjects
+    at 15-35 mg/day for 10 days, the compound had significant effects on tests of short-term (working)
+    memory (n-back) and learning (Milner maze), which the authors describe as having moderate to large
+    effect sizes and label exploratory pro-cognitive effects.
+  subject: GENE:CHRM1
+  predicate: MODULATES
+  object: PHENO:working_memory
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: mixed
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: working_memory
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the cognitive battery was exploratory pharmacodynamics in a safety and pharmacokinetics study, not
+      a pre-registered efficacy endpoint, so multiplicity is uncontrolled
+    - the source reports mild or moderate cholinergic adverse events and modest increases in blood pressure
+      and pulse rate; unblinding by peripheral effects is not excluded
+    - HTL0018318 is described as selective for M1 but receptor selectivity in vivo is never absolute,
+      so the effect is attributable to the compound rather than strictly to CHRM1
+    - two cohorts (younger adults, elderly) are pooled in the reported cognitive finding
+  evidence:
+  - source_id: SRC:PMID:33883008
+    design: rct_parallel
+    species: SPECIES:NCBITaxon:9606
+    population: healthy younger adults (n = 36, 3 cohorts) and healthy elderly subjects (n = 50, 4 cohorts),
+      oral 15-35 mg/day HTL0018318 or placebo
+    sample_size:
+      reported_as: healthy younger adult (n = 36; 3 cohorts) and elderly (n = 50; 4 cohorts) subjects
+      value: 86
+      unit: participants
+    endpoint: neurocognitive battery including n-back short-term (working) memory and Milner maze learning;
+      electrophysiological biomarkers of synaptic and cognitive function
+    endpoint_category: working_memory
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: significant effects on tests of short-term (working) memory (n-back) and learning (Milner
+        maze) with moderate to large effect sizes
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: Registered as Netherlands Trial Register NTR5781, which scripts/fetch_source_metadata.py cannot
+      verify; the identifier is recorded here for traceability only and no SRC:NTR source was invented.
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: one randomised placebo-controlled human study in healthy adults with directly relevant
+      cognitive endpoints; single study, exploratory endpoints, small cohorts
+    calibration_status: uncalibrated_subjective
+  risks:
+  - single sponsor-affiliated study; the red team should audit citation_dependence and sponsor involvement
+    (several authors are affiliated with the developer)
+  - the phrase 'moderate to large effect sizes' is the authors' wording and is recorded verbatim; no numeric
+    effect size was extracted and none should be inferred
+  - a 10-day exposure says nothing about whether the effect persists, tolerates, or reverses
+  confounders:
+  - peripheral cholinergic side effects as an unblinding cue
+  - practice effects across repeated cognitive testing
+  - pooling of younger and elderly cohorts
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CHRM1:002
+  schema_version: 0.1.0
+  statement: In a 6-month randomised, double-blind, placebo-controlled trial of oral xanomeline, an M1/M4-selective
+    muscarinic agonist, in 343 patients with mild to moderate probable Alzheimer disease, the high-dose
+    arm showed a significant treatment effect on the cognitive subscale of the Alzheimer's Disease Assessment
+    Scale and on the Clinician's Interview-Based Impression of Change relative to placebo.
+  subject: CPD:CHEMBL21536
+  predicate: CHANGES_STATE
+  object: PHENO:clinical_cognitive_composite
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: aged
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - xanomeline is an M1 AND M4 agonist (ChEMBL records both mechanisms), so the cognitive effect is
+      not attributable to CHRM1 alone
+    - a deficit-state population with cholinergic denervation; benefit there is restoration toward a lost
+      baseline, not enhancement of an intact one
+    - 52% discontinuation in the high-dose arm makes the completer analysis vulnerable to informative
+      dropout
+  evidence:
+  - source_id: SRC:PMID:9109749
+    design: rct_parallel
+    species: SPECIES:NCBITaxon:9606
+    population: 343 men and women at least 60 years of age with mild to moderate probable Alzheimer disease,
+      outpatients at 17 centres in the United States and Canada
+    sample_size:
+      reported_as: A total of 343 men and women at least 60 years of age with mild to moderate AD
+      value: 343
+      unit: participants
+    endpoint: ADAS-Cog, Clinician's Interview-Based Impression of Change, Alzheimer's Disease Symptomatology
+      Scale, Nurses' Observational Scale for Geriatric Patients
+    endpoint_category: clinical_cognitive_composite
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: p_value_only
+      as_reported: A significant treatment effect existed for ADAS-Cog (high dose vs placebo; P < or =
+        .05), and CIBIC+ (high dose vs placebo; P < or = .02)
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_same_group
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: The same trial is reported twice in the literature (a companion report exists); it is registered
+      and cited once, under this PMID, so that a single trial cannot be counted as two independent results.
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: rescue_only
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: large randomised human trial with a cognitive endpoint, but a patient population, a mixed
+      M1/M4 agonist, and a completer analysis undermined by high dropout
+    calibration_status: uncalibrated_subjective
+  risks:
+  - this result is the canonical rescue-mistaken-for-enhancement hazard for CHRM1 and must never be pooled
+    with CLM:alphacognition:CHRM1:001
+  - the trial dates from 1997 and the oral formulation was abandoned on tolerability grounds
+  confounders:
+  - cholinergic denervation in Alzheimer disease
+  - M4 agonism
+  - differential dropout
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CHRM1:003
+  schema_version: 0.1.0
+  statement: In the same xanomeline Alzheimer disease trial, adverse events were dose-dependent and predominantly
+    gastrointestinal, 52% of patients in the high-dose arm discontinued treatment because of adverse events,
+    and syncope defined as loss of consciousness and muscle tone occurred in 12.6% of the high-dose group.
+  subject: CPD:CHEMBL21536
+  predicate: INCREASES_RISK
+  object: AE:syncope
+  claim_type: safety
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: aged
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - peripheral muscarinic agonism at M2/M3 rather than central M1 is the likely driver of the gastrointestinal
+      and cardiovascular events
+    - an aged patient population is more susceptible to syncope than a healthy adult population would
+      be
+  evidence:
+  - source_id: SRC:PMID:9109749
+    design: rct_parallel
+    species: SPECIES:NCBITaxon:9606
+    population: 343 patients with mild to moderate probable Alzheimer disease; 75, 150 or 225 mg/day xanomeline
+      or placebo
+    sample_size:
+      reported_as: A total of 343 men and women at least 60 years of age with mild to moderate AD
+      value: 343
+      unit: participants
+    endpoint: treatment discontinuation due to adverse events; incidence of syncope
+    endpoint_category: not_applicable
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: percent_change
+      as_reported: In the high-dose arm, 52% of patients discontinued treatment because of adverse events;
+        ... Syncope, defined as loss of consciousness and muscle tone, occurred in 12.6% of patients in
+        the high-dose group
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: adverse-event incidences from a large randomised human trial, directly relevant to this
+      facet's proposition about a safe controllable window
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'this is the dose ceiling: the dose that produced the cognitive signal is the dose that produced 52%
+    discontinuation, so the therapeutic window for unselective muscarinic agonism is narrow by construction'
+  confounders:
+  - peripheral M2/M3 agonism
+  - age of the population
+  dependencies:
+  - CLM:alphacognition:CHRM1:002
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CHRM1:004
+  schema_version: 0.1.0
+  statement: A random-effects meta-analysis of three double-blind randomised placebo-controlled trials
+    in adults with schizophrenia experiencing acute psychosis reported that the xanomeline-trospium combination
+    was superior to placebo on PANSS total, positive and negative subscale scores, was comparable to placebo
+    on all-cause discontinuation and on metabolic and extrapyramidal measures, and was associated with
+    a higher incidence of at least one adverse event, dry mouth, hypertension, nausea, vomiting, dyspepsia,
+    constipation and increased serum triglyceride.
+  subject: CPD:CHEMBL21536
+  predicate: INCREASES_RISK
+  object: AE:nausea
+  claim_type: clinical_harm
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the combination includes trospium, a peripherally restricted non-selective muscarinic antagonist
+      added specifically to blunt peripheral cholinergic effects, so neither the efficacy nor the residual
+      adverse events are attributable to M1 agonism alone
+    - the efficacy endpoint is psychosis severity, not cognition; the meta-analysis addressed safety and
+      tolerability outcomes
+  evidence:
+  - source_id: SRC:PMID:39880004
+    design: meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: adults with schizophrenia experiencing acute psychosis, pooled from three double-blind
+      randomised placebo-controlled trials
+    sample_size:
+      reported_as: three double-blind, randomized placebo-controlled trials in adults with schizophrenia
+        experiencing acute psychosis
+      value: null
+      unit: trials
+    endpoint: PANSS total and subscale change; discontinuation; metabolic, cardiovascular and gastrointestinal
+      adverse events
+    endpoint_category: not_applicable
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: replicated_independent
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: 'adverse events and PANSS WERE measured. NO COGNITIVE ENDPOINT was measured in these three trials,
+      so with respect to cognition this record is an evidence GAP, not evidence against a cognitive effect;
+      it contributes no counter_level to any cognitive facet (R5) — Recorded here for two reasons only:
+      it establishes that M1/M4 agonism is pharmacologically deliverable in humans at a tolerated dose
+      when peripheral blockade is co-administered, and it enumerates the residual adverse events. It is
+      NOT cognitive evidence and its general_intelligence_relevance is none.'
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: pooled randomised human safety data across three trials, directly relevant to tolerability
+      of M1/M4 agonism in adults
+    calibration_status: uncalibrated_subjective
+  risks:
+  - approval for schizophrenia says nothing about a healthy-adult risk-benefit balance; a person with
+    no disease gains no efficacy to offset dry mouth, hypertension and vomiting
+  confounders:
+  - co-administered trospium
+  - acute psychosis population
+  - short trial durations
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CHRM1:005
+  schema_version: 0.1.0
+  statement: 'Mice with a null mutation of the M1 muscarinic receptor gene showed a selective and bidirectional
+    memory phenotype rather than a uniform deficit: normal or enhanced memory on matching-to-sample problems
+    alongside severe impairment of non-matching-to-sample working memory and of consolidation, together
+    with reduced hippocampal long-term potentiation in response to theta burst stimulation.'
+  subject: GENE:CHRM1
+  predicate: MODULATES
+  object: PHENO:animal_working_memory
+  claim_type: causal_perturbation
+  direction: bidirectional
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions:
+    - REGION:hippocampus
+    cell_types: []
+  phenotype_class: animal_working_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - germline knockout permits lifelong compensation, so the adult phenotype is not the phenotype of
+      acute M1 blockade
+    - the source contrasts its result explicitly with earlier work using non-selective muscarinic antagonists,
+      which produced uniform deficits; receptor-subtype specificity is the point of the paper
+  evidence:
+  - source_id: SRC:PMID:12483218
+    design: knockout
+    species: SPECIES:NCBITaxon:10090
+    population: mice with a null mutation of the gene coding the M1 receptor and wild-type controls
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: matching-to-sample and non-matching-to-sample memory tasks, consolidation, theta-burst long-term
+      potentiation in hippocampus
+    endpoint_category: animal_working_memory
+    endpoint_measured: measured
+    effect_direction: mixed
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: contradicts
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: clean genetic loss-of-function in a healthy rodent baseline, showing that removing M1 improves
+      some memory measures while impairing others
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'this is the direction-complicating result for CHRM1: the cognitive consequence of changing M1 signalling
+    depends on which process is measured, so ''more M1 is better'' is not supported even in rodents'
+  - a task-dependent bidirectional effect is exactly the pattern that a single favourable endpoint in
+    an exploratory human battery could mask
+  confounders:
+  - developmental compensation in germline knockouts
+  - task-specific demands
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01

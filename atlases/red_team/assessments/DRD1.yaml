@@ -1,0 +1,79 @@
+# Red-team facet assessment - DRD1. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/DRD1.yaml.
+schema_version: 0.1.0
+target_id: TGT:DRD1
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 3
+  rationale: 'Converging annotation across two curation reviews for a substantial and diverse liability
+    burden: psychosis, abuse potential, drug dependence, convulsions and dyskinesia at acute activation,
+    and fibrotic valvular heart disease and heart failure at chronic activation. The chronic-dosing rows
+    matter more than the acute ones here, because chronic exposure is the regime a cognitive-enhancement
+    use implies, and these are the only chronic rows in the safety data retrieved for any target.'
+  claim_refs:
+  - CLM:red_team:DRD1:001
+  counter_level: 0
+  counter_rationale: Searched for evidence that D1 modulation at cognitively active exposures avoids these
+    liabilities and found none; no healthy-adult dose-ranging safety study of a D1 agent was located.
+  counter_claim_refs: []
+  limiting_factor: both sources are curation reviews with no species or design attribution at row level,
+    and the valvular finding has a plausible off-target explanation the rows do not exclude
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. No developmental manipulation of DRD1 appears in the located
+    evidence, and the inverted-U literature is adult. The dossier records this as `unknown`; the red team
+    grades it 0 because the question was asked here.
+  search_basis: 'Read every claim for DRD1 and inspected context.life_stage and causal_attribution.basis
+    on each, then searched the whole claim set for any perturbation of this target with life_stage prenatal,
+    postnatal_developmental or adolescent, or with basis germline_knockout or conditional_developmental_knockout.
+    A hit would have been any manipulation beginning before adulthood, or any reported developmental requirement
+    for this target. None exists in the located evidence: both DRD1 claims are adult pharmacology. As
+    with HTR2A, a searched zero over a thin curated literature is weaker than one over a thick literature,
+    and the limiting_factor records that.'
+  claim_refs: []
+  counter_level: 2
+  counter_rationale: The inverted-U evidence is adult pharmacological manipulation with working-memory
+    endpoints in adult animals and adult humans, establishing adult modifiability - though in a direction
+    that offers no headroom at a healthy baseline.
+  counter_claim_refs:
+  - CLM:alphacognition:DRD1:001
+  limiting_factor: no dedicated developmental search was run for this receptor by any agent; the zero
+    rests on the absence of developmental records in the claim set
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: retain_with_downgrade. The red team owns only these two
+  facets; every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents''
+  facets, where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by
+  editing another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

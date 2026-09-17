@@ -1,0 +1,392 @@
+# State variables — domain: workspace
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: workspace
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Online maintenance and manipulation capacity: how much can be held, protected from
+  interference, bound together and updated within a task.
+
+variables:
+
+  - id: SV:workspace.working_memory_capacity
+    name: "working memory capacity"
+    definition: >-
+      Number of independent items that can be simultaneously maintained and remain available for
+      use, for a stated material and delay.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: "items"
+    measurement_proxies:
+      - name: "change-detection capacity estimate"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "complex span task family"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:persistent_representation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.persistent_activity_stability
+    name: "persistent activity stability"
+    definition: >-
+      Stability, over a delay and against noise, of the neural activity pattern that holds an
+      item online.
+    kind: latent_biological
+    timescale: seconds
+    level: circuit
+    units: "drift per second"
+    measurement_proxies:
+      - name: "delay-period decoding stability"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "delay-period pattern stability in fMRI or MEG"
+        modality: eeg_meg
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:persistent_representation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.distractor_resistance
+    name: "distractor resistance"
+    definition: >-
+      Degree to which maintained content survives the presentation of competing input during the
+      maintenance interval.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "delayed recall with intervening distractors"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:distractor_suppression]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.attentional_gating_precision
+    name: "attentional gating precision"
+    definition: >-
+      Selectivity with which information is admitted to, or excluded from, the maintained set.
+    kind: latent_biological
+    timescale: milliseconds
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "filtering-efficiency electrophysiological indices"
+        modality: eeg_meg
+        status: research_proxy
+      - name: "selective-encoding task accuracy"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:attentional_gating]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.recurrent_gain
+    name: "recurrent gain"
+    definition: >-
+      Strength of recurrent excitatory drive within a maintenance circuit relative to its
+      inhibitory restraint.
+    kind: latent_biological
+    timescale: milliseconds
+    level: circuit
+    units: "dimensionless ratio"
+    measurement_proxies:
+      - name: "circuit model fit to delay-period dynamics"
+        modality: model_derived_estimate
+        status: theoretical_construct
+      - name: "ex-vivo excitation/inhibition conductance ratio"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.interference_susceptibility
+    name: "interference susceptibility"
+    definition: >-
+      Degree to which similar maintained or stored content degrades the retrieval of a target
+      item.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "proactive and retroactive interference paradigms"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:pattern_separation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.binding_capacity
+    name: "binding capacity"
+    definition: >-
+      Number of feature-to-feature or item-to-context bindings that can be maintained
+      simultaneously without confusion.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: "bindings"
+    measurement_proxies:
+      - name: "feature-conjunction working memory tasks"
+        modality: behavioural_task
+        status: research_proxy
+      - name: "item-context binding tasks"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:relational_binding, PRIM:variable_binding]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.updating_efficiency
+    name: "updating efficiency"
+    definition: >-
+      Cost, in time and accuracy, of replacing part of the maintained set with new content while
+      preserving the rest.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "n-back and running-span updating tasks"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "reference-back paradigm"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:attentional_gating]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.serial_order_fidelity
+    name: "serial order fidelity"
+    definition: >-
+      Accuracy with which the order of maintained items is preserved, separably from the
+      accuracy of item identity.
+    kind: latent_cognitive
+    timescale: seconds
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "serial recall order-error analysis"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:variable_binding]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.workspace_broadcast_bandwidth
+    name: "workspace broadcast bandwidth"
+    definition: >-
+      Quantity of information that can be made simultaneously available to multiple downstream
+      processes, as a construct within global-workspace style accounts.
+    kind: latent_cognitive
+    timescale: seconds
+    level: systems
+    units: "items or bits"
+    measurement_proxies:
+      - name: "dual-task and access-consciousness paradigms"
+        modality: behavioural_task
+        status: research_proxy
+      - name: "no established quantitative human measure"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:composition]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.tonic_inhibition_level
+    name: "tonic inhibition level"
+    definition: >-
+      Magnitude of persistent, non-synaptic inhibitory conductance setting the baseline
+      excitability of a stated cell population, as distinct from phasic synaptic inhibition.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "conductance per unit membrane area"
+    measurement_proxies:
+      - name: "ex-vivo whole-cell holding-current measurement"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "MRS GABA concentration as an indirect index"
+        modality: mrs
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.dendritic_integration_gain
+    name: "dendritic integration gain"
+    definition: >-
+      Magnitude of the somatic response produced per unit of spatially distributed dendritic
+      input, for a stated cell class and input pattern.
+    kind: latent_biological
+    timescale: milliseconds
+    level: cellular
+    units: "somatic response per unit dendritic input"
+    measurement_proxies:
+      - name: "ex-vivo dendritic and somatic paired recording"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "biophysical model fit to recordings"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:workspace.chunk_size
+    name: "effective chunk size"
+    definition: >-
+      Number of elementary elements a single maintained unit can compress into one slot, given
+      available structure and prior knowledge.
+    kind: latent_cognitive
+    timescale: minutes
+    level: behavioural
+    units: "elements per chunk"
+    measurement_proxies:
+      - name: "structured-versus-random span comparison"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:chunk_formation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

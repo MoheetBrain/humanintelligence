@@ -1,0 +1,32 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY ONT2: a response shape other than `unknown` needs claim support.
+schema_version: "0.1.0"
+domain: cognition
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Deliberately broken copy of the cognition domain: one variable declares an
+  inverted-U response shape with the default basis, which is the invented
+  dose-response curve that README §3 forbids.
+
+variables:
+  - id: SV:cognition.placeholder_capacity
+    name: "placeholder capacity"
+    definition: >-
+      Synthetic placeholder definition, present only so the file has a variable to
+      carry the illegal response shape.
+    kind: latent_cognitive
+    timescale: unknown
+    level: behavioural
+    units: null
+    measurement_proxies: []
+    response_shape:
+      shape: inverted_u
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: provisional
+    provenance:
+      defined_by: agent:ontology
+      basis: fixture

@@ -1,0 +1,144 @@
+# Red-team audit - SLC6A8. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:SLC6A8:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:SLC6A8
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: The single cleanest developmental dissociation in the repository, and it runs against the target.
+      The strongest evidence is a DEVELOPMENTAL human syndrome, and the one study that separated timing
+      found learning deficits when the gene was deleted NEONATALLY and none when it was deleted in the
+      adult. That is not a confound to be worried about; it is a measured result showing the adult manipulation
+      does nothing.
+    evidence_refs:
+    - CLM:power:SLC6A8:001
+    - CLM:power:SLC6A8:002
+    - CLM:power:SLC6A8:003
+  - check: rescue_mistaken_for_enhancement
+    result: fail
+    note: 'The canonical rescue-versus-enhancement boundary, as the seed registry anticipated. Creatine
+      transporter deficiency causes intellectual disability; correcting it is restoration. Nothing in
+      the evidence base raises transport capacity above wild type in any species - agent:power states
+      that no gain-of-function experiment exists anywhere in its atlas - so every `proposed_modulation:
+      increase_activity` for this target is a hypothesis with zero supporting evidence, and that atlas
+      says so explicitly.'
+    evidence_refs:
+    - CLM:power:SLC6A8:001
+    - CLM:power:SLC6A8:004
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: The rodent arm is animal learning tasks; the human arm is a developmental intellectual-disability
+      syndrome. Neither is a healthy-adult cognitive endpoint.
+    evidence_refs:
+    - CLM:power:SLC6A8:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The timing dissociation rests on one study, which is also the single most consequential record
+      for this target in either direction.
+    evidence_refs:
+    - CLM:power:SLC6A8:002
+  - check: publication_bias
+    result: pass
+    note: agent:power cited the pooled null, the adult-deletion null and the conflicting single positive
+      trial, and marked the last `contested`. Well balanced.
+    evidence_refs:
+    - CLM:power:creatine_human:001
+    - CLM:power:creatine_human:002
+  - check: negative_clinical_evidence
+    result: pass
+    note: agent:power recorded the adult-deletion null as a NO_DETECTED_EFFECT_ON claim with a measured
+      endpoint (CLM:power:SLC6A8:002), correctly typed. Independently, the pooled human creatine literature
+      shows a tight null in the young-adult band.
+    evidence_refs:
+    - CLM:power:SLC6A8:002
+    - CLM:power:creatine_human:002
+  - check: dose_response_inversion
+    result: flag
+    note: 'No exposure-response curve exists, and the pooled human creatine data show benefit concentrated
+      where baseline is low (older adults, disease, vegetarians, sleep deprivation, hypoxia) and a null
+      where it is normal. That is a baseline-dependent response, which for enhancement purposes is worse
+      than an inverted U: it implies the healthy adult already sits at the plateau.'
+    evidence_refs:
+    - CLM:power:creatine_human:002
+    - CLM:red_team:creatine:001
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: pass
+    note: 'Rodent and human evidence agree for this target: both say the deficit is developmental. Agreement,
+      not failure.'
+    evidence_refs:
+    - CLM:power:SLC6A8:001
+    - CLM:power:SLC6A8:002
+  - check: overclaiming
+    result: pass
+    note: agent:power states in its own dossier that every increase_activity proposal for this target
+      has zero supporting evidence. That is the opposite of overclaiming.
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:SLC6A8:001#f1
+    severity: major
+    category: rescue_mistaken_for_enhancement
+    description: 'SLC6A8 is a restoration target, not an enhancement target, on its own evidence: the
+      human phenotype is a developmental deficiency syndrome, adult deletion in the mouse produced no
+      learning deficit while neonatal deletion did, and no experiment in any species raises transport
+      capacity above wild type.'
+    evidence_refs:
+    - CLM:power:SLC6A8:001
+    - CLM:power:SLC6A8:002
+    - CLM:power:SLC6A8:003
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

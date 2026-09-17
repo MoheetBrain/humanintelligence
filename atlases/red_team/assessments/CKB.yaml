@@ -1,0 +1,72 @@
+# Red-team facet assessment - CKB. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/CKB.yaml.
+schema_version: 0.1.0
+target_id: TGT:CKB
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 1
+  rationale: Weak and indirect only. No adverse-effect annotation exists for this target in the pinned
+    Open Targets release. The one liability-relevant record is a germline knockout with increased seizure
+    susceptibility, which is the wrong design to estimate the risk of adult partial modulation.
+  claim_refs:
+  - CLM:power:CKB:001
+  counter_level: 0
+  counter_rationale: 'Searched for evidence that modulating creatine kinase is well tolerated and found
+    none: no agent directed at this enzyme has been dosed in a human in any located study.'
+  counter_claim_refs: []
+  limiting_factor: the only liability signal is from a germline knockout; no adult-onset or pharmacological
+    safety data exist for this enzyme
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 3
+  rationale: Substantial. Every located perturbation is a germline knockout, the authors report accompanying
+    hippocampal mossy-fibre structural change so the confound is anatomical and not merely temporal, and
+    no adult-inducible manipulation of CKB exists in any species. Converging reasons across the design
+    and the reported anatomy.
+  claim_refs:
+  - CLM:power:CKB:001
+  - CLM:power:CKB:003
+  counter_level: 0
+  counter_rationale: Searched for any adult-restricted CKB manipulation - inducible deletion, adult viral
+    knockdown, or a creatine-kinase inhibitor given to an adult animal - with any behavioural or electrophysiological
+    readout, and located none. This matches agent:power's own search_basis for the same gap.
+  counter_claim_refs: []
+  limiting_factor: no adult-onset perturbation of this enzyme exists, so the developmental and structural
+    confounds cannot be separated from the phenotype
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: deep. Audit verdict: retain_with_downgrade. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

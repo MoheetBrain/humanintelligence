@@ -1,0 +1,551 @@
+# Hand-written lead-atlas facet assessments for the six targets agent:alphacognition leads.
+#
+# These are merged into atlases/alphacognition/assessments/{SYMBOL}.yaml by
+# pipelines/alphacognition/build_assessments.py. They are authored, not generated: each level
+# rests on papers read individually in this session, listed in claim_refs.
+#
+# The `level` / `counter_level` split is used as the contract intends. Where a target has
+# STRONG human evidence pointing AGAINST the facet's proposition, the level is 0 (nothing
+# found supporting it) and the counter_level is high — not a low level. GRM5 and HTR2A
+# `human_intervention_evidence` are the clearest cases: large randomised human data exist,
+# and they are negative.
+#
+# `adult_human_onset_claim_refs` feeds the generated `adult_expression_and_timing` facet: a
+# target only reaches level 3 there if an adult-onset human effect on a cognitive endpoint is
+# referenced. Only CHRM1 qualifies.
+# `developmental_counter` supplies the counter-grade for that same facet where developmental
+# restriction evidence was actually retrieved. Only GRIN2B qualifies.
+
+GRIN2B:
+  adult_human_onset_claim_refs: []
+  developmental_counter:
+    level: 2
+    rationale: >-
+      Two converging lines put GRIN2B's cognitive role largely in development: rodent NMDA
+      subunit composition shifts away from GluN2B across postnatal life
+      (CLM:alphacognition:GRIN2B:006), and the entire human phenotype of GRIN2B perturbation
+      is a neurodevelopmental encephalopathy, in six individuals with a malformation of
+      cortical development (CLM:alphacognition:GRIN2B:004). Graded 2 rather than 3 because
+      the expression evidence is rodent, indirect and from a study designed for another
+      purpose, and no human developmental transcriptome was ingested.
+    claim_refs: [CLM:alphacognition:GRIN2B:006, CLM:alphacognition:GRIN2B:004]
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        Converging causal evidence across designs: independent transgenic overexpression
+        studies from different groups agreeing in direction on behaviour and on synaptic
+        potentiation, plus an adult acute peptide perturbation, plus a human monogenic series
+        in which perturbing the gene changes cognition. Perturbing GRIN2B demonstrably
+        changes cognition-relevant processes.
+      claim_refs: [CLM:alphacognition:GRIN2B:001, CLM:alphacognition:GRIN2B:002, CLM:alphacognition:GRIN2B:003, CLM:alphacognition:GRIN2B:004]
+      counter_level: 2
+      counter_rationale: >-
+        The human series found that BOTH gain-of-function and loss-of-function variants
+        produce the same clinical direction (impairment), which is direct evidence against a
+        monotonic mapping from GRIN2B function to cognitive ability. A causal control point
+        whose perturbation in either direction is harmful is not a control knob.
+      counter_claim_refs: [CLM:alphacognition:GRIN2B:004]
+      limiting_factor: "every enhancement result is rodent; the human evidence runs the other way"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        Only one adult-onset result was retrieved (CLM:alphacognition:GRIN2B:003), and it
+        perturbs the Cdk5-NR2B interaction rather than GRIN2B itself, in a single study. The
+        two enhancement studies both use constitutive transgenic overexpression from
+        development.
+      claim_refs: [CLM:alphacognition:GRIN2B:003]
+      counter_level: 1
+      counter_rationale: >-
+        The rodent developmental subunit switch (CLM:alphacognition:GRIN2B:006) is weak
+        indirect evidence that the adult system is less GluN2B-dependent than the juvenile
+        one, which would limit adult modifiability.
+      counter_claim_refs: [CLM:alphacognition:GRIN2B:006]
+      limiting_factor: "no adult-inducible genetic perturbation of GRIN2B itself was retrieved"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Two independent rodent studies report performance above a healthy wild-type baseline
+        (learning and memory tasks; fear acquisition and LTP), i.e. replicated non-human
+        causal evidence of supra-baseline effect.
+      claim_refs: [CLM:alphacognition:GRIN2B:001, CLM:alphacognition:GRIN2B:002]
+      counter_level: 2
+      counter_rationale: >-
+        In humans the only available evidence on changing GRIN2B function is a
+        neurodevelopmental disorder with intellectual disability; supra-normal potential is
+        contradicted in the only species that matters for the project's goal.
+      counter_claim_refs: [CLM:alphacognition:GRIN2B:004, CLM:alphacognition:GRIN2B:005]
+      limiting_factor: "rodent wild-type baseline is not a human healthy-adult baseline"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        The founding study reports better performance across several behavioural tasks, which
+        is some breadth, but all of them are rodent memory paradigms in one laboratory
+        environment. Nothing resembling far transfer was retrieved.
+      claim_refs: [CLM:alphacognition:GRIN2B:001]
+      counter_level: 0
+      counter_rationale: "searched; no study reporting failure to transfer across domains was found"
+      counter_claim_refs: []
+      limiting_factor: "no human cognitive battery, and no non-memory domain, was tested in any retrieved study"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 0
+      rationale: >-
+        Searched: none of the retrieved GRIN2B studies characterises a dose-response or
+        expression-response relation. Transgenic overexpression has one level; the peptide
+        study reports no dose series in its abstract.
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: "no evidence of a non-monotonic or bounded response was retrieved either"
+      counter_claim_refs: []
+      limiting_factor: >-
+        for a gene where excess function causes human disease, the absence of any
+        dose-response characterisation is itself the most important gap
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 0
+      rationale: >-
+        Searched: no human interventional study targeting GRIN2B for cognitive benefit was
+        retrieved. The only treatment-adjacent human observation is that GRIN2B variant
+        receptors retained in vitro sensitivity to memantine.
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: >-
+        Nothing was found that TESTED a GRIN2B-directed intervention for cognitive benefit in
+        humans and failed. The one treatment-adjacent human statement — that an objectifiable
+        beneficial memantine response in GRIN2B patients remains to be demonstrated — is an
+        ABSENCE OF MEASUREMENT, not a measured absence of effect, so under R5 it contributes no
+        counter_level and is recorded as a coverage gap in limiting_factor instead.
+      counter_claim_refs: []
+      limiting_factor: >-
+        coverage gap, not negative evidence: no human interventional study of GRIN2B for a
+        cognitive endpoint has been performed. In vitro receptor sensitivity to memantine is not
+        efficacy (rule V16), and the source itself says the clinical response is undemonstrated.
+
+CRTC1:
+  adult_human_onset_claim_refs: []
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Causal adult perturbations in two directions of context (healthy enhancement and
+        disease rescue) plus an in vitro pathway mechanism, all rodent, each from a single
+        group.
+      claim_refs: [CLM:alphacognition:CRTC1:001, CLM:alphacognition:CRTC1:002, CLM:alphacognition:CRTC1:003]
+      counter_level: 1
+      counter_rationale: >-
+        The enhancement study reports that CREB overexpression produced strikingly similar
+        effects, so the retrieved evidence does not establish that CRTC1 is the control point
+        rather than an interchangeable entry into the CREB programme.
+      counter_claim_refs: [CLM:alphacognition:CRTC1:001]
+      limiting_factor: "no independent replication of any CRTC1 cognitive result was retrieved"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Both behavioural results use viral delivery into adult mouse hippocampus, one around
+        training in intact animals and one as gene therapy in an adult degeneration model.
+        This is the cleanest adult-onset evidence in this atlas outside CHRM1.
+      claim_refs: [CLM:alphacognition:CRTC1:001, CLM:alphacognition:CRTC1:002]
+      counter_level: 0
+      counter_rationale: "searched; no evidence was found that CRTC1's cognitive role requires a developmental window"
+      counter_claim_refs: []
+      limiting_factor: "rodent only; no human adult-onset evidence of any kind"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Memory strength increased above an intact healthy-wildtype baseline, and the study
+        explicitly tested and reported that memory quality (context specificity) was not
+        degraded, which is the control that most enhancement claims omit.
+      claim_refs: [CLM:alphacognition:CRTC1:001]
+      counter_level: 0
+      counter_rationale: "searched; no study reporting failure to exceed a healthy baseline was found"
+      counter_claim_refs: []
+      limiting_factor: "single unreplicated rodent study on one fear-conditioning task"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: only context fear conditioning was tested; no second domain, no transfer measure"
+      claim_refs: []
+      counter_level: 1
+      counter_rationale: >-
+        The enhancement was reported as context-specific and did not generalise to a
+        non-trained context. Specificity is desirable for memory quality and is simultaneously
+        weak evidence AGAINST breadth of transfer.
+      counter_claim_refs: [CLM:alphacognition:CRTC1:001]
+      limiting_factor: "one task, one paradigm"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: no dose-response or expression-level-response characterisation was retrieved for CRTC1"
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: "no evidence of non-monotonicity was retrieved either"
+      counter_claim_refs: []
+      limiting_factor: "viral overexpression magnitude is uncontrolled and unreported"
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: no human interventional study of CRTC1 for any endpoint was retrieved"
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: "no human study exists to contradict it either; this is a genuine absence of evidence, not negative evidence"
+      counter_claim_refs: []
+      limiting_factor: "a transcriptional coactivator is not an obvious small-molecule target; no probe or candidate was retrieved"
+
+CHRM1:
+  adult_human_onset_claim_refs: [CLM:alphacognition:CHRM1:001]
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        Converging causal evidence across designs and species: rodent germline loss of
+        function with behavioural and electrophysiological readouts, plus randomised human
+        pharmacological gain of function in healthy adults, plus randomised human
+        pharmacology in a patient population.
+      claim_refs: [CLM:alphacognition:CHRM1:001, CLM:alphacognition:CHRM1:002, CLM:alphacognition:CHRM1:005]
+      counter_level: 3
+      counter_rationale: >-
+        The rodent knockout produced normal or ENHANCED memory on matching-to-sample problems
+        while severely impairing non-matching-to-sample working memory and consolidation. That
+        is strong, direction-reversing evidence that the sign of M1's contribution depends on
+        the process measured, so 'M1 signalling supports cognition' is not a single
+        proposition that can be graded up.
+      counter_claim_refs: [CLM:alphacognition:CHRM1:005]
+      limiting_factor: "the rodent counter-evidence is a germline knockout, whose lifelong compensation makes it an imperfect model of acute adult M1 modulation"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        Randomised placebo-controlled adult human dosing with cognitive endpoints moving over
+        10 days (healthy adults and healthy elderly), plus 6 months of randomised adult dosing
+        in a patient population. Adult modifiability of this target is demonstrated in humans.
+      claim_refs: [CLM:alphacognition:CHRM1:001, CLM:alphacognition:CHRM1:002]
+      counter_level: 0
+      counter_rationale: "searched; nothing suggests M1's cognitive role requires a developmental window"
+      counter_claim_refs: []
+      limiting_factor: "10 days is the longest exposure with a cognitive endpoint in a healthy population"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        One human interventional result with a directly relevant endpoint in a HEALTHY adult
+        population: significant effects on n-back working memory and Milner maze learning
+        versus placebo.
+      claim_refs: [CLM:alphacognition:CHRM1:001]
+      counter_level: 2
+      counter_rationale: >-
+        Two independent reasons to doubt supra-normal potential: the cognitive endpoints were
+        exploratory pharmacodynamics in a safety study, and the rodent genetic evidence shows
+        that REMOVING M1 improves some memory measures, which is incompatible with a simple
+        'more M1 is better' account of headroom.
+      counter_claim_refs: [CLM:alphacognition:CHRM1:005]
+      limiting_factor: "single study, developer-affiliated authorship, no replication retrieved"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        Two different cognitive constructs moved in the healthy-adult study (working memory
+        and maze learning), which is minimal breadth, but they came from one battery in one
+        study and no far-transfer or real-world measure was tested.
+      claim_refs: [CLM:alphacognition:CHRM1:001]
+      counter_level: 1
+      counter_rationale: >-
+        The rodent evidence is explicitly task-dependent in both directions, which predicts
+        uneven rather than broad transfer.
+      counter_claim_refs: [CLM:alphacognition:CHRM1:005]
+      limiting_factor: "the abstract reports the two positive tests; the rest of the battery's results were not retrievable"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Two randomised human dose series exist for M1 agonism. Xanomeline was tested at three
+        dose levels with dose-dependent efficacy on ADAS-Cog and dose-dependent adverse
+        events; HTL0018318 had dose-proportional exposure over 15-35 mg with effects reported
+        across the dose range. That is one human study per compound with a relevant
+        dose-response readout.
+      claim_refs: [CLM:alphacognition:CHRM1:001, CLM:alphacognition:CHRM1:002, CLM:alphacognition:CHRM1:003]
+      counter_level: 0
+      counter_rationale: "no evidence of an inverted-U or other non-monotonic cognitive dose-response for M1 was retrieved"
+      counter_claim_refs: []
+      limiting_factor: >-
+        the dose-response that is actually characterised is efficacy-versus-tolerability, not
+        the cognitive response surface; the top xanomeline dose is also the 52%-discontinuation dose
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        One randomised placebo-controlled human study in healthy adults with directly relevant
+        cognitive endpoints (CLM:alphacognition:CHRM1:001), supported by randomised human
+        trials in patient populations with cognitive (CLM:...:CHRM1:002) and psychosis
+        (CLM:...:CHRM1:004) endpoints.
+      claim_refs: [CLM:alphacognition:CHRM1:001, CLM:alphacognition:CHRM1:002, CLM:alphacognition:CHRM1:004]
+      counter_level: 0
+      counter_rationale: >-
+        No human interventional study of M1 modulation MEASURED a cognitive endpoint and found
+        no effect. The largest human M1 dataset by sample size — the three xanomeline-trospium
+        psychosis trials (CLM:alphacognition:CHRM1:004) — measured PANSS and adverse events and
+        measured NO cognitive endpoint at all. Under R5 that is an evidence GAP about cognition,
+        not evidence against a cognitive effect, so it contributes no counter_level here; an
+        approval in an indication with no cognitive endpoint says nothing either way.
+      counter_claim_refs: []
+      limiting_factor: >-
+        two coverage gaps rather than counter-evidence: the healthy-adult cognitive result is a
+        single unreplicated exploratory analysis in a safety study, and the large psychosis
+        programme never measured cognition. Level 4 would require a replicated healthy-adult
+        cognitive result; a well-powered cognitive endpoint in the existing programme would
+        resolve the gap in either direction.
+
+GRM5:
+  adult_human_onset_claim_refs: []
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        One rodent pharmacological study in disease models, with an internally conflicting
+        cognitive outcome (memory recovered in the acute amyloid-injection model, not in the
+        chronic transgenic model).
+      claim_refs: [CLM:alphacognition:GRM5:002]
+      counter_level: 1
+      counter_rationale: >-
+        The two directions of mGluR5 modulation are each claimed to be pro-cognitive in
+        different contexts, which undermines any single causal account of mGluR5's
+        contribution.
+      counter_claim_refs: [CLM:alphacognition:GRM5:001, CLM:alphacognition:GRM5:002]
+      limiting_factor: "no healthy-baseline perturbation of mGluR5 with a cognitive endpoint was retrieved"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 1
+      rationale: "adult and aged mice were dosed pharmacologically, so the perturbation is adult-onset, but in disease models with a partly null cognitive result"
+      claim_refs: [CLM:alphacognition:GRM5:002]
+      counter_level: 2
+      counter_rationale: >-
+        The human trial was deliberately run in 3-6 year olds because prior mGluR5 NAM trials
+        in ADULTS had failed, and it was itself null. Adult human modifiability of cognition
+        via mGluR5 has been tried and has not worked.
+      counter_claim_refs: [CLM:alphacognition:GRM5:001]
+      limiting_factor: "the earlier adult trials are known only through the FXLEARN paper's own statement, not from records retrieved here"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: no study of mGluR5 modulation in a healthy baseline with a cognitive endpoint was retrieved"
+      claim_refs: []
+      counter_level: 2
+      counter_rationale: >-
+        A randomised human trial found no benefit even in a deficit population, and the rodent
+        evidence is rescue-only. Supra-normal potential is unsupported and the deficit-state
+        evidence is against it.
+      counter_claim_refs: [CLM:alphacognition:GRM5:001, CLM:alphacognition:GRM5:002]
+      limiting_factor: "no healthy-baseline study of any species was retrieved"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: nothing supporting breadth"
+      claim_refs: []
+      counter_level: 2
+      counter_rationale: >-
+        The human trial found no significant between-group difference on the primary measure
+        OR on any secondary cognitive or language measure. A multi-endpoint null is direct
+        evidence against breadth.
+      counter_claim_refs: [CLM:alphacognition:GRM5:001]
+      limiting_factor: "the endpoints were language and communication measures in young children, not a general cognitive battery"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        The human trial reports 2 months of dose optimisation to the maximum tolerated dose,
+        which is dosing information but not an exposure-response relation for a cognitive
+        endpoint.
+      claim_refs: [CLM:alphacognition:GRM5:001]
+      counter_level: 0
+      counter_rationale: "no non-monotonic response evidence retrieved"
+      counter_claim_refs: []
+      limiting_factor: "titrating to tolerability rather than to a target exposure is one of the candidate explanations for the null"
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 0
+      rationale: >-
+        Searched: no human interventional evidence that modulating mGluR5 improves cognition
+        was found. Level 0 rather than a low positive level is deliberate: the human evidence
+        that exists is strong and points the other way, which the counter_level records.
+      claim_refs: []
+      counter_level: 3
+      counter_rationale: >-
+        A multisite randomised placebo-controlled trial (99 randomised, 91 completing the
+        controlled period, NCT02920892) found no benefit on its primary or any secondary
+        endpoint, and its authors conclude that the mechanism does not translate to the human
+        population.
+      counter_claim_refs: [CLM:alphacognition:GRM5:001]
+      limiting_factor: "one indication (fragile X syndrome), one age group, one direction of modulation"
+
+DRD1:
+  adult_human_onset_claim_refs: []
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Adult pharmacological perturbation in a healthy rodent baseline changed working-memory
+        performance, and the source states the same dose-response pattern is typical in rats
+        and monkeys, i.e. replicated non-human causal evidence.
+      claim_refs: [CLM:alphacognition:DRD1:001]
+      counter_level: 0
+      counter_rationale: "searched; no study reporting no effect of D1 manipulation on working memory was retrieved"
+      counter_claim_refs: []
+      limiting_factor: "no available agent separates D1 from D5, as the source itself states"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 2
+      rationale: "acute systemic dosing of adult healthy mice changed working memory; adult modifiability is demonstrated in a non-human species"
+      claim_refs: [CLM:alphacognition:DRD1:001]
+      counter_level: 0
+      counter_rationale: "no developmental-window requirement was found in what was retrieved"
+      counter_claim_refs: []
+      limiting_factor: "rodent; the only human-facing evidence is a review"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        Weak and indirect only: a review states that dihydrexidine at low doses improved
+        working memory in monkeys. No primary healthy-baseline enhancement result was
+        retrieved.
+      claim_refs: [CLM:alphacognition:DRD1:002]
+      counter_level: 2
+      counter_rationale: >-
+        The inverted-U relation means any enhancement is bounded and reverses with further
+        stimulation, and the optimum depends on baseline dopamine tone. Enhancement here is
+        intrinsically a narrow-window phenomenon rather than a headroom that can be pushed.
+      counter_claim_refs: [CLM:alphacognition:DRD1:001, CLM:alphacognition:DRD1:002]
+      limiting_factor: "no primary source for healthy-baseline enhancement was retrieved, only a review's summary of one"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: only spatial working memory was tested in the primary source; no second domain"
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: "no failure-to-transfer result was retrieved either"
+      counter_claim_refs: []
+      limiting_factor: "single-domain evidence base"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 3
+      rationale: >-
+        This is DRD1's genuine strength and the reason it is in the seed list: the shape of the
+        dose-response relation is characterised, not assumed. An explicit inverted-U
+        dose/response curve was measured in healthy mice, and the source reports the same shape
+        as typical across rats and monkeys, i.e. converging evidence across species for a
+        non-monotonic response.
+      claim_refs: [CLM:alphacognition:DRD1:001, CLM:alphacognition:DRD1:002]
+      counter_level: 0
+      counter_rationale: "no source retrieved disputes the inverted-U shape"
+      counter_claim_refs: []
+      limiting_factor: >-
+        the LOCATION of the optimum, and its dependence on baseline state, is not
+        characterised anywhere retrieved; knowing the shape without knowing the setpoint is
+        not enough to dose anyone
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 0
+      rationale: >-
+        Searched: no primary human interventional study of D1 agonism with a cognitive endpoint
+        was retrieved. A review reports that dihydrexidine has begun to be tested in patients
+        with schizophrenia or schizotypal disorder with results the authors call encouraging
+        but limited by pharmacokinetics; that is a secondary report of an early-stage patient
+        study and cannot support a level here.
+      claim_refs: []
+      counter_level: 0
+      counter_rationale: "no negative human result was retrieved either"
+      counter_claim_refs: []
+      limiting_factor: "review-level evidence only; the primary trials were not located in this session"
+
+HTR2A:
+  adult_human_onset_claim_refs: []
+  facets:
+    - facet: mechanistic_causal_perturbation
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        One rodent study in which systemic 5-HT2A antagonism impaired spatial reversal
+        learning. The direction of the underlying proposition is inferred from a blockade
+        experiment, which is weak.
+      claim_refs: [CLM:alphacognition:HTR2A:001]
+      counter_level: 1
+      counter_rationale: >-
+        In the same study, targeted infusion of the 5-HT2A antagonist into orbitofrontal
+        cortex, medial prefrontal cortex and nucleus accumbens produced no significant effect,
+        so the systemic result was not localised and may not be a 5-HT2A mechanism at all.
+      counter_claim_refs: [CLM:alphacognition:HTR2A:001]
+      limiting_factor: "single rodent study whose own localisation attempt failed"
+    - facet: adult_onset_perturbation
+      assessment_status: assessed
+      level: 2
+      rationale: >-
+        Acute pharmacological 5-HT2A agonism in healthy adult humans demonstrably changes
+        self-rated cognition and control, and the rodent pharmacology is also adult-onset. The
+        target is unambiguously modifiable in adults; the question is the sign.
+      claim_refs: [CLM:alphacognition:HTR2A:002, CLM:alphacognition:HTR2A:001]
+      counter_level: 0
+      counter_rationale: "no developmental-window requirement was retrieved"
+      counter_claim_refs: []
+      limiting_factor: "all human exposure is acute; nothing about repeated or post-acute dosing"
+    - facet: above_baseline_enhancement
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: no result showing cognitive performance above a healthy human or animal baseline from 5-HT2A agonism was retrieved"
+      claim_refs: []
+      counter_level: 3
+      counter_rationale: >-
+        Two randomised placebo-controlled studies in healthy adults point away from
+        enhancement: acute dose-dependent increases in self-rated impairment of control and
+        cognition, and no change in measured cognitive empathy or moral decision-making while
+        emotional empathy changed.
+      counter_claim_refs: [CLM:alphacognition:HTR2A:002, CLM:alphacognition:HTR2A:003]
+      limiting_factor: "the human counter-evidence is acute intoxication; a post-acute enhancement window is untested here, not excluded"
+    - facet: transfer_breadth
+      assessment_status: assessed
+      level: 0
+      rationale: "searched: nothing supporting breadth"
+      claim_refs: []
+      counter_level: 1
+      counter_rationale: >-
+        A measured dissociation argues against breadth: emotional empathy changed while
+        cognitive empathy and moral reasoning did not, in the same participants.
+      counter_claim_refs: [CLM:alphacognition:HTR2A:003]
+      limiting_factor: "small samples in the dissociation study (n = 32 and n = 24)"
+    - facet: dose_response_knowledge
+      assessment_status: assessed
+      level: 1
+      rationale: >-
+        Two dose levels each of psilocybin and LSD were compared in the same healthy
+        participants, and the higher LSD dose produced higher impairment ratings, so a dose
+        ordering exists — for impairment, not for benefit.
+      claim_refs: [CLM:alphacognition:HTR2A:002]
+      counter_level: 0
+      counter_rationale: "no non-monotonic cognitive response for 5-HT2A agonism was retrieved"
+      counter_claim_refs: []
+      limiting_factor: "the dose-response that is characterised is for subjective drug effect, not for a cognitive endpoint"
+    - facet: human_intervention_evidence
+      assessment_status: assessed
+      level: 0
+      rationale: >-
+        Searched: no human interventional evidence that 5-HT2A modulation improves cognition
+        was found. Level 0 with a high counter_level is deliberate: substantial randomised
+        human data exist and they are not supportive.
+      claim_refs: []
+      counter_level: 3
+      counter_rationale: >-
+        Two randomised placebo-controlled healthy-adult studies (28 and 32/24 participants)
+        report acute impairment and a cognitive null respectively.
+      counter_claim_refs: [CLM:alphacognition:HTR2A:002, CLM:alphacognition:HTR2A:003]
+      limiting_factor: >-
+        both human studies used psychedelic agonists, which are receptor-promiscuous and
+        unblindable; a selective 5-HT2A ligand with a cognitive endpoint in healthy adults was
+        not found

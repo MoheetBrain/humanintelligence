@@ -1,0 +1,176 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34716926/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34716926"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs220558"
+          }
+        },
+        "accession_id": "GCST006568",
+        "association_id": 34716926,
+        "beta": "0.0111 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0078,
+        "ci_upper": 0.0144,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004875",
+            "efo_trait": "mathematical ability"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "12:13795131"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-10,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -10,
+        "pvalue_mantissa": 2,
+        "range": "[0.0078-0.0144]",
+        "reported_trait": [
+          "Highest math class taken (MTAG)"
+        ],
+        "risk_frequency": "0.3428",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs220558"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs220558-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34712910/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34712910"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs2268127"
+          }
+        },
+        "accession_id": "GCST006569",
+        "association_id": 34712910,
+        "beta": "0.012 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0081,
+        "ci_upper": 0.0159,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004875",
+            "efo_trait": "mathematical ability"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "12:13787914"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 1e-09,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 1,
+        "range": "[0.0081-0.0159]",
+        "reported_trait": [
+          "Self-reported math ability (MTAG)"
+        ],
+        "risk_frequency": "0.7111",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs2268127"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs2268127-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34701755/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34701755"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs138009610"
+          }
+        },
+        "accession_id": "GCST006573",
+        "association_id": 34701755,
+        "beta": "0.0231 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.015,
+        "ci_upper": 0.031,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004875",
+            "efo_trait": "mathematical ability"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "12:13711041"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 1e-08,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 1,
+        "range": "[0.015-0.031]",
+        "reported_trait": [
+          "Self-reported math ability"
+        ],
+        "risk_frequency": "0.939",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs138009610"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs138009610-T"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRIN2B&efo_id=EFO_0004875&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 3,
+    "totalPages": 1
+  }
+}

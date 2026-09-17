@@ -1,0 +1,16 @@
+# FIXTURE — synthetic, for tests only. MUST FAIL: a non-unknown shape with the default basis is an invented dose-response curve.
+id: SV:cognition.placeholder_capacity
+name: "placeholder capacity"
+definition: >-
+  Synthetic placeholder definition used only to exercise the schema.
+kind: latent_cognitive
+timescale: unknown
+level: behavioural
+units: null
+measurement_proxies: []
+response_shape: {shape: inverted_u, basis: default_no_evidence_yet, claim_refs: []}
+desirability: unknown
+safety_coupling: []
+safety_coupling_basis: not_asserted_pending_claims
+status: provisional
+provenance: {defined_by: agent:ontology, basis: fixture}

@@ -1,0 +1,758 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/intervention",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "A Mechanism record must name the class of molecular action it denotes.",
+      "if": {
+        "properties": {
+          "node_type": {
+            "const": "Mechanism"
+          }
+        },
+        "required": [
+          "node_type"
+        ]
+      },
+      "then": {
+        "required": [
+          "mechanism_class"
+        ]
+      }
+    },
+    {
+      "$comment": "The entity must be identified. Three atlases independently chose `id` and `intervention_id`; both are accepted in v0.1.0 and v0.2.0 settles on `id` (docs/ONTOLOGY_NOTES.md deviation D8).",
+      "anyOf": [
+        {
+          "required": [
+            "id"
+          ]
+        },
+        {
+          "required": [
+            "intervention_id"
+          ]
+        }
+      ]
+    },
+    {
+      "$comment": "The entity must be named, under one of the three accepted field names.",
+      "anyOf": [
+        {
+          "required": [
+            "label"
+          ]
+        },
+        {
+          "required": [
+            "preferred_name"
+          ]
+        },
+        {
+          "required": [
+            "name"
+          ]
+        }
+      ]
+    },
+    {
+      "$comment": "Authorship must be recorded, in one of the three forms in use.",
+      "anyOf": [
+        {
+          "required": [
+            "provenance"
+          ]
+        },
+        {
+          "required": [
+            "added_by"
+          ]
+        },
+        {
+          "required": [
+            "recorded_by"
+          ]
+        }
+      ]
+    }
+  ],
+  "description": "One intervention entity in the intervention layer. Registering an intervention is a cheminformatics or bibliographic act and NEVER an instruction to obtain, administer or self-apply anything. NO DOSE, ROUTE, REGIMEN, INTENSITY OR SCHEDULE MAY BE RECORDED \u2014 there is no field for one, and rule V20 rejects the attempt (docs/COMPUTATIONAL_ONLY_POLICY.md). Binding a target is never efficacy: an effect on a state variable needs a separate claim (rule V16).",
+  "examples": [
+    {
+      "cited_by_claims": [],
+      "dose_information": "omitted_by_policy",
+      "id": "CPD:placeholder_probe",
+      "identifiers": {
+        "chembl_id": null,
+        "identifier_provenance": null,
+        "inn": null
+      },
+      "known_liabilities": [],
+      "label": "placeholder research probe",
+      "modality": "small_molecule",
+      "node_type": "Compound",
+      "provenance": {
+        "created_by": "agent:ontology",
+        "created_on": "2026-09-17",
+        "run_id": "schema-example"
+      },
+      "schema_version": "0.1.0",
+      "targets": []
+    }
+  ],
+  "properties": {
+    "active_moiety": {
+      "description": "The compound node that carries the activity, when distinct.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "acts_on_target": {
+      "description": "The single Target this entity engages.",
+      "pattern": "^TGT:[A-Z0-9][A-Z0-9_.-]*$",
+      "type": "string"
+    },
+    "acts_through": {
+      "description": "Entities this one acts via, when it is not direct.",
+      "items": {
+        "description": "Intermediate entity id.",
+        "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "added_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "added_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "approval": {
+      "additionalProperties": false,
+      "description": "Approval somewhere for some indication. NEVER evidence of cognitive efficacy.",
+      "properties": {
+        "as_reported": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "status": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "approval_status": {
+      "additionalProperties": false,
+      "description": "Approval somewhere for some indication. NEVER evidence of cognitive efficacy.",
+      "properties": {
+        "source_id": {
+          "description": "Source for the approval status.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "status": {
+          "description": "As stated by the named source; never inferred.",
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "status",
+        "source_id"
+      ],
+      "type": "object"
+    },
+    "approved_indication_note": {
+      "description": "What it is approved for elsewhere. NEVER evidence of cognitive efficacy.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "attributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Descriptive domain metadata this schema does not model \u2014 an AAV construct's serotype, a probe's assay format, a cohort's genotyping array. Values must be STRINGS: a number in an unvalidated bag would escape rule V9's provenance requirement. A HOLDING AREA, not a permanent home \u2014 anything here that turns out to be decision-relevant must graduate to a real, validated field through a schema-change request (contract \u00a75.5).",
+      "type": "object"
+    },
+    "blood_brain_barrier": {
+      "description": "CNS penetration as stated by a source, or `unknown`. NEVER inferred from structure here.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "chembl_fields_as_returned": {
+      "description": "Verbatim ChEMBL fields, carried so a database value is never paraphrased. `max_phase` is a development-status field, not an efficacy statement.",
+      "type": "object"
+    },
+    "chembl_first_approval": {
+      "description": "DEPRECATED SPELLING of first_approval_year; accepted in v0.1.0.",
+      "type": [
+        "integer",
+        "string",
+        "null"
+      ]
+    },
+    "chembl_id": {
+      "description": "ChEMBL accession, seen in a tool response.",
+      "pattern": "^CHEMBL[0-9]+$",
+      "type": "string"
+    },
+    "chembl_max_phase": {
+      "description": "DEPRECATED SPELLING of max_clinical_phase.value; accepted in v0.1.0. ChEMBL max_phase verbatim: a development-status field, never an efficacy statement.",
+      "type": [
+        "integer",
+        "number",
+        "string",
+        "null"
+      ]
+    },
+    "cited_by_claims": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "claim_refs": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "conflict_of_interest_note": {
+      "description": "A declared interest visible in the source.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "database_source_id": {
+      "description": "The pinned DatabaseRelease these database facts came from. REQUIRED for rule V9 to exempt max_clinical_phase.value and first_approval_year from the no-free-numbers rule: a database fact is admissible because its provenance is visible, not because it is a number somebody trusts.",
+      "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+      "type": "string"
+    },
+    "description": {
+      "description": "What the entity is. Structural, never a protocol.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "direction_warning": {
+      "description": "A warning that the direction of effect is unknown, inverted or context-dependent.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "domain": {
+      "$comment": "vocabulary: agent_id (bare names, orchestrator excluded)",
+      "description": "Atlas that registered this entity.",
+      "enum": [
+        "ontology",
+        "alphacognition",
+        "brakes",
+        "power",
+        "comparative",
+        "integration",
+        "red_team"
+      ],
+      "type": "string"
+    },
+    "dose_information": {
+      "const": "omitted_by_policy",
+      "description": "THE ONLY LEGAL VALUE IS `omitted_by_policy`. The field exists so that the absence of dose, route and regimen is an explicit, auditable statement rather than an omission a reader might think accidental. No dose, route, regimen, product or sourcing information is recorded anywhere in this repository (docs/COMPUTATIONAL_ONLY_POLICY.md, rule V20)."
+    },
+    "dose_response_note": {
+      "description": "What the retrieved text said about the SHAPE of the response. Contains no dose the reader could act on; a stated shape still needs a claim.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "efficacy_status": {
+      "description": "What is and is not established about this entity's effect. BINDING IS NEVER EFFICACY (rule V16), so this field usually records the absence of efficacy evidence rather than its presence.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "exemplar_interventions": {
+      "description": "Concrete entities illustrating a Mechanism record.",
+      "items": {
+        "description": "Intervention node id.",
+        "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "first_approval_year": {
+      "description": "Year of first approval somewhere, as the database states it. A DATABASE FACT, not a judgement: rule V9 exempts it only when `database_source_id` names the pinned release it came from.",
+      "maximum": 2100,
+      "minimum": 1800,
+      "type": [
+        "integer",
+        "null"
+      ]
+    },
+    "human_evidence_summary": {
+      "description": "One paragraph on the human evidence, INCLUDING nulls and failures.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "id": {
+      "description": "Intervention node id. THE CANONICAL FIELD.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "identifier_provenance": {
+      "description": "How the identifier was obtained, in one line.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "identifiers": {
+      "additionalProperties": false,
+      "description": "Identifiers seen in a tool response, never typed from memory.",
+      "properties": {
+        "chembl_id": {
+          "pattern": "^CHEMBL[0-9]+$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier_provenance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "inn": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "intervention_id": {
+      "description": "Accepted alias of `id`; deprecated in v0.2.0.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "known_liabilities": {
+      "description": "An EMPTY list means nobody looked, never 'safe'.",
+      "items": {
+        "description": "Adverse effect id.",
+        "pattern": "^AE:[a-z0-9][a-z0-9_]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "label": {
+      "description": "Plain name, as the source database gives it.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "max_clinical_phase": {
+      "additionalProperties": false,
+      "description": "Highest clinical phase reached, as a DATABASE FIELD copied verbatim. It describes development status, never efficacy and never cognitive effect. Rule V9 exempts `value` only when the record also names `database_source_id`.",
+      "properties": {
+        "as_reported": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "value": {
+          "maximum": 4,
+          "minimum": 0,
+          "type": [
+            "integer",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "mechanism": {
+      "description": "The single Mechanism node this entity acts through.",
+      "pattern": "^MECH:[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "mechanism_as_reported": {
+      "description": "The mechanism in the source's own words, verbatim.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "mechanism_class": {
+      "$comment": "vocabulary: mechanism_class",
+      "description": "Class of molecular action. REQUIRED when node_type is Mechanism.",
+      "enum": [
+        "orthosteric_agonism",
+        "orthosteric_antagonism",
+        "inverse_agonism",
+        "positive_allosteric_modulation",
+        "negative_allosteric_modulation",
+        "competitive_inhibition",
+        "non_competitive_inhibition",
+        "transport_inhibition",
+        "substrate_provision",
+        "expression_upregulation",
+        "expression_downregulation",
+        "protein_degradation",
+        "epigenetic_modulation",
+        "physical_stimulation",
+        "other",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "mechanisms": {
+      "description": "Mechanisms of action as the drug database returned them, one object per mechanism. The structured form is kept rather than flattened to a string because it carries the per-mechanism provenance (`target_chembl_id`, `mechanism_ref_pmid`) that makes the annotation checkable; flattening it would destroy exactly what is worth keeping. Having a mechanism is NOT having an effect (rule V16).",
+      "items": {
+        "additionalProperties": false,
+        "description": "One mechanism of action, copied from the database with its provenance.",
+        "properties": {
+          "action_type": {
+            "description": "Database action type (AGONIST, INHIBITOR, ...), verbatim.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "direct_interaction": {
+            "description": "Database flag, verbatim. Not this project's judgement.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "disease_efficacy": {
+            "description": "Database flag, verbatim. It refers to the approved indication, NEVER to cognition.",
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "mechanism_id": {
+            "description": "Mechanism node id, when one has been declared.",
+            "pattern": "^MECH:[a-z0-9][a-z0-9_]*$",
+            "type": "string"
+          },
+          "mechanism_of_action": {
+            "description": "Verbatim mechanism text from the database.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "mechanism_ref_pmid": {
+            "description": "PubMed id the database cites for this mechanism.",
+            "pattern": "^[0-9]{1,9}$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "note": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_id": {
+            "description": "Registered source for this mechanism, if registered here.",
+            "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_chembl_id": {
+            "description": "The database's own target accession.",
+            "pattern": "^CHEMBL[0-9]+$",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "mechanism_of_action"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "modality": {
+      "$comment": "vocabulary: intervention_modality",
+      "description": "The kind of intervention this is; inferable from node_type.",
+      "enum": [
+        "small_molecule",
+        "biologic",
+        "oligonucleotide",
+        "gene_regulation",
+        "metabolic_or_nutritional",
+        "device_or_stimulation",
+        "behavioural_or_training",
+        "other"
+      ],
+      "type": "string"
+    },
+    "name": {
+      "description": "Accepted alias of `label`; deprecated in v0.2.0.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "node_type": {
+      "$comment": "ontology/nodes.yaml: intervention-layer entity types",
+      "description": "Which intervention node type this record instantiates.",
+      "enum": [
+        "Biologic",
+        "Compound",
+        "Drug",
+        "GeneRegulation",
+        "Mechanism",
+        "MetabolicIntervention",
+        "Neurotechnology",
+        "RNAIntervention"
+      ],
+      "type": "string"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        }
+      ],
+      "description": "Structural notes only, as one string or a list of them. No dose, route, regimen or protocol."
+    },
+    "preferred_name": {
+      "description": "Alternative spelling of `label`. Two atlases chose different names for this field independently; both are accepted in v0.1.0 and v0.2.0 must settle on `label` (see docs/ONTOLOGY_NOTES.md).",
+      "minLength": 1,
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "description": "Who wrote this record, when and how. The supporting_* lists exist so a database-derived record can name what it aggregates instead of hiding it.",
+      "properties": {
+        "created_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "created_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        },
+        "database_release": {
+          "description": "Pinned DatabaseRelease the record was derived from.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "method": {
+          "$comment": "vocabulary: claim_method",
+          "description": "How this record was produced.",
+          "enum": [
+            "literature_curation",
+            "database_ingestion",
+            "derived_from_claims"
+          ],
+          "type": "string"
+        },
+        "pipeline": {
+          "description": "Repo-relative script that produced the record, for database_ingestion. Makes the record rebuildable (P7).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "run_id": {
+          "description": "Agent run identifier, for tracing a record to a session.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "supporting_accessions": {
+          "description": "Any other accessions the record rests on.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_pubmed_ids": {
+          "description": "PubMed ids the database record itself cites.",
+          "items": {
+            "pattern": "^[0-9]{1,9}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_ids": {
+          "description": "Study accessions the database record aggregates.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_locus_ids": {
+          "description": "Opaque per-locus keys from the source database.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "created_by",
+        "created_on"
+      ],
+      "type": "object"
+    },
+    "recorded_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "recorded_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "related_probes_named_in_retrieved_text": {
+      "description": "Other probes the retrieved text named. Not endorsements.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "role_in_atlas": {
+      "description": "Why this atlas registered the entity at all.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "scope_limits": {
+      "description": "What this entity does NOT show. Honest scoping.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "state_variables_touched": {
+      "description": "State variables the CITED CLAIMS bear on. Registration only: it asserts no direction and no effect (rule V16).",
+      "items": {
+        "description": "State variable id.",
+        "pattern": "^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\\.[a-z0-9][a-z0-9_]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "supports_effect_claims": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "synonyms_as_reported": {
+      "description": "Synonyms exactly as the database returned them.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "targets": {
+      "description": "Engagement only. NOT an efficacy assertion (rule V16).",
+      "items": {
+        "description": "Target or molecular entity id.",
+        "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "vector_serotype": {
+      "description": "Delivery vector as named by the source, for GeneRegulation.",
+      "minLength": 1,
+      "type": "string"
+    }
+  },
+  "required": [],
+  "title": "Intervention entity",
+  "type": "object"
+}

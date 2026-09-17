@@ -1,0 +1,11 @@
+# FIXTURE — synthetic, for tests only. MUST FAIL: not_assessed with level 0: 'nobody looked' must not be recordable as 'searched and found nothing' (contract §5.2).
+schema_version: "0.1.0"
+target_id: TGT:PLACEHOLDER
+assessed_by: agent:ontology
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: tractability
+    assessment_status: not_assessed
+    level: 0
+    counter_level: null

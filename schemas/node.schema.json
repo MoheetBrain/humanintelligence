@@ -1,0 +1,111 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/node",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One node in the compiled graph. Phase 2 (graph/build_graph.py) emits these; Phase 1 defines the shape so the compiler has a contract to meet. `attributes` is deliberately open because node attributes vary by type \u2014 the declared required_attributes in ontology/nodes.yaml are checked by the validator, not here.",
+  "examples": [
+    {
+      "attributes": {},
+      "id": "SV:cognition.placeholder_variable",
+      "layer": "biological",
+      "node_type": "StateVariable",
+      "provenance_class": "ontology_axiom"
+    }
+  ],
+  "properties": {
+    "attributes": {
+      "description": "Type-specific attributes; keys checked against nodes.yaml.",
+      "type": "object"
+    },
+    "id": {
+      "description": "Node id; must match the node type's id_pattern (rule V2).",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "layer": {
+      "$comment": "ontology/nodes.yaml: layers",
+      "description": "Layer this node instance sits in.",
+      "enum": [
+        "evidence",
+        "biological",
+        "intervention"
+      ],
+      "type": "string"
+    },
+    "node_type": {
+      "$comment": "ontology/nodes.yaml: node type names",
+      "description": "Declared node type.",
+      "enum": [
+        "AdverseEffect",
+        "Audit",
+        "Biologic",
+        "BrainRegion",
+        "CellType",
+        "Circuit",
+        "Claim",
+        "ClinicalTrial",
+        "CognitivePhenotype",
+        "Compound",
+        "ComputationalPrimitive",
+        "DatabaseRelease",
+        "Dataset",
+        "DesiredEffect",
+        "Drug",
+        "Enzyme",
+        "Experiment",
+        "Gene",
+        "GeneRegulation",
+        "IonChannel",
+        "Measurement",
+        "Mechanism",
+        "MetabolicIntervention",
+        "MolecularProcess",
+        "Network",
+        "Neurotechnology",
+        "Paper",
+        "Pathway",
+        "Preprint",
+        "Protein",
+        "ProteinComplex",
+        "RNAIntervention",
+        "Receptor",
+        "Replication",
+        "Review",
+        "Species",
+        "StateDomain",
+        "StateVariable",
+        "Target",
+        "Transcript",
+        "Transporter",
+        "Variant"
+      ],
+      "type": "string"
+    },
+    "provenance_class": {
+      "$comment": "vocabulary: provenance_class",
+      "description": "Why this node exists in the graph.",
+      "enum": [
+        "claim_derived",
+        "reference_data",
+        "tool_mediated",
+        "ontology_axiom"
+      ],
+      "type": "string"
+    },
+    "source_refs": {
+      "description": "Records or snapshots this node was compiled from.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "id",
+    "node_type",
+    "layer"
+  ],
+  "title": "Compiled graph node",
+  "type": "object"
+}

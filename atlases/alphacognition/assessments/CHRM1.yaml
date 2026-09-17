@@ -1,0 +1,195 @@
+# Facet assessment — generated file.
+# The four genetics facets are produced deterministically by
+# pipelines/alphacognition/build_assessments.py from the derived tables under
+# data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
+# present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
+# Re-run the script rather than editing this file.
+target_id: TGT:CHRM1
+schema_version: 0.1.0
+assessed_by: agent:alphacognition
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: human_genetic_association
+  assessment_status: assessed
+  level: 1
+  rationale: 'weak or indirect only: 18 catalogued association(s) on non-panel traits only. No catalogued
+    genome-wide association on a cognitive-ability trait.'
+  claim_refs: &id001
+  - CLM:alphacognition:gap.CHRM1:001
+  counter_level: 0
+  counter_rationale: 'No study reporting a null or opposite-direction association for this gene on a panel
+    trait was found by this sweep. That is a property of the sweep, not of the literature: the GWAS Catalog
+    records associations that passed a significance threshold and does not record non-associations, so
+    absence of a catalogued negative is uninformative and is recorded as 0 for that reason.'
+  counter_claim_refs: []
+  limiting_factor: 'level 4 is unreachable from this evidence: the catalogue''s `beta` field is heterogeneous
+    free text and effect alleles are often reported as ''?'', so direction consistency across studies
+    cannot be established. cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither
+    the association nor any locus-to-gene assignment built on it is established as transportable.'
+- facet: causal_gene_attribution
+  assessment_status: assessed
+  level: 0
+  rationale: no cognitive-trait human genetic signal was found for this gene, so there is no attribution
+    question to answer yet
+  claim_refs: *id001
+  counter_level: 0
+  counter_rationale: no competing gene assignment was found, because no fine-mapped cognitive-trait credible
+    set implicates this gene at all
+  counter_claim_refs: []
+  limiting_factor: nothing to attribute
+  search_basis: 'Searched: Open Targets 26.06 trait -> studies(diseaseIds:) -> credibleSets(studyTypes:[gwas])
+    -> l2GPredictions and colocalisation, over all 22 panel traits (716 GWAS studies, 13,730 credible
+    sets), plus every GWAS Catalog association for this gene. A hit would have been this gene appearing
+    in an l2GPredictions row for a cognitive-panel trait, or a molecular-QTL colocalisation for this gene
+    at such a locus.'
+- facet: human_phenotype_specificity
+  assessment_status: assessed
+  level: 1
+  rationale: the gene carries 18 catalogued association(s) across 7 distinct non-cognitive trait(s) and
+    none on a cognitive-panel trait; whatever this locus does, the catalogue does not connect it to cognition
+  claim_refs: *id001
+  counter_level: 0
+  counter_rationale: no contradicting pleiotropy evidence applies at this level
+  counter_claim_refs: []
+  limiting_factor: specificity is assessed from positional annotation, so 'this gene is pleiotropic' and
+    'this locus is gene-dense' are not separated. Mendelian randomisation and pan-phenome gene-level testing
+    were not run in v0.1.
+- facet: adult_expression_and_timing
+  assessment_status: assessed
+  level: 3
+  rationale: detected in all 13 sampled adult human brain regions (GTEx v8, adult post-mortem donors),
+    AND an adult-onset human effect on a cognitive endpoint is referenced (CLM:alphacognition:CHRM1:001)
+  claim_refs:
+  - CLM:alphacognition:expr.CHRM1:001
+  - CLM:alphacognition:CHRM1:001
+  counter_level: 0
+  counter_rationale: 'no evidence that this gene''s action is confined to development was retrieved. Developmental-restriction
+    evidence was NOT systematically searched for this target: no human developmental transcriptome (BrainSpan/PsychENCODE)
+    was ingested in v0.1, so this 0 means ''not found by the sweep that was run''.'
+  counter_claim_refs: []
+  limiting_factor: adult human brain CELL-TYPE resolution is unavailable in this release and is deferred
+    to docs/TASK_DAG.yaml Q003; developmental timing was not ingested from any atlas. Level 4 is therefore
+    unreachable for every target in v0.1.
+- facet: mechanistic_causal_perturbation
+  assessment_status: assessed
+  level: 3
+  rationale: 'Converging causal evidence across designs and species: rodent germline loss of function
+    with behavioural and electrophysiological readouts, plus randomised human pharmacological gain of
+    function in healthy adults, plus randomised human pharmacology in a patient population.'
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  - CLM:alphacognition:CHRM1:005
+  counter_level: 3
+  counter_rationale: The rodent knockout produced normal or ENHANCED memory on matching-to-sample problems
+    while severely impairing non-matching-to-sample working memory and consolidation. That is strong,
+    direction-reversing evidence that the sign of M1's contribution depends on the process measured, so
+    'M1 signalling supports cognition' is not a single proposition that can be graded up.
+  counter_claim_refs:
+  - CLM:alphacognition:CHRM1:005
+  limiting_factor: the rodent counter-evidence is a germline knockout, whose lifelong compensation makes
+    it an imperfect model of acute adult M1 modulation
+- facet: adult_onset_perturbation
+  assessment_status: assessed
+  level: 3
+  rationale: Randomised placebo-controlled adult human dosing with cognitive endpoints moving over 10
+    days (healthy adults and healthy elderly), plus 6 months of randomised adult dosing in a patient population.
+    Adult modifiability of this target is demonstrated in humans.
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  counter_level: 0
+  counter_rationale: searched; nothing suggests M1's cognitive role requires a developmental window
+  counter_claim_refs: []
+  limiting_factor: 10 days is the longest exposure with a cognitive endpoint in a healthy population
+- facet: above_baseline_enhancement
+  assessment_status: assessed
+  level: 3
+  rationale: 'One human interventional result with a directly relevant endpoint in a HEALTHY adult population:
+    significant effects on n-back working memory and Milner maze learning versus placebo.'
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  counter_level: 2
+  counter_rationale: 'Two independent reasons to doubt supra-normal potential: the cognitive endpoints
+    were exploratory pharmacodynamics in a safety study, and the rodent genetic evidence shows that REMOVING
+    M1 improves some memory measures, which is incompatible with a simple ''more M1 is better'' account
+    of headroom.'
+  counter_claim_refs:
+  - CLM:alphacognition:CHRM1:005
+  limiting_factor: single study, developer-affiliated authorship, no replication retrieved
+- facet: transfer_breadth
+  assessment_status: assessed
+  level: 1
+  rationale: Two different cognitive constructs moved in the healthy-adult study (working memory and maze
+    learning), which is minimal breadth, but they came from one battery in one study and no far-transfer
+    or real-world measure was tested.
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  counter_level: 1
+  counter_rationale: The rodent evidence is explicitly task-dependent in both directions, which predicts
+    uneven rather than broad transfer.
+  counter_claim_refs:
+  - CLM:alphacognition:CHRM1:005
+  limiting_factor: the abstract reports the two positive tests; the rest of the battery's results were
+    not retrievable
+- facet: dose_response_knowledge
+  assessment_status: assessed
+  level: 2
+  rationale: Two randomised human dose series exist for M1 agonism. Xanomeline was tested at three dose
+    levels with dose-dependent efficacy on ADAS-Cog and dose-dependent adverse events; HTL0018318 had
+    dose-proportional exposure over 15-35 mg with effects reported across the dose range. That is one
+    human study per compound with a relevant dose-response readout.
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  - CLM:alphacognition:CHRM1:003
+  counter_level: 0
+  counter_rationale: no evidence of an inverted-U or other non-monotonic cognitive dose-response for M1
+    was retrieved
+  counter_claim_refs: []
+  limiting_factor: the dose-response that is actually characterised is efficacy-versus-tolerability, not
+    the cognitive response surface; the top xanomeline dose is also the 52%-discontinuation dose
+- facet: human_intervention_evidence
+  assessment_status: assessed
+  level: 3
+  rationale: One randomised placebo-controlled human study in healthy adults with directly relevant cognitive
+    endpoints (CLM:alphacognition:CHRM1:001), supported by randomised human trials in patient populations
+    with cognitive (CLM:...:CHRM1:002) and psychosis (CLM:...:CHRM1:004) endpoints.
+  claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  - CLM:alphacognition:CHRM1:004
+  counter_level: 0
+  counter_rationale: No human interventional study of M1 modulation MEASURED a cognitive endpoint and
+    found no effect. The largest human M1 dataset by sample size — the three xanomeline-trospium psychosis
+    trials (CLM:alphacognition:CHRM1:004) — measured PANSS and adverse events and measured NO cognitive
+    endpoint at all. Under R5 that is an evidence GAP about cognition, not evidence against a cognitive
+    effect, so it contributes no counter_level here; an approval in an indication with no cognitive endpoint
+    says nothing either way.
+  counter_claim_refs: []
+  limiting_factor: 'two coverage gaps rather than counter-evidence: the healthy-adult cognitive result
+    is a single unreplicated exploratory analysis in a safety study, and the large psychosis programme
+    never measured cognition. Level 4 would require a replicated healthy-adult cognitive result; a well-powered
+    cognitive endpoint in the existing programme would resolve the gap in either direction.'
+facets_not_owned_by_this_agent: []
+notes: 'Evidence basis for the four genetics facets. Genes covered by this target: CHRM1. GWAS Catalog
+  release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
+  gtex_v8. Association records for this target: 0 total, of which 0 on cognitive-panel traits (0 on a
+  g_factor/fluid_reasoning trait, 0 single-domain) and 0 on educational-attainment or literacy traits,
+  across 0 distinct publications (0 for the cognitive associations). Cognitive traits hit: none. Fine-mapped
+  credible sets in which Open Targets'' L2G model ranks this gene: 0 in total, 0 on cognitive-panel traits,
+  with 0 molecular-QTL colocalisations for this gene at those loci and 0 competing candidate gene(s) there.
+  Unfiltered GWAS Catalog sweep for this gene symbol: 18 catalogued association(s) in total, 18 of them
+  with traits outside the cognitive/educational panel, spanning 7 distinct such trait(s). GTEx reports
+  13 brain region(s); detected above zero median in all of them: True. Adult brain cell-type resolution
+  was not available in this release and is deferred to docs/TASK_DAG.yaml Q003. The level rules applied
+  here are in pipelines/alphacognition/build_assessments.py; lead-atlas facets for this target are hand-written
+  in atlases/alphacognition/lead_atlas_facets.yaml.'
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  method: derived_from_claims
+  pipeline: pipelines/alphacognition/build_assessments.py
+  run_id: sprint1-alphacognition-facets-01

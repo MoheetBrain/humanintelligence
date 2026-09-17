@@ -1,0 +1,123 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35228381/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/35228381"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1861786"
+          }
+        },
+        "accession_id": "GCST006442",
+        "association_id": 35228381,
+        "beta": "0.0081 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0054,
+        "ci_upper": 0.0108,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004784",
+            "efo_trait": "self reported educational attainment"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "12:13847533"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-08,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 2,
+        "range": "[0.0054-0.0108]",
+        "reported_trait": [
+          "Educational attainment (years of education)"
+        ],
+        "risk_frequency": "0.3813",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs1861786"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1861786-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34706690/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34706690"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1861786"
+          }
+        },
+        "accession_id": "GCST006571",
+        "association_id": 34706690,
+        "beta": "0.0081 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0056,
+        "ci_upper": 0.0106,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004784",
+            "efo_trait": "self reported educational attainment"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "12:13847533"
+        ],
+        "mapped_genes": [
+          "GRIN2B"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 1e-09,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 1,
+        "range": "[0.0056-0.0106]",
+        "reported_trait": [
+          "Educational attainment (MTAG)"
+        ],
+        "risk_frequency": "0.3813",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs1861786"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1861786-A"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRIN2B&efo_id=EFO_0004784&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

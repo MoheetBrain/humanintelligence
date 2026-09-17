@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34839391/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34839391"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs11055406"
+          }
+        },
+        "accession_id": "GCST006268",
+        "association_id": 34839391,
+        "beta": "0.008086 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0047,
+        "ci_upper": 0.0115,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008393",
+            "efo_trait": "reaction time measurement"
+          }
+        ],
+        "first_author": "Davies G",
+        "locations": [
+          "12:13391307"
+        ],
+        "mapped_genes": [
+          "GRIN2B",
+          "LINC01559"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 3e-06,
+        "pubmed_id": "29844566",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 3,
+        "range": "[0.0047-0.0115]",
+        "reported_trait": [
+          "Reaction time"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs11055406"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs11055406-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRIN2B&efo_id=EFO_0008393&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

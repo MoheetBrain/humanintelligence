@@ -1,0 +1,116 @@
+{
+  "data": {
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    },
+    "studies": {
+      "count": 3,
+      "rows": [
+        {
+          "condition": null,
+          "diseases": [
+            {
+              "id": "MONDO_0005090",
+              "name": "schizophrenia"
+            },
+            {
+              "id": "EFO_0008394",
+              "name": "verbal-numerical reasoning measurement"
+            }
+          ],
+          "hasSumstats": false,
+          "id": "GCST004973",
+          "initialSampleSize": "34,486 schizophrenia cases, 45,271 controls, 36,035 individuals with verbal-numerical reasoning data",
+          "ldPopulationStructure": [
+            {
+              "ldPopulation": "nfe",
+              "relativeSampleSize": 1
+            }
+          ],
+          "nCases": 34486,
+          "nControls": 45271,
+          "nSamples": 115792,
+          "projectId": "GCST",
+          "publicationDate": "2017-07-26",
+          "publicationFirstAuthor": "Smeland OB",
+          "publicationJournal": "JAMA Psychiatry",
+          "publicationTitle": "Identification of Genetic Loci Jointly Influencing Schizophrenia Risk and the Cognitive Traits of Verbal-Numerical Reasoning, Reaction Time, and General Cognitive Function.",
+          "pubmedId": "28746715",
+          "studyType": "gwas",
+          "traitFromSource": "Schizophrenia or verbal-numerical reasoning (pleiotropy)"
+        },
+        {
+          "condition": null,
+          "diseases": [
+            {
+              "id": "EFO_0008394",
+              "name": "verbal-numerical reasoning measurement"
+            }
+          ],
+          "hasSumstats": false,
+          "id": "GCST90011298",
+          "initialSampleSize": "171,304 British ancestry individuals",
+          "ldPopulationStructure": [
+            {
+              "ldPopulation": "nfe",
+              "relativeSampleSize": 1
+            }
+          ],
+          "nCases": 0,
+          "nControls": 0,
+          "nSamples": 171304,
+          "projectId": "GCST",
+          "publicationDate": "2020-09-07",
+          "publicationFirstAuthor": "de la Fuente J",
+          "publicationJournal": "Nat Hum Behav",
+          "publicationTitle": "A general dimension of genetic sharing across diverse cognitive traits inferred from molecular data.",
+          "pubmedId": "32895543",
+          "studyType": "gwas",
+          "traitFromSource": "Verbal-numerical reasoning"
+        },
+        {
+          "condition": null,
+          "diseases": [
+            {
+              "id": "EFO_0008394",
+              "name": "verbal-numerical reasoning measurement"
+            },
+            {
+              "id": "EFO_0004337",
+              "name": "intelligence"
+            }
+          ],
+          "hasSumstats": false,
+          "id": "GCST90310241",
+          "initialSampleSize": "89,748 European ancestry individuals",
+          "ldPopulationStructure": [
+            {
+              "ldPopulation": "nfe",
+              "relativeSampleSize": 1
+            }
+          ],
+          "nCases": 0,
+          "nControls": 0,
+          "nSamples": 89748,
+          "projectId": "GCST",
+          "publicationDate": "2023-07-04",
+          "publicationFirstAuthor": "Corley E",
+          "publicationJournal": "Genes Brain Behav",
+          "publicationTitle": "The impact of early adversity and education on genetic and brain morphological predictors of cognitive ability.",
+          "pubmedId": "37403260",
+          "studyType": "gwas",
+          "traitFromSource": "Intelligence using verbal-numerical reasoning"
+        }
+      ]
+    }
+  }
+}

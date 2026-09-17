@@ -19,8 +19,6 @@ owners:
     - "targets/seed_registry.yaml"
     - "requirements-lock.txt"
     - "reports/sprint1_summary.md"
-    - "data/raw/hgnc/**"
-    - "data/raw/hgnc_search/**"
 
   agent:ontology:
     - "ontology/**"
@@ -42,8 +40,6 @@ owners:
     - "targets/candidates/GRM5.yaml"
     - "targets/candidates/DRD1.yaml"
     - "targets/candidates/HTR2A.yaml"
-    - "data/raw/gwas_catalog/**"
-    - "data/raw/gtex/**"
     - "docs/ALPHACOGNITION_ARCHITECTURE.md"
 
   agent:brakes:
@@ -84,10 +80,10 @@ owners:
     - "pipelines/comparative/**"
     - "evidence/sources/comparative.yaml"
     - "evidence/claims/comparative/**"
-    - "data/raw/ncbi_taxonomy/**"
 
   agent:integration:
     - "models/**"
+    - "atlases/integration/**"
     - "pipelines/integration/**"
     - "evidence/sources/integration.yaml"
     - "evidence/claims/integration/**"
@@ -98,7 +94,6 @@ owners:
     - "docs/PHARMACOLOGY_INTERFACES.md"
     - "tests/test_ranking*.py"
     - "tests/test_uncertainty*.py"
-    - "data/raw/opentargets/**"
     - "reports/integration_v0_1.md"
     - "reports/state_variable_centrality_v0_1.md"
 
@@ -109,15 +104,18 @@ owners:
     - "atlases/red_team/**"
     - "reports/red_team_audit_v0_1.md"
     - "docs/RED_TEAM_METHOD.md"
-    - "data/raw/ctgov_v2/**"
 
 # Shared, append-only areas (any agent may add its own file; nobody edits another's):
 shared_append_only:
   - "docs/blackboard/handoffs/{agent}.md"
   - "docs/blackboard/schema_change_requests/{agent}-*.yaml"
-  - "data/raw/pubmed_esummary/**"    # written by scripts/fetch_source_metadata.py
-  - "data/raw/pubmed_esearch/**"     # written by scripts/fetch_source_metadata.py
-  - "data/raw/gwas_catalog_study/**" # written by scripts/fetch_source_metadata.py
+  # Raw snapshots are keyed by REGISTRY, not by agent. Any agent may need to snapshot
+  # any registry, the files are immutable once written, and attribution lives in
+  # MANIFEST.jsonl (which records the tool, query and timestamp per entry) rather than
+  # in the directory layout. Assigning these to individual agents made
+  # scripts/record_tool_snapshot.py unusable by whichever agent did not own the
+  # registry it needed — which was most of them.
+  - "data/raw/**"                    # written only by scripts/fetch_*.py and record_tool_snapshot.py
   - "data/raw/MANIFEST.jsonl"        # append-only manifest
 
 # Generated-only (no agent hand-edits these):

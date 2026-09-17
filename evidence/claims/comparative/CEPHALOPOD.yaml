@@ -1,0 +1,191 @@
+# Comparative claims on the cephalopod lineage. Contract: docs/DATA_CONTRACT.md §4.
+#
+# The cephalopods are the hardest case in this panel and the one where "smart animal"
+# narrative inference is least constrained by data. Coleoid cephalopods are the standard
+# example of an independently evolved complex nervous system, and the molecular finding
+# most often attached to them — pervasive A-to-I RNA recoding in neural transcripts — is
+# real, well replicated and genuinely striking. What is absent is any evidence linking
+# editing level to any measured behavioural capacity in any cephalopod. Both claims here
+# are therefore molecular claims, and the second is explicitly deflationary.
+#
+# Note the species discipline: the genome and much of the editing work is in
+# Octopus bimaculoides (SPECIES:NCBITaxon:37653), a different species from the panel's
+# Octopus vulgaris (SPECIES:NCBITaxon:6645). This atlas keeps both taxids so that a
+# finding in one is never silently attributed to the other.
+
+- claim_id: CLM:comparative:CEPHALOPOD_RNA_EDITING:001
+  schema_version: 0.1.0
+  statement: >-
+    Liscovitch-Brauer and colleagues reported tens of thousands of evolutionarily
+    conserved A-to-I recoding sites in coleoid cephalopods, enriched in the nervous
+    system and in transcripts for excitability and neuronal morphology, with conserved
+    flanking sequence that reduces protein-coding mutation and polymorphism around the
+    edited sites.
+  subject: PROC:rna_recoding
+  predicate: MODULATES
+  object: SV:stability.ionic_homeostasis_margin
+  claim_type: mechanistic
+  direction: unclear
+  context:
+    species: []
+    phylogenetic_control: not_reported
+    phylogenetic_control_basis: >-
+      The retrieved abstract reports conservation of editing sites across coleoid species
+      and conservation of flanking genomic sequence, which is a comparative argument, but
+      states no phylogenetic model. Full text could not be retrieved: the PMC page
+      returned a CAPTCHA challenge, which this agent did not attempt to bypass.
+    life_stage: not_reported
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "conservation of editing sites and their flanking sequence shows selection on the editing process; it does not show what the editing is selected FOR, and thermal or osmotic acclimatisation is at least as plausible a function as any cognitive one"
+      - "editing enriched in transcripts 'pertinent for excitability' is a functional-annotation statement about gene sets, not a measurement of excitability"
+      - "the abstract itself frames the lineage as 'behaviourally sophisticated' — that is the narrative premise of the study, not one of its findings"
+      - "the reported trade-off means editing carries a genomic cost, so higher editing is not straightforwardly an improvement even within cephalopods"
+  evidence:
+    - source_id: SRC:PMID:28388405
+      design: comparative_genomics
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:37653
+      population: "coleoid cephalopod transcriptomes and genomes; the specific species set could not be enumerated from the retrieved abstract"
+      sample_size:
+        reported_as: "tens of thousands of evolutionarily conserved sites"
+        value: null
+        unit: editing_sites
+      endpoint: "number, conservation and functional-category enrichment of A-to-I recoding sites, and mutation or polymorphism density in flanking coding sequence"
+      endpoint_category: molecular_readout
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "RNA editing is particularly common in behaviorally sophisticated coleoid cephalopods, with tens of thousands of evolutionarily conserved sites"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      The molecular observation is strong and has been extended by several groups, but
+      only the abstract was retrievable here, the species set is unenumerated, and there
+      is no phylogenetic model and no functional or behavioural endpoint of any kind.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "MOST LIKELY CEPHALOPOD OVER-READING: 'octopuses edit their RNA to rewire their nervous systems' is not supported by anything recorded here. What is supported is that recoding sites are numerous, conserved, and enriched in neural transcripts."
+    - "`context.species` is deliberately empty because the coleoid species analysed could not be enumerated from the retrieved text; the evidence item names O. bimaculoides only as the species for which the reference genome exists (SRC:PMID:26268193), not as a verified member of this study's panel"
+    - "nothing here bears on human biology or on any target in targets/seed_registry.yaml; it is panel context, and the ADAR machinery in humans is regulated quite differently"
+  confounders: ["tissue sampling across species", "sequencing depth", "editing-site calling thresholds", "unknown thermal and osmotic history of wild-caught animals"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:CEPHALOPOD_GENOME:001
+  schema_version: 0.1.0
+  statement: >-
+    Albertin and colleagues sequenced the Octopus bimaculoides genome and found no
+    whole-genome duplication and a core developmental and neuronal gene repertoire broadly
+    similar to other invertebrate bilaterians, with expansion confined largely to
+    protocadherins and C2H2 zinc-finger transcription factors alongside large-scale
+    genomic rearrangement.
+  subject: COMPLEX:protocadherin_cluster
+  predicate: ASSOCIATED_WITH
+  object: SV:plasticity.structural_plasticity_rate
+  claim_type: comparative_evolutionary
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:37653]
+    species_count: 1
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      A single reference genome compared against published invertebrate bilaterian gene
+      repertoires. Gene-family comparison against outgroups is a phylogenetic argument in
+      the loose sense, but no phylogenetic comparative model is applied to any trait.
+    life_stage: not_reported
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: "no"
+    alternative_explanations:
+      - "protocadherin expansion is also documented in vertebrates and may serve neuronal self-avoidance or wiring specificity rather than anything plasticity-related"
+      - "gene-family size is not gene function; an expanded family can be largely redundant"
+      - "C2H2 zinc-finger expansion is a common consequence of transposable-element activity, and the paper reports transposable-element expansion in the same genome, so the two may share a cause unrelated to neural function"
+      - "n = 1 genome, so within-species variation in family size is unknown"
+  evidence:
+    - source_id: SRC:PMID:26268193
+      design: comparative_genomics
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:37653
+      population: "Octopus bimaculoides reference genome and multiple transcriptomes, compared with invertebrate bilaterian genomes"
+      sample_size:
+        reported_as: "the genome and multiple transcriptomes of the California two-spot octopus, Octopus bimaculoides"
+        value: 1
+        unit: genomes
+      endpoint: "gene-family size, presence or absence of whole-genome duplication, and tissue-specific expression of cephalopod-specific genes"
+      endpoint_category: molecular_readout
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: "We found no evidence for hypothesized whole-genome duplications in the octopus lineage."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      One reference genome, descriptive comparison, no phylogenetic model, no functional
+      endpoint. Recorded chiefly for its two negative findings.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "DELIBERATELY RECORDED ABSENCE, twice over. (i) The whole-genome-duplication explanation for cephalopod nervous-system complexity was tested and found unsupported. (ii) The core neuronal gene repertoire is broadly similar to other invertebrate bilaterians — so the largest invertebrate nervous system was not built from a distinctive molecular toolkit. Any proposal that complex cognition requires novel neural genes has to account for this."
+    - "the edge into SV:plasticity.structural_plasticity_rate is the weakest part of this record: the paper measured gene-family size, not plasticity. `direction: unclear` and `locus_to_gene_resolved: no` are doing load-bearing work and the red team should test whether this claim should exist as a graph edge at all."
+    - "MIGRATION TO NO_DETECTED_EFFECT_ON WAS CONSIDERED AND REFUSED. This claim is technically eligible (ProteinComplex -> StateVariable is within that relation's domain/range) and it does carry contradicting evidence, but nobody tested whether protocadherin expansion affects structural plasticity rate. The negatives here are the absence of a whole-genome duplication and a neuronal gene repertoire similar to other invertebrate bilaterians — neither is a null result about this triple. Using the relation would manufacture a finding out of a gap, which its own semantics forbid."
+  confounders: ["single genome", "gene-family annotation method", "transposable-element content", "assembly completeness"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

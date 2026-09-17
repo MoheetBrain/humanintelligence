@@ -1,0 +1,15 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY V11: human_genetic_association is owned by agent:alphacognition.
+schema_version: "0.1.0"
+target_id: TGT:PLACEHOLDER
+assessed_by: agent:brakes
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+  - facet: human_genetic_association
+    assessment_status: assessed
+    level: 1
+    rationale: "synthetic fixture: brakes grading a facet owned by alphacognition"
+    claim_refs: [CLM:brakes:PLACEHOLDER:001]
+    counter_level: 0
+    counter_rationale: null

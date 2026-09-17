@@ -105,6 +105,7 @@ error, because it means one of them was written from a different record.
 | Target dossier | `targets/candidates/{TARGET_ID_LOCAL}.yaml` | YAML doc | lead atlas for that target |
 | Seed registry | `targets/seed_registry.yaml` | YAML doc | orchestrator only |
 | Facet assessment | `atlases/{domain}/assessments/{TARGET_ID_LOCAL}.yaml` | YAML doc | domain agent for its own facets |
+| Facet assessment (non-domain agents) | `atlases/{agent}/assessments/{TARGET_ID_LOCAL}.yaml` | YAML doc | `agent:integration`, `agent:red_team` for the facets they own |
 | Intervention entity | `atlases/{domain}/interventions/{ID_LOCAL}.yaml` | YAML doc | domain agent that cites it |
 | State-variable annotation | `atlases/{domain}/state_variable_annotations.yaml` | YAML list | domain agent |
 | State-variable definition | `state_model/{domain}.yaml` | YAML doc | ontology architect |
@@ -165,6 +166,12 @@ A claim is one machine-readable assertion plus the evidence for it. The triple
   claim_type: causal_perturbation # see §4.1
   direction: decreases            # increases | decreases | no_change | bidirectional
                                   # | inverted_u | u_shaped | state_dependent | unclear
+  direction_context: null         # REQUIRED when direction is state_dependent: name the
+                                  # context the sign or magnitude depends on — physiological
+                                  # state, cell subpopulation, cortical layer, compartment or
+                                  # task condition. "state_dependent" means the dependency is
+                                  # KNOWN and specified; "unclear" means we do not know it.
+                                  # Collapsing the first into the second discards information.
   context:
     species: [SPECIES:NCBITaxon:10090]
     life_stage: adult             # prenatal | postnatal_developmental | adolescent | adult
@@ -190,6 +197,10 @@ A claim is one machine-readable assertion plus the evidence for it. The triple
         unit: animals
       endpoint: "novel object recognition discrimination index"
       endpoint_category: animal_recognition_memory   # see §4.2
+      endpoint_measured: measured     # measured | not_measured_in_protocol
+                                      # | measured_but_not_reported | unknown
+                                      # A trial that never measured cognition is NOT a
+                                      # failed trial. See claim_type `evidence_gap`.
       effect_direction: increase                # increase | decrease | no_change | mixed | not_reported
       effect_size:
         metric: not_extracted                   # not_extracted | beta | odds_ratio | hazard_ratio
@@ -248,7 +259,22 @@ A claim is one machine-readable assertion plus the evidence for it. The triple
 ### 4.1 `claim_type`
 `association` · `causal_perturbation` · `mechanistic` · `expression` · `pharmacology_binding`
 · `pharmacodynamic` · `clinical_efficacy` · `clinical_null` · `clinical_harm` · `safety`
-· `comparative_evolutionary` · `theoretical_construct` · `methodological`
+· `comparative_evolutionary` · `theoretical_construct` · `methodological` · `evidence_gap`
+· `preclinical_harm`
+
+`clinical_harm` is reserved for harm observed in **humans**. Harm observed in a
+non-human model is `preclinical_harm`. The distinction is not cosmetic: labelling a
+mouse seizure-susceptibility finding `clinical_harm` makes animal evidence read as
+clinical evidence, which is precisely the laundering direction principle P4 exists to
+block — and it is the one direction where over-reading harms nobody except the
+project's own credibility, so it is easy to let slide.
+
+`evidence_gap` records that a study **did not measure** the endpoint in question —
+for example "the only human trial of this mechanism never included a cognitive
+endpoint". It is graph-inert: it creates an evidence-layer record and **no** edge in
+the biological or intervention layers, because an absence of measurement is not a
+finding about biology. It must never be counted as counter-evidence; it counts
+towards a coverage gap.
 
 ### 4.2 `phenotype_class` / `endpoint_category`
 Human: `g_factor` · `fluid_reasoning` · `working_memory` · `processing_speed`
@@ -281,8 +307,8 @@ spec weights it separately and lower.
 · `knockdown` · `overexpression` · `pharmacological_perturbation` · `optogenetic`
 · `chemogenetic` · `electrophysiology` · `in_vivo_imaging` · `expression_atlas`
 · `single_cell_atlas` · `comparative_genomics` · `comparative_anatomy`
-· `phylogenetic_comparative_analysis` · `biophysical_model` · `simulation`
-· `registry_record` · `database_release`
+· `phylogenetic_comparative_analysis` · `structural_biology` · `biophysical_model`
+· `simulation` · `registry_record` · `database_release`
 
 ---
 
@@ -340,12 +366,44 @@ facets:
     assessment_status: assessed      # assessed | not_assessed | not_applicable
     level: 3                         # supporting-evidence strength, 0..4, null iff not assessed
     rationale: "..."
-    claim_refs: [CLM:brakes:GABRA5:001, CLM:brakes:GABRA5:004]
+    search_basis: null               # REQUIRED when level == 0: what was searched, with what
+                                     # scope, and what would have counted as a hit
+    claim_refs: [CLM:brakes:GABRA5:001, CLM:brakes:GABRA5:004]   # required iff level >= 1
     counter_level: 2                 # CONTRADICTING-evidence strength, 0..4, same scale
     counter_rationale: "one adult pharmacological study found no effect on ..."
     counter_claim_refs: [CLM:brakes:GABRA5:007]
     limiting_factor: "no adult-inducible genetic evidence"
 ```
+
+**A level 0 must distinguish "nobody tried" from "tried, nothing published".** Where a
+search finds registered interventions that completed without posted results, the facet
+carries `reporting_gap_refs: [SRC:NCT:…]` listing them, and `search_basis` must mention
+them. A bare `0` covering an unreported completed trial is misleading in a specific and
+important way: it reads as absence of attempt when it is in fact evidence of
+**reporting bias**, which is a finding about the evidence base rather than about the
+target. `reporting_gap_refs` is not counter-evidence and must never raise
+`counter_level`; it feeds the red team's `publication_bias` check and is surfaced per
+target as `reporting_gap_count` in the ranking report.
+
+**Evidence references are required only where evidence is asserted.** `claim_refs`
+must be non-empty when `level >= 1`, and `counter_claim_refs` must be non-empty when
+`counter_level >= 1`. At `level: 0` — which means *searched, nothing found* — there is
+by definition nothing to cite, and demanding a citation for the absence of evidence is
+incoherent. A zero is instead made auditable by two required fields: a non-empty
+`rationale` and a `search_basis` naming what was actually searched (sources queried,
+scope, and what would have counted as a hit). A zero with no `search_basis` is an
+unaudited assertion and fails validation.
+
+A facet whose evidence is a **pinned database release** rather than curated papers
+may cite `source_refs: [SRC:DB:…]` in place of `claim_refs`, and must then carry
+`evidence_basis: database_release`. A facet is valid when `claim_refs` **or**
+`source_refs` is non-empty. `source_refs`-only grading is permitted **only** for facets
+flagged `database_gradable: true` in `models/ranking/facet_rubric_v0_1.yaml` (at present
+`tractability` alone), and the rationale must name the exact field values used. Every
+other facet still requires claim references. Forcing a druggability annotation into a
+claim record — inventing a triple, a claim type and meaningless `translation.*` values —
+is schema abuse that makes a non-biological annotation look like biological evidence,
+and is prohibited.
 
 **Evidence and counter-evidence are graded separately.** `level` measures how strong
 the evidence *for* the facet proposition is; `counter_level` measures how strong the
@@ -432,6 +490,21 @@ A facet with no assessment is recorded as `not_assessed` and handled by the
 uncertainty model as *wide and uninformative* — never as zero.
 
 ---
+
+### 5.5 Domain metadata the schema does not model
+
+Closed objects (`additionalProperties: false`) are the right default — they stop agents
+smuggling fields past review. But they also reject legitimate domain detail the schema
+never anticipated: an AAV construct's serotype, a probe's assay format, a cohort's
+genotyping array. Rejecting those pushes agents either into dropping real information or
+into misusing a field that means something else.
+
+Intervention and target records therefore carry an optional `attributes` mapping whose
+values must be **strings**. It is for descriptive domain metadata only. The string-only
+restriction is deliberate: a number in an unvalidated bag would escape rule V9's
+provenance requirement. Anything in `attributes` that turns out to be decision-relevant
+must graduate to a real, validated field via a schema-change request — `attributes` is
+a holding area, not a permanent home.
 
 ## 6. Audit record (red team only)
 
@@ -530,6 +603,8 @@ Gene identifiers are resolved the same way by `scripts/fetch_gene_identifiers.py
 | V15 | Every seed target has ≥1 audit record with the full mandatory check catalogue. |
 | V16 | No efficacy assertion from binding alone: an edge into `EFFECT:*` or a `CHANGES_STATE` edge needs ≥1 claim with `claim_type ∈ {causal_perturbation, pharmacodynamic, clinical_efficacy}`. |
 | V16b | **Null results must be representable as edges.** The relation `NO_DETECTED_EFFECT_ON` (biological and intervention layers; `requires_claim: true`; `allowed_claim_types: {clinical_null, causal_perturbation, pharmacodynamic, association}`) asserts that a *performed and reported* attempt detected no effect. It requires ≥1 evidence item with `evidence_role ∈ {null_result, contradicts}`. It must never be used for absence of evidence — an untested relationship is represented by the *absence* of an edge, not by a null edge. The graph compiler and the visualisation must render these edges distinguishably, and no traversal may count a `NO_DETECTED_EFFECT_ON` edge as support. |
+| V16b-sym | **A null must be expressible wherever the positive claim is expressible.** The domain and range of `NO_DETECTED_EFFECT_ON` must be at least the union of the domains and ranges of every relation it can negate (`MODULATES`, `CONSTRAINS`, `ASSOCIATED_WITH`, `PREDICTS`, `CHANGES_STATE`, `POSITIVELY_REGULATES`, `NEGATIVELY_REGULATES`, and any relation added later). A claim using `NO_DETECTED_EFFECT_ON` must name the relation it negates in `negated_relation`, so the record says what was tested and found absent rather than merely that something was absent. An ontology in which a positive edge is expressible and its corresponding null is not is biased towards positive findings, which is the exact asymmetry V16b exists to remove. |
+| V16c | **A measured absence is not an absence of measurement.** A claim using `NO_DETECTED_EFFECT_ON` requires ≥1 evidence item with `endpoint_measured: measured` *and* `evidence_role ∈ {null_result, contradicts}`. If every evidence item has `endpoint_measured: not_measured_in_protocol`, the claim must be `claim_type: evidence_gap` instead, which compiles to no biological or intervention edge and may not contribute to any facet's `counter_level`. |
 | V17 | Compiled graph edges each carry `provenance_class ∈ {claim_derived, reference_data, ontology_axiom}` and, when `claim_derived`, ≥1 resolvable claim id. |
 | V18 | No secrets: no API keys, tokens or `.env` content in any tracked file. |
 | V19 | `data/raw/` checksums match `MANIFEST.jsonl` (immutability). |

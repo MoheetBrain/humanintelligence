@@ -1,0 +1,125 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97487013/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97487013"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs9595590"
+          }
+        },
+        "accession_id": "GCST90105038",
+        "association_id": 97487013,
+        "beta": "0.00788553 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0058,
+        "ci_upper": 0.0099,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Okbay A",
+        "locations": [
+          "13:47068061"
+        ],
+        "mapped_genes": [
+          "GNG5P5",
+          "HTR2A"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 5e-14,
+        "pubmed_id": "35361970",
+        "pvalue_description": "",
+        "pvalue_exponent": -14,
+        "pvalue_mantissa": 5,
+        "range": "[0.0058-0.0099]",
+        "reported_trait": [
+          "Educational attainment"
+        ],
+        "risk_frequency": "0.4883",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs9595590"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs9595590-A"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97487007/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97487007"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1158089"
+          }
+        },
+        "accession_id": "GCST90105038",
+        "association_id": 97487007,
+        "beta": "0.00632433 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0041,
+        "ci_upper": 0.0085,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Okbay A",
+        "locations": [
+          "13:47020796"
+        ],
+        "mapped_genes": [
+          "GNG5P5",
+          "HTR2A"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 1e-08,
+        "pubmed_id": "35361970",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 1,
+        "range": "[0.0041-0.0085]",
+        "reported_trait": [
+          "Educational attainment"
+        ],
+        "risk_frequency": "0.6658",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs1158089"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1158089-A"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=HTR2A&efo_id=EFO_0011015&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

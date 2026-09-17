@@ -1,0 +1,422 @@
+# State-variable annotations — Cognitive Brake Atlas.
+#
+# Each entry proposes a response shape and a safety coupling for one state variable
+# that this atlas's evidence actually touches, and cites the claims that motivate it.
+# An annotation without claim references is invalid; where this agent has no claim
+# bearing on a shape, the shape is `unknown` and that is recorded as the answer.
+#
+# Two conventions matter here:
+#
+# * `response_shape` describes how the COGNITIVE consequence varies with the level of
+#   the state variable, not how the variable varies with a dose. A threshold shape
+#   means the consequence appears or disappears at a value; `state_dependent` means the
+#   sign itself depends on another variable.
+# * `safety_coupling` names the safety state variable that moves when this one moves,
+#   with the claim that shows it. Safety variables are constraints, not costs to trade
+#   away (README section 3).
+#
+# The SV ids used here follow the pattern in ontology/nodes.yaml but the variables
+# themselves are declared by agent:ontology in state_model/{domain}.yaml, which did not
+# exist when this file was written. The handoff note lists every SV id introduced here
+# so the ontology architect can declare or rename them.
+#
+# schema_version: 0.1.0
+
+- state_variable: SV:stability.arousal_level
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: threshold
+  shape_rationale: 'Across three randomised human designs the performance effect of adenosine antagonism
+    did not scale with dose: doses from 12.5 to 100 mg all produced effects with a curve the authors
+    described as flat, one, two and three spaced doses were equally effective, and the effect appeared
+    only after the longest abstinence interval. A variable whose consequence switches on rather than
+    scales is threshold-shaped.'
+  claim_refs:
+  - CLM:brakes:ADORA1:003
+  - CLM:brakes:ADORA1:004
+  - CLM:brakes:ADORA1:006
+  safety_coupling:
+    couples_to: SV:safety.cardiovascular_burden
+    direction: direct
+    claim_refs:
+    - CLM:brakes:ADORA1:007
+    note: Raising arousal by antagonising this brake does not remove the accumulated signal; the rodent
+      evidence indicates the accumulated pressure still has to be discharged and that blunting its discharge
+      costs working memory.
+  desirability_note: Not monotonically desirable. The located human evidence is consistent with the
+    reachable range above habitual baseline being small or nil in non-withdrawn adults.
+- state_variable: SV:stability.sleep_pressure
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Two independent rodent studies place this variable in the causal path from waking
+    duration to cognitive performance, but neither graded it, so no shape can be asserted. What they
+    do show is that reducing the rebound that discharges it impairs working memory under load.
+  claim_refs:
+  - CLM:brakes:ADORA1:001
+  - CLM:brakes:ADORA1:002
+  desirability_note: 'This is a scheduling signal, not a cost. Lowering it is not obviously beneficial,
+    because the process it schedules is itself required.
+
+
+    Trade-off against SV:stability.arousal_level (inverse): The two variables are the same homeostat
+    seen from two ends. Claim refs: CLM:brakes:ADORA1:001. Recorded here rather than as a safety_coupling
+    because the schema restricts safety couplings to variables in the safety domain.'
+- state_variable: SV:workspace.tonic_inhibition_level
+  domain: workspace
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Occupancy of the receptor carrying this inhibition was measured across a range in
+    an adult rat study, and two dose levels with a pharmacodynamic readout were used in a human trial,
+    but no cognitive endpoint was mapped against either, so no shape is asserted.
+  claim_refs:
+  - CLM:brakes:GABRA5:005
+  - CLM:brakes:GABRA5:004
+  - CLM:brakes:GABRA5:007
+  safety_coupling:
+    couples_to: SV:safety.seizure_risk
+    direction: inverse
+    claim_refs:
+    - CLM:brakes:GABRA5:008
+    - CLM:brakes:GABRA5:005
+    note: 'The coupling is asserted on weak grounds: a database-mapped safety compilation and the absence
+      of a proconvulsant signal at one dose in one assay. Absence of a signal is not evidence of safety.'
+  desirability_note: Reducing this variable improved two memory domains and worsened a third in the
+    same animals, so it has no monotone desirability.
+- state_variable: SV:workspace.interference_susceptibility
+  domain: workspace
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: state_dependent
+  shape_rationale: 'Within a single study, reducing alpha5-mediated inhibition in CA1 pyramidal neurons
+    improved spatial and trace memory while impairing discrimination between similar contexts, and in
+    a separate study positive modulation of the same receptor improved memory in aged impaired animals.
+    Both directions of manipulation can help, at different baselines. The sign of the useful manipulation
+    is therefore set by the baseline state rather than by the level of this variable, which is why the
+    shape is recorded as state-dependent rather than as an inverted-U: no study located here measures
+    the curve itself.'
+  claim_refs:
+  - CLM:brakes:GABRA5:001
+  - CLM:brakes:GABRA5:003
+  - CLM:brakes:GABRA5:006
+  desirability_note: 'Explicitly not maximisable. The optimum appears to depend on the baseline inhibitory
+    tone, which no human measurement currently provides.
+
+
+    Trade-off against SV:stability.representational_stability (inverse): Loss of context discrimination
+    is a loss of representational separability, so raising interference susceptibility shows up as instability
+    rather than as an adverse event. Claim refs: CLM:brakes:GABRA5:003. Recorded here rather than as
+    a safety_coupling because the schema restricts safety couplings to variables in the safety domain.'
+- state_variable: SV:plasticity.ltp_threshold
+  domain: plasticity
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Three mechanisms in this atlas are asserted to raise this threshold, and reducing
+    each of them increased potentiation. None of the located studies graded the reduction, so no shape
+    can be asserted from this evidence.
+  claim_refs:
+  - CLM:brakes:GABRA5:005
+  - CLM:brakes:GABRA5:007
+  - CLM:brakes:PTPN5:001
+  - CLM:brakes:PTPN5:002
+  safety_coupling:
+    couples_to: SV:safety.seizure_risk
+    direction: inverse
+    claim_refs:
+    - CLM:brakes:GABRA5:008
+    note: Coupling asserted on database-mapped evidence only; treated as weak.
+  desirability_note: Lowering an induction threshold makes a circuit learn more readily from whatever
+    is active, which is not the same as learning better.
+- state_variable: SV:plasticity.ltp_magnitude
+  domain: plasticity
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: state_dependent
+  shape_rationale: An adult histone-deacetylase inhibitor enhanced an intermediate phase of potentiation
+    lasting days but had no effect on the phase lasting weeks, and removing a scaffolding suppressor
+    unlocked potentiation in one hippocampal subfield without changing it in the neighbouring one. The
+    consequence therefore depends on which phase and which subfield is measured.
+  claim_refs:
+  - CLM:brakes:HDAC2:003
+  - CLM:brakes:RGS14:001
+  - CLM:brakes:GABRA5:005
+  desirability_note: 'Phase-specific effects mean a measured increase need not persist into the timescale
+    that durable knowledge requires.
+
+
+    Trade-off against SV:stability.representational_stability (unclear): No claim in this atlas measures
+    a stability cost of increased potentiation, so this coupling is a stated design assumption and carries
+    no claim references. It must not be treated as evidence. Claim refs: none. Recorded here rather
+    than as a safety_coupling because the schema restricts safety couplings to variables in the safety
+    domain.'
+- state_variable: SV:plasticity.critical_period_permissiveness
+  domain: plasticity
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: state_dependent
+  shape_rationale: The same adult manipulation that reopened cortical plasticity caused a loss of acuity
+    when the reopened cortex was then deprived, and restored binocular vision in animals that were already
+    amblyopic. The sign of the consequence is set entirely by the state of the system and the experience
+    that follows, not by the level of the variable.
+  claim_refs:
+  - CLM:brakes:OTX2:001
+  - CLM:brakes:OTX2:002
+  - CLM:brakes:RTN4R:001
+  desirability_note: 'Not desirable in itself. Permissiveness is a capacity to change, which in an adult
+    who has already learned is as likely to destroy structure as to build it.
+
+
+    Trade-off against SV:stability.representational_stability (inverse): This is the best-evidenced
+    safety coupling in the atlas: reopening the window measurably degraded an acquired capacity in healthy
+    adult animals. Claim refs: CLM:brakes:OTX2:001. Recorded here rather than as a safety_coupling because
+    the schema restricts safety couplings to variables in the safety domain.'
+- state_variable: SV:plasticity.structural_plasticity_rate
+  domain: plasticity
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Adult blockade of the receptor that transduces myelin-derived inhibition increased
+    axonal sprouting after injury, with a delayed start still effective, but the experiment had one
+    exposure level and a motor endpoint, so no shape is available.
+  claim_refs:
+  - CLM:brakes:RTN4R:004
+  - CLM:brakes:RTN4R:001
+  desirability_note: 'Demonstrated benefit is repair of damaged tissue. Nothing located here shows a
+    benefit of raising this rate in intact tissue.
+
+
+    No evidenced safety coupling. A coupling to SV:safety.seizure_risk is plausible on general grounds
+    but no claim in this atlas measures it, so no coupling is asserted: Aberrant sprouting is a recognised
+    concern for this class, but no claim in this atlas measures it, so this coupling has no claim references
+    and is a stated assumption only.'
+- state_variable: SV:consolidation.consolidation_protein_synthesis_capacity
+  domain: consolidation
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: threshold
+  shape_rationale: Pharmacological relief of the translational arrest works below a critical intracellular
+    concentration of the phosphorylated initiation factor and stops working above it. The gate is on
+    the internal state, not on the drug concentration, which is why the shape is threshold rather than
+    linear.
+  claim_refs:
+  - CLM:brakes:EIF2B_COMPLEX:003
+  - CLM:brakes:EIF2B_COMPLEX:001
+  - CLM:brakes:EIF2S1:001
+  - CLM:brakes:EIF2S1:002
+  desirability_note: 'The threshold is the point: an intervention gated by an unmeasured internal state
+    variable cannot be titrated in a human with current tools.
+
+
+    Trade-off against SV:stability.homeostatic_setpoint_integrity (unclear): The arrest being relieved
+    is cytoprotective, so a cost is expected on general grounds, but no claim in this atlas measures
+    one. Recorded with no claim references and therefore as an assumption, not evidence. Claim refs:
+    none. Recorded here rather than as a safety_coupling because the schema restricts safety couplings
+    to variables in the safety domain.'
+- state_variable: SV:consolidation.plasticity_gene_accessibility
+  domain: consolidation
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Bidirectional genetic manipulation moved this variable and moved memory with it,
+    and deacetylase activity rose after potentiation in adult animals, but no graded manipulation with
+    a cognitive readout was located, so no shape is asserted.
+  claim_refs:
+  - CLM:brakes:HDAC2:001
+  - CLM:brakes:HDAC2:002
+  - CLM:brakes:HDAC2:004
+  desirability_note: 'The enzyme that sets this variable is recruited by plasticity itself, so raising
+    accessibility removes a feedback element rather than lifting a fixed cap.
+
+
+    The proliferative risk of inhibiting this enzyme family is the obvious further coupling and no claim
+    in this atlas measures it, so it is left unasserted rather than recorded as unclear.'
+  safety_coupling:
+    couples_to: SV:safety.dose_limiting_tolerability_margin
+    direction: inverse
+    claim_refs:
+    - CLM:brakes:HDAC2:005
+    note: A human phase I dose escalation of a deacetylase-inhibiting drug established a maximum tolerated
+      dose of 140 mg/kg with dose-limiting headache and nausea, and reported a correlation between dose
+      level and adverse-event count. That is the real human constraint on how far this variable can
+      be pushed. The oncology-derived proliferative burden of this enzyme family remains unmeasured
+      by any claim here and is therefore NOT asserted as a coupling (resolution R3).
+- state_variable: SV:consolidation.camp_signalling_capacity
+  domain: consolidation
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: inverted_u
+  shape_rationale: In two randomised human crossover studies the lowest of three doses improved verbal
+    recall while higher doses did not, and the highest dose produced adverse events. Benefit at low
+    exposure with neither benefit nor tolerability at high exposure is an inverted-U in the reachable
+    range.
+  claim_refs:
+  - CLM:brakes:PDE4B:001
+  - CLM:brakes:PDE4B:002
+  - CLM:brakes:PDE4B:003
+  safety_coupling:
+    couples_to: SV:safety.dose_limiting_tolerability_margin
+    direction: inverse
+    claim_refs:
+    - CLM:brakes:PDE4B:002
+    note: Headache, dizziness, insomnia and diarrhoea were reported at the highest of three doses in
+      healthy older adults and not at the dose that improved recall, so pushing this variable upward
+      closes the gap between the effective and the dose-limiting exposure. Re-pointed from SV:safety.insomnia_risk,
+      which covered only one of the four reported events (resolution R3).
+  desirability_note: The improvement was confined to verbal recall; a spatial task and a working-memory
+    task in the same programme showed no benefit, so raising this variable is not a general capacity
+    gain.
+- state_variable: SV:workspace.dendritic_integration_gain
+  domain: workspace
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Deleting the channel that sets this gain enhanced learning and distal-input potentiation,
+    but the manipulation was all-or-none and confined to one species, so no shape is available.
+  claim_refs:
+  - CLM:brakes:HCN1:001
+  desirability_note: 'A wider integration window integrates more signal and more noise; nothing located
+    here separates the two.
+
+
+    No evidenced safety coupling. A coupling to SV:safety.seizure_risk is plausible on general grounds
+    but no claim in this atlas measures it, so no coupling is asserted: Reducing an excitability brake
+    in cortex and hippocampus has an expected seizure-threshold cost, but no claim located here measures
+    it for this channel. Assumption only, no claim references.'
+- state_variable: SV:efficiency.dendritic_temporal_summation
+  domain: efficiency
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Temporal summation was reduced and resonance frequency raised where the h-current
+    was chronically elevated in a disease model, which shows the variable is set by the current, but
+    the study was correlational with respect to the cognitive consequence.
+  claim_refs:
+  - CLM:brakes:HCN1:004
+  desirability_note: 'Direction of benefit is unknown; the variable is set differently in disease states.
+
+
+    Trade-off against SV:stability.intrinsic_excitability (inverse): The same current sets both variables,
+    so they cannot be moved independently. Claim refs: CLM:brakes:HCN1:002. Recorded here rather than
+    as a safety_coupling because the schema restricts safety couplings to variables in the safety domain.'
+- state_variable: SV:stability.intrinsic_excitability
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: state_dependent
+  shape_rationale: 'This variable is under active feedback control: the same theta-burst activity that
+    potentiates synapses raises the h-current and lowers excitability, and the M-current that limits
+    firing is transiently inhibited by endogenous acetylcholine. Its consequence therefore depends on
+    recent activity and neuromodulatory state rather than on its instantaneous level.'
+  claim_refs:
+  - CLM:brakes:HCN1:002
+  - CLM:brakes:KCNQ2:002
+  - CLM:brakes:GPR158:001
+  - CLM:brakes:HCN1:003
+  safety_coupling:
+    couples_to: SV:safety.seizure_risk
+    direction: direct
+    claim_refs:
+    - CLM:brakes:KCNQ2:001
+    note: 'Directly evidenced: adult-onset suppression of the M-current produced spontaneous seizures
+      alongside the memory deficit.'
+  desirability_note: Raising this variable in the adult was tested and produced impairment and seizures,
+    so it is recorded as not desirable to raise on present evidence.
+- state_variable: SV:safety.seizure_risk
+  domain: safety
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: threshold
+  shape_rationale: 'Seizure occurrence is a threshold phenomenon by construction: the adult-onset M-current
+    suppression produced spontaneous seizures rather than graded changes in network activity.'
+  claim_refs:
+  - CLM:brakes:KCNQ2:001
+  - CLM:brakes:KCNQ3:001
+  desirability_note: 'A constraint, not an objective. Raising it is never acceptable as the price of
+    a cognitive gain. Note that this atlas originally expressed the same constraint as a seizure THRESHOLD,
+    which has the opposite sign; the variable was re-pointed to the ontology-declared SV:safety.seizure_risk
+    and every direction was inverted with it.
+
+
+    Trade-off against SV:stability.intrinsic_excitability (direct): This is a constraint variable. It
+    is not traded against a cognitive gain anywhere in this atlas and must not be. Claim refs: CLM:brakes:KCNQ2:001.
+    Recorded here rather than as a safety_coupling because the schema restricts safety couplings to
+    variables in the safety domain.'
+- state_variable: SV:stability.representational_stability
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: state_dependent
+  shape_rationale: 'The two brakes with the best adult evidence both trade this variable against plasticity,
+    and in opposite ways depending on the state of the system: reopening the critical period degraded
+    acuity in healthy adults while restoring it in amblyopic ones, and reducing dendritic inhibition
+    improved two memory domains while degrading discrimination.'
+  claim_refs:
+  - CLM:brakes:OTX2:001
+  - CLM:brakes:GABRA5:003
+  desirability_note: 'This variable is what the critical-period and excitation brakes appear to protect.
+    Any plasticity-raising intervention should be scored against it.
+
+
+    Trade-off against SV:plasticity.critical_period_permissiveness (inverse): The inverse relation is
+    the central trade-off of the whole brake atlas. Claim refs: CLM:brakes:OTX2:001. Recorded here rather
+    than as a safety_coupling because the schema restricts safety couplings to variables in the safety
+    domain.'
+- state_variable: SV:stability.excitation_inhibition_balance
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: A brake-reduction manipulation restored potentiation and memory in a mutant with
+    abnormally elevated inhibitory transmission, which shows the variable has a setpoint that can be
+    missed in either direction, but no graded evidence of shape was located.
+  claim_refs:
+  - CLM:brakes:GABRA5:007
+  - CLM:brakes:GPR158:002
+  desirability_note: 'A setpoint variable, not a maximisable one.
+
+
+    No evidenced safety coupling. A coupling to SV:safety.seizure_risk is plausible on general grounds
+    but no claim in this atlas measures it, so no coupling is asserted: Assumption only; no claim in
+    this atlas measures the coupling directly.'
+- state_variable: SV:stability.homeostatic_setpoint_integrity
+  domain: stability
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: unknown
+  shape_rationale: Evidence that an activity-dependent increase in the h-current normalises output firing
+    establishes that such a homeostat operates, but nothing located here measures its gain or its time
+    constant.
+  claim_refs:
+  - CLM:brakes:HCN1:002
+  desirability_note: 'An intact homeostat is a reason to expect chronic interventions on its controlled
+    variables to be opposed rather than accumulated.
+
+
+    Trade-off against SV:stability.intrinsic_excitability (inverse): The homeostat acts by moving intrinsic
+    excitability, so they are not independent. Claim refs: CLM:brakes:HCN1:002. Recorded here rather
+    than as a safety_coupling because the schema restricts safety couplings to variables in the safety
+    domain.'
+- state_variable: SV:safety.dose_limiting_tolerability_margin
+  domain: safety
+  annotated_by: agent:brakes
+  annotated_on: '2026-09-17'
+  proposed_response_shape: threshold
+  shape_rationale: 'Two human dose-escalation records in this atlas show adverse events appearing above
+    an exposure rather than accumulating smoothly across it: a maximum tolerated dose of 140 mg/kg with
+    dose-limiting headache and nausea for a deacetylase-inhibiting drug, and mild adverse events appearing
+    only at the highest of three doses of a phosphodiesterase-4 inhibitor, at ten times the dose that
+    improved recall. The margin therefore has a knee rather than a slope.'
+  claim_refs:
+  - CLM:brakes:HDAC2:005
+  - CLM:brakes:PDE4B:002
+  - CLM:brakes:KCNQ2:003
+  desirability_note: 'A constraint variable, and the one this atlas most needed and could not previously
+    express. For two of the consolidation-brake mechanisms here the dose-limiting constraint is peripheral
+    rather than central, which means the useful central exposure range may be set by an organ other
+    than the brain. agent:integration should not read a small margin as a favourable safety profile:
+    PDE4B scores well on adult onset, human intervention and dose-response precisely because its margin
+    was measured, and the measurement is narrow.'

@@ -1,0 +1,142 @@
+# Red-team audit - RGS14. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:RGS14:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:RGS14
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: The only causal evidence is a germline knockout, and the protein is undetectable at birth and
+      rises through the first postnatal weeks to a sustained adult level. A lifelong absence of a plasticity
+      brake across exactly the period when hippocampal circuits are being built is not a model of removing
+      it in an adult. The dossier grades this high and the red team agrees without qualification.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+    - CLM:brakes:RGS14:002
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: Checked translation.supra_normal on every claim for this target. No record asserts enhancement_above_healthy_baseline
+      where the design is a deficit model.
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: fail
+    note: The entire case is one rodent germline knockout with an enhanced hippocampal phenotype, with
+      no independent replication of the behavioural result and no human interventional evidence. The seed
+      registry itself flagged this target as rodent-only with translation distance to be assessed explicitly.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Two brake claims and one comparative claim from one paper, declared in each record's `dependencies`
+      and `risks`.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+    - CLM:brakes:RGS14:002
+  - check: citation_dependence
+    result: fail
+    note: SRC:PMID:20837545 carries CLM:brakes:RGS14:001, :002 AND CLM:comparative:RGS14:001 - one paper,
+      three claims, two atlases. Separately, CLM:brakes:RGS14:004 is the only claim in the brake atlas
+      supported by a REVIEW alone with no primary source beside it, and it is simultaneously the ONLY
+      human-relevant evidence for this target, which makes the dossier's human column look stronger than
+      one secondary source warrants. agent:brakes flagged both of these about itself.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+    - CLM:brakes:RGS14:002
+    - CLM:brakes:RGS14:004
+    - CLM:comparative:RGS14:001
+  - check: publication_bias
+    result: flag
+    note: No failed replication of the RGS14 behavioural phenotype was located, but neither was any independent
+      replication. An unreplicated enhancement phenotype in a single knockout line is exactly the shape
+      that survives on absence of contradiction.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of RGS14 modulation exists. Searched ClinicalTrials.gov for any
+      RGS14-directed agent and found none.
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: 'Unassessable rather than absent: there is no human evidence to fail against. That is the finding.'
+  - check: overclaiming
+    result: flag
+    note: The dossier sets three state-variable directions to `unclear` because their only cited claims
+      were expression or mechanistic, which rule V16 says cannot license a direction. That is restraint,
+      correctly applied.
+  - check: provenance_integrity
+    result: flag
+    note: CLM:brakes:RGS14:004 rests on a review with no primary source alongside it. The red team did
+      not retrieve the review's primary evidence, so whether it says what the claim says is UNVERIFIED
+      by this audit. Recorded as an open item rather than as a cleared one.
+    evidence_refs:
+    - CLM:brakes:RGS14:004
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:RGS14:001#f1
+    severity: major
+    category: developmental_effect_mistaken_for_adult
+    description: RGS14's only causal evidence is a germline knockout of a protein that is absent at birth
+      and rises through the first postnatal weeks. Lifelong absence of a plasticity brake during circuit
+      construction cannot stand in for adult removal, and no adult-onset perturbation of this gene exists
+      in any species.
+    evidence_refs:
+    - CLM:brakes:RGS14:001
+  - finding_id: AUD:red_team:RGS14:001#f2
+    severity: major
+    category: citation_dependence
+    description: One paper supplies three claims across two atlases, and the target's only human-relevant
+      evidence is a single review with no primary source beside it.
+    evidence_refs:
+    - CLM:brakes:RGS14:004
+    - CLM:comparative:RGS14:001
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

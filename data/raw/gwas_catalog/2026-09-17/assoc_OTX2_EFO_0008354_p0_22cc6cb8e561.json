@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214584910/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/214584910"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs709941"
+          }
+        },
+        "accession_id": "GCST90448144",
+        "association_id": 214584910,
+        "beta": "2.119 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 1.21,
+        "ci_upper": 3.03,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008354",
+            "efo_trait": "cognitive function measurement"
+          }
+        ],
+        "first_author": "Hopkins LN",
+        "locations": [
+          "14:56744237"
+        ],
+        "mapped_genes": [
+          "OTX2",
+          "RPL36AP1"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-06,
+        "pubmed_id": "41413636",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 6,
+        "range": "[1.21-3.03]",
+        "reported_trait": [
+          "PC2 of Congitive Measures"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "C",
+            "rs_id": "rs709941"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs709941-C"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=OTX2&efo_id=EFO_0008354&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

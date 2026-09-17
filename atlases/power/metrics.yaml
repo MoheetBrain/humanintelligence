@@ -1,0 +1,291 @@
+# Theoretical constructs of the Cognitive Power Atlas
+#
+# Written by agent:power. Two constructs are defined here:
+#   cognitive_power_reserve  — the headroom hypothesis, made explicit enough to attack
+#   neural_efficiency        — useful information processing per unit metabolic cost
+#
+# THESE ARE NOT MEASURES. THEY ARE CONSTRUCTS.
+# --------------------------------------------
+# Neither has an agreed unit, neither has a validated measurement procedure, and
+# neither has ever been measured in a human being. Both are written here so that the
+# rest of the repository can refer to them by name WITHOUT the reference implying they
+# are quantifiable.
+#
+# No formula in this file is presented as validated. Where a defining relation is
+# given it is a DEFINITION, not an estimator: it says what the construct would mean if
+# its terms could be measured, and each `identifiability_problem` block says why they
+# currently cannot. No constant appears anywhere in this file, because this atlas has
+# no calibrated constants to offer and inventing one would violate contract P3.
+#
+# Proxy `status` vocabulary, from ontology/state_variables.yaml:
+#   established_human_proxy | research_proxy | animal_only_proxy | theoretical_construct
+
+schema_version: 0.1.0
+domain: power
+authored_by: agent:power
+authored_on: "2026-09-17"
+calibration_status_of_this_file: uncalibrated_subjective
+
+constructs:
+
+  # ===============================================================================
+  - id: cognitive_power_reserve
+    label: "cognitive power reserve"
+    type: theoretical_construct
+    definition: >-
+      The margin between the metabolic power a neural system could deliver to
+      computation and the power it is currently delivering, expressed for a specified
+      tissue volume, a specified timescale and a specified task demand. Informally:
+      how much harder the tissue could work before some energetic term became the
+      binding constraint.
+    defining_relation_in_words: >-
+      Reserve is the difference between attainable and currently used power for
+      computation. It is NOT the size of a stored pool: a large phosphocreatine pool
+      with a slow creatine-kinase flux has buffer but little reserve, and a small pool
+      with fast flux has the opposite. Anyone reading a pool size as a reserve is
+      making the error this construct exists to name.
+    units: >-
+      null. There is no agreed unit. A power quantity would be watts or micromoles of
+      ATP per gram per minute, but the construct as defined requires the ATTAINABLE
+      term, which has never been measured in a living human brain, so the quantity has
+      no unit in practice.
+    timescale_dependence: >-
+      The construct is undefined without a timescale. Reserve against a 200-millisecond
+      burst is dominated by phosphocreatine and local ATP; against a 30-second effort
+      by glycolysis and lactate handling; against a 2-hour session by oxidative
+      capacity, substrate delivery and by-product clearance. These are different
+      quantities and conflating them is the second characteristic error here.
+    related_state_variables:
+      - SV:power.phosphocreatine_reserve
+      - SV:power.atp_adp_ratio
+      - SV:power.mitochondrial_spare_capacity
+      - SV:power.oxygen_extraction_fraction
+      - SV:power.cerebral_blood_flow
+      - SV:power.neurovascular_coupling_gain
+      - SV:power.glucose_oxidation_rate
+    candidate_proxies:
+      - name: "phosphocreatine to ATP ratio by 31P magnetic resonance spectroscopy"
+        modality: mrs
+        status: research_proxy
+        measures_in_practice: "relative size of two metabolite pools in a large voxel, averaged over minutes"
+        identifiability_problem: >-
+          A pool ratio is not a flux and not a reserve. The ratio can rise because
+          utilisation FELL, which is the opposite of increased reserve. This is not
+          hypothetical: a matched human study found phosphocreatine INCREASED in early
+          Alzheimer's disease in exactly the regions that degenerate first
+          (CLM:power:CKB:006). Voxel sizes also far exceed the spatial scale at which a
+          local supply-demand mismatch would occur.
+        claim_refs: [CLM:power:CKB:005, CLM:power:CKB:006]
+      - name: "cerebral metabolic rate of glucose by FDG-PET"
+        modality: pet
+        status: established_human_proxy
+        measures_in_practice: "glucose uptake and phosphorylation rate, integrated over tens of minutes"
+        identifiability_problem: >-
+          Measures CURRENT use, not attainable use, so it gives one of the two terms
+          the construct needs and says nothing about the other. It also cannot separate
+          signalling from housekeeping cost: the split is a model partition of the
+          measured total, which is exactly what the human budget work does
+          (CLM:power:budget:004). Its time resolution is far too coarse for any
+          transient-mismatch hypothesis, and it involves ionising radiation, which
+          bounds how often it can be repeated even in others' studies.
+        claim_refs: [CLM:power:budget:004]
+      - name: "cerebral metabolic rate of oxygen (CMRO2) by calibrated MRI or PET"
+        modality: mrs
+        status: research_proxy
+        measures_in_practice: "oxidative metabolism rate, with substantial modelling between signal and quantity"
+        identifiability_problem: >-
+          Depends on assumed values for terms the measurement cannot independently
+          resolve, so different calibration choices yield materially different CMRO2.
+          Like FDG it reports current use rather than headroom. Aerobic glycolysis -
+          glucose consumed without matched oxygen - means CMRO2 and glucose use can
+          diverge, so neither alone indexes total power.
+        claim_refs: []
+      - name: "oxygen extraction fraction"
+        modality: mrs
+        status: research_proxy
+        measures_in_practice: "fraction of delivered oxygen removed from blood"
+        identifiability_problem: >-
+          This is the closest thing to a headroom measure in the list, since a rising
+          extraction fraction indicates delivery is being pressed. But its resting
+          value is tightly regulated, its measurement precision is poor relative to the
+          changes of interest, and it is confounded by haematocrit, vascular tone and
+          carbon dioxide level. An unchanged extraction fraction is compatible both
+          with large reserve and with a supply system that responds by raising flow
+          instead of extraction.
+        claim_refs: []
+      - name: "cerebral blood flow by arterial spin labelling"
+        modality: arterial_spin_labelling
+        status: established_human_proxy
+        measures_in_practice: "perfusion, non-invasively and repeatably"
+        identifiability_problem: >-
+          Flow is delivery, not consumption and not capacity. Flow rises with activity
+          by more than oxygen consumption does, so flow increases are not evidence of
+          an energy shortfall. Flow also responds strongly to arousal, caffeine,
+          carbon dioxide and blood pressure, all of which vary between and within
+          sessions.
+        claim_refs: []
+      - name: "lactate concentration by proton magnetic resonance spectroscopy"
+        modality: mrs
+        status: research_proxy
+        measures_in_practice: "steady-state lactate concentration in a large voxel"
+        identifiability_problem: >-
+          A concentration is the balance of production, consumption and clearance, so
+          the same value is produced by opposite underlying states. The rodent work in
+          this atlas shows the sign of the lactate-to-performance relationship
+          reversing between wild-type and disease-model animals
+          (CLM:power:anls:004), which means concentration alone carries no stable
+          directional information. Detection is also at the edge of feasibility at
+          physiological levels.
+        claim_refs: [CLM:power:anls:004]
+      - name: "mitochondrial spare respiratory capacity by respirometry on accessible cells"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+        measures_in_practice: "respiratory headroom of the cells actually assayed"
+        identifiability_problem: >-
+          The cells that can be assayed in a living person are blood cells, not
+          neurons. There is no established relationship between peripheral cell
+          respiratory headroom and neuronal headroom, and the state model correctly
+          grades this variable as having no established human proxy.
+        claim_refs: []
+      - name: "pupillometry as an indirect effort index"
+        modality: device_or_wearable
+        status: research_proxy
+        measures_in_practice: "pupil diameter, which tracks locus-coeruleus-linked arousal and task engagement"
+        identifiability_problem: >-
+          Pupil dilation indexes EFFORT ALLOCATION, not energy shortage, and those are
+          exactly the quantities H0/H5 and H1/H2 disagree about
+          (atlases/power/competing_models.yaml). Using pupillometry as a power measure
+          therefore begs the question at issue. It is also strongly confounded by
+          luminance, arousal, novelty and reward.
+        claim_refs: []
+    currently_not_measurable:
+      - "The ATTAINABLE term. No method retrieved in this session measures the maximum power a human neural circuit could deliver to computation. Without it, cognitive_power_reserve cannot be computed at all, only gestured at."
+      - "Flux as distinct from pool size. Creatine-kinase flux, not phosphocreatine pool size, is the quantity the construct needs, and no human measurement of it appears in this atlas."
+      - "Spatial scale. Every human proxy above averages over volumes orders of magnitude larger than the circuits where a local mismatch would occur, so H2 is not addressable with any of them."
+      - "The signalling versus housekeeping split. It is a model partition, not a measurement, in every source retrieved."
+      - "Anything at all about thermal burden or reactive oxygen species production in a living human brain. Both are defined in the state model and neither has a proxy in this list."
+    do_not_do:
+      - "Do not compute a reserve number from any proxy above and report it. No proxy identifies the construct and no combination of them has been validated against it."
+      - "Do not treat a larger phosphocreatine pool as more reserve. One human dataset in this atlas shows that inference failing (CLM:power:CKB:006)."
+      - "Do not use pupillometry to test whether cognition is power-limited. It measures the allocation side of the very dichotomy under test."
+    status: untested
+    claim_refs: [CLM:power:CKB:005, CLM:power:CKB:006, CLM:power:budget:004, CLM:power:anls:004]
+
+  # ===============================================================================
+  - id: neural_efficiency
+    label: "neural efficiency"
+    type: theoretical_construct
+    definition: >-
+      Useful information processing achieved per unit metabolic cost, for a specified
+      task, a specified tissue volume and a specified timescale. Written as a relation:
+      neural_efficiency = useful_information_processing / metabolic_cost.
+    defining_relation_in_words: >-
+      The numerator is the part that does not currently exist. "Useful information
+      processing" is not spike count, not firing rate, not transmitted bits and not
+      BOLD amplitude. It is task-relevant information that the downstream system can
+      actually use, and no retrieved method measures it in a human. The denominator is
+      measurable in principle and coarsely in practice. A ratio with an unmeasurable
+      numerator is a construct, not a metric, and the widespread practice of reporting
+      "less activation for equal performance" as efficiency is a substitution of a
+      convenient numerator for the defined one.
+    units: >-
+      null. If the numerator were bits and the denominator joules, the unit would be
+      bits per joule, and the state model reserves
+      SV:efficiency.information_throughput_per_unit_energy for exactly that quantity.
+      No value in those units has ever been obtained for a human brain.
+    numerator_problem: >-
+      Four incompatible candidate numerators appear in the literature this atlas
+      touched, and they do not rank systems the same way: (a) mutual information
+      between stimulus and neural response, measurable in animal population
+      recordings only; (b) behavioural discrimination performance, which is
+      task-specific and confounded by strategy and motivation; (c) spike count or
+      rate, which is an activity measure and not an information measure; (d) inverse
+      task-evoked BOLD amplitude at matched performance, which is the common human
+      practice and which conflates efficiency with vascular coupling, attention and
+      practice. Choosing among them is a research programme, not a preprocessing step.
+    related_state_variables:
+      - SV:efficiency.information_throughput_per_unit_energy
+      - SV:efficiency.atp_cost_per_bit_transmitted
+      - SV:efficiency.atp_cost_per_action_potential
+      - SV:efficiency.coding_sparseness
+      - SV:efficiency.signal_to_noise_ratio
+      - SV:efficiency.synaptic_transmission_reliability
+      - SV:efficiency.housekeeping_to_compute_energy_ratio
+      - SV:efficiency.representational_redundancy
+    candidate_proxies:
+      - name: "stimulus information per active neuron from population recordings"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+        measures_in_practice: "mutual information between stimulus and simultaneously recorded population activity"
+        identifiability_problem: >-
+          The best available numerator, and it is not available in humans. Estimates
+          are also strongly biased by the number of simultaneously recorded neurons
+          and by trial count, so cross-study comparison is unsafe.
+        claim_refs: []
+      - name: "orientation tuning width with concurrent ATP-use imaging"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+        measures_in_practice: "coding precision alongside a synaptic energy-use readout in the same tissue"
+        identifiability_problem: >-
+          This is the closest thing to a direct efficiency measurement in this atlas,
+          and it exists only in rodent visual cortex under food restriction
+          (CLM:power:budget:005). It measures precision for an oriented grating, which
+          is not a general information measure, and the manipulation was a deprivation
+          state.
+        claim_refs: [CLM:power:budget:005]
+      - name: "task-evoked BOLD amplitude at matched behavioural performance"
+        modality: fmri_bold
+        status: research_proxy
+        measures_in_practice: "haemodynamic response amplitude, which is not a cost and not an information rate"
+        identifiability_problem: >-
+          The standard human "neural efficiency" measure and the weakest entry here.
+          BOLD amplitude reflects neurovascular coupling, blood volume and
+          oxygenation, not ATP use; lower activation at matched performance is equally
+          well explained by practice, strategy change, attention, arousal or vascular
+          differences. It also cannot detect an efficiency change that leaves
+          amplitude unaltered, which is precisely the pattern reported in the one
+          direct measurement available (preserved spike rate, degraded precision).
+        claim_refs: [CLM:power:budget:005]
+      - name: "biophysically modelled ATP cost per action potential or per synaptic event"
+        modality: model_derived_estimate
+        status: theoretical_construct
+        measures_in_practice: "a computed quantity, not an observed one"
+        identifiability_problem: >-
+          These are model outputs and this atlas records them as such
+          (claim_type theoretical_construct, design biophysical_model). The
+          apportionment changed substantially between two publications by the same
+          group when one input parameter was revised (CLM:power:budget:001 versus
+          CLM:power:budget:002), which bounds how much weight any single set of
+          numbers can carry. They are also rodent-parameterised, while the human
+          budget work infers a several-fold lower human cortical signalling rate
+          (CLM:power:budget:004).
+        claim_refs: [CLM:power:budget:001, CLM:power:budget:002, CLM:power:budget:004]
+      - name: "myelination-derived conduction efficiency"
+        modality: model_derived_estimate
+        status: theoretical_construct
+        measures_in_practice: "modelled conduction speed per unit energy cost"
+        identifiability_problem: >-
+          The intuition that myelination is an energy-saving adaptation does not
+          survive the one analysis retrieved: the cost of maintaining the
+          oligodendrocyte resting potential was found usually to outweigh the
+          action-potential saving (CLM:power:budget:003). Any efficiency measure built
+          on "more myelin is more efficient" is therefore starting from a premise this
+          atlas records as contradicted.
+        claim_refs: [CLM:power:budget:003]
+    currently_not_measurable:
+      - "The numerator, in humans, by any method retrieved. This is the single blocking gap and it is not a technical detail: without it neural_efficiency cannot be estimated in a person at all."
+      - "Per-circuit metabolic cost in humans at the spatial and temporal scale at which computation happens."
+      - "The separation of housekeeping from compute cost by measurement rather than by model assumption."
+      - "Any human value for SV:efficiency.atp_cost_per_bit_transmitted or SV:efficiency.information_throughput_per_unit_energy. Both remain empty."
+    do_not_do:
+      - "Do not report inverse BOLD amplitude as neural efficiency. It is a different quantity and this atlas will not treat the two as interchangeable."
+      - "Do not combine a rodent-derived cost per spike with a human activity estimate to produce a human efficiency figure. The retrieved human budget work reports a several-fold species difference in signalling rate (CLM:power:budget:004), so such a product would be wrong by an unknown factor."
+      - "Do not present any biophysical cost estimate as a measurement. Every one in this atlas is claim_type theoretical_construct with design biophysical_model, and one of them already superseded another."
+    status: untested
+    claim_refs: [CLM:power:budget:001, CLM:power:budget:002, CLM:power:budget:003, CLM:power:budget:004, CLM:power:budget:005]
+
+# ---------------------------------------------------------------------------------
+consumer_instructions:
+  - "Neither construct may be written into a report as a number. If a ranking model needs a power or efficiency term, it must consume the ordinal facet levels in atlases/power/assessments/ instead."
+  - "Any future estimator for either construct belongs under models/ with a named implementation and a calibration_status, per contract P3. Nothing under atlases/ may produce a number."
+  - "The proxy lists above are the honest measurability grade for each candidate, and they are deliberately pessimistic. If a proxy is promoted, the promotion needs a claim, not an opinion."

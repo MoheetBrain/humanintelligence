@@ -1,0 +1,194 @@
+# Red-team audit of THEORY.md. agent:red_team, 2026-09-17.
+#
+# The brief asked specifically: does the Cognitive Power Envelope hypothesis present
+# multiplicativity as established, and does any empirical statement cite a claim that
+# does not support it?
+#
+# The answer to both is no, and the document anticipates the audit to an unusual degree:
+# section 1.2 is titled "Multiplicativity is a MODELLING CHOICE, not a law", section 1.4
+# is titled "The POWER factor may not be limiting at all in healthy adults", and section
+# 4.2 is a list of inferences the theory does not license. This audit therefore records
+# mostly passes, which is the honest outcome. An audit that downgrades everything is as
+# useless as one that downgrades nothing.
+
+- audit_id: AUD:red_team:THEORY:001
+  schema_version: 0.1.0
+  scope:
+    kind: document
+    id: THEORY.md
+  audited_by: agent:red_team
+  audited_on: "2026-09-17"
+  checks:
+    - check: overclaiming
+      result: pass
+      note: >-
+        Multiplicativity is NOT presented as established. Section 1.2 is titled
+        "Multiplicativity is a MODELLING CHOICE, not a law", tabulates the competing
+        aggregation forms (additive, multiplicative, minimum, hierarchical) with what each
+        would predict, names the experiment that would distinguish them, and states that
+        Kendall tau-b against multiplicative variants is computed in the ranking spec.
+        Section 4.2 closes the loop: "The multiplicative form licenses no arithmetic. It may
+        not be used to compute a capacity, to multiply effect sizes, or to argue that two
+        interventions compound." Section 1.5 lists falsifiers, including F1: a factorial
+        intervention showing purely additive effects "kills the multiplicative form and with
+        it the no-substitution claim, which is the hypothesis's main content". A hypothesis
+        that names the result that would kill it and says which part of itself would die is
+        not overclaiming.
+    - check: provenance_integrity
+      result: pass
+      note: >-
+        All 33 claim ids cited in THEORY.md were extracted and checked against the claim
+        set; every one resolves. Spot-checked the load-bearing empirical passage, section
+        1.4, against the four claims it cites: CLM:power:creatine_human:003 is a
+        parallel-group placebo-controlled null in young healthy active adults whose physical
+        arm confirmed biological activity - as described; CLM:power:creatine_human:002 is
+        the pooled analysis whose younger-band estimate is centred near zero - as described;
+        CLM:power:SLC6A8:002 versus :003 is the neonatal-versus-adult deletion dissociation
+        - as described. No empirical statement in that section cites a claim that does not
+        support it.
+    - check: educational_attainment_mistaken_for_intelligence
+      result: pass
+      note: >-
+        Section 4.2 states it as a forbidden inference in the same breath as the animal
+        distinction: "Animal memory is not human intelligence, and educational attainment is
+        not intelligence." No empirical passage in the document rests on an
+        education-derived record; the genetics facets the laundering defect affects are not
+        cited anywhere in THEORY.md.
+    - check: animal_memory_mistaken_for_human_intelligence
+      result: pass
+      note: >-
+        Section 4.2 states that most of the mechanistic claims the document cites are
+        rodent, several developmental, and none a human cognitive-capacity result. That is
+        the theory disclosing the composition of its own evidence base rather than being
+        caught at it.
+    - check: dose_response_inversion
+      result: pass
+      note: >-
+        Section 4.2 forbids maximising any state variable, requires a monotone reading to be
+        licensed per-variable, and names CLM:power:KL:004 and the caffeine dose-response
+        literature as the standing counterexamples. Section 2.3 is titled "Why 'open the
+        gate wider' is not a strategy". Both of the repository's documented dose-response
+        inversions are in the document as counterexamples rather than absent from it.
+    - check: rescue_mistaken_for_enhancement
+      result: pass
+      note: >-
+        Section 1.4 makes the point structurally rather than as a caveat: where creatine
+        benefits appear "they appear in low-baseline or stressed states", citing the
+        vegetarian and sleep-deprivation records specifically. That is the
+        rescue-versus-enhancement distinction doing analytical work.
+    - check: negative_clinical_evidence
+      result: flag
+      note: >-
+        THE ONE SUBSTANTIVE GAP, and it is a currency problem rather than an error. Section
+        1.4 correctly makes the power atlas's negative result central. But the document
+        predates this audit's two largest negative findings and does not contain them: the
+        replicated human null for the alpha5-GABA-A mechanism
+        (CLM:red_team:GABRA5:001), and the withdrawal of the CHRM1 clinical programme for an
+        animal toxicology finding (CLM:red_team:CHRM1:001). Section 1.4 is the model for how
+        both should be written up - "the correct conclusion is that the power atlas's
+        dominant result is a negative one" - and the same sentence is now available for the
+        brake atlas's most-studied target.
+      evidence_refs: [CLM:red_team:GABRA5:001, CLM:red_team:CHRM1:001]
+    - check: association_mistaken_for_causation
+      result: pass
+      note: >-
+        Section 4.2 states that no target is endorsed and that a high rank means "this
+        control point deserves more computational scrutiny", never that it is safe or
+        effective to modulate. Section 3.2 is titled "The identifiability problem".
+    - check: developmental_effect_mistaken_for_adult
+      result: pass
+      note: >-
+        Section 1.4 uses the SLC6A8 neonatal-versus-adult dissociation as a load-bearing
+        argument, and section 4.2 states that several cited claims are developmental.
+    - check: citation_dependence
+      result: flag
+      note: >-
+        Section 1.4's argument rests substantially on the creatine literature - four of its
+        five citations are creatine records - and those records overlap in primary trials
+        with each other. The conclusion drawn is appropriately narrow (H0 cannot be
+        rejected) rather than broad, so the dependence does not over-support the claim; but
+        a reader should know that the theory's most confident empirical section is largely
+        one supplement's literature. Section 4.2's "Convergence is not corroboration" is the
+        right principle and applies to the document itself here.
+      evidence_refs: [CLM:power:creatine_human:002, CLM:power:creatine_human:003]
+    - check: duplicated_evidence
+      result: pass
+      note: >-
+        Section 4.2 states that convergence of several targets on one state variable "is a
+        fact about what has been curated, and may reflect curation attention rather than
+        biology", and notes that path counts are reported separately for that reason.
+    - check: publication_bias
+      result: flag
+      note: >-
+        The document is a synthesis of curated claims, so it inherits its atlases'
+        publication-bias exposure rather than adding to it. The specific inherited exposure
+        worth stating in the document: agent:power found that a registry search overturned
+        two of its own literature-derived zeros, so any statement in THEORY.md resting on
+        "no human intervention exists" is provisional on a registry search having been run
+        for that mechanism.
+    - check: model_organism_translation_failure
+      result: pass
+      note: >-
+        Section 4.2 handles this better than the check requires, with a specific and
+        uncomfortable example: the two direct human-versus-rodent h-current comparisons for
+        HCN1 disagree by cortical layer, against a background of conserved allometry, and
+        the document states that "a conserved gene is not a conserved mechanism". It also
+        records a failed replication within the comparative literature.
+    - check: seizure_liability
+      result: pass
+      note: >-
+        Section 4.2 states that safety variables are constraints and "may not be traded
+        against a benefit at any exchange rate", and requires a directional reading to
+        consult the declared polarity rather than the variable's name - which is exactly the
+        error that produced the brake atlas's hand-inverted signs.
+    - check: psychiatric_liability
+      result: not_applicable
+      note: >-
+        The document makes no target-level safety assertion; it states the constraint
+        principle and defers the grades to the facet layer.
+    - check: systemic_adverse_effects
+      result: not_applicable
+      note: "As above: no target-level safety assertion is made."
+    - check: proposes_prohibited_work
+      result: pass
+      note: >-
+        Every proposed test in the document and in the competing-models file it draws on is
+        computational: meta-analytic re-analysis of deposited individual participant data,
+        within-subject analysis of already-collected imaging, tests in public cohorts.
+        Section 1.5's falsifiers are stated as results that WOULD falsify, not as
+        experiments this project would run. Section 4.3 records what the theory would need
+        to become a model, which is a statement of a gap rather than a research proposal.
+  findings:
+    - finding_id: AUD:red_team:THEORY:001#f1
+      severity: minor
+      category: negative_clinical_evidence
+      description: >-
+        THEORY.md is out of date rather than wrong. Section 1.4 correctly elevates the power
+        atlas's negative result to the level of theory, but the document does not yet
+        contain the two largest negative findings in this audit: the replicated human null
+        for the alpha5-GABA-A mechanism across two randomised trials with pre-specified
+        cognitive primaries, and the halt of the CHRM1 clinical programme for an animal
+        toxicology finding. Section 1.4's own template applies to the first almost
+        verbatim - a brake whose release produced no cognitive benefit in two adequately
+        sized human trials with demonstrated target engagement is a negative result about
+        the OPEN phase of the cycle, not merely about one target.
+      evidence_refs: [CLM:red_team:GABRA5:001, CLM:red_team:CHRM1:001]
+    - finding_id: AUD:red_team:THEORY:001#f2
+      severity: info
+      category: other
+      description: >-
+        Recorded because the red team should say plainly when something holds up. This
+        document does the two things that are hardest for a theory document to do: it names
+        the modelling choice at the centre of its own formalism as a choice rather than a
+        law, and it gives a full section to the case where the evidence runs against its own
+        usefulness. Section 4.2's list of inferences the theory does not license
+        pre-empts eight of this audit's seventeen checks. The red team found no empirical
+        statement citing a claim that does not support it, across all 33 cited claim ids.
+  adjustments: []
+  claim_status_changes: []
+  verdict: retain
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: derived_from_claims
+    run_id: sprint1-red-team-01

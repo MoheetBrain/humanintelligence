@@ -1,0 +1,43 @@
+# Intervention entity — AlphaCognition v0.1.
+# Registering an intervention is a bibliographic/cheminformatics act and NEVER an instruction
+# to obtain, administer or self-apply anything. `dose_information` is `omitted_by_policy` on
+# every record: no dose, route, regimen or schedule is recorded anywhere in this repository.
+# Identifiers come only from ChEMBL tool responses in this session; a compound ChEMBL does not
+# know by name is recorded under a snake_case slug (contract §1.2) and says so.
+# Numeric database facts (max_clinical_phase, first_approval_year) name the pinned release they
+# came from in `database_source_id`, which is what makes them admissible under rule V9 — and
+# they describe DEVELOPMENT STATUS, never efficacy and never a cognitive effect (rule V16).
+intervention_id: CPD:cdppb
+schema_version: 0.1.0
+name: CDPPB
+node_type: Compound
+modality: small_molecule
+domain: alphacognition
+dose_information: omitted_by_policy
+identifiers:
+  chembl_id: null
+  inn: null
+  identifier_provenance: not found in ChEMBL by name on 2026-09-17; snake_case slug used per contract
+    §1.2
+mechanisms:
+- mechanism_of_action: positive allosteric modulator of mGluR5, as described by the source publication
+    and not by a drug database
+  action_type: POSITIVE ALLOSTERIC MODULATOR
+  target_chembl_id: null
+  direct_interaction: null
+  disease_efficacy: null
+  mechanism_ref_pmid: '31541651'
+targets:
+- TGT:GRM5
+claim_refs:
+- CLM:alphacognition:GRM5:002
+known_liabilities: []
+efficacy_status: No efficacy. Rodent disease-model evidence only, and internally conflicting on the cognitive
+  endpoint (CLM:alphacognition:GRM5:002).
+notes:
+- ChEMBL compound_search returned 0 results for the name CDPPB; slug used, no id guessed.
+- Research tool compound; no clinical development stage was found in anything retrieved.
+- Its direction of action is OPPOSITE to mavoglurant's, and both are claimed pro-cognitive in different
+  disease models.
+added_by: agent:alphacognition
+added_on: '2026-09-17'

@@ -1,0 +1,332 @@
+# State variables — domain: efficiency
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: efficiency
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Cost per unit of computation or communication: how much of the available power is converted
+  into useful information processing rather than into overhead, leakage and maintenance.
+
+variables:
+
+  - id: SV:efficiency.atp_cost_per_action_potential
+    name: "ATP cost per action potential"
+    definition: >-
+      Quantity of ATP consumed to generate and recover from one action potential in a stated
+      cell class.
+    kind: latent_biological
+    timescale: milliseconds
+    level: cellular
+    units: "ATP molecules per spike"
+    measurement_proxies:
+      - name: "biophysical model estimate from conductance measurements"
+        modality: model_derived_estimate
+        status: theoretical_construct
+      - name: "ex-vivo thermodynamic measurement"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.atp_cost_per_bit_transmitted
+    name: "ATP cost per bit transmitted"
+    definition: >-
+      Energy consumed per bit of information successfully transmitted across a stated synaptic
+      or axonal channel.
+    kind: latent_biological
+    timescale: milliseconds
+    level: circuit
+    units: "ATP molecules per bit"
+    measurement_proxies:
+      - name: "information-theoretic estimate from paired recordings"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.synaptic_transmission_reliability
+    name: "synaptic transmission reliability"
+    definition: >-
+      Probability that a presynaptic action potential produces the intended postsynaptic event
+      at a stated synapse class.
+    kind: latent_biological
+    timescale: milliseconds
+    level: cellular
+    units: "probability per event"
+    measurement_proxies:
+      - name: "paired-pulse and failure-rate electrophysiology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "invasive human microelectrode recording"
+        modality: electrophysiology_invasive
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.axonal_conduction_efficiency
+    name: "axonal conduction efficiency"
+    definition: >-
+      Conduction velocity and temporal fidelity achieved per unit energetic and structural cost,
+      for a stated fibre class.
+    kind: latent_biological
+    timescale: months
+    level: circuit
+    units: "m/s per unit cost"
+    measurement_proxies:
+      - name: "diffusion MRI microstructure indices"
+        modality: fmri_bold
+        status: research_proxy
+      - name: "evoked-potential latency measurement"
+        modality: eeg_meg
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.dendritic_temporal_summation
+    name: "dendritic temporal summation"
+    definition: >-
+      Degree to which temporally separated inputs to a dendrite combine rather than decay
+      independently, for a stated cell class. A window width, not a gain.
+    kind: latent_biological
+    timescale: milliseconds
+    level: cellular
+    units: "ms of effective integration window"
+    measurement_proxies:
+      - name: "ex-vivo paired-input summation electrophysiology"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "biophysical model estimate from membrane properties"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:persistent_representation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.coding_sparseness
+    name: "coding sparseness"
+    definition: >-
+      Fraction of a population active in representing a single item or event, for a stated
+      population and time window.
+    kind: latent_biological
+    timescale: milliseconds
+    level: circuit
+    units: "fraction of population active"
+    measurement_proxies:
+      - name: "population decoding from invasive recordings"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "multivariate pattern dispersion in fMRI"
+        modality: fmri_bold
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:pattern_separation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.signal_to_noise_ratio
+    name: "neural signal-to-noise ratio"
+    definition: >-
+      Ratio of task-related signal variance to task-unrelated variance in a stated neural
+      measurement.
+    kind: observable_proxy
+    timescale: seconds
+    level: circuit
+    units: "dimensionless ratio"
+    measurement_proxies:
+      - name: "evoked-response amplitude over trial-to-trial variability"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "fMRI temporal SNR"
+        modality: fmri_bold
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.representational_redundancy
+    name: "representational redundancy"
+    definition: >-
+      Degree to which the same information is carried by multiple units or channels in a stated
+      population.
+    kind: latent_biological
+    timescale: minutes
+    level: circuit
+    units: "dimensionless"
+    measurement_proxies:
+      - name: "dimensionality estimates from population recordings"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "representational similarity dimensionality in fMRI"
+        modality: fmri_bold
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.ion_homeostasis_load
+    name: "ion homeostasis load"
+    definition: >-
+      Energetic cost of restoring transmembrane ion gradients, as a fraction of total tissue
+      energy use.
+    kind: latent_biological
+    timescale: seconds
+    level: cellular
+    units: "fraction of total energy use"
+    measurement_proxies:
+      - name: "biophysical budget model estimate"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.housekeeping_to_compute_energy_ratio
+    name: "housekeeping-to-compute energy ratio"
+    definition: >-
+      Ratio of energy spent on non-signalling maintenance to energy spent on signalling, in a
+      stated tissue volume.
+    kind: latent_biological
+    timescale: minutes
+    level: systems
+    units: "dimensionless ratio"
+    measurement_proxies:
+      - name: "compartment-resolved metabolic model estimate"
+        modality: model_derived_estimate
+        status: theoretical_construct
+      - name: "MRS-derived metabolite flux partitioning"
+        modality: mrs
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:efficiency.information_throughput_per_unit_energy
+    name: "information throughput per unit energy"
+    definition: >-
+      Information successfully processed per unit of energy consumed, for a stated task and
+      tissue volume. The summary efficiency quantity; currently a construct, not a measurement.
+    kind: latent_biological
+    timescale: minutes
+    level: systems
+    units: "bits per joule"
+    measurement_proxies:
+      - name: "joint task-performance and metabolic-imaging model estimate"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

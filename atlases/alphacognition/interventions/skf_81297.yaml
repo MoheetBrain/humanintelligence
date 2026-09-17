@@ -1,0 +1,42 @@
+# Intervention entity — AlphaCognition v0.1.
+# Registering an intervention is a bibliographic/cheminformatics act and NEVER an instruction
+# to obtain, administer or self-apply anything. `dose_information` is `omitted_by_policy` on
+# every record: no dose, route, regimen or schedule is recorded anywhere in this repository.
+# Identifiers come only from ChEMBL tool responses in this session; a compound ChEMBL does not
+# know by name is recorded under a snake_case slug (contract §1.2) and says so.
+# Numeric database facts (max_clinical_phase, first_approval_year) name the pinned release they
+# came from in `database_source_id`, which is what makes them admissible under rule V9 — and
+# they describe DEVELOPMENT STATUS, never efficacy and never a cognitive effect (rule V16).
+intervention_id: CPD:skf_81297
+schema_version: 0.1.0
+name: SKF81297
+node_type: Compound
+modality: small_molecule
+domain: alphacognition
+dose_information: omitted_by_policy
+identifiers:
+  chembl_id: null
+  inn: null
+  identifier_provenance: not found in ChEMBL by name on 2026-09-17; snake_case slug used per contract
+    §1.2
+mechanisms:
+- mechanism_of_action: D1 dopamine receptor agonist; the source states that no available agent distinguishes
+    D1 from D5
+  action_type: AGONIST
+  target_chembl_id: null
+  direct_interaction: null
+  disease_efficacy: null
+  mechanism_ref_pmid: '12454947'
+targets:
+- TGT:DRD1
+claim_refs:
+- CLM:alphacognition:DRD1:001
+known_liabilities: []
+efficacy_status: No efficacy. The rodent result it supports is an inverted-U dose-response curve, i.e.
+  impairment at both low and high stimulation (CLM:alphacognition:DRD1:001).
+notes:
+- ChEMBL compound_search returned 0 results for 'SKF-81297' or 'SKF 81297'; slug used, no id guessed.
+- D1/D5 non-selectivity is stated by the source itself and is why the claim cannot be attributed to DRD1
+  alone.
+added_by: agent:alphacognition
+added_on: '2026-09-17'

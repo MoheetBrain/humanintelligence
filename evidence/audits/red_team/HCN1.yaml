@@ -1,0 +1,175 @@
+# Red-team audit - HCN1. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:HCN1:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:HCN1
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: flag
+    note: The enhancement result uses a forebrain-restricted deletion that is spatially but not temporally
+      restricted, so developmental reorganisation of dendritic excitability cannot be excluded, and the
+      dossier says so.
+    evidence_refs:
+    - CLM:brakes:HCN1:001
+  - check: rescue_mistaken_for_enhancement
+    result: pass
+    note: The forebrain deletion is compared against wild-type littermates, so it is a genuine above-baseline
+      design.
+    evidence_refs:
+    - CLM:brakes:HCN1:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: 'Every non-human claim for this target carries translation.general_intelligence_relevance: animal_task_only
+      and translation.human_relevance naming the species, so the distinction is in required fields rather
+      than in prose. The residual risk is a consumer aggregating across it.'
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'HCN1''s level-3 human_genetic_association survives independently on genuine intelligence-trait
+      associations (SRC:PMID:31374203, SRC:PMID:37365406). Two of its l2g records are labelled educational_attainment
+      and correctly capped. Repository-level: the trait panel classes GWAS Catalog trait ''mathematical
+      ability'' (EFO_0004875) as phenotype_class fluid_reasoning while marking it use_in_ranking: supporting
+      with the note ''never a stand-alone basis for a facet level''. pipelines/alphacognition/build_assessments.py
+      tests phenotype_class, not use_in_ranking, so that restriction never fires. The underlying records
+      are ''Self-reported math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396,
+      a genome-wide association study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records:
+      gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:l2g.HCN1:002
+    - CLM:alphacognition:l2g.HCN1:004
+  - check: duplicated_evidence
+    result: flag
+    note: CLM:comparative:HCN1:001 and :002 are two readings of one experiment on one set of cells, declared
+      as such. CLM:comparative:HCN1:004 draws on the same source. Three claims, one experiment.
+    evidence_refs:
+    - CLM:comparative:HCN1:001
+    - CLM:comparative:HCN1:002
+  - check: citation_dependence
+    result: fail
+    note: 'A named cross-lane dependency. SRC:PMID:30340039 and SRC:PMID:20837545 are registered by both
+      agent:brakes and agent:comparative, and agent:comparative recorded in its own source file that this
+      shared citation is itself a signal for this check: the same papers are load-bearing for the brake
+      atlas''s mechanistic case AND for the comparative atlas''s translation-risk case. Two apparently
+      independent lines of argument move together. Additionally CLM:comparative:HCN1:001 and :002 are
+      the same experiment on the same cells, which that atlas states. The field-by-field divergence check
+      on the duplicate registrations was verified by agent:comparative and re-checked here: identical
+      on title, year, first author, container and DOI.'
+    evidence_refs:
+    - CLM:brakes:HCN1:006
+    - CLM:comparative:HCN1:001
+    - CLM:comparative:HCN1:002
+    - CLM:comparative:HCN1:004
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: flag
+    note: No human interventional study of HCN1 modulation with a cognitive endpoint was located. The
+      marketed HCN blocker class is cardiological and its dose-limiting liability is bradycardia, which
+      is in the dossier's liability list but is not backed by a claim in this repository. Recorded as
+      a gap rather than as counter-evidence.
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: flag
+    note: 'Adult HCN1-null mice are more susceptible to chemically induced seizures and develop spontaneous
+      behavioural seizures faster than wild-type littermates. The retype of CLM:brakes:HCN1:005 from clinical_harm
+      to preclinical_harm is VERIFIED CORRECT by direct inspection: species mouse, human_relevance rodent_only,
+      basis germline_knockout, design knockout, content_checked true. The label now matches the evidence,
+      and the previous label could have been read as a human harm signal.'
+    evidence_refs:
+    - CLM:brakes:HCN1:005
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: fail
+    note: 'The best-documented human/rodent divergence in the repository. Direct recordings from adult
+      human layer-5 dendrites show weaker dendrite-to-soma coupling and lower ion-channel density than
+      rat, which caps the translation of the brake atlas''s strongest dendritic result. agent:comparative
+      graded human_lineage_divergence_risk 3 for this target on that basis. The red team''s independent
+      concern is the one agent:comparative raised against itself: the human arm of that comparison used
+      DISEASED tissue (epilepsy or tumour resections) while the rodent arm did not, and no analysis in
+      the source removes the confound. If the confound explains the result, the divergence grade should
+      fall - but under contract section 5.4 that methodological weakness caps counter_level on an inverse-polarity
+      facet and NOT level, so it cannot be used to make the target look more translatable.'
+    evidence_refs:
+    - CLM:brakes:HCN1:006
+    - CLM:comparative:HCN1:003
+    - CLM:comparative:HCN1:004
+  - check: overclaiming
+    result: pass
+    note: Read this target's dossier and facet rationales against its claims. No facet level exceeds what
+      its cited claims support, and the limiting_factor fields state what would have to change.
+  - check: provenance_integrity
+    result: flag
+    note: 'The seizure sign chain was checked end to end and is CORRECT: suppressing the M-current raises
+      intrinsic excitability and produced spontaneous seizures, so the annotation''s excitability-to-seizure_risk
+      coupling of ''direct'' is right, and SV:safety.seizure_risk declares polarity risk with an id ending
+      _risk. See the repository-level finding on inconsistent `direction` semantics, which affects this
+      target''s KCNQ-derived couplings.'
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:HCN1:001#f1
+    severity: major
+    category: model_organism_translation_failure
+    description: Adult human layer-5 dendrites couple more weakly to the soma and carry lower ion-channel
+      density than rat, measured directly. This caps the translation of the brake atlas's strongest dendritic
+      result. The measurement's own confound - human tissue from epilepsy or tumour resections, rodent
+      tissue not - is unresolved in the source and could not be resolved here.
+    evidence_refs:
+    - CLM:brakes:HCN1:006
+    - CLM:comparative:HCN1:003
+  - finding_id: AUD:red_team:HCN1:001#f2
+    severity: major
+    category: citation_dependence
+    description: Two papers registered by both agent:brakes and agent:comparative carry the brake atlas's
+      mechanistic case and the comparative atlas's translation-risk case simultaneously. If either paper
+      is wrong, two apparently independent arguments fall together. agent:comparative identified and documented
+      this itself.
+    evidence_refs:
+    - CLM:brakes:HCN1:006
+    - CLM:comparative:HCN1:004
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

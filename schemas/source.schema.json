@@ -1,0 +1,219 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/source",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One registered source (contract \u00a73). `title`, `year`, `first_author` and `container` are what the agent BELIEVES; they are machine-checked against the registry snapshot (\u00a77) and a mismatch is a hard failure, not a warning. This is the anti-fabrication mechanism: an invented PMID either fails to resolve or resolves to a different title. Never paste an abstract or any passage from a source into this record.",
+  "examples": [
+    {
+      "added_by": "agent:ontology",
+      "added_on": "2026-09-17",
+      "container": "Journal of Placeholders",
+      "first_author": "Placeholder AB",
+      "identifiers": {
+        "database_release": null,
+        "dataset_id": null,
+        "doi": null,
+        "gcst": null,
+        "nct": null,
+        "pmid": "00000001"
+      },
+      "retrieval": {
+        "method": "known_identifier"
+      },
+      "schema_version": "0.1.0",
+      "source_id": "SRC:PMID:00000001",
+      "source_type": "journal_article",
+      "title": "Synthetic placeholder title for schema example purposes only",
+      "year": 2020
+    }
+  ],
+  "properties": {
+    "added_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "added_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "container": {
+      "description": "Journal, registry or database name.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "first_author": {
+      "description": "Surname + initials, or the organisation for a dataset.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "identifiers": {
+      "additionalProperties": false,
+      "description": "Registry identifiers, each seen in a tool response \u2014 NEVER typed from memory (contract \u00a77). The key set is CLOSED and mirrors the source-id prefixes in \u00a71.3: the point of closing it is that it should match the registry list, not that it should be open. Two spellings are accepted for the trial and PMC ids because records exist under both; v0.2.0 settles on `nct_id` and `pmcid`.",
+      "properties": {
+        "database_release": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dataset_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "doi": {
+          "pattern": "^10\\.[0-9]{4,9}/\\S+$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "gcst": {
+          "description": "GWAS Catalog study accession.",
+          "pattern": "^GCST[0-9]+$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nct": {
+          "description": "Accepted alias of `nct_id`; deprecated in v0.2.0.",
+          "pattern": "^NCT[0-9]{8}$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "nct_id": {
+          "description": "ClinicalTrials.gov accession. CANONICAL spelling.",
+          "pattern": "^NCT[0-9]{8}$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pmc": {
+          "description": "Accepted alias of `pmcid`; deprecated in v0.2.0.",
+          "pattern": "^PMC[0-9]+$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pmcid": {
+          "description": "PubMed Central id. CANONICAL spelling.",
+          "pattern": "^PMC[0-9]+$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "pmid": {
+          "pattern": "^[0-9]{1,9}$",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "notes": {
+      "description": "The agent's own one-sentence paraphrase. NEVER source text.",
+      "type": "string"
+    },
+    "retrieval": {
+      "additionalProperties": false,
+      "properties": {
+        "method": {
+          "$comment": "vocabulary: retrieval_method",
+          "description": "How the identifier reached this repository.",
+          "enum": [
+            "pubmed_search",
+            "pubmed_metadata",
+            "ctgov_api",
+            "gwas_catalog_api",
+            "opentargets_api",
+            "hgnc_api",
+            "mcp_tool",
+            "known_identifier"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "method"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "source_id": {
+      "description": "Source id; PMID > DOI > NCT > GCST (\u00a71.3).",
+      "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+      "type": "string"
+    },
+    "source_type": {
+      "$comment": "vocabulary: source_type",
+      "description": "What kind of artefact this source is.",
+      "enum": [
+        "journal_article",
+        "review",
+        "meta_analysis",
+        "systematic_review",
+        "preprint",
+        "clinical_trial_registration",
+        "dataset",
+        "database_release",
+        "book_chapter",
+        "regulatory_document"
+      ],
+      "type": "string"
+    },
+    "title": {
+      "description": "Title as the agent believes it to be; machine-checked.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "year": {
+      "description": "Publication year as printed.",
+      "maximum": 2100,
+      "minimum": 1800,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "source_id",
+    "source_type",
+    "title",
+    "year",
+    "first_author",
+    "container",
+    "added_by",
+    "added_on",
+    "retrieval"
+  ],
+  "title": "Source registration",
+  "type": "object"
+}

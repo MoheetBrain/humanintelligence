@@ -1,0 +1,70 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97485119/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97485119"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs645327"
+          }
+        },
+        "accession_id": "GCST90105038",
+        "association_id": 97485119,
+        "beta": "0.00720041 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.005,
+        "ci_upper": 0.0094,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Okbay A",
+        "locations": [
+          "11:88855618"
+        ],
+        "mapped_genes": [
+          "GRM5"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 1e-10,
+        "pubmed_id": "35361970",
+        "pvalue_description": "",
+        "pvalue_exponent": -10,
+        "pvalue_mantissa": 1,
+        "range": "[0.005-0.0094]",
+        "reported_trait": [
+          "Educational attainment"
+        ],
+        "risk_frequency": "0.6717",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs645327"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs645327-T"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRM5&efo_id=EFO_0011015&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

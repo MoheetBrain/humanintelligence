@@ -1,0 +1,129 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/134278729/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/134278729"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs35600435"
+          }
+        },
+        "accession_id": "GCST90448446",
+        "association_id": 134278729,
+        "beta": "0.018911 unit decrease",
+        "bg_efo_traits": [
+          {
+            "efo_id": "EFO_0007998",
+            "efo_trait": "cognitive impairment measurement"
+          }
+        ],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004874",
+            "efo_trait": "memory performance"
+          }
+        ],
+        "first_author": "Eissman JM",
+        "locations": [
+          "10:25581343"
+        ],
+        "mapped_genes": [
+          "GPR158"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 8e-06,
+        "pubmed_id": "37984853",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 8,
+        "range": "-",
+        "reported_trait": [
+          "Memory decline in impaired cognition"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs35600435"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs35600435-?"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/134278722/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/134278722"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs71495469"
+          }
+        },
+        "accession_id": "GCST90448446",
+        "association_id": 134278722,
+        "beta": "0.019359 unit decrease",
+        "bg_efo_traits": [
+          {
+            "efo_id": "EFO_0007998",
+            "efo_trait": "cognitive impairment measurement"
+          }
+        ],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004874",
+            "efo_trait": "memory performance"
+          }
+        ],
+        "first_author": "Eissman JM",
+        "locations": [
+          "10:25581070"
+        ],
+        "mapped_genes": [
+          "GPR158"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 7e-06,
+        "pubmed_id": "37984853",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 7,
+        "range": "-",
+        "reported_trait": [
+          "Memory decline in impaired cognition"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs71495469"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs71495469-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GPR158&efo_id=EFO_0004874&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,218 @@
+# Hand-curated claims — GRM5 (lead atlas: alphacognition, dossier_depth: shallow)
+#
+# GRM5 is in this atlas mainly as a translation-failure case study. mGluR5 negative
+# allosteric modulation was supported by a large animal-model literature in fragile X
+# syndrome and failed in humans; the trial authors say so in as many words. The rodent
+# positive-allosteric-modulator literature is disease-model rescue and contains its own
+# internal null.
+# schema_version: 0.1.0 (carried per claim below; contract §2 requires this file to be a YAML list)
+
+- claim_id: CLM:alphacognition:GRM5:001
+  schema_version: 0.1.0
+  statement: In FXLEARN, a multisite randomised placebo-controlled trial of the mGluR5 negative allosteric
+    modulator AFQ056 combined with a language-learning intervention in 3- to 6-year-old children with
+    fragile X syndrome, both groups made language progress but the change in the primary Weighted Communication
+    Scale score did not differ significantly between the AFQ056 and placebo groups, and there were no
+    significant between-group differences in any secondary cognitive or language measure.
+  subject: MECH:mglur5_negative_allosteric_modulation
+  predicate: NO_DETECTED_EFFECT_ON
+  object: PHENO:clinical_cognitive_composite
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: postnatal_developmental
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - 'a null trial does not prove the target is irrelevant: dose, exposure duration, the learning intervention''s
+      own effect and the sensitivity of the Weighted Communication Scale are all alternative explanations
+      the authors raise'
+    - the population is young children with fragile X syndrome; nothing here bears on adults, on healthy
+      people, or on general cognitive ability
+  evidence:
+  - source_id: SRC:PMID:37651202
+    design: rct_parallel
+    species: SPECIES:NCBITaxon:9606
+    population: 3- to 6-year-old children with fragile X syndrome; 110 enrolled, 99 randomised 1:1 to
+      AFQ056 or placebo, 91 completed the placebo-controlled period
+    sample_size:
+      reported_as: FXLEARN enrolled 110 participants, randomized 99, and had 91 who completed the placebo-controlled
+        period
+      value: 99
+      unit: participants
+    endpoint: centrally scored Weighted Communication Scale (primary); objective performance-based and
+      parent-reported cognitive and language measures (secondary)
+    endpoint_category: clinical_cognitive_composite
+    endpoint_measured: measured
+    effect_direction: no_change
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: failed_replication
+    evidence_role: null_result
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: the primary Weighted Communication Scale AND the secondary cognitive and language measures were
+      all measured and reported. This is a measured absence of effect, which is what licenses NO_DETECTED_EFFECT_ON
+      and the counter_level 3 on human_intervention_evidence (R5, rule V16c) — The authors' own conclusion
+      is that despite the large body of evidence supporting mGluR5 NAMs in animal models of fragile X
+      syndrome, this mechanism of action does not translate into benefit for the human fragile X population.
+      They also note that prior trials of mGluR5 NAMs in adults had already failed, and that this trial
+      was designed in children on the expectation of greater learning plasticity.
+  - source_id: SRC:NCT:NCT02920892
+    design: registry_record
+    species: SPECIES:NCBITaxon:9606
+    population: young children with fragile X syndrome
+    sample_size:
+      reported_as: enrolment 110
+      value: 110
+      unit: participants
+    endpoint: 'registry record: PHASE2, status COMPLETED, start date 2017-08-17, lead sponsor Elizabeth
+      Berry-Kravis'
+    endpoint_category: not_applicable
+    endpoint_measured: unknown
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: registry_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: a registry record is not a measurement
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: deficit_state_only
+    supra_normal: contradicted
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: a large multisite randomised human trial with a pre-specified primary endpoint; as evidence
+      about the proposition 'modulating mGluR5 improves human cognition' it is strong and negative
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'the most important entry for GRM5: an animal-model literature that was considered compelling did
+    not transfer to humans, in the direction the models predicted'
+  confounders:
+  - concurrent language-learning intervention in both arms
+  - dose optimisation to maximum tolerated dose rather than to a target exposure
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+  negated_relation: CHANGES_STATE
+- claim_id: CLM:alphacognition:GRM5:002
+  schema_version: 0.1.0
+  statement: The mGluR5 positive allosteric modulator CDPPB prevented amyloid-beta-induced death of cultured
+    hippocampal neurons, and in mice given a unilateral intra-hippocampal amyloid-beta injection an 8-day
+    course reversed neurodegeneration, restored doublecortin-positive cells and recovered memory function;
+    however, in 14-month-old T41 transgenic mice a 28-day course increased neuronal viability and reduced
+    gliosis but did not reverse the cognitive deficit.
+  subject: MECH:mglur5_positive_allosteric_modulation
+  predicate: MODULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: causal_perturbation
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: aged
+    baseline_context: disease_model
+    brain_regions:
+    - REGION:hippocampus
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the memory recovery was observed in an acute amyloid-injection model and not in the chronic transgenic
+      model, so the positive result may depend on the lesion being recent and reversible
+    - the readouts that improved in the transgenic mice were histological (NeuN-positive cells, Iba-1
+      and GFAP area), not cognitive
+    - CDPPB is a tool compound; brain exposure and off-target activity are not characterised in this abstract
+  evidence:
+  - source_id: SRC:PMID:31541651
+    design: pharmacological_perturbation
+    species: SPECIES:NCBITaxon:10090
+    population: primary mouse hippocampal neuron cultures; male C57BL/6 mice with unilateral intra-hippocampal
+      amyloid-beta injection; 14-month-old T41 transgenic mice
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: neuronal viability, doublecortin-positive cells, gliosis markers, memory function
+    endpoint_category: animal_spatial_memory
+    endpoint_measured: measured
+    effect_direction: mixed
+    effect_size:
+      metric: percent_change
+      as_reported: increased neuronal viability (32.2% increase in NeuNcells) and reduced gliosis in CA1
+        region (Iba-1area by 31.3% and GFAParea by 37.5%)
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: conflicting
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: The percentages copied into as_reported are histological, not cognitive. They are recorded verbatim
+      because the source states them, and they are explicitly NOT evidence about memory.
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: single rodent study, disease models only, internally conflicting on the cognitive endpoint
+    calibration_status: uncalibrated_subjective
+  risks:
+  - the two directions of mGluR5 modulation (NAM in fragile X, PAM in Alzheimer models) are both claimed
+    to be pro-cognitive in different disease contexts, which should make any monotonic story about GRM5
+    and cognition suspect
+  confounders:
+  - amyloid-beta injection surgery
+  - age of the transgenic cohort
+  - hepatotoxicity screening only
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01

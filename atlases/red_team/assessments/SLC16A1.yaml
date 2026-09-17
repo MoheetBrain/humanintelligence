@@ -1,0 +1,89 @@
+# Red-team facet assessment - SLC16A1. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/SLC16A1.yaml.
+schema_version: 0.1.0
+target_id: TGT:SLC16A1
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 3
+  rationale: 'One human interventional result with a directly relevant endpoint: a completed phase 1 in
+    53 participants with results posted in full, whose protocol named haematological, cardiac and ophthalmic
+    toxicity as the expected dose-limiting classes and whose adverse-event tables report retinopathy in
+    13 patients (2 serious) and anaemia in 14, in a cohort screened to exclude pre-existing retinal disease.
+    Both findings are mechanistically predicted on-target consequences. Level 3 rather than 4 because
+    it is a single unreplicated single-arm study in advanced cancer.'
+  search_basis: 'Searched Open Targets Platform 26.06 safetyLiabilities for ENSG00000155380 (empty list)
+    and ClinicalTrials.gov API v2 for interventional studies of MCT-directed agents, which returned the
+    AZD3965 programme (NCT01791595) whose posted results are the basis of this grade, and NCT01455376.
+    A hit would have been any human safety readout for an agent acting on this transporter. `search_basis`
+    is supplied here although the level is not 0, because `reporting_gap_refs` is non-empty and the schema
+    requires the search to be described whenever a reporting gap is cited: the refs explain a grade, they
+    do not replace the explanation. NCT01455376 is listed as a reporting gap and NOT as counter-evidence
+    - it completed in June 2010 with a declared neurocognitive primary outcome and has posted nothing
+    in sixteen years, which is a fact about the evidence base rather than about the target, and it may
+    never raise counter_level.'
+  claim_refs:
+  - CLM:red_team:SLC16A1:001
+  - CLM:power:SLC16A1:003
+  counter_level: 0
+  counter_rationale: Searched for evidence that MCT1 inhibition is well tolerated at cognitively relevant
+    exposures and found the opposite. Nothing on this side.
+  counter_claim_refs: []
+  reporting_gap_refs:
+  - SRC:NCT:NCT01455376
+  limiting_factor: the population is advanced cancer, so incidence is not transportable to healthy adults;
+    what transports is the identity of the dose-limiting organ systems
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 2
+  rationale: The human phenotype presents in infancy and childhood, and the reported developmental delay
+    in homozygotes is confounded by repeated episodes of severe metabolic decompensation, so the cognitive
+    feature cannot be attributed to the transporter rather than to the crises. One human genetic line
+    of evidence bearing on the facet's proposition.
+  claim_refs:
+  - CLM:power:SLC16A1:003
+  counter_level: 2
+  counter_rationale: The rodent evidence for this transporter is adult and acute knockdown with behavioural
+    readouts, and the human inhibitor trial dosed adults, so the mechanism is demonstrably engageable
+    after development.
+  counter_claim_refs:
+  - CLM:power:SLC16A1:001
+  - CLM:red_team:SLC16A1:001
+  limiting_factor: the human developmental signal is inseparable from metabolic decompensation in an ascertainment-biased
+    cohort
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: retain_with_downgrade. The red team owns only these two
+  facets; every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents''
+  facets, where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by
+  editing another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

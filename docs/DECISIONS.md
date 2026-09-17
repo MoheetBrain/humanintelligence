@@ -233,3 +233,53 @@ from a different record.
 
 **Consequences.** Slightly more redundant YAML, in exchange for self-contained agent
 lanes and no silent cross-lane breakage.
+
+---
+
+## D013 — The composite is conjunctive, and three consequences that followed
+
+*2026-09-17 · accepted*
+
+**Context.** The ranking composite was a weighted mean while `THEORY.md` argued a
+multiplicative envelope. `agent:integration` disclosed the tension rather than hiding
+it, and reported that the ordering was materially aggregation-sensitive (Kendall tau-b
+0.599 between `minimum` and `weighted_additive`).
+
+**Decision.** The six dimensions are not capacity factors; they are **conditions that
+must all hold**. A target whose adult modifiability is near zero is useless however
+strong the other five are, and a weighted mean lets those five compensate for it —
+exactly the inference this project must not license. The primary composite is therefore
+the **product under an explicit independence assumption**, with `minimum` (Liebig) and
+`weighted_additive` retained as reported variants at unchanged weights, so any movement
+is attributable to the operator rather than to retuning.
+
+**Effect on the result.** Product versus the superseded additive primary: tau-b 0.818,
+mean absolute rank movement 1.35 positions, maximum 7.0. `SLC16A7` fell nine places to
+sixteen — it had scored well precisely because compensation was available, and loses it
+once one weak condition can no longer be paid for by the others. That movement is the
+finding, not a regression.
+
+**Three consequences the change forced, none of them anticipated in the ruling:**
+
+1. **A variant was a tautology.** `geometric_mean` is a strictly monotone transform of
+   the product, so it reported tau-b 1.0 *by construction*. Carrying it overstated how
+   many independent operators the ordering had been tested against. Removed, and the
+   loader now refuses it.
+2. **The composite gate was inert.** A cap of 0.35 on "unresolved critical finding"
+   caps nothing when the composite is a product of six sub-unit dimensions. Caps are now
+   declared on a `dimension_equivalent` scale and converted per operator (0.35⁶ under
+   product), with a test asserting that the unconverted cap *would* be inert — so the
+   conversion is demonstrably load-bearing rather than decorative.
+3. **Principle P8 does not hold on the composite.** A product's spread is dominated by
+   the magnitude of its smallest factor rather than by its uncertainty, so a level-0
+   facet yields a *wider* relative composite interval than an unassessed facet, even
+   though the unassessed facet is strictly more uncertain. "Unknown widens" therefore
+   holds at the facet and dimension levels and **not** at the composite. Discovered by a
+   test failing after the switch. The property is now asserted where it holds and the
+   artefact pinned where it does not, and this is the reason the **rank interval**, not
+   the composite value, is the headline output.
+
+**Consequences accepted.** The independence assumption is false in a known direction —
+the dimensions share evidence, so the true joint probability is lower and every reported
+interval narrower than reality. That is disclosed in the report rather than corrected,
+because correcting it would require a dependence model we have no basis to fit.

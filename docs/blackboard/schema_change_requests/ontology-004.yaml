@@ -1,0 +1,33 @@
+# Schema change request ontology-004
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-004
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Let an audit adjustment name which graded field it moves.
+
+motivation: >-
+  Contract §6 adjustments carry from_level/to_level and V12 requires to_level < from_level.
+  After §5.2 gained counter_level, the red team's way to record contradicting evidence is to
+  RAISE counter_level — which is a downgrade of the target's standing but an increase in the
+  number. Under the single-field rule it was unrecordable.
+
+proposed_change: >-
+  Add `field: level | counter_level` to an adjustment, defaulting to `level`. V12 reads:
+  to_level < from_level for `level`, to_level > from_level for `counter_level`.
+
+implemented_as: >-
+  audit.schema.json, blueprint.records.AuditAdjustment and rule V12. The default reproduces
+  the contract's original behaviour exactly, and the rejection message names counter_level as
+  the correct alternative.

@@ -1,0 +1,60 @@
+# Target dossier — KL (klotho). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:KL
+symbol: KL
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: shallow
+identifiers: {}
+target_class: secreted_enzyme_and_coreceptor
+represented_entities: [GENE:KL, PROT:KL]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    Klotho is carried in this atlas as a SYSTEMIC MODIFIER: a circulating factor with
+    human cohort associations to cognition and brain volume, animal overexpression
+    effects on learning and long-term potentiation, and a single non-human primate
+    administration result. Its reported mechanism runs through synaptic GluN2B and
+    long-term potentiation, NOT through metabolic supply, so it is evidence about a
+    modifier of computation and not evidence that computation is power-limited. Two
+    features must travel with it: a prospective human cohort found the same haplotype
+    associated with MORE dementia, and the primate result worked at the low dose and
+    not the high dose.
+  proposed_modulation: context_dependent
+  mechanism_chain:
+    - CLM:power:KL:001
+    - CLM:power:KL:002
+    - CLM:power:KL:004
+    - CLM:power:KL:003
+  state_variables:
+    # direction is `unclear`, not `increases`, and deliberately so. The cited claim is
+    # an observational genotype association (KL-VS heterozygotes score better and have
+    # greater right DLPFC volume); rule V16 is right that an association cannot license
+    # an asserted effect direction on a state variable. The association's own direction
+    # is recorded in CLM:power:KL:002, where it belongs.
+    - id: SV:cognition.attentional_control
+      asserted_relation: associated_with
+      direction: unclear
+      response_shape: unknown
+      claim_refs: [CLM:power:KL:002]
+    - id: SV:cognition.general_cognitive_ability
+      asserted_relation: modulates
+      direction: unclear
+      response_shape: inverted_u
+      claim_refs: [CLM:power:KL:001, CLM:power:KL:003, CLM:power:KL:004]
+  computational_primitives: []
+known_liabilities: [AE:dementia]
+developmental_confound: moderate
+developmental_confound_rationale: >-
+  The mouse causal arm is transgenic systemic overexpression from development, so it
+  cannot separate developmental from adult mechanisms; the authors note the human
+  association did not correlate with age and that effects were present in young mice,
+  which argues against a purely age-related mechanism. The primate administration
+  (CLM:power:KL:004) is genuinely adult-onset and acute, which is why this target is
+  not graded high-confound.
+open_questions:
+  - "Why do the cognition associations and the dementia-incidence association point in opposite directions, and is the endpoint difference (test scores versus incident diagnosis) sufficient to reconcile them?"
+  - "The primate result is non-monotonic from two dose levels. Where is the peak, and is the high-dose failure a pharmacokinetic artefact or a genuine inverted-U?"
+  - "Is any of the klotho effect metabolic at all? Nothing retrieved links klotho to a power-domain state variable, so its presence in this atlas is a classification decision inherited from the seed registry, not an evidence-driven one."
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

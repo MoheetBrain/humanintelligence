@@ -1,0 +1,61 @@
+# Target dossier — SLC6A8 (creatine transporter). Contract §5.1.
+# identifiers: {} — machine-filled from HGNC by scripts/fetch_gene_identifiers.py.
+schema_version: 0.1.0
+target_id: TGT:SLC6A8
+symbol: SLC6A8
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: solute_carrier_transporter
+represented_entities: [GENE:SLC6A8, PROT:SLC6A8]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    Creatine transport into brain cells sets the size of the phosphocreatine buffer
+    available to absorb rapid ATP demand, so SLC6A8 capacity could in principle bound
+    how much transient computational load a circuit can sustain. The evidence
+    assembled here supports the first half of that statement in the DEFICIENCY range
+    and actively undermines the second half for a healthy adult: adult-onset deletion
+    of the transporter in mice produced no cognitive deficit, and randomised human
+    supplementation shows no effect in rested, fed young adults at normal baseline.
+    This target is therefore retained as a boundary marker, not as a candidate
+    enhancement control point.
+  proposed_modulation: restore_toward_setpoint
+  mechanism_chain:
+    - CLM:power:SLC6A8:001
+    - CLM:power:SLC6A8:003
+    - CLM:power:SLC6A8:002
+    - CLM:power:creatine_human:002
+  state_variables:
+    - id: SV:power.phosphocreatine_reserve
+      asserted_relation: modulates
+      direction: increases
+      response_shape: state_dependent
+      claim_refs: [CLM:power:SLC6A8:006, CLM:power:creatine_human:005]
+    - id: SV:cognition.learning_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: threshold
+      claim_refs: [CLM:power:SLC6A8:003, CLM:power:SLC6A8:002]
+    - id: SV:cognition.fluid_reasoning_capacity
+      asserted_relation: modulates
+      direction: increases
+      response_shape: state_dependent
+      claim_refs: [CLM:power:creatine_human:001, CLM:power:creatine_human:002, CLM:power:creatine_human:003]
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: high
+developmental_confound_rationale: >-
+  The strongest evidence for this target is a developmental syndrome, and the one study
+  that separated timing found deficits only when the gene was deleted neonatally
+  (CLM:power:SLC6A8:002). Every rodent perturbation in this dossier other than that
+  adult arm is developmental. Treating any of it as adult-modifiability evidence is the
+  specific error this dossier exists to block.
+open_questions:
+  - "Is there any human evidence at all on brain creatine transport capacity in healthy adults at normal baseline, as opposed to substrate loading?"
+  - "The adult-onset knockout null (CLM:power:SLC6A8:002) is a single unreplicated study with no reported sample size or depletion measurement. How complete was adult depletion?"
+  - "Why does the vegetarian fluid-reasoning result (CLM:power:creatine_human:001) not appear in the pooled young-adult subgroup estimate, and is dietary baseline the discriminating variable or is the 2003 result a false positive?"
+  - "Does the reported GABAergic locus of the creatine-dependent phenotype (CLM:power:SLC6A8:004) survive a non-confounded Cre line?"
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

@@ -1,0 +1,305 @@
+# Hand-curated sources for AlphaCognition v0.1.
+#
+# This file is the AUTHORED half of evidence/sources/alphacognition.yaml.
+# pipelines/alphacognition/build_sources.py concatenates it with the machine-generated
+# fragments under pipelines/alphacognition/generated/ to produce that file. Editing
+# evidence/sources/alphacognition.yaml directly would be overwritten; edit this instead.
+#
+# How each record was produced
+# ----------------------------
+# 1. The paper was found by an `mcp__plugin_bio-research_pubmed__search_articles` call in
+#    this session (never from memory).
+# 2. Its title / year / journal / first author were then read from NCBI ESummary
+#    (db=pubmed) via scripts/_provenance.http_get_json, and the response was snapshotted
+#    to data/raw/pubmed_esummary/2026-09-17/alphacog_curated_*.json. The strings below are
+#    copied from that registry response, so scripts/fetch_source_metadata.py is verifying
+#    against the same authority that supplied them.
+# 3. NCT records come from https://clinicaltrials.gov/api/v2/studies/{NCT}; the titles
+#    below are the `officialTitle` field of those responses.
+#
+# No abstract text is reproduced anywhere in this repository (contract §3).
+
+- source_id: SRC:PMID:10485705
+  source_type: journal_article
+  title: "Genetic enhancement of learning and memory in mice."
+  year: 1999
+  first_author: "Tang YP"
+  container: "Nature"
+  identifiers: {pmid: "10485705", doi: "10.1038/43432"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement"}
+
+- source_id: SRC:PMID:26118841
+  source_type: journal_article
+  title: "Forebrain NR2B overexpression enhancing fear acquisition and long-term potentiation in the lateral amygdala."
+  year: 2015
+  first_author: "Duan Y"
+  container: "Eur J Neurosci"
+  identifiers: {pmid: "26118841", doi: "10.1111/ejn.13008"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement"}
+
+- source_id: SRC:PMID:24607229
+  source_type: journal_article
+  title: "Memory enhancement by targeting Cdk5 regulation of NR2B."
+  year: 2014
+  first_author: "Plattner F"
+  container: "Neuron"
+  identifiers: {pmid: "24607229", doi: "10.1016/j.neuron.2014.01.022"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: GRIN2B NR2B overexpression transgenic mice learning memory enhancement"}
+
+- source_id: SRC:PMID:28377535
+  source_type: journal_article
+  title: "GRIN2B encephalopathy: novel findings on phenotype, variant clustering, functional consequences and treatment aspects."
+  year: 2017
+  first_author: "Platzer K"
+  container: "J Med Genet"
+  identifiers: {pmid: "28377535", doi: "10.1136/jmedgenet-2016-104509"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: GRIN2B encephalopathy phenotype spectrum variants"}
+
+- source_id: SRC:PMID:34615535
+  source_type: journal_article
+  title: "Prevalence and phenotypic impact of rare potentially damaging variants in autism spectrum disorder."
+  year: 2021
+  first_author: "Mahjani B"
+  container: "Mol Autism"
+  identifiers: {pmid: "34615535", doi: "10.1186/s13229-021-00465-3"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: GRIN2B de novo variants intellectual disability neurodevelopmental disorder cohort"}
+
+- source_id: SRC:PMID:27025552
+  source_type: journal_article
+  title: "A lasting effect of postnatal sevoflurane anesthesia on the composition of NMDA receptor subunits in rat prefrontal cortex."
+  year: 2016
+  first_author: "Zhang X"
+  container: "Int J Dev Neurosci"
+  identifiers: {pmid: "27025552", doi: "10.1016/j.ijdevneu.2016.01.008"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: NR2A NR2B developmental switch NMDA receptor subunit"}
+  notes: >-
+    Cited ONLY for its rat developmental-composition measurements and for its own
+    background statement of the NR2B-to-NR2A postnatal switch. It is a rodent anaesthesia
+    study, not a human developmental atlas; the claim built on it is graded accordingly.
+
+- source_id: SRC:PMID:23223304
+  source_type: journal_article
+  title: "Increasing CRTC1 function in the dentate gyrus during memory formation or reactivation increases memory strength without compromising memory quality."
+  year: 2012
+  first_author: "Sekeres MJ"
+  container: "J Neurosci"
+  identifiers: {pmid: "23223304", doi: "10.1523/JNEUROSCI.1419-12.2012"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: CRTC1 memory consolidation hippocampus mice"}
+
+- source_id: SRC:PMID:27587263
+  source_type: journal_article
+  title: "CRTC1 Function During Memory Encoding Is Disrupted in Neurodegeneration."
+  year: 2017
+  first_author: "Parra-Damas A"
+  container: "Biol Psychiatry"
+  identifiers: {pmid: "27587263", doi: "10.1016/j.biopsych.2016.06.025"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: Crtc1 knockout mice deficit long-term memory"}
+
+- source_id: SRC:PMID:36931707
+  source_type: journal_article
+  title: "Activity-Dependent Nr4a2 Induction Modulates Synaptic Expression of AMPA Receptors and Plasticity via a Ca(2+/)CRTC1/CREB Pathway."
+  year: 2023
+  first_author: "Català-Solsona J"
+  container: "J Neurosci"
+  identifiers: {pmid: "36931707", doi: "10.1523/JNEUROSCI.1341-22.2023"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: CRTC1 memory consolidation hippocampus mice"}
+
+- source_id: SRC:PMID:9109749
+  source_type: journal_article
+  title: "Effects of xanomeline, a selective muscarinic receptor agonist, on cognitive function and behavioral symptoms in Alzheimer disease."
+  year: 1997
+  first_author: "Bodick NC"
+  container: "Arch Neurol"
+  identifiers: {pmid: "9109749", doi: "10.1001/archneur.1997.00550160091022"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: xanomeline muscarinic M1 cognition Alzheimer randomized trial"}
+  notes: "PubMed publication types include Randomized Controlled Trial; patient population (probable Alzheimer disease), not healthy adults."
+
+- source_id: SRC:PMID:12483218
+  source_type: journal_article
+  title: "Selective cognitive dysfunction in acetylcholine M1 muscarinic receptor mutant mice."
+  year: 2003
+  first_author: "Anagnostaras SG"
+  container: "Nat Neurosci"
+  identifiers: {pmid: "12483218", doi: "10.1038/nn992"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: M1 muscarinic receptor knockout mice learning memory hippocampus"}
+
+- source_id: SRC:PMID:33883008
+  source_type: journal_article
+  title: "Safety, pharmacokinetics and exploratory pro-cognitive effects of HTL0018318, a selective M(1) receptor agonist, in healthy younger adult and elderly subjects: a multiple ascending dose study."
+  year: 2021
+  first_author: "Bakker C"
+  container: "Alzheimers Res Ther"
+  identifiers: {pmid: "33883008", doi: "10.1186/s13195-021-00816-5"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: HTL0018318 muscarinic M1 receptor agonist healthy subjects cognition"}
+  notes: >-
+    The only healthy-adult human interventional study in this atlas. Registered as
+    Netherlands Trial Register NTR5781; that registry is not machine-verifiable by
+    scripts/fetch_source_metadata.py, so the source is registered by PMID only and the
+    NTR id appears solely inside the claim's database_record for traceability.
+
+- source_id: SRC:PMID:39880004
+  source_type: meta_analysis
+  title: "Xanomeline-Trospium for Adults with Schizophrenia Experiencing Acute Psychosis: A Systematic Review and Meta-analysis of Safety and Tolerability Outcomes."
+  year: 2025
+  first_author: "Kishi T"
+  container: "Pharmacopsychiatry"
+  identifiers: {pmid: "39880004", doi: "10.1055/a-2506-7022"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: xanomeline trospium KarXT schizophrenia randomized controlled trial efficacy"}
+  notes: "Psychosis endpoints in a patient population; cited for safety/tolerability and for the fact of approval-supporting efficacy, never as cognitive-enhancement evidence."
+
+- source_id: SRC:PMID:37651202
+  source_type: journal_article
+  title: "Effects of AFQ056 on language learning in fragile X syndrome."
+  year: 2023
+  first_author: "Berry-Kravis E"
+  container: "J Clin Invest"
+  identifiers: {pmid: "37651202", doi: "10.1172/JCI171723"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: mavoglurant fragile X syndrome randomized placebo phase 2 mGluR5"}
+  notes: "Negative randomised result; PubMed publication types include Randomized Controlled Trial. Registered as NCT02920892."
+
+- source_id: SRC:NCT:NCT02920892
+  source_type: clinical_trial_registration
+  title: "Effects of AFQ056 on Language Learning in Young Children With Fragile X Syndrome (FXS)"
+  year: 2017
+  first_author: "Elizabeth Berry-Kravis"
+  container: "ClinicalTrials.gov"
+  identifiers: {nct_id: "NCT02920892"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: ctgov_api, endpoint: "https://clinicaltrials.gov/api/v2/studies/NCT02920892"}
+  notes: "Registry record for the FXLEARN trial: status COMPLETED, PHASE2, enrolment 110, start 2017-08-17."
+
+- source_id: SRC:PMID:31541651
+  source_type: journal_article
+  title: "A positive allosteric modulator of mGluR5 promotes neuroprotective effects in mouse models of Alzheimer's disease."
+  year: 2019
+  first_author: "Bellozi PMQ"
+  container: "Neuropharmacology"
+  identifiers: {pmid: "31541651", doi: "10.1016/j.neuropharm.2019.107785"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: mGluR5 positive allosteric modulator cognition rodent memory GRM5"}
+
+- source_id: SRC:PMID:12454947
+  source_type: journal_article
+  title: "D1 dopamine receptors in the mouse prefrontal cortex: Immunocytochemical and cognitive neuropharmacological analyses."
+  year: 2003
+  first_author: "Lidow MS"
+  container: "Synapse"
+  identifiers: {pmid: "12454947", doi: "10.1002/syn.10143"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: dopamine D1 receptor agonist working memory inverted U dose response prefrontal"}
+
+- source_id: SRC:PMID:26946382
+  source_type: review
+  title: "Novel Dopamine Therapeutics for Cognitive Deficits in Schizophrenia."
+  year: 2017
+  first_author: "Arnsten AF"
+  container: "Biol Psychiatry"
+  identifiers: {pmid: "26946382", doi: "10.1016/j.biopsych.2015.12.028"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: dopamine D1 receptor agonist working memory inverted U dose response prefrontal"}
+  notes: >-
+    PubMed publication types include Review. Cited only for the statements it makes about
+    the shape of the D1 dose-response relation and about the existence of dihydrexidine
+    testing in patient populations; a review can never carry a claim on its own here, so
+    every claim citing it also cites a primary source or is graded at level 1.
+
+- source_id: SRC:PMID:20089901
+  source_type: journal_article
+  title: "Enhancement of spatial reversal learning by 5-HT2C receptor antagonism is neuroanatomically specific."
+  year: 2010
+  first_author: "Boulougouris V"
+  container: "J Neurosci"
+  identifiers: {pmid: "20089901", doi: "10.1523/JNEUROSCI.4312-09.2010"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: 5-HT2A receptor reversal learning cognitive flexibility rat prefrontal antagonist"}
+  notes: >-
+    The title is about 5-HT2C. It is cited here for its 5-HT2A arm: the paper reports that
+    systemic 5-HT2A antagonism impaired spatial reversal learning while intra-OFC, -mPFC
+    and -NAc infusion of the 5-HT2A antagonist produced no significant effect.
+
+- source_id: SRC:PMID:35217796
+  source_type: journal_article
+  title: "Direct comparison of the acute effects of lysergic acid diethylamide and psilocybin in a double-blind placebo-controlled study in healthy subjects."
+  year: 2022
+  first_author: "Holze F"
+  container: "Neuropsychopharmacology"
+  identifiers: {pmid: "35217796", doi: "10.1038/s41386-022-01297-2"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: psilocybin cognitive function healthy volunteers double-blind acute impairment"}
+  notes: "Registered as NCT03604744. Cited for acute self-reported impairment of control and cognition in healthy adults."
+
+- source_id: SRC:NCT:NCT03604744
+  source_type: clinical_trial_registration
+  title: "Direct Comparison of Altered States of Consciousness Induced by LSD and Psilocybin in a Random-order Placebo-controlled Cross-over Study in Healthy Subjects"
+  year: 2019
+  first_author: "University Hospital, Basel, Switzerland"
+  container: "ClinicalTrials.gov"
+  identifiers: {nct_id: "NCT03604744"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: ctgov_api, endpoint: "https://clinicaltrials.gov/api/v2/studies/NCT03604744"}
+  notes: "Registry record: status COMPLETED, EARLY_PHASE1, enrolment 28, start 2019-03-27."
+
+- source_id: SRC:PMID:28637246
+  source_type: journal_article
+  title: "Effect of Psilocybin on Empathy and Moral Decision-Making."
+  year: 2017
+  first_author: "Pokorny T"
+  container: "Int J Neuropsychopharmacol"
+  identifiers: {pmid: "28637246", doi: "10.1093/ijnp/pyx047"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: pubmed_search, discovered_via: "pubmed search: psilocybin cognitive function healthy volunteers double-blind acute impairment"}
+  notes: "Cited as a null/dissociation result: cognitive empathy and moral decision-making were unaffected while emotional empathy changed."
+
+- source_id: SRC:DB:chembl:ChEMBL_37
+  source_type: database_release
+  title: "ChEMBL database release ChEMBL_37"
+  year: 2026
+  first_author: "EMBL-EBI ChEMBL"
+  container: "ChEMBL"
+  identifiers: {database_release: "ChEMBL_37"}
+  added_by: agent:alphacognition
+  added_on: "2026-09-17"
+  retrieval: {method: known_identifier}
+  notes: >-
+    Release string read from https://www.ebi.ac.uk/chembl/api/data/status.json
+    (chembl_db_version "ChEMBL_37", chembl_release_date "2026-05-01"), snapshotted to
+    data/raw/chembl/2026-09-17/. Pinned by every intervention record in this atlas that
+    reports a ChEMBL numeric field (max_clinical_phase, first_approval_year) so those
+    numbers have a visible provenance, per rule V9. The compound and mechanism records
+    themselves came from mcp__plugin_bio-research_chembl__* tool responses in this session.

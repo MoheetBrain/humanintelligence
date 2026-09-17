@@ -1,0 +1,147 @@
+# Red-team audit - OTX2. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:OTX2:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:OTX2
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'human_genetic_association reaches level 3 for nine targets on catalogued associations whose
+      gene attribution is positional, while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for
+      none. The facet decomposition is correct and the association grade is not downgraded for the attribution
+      gap - that would double-count it. The exposure is in the aggregation: D1 is a weighted sum, so a
+      level-3 association contributes support at 0.25 weight regardless of the attribution level. Recorded
+      against the model, not the atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: 'OTX2''s DEMONSTRATED primary role is developmental: experience-driven transfer into parvalbumin
+      cells sets critical-period timing, and conditional removal abolishes plasticity. The one adult manipulation
+      reopens a developmental programme rather than operating an adult one. This is the target where the
+      developmental-versus-adult question is not a confound to be controlled but the central fact about
+      the gene, which the seed registry anticipated.'
+    evidence_refs:
+    - CLM:brakes:OTX2:001
+    - CLM:brakes:OTX2:002
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: Reopening a closed critical period in an adult is neither rescue nor enhancement in the usual
+      sense - it is a return to a juvenile regime, which carries the juvenile regime's instability as
+      well as its plasticity. Nothing in the evidence base measures the cost side of that trade.
+    evidence_refs:
+    - CLM:brakes:OTX2:002
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: fail
+    note: Entirely rodent visual-system plasticity. No human cognitive endpoint, and the phenotypes measured
+      are ocular-dominance plasticity rather than memory or reasoning.
+    evidence_refs:
+    - CLM:brakes:OTX2:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'OTX2''s level-3 human_genetic_association SURVIVES on a genuine cognitive-function-measurement
+      association (SRC:PMID:41413636). But its rationale counts gwas.OTX2:002 among the directly-relevant
+      records, and that claim''s single record is a ''mathematical ability'' row from an educational-attainment
+      GWAS; two of its l2g records are labelled educational_attainment outright. Repository-level: the
+      trait panel classes GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class
+      fluid_reasoning while marking it use_in_ranking: supporting with the note ''never a stand-alone
+      basis for a facet level''. pipelines/alphacognition/build_assessments.py tests phenotype_class,
+      not use_in_ranking, so that restriction never fires. The underlying records are ''Self-reported
+      math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association
+      study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003,
+      gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.OTX2:002
+    - SRC:PMID:30038396
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: Two claims, one research programme, one model system.
+    evidence_refs:
+    - CLM:brakes:OTX2:001
+    - CLM:brakes:OTX2:002
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of OTX2 modulation exists. Searched ClinicalTrials.gov and found
+      none.
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: flag
+    note: The dossier is honest that the adult manipulation reopens a developmental programme. The overclaiming
+      risk is any downstream reading of 'critical-period reopening' as adult modifiability in the sense
+      this project means.
+    evidence_refs:
+    - CLM:brakes:OTX2:002
+  - check: provenance_integrity
+    result: flag
+    note: agent:integration's tractability grade for this target is level 0 but carries NO `search_basis`
+      field, which the assessment schema requires whenever level is 0. The substance of a search basis
+      is present in the rationale, which names the pinned release, the Ensembl id, the snapshot path and
+      what was looked for; the required field is simply absent. One row, one agent, mechanical to fix.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:OTX2:001#f1
+    severity: major
+    category: developmental_effect_mistaken_for_adult
+    description: OTX2's established function is to CLOSE a developmental critical period. The only adult
+      manipulation reopens that programme rather than operating an adult mechanism, and no evidence measures
+      the cost of returning an adult cortex to a juvenile regime. This target does not currently support
+      an adult-modifiability claim.
+    evidence_refs:
+    - CLM:brakes:OTX2:001
+    - CLM:brakes:OTX2:002
+  - finding_id: AUD:red_team:OTX2:001#f2
+    severity: minor
+    category: provenance_integrity
+    description: atlases/integration/assessments/OTX2.yaml grades tractability at level 0 with no `search_basis`
+      field. It is the only remaining level-0 facet in the repository without one; agent:power supplied
+      the other sixteen during this audit.
+  verdict: deprioritise
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

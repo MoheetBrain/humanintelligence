@@ -1,0 +1,80 @@
+# Target dossier — AlphaCognition v0.1 (lead atlas: alphacognition).
+# `identifiers` is deliberately left empty: it is machine-filled from HGNC by
+# scripts/fetch_gene_identifiers.py (contract §5.1, §7). No accession is hand-written here.
+# `computational_primitives` is empty for every dossier in this atlas because
+# ontology/computational_primitives.yaml did not exist when these were authored; declaring
+# PRIM ids against a non-existent vocabulary would create unresolvable cross-references.
+target_id: TGT:CHRM1
+schema_version: 0.1.0
+symbol: CHRM1
+lead_atlas: alphacognition
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: g_protein_coupled_receptor
+represented_entities:
+- GENE:CHRM1
+- PROT:P11229
+member_genes: []
+control_point_hypothesis:
+  statement: 'CHRM1 encodes the M1 muscarinic acetylcholine receptor, the most abundant muscarinic subtype
+    in hippocampus and forebrain, coupling cholinergic tone to cortical excitability and to the encoding-versus-retrieval
+    balance. The seed hypothesis is that M1 signalling is a control point on working-memory capacity and
+    on encoding of new material, so selective M1 agonism should raise both. CHRM1 is the ONLY target in
+    this atlas with a randomised, placebo-controlled, healthy-adult human result on cognitive endpoints
+    (CLM:...:CHRM1:001). It is also the target where the direction is least safe to assume: M1 germline
+    deletion in mice IMPROVES some memory measures while impairing others (CLM:...:CHRM1:005), and the
+    dose that produced a cognitive signal with an unselective muscarinic agonist is the dose that produced
+    52% discontinuation (CLM:...:CHRM1:003).'
+  proposed_modulation: increase_activity
+  mechanism_chain:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  - CLM:alphacognition:CHRM1:005
+  state_variables:
+  - id: SV:workspace.working_memory_capacity
+    asserted_relation: modulates
+    direction: increases
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:CHRM1:001
+  - id: SV:safety.cardiovascular_burden
+    asserted_relation: modulates
+    direction: unclear
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:CHRM1:003
+    - CLM:alphacognition:CHRM1:004
+  computational_primitives: []
+known_liabilities:
+- AE:syncope
+- AE:nausea
+- AE:vomiting
+- AE:dry_mouth
+- AE:hypertension
+- AE:constipation
+- AE:dyspepsia
+developmental_confound: low
+developmental_confound_rationale: The human evidence is adult and aged-adult pharmacology, and the healthy-adult
+  result was obtained in adults 10 days into dosing. The one developmental caveat is that the rodent evidence
+  is a GERMLINE knockout (CLM:...:CHRM1:005), whose lifelong compensation makes it a poor model of acute
+  adult M1 blockade — that is a confound in the counter-evidence, not in the supporting evidence.
+open_questions:
+- Does the HTL0018318 cognitive signal replicate outside the developer-affiliated study, and does it survive
+  pre-registered endpoints rather than exploratory pharmacodynamics?
+- Is the healthy-adult effect an enhancement or a recovery from a suboptimal state (time of day, fatigue,
+  practice)? The source does not separate these.
+- The rodent germline knockout shows task-dependent bidirectional effects. What is the task-dependence
+  profile of M1 AGONISM in healthy adults? Only two tests were reported positive; the rest of the battery's
+  results are not in the abstract.
+- Does peripheral blockade (as in the xanomeline-trospium combination) preserve central M1 cognitive effects
+  while removing the dose ceiling? No cognitive endpoint from that combination was retrieved.
+- 'Tolerance: all human cognitive data here is 10 days or less at cognitive endpoints.'
+- 'State-variable coupling caveat — SV:safety.cardiovascular_burden: the cited claims are `safety` and
+  `clinical_harm`, neither of which can license a direction on a state variable (rule V16); the adverse
+  events themselves are recorded on the compound record and in CLM:alphacognition:CHRM1:003 / :004'
+status: under_review
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  run_id: sprint1-alphacognition-curation-01

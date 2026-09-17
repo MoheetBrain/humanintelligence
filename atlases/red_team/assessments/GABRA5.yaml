@@ -1,0 +1,82 @@
+# Red-team facet assessment - GABRA5. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/GABRA5.yaml.
+schema_version: 0.1.0
+target_id: TGT:GABRA5
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 2
+  rationale: Class-level seizure liability in the PROPOSED direction of manipulation (convulsions annotated
+    to alpha5 inhibition, plus an AOP-Wiki epileptic seizure entry), together with annotated ataxia, sedation
+    and dependence. Graded 2 rather than higher because the source is a curation table with no species
+    or design attribution at row level.
+  claim_refs:
+  - CLM:red_team:GABRA5:002
+  - CLM:brakes:GABRA5:008
+  counter_level: 3
+  counter_rationale: 'Two randomised placebo-controlled human trials totalling 386 randomised participants
+    both report good tolerability, with adverse-event frequency and nature similar to placebo, and the
+    developer reports no proconvulsant signal in rats at clinical occupancy. That is one human interventional
+    result of directly relevant design on each side of an independent replication, so the evidence AGAINST
+    a prohibitive liability burden is substantial. Note the polarity rule in contract section 5.4: this
+    counter_level is the side a methodological cap would bite, and it is not capped here because the underlying
+    trials are methodologically strong.'
+  counter_claim_refs:
+  - CLM:red_team:GABRA5:001
+  limiting_factor: no dedicated seizure-threshold or abuse-liability study of a subtype-selective alpha5
+    negative allosteric modulator in humans was located
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 2
+  rationale: 'The rodent genetic evidence comes from deletions whose onset precedes testing - the CA1-restricted
+    line loses receptors progressively from about four weeks of age, which the full text states and the
+    dossier records. Independently confirmed. Against a higher grade: adult oral pharmacological access
+    with hippocampal occupancy data exists, and the two human trials dosed adults and adolescents.'
+  claim_refs:
+  - CLM:brakes:GABRA5:001
+  - CLM:brakes:GABRA5:002
+  counter_level: 2
+  counter_rationale: Adult oral dosing of an alpha5-selective negative modulator produced hippocampal
+    receptor occupancy and augmented potentiation in adult rat, and the human trials were conducted in
+    adolescents and adults, so the mechanism is demonstrably accessible after development.
+  counter_claim_refs:
+  - CLM:brakes:GABRA5:005
+  - CLM:red_team:GABRA5:001
+  limiting_factor: no adult-inducible genetic perturbation of Gabra5 exists in the located literature,
+    so the developmental contribution to the rodent enhancement phenotype is unexcluded rather than excluded
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: deep. Audit verdict: retain_with_downgrade. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

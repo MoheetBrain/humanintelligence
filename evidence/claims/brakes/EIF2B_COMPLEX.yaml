@@ -1,0 +1,464 @@
+# Claims — EIF2B_COMPLEX (decameric eIF2B guanine-nucleotide exchange factor),
+# Cognitive Brake Atlas.
+#
+# Brake class: translational control. The integrated stress response reduces eIF2B
+# activity and thereby limits the cap-dependent translation required for memory
+# consolidation. The decisive distinctions in this file are (a) the state-dependence of
+# pharmacological eIF2B activation, which only works below a threshold of eIF2-alpha
+# phosphorylation, and (b) the fact that the only phase 2/3 human trial of an eIF2B
+# activator measured motor function and survival, not cognition.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:EIF2B_COMPLEX:001
+  statement: >-
+    A small molecule identified in a cell-based screen for inhibitors of PERK signalling,
+    which acts on eIF2B and reverses the translational consequences of eIF2-alpha
+    phosphorylation, significantly enhanced spatial and fear-associated learning when given
+    to otherwise untreated mice.
+  subject: COMPLEX:eif2b
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the compound was identified phenotypically; target attribution to eIF2B rests on later structural work rather than on this study"
+      - "fear-associated learning and water-maze learning both load on arousal and stress reactivity, which a compound acting on the stress response may alter directly"
+      - "no dose-response for the behavioural effect is reported in the retrieved abstract"
+  evidence:
+    - source_id: SRC:PMID:23741617
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10090
+      population: "mice treated systemically with the integrated stress response inhibitor"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "spatial and fear-associated learning performance"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "IC50 = 5 nM"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "adult pharmacological perturbation in healthy animals, which is the strongest design class for an enhancement claim, but a single originating study with rodent tasks only"
+    calibration_status: uncalibrated_subjective
+  risks: ["the integrated stress response is cytoprotective; suppressing it is not free, and this study does not measure the cost"]
+  confounders: ["arousal and stress reactivity", "systemic exposure to a compound with broad translational effects"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:EIF2B_COMPLEX:002
+  statement: >-
+    An atomic structure of the compound bound to the human eIF2B decamer shows it bridging
+    two tetrameric subcomplexes, so that the pharmacological action is to stabilise assembly
+    of the fully active decameric enzyme rather than to inhibit a kinase.
+  subject: COMPLEX:eif2b
+  predicate: MODULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: mechanistic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a structural mechanism does not establish that the same mechanism produces the behavioural effect in vivo"
+      - "the retrieved source is a structural-snapshot review by the discovering group"
+  evidence:
+    - source_id: SRC:PMID:31550413
+      design: structural_biology
+      species: SPECIES:NCBITaxon:9606
+      population: "purified human eIF2B decamer with bound compound"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "structure of the compound-bound human eIF2B decamer and location of the binding pocket"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "a defined molecular mechanism on the human complex; mechanistic only, and it can never support an efficacy statement"
+    calibration_status: uncalibrated_subjective
+  risks: ["this is a mechanistic claim; contract rule V16 forbids it supporting any effect assertion"]
+  confounders: ["purified-system conditions"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:EIF2B_COMPLEX:003
+  statement: >-
+    In cells in which the integrated stress response was driven to high levels of
+    eIF2-alpha phosphorylation, the eIF2B-stabilising compound no longer rescued
+    translation, so its action is confined to a window of low-to-moderate stress-response
+    activation.
+  subject: COMPLEX:eif2b
+  predicate: MODULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: pharmacodynamic
+  direction: state_dependent
+  direction_context: >-
+    the intracellular concentration of phosphorylated eIF2-alpha: the compound rescues translation below a critical threshold of stress-response activation and not above it, so the sign of its effect is set by the cell’s stress state rather than by its own dose
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the threshold was established in cultured cells under chemical and viral stressors; the corresponding threshold in adult neurons in vivo is unknown"
+  evidence:
+    - source_id: SRC:PMID:30674674
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:9606
+      population: "cultured cell lines in which the stress response was induced with poly(I:C), arsenite or picornavirus infection"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "rescue of translation by the compound as a function of intracellular phosphorylated eIF2-alpha concentration"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "in vitro only, but the single most important dose- and state-response fact known about this mechanism: the response shape is a threshold, not a monotone gain"
+    calibration_status: uncalibrated_subjective
+  risks: ["a therapeutic window defined by an internal state variable cannot be dosed without measuring that state"]
+  confounders: ["cell-line specific stress kinetics"]
+  dependencies: [CLM:brakes:EIF2B_COMPLEX:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:EIF2B_COMPLEX:004
+  statement: >-
+    The only phase 2/3 trial of an eIF2B activator that this agent located, a
+    249-participant regimen of a platform trial in amyotrophic lateral sclerosis,
+    specified change in the ALS Functional Rating Scale and mortality as its primary
+    outcomes and lists no cognitive endpoint of any kind, so no human cognitive
+    measurement of this mechanism exists to be null or positive.
+  subject: CLM:brakes:EIF2B_COMPLEX:004
+  predicate: ABOUT
+  object: PHENO:clinical_cognitive_composite
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "this is a statement about what the trial measured, not about what the drug did; it asserts no effect and no null"
+      - "absence of a cognitive endpoint in an ALS trial is expected and is evidence about translational distance, not about the mechanism"
+      - "the trial's posted results were not retrieved by this agent; had they been, they still would not contain a cognitive endpoint"
+  evidence:
+    - source_id: SRC:NCT:NCT05842941
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "adults with amyotrophic lateral sclerosis randomised 3:1 to active or placebo within a platform master protocol; registry-reported enrolment 249; status completed"
+      sample_size:
+        reported_as: "249"
+        value: 249
+        unit: participants
+      endpoint: "registry primary outcomes: ALSFRS-R slope over 24 weeks and mortality event rate; no cognitive outcome is listed"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: registry_record
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: "an evidence_gap claim carries no evidential weight for or against the hypothesis by construction; level 0 records that the search was performed and the measurement does not exist"
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "read mechanically as a null this would be a serious misreading: the human safety database for eIF2B activation is accumulating in a neurodegenerative population with no cognitive endpoint at all"
+  confounders: ["platform-trial shared placebo design"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: database_ingestion
+    run_id: sprint1-brakes-01
+- claim_id: CLM:brakes:EIF2B_COMPLEX:005
+  statement: >-
+    Removing the eIF2-alpha phosphorylation signal that inhibits eIF2B, selectively in
+    hippocampal excitatory neurons or in somatostatin-expressing inhibitory neurons,
+    increased general mRNA translation, strengthened synaptic plasticity and enhanced
+    long-term memory in mice, whereas the same manipulation in parvalbumin-expressing
+    neurons did not.
+  subject: COMPLEX:eif2b
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the manipulation acts on the eIF2-alpha substrate rather than on eIF2B itself; this claim is placed under the complex because the inhibitory step is eIF2B inhibition, and the same evidence is recorded for EIF2S1"
+      - "cell-type-specific ablation of a phosphorylation site is a genetic manipulation of unknown onset relative to adulthood in the retrieved abstract"
+  evidence:
+    - source_id: SRC:PMID:33029011
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with cell-type-restricted ablation of the eIF2-alpha phosphorylation site"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "mRNA translation, long-term potentiation and long-term memory"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "cell-type-resolved genetic evidence in healthy animals converging in direction with the pharmacological result, which is a different design class attacking the same node"
+    calibration_status: uncalibrated_subjective
+  risks: ["cell-type specificity means a systemic drug cannot reproduce the manipulation"]
+  confounders: ["onset of the genetic manipulation", "compensatory translational control"]
+  dependencies: [CLM:brakes:EIF2B_COMPLEX:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:EIF2B_COMPLEX:006
+  statement: >-
+    A case report together with a summary of 33 genetically confirmed female patients with
+    adult-onset vanishing white matter disease, all carrying mutations in one of the five
+    eIF2B subunit genes, reports a mean age of clinical onset of 36.8 years and neurological
+    features including executive deficits, cerebellar ataxia and paraparesis, so reduced
+    eIF2B function in the adult human brain produces progressive cognitive and motor
+    decline.
+  subject: COMPLEX:eif2b
+  predicate: POSITIVELY_REGULATES
+  object: PHENO:executive_function
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: monogenic_disorder
+    locus_to_gene_resolved: "yes"
+    alternative_explanations:
+      - "the cohort summary is assembled from published case reports rather than from a systematically ascertained series, so ascertainment bias toward severe and unusual presentations is expected"
+      - "cognitive decline in a progressive leukoencephalopathy is downstream of white-matter destruction and is not a direct read-out of translational capacity in intact circuits"
+      - "all summarised patients were female and all had ovarian failure, so the cohort is not representative of eIF2B loss of function generally"
+      - "these are hypomorphic loss-of-function mutations; the relation they establish is that eIF2B activity is REQUIRED in the adult human brain, not that more activity than normal is beneficial"
+  evidence:
+    - source_id: SRC:PMID:31438897
+      design: clinical_case_series
+      species: SPECIES:NCBITaxon:9606
+      population: "one female patient with adult-onset disease plus a summary of 33 genetically confirmed female adult-onset cases with EIF2B1-5 mutations"
+      sample_size:
+        reported_as: "33 female patients with adult-onset VWMD"
+        value: 33
+        unit: participants
+      endpoint: "age of clinical onset, neurological and cognitive features, and causative EIF2B subunit mutation"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "The mean age of clinical onset in female patients with adult-onset VWMD was 36.8 years"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "a human monogenic genotype-phenotype relation with an adult-onset form and a directly relevant cognitive description; weakened by case-report ascertainment and by the fact that the phenotype is mediated by white-matter pathology"
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this is the human evidence that the eIF2B brake is load-bearing: adults who lose eIF2B function lose cognition, which constrains how the enhancement hypothesis should be read but says nothing about the safety of increasing activity"
+  confounders: ["ascertainment bias in a case-report cohort", "white-matter pathology as the mediator", "female-only cohort with universal ovarian failure"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+# claim_type `evidence_gap` (contract section 4.1, resolution R5): this record exists to
+# say that the endpoint was NEVER MEASURED, which is not a finding about biology. It is
+# graph-inert — no biological or intervention edge compiles from it — and it must never be
+# counted as counter-evidence against the control-point hypothesis. It counts towards a
+# coverage gap. The subject/predicate/object triple below is nominal for that reason.

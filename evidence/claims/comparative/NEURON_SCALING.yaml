@@ -1,0 +1,539 @@
+# Comparative claims: neuron counts, cellular scaling rules, and their metabolic
+# correlates. Contract: docs/DATA_CONTRACT.md §4.
+#
+# READ THIS BEFORE READING THE CLAIMS.
+#
+# Every claim in this file is an ANATOMICAL OR METABOLIC MEASUREMENT. Not one of these
+# studies measured cognition in the same animals whose neurons it counted. The cognitive
+# framing that surrounds this literature — "cognitive power per unit mass", "superior
+# cognitive abilities" — is the authors' inference from published behavioural work on
+# other individuals, usually other species, and it is exactly the narrative inference
+# this atlas exists to suppress. The `statement` of each claim therefore says what was
+# counted, in what tissue, by what method; the cognitive interpretation appears only in
+# `risks`.
+#
+# ontology/edges.yaml has no relation meaning "this anatomical property differs between
+# species" (see docs/blackboard/schema_change_requests/comparative-001.yaml). These
+# claims use `CONSTRAINS` — the weakest legal capacity relation — with
+# `direction: unclear` and `claim_type: theoretical_construct`, because the neuron count
+# is measured but its relation to information throughput is not. CONSTRAINS' own
+# semantics in ontology/edges.yaml state that asserting a constraint does not assert that
+# removing it raises performance; that reading is intended here.
+#
+# `context.phylogenetic_control`, `context.phylogenetic_control_basis` and
+# `context.species_count` are not yet in the schema; see the change request above.
+
+- claim_id: CLM:comparative:NEURON_SCALING:001
+  schema_version: 0.1.0
+  statement: >-
+    Olkowicz and colleagues dissociated 28 bird brains with the isotropic fractionator
+    and report that songbird and parrot brains hold about twice the neurons of primate
+    brains of equal mass, with a larger share of those neurons in the pallial
+    telencephalon, but measured no behaviour in the birds they counted.
+  subject: REGION:pallium
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:57247, SPECIES:NCBITaxon:176057]
+    species_count: 28
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      The methods section retrieved from the PMC record describes reduced major axis
+      regressions to power functions relating structure mass, cell numbers and densities
+      across species. No phylogenetic generalised least squares, phylogenetic mixed
+      model or independent-contrasts analysis is reported. The 28 species are not an
+      independent sample: 11 are parrots and 13 are songbirds, so two clades supply 24
+      of 28 points.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:pallium]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "shared ancestry: parrots and songbirds are sister clades, so the high-density pattern may be one ancestral character state counted 24 times rather than a repeated adaptation"
+      - "allometry: neuron density falls with brain size in mammals, so a comparison at equal brain mass compares a large bird brain against a small mammal brain, two different positions on each clade's own scaling curve"
+      - "publication and sampling bias towards large-brained parrots and corvids, the species the avian-cognition literature has already selected as impressive"
+      - "smaller neurons are not equivalent processing units: neuron count says nothing about connectivity, synapse number, firing rate or coding scheme"
+  evidence:
+    - source_id: SRC:PMID:27298365
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:57247
+      population: "28 bird species, including grey parrot and kea; brains obtained post mortem"
+      sample_size:
+        reported_as: "28 avian species"
+        value: 28
+        unit: species
+      endpoint: "numbers of neurons and non-neuronal cells per brain division, isotropic fractionator"
+      endpoint_category: molecular_readout
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "on average twice as many neurons as primate brains of the same mass"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single uncontrolled comparative anatomy study; measurement is a cell count, not a
+      cognitive endpoint; no phylogenetic control, so the cross-species contrast is
+      capped at level 2 by this atlas's rule and sits at 1 because it is unreplicated.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "THE CENTRAL OVER-READING RISK IN THIS ATLAS: the paper's own framing (higher 'cognitive power' per unit mass) is an inference, not a result. No bird in this study performed a cognitive task."
+    - "the comparison is between a neuron count in birds and a neuron count in primates; 'primate-like' refers to the count, not to any shared cognitive construct"
+    - "the full 28-species list and the per-species counts were read from an automated retrieval of the PMC page, not transcribed cell by cell"
+  confounders: ["brain mass", "body mass", "clade membership", "post-mortem tissue handling"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:NEURON_SCALING:002
+  schema_version: 0.1.0
+  statement: >-
+    Kocourek and colleagues applied the same isotropic fractionator method to 15
+    galliform bird species and found roughly half the neurons of parrot and songbird
+    brains of equal mass, with small telencephalic and dominant cerebellar neuronal
+    fractions, so neuron packing is not a property of birds but of particular avian
+    clades.
+  subject: REGION:pallium
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9054]
+    species_count: 15
+    phylogenetic_control: not_reported
+    phylogenetic_control_basis: >-
+      The retrieved abstract describes quantitative comparison of cellular scaling rules
+      against songbirds, parrots, marsupials, insectivores, rodents and primates, and
+      reports no phylogenetic correction. Full text was not retrieved.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:pallium]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "galliform brains may differ for reasons unrelated to cognition, including flight mode, precocial development and domestication history"
+      - "'cognitive abilities on par with non-primate mammals' is asserted in the abstract by reference to other literature, not measured here"
+  evidence:
+    - source_id: SRC:PMID:40159384
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9054
+      population: "15 galliform bird species, compared against published counts for songbirds, parrots, marsupials, insectivores, rodents and primates"
+      sample_size:
+        reported_as: "15 species of galliform birds"
+        value: 15
+        unit: species
+      endpoint: "numbers and distributions of neurons and non-neuronal cells per brain division, isotropic fractionator"
+      endpoint_category: molecular_readout
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "about half the number of neurons found in parrot and songbird brains of the same mass"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single uncontrolled comparative anatomy study, same method and largely the same
+      group as CLM:comparative:NEURON_SCALING:001, so it is not independent
+      corroboration; it is graded low as evidence but is important as a qualification.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "DEFLATIONARY CLAIM. It undercuts any statement of the form 'bird brains are densely packed': within Aves the range spans a factor of about two, so 'the avian solution' is not a single thing."
+    - "this is the same laboratory and the same method as NEURON_SCALING:001, so the two claims share a measurement-technique dependency and must not be counted as independent replication"
+  confounders: ["brain mass", "body mass", "clade membership", "domestication"]
+  dependencies: [CLM:comparative:NEURON_SCALING:001]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:NEURON_SCALING:003
+  schema_version: 0.1.0
+  statement: >-
+    Herculano-Houzel and colleagues counted cells in one African elephant brain and
+    found 257 billion neurons in total but only 5.6 billion in the cerebral cortex,
+    about a third of the human cortical count, with 97.5 per cent of all neurons in the
+    cerebellum.
+  subject: REGION:cerebral_cortex
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9785, SPECIES:NCBITaxon:9606]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      A single-specimen cell count compared against the authors' published mammalian
+      dataset. No phylogenetic analysis is possible with one elephant.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "n = 1 elephant: the count could be unrepresentative of the species, and no variance can be estimated"
+      - "the cerebellar excess may serve trunk sensorimotor control, as the authors suggest, in which case region totals are not comparable across body plans at all"
+      - "the paper's closing inference — that human cortical neuron number is 'correlated with' superior human cognition — is a two-point comparison with no statistical content"
+  evidence:
+    - source_id: SRC:PMID:24971054
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9785
+      population: "one African elephant brain, compared with the authors' published human and mammalian counts"
+      sample_size:
+        reported_as: "the brain of the African elephant"
+        value: 1
+        unit: animals
+      endpoint: "numbers of neurons and non-neuronal cells per brain division, isotropic fractionator"
+      endpoint_category: molecular_readout
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "the elephant cerebral cortex, which has twice the mass of the human cerebral cortex, holds only 5.6 billion neurons, about one third of the number of neurons found in the human cerebral cortex"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single specimen, no phylogenetic control, anatomical endpoint only. Recorded
+      primarily because it is an absence result in a cognitively impressive lineage.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "ABSENCE EVIDENCE, DELIBERATELY RECORDED. The elephant is the standard example of a large-brained, behaviourally flexible mammal, and it does not have the proposed mechanism: its cortex holds a third of the human cortical neuron count while its whole brain holds three times the human total. Any claim that total brain neurons set cognitive capacity has to survive this case."
+    - "conversely, this result is routinely used to argue that cortical neuron count DOES set cognitive capacity — a conclusion drawn from comparing two species on a measure chosen after the cognitive ranking was already assumed"
+  confounders: ["single specimen", "body size", "trunk sensorimotor specialisation", "post-mortem tissue handling"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:NEURON_SCALING:004
+  schema_version: 0.1.0
+  statement: >-
+    Herculano-Houzel reports that the human brain contains as many neuronal and
+    non-neuronal cells as the primate cellular scaling rules predict for a primate brain
+    of its mass, and that the human cerebral cortex holds about 19 per cent of all brain
+    neurons, a fraction similar to other mammals.
+  subject: REGION:cerebral_cortex
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    phylogenetic_control: not_reported
+    phylogenetic_control_basis: >-
+      A synthesis of the author's own isotropic-fractionator datasets for primates,
+      rodents and insectivores, reporting order-specific scaling rules fitted without
+      phylogenetic correction. Full text was not retrieved.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the claim is about conformity to a fitted scaling rule, so it depends entirely on which species were used to fit the rule"
+      - "different scaling rules apply within different mammalian orders, so 'as expected' means 'as expected for a primate', which is not a statement about mammals generally"
+  evidence:
+    - source_id: SRC:PMID:19915731
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "human brains compared against the author's isotropic-fractionator datasets for other primates, rodents and insectivores"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "numbers of neuronal and non-neuronal cells per brain division, and cortical share of total brain neurons"
+      endpoint_category: molecular_readout
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "the so-called overdeveloped human cerebral cortex holds only 19% of all brain neurons"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      A synthesis by a single author of that author's own datasets, no phylogenetic
+      control, anatomical endpoint only. Low as evidence, load-bearing as a corrective.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "DEFLATIONARY CLAIM about the human lineage specifically. It argues the human brain's cellular composition is unexceptional for its clade and size, which cuts against the premise that a distinctive human cellular architecture must underlie human cognition — and therefore cuts in the OPPOSITE direction to CLM:comparative:HCN1:003, which finds human layer 5 neurons to be significant biophysical outliers. This atlas records both and resolves neither."
+    - "the author is also the senior author of NEURON_SCALING:001 and NEURON_SCALING:003; the three claims share a method and a research programme"
+  confounders: ["choice of species used to fit the scaling rule", "post-mortem tissue handling"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:NEURON_SCALING:005
+  schema_version: 0.1.0
+  statement: >-
+    Avelino-de-Souza and colleagues counted 3.2 billion cerebral cortical neurons in one
+    northern minke whale brain by isotropic fractionator, against a published
+    stereological estimate of 12.8 billion for the same species, and conclude that
+    stereology has grossly overestimated cetacean cortical neuron numbers.
+  subject: REGION:cerebral_cortex
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9767]
+    species_count: 1
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      One specimen compared against the authors' mammalian dataset and against
+      artiodactyl scaling expectations. No phylogenetic analysis; none is possible at
+      n = 1.
+    life_stage: adult
+    baseline_context: not_reported
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the two methods disagree; which one is wrong is not settled by a single specimen, and the isotropic fractionator has its own known failure modes on large, lipid-rich, post-mortem-delayed tissue"
+      - "the minke whale is a mysticete; the panel's dolphin (Tursiops truncatus) is an odontocete, so this result does not transfer to dolphins without further evidence"
+      - "n = 1 for both the new count and the stereological comparison"
+  evidence:
+    - source_id: SRC:PMID:40966013
+      design: comparative_anatomy
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9767
+      population: "one northern minke whale brain of mass 2683.9 g, compared with the authors' dataset of several dozen mammalian species analysed with the same method"
+      sample_size:
+        reported_as: "the brain of a northern minke whale"
+        value: 1
+        unit: animals
+      endpoint: "cerebral cortical and cerebellar neuron numbers, isotropic fractionator, versus a published stereological estimate"
+      endpoint_category: molecular_readout
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "with 3.2 billion neurons, the minke whale cerebral cortex conforms to the quantitative scaling rules that apply to other mammals"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single specimen, but a direct method-versus-method conflict on the same species,
+      which is the most informative kind of negative result available here.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "NEGATIVE / FAILED-REPLICATION CLAIM, and the strongest measurement warning in this atlas. A roughly fourfold disagreement between two accepted counting methods on the same species means published cetacean neuron numbers cannot be used as a quantitative variable in any cross-clade analysis. Anything in this repository that ranks cetaceans by cortical neuron count is unsupported."
+    - "the abstract's closing comparison places whale cortical counts 'on par with' macaws, macaques, baboons and elephants and 'below' great apes and humans — that is an ordering of cell counts being presented in the vocabulary of a cognitive ranking, and must not be read as one"
+  confounders: ["counting method", "post-mortem interval", "single specimen", "mysticete versus odontocete brain organisation"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:NEURON_SCALING:006
+  schema_version: 0.1.0
+  statement: >-
+    Fonseca-Azevedo and Herculano-Houzel modelled feeding hours against the caloric yield
+    of raw food and concluded that metabolic limits impose a trade-off between body mass
+    and brain neuron number in primates, which they propose was relaxed in Homo erectus
+    by cooking.
+  subject: SV:power.glucose_oxidation_rate
+  predicate: CONSTRAINS
+  object: SV:efficiency.information_throughput_per_unit_energy
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:9598]
+    phylogenetic_control: not_reported
+    phylogenetic_control_basis: >-
+      An energetic model fitted to published primate body-mass and neuron-number data.
+      The retrieved abstract reports no phylogenetic correction; full text was not
+      retrieved.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the cooking hypothesis is an evolutionary narrative fitted to an energetic calculation; the archaeological timing of controlled fire is contested and is not evidence generated by this model"
+      - "feeding-hour budgets for extinct hominins are reconstructions, not observations"
+      - "other released constraints (foraging efficiency, gut reduction, allocare, life-history shifts) predict similar outcomes and are not distinguished by this analysis"
+  evidence:
+    - source_id: SRC:PMID:23090991
+      design: biophysical_model
+      endpoint_measured: not_measured_in_protocol
+      species: SPECIES:NCBITaxon:9606
+      population: "published primate body-mass and brain-neuron-number datasets, plus caloric-yield and feeding-time parameters"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "modelled maximum affordable brain neuron number as a function of body mass and feeding hours"
+      endpoint_category: metabolic_proxy
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      A single modelling study with no experimental perturbation and no phylogenetic
+      control. Retained because it is the clearest statement in this literature that
+      neuron number carries a metabolic price, which matters to the power atlas.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this is a model, not a measurement; it produces no evidence that altering any metabolic variable in an adult human changes cognition"
+    - "it is the main reason this atlas treats 'more neurons' as a cost-bearing change rather than a free improvement, but that framing is inherited from the model's assumptions"
+    - "`endpoint_measured: not_measured_in_protocol` on the single evidence item, which is the honest value under V16c: this is a biophysical model whose endpoint is a COMPUTED quantity, not a measured one. Every other evidence item in this atlas is `measured`. The distinction matters because V16c forbids a measured absence being confused with an absence of measurement, and a modelled number is neither."
+  confounders: ["assumed caloric yields", "assumed feeding hours", "extinct-taxon reconstruction"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

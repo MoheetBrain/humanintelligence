@@ -1,0 +1,78 @@
+# Red-team facet assessment - PTPN5. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/PTPN5.yaml.
+schema_version: 0.1.0
+target_id: TGT:PTPN5
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. No adverse-effect annotation exists for this target in the pinned
+    Open Targets release and no STEP-directed agent has been dosed in a human.
+  search_basis: Searched Open Targets Platform 26.06 safetyLiabilities for ENSG00000110786 and ClinicalTrials.gov
+    API v2 for interventional studies of agents directed at this target. A hit would have been any annotated
+    adverse event for this target, or any registered human study of an agent acting on it with a safety
+    readout. The empty Open Targets list means that SOURCE IS SILENT, not that the target is safe; per
+    contract section 5.4 this level is not lowered by the weakness of the search, because weak evidence
+    cannot establish the absence of a risk.
+  claim_refs: []
+  counter_level: 0
+  counter_rationale: Nothing establishes that inhibiting STEP is safe either.
+  counter_claim_refs: []
+  limiting_factor: no pharmacology exists for this target in humans
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. The located evidence is adult pharmacological inhibition in adult
+    animals, and no developmental manipulation of PTPN5 appears in the claim set. A genuine searched zero
+    over a thin literature.
+  search_basis: 'Read every claim for PTPN5 and inspected context.life_stage and causal_attribution.basis
+    on each, then searched the whole claim set for any perturbation of this target with life_stage prenatal,
+    postnatal_developmental or adolescent, or with basis germline_knockout or conditional_developmental_knockout.
+    A hit would have been any manipulation beginning before adulthood, or any reported developmental requirement
+    for this target. None exists in the located evidence: both claims are adult pharmacology. The literature
+    reviewed for this target is small, so the zero is honest but weakly informative.'
+  claim_refs: []
+  counter_level: 2
+  counter_rationale: Adult pharmacological inhibition in adult animals with a behavioural or plasticity
+    readout, replicated across the two located claims.
+  counter_claim_refs:
+  - CLM:brakes:PTPN5:001
+  - CLM:brakes:PTPN5:002
+  limiting_factor: no developmental evidence exists in either direction, and no human evidence of any
+    kind
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: insufficient_evidence. The red team owns only these two
+  facets; every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents''
+  facets, where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by
+  editing another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

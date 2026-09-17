@@ -1,0 +1,403 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/state_variable",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "Safety and stability variables must declare a polarity; the other six domains have no risk/margin reading (R4).",
+      "if": {
+        "properties": {
+          "id": {
+            "pattern": "^SV:(safety|stability)\\."
+          }
+        },
+        "required": [
+          "id"
+        ]
+      },
+      "then": {
+        "required": [
+          "polarity"
+        ]
+      }
+    },
+    {
+      "$comment": "not_asserted_pending_claims requires an empty coupling list.",
+      "if": {
+        "properties": {
+          "safety_coupling_basis": {
+            "const": "not_asserted_pending_claims"
+          }
+        },
+        "required": [
+          "safety_coupling_basis"
+        ]
+      },
+      "then": {
+        "properties": {
+          "safety_coupling": {
+            "maxItems": 0
+          }
+        }
+      }
+    }
+  ],
+  "description": "One state-variable DEFINITION from state_model/{domain}.yaml, typed by ontology/state_variables.yaml. A definition never carries empirical content: `response_shape.shape` defaults to `unknown` with basis `default_no_evidence_yet`, and `safety_coupling` is empty with basis `not_asserted_pending_claims` until a domain agent supplies claim-backed annotations. Maximising a state variable is NOT assumed to be good (README \u00a73).",
+  "examples": [
+    {
+      "definition": "Synthetic placeholder definition used only to exercise the schema example slot.",
+      "desirability": "unknown",
+      "id": "SV:cognition.placeholder_variable",
+      "kind": "latent_cognitive",
+      "level": "behavioural",
+      "measurement_proxies": [],
+      "name": "placeholder variable",
+      "provenance": {
+        "basis": "schema_example",
+        "defined_by": "agent:ontology"
+      },
+      "response_shape": {
+        "basis": "default_no_evidence_yet",
+        "claim_refs": [],
+        "shape": "unknown"
+      },
+      "safety_coupling": [],
+      "safety_coupling_basis": "not_asserted_pending_claims",
+      "status": "provisional",
+      "timescale": "unknown",
+      "units": null
+    }
+  ],
+  "properties": {
+    "aliases": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "definition": {
+      "description": "One or two sentences, mechanism-agnostic, no empirical assertion.",
+      "minLength": 20,
+      "type": "string"
+    },
+    "desirability": {
+      "$comment": "vocabulary: desirability",
+      "description": "Whether moving this variable is desirable at all.",
+      "enum": [
+        "context_dependent",
+        "higher_is_better_within_range",
+        "constraint_to_respect",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "id": {
+      "description": "SV:{domain}.{name}; the domain segment must match the file.",
+      "pattern": "^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\\.[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "kind": {
+      "$comment": "vocabulary: state_variable_kind",
+      "description": "What sort of quantity this is, epistemically.",
+      "enum": [
+        "latent_biological",
+        "latent_cognitive",
+        "observable_proxy",
+        "constraint"
+      ],
+      "type": "string"
+    },
+    "level": {
+      "$comment": "vocabulary: state_variable_level",
+      "description": "Level of biological organisation.",
+      "enum": [
+        "molecular",
+        "cellular",
+        "circuit",
+        "systems",
+        "behavioural"
+      ],
+      "type": "string"
+    },
+    "measurement_proxies": {
+      "description": "An EMPTY list is informative: it says nothing measures this yet.",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "modality": {
+            "$comment": "vocabulary: measurement_modality",
+            "description": "Measurement modality.",
+            "enum": [
+              "behavioural_task",
+              "neuropsychological_battery",
+              "eeg_meg",
+              "fmri_bold",
+              "mrs",
+              "pet",
+              "near_infrared_spectroscopy",
+              "arterial_spin_labelling",
+              "blood_or_csf_biomarker",
+              "genomic_or_transcriptomic",
+              "electrophysiology_invasive",
+              "ex_vivo_or_animal_only",
+              "questionnaire_or_diary",
+              "device_or_wearable",
+              "model_derived_estimate"
+            ],
+            "type": "string"
+          },
+          "name": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "status": {
+            "$comment": "vocabulary: measurability",
+            "description": "Honest measurability grade. animal_only_proxy can never substitute for a human measurement.",
+            "enum": [
+              "established_human_proxy",
+              "research_proxy",
+              "animal_only_proxy",
+              "theoretical_construct"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "modality",
+          "status"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "name": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "notes": {
+      "description": "Type-level clarification only, never empirical.",
+      "type": "string"
+    },
+    "polarity": {
+      "$comment": "vocabulary: state_variable_polarity",
+      "description": "REQUIRED on every safety and stability variable: does a higher value mean MORE HARM (`risk`) or MORE HEADROOM (`margin`)? `direction: increases` means opposite things against the two, and annotations are read relative to this field.",
+      "enum": [
+        "risk",
+        "margin"
+      ],
+      "type": "string"
+    },
+    "polarity_note": {
+      "description": "Why the polarity is what it is, when the name does not make it obvious or the assignment is nominal because the variable is non-monotone.",
+      "minLength": 20,
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "basis": {
+          "description": "Where the definition came from, e.g. project_brief_sprint1.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "defined_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "defined_by",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "related_primitives": {
+      "items": {
+        "description": "Primitive id.",
+        "pattern": "^PRIM:[a-z][a-z0-9_]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "response_shape": {
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "$comment": "The default basis permits only shape: unknown with no claim refs.",
+          "if": {
+            "properties": {
+              "basis": {
+                "const": "default_no_evidence_yet"
+              }
+            },
+            "required": [
+              "basis"
+            ]
+          },
+          "then": {
+            "properties": {
+              "claim_refs": {
+                "maxItems": 0
+              },
+              "shape": {
+                "const": "unknown"
+              }
+            }
+          }
+        },
+        {
+          "$comment": "A claim-supported shape needs at least one claim id.",
+          "if": {
+            "properties": {
+              "basis": {
+                "const": "claim_supported"
+              }
+            },
+            "required": [
+              "basis"
+            ]
+          },
+          "then": {
+            "properties": {
+              "claim_refs": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "description": "THE ANTI-NAIVETY FIELD. `unknown` is the default and is not a synonym for linear.",
+      "properties": {
+        "basis": {
+          "$comment": "vocabulary: response_shape_basis",
+          "description": "Why this shape is recorded.",
+          "enum": [
+            "default_no_evidence_yet",
+            "definitional",
+            "claim_supported"
+          ],
+          "type": "string"
+        },
+        "claim_refs": {
+          "description": "Claim ids. Every id must resolve (rule V4).",
+          "items": {
+            "description": "Claim id.",
+            "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "shape": {
+          "$comment": "vocabulary: response_shape",
+          "description": "Shape of the relation to cognitive output.",
+          "enum": [
+            "linear",
+            "threshold",
+            "inverted_u",
+            "u_shaped",
+            "state_dependent",
+            "unknown"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "shape",
+        "basis",
+        "claim_refs"
+      ],
+      "type": "object"
+    },
+    "safety_coupling": {
+      "description": "Safety constraints this variable can push.",
+      "items": {
+        "description": "Safety state variable id.",
+        "pattern": "^SV:safety\\.[a-z0-9][a-z0-9_]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "safety_coupling_basis": {
+      "$comment": "vocabulary: safety_coupling_basis",
+      "description": "Why a coupling is (or is not) asserted.",
+      "enum": [
+        "not_asserted_pending_claims",
+        "definitional",
+        "claim_supported"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "$comment": "vocabulary: state_variable_status",
+      "description": "Lifecycle of this definition.",
+      "enum": [
+        "active",
+        "provisional",
+        "deprecated"
+      ],
+      "type": "string"
+    },
+    "timescale": {
+      "$comment": "vocabulary: state_variable_timescale",
+      "description": "Timescale on which the variable itself changes.",
+      "enum": [
+        "milliseconds",
+        "seconds",
+        "minutes",
+        "hours",
+        "days",
+        "weeks",
+        "months",
+        "years",
+        "developmental",
+        "multi_timescale",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "units": {
+      "description": "null means 'no agreed unit', NOT 'dimensionless'.",
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "name",
+    "definition",
+    "kind",
+    "timescale",
+    "level",
+    "units",
+    "measurement_proxies",
+    "response_shape",
+    "desirability",
+    "safety_coupling",
+    "safety_coupling_basis",
+    "status",
+    "provenance"
+  ],
+  "title": "State variable",
+  "type": "object"
+}

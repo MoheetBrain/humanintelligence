@@ -1,0 +1,1940 @@
+{
+  "data": {
+    "credibleSets": {
+      "count": 39,
+      "rows": [
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 3,
+            "rows": [
+              {
+                "score": 0.7783352136611938,
+                "target": {
+                  "approvedSymbol": "SLC2A8",
+                  "id": "ENSG00000136856"
+                }
+              },
+              {
+                "score": 0.11497844010591507,
+                "target": {
+                  "approvedSymbol": "ZNF79",
+                  "id": "ENSG00000196152"
+                }
+              },
+              {
+                "score": 0.08212275058031082,
+                "target": {
+                  "approvedSymbol": "LRSAM1",
+                  "id": "ENSG00000148356"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 3,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "0106fbfd1193be2f0be3f10fa4e527c9",
+          "variant": {
+            "id": "9_127404103_C_G",
+            "rsIds": [
+              "rs10819287"
+            ]
+          }
+        },
+        {
+          "beta": 0.4689,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.25645172595977783,
+                "target": {
+                  "approvedSymbol": "TRIM34",
+                  "id": "ENSG00000258659"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 8,
+          "region": null,
+          "standardError": 0.07630683892217825,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "02c5c4b6f5cb561d732dfa795ff72660",
+          "variant": {
+            "id": "11_5637379_GA_G",
+            "rsIds": [
+              "rs200956582"
+            ]
+          }
+        },
+        {
+          "beta": 0.02475491733097066,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.925809919834137,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.33771562576293945,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -16,
+          "pValueMantissa": 5.85513162612915,
+          "region": "19:44783210-45113455",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565856",
+            "nSamples": 103938,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline (difference score)"
+          },
+          "studyLocusId": "06c8dbe2f6ec72434c8c08d1f5341938",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": 0.4354,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.40470030903816223,
+                "target": {
+                  "approvedSymbol": "SYNCRIP",
+                  "id": "ENSG00000135316"
+                }
+              },
+              {
+                "score": 0.23343390226364136,
+                "target": {
+                  "approvedSymbol": "SNX14",
+                  "id": "ENSG00000135317"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.07597637403739191,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "09e75c2e827eff1c9fd471080a4ab6b3",
+          "variant": {
+            "id": "6_85984238_C_T",
+            "rsIds": [
+              "rs140295727"
+            ]
+          }
+        },
+        {
+          "beta": 0.0786698,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.9340282082557678,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.3523555099964142,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07486949115991592,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              },
+              {
+                "score": 0.07486949115991592,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -32,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.006603111705828877,
+          "study": {
+            "id": "GCST90652255",
+            "nSamples": 90713,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Symbol digit substitution test performance decline (residual change score)"
+          },
+          "studyLocusId": "102096c2916ff88f483a71b8edee07c3",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": 0.75083,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 3,
+            "rows": [
+              {
+                "score": 0.6878380179405212,
+                "target": {
+                  "approvedSymbol": "KIF12",
+                  "id": "ENSG00000136883"
+                }
+              },
+              {
+                "score": 0.5789743065834045,
+                "target": {
+                  "approvedSymbol": "COL27A1",
+                  "id": "ENSG00000196739"
+                }
+              },
+              {
+                "score": 0.08534024655818939,
+                "target": {
+                  "approvedSymbol": "AMBP",
+                  "id": "ENSG00000106927"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.1251840878043052,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "17400f6a09432ce97aa2939d9ec17e08",
+          "variant": {
+            "id": "9_114127254_C_T",
+            "rsIds": [
+              "rs79523756"
+            ]
+          }
+        },
+        {
+          "beta": 0.027364681861176993,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.925809919834137,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.33771562576293945,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -19,
+          "pValueMantissa": 4.2868123054504395,
+          "region": "19:44783210-45113455",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565846",
+            "nSamples": 103938,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline (log-difference score)"
+          },
+          "studyLocusId": "1ee48de69c5008ddf6edde8fe2b7df5c",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": -0.9168,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.7890579700469971,
+                "target": {
+                  "approvedSymbol": "OLIG3",
+                  "id": "ENSG00000177468"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.14412055792412037,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "1faf7eff61a8d6ac9543cb897518b94c",
+          "variant": {
+            "id": "6_137490510_C_A",
+            "rsIds": [
+              "rs117070989"
+            ]
+          }
+        },
+        {
+          "beta": -0.261,
+          "colocalisation": {
+            "count": 7
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.8284110426902771,
+                "target": {
+                  "approvedSymbol": "GLI3",
+                  "id": "ENSG00000106571"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 3,
+          "region": null,
+          "standardError": 0.04400163160640545,
+          "study": {
+            "id": "GCST004372",
+            "nSamples": 1560,
+            "projectId": "GCST",
+            "pubmedId": "28577822",
+            "studyType": "gwas",
+            "traitFromSource": "Language performance in older adults (adjusted for episodic memory)"
+          },
+          "studyLocusId": "229c94562645b8ccd2701be7892ff192",
+          "variant": {
+            "id": "7_42148801_C_A",
+            "rsIds": [
+              "rs3801203"
+            ]
+          }
+        },
+        {
+          "beta": -1.0422,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.4587804079055786,
+                "target": {
+                  "approvedSymbol": "YWHAZ",
+                  "id": "ENSG00000164924"
+                }
+              },
+              {
+                "score": 0.05023009330034256,
+                "target": {
+                  "approvedSymbol": "SNX31",
+                  "id": "ENSG00000174226"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.1818616835594163,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "3291f2ce3949174d16c02f8091f79c33",
+          "variant": {
+            "id": "8_101033687_T_C",
+            "rsIds": [
+              "rs116237496"
+            ]
+          }
+        },
+        {
+          "beta": -0.8423,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.15150028467178345,
+                "target": {
+                  "approvedSymbol": "BTLA",
+                  "id": "ENSG00000186265"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 6,
+          "region": null,
+          "standardError": 0.14480575565139137,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "39cb856e78faffad66ef25b6061a0022",
+          "variant": {
+            "id": "3_112431166_A_C",
+            "rsIds": [
+              "rs184904296"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 0,
+            "rows": []
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "4e001f7623b0a0668ba746c499e3a17a",
+          "variant": {
+            "id": "13_81170245_G_C",
+            "rsIds": [
+              "rs7985509"
+            ]
+          }
+        },
+        {
+          "beta": -0.9587,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.7257505059242249,
+                "target": {
+                  "approvedSymbol": "TSNARE1",
+                  "id": "ENSG00000171045"
+                }
+              },
+              {
+                "score": 0.14080321788787842,
+                "target": {
+                  "approvedSymbol": "ADGRB1",
+                  "id": "ENSG00000181790"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.1507072195482703,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "4fe0936c8651e3c3507afd0528c7cc30",
+          "variant": {
+            "id": "8_142275662_G_A",
+            "rsIds": [
+              "rs145959269"
+            ]
+          }
+        },
+        {
+          "beta": -0.3,
+          "colocalisation": {
+            "count": 1883
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.9515709280967712,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.3730620741844177,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.08087802678346634,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              },
+              {
+                "score": 0.08087802678346634,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -11,
+          "pValueMantissa": 8,
+          "region": null,
+          "standardError": 0.04614958233736533,
+          "study": {
+            "id": "GCST90482628",
+            "nSamples": 1064,
+            "projectId": "GCST",
+            "pubmedId": "38306043",
+            "studyType": "gwas",
+            "traitFromSource": "Accelerated cognitive decline"
+          },
+          "studyLocusId": "5429de4b045b70657909a86cdebe7d8e",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.5461803078651428,
+                "target": {
+                  "approvedSymbol": "DACH1",
+                  "id": "ENSG00000276644"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "627b6cca542aca2d46f51c53bf793649",
+          "variant": {
+            "id": "13_70946701_G_C",
+            "rsIds": [
+              "rs79538982"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 10
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.590950071811676,
+                "target": {
+                  "approvedSymbol": "UBR5",
+                  "id": "ENSG00000104517"
+                }
+              },
+              {
+                "score": 0.2218208760023117,
+                "target": {
+                  "approvedSymbol": "RRM2B",
+                  "id": "ENSG00000048392"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -14,
+          "pValueMantissa": 4,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST004371",
+            "nSamples": 822,
+            "projectId": "GCST",
+            "pubmedId": "22833209",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in mild cognitive impairment (time interaction)"
+          },
+          "studyLocusId": "633477e3136b203563b7170d06cf5ffb",
+          "variant": {
+            "id": "8_102296172_A_C",
+            "rsIds": [
+              "rs7840202"
+            ]
+          }
+        },
+        {
+          "beta": 0.0188507,
+          "colocalisation": {
+            "count": 2
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 6,
+            "rows": [
+              {
+                "score": 0.7008514404296875,
+                "target": {
+                  "approvedSymbol": "NCAM1",
+                  "id": "ENSG00000149294"
+                }
+              },
+              {
+                "score": 0.33098089694976807,
+                "target": {
+                  "approvedSymbol": "PLET1",
+                  "id": "ENSG00000188771"
+                }
+              },
+              {
+                "score": 0.12115296721458435,
+                "target": {
+                  "approvedSymbol": "IL18",
+                  "id": "ENSG00000150782"
+                }
+              },
+              {
+                "score": 0.11119063198566437,
+                "target": {
+                  "approvedSymbol": "BCO2",
+                  "id": "ENSG00000197580"
+                }
+              },
+              {
+                "score": 0.11074993759393692,
+                "target": {
+                  "approvedSymbol": "PTS",
+                  "id": "ENSG00000150787"
+                }
+              },
+              {
+                "score": 0.08927074819803238,
+                "target": {
+                  "approvedSymbol": "TEX12",
+                  "id": "ENSG00000150783"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 4,
+          "region": null,
+          "standardError": 0.00320361668343566,
+          "study": {
+            "id": "GCST90652250",
+            "nSamples": 103938,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline (residual change score)"
+          },
+          "studyLocusId": "74fc4cce3f14532f1311b401be66cce0",
+          "variant": {
+            "id": "11_112612445_C_T",
+            "rsIds": [
+              "rs4604926"
+            ]
+          }
+        },
+        {
+          "beta": 0.0453789,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.9340282082557678,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.3523555099964142,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07486949115991592,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              },
+              {
+                "score": 0.07486949115991592,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -32,
+          "pValueMantissa": 3,
+          "region": null,
+          "standardError": 0.003838472478662,
+          "study": {
+            "id": "GCST90652250",
+            "nSamples": 103938,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline (residual change score)"
+          },
+          "studyLocusId": "7ca6cb3386190c0fb5dd72d1bf53ad33",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 127
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.18742609024047852,
+                "target": {
+                  "approvedSymbol": "PARP6",
+                  "id": "ENSG00000137817"
+                }
+              },
+              {
+                "score": 0.16327960789203644,
+                "target": {
+                  "approvedSymbol": "SENP8",
+                  "id": "ENSG00000166192"
+                }
+              },
+              {
+                "score": 0.10437464714050293,
+                "target": {
+                  "approvedSymbol": "MYO9A",
+                  "id": "ENSG00000066933"
+                }
+              },
+              {
+                "score": 0.09318151324987411,
+                "target": {
+                  "approvedSymbol": "GRAMD2A",
+                  "id": "ENSG00000175318"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -15,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST004371",
+            "nSamples": 822,
+            "projectId": "GCST",
+            "pubmedId": "22833209",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in mild cognitive impairment (time interaction)"
+          },
+          "studyLocusId": "83f74c1fe009da6cd1ef8e6d651af4c1",
+          "variant": {
+            "id": "15_72259371_C_T",
+            "rsIds": [
+              "rs11637611"
+            ]
+          }
+        },
+        {
+          "beta": -0.5508,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.5922039747238159,
+                "target": {
+                  "approvedSymbol": "EIPR1",
+                  "id": "ENSG00000032389"
+                }
+              },
+              {
+                "score": 0.4757272005081177,
+                "target": {
+                  "approvedSymbol": "TRAPPC12",
+                  "id": "ENSG00000171853"
+                }
+              },
+              {
+                "score": 0.064503975212574,
+                "target": {
+                  "approvedSymbol": "COLEC11",
+                  "id": "ENSG00000118004"
+                }
+              },
+              {
+                "score": 0.05087205022573471,
+                "target": {
+                  "approvedSymbol": "RNASEH1",
+                  "id": "ENSG00000171865"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 5,
+          "region": null,
+          "standardError": 0.08856580452093671,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "8ad02f4d85354af9b55cb5b5f98b0d9a",
+          "variant": {
+            "id": "2_3172644_C_T",
+            "rsIds": [
+              "rs7581969"
+            ]
+          }
+        },
+        {
+          "beta": -0.4992,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.6959607005119324,
+                "target": {
+                  "approvedSymbol": "CADPS",
+                  "id": "ENSG00000163618"
+                }
+              },
+              {
+                "score": 0.16959057748317719,
+                "target": {
+                  "approvedSymbol": "FEZF2",
+                  "id": "ENSG00000153266"
+                }
+              },
+              {
+                "score": 0.05676403269171715,
+                "target": {
+                  "approvedSymbol": "CEP15",
+                  "id": "ENSG00000114405"
+                }
+              },
+              {
+                "score": 0.05500683933496475,
+                "target": {
+                  "approvedSymbol": "PTPRG",
+                  "id": "ENSG00000144724"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.07847402106863098,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "8ad82a3fcafd3784776f43eab4f7c04d",
+          "variant": {
+            "id": "3_62457132_G_A",
+            "rsIds": [
+              "rs79158673"
+            ]
+          }
+        },
+        {
+          "beta": 0.0437522,
+          "colocalisation": {
+            "count": 527
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.6349966526031494,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.09670526534318924,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -13,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.005953655454303016,
+          "study": {
+            "id": "GCST90652256",
+            "nSamples": 131736,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Fluid intelligence score decline (residual change score)"
+          },
+          "studyLocusId": "8c041d5d25d66ca31351604f0813fed4",
+          "variant": {
+            "id": "19_44906745_G_A",
+            "rsIds": [
+              "rs769449"
+            ]
+          }
+        },
+        {
+          "beta": 1.2284,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.30587032437324524,
+                "target": {
+                  "approvedSymbol": "TSPAN2",
+                  "id": "ENSG00000134198"
+                }
+              },
+              {
+                "score": 0.11227501183748245,
+                "target": {
+                  "approvedSymbol": "NGF",
+                  "id": "ENSG00000134259"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -12,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.17462546371658116,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "8ee1da675a3d705dbb81b19d820538de",
+          "variant": {
+            "id": "1_115169958_C_T",
+            "rsIds": [
+              "rs17033324"
+            ]
+          }
+        },
+        {
+          "beta": -0.5032,
+          "colocalisation": {
+            "count": 1
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.38460373878479004,
+                "target": {
+                  "approvedSymbol": "LASP1",
+                  "id": "ENSG00000002834"
+                }
+              },
+              {
+                "score": 0.06404497474431992,
+                "target": {
+                  "approvedSymbol": "LASP1NB",
+                  "id": "ENSG00000263874"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 4,
+          "region": null,
+          "standardError": 0.08551724419277926,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "9143742c01387234145c86a40f60032e",
+          "variant": {
+            "id": "17_38873719_A_G",
+            "rsIds": [
+              "rs140564516"
+            ]
+          }
+        },
+        {
+          "beta": 0.90559,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.5846818685531616,
+                "target": {
+                  "approvedSymbol": "CDH7",
+                  "id": "ENSG00000081138"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.15802352908709633,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "93f8964a4f65a4e3a6a8cf612d8bc283",
+          "variant": {
+            "id": "18_65373686_T_C",
+            "rsIds": [
+              "rs594284"
+            ]
+          }
+        },
+        {
+          "beta": 0.0502802,
+          "colocalisation": {
+            "count": 1870
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.9515709280967712,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.3514214754104614,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07470560818910599,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              },
+              {
+                "score": 0.07470560818910599,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -12,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.007147674406351713,
+          "study": {
+            "id": "GCST90652253",
+            "nSamples": 77380,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Duration to complete alphanumeric path task decline (residual change score)"
+          },
+          "studyLocusId": "9d1c195dfc493ee09823cbba5842ac6b",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": 0.027116737514562932,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.925809919834137,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.33771562576293945,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -16,
+          "pValueMantissa": 2.1319704055786133,
+          "region": "19:44783210-45024977",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565851",
+            "nSamples": 90713,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Symbol digit substitution test performance decline (log-difference score)"
+          },
+          "studyLocusId": "a66303ff4aafbed19da603f9a95980a2",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": -0.7015,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.6682031750679016,
+                "target": {
+                  "approvedSymbol": "TMEM132D",
+                  "id": "ENSG00000151952"
+                }
+              },
+              {
+                "score": 0.13905999064445496,
+                "target": {
+                  "approvedSymbol": "GLT1D1",
+                  "id": "ENSG00000151948"
+                }
+              },
+              {
+                "score": 0.09565099328756332,
+                "target": {
+                  "approvedSymbol": "SLC15A4",
+                  "id": "ENSG00000139370"
+                }
+              },
+              {
+                "score": 0.07112659513950348,
+                "target": {
+                  "approvedSymbol": "TMEM132C",
+                  "id": "ENSG00000181234"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.12241025812409377,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "a77c0006b4ab2e8903600de3fac2b8b5",
+          "variant": {
+            "id": "12_129129840_C_A",
+            "rsIds": [
+              "rs117605016"
+            ]
+          }
+        },
+        {
+          "beta": -0.8192,
+          "colocalisation": {
+            "count": 2
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.37839412689208984,
+                "target": {
+                  "approvedSymbol": "ADAM29",
+                  "id": "ENSG00000168594"
+                }
+              },
+              {
+                "score": 0.13377399742603302,
+                "target": {
+                  "approvedSymbol": "GLRA3",
+                  "id": "ENSG00000145451"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -11,
+          "pValueMantissa": 3,
+          "region": null,
+          "standardError": 0.12325152531562779,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "b0cbcabe76de5d0c72fcc48a4f80d5e5",
+          "variant": {
+            "id": "4_175029445_C_T",
+            "rsIds": [
+              "rs76744071"
+            ]
+          }
+        },
+        {
+          "beta": 0.01847852737072897,
+          "colocalisation": {
+            "count": 527
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.6759926676750183,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.09924696385860443,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -12,
+          "pValueMantissa": 5.503284454345703,
+          "region": "19:44783210-45024977",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565862",
+            "nSamples": 131736,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Fluid intelligence score decline (difference score)"
+          },
+          "studyLocusId": "b3ca6fa805b3452baf840152ed94f04f",
+          "variant": {
+            "id": "19_44906745_G_A",
+            "rsIds": [
+              "rs769449"
+            ]
+          }
+        },
+        {
+          "beta": 0.02330292784578229,
+          "colocalisation": {
+            "count": 1716
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 4,
+            "rows": [
+              {
+                "score": 0.9370303750038147,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.3311232924461365,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.077061228454113,
+                "target": {
+                  "approvedSymbol": "APOC2",
+                  "id": "ENSG00000234906"
+                }
+              },
+              {
+                "score": 0.07691332697868347,
+                "target": {
+                  "approvedSymbol": "APOC4",
+                  "id": "ENSG00000267467"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -12,
+          "pValueMantissa": 1.122827410697937,
+          "region": "19:44783210-45024977",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565861",
+            "nSamples": 90713,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Symbol digit substitution test performance decline (difference score)"
+          },
+          "studyLocusId": "bef87ea237f6e13ea3aead9d9fa6c827",
+          "variant": {
+            "id": "19_44908684_T_C",
+            "rsIds": [
+              "rs429358"
+            ]
+          }
+        },
+        {
+          "beta": 1.2016,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.47674262523651123,
+                "target": {
+                  "approvedSymbol": "UNC5D",
+                  "id": "ENSG00000156687"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -8,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": 0.20967664456437787,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "c594d5b33c73fd6a7f266f5143c68a8d",
+          "variant": {
+            "id": "8_36006420_G_A",
+            "rsIds": [
+              "rs142214173"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 1
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.574359655380249,
+                "target": {
+                  "approvedSymbol": "USP40",
+                  "id": "ENSG00000085982"
+                }
+              },
+              {
+                "score": 0.05947224050760269,
+                "target": {
+                  "approvedSymbol": "DGKD",
+                  "id": "ENSG00000077044"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 1,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST010567",
+            "nSamples": 3946,
+            "projectId": "GCST",
+            "pubmedId": "32573913",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in Alzheimer's disease"
+          },
+          "studyLocusId": "c92aea5ddb6a37e44239cead48f3138d",
+          "variant": {
+            "id": "2_233575317_A_T",
+            "rsIds": [
+              "rs10182651"
+            ]
+          }
+        },
+        {
+          "beta": -0.6235,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.6868988871574402,
+                "target": {
+                  "approvedSymbol": "PRRC2C",
+                  "id": "ENSG00000117523"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -10,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.09801392655507096,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "d0026685cff7a63710e1b94a0748fb34",
+          "variant": {
+            "id": "1_171482283_A_G",
+            "rsIds": [
+              "rs116065238"
+            ]
+          }
+        },
+        {
+          "beta": 0.01866217249608162,
+          "colocalisation": {
+            "count": 630
+          },
+          "confidence": "SuSiE fine-mapped credible set with out-of-sample LD",
+          "finemappingMethod": "SuSiE-inf",
+          "l2GPredictions": {
+            "count": 3,
+            "rows": [
+              {
+                "score": 0.66559237241745,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.09924696385860443,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              },
+              {
+                "score": 0.07155300676822662,
+                "target": {
+                  "approvedSymbol": "TOMM40",
+                  "id": "ENSG00000130204"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -12,
+          "pValueMantissa": 3.2614641189575195,
+          "region": "19:44783210-45024977",
+          "standardError": null,
+          "study": {
+            "id": "GCST90565852",
+            "nSamples": 131736,
+            "projectId": "GCST",
+            "pubmedId": "40374629",
+            "studyType": "gwas",
+            "traitFromSource": "Fluid intelligence score decline (log-difference score)"
+          },
+          "studyLocusId": "d8d1a0054f2a74f39ef23427970b2c2e",
+          "variant": {
+            "id": "19_44906745_G_A",
+            "rsIds": [
+              "rs769449"
+            ]
+          }
+        },
+        {
+          "beta": 1.74,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.5505396127700806,
+                "target": {
+                  "approvedSymbol": "DPP6",
+                  "id": "ENSG00000130226"
+                }
+              },
+              {
+                "score": 0.14332668483257294,
+                "target": {
+                  "approvedSymbol": "PAXIP1",
+                  "id": "ENSG00000157212"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 9,
+          "region": null,
+          "standardError": 0.30268383489654566,
+          "study": {
+            "id": "GCST90709863",
+            "nSamples": 450,
+            "projectId": "GCST",
+            "pubmedId": "38875006",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline (time to event) in Parkinson's disease"
+          },
+          "studyLocusId": "d965ac01708c852c0d4a2dc51c9b52e1",
+          "variant": {
+            "id": "7_154529004_G_T",
+            "rsIds": [
+              "rs75819919"
+            ]
+          }
+        },
+        {
+          "beta": 0.7178,
+          "colocalisation": {
+            "count": 1
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.6655951738357544,
+                "target": {
+                  "approvedSymbol": "RBFOX1",
+                  "id": "ENSG00000078328"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -9,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.11967707500490161,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "db71b3d0c54ba93c76274f583161fb6a",
+          "variant": {
+            "id": "16_6454023_C_T",
+            "rsIds": [
+              "rs75638798"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.5919004082679749,
+                "target": {
+                  "approvedSymbol": "ACOT11",
+                  "id": "ENSG00000162390"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -11,
+          "pValueMantissa": 3,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST004371",
+            "nSamples": 822,
+            "projectId": "GCST",
+            "pubmedId": "22833209",
+            "studyType": "gwas",
+            "traitFromSource": "Rate of cognitive decline in mild cognitive impairment (time interaction)"
+          },
+          "studyLocusId": "df7c6b73656e0700799da4f0c6f2dba0",
+          "variant": {
+            "id": "1_54527266_T_C",
+            "rsIds": [
+              "rs12752888"
+            ]
+          }
+        },
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.689237654209137,
+                "target": {
+                  "approvedSymbol": "MEIS1",
+                  "id": "ENSG00000143995"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -11,
+          "pValueMantissa": 6,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST003075",
+            "nSamples": 519,
+            "projectId": "GCST",
+            "pubmedId": "26252872",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive decline rate in late mild cognitive impairment"
+          },
+          "studyLocusId": "eb400b650e5a16ba4ae4fe4bfaccf4a5",
+          "variant": {
+            "id": "2_66212157_A_T",
+            "rsIds": [
+              "rs184148048"
+            ]
+          }
+        }
+      ]
+    },
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    }
+  }
+}

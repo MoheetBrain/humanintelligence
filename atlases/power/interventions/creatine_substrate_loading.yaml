@@ -1,0 +1,19 @@
+schema_version: 0.1.0
+id: MECH:creatine_substrate_loading
+node_type: Mechanism
+label: "creatine/phosphocreatine substrate pool loading"
+mechanism_class: substrate_provision
+description: >-
+  Raising the tissue creatine and phosphocreatine pool so that more phosphoryl-transfer
+  buffer is available to the creatine-kinase reaction. Used as the claim subject where
+  the measured outcome was a null or a direction-unclear result, because the ontology's
+  intervention-layer relations do not admit a no-effect assertion from a
+  MetabolicIntervention node (see docs/blackboard/schema_change_requests/power-001.yaml).
+acts_through: [PROT:SLC6A8, PROT:CKB]
+state_variables_touched:
+  - SV:power.phosphocreatine_reserve
+  - SV:power.atp_adp_ratio
+cited_by_claims:
+  - CLM:power:creatine_human:002
+  - CLM:power:creatine_human:003
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

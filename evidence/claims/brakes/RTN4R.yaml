@@ -1,0 +1,304 @@
+# Claims — RTN4R (NgR1, Nogo-66 receptor 1), Cognitive Brake Atlas.
+#
+# Brake class: structural plasticity and critical-period closure.
+#
+# This target is the sharpest development-versus-adulthood case in the atlas after OTX2,
+# and the only one where the loss-of-function cognitive evidence points the wrong way:
+# NgR1-null mice show reduced working memory, and human RTN4R variation has been
+# investigated as a schizophrenia risk factor rather than as a cognitive advantage.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:RTN4R:001
+  statement: >-
+    Mice lacking NgR1 retained ocular-dominance plasticity of the kind normally confined to
+    the juvenile critical period into adulthood, and in adult mutants the gene was shown to
+    act within parvalbumin-expressing interneurons to restrict the loss of intracortical
+    excitatory input after monocular deprivation.
+  subject: GENE:RTN4R
+  predicate: NEGATIVELY_REGULATES
+  object: SV:plasticity.critical_period_permissiveness
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the mutant is a germline line, so lifelong absence of NgR1 could itself alter cortical development and thereby the adult plasticity phenotype"
+      - "retained juvenile-type plasticity is a change in the plasticity rule, not a demonstrated cognitive benefit"
+  evidence:
+    - source_id: SRC:PMID:27798181
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "adult and critical-period-aged male and female C57BL/6 ngr1 mutant mice and wild-type controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "ocular-dominance shift after monocular deprivation; laser-scanning photostimulation maps of intracortical excitatory input to parvalbumin interneurons; parvalbumin expression level"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "circuit-level mechanism measured in adults, but germline deletion and a sensory-plasticity endpoint with no cognitive measure"
+    calibration_status: uncalibrated_subjective
+  risks: ["reopened plasticity in adults is a vulnerability as well as a capacity; this study measures the rule change, not its cost"]
+  confounders: ["germline developmental effects", "parvalbumin expression as an activity proxy"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RTN4R:002
+  statement: >-
+    Mice lacking NgR1 protein exhibited reduced working-memory function, which the authors
+    presented as consistent with a schizophrenia-related endophenotype rather than with
+    cognitive gain, in the same study that reported an association between RTN4R locus
+    variation and schizophrenia in a case-control analysis.
+  subject: GENE:RTN4R
+  predicate: POSITIVELY_REGULATES
+  object: PHENO:animal_working_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090, SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_working_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: "no"
+    alternative_explanations:
+      - "the human component is a candidate-gene case-control association at a 22q11 locus, which is association only and does not resolve the locus to RTN4R"
+      - "rare coding variants were identified within a limited schizophrenia-derived sample and tested in vitro, so the functional work is cellular rather than organismal"
+      - "germline deletion in the mouse arm"
+  evidence:
+    - source_id: SRC:PMID:19052207
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "NgR1-null mice and controls; separately, a Caucasian schizophrenia case-control sample and neuronal cultures expressing patient-derived variants"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "working-memory task performance in mice; association of RTN4R variation with schizophrenia; myelin inhibition of axon growth in culture"
+      endpoint_category: animal_working_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "loss of function impaired rather than improved working memory in the animal arm; the human arm is candidate-gene association and is weighted accordingly"
+    calibration_status: uncalibrated_subjective
+  risks: ["this is direct counter-evidence to treating RTN4R as a cognitive brake worth releasing"]
+  confounders: ["population stratification in the human arm", "germline deletion"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RTN4R:003
+  statement: >-
+    Mice carrying a single amino-acid substitution in the Nogo-66 binding site of the
+    reticulon-4 receptor showed greater social preference and a mild impairment of spatial
+    cognition, and the authors concluded that their results do not support missense RTN4R
+    mutation as a strong schizophrenia risk factor.
+  subject: GENE:RTN4R
+  predicate: POSITIVELY_REGULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a single missense substitution in the ligand-binding site is a partial loss of function of unknown magnitude, not a null"
+      - "a mild impairment on one task is weak evidence in either direction"
+  evidence:
+    - source_id: SRC:PMID:21645550
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "Rtn4r R189H mutant mice and wild-type littermates on a C57BL/6 background"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "prepulse inhibition of acoustic startle, locomotor activity, social interaction and spatial cognition"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "single study with a deliberately negative framing by its own authors; weak, but it is a second independent line pointing away from cognitive benefit"
+    calibration_status: uncalibrated_subjective
+  risks: ["two independent loss-of-function lines both show impairment rather than enhancement"]
+  confounders: ["partial loss of function of unknown degree", "social behaviour confounds"]
+  dependencies: [CLM:brakes:RTN4R:002]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RTN4R:004
+  statement: >-
+    Blocking the Nogo receptor pathway after focal brain infarction promoted axonal
+    sprouting and recovery of motor function in mice lacking the receptor or its ligand and
+    in rats given a function-blocking receptor fragment intracerebroventricularly, with
+    benefit still obtained when treatment began a week after arterial occlusion.
+  subject: BIO:ngr1_decoy_fragment
+  predicate: CHANGES_STATE
+  object: SV:plasticity.structural_plasticity_rate
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090, SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "recovery of function after infarction is repair in damaged tissue, not enhancement of intact tissue; the two are routinely conflated for this target"
+      - "the endpoint is complex motor function, not cognition"
+      - "intracerebroventricular delivery of a protein fragment is not a systemic pharmacological strategy"
+  evidence:
+    - source_id: SRC:PMID:15240813
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10116
+      population: "ngr1-null and nogo-ab-null mice after stroke; male Sprague-Dawley rats after middle cerebral artery occlusion given a receptor fragment"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "recovery of complex motor skills and midline-crossing corticofugal axonal sprouting"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "adult-onset, delayed-start, genetic and pharmacological convergence, which is a good design; but it is a repair result with a motor endpoint and is recorded here only to mark that boundary"
+    calibration_status: uncalibrated_subjective
+  risks: ["the adult tractability of this pathway is established for repair; extending it to healthy cognition is unsupported"]
+  confounders: ["lesion size variability", "spontaneous recovery"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

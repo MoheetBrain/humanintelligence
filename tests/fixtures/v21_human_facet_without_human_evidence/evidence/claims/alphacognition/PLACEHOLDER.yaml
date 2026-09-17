@@ -1,0 +1,55 @@
+# FIXTURE — synthetic, for tests only. the cited claim is rodent_only, which is what makes the level-4 grade illegal.
+- schema_version: "0.1.0"
+  claim_id: CLM:alphacognition:PLACEHOLDER:001
+  statement: "Synthetic placeholder statement used only to exercise the validator rules."
+  subject: VAR:rs000000001
+  predicate: ASSOCIATED_WITH
+  object: PHENO:placeholder_phenotype
+  claim_type: association
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: "not_applicable"
+    alternative_explanations: ["synthetic placeholder alternative explanation"]
+  evidence:
+    - source_id: SRC:PMID:00000001
+      design: expression_atlas
+      endpoint_category: molecular_readout
+      effect_direction: not_reported
+      effect_size: {metric: not_extracted, as_reported: null, value: null,
+                    ci_lower: null, ci_upper: null, p_value: null}
+      replication_status: not_assessed
+      evidence_role: supports
+      extraction:
+        basis: database_record
+        extracted_by: agent:ontology
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "synthetic fixture, no real evidence"
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:ontology
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: fixture

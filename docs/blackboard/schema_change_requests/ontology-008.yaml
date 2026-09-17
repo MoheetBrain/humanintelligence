@@ -1,0 +1,37 @@
+# Schema change request ontology-008
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-008
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Decide whether the computational-primitive set may be extended.
+
+motivation: >-
+  The brief named 24 primitives. Domain agents referenced seven more, of which three named
+  genuine gaps (gain control, temporal integration, dendritic coincidence detection) and four
+  duplicated existing primitives. Borrowing pattern_separation for gain control was a real
+  loss of meaning, but silently accepting every referenced name would dilute a deliberately
+  designed set.
+
+proposed_change: >-
+  Treat the 24 as an opening set, extend by request, and mark the origin of every primitive so
+  the ontology's own provenance stays auditable.
+
+implemented_as: >-
+  APPROVED as R2. 27 primitives: 24 `origin: project_brief_sprint1` and 3 `origin:
+  agent_proposed_sprint1`. The four duplicate references stay V4 errors with a 'closest
+  declared id' hint. NOTE FOR A REVIEWER: dendritic_coincidence_detection is the most
+  mechanism-laden name in that file and sits awkwardly with its own mechanism-agnostic rule;
+  it is kept because the brake atlas needs to state coincidence-window claims, and it should
+  be challenged.

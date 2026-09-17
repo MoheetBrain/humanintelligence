@@ -1,0 +1,19 @@
+# FIXTURE — synthetic, for tests only. must validate against its schema.
+id: SV:cognition.placeholder_capacity
+name: "placeholder capacity"
+definition: >-
+  Synthetic placeholder definition used only to exercise the schema.
+kind: latent_cognitive
+timescale: unknown
+level: behavioural
+units: null
+measurement_proxies:
+  - name: "placeholder task"
+    modality: behavioural_task
+    status: theoretical_construct
+response_shape: {shape: unknown, basis: default_no_evidence_yet, claim_refs: []}
+desirability: unknown
+safety_coupling: []
+safety_coupling_basis: not_asserted_pending_claims
+status: provisional
+provenance: {defined_by: agent:ontology, basis: fixture}

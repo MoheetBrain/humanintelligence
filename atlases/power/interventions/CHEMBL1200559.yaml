@@ -1,0 +1,32 @@
+schema_version: 0.1.0
+id: CPD:CHEMBL1200559
+node_type: Compound
+label: "lactic acid"
+identifiers:
+  chembl_id: "CHEMBL1200559"
+  identifier_provenance: "ChEMBL compound_search(name='lactic acid') in the curation session on 2026-09-17"
+# See CHEMBL283800.yaml for why `value` is null and no database_source_id is named.
+max_clinical_phase:
+  value: null
+  as_reported: "4"
+  source: "ChEMBL compound_search response, curation session 2026-09-17"
+chembl_fields_as_returned:
+  pref_name: "LACTIC ACID"
+  molecule_type: "Small molecule"
+  molecular_formula: "C3H6O3"
+  natural_product: "true"
+attributes:
+  chembl_first_approval_as_returned: "2006"
+  chembl_atc_level5_as_returned: "G01AD01"
+  provenance_limitation: "ChEMBL was queried through an MCP tool that writes no immutable snapshot, so no SRC:DB:chembl release can be registered or verified under resolution R1; database numerics are therefore carried as strings and asserted as no number."
+role_in_atlas: >-
+  The rescue agent in every astrocyte-neuron lactate shuttle experiment cited here,
+  and the endogenous ligand of PROT:HCAR1. Note that ChEMBL's CHEMBL1200559 record is
+  the racemic/unspecified form; the shuttle literature administers L-lactate and uses
+  D-lactate (ChEMBL358850, also returned in the same tool response) as a
+  metabolically inert comparator that nonetheless still engages HCAR1.
+cited_by_claims: [CLM:power:anls:001, CLM:power:SLC16A3:001, CLM:power:SLC16A1:001, CLM:power:HCAR1:002, CLM:power:HCAR1:003]
+approved_indication_note: >-
+  The approval recorded in ChEMBL is for an unrelated indication and route. It confers
+  nothing whatsoever on the cognitive claims in this atlas.
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

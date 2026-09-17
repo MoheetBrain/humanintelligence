@@ -1,0 +1,391 @@
+# State variables — domain: safety
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: safety
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Named harm dimensions, represented as CONSTRAINTS on the admissible region of state space.
+  Every variable in this file is kind: constraint and desirability: constraint_to_respect. None
+  of them may be aggregated into a net-benefit score, and the absence of evidence for a risk is
+  never recorded as evidence of safety (docs/COMPUTATIONAL_ONLY_POLICY.md).
+
+variables:
+
+  - id: SV:safety.seizure_risk
+    name: "seizure risk"
+    definition: >-
+      Susceptibility to a seizure, as a constraint on how far excitability-related state
+      variables may be moved.
+    kind: constraint
+    timescale: hours
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "EEG epileptiform activity"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "clinical seizure history and event reporting"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "animal seizure threshold assays"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.psychosis_risk
+    name: "psychosis risk"
+    definition: >-
+      Susceptibility to psychotic symptoms, as a constraint on states affecting perception and
+      salience attribution.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "structured psychiatric interview"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "validated psychosis-risk symptom scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.mania_risk
+    name: "mania risk"
+    definition: >-
+      Susceptibility to manic or hypomanic states, as a constraint on states affecting drive,
+      sleep need and impulse control.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "structured psychiatric interview"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "validated mania rating scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.anxiety_risk
+    name: "anxiety risk"
+    definition: >-
+      Susceptibility to clinically significant anxiety, as a constraint on states affecting
+      threat processing and arousal.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "validated anxiety rating scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "physiological reactivity measures"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.addiction_risk
+    name: "addiction risk"
+    definition: >-
+      Susceptibility to compulsive self-administration and loss of control over use, as a
+      constraint on states affecting reinforcement.
+    kind: constraint
+    timescale: months
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "validated substance-use disorder instruments"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "animal self-administration paradigms"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.insomnia_risk
+    name: "insomnia risk"
+    definition: >-
+      Susceptibility to clinically significant difficulty initiating or maintaining sleep, as a
+      constraint on states affecting arousal and circadian regulation.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "polysomnography"
+        modality: eeg_meg
+        status: established_human_proxy
+      - name: "validated insomnia severity instruments"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "actigraphy"
+        modality: device_or_wearable
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.excitotoxicity_risk
+    name: "excitotoxicity risk"
+    definition: >-
+      Susceptibility to cell injury arising from excessive excitatory signalling and the
+      associated ion and calcium load.
+    kind: constraint
+    timescale: hours
+    level: cellular
+    units: null
+    measurement_proxies:
+      - name: "neuronal injury markers in blood or CSF"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+      - name: "ex-vivo and animal injury assays"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.oxidative_stress_burden
+    name: "oxidative stress burden"
+    definition: >-
+      Accumulated oxidative damage to tissue macromolecules, as a constraint on states that
+      raise reactive species production or lower defences.
+    kind: constraint
+    timescale: weeks
+    level: cellular
+    units: null
+    measurement_proxies:
+      - name: "oxidative damage marker panels"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+      - name: "ex-vivo redox and damage assays"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.pain_risk
+    name: "pain risk"
+    definition: >-
+      Susceptibility to new or worsened pain, as a constraint on states affecting nociceptive
+      signalling and its central modulation.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "validated pain intensity and interference scales"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "quantitative sensory testing"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.cardiovascular_burden
+    name: "cardiovascular burden"
+    definition: >-
+      Load placed on cardiac and vascular function, as a constraint on states affecting
+      autonomic balance, blood pressure and cardiac rhythm.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: null
+    measurement_proxies:
+      - name: "ambulatory blood pressure monitoring"
+        modality: device_or_wearable
+        status: established_human_proxy
+      - name: "electrocardiography"
+        modality: device_or_wearable
+        status: established_human_proxy
+      - name: "heart rate variability"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.dose_limiting_tolerability_margin
+    name: "dose-limiting tolerability margin"
+    definition: >-
+      Separation between the exposure at which the intended effect appears and the exposure at
+      which adverse events become dose-limiting. A MARGIN, not a risk: a larger value means more
+      headroom, and the variable records no exposure, dose or regimen of its own.
+    kind: constraint
+    timescale: weeks
+    level: systems
+    units: "fold separation between exposures"
+    measurement_proxies:
+      - name: "clinical dose-escalation and tolerability reporting"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "preclinical exposure-margin estimation"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: margin
+    desirability: higher_is_better_within_range
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:safety.proliferative_risk
+    name: "proliferative risk"
+    definition: >-
+      Susceptibility to unwanted cell proliferation, as a constraint on states reached by
+      modulating growth, transcriptional or epigenetic machinery.
+    kind: constraint
+    timescale: years
+    level: cellular
+    units: null
+    measurement_proxies:
+      - name: "clinical surveillance and registry outcomes"
+        modality: questionnaire_or_diary
+        status: established_human_proxy
+      - name: "animal carcinogenicity study designs"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    polarity: risk
+    desirability: constraint_to_respect
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

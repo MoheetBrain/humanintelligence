@@ -1,0 +1,65 @@
+# Intervention entity — AlphaCognition v0.1.
+# Registering an intervention is a bibliographic/cheminformatics act and NEVER an instruction
+# to obtain, administer or self-apply anything. `dose_information` is `omitted_by_policy` on
+# every record: no dose, route, regimen or schedule is recorded anywhere in this repository.
+# Identifiers come only from ChEMBL tool responses in this session; a compound ChEMBL does not
+# know by name is recorded under a snake_case slug (contract §1.2) and says so.
+# Numeric database facts (max_clinical_phase, first_approval_year) name the pinned release they
+# came from in `database_source_id`, which is what makes them admissible under rule V9 — and
+# they describe DEVELOPMENT STATUS, never efficacy and never a cognitive effect (rule V16).
+intervention_id: CPD:CHEMBL21536
+schema_version: 0.1.0
+name: xanomeline
+node_type: Drug
+modality: small_molecule
+domain: alphacognition
+dose_information: omitted_by_policy
+identifiers:
+  chembl_id: CHEMBL21536
+  inn: null
+  identifier_provenance: mcp__plugin_bio-research_chembl__compound_search response, 2026-09-17
+database_source_id: SRC:DB:chembl:ChEMBL_37
+mechanisms:
+- mechanism_of_action: Muscarinic acetylcholine receptor M1 agonist
+  action_type: AGONIST
+  target_chembl_id: CHEMBL216
+  direct_interaction: true
+  disease_efficacy: true
+  mechanism_ref_pmid: '28141924'
+- mechanism_of_action: Muscarinic acetylcholine receptor M4 agonist
+  action_type: AGONIST
+  target_chembl_id: CHEMBL1821
+  direct_interaction: true
+  disease_efficacy: true
+  mechanism_ref_pmid: '28141924'
+targets:
+- TGT:CHRM1
+claim_refs:
+- CLM:alphacognition:CHRM1:002
+- CLM:alphacognition:CHRM1:003
+- CLM:alphacognition:CHRM1:004
+known_liabilities:
+- AE:syncope
+- AE:nausea
+- AE:vomiting
+- AE:dry_mouth
+- AE:hypertension
+- AE:constipation
+- AE:dyspepsia
+efficacy_status: Randomised human cognitive efficacy is established only in an Alzheimer disease population
+  (CLM:alphacognition:CHRM1:002) and the approval-supporting efficacy is for psychosis, not cognition.
+  No healthy-adult cognitive efficacy is established for this compound.
+notes:
+- ChEMBL records BOTH M1 and M4 agonism with disease_efficacy true, so no cognitive effect of xanomeline
+  can be attributed to CHRM1 alone.
+- first_approval_year 2024 reflects approval of the xanomeline-trospium combination for schizophrenia,
+  an indication with no cognitive endpoint. Approval is not evidence of cognitive enhancement.
+- ChEMBL's disease_efficacy flag is a curation of the INTENDED mechanism, not of trial outcome.
+- The oral monotherapy was abandoned on tolerability grounds; see CLM:alphacognition:CHRM1:003.
+added_by: agent:alphacognition
+added_on: '2026-09-17'
+max_clinical_phase:
+  value: 4
+  as_reported: ChEMBL max_phase 4
+  source: SRC:DB:chembl:ChEMBL_37
+first_approval_year: 2024

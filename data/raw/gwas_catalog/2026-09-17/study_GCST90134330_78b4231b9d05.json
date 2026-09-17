@@ -1,0 +1,61 @@
+{
+  "_links": {
+    "ancestries": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/studies/GCST90134330/ancestries{?sort,direction}",
+      "templated": true
+    },
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/studies/GCST90134330"
+    }
+  },
+  "accession_id": "GCST90134330",
+  "array_manufacturer": [],
+  "bg_efo_traits": [],
+  "cohort": [
+    "UKB",
+    "COGENT",
+    "RS",
+    "Generation_R",
+    "STR",
+    "Spit",
+    "HRS",
+    "TEDS",
+    "DTR",
+    "IMAGEN",
+    "BLTS",
+    "GFG",
+    "other"
+  ],
+  "discovery_ancestry": [
+    "371591 European (Denmark, NR, U.K.)"
+  ],
+  "disease_trait": "Attention deficit hyperactivity disorder or autism spectrum disorder or intelligence (pleiotropy)",
+  "efo_traits": [
+    {
+      "efo_id": "MONDO_0007743",
+      "efo_trait": "attention deficit-hyperactivity disorder"
+    },
+    {
+      "efo_id": "MONDO_0005258",
+      "efo_trait": "autism spectrum disorder"
+    },
+    {
+      "efo_id": "EFO_0004337",
+      "efo_trait": "intelligence"
+    }
+  ],
+  "full_summary_stats": "NA",
+  "full_summary_stats_available": false,
+  "genotyping_technologies": [
+    "Genome-wide genotyping array"
+  ],
+  "gxg": false,
+  "imputed": true,
+  "initial_sample_size": "20,183 European ancestry ADHD cases, 18,381 European ancestry ASD cases, up to 63,160 European ancestry controls, 269,867 European ancestry individuals with intelligence measurements",
+  "platforms": "NR [6307410] (imputed)",
+  "pubmed_id": 35764056,
+  "replication_ancestry": [],
+  "replication_sample_size": "NA",
+  "snp_count": 6307410,
+  "terms_of_license": "https://www.ebi.ac.uk/about/terms-of-use/"
+}

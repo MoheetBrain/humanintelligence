@@ -1,0 +1,181 @@
+# Red-team audit - GRIN2B. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:GRIN2B:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:GRIN2B
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: Every rodent enhancement result for this target uses CONSTITUTIVE transgenic overexpression
+      from development, while the human evidence for perturbing the same gene is a neurodevelopmental
+      encephalopathy in 86 patients arising from both gain- and loss-of-function variants. Same gene,
+      opposite direction of consequence, different life stage. The dossier grades the confound high and
+      says so in three numbered reasons; the red team confirms all three independently.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+    - CLM:alphacognition:GRIN2B:004
+  - check: rescue_mistaken_for_enhancement
+    result: pass
+    note: The rodent overexpression comparison is against wild-type littermates, so it is a genuine above-baseline
+      design rather than a rescue. Recorded as a pass; the problem with this target is developmental onset
+      and species, not the rescue/enhancement distinction.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: fail
+    note: The Tang 1999 forebrain NR2B overexpression result is the most over-cited finding in the genetic-enhancement
+      literature, and its own abstract closes by proposing human genetic enhancement from a mouse experiment
+      - which agent:alphacognition records as the authors' inference rather than adopting. Two independent
+      rodent studies agree on direction on animal memory tasks; the only human interventional-grade evidence
+      about perturbing this gene is a severe developmental disorder. Treating the rodent result as evidence
+      about human intelligence is precisely the P4 error.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+    - CLM:alphacognition:GRIN2B:002
+    - CLM:alphacognition:GRIN2B:004
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'GRIN2B''s level-3 human_genetic_association grade SURVIVES independently of any educational-attainment
+      record - it has genuine intelligence-trait associations from SRC:PMID:29844566 and SRC:PMID:35386118.
+      But its rationale string counts gwas.GRIN2B:003 among the directly-relevant records, and that claim
+      rests entirely on three ''mathematical ability'' rows from an educational-attainment GWAS. The grade
+      is right; the stated breadth behind it is overstated. Repository-level: the trait panel classes
+      GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class fluid_reasoning while
+      marking it use_in_ranking: supporting with the note ''never a stand-alone basis for a facet level''.
+      pipelines/alphacognition/build_assessments.py tests phenotype_class, not use_in_ranking, so that
+      restriction never fires. The underlying records are ''Self-reported math ability'' and ''Highest
+      math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association study of EDUCATIONAL
+      ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002,
+      gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.GRIN2B:003
+    - SRC:PMID:30038396
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The rodent enhancement case rests on one transgenic line and one senior research programme;
+      the population string 'transgenic mice with forebrain-specific NR2B overexpression and wild-type
+      littermates' appears three times in the repository. Every Open Targets safetyLiabilities row used
+      in this audit traces to one of two PMIDs, SRC:PMID:28216264 and SRC:PMID:23197038, and both are
+      pharmaceutical-industry safety-pharmacology curation reviews over overlapping published literature.
+      Two rows agreeing is therefore close to one source agreeing with itself. The target-level safety
+      layer for the six annotated seed targets rests on two review papers.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+    - CLM:alphacognition:GRIN2B:002
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: flag
+    note: 'No trial of a GluN2B-selective modulator with a cognitive endpoint in healthy adults was located.
+      agent:alphacognition typed its ''benefit remains to be demonstrated'' record as an evidence_gap
+      rather than a clinical_null, and the red team confirms that retyping is correct: no trial measured
+      and failed, so there is nothing to record as a measured absence. The absence of negative clinical
+      evidence here is an absence of clinical evidence.'
+    evidence_refs:
+    - CLM:alphacognition:gap.GRIN2B:002
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: flag
+    note: Curated annotation attributes convulsions and pain to GluN2B activation and neurotoxicity, ataxia
+      and decreased memory to its inhibition, so both directions of modulation carry an annotated neurological
+      liability. This converges with the human genetic picture, where both gain- and loss-of-function
+      variants cause encephalopathy with seizures. Two independent lines pointing the same way.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:004
+    - CLM:red_team:GRIN2B:001
+  - check: psychiatric_liability
+    result: flag
+    note: Annotated psychosis and impaired social interactions at chronic inhibition, and the human encephalopathy
+      phenotype includes behavioural features. No psychiatric endpoint was measured in any retrieved interventional
+      study.
+    evidence_refs:
+    - CLM:red_team:GRIN2B:001
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: fail
+    note: Rodent overexpression enhances animal memory; human variants in the same gene, in either direction,
+      cause developmental encephalopathy. No human interventional study of GluN2B modulation with a cognitive
+      endpoint was located in this session. The rodent-to-human inference for this target is unsupported
+      and the available human evidence runs the other way.
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+    - CLM:alphacognition:GRIN2B:004
+  - check: overclaiming
+    result: flag
+    note: The dossier's own open_questions flag that the seizure and excitotoxicity liability is asserted
+      from pharmacology and not backed by a claim in that atlas. That was accurate at the time; CLM:red_team:GRIN2B:001
+      now supplies a citeable, if weak, record.
+    evidence_refs:
+    - CLM:red_team:GRIN2B:001
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:GRIN2B:001#f1
+    severity: major
+    category: developmental_effect_mistaken_for_adult
+    description: 'GRIN2B is the repository''s clearest case of a life-stage mismatch: constitutive developmental
+      overexpression enhances rodent memory, while human variants in the same gene cause neurodevelopmental
+      encephalopathy from both directions of effect. Nothing in the evidence base licenses an adult-modifiability
+      inference.'
+    evidence_refs:
+    - CLM:alphacognition:GRIN2B:001
+    - CLM:alphacognition:GRIN2B:004
+  - finding_id: AUD:red_team:GRIN2B:001#f2
+    severity: minor
+    category: educational_attainment_mistaken_for_intelligence
+    description: gwas.GRIN2B:003 is counted as directly-relevant genetic evidence in this target's level-3
+      rationale, but all three of its records are 'mathematical ability' rows from an educational-attainment
+      GWAS. The grade survives on other evidence; the rationale overstates how much of it is directly
+      relevant.
+    evidence_refs:
+    - CLM:alphacognition:gwas.GRIN2B:003
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

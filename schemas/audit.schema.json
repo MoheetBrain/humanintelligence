@@ -1,0 +1,464 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/audit",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One red-team audit (contract \u00a76). EVERY check in the mandatory catalogue must appear \u2014 `not_applicable` is a legitimate result but silence is not (rule V15). Adjustments are DOWNGRADES ONLY (rule V12): the red team can downgrade, never delete and never upgrade (contract P6). Withdrawal of a claim is a status change with a superseding finding, never a deletion (rule V14).",
+  "examples": [
+    {
+      "audit_id": "AUD:red_team:PLACEHOLDER:001",
+      "audited_by": "agent:red_team",
+      "audited_on": "2026-09-17",
+      "checks": [
+        {
+          "check": "overclaiming",
+          "note": "synthetic placeholder audit for the schema example slot",
+          "result": "not_applicable"
+        }
+      ],
+      "provenance": {
+        "created_by": "agent:red_team",
+        "created_on": "2026-09-17",
+        "run_id": "schema-example"
+      },
+      "schema_version": "0.1.0",
+      "scope": {
+        "id": "TGT:PLACEHOLDER",
+        "kind": "target"
+      },
+      "verdict": "insufficient_evidence"
+    }
+  ],
+  "properties": {
+    "adjustments": {
+      "description": "DOWNGRADES ONLY (rule V12). For `field: level` that means to_level < from_level; for `field: counter_level` it means to_level > from_level, because raising the contradicting grade IS a downgrade of the target's standing.",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "description": "Claim adjusted, for claim_status adjustments.",
+            "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+            "type": "string"
+          },
+          "facet": {
+            "$comment": "vocabulary: facet",
+            "description": "Facet adjusted.",
+            "enum": [
+              "human_genetic_association",
+              "causal_gene_attribution",
+              "human_phenotype_specificity",
+              "adult_expression_and_timing",
+              "mechanistic_causal_perturbation",
+              "adult_onset_perturbation",
+              "above_baseline_enhancement",
+              "transfer_breadth",
+              "dose_response_knowledge",
+              "human_intervention_evidence",
+              "cross_species_convergence",
+              "human_lineage_divergence_risk",
+              "safety_liability_burden",
+              "developmental_confound_risk",
+              "tractability"
+            ],
+            "type": "string"
+          },
+          "field": {
+            "$comment": "vocabulary: audit_adjustment_field",
+            "description": "Which graded field moves; defaults to `level`.",
+            "enum": [
+              "level",
+              "counter_level"
+            ],
+            "type": "string"
+          },
+          "from_level": {
+            "$comment": "vocabulary: evidence_strength_v1",
+            "maximum": 4,
+            "minimum": 0,
+            "type": "integer"
+          },
+          "kind": {
+            "$comment": "vocabulary: audit_adjustment_kind",
+            "description": "What this adjustment acts on.",
+            "enum": [
+              "facet",
+              "claim_status",
+              "dossier_status"
+            ],
+            "type": "string"
+          },
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "target_id": {
+            "description": "Target whose assessment is adjusted.",
+            "pattern": "^TGT:[A-Z0-9][A-Z0-9_.-]*$",
+            "type": "string"
+          },
+          "to_level": {
+            "$comment": "vocabulary: evidence_strength_v1",
+            "maximum": 4,
+            "minimum": 0,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "kind",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "audit_id": {
+      "description": "AUD:{auditor}:{scope_slug}:{nnn}.",
+      "pattern": "^AUD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+      "type": "string"
+    },
+    "audited_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "audited_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "checks": {
+      "description": "One entry per check in the mandatory catalogue (rule V15).",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "check": {
+            "$comment": "vocabulary: audit_check",
+            "description": "Check from the mandatory catalogue.",
+            "enum": [
+              "association_mistaken_for_causation",
+              "developmental_effect_mistaken_for_adult",
+              "rescue_mistaken_for_enhancement",
+              "animal_memory_mistaken_for_human_intelligence",
+              "educational_attainment_mistaken_for_intelligence",
+              "duplicated_evidence",
+              "citation_dependence",
+              "publication_bias",
+              "negative_clinical_evidence",
+              "dose_response_inversion",
+              "seizure_liability",
+              "psychiatric_liability",
+              "systemic_adverse_effects",
+              "model_organism_translation_failure",
+              "overclaiming",
+              "provenance_integrity",
+              "proposes_prohibited_work"
+            ],
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "description": "Source or claim id.",
+              "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "note": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "result": {
+            "$comment": "vocabulary: audit_check_result",
+            "description": "Outcome of this check.",
+            "enum": [
+              "pass",
+              "flag",
+              "fail",
+              "not_applicable"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "check",
+          "result"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "claim_status_changes": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {
+            "description": "Claim whose status changes.",
+            "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+            "type": "string"
+          },
+          "from": {
+            "$comment": "vocabulary: claim_status",
+            "description": "Previous status.",
+            "enum": [
+              "active",
+              "contested",
+              "downgraded",
+              "withdrawn"
+            ],
+            "type": "string"
+          },
+          "reason": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "to": {
+            "$comment": "vocabulary: claim_status",
+            "description": "New status.",
+            "enum": [
+              "active",
+              "contested",
+              "downgraded",
+              "withdrawn"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "claim_id",
+          "from",
+          "to",
+          "reason"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "findings": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "category": {
+            "$comment": "vocabulary: audit_finding_category",
+            "description": "Category of the finding.",
+            "enum": [
+              "association_mistaken_for_causation",
+              "developmental_effect_mistaken_for_adult",
+              "rescue_mistaken_for_enhancement",
+              "animal_memory_mistaken_for_human_intelligence",
+              "educational_attainment_mistaken_for_intelligence",
+              "duplicated_evidence",
+              "citation_dependence",
+              "publication_bias",
+              "negative_clinical_evidence",
+              "dose_response_inversion",
+              "seizure_liability",
+              "psychiatric_liability",
+              "systemic_adverse_effects",
+              "model_organism_translation_failure",
+              "overclaiming",
+              "provenance_integrity",
+              "proposes_prohibited_work",
+              "unverifiable_source",
+              "extraction_error",
+              "schema_or_process_violation",
+              "other"
+            ],
+            "type": "string"
+          },
+          "description": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "evidence_refs": {
+            "items": {
+              "description": "Source or claim id.",
+              "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "finding_id": {
+            "description": "Derived from the audit id: {audit_id}#f{n}.",
+            "pattern": "^AUD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#f[0-9]+$",
+            "type": "string"
+          },
+          "severity": {
+            "$comment": "vocabulary: audit_finding_severity",
+            "description": "Severity, most severe first.",
+            "enum": [
+              "critical",
+              "major",
+              "minor",
+              "info"
+            ],
+            "type": "string"
+          }
+        },
+        "required": [
+          "finding_id",
+          "severity",
+          "category",
+          "description"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "description": "Who wrote this record, when and how. The supporting_* lists exist so a database-derived record can name what it aggregates instead of hiding it.",
+      "properties": {
+        "created_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "created_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        },
+        "database_release": {
+          "description": "Pinned DatabaseRelease the record was derived from.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "method": {
+          "$comment": "vocabulary: claim_method",
+          "description": "How this record was produced.",
+          "enum": [
+            "literature_curation",
+            "database_ingestion",
+            "derived_from_claims"
+          ],
+          "type": "string"
+        },
+        "pipeline": {
+          "description": "Repo-relative script that produced the record, for database_ingestion. Makes the record rebuildable (P7).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "run_id": {
+          "description": "Agent run identifier, for tracing a record to a session.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "supporting_accessions": {
+          "description": "Any other accessions the record rests on.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_pubmed_ids": {
+          "description": "PubMed ids the database record itself cites.",
+          "items": {
+            "pattern": "^[0-9]{1,9}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_ids": {
+          "description": "Study accessions the database record aggregates.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_locus_ids": {
+          "description": "Opaque per-locus keys from the source database.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "created_by",
+        "created_on"
+      ],
+      "type": "object"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "scope": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "description": "Node id for target/claim scopes; a repo-relative path or model name for document/model scopes.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "kind": {
+          "$comment": "vocabulary: audit_scope_kind",
+          "description": "What this audit is about.",
+          "enum": [
+            "target",
+            "claim",
+            "document",
+            "model"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "kind",
+        "id"
+      ],
+      "type": "object"
+    },
+    "verdict": {
+      "$comment": "vocabulary: audit_verdict",
+      "description": "Overall outcome.",
+      "enum": [
+        "retain",
+        "retain_with_downgrade",
+        "deprioritise",
+        "insufficient_evidence"
+      ],
+      "type": "string"
+    }
+  },
+  "required": [
+    "audit_id",
+    "scope",
+    "audited_by",
+    "audited_on",
+    "checks",
+    "verdict",
+    "provenance"
+  ],
+  "title": "Audit record",
+  "type": "object"
+}

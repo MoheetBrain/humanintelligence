@@ -1,0 +1,257 @@
+# Brake taxonomy — Cognitive Brake Atlas.
+#
+# DEFINITIONAL FILE. There are no citations here and no effect claims. Every
+# statement below is a type definition or a stated design assumption of this atlas.
+# Empirical content lives in evidence/claims/brakes/ and is referenced from the
+# target dossiers, never from this file.
+#
+# What a brake is, for the purposes of this atlas
+# -----------------------------------------------
+# A brake is a mechanism whose normal operation *limits* a capacity of the adult
+# brain: it raises a threshold, reduces a gain, shortens a window, closes a period,
+# or arrests a process. A brake is not a defect. The organising discipline of this
+# atlas is that a brake usually exists for a reason, so every class below carries a
+# `plausibly_protects` field, and "release the brake" is recorded as a hypothesis
+# with a stated cost, never as a recommendation.
+#
+# Three things this taxonomy deliberately does NOT do
+# ---------------------------------------------------
+# 1. It does not rank the classes. Ranking is agent:integration's work and consumes
+#    facet assessments, not this file.
+# 2. It does not assert that any class is adult-modifiable. That is the
+#    `adult_onset_perturbation` facet, graded per target.
+# 3. It does not assume that reducing a brake is good. Several classes here have
+#    evidence that reducing them is harmful; the taxonomy is a map, not a plan.
+#
+# schema_version: 0.1.0
+taxonomy_version: 0.1.0
+defined_by: agent:brakes
+defined_on: "2026-09-17"
+
+response_shape_vocabulary:
+  note: >-
+    Shapes are the vocabulary used in state-variable annotations. They are listed here
+    for reference; the actual shape asserted for any variable lives in
+    atlases/brakes/state_variable_annotations.yaml with claim references.
+  values: [linear, threshold, inverted_u, u_shaped, state_dependent, unknown]
+
+brake_classes:
+
+  - id: arousal
+    name: Arousal and sleep-pressure brake
+    definition: >-
+      Mechanisms that reduce global excitability and behavioural arousal as a function
+      of accumulated time awake or metabolic load, and that discharge that accumulation
+      during sleep. They act on the whole system rather than on a specific
+      representation.
+    acts_on_state_variables:
+      - SV:stability.arousal_level
+      - SV:stability.sleep_pressure
+    constrains_computational_primitives:
+      - PRIM:attentional_gating
+      - PRIM:gain_control
+    plausibly_protects: >-
+      The integrity of the sleep-dependent restorative and consolidating processes that
+      the accumulated signal exists to trigger, and metabolic reserve. A brake that is
+      an accumulator cannot be blocked without interrupting the process it schedules.
+    characteristic_confound: >-
+      Withdrawal reversal. Because the antagonists are in habitual use, a placebo
+      comparison in habitual users measures restoration of a deficit, not enhancement.
+    targets: [TGT:ADORA1]
+
+  - id: excitation
+    name: Excitation and inhibitory-tone brake
+    definition: >-
+      Tonic and slow phasic inhibition that raises the excitation threshold for
+      plasticity induction and limits the spread of activity across a population. It
+      sets how sparse a representation must be.
+    acts_on_state_variables:
+      - SV:workspace.tonic_inhibition_level
+      - SV:plasticity.ltp_threshold
+      - SV:stability.excitation_inhibition_balance
+    constrains_computational_primitives:
+      - PRIM:pattern_separation
+      - PRIM:gain_control
+      - PRIM:distractor_suppression
+    plausibly_protects: >-
+      Representational specificity and the seizure threshold. Sparse coding requires
+      that most units stay silent; lowering the threshold everywhere recruits units that
+      should not have been recruited.
+    characteristic_confound: >-
+      Rescue mistaken for enhancement. The strongest results come from models with
+      abnormally elevated inhibition, where the manipulation restores a setpoint.
+    targets: [TGT:GABRA5]
+
+  - id: working_memory_gain
+    name: Working-memory gain and dendritic-integration brake
+    definition: >-
+      Dendritic and axonal conductances that shunt or temporally narrow synaptic input
+      before it reaches the soma, setting how much distal information contributes to
+      output and over what time window inputs can summate.
+    acts_on_state_variables:
+      - SV:workspace.dendritic_integration_gain
+      - SV:efficiency.dendritic_temporal_summation
+      - SV:workspace.interference_susceptibility
+    constrains_computational_primitives:
+      - PRIM:dendritic_coincidence_detection
+      - PRIM:temporal_integration
+      - PRIM:gain_control
+    plausibly_protects: >-
+      Signal-to-noise in dendritic integration, and the precision of the timing window
+      that makes coincidence detection informative. A wider window integrates more, and
+      also integrates more noise.
+    characteristic_confound: >-
+      Species divergence in dendritic biophysics. A conductance whose functional role
+      depends on dendritic geometry and length constants is the class most likely to
+      differ between rodent and human neurons.
+    targets: [TGT:HCN1, TGT:GABRA5]
+
+  - id: excitability_homeostasis
+    name: Excitability-homeostasis brake
+    definition: >-
+      Currents that limit repetitive firing, produce spike-frequency adaptation and
+      afterhyperpolarisation, and support subthreshold resonance, and that are
+      themselves regulated by recent activity as negative feedback.
+    acts_on_state_variables:
+      - SV:stability.intrinsic_excitability
+      - SV:safety.seizure_risk
+      - SV:stability.homeostatic_setpoint_integrity
+    constrains_computational_primitives:
+      - PRIM:gain_control
+      - PRIM:temporal_integration
+    plausibly_protects: >-
+      The seizure threshold, and the resonance properties that allow oscillatory coding.
+      This class is a controller, not a parameter: because it is recruited by activity,
+      chronic suppression is opposed by the loop itself.
+    characteristic_confound: >-
+      Homeostatic compensation. A short experiment measures the open-loop effect; the
+      closed-loop effect over weeks may be nil or inverted.
+    targets: [TGT:KCNQ2, TGT:KCNQ3, TGT:HCN1, TGT:GPR158]
+
+  - id: plasticity_suppression
+    name: Plasticity-suppression brake
+    definition: >-
+      Intracellular scaffolds and signalling regulators that hold particular synapses
+      or subfields in a state that does not potentiate, independently of the excitation
+      those synapses receive.
+    acts_on_state_variables:
+      - SV:plasticity.ltp_magnitude
+      - SV:plasticity.ltp_threshold
+    constrains_computational_primitives:
+      - PRIM:memory_allocation
+      - PRIM:persistent_representation
+    plausibly_protects: >-
+      Stability of circuits whose function may require fixed rather than plastic
+      weights, so that some representations survive new learning unchanged.
+    characteristic_confound: >-
+      Germline deletion. Where the only causal tool is a constitutive knockout, a
+      lifelong absence of a plasticity brake is not the same manipulation as removing it
+      from an adult.
+    targets: [TGT:RGS14, TGT:PTPN5]
+
+  - id: critical_period
+    name: Critical-period-closure brake
+    definition: >-
+      Molecular machinery that ends a developmental window of heightened
+      experience-dependent plasticity and then maintains the closed state, including
+      extracellular-matrix structures and the ligands they capture.
+    acts_on_state_variables:
+      - SV:plasticity.critical_period_permissiveness
+      - SV:plasticity.structural_plasticity_rate
+      - SV:stability.representational_stability
+    constrains_computational_primitives:
+      - PRIM:persistent_representation
+      - PRIM:credit_assignment
+    plausibly_protects: >-
+      Acquired representations, against being overwritten by later experience. Closure
+      is the mechanism by which early learning becomes permanent, so reopening the
+      window reintroduces the vulnerability that closure removed.
+    characteristic_confound: >-
+      Development mistaken for adulthood. This is the sharpest case: a mechanism whose
+      demonstrated function is to build and then lock the system may be untouchable or
+      harmful in adults even where it is pharmacologically accessible.
+    targets: [TGT:OTX2, TGT:RTN4R]
+
+  - id: consolidation
+    name: Consolidation and transcriptional brake
+    definition: >-
+      Transcriptional and epigenetic regulators that limit the gene programmes available
+      for synapse formation and for converting a labile trace into a durable one, and
+      that are themselves engaged by plasticity.
+    acts_on_state_variables:
+      - SV:consolidation.plasticity_gene_accessibility
+      - SV:consolidation.camp_signalling_capacity
+    constrains_computational_primitives:
+      - PRIM:memory_allocation
+      - PRIM:credit_assignment
+    plausibly_protects: >-
+      Selectivity and energy. Opening a consolidation programme cheaply consolidates
+      whatever happens to be active, and transcriptional and translational work is
+      metabolically expensive.
+    characteristic_confound: >-
+      Non-selective pharmacology and systemic burden. The available inhibitors act on
+      enzyme families with wide roles outside the nervous system, so cognitive and
+      systemic effects cannot be separated by the compound alone.
+    targets: [TGT:HDAC2, TGT:PDE4B]
+
+  - id: translation
+    name: Translational-control brake
+    definition: >-
+      Stress-responsive control of cap-dependent protein synthesis, in which
+      phosphorylation of an initiation factor converts it into an inhibitor of its own
+      exchange factor and arrests the translation that consolidation requires.
+    acts_on_state_variables:
+      - SV:consolidation.consolidation_protein_synthesis_capacity
+    constrains_computational_primitives:
+      - PRIM:memory_allocation
+      - PRIM:credit_assignment
+    plausibly_protects: >-
+      Cell survival under acute stress. The arrest is cytoprotective, which is why a
+      compound that relieves it is inactive precisely when the stress response is
+      strongly engaged, and why relieving it chronically is not obviously free.
+    characteristic_confound: >-
+      State gating. The mechanism is only accessible below a threshold of stress-response
+      activation, so an intervention cannot be dosed without a readout of that internal
+      state.
+    targets: [TGT:EIF2B_COMPLEX, TGT:EIF2S1]
+
+  - id: homeostasis
+    name: Systemic and metabotropic homeostatic brake
+    definition: >-
+      Receptor-and-regulator complexes that damp second-messenger signalling or
+      excitability in response to systemic or slow signals, and thereby hold a circuit
+      near a setpoint rather than at a maximum.
+    acts_on_state_variables:
+      - SV:stability.intrinsic_excitability
+      - SV:stability.homeostatic_setpoint_integrity
+      - SV:consolidation.camp_signalling_capacity
+    constrains_computational_primitives:
+      - PRIM:gain_control
+      - PRIM:attentional_gating
+    plausibly_protects: >-
+      The setpoint itself. A homeostat's output is the error signal, not the quantity of
+      interest, so removing it does not raise a ceiling; it removes a reference.
+    characteristic_confound: >-
+      Sign ambiguity. A regulator can act as a brake in one region or pathway and as a
+      required transducer in another, in which case the target has no single sign.
+    targets: [TGT:GPR158, TGT:ADORA1]
+
+# Cross-cutting notes on the design of this taxonomy.
+notes:
+  - >-
+    Several targets appear in more than one class. That is intended: the classes are
+    functional, not exclusive, and a channel that sets dendritic gain also participates
+    in excitability homeostasis. The dossier's own `brake_class` field records the
+    primary assignment.
+  - >-
+    Two classes in this taxonomy are controllers rather than parameters
+    (excitability_homeostasis, homeostasis), and one is a state gate (translation).
+    Those three are structurally different from the rest: an intervention on a
+    controller is opposed by the controller, and an intervention on a state gate is
+    conditional on a variable nobody currently measures in humans.
+  - >-
+    The classes named in the brief as "arousal, excitation, working-memory gain,
+    plasticity, critical period, consolidation, translation, homeostasis" are all
+    present. "Plasticity" is represented as `plasticity_suppression` to distinguish it
+    from `critical_period`, which is also a plasticity brake but acts by closing a
+    developmental window rather than by suppressing induction at a synapse.

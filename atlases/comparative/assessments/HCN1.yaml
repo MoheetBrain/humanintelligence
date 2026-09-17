@@ -1,0 +1,149 @@
+# Comparative facet assessment for TGT:HCN1.
+# Contract: docs/DATA_CONTRACT.md §5.2, §5.3. agent:comparative owns exactly two facets:
+# cross_species_convergence and human_lineage_divergence_risk. All other facets for this
+# target belong to agent:brakes (lead atlas), agent:alphacognition or agent:red_team and
+# are absent from this file by design, not by omission.
+#
+# HCN1 is the ONLY seed target for which this agent found direct, quantitative,
+# adult-human-versus-rodent measurements of the target's own biophysics. It is therefore
+# the only target where translation distance could be assessed from data rather than
+# assumed — and the answer is that the evidence exists, is good by comparative standards,
+# and points in two directions at once depending on cortical layer.
+
+target_id: TGT:HCN1
+assessed_by: agent:comparative
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+schema_version: 0.1.0
+notes: "run_id sprint1-comparative-01"
+
+facets:
+  - facet: cross_species_convergence
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      HCN-mediated conductance follows a single allometric relationship with neuron size
+      across nine mammals spanning Eulipotyphla, Glires, Carnivora and Primates
+      (CLM:comparative:HCN1:003), which is the strongest quantitative evidence of a
+      conserved cellular rule anywhere in this atlas, and h-current-dependent membrane
+      properties are present in both species examined by direct pharmacology
+      (CLM:comparative:HCN1:002). Level 2 is the ceiling here for two independent
+      reasons: the underlying analysis used ordinary log-log regression and ANCOVA with
+      no phylogenetic control, which caps it at 2 under
+      atlases/comparative/phylogenetic_controls.md §4; and five of the nine non-human
+      species are Glires, with the headline exponent resting on n = 5, all Glires, so the
+      "conserved rule" may be a within-Glires rule against which the other species were
+      tested. This facet is NORMAL-POLARITY, so under contract §5.4 the cap correctly
+      constrains `level` here — weak comparative method cannot establish strong support
+      for convergence. That application is unchanged from the original grading.
+    claim_refs:
+      - CLM:comparative:HCN1:002
+      - CLM:comparative:HCN1:003
+    counter_level: 3
+    counter_rationale: >-
+      RAISED FROM 2 TO 3 ON 2026-09-17 under contract §5.4, and settled. §5.4 applies a
+      methodological cap only in the direction that favours the target, so on this
+      normal-polarity facet the cap constrains `level` and leaves `counter_level`
+      unconstrained: weak comparative method is no reason to discount evidence AGAINST
+      convergence. The counter-evidence here is substantially the same body of work that
+      grades this target's `human_lineage_divergence_risk` at 3, so leaving it at 2 would
+      have understated evidence against the target — the precise error §5.4 exists to
+      prevent. §5.4 further records that this asymmetry is deliberate rather than
+      neutral: weak method can raise doubt but cannot establish support, because this
+      project's dominant risk is over-optimism, and the consequence is that a genuinely
+      promising target whose evidence is weak in both directions will be systematically
+      under-ranked. `agent:integration` measures the size of that effect through the
+      `symmetric_caps` sensitivity variant rather than assuming it.
+
+      The same dataset that establishes the conserved rule also shows human layer 5
+      neurons to be statistically significant outliers from it, with much lower HCN
+      conductance than their size predicts, and the human neuron was the sole outlier
+      among ten species (CLM:comparative:HCN1:003). Kalmbach and colleagues separately
+      report the opposite sign in supragranular layers, with h-channel-dependent
+      properties markedly stronger in human than mouse and HCN1 transcript ubiquitous in
+      human but not mouse supragranular excitatory neurons
+      (CLM:comparative:HCN1:001, CLM:comparative:HCN1:002). Convergence and divergence
+      are therefore both supported at comparable strength, in different layers, which is
+      why evidence and counter-evidence are both 2 rather than one dominating.
+    counter_claim_refs:
+      - CLM:comparative:HCN1:001
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:HCN1:004
+    limiting_factor: >-
+      No phylogenetic control of any kind, and no ancestral state reconstruction, so this
+      atlas cannot distinguish a conserved allometric rule from a rule inherited within
+      Glires and merely not yet broken elsewhere. Every human measurement comes from
+      epilepsy or tumour neurosurgical tissue while every non-human measurement comes
+      from healthy tissue, so human outlier status is structurally confounded with
+      disease and no analysis in the source removes that.
+
+  - facet: human_lineage_divergence_risk
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      LEVEL HISTORY, RECORDED RATHER THAN OVERWRITTEN. This facet was first graded 2 on
+      2026-09-17 under this atlas's original uniform reading of the
+      phylogenetic-control cap, which applied the cap to `level` on every facet
+      regardless of polarity. That was wrong, and wrong in the dangerous direction:
+      `human_lineage_divergence_risk` feeds dimension D6 inversely, so suppressing it
+      made HCN1 appear MORE translatable than its evidence supports. The cap's own
+      rationale — shared ancestry as a confounder — does not bite on a two-species
+      difference in any case, because shared ancestry predicts similarity, not
+      difference. This agent escalated the problem rather than resolving it unilaterally;
+      contract §5.4 now makes methodological caps polarity-aware, applying them to
+      `counter_level` and never to `level` on an inverse-polarity facet. The level is
+      restored to 3 under §5.4. Nothing about the evidence changed between the two
+      gradings; only the rule did.
+
+      THE EVIDENCE, which reads as level 3 on evidence_strength_v1 (converging evidence
+      across designs, with adult human tissue in every human arm). Human
+      layer 5 neurons are significant outliers in HCN conductance against a nine-species
+      mammalian relationship (CLM:comparative:HCN1:003); h-current's contribution to
+      resting potential and input resistance is roughly an order of magnitude larger in
+      human than mouse supragranular neurons, with ZD7288 hyperpolarising human cells by
+      8.15 +/- 1.52 mV against 0.59 +/- 0.97 mV in mouse and raising input resistance by
+      60.43 +/- 9.94 per cent against 13.27 +/- 4.73 per cent
+      (CLM:comparative:HCN1:002); HCN1 transcript distribution differs between the
+      species in supragranular layers (CLM:comparative:HCN1:001); and human distal
+      dendrites couple to the soma more weakly than rat, which qualifies any rodent
+      dendritic-integration result for this channel (CLM:comparative:DENDRITE:001).
+    claim_refs:
+      - CLM:comparative:HCN1:001
+      - CLM:comparative:HCN1:002
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:HCN1:004
+      - CLM:comparative:DENDRITE:001
+    counter_level: 1
+    counter_rationale: >-
+      Against high divergence risk: HCN-mediated conductance does follow a common
+      allometric relationship across nine mammals, so the channel's basic
+      size-scaling behaviour is conserved wherever it has been measured
+      (CLM:comparative:HCN1:003), and h-current-dependent sag, rebound and resonance are
+      present in both human and mouse rather than being a human novelty
+      (CLM:comparative:HCN1:002). This is weak counter-evidence — conservation of a
+      scaling law does not imply that a given perturbation produces the same functional
+      effect — hence 1.
+    counter_claim_refs:
+      - CLM:comparative:HCN1:002
+      - CLM:comparative:HCN1:003
+    limiting_factor: >-
+      What holds this at 3 rather than 4: level 4 on evidence_strength_v1 requires
+      REPLICATED human evidence bearing directly on the facet's proposition and
+      consistent in direction, and this evidence is neither replicated nor consistent in
+      direction — the supragranular and layer 5 results point opposite ways
+      (CLM:comparative:HCN1:004), and each rests on one laboratory.
+
+      The binding confound is that all human electrophysiology comes from epilepsy and
+      tumour resections while every non-human comparison used healthy tissue, so human
+      divergence is structurally confounded with disease; h-channels are themselves
+      implicated in epilepsy, which the source authors state as a limitation of their own
+      work. In CLM:comparative:HCN1:003 that confound is inseparable from the design and
+      no analysis in the source removes it.
+
+      Under contract §5.4 the phylogenetic-control cap constrains `counter_level` on this
+      inverse-polarity facet, not `level`. `counter_level` is 1 and therefore sits inside
+      the cap of 2 already; it could not rise above 2 on the present evidence, because
+      the claims that would support it (CLM:comparative:HCN1:002,
+      CLM:comparative:HCN1:003) are uncontrolled between-species comparisons. That is the
+      correct direction for the cap to bite: weak comparative method must not be allowed
+      to establish the ABSENCE of a translation risk.

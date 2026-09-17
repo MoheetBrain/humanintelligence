@@ -1,0 +1,412 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D008607",
+          "term": "Intellectual Disability"
+        },
+        {
+          "id": "D019954",
+          "term": "Neurobehavioral Manifestations"
+        },
+        {
+          "id": "D009461",
+          "term": "Neurologic Manifestations"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D000015",
+          "term": "Abnormalities, Multiple"
+        },
+        {
+          "id": "D000013",
+          "term": "Congenital Abnormalities"
+        },
+        {
+          "id": "D009358",
+          "term": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+        },
+        {
+          "id": "D025063",
+          "term": "Chromosome Disorders"
+        },
+        {
+          "id": "D030342",
+          "term": "Genetic Diseases, Inborn"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D004314",
+          "term": "Down Syndrome"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Participants will receive matching placebo by mouth (PO) twice daily (BID) for up to 26 weeks.",
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "description": "Participants will receive RO5186582 at a dosage of 120 milligrams (mg) PO BID for up to 26 weeks.",
+          "interventionNames": [
+            "Drug: RO5186582"
+          ],
+          "label": "RO5186582 120 mg BID",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Participants will receive RO5186582 at a dosage of 40 mg PO BID for up to 26 weeks.",
+          "interventionNames": [
+            "Drug: RO5186582"
+          ],
+          "label": "RO5186582 40 mg BID",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Participants will receive RO5186582 at a dosage of 60 mg PO BID for up to 26 weeks.",
+          "interventionNames": [
+            "Drug: RO5186582"
+          ],
+          "label": "RO5186582 60 mg BID",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Participants will receive matching placebo PO BID. Study medication will first be administered on Day 1, and only the morning dose will be given on the last day of treatment (Week 26).",
+          "name": "Placebo",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "RO5186582 120 mg BID",
+            "RO5186582 40 mg BID",
+            "RO5186582 60 mg BID"
+          ],
+          "description": "Participants will receive 1 of 3 dosages of RO5186582 PO BID, including 40 mg, 60 mg, or 120 mg. Study medication will first be administered on Day 1, and only the morning dose will be given on the last day of treatment (Week 26).",
+          "name": "RO5186582",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Down Syndrome"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Phoenix",
+          "country": "United States",
+          "facility": "Southwest Autism Research & Resource Center",
+          "geoPoint": {
+            "lat": 33.44838,
+            "lon": -112.07404
+          },
+          "state": "Arizona",
+          "zip": "85006"
+        },
+        {
+          "city": "Decatur",
+          "country": "United States",
+          "facility": "Emory University School of Medicine; Department of Human Genetics & Pediatrics",
+          "geoPoint": {
+            "lat": 33.77483,
+            "lon": -84.29631
+          },
+          "state": "Georgia",
+          "zip": "30033"
+        },
+        {
+          "city": "Chicago",
+          "country": "United States",
+          "facility": "Rush University Medical Center",
+          "geoPoint": {
+            "lat": 41.85003,
+            "lon": -87.65005
+          },
+          "state": "Illinois",
+          "zip": "60612"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Massachusette General Hospital; Medical Genetics",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02114"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Boston Children's Hospital, Department of Neurology",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02115"
+        },
+        {
+          "city": "Durham",
+          "country": "United States",
+          "facility": "Duke Clin Rsch Institute",
+          "geoPoint": {
+            "lat": 35.99403,
+            "lon": -78.89862
+          },
+          "state": "North Carolina",
+          "zip": "27710"
+        },
+        {
+          "city": "Pittsburgh",
+          "country": "United States",
+          "facility": "UPMC Western Psychiatric Institute and Clinic",
+          "geoPoint": {
+            "lat": 40.44062,
+            "lon": -79.99589
+          },
+          "state": "Pennsylvania",
+          "zip": "15203 1101"
+        },
+        {
+          "city": "Nashville",
+          "country": "United States",
+          "facility": "Vanderbilt University Medical Center",
+          "geoPoint": {
+            "lat": 36.16589,
+            "lon": -86.78444
+          },
+          "state": "Tennessee",
+          "zip": "37232"
+        },
+        {
+          "city": "Madison",
+          "country": "United States",
+          "facility": "University of Wisconsin Hospital and Clinics",
+          "geoPoint": {
+            "lat": 43.07305,
+            "lon": -89.40123
+          },
+          "state": "Wisconsin",
+          "zip": "53792"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Hoffmann-La Roche",
+          "name": "Clinical Trials",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This study will evaluate the safety, tolerability, efficacy, and pharmacokinetic and pharmacodynamic activity of 3 different dosages of RO5186582 compared with placebo. A total of approximately 46 participants will be enrolled, in order to have at least 32 evaluable, and will be randomly assigned to 1 of 4 treatments in a 1:1:1:1 ratio, with 9 children per treatment arm. The target ratio between 6-8 years and 9-11 years age groups is approximately 1:1 in each treatment arm, with a minimum of 3 children per age group in each treatment arm."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 45,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of Down syndrome, except for mosaic Down syndrome\n* Available parent or caregiver to attend clinic visits and provide information about the participant's behavior and symptoms\n\nExclusion Criteria:\n\n* Any primary psychiatric comorbid disorder\n* History of infantile spasms, West syndrome, Lennox-Gastaut syndrome, early infantile epileptic encephalopathy, treatment-refractory epilepsy with cognitive/developmental regression, severe head trauma, or central nervous system (CNS) infection\n* Seizure event of any type within 12 months prior to Screening or relevant changes in anti-epileptic drugs 6 weeks prior to enrollment\n* Significant sleep disruption\n* Significant gastrointestinal, renal, hepatic, endocrine, or cardiovascular disease\n* New-onset or ongoing hematologic/oncologic disorder\n* Severe lactose intolerance\n* Participation in another clinical study within 1 month or 6 half-lives prior to first dose, or any extent of participation in Study BP29589 (NCT02451657)",
+      "healthyVolunteers": false,
+      "maximumAge": "11 Years",
+      "minimumAge": "6 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "A Study of RO5186582 in Down Syndrome Among Children 6 to 11 Years of Age",
+      "nctId": "NCT02484703",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Parallel Group 26-Week Dose-Investigating Study to Explore the Pharmacokinetics, Pharmacodynamic Effects, Efficacy, Safety and Tolerability of RO5186582 in Children With Down Syndrome Aged 6-11 Years",
+      "orgStudyIdInfo": {
+        "id": "WP28760"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Hoffmann-La Roche"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Percentage of Participants With Adverse Events (AEs)",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Percentage of Participants With Epileptiform Abnormalities as Assessed Using Electroencephalogram (EEG) Analysis",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Percentage of Participants by Suicidality Classification as Assessed Using an Adapted Form of the Columbia Classification Algorithm for Suicide Assessment (C-CASA)",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Anxiety, Depression, and Mood Scale (ADAMS) Score",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Hyperactivity and Impulsivity as Assessed by the Short Version of Conners Third Edition Parent Short-Form (Conners-3) Score",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Sleep Disturbances as Assessed by the Children's Sleep Habits Questionnaire (CSHQ) Score",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Gamma Power at Posterior Electrodes as Assessed Using EEG Analysis",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Theta Power at Posterior Electrodes as Assessed Using EEG Analysis",
+          "timeFrame": "Baseline up to Week 6"
+        },
+        {
+          "measure": "Cognition as Assessed by the Children's Memory Scale (CMS) Subtests Score",
+          "timeFrame": "Baseline up to Week 6"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Percentage of Participants With AEs",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Percentage of Participants With Epileptiform Abnormalities as Assessed Using EEG Analysis",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Percentage of Participants by Suicidality Classification as Assessed Using an Adapted Form of the C-CASA",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "ADAMS Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Hyperactivity and Impulsivity as Assessed by the Short Version of Conners-3 Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Sleep Disturbances as Assessed by the CSHQ Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Gamma Power at Posterior Electrodes as Assessed Using EEG Analysis",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Theta Power at Posterior Electrodes as Assessed Using EEG Analysis",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Cognition as Assessed by the CMS Subtests Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Adaptive Behavior as Assessed by the Vineland Adaptive Behavior Scales-II (VABS-II) Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Clinical Global Impression-Improvement (CGI-I) Scale Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Daily Functional Memory as Assessed by the Observer Memory Questionnaire-Parent Form (OMQ-PF) Score",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Intellectual Quotient (IQ) as Assessed by the Leiter 3",
+          "timeFrame": "Baseline up to Week 26"
+        },
+        {
+          "measure": "Plasma Concentration of RO5186582",
+          "timeFrame": "Predose (2 predose samples separated by at least 1 hour) at Weeks 2 and 6; and predose or postdose (as convenient) during Weeks 10, 17, and 26"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Hoffmann-La Roche"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2016-08-03",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2017-07-06",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2017-07-04",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2016-08-03",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2015-10-28",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2017-07",
+      "studyFirstPostDateStruct": {
+        "date": "2015-06-30",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2015-06-16",
+      "studyFirstSubmitQcDate": "2015-06-24",
+      "whyStopped": "Study was terminated due to data from another study showing no efficacy. There were no safety issues of concern."
+    }
+  }
+}

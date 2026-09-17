@@ -1,0 +1,32 @@
+schema_version: 0.1.0
+id: CPD:CHEMBL283800
+node_type: Compound
+label: "creatine"
+identifiers:
+  chembl_id: "CHEMBL283800"
+  identifier_provenance: "ChEMBL compound_search(name='creatine') in the curation session on 2026-09-17"
+# Development status is kept in the canonical slot, but as `as_reported` with
+# `value: null` on purpose. Rule V9 exempts max_clinical_phase.value only when
+# `database_source_id` names a PINNED DatabaseRelease, and per resolution R1 a
+# SRC:DB source verifies only against a snapshot in data/raw/MANIFEST.jsonl. ChEMBL
+# was reached here through an MCP tool that writes no snapshot, so no pinned release
+# can be named honestly and no number is asserted. See the note below.
+max_clinical_phase:
+  value: null
+  as_reported: "3"
+  source: "ChEMBL compound_search response, curation session 2026-09-17"
+chembl_fields_as_returned:
+  pref_name: "CREATINE"
+  molecule_type: "Small molecule"
+  molecular_formula: "C4H9N3O2"
+  natural_product: "true"
+  withdrawn_flag: "false"
+attributes:
+  chembl_first_approval_as_returned: "null"
+  provenance_limitation: "ChEMBL was queried through an MCP tool that writes no immutable snapshot, so no SRC:DB:chembl release can be registered or verified under resolution R1; database numerics are therefore carried as strings and asserted as no number."
+role_in_atlas: "active moiety of METAB:creatine_monohydrate_supplementation; substrate of PROT:SLC6A8 and of the creatine-kinase reaction"
+cited_by_claims: [CLM:power:creatine_human:001, CLM:power:creatine_human:004, CLM:power:creatine_human:005]
+notes: >-
+  The clinical-phase field is a ChEMBL development-status field copied verbatim. It is
+  not efficacy evidence and must not be read as one (contract V16).
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

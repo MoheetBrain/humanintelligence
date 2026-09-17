@@ -1,0 +1,360 @@
+# Claims — KL (klotho; systemic/endocrine modifier, not a brain energy transporter)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power. Declared depth: shallow.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# KL sits in this atlas as a SYSTEMIC MODIFIER, and its evidence base has a shape
+# worth stating plainly: the enhancement claims (001, 002) are human OBSERVATIONAL
+# genotype associations plus animal overexpression, the non-human primate result (004)
+# is non-monotonic in dose, and there is a directly contradicting human cohort result
+# (003) in which the same protective haplotype was associated with MORE dementia.
+#
+# Nothing here is an energy-supply claim. The reported mechanism runs through synaptic
+# GluN2B and long-term potentiation, not through metabolic supply, so klotho is
+# evidence about a modifier of computation, not evidence that computation is
+# power-limited.
+
+- claim_id: CLM:power:KL:001
+  schema_version: 0.1.0
+  statement: >-
+    A lifespan-extending KLOTHO variant was associated with better cognition in
+    heterozygous human carriers, and systemic klotho overexpression in mice improved
+    performance across multiple learning and memory tests, enhanced long-term
+    potentiation and enriched synaptic GluN2B, with the mouse effects abolished by
+    GluN2B blockade and present in young as well as old animals.
+  subject: GENE:KL
+  predicate: ASSOCIATED_WITH
+  object: PHENO:general_cognitive_ability
+  claim_type: association
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    life_stage: mixed
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_reported
+  causal_attribution:
+    basis: human_observational_association
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "the human arm is a genotype-phenotype association in existing cohorts, so population stratification and linkage with neighbouring variants are not excluded"
+      - "the mouse arm is transgenic systemic overexpression from development, not an adult-onset intervention, so it cannot separate developmental from adult mechanisms"
+      - "the mechanism reported is glutamatergic and synaptic, so this claim provides no support for an energy-supply account"
+  evidence:
+    - source_id: SRC:PMID:24813892
+      design: observational_cohort
+      species: SPECIES:NCBITaxon:9606
+      population: "cognitively assessed human cohorts genotyped for the KL-VS haplotype"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "cognitive test performance by KL-VS heterozygous carrier status"
+      endpoint_category: not_reported
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:24813892
+      design: overexpression
+      species: SPECIES:NCBITaxon:10090
+      population: "transgenic mice with systemic klotho overexpression and controls, young and old"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "multiple learning and memory tests, long-term potentiation, synaptic GluN2B content"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Converging human genetic association and animal causal manipulation with a
+      mechanistic handle, but the human arm is observational, the animal arm is
+      developmental overexpression, and a later cohort reports the opposite direction.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["population structure", "haplotype linkage", "developmental overexpression"]
+  dependencies: []
+  status: contested
+  status_reason: >-
+    Self-contested by agent:power on curation, not by audit. CLM:power:KL:003 reports
+    the same KL-VS variant associated with HIGHER incident dementia in a prospective
+    cohort of 527 older men, which opposes the enhancement reading of this claim. Both
+    records stand; neither is withdrawn. Awaiting a red-team audit record.
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:KL:002
+  schema_version: 0.1.0
+  statement: >-
+    In whole-brain voxel-based morphometry across two independent cohorts of
+    cognitively normal older adults, KL-VS heterozygosity was associated with greater
+    right dorsolateral prefrontal grey-matter volume and with better executive
+    function, with the authors reporting that volume partially mediated the
+    genotype-to-cognition relationship.
+  subject: GENE:KL
+  predicate: ASSOCIATED_WITH
+  object: SV:cognition.attentional_control
+  claim_type: association
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: aged
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:dorsolateral_prefrontal_cortex]
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_observational_association
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "mediation inferred from cross-sectional data cannot establish a causal chain from genotype through volume to cognition"
+      - "whole-brain voxelwise analysis with a single surviving region invites a multiple-comparison concern the retrieved text does not resolve"
+      - "cognitively normal older adults are a selected, survivorship-biased group"
+  evidence:
+    - source_id: SRC:PMID:25815349
+      design: observational_cohort
+      species: SPECIES:NCBITaxon:9606
+      population: "cognitively normal older adults from two independent cohorts"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "voxel-based grey-matter volume, working memory and processing speed by KL-VS heterozygosity"
+      endpoint_category: executive_function
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Human, adult, directly relevant endpoint and two cohorts, but observational and
+      from the same group as the founding claim.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["survivorship bias in cognitively normal older cohorts", "multiple comparisons"]
+  dependencies: [CLM:power:KL:001]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:KL:003
+  schema_version: 0.1.0
+  statement: >-
+    In a prospective cohort of 527 initially cognitively unimpaired older men followed
+    for ten years by data linkage, the same KL-VS variant reported as protective
+    elsewhere was associated with a higher incidence of dementia, with risk increasing
+    from heterozygous to homozygous carriers.
+  subject: GENE:KL
+  predicate: INCREASES_RISK
+  object: AE:dementia
+  claim_type: association
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: aged
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_observational_association
+    locus_to_gene_resolved: partial
+    alternative_explanations:
+      - "men only, single cohort, and the homozygous stratum contributed only a small number of person-years, so the dose-dependent reading rests on few events"
+      - "dementia incidence by data linkage is a different endpoint from cognitive test performance, so this need not directly contradict the cognition associations"
+      - "competing risk of death in an elderly male cohort can distort genotype-specific incidence"
+  evidence:
+    - source_id: SRC:PMID:28539162
+      design: observational_cohort
+      species: SPECIES:NCBITaxon:9606
+      population: "527 men aged 71-87 years free of cognitive impairment at baseline, followed over 10 years"
+      sample_size:
+        reported_as: "We recruited 527 men aged 71-87 years who were free of cognitive impairment."
+        value: 527
+        unit: participants
+      endpoint: "incident dementia by KL-VS genotype (rs9536314 T/G)"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: hazard_ratio
+        as_reported: "the sub-hazard ratios of dementia associated with the TG and GG genotypes were 1.6 (95%CI=1.0, 2.5; p=0.030) and 3.5 (95%CI=1.3, 9.1; p=0.011)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Prospective human cohort with a hard clinical endpoint and a reported
+      dose-gradient, directly opposing the enhancement narrative; single cohort, men
+      only, wide confidence interval in the homozygous stratum.
+    calibration_status: uncalibrated_subjective
+  risks: ["this claim is the reason CLM:power:KL:001 is marked status: contested"]
+  confounders: ["competing risk of mortality", "sex restricted to men", "small homozygous stratum"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:KL:004
+  schema_version: 0.1.0
+  statement: >-
+    After validating the rhesus form of klotho protein in mice, the investigators
+    report that a single systemic administration of a low dose, but not of a high
+    dose, enhanced memory in aged nonhuman primates.
+  subject: BIO:klotho_protein
+  predicate: CHANGES_STATE
+  object: PHENO:episodic_memory
+  claim_type: causal_perturbation
+  direction: inverted_u
+  context:
+    species: [SPECIES:NCBITaxon:9544, SPECIES:NCBITaxon:10090]
+    life_stage: aged
+    baseline_context: aged
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "aged animals are not a healthy adult baseline, so the effect may be restoration within an age-related deficit rather than enhancement above a normal ceiling"
+      - "a single administration with a single positive dose level and a negative higher dose level is the minimum possible dose-response characterisation; the shape is asserted from two points"
+      - "sample sizes for the primate arm are not given in the retrieved text; nonhuman primate cognitive studies are typically very small"
+      - "an industry co-author group with a commercial interest in klotho therapeutics"
+  evidence:
+    - source_id: SRC:PMID:37400721
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:9544
+      population: "aged rhesus macaques given a single systemic administration of klotho protein at low or high dose"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "memory task performance after single klotho administration"
+      endpoint_category: episodic_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: rescue_only
+    human_relevance: nonhuman_primate
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Adult-onset pharmacological intervention in a human-adjacent species with a
+      cognitive endpoint and an explicit non-monotonic dose result; single study, very
+      likely small, aged baseline, commercial interest.
+    calibration_status: uncalibrated_subjective
+  risks: ["the higher dose did not work; any read of this claim that ignores the non-monotonic result is a dose-response inversion error"]
+  confounders: ["aged baseline", "small sample", "sponsor interest"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

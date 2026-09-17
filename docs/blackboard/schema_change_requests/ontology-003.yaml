@@ -1,0 +1,32 @@
+# Schema change request ontology-003
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-003
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Confirm the source-verification index path.
+
+motivation: >-
+  Contract §7 names a single data/interim/source_verification.jsonl; the orchestrator's brief
+  referred to a data/interim/source_verification/ directory. The two are not interchangeable
+  for a reader, and a validator that checked only one would silently report every source as
+  unverified.
+
+proposed_change: >-
+  State in §7 that the index is per-agent at data/interim/source_verification/{agent}.jsonl.
+
+implemented_as: >-
+  RESOLVED by the orchestrator: per-agent sharding is the real layout.
+  blueprint.paths.source_verification_paths reads BOTH the single file and every *.jsonl in
+  the directory, so neither layout can hide a source.

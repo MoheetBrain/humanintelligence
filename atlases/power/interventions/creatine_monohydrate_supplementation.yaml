@@ -1,0 +1,38 @@
+schema_version: 0.1.0
+id: METAB:creatine_monohydrate_supplementation
+node_type: MetabolicIntervention
+label: "oral creatine monohydrate supplementation"
+description: >-
+  Dietary loading of the creatine/phosphocreatine substrate pool by oral
+  administration of creatine monohydrate. Used as the human-facing probe of the
+  creatine axis in every human trial this atlas cites. It does NOT modulate SLC6A8 or
+  CKB; it raises substrate availability upstream of both, which is why claims built on
+  it are one inferential step away from the gene targets.
+active_moiety: CPD:CHEMBL283800
+identifiers:
+  chembl_id: "CHEMBL283800"
+  identifier_provenance: "ChEMBL compound_search(name='creatine') returned CHEMBL283800 (pref_name CREATINE, max_phase 3) in the curation session on 2026-09-17"
+targets: [TGT:SLC6A8, TGT:CKB]
+mechanism: MECH:creatine_substrate_loading
+state_variables_touched:
+  - SV:power.phosphocreatine_reserve
+  - SV:cognition.fluid_reasoning_capacity
+  - SV:cognition.processing_speed
+  - SV:cognition.attentional_control
+cited_by_claims:
+  - CLM:power:creatine_human:001
+  - CLM:power:creatine_human:004
+  - CLM:power:creatine_human:005
+human_evidence_summary: >-
+  Randomised human evidence exists and is mixed in an informative way: positive in a
+  low-baseline (vegetarian) group on fluid reasoning and working memory, null in
+  rested fed young omnivorous adults, and positive as reduced deterioration under
+  sleep deprivation and acute hypoxia. See
+  evidence/claims/power/creatine_supplementation_human.yaml.
+dose_information: omitted_by_policy
+notes: >-
+  No dose, regimen, route detail, product or sourcing information is recorded here or
+  anywhere in this atlas (docs/COMPUTATIONAL_ONLY_POLICY.md). The ChEMBL max_phase
+  value is a database field describing clinical development status, not an endorsement
+  and not an efficacy statement.
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

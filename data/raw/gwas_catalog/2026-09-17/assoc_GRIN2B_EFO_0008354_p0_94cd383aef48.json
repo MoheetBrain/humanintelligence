@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97381822/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97381822"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs75940780"
+          }
+        },
+        "accession_id": "GCST90104689",
+        "association_id": 97381822,
+        "beta": "1.31489 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.77,
+        "ci_upper": 1.86,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008354",
+            "efo_trait": "cognitive function measurement"
+          }
+        ],
+        "first_author": "Homann J",
+        "locations": [
+          "12:14008213"
+        ],
+        "mapped_genes": [
+          "GRIN2B",
+          "MRPS18CP4"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 3e-06,
+        "pubmed_id": "35386118",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 3,
+        "range": "[0.77-1.86]",
+        "reported_trait": [
+          "Cognitive performance (visuoconstruction)"
+        ],
+        "risk_frequency": "0.0400499",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs75940780"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs75940780-T"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRIN2B&efo_id=EFO_0008354&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

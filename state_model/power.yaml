@@ -1,0 +1,363 @@
+# State variables — domain: power
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: power
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Energy supply, energy delivery and energetic by-products: what the tissue has available to
+  spend on computation, and what spending it produces. The variable list is the one named in the
+  project brief.
+
+variables:
+
+  - id: SV:power.atp_adp_ratio
+    name: "ATP/ADP ratio"
+    definition: >-
+      Ratio of adenosine triphosphate to adenosine diphosphate concentration in neural tissue,
+      as an index of instantaneous energy charge.
+    kind: latent_biological
+    timescale: seconds
+    level: cellular
+    units: "dimensionless ratio"
+    measurement_proxies:
+      - name: "31P magnetic resonance spectroscopy"
+        modality: mrs
+        status: research_proxy
+      - name: "ex-vivo tissue metabolite assay"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.phosphocreatine_reserve
+    name: "phosphocreatine reserve"
+    definition: >-
+      Size of the phosphocreatine pool available to buffer rapid ATP demand, per unit tissue.
+    kind: latent_biological
+    timescale: seconds
+    level: cellular
+    units: "mmol/kg wet weight"
+    measurement_proxies:
+      - name: "31P magnetic resonance spectroscopy"
+        modality: mrs
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.mitochondrial_spare_capacity
+    name: "mitochondrial spare capacity"
+    definition: >-
+      Difference between maximal and currently used mitochondrial oxidative capacity, i.e. the
+      headroom available for a demand increase.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "fraction of maximal respiration"
+    measurement_proxies:
+      - name: "ex-vivo respirometry on accessible cells"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "model-derived estimate from metabolic imaging"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.glucose_oxidation_rate
+    name: "glucose oxidation rate"
+    definition: >-
+      Rate at which glucose is fully oxidised in neural tissue per unit mass per unit time.
+    kind: latent_biological
+    timescale: minutes
+    level: systems
+    units: "umol/100g/min"
+    measurement_proxies:
+      - name: "FDG positron emission tomography"
+        modality: pet
+        status: established_human_proxy
+      - name: "13C magnetic resonance spectroscopy"
+        modality: mrs
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.lactate_flux
+    name: "lactate flux"
+    definition: >-
+      Net rate of lactate transfer between compartments (astrocytic, neuronal, vascular) per
+      unit tissue per unit time.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "umol/100g/min"
+    measurement_proxies:
+      - name: "1H magnetic resonance spectroscopy lactate"
+        modality: mrs
+        status: research_proxy
+      - name: "arteriovenous difference measurement"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.ketone_utilisation_capacity
+    name: "ketone utilisation capacity"
+    definition: >-
+      Maximal rate at which ketone bodies can substitute for glucose as an oxidative substrate
+      in neural tissue.
+    kind: latent_biological
+    timescale: days
+    level: systems
+    units: "umol/100g/min"
+    measurement_proxies:
+      - name: "11C-acetoacetate positron emission tomography"
+        modality: pet
+        status: research_proxy
+      - name: "plasma ketone and cerebral extraction measurement"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.astrocytic_glycogen_reserve
+    name: "astrocytic glycogen reserve"
+    definition: >-
+      Quantity of glycogen stored in astrocytes and available for local mobilisation, per unit
+      tissue.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "mmol/kg wet weight"
+    measurement_proxies:
+      - name: "13C magnetic resonance spectroscopy glycogen"
+        modality: mrs
+        status: research_proxy
+      - name: "ex-vivo biochemical assay"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.cerebral_blood_flow
+    name: "cerebral blood flow"
+    definition: >-
+      Volume of blood delivered per unit brain mass per unit time.
+    kind: observable_proxy
+    timescale: seconds
+    level: systems
+    units: "mL/100g/min"
+    measurement_proxies:
+      - name: "arterial spin labelling MRI"
+        modality: arterial_spin_labelling
+        status: established_human_proxy
+      - name: "15O-water positron emission tomography"
+        modality: pet
+        status: established_human_proxy
+      - name: "transcranial Doppler velocity"
+        modality: device_or_wearable
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.oxygen_extraction_fraction
+    name: "oxygen extraction fraction"
+    definition: >-
+      Fraction of delivered oxygen extracted by the tissue during passage through the capillary
+      bed.
+    kind: observable_proxy
+    timescale: seconds
+    level: systems
+    units: "fraction"
+    measurement_proxies:
+      - name: "quantitative BOLD / calibrated fMRI"
+        modality: fmri_bold
+        status: research_proxy
+      - name: "15O positron emission tomography"
+        modality: pet
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.neurovascular_coupling_gain
+    name: "neurovascular coupling gain"
+    definition: >-
+      Magnitude of the local blood-flow response per unit of local neural activity change.
+    kind: latent_biological
+    timescale: seconds
+    level: systems
+    units: "flow change per unit activity"
+    measurement_proxies:
+      - name: "simultaneous EEG-fMRI response amplitude"
+        modality: fmri_bold
+        status: research_proxy
+      - name: "stimulus-evoked flow response by ASL"
+        modality: arterial_spin_labelling
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.ros_production_rate
+    name: "reactive oxygen species production rate"
+    definition: >-
+      Rate of reactive oxygen species generation in neural tissue per unit mass per unit time.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "arbitrary units per unit mass per time"
+    measurement_proxies:
+      - name: "oxidative damage markers in blood or CSF"
+        modality: blood_or_csf_biomarker
+        status: research_proxy
+      - name: "ex-vivo redox probe measurement"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:power.thermal_burden
+    name: "thermal burden"
+    definition: >-
+      Local tissue temperature elevation attributable to metabolic heat production, relative to
+      the regulated baseline.
+    kind: latent_biological
+    timescale: minutes
+    level: systems
+    units: "degrees C above baseline"
+    measurement_proxies:
+      - name: "MR thermometry"
+        modality: mrs
+        status: research_proxy
+      - name: "systemic temperature with model-derived local estimate"
+        modality: model_derived_estimate
+        status: theoretical_construct
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

@@ -1,0 +1,241 @@
+# Claims — SLC16A3 (MCT4; low-affinity, high-capacity, predominantly astrocytic
+# monocarboxylate transporter, the canonical lactate EXPORTER of the shuttle)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power. Declared depth: shallow.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# All three claims are rodent knockdown-with-rescue. There is NO human evidence of
+# any kind for SLC16A3 in this atlas: no human genetic phenotype was retrieved, no
+# human intervention exists, and nothing tests whether raising MCT4 above normal does
+# anything. The lactate-rescue pattern is the single most repeated observation in the
+# lactate-shuttle literature and also the observation the critical literature says is
+# most easily produced by non-specific energetic disruption.
+
+- claim_id: CLM:power:SLC16A3:001
+  schema_version: 0.1.0
+  statement: >-
+    Disrupting expression of the astrocytic lactate transporter MCT4 in rat
+    hippocampus caused amnesia for an inhibitory avoidance task and impaired
+    maintenance of in-vivo long-term potentiation, both reversed by L-lactate but not
+    by equicaloric glucose.
+  subject: PROT:SLC16A3
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the specificity of antisense knockdown and of pharmacological monocarboxylate-transport block is directly disputed in the critical literature"
+      - "blocking astrocytic lactate export could disturb astrocytic potassium and calcium handling, which is an alternative route to memory impairment that does not require a fuel shuttle"
+      - "L-lactate rescue does not discriminate a metabolic from a signalling role"
+  evidence:
+    - source_id: SRC:PMID:21376239
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "adult rats with hippocampal antisense knockdown of MCT4"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term memory and in-vivo long-term potentiation maintenance, with L-lactate or glucose rescue"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Causal rodent perturbation with internal rescue and independent replication of
+      the pattern; rodent only, contested tool specificity, no human data at all.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["astrocytic ion homeostasis disruption", "non-specific knockdown toxicity"]
+  dependencies: [CLM:power:anls:001, CLM:power:anls:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A3:002
+  schema_version: 0.1.0
+  statement: >-
+    In a cell-type-specific viral knockdown study in mouse dorsal hippocampus,
+    astroglial MCT4 was required for spatial information acquisition and retention at
+    24 hours but not for long-term memory at 7 days, and intracerebral lactate
+    infusion rescued the spatial learning deficit in MCT4-reduced but not
+    MCT2-reduced animals.
+  subject: PROT:SLC16A3
+  predicate: POSITIVELY_REGULATES
+  object: SV:cognition.learning_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte]
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the dissociation between 24-hour and 7-day memory is a single-study result and could reflect task or power differences rather than distinct transporter roles"
+      - "vector cell-type specificity is asserted rather than quantified in the retrieved text"
+  evidence:
+    - source_id: SRC:PMID:32693190
+      design: knockdown
+      species: SPECIES:NCBITaxon:10090
+      population: "mice with astrocyte-directed viral reduction of MCT4 in dorsal hippocampus"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "spatial acquisition and 24-hour retention, 7-day long-term memory, with intracerebral lactate rescue"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Second species, independent method, within-study rescue dissociation; still
+      rodent only with no human counterpart.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A3:003
+  schema_version: 0.1.0
+  statement: >-
+    Memory impairment caused by knockdown of glial MCT4 in rat dorsal hippocampus was
+    reversed by pyruvate and by the ketone body beta-hydroxybutyrate, so the
+    downstream requirement met by astrocytic lactate export can be satisfied by other
+    oxidisable substrates delivered to neurons.
+  subject: PROT:SLC16A3
+  predicate: MODULATES
+  object: SV:power.lactate_flux
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "substrate substitutability shows the requirement is energetic, not that MCT4 is rate-limiting in an unperturbed animal"
+      - "intracranial delivery of rescue metabolites is supraphysiological"
+  evidence:
+    - source_id: SRC:PMID:31286064
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "Long-Evans rats with dorsal hippocampal MCT4 expression knockdown"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term memory after pyruvate or beta-hydroxybutyrate administration"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "Single-study rescue design; mechanistically informative, does not test rate-limitation."
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

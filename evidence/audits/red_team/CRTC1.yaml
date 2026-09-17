@@ -1,0 +1,173 @@
+# Red-team audit - CRTC1. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:CRTC1:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:CRTC1
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'The single association behind the level-3 grade carries locus_to_gene_resolved: ''no'' and
+      causal_attribution.basis gwas_association_only, correctly. human_genetic_association reaches level
+      3 for nine targets on catalogued associations whose gene attribution is positional, while causal_gene_attribution
+      reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is correct and the association
+      grade is not downgraded for the attribution gap - that would double-count it. The exposure is in
+      the aggregation: D1 is a weighted sum, so a level-3 association contributes support at 0.25 weight
+      regardless of the attribution level. Recorded against the model, not the atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.CRTC1:002
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: Genuinely clean. The key perturbation was delivered virally to adult mice around training, so
+      it is adult-onset by construction, and the rescue result is also adult. One of very few targets
+      in the repository where adult onset is built into the design rather than argued for afterwards.
+    evidence_refs:
+    - CLM:alphacognition:CRTC1:001
+    - CLM:alphacognition:CRTC1:002
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: CLM:alphacognition:CRTC1:002 is gene therapy in a presenilin knockout and is labelled rescue_only.
+      Correct, and it is one of the two records agent:alphacognition itself named as most likely to be
+      miscited as enhancement.
+    evidence_refs:
+    - CLM:alphacognition:CRTC1:002
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: The entire causal case is rodent memory tasks. There is no human interventional evidence and,
+      after this audit, no human genetic evidence that is not an education measure.
+    evidence_refs:
+    - CLM:alphacognition:CRTC1:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: fail
+    note: 'THE CLEAREST CASE OF EDUCATIONAL-ATTAINMENT LAUNDERING IN THE REPOSITORY, and the only one
+      where it is load-bearing. CRTC1''s human_genetic_association grade of 3 rests on exactly one record:
+      gwas.CRTC1:002, a single association whose endpoint string is ''Self-reported math ability'' from
+      SRC:PMID:30038396, a genome-wide association study of EDUCATIONAL ATTAINMENT in 1.1 million individuals.
+      Its generated rationale reads ''1 catalogued genome-wide association record on a g_factor or fluid_reasoning
+      trait (mathematical ability) across 1 publication''. CRTC1''s only other genetic records are explicitly
+      educational_attainment. So this target has NO non-education cognitive association of any kind, yet
+      is graded at the level the contract reserves for one human genetic result with a directly relevant
+      endpoint. Repository-level: the trait panel classes GWAS Catalog trait ''mathematical ability''
+      (EFO_0004875) as phenotype_class fluid_reasoning while marking it use_in_ranking: supporting with
+      the note ''never a stand-alone basis for a facet level''. pipelines/alphacognition/build_assessments.py
+      tests phenotype_class, not use_in_ranking, so that restriction never fires. The underlying records
+      are ''Self-reported math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396,
+      a genome-wide association study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records:
+      gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.CRTC1:001
+    - CLM:alphacognition:gwas.CRTC1:002
+    - CLM:alphacognition:l2g.CRTC1:001
+    - SRC:PMID:30038396
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: One adult viral overexpression study carries the mechanistic case, and after this audit one
+      educational-attainment GWAS carries the entire human genetic case.
+    evidence_refs:
+    - CLM:alphacognition:CRTC1:001
+    - SRC:PMID:30038396
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of CRTC1 modulation exists to be negative. Searched ClinicalTrials.gov
+      for the mechanism and found no trial of any CRTC1-directed agent.
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: fail
+    note: The level-3 grade states 'one human genetic result with a directly relevant endpoint'. The endpoint
+      is self-reported mathematical ability from an educational-attainment GWAS, which the atlas's own
+      trait panel marks as supporting-only and 'never a stand-alone basis for a facet level'. It is here
+      the stand-alone basis.
+    evidence_refs:
+    - CLM:alphacognition:gwas.CRTC1:002
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:CRTC1:001#f1
+    severity: critical
+    category: educational_attainment_mistaken_for_intelligence
+    description: TGT:CRTC1's human_genetic_association level 3 rests on a single 'Self-reported math ability'
+      association from an educational-attainment GWAS, and the target has no non-education cognitive association
+      at all. The atlas's own trait panel forbids exactly this ('supporting only, never a stand-alone
+      basis for a facet level') but the generator tests phenotype_class rather than use_in_ranking, so
+      the restriction never fires. Downgraded to level 1, which is the rule's own value for 'associations
+      only on educational-attainment or literacy traits'.
+    evidence_refs:
+    - CLM:alphacognition:gwas.CRTC1:002
+    - SRC:PMID:30038396
+  adjustments:
+  - kind: facet
+    target_id: TGT:CRTC1
+    facet: human_genetic_association
+    field: level
+    from_level: 3
+    to_level: 1
+    reason: 'The grade''s sole basis is one ''Self-reported math ability'' association from SRC:PMID:30038396,
+      a GWAS of educational attainment. The trait panel classes that trait as fluid_reasoning but marks
+      it use_in_ranking: supporting with the explicit note that it is never a stand-alone basis for a
+      facet level; the generator does not read that field. CRTC1''s remaining genetic records are labelled
+      educational_attainment outright. Level 1 is the rule''s own definition for ''associations only on
+      educational-attainment or literacy traits'', so this downgrade applies the atlas''s stated rule
+      rather than substituting the red team''s judgement for it.'
+  claim_status_changes:
+  - claim_id: CLM:alphacognition:gwas.CRTC1:002
+    from: active
+    to: contested
+    reason: 'The claim record is accurate - it states the trait, quotes the study''s own wording ''Self-reported
+      math ability'', and flags positional mapping. It is contested not as a record but as a basis for
+      a directly-relevant-endpoint grade: its endpoint is an educational-attainment measure and the repository''s
+      own trait panel says such a measure may never carry a facet level alone. Contested rather than withdrawn
+      because the underlying association is real and correctly described.'
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

@@ -1,0 +1,58 @@
+# Target dossier — AlphaCognition v0.1 (lead atlas: alphacognition).
+# `identifiers` is deliberately left empty: it is machine-filled from HGNC by
+# scripts/fetch_gene_identifiers.py (contract §5.1, §7). No accession is hand-written here.
+# `computational_primitives` is empty for every dossier in this atlas because
+# ontology/computational_primitives.yaml did not exist when these were authored; declaring
+# PRIM ids against a non-existent vocabulary would create unresolvable cross-references.
+target_id: TGT:GRM5
+schema_version: 0.1.0
+symbol: GRM5
+lead_atlas: alphacognition
+seed_origin: user_seed_list
+dossier_depth: shallow
+identifiers: {}
+target_class: g_protein_coupled_receptor
+represented_entities:
+- GENE:GRM5
+- PROT:P41594
+member_genes: []
+control_point_hypothesis:
+  statement: 'GRM5 encodes mGluR5, a Gq-coupled metabotropic glutamate receptor that gates protein-synthesis-dependent
+    plasticity and is physically and functionally coupled to NMDA receptors. The seed hypothesis is that
+    mGluR5 signalling sets a gain on metabotropic plasticity. This dossier''s main contribution is negative:
+    mGluR5 negative allosteric modulation had a large, confident animal-model literature in fragile X
+    syndrome and a randomised human trial found no benefit on the primary or any secondary measure (CLM:...:GRM5:001),
+    while the opposite direction of modulation is claimed to be pro-cognitive in Alzheimer models with
+    an internal null of its own (CLM:...:GRM5:002).'
+  proposed_modulation: unknown
+  mechanism_chain:
+  - CLM:alphacognition:GRM5:001
+  - CLM:alphacognition:GRM5:002
+  state_variables:
+  - id: SV:plasticity.metaplasticity_setpoint
+    asserted_relation: modulates
+    direction: unclear
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:GRM5:001
+    - CLM:alphacognition:GRM5:002
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: unknown
+developmental_confound_rationale: Not assessed. The human trial was in 3- to 6-year-old children and was
+  designed on the expectation that younger brains would have more learning plasticity than the adults
+  in whom earlier mGluR5 NAM trials had failed; that design choice implies a developmental dependence
+  hypothesis which the null result neither confirms nor refutes. No developmental expression data was
+  retrieved.
+open_questions:
+- Why did a strong animal-model literature fail to transfer? The trial authors call explicitly for better
+  strategies to decide which mechanisms will translate; that question is the reason GRM5 belongs in this
+  repository.
+- Both directions of mGluR5 modulation are claimed pro-cognitive in different disease contexts. Is there
+  any healthy-baseline evidence at all? None was retrieved.
+- No human genetic or healthy-adult interventional evidence for GRM5 and cognitive ability was retrieved.
+status: downgraded
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  run_id: sprint1-alphacognition-curation-01

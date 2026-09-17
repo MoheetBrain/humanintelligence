@@ -1,0 +1,475 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/state_variable_annotation",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "The annotated variable must be named, under either accepted field name.",
+      "anyOf": [
+        {
+          "required": [
+            "state_variable"
+          ]
+        },
+        {
+          "required": [
+            "state_variable_id"
+          ]
+        }
+      ]
+    },
+    {
+      "$comment": "A proposed response shape is an empirical assertion and needs a claim.",
+      "if": {
+        "required": [
+          "proposed_response_shape"
+        ]
+      },
+      "then": {
+        "properties": {
+          "claim_refs": {
+            "minItems": 1
+          }
+        },
+        "required": [
+          "claim_refs",
+          "shape_rationale"
+        ]
+      }
+    }
+  ],
+  "description": "A domain agent's claim-backed annotation on a state variable that agent:ontology defined. THE ONLY ROUTE by which empirical content reaches a state variable: the definition in state_model/ carries none, by design. Every annotation that asserts something about the world cites at least one resolvable claim, and a proposed response shape or safety coupling with no claim is refused \u2014 that is the 'no invented dose-response curves' rule at the annotation layer.",
+  "examples": [
+    {
+      "annotated_by": "agent:ontology",
+      "annotated_on": "2026-09-17",
+      "claim_refs": [],
+      "domain": "cognition",
+      "note": "synthetic placeholder annotation with no empirical content",
+      "schema_version": "0.1.0",
+      "state_variable": "SV:cognition.placeholder_variable"
+    }
+  ],
+  "properties": {
+    "annotated_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "annotated_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "claim_refs": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "couples_to_targets": {
+      "description": "Targets whose evidence produced this annotation.",
+      "items": {
+        "description": "Target id.",
+        "pattern": "^TGT:[A-Z0-9][A-Z0-9_.-]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "desirability_note": {
+      "description": "Why moving this variable is or is not desirable. Maximising is not assumed to be good (README \u00a73).",
+      "minLength": 1,
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "domain": {
+      "$comment": "vocabulary: state_domain",
+      "description": "Domain of the annotated variable; must match its id.",
+      "enum": [
+        "cognition",
+        "power",
+        "efficiency",
+        "plasticity",
+        "workspace",
+        "consolidation",
+        "stability",
+        "safety"
+      ],
+      "type": "string"
+    },
+    "linked_nodes": {
+      "items": {
+        "description": "Node id.",
+        "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "measurability_note": {
+      "description": "What can and cannot currently be measured.",
+      "minLength": 1,
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "measurement_proxy": {
+      "additionalProperties": false,
+      "description": "A proxy this agent found that the definition does not list.",
+      "properties": {
+        "modality": {
+          "$comment": "vocabulary: measurement_modality",
+          "description": "Modality.",
+          "enum": [
+            "behavioural_task",
+            "neuropsychological_battery",
+            "eeg_meg",
+            "fmri_bold",
+            "mrs",
+            "pet",
+            "near_infrared_spectroscopy",
+            "arterial_spin_labelling",
+            "blood_or_csf_biomarker",
+            "genomic_or_transcriptomic",
+            "electrophysiology_invasive",
+            "ex_vivo_or_animal_only",
+            "questionnaire_or_diary",
+            "device_or_wearable",
+            "model_derived_estimate"
+          ],
+          "type": "string"
+        },
+        "name": {
+          "minLength": 1,
+          "type": "string"
+        },
+        "status": {
+          "$comment": "vocabulary: measurability",
+          "description": "Measurability grade.",
+          "enum": [
+            "established_human_proxy",
+            "research_proxy",
+            "animal_only_proxy",
+            "theoretical_construct"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "modality",
+        "status"
+      ],
+      "type": "object"
+    },
+    "note": {
+      "description": "A claim-free domain note.",
+      "type": "string"
+    },
+    "proposed_response_shape": {
+      "$comment": "vocabulary: response_shape",
+      "description": "The shape this agent's evidence supports. PROPOSED, not adopted: state_model/ keeps `unknown` until the orchestrator promotes it, so the definition and the claim-backed proposal stay distinguishable.",
+      "enum": [
+        "linear",
+        "threshold",
+        "inverted_u",
+        "u_shaped",
+        "state_dependent",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "rationale": {
+      "description": "General rationale, when the annotation is not shape-specific.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "relation": {
+      "$comment": "vocabulary: state_variable_annotation_relation",
+      "description": "What this annotation asserts. Optional: inferable from which of the fields below are present.",
+      "enum": [
+        "response_shape",
+        "safety_coupling",
+        "measurement_proxy",
+        "target_link",
+        "primitive_link",
+        "domain_note"
+      ],
+      "type": "string"
+    },
+    "response_shape": {
+      "additionalProperties": false,
+      "description": "Structured alternative to proposed_response_shape + shape_rationale.",
+      "properties": {
+        "basis": {
+          "$comment": "vocabulary: response_shape_basis",
+          "description": "Why.",
+          "enum": [
+            "default_no_evidence_yet",
+            "definitional",
+            "claim_supported"
+          ],
+          "type": "string"
+        },
+        "claim_refs": {
+          "description": "Claim ids. Every id must resolve (rule V4).",
+          "items": {
+            "description": "Claim id.",
+            "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "rationale": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "shape": {
+          "$comment": "vocabulary: response_shape",
+          "description": "Shape asserted.",
+          "enum": [
+            "linear",
+            "threshold",
+            "inverted_u",
+            "u_shaped",
+            "state_dependent",
+            "unknown"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "shape",
+        "basis"
+      ],
+      "type": "object"
+    },
+    "run_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "safety_coupling": {
+      "description": "Safety constraints this variable can push. Either a structured entry or a list of them; both carry claim refs, because a coupling is empirical.",
+      "oneOf": [
+        {
+          "additionalProperties": false,
+          "description": "Grouped form: one basis and one claim set covering several couplings. `couplings: []` with `basis: not_asserted_pending_claims` is the honest record for 'looked, nothing to assert yet' and is accepted.",
+          "properties": {
+            "basis": {
+              "$comment": "vocabulary: safety_coupling_basis",
+              "description": "Why these couplings are (or are not) asserted.",
+              "enum": [
+                "not_asserted_pending_claims",
+                "definitional",
+                "claim_supported"
+              ],
+              "type": "string"
+            },
+            "claim_refs": {
+              "description": "Claim ids. Every id must resolve (rule V4).",
+              "items": {
+                "description": "Claim id.",
+                "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "couplings": {
+              "description": "The coupled safety variables. An entry may be a BARE state-variable id when the group's own basis, claim_refs and rationale already cover it, or an object when a coupling needs its own direction or note. `couplings: []` with `basis: not_asserted_pending_claims` records 'looked, nothing to assert yet'.",
+              "items": {
+                "anyOf": [
+                  {
+                    "description": "Safety state variable id.",
+                    "pattern": "^SV:safety\\.[a-z0-9][a-z0-9_]*$",
+                    "type": "string"
+                  },
+                  {
+                    "additionalProperties": false,
+                    "properties": {
+                      "claim_refs": {
+                        "description": "Claim ids. Every id must resolve (rule V4).",
+                        "items": {
+                          "description": "Claim id.",
+                          "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+                          "type": "string"
+                        },
+                        "type": "array",
+                        "uniqueItems": true
+                      },
+                      "couples_to": {
+                        "description": "Safety state variable id.",
+                        "pattern": "^SV:safety\\.[a-z0-9][a-z0-9_]*$",
+                        "type": "string"
+                      },
+                      "direction": {
+                        "$comment": "vocabulary: safety_coupling_direction",
+                        "enum": [
+                          "direct",
+                          "inverse",
+                          "unclear"
+                        ],
+                        "type": "string"
+                      },
+                      "note": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "couples_to"
+                    ],
+                    "type": "object"
+                  }
+                ]
+              },
+              "type": "array"
+            },
+            "rationale": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "couplings"
+          ],
+          "type": "object"
+        },
+        {
+          "additionalProperties": false,
+          "properties": {
+            "claim_refs": {
+              "description": "Claim ids. Every id must resolve (rule V4).",
+              "items": {
+                "description": "Claim id.",
+                "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+                "type": "string"
+              },
+              "type": "array",
+              "uniqueItems": true
+            },
+            "couples_to": {
+              "description": "Safety state variable id.",
+              "pattern": "^SV:safety\\.[a-z0-9][a-z0-9_]*$",
+              "type": "string"
+            },
+            "direction": {
+              "$comment": "vocabulary: safety_coupling_direction",
+              "description": "Sign of the coupling; `unclear` is legitimate.",
+              "enum": [
+                "direct",
+                "inverse",
+                "unclear"
+              ],
+              "type": "string"
+            },
+            "note": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "required": [
+            "couples_to",
+            "claim_refs"
+          ],
+          "type": "object"
+        },
+        {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "claim_refs": {
+                "description": "Claim ids. Every id must resolve (rule V4).",
+                "items": {
+                  "description": "Claim id.",
+                  "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "couples_to": {
+                "description": "Safety state variable id.",
+                "pattern": "^SV:safety\\.[a-z0-9][a-z0-9_]*$",
+                "type": "string"
+              },
+              "direction": {
+                "$comment": "vocabulary: safety_coupling_direction",
+                "enum": [
+                  "direct",
+                  "inverse",
+                  "unclear"
+                ],
+                "type": "string"
+              },
+              "note": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "couples_to",
+              "claim_refs"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      ]
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "shape_rationale": {
+      "description": "Why that shape, referencing the cited claims.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "state_variable": {
+      "description": "State variable being annotated.",
+      "pattern": "^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\\.[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    },
+    "state_variable_id": {
+      "description": "Accepted alternative spelling of `state_variable`.",
+      "pattern": "^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\\.[a-z0-9][a-z0-9_]*$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "annotated_by",
+    "annotated_on"
+  ],
+  "title": "State-variable annotation",
+  "type": "object"
+}

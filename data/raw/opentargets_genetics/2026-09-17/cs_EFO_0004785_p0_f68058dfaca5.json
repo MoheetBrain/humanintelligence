@@ -1,0 +1,60 @@
+{
+  "data": {
+    "credibleSets": {
+      "count": 1,
+      "rows": [
+        {
+          "beta": null,
+          "colocalisation": {
+            "count": 0
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 1,
+            "rows": [
+              {
+                "score": 0.767400860786438,
+                "target": {
+                  "approvedSymbol": "DISC1",
+                  "id": "ENSG00000162946"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -36,
+          "pValueMantissa": 4,
+          "region": null,
+          "standardError": null,
+          "study": {
+            "id": "GCST001037",
+            "nSamples": 857,
+            "projectId": "GCST",
+            "pubmedId": "21483430",
+            "studyType": "gwas",
+            "traitFromSource": "Neuranatomic and neurocognitive phenotypes"
+          },
+          "studyLocusId": "6c26614a5497be816acf51035844f6c5",
+          "variant": {
+            "id": "1_231681096_C_T",
+            "rsIds": [
+              "rs12042938"
+            ]
+          }
+        }
+      ]
+    },
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    }
+  }
+}

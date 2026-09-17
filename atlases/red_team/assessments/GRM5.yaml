@@ -1,0 +1,79 @@
+# Red-team facet assessment - GRM5. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/GRM5.yaml.
+schema_version: 0.1.0
+target_id: TGT:GRM5
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 1
+  rationale: Weak and indirect only, and unusually the picture is FAVOURABLE. Open Targets returns no
+    adverse-effect annotation for GRM5, and the several terminated mGluR5 NAM programmes all record efficacy
+    failure or sponsor decision rather than safety as the reason for stopping, across hundreds of exposed
+    participants including a 148-patient long-term open-label study. The residual liability is that no
+    cognitive-population safety data exist for healthy adults.
+  claim_refs:
+  - CLM:red_team:GRM5:001
+  counter_level: 2
+  counter_rationale: Several hundred participants were exposed across multiple terminated and completed
+    mGluR5 NAM studies, including long-term open-label dosing, and not one registry record gives safety
+    as the reason for stopping. That is one human interventional line of evidence with a relevant endpoint
+    against a prohibitive liability burden.
+  counter_claim_refs:
+  - CLM:red_team:GRM5:001
+  limiting_factor: tolerability is inferred from the absence of safety-driven terminations rather than
+    from a reported safety analysis, and no healthy-adult exposure data were located
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 2
+  rationale: Moderate, and the reasoning is unusual. The developmental exposure is not that the evidence
+    comes from developmental manipulations but that the only cognitive-endpoint trial was DELIBERATELY
+    moved to 3-to-6-year-old children on the stated expectation that younger brains would respond where
+    adults had not - and the adults had already failed. So the mechanism's cognitive evidence base is
+    structurally juvenile by design, and the adult evidence is a prior failure.
+  claim_refs:
+  - CLM:alphacognition:GRM5:001
+  - CLM:red_team:GRM5:001
+  counter_level: 1
+  counter_rationale: Adult humans were dosed with this mechanism in the earlier fragile X studies, so
+    it is engageable in adults; what those studies showed is that engaging it did not help, which is weak
+    counter-evidence to a developmental-confound grade rather than strong.
+  counter_claim_refs:
+  - CLM:red_team:GRM5:001
+  limiting_factor: no healthy-adult cognitive study of this mechanism exists, and the trial design history
+    indicates the field moved away from adults deliberately
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: deprioritise. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

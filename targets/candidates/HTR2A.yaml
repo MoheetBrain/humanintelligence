@@ -1,0 +1,69 @@
+# Target dossier — AlphaCognition v0.1 (lead atlas: alphacognition).
+# `identifiers` is deliberately left empty: it is machine-filled from HGNC by
+# scripts/fetch_gene_identifiers.py (contract §5.1, §7). No accession is hand-written here.
+# `computational_primitives` is empty for every dossier in this atlas because
+# ontology/computational_primitives.yaml did not exist when these were authored; declaring
+# PRIM ids against a non-existent vocabulary would create unresolvable cross-references.
+target_id: TGT:HTR2A
+schema_version: 0.1.0
+symbol: HTR2A
+lead_atlas: alphacognition
+seed_origin: user_seed_list
+dossier_depth: shallow
+identifiers: {}
+target_class: g_protein_coupled_receptor
+represented_entities:
+- GENE:HTR2A
+- PROT:P28223
+member_genes: []
+control_point_hypothesis:
+  statement: 'HTR2A encodes the 5-HT2A receptor, densely expressed on cortical pyramidal neurons and the
+    primary molecular target of serotonergic psychedelics. Two seed hypotheses are usually run together
+    and are separated here: (a) 5-HT2A signalling supports cognitive flexibility and cortical plasticity,
+    and (b) 5-HT2A agonism carries psychiatric liability. The retrieved evidence supports (a) only indirectly
+    and in rodents via ANTAGONISM impairing reversal learning (CLM:...:HTR2A:001, whose regional localisation
+    attempt was null), while the only direct human interventional evidence shows acute self-reported impairment
+    of control and cognition (CLM:...:HTR2A:002) and a null on measured cognitive empathy and moral reasoning
+    (CLM:...:HTR2A:003).'
+  proposed_modulation: context_dependent
+  mechanism_chain:
+  - CLM:alphacognition:HTR2A:001
+  - CLM:alphacognition:HTR2A:002
+  state_variables:
+  - id: SV:cognition.cognitive_flexibility
+    asserted_relation: modulates
+    direction: unclear
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:HTR2A:001
+  - id: SV:safety.anxiety_risk
+    asserted_relation: modulates
+    direction: increases
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:HTR2A:002
+  computational_primitives: []
+known_liabilities:
+- AE:anxiety
+- AE:ego_dissolution
+- AE:blood_pressure_increase
+- AE:heart_rate_increase
+developmental_confound: unknown
+developmental_confound_rationale: 'Not assessed: no developmental evidence for HTR2A was retrieved in
+  v0.1.'
+open_questions:
+- Is there ANY measured (not self-reported) cognitive-flexibility improvement in healthy adults from 5-HT2A
+  agonism? None was retrieved; the closest human data are an acute impairment rating and a cognitive null.
+- 'Post-acute versus acute: all retrieved human data is acute intoxication. Claims about lasting flexibility
+  gains were not retrievable with the searches run.'
+- Both psilocybin and LSD are receptor-promiscuous, so no retrieved human evidence isolates HTR2A.
+- The liability list is drawn from the acute human study's own reported effects; a systematic psychiatric-liability
+  search (persisting perceptual changes, psychosis risk) was NOT run by this agent and belongs to the
+  red team.
+- 'State-variable coupling caveat — SV:safety.anxiety_risk: the cited human study reported higher anxiety
+  ratings at the higher dose; psychosis risk was NOT measured and is deliberately not asserted'
+status: under_review
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  run_id: sprint1-alphacognition-curation-01

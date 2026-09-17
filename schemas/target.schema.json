@@ -1,0 +1,479 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/target",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "$comment": "state_dependent names a KNOWN dependency, so it must say which.",
+      "if": {
+        "properties": {
+          "direction": {
+            "const": "state_dependent"
+          }
+        },
+        "required": [
+          "direction"
+        ]
+      },
+      "then": {
+        "properties": {
+          "direction_context": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "direction_context"
+        ]
+      }
+    },
+    {
+      "$comment": "A stated developmental-confound grade requires its rationale (contract \u00a75.1).",
+      "if": {
+        "properties": {
+          "developmental_confound": {
+            "$comment": "vocabulary: developmental_confound (requires_rationale)",
+            "enum": [
+              "high",
+              "moderate",
+              "low"
+            ]
+          }
+        },
+        "required": [
+          "developmental_confound"
+        ]
+      },
+      "then": {
+        "required": [
+          "developmental_confound_rationale"
+        ]
+      }
+    }
+  ],
+  "description": "One target dossier (contract \u00a75.1). `identifiers` is MACHINE-FILLED from HGNC: an agent authoring this record leaves it empty, because agents never hand-write HGNC/Ensembl/UniProt accessions (\u00a77). The control-point hypothesis is a HYPOTHESIS \u2014 its mechanism_chain must be claim ids that resolve, and a state-variable link with no claim_refs asserts nothing.",
+  "examples": [
+    {
+      "dossier_depth": "shallow",
+      "identifiers": {},
+      "lead_atlas": "ontology",
+      "provenance": {
+        "created_by": "agent:ontology",
+        "created_on": "2026-09-17",
+        "run_id": "schema-example"
+      },
+      "schema_version": "0.1.0",
+      "seed_origin": "agent_proposed",
+      "status": "seed_hypothesis",
+      "symbol": "PLACEHOLDER",
+      "target_id": "TGT:PLACEHOLDER"
+    }
+  ],
+  "properties": {
+    "attributes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Descriptive domain metadata this schema does not model \u2014 an AAV construct's serotype, a probe's assay format, a cohort's genotyping array. Values must be STRINGS: a number in an unvalidated bag would escape rule V9's provenance requirement. A HOLDING AREA, not a permanent home \u2014 anything here that turns out to be decision-relevant must graduate to a real, validated field through a schema-change request (contract \u00a75.5).",
+      "type": "object"
+    },
+    "brake_class": {
+      "description": "Brake taxonomy label carried over from targets/seed_registry.yaml (brake_category). A work-organisation label, not a finding.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "control_point_hypothesis": {
+      "additionalProperties": false,
+      "description": "A hypothesis, explicitly labelled as such. Claim ids must resolve (rule V4).",
+      "properties": {
+        "computational_primitives": {
+          "items": {
+            "description": "Primitive id.",
+            "pattern": "^PRIM:[a-z][a-z0-9_]*$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "mechanism_chain": {
+          "description": "Claim ids. Every id must resolve (rule V4).",
+          "items": {
+            "description": "Claim id.",
+            "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "proposed_modulation": {
+          "$comment": "vocabulary: proposed_modulation",
+          "description": "Direction proposed. `unknown` is often correct.",
+          "enum": [
+            "decrease_activity",
+            "increase_activity",
+            "restore_toward_setpoint",
+            "context_dependent",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "state_variables": {
+          "items": {
+            "additionalProperties": false,
+            "properties": {
+              "asserted_relation": {
+                "description": "Relation asserted, in the ontology's terms.",
+                "pattern": "^[A-Za-z][A-Za-z_]*$",
+                "type": "string"
+              },
+              "claim_refs": {
+                "description": "Claim ids. Every id must resolve (rule V4).",
+                "items": {
+                  "description": "Claim id.",
+                  "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+                  "type": "string"
+                },
+                "type": "array",
+                "uniqueItems": true
+              },
+              "direction": {
+                "$comment": "vocabulary: direction",
+                "description": "Sign asserted.",
+                "enum": [
+                  "increases",
+                  "decreases",
+                  "no_change",
+                  "bidirectional",
+                  "inverted_u",
+                  "u_shaped",
+                  "state_dependent",
+                  "unclear"
+                ],
+                "type": "string"
+              },
+              "id": {
+                "description": "State variable id.",
+                "pattern": "^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\\.[a-z0-9][a-z0-9_]*$",
+                "type": "string"
+              },
+              "response_shape": {
+                "$comment": "vocabulary: response_shape",
+                "description": "Shape asserted. `unknown` is the default.",
+                "enum": [
+                  "linear",
+                  "threshold",
+                  "inverted_u",
+                  "u_shaped",
+                  "state_dependent",
+                  "unknown"
+                ],
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "asserted_relation",
+              "direction",
+              "response_shape",
+              "claim_refs"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "statement": {
+          "minLength": 1,
+          "type": "string"
+        }
+      },
+      "required": [
+        "statement",
+        "proposed_modulation",
+        "mechanism_chain"
+      ],
+      "type": "object"
+    },
+    "developmental_confound": {
+      "$comment": "vocabulary: developmental_confound",
+      "description": "Risk that the evidence reflects development, not adult biology.",
+      "enum": [
+        "high",
+        "moderate",
+        "low",
+        "unknown"
+      ],
+      "type": "string"
+    },
+    "developmental_confound_rationale": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "dossier_depth": {
+      "$comment": "vocabulary: dossier_depth",
+      "description": "Declared depth, then checked against contents.",
+      "enum": [
+        "deep",
+        "shallow"
+      ],
+      "type": "string"
+    },
+    "identifiers": {
+      "additionalProperties": false,
+      "description": "MACHINE-FILLED from HGNC. Leave {} when authoring (contract \u00a75.1).",
+      "properties": {
+        "ensembl_gene_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "entrez_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "hgnc_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "identifier_provenance": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "uniprot_ids": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "known_liabilities": {
+      "description": "An EMPTY list means nobody looked, never 'safe'.",
+      "items": {
+        "description": "Adverse effect id.",
+        "pattern": "^AE:[a-z0-9][a-z0-9_]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "lead_atlas": {
+      "$comment": "vocabulary: agent_id (bare names, orchestrator excluded)",
+      "description": "Atlas responsible for this dossier.",
+      "enum": [
+        "ontology",
+        "alphacognition",
+        "brakes",
+        "power",
+        "comparative",
+        "integration",
+        "red_team"
+      ],
+      "type": "string"
+    },
+    "member_genes": {
+      "description": "For complexes only.",
+      "items": {
+        "description": "Gene id.",
+        "pattern": "^GENE:[A-Z0-9][A-Z0-9_.-]*$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "modulator_class": {
+      "description": "Neuromodulator-class label from the seed registry.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "open_questions": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "power_node": {
+      "description": "Power-axis label from the seed registry. Organisational only.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "primary_state_domains": {
+      "description": "State domains this target is expected to touch. A work assignment from the seed registry, NOT an asserted coupling: asserting one needs a claim.",
+      "items": {
+        "$comment": "vocabulary: state_domain",
+        "enum": [
+          "cognition",
+          "power",
+          "efficiency",
+          "plasticity",
+          "workspace",
+          "consolidation",
+          "stability",
+          "safety"
+        ],
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "description": "Who wrote this record, when and how. The supporting_* lists exist so a database-derived record can name what it aggregates instead of hiding it.",
+      "properties": {
+        "created_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "created_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        },
+        "database_release": {
+          "description": "Pinned DatabaseRelease the record was derived from.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "method": {
+          "$comment": "vocabulary: claim_method",
+          "description": "How this record was produced.",
+          "enum": [
+            "literature_curation",
+            "database_ingestion",
+            "derived_from_claims"
+          ],
+          "type": "string"
+        },
+        "pipeline": {
+          "description": "Repo-relative script that produced the record, for database_ingestion. Makes the record rebuildable (P7).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "run_id": {
+          "description": "Agent run identifier, for tracing a record to a session.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "supporting_accessions": {
+          "description": "Any other accessions the record rests on.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_pubmed_ids": {
+          "description": "PubMed ids the database record itself cites.",
+          "items": {
+            "pattern": "^[0-9]{1,9}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_ids": {
+          "description": "Study accessions the database record aggregates.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_locus_ids": {
+          "description": "Opaque per-locus keys from the source database.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "created_by",
+        "created_on"
+      ],
+      "type": "object"
+    },
+    "represented_entities": {
+      "description": "Biological entities this target stands for (compiled to REPRESENTS).",
+      "items": {
+        "description": "Gene/protein/complex id.",
+        "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "seed_origin": {
+      "$comment": "vocabulary: seed_origin",
+      "description": "Where this target came from.",
+      "enum": [
+        "user_seed_list",
+        "agent_proposed"
+      ],
+      "type": "string"
+    },
+    "status": {
+      "$comment": "vocabulary: dossier_status",
+      "description": "Dossier lifecycle.",
+      "enum": [
+        "seed_hypothesis",
+        "under_review",
+        "downgraded",
+        "deprioritised"
+      ],
+      "type": "string"
+    },
+    "symbol": {
+      "description": "HGNC-approved symbol, or a complex slug in upper case.",
+      "pattern": "^[A-Z0-9][A-Z0-9_.-]*$",
+      "type": "string"
+    },
+    "target_class": {
+      "description": "Free-text class (receptor_subunit, transporter, ...).",
+      "minLength": 1,
+      "type": "string"
+    },
+    "target_id": {
+      "description": "TGT:{symbol or complex slug}.",
+      "pattern": "^TGT:[A-Z0-9][A-Z0-9_.-]*$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "target_id",
+    "symbol",
+    "lead_atlas",
+    "seed_origin",
+    "dossier_depth",
+    "status",
+    "provenance"
+  ],
+  "title": "Target dossier",
+  "type": "object"
+}

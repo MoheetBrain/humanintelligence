@@ -1,0 +1,237 @@
+# Red-team audit - GABRA5. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:GABRA5:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:GABRA5
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'human_genetic_association is level 1 for this target, so no positional association is doing
+      causal work here. human_genetic_association reaches level 3 for nine targets on catalogued associations
+      whose gene attribution is positional, while causal_gene_attribution reaches 0-2 for all 27 and 3-4
+      for none. The facet decomposition is correct and the association grade is not downgraded for the
+      attribution gap - that would double-count it. The exposure is in the aggregation: D1 is a weighted
+      sum, so a level-3 association contributes support at 0.25 weight regardless of the attribution level.
+      Recorded against the model, not the atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: flag
+    note: The CA1-restricted deletion loses receptors progressively from about four weeks of age, so onset
+      precedes testing and the dossier says so. Adult pharmacological access exists and is documented
+      with occupancy (CLM:brakes:GABRA5:005), which is what keeps this at flag rather than fail.
+    evidence_refs:
+    - CLM:brakes:GABRA5:001
+    - CLM:brakes:GABRA5:005
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: The developer's own preclinical summary describes the rodent cognitive result as attenuation
+      of a DIAZEPAM-INDUCED spatial learning impairment - a rescue of a pharmacologically imposed deficit
+      - plus one non-human-primate object retrieval task (SRC:PMID:33833333). The atlas's own enhancement
+      evidence (CLM:brakes:GABRA5:001, :002) is a genuine above-wild-type comparison and is not affected
+      by this, but the wider preclinical case for the mechanism is substantially rescue.
+    evidence_refs:
+    - CLM:brakes:GABRA5:001
+    - CLM:brakes:GABRA5:002
+    - SRC:PMID:33833333
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: The supporting case is two rodent memory tasks; the human case is now two null cognitive composites.
+      The atlas labels every rodent claim animal_task_only and caps transfer_breadth at 1. The gap between
+      the rodent and human pictures is the finding, and after this audit the human side is the better-evidenced
+      one.
+    evidence_refs:
+    - CLM:brakes:GABRA5:001
+    - CLM:red_team:GABRA5:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: pass
+    note: The three one-paper claims declare their shared origin in `dependencies`, and the red team's
+      own replication claim names both trials in one record rather than filing them as two, so the human
+      null cannot be counted twice.
+    evidence_refs:
+    - CLM:red_team:GABRA5:001
+  - check: citation_dependence
+    result: flag
+    note: 'CLM:brakes:GABRA5:001, :002 and :003 all come from one paper (SRC:PMID:32934095) read in full
+      text - the enhancement, the second enhancement and the discrimination cost are three readings of
+      one experiment, which the atlas''s `dependencies` fields state. Because that single paper supplies
+      both the atlas''s best evidence FOR the target and its within-study counter-evidence, the two move
+      together: if the paper is wrong, both sides fall. Every Open Targets safetyLiabilities row used
+      in this audit traces to one of two PMIDs, SRC:PMID:28216264 and SRC:PMID:23197038, and both are
+      pharmaceutical-industry safety-pharmacology curation reviews over overlapping published literature.
+      Two rows agreeing is therefore close to one source agreeing with itself. The target-level safety
+      layer for the six annotated seed targets rests on two review papers.'
+    evidence_refs:
+    - CLM:brakes:GABRA5:001
+    - CLM:brakes:GABRA5:002
+    - CLM:brakes:GABRA5:003
+  - check: publication_bias
+    result: pass
+    note: This is the best-balanced target in the repository. The atlas cited the negative human trial,
+      the within-study cost, and the opposite-direction result. The one gap - unretrieved posted results
+      - was declared and is now closed, and closing it made the picture more negative, not less.
+    evidence_refs:
+    - CLM:brakes:GABRA5:004
+    - CLM:red_team:GABRA5:001
+  - check: negative_clinical_evidence
+    result: fail
+    note: 'THE HEADLINE FINDING OF THIS AUDIT. The alpha5-GABA-A negative allosteric modulator mechanism
+      has now failed TWO independently reported randomised placebo-controlled trials with pre-specified
+      multi-domain cognitive primary endpoints, in two different populations. agent:brakes found and correctly
+      recorded the first (CLEMATIS, SRC:PMID:35123401) and named the second as the largest unresolved
+      item in its dossier, refusing to grade a result it had not read. The red team retrieved it. Published:
+      SRC:PMID:41983730 - 24 weeks, 213 randomised, no improvement in the MCCB neurocognitive composite
+      or any secondary or stratified subgroup, with the 80 mg arm stopped for futility at a planned analysis.
+      Posted registry results quantify it: treatment difference 0.28 composite T-score points, 95% CI
+      -1.47 to 2.02, p=0.793 on a scale whose population SD is 10, so the interval excludes anything above
+      roughly 0.2 SD in either direction. This is a PRECISE null, not an underpowered one. A third trial
+      (SRC:NCT:NCT02484703, n=45) was terminated with the sponsor stating in the registry that it stopped
+      because another study showed no efficacy and that safety was not the reason.'
+    evidence_refs:
+    - CLM:red_team:GABRA5:001
+    - SRC:NCT:NCT02484703
+    - SRC:NCT:NCT02953639
+    - SRC:PMID:35123401
+    - SRC:PMID:41983730
+  - check: dose_response_inversion
+    result: flag
+    note: Positive and negative modulation of the same receptor both improve memory, at different baselines
+      (CLM:brakes:GABRA5:006), and the atlas records the response shape as state_dependent rather than
+      inverted-U because nobody measured the curve. Correct handling, and it means the sign of the useful
+      manipulation is gated on an unmeasurable human state (baseline inhibitory tone).
+    evidence_refs:
+    - CLM:brakes:GABRA5:006
+  - check: seizure_liability
+    result: flag
+    note: 'Direction matters and the direction is unfavourable: the curation annotation attributes convulsions
+      to INHIBITION of alpha5 and decreased convulsions to its activation, so the proposed direction is
+      the one associated with seizure liability, and Open Targets also carries an AOP-Wiki ''Occurrence,
+      Epileptic seizure'' entry. Against that, the developer reports no proconvulsant effect in rats at
+      the 30-65 percent occupancy range taken into the clinic, and both human trials reported good tolerability.
+      Net: a class-level, plausibly occupancy-avoidable liability, not an observed human signal.'
+    evidence_refs:
+    - CLM:brakes:GABRA5:008
+    - CLM:red_team:GABRA5:002
+    - SRC:PMID:33833333
+  - check: psychiatric_liability
+    result: flag
+    note: The curation annotation lists decreased anxiety at activation, implying increased anxiety at
+      inhibition, and drug abuse or dependence. The dossier carries AE:anxiety and AE:drug_dependence.
+      No anxiety or abuse endpoint was measured in either human trial's retrieved report, so this is class-level
+      only.
+    evidence_refs:
+    - CLM:brakes:GABRA5:008
+  - check: systemic_adverse_effects
+    result: pass
+    note: Two randomised human trials totalling 386 randomised participants both report good tolerability
+      with adverse-event frequency and nature similar to placebo. This is real human safety evidence and
+      it is favourable; recorded as a pass rather than softened, because an audit that only ever reports
+      bad news is not an audit.
+    evidence_refs:
+    - SRC:PMID:35123401
+    - SRC:PMID:41983730
+  - check: model_organism_translation_failure
+    result: fail
+    note: 'This is now a DEMONSTRATED translation failure rather than a risk: replicated rodent memory
+      enhancement with confirmed human target engagement and two null human cognitive composites. It is
+      the clearest instance in the repository of the specific failure mode contract principle P4 exists
+      to prevent.'
+    evidence_refs:
+    - CLM:brakes:GABRA5:001
+    - CLM:red_team:GABRA5:001
+    - SRC:PMID:35123401
+  - check: overclaiming
+    result: pass
+    note: 'agent:brakes graded human_intervention_evidence level 1 / counter_level 3 and stated in a required
+      field that the one completed multi-domain trial had posted results it did not retrieve. That is
+      the opposite of overclaiming: it named the gap, refused to grade it, and refused to count three
+      terminated trials as nulls. The downgrades below follow from new evidence, not from a defect in
+      the atlas''s reasoning.'
+  - check: provenance_integrity
+    result: flag
+    note: 'CLM:brakes:GABRA5:008 carries content_checked: false and attributes a safety set to a curation
+      table it did not read. The red team read that source (SRC:PMID:28216264) and confirms the claim
+      describes it exactly: it is a literature curation effort over 70 targets, and the claim says so.
+      The record is correct as written and should be RETAINED. One genuine internal inconsistency: context.species
+      is human while translation.human_relevance is other_species_only. The curation table attributes
+      no species at row level, so the honest value is unknown; the error runs in the conservative direction
+      and cannot inflate the target.'
+    evidence_refs:
+    - CLM:brakes:GABRA5:008
+    - SRC:PMID:28216264
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:GABRA5:001#f1
+    severity: critical
+    category: negative_clinical_evidence
+    description: The alpha5-GABA-A NAM mechanism has failed two independently reported randomised trials
+      with pre-specified multi-domain cognitive primary endpoints, and the larger trial's posted results
+      bound the treatment difference to 0.28 composite T-score points (95% CI -1.47 to 2.02, p=0.793)
+      on a scale with population SD 10. Human target engagement was demonstrated in the companion trial,
+      so this is not explained by failure to reach the target. The human null for this mechanism is now
+      REPLICATED and quantified.
+    evidence_refs:
+    - CLM:red_team:GABRA5:001
+    - SRC:NCT:NCT02953639
+    - SRC:PMID:41983730
+  - finding_id: AUD:red_team:GABRA5:001#f2
+    severity: info
+    category: other
+    description: Closing the gap agent:brakes declared. That agent had the registry record for NCT02953639
+      and refused to grade a result it had not read, calling it the largest unresolved item in the dossier
+      and saying it could move the facet either way. It moved it downward. The refusal was correct behaviour
+      and the mechanism worked as the blackboard intends.
+    evidence_refs:
+    - SRC:NCT:NCT02953639
+  - finding_id: AUD:red_team:GABRA5:001#f3
+    severity: minor
+    category: provenance_integrity
+    description: CLM:brakes:GABRA5:008 has context.species human but translation.human_relevance other_species_only.
+      The underlying curation table attributes no species at row level, so the honest value for both is
+      unknown. The inconsistency is conservative in direction and no level depends on it.
+    evidence_refs:
+    - CLM:brakes:GABRA5:008
+  adjustments:
+  - kind: facet
+    target_id: TGT:GABRA5
+    facet: human_intervention_evidence
+    field: counter_level
+    from_level: 3
+    to_level: 4
+    reason: The human null is now replicated across two independently reported randomised trials in two
+      populations, consistent in direction, one with demonstrated pharmacodynamic target engagement and
+      one with posted results that bound the effect tightly. Level 4 on evidence_strength_v1 is 'replicated
+      human evidence bearing directly on this facet's proposition, consistent in direction', which is
+      now satisfied on the contradicting side. Raising counter_level is a downgrade of the target's standing.
+  - kind: facet
+    target_id: TGT:GABRA5
+    facet: above_baseline_enhancement
+    field: counter_level
+    from_level: 3
+    to_level: 4
+    reason: Same evidence. Two randomised trials with pre-specified cognitive primaries found no improvement,
+      and the second bounds the effect below roughly 0.2 SD. Combined with the within-study discrimination
+      cost in the mouse and the opposite-direction benefit in aged rats, the contradicting evidence against
+      above-baseline enhancement is now replicated human evidence.
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

@@ -1,0 +1,34 @@
+# Schema change request ontology-005
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-005
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Rename locus_to_gene_resolved's `yes`/`no` values in v0.2.0.
+
+motivation: >-
+  Contract §4 gives the enum as `yes | no | partial | not_applicable`. Under YAML 1.1,
+  unquoted `yes` and `no` parse as BOOLEANS, so `locus_to_gene_resolved: no` silently becomes
+  `false` and fails validation with a type error that sends the curator looking in the wrong
+  place. Four claims across two atlases hit this. LOCUS IS NOT GENE is one of the six required
+  distinctions, so its field must not be the one with a syntax trap.
+
+proposed_change: >-
+  In v0.2.0 rename to `resolved | not_resolved | partial | not_applicable`. For v0.1.0 the
+  values are quoted in ontology/vocabularies.yaml.
+
+implemented_as: >-
+  Values quoted, so the vocabulary itself is correct. blueprint.records.CausalAttribution
+  intercepts the boolean and explains the real cause: 'unquoted `no` is a boolean in YAML 1.1.
+  Write locus_to_gene_resolved: "no" with quotes.'

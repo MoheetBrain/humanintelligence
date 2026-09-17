@@ -1,0 +1,299 @@
+{
+  "data": {
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    },
+    "target": {
+      "approvedSymbol": "GRIN2B",
+      "biotype": "protein_coding",
+      "chemicalProbes": [
+        {
+          "drugId": "CHEMBL48029",
+          "id": "CHEMBL48029",
+          "isHighQuality": false,
+          "probeMinerScore": 31
+        }
+      ],
+      "id": "ENSG00000273079",
+      "safetyLiabilities": [
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "convulsions",
+          "eventId": "EFO_0009853",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "dizziness",
+          "eventId": "EFO_0009847",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "pain",
+          "eventId": "HP_0012531",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "ClinPGx",
+          "event": "sleepiness",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "ClinPGx",
+          "event": "adverse reactions",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "ClinPGx",
+          "event": "neurological adverse reactions and sleepiness",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "stereotypy",
+          "eventId": "HP_0000733",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased locomotor activity",
+          "eventId": "GO_0040017",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased heart rate",
+          "eventId": "HP_0001649",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "neurodegeneration",
+          "eventId": "HP_0002180",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased convulsions",
+          "eventId": "EFO_0009853",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased pain",
+          "eventId": "GO_1904057",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "psychosis",
+          "eventId": "MONDO_0005485",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "impaired social interactions",
+          "eventId": "HP_0000735",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased blood pressure",
+          "eventId": "HP_0032263",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased then decreased heart rate",
+          "eventId": "HP_0031860",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "neurotoxicity",
+          "eventId": "MONDO_0005527",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "ataxia",
+          "eventId": "MONDO_0000437",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "drug abuse/dependence",
+          "eventId": "MONDO_0005303",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased memory",
+          "eventId": "EFO_0001072",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "ClinPGx",
+          "event": "neurological adverse reactions",
+          "eventId": "",
+          "literature": null
+        }
+      ],
+      "tractability": [
+        {
+          "label": "Approved Drug",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Structure with Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Med-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Druggable Family",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt loc high conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "GO CC high conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "UniProt loc med conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "UniProt SigP or TMHMM",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "GO CC med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Human Protein Atlas loc",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Literature",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "UniProt Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Database Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Half-life Data",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Small Molecule Binder",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "OC",
+          "value": true
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "OC",
+          "value": false
+        }
+      ]
+    }
+  }
+}

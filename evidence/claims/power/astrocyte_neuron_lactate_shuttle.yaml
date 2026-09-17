@@ -1,0 +1,421 @@
+# Claims — topic: the astrocyte-neuron lactate shuttle (ANLS)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# THIS TOPIC IS CONTESTED AND THIS FILE IS BUILT TO SHOW THAT
+# -----------------------------------------------------------
+# 001  the founding causal result                                     evidence_role: supports
+# 002  the methodological critique: the shuttle was never measured    evidence_role: contradicts
+# 003  a region- and phase-specific counter-result                    evidence_role: contradicts
+# 004  a correlational result whose sign reverses with baseline       evidence_role: qualifies
+# 005  reconsolidation of an appetitive drug memory                   evidence_role: supports
+#
+# Anyone consuming this atlas should note that 001, the founding study, and 002, the
+# critique, are BOTH registered here with opposite roles and neither is marked
+# withdrawn. The shuttle is not settled physiology in this repository and must not be
+# compiled into the graph as though it were.
+#
+# All of it is rodent. None of it is human. None of it concerns a healthy rested adult
+# human at normal baseline, and none of it tests whether increasing shuttle flux above
+# normal increases anything.
+
+- claim_id: CLM:power:anls:001
+  schema_version: 0.1.0
+  statement: >-
+    In rat hippocampus, learning raised extracellular lactate derived from astrocytic
+    glycogen, and blocking glycogen breakdown or the astrocytic lactate transporters
+    produced amnesia and impaired maintenance of in-vivo long-term potentiation that
+    L-lactate but not equicaloric glucose reversed, while short-term memory was spared.
+  subject: PROC:astrocyte_neuron_lactate_shuttle
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte, CELL:neuron]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "lactate transfer itself was not measured in this study; it is inferred from the effects of blocking transporters and from extracellular lactate levels"
+      - "glycogenolysis inhibition also disturbs astrocytic potassium and calcium handling and glutamate synthesis, any of which could block consolidation without a fuel shuttle"
+      - "rescue by L-lactate is equally compatible with lactate acting as a signal"
+  evidence:
+    - source_id: SRC:PMID:21376239
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "adult rats with hippocampal glycogenolysis inhibition or antisense knockdown of MCT1, MCT4 or MCT2"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term and short-term memory, in-vivo LTP maintenance, phospho-CREB, Arc and phospho-cofilin induction"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Converging causal manipulations with internal substrate-specific rescue,
+      independently reproduced by other groups; entirely rodent and subject to a
+      published specificity critique that this atlas records separately.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["astrocytic ion homeostasis", "glutamate synthesis", "tool specificity"]
+  dependencies: []
+  status: contested
+  status_reason: >-
+    Self-contested by agent:power on curation, not by audit. CLM:power:anls:002 records
+    a published methodological critique stating that lactate shuttling was never
+    measured in any study supporting it and that the glycogenolysis and monocarboxylate
+    blockers used are not specific. Both records stand; neither is withdrawn. Awaiting
+    a red-team audit record.
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:anls:002
+  schema_version: 0.1.0
+  statement: >-
+    Reviewing the shuttle literature, the author states that lactate shuttling was not
+    measured in any of the studies used to support it and that the procedures used to
+    inhibit glycogenolysis and neuronal monocarboxylate uptake are not specific, and
+    proposes testable alternatives including disrupted potassium and calcium
+    homeostasis, gliotransmitter release, inhibition of mitochondrial pyruvate
+    transport by the blockers themselves, and interference with astrocytic filopodial
+    movement.
+  subject: PROC:astrocyte_neuron_lactate_shuttle
+  predicate: MODULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10116, SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: [CELL:astrocyte, CELL:neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "this is a single author's critical review, not new data, and the alternatives it proposes are explicitly labelled as testable rather than tested"
+      - "the author has a long-standing published position against the shuttle, so the review is not a neutral appraisal"
+      - "the critique does not explain the substrate-specific rescue asymmetry between astrocytic and neuronal transporters"
+  evidence:
+    - source_id: SRC:PMID:30667077
+      design: narrative_review
+      species: SPECIES:NCBITaxon:10116
+      population: "not applicable; critical review of cultured-cell, co-culture and in-vivo shuttle studies"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "adequacy of evidence for glycogen-derived lactate transfer during neurotransmission and memory consolidation"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A substantive, specific methodological objection that directly attacks the
+      inferential basis of the whole strand; it is a review rather than data, and its
+      author is a declared partisan, which cuts both ways.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:anls:003
+  schema_version: 0.1.0
+  statement: >-
+    During acquisition of contextual fear conditioning in rats, glucose-analogue
+    uptake rose in dorsal hippocampal neurons but not in amygdala or cerebellum, a
+    glucose transporter inhibitor injected into dorsal hippocampus reduced freezing
+    whereas a monocarboxylate transporter inhibitor did so only in amygdala, and
+    lentiviral knockdown of GLUT3 in dorsal hippocampus impaired acquisition, so the
+    energy route used depended on region and on memory phase.
+  subject: PROC:astrocyte_neuron_lactate_shuttle
+  predicate: CONSTRAINS
+  object: SV:cognition.learning_rate
+  claim_type: causal_perturbation
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus, REGION:amygdala]
+    cell_types: [CELL:neuron]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the monocarboxylate transporter inhibitor used is not transporter-subtype selective, so the negative hippocampal result cannot exclude a role for a specific transporter"
+      - "acquisition and consolidation were probed at different times with different agents, which makes the phase dissociation partly a design artefact"
+      - "single study"
+  evidence:
+    - source_id: SRC:PMID:29209168
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "rats undergoing contextual fear conditioning with regional transporter inhibition or GLUT3 knockdown"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "2-NBDG-positive neuron counts and freezing during and 1 hour after contextual fear conditioning"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A directly relevant counter-result with a within-study regional dissociation,
+      but a single study using non-selective pharmacology.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["non-selective transporter inhibitors", "phase and agent confounded"]
+  dependencies: [CLM:power:anls:001]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:anls:004
+  schema_version: 0.1.0
+  statement: >-
+    Across ageing wild-type and APP/PS1 mice, frontal cortical lactate and aerobic
+    glycolysis enzyme expression declined with age in controls and higher expression of
+    lactate-producing enzymes correlated with better memory in controls, whereas in the
+    amyloid model the same higher expression correlated with worse memory and lactate
+    levels stayed elevated.
+  subject: SV:power.lactate_flux
+  predicate: PREDICTS
+  object: SV:cognition.general_cognitive_ability
+  claim_type: association
+  direction: bidirectional
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: mixed
+    baseline_context: mixed
+    brain_regions: [REGION:frontal_cortex, REGION:hippocampus]
+    cell_types: [CELL:astrocyte, CELL:neuron]
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "purely correlational: no manipulation of glycolytic enzyme expression was performed"
+      - "the sign reversal between genotypes is the whole point and also means the correlation carries no stable directional information"
+      - "magnetic resonance spectroscopy and microdialysis lactate measurements are sensitive to anaesthesia and probe insertion"
+  evidence:
+    - source_id: SRC:PMID:26865611
+      design: in_vivo_imaging
+      species: SPECIES:NCBITaxon:10090
+      population: "APP/PS1 and control mice from 3 to 12 months of age"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "frontal cortical lactate by 1H-MRS, hippocampal interstitial lactate by microdialysis, glycolytic enzyme and lactate transporter expression, memory performance"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Correlational only, single study, and its own headline is that the correlation
+      reverses sign depending on baseline state.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["genotype", "age", "anaesthesia", "microdialysis probe effects"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:anls:005
+  schema_version: 0.1.0
+  statement: >-
+    Injecting a glycogen phosphorylase inhibitor into rat basolateral amygdala
+    immediately after retrieval lowered local lactate and prevented subsequent
+    expression of cocaine-induced conditioned place preference and reduced
+    self-administration responding, and antisense disruption of MCT1 and MCT2 in the
+    same region produced the same deficit, which pre-treatment with L-lactate reversed.
+  subject: PROC:astrocyte_neuron_lactate_shuttle
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.reconsolidation_window_width
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:amygdala]
+    cell_types: [CELL:astrocyte, CELL:neuron]
+  phenotype_class: animal_operant_task
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the memory in question is a cocaine-associated appetitive memory, which need not share energetic requirements with neutral declarative learning"
+      - "the same specificity critique of glycogenolysis inhibitors and antisense knockdown applies"
+      - "the microdialysis lactate measurement confirms a concentration change, not a transfer between cell types"
+  evidence:
+    - source_id: SRC:PMID:26293178
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "male Sprague-Dawley rats trained for cocaine conditioned place preference or self-administration"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "conditioned place preference score, nosepoke number, basolateral amygdala lactate concentration"
+      endpoint_category: animal_operant_task
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Independent group, different brain region, different memory type, with an
+      internal lactate rescue; still rodent, still the same toolkit, and the
+      phenotype is a drug memory.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["psychostimulant exposure", "tool specificity"]
+  dependencies: [CLM:power:anls:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

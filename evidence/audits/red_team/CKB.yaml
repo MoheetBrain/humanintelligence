@@ -1,0 +1,149 @@
+# Red-team audit - CKB. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:CKB:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:CKB
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: fail
+    note: All CKB and creatine-kinase perturbations retrieved are germline knockouts, and the authors
+      themselves report accompanying hippocampal mossy-fibre STRUCTURAL change - so the behavioural phenotype
+      is confounded by anatomical remodelling, not merely by onset timing. There is no adult-inducible
+      manipulation of CKB anywhere in the located literature.
+    evidence_refs:
+    - CLM:power:CKB:001
+    - CLM:power:CKB:003
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: No above-baseline manipulation of creatine kinase activity exists in any species. The human
+      creatine literature that bears on this axis shows benefit concentrated at low baseline.
+    evidence_refs:
+    - CLM:power:creatine_human:002
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Animal spatial learning on one side, positional GWAS association on the other, with nothing
+      joining them.
+    evidence_refs:
+    - CLM:power:CKB:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'CKB''s level-3 human_genetic_association SURVIVES on genuine intelligence-trait associations
+      from five publications including SRC:PMID:29942086. Two of its l2g records are labelled educational_attainment
+      and correctly capped. No laundering affects the grade. Repository-level: the trait panel classes
+      GWAS Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class fluid_reasoning while
+      marking it use_in_ranking: supporting with the note ''never a stand-alone basis for a facet level''.
+      pipelines/alphacognition/build_assessments.py tests phenotype_class, not use_in_ranking, so that
+      restriction never fires. The underlying records are ''Self-reported math ability'' and ''Highest
+      math class taken (MTAG)'' from SRC:PMID:30038396, a genome-wide association study of EDUCATIONAL
+      ATTAINMENT. Five claims rest entirely on such records: gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002,
+      gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:l2g.CKB:002
+    - CLM:alphacognition:l2g.CKB:004
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: The behavioural case rests on a secondary report of a primary study nobody in this repository
+      has read.
+    evidence_refs:
+    - CLM:power:CKB:002
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of CKB modulation exists. Searched ClinicalTrials.gov for creatine-kinase-directed
+      agents and found none.
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: flag
+    note: 'CLM:power:CKB:001 asserts POSITIVELY_REGULATES into SV:safety.seizure_risk with direction increases.
+      The sign chain was checked: the germline knockout raised seizure susceptibility, so the coupling
+      direction is right and the variable''s polarity declaration (risk, id ends _risk) is right.'
+    evidence_refs:
+    - CLM:power:CKB:001
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: flag
+    note: The dossier grades adult_onset_perturbation 0 with a search_basis stating that every retrieved
+      perturbation is a germline knockout. That is a correctly accountable zero.
+  - check: provenance_integrity
+    result: flag
+    note: 'CLM:power:CKB:002 is the one content_checked: false record in the power atlas: the behavioural
+      phenotype was reachable only as a one-sentence secondary report inside another paper''s abstract.
+      The automatic red-team downgrade applies. The primary paper was not retrieved in this session either,
+      so this remains unverified.'
+    evidence_refs:
+    - CLM:power:CKB:002
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:CKB:001#f1
+    severity: major
+    category: developmental_effect_mistaken_for_adult
+    description: Every CKB perturbation in the located literature is a germline knockout accompanied by
+      reported hippocampal mossy-fibre structural remodelling, so the behavioural phenotype is confounded
+      by anatomy as well as by timing. No adult-inducible manipulation exists.
+    evidence_refs:
+    - CLM:power:CKB:001
+  - finding_id: AUD:red_team:CKB:001#f2
+    severity: minor
+    category: provenance_integrity
+    description: 'CLM:power:CKB:002 carries content_checked: false and rests on a one-sentence secondary
+      report. The primary paper remains unretrieved after this audit, so the automatic downgrade stands
+      and the record should not carry weight until it is read.'
+    evidence_refs:
+    - CLM:power:CKB:002
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

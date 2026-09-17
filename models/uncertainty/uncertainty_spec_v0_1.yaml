@@ -1,0 +1,304 @@
+# ============================================================================
+# Uncertainty specification v0.1.0 — Intelligence Blueprint
+# ============================================================================
+#
+# This file converts ORDINAL EVIDENCE GRADES into distributions so that a ranking can
+# carry an interval instead of a point. Every parameter in it is a subjective,
+# uncalibrated prior. None was fitted. None was validated. They are written down here
+# so that they can be criticised, versioned and perturbed — which is the only honest
+# reason to write a number down in this project at all.
+#
+# calibration_status: uncalibrated_subjective
+# subjectivity:       subjective_prior
+# ============================================================================
+
+schema_version: 0.1.0
+spec_id: uncertainty_spec_v0_1
+spec_version: 0.1.0
+defined_by: agent:integration
+defined_on: "2026-09-17"
+scale: evidence_strength_v1
+scale_source: docs/DATA_CONTRACT.md#53-ordinal-scale-evidence_strength_v1
+calibration_status: uncalibrated_subjective
+subjectivity: subjective_prior
+
+# ---------------------------------------------------------------------------
+# 1. Why not a single number
+# ---------------------------------------------------------------------------
+why_not_a_single_number: >-
+  A point score hides the two things a reader most needs. First, HOW MUCH was looked
+  at: a target with two assessed facets and a target with fifteen can produce the same
+  mean, and a single number makes them indistinguishable. Second, WHETHER THE ORDER IS
+  RESOLVED: with sparse evidence, the difference between rank 4 and rank 11 is usually
+  noise in the grading, and a table of point scores invites readers to treat that noise
+  as a finding. Distributions make both visible — a wide interval is a report about the
+  state of the evidence, and it is the most useful output this model produces. The
+  practical consequence is that the deliverable is a rank INTERVAL per target plus a
+  `coverage` column, and any prose that quotes a rank without its interval is
+  misreporting the model.
+
+what_these_numbers_may_be_used_for:
+  - "Ordering candidate control points by how complete and favourable their EVIDENCE ACCOUNTING is."
+  - "Identifying which facet to resolve next (models/ranking §7)."
+  - "Showing that a ranking is unresolved, which is the expected Sprint-1 result."
+  - "Sensitivity analysis: does the order survive a different aggregation or a one-level change."
+what_these_numbers_may_never_be_used_for:
+  - "Any statement about biology, efficacy, or safety."
+  - "Any comparison against a real-world frequency ('70% likely to work' is a category error)."
+  - "Any threshold decision about acting on a target. Nothing here is actionable, and no output of this model is a protocol, dose, route or regimen."
+  - "Meta-analysis or pooling with anyone else's probabilities."
+  - "Retrospective 'we predicted this' claims. The priors are uncalibrated; the model has no track record."
+
+# ---------------------------------------------------------------------------
+# 2. Level -> Beta distribution
+# ---------------------------------------------------------------------------
+# CONSTRUCTION. Each ordinal level is read as a summary of a hypothetical set of
+# independent "tests" of the facet proposition, and mapped to the Beta posterior such a
+# set would produce under a uniform prior:
+#
+#     level L  ->  Beta( 1 + s_L , 1 + f_L )
+#
+# where s_L is a count of SUPPORTING pseudo-observations and f_L a count of
+# NON-SUPPORTING pseudo-observations. Beta(1,1) is the uniform prior, so an unasked
+# question contributes no pseudo-observations at all and stays uniform. The pseudo-count
+# TOTAL (s+f) grows with the level, which encodes the second thing the ordinal scale
+# means: higher levels are not only more favourable, they are better evidenced, hence
+# narrower.
+#
+# The pseudo-counts below are subjective. The shape of the ladder is what is being
+# asserted, not the individual integers: monotone increasing mean, monotone increasing
+# total count from level 1 upward, level 0 informative-but-low, not_assessed widest.
+
+level_to_beta:
+
+  not_assessed:
+    alpha: 1
+    beta: 1
+    supporting_pseudo_counts: 0
+    nonsupporting_pseudo_counts: 0
+    mean: 0.500
+    median: 0.500
+    sd: 0.289
+    reasoning: >-
+      Nobody asked the question, so the data are silent and the prior must be the
+      maximum-entropy distribution on [0,1]. This is the WIDEST distribution in the
+      mapping — wider than level 0 — which is the mechanical form of contract P8:
+      unknown widens, it does not lower. Its median (0.500) sits below the level-2
+      median (0.560) and above the level-1 median (0.314), so an unexamined facet is
+      never better than moderate real evidence and never worse than a documented
+      absence of it. Absence of assessment is therefore neither punished nor rewarded,
+      only made visible.
+
+  0:
+    alpha: 1
+    beta: 4
+    supporting_pseudo_counts: 0
+    nonsupporting_pseudo_counts: 3
+    mean: 0.200
+    median: 0.159
+    sd: 0.163
+    reasoning: >-
+      "Searched, nothing found" is real, if weak, evidence against the proposition:
+      three pseudo-observations that failed to support it, none that did. It is
+      deliberately NARROWER than not_assessed — a recorded, documented search is
+      informative, and this is precisely the distinction the contract forbids
+      collapsing (§5.2). The pseudo-count of 3 rather than 10 reflects how little a
+      literature search actually rules out.
+
+  1:
+    alpha: 2
+    beta: 4
+    supporting_pseudo_counts: 1
+    nonsupporting_pseudo_counts: 3
+    mean: 0.333
+    median: 0.314
+    sd: 0.178
+    reasoning: >-
+      Weak or indirect only: one pseudo-observation supports the proposition, three do
+      not. Slightly WIDER than level 0, which is intentional — "one small study in a
+      distant model system" is genuinely more ambiguous than a clean negative search.
+
+  2:
+    alpha: 5
+    beta: 4
+    supporting_pseudo_counts: 4
+    nonsupporting_pseudo_counts: 3
+    mean: 0.556
+    median: 0.560
+    sd: 0.157
+    reasoning: >-
+      Moderate evidence tips the balance just past even, and no further: replicated
+      non-human causal evidence, or a single human study, is where the project's
+      distinctions (P4) start to bite hardest. Placing the level-2 median strictly
+      above the not_assessed median is what makes "absence of assessment is not
+      rewarded" a strict inequality rather than a tie.
+
+  3:
+    alpha: 8
+    beta: 3
+    supporting_pseudo_counts: 7
+    nonsupporting_pseudo_counts: 2
+    mean: 0.727
+    median: 0.741
+    sd: 0.129
+    reasoning: >-
+      Converging causal evidence across designs or species, or one directly relevant
+      human result. Clearly favourable and clearly narrower, while retaining two
+      non-supporting pseudo-observations: convergence is not unanimity, and a
+      substantial grade must not read as near-certainty.
+
+  4:
+    alpha: 13
+    beta: 3
+    supporting_pseudo_counts: 12
+    nonsupporting_pseudo_counts: 2
+    mean: 0.813
+    median: 0.826
+    sd: 0.095
+    reasoning: >-
+      Replicated human evidence bearing directly on the proposition. The mean is held
+      well below 1 and the two non-supporting pseudo-observations are retained on
+      purpose: in this literature, replicated human results are routinely overturned,
+      and a model that let a level-4 grade approach certainty would be making a claim
+      about the reliability of published human cognition research that nobody in this
+      repository is in a position to make.
+
+level_ladder_properties:
+  monotone_mean: "0.200 < 0.333 < 0.556 < 0.727 < 0.813 — strictly increasing in level."
+  monotone_width_from_level_1: "sd 0.178 > 0.157 > 0.129 > 0.095 — higher levels are tighter."
+  widest_is_not_assessed: "sd 0.289 at not_assessed exceeds every assessed level."
+  bounded_away_from_certainty: "No level maps to a mean above 0.813 or below 0.159."
+  asserted_not_measured: "All of the above are properties of this table, not findings about evidence."
+
+# ---------------------------------------------------------------------------
+# 3. counter_level -> additional failure pseudo-counts
+# ---------------------------------------------------------------------------
+counter_level_to_pseudo_counts:
+  mechanism: "beta_parameter += counter_pseudo_counts[counter_level]"
+  formula: "Beta( 1 + s_level , 1 + f_level + g_counter )"
+  values:
+    null: 0        # counter_level absent (facet not assessed, or no counter grade recorded)
+    0: 0           # searched for contradicting evidence, found none
+    1: 1           # weak or indirect contradiction
+    2: 4           # moderate contradiction
+    3: 7           # substantial contradiction
+    4: 12          # strong replicated human contradiction
+  reasoning: >-
+    Counter-evidence is the mirror image of supporting evidence, so it uses the same
+    pseudo-count ladder (1, 4, 7, 12) applied to the FAILURE side. Two consequences are
+    intended. (1) "Tested and contradicted" lands below "nobody found anything":
+    level 1 with counter_level 3 gives Beta(2, 11), mean 0.154, whereas level 0 with
+    counter_level 0 gives Beta(1, 4), mean 0.200. The contract requires these two
+    states to be distinguishable (§5.2) and this is where that requirement becomes
+    arithmetic. (2) Contradiction NARROWS as well as lowers: level 3 with
+    counter_level 3 gives Beta(8, 10), mean 0.444, sd 0.114 — a well-studied,
+    genuinely contested facet, which is a different epistemic state from an unstudied
+    one and must not look like it.
+  inverse_polarity_note: >-
+    For a facet with `polarity: inverse` (a RISK proposition), counter_level grades the
+    evidence that the risk is absent, so it raises the dimension the facet feeds. The
+    arithmetic is unchanged — it is applied to the facet belief, and the inversion
+    (1 - belief) happens afterwards.
+  asymmetry_warning: >-
+    This symmetric treatment is a modelling choice and it is WRONG FOR SAFETY in one
+    direction that matters. Evidence of harm accumulates more reliably than evidence of
+    its absence, so counter_level on `safety_liability_burden` should arguably be
+    discounted relative to level. v0.1.0 does not implement that discount; instead the
+    rubric instructs the red team to grade safety counter_level conservatively, and the
+    gate `safety_liability_caps_d5` provides the un-tradeable floor. FLAGGED FOR REVIEW.
+
+# ---------------------------------------------------------------------------
+# 4. Monte Carlo settings
+# ---------------------------------------------------------------------------
+monte_carlo:
+  sampler: "numpy.random.Generator.beta"
+  n_draws: 4000
+  n_draws_reasoning: >-
+    Chosen so that the 5th and 95th rank percentiles are stable to the integer across
+    reruns with different seeds at cohort sizes of ~30 targets, while keeping a full
+    information-gain sweep (targets x facets x 2 perturbations) inside a few seconds.
+    Not chosen by a convergence study; a convergence check is an open task.
+  seed: 20260917
+  seed_reasoning: >-
+    A fixed, arbitrary integer (the sprint date). Fixed so that runs are reproducible
+    and diffable; arbitrary so that it carries no meaning. It is recorded in every
+    report row (`model_run_seed`) and in the sidecar.
+  determinism_requirement: >-
+    MANDATORY. Draws for a facet are keyed by (seed, target_id, facet) through a
+    hash-derived SeedSequence, so a target's distribution does not depend on how many
+    targets are in the run or on the order in which they are processed. Two runs with
+    the same seed and the same inputs must produce BYTE-IDENTICAL CSV output; this is
+    asserted by tests/test_ranking_determinism.py, not merely intended.
+  independence_assumption: >-
+    Facet draws are independent, both within and across targets. THIS IS FALSE in
+    reality: facets share claims, share sources, share cohorts and share the judgement
+    of a single grading agent, so the true joint distribution is strongly positively
+    correlated and the reported intervals are consequently TOO NARROW. The direction of
+    the error is known; its size is not. Modelling the dependence (e.g. a shared
+    per-target grader effect, or claim-level source overlap) is the most valuable single
+    improvement available to this spec.
+
+# ---------------------------------------------------------------------------
+# 5. Intervals and rank intervals
+# ---------------------------------------------------------------------------
+intervals:
+  quantile_method: linear_interpolation_type_7
+  quantile_implementation: "src/blueprint/ranking/uncertainty.py::quantile (implemented in-repo; scipy is unavailable)"
+  reported_quantiles: [0.05, 0.50, 0.95]
+  interval_label: "90% interval (5th to 95th percentile of the Monte Carlo draws)"
+  interval_caveat: >-
+    A 90% interval over a subjective prior is a 90% interval OF THE MODEL, not of the
+    world. It quantifies how much this model's own inputs leave undetermined. It does
+    not quantify whether the model is right.
+
+rank_distribution:
+  procedure: >-
+    Within each Monte Carlo draw, compute the composite for every target and rank them
+    with 1 = highest composite, ties resolved by AVERAGE rank. Accumulate one rank per
+    target per draw, then report rank_p05, rank_median, rank_p95 as percentiles over
+    those draws.
+  why_ranks_and_not_scores: >-
+    Ranks are what a reader will use, and the rank interval exposes something a score
+    interval hides: two targets can have tight composite intervals and still swap
+    places in most draws. The rank interval is the honest headline.
+  reading_rule: >-
+    A target whose rank_p05..rank_p95 spans most of the cohort has no meaningful rank.
+    In Sprint 1 this is expected to be the normal case, and reporting it as such is a
+    result, not a defect.
+
+# ---------------------------------------------------------------------------
+# 6. What would make these calibrated
+# ---------------------------------------------------------------------------
+what_would_make_these_calibrated:
+  requirement: "A resolved outcome per graded facet, and enough of them to score the priors against."
+  concrete_routes:
+    - id: retrospective_facet_resolution
+      description: >-
+        Assemble a historical cohort of targets where a facet proposition was later
+        SETTLED (an adult-onset perturbation was eventually published; a human trial
+        eventually reported), grade each facet from the evidence available at an earlier
+        cut-off date, and score the level -> Beta mapping against the settled outcome
+        with a proper scoring rule (Brier, or the log score) plus a reliability diagram.
+        Levels whose empirical hit rate does not increase monotonically are evidence
+        that the ordinal scale itself is not measuring what it claims.
+    - id: replication_base_rates
+      description: >-
+        Use published replication-rate estimates for the relevant designs (preclinical
+        perturbation studies, cognitive-enhancement RCTs) to set the pseudo-count
+        totals, so that "level 4" inherits a measured replication rate rather than an
+        asserted one. This would make the WIDTHS defensible even before the means are.
+    - id: prediction_market_or_expert_elicitation
+      description: >-
+        Structured elicitation from multiple independent graders on the same facets,
+        which at minimum measures inter-grader reliability. A mapping cannot be better
+        calibrated than the grades feeding it are reliable, and that reliability is
+        currently unmeasured.
+  what_calibration_would_NOT_fix:
+    - "The independence assumption (§4). Calibrated marginals with a wrong copula still give wrong intervals."
+    - "The subjectivity of the facet -> dimension WEIGHTS, which live in ranking_spec_v0_1.yaml and are a separate problem."
+    - "The single-facet structure of D3, which is a contract-level issue, not a statistical one."
+  status_until_then: >-
+    `calibration_status: uncalibrated_subjective` stays on every row of every report.
+    Removing it requires stating, in writing, what the probabilities were calibrated
+    against and what the reliability looked like. Contract P3 and README §4 both make
+    this non-optional.

@@ -1,0 +1,628 @@
+# Computational primitives — Intelligence Blueprint v0.1.0
+#
+# The 24 operations named in the project brief, defined COMPUTATIONALLY and
+# MECHANISM-AGNOSTICALLY. A primitive says what has to be computed, never what
+# implements it: implementation claims are IMPLEMENTS / SUPPORTS_PRIMITIVE edges with
+# evidence.
+#
+# These are WORKING DEFINITIONS (`definition_status: working_definition_v0_1`), not
+# empirical claims and not a settled taxonomy. No literature is cited because nothing
+# here is an assertion about the world; the primitives are a coordinate system the
+# agents agree to use so that a rodent finding and a human finding can be filed
+# against the same operation without being equated.
+#
+# `animal_analogue_caveat` is the most important field in this file. The project's
+# fourth non-negotiable distinction is "animal memory is not human intelligence"
+# (contract P4). The caveat states, per primitive, where the usual animal task stops
+# being the same operation. An agent that maps a rodent task onto a primitive whose
+# caveat says the analogue is weak must say so in its claim's
+# translation.general_intelligence_relevance (`animal_task_only`) and expect the red
+# team's `animal_memory_mistaken_for_human_intelligence` check to look at it.
+#
+# `human_measurement_paradigms` lists TASK FAMILY NAMES only — no citation, no
+# psychometric property, no claim that the task measures the primitive validly. Task
+# family names are common nouns in cognitive science, not findings.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+definition_status_global: working_definition_v0_1
+count: 27
+origin_markers:
+  project_brief_sprint1: >-
+    The 24 primitives the project brief named as its opening set.
+  agent_proposed_sprint1: >-
+    Added during Sprint 1 in response to a schema-change request from a domain agent
+    that hit a real gap (docs/blackboard/RESOLUTIONS.md R2). Attribution is kept
+    visible so the provenance of the ontology itself is auditable: four brake classes
+    are defined by what they do to gain and to the integration window, and borrowing
+    `pattern_separation` for gain control and `relational_binding` for temporal
+    integration was a real loss of meaning.
+
+primitives:
+
+  - id: PRIM:persistent_representation
+    name: persistent representation
+    definition: >-
+      Maintain an item of information in an accessible form across a gap in which no
+      external input carries it, such that it can still condition later computation.
+    related_state_variables:
+      - SV:workspace.persistent_activity_stability
+      - SV:workspace.working_memory_capacity
+      - SV:workspace.recurrent_gain
+    human_measurement_paradigms:
+      - delayed match-to-sample
+      - change detection with retention interval
+      - complex span
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE. Delay-period maintenance is genuinely shared across species,
+      but rodent delays are typically seconds and often confounded with a maintained
+      motor plan or a body position, whereas human paradigms require content-specific
+      maintenance without a response prepared in advance. A rodent delay task result
+      supports the primitive only where the delay content could not have been carried
+      by a postural or motor proxy.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:attentional_gating
+    name: attentional gating
+    definition: >-
+      Control which inputs are admitted to a capacity-limited stage, admitting
+      task-relevant information and withholding the rest, before the competition for
+      that capacity is resolved.
+    related_state_variables:
+      - SV:workspace.attentional_gating_precision
+      - SV:workspace.updating_efficiency
+      - SV:cognition.attentional_control
+    human_measurement_paradigms:
+      - selective encoding with cue validity manipulation
+      - filtering paradigms with set-size and relevance manipulation
+      - reference-back task
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK TO MODERATE. Animal tasks can demonstrate stimulus selection, but
+      endogenous, instruction-driven gating (told in advance which of several features
+      to admit) has no clean animal counterpart because the instruction channel does
+      not exist. Animal evidence typically demonstrates salience-driven or
+      reward-driven selection, which is a different operation.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:distractor_suppression
+    name: distractor suppression
+    definition: >-
+      Prevent competing information already admitted or concurrently present from
+      degrading maintained or attended content, after the competition has begun.
+    related_state_variables:
+      - SV:workspace.distractor_resistance
+      - SV:workspace.interference_susceptibility
+      - SV:cognition.attentional_control
+    human_measurement_paradigms:
+      - delayed recall with intervening distractors
+      - conflict tasks with congruency manipulation
+      - negative priming paradigms
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE. Interference during a delay can be manipulated in animals,
+      but distinguishing suppression of the distractor from strengthening of the
+      target requires probe measures that most animal protocols do not include, so
+      animal results usually constrain net interference resistance rather than
+      suppression itself.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:pattern_separation
+    name: pattern separation
+    definition: >-
+      Map similar inputs to less-similar internal representations, so that overlapping
+      experiences remain individually addressable.
+    related_state_variables:
+      - SV:consolidation.memory_allocation_selectivity
+      - SV:consolidation.long_term_interference_resistance
+      - SV:efficiency.coding_sparseness
+    human_measurement_paradigms:
+      - mnemonic similarity / lure discrimination tasks
+      - high-interference associative learning
+    animal_analogue_caveat: >-
+      ANALOGUE RELATIVELY STRONG at the computational level, and this is one of the few
+      primitives where the animal and human operationalisations plausibly align, since
+      both reduce to discriminating similar items. The caveat is different here: the
+      rodent literature frequently measures the SUBSTRATE (population overlap) and the
+      human literature measures the BEHAVIOURAL CONSEQUENCE, and the inference from one
+      to the other is an empirical claim, not a definition.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:pattern_completion
+    name: pattern completion
+    definition: >-
+      Recover a full stored representation from a partial or degraded cue, returning the
+      stored pattern rather than a blend of stored patterns.
+    related_state_variables:
+      - SV:consolidation.retrieval_fidelity
+      - SV:cognition.knowledge_accessibility
+    human_measurement_paradigms:
+      - cued recall with degraded cues
+      - partial-cue associative retrieval
+      - fragmented-image identification
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE. Context-cue reinstatement in animals demonstrates completion
+      of an environmental representation; human paradigms usually test completion of
+      an arbitrary association. Whether these are the same operation at different
+      scales, or different operations, is unresolved — so an animal completion result
+      does not transfer to human associative retrieval by default.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:relational_binding
+    name: relational binding
+    definition: >-
+      Represent a relation between elements such that the relation is available
+      independently of the identity of the elements it currently holds.
+    related_state_variables:
+      - SV:workspace.binding_capacity
+      - SV:cognition.fluid_reasoning_capacity
+    human_measurement_paradigms:
+      - relational integration and analogy tasks
+      - transitive inference tasks
+      - associative recognition with rearranged pairs
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Animals demonstrate transitive choice and configural learning,
+      but these can be produced by value transfer or stimulus generalisation without
+      an explicit relational representation. Rodent and even non-human-primate
+      evidence rarely rules out the non-relational account, so the primitive should be
+      treated as effectively human-tested-only until it does.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:variable_binding
+    name: variable binding
+    definition: >-
+      Bind a value to a role or slot so that the same value can occupy different roles
+      and the same role can hold different values, without the bindings interfering.
+    related_state_variables:
+      - SV:workspace.binding_capacity
+      - SV:workspace.serial_order_fidelity
+    human_measurement_paradigms:
+      - role-filler assignment tasks
+      - serial recall with order-error scoring
+      - syntactic and sentence-structure comprehension tasks
+    animal_analogue_caveat: >-
+      ANALOGUE VERY WEAK, arguably absent. Role-value independence is the classic
+      capability attributed to symbolic human cognition, and no standard animal
+      paradigm isolates it from position- or stimulus-specific learning. Claims mapping
+      animal work onto this primitive should be treated as claims about a different
+      operation unless they explicitly address role-value independence.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:chunk_formation
+    name: chunk formation
+    definition: >-
+      Recode a set of co-occurring elements into a single unit that thereafter consumes
+      the capacity of one element.
+    related_state_variables:
+      - SV:workspace.chunk_size
+      - SV:workspace.working_memory_capacity
+    human_measurement_paradigms:
+      - structured versus random span comparison
+      - artificial grammar and statistical learning with span probes
+      - expertise-based recall paradigms
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Sequence compression has been reported in animals, but the
+      capacity-accounting that defines chunking in humans (one chunk costs one slot)
+      requires a measurable capacity limit in the same units, which animal paradigms
+      generally do not provide.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:rule_extraction
+    name: rule extraction
+    definition: >-
+      Infer from a set of instances a rule that determines the correct response for
+      unseen instances, and apply it without instance-by-instance learning.
+    related_state_variables:
+      - SV:cognition.fluid_reasoning_capacity
+      - SV:cognition.abstraction_capacity
+    human_measurement_paradigms:
+      - rule-learning and category-learning tasks
+      - artificial grammar learning with transfer items
+      - concept identification tasks
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Animals acquire discriminations that can look rule-like but are
+      frequently explicable by exemplar similarity; the diagnostic test is transfer to
+      items that similarity-based accounts get wrong, which few animal protocols
+      include. Where they do (some primate work), the analogue is stronger.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:latent_structure_discovery
+    name: latent structure discovery
+    definition: >-
+      Infer unobserved structure — clusters, hierarchies, causal graphs, state spaces —
+      that accounts for observed data, without being told that the structure exists.
+    related_state_variables:
+      - SV:cognition.abstraction_capacity
+      - SV:consolidation.schema_integration_efficiency
+    human_measurement_paradigms:
+      - structure learning and graph inference tasks
+      - unsupervised category formation
+      - hidden-state sequence learning tasks
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Latent-state inference has been demonstrated in animals in
+      restricted settings (state-dependent extinction, cognitive maps), but the
+      inference is usually to a small, experimenter-designed state set. Discovery of
+      structure the experimenter did not build in is largely human-tested.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:generalisation
+    name: generalisation
+    definition: >-
+      Apply a learned mapping to inputs drawn from the same underlying distribution but
+      not previously encountered, with performance above that expected from memorised
+      instances.
+    related_state_variables:
+      - SV:cognition.general_cognitive_ability
+      - SV:consolidation.schema_integration_efficiency
+    human_measurement_paradigms:
+      - trained-versus-untrained item transfer tests
+      - category generalisation gradients
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE. Stimulus generalisation gradients are measurable across
+      species and are the same construct at the perceptual level. The gap appears at
+      the conceptual level: generalising along a learned abstract dimension rather than
+      a perceptual one is not established in most animal preparations.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:far_transfer
+    name: far transfer
+    definition: >-
+      Apply a capacity acquired in one task domain to a task that shares structure but
+      not surface content, procedure or stimuli.
+    related_state_variables:
+      - SV:cognition.transfer_breadth
+      - SV:cognition.abstraction_capacity
+    human_measurement_paradigms:
+      - training studies with pre-registered untrained outcome batteries
+      - analogical problem-solving transfer tasks
+    animal_analogue_caveat: >-
+      ANALOGUE ABSENT FOR PRACTICAL PURPOSES. "Far" is defined by distance in a space
+      of task content that only exists for humans; there is no accepted animal
+      operationalisation. This primitive is also the one most often over-claimed in
+      humans, because a transfer battery correlated with the trained task is near
+      transfer wearing a different label. Treat any animal claim against this primitive
+      as a category error, and any human claim as requiring untrained, pre-specified
+      outcomes.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:credit_assignment
+    name: credit assignment
+    definition: >-
+      Attribute an outcome to the specific earlier choices, states or synaptic changes
+      responsible for it, across intervening events.
+    related_state_variables:
+      - SV:cognition.learning_rate
+      - SV:plasticity.synaptic_tagging_capacity
+    human_measurement_paradigms:
+      - multi-step decision tasks with delayed outcomes
+      - probabilistic reversal learning with model-based analysis
+      - temporal credit-assignment paradigms with distractor-filled delays
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE, with an important asymmetry: animal work provides the
+      strongest evidence about the MECHANISM of credit assignment (eligibility traces,
+      dopaminergic teaching signals) while human work provides the evidence about its
+      SCOPE (multi-step, structured, counterfactual). Neither substitutes for the other,
+      and a mechanism demonstrated over seconds in a rodent does not establish credit
+      assignment over the timescales human tasks use.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:prediction_error
+    name: prediction error
+    definition: >-
+      Compute the signed discrepancy between an expected and an observed quantity, in a
+      form usable to update the expectation.
+    related_state_variables:
+      - SV:cognition.learning_rate
+    human_measurement_paradigms:
+      - probabilistic learning tasks with computational model fitting
+      - oddball and expectancy-violation paradigms
+      - reward prediction error elicitation tasks
+    animal_analogue_caveat: >-
+      ANALOGUE RELATIVELY STRONG — one of the few primitives where the animal and human
+      constructs are close, because the operation is defined by an arithmetic
+      relationship rather than by task content. Remaining caveat: the error signal's
+      SOURCE of expectation differs (learned associations in animals, often instructed
+      or inferred expectations in humans), so equating the two equates the error
+      computation and not the model generating the prediction.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:error_monitoring
+    name: error monitoring
+    definition: >-
+      Detect that one's own response was incorrect or suboptimal, independently of
+      external feedback, and register that detection in a form that can adjust
+      subsequent behaviour.
+    related_state_variables:
+      - SV:cognition.metacognitive_accuracy
+      - SV:cognition.attentional_control
+    human_measurement_paradigms:
+      - speeded response tasks with error-related potential measurement
+      - post-error adjustment paradigms
+      - error signalling and self-correction tasks
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Post-error slowing occurs in animals and is a genuine shared
+      phenomenon, but it does not require an internal representation that an error
+      occurred: it can arise from the outcome itself. Feedback-independent
+      self-detection is what defines the primitive, and that is hard to establish
+      without a report.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:metacognition
+    name: metacognition
+    definition: >-
+      Represent properties of one's own cognitive processes — their reliability,
+      difficulty or completion state — and use that representation to control further
+      processing.
+    related_state_variables:
+      - SV:cognition.metacognitive_accuracy
+      - SV:cognition.cognitive_effort_cost
+    human_measurement_paradigms:
+      - confidence rating with calibration analysis
+      - judgement-of-learning and study-time allocation tasks
+      - information-seeking / opt-out paradigms
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK AND CONTESTED. Opt-out and information-seeking paradigms in
+      primates and some other species are the standard animal evidence, and there is a
+      long-standing dispute over whether they require metacognitive representation or
+      are explicable by learned stimulus-response associations with uncertainty as a
+      cue. The project should treat this primitive as human-measured and take animal
+      evidence as suggestive only.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:memory_allocation
+    name: memory allocation
+    definition: >-
+      Select which internal resources — which population, which synapses, which slot —
+      will carry a new memory, given what is already stored.
+    related_state_variables:
+      - SV:consolidation.memory_allocation_selectivity
+      - SV:plasticity.synaptic_tagging_capacity
+    human_measurement_paradigms:
+      - no established human paradigm isolates allocation from encoding
+      - temporally clustered encoding designs (indirect)
+    animal_analogue_caveat: >-
+      ANALOGUE IS ANIMAL-ONLY IN PRACTICE, and the direction of the problem is
+      REVERSED here: allocation is observable in animals (population tagging) and
+      essentially unobservable in humans. The caveat is therefore not "the animal task
+      is a weak analogue" but "there is no human measurement to compare it to", so any
+      human-relevant claim against this primitive is inference, not measurement.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:memory_retrieval
+    name: memory retrieval
+    definition: >-
+      Access stored content given a cue, returning the content in a form usable by
+      current computation, separably from whether the content is stored.
+    related_state_variables:
+      - SV:consolidation.retrieval_fidelity
+      - SV:cognition.knowledge_accessibility
+    human_measurement_paradigms:
+      - cued and free recall
+      - recognition with source judgements
+      - continuous-report precision paradigms
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE. Cued retrieval is measurable in animals, but the
+      storage-versus-access distinction that defines the primitive requires convergent
+      measures (recognition versus recall, re-learning savings) that animal protocols
+      rarely provide together. An animal retrieval failure usually cannot be attributed
+      to access rather than storage.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:reconsolidation
+    name: reconsolidation
+    definition: >-
+      Return an already-stabilised representation to a modifiable state upon
+      reactivation, and re-stabilise it, with the possibility of altered content.
+    related_state_variables:
+      - SV:consolidation.reconsolidation_window_width
+      - SV:consolidation.engram_stability
+    human_measurement_paradigms:
+      - post-reactivation interference paradigms
+      - memory updating after reminder cues
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE BUT THE CONSTRUCT ITSELF IS CONTESTED. The animal evidence
+      base is much larger and relies on amnestic manipulations that are not available
+      in humans, so the human paradigms test a behavioural signature rather than the
+      process. Boundary conditions (memory age, strength, reminder type) differ across
+      preparations, and failure to replicate is common in both literatures — an
+      unusually important primitive to keep `unknown` about.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:strategy_switching
+    name: strategy switching
+    definition: >-
+      Replace the currently active policy, rule or algorithm with a different one when
+      the current one stops being appropriate, and bear the cost of doing so.
+    related_state_variables:
+      - SV:cognition.cognitive_flexibility
+      - SV:workspace.updating_efficiency
+    human_measurement_paradigms:
+      - task switching with switch-cost measurement
+      - set-shifting and reversal tasks
+      - explore-exploit transition paradigms
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE for reversal and MUCH WEAKER for switching between
+      simultaneously available rules. Rodent reversal learning measures abandoning a
+      no-longer-rewarded response, which is a special case; alternating between two
+      maintained task sets on instruction has no clean rodent analogue.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:planning
+    name: planning
+    definition: >-
+      Construct a sequence of actions before executing it, by evaluating candidate
+      sequences against a represented goal and a model of their consequences.
+    related_state_variables:
+      - SV:workspace.working_memory_capacity
+      - SV:cognition.fluid_reasoning_capacity
+    human_measurement_paradigms:
+      - multi-step puzzle tasks with move-count and pre-move latency measures
+      - sequential decision tasks with model-based/model-free dissociation
+      - prospective planning interview and task batteries
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Animal evidence for prospective evaluation exists (vicarious trial
+      and error, sequence pre-play), but the depth of planning demonstrated is small
+      and typically confounded with well-learned routes. Human planning tasks require
+      depth and goal representation that animal protocols do not reach, so animal
+      planning evidence should not be read as supporting human planning capacity.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:abstraction
+    name: abstraction
+    definition: >-
+      Form a representation that retains the properties shared by a set of instances
+      and discards the rest, such that the representation applies to instances not in
+      the set.
+    related_state_variables:
+      - SV:cognition.abstraction_capacity
+      - SV:cognition.general_cognitive_ability
+    human_measurement_paradigms:
+      - category and prototype formation tasks
+      - analogical reasoning tasks
+      - abstract rule generalisation tasks
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Perceptual categorisation is shared; abstraction over relations or
+      over abstract dimensions is largely human-demonstrated, and same-different
+      concept learning in animals remains the contested boundary case. Treat animal
+      categorisation as evidence about perceptual categorisation, not about abstraction.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:composition
+    name: composition
+    definition: >-
+      Combine existing representations or operations into a new one whose meaning is
+      determined by the parts and their arrangement, without retraining on the
+      combination.
+    related_state_variables:
+      - SV:workspace.workspace_broadcast_bandwidth
+      - SV:cognition.abstraction_capacity
+    human_measurement_paradigms:
+      - compositional generalisation tasks
+      - novel instruction following
+      - sentence and expression comprehension tasks
+    animal_analogue_caveat: >-
+      ANALOGUE ABSENT FOR PRACTICAL PURPOSES. Zero-shot composition from instruction
+      requires an instruction channel; the closest animal work involves extensive
+      training on the combinations themselves, which is the opposite of the primitive.
+      Any animal claim here should be read as evidence about a different operation.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  - id: PRIM:causal_inference
+    name: causal inference
+    definition: >-
+      Infer which variables influence which others, from observation, intervention or
+      both, in a form that supports predicting the effect of a new intervention.
+    related_state_variables:
+      - SV:cognition.abstraction_capacity
+      - SV:cognition.fluid_reasoning_capacity
+    human_measurement_paradigms:
+      - causal structure learning tasks
+      - interventional versus observational learning comparisons
+      - counterfactual judgement tasks
+    animal_analogue_caveat: >-
+      ANALOGUE WEAK. Animals learn from their own actions, which yields
+      intervention-like information, but distinguishing genuine causal representation
+      from action-outcome association typically requires counterfactual or
+      observational-versus-interventional contrasts that animal protocols rarely
+      support. Counterfactual judgement in particular is human-tested only.
+    definition_status: working_definition_v0_1
+    origin: project_brief_sprint1
+
+  # ---- agent-proposed during Sprint 1 (docs/blackboard/RESOLUTIONS.md R2) ----
+
+  - id: PRIM:gain_control
+    name: gain control
+    definition: >-
+      Scale the responsiveness of a processing stage to its input without changing what
+      the stage computes, so that the same input pattern produces a larger or smaller
+      output while its structure is preserved.
+    related_state_variables:
+      - SV:workspace.recurrent_gain
+      - SV:workspace.dendritic_integration_gain
+      - SV:stability.excitation_inhibition_balance
+    human_measurement_paradigms:
+      - contrast-response function estimation
+      - stimulus-intensity response slope measurement
+      - attentional modulation of evoked response amplitude
+    animal_analogue_caveat: >-
+      ANALOGUE RELATIVELY STRONG, and unusually so: gain is defined by an
+      input-output relationship rather than by task content, so a response-slope
+      measurement means the same thing across species. The caveat is different here —
+      gain is measured at very different levels in the two literatures (single-neuron
+      input-output curves in animals, population response amplitude in humans), and the
+      inference from one level to the other is empirical. Note also that gain is NOT
+      sensitivity to information: raising gain amplifies noise along with signal, so a
+      gain increase is not an improvement by default.
+    definition_status: working_definition_v0_1
+    origin: agent_proposed_sprint1
+
+  - id: PRIM:temporal_integration
+    name: temporal integration
+    definition: >-
+      Accumulate information arriving over an extended interval into a single
+      representation or decision variable, such that inputs separated in time combine
+      rather than decay independently.
+    related_state_variables:
+      - SV:efficiency.dendritic_temporal_summation
+      - SV:workspace.persistent_activity_stability
+    human_measurement_paradigms:
+      - evidence-accumulation decision tasks with drift-diffusion fitting
+      - temporal integration windows in perceptual judgement
+      - stimulus duration versus accuracy functions
+    animal_analogue_caveat: >-
+      ANALOGUE MODERATE TO STRONG for perceptual accumulation, where rodent and primate
+      evidence-accumulation tasks fit the same models as human ones. It weakens sharply
+      with the LENGTH of the interval: animal paradigms integrate over hundreds of
+      milliseconds to seconds, human tasks often over many seconds or across
+      interruptions, and the mechanisms that support the two need not be the same. An
+      animal result constrains the short-interval case only.
+    definition_status: working_definition_v0_1
+    origin: agent_proposed_sprint1
+
+  - id: PRIM:dendritic_coincidence_detection
+    name: dendritic coincidence detection
+    definition: >-
+      Signal that two or more inputs arrived within a narrow time window, producing an
+      output that the same inputs would not produce if spread further apart. Defined by
+      the conjunction-in-time requirement, not by the structure that implements it.
+    related_state_variables:
+      - SV:efficiency.dendritic_temporal_summation
+      - SV:workspace.dendritic_integration_gain
+      - SV:plasticity.ltp_threshold
+    human_measurement_paradigms:
+      - no established human paradigm isolates this operation
+      - paired-associative stimulation interval sensitivity (indirect)
+    animal_analogue_caveat: >-
+      ANIMAL-MEASURED ONLY, and the direction of the problem is REVERSED here: the
+      operation is directly observable in animal and ex-vivo preparations and
+      essentially unobservable in living humans. So the caveat is not "the animal task
+      is a weak analogue" but "there is no human measurement to compare it against", and
+      any human-relevant claim against this primitive is inference rather than
+      measurement. The name is also the most mechanism-laden in this file, which sits
+      awkwardly with the mechanism-agnostic rule: it is retained because the brake atlas
+      needs to state coincidence-window claims, and a reviewer should challenge it.
+    definition_status: working_definition_v0_1
+    origin: agent_proposed_sprint1

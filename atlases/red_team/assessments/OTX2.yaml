@@ -1,0 +1,79 @@
+# Red-team facet assessment - OTX2. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/OTX2.yaml.
+schema_version: 0.1.0
+target_id: TGT:OTX2
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. No adverse-effect annotation exists for this target in the pinned
+    Open Targets release and no agent directed at OTX2 has been dosed in a human.
+  search_basis: 'Searched Open Targets Platform 26.06 safetyLiabilities for ENSG00000165588 and ClinicalTrials.gov
+    API v2 for interventional studies of agents directed at this target. A hit would have been any annotated
+    adverse event for this target, or any registered human study of an agent acting on it with a safety
+    readout. The empty Open Targets list means that SOURCE IS SILENT, not that the target is safe; per
+    contract section 5.4 this level is not lowered by the weakness of the search, because weak evidence
+    cannot establish the absence of a risk. The absence of any liability record for a transcription factor
+    that gates cortical critical periods should be read as an absence of investigation, not as reassurance:
+    reopening a critical period in an adult cortex has no measured safety profile at all.'
+  claim_refs: []
+  counter_level: 0
+  counter_rationale: Nothing establishes that modulating OTX2 is safe either.
+  counter_claim_refs: []
+  limiting_factor: no pharmacology exists; and the conceptual liability of adult critical-period reopening
+    has never been measured in any species
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 4
+  rationale: 'The only other level 4 in this audit, and it is awarded because the developmental role is
+    not a confound but the gene''s DEMONSTRATED primary function: experience-driven transfer into parvalbumin
+    cells sets critical-period timing, and conditional removal abolishes plasticity. Replicated non-human
+    causal evidence bearing directly on the facet''s proposition and consistent in direction, converging
+    with the gene''s known developmental biology.'
+  claim_refs:
+  - CLM:brakes:OTX2:001
+  - CLM:brakes:OTX2:002
+  counter_level: 1
+  counter_rationale: One adult manipulation exists and does change plasticity in an adult animal, so the
+    machinery is not wholly inert after development - but what it does is reopen the developmental programme,
+    which is weak counter-evidence at best.
+  counter_claim_refs:
+  - CLM:brakes:OTX2:002
+  limiting_factor: nothing short of an adult manipulation that improves cognition without reopening the
+    critical period would reduce this grade
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: deprioritise. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

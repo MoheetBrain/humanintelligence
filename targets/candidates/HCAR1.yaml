@@ -1,0 +1,70 @@
+# Target dossier — HCAR1 (GPR81, lactate receptor). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:HCAR1
+symbol: HCAR1
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: g_protein_coupled_receptor
+represented_entities: [GENE:HCAR1, PROT:HCAR1]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    HCAR1 makes lactate a signal rather than only a fuel, which would let activity
+    -driven metabolic state feed back onto excitability, vascular supply and plasticity
+    - an attractive "activity-dependent energy routing" control point. The retrieved
+    evidence points the OTHER WAY. HCAR1 is Gi-coupled and its activation lowers
+    cortical firing and spontaneous activity; receptor-null neurons are more active at
+    baseline; receptor-null mice have HIGHER exercise endurance and preserved cortical
+    excitability, with the lactate-HCAR1 axis reported as a cause of central fatigue;
+    and an agonist that helps memory after training impairs it before training. The
+    honest summary is that HCAR1 looks like a brake or a state-signal, not a throttle.
+  proposed_modulation: context_dependent
+  mechanism_chain:
+    - CLM:power:HCAR1:001
+    - CLM:power:HCAR1:004
+    - CLM:power:HCAR1:002
+    - CLM:power:HCAR1:003
+  state_variables:
+    - id: SV:workspace.recurrent_gain
+      asserted_relation: modulates
+      direction: decreases
+      response_shape: unknown
+      claim_refs: [CLM:power:HCAR1:001]
+    - id: SV:cognition.sustained_attention_stability
+      asserted_relation: modulates
+      direction: decreases
+      response_shape: unknown
+      claim_refs: [CLM:power:HCAR1:004]
+    - id: SV:consolidation.synaptic_consolidation_efficiency
+      asserted_relation: modulates
+      direction: bidirectional
+      response_shape: state_dependent
+      claim_refs: [CLM:power:HCAR1:002]
+    - id: SV:plasticity.adult_neurogenesis_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:HCAR1:003]
+    - id: SV:plasticity.structural_plasticity_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:HCAR1:006]
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: moderate
+developmental_confound_rationale: >-
+  The clearest anatomical HCAR1 phenotype retrieved is developmental (retinal ganglion
+  cell axon growth and ipsilateral projection to dLGN, CLM:power:HCAR1:006), and both
+  in-vivo knockout studies used germline nulls, which permits lifelong compensation -
+  the raised basal activity of receptor-null neurons in CLM:power:HCAR1:001 may be
+  exactly that. The pharmacological arms (001, 002) are genuinely acute and adult.
+open_questions:
+  - "Can HCAR1 be engaged at physiological extracellular lactate at all, given the concentration objection recorded in CLM:power:HCAR1:005, or only in ischaemia, seizure and unmeasured microdomains?"
+  - "If HCAR1 activation lowers cortical gain and contributes to central fatigue, is the correct hypothesis that HCAR1 antagonism rather than agonism raises sustainable load? Nothing retrieved tests that in a cognitive paradigm."
+  - "The timing-dependent sign flip in CLM:power:HCAR1:002 has never been replicated and has no knockout control. Is it real?"
+  - "There is NO human evidence for HCAR1 of any kind in this atlas."
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

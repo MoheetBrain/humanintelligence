@@ -1,0 +1,307 @@
+# Sources cited by agent:comparative (Comparative Intelligence atlas).
+#
+# Contract: docs/DATA_CONTRACT.md §3. Every record below was located through a PubMed
+# tool call during the sprint-1 comparative curation run; none was written from memory.
+# `title`, `year`, `first_author` and `container` are what this agent believes and are
+# machine-checked by scripts/fetch_source_metadata.py against PubMed ESummary.
+#
+# No abstract text or source passage is stored anywhere in this repository.
+#
+# TWO SOURCES HERE ARE ALSO REGISTERED BY agent:brakes, DELIBERATELY:
+#   SRC:PMID:30340039  (Beaulieu-Laroche 2018, human dendritic compartmentalisation)
+#   SRC:PMID:20837545  (Lee 2010, RGS14 suppresses CA2 plasticity)
+# Contract §1.3 allows and prefers duplicate registration across agents, so that every
+# agent's claims are self-contained and no agent depends on a file it cannot edit. The
+# store, the graph compiler and `independent_source_count` all deduplicate by
+# `source_id`, so two registrations cannot inflate any evidence count. What IS a hard
+# error is divergence: if two registrations of one `source_id` disagree on the verified
+# registry fields, one of them was written from a different record. These two were
+# checked field-by-field against evidence/sources/brakes.yaml before being written here
+# and agree on title, year, first_author, container and DOI.
+#
+# The shared citation is itself a useful signal, not just bookkeeping. Both papers are
+# load-bearing for agent:brakes' mechanistic case AND for this atlas's translation-risk
+# case, which is exactly the pattern the red team's `citation_dependence` check exists to
+# find: if either paper is wrong, two independent-looking lines of argument move together.
+# The claims affected are CLM:comparative:DENDRITE:001, CLM:comparative:HCN1:004 and
+# CLM:comparative:RGS14:001.
+
+- source_id: SRC:PMID:27298365
+  source_type: journal_article
+  title: "Birds have primate-like numbers of neurons in the forebrain."
+  year: 2016
+  first_author: "Olkowicz S"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "27298365"
+    doi: "10.1073/pnas.1517131113"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:40159384
+  source_type: journal_article
+  title: "Cellular Scaling Rules for Brains of the Galliform Birds (Aves, Galliformes) Compared to Those of Songbirds and Parrots: Distantly Related Avian Lineages Have Starkly Different Neuronal Cerebrotypes."
+  year: 2025
+  first_author: "Kocourek M"
+  container: "Brain Behav Evol"
+  identifiers:
+    pmid: "40159384"
+    doi: "10.1159/000545417"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:24971054
+  source_type: journal_article
+  title: "The elephant brain in numbers."
+  year: 2014
+  first_author: "Herculano-Houzel S"
+  container: "Front Neuroanat"
+  identifiers:
+    pmid: "24971054"
+    doi: "10.3389/fnana.2014.00046"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:19915731
+  source_type: journal_article
+  title: "The human brain in numbers: a linearly scaled-up primate brain."
+  year: 2009
+  first_author: "Herculano-Houzel S"
+  container: "Front Hum Neurosci"
+  identifiers:
+    pmid: "19915731"
+    doi: "10.3389/neuro.09.031.2009"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:40966013
+  source_type: journal_article
+  title: "Cellular Composition of the Brain of a Northern Minke Whale."
+  year: 2025
+  first_author: "Avelino-de-Souza K"
+  container: "J Comp Neurol"
+  identifiers:
+    pmid: "40966013"
+    doi: "10.1002/cne.70089"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:23090991
+  source_type: journal_article
+  title: "Metabolic constraint imposes tradeoff between body size and number of brain neurons in human evolution."
+  year: 2012
+  first_author: "Fonseca-Azevedo K"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "23090991"
+    doi: "10.1073/pnas.1206390109"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30392798
+  source_type: journal_article
+  title: "h-Channels Contribute to Divergent Intrinsic Membrane Properties of Supragranular Pyramidal Neurons in Human versus Mouse Cerebral Cortex."
+  year: 2018
+  first_author: "Kalmbach BE"
+  container: "Neuron"
+  identifiers:
+    pmid: "30392798"
+    doi: "10.1016/j.neuron.2018.10.012"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:34759318
+  source_type: journal_article
+  title: "Allometric rules for mammalian cortical layer 5 neuron biophysics."
+  year: 2021
+  first_author: "Beaulieu-Laroche L"
+  container: "Nature"
+  identifiers:
+    pmid: "34759318"
+    doi: "10.1038/s41586-021-04072-3"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30340039
+  source_type: journal_article
+  title: "Enhanced Dendritic Compartmentalization in Human Cortical Neurons."
+  year: 2018
+  first_author: "Beaulieu-Laroche L"
+  container: "Cell"
+  identifiers:
+    pmid: "30340039"
+    doi: "10.1016/j.cell.2018.08.045"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:28388405
+  source_type: journal_article
+  title: "Trade-off between Transcriptome Plasticity and Genome Evolution in Cephalopods."
+  year: 2017
+  first_author: "Liscovitch-Brauer N"
+  container: "Cell"
+  identifiers:
+    pmid: "28388405"
+    doi: "10.1016/j.cell.2017.03.025"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:26268193
+  source_type: journal_article
+  title: "The octopus genome and the evolution of cephalopod neural and morphological novelties."
+  year: 2015
+  first_author: "Albertin CB"
+  container: "Nature"
+  identifiers:
+    pmid: "26268193"
+    doi: "10.1038/nature14668"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22559944
+  source_type: journal_article
+  title: "Inhibition of SRGAP2 function by its human-specific paralogs induces neoteny during spine maturation."
+  year: 2012
+  first_author: "Charrier C"
+  container: "Cell"
+  identifiers:
+    pmid: "22559944"
+    doi: "10.1016/j.cell.2012.03.034"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:39352808
+  source_type: journal_article
+  title: "CTNND2 moderates the pace of synaptic maturation and links human evolution to synaptic neoteny."
+  year: 2024
+  first_author: "Assendorp N"
+  container: "Cell Rep"
+  identifiers:
+    pmid: "39352808"
+    doi: "10.1016/j.celrep.2024.114797"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:39889695
+  source_type: journal_article
+  title: "Resolving the three-dimensional interactome of human accelerated regions during human and chimpanzee neurodevelopment."
+  year: 2025
+  first_author: "Pal A"
+  container: "Cell"
+  identifiers:
+    pmid: "39889695"
+    doi: "10.1016/j.cell.2025.01.007"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:24753565
+  source_type: journal_article
+  title: "The evolution of self-control."
+  year: 2014
+  first_author: "MacLean EL"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "24753565"
+    doi: "10.1073/pnas.1323533111"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:27152224
+  source_type: journal_article
+  title: "Ravens, New Caledonian crows and jackdaws parallel great apes in motor self-regulation despite smaller brains."
+  year: 2016
+  first_author: "Kabadayi C"
+  container: "R Soc Open Sci"
+  identifiers:
+    pmid: "27152224"
+    doi: "10.1098/rsos.160104"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:31758353
+  source_type: journal_article
+  title: "Response learning confounds assays of inhibitory control on detour tasks."
+  year: 2020
+  first_author: "van Horik JO"
+  container: "Anim Cogn"
+  identifiers:
+    pmid: "31758353"
+    doi: "10.1007/s10071-019-01330-w"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:32973004
+  source_type: journal_article
+  title: "A cortex-like canonical circuit in the avian forebrain."
+  year: 2020
+  first_author: "Stacho M"
+  container: "Science"
+  identifiers:
+    pmid: "32973004"
+    doi: "10.1126/science.abc5534"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:38180568
+  source_type: journal_article
+  title: "Immunohistochemical field parcellation of the human hippocampus along its antero-posterior axis."
+  year: 2024
+  first_author: "González-Arnay E"
+  container: "Brain Struct Funct"
+  identifiers:
+    pmid: "38180568"
+    doi: "10.1007/s00429-023-02725-9"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:20837545
+  source_type: journal_article
+  title: "RGS14 is a natural suppressor of both synaptic plasticity in CA2 neurons and hippocampal-based learning and memory."
+  year: 2010
+  first_author: "Lee SE"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "20837545"
+    doi: "10.1073/pnas.1005362107"
+  added_by: agent:comparative
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search

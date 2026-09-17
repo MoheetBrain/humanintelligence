@@ -1,0 +1,165 @@
+# Red-team audit - ADORA1. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:ADORA1:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:ADORA1
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: The defining human intervention is acute adult pharmacology and the rodent evidence concerns
+      an ongoing homeostatic process. The dossier grades the confound low with a stated caveat about a
+      conditional knockout of unstated onset, which is the honest reading.
+    evidence_refs:
+    - CLM:brakes:ADORA1:001
+  - check: rescue_mistaken_for_enhancement
+    result: fail
+    note: The canonical case. Caffeine's cognitive effects in habitual consumers are confounded by withdrawal
+      reversal, and the brake atlas states plainly that no adult caffeine-naive enhancement trial was
+      located - the decisive design (rested, non-withdrawn, low-habitual-use adults) does not appear in
+      the retrieved literature, and the nearest substitute uses children. Until that trial exists, every
+      positive adult caffeine result is consistent with restoring a withdrawn baseline rather than raising
+      a rested one.
+    evidence_refs:
+    - CLM:brakes:ADORA1:003
+    - CLM:brakes:ADORA1:006
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: 'Every non-human claim for this target carries translation.general_intelligence_relevance: animal_task_only
+      and translation.human_relevance naming the species, so the distinction is in required fields rather
+      than in prose. The residual risk is a consumer aggregating across it.'
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: Every Open Targets safetyLiabilities row used in this audit traces to one of two PMIDs, SRC:PMID:28216264
+      and SRC:PMID:23197038, and both are pharmaceutical-industry safety-pharmacology curation reviews
+      over overlapping published literature. Two rows agreeing is therefore close to one source agreeing
+      with itself. The target-level safety layer for the six annotated seed targets rests on two review
+      papers.
+    evidence_refs:
+    - CLM:brakes:ADORA1:007
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: pass
+    note: agent:brakes recorded two human clinical nulls for this target (CLM:brakes:ADORA1:004, :005),
+      both properly typed and both with measured endpoints. This is the target where that atlas's negative-evidence
+      discipline shows best.
+    evidence_refs:
+    - CLM:brakes:ADORA1:004
+    - CLM:brakes:ADORA1:005
+  - check: dose_response_inversion
+    result: flag
+    note: The dossier records a non-monotone or flat human dose ladder, which is itself the finding. An
+      arousal brake whose release is beneficial only from a depressed baseline has no headroom at a rested
+      one.
+    evidence_refs:
+    - CLM:brakes:ADORA1:003
+  - check: seizure_liability
+    result: flag
+    note: Convulsions are annotated to A1 INHIBITION, which is the caffeine-like direction and therefore
+      the direction-relevant entry, consistent with the known proconvulsant effect of high-dose methylxanthines.
+    evidence_refs:
+    - CLM:red_team:ADORA1:001
+  - check: psychiatric_liability
+    result: flag
+    note: Dependence and insomnia are in the dossier's liability list and are the best-documented human
+      consequences of chronic A1 antagonism, but no claim in the repository measures either as an endpoint.
+    evidence_refs:
+    - CLM:brakes:ADORA1:007
+  - check: systemic_adverse_effects
+    result: flag
+    note: 'The curated annotation set is dominated by cardiac and renal events attributed to A1 AGONISM
+      - atrioventricular block, arrhythmia, bradycardia, heart failure, and death - which is the OPPOSITE
+      direction to the one this project would propose. See the provenance finding: CLM:brakes:ADORA1:007
+      lists those events together with convulsions as consequences of ''adenosine A1 receptor pharmacology''
+      without separating direction.'
+    evidence_refs:
+    - CLM:brakes:ADORA1:007
+    - CLM:red_team:ADORA1:001
+  - check: model_organism_translation_failure
+    result: pass
+    note: 'Not applicable in the usual direction: this is a target where the human exposure base vastly
+      exceeds the animal literature. The translation risk runs the other way - rodent A1 work adds little
+      to what human caffeine pharmacology already shows.'
+  - check: overclaiming
+    result: pass
+    note: Read this target's dossier and facet rationales against its claims. No facet level exceeds what
+      its cited claims support, and the limiting_factor fields state what would have to change.
+  - check: provenance_integrity
+    result: flag
+    note: 'CLM:brakes:ADORA1:007 conflates directions. Reading the underlying Open Targets rows directly,
+      every cardiac and lethal event is annotated to ACTIVATION and only convulsions is annotated to INHIBITION.
+      The claim presents the whole set as consequences of ''A1 receptor pharmacology'', which attaches
+      agonist liabilities to an antagonist strategy. The error is CONSERVATIVE - it makes a caffeine-like
+      intervention look more dangerous than these rows support - so it cannot inflate the target, but
+      it is the same class of silent sign error that agent:brakes flagged as its own most likely residual
+      defect. CLM:red_team:ADORA1:001 records the direction-resolved version. Also: context.species human
+      with translation.human_relevance other_species_only, as for GABRA5:008.'
+    evidence_refs:
+    - CLM:brakes:ADORA1:007
+    - CLM:red_team:ADORA1:001
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:ADORA1:001#f1
+    severity: major
+    category: rescue_mistaken_for_enhancement
+    description: No adult caffeine-naive, rested, low-habitual-use enhancement trial exists in the located
+      literature. Every positive adult result for this mechanism is therefore consistent with withdrawal
+      reversal rather than enhancement above a rested baseline. agent:brakes identified this gap and named
+      it; the red team's independent search did not close it.
+    evidence_refs:
+    - CLM:brakes:ADORA1:003
+  - finding_id: AUD:red_team:ADORA1:001#f2
+    severity: minor
+    category: provenance_integrity
+    description: CLM:brakes:ADORA1:007 attaches A1-AGONIST liabilities (atrioventricular block, arrhythmia,
+      heart failure, death) to 'A1 receptor pharmacology' without separating direction, when the underlying
+      annotation assigns all of them to activation and only convulsions to inhibition. Conservative in
+      effect, wrong in fact.
+    evidence_refs:
+    - CLM:brakes:ADORA1:007
+    - CLM:red_team:ADORA1:001
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

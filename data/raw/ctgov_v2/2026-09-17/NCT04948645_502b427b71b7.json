@@ -1,0 +1,418 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D013118",
+          "term": "Spinal Cord Diseases"
+        },
+        {
+          "id": "D002493",
+          "term": "Central Nervous System Diseases"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D016472",
+          "term": "Motor Neuron Disease"
+        },
+        {
+          "id": "D019636",
+          "term": "Neurodegenerative Diseases"
+        },
+        {
+          "id": "D057177",
+          "term": "TDP-43 Proteinopathies"
+        },
+        {
+          "id": "D009468",
+          "term": "Neuromuscular Diseases"
+        },
+        {
+          "id": "D057165",
+          "term": "Proteostasis Deficiencies"
+        },
+        {
+          "id": "D008659",
+          "term": "Metabolic Diseases"
+        },
+        {
+          "id": "D009750",
+          "term": "Nutritional and Metabolic Diseases"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D000690",
+          "term": "Amyotrophic Lateral Sclerosis"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "interventionNames": [
+            "Drug: Fosigotifator"
+          ],
+          "label": "Fosigotifator Low Dose",
+          "type": "ACTIVE_COMPARATOR"
+        },
+        {
+          "interventionNames": [
+            "Drug: Fosigotifator"
+          ],
+          "label": "Fosigotifator Medium Dose",
+          "type": "ACTIVE_COMPARATOR"
+        },
+        {
+          "interventionNames": [
+            "Drug: Fosigotifator"
+          ],
+          "label": "Fosigotifator High Dose",
+          "type": "ACTIVE_COMPARATOR"
+        },
+        {
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Fosigotifator High Dose",
+            "Fosigotifator Low Dose",
+            "Fosigotifator Medium Dose"
+          ],
+          "description": "Oral",
+          "name": "Fosigotifator",
+          "otherNames": [
+            "ABBV-CLS-7262"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Oral",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "ALS",
+        "Amyotrophic Lateral Sclerosis"
+      ],
+      "keywords": [
+        "Fosigotifator",
+        "ABBV-CLS-7262"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Irvine",
+          "country": "United States",
+          "facility": "UC Irvine Health ALS and Neuromuscular Center",
+          "geoPoint": {
+            "lat": 33.66946,
+            "lon": -117.82311
+          },
+          "state": "California",
+          "zip": "92868"
+        },
+        {
+          "city": "Los Angeles",
+          "country": "United States",
+          "facility": "Cedars-Sinai Medical Center",
+          "geoPoint": {
+            "lat": 34.05223,
+            "lon": -118.24368
+          },
+          "state": "California",
+          "zip": "90048"
+        },
+        {
+          "city": "San Francisco",
+          "country": "United States",
+          "facility": "Forbes Norris MDA/ALS Research and Treatment Center",
+          "geoPoint": {
+            "lat": 37.77493,
+            "lon": -122.41942
+          },
+          "state": "California",
+          "zip": "94109"
+        },
+        {
+          "city": "Jacksonville",
+          "country": "United States",
+          "facility": "Mayo Clinic",
+          "geoPoint": {
+            "lat": 30.33218,
+            "lon": -81.65565
+          },
+          "state": "Florida",
+          "zip": "32224"
+        },
+        {
+          "city": "Baltimore",
+          "country": "United States",
+          "facility": "Johns Hopkins ALS Clinical Trials Unit",
+          "geoPoint": {
+            "lat": 39.29038,
+            "lon": -76.61219
+          },
+          "state": "Maryland",
+          "zip": "21205"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Healey & AMG Center for ALS Research",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02114"
+        },
+        {
+          "city": "Rochester",
+          "country": "United States",
+          "facility": "Mayo Clinic",
+          "geoPoint": {
+            "lat": 44.02163,
+            "lon": -92.4699
+          },
+          "state": "Minnesota",
+          "zip": "55905"
+        },
+        {
+          "city": "Calgary",
+          "country": "Canada",
+          "facility": "University of Calgary - Heritage Medical Research Clinic",
+          "geoPoint": {
+            "lat": 51.05011,
+            "lon": -114.08529
+          },
+          "state": "Alberta",
+          "zip": "T2V1P9"
+        },
+        {
+          "city": "Edmonton",
+          "country": "Canada",
+          "facility": "University of Alberta",
+          "geoPoint": {
+            "lat": 53.55014,
+            "lon": -113.46871
+          },
+          "state": "Alberta",
+          "zip": "T6G 2G3"
+        },
+        {
+          "city": "Fredericton",
+          "country": "Canada",
+          "facility": "Stan Cassidy Centre for Rehabilitation",
+          "geoPoint": {
+            "lat": 45.94541,
+            "lon": -66.66558
+          },
+          "state": "New Brunswick",
+          "zip": "E38 0C7"
+        },
+        {
+          "city": "London",
+          "country": "Canada",
+          "facility": "London Health Sciences Centre",
+          "geoPoint": {
+            "lat": 42.98339,
+            "lon": -81.23304
+          },
+          "state": "Ontario",
+          "zip": "N6A585"
+        },
+        {
+          "city": "Toronto",
+          "country": "Canada",
+          "facility": "Sunnybrook Research Institute",
+          "geoPoint": {
+            "lat": 43.70643,
+            "lon": -79.39864
+          },
+          "state": "Ontario",
+          "zip": "M4N 3M5"
+        },
+        {
+          "city": "Montreal",
+          "country": "Canada",
+          "facility": "Centre Hospitalier de l'Universite de Montreal (CHUM)",
+          "geoPoint": {
+            "lat": 45.50884,
+            "lon": -73.58781
+          },
+          "state": "Quebec",
+          "zip": "H2L 4M1"
+        },
+        {
+          "city": "Montreal",
+          "country": "Canada",
+          "facility": "Montreal Neurological Institute and Hospital",
+          "geoPoint": {
+            "lat": 45.50884,
+            "lon": -73.58781
+          },
+          "state": "Quebec",
+          "zip": "H3A 2B4"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Fosigotifator is an investigational drug being researched for the treatment of Amyotrophic Lateral Sclerosis. This is an up to 156-week, 2-part study. Part 1 will be a 4-week, randomized, double-blind, placebo-controlled study; Part 2 will be up to a 152-week active treatment extension (ATE) during which all subjects will receive Fosigotifator."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "TRIPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 31,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Must have an identified, reliable caregiver.\n* Confirmed diagnosis of Familial Amyotrophic Lateral Sclerosis (ALS) or Sporadic ALS.\n* First ALS symptoms occurred \\<= 36 months before screening.\n* Able to swallow solids.\n* No known active COVID-19 infection at screening.\n* Slow vital capacity (SVC) \\>= 50% predicted value (for sex, age, ethnic origin, and height) at screening.\n* If taking concomitant standard-of-care medications approved for the treatment of ALS (or their components), subjects must be on a stable dose of the medication(s) for \\>30 days prior to Baseline in order to enter the study. For edaravone, a stable dose is defined by having completed 2 treatment cycles prior to Baseline.\n\nExclusion Criteria:\n\n* History of dementia/severe cognitive problems at screening.\n* History of clinically significant medical conditions (other than ALS) or any other reason, including any physical, psychological, or psychiatric condition that, in the opinion of the Investigator, would compromise the safety or interfere with the subject's participation in the study, or would make the subject an unsuitable candidate to receive study drug, or would put the subject at risk by participating in the study.\n* History of abnormal screening laboratory or imaging results that, in the opinion of the Investigator, are indicative of any significant cardiac, endocrinologic, hematologic, hepatic, immunologic, infectious, metabolic, urologic, pulmonary, gastrointestinal, dermatologic, psychiatric, renal, neurologic, and/or other major disease that would preclude administration of Fosigotifator.\n* Documented active or suspected malignancy or history of any malignancy within the last 5 years except for successfully treated non-melanoma skin cancer or localized carcinoma in situ of the cervix.\n* If female, is known to be pregnant, breastfeeding, considering becoming pregnant, or donating/banking eggs during the study or within 30 days or \\>5 half-lives (whichever is longer) after the last dose of study drug.\n* If male, plans to donate sperm or father a child during the study or within 30 days after the last dose of study drug.\n* Known to have received any investigational product within 30 days or 5 half-lives of the drug (whichever is longer) prior to the first dose of study drug or is currently enrolled in another clinical study.\n* History of Fosigotifator use prior to participation in this study.\n* Recent (within 6 months prior to Screening) history of drug or alcohol abuse.\n* Previous participation in a stem cell clinical study for treatment of ALS.\n* Current or anticipated use of diaphragmatic pacing during the study period.\n* Tracheostomy or use of non-invasive ventilatory support \\>= 22 hours a day.",
+      "healthyVolunteers": false,
+      "maximumAge": "80 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "A Phase 1 Study to Investigate the Safety and Pharmacokinetics of Fosigotifator in Patients With Amyotrophic Lateral Sclerosis",
+      "nctId": "NCT04948645",
+      "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled Study to Assess Safety, Tolerability, and Pharmacokinetics Following Multiple Doses of Fosigotifator in Subjects With Amyotrophic Lateral Sclerosis Followed by an Active Treatment Extension",
+      "orgStudyIdInfo": {
+        "id": "M20-405"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "AbbVie"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "Number of patients with treatment-related adverse events as assessed by CTCAE v4.03",
+          "measure": "Safety and Tolerability",
+          "timeFrame": "Baseline Up to Approximately Day 28"
+        },
+        {
+          "description": "Maximum Plasma Concentration \\[Cmax\\]",
+          "measure": "Pharmacokinetics",
+          "timeFrame": "Baseline Up to Approximately Day 28"
+        },
+        {
+          "description": "Area Under the Curve \\[AUC\\]",
+          "measure": "Pharmacokinetics",
+          "timeFrame": "Baseline Up to Approximately Day 28"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Concentration at steady state in CSF",
+          "measure": "CSF Pharmacokinetics",
+          "timeFrame": "Baseline Up to Approximately Day 28"
+        },
+        {
+          "description": "Number of patients with treatment-related adverse events as assessed by CTCAE v4.03",
+          "measure": "Safety and Tolerability",
+          "timeFrame": "Baseline Up to Approximately Week 156"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true,
+      "isUsExport": true,
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Calico Life Sciences LLC"
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "AbbVie"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2025-07-15",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2025-08-01",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2025-07-30",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2025-07-15",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2021-09-22",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2025-07",
+      "studyFirstPostDateStruct": {
+        "date": "2021-07-02",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2021-06-23",
+      "studyFirstSubmitQcDate": "2021-06-30",
+      "whyStopped": "Company Decision"
+    }
+  }
+}

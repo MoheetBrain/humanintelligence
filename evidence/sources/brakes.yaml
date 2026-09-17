@@ -1,0 +1,778 @@
+# Source registrations for the Cognitive Brake Atlas (agent:brakes).
+#
+# Every record below was located through a tool call in this session (PubMed
+# search/metadata via the bio-research PubMed MCP server, ClinicalTrials.gov API v2
+# via the c-trials MCP server, or Open Targets Platform GraphQL). Titles, years,
+# first authors and containers are what this agent believes the source to be; they
+# are machine-checked against the registry of record by
+# scripts/fetch_source_metadata.py --agent brakes (contract section 7).
+#
+# No abstract text or source passage is reproduced anywhere in this repository.
+# Paraphrases live in the claim `statement` fields, in this agent's own words.
+#
+# schema_version: 0.1.0
+
+# ----------------------------------------------------------------- GABRA5 ----
+- source_id: SRC:PMID:35123401
+  source_type: journal_article
+  title: "A randomized, double-blind, placebo-controlled phase II trial to explore the effects of a GABA-α5 NAM (basmisanil) on intellectual disability associated with Down syndrome."
+  year: 2022
+  first_author: "Goeldner C"
+  container: "J Neurodev Disord"
+  identifiers:
+    pmid: "35123401"
+    doi: "10.1186/s11689-022-09418-0"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:32934095
+  source_type: journal_article
+  title: "Bidirectional regulation of distinct memory domains by α5-subunit-containing GABAA receptors in CA1 pyramidal neurons."
+  year: 2020
+  first_author: "Engin E"
+  container: "Learn Mem"
+  identifiers:
+    pmid: "32934095"
+    doi: "10.1101/lm.052084.120"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:29674331
+  source_type: journal_article
+  title: "ONO-8590580, a Novel GABAA α5 Negative Allosteric Modulator Enhances Long-Term Potentiation and Improves Cognitive Deficits in Preclinical Models."
+  year: 2018
+  first_author: "Kawaharada S"
+  container: "J Pharmacol Exp Ther"
+  identifiers:
+    pmid: "29674331"
+    doi: "10.1124/jpet.117.247627"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22732440
+  source_type: journal_article
+  title: "Selective GABA(A) α5 positive allosteric modulators improve cognitive function in aged rats with memory impairment."
+  year: 2012
+  first_author: "Koh MT"
+  container: "Neuropharmacology"
+  identifiers:
+    pmid: "22732440"
+    doi: "10.1016/j.neuropharm.2012.06.023"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:38942471
+  source_type: journal_article
+  title: "Haploinsufficiency of GABAA Receptor-Associated Clptm1 Enhances Phasic and Tonic Inhibitory Neurotransmission, Suppresses Excitatory Synaptic Plasticity, and Impairs Memory."
+  year: 2024
+  first_author: "Ge Y"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "38942471"
+    doi: "10.1523/JNEUROSCI.0521-24.2024"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:41881181
+  source_type: review
+  title: "The role of GABAA receptors in hippocampus-dependent cognitive functions."
+  year: 2026
+  first_author: "Nagarajan R"
+  container: "Neurosci Biobehav Rev"
+  identifiers:
+    pmid: "41881181"
+    doi: "10.1016/j.neubiorev.2026.106659"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25751008
+  source_type: review
+  title: "Selective Modulators of α5-Containing GABAA Receptors and their Therapeutic Significance."
+  year: 2015
+  first_author: "Soh MS"
+  container: "Curr Drug Targets"
+  identifiers:
+    pmid: "25751008"
+    doi: "10.2174/1389450116666150309120235"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:NCT:NCT02024789
+  source_type: clinical_trial_registration
+  title: "A MULTI-CENTER, RANDOMIZED, DOUBLE-BLIND, PLACEBO-CONTROLLED PHASE 2 STUDY OF THE EFFICACY, SAFETY AND TOLERABILITY OF RG1662 IN ADULTS AND ADOLESCENTS WITH DOWN SYNDROME (CLEMATIS)"
+  year: 2014
+  first_author: "Hoffmann-La Roche"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT02024789"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+
+# Three basmisanil registry records were retrieved and machine-verified on 2026-09-17 and
+# then DEREGISTERED, because the claim that would have cited them could not be written
+# honestly: NCT02484703 (paediatric Down syndrome, terminated, n=45), NCT05307679 (Dup15q,
+# terminated, n=7) and NCT02953639 (schizophrenia cognition, completed with results posted,
+# n=214, MATRICS composite). A registered source that nothing cites is either a dropped
+# claim or a missing one (rule V22); this was the former. See the AUDIT ITEM in
+# docs/blackboard/handoffs/brakes.md section 5 for exactly what could not be determined and
+# what would settle it. The identifiers are kept here in prose so the red team can
+# re-retrieve all three in one get_trial_details call.
+
+# ---------------------------------- cross-target safety reference (curated) ---
+- source_id: SRC:PMID:28216264
+  source_type: review
+  title: "Potential functional and pathological side effects related to off-target pharmacological activity."
+  year: 2017
+  first_author: "Lynch JJ"
+  container: "J Pharmacol Toxicol Methods"
+  identifiers:
+    pmid: "28216264"
+    doi: "10.1016/j.vascn.2017.02.020"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: opentargets_api
+
+# ------------------------------------------------------------------ RGS14 ----
+- source_id: SRC:PMID:20837545
+  source_type: journal_article
+  title: "RGS14 is a natural suppressor of both synaptic plasticity in CA2 neurons and hippocampal-based learning and memory."
+  year: 2010
+  first_author: "Lee SE"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "20837545"
+    doi: "10.1073/pnas.1005362107"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:23817783
+  source_type: journal_article
+  title: "Postnatal developmental expression of regulator of G protein signaling 14 (RGS14) in the mouse brain."
+  year: 2014
+  first_author: "Evans PR"
+  container: "J Comp Neurol"
+  identifiers:
+    pmid: "23817783"
+    doi: "10.1002/cne.23395"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:36541898
+  source_type: review
+  title: "RGS14 expression in CA2 hippocampus, amygdala, and basal ganglia: Implications for human brain physiology and disease."
+  year: 2023
+  first_author: "Montanez-Miranda C"
+  container: "Hippocampus"
+  identifiers:
+    pmid: "36541898"
+    doi: "10.1002/hipo.23492"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:26123307
+  source_type: review
+  title: "Regulator of G Protein Signaling 14: A Molecular Brake on Synaptic Plasticity Linked to Learning and Memory."
+  year: 2015
+  first_author: "Evans PR"
+  container: "Prog Mol Biol Transl Sci"
+  identifiers:
+    pmid: "26123307"
+    doi: "10.1016/bs.pmbts.2015.03.006"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# --------------------------------------------- EIF2B_COMPLEX and EIF2S1 ----
+- source_id: SRC:PMID:23741617
+  source_type: journal_article
+  title: "Pharmacological brake-release of mRNA translation enhances cognitive memory."
+  year: 2013
+  first_author: "Sidrauski C"
+  container: "Elife"
+  identifiers:
+    pmid: "23741617"
+    doi: "10.7554/eLife.00498"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:31550413
+  source_type: review
+  title: "Structural insights into ISRIB, a memory-enhancing inhibitor of the integrated stress response."
+  year: 2020
+  first_author: "Anand AA"
+  container: "FEBS J"
+  identifiers:
+    pmid: "31550413"
+    doi: "10.1111/febs.15073"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30674674
+  source_type: journal_article
+  title: "Small molecule ISRIB suppresses the integrated stress response within a defined window of activation."
+  year: 2019
+  first_author: "Rabouw HH"
+  container: "Proc Natl Acad Sci U S A"
+  identifiers:
+    pmid: "30674674"
+    doi: "10.1073/pnas.1815767116"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:33029011
+  source_type: journal_article
+  title: "eIF2α controls memory consolidation via excitatory and somatostatin neurons."
+  year: 2020
+  first_author: "Sharma V"
+  container: "Nature"
+  identifiers:
+    pmid: "33029011"
+    doi: "10.1038/s41586-020-2805-8"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:NCT:NCT05842941
+  source_type: clinical_trial_registration
+  title: "HEALEY ALS Platform Trial - Regimen G DNL343"
+  year: 2023
+  first_author: "Merit E. Cudkowicz, MD"
+  container: "ClinicalTrials.gov"
+  identifiers:
+    nct: "NCT05842941"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: ctgov_api
+
+# ------------------------------------------------------------------- HCN1 ----
+- source_id: SRC:PMID:15550252
+  source_type: journal_article
+  title: "A behavioral role for dendritic integration: HCN1 channels constrain spatial memory and plasticity at inputs to distal dendrites of CA1 pyramidal neurons."
+  year: 2004
+  first_author: "Nolan MF"
+  container: "Cell"
+  identifiers:
+    pmid: "15550252"
+    doi: "10.1016/j.cell.2004.11.020"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:16234810
+  source_type: journal_article
+  title: "Activity-dependent decrease of excitability in rat hippocampal neurons through increases in I(h)."
+  year: 2005
+  first_author: "Fan Y"
+  container: "Nat Neurosci"
+  identifiers:
+    pmid: "16234810"
+    doi: "10.1038/nn1568"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:40210080
+  source_type: journal_article
+  title: "Hyperpolarization-Activated Channel 1 Modulates Resilience and Susceptibility to Social Avoidance Induced by Witnessing Social Defeat Stress."
+  year: 2025
+  first_author: "Kim J"
+  container: "Biol Psychiatry"
+  identifiers:
+    pmid: "40210080"
+    doi: "10.1016/j.biopsych.2025.03.025"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22662315
+  source_type: journal_article
+  title: "Impaired dendritic expression and plasticity of h-channels in the fmr1(-/y) mouse model of fragile X syndrome."
+  year: 2012
+  first_author: "Brager DH"
+  container: "Cell Rep"
+  identifiers:
+    pmid: "22662315"
+    doi: "10.1016/j.celrep.2012.02.002"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ----------------------------------------------------------------- ADORA1 ----
+- source_id: SRC:PMID:19193874
+  source_type: journal_article
+  title: "Control and function of the homeostatic sleep response by adenosine A1 receptors."
+  year: 2009
+  first_author: "Bjorness TE"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "19193874"
+    doi: "10.1523/JNEUROSCI.2942-08.2009"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:19186164
+  source_type: journal_article
+  title: "Astrocytic modulation of sleep homeostasis and cognitive consequences of sleep loss."
+  year: 2009
+  first_author: "Halassa MM"
+  container: "Neuron"
+  identifiers:
+    pmid: "19186164"
+    doi: "10.1016/j.neuron.2008.11.024"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:9862086
+  source_type: journal_article
+  title: "Mood and psychomotor performance effects of the first, but not of subsequent, cup-of-coffee equivalent doses of caffeine consumed after overnight caffeine abstinence."
+  year: 1998
+  first_author: "Robelin M"
+  container: "Behav Pharmacol"
+  identifiers:
+    pmid: "9862086"
+    doi: "10.1097/00008877-199811000-00016"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:15696321
+  source_type: journal_article
+  title: "Cognitive and psychomotor performance, mood, and pressor effects of caffeine after 4, 6 and 8 h caffeine abstinence."
+  year: 2005
+  first_author: "Heatherley SV"
+  container: "Psychopharmacology (Berl)"
+  identifiers:
+    pmid: "15696321"
+    doi: "10.1007/s00213-005-2159-9"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:11057520
+  source_type: journal_article
+  title: "Effects of low doses of caffeine on cognitive performance, mood and thirst in low and higher caffeine consumers."
+  year: 2000
+  first_author: "Smit HJ"
+  container: "Psychopharmacology (Berl)"
+  identifiers:
+    pmid: "11057520"
+    doi: "10.1007/s002130000506"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:16423144
+  source_type: journal_article
+  title: "Psychostimulant and other effects of caffeine in 9- to 11-year-old children."
+  year: 2006
+  first_author: "Heatherley SV"
+  container: "J Child Psychol Psychiatry"
+  identifiers:
+    pmid: "16423144"
+    doi: "10.1111/j.1469-7610.2005.01457.x"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------------ HDAC2 ----
+- source_id: SRC:PMID:19424149
+  source_type: journal_article
+  title: "HDAC2 negatively regulates memory formation and synaptic plasticity."
+  year: 2009
+  first_author: "Guan JS"
+  container: "Nature"
+  identifiers:
+    pmid: "19424149"
+    doi: "10.1038/nature07925"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:33378103
+  source_type: journal_article
+  title: "Bilateral histone deacetylase 1 and 2 activity and enrichment at unique genes following induction of long-term potentiation in vivo."
+  year: 2021
+  first_author: "Kyrke-Smith M"
+  container: "Hippocampus"
+  identifiers:
+    pmid: "33378103"
+    doi: "10.1002/hipo.23297"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25492968
+  source_type: review
+  title: "Histone deacetylases in memory and cognition."
+  year: 2014
+  first_author: "Penney J"
+  container: "Sci Signal"
+  identifiers:
+    pmid: "25492968"
+    doi: "10.1126/scisignal.aaa0069"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:34559230
+  source_type: journal_article
+  title: "Effect of the Histone Deacetylase Inhibitor FRM-0334 on Progranulin Levels in Patients With Progranulin Gene Haploinsufficiency: A Randomized Clinical Trial."
+  year: 2021
+  first_author: "Ljubenkov PA"
+  container: "JAMA Netw Open"
+  identifiers:
+    pmid: "34559230"
+    doi: "10.1001/jamanetworkopen.2021.25584"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:28497259
+  source_type: journal_article
+  title: "Safety and Tolerability of Intravenous Valproic Acid in Healthy Subjects: A Phase I Dose-Escalation Trial."
+  year: 2018
+  first_author: "Georgoff PE"
+  container: "Clin Pharmacokinet"
+  identifiers:
+    pmid: "28497259"
+    doi: "10.1007/s40262-017-0553-1"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------------ PTPN5 ----
+- source_id: SRC:PMID:25093460
+  source_type: journal_article
+  title: "Inhibitor of the tyrosine phosphatase STEP reverses cognitive deficits in a mouse model of Alzheimer's disease."
+  year: 2014
+  first_author: "Xu J"
+  container: "PLoS Biol"
+  identifiers:
+    pmid: "25093460"
+    doi: "10.1371/journal.pbio.1001923"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:26450419
+  source_type: journal_article
+  title: "Inhibition of the tyrosine phosphatase STEP61 restores BDNF expression and reverses motor and cognitive deficits in phencyclidine-treated mice."
+  year: 2016
+  first_author: "Xu J"
+  container: "Cell Mol Life Sci"
+  identifiers:
+    pmid: "26450419"
+    doi: "10.1007/s00018-015-2057-1"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ----------------------------------------------------------- KCNQ2, KCNQ3 ----
+- source_id: SRC:PMID:15608631
+  source_type: journal_article
+  title: "Conditional transgenic suppression of M channels in mouse brain reveals functions in neuronal excitability, resonance and behavior."
+  year: 2005
+  first_author: "Peters HC"
+  container: "Nat Neurosci"
+  identifiers:
+    pmid: "15608631"
+    doi: "10.1038/nn1375"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:25578363
+  source_type: journal_article
+  title: "Cholinergic afferent stimulation induces axonal function plasticity in adult hippocampal granule cells."
+  year: 2015
+  first_author: "Martinello K"
+  container: "Neuron"
+  identifiers:
+    pmid: "25578363"
+    doi: "10.1016/j.neuron.2014.12.030"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:22428574
+  source_type: review
+  title: "The urinary safety profile and secondary renal effects of retigabine (ezogabine): a first-in-class antiepileptic drug that targets KCNQ (K(v)7) potassium channels."
+  year: 2012
+  first_author: "Brickel N"
+  container: "Epilepsia"
+  identifiers:
+    pmid: "22428574"
+    doi: "10.1111/j.1528-1167.2012.03441.x"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------------ RTN4R ----
+- source_id: SRC:PMID:27798181
+  source_type: journal_article
+  title: "Nogo Receptor 1 Confines a Disinhibitory Microcircuit to the Critical Period in Visual Cortex."
+  year: 2016
+  first_author: "Stephany CÉ"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "27798181"
+    doi: "10.1523/JNEUROSCI.0935-16.2016"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:19052207
+  source_type: journal_article
+  title: "Genetic variants of Nogo-66 receptor with possible association to schizophrenia block myelin inhibition of axon growth."
+  year: 2008
+  first_author: "Budel S"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "19052207"
+    doi: "10.1523/JNEUROSCI.3828-08.2008"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:21645550
+  source_type: journal_article
+  title: "Missense mutation of the reticulon-4 receptor alters spatial memory and social interaction in mice."
+  year: 2011
+  first_author: "Lazar NL"
+  container: "Behav Brain Res"
+  identifiers:
+    pmid: "21645550"
+    doi: "10.1016/j.bbr.2011.05.020"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:15240813
+  source_type: journal_article
+  title: "Nogo receptor antagonism promotes stroke recovery by enhancing axonal plasticity."
+  year: 2004
+  first_author: "Lee JK"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "15240813"
+    doi: "10.1523/JNEUROSCI.1643-04.2004"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------------- OTX2 ----
+- source_id: SRC:PMID:22764251
+  source_type: journal_article
+  title: "Otx2 binding to perineuronal nets persistently regulates plasticity in the mature visual cortex."
+  year: 2012
+  first_author: "Beurdeley M"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "22764251"
+    doi: "10.1523/JNEUROSCI.0394-12.2012"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:18692473
+  source_type: journal_article
+  title: "Experience-dependent transfer of Otx2 homeoprotein into the visual cortex activates postnatal plasticity."
+  year: 2008
+  first_author: "Sugiyama S"
+  container: "Cell"
+  identifiers:
+    pmid: "18692473"
+    doi: "10.1016/j.cell.2008.05.054"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------------------------------ PDE4B ----
+- source_id: SRC:PMID:29241652
+  source_type: journal_article
+  title: "Acute administration of roflumilast enhances immediate recall of verbal word memory in healthy young adults."
+  year: 2018
+  first_author: "Van Duinen MA"
+  container: "Neuropharmacology"
+  identifiers:
+    pmid: "29241652"
+    doi: "10.1016/j.neuropharm.2017.12.019"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30776650
+  source_type: journal_article
+  title: "Acute treatment with the PDE4 inhibitor roflumilast improves verbal word memory in healthy old individuals: a double-blind placebo-controlled study."
+  year: 2019
+  first_author: "Blokland A"
+  container: "Neurobiol Aging"
+  identifiers:
+    pmid: "30776650"
+    doi: "10.1016/j.neurobiolaging.2019.01.014"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30536081
+  source_type: journal_article
+  title: "An experimental medicine study of the phosphodiesterase-4 inhibitor, roflumilast, on working memory-related brain activity and episodic memory in schizophrenia patients."
+  year: 2021
+  first_author: "Gilleen J"
+  container: "Psychopharmacology (Berl)"
+  identifiers:
+    pmid: "30536081"
+    doi: "10.1007/s00213-018-5134-y"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ---------------------------------------------------------------- GPR158 ----
+- source_id: SRC:PMID:28851741
+  source_type: journal_article
+  title: "Gpr158 mediates osteocalcin's regulation of cognition."
+  year: 2017
+  first_author: "Khrimian L"
+  container: "J Exp Med"
+  identifiers:
+    pmid: "28851741"
+    doi: "10.1084/jem.20171320"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:31311860
+  source_type: journal_article
+  title: "The signaling proteins GPR158 and RGS7 modulate excitability of L2/3 pyramidal neurons and control A-type potassium channel in the prelimbic cortex."
+  year: 2019
+  first_author: "Song C"
+  container: "J Biol Chem"
+  identifiers:
+    pmid: "31311860"
+    doi: "10.1074/jbc.RA119.007533"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30546127
+  source_type: journal_article
+  title: "Homeostatic cAMP regulation by the RGS7 complex controls depression-related behaviors."
+  year: 2019
+  first_author: "Orlandi C"
+  container: "Neuropsychopharmacology"
+  identifiers:
+    pmid: "30546127"
+    doi: "10.1038/s41386-018-0238-y"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------------------------- HCN1 (second round: harm + human) ---
+- source_id: SRC:PMID:19726656
+  source_type: journal_article
+  title: "Loss of dendritic HCN1 subunits enhances cortical excitability and epileptogenesis."
+  year: 2009
+  first_author: "Huang Z"
+  container: "J Neurosci"
+  identifiers:
+    pmid: "19726656"
+    doi: "10.1523/JNEUROSCI.1531-09.2009"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+- source_id: SRC:PMID:30340039
+  source_type: journal_article
+  title: "Enhanced Dendritic Compartmentalization in Human Cortical Neurons."
+  year: 2018
+  first_author: "Beaulieu-Laroche L"
+  container: "Cell"
+  identifiers:
+    pmid: "30340039"
+    doi: "10.1016/j.cell.2018.08.045"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search
+
+# ------------------------- EIF2B_COMPLEX (third round: human genetic phenotype) ---
+- source_id: SRC:PMID:31438897
+  source_type: journal_article
+  title: "Adult-onset vanishing white matter disease with the EIF2B2 gene mutation presenting as menometrorrhagia."
+  year: 2019
+  first_author: "Wei C"
+  container: "BMC Neurol"
+  identifiers:
+    pmid: "31438897"
+    doi: "10.1186/s12883-019-1429-9"
+  added_by: agent:brakes
+  added_on: "2026-09-17"
+  retrieval:
+    method: pubmed_search

@@ -1,0 +1,36 @@
+schema_version: 0.1.0
+id: CPD:CHEMBL3335793
+node_type: Compound
+label: "AZD3965 (monocarboxylate transporter 1 inhibitor)"
+identifiers:
+  chembl_id: "CHEMBL3335793"
+  identifier_provenance: "ChEMBL compound_search(name='AZD3965') in the curation session on 2026-09-17"
+max_clinical_phase:
+  value: null
+  as_reported: "1"
+  source: "ChEMBL compound_search response, curation session 2026-09-17"
+chembl_fields_as_returned:
+  pref_name: "AZD3965"
+  molecule_type: "Small molecule"
+  molecular_formula: "C21H24F3N5O5S"
+  chemical_probe: "1"
+attributes:
+  provenance_limitation: "ChEMBL was queried through an MCP tool that writes no immutable snapshot, so no SRC:DB:chembl release can be registered or verified under resolution R1; database numerics are therefore carried as strings and asserted as no number."
+targets: [TGT:SLC16A1]
+mechanism_as_reported: "monocarboxylate transporter 1 inhibitor, taken orally"
+state_variables_touched: []
+cited_by_claims: [CLM:power:SLC16A1:005]
+role_in_atlas: >-
+  The only compound in this atlas that has been given to humans in a trial directed at
+  one of these targets. It is carried here so the evidence-gap record
+  CLM:power:SLC16A1:005 names a real, tool-sourced identifier rather than a slug. Note
+  that `state_variables_touched` is deliberately EMPTY: the trial measured no state
+  variable this atlas models, which is the whole content of the gap.
+notes: >-
+  FOR agent:red_team — dose-limiting toxicities in the phase 1 trial
+  (SRC:NCT:NCT01791595) were haematological, cardiac and ophthalmic, and patients with
+  known retinal disease were excluded at screening. agent:power does not own
+  safety_liability_burden and has not graded it. This is the only first-in-human safety
+  read-out for any target in the power atlas.
+dose_information: omitted_by_policy
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

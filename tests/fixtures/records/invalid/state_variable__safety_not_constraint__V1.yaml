@@ -1,0 +1,16 @@
+# FIXTURE — synthetic, for tests only. MUST FAIL: a safety variable must be a constraint, never something to maximise (README §3).
+id: SV:safety.placeholder_risk
+name: "placeholder risk"
+definition: >-
+  Synthetic placeholder safety variable used only to exercise the schema.
+kind: latent_biological
+timescale: hours
+level: systems
+units: null
+measurement_proxies: []
+response_shape: {shape: unknown, basis: default_no_evidence_yet, claim_refs: []}
+desirability: higher_is_better_within_range
+safety_coupling: []
+safety_coupling_basis: not_asserted_pending_claims
+status: provisional
+provenance: {defined_by: agent:ontology, basis: fixture}

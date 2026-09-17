@@ -1,0 +1,11 @@
+# FIXTURE — synthetic, for tests only. MUST FAIL: the facet catalogue is closed (contract §5.2).
+schema_version: "0.1.0"
+target_id: TGT:PLACEHOLDER
+assessed_by: agent:ontology
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: a_facet_that_is_not_in_the_catalogue
+    assessment_status: assessed
+    level: 2
+    rationale: "synthetic fixture"

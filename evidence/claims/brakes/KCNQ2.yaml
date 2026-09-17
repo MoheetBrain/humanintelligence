@@ -1,0 +1,233 @@
+# Claims — KCNQ2 (Kv7.2), Cognitive Brake Atlas.
+#
+# Brake class: excitability homeostasis. KCNQ2/3 heteromers carry the M-current, which
+# limits repetitive firing, produces spike-frequency adaptation and the medium
+# afterhyperpolarisation, and supports subthreshold theta resonance.
+#
+# This is the clearest case in the atlas where releasing a brake in the adult impairs
+# rather than improves cognition, and does so alongside seizures.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:KCNQ2:001
+  statement: >-
+    Conditional transgenic expression of dominant-negative KCNQ2 subunits in mouse brain
+    produced spontaneous seizures, behavioural hyperactivity and hippocampal morphological
+    change, and when the transgene was restricted to the period after the first postnatal
+    weeks it produced increased neuronal excitability together with deficits, not
+    improvements, in hippocampus-dependent spatial memory.
+  subject: GENE:KCNQ2
+  predicate: POSITIVELY_REGULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a dominant-negative subunit suppresses the heteromeric M-current and therefore implicates KCNQ2 and KCNQ3 jointly rather than KCNQ2 alone"
+      - "seizure activity is itself sufficient to impair spatial memory, so the memory deficit need not be a direct consequence of reduced M-current in memory circuits"
+      - "the retrieved abstract reports restriction of transgene expression to defined developmental periods; the post-critical-period condition is the adult-relevant arm and is the one cited here"
+  evidence:
+    - source_id: SRC:PMID:15608631
+      design: overexpression
+      species: SPECIES:NCBITaxon:10090
+      population: "male and female transgenic mice with conditional, temporally restricted dominant-negative KCNQ2 expression and controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "spontaneous seizures, locomotor activity, hippocampal morphology, spatial memory in a swimming task; CA1 excitability, spike-frequency adaptation, medium afterhyperpolarisation and subthreshold theta resonance"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "an adult-onset perturbation in healthy animals with an explicit developmental-versus-adult dissociation, and a clear result in the direction opposite to brake release; single study, one species"
+    calibration_status: uncalibrated_subjective
+  risks: ["this claim is the atlas's strongest single counterexample to the general brake-release hypothesis"]
+  confounders: ["seizures as a mediator", "transgene expression level", "swimming performance"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:KCNQ2:002
+  statement: >-
+    In adult mouse hippocampal slices, stimulating cholinergic afferents produced a
+    muscarinic, calcium-dependent inhibition of the axonal KCNQ/M current in dentate
+    granule cells that lowered the action-potential threshold and raised intrinsic
+    excitability for at least 30 minutes, and KCNQ2 and KCNQ3 subunits were localised
+    immunohistochemically to those axons.
+  subject: GENE:KCNQ2
+  predicate: NEGATIVELY_REGULATES
+  object: SV:stability.intrinsic_excitability
+  claim_type: mechanistic
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the M-current inhibition is inferred pharmacologically and from immunolocalisation, not by genetic removal of KCNQ2"
+      - "acetylcholine has many targets; the authors describe the mechanism as one cellular route by which acetylcholine might partly enhance cognitive processing, which is explicitly a hypothesis"
+  evidence:
+    - source_id: SRC:PMID:25578363
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10090
+      population: "adult mouse hippocampal slices with cholinergic fibre stimulation and granule-cell recordings"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "action-potential threshold, intrinsic excitability, synaptic potential to spike coupling, axonal calcium, and KCNQ2/KCNQ3 localisation"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "adult tissue, defined mechanism, and it shows the brake is already under physiological neuromodulatory control; cellular endpoint only"
+    calibration_status: uncalibrated_subjective
+  risks: ["a brake that endogenous acetylcholine already releases transiently is a poor candidate for tonic pharmacological release"]
+  confounders: ["slice preparation", "pharmacological specificity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:KCNQ2:003
+  statement: >-
+    Across the controlled trials and the overall phase 2/3 programme of the first-in-class
+    KCNQ2/3 opener retigabine, urinary adverse events including urinary hesitation and an
+    increased risk of urinary retention were reported more often than on placebo, reflecting
+    the same channel pharmacology acting on bladder smooth muscle.
+  subject: DRUG:CHEMBL41355
+  predicate: INCREASES_RISK
+  object: AE:urinary_retention
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "retigabine opens rather than blocks KCNQ channels, so this liability constrains the brake-strengthening direction, not the brake-release direction"
+      - "the source is a sponsor-authored review of the programme, not an independent meta-analysis"
+      - "it says nothing about the cognitive consequences of either direction of KCNQ modulation"
+  evidence:
+    - source_id: SRC:PMID:22428574
+      design: systematic_review
+      species: SPECIES:NCBITaxon:9606
+      population: "adults with partial-onset seizures in the pivotal controlled trials and the wider phase 2/3 programme"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "urinary adverse events, urinary retention, urine crystals, urinary tract infection and nephrolithiasis"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "human programme-level safety data; directionally relevant only to KCNQ opening, and this is recorded explicitly so it is not misread"
+    calibration_status: uncalibrated_subjective
+  risks: ["KCNQ channels are peripheral as well as central; either direction of modulation inherits a smooth-muscle constraint"]
+  confounders: ["concomitant antiepileptic drugs", "sponsor authorship"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

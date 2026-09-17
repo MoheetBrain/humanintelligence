@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/104172993/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/104172993"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs122453115"
+          }
+        },
+        "accession_id": "GCST90255366",
+        "association_id": 104172993,
+        "beta": "-",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0803368",
+            "efo_trait": "internet addiction disorder"
+          }
+        ],
+        "first_author": "Haghighatfard A",
+        "locations": [
+          "X:153688833"
+        ],
+        "mapped_genes": [
+          "PNCK",
+          "SLC6A8"
+        ],
+        "multi_snp_haplotype": false,
+        "or_per_copy_num": 1.92,
+        "or_value": "1.92",
+        "p_value": 2e-08,
+        "pubmed_id": "36566681",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 2,
+        "range": "-",
+        "reported_trait": [
+          "Internet addiction disorder"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs122453115"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs122453115-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=SLC6A8&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,375 @@
+# State variables — domain: cognition
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: cognition
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Organism-level cognitive capacities and rates: the quantities a cognitive scientist would try
+  to estimate directly from behaviour. These are the outputs the project cares about, not the
+  levers it proposes to pull.
+
+variables:
+
+  - id: SV:cognition.general_cognitive_ability
+    name: "general cognitive ability"
+    definition: >-
+      The common factor shared across diverse cognitive tests in a population, as a statistical
+      construct. Defined here as the construct itself, with no assumption that it corresponds to
+      a single biological quantity.
+    kind: latent_cognitive
+    timescale: years
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "multi-test battery g estimate"
+        modality: neuropsychological_battery
+        status: established_human_proxy
+      - name: "single composite IQ score"
+        modality: neuropsychological_battery
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:generalisation, PRIM:abstraction]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.fluid_reasoning_capacity
+    name: "fluid reasoning capacity"
+    definition: >-
+      Capacity to solve novel problems that cannot be answered from stored knowledge, measured
+      by performance on unfamiliar relational and inductive problems.
+    kind: latent_cognitive
+    timescale: months
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "matrix reasoning task family"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "relational integration task family"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:relational_binding, PRIM:rule_extraction, PRIM:abstraction]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.processing_speed
+    name: "processing speed"
+    definition: >-
+      Rate at which simple, well-learned cognitive operations are executed, indexed by latency
+      on tasks with minimal decision complexity.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: "s^-1"
+    measurement_proxies:
+      - name: "simple and choice reaction time"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "symbol/digit substitution task family"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.learning_rate
+    name: "learning rate"
+    definition: >-
+      Rate at which performance improves per unit of relevant experience, for a stated task and
+      feedback structure. Not a single number for a person: it is task- and regime-specific by
+      definition.
+    kind: latent_cognitive
+    timescale: days
+    level: behavioural
+    units: "per trial"
+    measurement_proxies:
+      - name: "learning-curve slope from repeated practice"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "reinforcement-learning model learning-rate parameter"
+        modality: model_derived_estimate
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:credit_assignment, PRIM:prediction_error]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.abstraction_capacity
+    name: "abstraction capacity"
+    definition: >-
+      Capacity to form and use representations that discard task-irrelevant detail while
+      preserving the structure needed for a class of problems.
+    kind: latent_cognitive
+    timescale: months
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "category and rule-learning task family"
+        modality: behavioural_task
+        status: research_proxy
+      - name: "analogical mapping task family"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:abstraction, PRIM:latent_structure_discovery, PRIM:composition]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.transfer_breadth
+    name: "transfer breadth"
+    definition: >-
+      Extent to which a capacity gained on trained material appears on untrained material,
+      measured as the distance between trained and tested content at which a change is still
+      detectable.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "near- versus far-transfer test batteries"
+        modality: neuropsychological_battery
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:far_transfer, PRIM:generalisation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.metacognitive_accuracy
+    name: "metacognitive accuracy"
+    definition: >-
+      Correspondence between an individual's confidence in a judgement and the accuracy of that
+      judgement, independent of the accuracy level itself.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "confidence calibration / meta-d' estimation"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:metacognition, PRIM:error_monitoring]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.attentional_control
+    name: "attentional control"
+    definition: >-
+      Capacity to bias processing toward task-relevant information under competition,
+      independent of how much can be held in mind.
+    kind: latent_cognitive
+    timescale: days
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "conflict and interference task family"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "cued attention shift task family"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:attentional_gating, PRIM:distractor_suppression]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.cognitive_flexibility
+    name: "cognitive flexibility"
+    definition: >-
+      Capacity to change the rule, set or strategy in use when the environment requires it,
+      including the cost incurred by that change.
+    kind: latent_cognitive
+    timescale: days
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "task-switching cost"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "reversal and set-shifting task family"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:strategy_switching]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.sustained_attention_stability
+    name: "sustained attention stability"
+    definition: >-
+      Stability of performance over time on task, characterised by the rate of lapses and the
+      drift of response variability rather than by mean accuracy.
+    kind: latent_cognitive
+    timescale: hours
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "vigilance / continuous performance task lapse rate"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "reaction-time variability over session"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.cognitive_effort_cost
+    name: "cognitive effort cost"
+    definition: >-
+      Subjective and revealed cost of allocating cognitive resources to a task, as estimated
+      from effort-discounting choices. A cost term in the agent's own decision problem, not a
+      measure of capacity.
+    kind: latent_cognitive
+    timescale: hours
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "effort-discounting choice task"
+        modality: behavioural_task
+        status: research_proxy
+      - name: "self-reported effort and fatigue scales"
+        modality: questionnaire_or_diary
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:cognition.knowledge_accessibility
+    name: "knowledge accessibility"
+    definition: >-
+      Ease with which already-stored knowledge can be brought to bear on a current problem,
+      separable from whether the knowledge is stored at all.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "cued recall and fluency task family"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "semantic priming paradigms"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:memory_retrieval]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

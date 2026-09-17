@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34717344/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/34717344"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs61997667"
+          }
+        },
+        "accession_id": "GCST006568",
+        "association_id": 34717344,
+        "beta": "0.0168 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.012,
+        "ci_upper": 0.021,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004875",
+            "efo_trait": "mathematical ability"
+          }
+        ],
+        "first_author": "Lee JJ",
+        "locations": [
+          "14:56813328"
+        ],
+        "mapped_genes": [
+          "OTX2",
+          "OTX2-AS1"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-13,
+        "pubmed_id": "30038396",
+        "pvalue_description": "",
+        "pvalue_exponent": -13,
+        "pvalue_mantissa": 2,
+        "range": "[0.012-0.021]",
+        "reported_trait": [
+          "Highest math class taken (MTAG)"
+        ],
+        "risk_frequency": "0.1525",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs61997667"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs61997667-T"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=OTX2&efo_id=EFO_0004875&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

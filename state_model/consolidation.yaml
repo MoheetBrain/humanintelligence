@@ -1,0 +1,379 @@
+# State variables — domain: consolidation
+#
+# INSTANCES of the type system in ontology/state_variables.yaml. Written by
+# agent:ontology from the project brief and README §3; every field is a DEFINITION,
+# never an empirical finding.
+#
+# Read before editing:
+#   * `response_shape.shape` is `unknown` with basis `default_no_evidence_yet` for
+#     every variable here. That is not a placeholder to be filled in with a plausible
+#     curve: changing it requires basis `claim_supported` and at least one claim id.
+#     tests/test_state_model.py enforces this.
+#   * `safety_coupling` is empty everywhere with basis `not_asserted_pending_claims`.
+#     Which variables push which safety constraints is empirical; domain agents supply
+#     it through atlases/{domain}/state_variable_annotations.yaml with claim refs.
+#   * `measurement_proxies[*].status` is the honest measurability grade. An
+#     `animal_only_proxy` can never stand in for a human measurement.
+#   * `units: null` means "no agreed unit for this quantity", not "dimensionless".
+#   * Safety and stability variables declare `polarity`: `risk` (higher = more harm) or
+#     `margin` (higher = more headroom). `direction: increases` means OPPOSITE things
+#     against the two, so annotations are read relative to the declared polarity and the
+#     validator enforces the naming convention.
+
+schema_version: 0.1.0
+domain: consolidation
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+description: >-
+  Conversion of labile traces into durable, retrievable, integrated knowledge, and the rates
+  that govern loss, re-stabilisation and schema integration.
+
+variables:
+
+  - id: SV:consolidation.synaptic_consolidation_efficiency
+    name: "synaptic consolidation efficiency"
+    definition: >-
+      Fraction of newly induced synaptic change that becomes protein-synthesis-dependent and
+      persists beyond the labile window.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "fraction retained"
+    measurement_proxies:
+      - name: "ex-vivo late-phase potentiation persistence"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.systems_consolidation_rate
+    name: "systems consolidation rate"
+    definition: >-
+      Rate at which a memory's retrieval dependence shifts between the circuits that initially
+      supported it and those that support it in the long term.
+    kind: latent_biological
+    timescale: weeks
+    level: systems
+    units: "per week"
+    measurement_proxies:
+      - name: "retrograde-gradient lesion studies"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "longitudinal retrieval-network imaging"
+        modality: fmri_bold
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.consolidation_protein_synthesis_capacity
+    name: "consolidation protein synthesis capacity"
+    definition: >-
+      Rate at which the de novo protein synthesis required for consolidation can be sustained in
+      the relevant compartments during the consolidation window.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "protein synthesis rate"
+    measurement_proxies:
+      - name: "ex-vivo labelled amino-acid incorporation"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.camp_signalling_capacity
+    name: "cAMP signalling capacity"
+    definition: >-
+      Dynamic range available to the cyclic-AMP second-messenger system in a stated compartment:
+      how far the signal can rise above baseline before degradation limits it.
+    kind: latent_biological
+    timescale: minutes
+    level: cellular
+    units: "fold change above basal cAMP"
+    measurement_proxies:
+      - name: "ex-vivo cyclic-nucleotide assay or biosensor"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "PET tracer for phosphodiesterase availability"
+        modality: pet
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.plasticity_gene_accessibility
+    name: "plasticity gene accessibility"
+    definition: >-
+      Degree to which the chromatin at plasticity-related gene loci is in a state permitting
+      transcription, in a stated cell population.
+    kind: latent_biological
+    timescale: hours
+    level: molecular
+    units: "fraction of loci accessible"
+    measurement_proxies:
+      - name: "ex-vivo chromatin accessibility assay"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+      - name: "peripheral-tissue epigenetic marker panel"
+        modality: genomic_or_transcriptomic
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.sleep_dependent_replay_density
+    name: "sleep-dependent replay density"
+    definition: >-
+      Rate of reactivation of task-related activity patterns during sleep, per unit time in the
+      relevant sleep stage.
+    kind: latent_biological
+    timescale: hours
+    level: circuit
+    units: "events per minute"
+    measurement_proxies:
+      - name: "sleep-stage-resolved decoding of replay"
+        modality: electrophysiology_invasive
+        status: research_proxy
+      - name: "sleep spindle and slow-oscillation coupling indices"
+        modality: eeg_meg
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.reconsolidation_window_width
+    name: "reconsolidation window width"
+    definition: >-
+      Duration after reactivation during which a consolidated memory is again labile and
+      modifiable.
+    kind: latent_biological
+    timescale: hours
+    level: cellular
+    units: "hours"
+    measurement_proxies:
+      - name: "post-reactivation interference paradigms"
+        modality: behavioural_task
+        status: research_proxy
+      - name: "animal post-reactivation amnesia protocols"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:reconsolidation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.memory_allocation_selectivity
+    name: "memory allocation selectivity"
+    definition: >-
+      Degree to which new traces are allocated to distinct rather than overlapping neuronal
+      populations, for events separated in time or content.
+    kind: latent_biological
+    timescale: hours
+    level: circuit
+    units: null
+    measurement_proxies:
+      - name: "activity-tagging of engram populations"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:memory_allocation, PRIM:pattern_separation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.engram_stability
+    name: "engram stability"
+    definition: >-
+      Persistence, over time and against intervening experience, of the neural population that
+      supports a specific memory.
+    kind: latent_biological
+    timescale: months
+    level: circuit
+    units: "fraction retained per month"
+    measurement_proxies:
+      - name: "longitudinal population tagging and imaging"
+        modality: ex_vivo_or_animal_only
+        status: animal_only_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.forgetting_rate
+    name: "forgetting rate"
+    definition: >-
+      Rate of loss of retrievability of a stored item as a function of elapsed time, for a
+      stated material and retrieval cue.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: "fraction lost per week"
+    measurement_proxies:
+      - name: "spaced retention testing"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.retrieval_fidelity
+    name: "retrieval fidelity"
+    definition: >-
+      Precision and completeness of a retrieved memory relative to the original event, separably
+      from whether retrieval succeeded at all.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "continuous-report precision paradigms"
+        modality: behavioural_task
+        status: established_human_proxy
+      - name: "source and detail memory scoring"
+        modality: neuropsychological_battery
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:memory_retrieval, PRIM:pattern_completion]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.long_term_interference_resistance
+    name: "long-term interference resistance"
+    definition: >-
+      Degree to which consolidated content resists degradation by subsequently learned similar
+      content.
+    kind: latent_cognitive
+    timescale: weeks
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "AB/AC interference designs"
+        modality: behavioural_task
+        status: established_human_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:pattern_separation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1
+
+  - id: SV:consolidation.schema_integration_efficiency
+    name: "schema integration efficiency"
+    definition: >-
+      Ease with which new content is incorporated into existing organised knowledge rather than
+      stored as an isolated trace.
+    kind: latent_cognitive
+    timescale: days
+    level: behavioural
+    units: null
+    measurement_proxies:
+      - name: "schema-congruent versus incongruent learning designs"
+        modality: behavioural_task
+        status: research_proxy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+    desirability: unknown
+    safety_coupling: []
+    safety_coupling_basis: not_asserted_pending_claims
+    related_primitives: [PRIM:latent_structure_discovery, PRIM:generalisation]
+    status: active
+    provenance:
+      defined_by: agent:ontology
+      basis: project_brief_sprint1

@@ -1,0 +1,144 @@
+# Red-team audit - HDAC2. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:HDAC2:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:HDAC2
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: flag
+    note: The enhancement arm of the defining study is an Hdac2-deficient line, so a developmental contribution
+      cannot be excluded, and no adult-onset HDAC2-SELECTIVE perturbation was located. The adult pharmacological
+      evidence that exists is non-selective.
+    evidence_refs:
+    - CLM:brakes:HDAC2:001
+    - CLM:brakes:HDAC2:003
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: The deficient-line comparison is against wild type, so above-baseline in design, but most HDAC-inhibitor
+      cognitive literature is in deficit or ageing models.
+    evidence_refs:
+    - CLM:brakes:HDAC2:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: 'Every non-human claim for this target carries translation.general_intelligence_relevance: animal_task_only
+      and translation.human_relevance naming the species, so the distinction is in required fields rather
+      than in prose. The residual risk is a consumer aggregating across it.'
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: flag
+    note: Checked for shared sources, shared cohorts and shared senior authorship across this target's
+      claims. Cohort concentration checked by grouping every evidence item's population string. Two educational-attainment
+      GWAS carry 40 of the 289 claims in the repository (SRC:PMID:30038396, 20 claims; SRC:PMID:35361970,
+      20 claims), and the largest single literature cohort string is Okbay 2022's ~3.04 million European
+      sample, appearing 14 times. SRC:PMID:37365406 is UK Biobank only (n=336,993) and carries 6 claims.
+      Only 5 claims name UK Biobank explicitly, so the concentration is invisible to a text search and
+      had to be found by grouping sample-size strings.
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: flag
+    note: agent:brakes recorded a human clinical null for this target (CLM:brakes:HDAC2:004) with a measured
+      endpoint, correctly typed. The red team's independent search of the HDAC-inhibitor cognition literature
+      returned 23 records but no additional adequately designed healthy-adult cognitive trial, so nothing
+      was added.
+    evidence_refs:
+    - CLM:brakes:HDAC2:004
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: pass
+    note: No seizure liability is annotated or claimed for this target, and none was located. Searched
+      the pinned Open Targets release and the class literature.
+  - check: psychiatric_liability
+    result: flag
+    note: One safety claim is re-pointed to AE:headache, which is what the cited study establishes; fatigue
+      is in the dossier list. No psychiatric endpoint was measured.
+    evidence_refs:
+    - CLM:brakes:HDAC2:005
+  - check: systemic_adverse_effects
+    result: fail
+    note: The dossier carries thrombocytopenia, fatigue, nausea, hepatotoxicity and hypoacusis, all of
+      which come from the oncology-derived HDAC inhibitor class rather than from any HDAC2-selective agent.
+      That burden is real and the atlas carries it explicitly, which the seed registry required. Note
+      that Open Targets 26.06 returns an EMPTY safetyLiabilities list for HDAC2 - a clean illustration
+      that an empty database annotation is not a clean safety record.
+    evidence_refs:
+    - CLM:brakes:HDAC2:003
+    - CLM:brakes:HDAC2:005
+  - check: model_organism_translation_failure
+    result: flag
+    note: Rodent plasticity gains from a gene-deficient line; human evidence is a class-inhibitor null.
+      The gap is the finding.
+    evidence_refs:
+    - CLM:brakes:HDAC2:001
+    - CLM:brakes:HDAC2:004
+  - check: overclaiming
+    result: flag
+    note: 'The mechanism facet rests on a gene-level deficient line while the human and pharmacological
+      facets rest on class inhibitors that do not isolate HDAC2. Same structure as PDE4B: a gene-level
+      conclusion carried by family-level pharmacology.'
+    evidence_refs:
+    - CLM:brakes:HDAC2:001
+    - CLM:brakes:HDAC2:003
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:HDAC2:001#f1
+    severity: major
+    category: systemic_adverse_effects
+    description: HDAC2's liability burden is inherited from the oncology HDAC-inhibitor class - thrombocytopenia,
+      hepatotoxicity, fatigue, hypoacusis - while Open Targets returns no target-level annotation at all.
+      This target is the clearest demonstration in the audit that an empty database safety list must never
+      be graded as level 0.
+    evidence_refs:
+    - CLM:brakes:HDAC2:005
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

@@ -1,0 +1,317 @@
+{
+  "data": {
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    },
+    "target": {
+      "approvedSymbol": "ADORA1",
+      "biotype": "protein_coding",
+      "chemicalProbes": [
+        {
+          "drugId": "CHEMBL3613119",
+          "id": "CHEMBL3613119",
+          "isHighQuality": false,
+          "probeMinerScore": 28
+        },
+        {
+          "drugId": "CHEMBL2163568",
+          "id": "GR79236",
+          "isHighQuality": false,
+          "probeMinerScore": 54
+        },
+        {
+          "drugId": "CHEMBL219160",
+          "id": "LUF5981",
+          "isHighQuality": false,
+          "probeMinerScore": 19
+        },
+        {
+          "drugId": "CHEMBL285819",
+          "id": "PD003180",
+          "isHighQuality": false,
+          "probeMinerScore": 74
+        },
+        {
+          "drugId": "CHEMBL2113457",
+          "id": "TCPA",
+          "isHighQuality": true,
+          "probeMinerScore": 49
+        }
+      ],
+      "id": "ENSG00000163485",
+      "safetyLiabilities": [
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased blood pressure",
+          "eventId": "MONDO_0005468",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "ClinPGx",
+          "event": "aspirin-intolerant asthma",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "bronchoconstriction",
+          "eventId": "EFO_0009836",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "heart failure",
+          "eventId": "MONDO_0005252",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "induction of sleep",
+          "eventId": "EFO_0009843",
+          "literature": null
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "natriuresis",
+          "eventId": "GO_0035812",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "death",
+          "eventId": "EFO_0000480",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "diuresis",
+          "eventId": "HP_0000103",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "atrioventricular block",
+          "eventId": "MONDO_0000465",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "convulsions",
+          "eventId": "EFO_0009853",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased urinary sodium excretion",
+          "eventId": "GO_0035815",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "bradycardia",
+          "eventId": "HP_0001662",
+          "literature": null
+        },
+        {
+          "datasource": "ToxCast",
+          "event": "receptor binding",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased pain",
+          "eventId": "GO_1904057",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "cardioprotection",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "decreased heart rate",
+          "eventId": "HP_0001662",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "cardiac arrhythmia",
+          "eventId": "EFO_0004269",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "vasoconstriction",
+          "eventId": "",
+          "literature": null
+        },
+        {
+          "datasource": "Lynch et al. (2017)",
+          "event": "increased urine excretion",
+          "eventId": "HP_0000103",
+          "literature": "28216264"
+        },
+        {
+          "datasource": "Urban et al. (2012)",
+          "event": "vasodilation",
+          "eventId": "",
+          "literature": null
+        }
+      ],
+      "tractability": [
+        {
+          "label": "Approved Drug",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Structure with Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Ligand",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "High-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Med-Quality Pocket",
+          "modality": "SM",
+          "value": false
+        },
+        {
+          "label": "Druggable Family",
+          "modality": "SM",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt loc high conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "GO CC high conf",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "UniProt loc med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "UniProt SigP or TMHMM",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "GO CC med conf",
+          "modality": "AB",
+          "value": false
+        },
+        {
+          "label": "Human Protein Atlas loc",
+          "modality": "AB",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Literature",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "UniProt Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Database Ubiquitination",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Half-life Data",
+          "modality": "PR",
+          "value": false
+        },
+        {
+          "label": "Small Molecule Binder",
+          "modality": "PR",
+          "value": true
+        },
+        {
+          "label": "Approved Drug",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Advanced Clinical",
+          "modality": "OC",
+          "value": false
+        },
+        {
+          "label": "Phase 1 Clinical",
+          "modality": "OC",
+          "value": false
+        }
+      ]
+    }
+  }
+}

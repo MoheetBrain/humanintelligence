@@ -1,0 +1,121 @@
+# Facet assessment — SLC6A8. Contract §5.2 / §5.3. agent:power grades ONLY the six
+# facets it owns as lead atlas. Levels are ordinal (evidence_strength_v1, 0-4);
+# `level` grades supporting evidence, `counter_level` grades contradicting evidence,
+# and the two are independent by design.
+schema_version: 0.1.0
+target_id: TGT:SLC6A8
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Converging causal rodent evidence across designs (brain-specific conditional
+      knockout with the swim-speed confound removed, cell-type-restricted deletion)
+      plus a human monogenic disorder with a directly relevant clinical endpoint.
+    claim_refs: [CLM:power:SLC6A8:001, CLM:power:SLC6A8:003, CLM:power:SLC6A8:004]
+    counter_level: 2
+    counter_rationale: >-
+      A single adult-onset inducible deletion found no cognitive deficit, which does
+      not contradict the mechanism but bounds it to a developmental window.
+    counter_claim_refs: [CLM:power:SLC6A8:002]
+    limiting_factor: "every positive causal manipulation retrieved is developmental; the mechanism is established in the deficiency range only"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing: no study retrieved shows that perturbing SLC6A8 in
+      an adult changes cognition. The one adult-onset experiment that exists found no
+      effect, so there is no supporting evidence to grade.
+    search_basis: >-
+      PubMed searched across the whole index for 'Slc6a8 knockout mouse brain creatine
+      learning memory cognitive deficit' (3 results, all retrieved and read) plus the
+      creatine-transporter-deficiency literature. A hit would have been any adult-onset
+      perturbation of SLC6A8 showing a cognitive change. The one experiment that exists and
+      was designed for exactly this question - inducible deletion at postnatal day 60,
+      tested 60 days later - found no deficit, so it is recorded as counter-evidence rather
+      than as support. That is a tested absence, not an untested question, which is why
+      counter_level is 2 while level is 0.
+    claim_refs: []
+    counter_level: 2
+    counter_rationale: >-
+      Tamoxifen-inducible deletion at postnatal day 60 produced no Morris water maze,
+      novel object recognition or conditioned fear deficit while neonatal deletion in
+      the same study did, which is a direct, designed test of adult-onset dependence
+      and it came back negative. Unreplicated, and brain creatine depletion after
+      adult deletion was not reported.
+    counter_claim_refs: [CLM:power:SLC6A8:002]
+    limiting_factor: "one unreplicated rodent study carries the entire adult-onset question for this target"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak and indirect only. The single positive human result with a fluid-reasoning
+      endpoint was obtained in vegetarians, a low-substrate-baseline group, and it
+      loads the substrate rather than the transporter. No study at any level tests
+      whether raising SLC6A8 capacity above normal improves anything.
+    claim_refs: [CLM:power:creatine_human:001]
+    counter_level: 3
+    counter_rationale: >-
+      A pooled analysis of randomised trials found no memory effect in the younger
+      age band, and an independent randomised trial in young healthy omnivorous
+      active adults found no effect on any cognitive task while confirming a
+      physical-performance effect in the same participants. That is a human
+      interventional null with directly relevant endpoints, from two independent
+      sources.
+    counter_claim_refs: [CLM:power:creatine_human:002, CLM:power:creatine_human:003]
+    limiting_factor: "no experiment anywhere raises transporter capacity above wild type; the human evidence tests substrate loading instead"
+
+  - facet: transfer_breadth
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      One human trial measured two distinct domains (working memory and fluid
+      reasoning) in the same participants, which is the widest same-cohort breadth
+      retrieved for this target; no study tested transfer to untrained real-world or
+      far-transfer endpoints.
+    claim_refs: [CLM:power:creatine_human:001]
+    counter_level: 2
+    counter_rationale: >-
+      Where breadth was tested in rested young adults it was uniformly null across
+      executive and speed measures; the pooled evidence covers memory only and is
+      null in that age band.
+    counter_claim_refs: [CLM:power:creatine_human:003, CLM:power:creatine_human:002]
+    limiting_factor: "no far-transfer endpoint exists anywhere in this target's evidence base"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak and indirect. A pooled analysis reports that dose and duration did not
+      influence the findings across the trial range, and one group reports a smaller
+      cognitive-protection effect at a lower exposure than in their own earlier
+      higher-exposure study; one human study also measured the resulting change in
+      brain creatine, which links exposure to the actual substrate. None of this is a
+      dose-ranging design and none of it concerns transporter activity.
+    claim_refs: [CLM:power:creatine_human:002, CLM:power:creatine_human:004, CLM:power:creatine_human:005]
+    counter_level: 0
+    counter_rationale: "searched and found nothing that contradicts the reported dose-insensitivity; the deficit is absence of dose-ranging work, not conflicting work"
+    counter_claim_refs: []
+    limiting_factor: "no dose-ranging or exposure-response design retrieved, and no assay of transporter activity as a function of exposure"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Human randomised interventional evidence with cognitive endpoints exists and is
+      cited here, but every trial intervenes on the SUBSTRATE (creatine loading), not
+      on SLC6A8. As evidence about this target it is one step removed, which is why
+      this is graded 2 rather than higher despite the design quality.
+    claim_refs: [CLM:power:creatine_human:001, CLM:power:creatine_human:004, CLM:power:creatine_human:005]
+    counter_level: 3
+    counter_rationale: >-
+      The best-powered human evidence in the healthy-young-adult stratum is null: a
+      pooled subgroup estimate centred near zero with a tight interval, plus an
+      independent randomised null.
+    counter_claim_refs: [CLM:power:creatine_human:002, CLM:power:creatine_human:003]
+    limiting_factor: "no human intervention targets SLC6A8 itself; the corrector programme retrieved is variant-specific, preclinical and has no cognitive endpoint"

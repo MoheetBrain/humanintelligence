@@ -1,0 +1,1176 @@
+# Definitional edges — Intelligence Blueprint v0.1.0
+#
+# CLAIM-FREE STRUCTURAL FACTS ONLY. Every edge here carries
+# `provenance_class: ontology_axiom`, which means it is true by the definitions in
+# this ontology and needs no evidence. That is a strong statement, so the bar is high
+# and this file is deliberately short: PREFER FEWER AXIOMS OVER GUESSED FACTS.
+#
+# What is NOT allowed in this file
+# --------------------------------
+# * Anything empirical. No expression, no effect, no risk, no direction, no dose.
+# * Gene -> Protein ENCODES edges. Those are REFERENCE DATA compiled in Phase 2 from
+#   data/interim/gene_identifiers.jsonl (HGNC/UniProt) and an agent that hand-writes
+#   one has violated contract §7. ontology/edges.yaml restricts ENCODES to
+#   provenance_class: reference_data precisely so this file cannot contain one.
+# * Any relation whose allowed_provenance_classes omits ontology_axiom. The validator
+#   checks this, so a mistake here fails the build rather than entering the graph.
+# * Anatomy the author is not certain of. UBERON accessions are NOT hand-written
+#   (contract §7): the region axioms below use snake_case slugs and are limited to
+#   gross containment that every standard atlas agrees on. Phase 2 resolves the slugs
+#   to accessions through a fetch script, and that resolution is reference data.
+#
+# What IS in this file
+# --------------------
+# 1. MEMBER_OF_STATE_DOMAIN for all 92 declared state variables. Redundant with the
+#    identifier by construction (SV:{domain}.{name}) and written out so that domain
+#    membership is queryable in the graph rather than recovered by string parsing.
+# 2. SUPPORTS_PRIMITIVE where the state variable IS the capacity the primitive names
+#    by definition. These are the only primitive links treated as axioms; every other
+#    primitive-to-biology link is empirical and needs a claim. The `basis` note on each
+#    one states the definitional argument so a reviewer can attack it.
+# 3. PART_OF for gross brain-region containment, minimal and uncontroversial.
+#
+# Each entry has: subject, predicate, object, provenance_class, basis, defined_by.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+
+edges:
+
+  # ---- 1. state-variable domain membership (definitional, redundant by design) ----
+
+  - subject: SV:cognition.abstraction_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.attentional_control
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.cognitive_effort_cost
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.cognitive_flexibility
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.fluid_reasoning_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.general_cognitive_ability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.knowledge_accessibility
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.learning_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.metacognitive_accuracy
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.processing_speed
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.sustained_attention_stability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.transfer_breadth
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:cognition
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:cognition.* is by construction a
+      member of the cognition domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.camp_signalling_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.consolidation_protein_synthesis_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.engram_stability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.forgetting_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.long_term_interference_resistance
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.memory_allocation_selectivity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.plasticity_gene_accessibility
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.reconsolidation_window_width
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.retrieval_fidelity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.schema_integration_efficiency
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.sleep_dependent_replay_density
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.synaptic_consolidation_efficiency
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.systems_consolidation_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:consolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:consolidation.* is by construction a
+      member of the consolidation domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.atp_cost_per_action_potential
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.atp_cost_per_bit_transmitted
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.axonal_conduction_efficiency
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.coding_sparseness
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.dendritic_temporal_summation
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.housekeeping_to_compute_energy_ratio
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.information_throughput_per_unit_energy
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.ion_homeostasis_load
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.representational_redundancy
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.signal_to_noise_ratio
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:efficiency.synaptic_transmission_reliability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:efficiency
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:efficiency.* is by construction a
+      member of the efficiency domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.adult_neurogenesis_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.critical_period_permissiveness
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.dendritic_spine_turnover_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.ltd_threshold
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.ltp_magnitude
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.ltp_threshold
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.metaplasticity_setpoint
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.neuromodulatory_plasticity_gating
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.perineuronal_net_density
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.plasticity_brake_load
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.plasticity_related_translation_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.structural_plasticity_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.synaptic_scaling_gain
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:plasticity.synaptic_tagging_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:plasticity
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:plasticity.* is by construction a
+      member of the plasticity domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.astrocytic_glycogen_reserve
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.atp_adp_ratio
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.cerebral_blood_flow
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.glucose_oxidation_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.ketone_utilisation_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.lactate_flux
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.mitochondrial_spare_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.neurovascular_coupling_gain
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.oxygen_extraction_fraction
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.phosphocreatine_reserve
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.ros_production_rate
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:power.thermal_burden
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:power
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:power.* is by construction a member
+      of the power domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.addiction_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.anxiety_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.cardiovascular_burden
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.dose_limiting_tolerability_margin
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.excitotoxicity_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.insomnia_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.mania_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.oxidative_stress_burden
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.pain_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.proliferative_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.psychosis_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:safety.seizure_risk
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:safety
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:safety.* is by construction a member
+      of the safety domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.affective_stability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.arousal_level
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.blood_brain_barrier_integrity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.circadian_alignment
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.excitation_inhibition_balance
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.homeostatic_setpoint_integrity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.intrinsic_excitability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.ionic_homeostasis_margin
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.network_criticality_margin
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.neuroimmune_activation
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.oscillatory_coordination_integrity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.representational_stability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.sleep_pressure
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:stability.stress_axis_load
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:stability
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:stability.* is by construction a
+      member of the stability domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.attentional_gating_precision
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.binding_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.chunk_size
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.dendritic_integration_gain
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.distractor_resistance
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.interference_susceptibility
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.persistent_activity_stability
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.recurrent_gain
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.serial_order_fidelity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.tonic_inhibition_level
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.updating_efficiency
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.working_memory_capacity
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.workspace_broadcast_bandwidth
+    predicate: MEMBER_OF_STATE_DOMAIN
+    object: SVDOM:workspace
+    provenance_class: ontology_axiom
+    basis: >-
+      The domain is the first segment of the identifier: SV:workspace.* is by construction a
+      member of the workspace domain declared in ontology/state_variables.yaml.
+    defined_by: agent:ontology
+
+  # ---- 2. definitional state-variable -> primitive support ----
+
+  - subject: SV:cognition.abstraction_capacity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:abstraction
+    provenance_class: ontology_axiom
+    basis: >-
+      The state variable is defined as the capacity to form representations that discard
+      irrelevant detail, which is verbatim the primitive's operation.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.cognitive_flexibility
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:strategy_switching
+    provenance_class: ontology_axiom
+    basis: >-
+      Cognitive flexibility is defined as changing the rule or strategy in use when required,
+      including its cost — the primitive's operation plus its cost term.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.metacognitive_accuracy
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:metacognition
+    provenance_class: ontology_axiom
+    basis: >-
+      Metacognitive accuracy is defined as the correspondence between the self-representation of
+      reliability and actual reliability, i.e. the accuracy of the representation the primitive
+      is defined to construct.
+    defined_by: agent:ontology
+
+  - subject: SV:cognition.transfer_breadth
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:far_transfer
+    provenance_class: ontology_axiom
+    basis: >-
+      Transfer breadth is defined as the content distance at which a trained change is still
+      detectable; far transfer is defined as that distance being large. Same quantity, different
+      threshold.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.memory_allocation_selectivity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:memory_allocation
+    provenance_class: ontology_axiom
+    basis: >-
+      The state variable is defined as the selectivity with which new traces are assigned to
+      populations, which is the operation the primitive names.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.reconsolidation_window_width
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:reconsolidation
+    provenance_class: ontology_axiom
+    basis: >-
+      The window is defined as the interval during which the primitive's labile phase obtains;
+      the variable has no meaning except as a parameter of this primitive.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.retrieval_fidelity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:memory_retrieval
+    provenance_class: ontology_axiom
+    basis: >-
+      Retrieval fidelity is defined as the precision of the content the primitive returns, given
+      that retrieval occurred.
+    defined_by: agent:ontology
+
+  - subject: SV:consolidation.retrieval_fidelity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:pattern_completion
+    provenance_class: ontology_axiom
+    basis: >-
+      Completion is defined as recovering the stored pattern rather than a blend; fidelity is
+      the measure of how well that definitional requirement is met.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.attentional_gating_precision
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:attentional_gating
+    provenance_class: ontology_axiom
+    basis: >-
+      The state variable is defined as the selectivity of admission to the capacity-limited
+      stage, which is the operation the primitive names.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.binding_capacity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:relational_binding
+    provenance_class: ontology_axiom
+    basis: >-
+      Binding capacity is defined as the number of bindings maintainable without confusion; the
+      primitive is defined as representing such a binding. Capacity presupposes the operation.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.binding_capacity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:variable_binding
+    provenance_class: ontology_axiom
+    basis: >-
+      Same definitional relation: role-value bindings are bindings, so the capacity variable
+      bounds this primitive by definition.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.chunk_size
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:chunk_formation
+    provenance_class: ontology_axiom
+    basis: >-
+      Effective chunk size is defined as the number of elements one formed chunk contains; it is
+      the quantity the primitive's output is measured in.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.distractor_resistance
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:distractor_suppression
+    provenance_class: ontology_axiom
+    basis: >-
+      The state variable is defined as the survival of maintained content against competing
+      input, which is the outcome the primitive is defined to produce.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.persistent_activity_stability
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:persistent_representation
+    provenance_class: ontology_axiom
+    basis: >-
+      The primitive is defined as maintaining information across a gap with no external carrier;
+      this state variable is defined as the stability of exactly that maintained pattern. The
+      two definitions name the same capacity at different levels.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.serial_order_fidelity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:variable_binding
+    provenance_class: ontology_axiom
+    basis: >-
+      Order fidelity is defined as the preservation of position-to-item assignment, which is a
+      role-value binding in the primitive's sense.
+    defined_by: agent:ontology
+
+  - subject: SV:workspace.working_memory_capacity
+    predicate: SUPPORTS_PRIMITIVE
+    object: PRIM:persistent_representation
+    provenance_class: ontology_axiom
+    basis: >-
+      Capacity is the count of items the primitive can hold concurrently; a capacity of zero is
+      definitionally the absence of the primitive.
+    defined_by: agent:ontology
+
+  # ---- 3. gross brain-region containment (slugs, pending UBERON resolution) ----
+
+  - subject: REGION:ca1
+    predicate: PART_OF
+    object: REGION:hippocampus
+    provenance_class: ontology_axiom
+    basis: >-
+      CA1 is a named subfield of the hippocampus in every standard atlas; the term does not
+      exist independently of it.
+    defined_by: agent:ontology
+
+  - subject: REGION:ca2
+    predicate: PART_OF
+    object: REGION:hippocampus
+    provenance_class: ontology_axiom
+    basis: >-
+      CA2 is a named subfield of the hippocampus in every standard atlas.
+    defined_by: agent:ontology
+
+  - subject: REGION:ca3
+    predicate: PART_OF
+    object: REGION:hippocampus
+    provenance_class: ontology_axiom
+    basis: >-
+      CA3 is a named subfield of the hippocampus in every standard atlas.
+    defined_by: agent:ontology
+
+  - subject: REGION:dentate_gyrus
+    predicate: PART_OF
+    object: REGION:hippocampus
+    provenance_class: ontology_axiom
+    basis: >-
+      The dentate gyrus is a named subfield of the hippocampal formation in every standard
+      atlas.
+    defined_by: agent:ontology
+
+  - subject: REGION:hippocampus
+    predicate: PART_OF
+    object: REGION:medial_temporal_lobe
+    provenance_class: ontology_axiom
+    basis: >-
+      Gross-anatomical containment: the hippocampus lies within the medial temporal lobe by the
+      definition of that lobe's boundaries.
+    defined_by: agent:ontology
+
+  - subject: REGION:dorsolateral_prefrontal_cortex
+    predicate: PART_OF
+    object: REGION:prefrontal_cortex
+    provenance_class: ontology_axiom
+    basis: >-
+      The dorsolateral prefrontal cortex is a named subdivision of the prefrontal cortex; the
+      term is defined as a part of it.
+    defined_by: agent:ontology
+
+  - subject: REGION:prefrontal_cortex
+    predicate: PART_OF
+    object: REGION:frontal_cortex
+    provenance_class: ontology_axiom
+    basis: >-
+      Gross-anatomical containment, true by the definition of the prefrontal subdivision.
+    defined_by: agent:ontology
+
+  - subject: REGION:frontal_cortex
+    predicate: PART_OF
+    object: REGION:cerebral_cortex
+    provenance_class: ontology_axiom
+    basis: >-
+      Gross-anatomical containment, true by the definition of the cortical lobes.
+    defined_by: agent:ontology
+
+counts:
+  member_of_state_domain: 101
+  supports_primitive: 16
+  part_of_region: 8
+  total: 125

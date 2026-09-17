@@ -1,0 +1,127 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97475479/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97475479"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs62367470"
+          }
+        },
+        "accession_id": "GCST90105038",
+        "association_id": 97475479,
+        "beta": "0.00798644 unit increase",
+        "bg_efo_traits": [],
+        "ci_lower": 0.0053,
+        "ci_upper": 0.0107,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Okbay A",
+        "locations": [
+          "5:45192174"
+        ],
+        "mapped_genes": [
+          "HCN1",
+          "MRPS30"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6.000000000000001e-09,
+        "pubmed_id": "35361970",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 6,
+        "range": "[0.0053-0.0107]",
+        "reported_trait": [
+          "Educational attainment"
+        ],
+        "risk_frequency": "0.1768",
+        "snp_allele": [
+          {
+            "effect_allele": "T",
+            "rs_id": "rs62367470"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs62367470-T"
+        ],
+        "snp_interaction": false
+      },
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/95158467/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/95158467"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs4493682"
+          }
+        },
+        "accession_id": "GCST90095190",
+        "association_id": 95158467,
+        "beta": "35.550488 z score increase",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "MONDO_0004975",
+            "efo_trait": "Alzheimer disease"
+          },
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Kulminski AM",
+        "locations": [
+          "5:45187922"
+        ],
+        "mapped_genes": [
+          "HCN1",
+          "MRPS30"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 4e-07,
+        "pubmed_id": "34743297",
+        "pvalue_description": "",
+        "pvalue_exponent": -7,
+        "pvalue_mantissa": 4,
+        "range": "-",
+        "reported_trait": [
+          "Alzheimer's disease or educational attainment (pleiotropy)"
+        ],
+        "risk_frequency": "0.2034",
+        "snp_allele": [
+          {
+            "effect_allele": "C",
+            "rs_id": "rs4493682"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs4493682-C"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=HCN1&efo_id=EFO_0011015&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 2,
+    "totalPages": 1
+  }
+}

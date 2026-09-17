@@ -1,0 +1,71 @@
+# Target dossier — AlphaCognition v0.1 (lead atlas: alphacognition).
+# `identifiers` is deliberately left empty: it is machine-filled from HGNC by
+# scripts/fetch_gene_identifiers.py (contract §5.1, §7). No accession is hand-written here.
+# `computational_primitives` is empty for every dossier in this atlas because
+# ontology/computational_primitives.yaml did not exist when these were authored; declaring
+# PRIM ids against a non-existent vocabulary would create unresolvable cross-references.
+target_id: TGT:CRTC1
+schema_version: 0.1.0
+symbol: CRTC1
+lead_atlas: alphacognition
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: transcriptional_coactivator
+represented_entities:
+- GENE:CRTC1
+- PROT:Q6UUV9
+member_genes: []
+control_point_hypothesis:
+  statement: CRTC1 is a CREB-regulated transcription coactivator that traffics from synapses and dendrites
+    to the nucleus on activity and potentiates CREB-dependent transcription without requiring CREB phosphorylation.
+    The seed hypothesis is that CRTC1 availability is a rate-limiting control point on the transcription-dependent
+    step of memory consolidation, so raising it around the time of learning should increase how much of
+    an experience is consolidated. The strongest supporting result in this atlas is adult-onset, local,
+    healthy-baseline and specificity-controlled (CLM:...:CRTC1:001) — and is also a single unreplicated
+    rodent study with no human counterpart of any kind.
+  proposed_modulation: increase_activity
+  mechanism_chain:
+  - CLM:alphacognition:CRTC1:001
+  - CLM:alphacognition:CRTC1:003
+  state_variables:
+  - id: SV:consolidation.plasticity_gene_accessibility
+    asserted_relation: modulates
+    direction: increases
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:CRTC1:001
+  - id: SV:plasticity.ltd_threshold
+    asserted_relation: modulates
+    direction: unclear
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:CRTC1:003
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: low
+developmental_confound_rationale: The key perturbation was delivered virally to adult mice around training
+  (CLM:...:CRTC1:001), so it is adult-onset by construction, and the rescue result (CLM:...:CRTC1:002)
+  is also adult. No developmental dependence was found. 'low' here means 'no developmental confound was
+  identified in what was retrieved', not 'developmental involvement has been excluded' — no developmental
+  expression data for CRTC1 was ingested.
+open_questions:
+- No independent replication of CLM:alphacognition:CRTC1:001 was found in this session. The whole enhancement
+  case for CRTC1 rests on one paper from one group.
+- The same paper reports that CREB overexpression produced strikingly similar effects, so it is unresolved
+  whether CRTC1 is a control point or simply an entry point into the CREB programme.
+- No human evidence of any kind (interventional, genetic or observational) linking CRTC1 to cognition
+  was retrieved. The only human genetic signal found by the pipelines is locus-level and, where it exists,
+  sits on educational-attainment traits, which are not intelligence endpoints.
+- 'No liability record: this dossier lists no known_liabilities because none were retrieved, not because
+  none exist. Raising a CREB-pathway coactivator has obvious oncogenic and mood-related questions that
+  were not searched.'
+- Enhanced reconsolidation is a two-sided property (CLM:...:CRTC1:001 also enhanced reconsolidation of
+  an established memory); whether that is desirable is a design question, not a data question.
+- 'State-variable coupling caveat — SV:plasticity.ltd_threshold: the cited claim is `mechanistic` and
+  no perturbation evidence licenses a direction on this state variable (rule V16)'
+status: under_review
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  run_id: sprint1-alphacognition-curation-01

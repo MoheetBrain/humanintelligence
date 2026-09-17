@@ -1,0 +1,307 @@
+# State-variable TYPE SYSTEM — Intelligence Blueprint v0.1.0
+#
+# This file types state variables. It contains no instances: those live in
+# state_model/{domain}.yaml, one file per domain, and are validated against the
+# declarations here.
+#
+# The whole point of this type system is to make three project-level commitments
+# mechanical rather than rhetorical (README §3):
+#
+#   1. MAXIMISING IS NOT ASSUMED TO BE GOOD. Every instance carries a response_shape
+#      and a desirability, both defaulting to the uninformative value. A monotone
+#      "higher is better" reading of any variable must be licensed by evidence, and
+#      tests/test_state_model.py fails the build if a shape other than `unknown`
+#      appears with basis `default_no_evidence_yet`.
+#   2. SAFETY VARIABLES ARE CONSTRAINTS. Everything in the safety domain is
+#      kind: constraint with desirability: constraint_to_respect, and no aggregation
+#      may trade it against a benefit.
+#   3. MEASURABILITY IS DECLARED, NOT ASSUMED. `measurability` on each proxy says
+#      whether a human proxy exists at all, so that an animal-only proxy cannot
+#      silently stand in for a human measurement.
+#
+# The enum VALUES below are duplicated in ontology/vocabularies.yaml (which is what
+# the JSON Schemas are generated from). tests/test_ontology.py asserts the two agree,
+# so they cannot drift.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+
+id_convention:
+  pattern: '^SV:(cognition|power|efficiency|plasticity|workspace|consolidation|stability|safety)\.[a-z0-9][a-z0-9_]*$'
+  form: "SV:{domain}.{name}"
+  note: >-
+    The domain is part of the identifier, so a variable cannot be moved between
+    domains without changing its id — which is deliberate: renaming is visible in the
+    claim registry lock and cannot happen silently.
+
+domains:
+  - name: cognition
+    file: state_model/cognition.yaml
+    description: >-
+      Organism-level cognitive capacities and rates: the quantities a psychometrician
+      or a cognitive scientist would try to measure directly.
+    typical_kinds: [latent_cognitive, observable_proxy]
+
+  - name: power
+    file: state_model/power.yaml
+    description: >-
+      Energy supply, energy delivery and energetic by-products: what the tissue has
+      available to spend on computation.
+    typical_kinds: [latent_biological, observable_proxy]
+
+  - name: efficiency
+    file: state_model/efficiency.yaml
+    description: >-
+      Cost per unit of computation or communication: how much of the available power is
+      converted into useful information processing rather than overhead.
+    typical_kinds: [latent_biological, observable_proxy]
+
+  - name: plasticity
+    file: state_model/plasticity.yaml
+    description: >-
+      The capacity of synapses, cells and circuits to change, and the machinery that
+      permits or blocks that change.
+    typical_kinds: [latent_biological, constraint]
+
+  - name: workspace
+    file: state_model/workspace.yaml
+    description: >-
+      Online maintenance and manipulation capacity: how much can be held, protected
+      from interference and updated within a task.
+    typical_kinds: [latent_cognitive, latent_biological]
+
+  - name: consolidation
+    file: state_model/consolidation.yaml
+    description: >-
+      Conversion of labile traces into durable, retrievable, integrated knowledge, and
+      the rates that govern loss and re-stabilisation.
+    typical_kinds: [latent_biological, latent_cognitive]
+
+  - name: stability
+    file: state_model/stability.yaml
+    description: >-
+      Homeostatic and dynamical regulation: excitation/inhibition balance, criticality
+      margin, arousal, circadian and stress state. Stability is what keeps the other
+      domains inside their operating range.
+    typical_kinds: [latent_biological, constraint]
+
+  - name: safety
+    file: state_model/safety.yaml
+    description: >-
+      Named harm dimensions, represented as CONSTRAINTS on the admissible region of
+      state space. Never a cost term, never tradeable against a benefit.
+    typical_kinds: [constraint]
+
+enums:
+
+  kind:
+    description: What sort of quantity the variable is, epistemically.
+    values:
+      - value: latent_biological
+        meaning: >-
+          A biological quantity that is not directly observed in a living human brain
+          and must be inferred from proxies.
+      - value: latent_cognitive
+        meaning: >-
+          A cognitive construct that is not directly observed and is estimated from
+          task behaviour.
+      - value: observable_proxy
+        meaning: >-
+          A quantity that can be measured in a living human with an established
+          method, and which stands in for a latent variable.
+      - value: constraint
+        meaning: >-
+          A bound on the admissible region of state space rather than a quantity to be
+          optimised. All safety-domain variables are of this kind.
+    default: null
+    required: true
+
+  timescale:
+    description: >-
+      The characteristic timescale over which the variable itself changes — not the
+      timescale of an intervention that might move it.
+    values:
+      - value: milliseconds
+      - value: seconds
+      - value: minutes
+      - value: hours
+      - value: days
+      - value: weeks
+      - value: months
+      - value: years
+      - value: developmental
+        meaning: Changes principally during a developmental window.
+      - value: multi_timescale
+        meaning: Has distinct fast and slow components that cannot be collapsed.
+      - value: unknown
+    default: unknown
+    required: true
+
+  level:
+    description: The level of biological organisation at which the variable is defined.
+    values:
+      - value: molecular
+      - value: cellular
+      - value: circuit
+      - value: systems
+      - value: behavioural
+    default: null
+    required: true
+
+  response_shape:
+    description: >-
+      The shape of the relationship between this variable and useful cognitive output.
+      This is the project's central anti-naivety field.
+    values:
+      - value: linear
+        meaning: Monotone and approximately proportional over the relevant range.
+      - value: threshold
+        meaning: Little effect until a level is crossed, then an effect.
+      - value: inverted_u
+        meaning: An interior optimum; more is worse beyond it.
+      - value: u_shaped
+        meaning: An interior worst case; extremes are better than the middle.
+      - value: state_dependent
+        meaning: >-
+          The shape itself depends on other state variables (baseline tone, arousal,
+          sleep state), so no single curve exists.
+      - value: unknown
+        meaning: >-
+          Not established. THE DEFAULT. It is not a synonym for linear and must never
+          be treated as one.
+    default: unknown
+    required: true
+    instance_field_form:
+      shape: "one of the values above"
+      basis: >-
+        Why this shape is recorded. `default_no_evidence_yet` requires
+        shape: unknown and an empty claim_refs. Any shape other than unknown requires
+        basis `definitional` (it follows from the definition in this file) or
+        `claim_supported` together with at least one claim id in claim_refs.
+      claim_refs: "claim ids licensing a non-default shape; empty for the default"
+    basis_values: [default_no_evidence_yet, definitional, claim_supported]
+
+  desirability:
+    description: >-
+      Whether moving this variable is desirable at all. Defaults are deliberately
+      uninformative: the project does not know the direction of benefit for most of
+      these variables and must not pretend to.
+    values:
+      - value: context_dependent
+        meaning: >-
+          Depends on the rest of the state and the task. A COMMON, HONEST answer.
+      - value: higher_is_better_within_range
+        meaning: >-
+          Higher is better up to a bound that is itself not established. Never implies
+          unbounded benefit.
+      - value: constraint_to_respect
+        meaning: >-
+          Not an objective at all: a bound to stay inside. All safety variables.
+      - value: unknown
+        meaning: Not established. A DEFAULT.
+    defaults: [unknown, context_dependent]
+    required: true
+
+  measurability:
+    description: >-
+      How well the variable can be measured in a living human adult. Applied per
+      measurement proxy, and summarised on the variable by its best proxy.
+    values:
+      - value: established_human_proxy
+        meaning: >-
+          A validated human measurement exists and is used routinely for this quantity.
+      - value: research_proxy
+        meaning: >-
+          A human measurement exists but is research-grade, contested or indirect.
+      - value: animal_only_proxy
+        meaning: >-
+          Measurable only in animals or ex-vivo preparations. It CANNOT substitute for
+          a human measurement, and a claim resting on it is rodent_only at best.
+      - value: theoretical_construct
+        meaning: >-
+          No accepted measurement exists; the variable is currently a modelling
+          construct only.
+    default: null
+    required: true
+
+  status:
+    description: Lifecycle of the state-variable definition itself.
+    values:
+      - value: active
+      - value: provisional
+        meaning: Declared because the project needs the slot; definition may change.
+      - value: deprecated
+        meaning: Superseded; kept so that existing claim references still resolve.
+    default: active
+    required: true
+
+# ---------------------------------------------------------------------------------
+# Required shape of a state-variable INSTANCE in state_model/{domain}.yaml.
+# Enforced by schemas/state_variable.schema.json and blueprint.records.StateVariable.
+# ---------------------------------------------------------------------------------
+instance_required_fields:
+  - id                    # SV:{domain}.{name}; domain segment must match the file
+  - name                  # human-readable short name
+  - definition            # 1-2 sentences, mechanism-agnostic, no empirical assertion
+  - kind
+  - timescale
+  - level
+  - units                 # string or null; null means "no agreed unit", not "unitless"
+  - measurement_proxies   # list; MAY be empty, and an empty list is informative
+  - response_shape        # {shape, basis, claim_refs}
+  - desirability
+  - safety_coupling       # list of SV:safety.* ids; see note below
+  - safety_coupling_basis
+  - status
+  - provenance            # {defined_by, basis}
+
+instance_optional_fields:
+  - aliases
+  - related_primitives    # PRIM ids this variable is definitionally close to
+  - notes                 # type-level clarification only, never an empirical note
+
+measurement_proxy_required_fields: [name, modality, status]
+
+measurement_proxy_modalities:
+  - behavioural_task
+  - neuropsychological_battery
+  - eeg_meg
+  - fmri_bold
+  - mrs                   # magnetic resonance spectroscopy
+  - pet
+  - near_infrared_spectroscopy
+  - arterial_spin_labelling
+  - blood_or_csf_biomarker
+  - genomic_or_transcriptomic
+  - electrophysiology_invasive
+  - ex_vivo_or_animal_only
+  - questionnaire_or_diary
+  - device_or_wearable
+  - model_derived_estimate
+
+safety_coupling_policy:
+  field: safety_coupling
+  allowed_bases: [not_asserted_pending_claims, definitional]
+  default_basis: not_asserted_pending_claims
+  rule: >-
+    `safety_coupling` names the safety-domain variables that this variable can push.
+    Which variables actually couple to which is an EMPIRICAL question, so
+    agent:ontology leaves every list EMPTY with basis not_asserted_pending_claims.
+    Domain agents populate couplings through state-variable annotation records
+    (atlases/{domain}/state_variable_annotations.yaml) with claim references; the
+    validator refuses a non-empty list whose basis is not_asserted_pending_claims.
+    Pre-filling this field would be exactly the kind of plausible-sounding invention
+    the contract forbids (P2, P3), even though several couplings look obvious.
+
+no_invented_dynamics:
+  rule: >-
+    A state-variable definition may not assert a relationship to another state
+    variable, to a gene, to an intervention or to a phenotype. Relationships are
+    claims or annotations with provenance. The only exceptions are the axioms in
+    ontology/definitional_edges.yaml, which are definitional and carry
+    provenance_class: ontology_axiom.
+  enforced_by:
+    - tests/test_state_model.py
+    - blueprint.validate (rules V9, V17)

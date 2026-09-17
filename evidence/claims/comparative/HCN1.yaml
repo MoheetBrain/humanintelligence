@@ -1,0 +1,453 @@
+# Comparative claims bearing on the seed target TGT:HCN1 (h-current, HCN1 subunit).
+# Contract: docs/DATA_CONTRACT.md §4. Lead atlas for the HCN1 dossier is agent:brakes;
+# this file supplies only the comparative evidence and the two facets this agent owns.
+#
+# WHY THIS FILE MATTERS MORE THAN ITS SIZE SUGGESTS
+#
+# HCN1 is the one seed target where human-versus-rodent divergence has been measured
+# directly by patch-clamp in both species, rather than inferred. It is therefore the
+# best available test of how much rodent causal evidence transfers to adult humans.
+# The answer is uncomfortable, and this file records the discomfort rather than
+# resolving it:
+#
+#   * SRC:PMID:30392798 (Kalmbach 2018) finds h-channel-related membrane properties
+#     STRONGER in human than mouse, in SUPRAGRANULAR (layer 2/3) pyramidal neurons,
+#     with HCN1 transcript ubiquitous in human but not mouse supragranular excitatory
+#     neurons.
+#   * SRC:PMID:34759318 (Beaulieu-Laroche 2021) finds HCN conductance LOWER in human
+#     than the mammalian allometric rule predicts, in LAYER 5 pyramidal neurons, with
+#     human the sole outlier among ten species.
+#
+# These are not contradictory once the layer is attended to, and they are not
+# reconcilable into a single "human HCN1 is higher/lower than rodent" statement. Any
+# summary that picks one direction has discarded half the evidence.
+# CLM:comparative:HCN1:004 records the tension explicitly so that no downstream reader
+# can inherit only one side of it.
+#
+# Both human datasets come from neurosurgical tissue (epilepsy and tumour patients).
+# `baseline_context` is therefore `disease_population` on every human claim here, and
+# no claim in this file describes a healthy adult human.
+
+- claim_id: CLM:comparative:HCN1:001
+  schema_version: 0.1.0
+  statement: >-
+    Kalmbach and colleagues found by single-cell and single-nucleus RNA sequencing that
+    HCN1 transcript is present across excitatory neurons of human supragranular temporal
+    cortex but not across mouse supragranular excitatory neurons, where the labelling
+    they detected was attributed to interneurons.
+  subject: GENE:HCN1
+  predicate: EXPRESSED_IN
+  object: CELL:supragranular_pyramidal_neuron
+  claim_type: expression
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      A two-species contrast. With two species there is one comparison and zero degrees
+      of freedom for ancestry, so no phylogenetic control is possible even in principle
+      and none is claimed. Any lineage-specific interpretation rests on outgroup data
+      this study does not provide.
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: [REGION:temporal_cortex]
+    cell_types: [CELL:supragranular_pyramidal_neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "human tissue came from temporal lobe epilepsy and tumour resections; HCN channel expression is itself altered in epilepsy, so disease could produce the species difference"
+      - "the mouse comparator region is temporal association area, chosen as an analogue of human middle temporal cortex; the regions are homologised by argument, not by a conserved landmark"
+      - "transcript abundance is not channel protein, surface density or conductance"
+      - "cross-species single-cell data require cell-type matching across species, and the human and mouse taxonomies were built separately"
+  evidence:
+    - source_id: SRC:PMID:30392798
+      design: single_cell_atlas
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "human temporal cortex from epilepsy and tumour neurosurgical patients; mouse temporal association area"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "HCN1 subunit transcript detection in supragranular excitatory neurons, single-cell and single-nucleus RNA sequencing"
+      endpoint_category: molecular_readout
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "ubiquitous HCN1-subunit expression in excitatory neurons in human, but not mouse, supragranular layers"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Expression measured directly in adult human tissue, which is the relevant species
+      and life stage, but from a disease population, in one study, with no phylogenetic
+      control and no functional endpoint.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "an expression difference is not a functional difference; the functional claim is CLM:comparative:HCN1:002"
+    - "the direction of this result is OPPOSITE to CLM:comparative:HCN1:003 in layer 5 — see CLM:comparative:HCN1:004"
+  confounders: ["epilepsy", "brain tumour", "anti-epileptic medication", "post-resection tissue handling", "cross-species cell-type matching"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:HCN1:002
+  schema_version: 0.1.0
+  statement: >-
+    Kalmbach and colleagues showed by whole-cell recording in acute slices that blocking
+    h-channels with ZD7288 hyperpolarised resting potential and raised input resistance
+    far more in human than in mouse supragranular pyramidal neurons, and abolished
+    voltage sag, rebound and resonance in the human cells.
+  subject: PROT:HCN1
+  predicate: MODULATES
+  object: SV:stability.oscillatory_coordination_integrity
+  claim_type: mechanistic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    species_count: 2
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      Two-species contrast; no phylogenetic control possible or claimed. See
+      CLM:comparative:HCN1:001.
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: [REGION:temporal_cortex]
+    cell_types: [CELL:supragranular_pyramidal_neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the authors state the limitation themselves: human physiology came from neurosurgical patients and may be influenced by neuropathology, and h-channels are implicated in epilepsy"
+      - "ZD7288 is not HCN1-selective; it blocks h-current carried by any HCN subunit, so the claim is about h-current and not specifically about the HCN1 gene product"
+      - "human neurons are much larger, so a given conductance change produces a different voltage change; some of the species difference is geometry rather than channel biology"
+      - "the theta-transfer result is from a biophysical model, not a measurement"
+  evidence:
+    - source_id: SRC:PMID:30392798
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "adult human supragranular temporal cortex pyramidal neurons from epilepsy patients, plus three temporal and two frontal cortex tumour patients; adult mouse temporal association area pyramidal neurons"
+      sample_size:
+        reported_as: "human n=43 ... mouse n=39 cells from 10 mice"
+        value: null
+        unit: cells
+      endpoint: "change in resting membrane potential and input resistance on bath application of the h-channel blocker ZD7288"
+      endpoint_category: cellular_excitability
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "ZD7288 hyperpolarized the RMP by 8.15 +/- 1.52 mV in human neurons and 0.59 +/- 0.97 mV in mouse neurons"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:30392798
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "same cells as the preceding measurement"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "percentage change in input resistance at a common potential of -65 mV on h-channel block"
+      endpoint_category: cellular_excitability
+      effect_direction: increase
+      effect_size:
+        metric: percent_change
+        as_reported: "increased by 60.43 +/- 9.94% in human neurons ... and by 13.27 +/- 4.73% percent in mouse neurons"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Direct pharmacological perturbation in adult human tissue with a matched mouse
+      comparison, which is unusually strong for a comparative claim, but one study, one
+      laboratory, disease-derived tissue, a non-selective blocker, and a cellular rather
+      than cognitive endpoint.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this is ex vivo human tissue, not a living human; nothing here bears on whether modulating h-current changes cognition in a person"
+    - "the two evidence items come from the same experiment on the same cells and must not be counted as independent replication"
+    - "direction of the human-versus-rodent difference is opposite in layer 5 — see CLM:comparative:HCN1:004"
+  confounders: ["epilepsy", "brain tumour", "neuron size", "ZD7288 non-selectivity", "slice temperature and solution composition"]
+  dependencies: [CLM:comparative:HCN1:001]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:HCN1:003
+  schema_version: 0.1.0
+  statement: >-
+    Beaulieu-Laroche and colleagues recorded layer 5 pyramidal neurons in ten mammalian
+    species and found that HCN and voltage-gated potassium conductances follow an
+    allometric relationship with neuron size in nine of them, while human layer 5
+    neurons were statistically significant outliers with much lower conductances than
+    their size predicts.
+  subject: PROT:HCN1
+  predicate: MODULATES
+  object: CELL:layer5_pyramidal_neuron
+  claim_type: mechanistic
+  direction: unclear
+  context:
+    species:
+      - SPECIES:NCBITaxon:9606
+      - SPECIES:NCBITaxon:109475
+      - SPECIES:NCBITaxon:10090
+      - SPECIES:NCBITaxon:10047
+      - SPECIES:NCBITaxon:10116
+      - SPECIES:NCBITaxon:9668
+      - SPECIES:NCBITaxon:10141
+      - SPECIES:NCBITaxon:9986
+      - SPECIES:NCBITaxon:9483
+      - SPECIES:NCBITaxon:9544
+    species_count: 10
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      The methods report Pearson and Spearman correlation, ANCOVA for differences in
+      linear fits, and ordinary linear regression on log-log scales. No PGLS,
+      phylogenetic mixed model or independent contrasts. The analysis controls for
+      NEURON SIZE (allometry), which is a real and important control, but not for shared
+      ancestry: five of the nine non-human species (mouse, gerbil, rat, guinea pig,
+      rabbit) are Glires, so the "conserved rule" is fitted largely within one clade,
+      and several sub-analyses rest on n = 5, all of them Glires. The methods also state
+      species were included on grounds of tissue availability, brain-size range and
+      technical convenience, not phylogenetic sampling design.
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: [REGION:temporal_cortex]
+    cell_types: [CELL:layer5_pyramidal_neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "human tissue is neurosurgical; every other species contributed healthy tissue, so the human outlier status is confounded with disease at the level of the whole comparison and cannot be separated by this design"
+      - "phylogenetic pseudoreplication: with five Glires among nine species, the allometric rule could be a Glires rule that primates and the human were then tested against"
+      - "the brain region differed across species, selected as the closest analogue to human anterior temporal lobe by the authors' judgement"
+      - "conductance was estimated from recordings, so it inherits the assumptions of the extraction procedure and the cell-size measurement it is normalised by"
+      - "an outlier in a fitted relationship is a statement about the fit, not a demonstrated functional consequence"
+  evidence:
+    - source_id: SRC:PMID:34759318
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "layer 5 thick-tufted cortical pyramidal neurons in acute slices from adult individuals of ten mammalian species; human tissue from neurosurgical patients"
+      sample_size:
+        reported_as: "n = 9 for shrew, mouse, gerbil, rat, ferret, guinea pig, rabbit, marmoset, and macaque"
+        value: 10
+        unit: species
+      endpoint: "HCN and voltage-gated potassium conductance as a function of neuron size, fitted on log-log scales"
+      endpoint_category: cellular_excitability
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: "Normalized average of HCN, Kpeak and Kplateau conductance (exponent 1.43 +/- 0.15, R= 0.966, p = 0.003, linear regression on log-log scale, F = 85.7 & 3 df, n = 5 for mouse, gerbil, rat, guinea pig, and rabbit)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Ten-species direct electrophysiology including adult human tissue is about as good
+      as comparative cellular physiology gets, and the size control is genuine. Capped
+      at 2 by this atlas's rule because there is no phylogenetic control, the
+      non-human sample is clade-skewed, and the effect size quoted rests on n = 5 Glires.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "THIS IS THE CLAIM THAT SHOULD MOST WORRY ANYONE RELYING ON RODENT HCN1 EVIDENCE. If human layer 5 neurons genuinely sit off the mammalian conductance relationship, the quantitative dose-response of an h-current intervention in mouse is not transferable to human, and the sign of a dendritic-integration effect may not be either."
+    - "it also points OPPOSITE to CLM:comparative:HCN1:001 and :002 — see CLM:comparative:HCN1:004. The honest summary is layer-specific, not species-specific."
+    - "the human outlier result is confounded with the fact that only the human tissue was diseased; that confound is structural to the design and no analysis in the paper removes it"
+  confounders: ["neurosurgical tissue in the human arm only", "clade composition of the comparison set", "region non-equivalence across species", "neuron size estimation"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:HCN1:004
+  schema_version: 0.1.0
+  statement: >-
+    The two direct human-versus-rodent h-current comparisons disagree in sign by
+    cortical layer — h-channel-related properties are stronger than mouse in human
+    supragranular neurons and HCN conductance is lower than allometrically predicted in
+    human layer 5 neurons — so no single-direction statement about human versus rodent
+    HCN1 is supported by the present evidence.
+  subject: PROT:HCN1
+  predicate: MODULATES
+  object: CELL:cortical_pyramidal_neuron
+  claim_type: theoretical_construct
+  direction: state_dependent
+  direction_context: >-
+    cortical layer: the human-versus-rodent difference in h-current reverses sign between supragranular layers, where h-channel-dependent membrane properties are stronger in human than mouse, and layer 5, where human HCN conductance falls below the mammalian allometric prediction. The dependency is on laminar position, not on physiological state.
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090, SPECIES:NCBITaxon:10116]
+    species_count: 3
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      Derived from two uncontrolled comparative studies; inherits their lack of
+      phylogenetic control and adds none.
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: [REGION:temporal_cortex]
+    cell_types: [CELL:supragranular_pyramidal_neuron, CELL:layer5_pyramidal_neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the two results may be fully compatible: h-current density genuinely differs by layer within a species, and the studies sampled different layers, so 'disagreement' may be an artefact of summarising across layers"
+      - "different comparator species (mouse versus a ten-species allometric expectation), different regions, different laboratories, different conductance-estimation methods; any of these could produce the apparent sign reversal without any layer-specific biology"
+      - "both human datasets are neurosurgical, and epilepsy pathology could act differently in supragranular and infragranular layers"
+  evidence:
+    - source_id: SRC:PMID:30392798
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "adult human supragranular temporal cortex pyramidal neurons versus adult mouse temporal association area"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "h-channel-dependent membrane properties, human relative to mouse, supragranular layers"
+      endpoint_category: cellular_excitability
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: qualifies
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:34759318
+      design: electrophysiology
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9606
+      population: "adult human layer 5 pyramidal neurons versus a nine-species mammalian allometric expectation"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "HCN conductance, human relative to the size-predicted mammalian value, layer 5"
+      endpoint_category: cellular_excitability
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: conflicting
+      evidence_role: qualifies
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      A derived claim asserting only that the evidence does not license a single
+      direction. Graded low as positive evidence; its function is to block a stronger
+      claim, and the two studies it rests on are each graded 2.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this claim can itself be over-read as 'the human HCN1 findings are unreliable'. They are not; they are layer-specific and both are graded 2. What is unsupported is the unqualified summary."
+    - "a reader wanting a single number for human-versus-rodent h-current will not find one here, and should not construct one"
+    - "`direction` CHANGED FROM `unclear` TO `state_dependent` on the landing of the R10 vocabulary amendment (docs/blackboard/RESOLUTIONS.md R10). Under the original wording `state_dependent` meant a dependency on physiological state, so a laminar dependency did not qualify and `unclear` was the honest value. R10 widened it to a KNOWN AND SPECIFIED dependency, including cortical layer, and added the required `direction_context`. The claim is characterised, not ignorant, and now records that."
+  confounders: ["cortical layer", "comparator species set", "laboratory", "conductance estimation method", "neurosurgical tissue"]
+  dependencies: [CLM:comparative:HCN1:002, CLM:comparative:HCN1:003]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: derived_from_claims
+    run_id: sprint1-comparative-01

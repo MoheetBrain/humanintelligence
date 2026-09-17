@@ -1,0 +1,134 @@
+# Red-team audit - SLC16A3. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:SLC16A3:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:SLC16A3
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: All three claims come from adult, acute knockdown in adult animals. The dossier is careful to
+      add that there is no developmental evidence either way, which is a gap rather than a clean bill
+      of health - a distinction worth preserving.
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+    - CLM:power:SLC16A3:003
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: Loss-of-function knockdown producing impairment only. No gain-of-function experiment exists
+      anywhere in the power atlas, which that atlas states.
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: fail
+    note: Entirely rodent. No human genetic, observational or interventional evidence exists for this
+      target.
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: fail
+    note: 'This is the clearest duplicated-evidence case in the repository: three claims, three sources,
+      and all three sources carry claims on other targets. The findings within each paper are genuinely
+      transporter-specific, so the claims are legitimate - but SLC16A1, SLC16A3 and SLC16A7 are three
+      readings of one literature, not three independent evidence bases.'
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+    - CLM:power:SLC16A3:002
+    - CLM:power:SLC16A3:003
+  - check: citation_dependence
+    result: fail
+    note: 'Every one of this target''s three claims shares its source with a claim on another MCT target:
+      SRC:PMID:21376239 (with SLC16A1, SLC16A7 and anls), SRC:PMID:31286064 (with SLC16A1 and SLC16A7),
+      SRC:PMID:32693190 (with SLC16A7 twice). This target has no independent literature at all.'
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+    - CLM:power:SLC16A3:002
+    - CLM:power:SLC16A3:003
+  - check: publication_bias
+    result: flag
+    note: Like SLC16A7, this target has no contradicting or null claim in its own file; the countervailing
+      evidence lives in the shuttle topic file and reaches the target only through counter_claim_refs.
+      The file header says so.
+    evidence_refs:
+    - CLM:power:anls:002
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of MCT4 modulation exists. The AZD3965 MCT1 safety data are isoform-specific
+      and are deliberately NOT carried across.
+    evidence_refs:
+    - SRC:NCT:NCT01791595
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: pass
+    note: The dossier makes no human claim and states that no gain-of-function evidence exists.
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:SLC16A3:001#f1
+    severity: major
+    category: duplicated_evidence
+    description: SLC16A1, SLC16A3 and SLC16A7 share all their founding sources. Three of SLC16A3's three
+      claims come from papers that also carry claims on the other MCT targets, so this target has no independent
+      literature. The ranking must be invariant to this, which is what tests/test_ranking_invariance.py
+      exists for.
+    evidence_refs:
+    - CLM:power:SLC16A3:001
+    - CLM:power:anls:001
+  verdict: retain
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

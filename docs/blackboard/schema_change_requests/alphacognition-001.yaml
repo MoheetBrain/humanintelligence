@@ -8,153 +8,140 @@
 schema_version: 0.1.0
 request_id: alphacognition-001
 filed_by: agent:alphacognition
-filed_on: "2026-09-17"
+filed_on: '2026-09-17'
 blocking: false
-blocking_rationale: >-
-  None of these prevented the milestone from being produced. Item 1 does prevent
-  `graph/validate_graph.py --strict` from passing V6 while database-release sources are
-  registered, so it is blocking for the G3 gate rather than for this agent's work.
-
+blocking_rationale: Item 1 was blocking for gate G3 and is resolved (R1). Nothing outstanding blocks this
+  agent or the gate; the open items are reporting/ergonomics defects whose workarounds are recorded in
+  the affected records.
 items:
-
-  - id: 1
-    request: >-
-      Make scripts/fetch_source_metadata.py verify `SRC:DB:*` (DatabaseRelease) sources
-      instead of reporting them as `unsupported_registry`.
-    motivation: >-
-      The script's own docstring says `SRC:DB:*` release metadata is "recorded by the
-      ingesting pipeline (not fetched here)", but verify_agent_sources() has no branch for
-      the DB registry, so such sources fall through to `unsupported_registry`. Contract V6
-      requires every registered source to reach `status: verified`, so a database release can
-      never satisfy it. Task A2/A3 of this agent's brief explicitly requires registering
-      `SRC:DB:gwas_catalog:<release>` and `SRC:DB:opentargets:<dataVersion>`, which makes the
-      requirement and the tooling mutually unsatisfiable as written.
-    affected_records:
-      - SRC:DB:gwas_catalog:2026-09-13
-      - SRC:DB:opentargets:26.06
-      - SRC:DB:gtex:v8
-    proposed_change: >-
-      Add a DB branch to verify_agent_sources() that re-reads the release identifier from the
-      pipeline's own snapshot and sets `status: verified` when the registered release string
-      matches. The three snapshots needed already exist and are self-describing:
-      data/raw/gwas_catalog/<date>/metadata_*.json carries `data_release_date`; any
-      data/raw/opentargets_genetics/<date>/*.json carries
-      `data.meta.dataVersion {year, month, iteration}`; data/raw/gtex/<date>/median_*.json
-      carries `datasetId` on every row. A minimal implementation is a shape check against
-      those three keys, keyed on the db name in the source id.
-    workaround_in_use: >-
-      The three sources are registered as the brief requires and are named explicitly as
-      non-verified in docs/blackboard/handoffs/alphacognition.md and in the header of
-      evidence/sources/alphacognition.yaml.
-
-  - id: 2
-    request: >-
-      Fix or document scripts/fetch_source_metadata.py's GWAS Catalog study verification,
-      which cannot work against REST API v2.
-    motivation: >-
-      summarise_gwas_study() reads `payload["publication"]["title"]` with a fallback to
-      `payload["reported_trait"]`. The v2 study record
-      (GET https://www.ebi.ac.uk/gwas/rest/api/v2/studies/{GCST}) contains neither: it has no
-      `publication` object at all, and the trait field is named `disease_trait`. Verified
-      against GCST006269 on 2026-09-17, whose response keys are
-      initial_sample_size, replication_sample_size, gxe, gxg, snp_count, qualifier, imputed,
-      pooled, accession_id, full_summary_stats_available, user_requested, pubmed_id,
-      platforms, disease_trait, genotyping_technologies, efo_traits, discovery_ancestry,
-      replication_ancestry, full_summary_stats, terms_of_license, bg_efo_traits,
-      array_manufacturer. Any `SRC:GCST:*` source would therefore get an empty
-      `registry_title` and fail with `title_mismatch`.
-    affected_records: []
-    proposed_change: >-
-      Either (a) read `disease_trait` and `pubmed_id` from the v2 record and verify the
-      accession plus the PMID linkage rather than a publication title, or (b) state in the
-      docstring that `SRC:GCST:*` is unsupported and that studies must be registered by PMID.
-    workaround_in_use: >-
-      This atlas registers no `SRC:GCST:*` sources. It registers each study's PubMed id
-      instead, which contract §3 prefers anyway ("A paper that has a PMID must be registered
-      under its PMID"), and keeps the GCST accessions inside each claim's
-      `evidence[].database_record.accession_id` and `provenance.supporting_accessions`.
-
-  - id: 3
-    request: >-
-      Add a legal predicate for `claim_type: clinical_null` and `clinical_harm` into
-      CognitivePhenotype, or state which relation should carry them.
-    motivation: >-
-      docs/DATA_CONTRACT.md §4.1 lists `clinical_null` and `clinical_harm` as claim types, and
-      the red team's mandatory check catalogue includes `negative_clinical_evidence`, so
-      negative trials must be representable. But no relation in ontology/edges.yaml lists
-      either value in `allowed_claim_types`: MODULATES allows
-      [causal_perturbation, mechanistic, pharmacodynamic, association, expression,
-      theoretical_construct]; CHANGES_STATE allows
-      [causal_perturbation, pharmacodynamic, clinical_efficacy]; INCREASES_RISK allows
-      clinical_harm but only into AdverseEffect. A failed cognitive trial therefore has no
-      legal triple.
-    affected_records:
-      - CLM:alphacognition:GRM5:001
-    proposed_change: >-
-      Add `clinical_null` (and `clinical_harm` where the object is a cognitive endpoint) to
-      MODULATES `allowed_claim_types`. MODULATES already has `asserts_effect: false`, so
-      admitting a null there cannot be mistaken for an efficacy assertion — which is exactly
-      the property a null needs.
-    workaround_in_use: >-
-      CLM:alphacognition:GRM5:001 uses MODULATES with `direction: no_change` and
-      `evidence[].evidence_role: null_result`, and records the mismatch in
-      `provenance.ontology_note`. It was NOT relabelled as `pharmacodynamic`, which would have
-      hidden a clinical null from the red team's negative_clinical_evidence check.
-
-  - id: 4
-    request: "Add a `gtex_api` value to the `retrieval.method` enum in contract §3."
-    motivation: >-
-      §3 lists pubmed_search, pubmed_metadata, ctgov_api, gwas_catalog_api, opentargets_api,
-      hgnc_api, known_identifier. GTEx Portal API v2 is a distinct registry and is the actual
-      source of the adult brain expression data in this atlas.
-    affected_records: [SRC:DB:gtex:v8]
-    proposed_change: "Append `gtex_api` to the enum."
-    workaround_in_use: "`opentargets_api` with an explicit note in the source record's retrieval block."
-
-  - id: 5
-    request: >-
-      Let scripts/check_ownership.py distinguish a pipeline write to data/interim/ from a
-      hand edit, or exclude `generated_only` paths from the `--agent` failure condition.
-    motivation: >-
-      docs/OWNERSHIP.yaml lists `data/interim/**` under generated_only ("no agent hand-edits
-      these"), and contract §2 requires derived tables to live there and to be written by code
-      only. But owner_of() returns "generated_only", and main() treats any owner that is
-      neither the expected agent nor shared_append_only as a violation. So an agent that
-      correctly produces its contract-mandated derived tables is reported as having committed
-      ownership violations.
-    affected_records:
-      - data/interim/gwas_catalog_associations.jsonl
-      - data/interim/gwas_catalog_gene_pleiotropy.jsonl
-      - data/interim/opentargets_l2g.jsonl
-      - data/interim/adult_brain_expression.jsonl
-      - data/interim/source_verification/alphacognition.jsonl
-    proposed_change: >-
-      Treat `generated_only` like `shared_append_only` in the --agent comparison, i.e. accept
-      it, since the intent of the label is "nobody hand-edits this" rather than "nobody may
-      produce this".
-    workaround_in_use: >-
-      The expected flags are reported honestly in the handoff note rather than avoided by
-      writing the derived tables somewhere they do not belong.
-
-  - id: 6
-    request: "Assign an owner to `data/raw/opentargets_genetics/**`."
-    motivation: >-
-      `data/raw/opentargets/**` belongs to agent:integration. This atlas's locus-to-gene
-      pipeline needs its own Open Targets snapshot directory, so it writes to
-      `data/raw/opentargets_genetics/**`, which no owner claims and which check_ownership.py
-      therefore reports as UNCLAIMED.
-    affected_records: ["data/raw/opentargets_genetics/**"]
-    proposed_change: "Add `data/raw/opentargets_genetics/**` to agent:alphacognition's globs in docs/OWNERSHIP.yaml."
-    workaround_in_use: "Path used as described; the UNCLAIMED flag is reported in the handoff note."
-
-  - id: 7
-    request: >-
-      Note in contract §4.4 that `expression_atlas` is being used for protein-level and
-      bulk-tissue expression measurements, or add a `western_blot` / `bulk_tissue_expression`
-      design value.
-    motivation: >-
-      `evidence.design` has expression_atlas and single_cell_atlas. A developmental
-      protein-abundance measurement by immunoblot (CLM:alphacognition:GRIN2B:006) is neither.
-    affected_records: [CLM:alphacognition:GRIN2B:006]
-    proposed_change: "Either broaden expression_atlas explicitly, or add a design value for targeted protein/transcript quantification."
-    workaround_in_use: "`expression_atlas` with the mismatch stated in the evidence item's note."
+- id: 1
+  request: Make scripts/fetch_source_metadata.py verify `SRC:DB:*` (DatabaseRelease) sources instead of
+    reporting them as `unsupported_registry`.
+  motivation: 'The script''s own docstring says `SRC:DB:*` release metadata is "recorded by the ingesting
+    pipeline (not fetched here)", but verify_agent_sources() has no branch for the DB registry, so such
+    sources fall through to `unsupported_registry`. Contract V6 requires every registered source to reach
+    `status: verified`, so a database release can never satisfy it. Task A2/A3 of this agent''s brief
+    explicitly requires registering `SRC:DB:gwas_catalog:<release>` and `SRC:DB:opentargets:<dataVersion>`,
+    which makes the requirement and the tooling mutually unsatisfiable as written.'
+  affected_records:
+  - SRC:DB:gwas_catalog:2026-09-13
+  - SRC:DB:opentargets:26.06
+  - SRC:DB:gtex:v8
+  proposed_change: 'Add a DB branch to verify_agent_sources() that re-reads the release identifier from
+    the pipeline''s own snapshot and sets `status: verified` when the registered release string matches.
+    The three snapshots needed already exist and are self-describing: data/raw/gwas_catalog/<date>/metadata_*.json
+    carries `data_release_date`; any data/raw/opentargets_genetics/<date>/*.json carries `data.meta.dataVersion
+    {year, month, iteration}`; data/raw/gtex/<date>/median_*.json carries `datasetId` on every row. A
+    minimal implementation is a shape check against those three keys, keyed on the db name in the source
+    id.'
+  workaround_in_use: The three sources are registered as the brief requires and are named explicitly as
+    non-verified in docs/blackboard/handoffs/alphacognition.md and in the header of evidence/sources/alphacognition.yaml.
+  resolution_status: resolved_differently
+  resolution_note: 'R1: resolved by verifying a release against MANIFEST integrity (snapshot present and
+    sha256 still matching) rather than by re-reading the release string from the pipeline''s own snapshot,
+    which would have verified a record against itself. Status release_verified_by_snapshot, accepted by
+    V6 for SRC:DB:* and SRC:DATASET:* only. All four database releases in this atlas now verify (gwas_catalog:2026-09-13,
+    opentargets:26.06, gtex:v8, chembl:ChEMBL_37).'
+- id: 2
+  request: Fix or document scripts/fetch_source_metadata.py's GWAS Catalog study verification, which cannot
+    work against REST API v2.
+  motivation: 'summarise_gwas_study() reads `payload["publication"]["title"]` with a fallback to `payload["reported_trait"]`.
+    The v2 study record (GET https://www.ebi.ac.uk/gwas/rest/api/v2/studies/{GCST}) contains neither:
+    it has no `publication` object at all, and the trait field is named `disease_trait`. Verified against
+    GCST006269 on 2026-09-17, whose response keys are initial_sample_size, replication_sample_size, gxe,
+    gxg, snp_count, qualifier, imputed, pooled, accession_id, full_summary_stats_available, user_requested,
+    pubmed_id, platforms, disease_trait, genotyping_technologies, efo_traits, discovery_ancestry, replication_ancestry,
+    full_summary_stats, terms_of_license, bg_efo_traits, array_manufacturer. Any `SRC:GCST:*` source would
+    therefore get an empty `registry_title` and fail with `title_mismatch`.'
+  affected_records: []
+  proposed_change: Either (a) read `disease_trait` and `pubmed_id` from the v2 record and verify the accession
+    plus the PMID linkage rather than a publication title, or (b) state in the docstring that `SRC:GCST:*`
+    is unsupported and that studies must be registered by PMID.
+  workaround_in_use: This atlas registers no `SRC:GCST:*` sources. It registers each study's PubMed id
+    instead, which contract §3 prefers anyway ("A paper that has a PMID must be registered under its PMID"),
+    and keeps the GCST accessions inside each claim's `evidence[].database_record.accession_id` and `provenance.supporting_accessions`.
+  resolution_status: open
+  resolution_note: Not blocking. This atlas registers study PMIDs instead of GCST accessions, which contract
+    §3 prefers anyway; GCST accessions are kept in evidence[].database_record.
+- id: 3
+  request: 'Add a legal predicate for `claim_type: clinical_null` and `clinical_harm` into CognitivePhenotype,
+    or state which relation should carry them.'
+  motivation: 'docs/DATA_CONTRACT.md §4.1 lists `clinical_null` and `clinical_harm` as claim types, and
+    the red team''s mandatory check catalogue includes `negative_clinical_evidence`, so negative trials
+    must be representable. But no relation in ontology/edges.yaml lists either value in `allowed_claim_types`:
+    MODULATES allows [causal_perturbation, mechanistic, pharmacodynamic, association, expression, theoretical_construct];
+    CHANGES_STATE allows [causal_perturbation, pharmacodynamic, clinical_efficacy]; INCREASES_RISK allows
+    clinical_harm but only into AdverseEffect. A failed cognitive trial therefore has no legal triple.'
+  affected_records:
+  - CLM:alphacognition:GRM5:001
+  proposed_change: 'Add `clinical_null` (and `clinical_harm` where the object is a cognitive endpoint)
+    to MODULATES `allowed_claim_types`. MODULATES already has `asserts_effect: false`, so admitting a
+    null there cannot be mistaken for an efficacy assertion — which is exactly the property a null needs.'
+  workaround_in_use: 'CLM:alphacognition:GRM5:001 uses MODULATES with `direction: no_change` and `evidence[].evidence_role:
+    null_result`, and records the mismatch in `provenance.ontology_note`. It was NOT relabelled as `pharmacodynamic`,
+    which would have hidden a clinical null from the red team''s negative_clinical_evidence check.'
+  resolution_status: resolved
+  resolution_note: 'ontology/edges.yaml now provides NO_DETECTED_EFFECT_ON (asserts_absence_of_effect:
+    true, excluded from support counts, allowed_claim_types includes clinical_null). CLM:alphacognition:GRM5:001
+    and CLM:alphacognition:HTR2A:003 now use it and the provenance.ontology_note workaround has been removed.'
+- id: 4
+  request: Add a `gtex_api` value to the `retrieval.method` enum in contract §3.
+  motivation: §3 lists pubmed_search, pubmed_metadata, ctgov_api, gwas_catalog_api, opentargets_api, hgnc_api,
+    known_identifier. GTEx Portal API v2 is a distinct registry and is the actual source of the adult
+    brain expression data in this atlas.
+  affected_records:
+  - SRC:DB:gtex:v8
+  proposed_change: Append `gtex_api` to the enum.
+  workaround_in_use: '`opentargets_api` with an explicit note in the source record''s retrieval block.'
+  resolution_status: open
+  resolution_note: Cosmetic. GTEx source registered with retrieval.method known_identifier and the endpoint
+    recorded in notes.
+- id: 5
+  request: Let scripts/check_ownership.py distinguish a pipeline write to data/interim/ from a hand edit,
+    or exclude `generated_only` paths from the `--agent` failure condition.
+  motivation: docs/OWNERSHIP.yaml lists `data/interim/**` under generated_only ("no agent hand-edits these"),
+    and contract §2 requires derived tables to live there and to be written by code only. But owner_of()
+    returns "generated_only", and main() treats any owner that is neither the expected agent nor shared_append_only
+    as a violation. So an agent that correctly produces its contract-mandated derived tables is reported
+    as having committed ownership violations.
+  affected_records:
+  - data/interim/gwas_catalog_associations.jsonl
+  - data/interim/gwas_catalog_gene_pleiotropy.jsonl
+  - data/interim/opentargets_l2g.jsonl
+  - data/interim/adult_brain_expression.jsonl
+  - data/interim/source_verification/alphacognition.jsonl
+  proposed_change: Treat `generated_only` like `shared_append_only` in the --agent comparison, i.e. accept
+    it, since the intent of the label is "nobody hand-edits this" rather than "nobody may produce this".
+  workaround_in_use: The expected flags are reported honestly in the handoff note rather than avoided
+    by writing the derived tables somewhere they do not belong.
+  resolution_status: open
+  resolution_note: Flags reported in docs/blackboard/handoffs/alphacognition.md rather than avoided by
+    writing derived tables somewhere they do not belong.
+- id: 6
+  request: Assign an owner to `data/raw/opentargets_genetics/**`.
+  motivation: '`data/raw/opentargets/**` belongs to agent:integration. This atlas''s locus-to-gene pipeline
+    needs its own Open Targets snapshot directory, so it writes to `data/raw/opentargets_genetics/**`,
+    which no owner claims and which check_ownership.py therefore reports as UNCLAIMED.'
+  affected_records:
+  - data/raw/opentargets_genetics/**
+  proposed_change: Add `data/raw/opentargets_genetics/**` to agent:alphacognition's globs in docs/OWNERSHIP.yaml.
+  workaround_in_use: Path used as described; the UNCLAIMED flag is reported in the handoff note.
+  resolution_status: open
+  resolution_note: Now applies to data/raw/chembl/** as well, added because rule V9 requires a pinned
+    release for the ChEMBL numeric fields on intervention records.
+- id: 7
+  request: Note in contract §4.4 that `expression_atlas` is being used for protein-level and bulk-tissue
+    expression measurements, or add a `western_blot` / `bulk_tissue_expression` design value.
+  motivation: '`evidence.design` has expression_atlas and single_cell_atlas. A developmental protein-abundance
+    measurement by immunoblot (CLM:alphacognition:GRIN2B:006) is neither.'
+  affected_records:
+  - CLM:alphacognition:GRIN2B:006
+  proposed_change: Either broaden expression_atlas explicitly, or add a design value for targeted protein/transcript
+    quantification.
+  workaround_in_use: '`expression_atlas` with the mismatch stated in the evidence item''s note.'
+  resolution_status: open
+  resolution_note: R5 added structural_biology to evidence.design but no value for targeted protein or
+    transcript quantification; CLM:alphacognition:GRIN2B:006 still uses expression_atlas with the mismatch
+    stated in its evidence note.
+resolved_on: '2026-09-17'
+resolution_reference: docs/blackboard/RESOLUTIONS.md

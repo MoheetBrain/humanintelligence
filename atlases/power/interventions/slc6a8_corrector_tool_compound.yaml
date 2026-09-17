@@ -1,0 +1,20 @@
+schema_version: 0.1.0
+id: CPD:slc6a8_corrector_tool_compound
+node_type: Compound
+label: "SLC6A8 variant corrector tool compound (unnamed in the retrieved text)"
+identifiers:
+  chembl_id: null
+  identifier_provenance: >-
+    No identifier available. The retrieved abstract does not name the compound and no
+    ChEMBL search was possible without a name or structure. A slug identifier is the
+    contract's permitted fallback (§1.2). Do not invent a ChEMBL id for this node.
+targets: [TGT:SLC6A8]
+mechanism_as_reported: "small-molecule corrector promoting cell-surface trafficking of mutant SLC6A8 and restoring creatine uptake"
+state_variables_touched: [SV:power.phosphocreatine_reserve]
+cited_by_claims: [CLM:power:SLC6A8:005]
+scope_limits: >-
+  Variant-specific by construction: the retrieved text reports activity against a
+  minority of the most prevalent patient missense variants. This is a rescue tool for
+  a deficiency state and provides no route to raising transport above wild type.
+dose_information: omitted_by_policy
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

@@ -1,0 +1,418 @@
+# Claims — SLC16A1 (MCT1; astrocytic, endothelial and ubiquitous monocarboxylate
+# transporter; also the principal extrahepatic ketone-body transporter)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power. Declared depth: shallow.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# SLC16A1 is the one lactate-axis gene in this atlas with a defined human
+# loss-of-function phenotype, and that phenotype is METABOLIC (recurrent
+# ketoacidosis), not primarily cognitive. Developmental delay is reported in
+# homozygotes but not as the presenting or defining feature. This is direct human
+# evidence against treating MCT1 as a cognitive bottleneck whose relief would raise
+# capacity in a healthy adult - see CLM:power:SLC16A1:003.
+
+- claim_id: CLM:power:SLC16A1:001
+  schema_version: 0.1.0
+  statement: >-
+    Disrupting expression of the astrocytic lactate transporter MCT1 in rat
+    hippocampus caused amnesia for an inhibitory avoidance task and impaired
+    maintenance of in-vivo long-term potentiation, and both were reversed by L-lactate
+    but not by equicaloric glucose.
+  subject: PROT:SLC16A1
+  predicate: POSITIVELY_REGULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "antisense knockdown specificity is disputed and MCT blockade can inhibit mitochondrial pyruvate transport, producing an energy crisis rather than a selective shuttle block"
+      - "MCT1 is expressed in endothelium as well as astrocytes, so a vascular contribution to the deficit is not excluded by the retrieved text"
+      - "rescue by L-lactate but not glucose is also consistent with lactate acting as a signal rather than as a transported fuel"
+  evidence:
+    - source_id: SRC:PMID:21376239
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "adult rats with hippocampal antisense knockdown of MCT1"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term memory and in-vivo long-term potentiation maintenance, with L-lactate or glucose rescue"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Causal rodent perturbation with an internal rescue control and independent
+      replication of the general pattern; rodent only and tool-specificity contested.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["endothelial MCT1 expression", "non-specific knockdown toxicity"]
+  dependencies: [CLM:power:anls:001, CLM:power:anls:002]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A1:002
+  schema_version: 0.1.0
+  statement: >-
+    Memory impairment caused by knockdown of MCT1 in rat dorsal hippocampus was
+    reversed by the Krebs-cycle substrate pyruvate and by the ketone body
+    beta-hydroxybutyrate, indicating that what the astrocytic transporter supplies
+    downstream can be substituted by other oxidisable substrates.
+  subject: PROT:SLC16A1
+  predicate: MODULATES
+  object: SV:power.ketone_utilisation_capacity
+  claim_type: causal_perturbation
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:astrocyte]
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "substitutability of the substrate does not establish that the transporter is rate-limiting under normal conditions"
+      - "the rescue metabolites were delivered intracranially at experimental concentrations, which is not a physiological state"
+  evidence:
+    - source_id: SRC:PMID:31286064
+      design: knockdown
+      species: SPECIES:NCBITaxon:10116
+      population: "Long-Evans rats with dorsal hippocampal MCT1 expression knockdown"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance long-term memory after pyruvate or beta-hydroxybutyrate administration"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "Single-study rescue design that is mechanistically informative but does not test rate-limitation."
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A1:003
+  schema_version: 0.1.0
+  statement: >-
+    Exome sequencing identified inactivating SLC16A1 mutations in patients with
+    recurrent severe ketoacidosis, with mutational status correlated with ketoacidosis
+    severity, MCT1 protein level and transport capacity, establishing a human
+    loss-of-function phenotype that is an acid-base and ketone-utilisation disorder
+    rather than a defined cognitive syndrome.
+  subject: PROT:SLC16A1
+  predicate: CONSTRAINS
+  object: SV:power.ketone_utilisation_capacity
+  claim_type: association
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: mixed
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: monogenic_disorder
+    locus_to_gene_resolved: "yes"
+    alternative_explanations:
+      - "ascertainment was by ketoacidosis, so any cognitive phenotype would be systematically under-detected in this cohort"
+      - "absence of a reported cognitive syndrome in an acid-base-ascertained series is weak evidence of absence"
+  evidence:
+    - source_id: SRC:PMID:25390740
+      design: rare_variant_association
+      species: SPECIES:NCBITaxon:9606
+      population: "one index patient with recurrent severe ketoacidosis plus 96 patients suspected of having ketolytic defects"
+      sample_size:
+        reported_as: "Genetic analysis in 96 patients suspected of having ketolytic defects yielded seven additional inactivating mutations in MCT1"
+        value: 96
+        unit: participants
+      endpoint: "ketoacidosis severity, MCT1 protein level and transport capacity by genotype"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Direct human genetic evidence with a genotype-to-function gradient, in a
+      high-quality journal; the cognitive inference drawn from it here is an argument
+      from a non-cognitive presentation and is correspondingly weak.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["ascertainment bias toward metabolic presentation"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:SLC16A1:004
+  schema_version: 0.1.0
+  statement: >-
+    A report of three Palestinian children with novel homozygous SLC16A1 missense
+    variants describes recurrent vomiting, dehydration, metabolic acidosis and
+    hyperuricaemia as the shared phenotype, and states that individuals with
+    homozygous variants typically present younger and exhibit developmental delays.
+  subject: PROT:SLC16A1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:general_cognitive_ability
+  claim_type: association
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: postnatal_developmental
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: monogenic_disorder
+    locus_to_gene_resolved: "yes"
+    alternative_explanations:
+      - "three patients from two families; developmental delay is reported as a general feature of the homozygous literature rather than quantified in these children"
+      - "repeated episodes of severe metabolic decompensation are themselves a plausible cause of developmental delay, independent of any direct role for brain monocarboxylate transport"
+      - "developmental, not adult-onset, so it says nothing about adult modifiability"
+  evidence:
+    - source_id: SRC:PMID:40464101
+      design: clinical_case_series
+      species: SPECIES:NCBITaxon:9606
+      population: "three Palestinian children from two unrelated families with homozygous SLC16A1 missense variants"
+      sample_size:
+        reported_as: "three Palestinian children with MCT1 deficiency from two unrelated families"
+        value: 3
+        unit: participants
+      endpoint: "clinical and biochemical phenotype, including reported developmental delay"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Case series of three, with the cognitive feature reported as a general
+      literature observation rather than measured here, and a strong metabolic
+      confound.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["repeated metabolic decompensation", "consanguinity and unmeasured background variants"]
+  dependencies: [CLM:power:SLC16A1:003]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+# --------------------------------------------------------------- evidence gap ---
+# This record exists because of resolution R5, and it is the contract's own worked
+# example: "the only human trial of this mechanism never included a cognitive
+# endpoint". It is GRAPH-INERT — it compiles to an evidence-layer record and no
+# biological or intervention edge — and per V16c it may NEVER be cited in any facet's
+# counter_claim_refs. It is a finding about the evidence base, not about the target.
+#
+# It was found only because resolution R11 forced a `search_basis` to be written for
+# the SLC16A1 human_intervention_evidence zero, which exposed that the zero had been
+# reached by literature search alone.
+
+- claim_id: CLM:power:SLC16A1:005
+  schema_version: 0.1.0
+  statement: >-
+    A completed phase 1 dose-escalation trial gave the MCT1 inhibitor AZD3965 to 53
+    patients with advanced solid tumours or lymphoma and posted its results, and every
+    primary outcome is a dose-limiting-toxicity or adverse-event measure while every
+    secondary outcome is pharmacokinetic, a cell-death marker or tumour response, so the
+    only human MCT1-directed pharmacological intervention retrieved by this atlas
+    measured no cognitive endpoint of any kind.
+  # The triple is deliberately an EVIDENCE-LAYER one with the claim as its own subject.
+  # My first attempt named CPD:CHEMBL3335793 -CHANGES_STATE-> SV:cognition.general_cognitive_ability
+  # and rule V3c rejected it, correctly: attaching a graph-inert gap to a causal or
+  # interventional relation would assert exactly what this record refuses to assert.
+  # ABOUT declares no allowed_claim_types and compiles to no layer-2/3 edge, which is
+  # the point. Do not "fix" this back to a causal relation.
+  subject: CLM:power:SLC16A1:005
+  predicate: ABOUT
+  object: TGT:SLC16A1
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the relation named in the triple is the relation NOBODY TESTED; no effect of any size or sign is asserted or implied by this record"
+      - "the population is advanced cancer refractory to conventional treatment, so even had cognition been measured it would not have spoken to a healthy adult baseline; translation.healthy_baseline is recorded as disease_model_only because the vocabulary offers no value for a human disease population"
+      - "dose-limiting toxicities in this trial were haematological, cardiac and ophthalmic, and patients with known retinal disease were excluded at screening. That is a SAFETY signal for MCT1 inhibition and it belongs to agent:red_team's safety_liability_burden facet, which agent:power does not own and has not graded"
+  evidence:
+    - source_id: SRC:NCT:NCT01791595
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "53 patients with advanced solid tumour or lymphoma, 18 years or over, WHO performance status 0 or 1"
+      sample_size:
+        reported_as: "enrollment: 53"
+        value: 53
+        unit: participants
+      endpoint: "maximum tolerated dose, dose-limiting toxicities, serious and non-serious adverse events, pharmacokinetics, plasma cell-death markers, tumour response"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: registry_record
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: >-
+      Level 0 is correct and deliberate: this record carries no evidence about the
+      target at all. It records that a human test of MCT1 modulation happened and that
+      the question this atlas cares about was not asked.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "must never be read as a null result. Nothing was measured, so nothing failed. V16c exists to keep those two apart and this record is on the unmeasured side."
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

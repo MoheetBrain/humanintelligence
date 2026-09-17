@@ -1,0 +1,407 @@
+# State-variable annotations — domain: power and efficiency
+#
+# Written by agent:power. Contract §2 (record type "State-variable annotation") and
+# the annotation policy in ontology/state_variables.yaml, which reserves response
+# shapes and safety couplings for domain agents supplying CLAIM REFERENCES.
+#
+# THE RULE THIS FILE FOLLOWS ABSOLUTELY
+# -------------------------------------
+# `response_shape` stays `unknown` with `claim_refs: []` unless a claim in
+# evidence/claims/power/ actually bears on the shape. Several couplings look obvious
+# and remain empty here because obvious is not evidence. Of the 22 variables in the
+# power and efficiency domains, this atlas can annotate 10 and leaves 12 as `unknown`
+# with an explicit reason - that ratio is the honest coverage of one sprint's curation.
+#
+# `desirability_note` is prose only and never a value; the state model owns
+# `desirability` and this agent does not overwrite it.
+
+schema_version: 0.1.0
+domain: power
+annotated_by: agent:power
+annotated_on: "2026-09-17"
+
+annotations:
+
+  # ============================================================= power domain ===
+
+  - state_variable: SV:power.phosphocreatine_reserve
+    response_shape:
+      shape: state_dependent
+      basis: claim_supported
+      claim_refs:
+        - CLM:power:creatine_human:001
+        - CLM:power:creatine_human:002
+        - CLM:power:creatine_human:003
+        - CLM:power:creatine_human:004
+        - CLM:power:creatine_human:005
+      rationale: >-
+        The randomised human evidence does not describe one curve, it describes
+        different curves in different states. Raising the substrate pool improved
+        fluid reasoning and working memory in a low-baseline (vegetarian) group,
+        produced no measurable cognitive change in rested fed young omnivorous adults
+        despite a confirmed physical-performance effect in the same participants,
+        reduced deterioration under sleep deprivation, and restored
+        hypoxia-degraded attention. Pooled trials show benefit in older adults and an
+        estimate centred essentially on zero in the younger band. That is the
+        definition of state_dependent, and recording it as `linear` or `threshold`
+        would misrepresent five randomised studies.
+    safety_coupling:
+      couplings: [SV:safety.seizure_risk]
+      basis: claim_supported
+      claim_refs: [CLM:power:CKB:001]
+      rationale: >-
+        Mice lacking both brain creatine-kinase isoforms largely failed to develop
+        pentylenetetrazole-induced generalised seizures and showed no rhythmic
+        electroencephalographic seizure activity, which places the phosphocreatine
+        shuttle on the same axis as seizure susceptibility. Direction of the coupling
+        in the raising direction is UNTESTED: nothing retrieved shows that increasing
+        the pool increases seizure risk, only that abolishing the transfer system
+        decreased convulsant sensitivity. One unreplicated double-knockout study
+        carries this coupling entirely.
+    desirability_note: >-
+      Not monotonically desirable. A human imaging study found the pool INCREASED in
+      early Alzheimer's disease in the first regions to degenerate
+      (CLM:power:CKB:006), so a larger pool is not by itself a better state.
+    couples_to_targets: [TGT:SLC6A8, TGT:CKB]
+
+  - state_variable: SV:power.lactate_flux
+    response_shape:
+      shape: threshold
+      basis: claim_supported
+      claim_refs:
+        - CLM:power:anls:001
+        - CLM:power:SLC16A3:001
+        - CLM:power:SLC16A3:003
+        - CLM:power:SLC16A7:001
+      rationale: >-
+        Every retrieved manipulation shows that REDUCING flux below normal impairs
+        long-term memory and that restoring it rescues performance, while no
+        manipulation anywhere raises flux above normal or shows benefit from doing so.
+        That is a threshold pattern, in the specific sense that the evidence
+        establishes a floor and says nothing whatever about the region above it.
+        `threshold` here is a statement about what was tested, not a claim that the
+        curve saturates.
+    safety_coupling:
+      couplings: []
+      basis: not_asserted_pending_claims
+      claim_refs: []
+      rationale: "no retrieved claim links brain lactate flux to any safety-domain variable"
+    desirability_note: >-
+      Direction is not stable across baselines. In one rodent dataset the correlation
+      between glycolytic capacity and memory was positive in wild-type animals and
+      negative in an amyloid model (CLM:power:anls:004), so raising flux is not
+      generically good.
+    couples_to_targets: [TGT:SLC16A1, TGT:SLC16A3, TGT:SLC16A7, TGT:HCAR1]
+
+  - state_variable: SV:power.astrocytic_glycogen_reserve
+    response_shape:
+      shape: threshold
+      basis: claim_supported
+      claim_refs: [CLM:power:anls:001, CLM:power:anls:005]
+      rationale: >-
+        Blocking glycogen breakdown before a learning event blocked long-term memory
+        in two independent rodent studies and in two brain regions, with L-lactate
+        rescue. Again this establishes a floor only; no study raises the glycogen
+        reserve above normal. The critique in CLM:power:anls:002 argues the
+        glycogenolysis inhibitors are not specific, so even the floor is contested.
+    safety_coupling:
+      couplings: []
+      basis: not_asserted_pending_claims
+      claim_refs: []
+      rationale: "no retrieved claim links astrocytic glycogen to a safety variable"
+    desirability_note: "unknown above the normal range; nothing retrieved tests it"
+    couples_to_targets: [TGT:SLC16A3, TGT:SLC16A1]
+
+  - state_variable: SV:power.ketone_utilisation_capacity
+    response_shape:
+      shape: threshold
+      basis: claim_supported
+      claim_refs: [CLM:power:SLC16A1:003, CLM:power:SLC16A1:002]
+      rationale: >-
+        Human inactivating MCT1 mutations produce recurrent severe ketoacidosis with
+        mutational status correlated to transport capacity, establishing a floor below
+        which acid-base homeostasis fails. In rodents, ketone body supply substituted
+        for blocked astrocytic lactate transport in a memory task. Nothing tests the
+        region above normal capacity, and the human phenotype is metabolic rather than
+        cognitive.
+    safety_coupling:
+      couplings: []
+      basis: not_asserted_pending_claims
+      claim_refs: []
+      rationale: >-
+        Ketoacidosis is recorded as AE:ketoacidosis in the SLC16A1 dossier, but no
+        safety-domain state variable in state_model/safety.yaml corresponds to
+        acid-base failure, so no coupling is asserted. This is a genuine gap in the
+        safety state model rather than an omission here.
+    desirability_note: "unknown above the normal range"
+    couples_to_targets: [TGT:SLC16A1]
+
+  - state_variable: SV:power.glucose_oxidation_rate
+    response_shape:
+      shape: state_dependent
+      basis: claim_supported
+      claim_refs: [CLM:power:budget:005, CLM:power:budget:004]
+      rationale: >-
+        In rodent visual cortex, reducing available energy did not reduce spike rate;
+        it reduced synaptic conductance and coding precision while a compensatory
+        change in input resistance and resting potential held firing constant, and the
+        whole reconfiguration was reversed by exogenous leptin. The relationship
+        between this variable and useful output therefore depends on a hormonal
+        signal reporting organismal energy state, which is state_dependent by
+        definition. The human budget work additionally partitions resting oxidation
+        between signalling and non-signalling processes, so not all of this variable
+        is available to computation.
+    safety_coupling:
+      couplings: []
+      basis: not_asserted_pending_claims
+      claim_refs: []
+      rationale: "no retrieved claim links cerebral glucose oxidation rate to a safety variable"
+    desirability_note: >-
+      The rodent result shows the system CHOOSING to spend less and accepting less
+      precision, which is an allocation decision rather than a shortage. Raising the
+      variable is not obviously the intervention its existence suggests.
+    couples_to_targets: []
+
+  - state_variable: SV:power.atp_adp_ratio
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "no retrieved claim measures or manipulates the ATP/ADP ratio in neural tissue; left unknown"
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: [TGT:CKB]
+
+  - state_variable: SV:power.mitochondrial_spare_capacity
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        Not addressed by anything this atlas retrieved. Mitochondrial spare capacity
+        was part of the scientific remit and returned no usable claim, which is a
+        coverage gap the handoff records explicitly.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:power.cerebral_blood_flow
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "no retrieved claim relates cerebral blood flow to cognitive output; the atlas found no usable neurovascular-coupling evidence this sprint"
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:power.oxygen_extraction_fraction
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        No claim. Note that the only oxygen-related human claim in this atlas
+        (CLM:power:creatine_human:005) IMPOSED hypoxia experimentally rather than
+        measuring extraction, so it annotates nothing here.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:power.neurovascular_coupling_gain
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        Unaddressed. Neurovascular coupling was in the remit and produced no claim.
+        This matters because H2 in atlases/power/competing_models.yaml turns on it, so
+        the hypothesis the atlas considers most compatible with the human data is the
+        one whose central variable is entirely unpopulated.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:power.ros_production_rate
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "unaddressed; no reactive-oxygen-species claim was curated. H4 in competing_models.yaml is correspondingly unsupported in either direction."
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:power.thermal_burden
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "unaddressed; no thermal claim was curated. Named in the remit and returned nothing."
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  # ======================================================== efficiency domain ===
+
+  - state_variable: SV:efficiency.coding_sparseness
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        Deliberately left unknown despite a relevant claim. CLM:power:budget:001
+        PREDICTS from a biophysical model that energy constraints favour distributed
+        codes with only a small fraction of neurons simultaneously active. That is a
+        model output about what would be efficient, not evidence about how sparseness
+        relates to cognitive output, so it does not license a shape. Recording
+        `linear` here from a model prediction is exactly the invention the ontology's
+        annotation policy forbids.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: "the model argues sparse is cheap; cheap is not the same as better, and no claim links sparseness to performance"
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.atp_cost_per_action_potential
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        Two biophysical models estimate this quantity and the second substantially
+        revised the first (CLM:power:budget:001, CLM:power:budget:002). An estimate of
+        a variable's VALUE is not evidence about its response shape against cognitive
+        output, and the instability of the estimate is itself a reason for caution.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: "lower cost per spike is assumed better throughout the efficiency literature; no retrieved claim establishes it"
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.signal_to_noise_ratio
+    response_shape:
+      shape: state_dependent
+      basis: claim_supported
+      claim_refs: [CLM:power:budget:005]
+      rationale: >-
+        The one direct measurement available shows this variable being traded against
+        energy under hormonal control: restricting food amplified trial-to-trial
+        variability of visually evoked subthreshold responses and broadened
+        orientation tuning while spike rates were preserved, and exogenous leptin
+        restored precision. The relationship between signal-to-noise and useful output
+        therefore depends on metabolic state, which is state_dependent. Rodent visual
+        cortex, one study, deprivation state - this annotation should not be treated as
+        established for a fed human.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: "higher precision cost energy in the one system where both were measured; the trade-off is real and its optimum is unknown"
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.axonal_conduction_efficiency
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        Left unknown, but for an informative reason worth recording. The one analysis
+        retrieved (CLM:power:budget:003) concluded that the cost of maintaining the
+        oligodendrocyte resting potential usually outweighs the action-potential
+        saving from myelination, so myelination need not save energy. That
+        CONTRADICTS the premise on which an efficiency shape would usually be
+        asserted, and contradicting a premise does not establish a shape.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: >-
+      Do not assume more myelin is more efficient. This atlas records a modelling
+      result against it (CLM:power:budget:003).
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.housekeeping_to_compute_energy_ratio
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        CLM:power:budget:004 partitions human cerebral glucose oxidation between
+        signalling and non-signalling processes, which gives this variable an
+        approximate resting VALUE but says nothing about its relationship to cognitive
+        output. The partition is also a model result, not a measurement.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.ion_homeostasis_load
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        CLM:power:CKB:004 reports faster calcium clearance in creatine-kinase-null
+        hippocampal granule neurons, which touches this variable but is a single
+        in-vitro measurement in a double knockout with an unresolved mechanism and a
+        counter-intuitive direction. Not enough for a shape.
+    safety_coupling:
+      couplings: []
+      basis: not_asserted_pending_claims
+      claim_refs: []
+      rationale: >-
+        A coupling to SV:safety.seizure_risk is plausible given CLM:power:CKB:001 and
+        CLM:power:CKB:004 come from the same animals, but the causal chain from calcium
+        clearance to seizure phenotype is the authors' proposal rather than their
+        result, so no coupling is asserted here.
+    desirability_note: null
+    couples_to_targets: [TGT:CKB]
+
+  - state_variable: SV:efficiency.atp_cost_per_bit_transmitted
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        No claim, and no human value exists for this variable by any method.
+        atlases/power/metrics.yaml records why: the numerator of any bits-per-joule
+        quantity is not measurable in a human brain today.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.information_throughput_per_unit_energy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: >-
+        No claim. This is the state variable corresponding directly to the
+        neural_efficiency construct in atlases/power/metrics.yaml, and it is empty for
+        the same reason: the construct has never been measured in a human.
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.synaptic_transmission_reliability
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "no retrieved claim measures synaptic release reliability against any cognitive or energetic outcome"
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+  - state_variable: SV:efficiency.representational_redundancy
+    response_shape:
+      shape: unknown
+      basis: default_no_evidence_yet
+      claim_refs: []
+      rationale: "unaddressed by this atlas"
+    safety_coupling: {couplings: [], basis: not_asserted_pending_claims, claim_refs: [], rationale: "no claims"}
+    desirability_note: null
+    couples_to_targets: []
+
+coverage_summary:
+  power_domain_variables_total: 12
+  power_domain_annotated_with_claims: 5
+  efficiency_domain_variables_total: 10
+  efficiency_domain_annotated_with_claims: 1
+  note: >-
+    Six of twenty-two variables carry a claim-supported response shape. Sixteen remain
+    `unknown`. The unannotated set includes every variable H4 (thermal and oxidative
+    limitation) depends on and every variable H2 (local supply-demand mismatch)
+    depends on, which is why both hypotheses in
+    atlases/power/competing_models.yaml are labelled untested rather than merely
+    unsupported.

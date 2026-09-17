@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97486299/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/97486299"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs10877343"
+          }
+        },
+        "accession_id": "GCST90105038",
+        "association_id": 97486299,
+        "beta": "0.00607979 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.004,
+        "ci_upper": 0.0081,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0011015",
+            "efo_trait": "educational attainment"
+          }
+        ],
+        "first_author": "Okbay A",
+        "locations": [
+          "12:59828247"
+        ],
+        "mapped_genes": [
+          "SLC16A7",
+          "Y_RNA"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6.000000000000001e-09,
+        "pubmed_id": "35361970",
+        "pvalue_description": "",
+        "pvalue_exponent": -9,
+        "pvalue_mantissa": 6,
+        "range": "[0.004-0.0081]",
+        "reported_trait": [
+          "Educational attainment"
+        ],
+        "risk_frequency": "0.4825",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs10877343"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs10877343-A"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=SLC16A7&efo_id=EFO_0011015&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

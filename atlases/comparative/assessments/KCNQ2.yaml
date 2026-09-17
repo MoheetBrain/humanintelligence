@@ -1,0 +1,84 @@
+# Comparative facet assessment for TGT:KCNQ2.
+# Contract: docs/DATA_CONTRACT.md §5.2, §5.3. agent:comparative owns only
+# cross_species_convergence and human_lineage_divergence_risk.
+#
+# This target is assessed on ONE facet and not the other, deliberately. The only
+# comparative measurement that touches it is an aggregate voltage-gated potassium
+# conductance across ten mammals, which is not resolved to channel subunits. That is
+# enough to say something indirect about human divergence and not enough to say anything
+# about KCNQ2-specific conservation.
+#
+# Reviewed 2026-09-17 against contract §5.4 (polarity-aware caps).
+# `human_lineage_divergence_risk` is inverse-polarity, so the phylogenetic-control cap
+# constrains `counter_level`, never `level`. Its `level` of 1 was NOT set by the cap and
+# is unchanged: it reflects evidentiary distance — the supporting measurements are
+# aggregate Kv conductance, not KCNQ2-resolved. An inaccurate sentence in the original
+# `limiting_factor`, which said the level was "capped at 1 regardless" by the
+# phylogenetic rule, has been corrected; the cap was never at 1 and never set this
+# level.
+
+target_id: TGT:KCNQ2
+assessed_by: agent:comparative
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+schema_version: 0.1.0
+notes: "run_id sprint1-comparative-01"
+
+facets:
+  - facet: cross_species_convergence
+    assessment_status: not_assessed
+    level: null
+    rationale: >-
+      No subunit-resolved comparative measurement of KCNQ/Kv7 channels was found. The
+      available ten-species dataset (CLM:comparative:HCN1:003) reports aggregate
+      voltage-gated potassium conductance (peak and plateau components) and does not
+      separate the slowly activating, non-inactivating M-current that KCNQ2 carries, so
+      attributing its conserved allometric relationship to KCNQ2 would be an
+      unsupported subunit attribution. Recorded as not_assessed rather than 0 because a
+      KCNQ2-targeted comparative search was not run; 0 would assert a search that
+      did not happen.
+    claim_refs: []
+    counter_level: null
+    counter_claim_refs: []
+    limiting_factor: >-
+      Requires a comparative study that separates M-current pharmacologically (for
+      example with a Kv7 blocker or opener) or resolves KCNQ2/KCNQ3 transcript and
+      protein across species. None was curated in sprint 1.
+
+  - facet: human_lineage_divergence_risk
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Indirect only. Human layer 5 pyramidal neurons are statistically significant
+      outliers from the mammalian allometric relationship for BOTH HCN and voltage-gated
+      potassium conductance, exhibiting much lower conductance than their size predicts
+      (CLM:comparative:HCN1:003), and human cortical neurons show lower ion channel
+      densities and correspondingly higher input resistance than rat
+      (CLM:comparative:DENDRITE:001). Both findings concern the Kv conductance class to
+      which KCNQ2 contributes, so they raise the prior that human excitability-brake
+      biophysics departs from the rodent expectation. Neither measurement resolved
+      KCNQ2, which is exactly why this is level 1 and not higher.
+    claim_refs:
+      - CLM:comparative:HCN1:003
+      - CLM:comparative:DENDRITE:001
+    counter_level: 0
+    counter_rationale: >-
+      Searched, nothing found: no curated evidence argues that human KCNQ2
+      biophysics matches the rodent expectation. Absence of contradicting evidence, not
+      evidence of similarity.
+    counter_claim_refs: []
+    limiting_factor: >-
+      The supporting claims are aggregate-conductance measurements, not subunit
+      measurements, so this level rests on class membership rather than on the target.
+      That evidentiary distance, not any cap, is what holds the level at 1: a
+      KCNQ2-resolved comparative measurement could raise it without any rule
+      changing. Both supporting claims also come from neurosurgical human tissue in which
+      channel expression may be altered, and KCNQ2 loss-of-function variants cause
+      epileptic encephalopathy, so the disease confound is particularly acute here.
+
+      Under contract §5.4 the phylogenetic-control cap constrains `counter_level` on this
+      inverse-polarity facet, not `level`. `counter_level` is 0 and so sits well inside
+      the cap of 2; it could not exceed 2 on the present evidence, because no controlled
+      comparative study argues that human KCNQ2 biophysics matches the rodent
+      expectation. That is the cap biting in the correct direction: weak comparative
+      method must not establish the ABSENCE of a translation risk.

@@ -1,0 +1,925 @@
+# Relation type system — Intelligence Blueprint v0.1.0
+#
+# Executable form of docs/DATA_CONTRACT.md §4 (legal triples) and README §2.
+# `blueprint.ontology.is_legal_triple(subject_type, predicate, object_type)` is
+# nothing more than a lookup into this file plus the parent chain in nodes.yaml.
+#
+# Field semantics
+# ---------------
+# name      relation name, SCREAMING_SNAKE_CASE, unique.
+# layers    which graph layer(s) the relation belongs to. A relation that crosses
+#           layers (an intervention acting on a state variable) lists both.
+# domain    allowed subject node types. A subtype of a listed type is also allowed
+#           (Receptor is accepted wherever Protein is listed); the converse is not.
+# range     allowed object node types, same subtyping rule.
+# requires_claim
+#           true  -> an edge of this type is an EMPIRICAL assertion. It may enter the
+#                    compiled graph only as provenance_class: claim_derived with >= 1
+#                    resolvable claim id — unless the relation also lists
+#                    ontology_axiom in allowed_provenance_classes and the edge is
+#                    declared in ontology/definitional_edges.yaml.
+#           false -> the edge may also be introduced from reference data (identifier
+#                    or annotation databases, pinned to a DatabaseRelease) or as an
+#                    ontology axiom.
+# allowed_provenance_classes
+#           subset of {claim_derived, reference_data, ontology_axiom} (contract V17).
+# allowed_claim_types
+#           when requires_claim is true, the claim_type values that may license this
+#           relation. A claim whose type is outside this list cannot compile into this
+#           edge. This is the mechanism behind contract rule V16.
+# asserts_effect
+#           true  -> the edge asserts that something CHANGED as a result. V16 applies:
+#                    binding/engagement evidence alone can never license it.
+#           false -> the edge asserts structure, engagement, association or prediction.
+#                    Reading it as an effect is a category error.
+# negatable
+#           true -> NO_DETECTED_EFFECT_ON can negate this relation. Rule V16b-sym then
+#                    requires the null relation's domain and range to be a SUPERSET of
+#                    this relation's, so a null is expressible wherever the positive
+#                    claim is. The flag is what makes that derivable: a hand-maintained
+#                    list would drift the first time somebody added a relation.
+# requires_multiple_species
+#           true -> the relation states something BETWEEN species, so the claim's
+#                    context.species must name at least two and context.species_count
+#                    must agree. A between-species statement with one species is
+#                    meaningless, and rule V3b refuses it.
+# asserts_absence_of_effect
+#           true -> the relation reports that an attempt found NO effect. Such an edge
+#                    is exempt from the V16 efficacy gate (demanding efficacy-grade
+#                    evidence for a null result is backwards) and is instead governed by
+#                    rule V16b, which requires null or contradicting evidence. No
+#                    traversal may count it as support.
+# effect_asserting_ranges
+#           object types for which an edge of this relation IS an effect assertion even
+#           though asserts_effect is false. A protein regulating a molecular process is
+#           mechanism; the SAME relation reaching a CognitivePhenotype or a
+#           ComputationalPrimitive is an efficacy-grade assertion, and V16 gates it
+#           exactly as it gates CHANGES_STATE. This is what stops an agent routing round
+#           the efficacy gate by writing NEGATIVELY_REGULATES instead of CHANGES_STATE.
+# directional / inverse
+#           `directional: false` means the relation is symmetric and the compiler may
+#           traverse it either way. `inverse` names a materialised inverse relation, or
+#           null. v0.1.0 materialises NO inverse relations: the graph is traversed in
+#           reverse instead, so README's "CONTRADICTED_BY" is CONTRADICTS read
+#           backwards, not a second relation.
+# semantics notes for relations that are easy to misuse. Read these before curating.
+#
+# NOTHING in this file is a scientific claim. It defines which sentences may be
+# written, never which sentences are true.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+
+provenance_classes: [claim_derived, reference_data, tool_mediated, ontology_axiom]
+
+# Convenience groupings, expanded by blueprint.ontology when it indexes this file.
+# A group name may be used anywhere a node type may be used in domain/range.
+groups:
+  protein_like: [Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+  gene_like: [Gene, Transcript]
+  intervention_entity:
+    [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism]
+  source_like: [Paper, Preprint, Review, Dataset, DatabaseRelease, ClinicalTrial]
+  evidence_item: [Experiment, Measurement, Replication]
+  neural_substrate: [CellType, BrainRegion, Circuit, Network]
+  cognitive_target: [StateVariable, ComputationalPrimitive, CognitivePhenotype]
+
+edges:
+
+  # ============================================ biological causal chain =========
+
+  - name: MAPS_TO_GENE
+    layers: [biological]
+    description: >-
+      Asserts that a variant's effect is attributable to a named gene.
+    domain: [Variant]
+    range: [Gene]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [association, mechanistic, methodological]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      LOCUS IS NOT GENE (contract P4). This relation is an INFERENCE, not an
+      annotation. Positional overlap between a variant and a gene body is reference
+      data and must never be written as MAPS_TO_GENE: the claim's
+      causal_attribution.locus_to_gene_resolved field records how the assignment was
+      made (fine-mapping, colocalisation, rare-variant burden, monogenic disorder) and
+      a value of `no` with this relation is a contradiction the red team should flag.
+
+  - name: ENCODES
+    layers: [biological]
+    description: >-
+      Gene or transcript to the protein product it codes for.
+    domain: [Gene, Transcript]
+    range: [Protein, Receptor, IonChannel, Transporter, Enzyme]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Reference data only. In this repository ENCODES edges are compiled in Phase 2
+      from data/interim/gene_identifiers.jsonl (HGNC/UniProt), never authored by an
+      agent and never declared as an ontology axiom — an agent that hand-writes a
+      gene-to-UniProt mapping has violated contract §7.
+
+  - name: TRANSCRIBED_AS
+    layers: [biological]
+    description: >-
+      Gene to one of its transcript isoforms.
+    domain: [Gene]
+    range: [Transcript]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Reference data only, from Ensembl/MANE via the identifier pipeline. Isoform
+      existence is not isoform relevance: a claim about a specific isoform still needs
+      its own evidence.
+
+  - name: ORTHOLOGOUS_TO
+    layers: [biological]
+    description: >-
+      Cross-species orthology between two genes or two proteins.
+    domain: [Gene, Protein, Receptor, IonChannel, Transporter, Enzyme]
+    range: [Gene, Protein, Receptor, IonChannel, Transporter, Enzyme]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: false
+    inverse: null
+    semantics: >-
+      Sequence orthology only, from an orthology database with a pinned release.
+      Orthology is NOT functional equivalence: an ortholog pair licenses no inference
+      that a mechanism demonstrated in one species operates in the other. That
+      inference is a comparative_evolutionary claim with its own evidence.
+
+  - name: PART_OF
+    layers: [biological]
+    description: >-
+      Structural containment: subunit in complex, region in region, circuit in network,
+      process in pathway.
+    domain: [Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, BrainRegion, Circuit, Network, MolecularProcess]
+    range: [ProteinComplex, BrainRegion, Circuit, Network, Pathway, MolecularProcess]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data, ontology_axiom]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Containment only. It carries no functional or causal content: a subunit being
+      PART_OF a complex says nothing about whether perturbing the subunit perturbs the
+      complex's function. Used as an ontology_axiom only for gross anatomy nobody
+      disputes; anything finer belongs in reference data with a pinned ontology release.
+
+  - name: PARTICIPATES_IN
+    layers: [biological]
+    description: >-
+      A molecular entity takes part in a process or pathway.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+    range: [MolecularProcess, Pathway]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: [mechanistic, expression, association, methodological]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Participation is membership, not necessity and not direction. GO/Reactome
+      annotations enter as reference_data with a pinned DatabaseRelease. If an agent
+      wants to say the entity is REQUIRED for the process, that is a mechanistic claim
+      compiled as POSITIVELY_REGULATES or NEGATIVELY_REGULATES, not PARTICIPATES_IN.
+
+  - name: EXPRESSED_IN
+    layers: [biological]
+    description: >-
+      A gene, transcript or protein is expressed in a cell type or brain region.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+    range: [CellType, BrainRegion]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [expression, association, methodological]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Expression is empirical and needs a claim even when it comes from an atlas
+      (method: database_ingestion). Two traps this project cares about: expression is
+      not function, and DEVELOPMENTAL expression is not ADULT expression (contract P4)
+      — the claim's context.life_stage carries that distinction and a claim used to
+      support the `adult_expression_and_timing` facet must not have
+      life_stage: prenatal or postnatal_developmental.
+
+  - name: LOCATED_IN
+    layers: [biological]
+    description: >-
+      Anatomical localisation of a cell type, circuit or molecular entity established
+      by measurement rather than by definition.
+    domain: [CellType, Circuit, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess]
+    range: [CellType, BrainRegion, Circuit, Network]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [expression, mechanistic, association, methodological]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Use PART_OF for containment that is true by definition or by atlas convention
+      (CA1 is part of the hippocampus) and LOCATED_IN for localisation somebody had to
+      measure (a cell population is found in a region). Localisation in one species is
+      not localisation in another.
+
+  - name: MODULATES
+    layers: [biological, intervention]
+    description: >-
+      Subject influences object, with NO direction asserted.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, Mechanism, Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Target]
+    range: [MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, mechanistic, pharmacodynamic, association, expression, theoretical_construct]
+    asserts_effect: false
+    negatable: true
+    effect_asserting_ranges: [CognitivePhenotype, ComputationalPrimitive]
+    directional: true
+    inverse: null
+    semantics: >-
+      The deliberately weak relation, for when an influence is evidenced but its sign
+      is not. It must NOT be used as a polite way of asserting improvement: if the
+      direction is known, use POSITIVELY_REGULATES / NEGATIVELY_REGULATES / CONSTRAINS.
+      A ranking model must never read MODULATES as beneficial, and the claim's
+      `direction` field (which may be `unclear`) is the authority on sign, not the
+      relation name.
+
+  - name: POSITIVELY_REGULATES
+    layers: [biological, intervention]
+    description: >-
+      Subject increases the level, rate or magnitude of the object.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, Mechanism, Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Target]
+    range: [MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, mechanistic, pharmacodynamic, expression]
+    asserts_effect: false
+    negatable: true
+    effect_asserting_ranges: [CognitivePhenotype, ComputationalPrimitive]
+    directional: true
+    inverse: null
+    semantics: >-
+      "Increases the object" is not "improves cognition". The object's own
+      `desirability` and `response_shape` fields decide whether an increase is good,
+      and both default to unknown / context_dependent. Direction observed in one
+      baseline state (disease model, sleep deprivation, ageing) does not transfer to a
+      healthy adult baseline; context.baseline_context carries that.
+
+  - name: NEGATIVELY_REGULATES
+    layers: [biological, intervention]
+    description: >-
+      Subject decreases the level, rate or magnitude of the object.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, Mechanism, Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Target]
+    range: [MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, mechanistic, pharmacodynamic, expression]
+    asserts_effect: false
+    negatable: true
+    effect_asserting_ranges: [CognitivePhenotype, ComputationalPrimitive]
+    directional: true
+    inverse: null
+    semantics: >-
+      The canonical "brake" relation. Note carefully: a brake being real does not make
+      releasing it beneficial — that is a separate assertion requiring its own claim
+      into a StateVariable or DesiredEffect. This is the single most likely place for a
+      brake atlas to overreach.
+
+  - name: CONSTRAINS
+    layers: [biological, intervention]
+    description: >-
+      Subject imposes a ceiling, bound or limiting factor on the object's attainable
+      range, rather than setting its momentary value.
+    domain: [StateVariable, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, Gene, Transcript]
+    range: [StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, ontology_axiom]
+    allowed_claim_types: [causal_perturbation, mechanistic, association, theoretical_construct]
+    asserts_effect: false
+    negatable: true
+    effect_asserting_ranges: [CognitivePhenotype]
+    directional: true
+    inverse: null
+    semantics: >-
+      A capacity statement, not a direction-of-change statement: "performance cannot
+      exceed X while this is limiting". Asserting a constraint does NOT assert that
+      removing it raises performance — there is usually more than one binding
+      constraint, and the power-envelope form in state_model/dynamics.yaml is an
+      explicitly unproven conceptual hypothesis. ontology_axiom use is restricted to
+      constraints that are true by the definitions in ontology/state_variables.yaml.
+
+  - name: IMPLEMENTS
+    layers: [biological]
+    description: >-
+      A neural substrate realises a computational primitive.
+    domain: [CellType, BrainRegion, Circuit, Network]
+    range: [ComputationalPrimitive]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [mechanistic, causal_perturbation, theoretical_construct, methodological]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      The strong claim: this substrate is where the operation happens. Reserve it for
+      cases with perturbation or decoding evidence; activation correlating with a task
+      is an ASSOCIATED_WITH or PREDICTS claim about a CognitivePhenotype, not
+      IMPLEMENTS. A rodent circuit implementing a rodent-task operation does not
+      implement the human primitive of the same name — see each primitive's
+      animal_analogue_caveat.
+
+  - name: SUPPORTS_PRIMITIVE
+    layers: [biological]
+    description: >-
+      A state variable, process or substrate is required for, or enables, a
+      computational primitive without being its implementation.
+    domain: [StateVariable, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network]
+    range: [ComputationalPrimitive]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, ontology_axiom]
+    allowed_claim_types: [mechanistic, causal_perturbation, association, theoretical_construct]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Enablement, not identity. ontology_axiom instances are permitted ONLY in
+      ontology/definitional_edges.yaml and only where the state variable is the
+      capacity the primitive names by definition (persistent-activity stability and
+      persistent_representation); everything else is empirical and needs a claim.
+
+  - name: ASSOCIATED_WITH
+    layers: [biological]
+    description: >-
+      Statistical association between a genomic or biological entity and a phenotype or
+      state variable.
+    domain: [Variant, Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, StateVariable]
+    range: [CognitivePhenotype, StateVariable, ComputationalPrimitive]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [association, comparative_evolutionary]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      ASSOCIATION IS NOT CAUSATION (contract P4) and this relation is the place the
+      project expects that error. It licenses no direction of causality, no mechanism
+      and no intervention. `causal_attribution.basis` must be one of the association
+      bases; a claim with basis gwas_association_only can never compile into
+      POSITIVELY_REGULATES, NEGATIVELY_REGULATES, MODULATES or CHANGES_STATE.
+      Association with educational attainment is never association with intelligence.
+
+  - name: PREDICTS
+    layers: [biological]
+    description: >-
+      Subject carries statistical information about the object, in a stated
+      measurement context, without any causal assertion.
+    domain: [StateVariable, ComputationalPrimitive, CognitivePhenotype, Variant, Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, Species, Measurement, Experiment]
+    range: [CognitivePhenotype, StateVariable, ComputationalPrimitive]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [association, methodological, theoretical_construct]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Predictive, not causal, and not symmetric: a proxy predicting a construct does
+      not make the proxy the construct. Use this for measurement proxies and for
+      cross-validated predictive models; a claim asserting that changing the subject
+      changes the object is a different relation entirely.
+
+  - name: DIFFERS_BETWEEN_SPECIES
+    layers: [biological]
+    description: >-
+      A named property of this entity differs between two or more compared species.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    range: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype, Species]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [comparative_evolutionary, association, expression, mechanistic, methodological]
+    asserts_effect: false
+    negatable: true
+    requires_multiple_species: true
+    directional: false
+    inverse: null
+    semantics: >-
+      A DIFFERENCE, not a cause. The comparative atlas previously had no relation for
+      "this property differs between species" and borrowed causal relations, which
+      overstated the evidence: a cross-species difference in a property is not evidence
+      that the property causes a cross-species difference in cognition. Requires at
+      least TWO species in the claim's context.species — a between-species statement
+      with one species is meaningless — and the claim's
+      context.phylogenetic_control records whether relatedness was controlled for. AN
+      UNCONTROLLED CROSS-SPECIES CORRELATION IS NOT CONVERGENCE: related species share
+      traits by descent, so `none` is an honest and common answer that must not be read
+      as `not_reported`.
+
+  - name: CONSERVED_ACROSS_SPECIES
+    layers: [biological]
+    description: >-
+      A named property of this entity is preserved across two or more compared species.
+    domain: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype]
+    range: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway, CellType, BrainRegion, Circuit, Network, StateVariable, ComputationalPrimitive, CognitivePhenotype, Species]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [comparative_evolutionary, association, expression, mechanistic, methodological]
+    asserts_effect: false
+    negatable: true
+    requires_multiple_species: true
+    directional: false
+    inverse: null
+    semantics: >-
+      Conservation of a property, and nothing more. It is NOT functional equivalence and
+      NOT evidence that a mechanism demonstrated in one species operates in another —
+      that inference needs its own evidence. Conservation is also not importance:
+      sequence conservation under selection says nothing about whether perturbing the
+      entity changes cognition. Requires at least TWO species in the claim's
+      context.species, and the same phylogenetic-control caveat applies as for
+      DIFFERS_BETWEEN_SPECIES.
+
+  # ================================================= evidence layer =============
+
+  - name: REPORTS
+    layers: [evidence]
+    description: >-
+      A source contains a given evidence item or claim-relevant result.
+    domain: [Paper, Preprint, Review, Dataset, DatabaseRelease, ClinicalTrial]
+    range: [Experiment, Measurement, Replication, Claim]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Bibliographic, not epistemic: it says the source contains the result, never that
+      the result is correct or that the project agrees. A REPORTS edge from a Review is
+      secondary reporting — the citation_dependence audit check exists because a chain
+      of reviews reporting each other is not independent evidence.
+
+  - name: SUPPORTS
+    layers: [evidence]
+    description: >-
+      An evidence item or claim raises the support for another claim.
+    domain: [Experiment, Measurement, Replication, Claim]
+    range: [Claim]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Count of SUPPORTS edges is NOT evidence strength (contract P5). Duplicated
+      reporting of one underlying study must collapse, which is why evidence items
+      carry source ids and why the ranking model is tested for invariance to
+      duplication.
+
+  - name: CONTRADICTS
+    layers: [evidence]
+    description: >-
+      An evidence item or claim is inconsistent with another claim.
+    domain: [Experiment, Measurement, Replication, Claim]
+    range: [Claim]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      README's CONTRADICTED_BY is this relation read in reverse; no inverse relation is
+      materialised. A contradiction never deletes the contradicted claim: the claim's
+      status moves to contested or downgraded and both sides stay in the graph
+      (contract P6).
+
+  - name: QUALIFIES
+    layers: [evidence]
+    description: >-
+      An evidence item or claim narrows the conditions under which another claim holds
+      without contradicting it.
+    domain: [Experiment, Measurement, Replication, Claim]
+    range: [Claim]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      The honest home for "only in the disease model", "only during development",
+      "only under sleep deprivation". A qualification that in fact removes the
+      healthy-adult case should be recorded as CONTRADICTS, not softened into
+      QUALIFIES.
+
+  - name: REPLICATED_BY
+    layers: [evidence]
+    description: >-
+      A claim was independently reproduced by a named evidence item.
+    domain: [Claim]
+    range: [Experiment, Measurement, Replication]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Independence is part of the assertion: the replicating item's
+      replication_status must be replicated_independent. Same-group repetition is
+      replicated_same_group and is not independent replication.
+
+  - name: FAILED_TO_REPLICATE_BY
+    layers: [evidence]
+    description: >-
+      A named evidence item attempted and failed to reproduce a claim.
+    domain: [Claim]
+    range: [Experiment, Measurement, Replication]
+    requires_claim: false
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      A failed replication is evidence and must be recorded with the same rigour as a
+      positive result (protocol §5.6). Absence of a failed-replication edge is not
+      evidence of robustness — it is usually evidence that nobody tried.
+
+  - name: AUDITS
+    layers: [evidence]
+    description: >-
+      An audit record examines a claim or a target.
+    domain: [Audit]
+    range: [Claim, Target]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      v0.1.0 materialises AUDITS only for the `claim` and `target` audit scopes. The
+      `document` and `model` scopes are legal in the audit record (contract §6) but
+      have no node type, so they are not compiled into graph edges; the audit record
+      remains the authority. Audits may downgrade, never delete or upgrade.
+
+  - name: ABOUT
+    layers: [evidence]
+    description: >-
+      Topical aboutness: an evidence record concerns a given biological or intervention
+      entity.
+    domain: [Claim, Experiment, Measurement, Replication, Audit]
+    range: [Variant, Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, Pathway, MolecularProcess, CellType, BrainRegion, Circuit, Network, StateVariable, StateDomain, ComputationalPrimitive, CognitivePhenotype, Species, Target, Mechanism, Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, DesiredEffect, AdverseEffect]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: [evidence_gap]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Indexing only: no direction, no support, no effect. Its sole purpose is retrieval
+      ("what do we have on this node"). An ABOUT edge must never be counted as evidence
+      for anything, and a node whose only edges are ABOUT has no evidence at all.
+      IT IS ALSO THE HOME OF `claim_type: evidence_gap`, and the only relation that
+      admits it. A gap is GRAPH-INERT — an absence of measurement is not a finding about
+      biology — so attaching it to MODULATES or CONSTRAINS would assert exactly the
+      thing the record is refusing to assert. The natural triple makes the claim its own
+      subject: `CLM:{...} ABOUT PHENO:{the endpoint nobody measured}`. A V3c error on a
+      gap attached to a causal relation is correct behaviour.
+
+  - name: MEASURED_IN
+    layers: [evidence]
+    description: >-
+      The species, preparation or substrate in which an evidence item was measured.
+    domain: [Experiment, Measurement, Replication]
+    range: [Species, CellType, BrainRegion, Circuit, Network]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      The translation-distance bookkeeping edge: it is what lets a query ask "which of
+      these measurements were made in humans". ANIMAL MEMORY IS NOT HUMAN INTELLIGENCE
+      (contract P4) — MEASURED_IN plus the claim's translation.human_relevance is how
+      the graph keeps that visible instead of letting it fade into prose.
+
+  # ============================================= intervention layer ============
+
+  - name: TARGETS
+    layers: [intervention]
+    description: >-
+      An intervention entity engages a named molecular target.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism]
+    range: [Target, Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, BrainRegion, Circuit, MolecularProcess]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, mechanistic, pharmacodynamic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      BINDING IS NOT EFFICACY — this relation is the reason contract rule V16 exists.
+      TARGETS asserts engagement only. It licenses no claim about a state variable, a
+      primitive, a phenotype or a DesiredEffect, and a chain
+      "compound TARGETS protein NEGATIVELY_REGULATES state variable" is NOT an efficacy
+      claim about the compound: the compound's own effect needs its own
+      causal_perturbation, pharmacodynamic or clinical_efficacy evidence.
+
+  - name: HAS_MECHANISM
+    layers: [intervention]
+    description: >-
+      An intervention entity acts through a named mechanism of molecular action.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology]
+    range: [Mechanism]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, reference_data]
+    allowed_claim_types: [pharmacology_binding, mechanistic, pharmacodynamic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      A mechanism annotation from a drug database enters as reference_data with a
+      pinned DatabaseRelease. Having a mechanism is not having an effect, and a
+      mechanism that is plausible in vitro may be irrelevant at achievable exposure —
+      which this project cannot and does not evaluate.
+
+  - name: AGONISES
+    layers: [intervention]
+    description: >-
+      An intervention entity activates a receptor at its orthosteric site.
+    domain: [Compound, Drug, Biologic, MetabolicIntervention, Mechanism]
+    range: [Receptor, IonChannel, Target]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, pharmacodynamic, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      A mode of action, not an outcome. Efficacy at the receptor (full, partial,
+      inverse) and potency belong in the supporting claim's effect_size as_reported
+      text, never as a hand-written number. Agonism does not imply any direction of
+      cognitive change.
+
+  - name: ANTAGONISES
+    layers: [intervention]
+    description: >-
+      An intervention entity blocks activation of a receptor without activating it.
+    domain: [Compound, Drug, Biologic, MetabolicIntervention, Mechanism]
+    range: [Receptor, IonChannel, Target]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, pharmacodynamic, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Mode of action only. Blocking a receptor whose endogenous tone is unknown has an
+      unknown net effect; and blocking a receptor that is tonically active in a
+      sleep-deprived or caffeine-tolerant state is the canonical
+      rescue-versus-enhancement confound.
+
+  - name: POTENTIATES
+    layers: [intervention]
+    description: >-
+      An intervention entity increases the response of a receptor, channel or process to
+      its endogenous signal, typically allosterically.
+    domain: [Compound, Drug, Biologic, MetabolicIntervention, Mechanism]
+    range: [Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Target]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, pharmacodynamic, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Positive modulation of a RESPONSE, not of an outcome. Potentiation depends on
+      endogenous tone, so its magnitude is state-dependent by construction — a reason
+      state_dependent is a first-class response_shape value.
+
+  - name: NEGATIVELY_MODULATES
+    layers: [intervention]
+    description: >-
+      An intervention entity reduces the response of a receptor, channel or process to
+      its endogenous signal, typically allosterically.
+    domain: [Compound, Drug, Biologic, MetabolicIntervention, Mechanism]
+    range: [Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Target]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, pharmacodynamic, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Negative allosteric modulation of a molecular response. Distinct from
+      NEGATIVELY_REGULATES, which is about levels/rates of a process or state variable.
+      A negative allosteric modulator of a receptor subtype is not thereby an enhancer
+      of anything.
+
+  - name: INHIBITS
+    layers: [intervention]
+    description: >-
+      An intervention entity reduces the catalytic or transport activity of an enzyme or
+      transporter.
+    domain: [Compound, Drug, Biologic, RNAIntervention, MetabolicIntervention, Mechanism]
+    range: [Enzyme, Transporter, IonChannel, ProteinComplex, MolecularProcess, Target]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [pharmacology_binding, pharmacodynamic, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Activity reduction at the molecular level. Selectivity is the whole question and
+      is not encoded in the relation: an inhibitor's off-target profile lives in
+      separate TARGETS/INHIBITS claims, and the absence of such claims means nobody
+      looked, not that the compound is selective.
+
+  - name: UPREGULATES
+    layers: [intervention, biological]
+    description: >-
+      Subject increases the abundance or activity of a gene product, transcript or
+      process.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism, Gene, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+    range: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, pharmacodynamic, mechanistic, expression]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Abundance/activity change of a molecular entity, measured. It is one step in a
+      causal chain and not a cognitive effect; and an increase measured in a cell line
+      or in a developing animal is not an increase in an adult human brain.
+
+  - name: DOWNREGULATES
+    layers: [intervention, biological]
+    description: >-
+      Subject decreases the abundance or activity of a gene product, transcript or
+      process.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism, Gene, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+    range: [Gene, Transcript, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, MolecularProcess, Pathway]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, pharmacodynamic, mechanistic, expression]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Mirror of UPREGULATES. Knockdown efficiency, compensation and off-target
+      regulation are all unmeasured unless a claim says otherwise.
+
+  - name: CHANGES_STATE
+    layers: [intervention]
+    description: >-
+      An intervention entity changes the value of a state variable, or achieves a named
+      desired effect.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism, Target]
+    range: [StateVariable, DesiredEffect, CognitivePhenotype, ComputationalPrimitive]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [causal_perturbation, pharmacodynamic, clinical_efficacy]
+    asserts_effect: true
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      THE EFFICACY RELATION, and the narrowest gate in the ontology (contract V16).
+      Binding, mechanism, expression, association and theoretical claims can never
+      license it: only causal_perturbation, pharmacodynamic or clinical_efficacy
+      evidence can. An edge into a DesiredEffect is the strongest form of this
+      assertion and additionally requires the supporting claim's translation block to
+      state honestly whether the effect was shown above a healthy baseline
+      (supra_normal) and in which species (human_relevance).
+
+  - name: NO_DETECTED_EFFECT_ON
+    layers: [biological, intervention]
+    description: >-
+      A performed and reported attempt to change the object detected no effect.
+    domain: [Biologic, BrainRegion, CellType, Circuit, CognitivePhenotype, Compound, ComputationalPrimitive, Drug, Enzyme, Experiment, Gene, GeneRegulation, IonChannel, Measurement, Mechanism, MetabolicIntervention, MolecularProcess, Network, Neurotechnology, Pathway, Protein, ProteinComplex, RNAIntervention, Receptor, Species, StateVariable, Target, Transcript, Transporter, Variant]
+    range: [AdverseEffect, BrainRegion, CellType, Circuit, CognitivePhenotype, ComputationalPrimitive, DesiredEffect, Enzyme, Gene, IonChannel, MolecularProcess, Network, Pathway, Protein, ProteinComplex, Receptor, Species, StateVariable, Transcript, Transporter]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [clinical_null, clinical_harm, preclinical_harm, safety, causal_perturbation, pharmacodynamic, association]
+    asserts_effect: false
+    asserts_absence_of_effect: true
+    directional: true
+    inverse: null
+    semantics: >-
+      THE NULL-RESULT RELATION, and the asymmetry it removes is the reason it exists:
+      without it a positive trial compiles into an edge and an equally well-powered
+      null trial of the same intervention compiles into nothing, so the graph drifts
+      positive no matter how honest each individual record is. It asserts that somebody
+      PERFORMED AND REPORTED an attempt and detected no effect, which is a finding.
+      It MUST NEVER encode absence of evidence: an untested relationship is represented
+      by the ABSENCE of an edge, never by a null edge, and writing one for a
+      relationship nobody tested manufactures a finding out of a gap. Rule V16b
+      requires at least one evidence item with evidence_role in
+      {null_result, contradicts} — a claim with only supporting evidence cannot license
+      it. NO TRAVERSAL MAY COUNT THIS EDGE AS SUPPORT, and Phase 2 must render it
+      distinguishably in the export and exclude it from support counts. Note what it
+      does not say: no detected effect at the tested exposure, in the tested
+      population, on the tested endpoint, at the achieved power. It is not evidence of
+      no effect.
+
+  - name: INCREASES_RISK
+    layers: [intervention]
+    description: >-
+      Subject raises the probability or severity of a named adverse effect.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism, Target, Gene, Variant, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, StateVariable]
+    range: [AdverseEffect]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [safety, clinical_harm, preclinical_harm, clinical_null, clinical_efficacy, causal_perturbation, pharmacodynamic, association]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Association-grade safety evidence (pharmacovigilance, cohort) is admissible here
+      even though it would not be admissible for efficacy: the asymmetry is
+      deliberate and the claim_type records which grade it is. ABSENCE OF THIS EDGE IS
+      NOT SAFETY (docs/COMPUTATIONAL_ONLY_POLICY.md) — it usually means nobody
+      measured.
+
+  - name: DECREASES_RISK
+    layers: [intervention]
+    description: >-
+      Subject lowers the probability or severity of a named adverse effect.
+    domain: [Compound, Drug, Biologic, RNAIntervention, GeneRegulation, MetabolicIntervention, Neurotechnology, Mechanism, Target, Gene, Variant, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex, StateVariable]
+    range: [AdverseEffect]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived]
+    allowed_claim_types: [safety, preclinical_harm, clinical_null, clinical_efficacy, causal_perturbation, pharmacodynamic, association]
+    asserts_effect: false
+    negatable: true
+    directional: true
+    inverse: null
+    semantics: >-
+      Risk reduction for one adverse effect says nothing about the total safety
+      profile, and must never be aggregated into a net-benefit number: safety variables
+      are constraints, not costs to be traded away (README §3).
+
+  - name: REPRESENTS
+    layers: [intervention]
+    description: >-
+      A project-level Target stands for one or more biological entities.
+    domain: [Target]
+    range: [Gene, Protein, Receptor, IonChannel, Transporter, Enzyme, ProteinComplex]
+    requires_claim: false
+    allowed_provenance_classes: [reference_data]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Bookkeeping between the work-unit layer and the biology, compiled from the target
+      dossier's represented_entities plus HGNC-resolved identifiers. A Target
+      representing a complex represents its member genes too; evidence about one member
+      is not automatically evidence about the complex.
+
+  - name: MEMBER_OF_STATE_DOMAIN
+    layers: [biological, intervention]
+    description: >-
+      A state variable belongs to one of the eight state domains.
+    domain: [StateVariable]
+    range: [StateDomain]
+    requires_claim: false
+    allowed_provenance_classes: [ontology_axiom]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Definitional and redundant by construction — the domain is the first segment of
+      the state-variable id — but written out as triples in
+      ontology/definitional_edges.yaml so that domain membership is queryable in the
+      graph rather than hidden in string parsing. Not an empirical relation and never
+      claim_derived.

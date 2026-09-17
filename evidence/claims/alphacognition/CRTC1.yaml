@@ -1,0 +1,263 @@
+# Hand-curated claims — CRTC1 (lead atlas: alphacognition, dossier_depth: deep)
+#
+# CRTC1 is the cleanest adult-onset enhancement result in this atlas: viral overexpression
+# in the dentate gyrus of healthy adult mice, delivered around training, increased memory
+# strength without degrading memory specificity. It is also the target with the largest
+# translation gap: no human interventional or human genetic evidence bearing on cognition
+# was found. Both facts are recorded.
+# schema_version: 0.1.0 (carried per claim below; contract §2 requires this file to be a YAML list)
+
+- claim_id: CLM:alphacognition:CRTC1:001
+  schema_version: 0.1.0
+  statement: Viral vectors were used to raise CRTC1 locally and acutely in the dorsal hippocampal dentate
+    gyrus of mice before context fear training or before memory reactivation; the manipulation enhanced
+    both consolidation and reconsolidation, the facilitation was specific to the trained context rather
+    than generalising to an untrained one, and it persisted after the virally expressed CRTC1 had dissipated.
+  subject: GENE:CRTC1
+  predicate: MODULATES
+  object: PHENO:animal_fear_conditioning
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions:
+    - REGION:dentate_gyrus
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the source reports that CREB overexpression produced strikingly similar effects, so the result may
+      reflect the CREB transcriptional programme generally rather than anything specific to CRTC1
+    - stronger context fear memory is one valenced task in one hippocampal subregion; it is not a general
+      memory improvement and certainly not a general ability improvement
+    - viral overexpression magnitude is not physiological and has no dose analogue in a human intervention
+  evidence:
+  - source_id: SRC:PMID:23223304
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: mice receiving local viral CRTC1 or CREB overexpression in dorsal dentate gyrus before
+      training or before memory reactivation
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: context fear memory strength and context specificity after consolidation and after reconsolidation
+    endpoint_category: animal_fear_conditioning
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    note: The reason this claim is worth more than a typical rodent overexpression result is the reported
+      preservation of memory quality (no generalisation to an untrained context). Enhancement that trades
+      specificity for strength would not be an enhancement; the source addresses that directly.
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: adult-onset, local, healthy-baseline causal perturbation with an explicit specificity control,
+      but a single rodent study on one task
+    calibration_status: uncalibrated_subjective
+  risks:
+  - no independent replication of this result was found in this session
+  - enhanced reconsolidation is a plausible route to strengthening unwanted memories as well as wanted
+    ones
+  confounders:
+  - viral vector inflammation
+  - surgery
+  - CREB-pathway non-specificity
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CRTC1:002
+  schema_version: 0.1.0
+  statement: Context-associative learning normally triggers rapid CRTC1 dephosphorylation and translocation
+    from cytosol and dendrites to the nucleus of hippocampal neurons; in presenilin conditional double
+    knockout mice this regulation and the associated CRTC1-dependent transcription were deregulated alongside
+    long-term contextual memory deficits, and hippocampal CRTC1 gene therapy ameliorated the memory and
+    transcriptional deficits and dendritic degeneration despite ongoing cortical degeneration.
+  subject: GENE:CRTC1
+  predicate: MODULATES
+  object: PHENO:animal_fear_conditioning
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: disease_model
+    brain_regions:
+    - REGION:hippocampus
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is restoration of a deficient function in a degeneration model, which says nothing about headroom
+      in an intact brain
+    - the presenilin conditional double knockout is a severe model with cortical atrophy and neuron loss;
+      improvement there may reflect general neuroprotection
+  evidence:
+  - source_id: SRC:PMID:27587263
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: control mice and presenilin conditional double knockout mice after one-trial contextual
+      fear conditioning
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: CRTC1 phosphorylation and nuclear translocation, CRTC1-dependent c-fos and Nr4a1-3 transcription,
+      long-term contextual memory, dendritic morphology
+    endpoint_category: animal_fear_conditioning
+    endpoint_measured: measured
+    effect_direction: increase
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: adult-onset causal intervention with a mechanistic readout, but in a disease model, so
+      it is rescue evidence and is labelled as such
+    calibration_status: uncalibrated_subjective
+  risks:
+  - rescue in a degeneration model is routinely miscited as enhancement; this claim exists partly to make
+    that misreading detectable
+  confounders:
+  - severity of the presenilin model
+  - viral delivery
+  dependencies:
+  - CLM:alphacognition:CRTC1:001
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01
+- claim_id: CLM:alphacognition:CRTC1:003
+  schema_version: 0.1.0
+  statement: In cultured mouse hippocampal neurons, neuronal activity enhanced Nr4a2 expression and function
+    through an ionotropic glutamate receptor / calcium / CREB / CRTC1 pathway, and Nr4a2 activation in
+    turn mediated BDNF production and increased ionotropic glutamate receptor expression, affecting long-term
+    depression at CA3-CA1 synapses in acute hippocampal slices.
+  subject: GENE:CRTC1
+  predicate: MODULATES
+  object: SV:plasticity.ltd_threshold
+  claim_type: mechanistic
+  direction: bidirectional
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: not_reported
+    baseline_context: healthy_wildtype
+    brain_regions:
+    - REGION:hippocampus
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - CRTC1 appears here as one node in a multi-step pathway whose behavioural consequence was not tested
+    - cultured neurons and acute slices are not an intact behaving animal
+  evidence:
+  - source_id: SRC:PMID:36931707
+    design: electrophysiology
+    species: SPECIES:NCBITaxon:10090
+    population: cultured mouse hippocampal neurons (both sexes) and acute mouse hippocampal slices (both
+      sexes)
+    sample_size:
+      reported_as: null
+      value: null
+      unit: animals
+    endpoint: Nr4a2 expression and function, BDNF production, synaptic GluA1-AMPAR levels, long-term depression
+      at CA3-CA1 synapses
+    endpoint_category: synaptic_plasticity_ltp_ltd
+    endpoint_measured: measured
+    effect_direction: mixed
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: single_study
+    evidence_role: supports
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: in vitro and slice mechanism only; supplies a plausible molecular route from CRTC1 to plasticity
+      but no behavioural or human endpoint
+    calibration_status: uncalibrated_subjective
+  risks:
+  - the direction of the plasticity effect here is LTD, not LTP; a mechanism that changes plasticity is
+    not automatically a mechanism that improves cognition
+  confounders:
+  - culture conditions
+  - slice preparation
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-alphacognition-curation-01

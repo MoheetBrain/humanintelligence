@@ -1,0 +1,27 @@
+schema_version: 0.1.0
+id: BIO:klotho_protein
+node_type: Biologic
+label: "klotho protein (rhesus form, administered systemically)"
+identifiers:
+  chembl_id: null
+  identifier_provenance: >-
+    No ChEMBL or other accession was retrieved for the administered protein in this
+    session. A slug identifier is the contract's permitted fallback for BIO nodes.
+targets: [TGT:KL]
+mechanism_as_reported: >-
+  Not resolved in the retrieved text for the primate study. The associated mouse work
+  reports enhanced long-term potentiation and enriched synaptic GluN2B, with effects
+  abolished by GluN2B blockade, so the reported route is glutamatergic and synaptic
+  rather than metabolic.
+state_variables_touched:
+  - SV:cognition.general_cognitive_ability
+  - SV:cognition.attentional_control
+cited_by_claims: [CLM:power:KL:004, CLM:power:KL:001]
+dose_response_note: >-
+  The retrieved text reports that a single low dose enhanced memory in aged nonhuman
+  primates and that a high dose did NOT. Any use of this node must carry the
+  non-monotonic result; treating klotho as monotonically beneficial is a dose-response
+  inversion error.
+dose_information: omitted_by_policy
+conflict_of_interest_note: "the primate study's author list includes a commercial developer of klotho therapeutics, as stated in the retrieved affiliations"
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

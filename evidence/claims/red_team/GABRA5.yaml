@@ -1,0 +1,272 @@
+# Red-team contradicting evidence — GABRA5.
+# Contract: docs/DATA_CONTRACT.md section 4. schema_version 0.1.0.
+#
+# WHY THIS FILE EXISTS. agent:brakes named NCT02953639 as "the largest single
+# unresolved item in the GABRA5 dossier" and refused to grade it, because it had the
+# registry record but not the result. That refusal was correct. This file closes the
+# gap the right way: by retrieving the published result and recording it as evidence,
+# not by asserting what the trial probably showed.
+#
+# The effect is that the human null for the alpha5-GABA-A mechanism is now REPLICATED
+# across two independent trials in two different populations, both with a pre-specified
+# cognitive primary endpoint. That is the strongest negative finding in this audit and
+# it is the reason TGT:GABRA5's human facets are downgraded in
+# evidence/audits/red_team/GABRA5.yaml.
+
+- claim_id: CLM:red_team:GABRA5:001
+  schema_version: 0.1.0
+  statement: >-
+    In a 24-week randomised placebo-controlled phase 2b trial in adults with cognitive
+    impairment associated with schizophrenia, the selective alpha5-GABA-A negative
+    allosteric modulator basmisanil did not improve the MATRICS Consensus Cognitive
+    Battery neurocognitive composite, which was the pre-specified primary endpoint, nor
+    any secondary cognitive or functional measure, nor any of the pre-specified
+    stratified subgroups, and recruitment into the lower-dose arm was stopped at a
+    planned futility analysis.
+  subject: CPD:CHEMBL3681419
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: PHENO:clinical_cognitive_composite
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the population had schizophrenia and was on stable antipsychotics, so a null here does not establish a null for healthy adults"
+      - "antipsychotic co-medication could in principle occlude an effect of alpha5 negative modulation, and the retrieved text does not exclude that"
+      - "the report states that practice and learning effects were not observed at week 12, which removes one common explanation for a null but not all of them"
+      - "no receptor-occupancy measurement is reported for this trial in the retrieved text, so adequate target engagement at the tested doses is inferred from the wider programme rather than demonstrated here"
+      - "one secondary sub-score was nominally significant in the posted results (Wechsler Memory Scale IV Verbal Paired Associates, treatment difference 0.91, 95% CI 0.23 to 1.58, p=0.028) among many secondary comparisons with no correction reported, alongside p-values of 0.211, 0.787 and 0.477 on the other sub-scores of the same instrument and 0.556, 0.848, 0.973 and 0.651 across the MCCB cognitive domains; the red team records this because it is the one result a reader seeking a positive finding would quote, and treats it as consistent with chance"
+  evidence:
+    - source_id: SRC:PMID:41983730
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "adults with schizophrenia of stable symptoms on stable antipsychotic therapy, randomised to basmisanil 80 mg twice daily, 240 mg twice daily or placebo for 24 weeks"
+      sample_size:
+        reported_as: "Two hundred thirteen patients were randomized"
+        value: 213
+        unit: participants
+      endpoint: "MATRICS Consensus Cognitive Battery (MCCB) neurocognitive composite score, change from baseline to week 24"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "Twenty-four weeks of treatment with basmisanil was well tolerated without improving cognitive or functional measures overall or in any of the stratified subgroups"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:NCT:NCT02953639
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "participants aged 18-50 with schizophrenia treated with antipsychotics; registry-reported actual enrolment 214, posted results comparing placebo (OG000) with basmisanil 240 mg twice daily (OG001)"
+      sample_size:
+        reported_as: "214"
+        value: 214
+        unit: participants
+      endpoint: "POSTED RESULTS, registry primary outcome measure: change from baseline to week 24 in MATRICS Consensus Cognitive Battery neurocognitive composite T-score, mixed-models treatment difference"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: mean_difference
+        as_reported: "Mixed Models Analysis, Treatment Difference 0.28, 95% CI -1.47 to 2.02, p=0.793 (week 24); Treatment Difference -0.36, 95% CI -2.11 to 1.38, p=0.730 (earlier timepoint). Baseline composite T-score 32.50 (SD 14.47) placebo and 32.36 (SD 11.44) basmisanil; change 1.08 (SD 5.78) placebo and 1.36 (SD 4.80) basmisanil."
+        value: 0.28
+        ci_lower: -1.47
+        ci_upper: 2.02
+        p_value: 0.793
+      replication_status: not_assessed
+      evidence_role: null_result
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:35123401
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "adolescents and young adults with Down syndrome dosed twice daily for 6 months (the CLEMATIS trial, independently reported)"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "composite of working memory (RBANS) and independent functioning or clinical global impression at 6 months"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: percent_change
+        as_reported: "29% in placebo, 20% in low dose, and 25% in high dose"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 4
+    rationale: >-
+      two independently reported randomised placebo-controlled trials of the same
+      mechanism, in two different populations, each with a pre-specified multi-domain
+      cognitive primary endpoint, both null and consistent in direction; the companion
+      trial demonstrated pharmacodynamic target engagement; and the posted results of the
+      larger trial bound the treatment difference on a composite whose population
+      standard deviation is 10 T-score points to a confidence interval of roughly -1.5 to
+      +2.0, so this is a precise null rather than an uninformative one
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "neither trial tested healthy adults, so this pair of nulls does not establish that the mechanism cannot enhance a healthy adult; it establishes that it did not improve cognition in the two deficit populations where it was tested"
+    - "reading this as 'the alpha5 brake does not exist' would be an over-read: the rodent plasticity phenotypes are separate evidence and are not addressed by these trials"
+    - "the placebo arm itself improved by 1.08 composite T-score points over 24 weeks, which is nearly four times the treatment difference; anyone comparing a single-arm result against a historical baseline in this indication would mistake that drift for an effect"
+  confounders:
+    - "antipsychotic co-medication in the schizophrenia trial"
+    - "instrument floor and ceiling effects in intellectual disability in the Down syndrome trial"
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_pubmed_ids: ["41983730", "35123401"]
+    supporting_accessions: ["NCT02953639", "NCT02024789", "NCT02484703"]
+
+- claim_id: CLM:red_team:GABRA5:002
+  schema_version: 0.1.0
+  statement: >-
+    A curated safety-pharmacology review indexed by the Open Targets Platform attributes
+    convulsions to inhibition of the alpha5-containing GABA-A receptor and attributes
+    decreased convulsions to its activation, so the direction of manipulation this
+    project proposes for this target is the direction associated with seizure liability
+    rather than the direction that protects against it.
+  subject: GENE:GABRA5
+  predicate: INCREASES_RISK
+  object: AE:seizure
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the source is a literature curation table, not a primary experiment; its rows carry no species, dose or design attribution, so this is a class-level expectation rather than an observed outcome for any specific compound"
+      - "the developer's own preclinical report for the clinical alpha5 negative allosteric modulator states that no proconvulsant effect was seen in rats at the 30-65 percent occupancy range taken into the clinic, so the liability is plausibly occupancy-dependent and avoidable at partial occupancy"
+      - "the curation table lists both directions for this event, which is consistent with a bidirectional relationship rather than a one-way risk"
+  evidence:
+    - source_id: SRC:PMID:28216264
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "literature curation across 70 receptors, enzymes, ion channels and transporters with established links to adverse effects; no per-row population is given"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "curated adverse-effect annotation for the alpha5-containing GABA-A receptor, retrieved as Open Targets Platform 26.06 safetyLiabilities rows 'convulsions' (direction: Inhibition/Decrease/Downregulation, dosing: acute) and 'decreased convulsions' (direction: Activation/Increase/Upregulation, dosing: acute)"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: database_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:33833333
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10116
+      population: "rats dosed with basmisanil at estimated receptor occupancies between 30 and 65 percent"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "anxiogenic and proconvulsant screening in rat alongside attenuation of diazepam-induced spatial learning impairment"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "without showing anxiogenic or proconvulsant effects in rats"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      a class-level annotation from a curation review with no species or design
+      attribution at row level, partly offset by a primary rodent report of no
+      proconvulsant signal at clinical occupancy; weak evidence, recorded because the
+      direction matters and omitting it would make the target look safer than the
+      literature supports
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this claim must not be read as a demonstrated human seizure signal for any alpha5 negative allosteric modulator; the two trials that dosed humans reported good tolerability"
+  confounders:
+    - "the curation table does not separate subtype-selective from non-selective ligands"
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    database_release: SRC:DB:opentargets:26.06
+    supporting_pubmed_ids: ["28216264", "33833333"]

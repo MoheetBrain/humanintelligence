@@ -1,0 +1,144 @@
+# Facet assessment — CKB. Contract §5.2 / §5.3.
+schema_version: 0.1.0
+target_id: TGT:CKB
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Replicated non-human causal evidence exists for the creatine-kinase system:
+      double knockout suppressed chemically induced seizures and altered neuronal
+      calcium clearance, and isoform knockout slowed spatial learning acquisition.
+      None of it isolates CKB, and the only CKB-specific behavioural description
+      reached was a secondary report inside another paper's abstract.
+    claim_refs: [CLM:power:CKB:001, CLM:power:CKB:003, CLM:power:CKB:004]
+    counter_level: 2
+    counter_rationale: >-
+      The same body of work reports that the surviving phosphoryl-transfer reactions
+      sufficed for basic sensory, motor and physiological function, which argues the
+      system is redundant rather than rate-limiting.
+    counter_claim_refs: [CLM:power:CKB:003]
+    limiting_factor: "no isoform-resolved causal cognitive experiment; the CKB-specific behavioural phenotype is available only as a secondary report"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. Every creatine-kinase perturbation retrieved is a
+      germline knockout with lifelong compensation and documented structural
+      remodelling. There is no adult-inducible, adult-restricted or pharmacological
+      adult manipulation of CKB at any evidence level.
+    search_basis: >-
+      PubMed searched for CKB and creatine-kinase perturbation in brain across the whole
+      index with no date limit, via the queries 'brain creatine kinase CKB knockout mice
+      hippocampus behaviour' and 'creatine kinase B knockout mice spatial learning
+      behavioral phenotype'; both returned single-figure result sets and every retrieved
+      perturbation was a germline knockout. A hit would have been any adult-restricted
+      manipulation of CKB - tamoxifen- or doxycycline-inducible deletion, adult viral
+      knockdown, or a pharmacological creatine-kinase inhibitor given to an adult animal -
+      with any behavioural or electrophysiological readout. None exists in the retrieved
+      literature.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "no study has tested and failed; the question is simply unaddressed"
+    counter_claim_refs: []
+    limiting_factor: "complete absence of adult-onset experiments; germline knockouts cannot answer this"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. No study retrieved increases CKB activity or
+      expression above wild type, so there is no evidence of enhancement above a
+      healthy baseline to grade.
+    search_basis: >-
+      Scope: PubMed for CKB and creatine-kinase perturbation across the whole index, read
+      specifically for gain-of-function arms. A hit would have been any experiment raising
+      CKB expression or creatine-kinase activity above wild type - transgenic
+      overexpression, viral delivery, or an activator compound - with any functional
+      readout. Every retrieved manipulation removes a component; not one adds capacity. The
+      counter-evidence cited is human and goes the other way.
+    claim_refs: []
+    counter_level: 2
+    counter_rationale: >-
+      A human imaging study found the phosphocreatine pool INCREASED in early
+      Alzheimer's disease in exactly the regions that degenerate first, which is the
+      wrong direction for a larger-reserve-is-better reading of this axis.
+    counter_claim_refs: [CLM:power:CKB:006]
+    limiting_factor: "no gain-of-function experiment exists for CKB in any species"
+
+  - facet: transfer_breadth
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. The behavioural evidence is confined to rodent
+      spatial learning, habituation, startle and seizure susceptibility; no study
+      measures benefit across cognitive domains, and no manipulation produces a
+      benefit whose breadth could be assessed.
+    search_basis: >-
+      Scope: the same CKB and creatine-kinase PubMed result sets as the mechanistic facet,
+      read for the endpoints each study used rather than for new records. A hit would have
+      been one study measuring two or more distinct cognitive domains in the same animals,
+      or any transfer or untrained-task endpoint. Every retrieved behavioural readout was a
+      single family - spatial learning, habituation, acoustic startle, seizure
+      susceptibility - and no manipulation produced a benefit whose breadth could be
+      measured at all.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "no breadth test attempted, so nothing to contradict"
+    counter_claim_refs: []
+    limiting_factor: "no positive effect exists whose transfer could be measured"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. There is no CKB modulator in this atlas and
+      therefore no exposure axis; the knockouts are all-or-nothing genetic ablations
+      with no graded arm.
+    search_basis: >-
+      Scope: PubMed for CKB perturbation as above, plus ChEMBL compound_search for a
+      creatine-kinase-directed small molecule. ChEMBL returned creatine (CHEMBL283800) and
+      phosphocreatine (CHEMBL1204644) as substrates, and no CKB inhibitor or activator. A
+      hit would have been a graded perturbation - allelic series, partial versus complete
+      knockdown, or any compound with a concentration-response curve against creatine-kinase
+      activity. There is no exposure axis for this target in the retrieved evidence, so
+      there is nothing whose shape could be known.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "nothing to contradict"
+    counter_claim_refs: []
+    limiting_factor: "no graded perturbation and no pharmacological tool"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. No human intervention on CKB exists. The two human
+      records in this dossier are 31P magnetic resonance spectroscopy associations
+      with the phosphocreatine pool, which is observational, does not implicate CKB
+      specifically, and one of which points the opposite way.
+    search_basis: >-
+      PubMed searched for human high-energy-phosphate work via 'phosphorus magnetic
+      resonance spectroscopy 31P brain phosphocreatine ATP cognitive performance humans'
+      (5 results, all observational imaging) and for creatine-axis human trials via
+      'creatine supplementation cognitive performance randomized controlled trial healthy
+      adults' (12 results). ClinicalTrials.gov was searched for klotho and for
+      lactate-with-cognition; no CKB-directed search was possible because no CKB modulator
+      exists to search for. A hit would have been any human study that PERTURBED CKB or
+      creatine-kinase flux - a modulator trial, or a genetic human cohort with a CKB
+      loss-of-function allele and cognitive testing. Nothing of the kind was retrieved; the
+      two human records in this dossier are 31P-MRS pool associations that do not implicate
+      CKB specifically.
+    claim_refs: []
+    counter_level: 1
+    counter_rationale: >-
+      The available human observational data on the phosphocreatine axis is
+      inconsistent: a small study found higher grey-matter phosphocreatine with
+      better executive performance, while a larger matched study found higher
+      phosphocreatine in early Alzheimer's disease.
+    counter_claim_refs: [CLM:power:CKB:005, CLM:power:CKB:006]
+    limiting_factor: "no human perturbation of CKB or of creatine-kinase flux has been performed"

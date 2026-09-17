@@ -1,0 +1,209 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D001927",
+          "term": "Brain Diseases"
+        },
+        {
+          "id": "D002493",
+          "term": "Central Nervous System Diseases"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D006259",
+          "term": "Craniocerebral Trauma"
+        },
+        {
+          "id": "D020196",
+          "term": "Trauma, Nervous System"
+        },
+        {
+          "id": "D014947",
+          "term": "Wounds and Injuries"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D000070642",
+          "term": "Brain Injuries, Traumatic"
+        },
+        {
+          "id": "D001930",
+          "term": "Brain Injuries"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Patients in this group received intravenous infusion of hyperosmolar Sodium Chloride 3% at 1.5 ml.KgBW-1 within 15 minutes before neurosurgery",
+          "label": "Hyperosmolar sodium chloride",
+          "type": "NO_INTERVENTION"
+        },
+        {
+          "description": "Patients in this group received intravenous infusion of hyperosmolar sodium lactate at 1.5 ml.KgBW-1 within 15 minutes before neurosurgery",
+          "interventionNames": [
+            "Drug: hyperosmolar sodium lactate"
+          ],
+          "label": "Hyperosmolar sodium lactate",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Hyperosmolar sodium lactate"
+          ],
+          "description": "Patients in this group received intravenous infusion of hyperosmolar sodium lactate at 1.5 ml.KgBW-1 within 15 minutes before neurosurgery",
+          "name": "hyperosmolar sodium lactate",
+          "otherNames": [
+            "Totilac"
+          ],
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Traumatic Brain Injury"
+      ],
+      "keywords": [
+        "brain injury",
+        "cognitive function",
+        "sodium lactate",
+        "MMSE score"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Bandung",
+          "country": "Indonesia",
+          "facility": "Hasan Sadikin Hospital",
+          "geoPoint": {
+            "lat": -6.92222,
+            "lon": 107.60694
+          },
+          "state": "West Java",
+          "zip": "40161"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Faculty of Medicine Universitas Padjadjaran - Dr. Hasan Sadikin Hospital Bandung",
+          "name": "Tatang Bisri, MD,PhD,Prof",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Mild traumatic brain injury (TBI) is the most common type of brain injury. Post-mild TBI disability could stem from cognitive, physical, psychological and social dysfunction which resulted in significant disability and unemployment. Long-term behavioral impairments which affected the individual's occupation, lifestyle, and family frequently occurred in individuals with mild to moderate brain injuries who physically fully recovered. In-vitro and in-vivo studies showed a better recovery of cognitive function after administration of exogenous lactate in traumatic brain injury. Therefore, this study is aimed to evaluate the effect of exogenous lactate infusion contained in hyperosmolar sodium lactate solution on cognitive function assessed by Mini Mental State Examination(MMSE)scale.",
+      "detailedDescription": "Mild traumatic brain injury (TBI) is the most common type of brain injury. Post-mild TBI disability could stem from cognitive, physical, psychological and social dysfunction which resulted in significant disability and unemployment. Cognitive impairment post traumatic brain injury is due to the disruption of brain vascular bed and microstructural damage. Currently, there is no specific therapy for individual with mild TBI. Neuropsychological assessment and early management immediately after mild traumatic brain injury have been shown to reduce long term cognitive disability. In-vitro and in-vivo studies showed a better recovery of cognitive function after administration of exogenous lactate in traumatic brain injury.\n\nThe role of lactate in cerebral energy metabolism has been investigated widely. The ability of lactate as the sole energy substrate to support synaptic function has been demonstrated by different studies. In many studies, lactate has been proven to be a preferred or even an obligatory substrate over glucose for aerobic energy production during the initial stage of recovery from cerebral ischemia or hypoxia for recovery from ATP-depleted synaptic function and exogenously supplied lactate can support the early recovery of synaptic function after hypoxia.\n\nHowever, the clinical studies evaluated the effect of lactate administration on cognitive function in patients with mild traumatic brain injury are still limited. Therefore, we conduct a study to evaluate the effect of exogenous lactate infusion contained in hyperosmolar sodium lactate solution on cognitive function assessed by Mini Mental State Examination (MMSE) score evolution in mild traumatic brain injury compared with patients receiving hyperosmolar sodium chloride 3 % as a control group. MMSE score can be used as a tool to describe cognitive function."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "SINGLE",
+          "whoMasked": [
+            "PARTICIPANT"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 60,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "NA"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Mild traumatic brain injury\n* Glasgow Coma Scale (GCS) of 14-15\n* Requires emergency neurosurgery procedures\n* Physical status ASA I-II\n* Onset of trauma \\< 9 hours\n\nExclusion Criteria:\n\n* Multiple injury\n* Pregnancy/lactation\n* History of alcohol or barbiturate consumption prior to the injury",
+      "healthyVolunteers": false,
+      "maximumAge": "60 Years",
+      "minimumAge": "14 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD",
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Effect of Exogenous Lactate on Neurocognitive in Brain Trauma",
+      "nctId": "NCT01455376",
+      "officialTitle": "Effect of Exogenous Lactate Infusion on Neurocognitive Function of Patients With Mild Traumatic Brain Injury",
+      "orgStudyIdInfo": {
+        "id": "AN-001.2011"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Universitas Padjadjaran"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The investigators evaluate the changes in neurocognitive function at several time points (24 hours, 30 days, and 90 days post surgery) using Mini Mental State Examination (MMSE) score in both groups. Osmolality and sodium level are also recorded in order to confirm that hyperosmolar sodium lactate is safe for traumatic brain injury patients",
+          "measure": "Changes in neurocognitive function",
+          "timeFrame": "24 hours, 30 days, and 90 days post surgery"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "Universitas Padjadjaran"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2010-06",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2011-10-21",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2011-10-20",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2010-06",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2010-03"
+      },
+      "statusVerifiedDate": "2011-10",
+      "studyFirstPostDateStruct": {
+        "date": "2011-10-19",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2011-10-05",
+      "studyFirstSubmitQcDate": "2011-10-17"
+    }
+  }
+}

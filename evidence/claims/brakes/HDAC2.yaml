@@ -1,0 +1,409 @@
+# Claims — HDAC2, Cognitive Brake Atlas.
+#
+# Brake class: transcriptional. HDAC2 occupancy at plasticity-gene promoters limits the
+# transcriptional programme available for synapse formation and consolidation.
+#
+# The two things this file must carry honestly are (a) that the rodent evidence rests on
+# overexpression and germline deficiency rather than on adult-onset HDAC2-selective
+# perturbation, and (b) that the human record for HDAC inhibitors in a CNS indication
+# includes a randomised trial in which the class failed even to move its
+# pharmacodynamic biomarker.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:HDAC2:001
+  statement: >-
+    Neuron-specific overexpression of HDAC2 in mice reduced dendritic spine density,
+    synapse number, synaptic plasticity and memory formation, whereas HDAC2 deficiency
+    increased synapse number and facilitated memory, and the overexpression phenotype was
+    ameliorated by chronic histone-deacetylase inhibition.
+  subject: GENE:HDAC2
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.plasticity_gene_accessibility
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the enhancement arm is an Hdac2-deficient line, so the effect could be developmental; the retrieved abstract does not describe an adult-onset HDAC2-selective manipulation"
+      - "overexpression above physiological level is not the mirror image of physiological reduction"
+      - "the pharmacological arm used non-selective inhibitors, so the inference that inhibitors act through HDAC2 rests on the absence of a further effect in deficient mice rather than on selectivity"
+  evidence:
+    - source_id: SRC:PMID:19424149
+      design: overexpression
+      species: SPECIES:NCBITaxon:10090
+      population: "male and female C57BL/6 mice with neuron-specific HDAC2 or HDAC1 overexpression, Hdac2-deficient mice, and controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "dendritic spine density, synapse number, synaptic plasticity, memory formation, and promoter occupancy at plasticity genes"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:25492968
+      design: narrative_review
+      species: SPECIES:NCBITaxon:10090
+      population: "review of lysine acetylation in memory and cognition"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "reviewers' account of HDAC2 as the central coupling of lysine acetylation to synaptic plasticity"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "a landmark study with bidirectional genetic and pharmacological arms, but a single primary study with no adult-onset HDAC2-selective perturbation and reviews from the same group"
+    calibration_status: uncalibrated_subjective
+  risks: ["HDAC2 is a broadly acting transcriptional regulator; chronic inhibition has an oncology-derived safety burden that no cognitive study here evaluates"]
+  confounders: ["overexpression artefacts", "developmental effects of germline deficiency", "inhibitor selectivity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HDAC2:002
+  statement: >-
+    After unilateral induction of long-term potentiation in the dentate gyrus of freely
+    moving adult rats, HDAC1 and HDAC2 activity rose in both hemispheres with the largest
+    increase 20 minutes after stimulation, and the two enzymes were enriched at distinct
+    sets of genes within each hemisphere.
+  subject: GENE:HDAC2
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.plasticity_gene_accessibility
+  claim_type: mechanistic
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "bilateral activity changes after unilateral stimulation weaken any simple local-regulation account"
+      - "activity and promoter enrichment are correlates of the potentiation, not demonstrated requirements for it"
+  evidence:
+    - source_id: SRC:PMID:33378103
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10116
+      population: "freely moving adult rats after unilateral dentate gyrus long-term potentiation induction"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "HDAC1 and HDAC2 enzymatic activity over 24 h and chromatin immunoprecipitation at candidate genes"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "in vivo adult measurement of the brake being engaged by plasticity itself; correlational with respect to necessity"
+    calibration_status: uncalibrated_subjective
+  risks: ["if the brake is recruited by plasticity, blocking it removes a feedback element rather than merely raising a ceiling"]
+  confounders: ["stimulation-induced stress", "bilateral spread"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HDAC2:003
+  statement: >-
+    In the same adult rats, the histone-deacetylase inhibitor trichostatin A enhanced an
+    intermediate phase of long-term potentiation lasting days but had no effect on the
+    persistence of potentiation lasting weeks.
+  subject: CPD:trichostatin_a
+  predicate: CHANGES_STATE
+  object: SV:plasticity.ltp_magnitude
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "trichostatin A is a broad-spectrum inhibitor and does not isolate HDAC2"
+      - "the enhancement was confined to one temporal phase, so the effect is on stabilisation kinetics rather than on the ceiling"
+  evidence:
+    - source_id: SRC:PMID:33378103
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10116
+      population: "freely moving adult rats given a histone-deacetylase inhibitor around potentiation induction"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "persistence of dentate gyrus long-term potentiation over days and over weeks"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "adult pharmacological perturbation in healthy animals with an explicit null on the longest-lasting phase, which is the phase most relevant to durable knowledge"
+    calibration_status: uncalibrated_subjective
+  risks: ["an effect that decays is a poor basis for a durable-capacity claim"]
+  confounders: ["non-selective inhibition", "repeated recording over weeks"]
+  dependencies: [CLM:brakes:HDAC2:002]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HDAC2:004
+  statement: >-
+    In a randomised placebo-controlled phase 2a trial of 27 participants with
+    progranulin-gene haploinsufficiency and frontotemporal dementia, 28 days of the
+    histone-deacetylase inhibitor FRM-0334 did not raise plasma or cerebrospinal-fluid
+    progranulin or move any exploratory pharmacodynamic measure, and plasma drug exposure
+    did not increase in proportion to dose.
+  subject: CPD:frm_0334
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: SV:consolidation.plasticity_gene_accessibility
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the authors state the null could reflect insufficient exposure or low bioavailability rather than a mechanistic failure, so this is a programme failure and not necessarily a target failure"
+      - "the endpoint was a protein biomarker, not cognition; no cognitive efficacy conclusion follows"
+      - "FRM-0334 is not HDAC2-selective"
+  evidence:
+    - source_id: SRC:PMID:34559230
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "27 participants with prodromal to moderate frontotemporal dementia and pathogenic GRN variants, randomised to placebo or two dose levels for 28 days"
+      sample_size:
+        reported_as: "A total of 27 participants (mean [SD] age, 56.6 [10.5] years; 16 women [59.3%]"
+        value: 27
+        unit: participants
+      endpoint: "change in plasma and cerebrospinal-fluid progranulin; safety and tolerability; exploratory imaging and fluid biomarkers"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "4.3 pg/mL per day change after treatment; 95% CI, -10.1 to 18.8 pg/mL; P = .56"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "small randomised human trial with an unambiguous pharmacodynamic null; informative about the class's CNS translation record rather than about HDAC2 biology"
+    calibration_status: uncalibrated_subjective
+  risks: ["the only randomised HDAC-inhibitor trial in a CNS indication located here failed at the biomarker stage"]
+  confounders: ["bioavailability", "28-day exposure", "disease-population biology"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:HDAC2:005
+  statement: >-
+    A phase I dose-escalation study of single intravenous doses of the
+    histone-deacetylase-inhibiting anticonvulsant valproic acid in 59 healthy adults
+    established a maximum tolerated dose of 140 mg/kg, with hypoacusis, chills and headache
+    as the commonest adverse events and dose-limiting headache and nausea, and reported no
+    drug-related abnormality on cognitive testing.
+  subject: DRUG:CHEMBL109
+  predicate: INCREASES_RISK
+  object: AE:headache
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the predicate and object record what this study establishes positively, namely dose-limiting adverse events; the accompanying absence of change on cognitive testing is reported in the statement and in the endpoint, and is not encoded as an effect edge."
+      - "valproic acid has anticonvulsant actions independent of histone-deacetylase inhibition, so it does not isolate the mechanism"
+      - "the cognitive testing was a safety measure, not an efficacy measure, so the absence of change is uninformative about enhancement potential"
+      - "single doses only"
+  evidence:
+    - source_id: SRC:PMID:28497259
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "59 healthy adults, 44 of whom received a single intravenous dose between 15 and 150 mg/kg"
+      sample_size:
+        reported_as: "Fifty-nine healthy subjects (mean 30 ± 12 years)"
+        value: 59
+        unit: participants
+      endpoint: "dose-limiting toxicity, adverse-event frequency, laboratory and cardiac safety, and cognitive testing"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "The maximum tolerated dose was 140 mg/kg"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "human dose-escalation data in healthy adults, which is rare in this atlas; but the compound is non-selective and cognition was a safety endpoint"
+    calibration_status: uncalibrated_subjective
+  risks: ["dose-limiting tolerability in healthy adults constrains any chronic-exposure strategy for this class"]
+  confounders: ["single intravenous doses", "anticonvulsant actions unrelated to deacetylase inhibition"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

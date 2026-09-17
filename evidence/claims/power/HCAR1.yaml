@@ -1,0 +1,489 @@
+# Claims — HCAR1 (GPR81, the G-protein-coupled receptor for L-lactate)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power. Declared depth: deep.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# The naive power-limitation story says: exercise raises lactate, lactate signals
+# through HCAR1, therefore HCAR1 activation should raise cognitive capacity. The
+# evidence retrieved here does NOT support that story, and three records actively
+# cut against it:
+#
+#   001  HCAR1 activation DOWN-modulates cortical neuronal firing and spontaneous
+#        calcium activity, and basal activity is HIGHER in receptor-null neurons.
+#   002  An HCAR1 agonist enhanced memory when given AFTER training and IMPAIRED it
+#        when given BEFORE training - the sign of the effect flips with timing.
+#   004  Deleting the receptor INCREASED exercise endurance and preserved cortical
+#        excitability; the lactate-HCAR1 axis was reported as a cause of central
+#        fatigue, not a relief from it.
+#
+# 003 is a partial null (no HCAR1-dependent lactate effect in the hippocampal
+# neurogenic niche), 005 is the concentration critique, and 006 is developmental only.
+# There is NO human evidence for HCAR1 in this atlas.
+
+- claim_id: CLM:power:HCAR1:001
+  schema_version: 0.1.0
+  statement: >-
+    In mouse primary cortical neurons, HCAR1 agonists reduced miniature excitatory
+    postsynaptic current frequency, reduced firing frequency and reduced spontaneous
+    calcium spiking in wild-type but not receptor-null cells, while basal activity was
+    higher in receptor-null neurons, so receptor activation lowers rather than raises
+    network activity.
+  subject: PROT:HCAR1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:workspace.recurrent_gain
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: not_reported
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: [CELL:neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "primary cortical cultures lack the vascular, astrocytic and long-range connectivity context that determines whether reduced local gain helps or harms computation"
+      - "the same study reports functional cross-talk with adenosine A1, GABA-B and alpha-adrenergic receptors, so the measured effect is not a clean single-receptor readout"
+      - "agonist concentrations used in culture may exceed the physiological extracellular lactate range"
+  evidence:
+    - source_id: SRC:PMID:30926749
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10090
+      population: "primary cortical neurons from wild-type and HCAR1 knockout mice of both sexes"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "miniature EPSC frequency, paired-pulse ratio, firing frequency and spontaneous calcium spiking activity"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: percent_change
+        as_reported: "decreased by 40% spontaneous calcium spiking activity of primary cortical neurons from WT but not from HCAR1 KO mice"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Well-controlled knockout-verified pharmacology with a clear direction, but
+      in vitro, single study, and with acknowledged receptor cross-talk.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["receptor cross-talk with adenosine A1, GABA-B and adrenergic receptors", "culture agonist concentration"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:HCAR1:002
+  schema_version: 0.1.0
+  statement: >-
+    In rats trained on inhibitory avoidance, subcutaneous administration of a specific
+    HCAR1 agonist after training enhanced memory relative to saline whereas the same
+    agonist given 15 minutes before training impaired memory, and L-lactate itself had
+    no post-training effect, so the direction of the HCAR1 effect depends on when in
+    the memory process the receptor is engaged.
+  subject: PROT:HCAR1
+  predicate: MODULATES
+  object: SV:consolidation.synaptic_consolidation_efficiency
+  claim_type: causal_perturbation
+  direction: bidirectional
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "systemic administration means peripheral HCAR1 effects, including on adipose tissue and vasculature, are not excluded"
+      - "no receptor-null control arm is reported in the retrieved text, so agonist selectivity is assumed rather than demonstrated in vivo"
+      - "a single behavioural paradigm; opposite-sign results across time windows require replication before being treated as a genuine timing-dependent mechanism"
+  evidence:
+    - source_id: SRC:PMID:31881352
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10116
+      population: "male Sprague-Dawley rats in an inhibitory avoidance protocol"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "inhibitory avoidance retention after pre-training or post-training administration of an HCAR1 agonist, L-lactate or D-lactate"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Adult pharmacological perturbation in healthy animals showing above-baseline
+      enhancement on one endpoint, but a single study, one task, systemic route, no
+      knockout control, and an opposite-sign result in the other time window.
+    calibration_status: uncalibrated_subjective
+  risks: ["the same manipulation impaired performance in the pre-training window; any 'enhancement' reading of this claim must carry that"]
+  confounders: ["peripheral HCAR1 activation", "agonist off-target activity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:HCAR1:003
+  schema_version: 0.1.0
+  statement: >-
+    Comparing wild-type and HCAR1 knockout mice after seven weeks of high-intensity
+    interval exercise or subcutaneous L-lactate, the investigators found that
+    neurogenesis in the ventricular-subventricular zone increased with exercise or
+    lactate only in wild-type animals, whereas in the hippocampal subgranular zone
+    exercise increased neurogenesis in both genotypes and lactate had no effect at all.
+  subject: PROT:HCAR1
+  predicate: POSITIVELY_REGULATES
+  object: SV:plasticity.adult_neurogenesis_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:lateral_ventricle]
+    cell_types: [CELL:neural_stem_cell]
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the hippocampal niche result is a null for lactate and genotype-independent for exercise, so HCAR1 is not the route by which exercise reaches the memory-relevant niche in this study"
+      - "germline knockout permits developmental compensation"
+      - "proliferation and immature-neuron markers are not cognitive outcomes; no behavioural endpoint is reported in the retrieved text"
+  evidence:
+    - source_id: SRC:PMID:33244894
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "wild-type and HCAR1 knockout mice given high intensity interval exercise, L-lactate injections or saline five days per week for seven weeks"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "Ki-67 and doublecortin immunolabelling in the subgranular zone and the ventricular-subventricular zone"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Genotype-controlled adult intervention with a clear receptor dependence in one
+      niche and an explicit null in the other; single study, no behaviour, rodent only.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["developmental compensation in germline knockouts", "exercise effects independent of lactate"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:HCAR1:004
+  schema_version: 0.1.0
+  statement: >-
+    In a weight-loaded swimming model, local motor-cortex administration of lactate or
+    an HCAR1 agonist blunted the exercise-associated rise in protein kinase A
+    phosphorylation, genetic ablation of the receptor increased swimming endurance
+    while peripheral fatigue markers were comparable, and receptor-null mice showed
+    elevated motor-cortical glutamate to GABA ratios, which the authors interpret as
+    the lactate-HCAR1 axis contributing to central fatigue.
+  subject: PROT:HCAR1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:cognition.sustained_attention_stability
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:motor_cortex]
+    cell_types: []
+  phenotype_class: electrophysiological_proxy
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the endpoint is swimming endurance in males only, which is a motor-persistence measure, not a cognitive-capacity measure; mapping it onto sustained attention is an interpretive step this atlas makes explicitly and weakly"
+      - "central fatigue and cognitive capacity are distinct constructs and the study measures neither cognition nor information processing"
+      - "germline ablation with possible developmental compensation, and a single study"
+  evidence:
+    - source_id: SRC:PMID:41500517
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male C57BL/6 mice, wild-type and GPR81-null, in a weight-loaded swimming model"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "time to exhaustion, motor-cortex PKA phosphorylation, motor-cortical glutamate to GABA ratio, blood lactate and muscle glycogen"
+      endpoint_category: electrophysiological_proxy
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: percent_change
+        as_reported: "resulting in a 33% increase in swimming endurance"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: contradicted
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Adult genetic and pharmacological manipulation in healthy animals with a
+      consistent internal story, but a motor endurance endpoint, males only, single
+      study, and a substantial construct gap to cognition.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["sex restricted to males", "motor rather than cognitive endpoint"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:HCAR1:005
+  schema_version: 0.1.0
+  statement: >-
+    Reviewing the proposed signalling roles of brain L-lactate, the authors argue that
+    the sensitivity of any candidate mechanism must match the physiological
+    extracellular lactate range and that several of the proposed mechanisms would
+    require concentrations above that range, reachable only in states such as
+    ischaemia or seizure.
+  subject: PROT:HCAR1
+  predicate: MODULATES
+  object: SV:power.lactate_flux
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090, SPECIES:NCBITaxon:10116]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the authors note that local microdomain lactate concentrations have not been measured and could exceed the tissue average, which would defeat the objection"
+      - "a narrative review, not a measurement: the concentration argument is an inference from reported affinities and reported extracellular levels"
+  evidence:
+    - source_id: SRC:PMID:25920953
+      design: narrative_review
+      species: SPECIES:NCBITaxon:10090
+      population: "not applicable; review of published brain lactate signalling mechanisms"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "concordance between proposed mechanism sensitivity and physiological extracellular lactate concentration"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: "less than ~1.5 mmol/L under physiologic conditions"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      A reasoned methodological objection from a review rather than new data; important
+      for interpretation, weak as evidence in its own right.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:HCAR1:006
+  schema_version: 0.1.0
+  statement: >-
+    In rodent retinal explants, L-lactate and a specific HCAR1 agonist changed retinal
+    ganglion cell growth-cone morphology and promoted axon growth through protein
+    kinase A and C, with no such effect in explants from receptor-null animals, and
+    receptor-null mice showed fewer ipsilateral retinal projections to the dorsal
+    lateral geniculate nucleus.
+  subject: PROT:HCAR1
+  predicate: POSITIVELY_REGULATES
+  object: SV:plasticity.structural_plasticity_rate
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:retina]
+    cell_types: [CELL:retinal_ganglion_cell]
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the entire result concerns visual-system wiring during development, not adult cognition"
+      - "explant growth-cone morphology is several inferential steps from any capacity measure"
+  evidence:
+    - source_id: SRC:PMID:34208876
+      design: in_vivo_imaging
+      species: SPECIES:NCBITaxon:10090
+      population: "rodent retinal explants and HCAR1 knockout mice during neurovisual development"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "growth cone filopodia number and size, axon growth, ipsilateral retinal projection to the dorsal lateral geniculate nucleus"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: developmental_only
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "Single developmental study with an anatomical endpoint and no adult or cognitive arm."
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

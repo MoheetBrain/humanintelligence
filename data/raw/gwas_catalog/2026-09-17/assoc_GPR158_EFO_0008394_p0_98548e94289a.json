@@ -1,0 +1,68 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/63100832/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/63100832"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs17527895"
+          }
+        },
+        "accession_id": "GCST90011298",
+        "association_id": 63100832,
+        "beta": "-",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0008394",
+            "efo_trait": "verbal-numerical reasoning measurement"
+          }
+        ],
+        "first_author": "de la Fuente J",
+        "locations": [
+          "10:25486813"
+        ],
+        "mapped_genes": [
+          "GPR158"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-08,
+        "pubmed_id": "32895543",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 2,
+        "range": "-",
+        "reported_trait": [
+          "Verbal-numerical reasoning"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs17527895"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs17527895-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GPR158&efo_id=EFO_0008394&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

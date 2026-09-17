@@ -1,0 +1,419 @@
+# Claims — topic: the brain signalling energy budget
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# EVERY NUMBER IN THIS FILE IS A MODEL OUTPUT, NOT A MEASUREMENT
+# --------------------------------------------------------------
+# Claims 001-004 are `claim_type: theoretical_construct` with
+# `evidence.design: biophysical_model`. They are bottom-up apportionments computed
+# from anatomical and electrophysiological parameters, not measured quantities. The
+# clearest proof that they must be read that way is internal to this file: claim 002
+# revised claim 001's apportionment substantially after the energy cost of the
+# mammalian action potential was re-estimated. A budget that changed once can change
+# again.
+#
+# 003 is included because it CONTRADICTS a premise this atlas would otherwise
+# smuggle in: that myelination is an energy-saving adaptation.
+#
+# 005 is the only experimental record here, and it is a rodent deprivation-state
+# result. It shows that an energy-precision trade-off exists and is actively
+# regulated. It does NOT show that a rested, fed adult human sits on that trade-off.
+
+- claim_id: CLM:power:budget:001
+  schema_version: 0.1.0
+  statement: >-
+    Combining anatomical and physiological parameters into a bottom-up apportionment
+    of excitatory signalling energy in rodent grey matter, the authors predict that
+    action potentials and postsynaptic glutamate effects dominate the signalling
+    budget with the resting potential and glutamate recycling much smaller, and argue
+    that this favours distributed codes in which only a small fraction of neurons are
+    simultaneously active.
+  subject: PROC:cortical_signalling_energy_budget
+  predicate: CONSTRAINS
+  object: SV:efficiency.coding_sparseness
+  claim_type: theoretical_construct
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116, SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: [CELL:neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a bottom-up model, not a measurement: the apportionment is only as good as the anatomical and conductance parameters fed into it"
+      - "rodent parameters; the authors' own later work and the human budget work show substantial species differences in firing rate"
+      - "sparse coding has many independent justifications (interference, capacity, learning) so an energy argument for it is not evidence that energy is what selected it"
+  evidence:
+    - source_id: SRC:PMID:11598490
+      design: biophysical_model
+      species: SPECIES:NCBITaxon:10116
+      population: "not applicable; model of rodent cerebral grey matter"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "predicted share of signalling ATP consumption per subcellular process and predicted fraction of simultaneously active neurons"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: percent_change
+        as_reported: "Action potentials and postsynaptic effects of glutamate are predicted to consume much of the energy (47% and 34%, respectively), with the resting potential consuming a smaller amount (13%), and glutamate recycling using only 3%."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Influential and internally coherent, but a single-model computation on rodent
+      parameters that its own authors later revised.
+    calibration_status: uncalibrated_subjective
+  risks: ["the percentages in as_reported are model outputs; presenting them as measured facts is the characteristic error this claim exists to prevent"]
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:budget:002
+  schema_version: 0.1.0
+  statement: >-
+    Re-running the cortical and cerebellar energy budgets after mammalian action
+    potentials were shown to be far more energy-efficient than previously assumed, the
+    authors report a substantially different apportionment in which postsynaptic
+    glutamate receptors dominate and the action-potential share falls by roughly half
+    relative to the earlier estimate, and in cerebellar cortex most signalling energy
+    goes to non-principal neurons rather than Purkinje cells.
+  subject: PROC:cortical_signalling_energy_budget
+  predicate: CONSTRAINS
+  object: SV:efficiency.atp_cost_per_action_potential
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10116, SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex, REGION:cerebellar_cortex]
+    cell_types: [CELL:neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "still a model; the revision demonstrates parameter sensitivity rather than convergence on a true value"
+      - "the cerebellar model is detailed and the cerebral model is explicitly described as simple, so the two are not equally trustworthy"
+  evidence:
+    - source_id: SRC:PMID:22434069
+      design: biophysical_model
+      species: SPECIES:NCBITaxon:10116
+      population: "not applicable; models of cerebral cortex and cerebellar cortex"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "revised predicted share of signalling ATP consumption per subcellular process and per cell class"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: percent_change
+        as_reported: "In cerebral cortex, most signaling energy (50%) is used on postsynaptic glutamate receptors, 21% is used on action potentials, 20% on resting potentials, 5% on presynaptic transmitter release, and 4% on transmitter recycling."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      A model update by the same group. Its evidential value here is chiefly that it
+      demonstrates how much these apportionments move when one input parameter changes.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: [CLM:power:budget:001]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:budget:003
+  schema_version: 0.1.0
+  statement: >-
+    Deriving a signalling energy budget for CNS white matter and running a cost-benefit
+    analysis of myelination, the authors report that white matter uses less energy than
+    grey matter chiefly because its synapses are so few rather than because myelinated
+    action potentials are cheaper, and that although the construction cost of myelin
+    could be repaid by cheaper action potentials, the cost of maintaining the
+    oligodendrocyte resting potential usually outweighs that saving, so myelination
+    need not save energy.
+  subject: PROC:axonal_myelination
+  predicate: MODULATES
+  object: SV:efficiency.axonal_conduction_efficiency
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:optic_nerve, REGION:corpus_callosum]
+    cell_types: [CELL:oligodendrocyte, CELL:neuron]
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a model built on rodent optic nerve and corpus callosum parameters, and the authors describe the conclusion as surprising, which is a signal to check the inputs rather than to adopt the result"
+      - "myelin's principal benefit is conduction speed, which the same analysis affirms; an energy-neutral adaptation can still be strongly advantageous"
+  evidence:
+    - source_id: SRC:PMID:22219296
+      design: biophysical_model
+      species: SPECIES:NCBITaxon:10116
+      population: "not applicable; model based on rodent optic nerve and corpus callosum data"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "predicted white-matter signalling energy shares, myelination cost-benefit balance, and sufficiency of axonal mitochondria and nodal glucose transporters"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: percent_change
+        as_reported: "We show that white matter synapses consume ≤0.5% of the energy of gray matter synapses"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Single biophysical analysis, but directly contradicting a premise ("myelin saves
+      energy") that a power atlas would otherwise assume without evidence.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:budget:004
+  schema_version: 0.1.0
+  statement: >-
+    Combining measured human and rat grey- and white-matter metabolic rates with a
+    bottom-up biophysical calculation validated against PET, autoradiography, carbon-13
+    magnetic resonance spectroscopy and electrophysiology, the authors report that
+    awake resting cortical signalling accounts for roughly seventy per cent and
+    mass-dependent non-signalling processes for roughly thirty per cent of glucose
+    oxidation, that inhibitory neurons and glia together take a modest share, and that
+    the implied human cortical glutamatergic signalling rate is several-fold lower than
+    the rat's.
+  subject: PROC:cortical_signalling_energy_budget
+  predicate: CONSTRAINS
+  object: SV:efficiency.housekeeping_to_compute_energy_ratio
+  claim_type: theoretical_construct
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:cerebral_cortex]
+    cell_types: [CELL:neuron, CELL:astrocyte]
+  phenotype_class: metabolic_proxy
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "top-down validated is not the same as measured: the apportionment between signalling and non-signalling remains a model partition of a measured total"
+      - "the human signalling rate is inferred from a comparison between carbon-13 MRS data and the calculation, not observed directly"
+      - "resting-state apportionment need not hold under high cognitive load, which is precisely the regime H2 concerns"
+  evidence:
+    - source_id: SRC:PMID:28589753
+      design: biophysical_model
+      species: SPECIES:NCBITaxon:9606
+      population: "not applicable; human and rat grey and white matter"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "share of cerebral metabolic rate of glucose attributed to signalling versus non-signalling processes and to cell classes; inferred glutamatergic signalling rate"
+      endpoint_category: metabolic_proxy
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: percent_change
+        as_reported: "The awake resting cortical signaling processes and mass-dependent nonsignaling processes, respectively, demand ∼70% and ∼30% of CMR"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: computational_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      The only budget record here anchored to human measurements across several
+      modalities; still a model partition, and resting state only.
+    calibration_status: uncalibrated_subjective
+  risks: ["the reported human-versus-rat signalling-rate gap is a direct warning against importing rodent energetic conclusions into human claims elsewhere in this repository"]
+  confounders: ["resting state only", "modality-specific calibration assumptions"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:budget:005
+  schema_version: 0.1.0
+  statement: >-
+    Using whole-cell recording and two-photon imaging in layer 2/3 of mouse visual
+    cortex, the investigators found that food restriction reduced AMPA receptor
+    conductance and synaptic ATP use while a compensatory rise in input resistance and
+    a depolarised resting potential preserved spike rates, and that this saving came at
+    the cost of more variable visually evoked subthreshold responses, broader
+    orientation tuning and impaired fine visual discrimination, all reversed by
+    exogenous leptin.
+  subject: SV:power.glucose_oxidation_rate
+  predicate: CONSTRAINS
+  object: SV:efficiency.signal_to_noise_ratio
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: [REGION:visual_cortex]
+    cell_types: [CELL:neuron]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: acute_circuit_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "food restriction is a deprivation state; the result establishes that the trade-off is available and hormonally gated, not that it is active in a fed animal"
+      - "the mechanism identified runs through leptin signalling, so it is a regulated set-point change rather than a direct supply limitation"
+      - "the endpoint is fine visual discrimination in mouse V1, several inferential steps from human cognitive capacity"
+      - "single laboratory, single study"
+  evidence:
+    - source_id: SRC:PMID:34741806
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10090
+      population: "food-restricted and control mice, layer 2/3 primary visual cortex"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "AMPA receptor conductance, synaptic ATP use, input resistance, resting potential, spike rate, orientation tuning width, fine visual discrimination, leptin level"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: percent_change
+        as_reported: "food restriction reduced AMPA receptor conductance, reducing synaptic ATP use by 29%"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Technically strong causal demonstration with mechanism and rescue, and the single
+      best existing evidence that neural coding precision is traded against energy;
+      one study, one species, and a deprivation state rather than a normal baseline.
+    calibration_status: uncalibrated_subjective
+  risks: ["this is the claim most likely to be misquoted as showing that humans are power-limited; it does not"]
+  confounders: ["leptin-mediated hormonal signalling", "food restriction stress", "anaesthesia during recording"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

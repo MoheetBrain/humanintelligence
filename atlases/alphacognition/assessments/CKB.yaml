@@ -1,0 +1,116 @@
+# Facet assessment — generated file.
+# The four genetics facets are produced deterministically by
+# pipelines/alphacognition/build_assessments.py from the derived tables under
+# data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
+# present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
+# Re-run the script rather than editing this file.
+target_id: TGT:CKB
+schema_version: 0.1.0
+assessed_by: agent:alphacognition
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: human_genetic_association
+  assessment_status: assessed
+  level: 3
+  rationale: 5 catalogued genome-wide association record(s) on a g_factor or fluid_reasoning trait (cognitive
+    function measurement, intelligence) across 5 publication(s); one human genetic result with a directly
+    relevant endpoint
+  claim_refs:
+  - CLM:alphacognition:gwas.CKB:001
+  - CLM:alphacognition:gwas.CKB:002
+  - CLM:alphacognition:l2g.CKB:001
+  - CLM:alphacognition:l2g.CKB:002
+  - CLM:alphacognition:l2g.CKB:003
+  - CLM:alphacognition:l2g.CKB:004
+  counter_level: 0
+  counter_rationale: 'No study reporting a null or opposite-direction association for this gene on a panel
+    trait was found by this sweep. That is a property of the sweep, not of the literature: the GWAS Catalog
+    records associations that passed a significance threshold and does not record non-associations, so
+    absence of a catalogued negative is uninformative and is recorded as 0 for that reason.'
+  counter_claim_refs: []
+  limiting_factor: 'level 4 is unreachable from this evidence: the catalogue''s `beta` field is heterogeneous
+    free text and effect alleles are often reported as ''?'', so direction consistency across studies
+    cannot be established. cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither
+    the association nor any locus-to-gene assignment built on it is established as transportable.'
+- facet: causal_gene_attribution
+  assessment_status: assessed
+  level: 2
+  rationale: Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the candidates
+    at 13 fine-mapped credible set(s) for cognitive-panel traits, with 5 competing candidate gene(s) at
+    the same loci (BAG5, COA8, KLC1, MARK3, TRMT61A); no molecular-QTL colocalisation for this gene was
+    found at those loci
+  claim_refs:
+  - CLM:alphacognition:l2g.CKB:001
+  - CLM:alphacognition:l2g.CKB:003
+  - CLM:alphacognition:gwas.CKB:001
+  - CLM:alphacognition:gwas.CKB:002
+  counter_level: 2
+  counter_rationale: 5 other gene(s) are ranked as candidates at the same cognitive-trait credible set(s),
+    which is direct evidence against a confident assignment to this gene
+  counter_claim_refs:
+  - CLM:alphacognition:l2g.CKB:001
+  - CLM:alphacognition:l2g.CKB:003
+  limiting_factor: attribution is a published statistical model's output with competing candidates and
+    no QTL corroboration; not a demonstrated gene-level effect
+- facet: human_phenotype_specificity
+  assessment_status: assessed
+  level: 2
+  rationale: 5 cognitive-panel association(s) (5 directly relevant, 0 single-domain) alongside 28 association(s)
+    with 15 distinct trait(s) outside the panel; cognition-specificity is qualified by that pleiotropy
+  claim_refs:
+  - CLM:alphacognition:gwas.CKB:001
+  - CLM:alphacognition:gwas.CKB:002
+  counter_level: 0
+  counter_rationale: No citable contradicting claim exists in this atlas for this facet. The observation
+    that would have argued against it is recorded in limiting_factor instead, because a counter-grade
+    may not rest on evidence no record identifies.
+  counter_claim_refs: []
+  limiting_factor: 'specificity is assessed from positional annotation, so ''this gene is pleiotropic''
+    and ''this locus is gene-dense'' are not separated. Mendelian randomisation and pan-phenome gene-level
+    testing were not run in v0.1. Uncited observation that would argue against this facet: the same positional
+    locus carries 28 catalogued association(s) with 15 distinct non-cognitive trait(s), which argues against
+    reading the cognitive hit as specific to this gene''s cognitive function'
+- facet: adult_expression_and_timing
+  assessment_status: assessed
+  level: 2
+  rationale: detected in all 13 sampled adult human brain regions (GTEx v8, adult post-mortem donors);
+    direct human adult tissue measurement, but bulk-tissue resolution and no evidence that the gene's
+    cognitive relevance extends into adulthood
+  claim_refs:
+  - CLM:alphacognition:expr.CKB:001
+  counter_level: 0
+  counter_rationale: 'no evidence that this gene''s action is confined to development was retrieved. Developmental-restriction
+    evidence was NOT systematically searched for this target: no human developmental transcriptome (BrainSpan/PsychENCODE)
+    was ingested in v0.1, so this 0 means ''not found by the sweep that was run''.'
+  counter_claim_refs: []
+  limiting_factor: adult human brain CELL-TYPE resolution is unavailable in this release and is deferred
+    to docs/TASK_DAG.yaml Q003; developmental timing was not ingested from any atlas. Level 4 is therefore
+    unreachable for every target in v0.1.
+facets_not_owned_by_this_agent:
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+notes: 'Evidence basis for the four genetics facets. Genes covered by this target: CKB. GWAS Catalog release
+  2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset gtex_v8.
+  Association records for this target: 5 total, of which 5 on cognitive-panel traits (5 on a g_factor/fluid_reasoning
+  trait, 0 single-domain) and 0 on educational-attainment or literacy traits, across 5 distinct publications
+  (5 for the cognitive associations). Cognitive traits hit: cognitive function measurement, intelligence.
+  Fine-mapped credible sets in which Open Targets'' L2G model ranks this gene: 15 in total, 13 on cognitive-panel
+  traits, with 0 molecular-QTL colocalisations for this gene at those loci and 5 competing candidate gene(s)
+  there (BAG5, COA8, KLC1, MARK3, TRMT61A). Unfiltered GWAS Catalog sweep for this gene symbol: 33 catalogued
+  association(s) in total, 28 of them with traits outside the cognitive/educational panel, spanning 15
+  distinct such trait(s). GTEx reports 13 brain region(s); detected above zero median in all of them:
+  True. Adult brain cell-type resolution was not available in this release and is deferred to docs/TASK_DAG.yaml
+  Q003. The level rules applied here are in pipelines/alphacognition/build_assessments.py; lead-atlas
+  facets for this target are owned by agent:power and are not graded here.'
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  method: derived_from_claims
+  pipeline: pipelines/alphacognition/build_assessments.py
+  run_id: sprint1-alphacognition-facets-01

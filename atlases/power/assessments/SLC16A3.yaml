@@ -1,0 +1,106 @@
+# Facet assessment — SLC16A3 (MCT4). Contract §5.2 / §5.3. Declared depth: shallow.
+schema_version: 0.1.0
+target_id: TGT:SLC16A3
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Replicated non-human causal evidence across two species and two knockdown
+      technologies, each with a rescue arm showing that supplying lactate, pyruvate or
+      a ketone body restores performance.
+    claim_refs: [CLM:power:SLC16A3:001, CLM:power:SLC16A3:002, CLM:power:SLC16A3:003]
+    counter_level: 2
+    counter_rationale: >-
+      The tool-specificity critique applies in full, and a separate study found the
+      dorsal hippocampus used direct neuronal glucose uptake rather than a
+      monocarboxylate route during acquisition.
+    counter_claim_refs: [CLM:power:anls:002, CLM:power:anls:003]
+    limiting_factor: "astrocytic lactate export cannot be separated from astrocytic ion handling by any retrieved manipulation"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      All three claims come from acute knockdown in adult animals with testing within
+      days, in two species.
+    claim_refs: [CLM:power:SLC16A3:001, CLM:power:SLC16A3:002]
+    counter_level: 0
+    counter_rationale: "no adult-onset null retrieved"
+    counter_claim_refs: []
+    limiting_factor: "rodent only, loss of function only"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 0
+    rationale: "Searched and found nothing: no study raises MCT4 above normal or reports a supra-normal effect."
+    search_basis: >-
+      Scope: PubMed across the whole index for MCT4 and SLC16A3 within the lactate-shuttle
+      result sets - 'astrocyte neuron lactate transport memory consolidation monocarboxylate
+      transporter' (10 results) and the founding Suzuki record - read for gain-of-function
+      arms. A hit would have been any experiment raising MCT4 above normal with any
+      functional readout. All three retrieved claims are knockdown-with-rescue; no
+      overexpression or activator arm exists in any species.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "no enhancement attempt has failed; none has been made"
+    counter_claim_refs: []
+    limiting_factor: "no gain-of-function experiment exists"
+
+  - facet: transfer_breadth
+    assessment_status: not_assessed
+    level: null
+    rationale: "Not reviewed; shallow dossier and no retrieved study measured more than one endpoint family."
+    claim_refs: []
+    counter_level: null
+    counter_rationale: null
+    counter_claim_refs: []
+    limiting_factor: "shallow dossier; breadth not searched"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing: no graded knockdown, no partial-reduction comparison
+      and no rescue-concentration series was retrieved.
+    search_basis: >-
+      Scope: the same MCT4 result sets, read for graded manipulations and for quantified
+      knockdown depth. A hit would have been a partial-versus-complete knockdown comparison,
+      an allelic series, or a rescue-substrate concentration series. No retrieved study
+      reports knockdown depth quantitatively at all, so there is no exposure axis on which a
+      response shape could be defined.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "nothing to contradict"
+    counter_claim_refs: []
+    limiting_factor: "knockdown depth never quantified"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: "Searched and found nothing: no human intervention, genetic phenotype or imaging proxy for SLC16A3 was retrieved."
+    search_basis: >-
+      PubMed searched for SLC16A3 and MCT4 within the lactate-transport result sets across
+      the whole index; ClinicalTrials.gov searched for interventions matching lactate or
+      monocarboxylate against cognition, memory or cognitive function (19 trials, all
+      screened). A hit would have been any human study - interventional, genetic or imaging
+      - naming MCT4 or SLC16A3 with a cognitive endpoint. Not one human record of any kind
+      for this gene was retrieved, which is why the target is declared shallow. The
+      target-directed registry search added in the second round (interventions matching
+      monocarboxylate, MCT1, MCT2, MCT4, GPR81, HCAR1 or lactate receptor; 20 trials, all
+      screened) returned no intervention directed at this gene: the MCT1 inhibitor
+      SRC:NCT:NCT01791595 is the only transporter-directed human trial and it targets a
+      different transporter, and the MCT8 trials returned are a different gene again
+      (SLC16A2). SRC:NCT:NCT01455376, which completed in 2010 with a neurocognitive
+      primary outcome and no posted results, is a genuine reporting gap in the
+      lactate-axis evidence base but is listed in reporting_gap_refs on the HCAR1 facet
+      only: it infuses circulating lactate, engaging this transporter's substrate rather
+      than the transporter, and one shared trial should not become four counts.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "unaddressed in humans"
+    counter_claim_refs: []
+    limiting_factor: "complete absence of human data"

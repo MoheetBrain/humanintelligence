@@ -1,0 +1,71 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/49509983/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/49509983"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs187763903"
+          }
+        },
+        "accession_id": "GCST009307",
+        "association_id": 49509983,
+        "beta": "0.7245752 unit decrease",
+        "bg_efo_traits": [],
+        "ci_lower": 0.47,
+        "ci_upper": 0.98,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0004874",
+            "efo_trait": "memory performance"
+          }
+        ],
+        "first_author": "Greenwood TA",
+        "locations": [
+          "5:44998764"
+        ],
+        "mapped_genes": [
+          "HCN1",
+          "MRPS30"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 8e-08,
+        "pubmed_id": "31596458",
+        "pvalue_description": "",
+        "pvalue_exponent": -8,
+        "pvalue_mantissa": 8,
+        "range": "[0.47-0.98]",
+        "reported_trait": [
+          "Spatial memory"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "C",
+            "rs_id": "rs187763903"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs187763903-C"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=HCN1&efo_id=EFO_0004874&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

@@ -1,0 +1,1162 @@
+# Controlled vocabularies — Intelligence Blueprint v0.1.0
+#
+# SINGLE SOURCE OF TRUTH for every enumerated value in the contract. The JSON Schemas
+# under schemas/ carry these lists inline (so that a schema file is self-contained and
+# usable by any JSON Schema tool), and they are kept in step mechanically:
+#
+#   .venv/bin/python -m blueprint.sync_schema_enums --check   # used by the drift test
+#   .venv/bin/python -m blueprint.sync_schema_enums --write   # rewrite schema enums
+#
+# The binding table (vocabulary name -> schema file + JSON pointer) lives in
+# blueprint/sync_schema_enums.py, and tests/test_ontology.py runs --check, so the two
+# representations cannot drift. The state-variable enums are additionally duplicated in
+# ontology/state_variables.yaml with their semantics; the same test asserts those agree.
+#
+# ORDER IS MEANINGFUL ONLY WHERE A VOCABULARY IS ORDINAL (it says so explicitly).
+# Everywhere else the order is the contract's order, preserved for readability.
+#
+# Adding a value here is an ontology change: it requires a schema change request
+# (docs/blackboard/schema_change_requests/) and a re-validation run.
+
+schema_version: 0.1.0
+ontology_version: 0.1.0
+defined_by: agent:ontology
+defined_on: "2026-09-17"
+contract_version: 0.1.0
+
+vocabularies:
+
+  # ------------------------------------------------------------------ sources ---
+
+  source_type:
+    contract_ref: "§3"
+    ordinal: false
+    description: What kind of artefact a registered source is.
+    values:
+      - journal_article
+      - review
+      - meta_analysis
+      - systematic_review
+      - preprint
+      - clinical_trial_registration
+      - dataset
+      - database_release
+      - book_chapter
+      - regulatory_document
+
+  retrieval_method:
+    contract_ref: "§3"
+    ordinal: false
+    description: >-
+      How the source's identifier reached this repository. `known_identifier` means the
+      agent already held the id; it still has to pass registry verification (§7).
+    values:
+      - pubmed_search
+      - pubmed_metadata
+      - ctgov_api
+      - gwas_catalog_api
+      - opentargets_api
+      - hgnc_api
+      - mcp_tool
+      - known_identifier
+    tool_mediated_values: [mcp_tool]
+
+  verification_status:
+    contract_ref: "§7"
+    ordinal: false
+    description: >-
+      Result of machine-checking a source against its registry snapshot.
+
+      `verified` means a literature or trial registry confirmed the record's title and
+      year. `release_verified_by_snapshot` is the answer for a DATABASE RELEASE or
+      DATASET, which has no literature registry to check against: it means the pinned
+      snapshot exists under data/raw/ and its sha256 still matches MANIFEST.jsonl. It
+      passes V6 for `SRC:DB:*` and `SRC:DATASET:*` ONLY — accepting it for a paper
+      would let an unverifiable PMID through, which is the one thing V6 exists to stop.
+      `snapshot_missing_or_altered` deliberately overlaps rule V19: a release whose
+      snapshot changed is both an unverified source and a broken immutability
+      guarantee, and it should be reported as both.
+    values:
+      - verified
+      - release_verified_by_snapshot
+      - title_mismatch
+      - year_mismatch
+      - not_found
+      - not_checked
+      - retracted
+      - unsupported_registry
+      - snapshot_missing_or_altered
+    passing_values: [verified, release_verified_by_snapshot]
+    snapshot_verified_values: [release_verified_by_snapshot]
+    snapshot_verifiable_prefixes: []
+
+  provenance_class:
+    contract_ref: "V17"
+    ordinal: false
+    description: Why an edge exists in the compiled graph.
+    values:
+      - claim_derived      # compiled from >= 1 claim with provenance
+      - reference_data     # from an identifier/annotation database, pinned to a release
+      - tool_mediated      # from an MCP tool payload, snapshotted to data/raw/
+      - ontology_axiom     # definitional; only from ontology/definitional_edges.yaml
+    evidential_classes: [claim_derived, reference_data, tool_mediated]
+    tool_mediated_note: >-
+      `tool_mediated` is DELIBERATELY DISTINCT from `reference_data`. An MCP tool returns
+      a payload into an agent's context and writes nothing to disk, so before
+      scripts/record_tool_snapshot.py existed a ChEMBL clinical-development fact could
+      enter the repository only as an unprovenanced string — rule V9 exempts a
+      database number only when a pinned SRC:DB:* source names it, and such a source
+      verifies only against a manifest snapshot. The script wraps the payload in an
+      envelope (tool, registry, release, query, recorded_at), writes it under
+      data/raw/<registry>/<date>/ and appends a manifest line, so a tool-mediated read
+      verifies exactly like an HTTP fetch. It stays its own class because a payload a
+      tool handed an agent is WEAKER than a record the agent opened itself, and the red
+      team should be able to see which it is rather than having the two collapsed.
+
+  # ------------------------------------------------------------------- claims ---
+
+  claim_type:
+    contract_ref: "§4.1"
+    ordinal: false
+    description: >-
+      What KIND of assertion the claim makes. This field, not the prose statement,
+      decides which relations the claim may license (see allowed_claim_types in
+      ontology/edges.yaml) and is the mechanism behind rule V16.
+    values:
+      - association
+      - causal_perturbation
+      - mechanistic
+      - expression
+      - pharmacology_binding
+      - pharmacodynamic
+      - clinical_efficacy
+      - clinical_null
+      - clinical_harm
+      - preclinical_harm
+      - safety
+      - comparative_evolutionary
+      - theoretical_construct
+      - methodological
+      - evidence_gap
+    efficacy_licensing_values: [causal_perturbation, pharmacodynamic, clinical_efficacy]
+    graph_inert_values: [evidence_gap]
+    human_harm_values: [clinical_harm]
+    harm_values: [clinical_harm, preclinical_harm, clinical_null]
+    preclinical_harm_note: >-
+      `clinical_harm` is reserved for harm OBSERVED IN HUMANS. Harm in a non-human model
+      is `preclinical_harm`. An agent had to record increased seizure susceptibility in
+      mice as `clinical_harm` because nothing else fitted, and flagged the forced label
+      itself. The distinction is not cosmetic: animal harm wearing a clinical label is
+      the laundering direction contract P4 blocks, and it is the easiest one to let
+      slide because over-stating a harm feels like the safe error. It is not — it
+      misprices every safety constraint that rests on it. Rule V23 enforces it.
+    evidence_gap_note: >-
+      `evidence_gap` records that a study DID NOT MEASURE the endpoint in question —
+      "the only human trial of this mechanism never included a cognitive endpoint".
+      ABSENCE OF MEASUREMENT IS NOT MEASURED ABSENCE. It is GRAPH-INERT: the Phase-2
+      compiler emits an evidence-layer record and NO biological or intervention edge,
+      because a gap is not a finding about biology. It may never contribute to a
+      facet's counter_level; it counts towards a coverage gap.
+
+  direction:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Sign of the asserted relationship. `unclear` is a legitimate, common answer and
+      must never be silently read as `increases`. `state_dependent` is for a
+      relationship whose SIGN depends on the rest of the state — benefit only from a
+      low baseline or under stress, nothing or harm otherwise. It is distinct from
+      `unclear` (sign not established) and from `inverted_u` (one curve with an
+      interior optimum): state dependence means there is no single curve.
+    values:
+      - increases
+      - decreases
+      - no_change
+      - bidirectional
+      - inverted_u
+      - u_shaped
+      - state_dependent
+      - unclear
+
+  life_stage:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Life stage of the organism in which the evidence was obtained. Carries the
+      "development is not adulthood" distinction (contract P4).
+    values:
+      - prenatal
+      - postnatal_developmental
+      - adolescent
+      - adult
+      - aged
+      - mixed
+      - not_reported
+    adult_values: [adult, aged]
+    developmental_values: [prenatal, postnatal_developmental]
+
+  baseline_context:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Baseline state of the system that was perturbed or observed. Carries the
+      "rescue is not enhancement" distinction (contract P4).
+    values:
+      - healthy_wildtype
+      - disease_model
+      - disease_population
+      - sleep_deprived_or_stressed
+      - aged
+      - mixed
+      - not_reported
+    healthy_values: [healthy_wildtype]
+    deficit_values: [disease_model, disease_population, sleep_deprived_or_stressed, aged]
+
+  phenotype_class:
+    contract_ref: "§4.2"
+    ordinal: false
+    description: >-
+      Class of the cognitive endpoint. Identical list to endpoint_category: the two
+      fields differ in scope (claim-level versus evidence-item-level), not in domain.
+      `educational_attainment` IS NEVER TREATED AS AN INTELLIGENCE ENDPOINT (§4.2).
+    values:
+      - g_factor
+      - fluid_reasoning
+      - working_memory
+      - processing_speed
+      - episodic_memory
+      - executive_function
+      - learning_rate
+      - far_transfer
+      - metacognition
+      - educational_attainment
+      - clinical_cognitive_composite
+      - neuroimaging_proxy
+      - electrophysiological_proxy
+      - metabolic_proxy
+      - animal_spatial_memory
+      - animal_recognition_memory
+      - animal_fear_conditioning
+      - animal_reversal_learning
+      - animal_working_memory
+      - animal_operant_task
+      - synaptic_plasticity_ltp_ltd
+      - cellular_excitability
+      - molecular_readout
+      - not_applicable
+      - not_reported
+    human_values:
+      - g_factor
+      - fluid_reasoning
+      - working_memory
+      - processing_speed
+      - episodic_memory
+      - executive_function
+      - learning_rate
+      - far_transfer
+      - metacognition
+      - educational_attainment
+      - clinical_cognitive_composite
+      - neuroimaging_proxy
+      - electrophysiological_proxy
+      - metabolic_proxy
+    non_human_values:
+      - animal_spatial_memory
+      - animal_recognition_memory
+      - animal_fear_conditioning
+      - animal_reversal_learning
+      - animal_working_memory
+      - animal_operant_task
+      - synaptic_plasticity_ltp_ltd
+      - cellular_excitability
+      - molecular_readout
+    excluded_from_intelligence_endpoints: [educational_attainment]
+
+  endpoint_category:
+    contract_ref: "§4.2"
+    ordinal: false
+    description: >-
+      Class of the measured endpoint on one evidence item. Same value set as
+      phenotype_class by contract design; kept as its own vocabulary so a future
+      version can diverge without a silent change of meaning.
+    same_values_as: phenotype_class
+
+  causal_attribution_basis:
+    contract_ref: "§4.3"
+    ordinal: false
+    description: >-
+      The study design feature that licenses (or fails to license) a causal reading.
+      This is where "association is not causation" and "locus is not gene" become
+      required fields rather than caveats.
+    values:
+      - gwas_association_only
+      - gene_based_association
+      - finemapped_credible_set
+      - colocalisation_qtl
+      - mendelian_randomisation
+      - rare_variant_burden
+      - monogenic_disorder
+      - germline_knockout
+      - conditional_developmental_knockout
+      - adult_inducible_genetic_perturbation
+      - adult_pharmacological_perturbation
+      - acute_circuit_perturbation
+      - human_randomised_intervention
+      - human_observational_association
+      - in_vitro_perturbation
+      - correlational_expression
+      - computational_prediction
+      - theoretical_argument
+    association_only_values:
+      - gwas_association_only
+      - gene_based_association
+      - human_observational_association
+      - correlational_expression
+    adult_perturbation_values:
+      - adult_inducible_genetic_perturbation
+      - adult_pharmacological_perturbation
+      - acute_circuit_perturbation
+      - human_randomised_intervention
+    developmentally_confounded_values:
+      - germline_knockout
+      - conditional_developmental_knockout
+      - monogenic_disorder
+
+  locus_to_gene_resolved:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Whether the locus-to-gene assignment was actually resolved. THE VALUES MUST BE
+      QUOTED IN YAML: unquoted `yes` and `no` parse as booleans under YAML 1.1, so
+      `locus_to_gene_resolved: no` silently becomes `false` and fails validation. The
+      validator emits a targeted message for that case. A rename to
+      resolved/not_resolved is proposed for v0.2.0 (schema_change_requests/ontology-005).
+    values: ["yes", "no", partial, not_applicable]
+    resolved_values: ["yes", partial]
+    unresolved_values: ["no"]
+
+  phylogenetic_control:
+    contract_ref: "§4 (ontology extension, see schema_change_requests/ontology-007)"
+    ordinal: false
+    description: >-
+      What phylogenetic control a cross-species comparison applied. Required by the
+      comparative atlas: a correlation across species with no phylogenetic control is
+      not evidence of convergence, because related species share traits by descent.
+      `none` is an honest and common answer and must never be read as `not_reported`.
+    values:
+      - none
+      - outgroup_comparison
+      - sister_taxon_comparison
+      - phylogenetic_comparative_model
+      - ancestral_state_reconstruction
+      - other
+      - not_reported
+    controlled_values: [sister_taxon_comparison, phylogenetic_comparative_model, ancestral_state_reconstruction]
+
+  design:
+    contract_ref: "§4.4"
+    ordinal: false
+    description: >-
+      Study design of one evidence item. Describes WHO ELSE ran the study; this project
+      performs none of these (docs/COMPUTATIONAL_ONLY_POLICY.md).
+    values:
+      - gwas
+      - gwas_meta_analysis
+      - gene_based_test
+      - fine_mapping
+      - eqtl
+      - sqtl
+      - colocalisation
+      - mendelian_randomisation
+      - polygenic_score_analysis
+      - rare_variant_association
+      - clinical_case_series
+      - rct_parallel
+      - rct_crossover
+      - open_label_trial
+      - observational_cohort
+      - case_control
+      - meta_analysis
+      - systematic_review
+      - narrative_review
+      - knockout
+      - conditional_knockout
+      - knockdown
+      - overexpression
+      - pharmacological_perturbation
+      - optogenetic
+      - chemogenetic
+      - electrophysiology
+      - in_vivo_imaging
+      - expression_atlas
+      - single_cell_atlas
+      - comparative_genomics
+      - comparative_anatomy
+      - phylogenetic_comparative_analysis
+      - structural_biology
+      - biophysical_model
+      - simulation
+      - registry_record
+      - database_release
+    human_interventional_values: [rct_parallel, rct_crossover, open_label_trial]
+    secondary_report_values: [meta_analysis, systematic_review, narrative_review]
+
+  endpoint_measured:
+    contract_ref: "§4 (R5)"
+    ordinal: false
+    description: >-
+      Whether the endpoint this claim is about was MEASURED AT ALL in the study behind
+      this evidence item. The distinction the contract could not previously express: a
+      trial that never measured cognition is NOT a failed trial, and two brake-atlas
+      claims were typed `clinical_null` when they were this instead — read
+      mechanically they looked like failed trials. Rule V16c enforces the difference.
+    values:
+      - measured
+      - not_measured_in_protocol
+      - measured_but_not_reported
+      - unknown
+    measured_values: [measured]
+    gap_values: [not_measured_in_protocol]
+    default: unknown
+
+  effect_direction:
+    contract_ref: "§4"
+    ordinal: false
+    description: Direction of the measured effect on one evidence item.
+    values: [increase, decrease, no_change, mixed, not_reported]
+
+  effect_size_metric:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Which statistic `effect_size.value` holds. `not_extracted` is the default and
+      the honest answer whenever the number was not read verbatim from the source.
+    values:
+      - not_extracted
+      - beta
+      - odds_ratio
+      - hazard_ratio
+      - cohens_d
+      - smd
+      - correlation_r
+      - percent_change
+      - p_value_only
+      - mean_difference
+    default: not_extracted
+
+  replication_status:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Replication standing of one evidence item. `not_assessed` means nobody checked
+      and must never be conflated with `single_study`.
+    values:
+      - single_study
+      - replicated_independent
+      - replicated_same_group
+      - failed_replication
+      - conflicting
+      - not_assessed
+    independent_values: [replicated_independent]
+
+  evidence_role:
+    contract_ref: "§4"
+    ordinal: false
+    description: How this evidence item bears on the claim it is attached to.
+    values: [supports, contradicts, qualifies, null_result]
+
+  extraction_basis:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      What the extracting agent actually read. Ordered from least to most complete for
+      reporting convenience only — it is not an ordinal score.
+    values:
+      - abstract
+      - full_text
+      - database_record
+      - registry_record
+      - secondary_report
+    secondary_values: [secondary_report]
+
+  claim_status:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Lifecycle of a claim. Records are NEVER deleted; withdrawal is a status change
+      with a superseding audit finding (contract P6, V14).
+    values: [active, contested, downgraded, withdrawn]
+    requires_superseding_audit: [withdrawn]
+
+  claim_method:
+    contract_ref: "§4"
+    ordinal: false
+    description: How the claim record was produced.
+    values: [literature_curation, database_ingestion, derived_from_claims]
+
+  # ------------------------------------------------------------- translation ---
+
+  translation_adult_relevance:
+    contract_ref: "§4"
+    ordinal: false
+    description: Whether the finding has been shown in adults.
+    values: [demonstrated_in_adults, plausible_untested, developmental_only, contradicted, unknown]
+
+  translation_healthy_baseline:
+    contract_ref: "§4"
+    ordinal: false
+    description: Whether the finding has been shown from a healthy baseline.
+    values: [tested_in_healthy, disease_model_only, deficit_state_only, mixed, unknown]
+
+  translation_supra_normal:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Whether an improvement ABOVE a healthy baseline was observed, as opposed to
+      restoration of a deficit. Carries "rescue is not enhancement" (contract P4).
+    values: [enhancement_above_healthy_baseline, rescue_only, no_enhancement_observed, contradicted, untested]
+
+  translation_human_relevance:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      The strongest species/level of evidence behind the claim. The values marked
+      human_evidence_values are what rule V21 requires for a level 3-4 grade on a
+      human-proposition facet.
+    values:
+      - direct_human_interventional
+      - human_genetic
+      - human_observational
+      - nonhuman_primate
+      - rodent_only
+      - other_species_only
+      - in_vitro_only
+      - computational_only
+    human_evidence_values: [direct_human_interventional, human_genetic, human_observational]
+
+  translation_general_intelligence_relevance:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      How close the measured endpoint is to general cognitive ability.
+      `educational_attainment_proxy` is deliberately separate and weighted lower (§4.2).
+    values:
+      - g_or_fluid_measured
+      - multi_domain_cognitive
+      - single_domain_cognitive
+      - educational_attainment_proxy
+      - animal_task_only
+      - none
+      - unknown
+
+  # ------------------------------------------------------------- uncertainty ---
+
+  uncertainty_representation:
+    contract_ref: "V10"
+    ordinal: false
+    description: >-
+      How uncertainty is expressed. CURATED RECORDS MAY ONLY USE `ordinal_grade`
+      (rule V10): a hand-written probability is forbidden anywhere (contract P3).
+      `model_distribution` exists for model outputs under models/, which are not
+      curated records.
+    values: [ordinal_grade, model_distribution]
+    allowed_in_curated_records: [ordinal_grade]
+
+  uncertainty_scale:
+    contract_ref: "§4, §5.3"
+    ordinal: false
+    description: Named ordinal scale that `uncertainty.level` is expressed on.
+    values: [evidence_strength_v1]
+
+  calibration_status:
+    contract_ref: "§4"
+    ordinal: false
+    description: >-
+      Whether a stated uncertainty has ever been checked against outcomes. Sprint 1
+      produces only `uncalibrated_subjective` and `model_derived_uncalibrated`.
+    values: [uncalibrated_subjective, model_derived_uncalibrated, empirically_calibrated]
+
+  # ------------------------------------------------------- facet assessments ---
+
+  evidence_strength_v1:
+    contract_ref: "§5.3"
+    ordinal: true
+    description: >-
+      THE SHARED ORDINAL SCALE for every facet level, counter_level and
+      uncertainty.level. Integers 0-4, defined by the contract. agent:integration may
+      refine per-facet criteria in models/ranking/facet_rubric_v0_1.yaml but may not
+      change these level semantics.
+    values: [0, 1, 2, 3, 4]
+    level_semantics:
+      0: "searched, nothing found"
+      1: >-
+        weak or indirect only: correlational, in-vitro only, single small study, or a
+        distant model system
+      2: >-
+        moderate: replicated non-human causal evidence, or one human study with a
+        relevant endpoint
+      3: >-
+        substantial: converging causal evidence across designs or species, or one human
+        interventional/genetic result with a directly relevant endpoint
+      4: >-
+        strong: replicated human evidence bearing directly on this facet's proposition,
+        consistent in direction
+    human_evidence_required_at_or_above: 3
+    notes:
+      - >-
+        Level 0 means SEARCHED AND FOUND NOTHING. It is an assertion that a search
+        happened. A facet nobody examined is assessment_status: not_assessed with
+        level: null, and writing 0 for it is a contract violation (§5.2).
+      - >-
+        The scale is applied twice per facet, independently: `level` grades the
+        evidence FOR the facet proposition and `counter_level` grades the evidence
+        AGAINST it. "Nobody looked" (not_assessed) and "tested and failed"
+        (level 1, counter_level 3) are different records and must stay different.
+
+  evidence_basis:
+    contract_ref: "§5.2 (R7)"
+    ordinal: false
+    description: >-
+      What kind of evidence a facet grade rests on. `database_release` is what lets a
+      facet cite `source_refs` instead of `claim_refs`, and it is permitted ONLY for
+      facets flagged `database_gradable: true` in
+      models/ranking/facet_rubric_v0_1.yaml. Forcing a druggability annotation into a
+      claim record — inventing a triple, a claim type and meaningless translation
+      values — makes a non-biological annotation look like biological evidence, and is
+      prohibited.
+    values: [curated_claims, database_release, mixed]
+    source_refs_only_values: [database_release]
+
+  assessment_status:
+    contract_ref: "§5.2"
+    ordinal: false
+    description: >-
+      Whether this facet was actually assessed. `not_assessed` requires `level: null`
+      and is handled by the uncertainty model as wide and uninformative — never as zero.
+    values: [assessed, not_assessed, not_applicable]
+    requires_null_level: [not_assessed, not_applicable]
+
+  facet:
+    contract_ref: "§5.2"
+    ordinal: false
+    description: >-
+      The facet catalogue: the only places an agent may express a graded judgement.
+      `owners` lists the agent ids permitted to write the facet (rule V11);
+      `lead_atlas` as an owner means whichever atlas leads that target.
+      `dimension` is the ranking dimension the facet feeds, and `inverse: true` means
+      a HIGHER level lowers the dimension.
+      `human_proposition: true` marks the facets whose proposition is about humans;
+      rule V21 refuses a level of 3 or 4 on those without a human-evidence claim ref.
+    values:
+      - human_genetic_association
+      - causal_gene_attribution
+      - human_phenotype_specificity
+      - adult_expression_and_timing
+      - mechanistic_causal_perturbation
+      - adult_onset_perturbation
+      - above_baseline_enhancement
+      - transfer_breadth
+      - dose_response_knowledge
+      - human_intervention_evidence
+      - cross_species_convergence
+      - human_lineage_divergence_risk
+      - safety_liability_burden
+      - developmental_confound_risk
+      - tractability
+    catalogue:
+      - facet: human_genetic_association
+        owners: [agent:alphacognition]
+        dimensions: [D1]
+        inverse: false
+        human_proposition: true
+      - facet: causal_gene_attribution
+        owners: [agent:alphacognition]
+        dimensions: [D1]
+        inverse: false
+        human_proposition: false
+      - facet: human_phenotype_specificity
+        owners: [agent:alphacognition]
+        dimensions: [D1, D4]
+        inverse: false
+        human_proposition: true
+      - facet: adult_expression_and_timing
+        owners: [agent:alphacognition]
+        dimensions: [D2]
+        inverse: false
+        human_proposition: true
+      - facet: mechanistic_causal_perturbation
+        owners: [agent:brakes, agent:power, agent:alphacognition]
+        dimensions: [D1]
+        inverse: false
+        human_proposition: false
+        note: "lead atlas for the target writes it"
+      - facet: adult_onset_perturbation
+        owners: [lead_atlas]
+        dimensions: [D2]
+        inverse: false
+        human_proposition: false
+      - facet: above_baseline_enhancement
+        owners: [lead_atlas]
+        dimensions: [D3]
+        inverse: false
+        human_proposition: false
+      - facet: transfer_breadth
+        owners: [lead_atlas]
+        dimensions: [D4]
+        inverse: false
+        human_proposition: false
+      - facet: dose_response_knowledge
+        owners: [lead_atlas]
+        dimensions: [D5]
+        inverse: false
+        human_proposition: false
+      - facet: human_intervention_evidence
+        owners: [lead_atlas]
+        dimensions: [D6]
+        inverse: false
+        human_proposition: true
+      - facet: cross_species_convergence
+        owners: [agent:comparative]
+        dimensions: [D6]
+        inverse: false
+        human_proposition: false
+      - facet: human_lineage_divergence_risk
+        owners: [agent:comparative]
+        dimensions: [D6]
+        inverse: true
+        human_proposition: false
+      - facet: safety_liability_burden
+        owners: [agent:red_team]
+        dimensions: [D5]
+        inverse: true
+        human_proposition: false
+      - facet: developmental_confound_risk
+        owners: [agent:red_team]
+        dimensions: [D2]
+        inverse: true
+        human_proposition: false
+        note: "gate, not just a weight"
+      - facet: tractability
+        owners: [agent:integration]
+        dimensions: [D6]
+        inverse: false
+        human_proposition: false
+    human_proposition_facets:
+      - human_genetic_association
+      - human_phenotype_specificity
+      - human_intervention_evidence
+      - adult_expression_and_timing
+
+  dimension:
+    contract_ref: "§5.2"
+    ordinal: false
+    description: The six ranking dimensions. All are explicitly uncalibrated.
+    values: [D1, D2, D3, D4, D5, D6]
+    meanings:
+      D1: "P(causal cognition relevance)"
+      D2: "P(adult modifiability)"
+      D3: "P(supra-normal potential)"
+      D4: "P(far transfer potential)"
+      D5: "P(safe controllable window)"
+      D6: "P(human translation)"
+
+  rubric:
+    contract_ref: "§5.2"
+    ordinal: false
+    description: Named facet rubric a facet assessment was graded against.
+    values: [facet_rubric_v0_1]
+
+  # ------------------------------------------------------------------ audits ---
+
+  audit_check:
+    contract_ref: "§6"
+    ordinal: false
+    description: >-
+      THE MANDATORY CHECK CATALOGUE. Every check must appear in every audit record
+      (rule V15); `not_applicable` is a legitimate result but silence is not.
+    values:
+      - association_mistaken_for_causation
+      - developmental_effect_mistaken_for_adult
+      - rescue_mistaken_for_enhancement
+      - animal_memory_mistaken_for_human_intelligence
+      - educational_attainment_mistaken_for_intelligence
+      - duplicated_evidence
+      - citation_dependence
+      - publication_bias
+      - negative_clinical_evidence
+      - dose_response_inversion
+      - seizure_liability
+      - psychiatric_liability
+      - systemic_adverse_effects
+      - model_organism_translation_failure
+      - overclaiming
+      - provenance_integrity
+      - proposes_prohibited_work
+    mandatory: true
+
+  audit_check_result:
+    contract_ref: "§6"
+    ordinal: false
+    description: Outcome of one audit check.
+    values: [pass, flag, fail, not_applicable]
+
+  audit_scope_kind:
+    contract_ref: "§6"
+    ordinal: false
+    description: >-
+      What an audit is about. `document` and `model` have no node type in v0.1.0, so
+      audits of those scopes do not compile into AUDITS edges; the record remains the
+      authority.
+    values: [target, claim, document, model]
+    graph_compiled_values: [target, claim]
+
+  audit_finding_severity:
+    contract_ref: "§6"
+    ordinal: true
+    description: Severity of an audit finding, ordered most to least severe.
+    values: [critical, major, minor, info]
+
+  audit_finding_category:
+    contract_ref: "§6"
+    ordinal: false
+    description: >-
+      Category of an audit finding. Aligned with the check catalogue so a finding can
+      always be traced to the check that produced it, plus categories for problems
+      found outside the catalogue.
+    values:
+      - association_mistaken_for_causation
+      - developmental_effect_mistaken_for_adult
+      - rescue_mistaken_for_enhancement
+      - animal_memory_mistaken_for_human_intelligence
+      - educational_attainment_mistaken_for_intelligence
+      - duplicated_evidence
+      - citation_dependence
+      - publication_bias
+      - negative_clinical_evidence
+      - dose_response_inversion
+      - seizure_liability
+      - psychiatric_liability
+      - systemic_adverse_effects
+      - model_organism_translation_failure
+      - overclaiming
+      - provenance_integrity
+      - proposes_prohibited_work
+      - unverifiable_source
+      - extraction_error
+      - schema_or_process_violation
+      - other
+
+  audit_verdict:
+    contract_ref: "§6"
+    ordinal: false
+    description: Overall outcome of an audit.
+    values: [retain, retain_with_downgrade, deprioritise, insufficient_evidence]
+
+  audit_adjustment_kind:
+    contract_ref: "§6"
+    ordinal: false
+    description: What an audit adjustment acts on.
+    values: [facet, claim_status, dossier_status]
+
+  audit_adjustment_field:
+    contract_ref: "§6 (ontology extension, see schema_change_requests/ontology-004)"
+    ordinal: false
+    description: >-
+      Which graded field a facet adjustment moves. DOWNGRADE-ONLY (rule V12) means
+      `to_level < from_level` for `level`, and `to_level > from_level` for
+      `counter_level` — raising the contradicting-evidence grade IS a downgrade of the
+      target's standing. Defaults to `level`, which reproduces the contract's original
+      single-field behaviour exactly.
+    values: [level, counter_level]
+    default: level
+
+  # ------------------------------------------------- targets and interventions ---
+
+  seed_origin:
+    contract_ref: "§5.1"
+    ordinal: false
+    description: Where a target came from.
+    values: [user_seed_list, agent_proposed]
+
+  dossier_depth:
+    contract_ref: "§5.1"
+    ordinal: false
+    description: Declared depth of a target dossier, then checked against its contents.
+    values: [deep, shallow]
+
+  dossier_status:
+    contract_ref: "§5.1"
+    ordinal: false
+    description: Lifecycle of a target dossier.
+    values: [seed_hypothesis, under_review, downgraded, deprioritised]
+
+  proposed_modulation:
+    contract_ref: "§5.1"
+    ordinal: false
+    description: >-
+      Direction of modulation the control-point hypothesis proposes. `unknown` and
+      `context_dependent` are the defaults and are frequently the right answer.
+    values: [decrease_activity, increase_activity, restore_toward_setpoint, context_dependent, unknown]
+
+  developmental_confound:
+    contract_ref: "§5.1"
+    ordinal: true
+    description: >-
+      Risk that the evidence for a target reflects development rather than adult
+      biology. Ordered highest to lowest risk; requires a rationale in the dossier.
+    values: [high, moderate, low, unknown]
+    requires_rationale: [high, moderate, low]
+
+  intervention_modality:
+    contract_ref: "§2 (record type: intervention entity)"
+    ordinal: false
+    description: >-
+      The kind of intervention an entity is. Registration is a cheminformatics or
+      bibliographic act and never an instruction to obtain, administer or self-apply
+      anything (docs/COMPUTATIONAL_ONLY_POLICY.md).
+    values:
+      - small_molecule
+      - biologic
+      - oligonucleotide
+      - gene_regulation
+      - metabolic_or_nutritional
+      - device_or_stimulation
+      - behavioural_or_training
+      - other
+
+  mechanism_class:
+    contract_ref: "§1.2 (MECH)"
+    ordinal: false
+    description: Class of molecular action a Mechanism node names.
+    values:
+      - orthosteric_agonism
+      - orthosteric_antagonism
+      - inverse_agonism
+      - positive_allosteric_modulation
+      - negative_allosteric_modulation
+      - competitive_inhibition
+      - non_competitive_inhibition
+      - transport_inhibition
+      - substrate_provision
+      - expression_upregulation
+      - expression_downregulation
+      - protein_degradation
+      - epigenetic_modulation
+      - physical_stimulation
+      - other
+      - unknown
+
+  # ------------------------------------------- state-variable type system ------
+  # Duplicated from ontology/state_variables.yaml (which carries the semantics).
+  # tests/test_ontology.py asserts the two agree.
+
+  state_domain:
+    contract_ref: "README §3"
+    ordinal: false
+    description: The eight state domains.
+    values: [cognition, power, efficiency, plasticity, workspace, consolidation, stability, safety]
+    constraint_domains: [safety]
+
+  state_variable_kind:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: What sort of quantity a state variable is, epistemically.
+    values: [latent_biological, latent_cognitive, observable_proxy, constraint]
+
+  state_variable_timescale:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: Characteristic timescale on which the variable itself changes.
+    values:
+      - milliseconds
+      - seconds
+      - minutes
+      - hours
+      - days
+      - weeks
+      - months
+      - years
+      - developmental
+      - multi_timescale
+      - unknown
+    state_vector_values: [milliseconds, seconds, minutes, hours, days, weeks, multi_timescale]
+    parameter_values: [months, years, developmental]
+
+  state_variable_level:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: Level of biological organisation at which the variable is defined.
+    values: [molecular, cellular, circuit, systems, behavioural]
+
+  response_shape:
+    contract_ref: "README §3"
+    ordinal: false
+    description: >-
+      Shape of the relationship between a state variable and useful cognitive output.
+      `unknown` IS THE DEFAULT and is not a synonym for linear.
+    values: [linear, threshold, inverted_u, u_shaped, state_dependent, unknown]
+    default: unknown
+
+  response_shape_basis:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: >-
+      Why a response shape is recorded. `default_no_evidence_yet` requires
+      shape: unknown; anything else requires `definitional` or `claim_supported` with
+      at least one claim reference.
+    values: [default_no_evidence_yet, definitional, claim_supported]
+    default: default_no_evidence_yet
+    requires_claim_refs: [claim_supported]
+
+  desirability:
+    contract_ref: "README §3"
+    ordinal: false
+    description: Whether moving a state variable is desirable at all.
+    values: [context_dependent, higher_is_better_within_range, constraint_to_respect, unknown]
+    defaults: [unknown, context_dependent]
+
+  measurability:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: How well a state variable can be measured in a living human adult.
+    values: [established_human_proxy, research_proxy, animal_only_proxy, theoretical_construct]
+    human_values: [established_human_proxy, research_proxy]
+
+  measurement_modality:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: Measurement modality of one state-variable proxy.
+    values:
+      - behavioural_task
+      - neuropsychological_battery
+      - eeg_meg
+      - fmri_bold
+      - mrs
+      - pet
+      - near_infrared_spectroscopy
+      - arterial_spin_labelling
+      - blood_or_csf_biomarker
+      - genomic_or_transcriptomic
+      - electrophysiology_invasive
+      - ex_vivo_or_animal_only
+      - questionnaire_or_diary
+      - device_or_wearable
+      - model_derived_estimate
+
+  state_variable_polarity:
+    contract_ref: "§R4 (docs/blackboard/RESOLUTIONS.md)"
+    ordinal: false
+    description: >-
+      Whether a HIGHER value of this variable means MORE HARM (`risk`) or MORE HEADROOM
+      (`margin`). Required on every safety and stability variable, because
+      `direction: increases` means opposite things against a threshold and against a
+      risk: the brake atlas had to invert six coupling directions by hand after
+      re-pointing a seizure THRESHOLD to a seizure RISK, and that error is silent. The
+      validator enforces the naming convention (`*_margin` declares `margin`,
+      `*_risk`/`*_burden`/`*_load` declares `risk`) so a convention that is merely
+      written down cannot be broken by the next agent.
+    values: [risk, margin]
+    margin_suffixes: []
+    risk_suffixes: []
+
+  state_variable_status:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: Lifecycle of a state-variable definition.
+    values: [active, provisional, deprecated]
+
+  safety_coupling_basis:
+    contract_ref: "ontology/state_variables.yaml"
+    ordinal: false
+    description: >-
+      Why a safety coupling is (or is not) asserted. agent:ontology writes
+      `not_asserted_pending_claims` with an empty list everywhere; a non-empty list
+      with this basis is a validation failure.
+    values: [not_asserted_pending_claims, definitional, claim_supported]
+    requires_empty_list: [not_asserted_pending_claims]
+
+  safety_coupling_direction:
+    contract_ref: "§2 (record type: state-variable annotation)"
+    ordinal: false
+    description: >-
+      Sign of an asserted coupling between a state variable and a safety constraint.
+      `unclear` is legitimate and common: the existence of a coupling is easier to
+      establish than its sign, and guessing the sign is exactly the kind of invention
+      contract P3 forbids.
+    values: [direct, inverse, unclear]
+
+  state_variable_annotation_relation:
+    contract_ref: "§2 (record type: state-variable annotation)"
+    ordinal: false
+    description: >-
+      What a domain agent's annotation asserts about a state variable. Annotations
+      are how empirical content reaches a state variable; the definition itself never
+      carries it.
+    values:
+      - response_shape
+      - safety_coupling
+      - measurement_proxy
+      - target_link
+      - primitive_link
+      - domain_note
+
+  # ------------------------------------------------------------------ policy ---
+
+  action_type:
+    contract_ref: "docs/TASK_DAG.yaml (closed enum), P1, V20"
+    ordinal: false
+    description: >-
+      CLOSED ENUM OF COMPUTATIONAL ACTIONS. No value denotes laboratory, animal or
+      human experimentation, and ADDING ONE IS A POLICY VIOLATION
+      (docs/COMPUTATIONAL_ONLY_POLICY.md). Loaded at runtime from docs/TASK_DAG.yaml by
+      blueprint.policy; the copy here exists so schemas are self-contained, and
+      tests/test_ontology.py asserts the two agree.
+    source_of_truth: "docs/TASK_DAG.yaml:action_type_enum"
+    values:
+      - schema_design
+      - ontology_design
+      - software_engineering
+      - evidence_ingestion
+      - literature_synthesis
+      - database_query
+      - statistical_genetics_analysis
+      - causal_inference_analysis
+      - knowledge_graph_construction
+      - comparative_genomics_analysis
+      - structural_bioinformatics
+      - cheminformatics
+      - virtual_screening
+      - molecular_simulation
+      - machine_learning
+      - uncertainty_modelling
+      - adversarial_audit
+      - documentation
+      - reporting
+
+  task_status:
+    contract_ref: "docs/TASK_DAG.yaml"
+    ordinal: false
+    description: Task lifecycle in the task DAG.
+    values: [blocked, ready, in_progress, needs_review, done, deferred, abandoned]
+
+  agent_id:
+    contract_ref: "docs/BLACKBOARD_PROTOCOL.md §1"
+    ordinal: false
+    description: The eight agent ids. Used by `added_by`, `created_by`, `assessed_by`.
+    values:
+      - agent:orchestrator
+      - agent:ontology
+      - agent:alphacognition
+      - agent:brakes
+      - agent:power
+      - agent:comparative
+      - agent:integration
+      - agent:red_team
+
+  violation_severity:
+    contract_ref: "graph/validate_graph.py"
+    ordinal: true
+    description: >-
+      Severity of a validator violation. Under --strict a warning is treated as an
+      error; without it, warnings are reported and the run can still exit 0.
+    values: [error, warning]

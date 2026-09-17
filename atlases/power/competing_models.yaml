@@ -1,0 +1,425 @@
+# Competing models: is adult human cognition power-limited?
+#
+# Written by agent:power. This file is the intellectual core of the Cognitive Power
+# Atlas, and its purpose is to stop "the brain is power-limited" from functioning as a
+# premise. It is a hypothesis with rivals, and several of the rivals are currently
+# better supported.
+#
+# RULES THIS FILE OBEYS
+# ---------------------
+# * Every model carries DISCRIMINATING predictions: things that would come out
+#   differently under it than under its rivals. A prediction that every model shares
+#   is recorded as `shared_prediction` and explicitly marked non-discriminating.
+# * Every model is `status: untested` in this repository. Nothing here has been run.
+# * Every proposed test is COMPUTATIONAL and uses data that has ALREADY been collected
+#   by other people. This project runs no experiments of any kind
+#   (docs/COMPUTATIONAL_ONLY_POLICY.md). No test below requires recruiting a
+#   participant, dosing anyone, or generating new measurements.
+# * No probabilities, no scores, no weights. Support is expressed only as claim
+#   references and as the ordinal `current_evidence_direction` label.
+# * Dataset identifiers are NOT resolved. The named resources are candidate data
+#   sources; `accession: null` and `resolution_required: true` mean an agent must
+#   resolve the real accession and access terms with a tool call before any use. No
+#   accession has been invented here.
+#
+# `current_evidence_direction` vocabulary (ordinal, not numeric):
+#   supported_by_retrieved_evidence | partially_supported | undetermined |
+#   weakened_by_retrieved_evidence | not_addressed_by_retrieved_evidence
+
+schema_version: 0.1.0
+domain: power
+authored_by: agent:power
+authored_on: "2026-09-17"
+scope: >-
+  The claim under test is specifically: in a healthy, rested, well-fed adult human, is
+  the amount of useful cognitive work achievable bounded by energy supply, energy
+  conversion, or the consequences of spending energy? The question is NOT whether the
+  brain is metabolically expensive (it is, and nobody disputes it) and NOT whether
+  cognition degrades in deprivation states (it does, and that is separately evidenced).
+
+headline_reading: >-
+  On the human evidence this atlas retrieved, H0 is the most parsimonious reading for
+  the healthy rested well-fed adult case, and H0 cannot be rejected. The single
+  cleanest datum is that pooled randomised human trials of creatine supplementation
+  show a memory benefit in older adults and an estimate centred essentially on zero in
+  the younger band (CLM:power:creatine_human:002), corroborated by an independent
+  randomised null in young healthy active omnivores whose physical-performance arm
+  confirmed the supplement was biologically active in the same participants
+  (CLM:power:creatine_human:003). Where human benefit does appear it appears in
+  LOW-BASELINE or STRESSED states: vegetarians, sleep deprivation, acute hypoxia
+  (CLM:power:creatine_human:001, :004, :005). That is the signature of H2/H5, not of
+  H1. The rodent mechanistic literature is largely consistent with H3 and H5 and does
+  not test H1 in a fed animal. H4 is essentially unaddressed by anything retrieved.
+  This reading is a reading of THIS evidence set, which is small, and it should be
+  attacked rather than trusted.
+
+models:
+
+  - id: H0
+    label: "Not power-limited in healthy rested well-fed adults"
+    mechanism_statement: >-
+      Energy supply, conversion and disposal all carry enough headroom in a healthy
+      rested fed adult that none of them is the binding constraint on cognitive
+      output. What limits performance is architecture, representation, learned
+      structure, allocation policy and time - not joules. On this model the brain's
+      large and famously stable metabolic rate is evidence of a well-regulated supply
+      system, not of a system operating at its ceiling.
+    discriminating_predictions:
+      - "Adding substrate or buffer capacity to a replete adult produces no cognitive change. Benefit appears only after a baseline deficit or an imposed stress is introduced."
+      - "Removing an energy-handling component in adulthood, in a fed animal, produces no cognitive deficit even when the same removal during development does."
+      - "Measured energetic headroom (oxygen extraction fraction, mitochondrial spare capacity proxies, phosphocreatine to ATP ratio) does not tighten as cognitive load increases within the normal range."
+      - "Individual differences in cognitive ability are not predicted by individual differences in resting or task-evoked metabolic supply once body size, tissue composition and head motion are controlled."
+    shared_prediction_non_discriminating:
+      - "Severe deprivation impairs cognition. Every model predicts this; it discriminates nothing."
+    current_evidence_direction: supported_by_retrieved_evidence
+    evidence_pointers:
+      supporting:
+        - CLM:power:creatine_human:002
+        - CLM:power:creatine_human:003
+        - CLM:power:SLC6A8:002
+        - CLM:power:CKB:003
+        - CLM:power:SLC16A1:003
+      weakening:
+        - CLM:power:creatine_human:001
+        - CLM:power:budget:005
+    proposed_computational_tests:
+      - id: H0.T1
+        description: >-
+          Re-analysis of already-published randomised creatine trials with individual
+          participant data where it has been deposited, stratified by a baseline proxy
+          (dietary pattern, vegetarian status, baseline brain or blood creatine where
+          measured), testing whether the interaction between baseline and effect is
+          what carries the heterogeneity the pooled analysis reports.
+        data_sources:
+          - name: "individual participant data from creatine cognition RCTs, where deposited"
+            accession: null
+            resolution_required: true
+            note: "most of these trials predate routine IPD deposition; a feasibility scan is the first step and may return nothing, which is itself a reportable result"
+        method_class: meta_analytic_reanalysis
+        discriminates_against: [H1]
+      - id: H0.T2
+        description: >-
+          Within-subject analysis of already-collected task-based neuroimaging to test
+          whether any measurable supply variable tightens with load. Specifically,
+          whether the ratio of task-evoked cerebral blood flow change to task-evoked
+          oxygen metabolism change is invariant across graded working-memory load, as
+          H0 predicts, rather than shifting toward greater extraction as H1 predicts.
+        data_sources:
+          - name: "public calibrated-BOLD and arterial spin labelling datasets with graded cognitive load"
+            accession: null
+            resolution_required: true
+          - name: "open neuroimaging repositories"
+            accession: null
+            resolution_required: true
+        method_class: reanalysis_of_public_imaging
+        discriminates_against: [H1, H2]
+    status: untested
+    falsified_if: >-
+      A well-powered randomised human trial in replete, rested adults shows a
+      cognitive benefit from raising any energy-supply variable, with a baseline
+      measurement confirming the participants were not deficient.
+
+  - id: H1
+    label: "Globally supply limited"
+    mechanism_statement: >-
+      Total substrate or oxygen delivery to the brain sets a ceiling on aggregate
+      computation, so raising global supply raises achievable output. This is the
+      strongest and most commonly assumed form of the power-limitation hypothesis.
+    discriminating_predictions:
+      - "Raising global substrate availability in a replete adult improves cognition, and the improvement scales with the size of the supply increase."
+      - "Cognitive ability correlates with global cerebral metabolic rate or delivery capacity across individuals, after controlling for tissue volume."
+      - "Whole-brain energy use rises substantially and measurably with cognitive effort. If aggregate metabolism is near-invariant across rest and hard cognitive work, H1 is in trouble."
+      - "Any single supply bottleneck should be sufficient to limit performance, so loss-of-function at several independent supply genes should converge on the same cognitive phenotype."
+    current_evidence_direction: weakened_by_retrieved_evidence
+    evidence_pointers:
+      supporting: []
+      weakening:
+        - CLM:power:creatine_human:003
+        - CLM:power:creatine_human:002
+        - CLM:power:SLC16A1:003
+        - CLM:power:CKB:006
+        - CLM:power:budget:004
+    proposed_computational_tests:
+      - id: H1.T1
+        description: >-
+          Test the cross-individual prediction on already-collected data: does a
+          measure of global cerebral perfusion or metabolism predict fluid-reasoning
+          performance in large cohorts with both imaging and cognitive testing, after
+          adjustment for intracranial volume, grey-matter volume, age, sex, head
+          motion and cardiovascular covariates? H1 requires a relationship; H0 and H3
+          predict none.
+        data_sources:
+          - name: "large population cohorts with brain imaging and cognitive batteries"
+            accession: null
+            resolution_required: true
+          - name: "lifespan and developmental imaging cohorts with cognition"
+            accession: null
+            resolution_required: true
+        method_class: cohort_reanalysis
+        discriminates_against: [H0, H3]
+      - id: H1.T2
+        description: >-
+          Mendelian-randomisation-style analysis using published GWAS summary
+          statistics only: do genetically predicted differences in cerebral blood
+          flow, haemoglobin, or metabolic substrate handling associate with fluid
+          intelligence? This is a computational analysis of already-published summary
+          data and requires coordination with agent:alphacognition, which owns the
+          human-genetics lane.
+        data_sources:
+          - name: "published GWAS summary statistics for perfusion and metabolic traits, and for cognitive traits"
+            accession: null
+            resolution_required: true
+            note: "GWAS Catalog accessions must be resolved via the API pattern in docs/API_RECIPES.md §4; educational attainment must NOT be substituted for cognitive ability"
+        method_class: mendelian_randomisation_on_summary_statistics
+        discriminates_against: [H0]
+        owner_note: "human genetics is agent:alphacognition's lane; agent:power proposes, it does not execute"
+    status: untested
+    falsified_if: >-
+      Global supply measures show no relationship to cognitive ability across
+      well-powered cohorts, and no replete-adult supply intervention produces benefit.
+
+  - id: H2
+    label: "Local and transient supply-demand mismatch under high load"
+    mechanism_statement: >-
+      Global supply is adequate but delivery is spatially and temporally coarse
+      relative to demand, so specific circuits transiently outrun their local supply
+      during the hardest moments of the hardest tasks. The limit is a matching
+      problem, not a budget problem. On this model performance ceilings are set by
+      how fast and how precisely neurovascular coupling and local buffering can track
+      demand, and the state-dependence of the human creatine evidence is exactly what
+      one would expect.
+    discriminating_predictions:
+      - "Benefit from raising buffer capacity (the phosphocreatine pool being the clearest example) appears only at high load or in stressed states, and disappears at low load. H1 predicts benefit everywhere; H0 predicts benefit nowhere."
+      - "Errors and lapses cluster in time with local supply transients, not with global supply level."
+      - "Interventions that improve the SPEED of neurovascular coupling should help more than interventions that raise its gain."
+      - "The effect of a buffer intervention should be larger in individuals with slower or noisier neurovascular coupling."
+    current_evidence_direction: partially_supported
+    evidence_pointers:
+      supporting:
+        - CLM:power:creatine_human:004
+        - CLM:power:creatine_human:005
+        - CLM:power:creatine_human:002
+      weakening:
+        - CLM:power:creatine_human:003
+    proposed_computational_tests:
+      - id: H2.T1
+        description: >-
+          Trial-level re-analysis of already-collected fast fMRI or fNIRS datasets
+          during sustained demanding tasks, testing whether the haemodynamic response
+          to successive high-demand events shows progressive undershoot that precedes
+          behavioural lapses. H2 predicts a within-run, event-locked supply transient
+          preceding errors; H3 predicts no supply transient and instead a drift in
+          coding precision or gain; H5 predicts a shift in the spatial allocation of
+          the response rather than its amplitude.
+        data_sources:
+          - name: "public rapid-sampling fMRI datasets with sustained-attention or n-back paradigms and trial-level behaviour"
+            accession: null
+            resolution_required: true
+          - name: "public fNIRS datasets with prolonged cognitive load"
+            accession: null
+            resolution_required: true
+        method_class: trial_level_timeseries_reanalysis
+        discriminates_against: [H0, H3, H5]
+      - id: H2.T2
+        description: >-
+          Biophysical simulation: extend a published cortical energy-budget model with
+          an explicit local supply compartment and a neurovascular transfer function
+          taken from published impulse-response measurements, then ask under what
+          coupling delay and buffer size the model produces the state-dependence
+          pattern actually observed in the human creatine trials. If no plausible
+          parameter set reproduces it, H2 is in trouble.
+        data_sources:
+          - name: "published biophysical energy-budget parameters"
+            accession: null
+            resolution_required: true
+            note: "the budget claims in evidence/claims/power/brain_energy_budget.yaml are the entry point; note that these are model outputs, and claim 002 revised claim 001 substantially"
+        method_class: biophysical_simulation
+        discriminates_against: [H0, H1]
+    status: untested
+    falsified_if: >-
+      Buffer-capacity interventions show the same effect at low and high load, or
+      event-locked supply transients are absent before behavioural lapses in
+      well-powered re-analyses.
+
+  - id: H3
+    label: "Efficiency limited, not supply limited"
+    mechanism_statement: >-
+      The binding constraint is the cost of useful computation, not the availability of
+      energy. A brain with a fixed budget can do more or less depending on how many
+      joules each useful bit costs, and that cost is set by channel and receptor
+      properties, synaptic reliability, coding sparseness and redundancy. On this model
+      supply interventions are pointless and efficiency interventions are the only
+      lever - and the published cortical energy budgets, which apportion most
+      signalling cost to postsynaptic receptors rather than to spikes, say where such a
+      lever would have to act.
+    discriminating_predictions:
+      - "Raising supply does nothing; changing the cost per unit of useful processing changes output."
+      - "Cognitive ability correlates with efficiency proxies (coding sparseness, signal-to-noise, response reliability) rather than with supply proxies."
+      - "A manipulation that reduces synaptic energy cost while holding spike rate constant should change coding precision, not firing rate. This is exactly the pattern reported under food restriction in rodent visual cortex."
+      - "Species differences in cognition should track efficiency parameters more than supply parameters; the reported several-fold lower human than rat cortical glutamatergic signalling rate is a datum for this model."
+    current_evidence_direction: partially_supported
+    evidence_pointers:
+      supporting:
+        - CLM:power:budget:005
+        - CLM:power:budget:001
+        - CLM:power:budget:002
+        - CLM:power:budget:004
+      weakening:
+        - CLM:power:budget:003
+    proposed_computational_tests:
+      - id: H3.T1
+        description: >-
+          Using public large-scale single-unit and two-photon population recordings
+          with concurrent psychophysics, estimate coding sparseness and
+          stimulus-information-per-active-neuron and test whether those efficiency
+          measures, rather than firing rate or population size, predict behavioural
+          discrimination performance across sessions and animals.
+        data_sources:
+          - name: "public large-scale population recording datasets with behaviour"
+            accession: null
+            resolution_required: true
+        method_class: population_coding_reanalysis
+        discriminates_against: [H1, H2]
+      - id: H3.T2
+        description: >-
+          Reproduce the published cortical energy-budget computation from its stated
+          parameters, then run a sensitivity analysis over the inputs to determine
+          which parameters the apportionment actually depends on. The point is not to
+          re-derive the published percentages but to establish how much of the
+          apportionment is empirically constrained and how much is assumption - the
+          revision between the 2001 and 2012 budgets suggests the answer is
+          uncomfortable.
+        data_sources:
+          - name: "published budget model parameter sets"
+            accession: null
+            resolution_required: true
+        method_class: model_reimplementation_and_sensitivity_analysis
+        discriminates_against: []
+        note: "this test discriminates between no two hypotheses; it audits the evidence base that H3 leans on, which is worth doing first"
+    status: untested
+    falsified_if: >-
+      Efficiency proxies show no relationship to performance once supply and
+      population size are controlled, or a supply intervention in replete adults
+      produces a robust benefit.
+
+  - id: H4
+    label: "Thermally or oxidatively limited"
+    mechanism_statement: >-
+      What bounds sustained computation is not the energy itself but the by-products of
+      spending it: heat that must be carried away by perfusion, and reactive oxygen
+      species generated by oxidative phosphorylation. On this model the brain
+      deliberately runs below its metabolic capacity to stay inside thermal and redox
+      safety margins, and cognitive endurance rather than cognitive peak is the
+      limited quantity.
+    discriminating_predictions:
+      - "Sustained high-load performance should degrade with a time course matching a thermal or redox accumulation process, not a substrate depletion process, and should be relieved by cooling or by reduced ambient thermal load rather than by substrate."
+      - "Individuals or conditions with greater heat-dissipation capacity should sustain high load longer without any difference in peak performance."
+      - "Antioxidant status should predict cognitive ENDURANCE specifically, not cognitive peak."
+      - "H4 uniquely predicts that raising supply while holding by-product handling fixed makes things WORSE, not better."
+    current_evidence_direction: not_addressed_by_retrieved_evidence
+    evidence_pointers:
+      supporting: []
+      weakening: []
+      note: >-
+        This atlas retrieved NO evidence bearing on H4, in either direction. That is a
+        coverage gap, not a verdict. The state model defines SV:power.thermal_burden,
+        SV:power.ros_production_rate and SV:safety.oxidative_stress_burden, and this
+        atlas populated none of them with a claim.
+    proposed_computational_tests:
+      - id: H4.T1
+        description: >-
+          Re-analysis of already-collected cognitive-performance datasets that vary
+          ambient or core temperature, testing whether the degradation of sustained
+          performance tracks a thermal accumulation time course independently of
+          hydration, motivation and arousal covariates. H4 predicts a thermal
+          signature; H2 predicts a substrate signature; H0 predicts neither.
+        data_sources:
+          - name: "public heat-stress and occupational-performance datasets with cognitive endpoints"
+            accession: null
+            resolution_required: true
+        method_class: cohort_reanalysis
+        discriminates_against: [H0, H2]
+      - id: H4.T2
+        description: >-
+          Literature-scale evidence synthesis, executed as a computational curation
+          task in this repository, to establish whether the thermal and oxidative arm
+          of the power hypothesis has an evidence base at all. The honest prior after
+          this session is that it may not, and establishing that is a result.
+        data_sources:
+          - name: "PubMed and ClinicalTrials.gov via the tool patterns in docs/API_RECIPES.md"
+            accession: null
+            resolution_required: false
+        method_class: evidence_synthesis
+        discriminates_against: []
+    status: untested
+    falsified_if: >-
+      Sustained-performance degradation is fully explained by substrate or arousal
+      covariates with no residual thermal or redox term.
+
+  - id: H5
+    label: "Allocation and routing limited, not total budget limited"
+    mechanism_statement: >-
+      The total budget is adequate and largely fixed, and what varies is where it is
+      spent. Cognitive limits are the limits of an allocation policy: which circuits
+      get metabolic and attentional priority, how fast priority can be switched, and
+      how faithfully the allocation tracks task demands. On this model "effort" is the
+      subjective correlate of an allocation decision rather than of a supply shortage,
+      and interventions should target routing rather than volume. The leptin-gated
+      energy-precision trade-off in rodent visual cortex is a concrete instance: the
+      animal was not out of energy, it changed its spending policy.
+    discriminating_predictions:
+      - "Total metabolic rate stays near-constant while cognitive load changes; what changes is the SPATIAL DISTRIBUTION of metabolic and haemodynamic activity. H1 predicts the total moves; H5 predicts the distribution moves."
+      - "Cognitive ability correlates with the precision and speed of reallocation, measurable as the fidelity with which task-evoked activity patterns match task demands, rather than with the amplitude of any response."
+      - "A hormonal or neuromodulatory signal that reports on organismal energy state should change coding precision without changing spike rate - which is precisely the reported food-restriction result."
+      - "Interventions that raise a global supply variable should be absorbed by the allocation system and produce no behavioural change, which makes H5 and H0 behaviourally similar and hard to separate on supply interventions alone."
+    current_evidence_direction: partially_supported
+    evidence_pointers:
+      supporting:
+        - CLM:power:budget:005
+        - CLM:power:budget:004
+        - CLM:power:HCAR1:004
+        - CLM:power:HCAR1:001
+      weakening: []
+    proposed_computational_tests:
+      - id: H5.T1
+        description: >-
+          Using already-collected task fMRI with graded load, test whether the total
+          integrated response is invariant while its spatial distribution shifts, and
+          whether the fidelity of the demand-to-allocation mapping predicts individual
+          performance better than any amplitude measure. This is the cleanest
+          available H1-versus-H5 discriminator and it needs no new data.
+        data_sources:
+          - name: "public task-fMRI datasets with graded cognitive load and individual cognitive scores"
+            accession: null
+            resolution_required: true
+        method_class: reanalysis_of_public_imaging
+        discriminates_against: [H1, H3]
+      - id: H5.T2
+        description: >-
+          Model-based analysis of published metabolic-state signalling results, asking
+          whether a controller that maximises useful information per joule subject to a
+          fixed total budget reproduces the observed pattern of preserved spike rate
+          with degraded tuning width under restriction, and whether it predicts the
+          human state-dependence pattern as a special case. If a fixed-budget
+          allocation controller reproduces both, H5 explains data that H1 cannot.
+        data_sources:
+          - name: "published tuning-width, conductance and ATP-use parameters from the rodent restriction study"
+            accession: null
+            resolution_required: true
+            note: "parameters must be read from the source, not assumed; only the values verbatim in the retrieved text are usable (CLM:power:budget:005)"
+        method_class: normative_model_fitting
+        discriminates_against: [H1]
+    status: untested
+    falsified_if: >-
+      Total metabolic rate is shown to rise substantially with cognitive load while
+      allocation fidelity fails to predict performance.
+
+# ---------------------------------------------------------------------------------
+# What this set does NOT contain, stated so nobody mistakes the gaps for coverage
+# ---------------------------------------------------------------------------------
+known_gaps:
+  - "H4 has no supporting or weakening evidence at all in this atlas. It is in the list because it is falsifiable and because omitting it would bias the comparison, not because it is supported."
+  - "H0 and H5 make nearly identical predictions about supply interventions, so no supply intervention can separate them. Only H5.T1 and H5.T2 address that separation, and both are unrun."
+  - "No model here is tested against human cognitive data in this repository. Every `current_evidence_direction` label is a reading of a small, deliberately curated evidence set and is not a measurement."
+  - "The rodent mechanistic literature in this atlas was not designed to discriminate these hypotheses, and using it to do so is an act of interpretation on this agent's part. The red team should attack that interpretation first."
+  - "Nothing in this file addresses whether any of these constraints, if real, would be modifiable in an adult human. That is a separate question and the facet assessments answer it much less favourably."

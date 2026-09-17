@@ -1,0 +1,76 @@
+# Red-team facet assessment - KL. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/KL.yaml.
+schema_version: 0.1.0
+target_id: TGT:KL
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 1
+  rationale: Weak and indirect only. No adverse-effect annotation exists for this target in the pinned
+    Open Targets release. The dossier carries AE:dementia, which comes from a human cohort association
+    running against the target rather than from an intervention. Klotho's established systemic endocrine
+    roles in phosphate and vitamin D handling make a systemic liability mechanistically expected, but
+    nothing measures one.
+  claim_refs:
+  - CLM:power:KL:003
+  counter_level: 1
+  counter_rationale: A non-human-primate administration study reported a benefit without a reported safety
+    signal, which is weak evidence of tolerability in a primate and no evidence at all about humans.
+  counter_claim_refs:
+  - CLM:power:KL:004
+  limiting_factor: no human interventional safety data; and the one primate study has a commercially interested
+    author, which agent:power recorded
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 2
+  rationale: The mouse causal arm is transgenic systemic overexpression from development, which cannot
+    separate developmental from adult mechanisms, and systemic overexpression of an endocrine modifier
+    from birth is a particularly poor model of adult administration. Non-human causal evidence of the
+    exposure.
+  claim_refs:
+  - CLM:power:KL:001
+  counter_level: 2
+  counter_rationale: Adult and acute administration in non-human primates with a cognitive readout, plus
+    the authors' observation that the human cohort association did not correlate with age - one relevant
+    result on each of two designs.
+  counter_claim_refs:
+  - CLM:power:KL:004
+  - CLM:power:KL:002
+  limiting_factor: the adult evidence is a single primate study with a dose-response inversion and a conflicted
+    author list
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: retain_with_downgrade. The red team owns only these two
+  facets; every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents''
+  facets, where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by
+  editing another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

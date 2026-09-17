@@ -1,0 +1,99 @@
+# Comparative facet assessment for TGT:RGS14.
+# Contract: docs/DATA_CONTRACT.md §5.2, §5.3. agent:comparative owns only
+# cross_species_convergence and human_lineage_divergence_risk.
+#
+# targets/seed_registry.yaml flags RGS14 as "rodent-only evidence base — translation
+# distance must be assessed explicitly". This is that assessment. The short version: the
+# anatomical substrate is conserved into adult humans, and the functional evidence is not.
+#
+# Reviewed 2026-09-17 against contract §5.4 (polarity-aware caps). Neither level changed.
+# `cross_species_convergence` is normal-polarity, so the cap constrains its `level`, which
+# sits at the cap of 2. `human_lineage_divergence_risk` is inverse-polarity, so the cap
+# constrains its `counter_level`, which is 2 and therefore exactly AT the cap and cannot
+# rise on the present evidence. Its `level` of 1 was never cap-derived — it reflects the
+# absence of any RGS14-specific human-versus-rodent functional measurement — so §5.4
+# leaves it where it was.
+
+target_id: TGT:RGS14
+assessed_by: agent:comparative
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+schema_version: 0.1.0
+notes: "run_id sprint1-comparative-01"
+
+facets:
+  - facet: cross_species_convergence
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      RGS14 protein is enriched in CA2 pyramidal neurons in both species in which it has
+      been localised: mouse (CLM:comparative:RGS14:001, evidence item 1) and adult human,
+      where RGS-14 immunoreactivity is specific enough to CA2 that it was used as a
+      boundary marker for parcellating the human hippocampus
+      (CLM:comparative:RGS14:001, evidence item 2). Two independent laboratories, two
+      species, one of them adult human, agreeing on cell-type-specific localisation. That
+      is genuine convergent expression evidence and reaches 2.
+    claim_refs:
+      - CLM:comparative:RGS14:001
+    counter_level: 0
+    counter_rationale: >-
+      Searched, nothing found. PubMed searches combining RGS14 with primate, monkey,
+      non-human, hippocampus, CA2 and species-comparison terms returned no study
+      reporting absent or differently localised RGS14 in any species, and no study
+      contradicting the CA2 enrichment. Counter-level 0 here means the absence of
+      contradicting evidence, not the absence of evidence — which is why it sits beside
+      level 2 rather than replacing it.
+    counter_claim_refs: []
+    limiting_factor: >-
+      Localisation is not function. Conserved cell-type-specific expression says nothing
+      about whether RGS14 suppresses plasticity in human CA2, and no non-rodent
+      functional experiment exists. Only two species have been examined, so no
+      phylogenetic control is possible; no non-human primate has been looked at at all,
+      which means the panel's macaque and chimpanzee entries carry no RGS14 evidence. The
+      human study was an anatomical parcellation exercise in which RGS-14 staining was a
+      tool rather than a hypothesis, so antibody specificity in human tissue was not
+      itself the endpoint.
+
+  - facet: human_lineage_divergence_risk
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak and indirect evidence for elevated divergence risk. There is no
+      RGS14-specific human-versus-rodent functional measurement at all, so the risk must
+      be inferred from generic cellular divergence: human cortical dendrites couple more
+      weakly to the soma than rodent (CLM:comparative:DENDRITE:001) and human layer 5
+      neurons sit off the mammalian conductance relationship
+      (CLM:comparative:HCN1:003). Both bear on how a plasticity-suppressing signalling
+      scaffold would behave in a human neuron, but neither examined RGS14 or CA2. That is
+      the definition of level 1 on evidence_strength_v1: indirect, from a distant
+      measurement.
+    claim_refs:
+      - CLM:comparative:DENDRITE:001
+      - CLM:comparative:HCN1:003
+    counter_level: 2
+    counter_rationale: >-
+      Against elevated divergence risk, and stronger than the evidence for it: the
+      cell-type-specific localisation of RGS14 to CA2 is preserved in adult human
+      hippocampus (CLM:comparative:RGS14:001). A gene whose expression has been retained
+      in the same rare cell population across ~90 million years of divergence is not
+      obviously a candidate for gross functional reinvention.
+
+      THIS VALUE IS AT THE CAP AND MAY NOT RISE. Under contract §5.4 the
+      phylogenetic-control cap constrains `counter_level` on this inverse-polarity facet,
+      and CLM:comparative:RGS14:001 is an uncontrolled two-species expression comparison,
+      so 2 is its ceiling. Read that as intended: conserved localisation is the best
+      available argument that RGS14 translates, and the cap says that argument cannot be
+      made strongly from two species and no functional data. Only a human or non-human
+      primate functional experiment could push this higher.
+    counter_claim_refs:
+      - CLM:comparative:RGS14:001
+    limiting_factor: >-
+      THE REAL LIMITATION IS NOT THE LEVEL, IT IS WHAT THE LEVELS CANNOT SAY. The entire
+      causal case for RGS14 — knockout mice showing LTP at CA2 synapses and improved
+      performance on rodent spatial and object-recognition tasks — is germline knockout
+      in one species, so it is developmentally confounded as well as species-limited
+      (agent:brakes and agent:red_team own that judgement). Conserved localisation plus
+      a striking rodent knockout phenotype is precisely the combination most likely to
+      be read as "this would work in humans", and nothing in this atlas supports that
+      reading. A human or non-human-primate functional experiment would move this facet
+      more than any further rodent work.

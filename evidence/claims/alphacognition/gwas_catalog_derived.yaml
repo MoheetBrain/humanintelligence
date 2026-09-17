@@ -1,0 +1,5096 @@
+# MACHINE-GENERATED — do not hand-edit.
+# Produced by pipelines/alphacognition/fetch_gwas_catalog.py
+# GWAS Catalog release: 2026-09-13   (source SRC:DB:gwas_catalog:2026-09-13)
+#
+# Every claim here is a POSITIONAL association record. causal_attribution.basis is
+# gwas_association_only and locus_to_gene_resolved is no, without exception. Nothing in
+# this file licenses an intervention on any gene, and no effect size in it has been
+# reformatted: `effect_size.as_reported` is the catalogue's own string.
+#
+# Claims: 38   associations covered: 68
+- claim_id: CLM:alphacognition:gwas.CKB:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes CKB; the studies'
+    own wording for the trait is Attention deficit hyperactivity disorder or autism spectrum disorder
+    or intelligence (pleiotropy); Fluid intelligence; Intelligence. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:CKB
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29942086
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 269867 European (Australia, Denmark, Germany, NR, Netherlands, Sweden, U.K., U.S.)
+    sample_size:
+      reported_as: 269,867 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Intelligence (GWAS Catalog association 34941631, variant rs2071407, effect allele rs2071407-T)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 7.686 z-score decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-14
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006250
+      association_id: 34941631
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - CKB
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35764056
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 371591 European (Denmark, NR, U.K.)
+    sample_size:
+      reported_as: 20,183 European ancestry ADHD cases, 18,381 European ancestry ASD cases, up to 63,160
+        European ancestry controls, 269,867 European ancestry individuals with intelligence measurements
+      value: null
+      unit: individuals
+    endpoint: Attention deficit hyperactivity disorder or autism spectrum disorder or intelligence (pleiotropy)
+      (GWAS Catalog association 100283806, variant rs2071407, effect allele rs2071407-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-15
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90134330
+      association_id: 100283806
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - CKB
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:36378351
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 223731 European (U.K.)
+    sample_size:
+      reported_as: 223,731 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Intelligence (GWAS Catalog association 104373775, variant rs2071407, effect allele rs2071407-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90264174
+      association_id: 104373775
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - CKB
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:42092107
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 182798 European (U.K.)
+    sample_size:
+      reported_as: 182,798 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Fluid intelligence (GWAS Catalog association 218978564, variant rs2071407, effect allele
+      rs2071407-T)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0194379 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 7.000000000000001e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90832687
+      association_id: 218978564
+      risk_frequency_as_reported: '0.366244'
+      mapped_genes:
+      - CKB
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 182798
+    European (U.K.); 223731 European (U.K.); 269867 European (Australia, Denmark, Germany, NR, Netherlands,
+    Sweden, U.K., U.S.); 371591 European (Denmark, NR, U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006250
+    - GCST90134330
+    - GCST90264174
+    - GCST90832687
+    supporting_pubmed_ids:
+    - '29942086'
+    - '35764056'
+    - '36378351'
+    - '42092107'
+- claim_id: CLM:alphacognition:gwas.CKB:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    CKB; the studies' own wording for the trait is Personality traits or cognitive traits (multivariate
+    analysis). Positional mapping is not a causal gene assignment.
+  subject: GENE:CKB
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37365406
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 337125 European (U.K.)
+    sample_size:
+      reported_as: 337,125 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Personality traits or cognitive traits (multivariate analysis) (GWAS Catalog association
+      106035073, variant rs2071408, effect allele rs2071408-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-18
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90270074
+      association_id: 106035073
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - CKB
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 337125
+    European (U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90270074
+    supporting_pubmed_ids:
+    - '37365406'
+- claim_id: CLM:alphacognition:gwas.CRTC1:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'self reported educational attainment' (EFO_0004784) at loci whose positional gene annotation
+    includes CRTC1; the studies' own wording for the trait is Noncognitive aspects of educational attainment
+    (multivariate analysis). Positional mapping is not a causal gene assignment.
+  subject: GENE:CRTC1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:42062297
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 597090 European (U.K.)
+    sample_size:
+      reported_as: 597,090 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Noncognitive aspects of educational attainment (multivariate analysis) (GWAS Catalog association
+      222411648, variant rs36070283, effect allele rs36070283-?)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0000000000000004e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90860823
+      association_id: 222411648
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - CRTC1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 597090
+    European (U.K.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90860823
+    supporting_pubmed_ids:
+    - '42062297'
+- claim_id: CLM:alphacognition:gwas.CRTC1:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'mathematical ability' (EFO_0004875) at loci whose positional gene annotation includes CRTC1;
+    the studies' own wording for the trait is Self-reported math ability. Positional mapping is not a
+    causal gene assignment.
+  subject: GENE:CRTC1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 564698 European (NR, U.S.)
+    sample_size:
+      reported_as: 564,698 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (GWAS Catalog association 34702215, variant rs146543016, effect
+      allele rs146543016-C)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0124 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.000000000000001e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006573
+      association_id: 34702215
+      risk_frequency_as_reported: '0.7048'
+      mapped_genes:
+      - CRTC1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 564698
+    European (NR, U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006573
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.DRD1:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes DRD1;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:DRD1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97477132, variant rs265981, effect allele
+      rs265981-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.007221 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-11
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97477132
+      risk_frequency_as_reported: '0.3796'
+      mapped_genes:
+      - DRD1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.GPR158:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes GPR158; the studies'
+    own wording for the trait is Intelligence (MTAG). Positional mapping is not a causal gene assignment.
+  subject: GENE:GPR158
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29326435
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 120934 European (U.K.); 127548 NR (NR)
+    sample_size:
+      reported_as: "120,934 British ancestry individuals, 127,548 individuals\r\n"
+      value: null
+      unit: individuals
+    endpoint: Intelligence (MTAG) (GWAS Catalog association 27408735, variant rs1360123, effect allele
+      rs1360123-A)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.017633423 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 9.000000000000001e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST005316
+      association_id: 27408735
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GPR158
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 120934
+    European (U.K.); 127548 NR (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST005316
+    supporting_pubmed_ids:
+    - '29326435'
+- claim_id: CLM:alphacognition:gwas.GPR158:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'memory performance' (EFO_0004874) at loci whose positional gene annotation includes GPR158;
+    the studies' own wording for the trait is Memory decline in impaired cognition. Positional mapping
+    is not a causal gene assignment.
+  subject: GENE:GPR158
+  predicate: ASSOCIATED_WITH
+  object: PHENO:episodic_memory
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37984853
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 373 African unspecified (NR); 4478 European (NR)
+    sample_size:
+      reported_as: 4,478 European ancestry males, 373 African ancestry males
+      value: null
+      unit: individuals
+    endpoint: Memory decline in impaired cognition (GWAS Catalog association 134278722, variant rs71495469,
+      effect allele rs71495469-?)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.019359 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 7.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448446
+      association_id: 134278722
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GPR158
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:37984853
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 373 African unspecified (NR); 4478 European (NR)
+    sample_size:
+      reported_as: 4,478 European ancestry males, 373 African ancestry males
+      value: null
+      unit: individuals
+    endpoint: Memory decline in impaired cognition (GWAS Catalog association 134278729, variant rs35600435,
+      effect allele rs35600435-?)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.018911 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 8.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448446
+      association_id: 134278729
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GPR158
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 373
+    African unspecified (NR); 4478 European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90448446
+    supporting_pubmed_ids:
+    - '37984853'
+- claim_id: CLM:alphacognition:gwas.GPR158:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'verbal-numerical reasoning measurement' (EFO_0008394) at loci whose positional gene annotation
+    includes GPR158; the studies' own wording for the trait is Verbal-numerical reasoning. Positional
+    mapping is not a causal gene assignment.
+  subject: GENE:GPR158
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:32895543
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 171304 European (U.K.)
+    sample_size:
+      reported_as: 171,304 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Verbal-numerical reasoning (GWAS Catalog association 63100832, variant rs17527895, effect
+      allele rs17527895-?)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90011298
+      association_id: 63100832
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GPR158
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 171304
+    European (U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90011298
+    supporting_pubmed_ids:
+    - '32895543'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes GRIN2B; the studies'
+    own wording for the trait is General cognitive ability. Positional mapping is not a causal gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29844566
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 300486 European (Australia, Austria, Canada, Croatia, Denmark, Finland, France, Germany,
+      Greece, Iceland, NR, Netherlands, Norway, Republic of Ireland, Sweden, U.K., U.S.)
+    sample_size:
+      reported_as: up to 300,486 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: General cognitive ability (GWAS Catalog association 34835792, variant rs141426703, effect
+      allele rs141426703-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 4.76 z-score increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006269
+      association_id: 34835792
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 300486
+    European (Australia, Austria, Canada, Croatia, Denmark, Finland, France, Germany, Greece, Iceland,
+    NR, Netherlands, Norway, Republic of Ireland, Sweden, U.K., U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006269
+    supporting_pubmed_ids:
+    - '29844566'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'self reported educational attainment' (EFO_0004784) at loci whose positional gene annotation
+    includes GRIN2B; the studies' own wording for the trait is Educational attainment (MTAG); Educational
+    attainment (years of education). Positional mapping is not a causal gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35228381, variant
+      rs1861786, effect allele rs1861786-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0081 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35228381
+      risk_frequency_as_reported: '0.3813'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1131438 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: 1,311,438 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (MTAG) (GWAS Catalog association 34706690, variant rs1861786, effect
+      allele rs1861786-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0081 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006571
+      association_id: 34706690
+      risk_frequency_as_reported: '0.3813'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 1131438
+    European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland,
+    Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.); 1131881 European (Australia, Austria,
+    Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland, Italy, Netherlands, Norway,
+    Sweden, Switzerland, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006442
+    - GCST006571
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 3 genome-wide association record(s) for the
+    trait 'mathematical ability' (EFO_0004875) at loci whose positional gene annotation includes GRIN2B;
+    the studies' own wording for the trait is Highest math class taken (MTAG); Self-reported math ability;
+    Self-reported math ability (MTAG). Positional mapping is not a causal gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 811539 European (NR, U.S.)
+    sample_size:
+      reported_as: 811,539 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (MTAG) (GWAS Catalog association 34716926, variant rs220558, effect
+      allele rs220558-A)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0111 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006568
+      association_id: 34716926
+      risk_frequency_as_reported: '0.3428'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 670471 European (NR, U.S.)
+    sample_size:
+      reported_as: 670,471 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (MTAG) (GWAS Catalog association 34712910, variant rs2268127,
+      effect allele rs2268127-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.012 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006569
+      association_id: 34712910
+      risk_frequency_as_reported: '0.7111'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 564698 European (NR, U.S.)
+    sample_size:
+      reported_as: 564,698 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (GWAS Catalog association 34701755, variant rs138009610, effect
+      allele rs138009610-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0231 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006573
+      association_id: 34701755
+      risk_frequency_as_reported: '0.939'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 564698
+    European (NR, U.S.); 670471 European (NR, U.S.); 811539 European (NR, U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006568
+    - GCST006569
+    - GCST006573
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:004
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    GRIN2B; the studies' own wording for the trait is Cognitive performance (visuoconstruction). Positional
+    mapping is not a causal gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:35386118
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 429 European (NR)
+    sample_size:
+      reported_as: 429 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Cognitive performance (visuoconstruction) (GWAS Catalog association 97381822, variant rs75940780,
+      effect allele rs75940780-T)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 1.31489 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90104689
+      association_id: 97381822
+      risk_frequency_as_reported: '0.0400499'
+      mapped_genes:
+      - GRIN2B
+      - MRPS18CP4
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 429
+    European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90104689
+    supporting_pubmed_ids:
+    - '35386118'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:005
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'reaction time measurement' (EFO_0008393) at loci whose positional gene annotation includes
+    GRIN2B; the studies' own wording for the trait is Reaction time. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:processing_speed
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29844566
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 330069 European (NR)
+    sample_size:
+      reported_as: 330,069 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Reaction time (GWAS Catalog association 34839391, variant rs11055406, effect allele rs11055406-?)
+    endpoint_category: processing_speed
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.008086 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006268
+      association_id: 34839391
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GRIN2B
+      - LINC01559
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 330069
+    European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006268
+    supporting_pubmed_ids:
+    - '29844566'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:006
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes GRIN2B;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97485861, variant rs7312511, effect allele
+      rs7312511-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00977678 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0000000000000004e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97485861
+      risk_frequency_as_reported: '0.0986'
+      mapped_genes:
+      - GRIN2B
+      - LINC01559
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97485867, variant rs12822453, effect allele
+      rs12822453-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00600391 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 7.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97485867
+      risk_frequency_as_reported: '0.1888'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97485872, variant rs1861786, effect allele
+      rs1861786-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00764383 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-12
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97485872
+      risk_frequency_as_reported: '0.3807'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97485878, variant rs1019385, effect allele
+      rs1019385-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00669627 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97485878
+      risk_frequency_as_reported: '0.4582'
+      mapped_genes:
+      - GRIN2B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.GRIN2B:007
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'visuospatial function measurement' (EFO_0803533) at loci whose positional gene annotation includes
+    GRIN2B; the studies' own wording for the trait is Cognitive performance (visuospatial function) (longitudinal).
+    Positional mapping is not a causal gene assignment.
+  subject: GENE:GRIN2B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37089073
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 2995 European (U.S.)
+    sample_size:
+      reported_as: 2,995 European ancestry individuals aged 65 years or older
+      value: null
+      unit: individuals
+    endpoint: Cognitive performance (visuospatial function) (longitudinal) (GWAS Catalog association 106054171,
+      variant rs11055732, effect allele rs11055732-G)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.2623 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 9.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90270904
+      association_id: 106054171
+      risk_frequency_as_reported: '0.0447'
+      mapped_genes:
+      - GRIN2B
+      - MRPS18CP4
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 2995
+    European (U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90270904
+    supporting_pubmed_ids:
+    - '37089073'
+- claim_id: CLM:alphacognition:gwas.GRM5:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes GRM5; the studies'
+    own wording for the trait is Crystallized knowledge (multivariate analysis). Positional mapping is
+    not a causal gene assignment.
+  subject: GENE:GRM5
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:42062297
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 438582 European (U.K.)
+    sample_size:
+      reported_as: 438,582 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Crystallized knowledge (multivariate analysis) (GWAS Catalog association 222410560, variant
+      rs7481199, effect allele rs7481199-A)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.015 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 5.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90827739
+      association_id: 222410560
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GRM5
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 438582
+    European (U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90827739
+    supporting_pubmed_ids:
+    - '42062297'
+- claim_id: CLM:alphacognition:gwas.GRM5:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    GRM5; the studies' own wording for the trait is Personality traits or cognitive traits (multivariate
+    analysis). Positional mapping is not a causal gene assignment.
+  subject: GENE:GRM5
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37365406
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 337125 European (U.K.)
+    sample_size:
+      reported_as: 337,125 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Personality traits or cognitive traits (multivariate analysis) (GWAS Catalog association
+      106035031, variant rs1942496, effect allele rs1942496-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-11
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90270074
+      association_id: 106035031
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GRM5
+      - TYR
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 337125
+    European (U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90270074
+    supporting_pubmed_ids:
+    - '37365406'
+- claim_id: CLM:alphacognition:gwas.GRM5:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes GRM5;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:GRM5
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97485119, variant rs645327, effect allele
+      rs645327-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00720041 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97485119
+      risk_frequency_as_reported: '0.6717'
+      mapped_genes:
+      - GRM5
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.HCN1:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes HCN1; the studies'
+    own wording for the trait is Cognitive ability, years of educational attainment or schizophrenia (pleiotropy).
+    Positional mapping is not a causal gene assignment.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:31374203
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 436124 NR (NR); 120552 European (NR)
+    sample_size:
+      reported_as: 328,917 individuals with educational attainment measurements, 107,207 individuals with
+        cognitive ability measurements, 77,096 European ancestry schizophrenia cases, 43,456 European
+        ancestry controls
+      value: null
+      unit: individuals
+    endpoint: Cognitive ability, years of educational attainment or schizophrenia (pleiotropy) (GWAS Catalog
+      association 47702178, variant rs4493682, effect allele rs4493682-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.015637161 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST008595
+      association_id: 47702178
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 436124
+    NR (NR); 120552 European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST008595
+    supporting_pubmed_ids:
+    - '31374203'
+- claim_id: CLM:alphacognition:gwas.HCN1:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'self reported educational attainment' (EFO_0004784) at loci whose positional gene annotation
+    includes HCN1; the studies' own wording for the trait is Cognitive ability, years of educational attainment
+    or schizophrenia (pleiotropy); Educational attainment (years of education). Positional mapping is
+    not a causal gene assignment.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:27225129
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 405072 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: "405,072 European ancestry individuals\r\n"
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 17470358, variant
+      rs4493682, effect allele rs4493682-C)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.018939953 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST003676
+      association_id: 17470358
+      risk_frequency_as_reported: '0.1717'
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:31374203
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 436124 NR (NR); 120552 European (NR)
+    sample_size:
+      reported_as: 328,917 individuals with educational attainment measurements, 107,207 individuals with
+        cognitive ability measurements, 77,096 European ancestry schizophrenia cases, 43,456 European
+        ancestry controls
+      value: null
+      unit: individuals
+    endpoint: Cognitive ability, years of educational attainment or schizophrenia (pleiotropy) (GWAS Catalog
+      association 47702178, variant rs4493682, effect allele rs4493682-?)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.015637161 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST008595
+      association_id: 47702178
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 405072
+    European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland,
+    Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.); 436124 NR (NR); 120552 European (NR)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST003676
+    - GCST008595
+    supporting_pubmed_ids:
+    - '27225129'
+    - '31374203'
+- claim_id: CLM:alphacognition:gwas.HCN1:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'memory performance' (EFO_0004874) at loci whose positional gene annotation includes HCN1; the
+    studies' own wording for the trait is Spatial memory. Positional mapping is not a causal gene assignment.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:episodic_memory
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:31596458
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1350 European (U.S.); 183 Hispanic or Latin American (U.S.)
+    sample_size:
+      reported_as: 523 European ancestry schizophrenia cases, 100 Latino schizophrenia cases, 827 European
+        ancestry controls, 83 Latino controls
+      value: null
+      unit: individuals
+    endpoint: Spatial memory (GWAS Catalog association 49509983, variant rs187763903, effect allele rs187763903-C)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.7245752 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 8.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST009307
+      association_id: 49509983
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 1350
+    European (U.S.); 183 Hispanic or Latin American (U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST009307
+    supporting_pubmed_ids:
+    - '31596458'
+- claim_id: CLM:alphacognition:gwas.HCN1:004
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    HCN1; the studies' own wording for the trait is Personality traits or cognitive traits (multivariate
+    analysis). Positional mapping is not a causal gene assignment.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37365406
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 337125 European (U.K.)
+    sample_size:
+      reported_as: 337,125 British ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Personality traits or cognitive traits (multivariate analysis) (GWAS Catalog association
+      106035721, variant rs58902336, effect allele rs58902336-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: '-'
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90270074
+      association_id: 106035721
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - EMB
+      - HCN1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 337125
+    European (U.K.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90270074
+    supporting_pubmed_ids:
+    - '37365406'
+- claim_id: CLM:alphacognition:gwas.HCN1:005
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes HCN1;
+    the studies' own wording for the trait is Alzheimer's disease or educational attainment (pleiotropy);
+    Educational attainment. Positional mapping is not a causal gene assignment.
+  subject: GENE:HCN1
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:34743297
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: NA NR (NR)
+    sample_size:
+      reported_as: (see Lambert 2013 and Okbay 2016)
+      value: null
+      unit: individuals
+    endpoint: Alzheimer's disease or educational attainment (pleiotropy) (GWAS Catalog association 95158467,
+      variant rs4493682, effect allele rs4493682-C)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 35.550488 z score increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 4.0e-07
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90095190
+      association_id: 95158467
+      risk_frequency_as_reported: '0.2034'
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97475479, variant rs62367470, effect allele
+      rs62367470-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00798644 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.000000000000001e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97475479
+      risk_frequency_as_reported: '0.1768'
+      mapped_genes:
+      - HCN1
+      - MRPS30
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.); NA NR (NR)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90095190
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '34743297'
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.HTR2A:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'episodic memory' (EFO_0004333) at loci whose positional gene annotation includes HTR2A; the
+    studies' own wording for the trait is Episodic memory. Positional mapping is not a causal gene assignment.
+  subject: GENE:HTR2A
+  predicate: ASSOCIATED_WITH
+  object: PHENO:episodic_memory
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:36973338
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1887 Sub-Saharan African (South Africa)
+    sample_size:
+      reported_as: 1,887 Sub-Saharan African ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Episodic memory (GWAS Catalog association 104862474, variant rs73485231, effect allele rs73485231-A)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.24 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 8.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90246330
+      association_id: 104862474
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GNG5P5
+      - HTR2A
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 1887
+    Sub-Saharan African (South Africa)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90246330
+    supporting_pubmed_ids:
+    - '36973338'
+- claim_id: CLM:alphacognition:gwas.HTR2A:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'memory performance' (EFO_0004874) at loci whose positional gene annotation includes HTR2A;
+    the studies' own wording for the trait is Memory decline in impaired cognition x sex interaction.
+    Positional mapping is not a causal gene assignment.
+  subject: GENE:HTR2A
+  predicate: ASSOCIATED_WITH
+  object: PHENO:episodic_memory
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:37984853
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 8465 European (NR)
+    sample_size:
+      reported_as: 8,465 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Memory decline in impaired cognition x sex interaction (GWAS Catalog association 134293079,
+      variant rs9562710, effect allele rs9562710-?)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.027767 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 4.9999999999999996e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448470
+      association_id: 134293079
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GNG5P5
+      - HTR2A
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:37984853
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 8465 European (NR)
+    sample_size:
+      reported_as: 8,465 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Memory decline in impaired cognition x sex interaction (GWAS Catalog association 134293162,
+      variant rs7996092, effect allele rs7996092-?)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.021973 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448470
+      association_id: 134293162
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - GNG5P5
+      - HTR2A
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 8465
+    European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90448470
+    supporting_pubmed_ids:
+    - '37984853'
+- claim_id: CLM:alphacognition:gwas.HTR2A:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes HTR2A;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:HTR2A
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97487007, variant rs1158089, effect allele
+      rs1158089-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00632433 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97487007
+      risk_frequency_as_reported: '0.6658'
+      mapped_genes:
+      - GNG5P5
+      - HTR2A
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97487013, variant rs9595590, effect allele
+      rs9595590-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00788553 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 5.0e-14
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97487013
+      risk_frequency_as_reported: '0.4883'
+      mapped_genes:
+      - GNG5P5
+      - HTR2A
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.KCNQ3:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive decline measurement' (EFO_0007710) at loci whose positional gene annotation includes
+    KCNQ3; the studies' own wording for the trait is Rate of cognitive decline in Alzheimer's disease.
+    Positional mapping is not a causal gene assignment.
+  subject: GENE:KCNQ3
+  predicate: ASSOCIATED_WITH
+  object: PHENO:clinical_cognitive_composite
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:32573913
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3946 European (NR)
+    sample_size:
+      reported_as: 3,946 European ancestry cases
+      value: null
+      unit: individuals
+    endpoint: Rate of cognitive decline in Alzheimer's disease (GWAS Catalog association 62416324, variant
+      rs16904657, effect allele rs16904657-A)
+    endpoint_category: clinical_cognitive_composite
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.64115 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST010567
+      association_id: 62416324
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - KCNQ3
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3946
+    European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST010567
+    supporting_pubmed_ids:
+    - '32573913'
+- claim_id: CLM:alphacognition:gwas.OTX2:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'self reported educational attainment' (EFO_0004784) at loci whose positional gene annotation
+    includes OTX2; the studies' own wording for the trait is Educational attainment (MTAG); Educational
+    attainment (years of education). Positional mapping is not a causal gene assignment.
+  subject: GENE:OTX2
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35228793, variant
+      rs1123285, effect allele rs1123285-C)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0094 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35228793
+      risk_frequency_as_reported: '0.6659'
+      mapped_genes:
+      - OTX2
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35228797, variant
+      rs61997667, effect allele rs61997667-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0144 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35228797
+      risk_frequency_as_reported: '0.1511'
+      mapped_genes:
+      - OTX2
+      - OTX2-AS1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35228801, variant
+      rs198262, effect allele rs198262-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0223 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35228801
+      risk_frequency_as_reported: '0.9574'
+      mapped_genes:
+      - OTX2
+      - OTX2-AS1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1131438 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: 1,311,438 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (MTAG) (GWAS Catalog association 34707179, variant rs61997667, effect
+      allele rs61997667-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0134 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006571
+      association_id: 34707179
+      risk_frequency_as_reported: '0.1511'
+      mapped_genes:
+      - OTX2
+      - OTX2-AS1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 1131438
+    European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland,
+    Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.); 1131881 European (Australia, Austria,
+    Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland, Italy, Netherlands, Norway,
+    Sweden, Switzerland, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006442
+    - GCST006571
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.OTX2:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'mathematical ability' (EFO_0004875) at loci whose positional gene annotation includes OTX2;
+    the studies' own wording for the trait is Highest math class taken (MTAG). Positional mapping is not
+    a causal gene assignment.
+  subject: GENE:OTX2
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 811539 European (NR, U.S.)
+    sample_size:
+      reported_as: 811,539 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (MTAG) (GWAS Catalog association 34717344, variant rs61997667,
+      effect allele rs61997667-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0168 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006568
+      association_id: 34717344
+      risk_frequency_as_reported: '0.1525'
+      mapped_genes:
+      - OTX2
+      - OTX2-AS1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 811539
+    European (NR, U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006568
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.OTX2:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    OTX2; the studies' own wording for the trait is PC2 of Congitive Measures. Positional mapping is not
+    a causal gene assignment.
+  subject: GENE:OTX2
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:41413636
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 597 Asian unspecified,European,NR (Australia)
+    sample_size:
+      reported_as: 597 European ancestry, Asian ancestry, NR ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: PC2 of Congitive Measures (GWAS Catalog association 214584910, variant rs709941, effect
+      allele rs709941-C)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 2.119 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448144
+      association_id: 214584910
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - OTX2
+      - RPL36AP1
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 597
+    Asian unspecified,European,NR (Australia)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90448144
+    supporting_pubmed_ids:
+    - '41413636'
+- claim_id: CLM:alphacognition:gwas.PDE4B:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'intelligence' (EFO_0004337) at loci whose positional gene annotation includes PDE4B; the studies'
+    own wording for the trait is General cognitive ability. Positional mapping is not a causal gene assignment.
+  subject: GENE:PDE4B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29844566
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 300486 European (Australia, Austria, Canada, Croatia, Denmark, Finland, France, Germany,
+      Greece, Iceland, NR, Netherlands, Norway, Republic of Ireland, Sweden, U.K., U.S.)
+    sample_size:
+      reported_as: up to 300,486 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: General cognitive ability (GWAS Catalog association 34836820, variant rs564109448, effect
+      allele rs564109448-?)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 4.591 z-score decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 4.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006269
+      association_id: 34836820
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 300486
+    European (Australia, Austria, Canada, Croatia, Denmark, Finland, France, Germany, Greece, Iceland,
+    NR, Netherlands, Norway, Republic of Ireland, Sweden, U.K., U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006269
+    supporting_pubmed_ids:
+    - '29844566'
+- claim_id: CLM:alphacognition:gwas.PDE4B:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'self reported educational attainment' (EFO_0004784) at loci whose positional gene annotation
+    includes PDE4B; the studies' own wording for the trait is Educational attainment (MTAG); Educational
+    attainment (years of education). Positional mapping is not a causal gene assignment.
+  subject: GENE:PDE4B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35224817, variant
+      rs1392816, effect allele rs1392816-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0082 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35224817
+      risk_frequency_as_reported: '0.3831'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas_meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: 1131881 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: up to 1,131,881 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (years of education) (GWAS Catalog association 35224821, variant
+      rs72667460, effect allele rs72667460-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0197 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006442
+      association_id: 35224821
+      risk_frequency_as_reported: '0.0539'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1131438 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: 1,311,438 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (MTAG) (GWAS Catalog association 34708261, variant rs11208757, effect
+      allele rs11208757-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0113 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-11
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006571
+      association_id: 34708261
+      risk_frequency_as_reported: '0.1924'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 1131438 European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany,
+      Greece, Iceland, Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.)
+    sample_size:
+      reported_as: 1,311,438 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (MTAG) (GWAS Catalog association 34708265, variant rs1392816, effect
+      allele rs1392816-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0084 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 5.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006571
+      association_id: 34708265
+      risk_frequency_as_reported: '0.3831'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 1131438
+    European (Australia, Austria, Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland,
+    Italy, Netherlands, Norway, Sweden, Switzerland, U.K., U.S.); 1131881 European (Australia, Austria,
+    Belgium, Croatia, Denmark, Estonia, Finland, Germany, Greece, Iceland, Italy, Netherlands, Norway,
+    Sweden, Switzerland, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006442
+    - GCST006571
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.PDE4B:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'mathematical ability' (EFO_0004875) at loci whose positional gene annotation includes PDE4B;
+    the studies' own wording for the trait is Highest math class taken; Highest math class taken (MTAG);
+    Self-reported math ability (MTAG). Positional mapping is not a causal gene assignment.
+  subject: GENE:PDE4B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 811539 European (NR, U.S.)
+    sample_size:
+      reported_as: 811,539 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (MTAG) (GWAS Catalog association 34718269, variant rs11208757,
+      effect allele rs11208757-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0155 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0000000000000003e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006568
+      association_id: 34718269
+      risk_frequency_as_reported: '0.1846'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 811539 European (NR, U.S.)
+    sample_size:
+      reported_as: 811,539 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (MTAG) (GWAS Catalog association 34718274, variant rs11208774,
+      effect allele rs11208774-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0106 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-10
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006568
+      association_id: 34718274
+      risk_frequency_as_reported: '0.536'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 670471 European (NR, U.S.)
+    sample_size:
+      reported_as: 670,471 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (MTAG) (GWAS Catalog association 34713822, variant rs11208742,
+      effect allele rs11208742-T)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.014 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006569
+      association_id: 34713822
+      risk_frequency_as_reported: '0.1869'
+      mapped_genes:
+      - PDE4B
+      - RN7SL854P
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 430445 European (Estonia, U.K., U.S.)
+    sample_size:
+      reported_as: 430,445 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (GWAS Catalog association 34704606, variant rs10889584, effect
+      allele rs10889584-C)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.016 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 4.0e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006574
+      association_id: 34704606
+      risk_frequency_as_reported: '0.8156'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 430445
+    European (Estonia, U.K., U.S.); 670471 European (NR, U.S.); 811539 European (NR, U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006568
+    - GCST006569
+    - GCST006574
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.PDE4B:004
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes PDE4B;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:PDE4B
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97465817, variant rs11208757, effect allele
+      rs11208757-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.010895 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 4.0e-16
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97465817
+      risk_frequency_as_reported: '0.188'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97465822, variant rs1392816, effect allele
+      rs1392816-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00959338 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 5.0e-19
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97465822
+      risk_frequency_as_reported: '0.3814'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97465827, variant rs72667460, effect allele
+      rs72667460-T)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0178369 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-14
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97465827
+      risk_frequency_as_reported: '0.0538'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97465832, variant rs1338721, effect allele
+      rs1338721-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00780593 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97465832
+      risk_frequency_as_reported: '0.4661'
+      mapped_genes:
+      - PDE4B
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'
+- claim_id: CLM:alphacognition:gwas.SLC16A7:001
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 2 genome-wide association record(s) for the
+    trait 'memory performance' (EFO_0004874) at loci whose positional gene annotation includes SLC16A7;
+    the studies' own wording for the trait is Logical memory (delayed recall) in normal cognition; Logical
+    memory (immediate recall) in normal cognition. Positional mapping is not a causal gene assignment.
+  subject: GENE:SLC16A7
+  predicate: ASSOCIATED_WITH
+  object: PHENO:episodic_memory
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: episodic_memory
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:29274321
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 305 European (NR)
+    sample_size:
+      reported_as: 305 European ancestry cognitively normal individuals
+      value: null
+      unit: individuals
+    endpoint: Logical memory (immediate recall) in normal cognition (GWAS Catalog association 35904933,
+      variant rs56158317, effect allele rs56158317-C)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.59 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-06
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST007005
+      association_id: 35904933
+      risk_frequency_as_reported: '0.04'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:29274321
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 305 European (NR)
+    sample_size:
+      reported_as: 305 European ancestry cognitively normal individuals
+      value: null
+      unit: individuals
+    endpoint: Logical memory (delayed recall) in normal cognition (GWAS Catalog association 35905083,
+      variant rs35551159, effect allele rs35551159-A)
+    endpoint_category: episodic_memory
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.55 unit increase
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-07
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST007006
+      association_id: 35905083
+      risk_frequency_as_reported: '0.03'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 305
+    European (NR)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST007005
+    - GCST007006
+    supporting_pubmed_ids:
+    - '29274321'
+- claim_id: CLM:alphacognition:gwas.SLC16A7:002
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 4 genome-wide association record(s) for the
+    trait 'mathematical ability' (EFO_0004875) at loci whose positional gene annotation includes SLC16A7;
+    the studies' own wording for the trait is Highest math class taken; Highest math class taken (MTAG);
+    Self-reported math ability; Self-reported math ability (MTAG). Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:SLC16A7
+  predicate: ASSOCIATED_WITH
+  object: PHENO:fluid_reasoning
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: fluid_reasoning
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 811539 European (NR, U.S.)
+    sample_size:
+      reported_as: 811,539 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (MTAG) (GWAS Catalog association 34717014, variant rs12830284,
+      effect allele rs12830284-A)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.011 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 3.0e-11
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006568
+      association_id: 34717014
+      risk_frequency_as_reported: '0.5289'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 670471 European (NR, U.S.)
+    sample_size:
+      reported_as: 670,471 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (MTAG) (GWAS Catalog association 34712951, variant rs12830284,
+      effect allele rs12830284-A)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0126 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-12
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006569
+      association_id: 34712951
+      risk_frequency_as_reported: '0.5291'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 564698 European (NR, U.S.)
+    sample_size:
+      reported_as: 564,698 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Self-reported math ability (GWAS Catalog association 34701775, variant rs12830284, effect
+      allele rs12830284-A)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0143 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 2.0e-13
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006573
+      association_id: 34701775
+      risk_frequency_as_reported: '0.5291'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  - source_id: SRC:PMID:30038396
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 430445 European (Estonia, U.K., U.S.)
+    sample_size:
+      reported_as: 430,445 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Highest math class taken (GWAS Catalog association 34704194, variant rs12830284, effect
+      allele rs12830284-A)
+    endpoint_category: fluid_reasoning
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.0155 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 1.0e-11
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST006574
+      association_id: 34704194
+      risk_frequency_as_reported: '0.5289'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 430445
+    European (Estonia, U.K., U.S.); 564698 European (NR, U.S.); 670471 European (NR, U.S.); 811539 European
+    (NR, U.S.)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST006568
+    - GCST006569
+    - GCST006573
+    - GCST006574
+    supporting_pubmed_ids:
+    - '30038396'
+- claim_id: CLM:alphacognition:gwas.SLC16A7:003
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'cognitive function measurement' (EFO_0008354) at loci whose positional gene annotation includes
+    SLC16A7; the studies' own wording for the trait is PC1 of Congitive Measures. Positional mapping is
+    not a causal gene assignment.
+  subject: GENE:SLC16A7
+  predicate: ASSOCIATED_WITH
+  object: PHENO:g_factor
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+  evidence:
+  - source_id: SRC:PMID:41413636
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 597 Asian unspecified,European,NR (Australia)
+    sample_size:
+      reported_as: 597 European ancestry, Asian ancestry, NR ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: PC1 of Congitive Measures (GWAS Catalog association 214584512, variant rs11173363, effect
+      allele rs11173363-G)
+    endpoint_category: g_factor
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 2.693 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.000000000000001e-08
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90448143
+      association_id: 214584512
+      risk_frequency_as_reported: NR
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: g_or_fluid_measured
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 597
+    Asian unspecified,European,NR (Australia)'
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90448143
+    supporting_pubmed_ids:
+    - '41413636'
+- claim_id: CLM:alphacognition:gwas.SLC16A7:004
+  schema_version: 0.1.0
+  statement: The GWAS Catalog (release 2026-09-13) reports 1 genome-wide association record(s) for the
+    trait 'educational attainment' (EFO_0011015) at loci whose positional gene annotation includes SLC16A7;
+    the studies' own wording for the trait is Educational attainment. Positional mapping is not a causal
+    gene assignment.
+  subject: GENE:SLC16A7
+  predicate: ASSOCIATED_WITH
+  object: PHENO:educational_attainment
+  claim_type: association
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: educational_attainment
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    alternative_explanations:
+    - the catalogue's mapped_genes field is positional (nearest-gene) annotation, so the causal gene at
+      this locus may be any gene in the LD block
+    - linkage disequilibrium means the reported variant need not be the causal variant
+    - population stratification and assortative mating are not excluded by the catalogue record alone
+    - educational attainment is a social-institutional outcome and is exposed to indirect (parental) genetic
+      effects, so an association here need not act on the carrier's cognition at all
+  evidence:
+  - source_id: SRC:PMID:35361970
+    design: gwas
+    species: SPECIES:NCBITaxon:9606
+    population: 3037499 European (NR, U.K., U.S.)
+    sample_size:
+      reported_as: 3,037,499 European ancestry individuals
+      value: null
+      unit: individuals
+    endpoint: Educational attainment (GWAS Catalog association 97486299, variant rs10877343, effect allele
+      rs10877343-A)
+    endpoint_category: educational_attainment
+    endpoint_measured: measured
+    effect_direction: not_reported
+    effect_size:
+      metric: beta
+      as_reported: 0.00607979 unit decrease
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: 6.000000000000001e-09
+    replication_status: not_assessed
+    evidence_role: supports
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+    database_record:
+      registry: gwas_catalog
+      release: '2026-09-13'
+      accession_id: GCST90105038
+      association_id: 97486299
+      risk_frequency_as_reported: '0.4825'
+      mapped_genes:
+      - SLC16A7
+      - Y_RNA
+      mapping_basis: gwas_catalog_mapped_genes_positional
+      snapshot_registry: data/raw/gwas_catalog/
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: educational_attainment_proxy
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: 'database ingestion of positional associations: the association itself is a catalogued
+      human genetic result, but nothing here attributes it to this gene, and per-allele GWAS effects are
+      not intervention effects'
+    calibration_status: uncalibrated_subjective
+  risks:
+  - GWAS per-allele effect sizes are not intervention effect sizes and must never be read as the expected
+    effect of modulating this gene
+  - 'discovery cohorts are overwhelmingly European-ancestry, so transportability is unestablished: 3037499
+    European (NR, U.K., U.S.)'
+  - educational attainment is not an intelligence endpoint
+  confounders:
+  - linkage disequilibrium
+  - population structure
+  - assortative mating
+  - family socioeconomic environment
+  - cohort education policy
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: database_ingestion
+    run_id: sprint1-alphacognition-gwas-01
+    pipeline: pipelines/alphacognition/fetch_gwas_catalog.py
+    database_release: SRC:DB:gwas_catalog:2026-09-13
+    supporting_accessions:
+    - GCST90105038
+    supporting_pubmed_ids:
+    - '35361970'

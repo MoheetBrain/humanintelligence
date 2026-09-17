@@ -1,0 +1,993 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/claim",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One machine-readable assertion plus the evidence for it (contract \u00a74). The triple (subject, predicate, object) MUST be a legal edge in ontology/edges.yaml (rule V3) and the claim_type must be one the relation permits (rule V16). The six required distinctions \u2014 association vs causation, locus vs gene, development vs adulthood, rescue vs enhancement, animal memory vs human intelligence, educational attainment vs intelligence \u2014 are FIELDS here, not prose caveats (contract P4).",
+  "examples": [
+    {
+      "causal_attribution": {
+        "alternative_explanations": [
+          "synthetic placeholder alternative"
+        ],
+        "basis": "correlational_expression",
+        "locus_to_gene_resolved": "not_applicable"
+      },
+      "claim_id": "CLM:ontology:PLACEHOLDER:001",
+      "claim_type": "expression",
+      "confounders": [],
+      "context": {
+        "baseline_context": "not_reported",
+        "brain_regions": [],
+        "cell_types": [],
+        "life_stage": "not_reported",
+        "species": [
+          "SPECIES:NCBITaxon:0"
+        ]
+      },
+      "dependencies": [],
+      "direction": "unclear",
+      "evidence": [
+        {
+          "design": "expression_atlas",
+          "effect_direction": "not_reported",
+          "effect_size": {
+            "as_reported": null,
+            "ci_lower": null,
+            "ci_upper": null,
+            "metric": "not_extracted",
+            "p_value": null,
+            "value": null
+          },
+          "endpoint_category": "molecular_readout",
+          "evidence_role": "supports",
+          "extraction": {
+            "basis": "database_record",
+            "content_checked": false,
+            "extracted_by": "agent:ontology",
+            "extracted_on": "2026-09-17"
+          },
+          "replication_status": "not_assessed",
+          "source_id": "SRC:PMID:00000001"
+        }
+      ],
+      "object": "CELL:placeholder_cell",
+      "predicate": "EXPRESSED_IN",
+      "provenance": {
+        "created_by": "agent:ontology",
+        "created_on": "2026-09-17",
+        "method": "literature_curation",
+        "run_id": "schema-example"
+      },
+      "risks": [],
+      "schema_version": "0.1.0",
+      "statement": "Synthetic placeholder claim used only to exercise the schema example slot.",
+      "status": "active",
+      "subject": "GENE:PLACEHOLDER",
+      "translation": {
+        "adult_relevance": "unknown",
+        "general_intelligence_relevance": "unknown",
+        "healthy_baseline": "unknown",
+        "human_relevance": "computational_only",
+        "supra_normal": "untested"
+      },
+      "uncertainty": {
+        "calibration_status": "uncalibrated_subjective",
+        "level": 0,
+        "rationale": "synthetic placeholder, no evidence",
+        "representation": "ordinal_grade",
+        "scale": "evidence_strength_v1"
+      }
+    }
+  ],
+  "properties": {
+    "causal_attribution": {
+      "additionalProperties": false,
+      "description": "Mandatory on every claim (rule V7).",
+      "properties": {
+        "alternative_explanations": {
+          "description": "Explanations not excluded by this evidence. An EMPTY list asserts that none remain, which is rarely true.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "basis": {
+          "$comment": "vocabulary: causal_attribution_basis",
+          "description": "The design feature that licenses (or fails to license) a causal reading.",
+          "enum": [
+            "gwas_association_only",
+            "gene_based_association",
+            "finemapped_credible_set",
+            "colocalisation_qtl",
+            "mendelian_randomisation",
+            "rare_variant_burden",
+            "monogenic_disorder",
+            "germline_knockout",
+            "conditional_developmental_knockout",
+            "adult_inducible_genetic_perturbation",
+            "adult_pharmacological_perturbation",
+            "acute_circuit_perturbation",
+            "human_randomised_intervention",
+            "human_observational_association",
+            "in_vitro_perturbation",
+            "correlational_expression",
+            "computational_prediction",
+            "theoretical_argument"
+          ],
+          "type": "string"
+        },
+        "locus_to_gene_resolved": {
+          "$comment": "vocabulary: locus_to_gene_resolved",
+          "description": "Whether the locus-to-gene assignment was resolved.",
+          "enum": [
+            "yes",
+            "no",
+            "partial",
+            "not_applicable"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "basis",
+        "locus_to_gene_resolved",
+        "alternative_explanations"
+      ],
+      "type": "object"
+    },
+    "claim_id": {
+      "description": "CLM:{domain}:{target_or_topic}:{nnn}.",
+      "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+      "type": "string"
+    },
+    "claim_type": {
+      "$comment": "vocabulary: claim_type",
+      "description": "What kind of assertion this is. Decides which relations it may license.",
+      "enum": [
+        "association",
+        "causal_perturbation",
+        "mechanistic",
+        "expression",
+        "pharmacology_binding",
+        "pharmacodynamic",
+        "clinical_efficacy",
+        "clinical_null",
+        "clinical_harm",
+        "preclinical_harm",
+        "safety",
+        "comparative_evolutionary",
+        "theoretical_construct",
+        "methodological",
+        "evidence_gap"
+      ],
+      "type": "string"
+    },
+    "confounders": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "context": {
+      "additionalProperties": false,
+      "description": "Where and in what state the evidence was obtained.",
+      "properties": {
+        "baseline_context": {
+          "$comment": "vocabulary: baseline_context",
+          "description": "Baseline state: rescue is not enhancement.",
+          "enum": [
+            "healthy_wildtype",
+            "disease_model",
+            "disease_population",
+            "sleep_deprived_or_stressed",
+            "aged",
+            "mixed",
+            "not_reported"
+          ],
+          "type": "string"
+        },
+        "brain_regions": {
+          "items": {
+            "description": "Region id.",
+            "pattern": "^REGION:(UBERON:[0-9]{7}|[a-z0-9][a-z0-9_]*)$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "cell_types": {
+          "items": {
+            "description": "Cell type id.",
+            "pattern": "^CELL:(CL:[0-9]{7}|[a-z0-9][a-z0-9_]*)$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "life_stage": {
+          "$comment": "vocabulary: life_stage",
+          "description": "Life stage: development is not adulthood.",
+          "enum": [
+            "prenatal",
+            "postnatal_developmental",
+            "adolescent",
+            "adult",
+            "aged",
+            "mixed",
+            "not_reported"
+          ],
+          "type": "string"
+        },
+        "phylogenetic_control": {
+          "$comment": "vocabulary: phylogenetic_control",
+          "description": "What phylogenetic control the comparison applied. `none` is honest and common; an uncontrolled cross-species correlation is not convergence.",
+          "enum": [
+            "none",
+            "outgroup_comparison",
+            "sister_taxon_comparison",
+            "phylogenetic_comparative_model",
+            "ancestral_state_reconstruction",
+            "other",
+            "not_reported"
+          ],
+          "type": "string"
+        },
+        "phylogenetic_control_basis": {
+          "description": "How that control was (or was not) achieved, in one or two sentences.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "species": {
+          "description": "Species the evidence was obtained in.",
+          "items": {
+            "description": "Species id.",
+            "pattern": "^SPECIES:NCBITaxon:[0-9]+$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "species_count": {
+          "description": "Number of species compared. A COUNT, not a score; n = 1 makes any comparative reading unavailable.",
+          "minimum": 1,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "species",
+        "life_stage",
+        "baseline_context"
+      ],
+      "type": "object"
+    },
+    "dependencies": {
+      "description": "Claim ids. Every id must resolve (rule V4).",
+      "items": {
+        "description": "Claim id.",
+        "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "direction": {
+      "$comment": "vocabulary: direction",
+      "description": "Sign of the relationship. `unclear` is reserved for GENUINE IGNORANCE; `state_dependent` means a KNOWN AND SPECIFIED dependency and requires `direction_context`. The difference is a characterised interaction versus a shrug, and they used to be recorded identically.",
+      "enum": [
+        "increases",
+        "decreases",
+        "no_change",
+        "bidirectional",
+        "inverted_u",
+        "u_shaped",
+        "state_dependent",
+        "unclear"
+      ],
+      "type": "string"
+    },
+    "direction_context": {
+      "description": "REQUIRED when direction is `state_dependent`: name what the sign depends on \u2014 physiological state, cell subpopulation, cortical layer, compartment or task condition. Without it, 'we know it varies and we know what with' is indistinguishable from 'we do not know'.",
+      "minLength": 3,
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "evidence": {
+      "description": "At least one evidence item, each naming a registered source (rule V5).",
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "database_record": {
+            "description": "Verbatim fields of the database record this item was read from. THE ONE OPEN OBJECT IN THESE SCHEMAS: its keys are the source database's, not this project's, so closing it would mean rewriting the schema per database release. Numbers inside it are machine-copied and are permitted by rule V9 ONLY when the claim's provenance names a `database_release` or `pipeline`; it is not a place to park a hand-written figure.",
+            "type": "object"
+          },
+          "design": {
+            "$comment": "vocabulary: design",
+            "description": "Study design somebody else used. This project runs none of these.",
+            "enum": [
+              "gwas",
+              "gwas_meta_analysis",
+              "gene_based_test",
+              "fine_mapping",
+              "eqtl",
+              "sqtl",
+              "colocalisation",
+              "mendelian_randomisation",
+              "polygenic_score_analysis",
+              "rare_variant_association",
+              "clinical_case_series",
+              "rct_parallel",
+              "rct_crossover",
+              "open_label_trial",
+              "observational_cohort",
+              "case_control",
+              "meta_analysis",
+              "systematic_review",
+              "narrative_review",
+              "knockout",
+              "conditional_knockout",
+              "knockdown",
+              "overexpression",
+              "pharmacological_perturbation",
+              "optogenetic",
+              "chemogenetic",
+              "electrophysiology",
+              "in_vivo_imaging",
+              "expression_atlas",
+              "single_cell_atlas",
+              "comparative_genomics",
+              "comparative_anatomy",
+              "phylogenetic_comparative_analysis",
+              "structural_biology",
+              "biophysical_model",
+              "simulation",
+              "registry_record",
+              "database_release"
+            ],
+            "type": "string"
+          },
+          "effect_direction": {
+            "$comment": "vocabulary: effect_direction",
+            "description": "Direction of the measured effect.",
+            "enum": [
+              "increase",
+              "decrease",
+              "no_change",
+              "mixed",
+              "not_reported"
+            ],
+            "type": "string"
+          },
+          "effect_size": {
+            "additionalProperties": false,
+            "description": "Effect size copied from the source. The ONLY place a free number may appear in a curated record, and only when it was read verbatim (contract P3, rule V9).",
+            "properties": {
+              "as_reported": {
+                "description": "VERBATIM string from the source, or null. Never paraphrased.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "ci_lower": {
+                "description": "As reported, or null.",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "ci_upper": {
+                "description": "As reported, or null.",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "metric": {
+                "$comment": "vocabulary: effect_size_metric",
+                "description": "Which statistic `value` holds. `not_extracted` is the default.",
+                "enum": [
+                  "not_extracted",
+                  "beta",
+                  "odds_ratio",
+                  "hazard_ratio",
+                  "cohens_d",
+                  "smd",
+                  "correlation_r",
+                  "percent_change",
+                  "p_value_only",
+                  "mean_difference"
+                ],
+                "type": "string"
+              },
+              "p_value": {
+                "description": "As reported, or null.",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              },
+              "value": {
+                "description": "Only when `as_reported` states it explicitly. Never estimated (P3).",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "metric"
+            ],
+            "type": "object"
+          },
+          "endpoint": {
+            "description": "The measured endpoint, named plainly.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "endpoint_category": {
+            "$comment": "vocabulary: endpoint_category",
+            "description": "Class of the measured endpoint.",
+            "enum": [
+              "g_factor",
+              "fluid_reasoning",
+              "working_memory",
+              "processing_speed",
+              "episodic_memory",
+              "executive_function",
+              "learning_rate",
+              "far_transfer",
+              "metacognition",
+              "educational_attainment",
+              "clinical_cognitive_composite",
+              "neuroimaging_proxy",
+              "electrophysiological_proxy",
+              "metabolic_proxy",
+              "animal_spatial_memory",
+              "animal_recognition_memory",
+              "animal_fear_conditioning",
+              "animal_reversal_learning",
+              "animal_working_memory",
+              "animal_operant_task",
+              "synaptic_plasticity_ltp_ltd",
+              "cellular_excitability",
+              "molecular_readout",
+              "not_applicable",
+              "not_reported"
+            ],
+            "type": "string"
+          },
+          "endpoint_measured": {
+            "$comment": "vocabulary: endpoint_measured",
+            "description": "Whether the endpoint was MEASURED AT ALL in the study behind this item. ABSENCE OF MEASUREMENT IS NOT MEASURED ABSENCE: a trial that never measured cognition is not a failed trial, and rule V16c enforces the difference. Use `not_measured_in_protocol` with claim_type `evidence_gap`.",
+            "enum": [
+              "measured",
+              "not_measured_in_protocol",
+              "measured_but_not_reported",
+              "unknown"
+            ],
+            "type": "string"
+          },
+          "evidence_id": {
+            "description": "Derived id EVD:{claim_local}#{n}; never hand-written.",
+            "pattern": "^EVD:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}#[0-9]+$",
+            "type": "string"
+          },
+          "evidence_role": {
+            "$comment": "vocabulary: evidence_role",
+            "description": "How this item bears on the claim.",
+            "enum": [
+              "supports",
+              "contradicts",
+              "qualifies",
+              "null_result"
+            ],
+            "type": "string"
+          },
+          "extraction": {
+            "additionalProperties": false,
+            "description": "Provenance of the extraction itself, not of the source.",
+            "properties": {
+              "basis": {
+                "$comment": "vocabulary: extraction_basis",
+                "description": "What the agent actually read.",
+                "enum": [
+                  "abstract",
+                  "full_text",
+                  "database_record",
+                  "registry_record",
+                  "secondary_report"
+                ],
+                "type": "string"
+              },
+              "content_checked": {
+                "description": "False means the agent could not read enough to be sure; the red team downgrades those automatically.",
+                "type": "boolean"
+              },
+              "extracted_by": {
+                "$comment": "vocabulary: agent_id",
+                "description": "Agent id that wrote this record.",
+                "enum": [
+                  "agent:orchestrator",
+                  "agent:ontology",
+                  "agent:alphacognition",
+                  "agent:brakes",
+                  "agent:power",
+                  "agent:comparative",
+                  "agent:integration",
+                  "agent:red_team"
+                ],
+                "type": "string"
+              },
+              "extracted_on": {
+                "description": "ISO date (UTC), YYYY-MM-DD.",
+                "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+                "type": "string"
+              }
+            },
+            "required": [
+              "basis",
+              "extracted_by",
+              "extracted_on",
+              "content_checked"
+            ],
+            "type": "object"
+          },
+          "note": {
+            "description": "The agent's own short note about the extraction, e.g. why a number was left in the derived table. NEVER source text.",
+            "minLength": 1,
+            "type": "string"
+          },
+          "population": {
+            "description": "Population/preparation in the source's own terms.",
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "replication_status": {
+            "$comment": "vocabulary: replication_status",
+            "description": "Replication standing of this item.",
+            "enum": [
+              "single_study",
+              "replicated_independent",
+              "replicated_same_group",
+              "failed_replication",
+              "conflicting",
+              "not_assessed"
+            ],
+            "type": "string"
+          },
+          "sample_size": {
+            "additionalProperties": false,
+            "description": "Sample size as reported. `value: null` is correct whenever the source is not explicit.",
+            "properties": {
+              "reported_as": {
+                "description": "Verbatim sample-size text from the source, or null.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "unit": {
+                "description": "What was counted: participants, animals, cells, slices, studies.",
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "value": {
+                "description": "Integer or null. NEVER estimated. ZERO IS A REAL AND IMPORTANT VALUE: a trial withdrawn before enrolling anyone has an enrolment of exactly 0, and the registry reports it as 0. Forcing that to null would erase the difference between 'we do not know the enrolment' and 'the enrolment was zero because nobody was ever enrolled' \u2014 the same measured-absence-versus-absence-of-measurement distinction as R5 and R14. A registered programme that never ran is exactly the record the red team exists to bring in.",
+                "minimum": 0,
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              }
+            },
+            "type": "object"
+          },
+          "source_id": {
+            "description": "Registered source this item was extracted from (rule V5).",
+            "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+            "type": "string"
+          },
+          "species": {
+            "description": "Species the measurement was made in; null when the source does not say, which is different from not applicable.",
+            "pattern": "^SPECIES:NCBITaxon:[0-9]+$",
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "required": [
+          "source_id",
+          "design",
+          "endpoint_category",
+          "effect_direction",
+          "effect_size",
+          "replication_status",
+          "evidence_role",
+          "extraction"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "negated_relation": {
+      "description": "REQUIRED when predicate is a null relation: the relation this claim NEGATES. A null edge should say what was tested and found absent, not merely that something was absent. The triple must also be legal under the negated relation's own domain and range (rule V16b-sym).",
+      "pattern": "^[A-Z][A-Z_]*$",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "object": {
+      "description": "Object node id.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "phenotype_class": {
+      "$comment": "vocabulary: phenotype_class",
+      "description": "Mandatory whenever the object is a CognitivePhenotype or a cognitive StateVariable (rule V7). `educational_attainment` is never an intelligence endpoint.",
+      "enum": [
+        "g_factor",
+        "fluid_reasoning",
+        "working_memory",
+        "processing_speed",
+        "episodic_memory",
+        "executive_function",
+        "learning_rate",
+        "far_transfer",
+        "metacognition",
+        "educational_attainment",
+        "clinical_cognitive_composite",
+        "neuroimaging_proxy",
+        "electrophysiological_proxy",
+        "metabolic_proxy",
+        "animal_spatial_memory",
+        "animal_recognition_memory",
+        "animal_fear_conditioning",
+        "animal_reversal_learning",
+        "animal_working_memory",
+        "animal_operant_task",
+        "synaptic_plasticity_ltp_ltd",
+        "cellular_excitability",
+        "molecular_readout",
+        "not_applicable",
+        "not_reported"
+      ],
+      "type": "string"
+    },
+    "predicate": {
+      "description": "Relation name from ontology/edges.yaml.",
+      "pattern": "^[A-Z][A-Z_]*$",
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "description": "Who wrote this record, when and how. The supporting_* lists exist so a database-derived record can name what it aggregates instead of hiding it.",
+      "properties": {
+        "created_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "created_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        },
+        "database_release": {
+          "description": "Pinned DatabaseRelease the record was derived from.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "method": {
+          "$comment": "vocabulary: claim_method",
+          "description": "How this record was produced.",
+          "enum": [
+            "literature_curation",
+            "database_ingestion",
+            "derived_from_claims"
+          ],
+          "type": "string"
+        },
+        "pipeline": {
+          "description": "Repo-relative script that produced the record, for database_ingestion. Makes the record rebuildable (P7).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "run_id": {
+          "description": "Agent run identifier, for tracing a record to a session.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "supporting_accessions": {
+          "description": "Any other accessions the record rests on.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_pubmed_ids": {
+          "description": "PubMed ids the database record itself cites.",
+          "items": {
+            "pattern": "^[0-9]{1,9}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_ids": {
+          "description": "Study accessions the database record aggregates.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_locus_ids": {
+          "description": "Opaque per-locus keys from the source database.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "created_by",
+        "created_on"
+      ],
+      "type": "object"
+    },
+    "risks": {
+      "items": {
+        "minLength": 1,
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "statement": {
+      "description": "One sentence in the agent's OWN words: who measured what, in which species, and what changed. No quoted source text.",
+      "minLength": 20,
+      "type": "string"
+    },
+    "status": {
+      "$comment": "vocabulary: claim_status",
+      "description": "Lifecycle. `withdrawn` needs a superseding audit finding (rule V14).",
+      "enum": [
+        "active",
+        "contested",
+        "downgraded",
+        "withdrawn"
+      ],
+      "type": "string"
+    },
+    "status_reason": {
+      "description": "Required in practice for any status other than active.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "subject": {
+      "description": "Subject node id.",
+      "pattern": "^[A-Z]+(:[A-Za-z0-9._+#-]+)+$",
+      "type": "string"
+    },
+    "translation": {
+      "additionalProperties": false,
+      "description": "FULLY POPULATED on every claim (rule V8). `unknown` is allowed and explicit; a missing key is not.",
+      "properties": {
+        "adult_relevance": {
+          "$comment": "vocabulary: translation_adult_relevance",
+          "description": "Whether this has been shown in adults.",
+          "enum": [
+            "demonstrated_in_adults",
+            "plausible_untested",
+            "developmental_only",
+            "contradicted",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "general_intelligence_relevance": {
+          "$comment": "vocabulary: translation_general_intelligence_relevance",
+          "description": "How close the endpoint is to general cognitive ability.",
+          "enum": [
+            "g_or_fluid_measured",
+            "multi_domain_cognitive",
+            "single_domain_cognitive",
+            "educational_attainment_proxy",
+            "animal_task_only",
+            "none",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "healthy_baseline": {
+          "$comment": "vocabulary: translation_healthy_baseline",
+          "description": "Whether this has been shown from a healthy baseline.",
+          "enum": [
+            "tested_in_healthy",
+            "disease_model_only",
+            "deficit_state_only",
+            "mixed",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        "human_relevance": {
+          "$comment": "vocabulary: translation_human_relevance",
+          "description": "Strongest species/level of evidence behind the claim.",
+          "enum": [
+            "direct_human_interventional",
+            "human_genetic",
+            "human_observational",
+            "nonhuman_primate",
+            "rodent_only",
+            "other_species_only",
+            "in_vitro_only",
+            "computational_only"
+          ],
+          "type": "string"
+        },
+        "supra_normal": {
+          "$comment": "vocabulary: translation_supra_normal",
+          "description": "Enhancement above healthy baseline, or rescue only.",
+          "enum": [
+            "enhancement_above_healthy_baseline",
+            "rescue_only",
+            "no_enhancement_observed",
+            "contradicted",
+            "untested"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "adult_relevance",
+        "healthy_baseline",
+        "supra_normal",
+        "human_relevance",
+        "general_intelligence_relevance"
+      ],
+      "type": "object"
+    },
+    "uncertainty": {
+      "additionalProperties": false,
+      "description": "Ordinal only. A hand-written probability is forbidden anywhere (contract P3).",
+      "properties": {
+        "calibration_status": {
+          "$comment": "vocabulary: calibration_status",
+          "description": "Whether this uncertainty has ever been checked against outcomes.",
+          "enum": [
+            "uncalibrated_subjective",
+            "model_derived_uncalibrated",
+            "empirically_calibrated"
+          ],
+          "type": "string"
+        },
+        "level": {
+          "$comment": "vocabulary: evidence_strength_v1",
+          "description": "Rubric level 0-4 (contract \u00a75.3). Not a probability.",
+          "maximum": 4,
+          "minimum": 0,
+          "type": "integer"
+        },
+        "model_outputs": {
+          "description": "Numbers produced by a NAMED MODEL and carried verbatim, with their interpretation limits attached. This is the only route by which a float in (0,1) may appear in a curated record (contract P3, rule V9), and every entry must name what produced it and what it does not mean. A model output is never this project's probability and is never thresholded into a decision here.",
+          "items": {
+            "description": "One model output. Additional keys are the model's own output fields and are carried verbatim, which is why this object is open.",
+            "properties": {
+              "data_version": {
+                "description": "Release/version of the model or its data.",
+                "minLength": 1,
+                "type": "string"
+              },
+              "derived_from": {
+                "description": "The model that produced it: a repo-relative path under models/, or a named external published model.",
+                "minLength": 1,
+                "type": "string"
+              },
+              "interpretation_limits": {
+                "description": "What this number is NOT. Required and deliberately long: an unqualified model output becomes a fake probability the moment it is read.",
+                "minLength": 40,
+                "type": "string"
+              },
+              "kind": {
+                "description": "What the number is (e.g. locus_to_gene_score).",
+                "minLength": 1,
+                "type": "string"
+              },
+              "value_as_published": {
+                "description": "The number exactly as the model published it.",
+                "type": [
+                  "number",
+                  "null"
+                ]
+              }
+            },
+            "required": [
+              "derived_from",
+              "kind",
+              "interpretation_limits"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "rationale": {
+          "description": "Why this level, in one sentence.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "representation": {
+          "$comment": "vocabulary: uncertainty_representation (allowed_in_curated_records)",
+          "description": "Curated records may use ordinal grades ONLY (rule V10).",
+          "enum": [
+            "ordinal_grade"
+          ],
+          "type": "string"
+        },
+        "scale": {
+          "$comment": "vocabulary: uncertainty_scale",
+          "description": "Named ordinal scale the level is on.",
+          "enum": [
+            "evidence_strength_v1"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "representation",
+        "scale",
+        "level",
+        "rationale",
+        "calibration_status"
+      ],
+      "type": "object"
+    }
+  },
+  "required": [
+    "claim_id",
+    "statement",
+    "subject",
+    "predicate",
+    "object",
+    "claim_type",
+    "causal_attribution",
+    "evidence",
+    "translation",
+    "uncertainty",
+    "status",
+    "provenance"
+  ],
+  "title": "Claim",
+  "type": "object"
+}

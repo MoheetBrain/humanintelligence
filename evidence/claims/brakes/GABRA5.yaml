@@ -1,0 +1,682 @@
+# Claims — GABRA5 (alpha5 subunit of the GABA-A receptor), Cognitive Brake Atlas.
+#
+# Brake class: excitation / working-memory gain (tonic and slow dendritic inhibition).
+# Central discipline of this file: the alpha5 brake plausibly protects representational
+# specificity. Every claim that a reduction improves a memory domain is paired with the
+# evidence that the same reduction costs discrimination, and with the human trial that
+# failed.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:GABRA5:001
+  statement: >-
+    Mice in which the alpha5 GABA-A subunit was conditionally deleted from CA1 pyramidal
+    neurons reached the hidden platform location faster on Morris water maze probe trials
+    than floxed littermate controls, tested at 8-12 weeks of age.
+  subject: GENE:GABRA5
+  predicate: NEGATIVELY_REGULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the retrieved full text states the CA1 deletion is progressive from about 4 weeks of age, so the manipulation precedes testing and is not an acute adult intervention"
+      - "Cre line (T29-1) effects independent of the floxed allele were not controlled by a Cre-only group in the retrieved text"
+      - "male mice only, so sex-dependence is untested"
+  evidence:
+    - source_id: SRC:PMID:32934095
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with Gabra5 exons 4/5 floxed crossed to a CA1-restricted Cre line, tested at 8-12 weeks"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "latency to platform location and time in platform quadrant on Morris water maze probe trials"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "~40% decrease in α5GABARs in the CA1 of α5CA1KO mice compared to α5F/F controls"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "replicated within one laboratory across global and CA1-restricted lines; single species; no adult-onset perturbation; effect transient across probe days"
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "the same manipulation impaired context discrimination in the same animals (see CLM:brakes:GABRA5:003)"
+  confounders: ["developmental onset of the deletion", "Cre line background", "swim motivation and thigmotaxis not reported in the retrieved text"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:002
+  statement: >-
+    The same CA1-restricted alpha5 deletion abolished the normal weakening of auditory fear
+    conditioning by a 20-second trace interval, so that trace-conditioned mutants froze to
+    the tone as much as delay-conditioned animals.
+  subject: GENE:GABRA5
+  predicate: NEGATIVELY_REGULATES
+  object: PHENO:animal_fear_conditioning
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "increased freezing can reflect altered fear expression or generalisation rather than better temporal association"
+      - "pre-tone freezing was reported as similar across groups, which argues against non-specific freezing but does not exclude altered shock sensitivity"
+  evidence:
+    - source_id: SRC:PMID:32934095
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with CA1-restricted Gabra5 deletion and floxed controls, 8-12 weeks"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "percentage freezing to tone 24 h after trace versus delay auditory fear conditioning"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: supports
+      extraction:
+        basis: full_text
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "converging result in global and CA1-restricted lines from the same group; aversive-conditioning endpoint with limited relevance to human reasoning"
+    calibration_status: uncalibrated_subjective
+  risks: ["an intervention that strengthens aversive associations is not self-evidently desirable"]
+  confounders: ["fear expression versus fear learning", "developmental onset"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:003
+  statement: >-
+    The same CA1-restricted alpha5 deletion impaired discrimination between two highly
+    similar contexts, one shocked and one safe, for the first eight days of training, and
+    the authors described this as a cost accompanying the procognitive effects of alpha5
+    negative modulation.
+  subject: GENE:GABRA5
+  predicate: NEGATIVELY_REGULATES
+  object: SV:workspace.interference_susceptibility
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_fear_conditioning
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "slower discrimination could reflect altered fear generalisation rather than reduced pattern separation"
+      - "performance reached control level by day 8, so the deficit is a rate deficit rather than a ceiling deficit"
+  evidence:
+    - source_id: SRC:PMID:32934095
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with CA1-restricted Gabra5 deletion, global knockouts and floxed controls, 8-12 weeks"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "discrimination ratio between a shock-associated and a safe similar context over multiday training"
+      endpoint_category: animal_fear_conditioning
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: full_text
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "single well-described experiment in one laboratory, but the direction is opposite to the enhancement narrative and therefore load-bearing for this atlas"
+    calibration_status: uncalibrated_subjective
+  risks: ["this is the strongest available rodent evidence that releasing the alpha5 brake trades specificity for sensitivity"]
+  confounders: ["shock intensity differed between contextual protocols", "developmental onset"]
+  dependencies: [CLM:brakes:GABRA5:001, CLM:brakes:GABRA5:002]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:004
+  statement: >-
+    In a six-month randomised placebo-controlled phase II trial in adolescents and young
+    adults with Down syndrome, the selective alpha5 negative allosteric modulator basmisanil
+    produced EEG changes consistent with target engagement but no difference from placebo on
+    the composite cognition-plus-adaptive-function endpoint or on any secondary cognitive
+    measure.
+  subject: CPD:CHEMBL3681419
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: PHENO:clinical_cognitive_composite
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: mixed
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: clinical_cognitive_composite
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the trial tested a deficit population, so it does not test enhancement in healthy adults"
+      - "the composite responder endpoint may have been insensitive; the report states the individual contributing measures also showed no difference"
+      - "dose selection and exposure adequacy cannot be assessed from the retrieved text beyond the reported EEG target-engagement signal"
+  evidence:
+    - source_id: SRC:PMID:35123401
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "adolescents and young adults with karyotype-confirmed Down syndrome, dosed twice daily for 6 months"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: participants
+      endpoint: "proportion of participants improving on a composite of working memory (RBANS) and adaptive behaviour or clinical global impression"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured
+      effect_direction: no_change
+      effect_size:
+        metric: percent_change
+        as_reported: "29% in placebo, 20% in low dose, and 25% in high dose"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:NCT:NCT02024789
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "participants aged 12-30 with Down syndrome; registry-reported enrolment 173"
+      sample_size:
+        reported_as: "173"
+        value: 173
+        unit: participants
+      endpoint: "registry primary outcome measures: RBANS sub-tests, Vineland Adaptive Behavior Scales-II, clinician-rated global improvement at 26 weeks"
+      endpoint_category: clinical_cognitive_composite
+      endpoint_measured: measured_but_not_reported
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: registry_record
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: multi_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "one adequately sized randomised human trial with a pharmacodynamic target-engagement signal and a clearly reported negative primary result"
+    calibration_status: uncalibrated_subjective
+  risks: ["a null in a trisomy-21 population does not establish a null for healthy adults, and must not be read as one in either direction"]
+  confounders: ["ceiling and floor effects of the chosen instruments in intellectual disability", "concomitant medication not assessable from the retrieved text"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:005
+  statement: >-
+    An orally available alpha5-selective negative allosteric modulator augmented
+    tetanus-induced long-term potentiation at CA1 synapses in rat hippocampal slices and
+    reversed pharmacologically induced memory deficits in rats without producing anxiogenic
+    or proconvulsant signals at the highest dose tested.
+  subject: CPD:ono_8590580
+  predicate: CHANGES_STATE
+  object: SV:plasticity.ltp_magnitude
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the behavioural benefit was measured against scopolamine- and MK-801-induced deficits, which is deficit reversal and not enhancement of an intact baseline"
+      - "functional selectivity was characterised on recombinant receptors; residual activity at other alpha subunits in vivo is not excluded by the retrieved text"
+  evidence:
+    - source_id: SRC:PMID:29674331
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10116
+      population: "rat hippocampal slices; separately, adult Sprague-Dawley rats dosed orally"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "tetanus-induced long-term potentiation of the CA1 synaptic response; passive avoidance and eight-arm radial maze performance"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "a maximum 44.4% inhibition and an EC of 1.1 nM"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "adult pharmacological perturbation with dose-occupancy characterisation, but industry single-study and the cognitive readouts are deficit-reversal designs"
+    calibration_status: uncalibrated_subjective
+  risks: ["absence of a proconvulsant signal at one dose in one seizure-threshold assay is not evidence of seizure safety"]
+  confounders: ["arousal and locomotor effects", "slice versus in vivo dose correspondence"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:006
+  statement: >-
+    Two compounds acting as positive rather than negative allosteric modulators at alpha5
+    GABA-A receptors improved hippocampus-dependent memory in aged rats identified as
+    cognitively impaired, the opposite pharmacological direction to the alpha5 brake-release
+    hypothesis.
+  subject: GENE:GABRA5
+  predicate: MODULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: pharmacodynamic
+  direction: state_dependent
+  direction_context: >-
+    baseline hippocampal inhibitory tone and age: negative allosteric modulation improved memory in young healthy animals while POSITIVE allosteric modulation improved it in aged animals pre-screened as impaired, in whom excess hippocampal network activity is the hypothesised baseline
+  context:
+    species: [SPECIES:NCBITaxon:10116]
+    life_stage: aged
+    baseline_context: aged
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the target population was aged rats pre-screened as impaired, in which the baseline is hypothesised to be hyperactive hippocampal network activity; the result need not generalise to young healthy animals"
+      - "one compound was delivered intracerebroventricularly, which is not a systemic exposure comparison"
+      - "the second review states that no alpha5-selective compound has been marketed, attributing this to unsuccessful clinical trials and human toxicity; that is a review-level assertion this agent did not trace to the individual programmes, so it qualifies the claim rather than supporting it"
+  evidence:
+    - source_id: SRC:PMID:22732440
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10116
+      population: "aged Long-Evans rats characterised as cognitively impaired"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "water maze and radial arm maze memory performance"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "Compound 44 (100 μg)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:25751008
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "review of positive and negative allosteric modulators of alpha5-containing GABA-A receptors and their behavioural and clinical record"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "reviewers' account of paradoxical effects, in which cognitive impairment has been reversed by both positive and negative modulation, and of the clinical record of the compound class"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:41881181
+      design: narrative_review
+      species: SPECIES:NCBITaxon:10090
+      population: "review of rodent genetic and pharmacological studies"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "reviewers' summary of age-dependent bidirectional effects of alpha5 modulators on learning and memory"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "one primary rodent study plus a recent review asserting the same age-dependent reversal; establishes that the sign of the optimal manipulation is state-dependent"
+    calibration_status: uncalibrated_subjective
+  risks: ["if the beneficial direction depends on baseline network state, a fixed-direction intervention is unsafe without state measurement"]
+  confounders: ["pre-screening for impairment creates a regression-to-the-mean risk", "compound selectivity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:007
+  statement: >-
+    In mice haploinsufficient for the GABA-A-receptor-associated protein Clptm1, in which
+    tonic inhibition was elevated and CA3-to-CA1 long-term potentiation and contextual fear
+    memory were impaired, the alpha5-selective negative allosteric modulator L-655,708
+    restored both potentiation and memory to control levels.
+  subject: CPD:l_655_708
+  predicate: CHANGES_STATE
+  object: SV:plasticity.ltp_magnitude
+  claim_type: pharmacodynamic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: disease_model
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: adult_pharmacological_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "restoration in a mutant with abnormally elevated tonic inhibition is rescue toward a setpoint, not enhancement"
+      - "the drug effect in wild-type animals is not reported in the retrieved abstract"
+  evidence:
+    - source_id: SRC:PMID:38942471
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:10090
+      population: "male and female Clptm1 heterozygous knockout mice on a C57BL/6 background and littermate controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "high-frequency-stimulation long-term potentiation at CA3-to-CA1 synapses and contextual fear memory"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: rescue_only
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "single study; the informative content is the rescue-versus-enhancement boundary rather than the magnitude"
+    calibration_status: uncalibrated_subjective
+  risks: ["this claim is frequently mis-cited as evidence of cognitive enhancement; it is a rescue result"]
+  confounders: ["Clptm1 haploinsufficiency affects multiple GABA-A subunits"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:GABRA5:008
+  statement: >-
+    A curated safety-pharmacology compilation of off-target liabilities is the source, via
+    the Open Targets Platform, for associating GABA-A alpha5 pharmacology with decreased
+    memory, convulsions, ataxia, sedation and dependence as potential functional
+    consequences.
+  subject: GENE:GABRA5
+  predicate: INCREASES_RISK
+  object: AE:seizure
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the target-to-event mapping was read from the Open Targets Platform GraphQL response (API 26.6.3, data version 26.06), not from the source publication's own table; the underlying row was not read"
+      - "the compilation covers a screening battery of 70 targets and reports effects in either direction, so it does not assign a direction to alpha5-selective negative modulation specifically"
+  evidence:
+    - source_id: SRC:PMID:28216264
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "literature curation of adverse effects associated with interactions at 70 receptors, enzymes, ion channels and transporters"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "curated functional and pathological outcomes associated with the target"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: database_record
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: false
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "secondary database mapping of a curation review; content of the specific row was not verified, so this claim is deliberately weak and should be downgraded if the red team cannot confirm it"
+    calibration_status: uncalibrated_subjective
+  risks: ["a seizure-liability claim built on a database row is not a seizure-liability assessment"]
+  confounders: ["curation reviews aggregate across compounds of differing selectivity"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: database_ingestion
+    run_id: sprint1-brakes-01
+
+
+# claim_type `evidence_gap` (contract section 4.1, resolution R5). Graph-inert; never
+# counted as counter-evidence. It records what is missing from the human record, not a
+# failure of the mechanism.

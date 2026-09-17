@@ -1,0 +1,172 @@
+# Red-team audit - SLC16A1. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:SLC16A1:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:SLC16A1
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: fail
+    note: 'agent:power nominated CLM:power:SLC16A1:003 for audit and the red team agrees with its self-criticism.
+      It reads ''human MCT1 loss of function presents as ketoacidosis, not as a cognitive syndrome'' as
+      evidence AGAINST a cognitive bottleneck - but the cohort was ASCERTAINED BY KETOACIDOSIS, so any
+      cognitive phenotype would be systematically under-detected. That is absence of evidence dressed
+      as evidence of absence, and `evidence_role: contradicts` overstates it. `qualifies` is the defensible
+      role.'
+    evidence_refs:
+    - CLM:power:SLC16A1:003
+  - check: developmental_effect_mistaken_for_adult
+    result: flag
+    note: The human phenotype presents in infancy and childhood, and the reported developmental delay
+      in homozygotes is confounded by repeated episodes of severe metabolic decompensation - so the cognitive
+      feature may be a consequence of the crises rather than of the transporter. The rodent evidence is
+      adult and acute, which is the favourable half of the picture.
+    evidence_refs:
+    - CLM:power:SLC16A1:002
+    - CLM:power:SLC16A1:003
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: All evidence is loss of function producing impairment or metabolic crisis. No gain-of-function
+      experiment exists.
+    evidence_refs:
+    - CLM:power:SLC16A1:003
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Rodent acute knockdown with memory endpoints; human evidence is a metabolic syndrome and an
+      oncology safety trial with no cognitive endpoint.
+    evidence_refs:
+    - CLM:power:SLC16A1:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: Source fan-in was computed across all 289 curated claims. Where several claims for this target
+      share a source, the claims declare it in `dependencies` or `risks`. The ranking invariance requirement
+      is what must enforce this downstream.
+  - check: citation_dependence
+    result: fail
+    note: SRC:PMID:21376239 carries this target's founding claim AND SLC16A3:001 AND SLC16A7:001 AND anls:001
+      - one paper behind three transporter targets and the shuttle hypothesis they inherit. Every Open
+      Targets safetyLiabilities row used in this audit traces to one of two PMIDs, SRC:PMID:28216264 and
+      SRC:PMID:23197038, and both are pharmaceutical-industry safety-pharmacology curation reviews over
+      overlapping published literature. Two rows agreeing is therefore close to one source agreeing with
+      itself. The target-level safety layer for the six annotated seed targets rests on two review papers.
+    evidence_refs:
+    - CLM:power:SLC16A1:001
+    - CLM:power:anls:001
+  - check: publication_bias
+    result: fail
+    note: 'TWO STRUCTURALLY DIFFERENT CASES ON ONE AXIS, and they must not be pooled. (1) MEASUREMENT
+      GAP: NCT01791595 reported in full and NEVER ASKED the cognitive question - every primary outcome
+      is toxicity or adverse events, every secondary is pharmacokinetic, a cell-death marker or tumour
+      response. agent:power records this correctly as CLM:power:SLC16A1:005, an evidence_gap attached
+      to ABOUT. It is a coverage fact. (2) REPORTING GAP: NCT01455376 declared a NEUROCOGNITIVE PRIMARY
+      OUTCOME, completed in June 2010 with 60 participants, and has posted nothing in sixteen years. That
+      is a publication-bias fact, it belongs in `reporting_gap_refs` rather than in a claim, and it is
+      INVISIBLE to a literature search because a study that never reports generates no paper. A first
+      red-team draft wrongly filed it as an evidence_gap claim; the validator caught it and the record
+      was removed.'
+    evidence_refs:
+    - CLM:power:SLC16A1:005
+    - SRC:NCT:NCT01455376
+    - SRC:NCT:NCT01791595
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of this target with a relevant endpoint was located in ClinicalTrials.gov
+      or in the literature, so there is no clinical evidence to be negative. This is an absence of clinical
+      evidence, not evidence of absence.
+  - check: dose_response_inversion
+    result: flag
+    note: No cognitive exposure-response exists. The AZD3965 dose escalation produced a toxicity-response
+      relation but measured nothing cognitive.
+    evidence_refs:
+    - CLM:red_team:SLC16A1:001
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: fail
+    note: 'THE ONLY FIRST-IN-HUMAN SAFETY READ-OUT FOR ANY TARGET IN THE POWER ATLAS, routed to the red
+      team by agent:power and read here from the primary registry record. The protocol for AZD3965 defined
+      dose-limiting toxicity in terms of HAEMATOLOGICAL, CARDIAC and OPHTHALMIC events, and the posted
+      results show retinopathy in 13 patients as a non-serious event with 2 serious retinopathy events,
+      and anaemia in 14, in a population from which known retinal disease had been excluded at screening.
+      Both are ON-TARGET: MCT1 is the erythrocyte lactate transporter and is essential to retinal metabolism.
+      That mechanistic coherence is what makes this a target liability rather than trial noise.'
+    evidence_refs:
+    - CLM:red_team:SLC16A1:001
+    - SRC:NCT:NCT01791595
+  - check: model_organism_translation_failure
+    result: flag
+    note: Rodent knockdown impairs memory; the human trial of the same target measured ophthalmic and
+      haematological toxicity and never looked at cognition. Not a translation failure - a translation
+      that was never attempted.
+    evidence_refs:
+    - CLM:red_team:SLC16A1:001
+  - check: overclaiming
+    result: pass
+    note: Read this target's dossier and facet rationales against its claims. No facet level exceeds what
+      its cited claims support, and the limiting_factor fields state what would have to change.
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:SLC16A1:001#f1
+    severity: major
+    category: systemic_adverse_effects
+    description: MCT1 inhibition in humans produced on-target ophthalmic (retinopathy in 13 of the exposed
+      cohort, 2 serious) and haematological (anaemia in 14) toxicity, with the protocol naming haematological,
+      cardiac and ophthalmic events as the expected dose-limiting classes and known retinal disease excluded
+      at screening. This is the only first-in-human safety read-out for any power-atlas target and it
+      is unfavourable.
+    evidence_refs:
+    - CLM:red_team:SLC16A1:001
+    - SRC:NCT:NCT01791595
+  - finding_id: AUD:red_team:SLC16A1:001#f2
+    severity: major
+    category: publication_bias
+    description: 'The lactate axis carries one MEASUREMENT gap (a fully reported trial that never asked
+      the cognitive question) and one REPORTING gap (a trial with a neurocognitive primary outcome, completed
+      sixteen years ago, never reported). These are different failures and only the second is publication
+      bias. The red team upholds agent:power''s decision to list the reporting gap against HCAR1 alone
+      rather than across four targets: counting one unreported study four times inflates a bias count
+      exactly as re-citing one paper inflates evidence.'
+    evidence_refs:
+    - CLM:power:SLC16A1:005
+    - SRC:NCT:NCT01455376
+  - finding_id: AUD:red_team:SLC16A1:001#f3
+    severity: minor
+    category: association_mistaken_for_causation
+    description: 'CLM:power:SLC16A1:003''s `evidence_role: contradicts` rests on a cohort ascertained
+      by ketoacidosis, in which a cognitive phenotype would be systematically under-detected. The curating
+      agent nominated this itself. `qualifies` is the defensible role.'
+    evidence_refs:
+    - CLM:power:SLC16A1:003
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

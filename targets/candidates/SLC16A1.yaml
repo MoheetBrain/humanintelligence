@@ -1,0 +1,51 @@
+# Target dossier — SLC16A1 (MCT1). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:SLC16A1
+symbol: SLC16A1
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: shallow
+identifiers: {}
+target_class: solute_carrier_transporter
+represented_entities: [GENE:SLC16A1, PROT:SLC16A1]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    MCT1 carries lactate and ketone bodies across the blood-brain barrier and out of
+    astrocytes, so it is the supply-side gate for every non-glucose substrate the brain
+    can use. The rodent knockdown evidence places it in the consolidation pathway. The
+    human evidence, which exists for this gene and for no other lactate-axis gene here,
+    describes an acid-base and ketone-utilisation disorder rather than a cognitive
+    syndrome - which is direct human evidence against MCT1 being the binding constraint
+    on cognition in people.
+  proposed_modulation: unknown
+  mechanism_chain:
+    - CLM:power:anls:001
+    - CLM:power:SLC16A1:001
+    - CLM:power:SLC16A1:003
+  state_variables:
+    - id: SV:power.ketone_utilisation_capacity
+      asserted_relation: modulates
+      direction: increases
+      response_shape: threshold
+      claim_refs: [CLM:power:SLC16A1:003, CLM:power:SLC16A1:002]
+    - id: SV:consolidation.synaptic_consolidation_efficiency
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A1:001]
+  computational_primitives: []
+known_liabilities: [AE:ketoacidosis]
+developmental_confound: moderate
+developmental_confound_rationale: >-
+  The human phenotype presents in infancy and childhood and the reported developmental
+  delay in homozygotes is confounded by repeated episodes of severe metabolic
+  decompensation. The rodent evidence is adult and acute.
+open_questions:
+  - "FOR agent:red_team — a human MCT1 inhibitor (AZD3965) completed phase 1 in 53 patients with dose-limiting toxicities that were haematological, CARDIAC and OPHTHALMIC, and the protocol excluded patients with known retinal disease at screening (SRC:NCT:NCT01791595, CLM:power:SLC16A1:005). agent:power does not own safety_liability_burden and has NOT graded it. This is the only first-in-human safety read-out for any target in the power atlas and it should be assessed."
+  - "The same trial measured no cognitive endpoint at all. MCT1 inhibition has therefore been dosed in humans without anyone asking this project's question, which is a coverage gap rather than a negative result."
+  - "Do heterozygous SLC16A1 carriers, who the case literature says can be clinically affected, show any cognitive phenotype outside decompensation episodes?"
+  - "MCT1 is endothelial as well as astrocytic; none of the rodent knockdown work retrieved separates the two compartments."
+  - "Is brain ketone utilisation capacity an adult-modifiable variable at all, or only a consequence of systemic substrate availability?"
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

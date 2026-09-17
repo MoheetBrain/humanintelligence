@@ -1,0 +1,20 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY V12: the red team may downgrade, never upgrade (contract P6).
+- schema_version: "0.1.0"
+  audit_id: AUD:red_team:PLACEHOLDER:001
+  scope: {kind: target, id: TGT:PLACEHOLDER}
+  audited_by: agent:red_team
+  audited_on: "2026-09-17"
+  checks:
+    - check: overclaiming
+      result: not_applicable
+      note: "synthetic fixture audit"
+  adjustments:
+    - kind: facet
+      target_id: TGT:PLACEHOLDER
+      facet: tractability
+      field: level
+      from_level: 1
+      to_level: 3
+      reason: "synthetic fixture: this is an UPGRADE and must be rejected"
+  verdict: retain
+  provenance: {created_by: agent:red_team, created_on: "2026-09-17", run_id: fixture}

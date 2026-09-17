@@ -1,0 +1,123 @@
+# Facet assessment — KL (klotho). Contract §5.2 / §5.3. Declared depth: shallow.
+schema_version: 0.1.0
+target_id: TGT:KL
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Converging causal evidence across species and designs: systemic transgenic
+      overexpression in mice improved multiple learning and memory measures, enhanced
+      long-term potentiation and enriched synaptic GluN2B with the effect abolished by
+      GluN2B blockade, and single-administration protein delivery enhanced memory in
+      aged nonhuman primates after validation in mice.
+    claim_refs: [CLM:power:KL:001, CLM:power:KL:004]
+    counter_level: 0
+    counter_rationale: >-
+      Searched and found nothing that contradicts the mechanism. Graded 0 rather than 1
+      after the schema correctly refused a counter_level of 1 with no citable claim:
+      there is no contradicting mechanistic study, only a scope objection, which is not
+      counter-evidence. The scope objection stands on its own in limiting_factor and in
+      targets/candidates/KL.yaml - nothing retrieved links klotho to any power- or
+      efficiency-domain state variable, so its mechanistic credentials are not
+      power-atlas credentials.
+    counter_claim_refs: []
+    limiting_factor: "the mouse causal arm is developmental systemic overexpression; the mechanism identified is glutamatergic, not metabolic"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      A single systemic administration of klotho protein to aged nonhuman primates
+      enhanced memory, which is a genuinely adult-onset, acute, non-genetic
+      manipulation in a human-adjacent species with a cognitive endpoint.
+    claim_refs: [CLM:power:KL:004]
+    counter_level: 0
+    counter_rationale: "no adult-onset klotho administration study retrieved returned a null on its primary endpoint"
+    counter_claim_refs: []
+    limiting_factor: "one study, aged animals only, sample size not reported in the retrieved text, and the higher dose did not work"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Moderate. Human carriers of the variant score better on cognitive measures and
+      have greater right dorsolateral prefrontal volume in cognitively normal cohorts,
+      and klotho-overexpressing mice outperformed controls including when young, which
+      is an above-baseline comparison rather than a rescue. But the human arms are
+      observational and the animal arm is developmental overexpression.
+    claim_refs: [CLM:power:KL:001, CLM:power:KL:002]
+    counter_level: 3
+    counter_rationale: >-
+      A prospective human cohort of 527 initially unimpaired older men found the same
+      variant associated with HIGHER dementia incidence, with a reported gradient from
+      heterozygous to homozygous carriers. That is a human genetic result with a hard
+      clinical endpoint pointing the opposite way, and it is why CLM:power:KL:001 is
+      marked contested. The primate result also worked only at the lower of two doses.
+    counter_claim_refs: [CLM:power:KL:003, CLM:power:KL:004]
+    limiting_factor: "no randomised human klotho intervention exists; the enhancement case rests on observational genotype associations that a prospective cohort contradicts"
+
+  - facet: transfer_breadth
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Moderate: benefit was reported across multiple learning and memory tests in
+      mice and across working memory and processing speed in humans, which is genuine
+      multi-domain breadth, albeit observational on the human side.
+    claim_refs: [CLM:power:KL:001, CLM:power:KL:002]
+    counter_level: 1
+    counter_rationale: >-
+      The one hard clinical endpoint (incident dementia) went the other way, so
+      breadth of benefit does not extend to the outcome that matters most.
+    counter_claim_refs: [CLM:power:KL:003]
+    limiting_factor: "no far-transfer endpoint; human breadth is cross-sectional"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 2
+    rationale: >-
+      Moderate for an unusual reason: a single nonhuman-primate study reports an
+      explicitly NON-MONOTONIC result, with the low dose effective and the high dose
+      not. Two points is the minimum possible characterisation, but it is a real and
+      directly relevant dose finding, and human genotype dosage (heterozygous versus
+      homozygous) also shows a gradient in the dementia cohort.
+    claim_refs: [CLM:power:KL:004, CLM:power:KL:003]
+    counter_level: 0
+    counter_rationale: "no study contradicts the non-monotonic result; there is simply no dose-ranging work"
+    counter_claim_refs: []
+    limiting_factor: "two dose levels, one species, one study; the shape between and beyond them is unknown"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing: no human klotho intervention trial with a cognitive
+      endpoint was retrieved. All human evidence for this target is observational
+      genotype association, which belongs to facets owned by agent:alphacognition.
+    search_basis: >-
+      ClinicalTrials.gov searched for interventions matching klotho with no condition or
+      status filter: 41 trials, all screened. This search DID return a human klotho
+      intervention - SRC:NCT:NCT07285629, a completed early-phase-1 study in 14 healthy
+      adults aged 50-80 whose secondary outcomes include five NIH Toolbox cognitive measures
+      at four timepoints. It is nonetheless graded 0 rather than 1, for three reasons stated
+      so a later agent can disagree with them: no results are posted (`has_results: false`),
+      so there is no finding to grade; it is non-placebo-controlled with 14 participants;
+      and klotho was co-administered with follistatin, so klotho's own contribution is
+      unidentifiable by design. PubMed was searched in parallel via 'klotho KL cognition
+      humans cohort association aging' (15 results) and 'klotho aged nonhuman primate
+      treatment memory', returning observational genotype cohorts and the primate
+      administration study, neither of which is a human intervention. A hit would have been
+      a controlled human klotho intervention reporting a cognitive outcome. NOTE FOR THE
+      RUBRIC: level 0 means 'searched, nothing found', and the scale has no value for
+      'a trial exists and reported nothing'; that gap is recorded as resolution R14's
+      accepted limitation and is why reporting_gap_refs below is structured rather than
+      left in this prose.
+    reporting_gap_refs: [SRC:NCT:NCT07285629]
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "no human intervention has been attempted and failed"
+    counter_claim_refs: []
+    limiting_factor: "no human interventional study exists; the closest evidence is nonhuman primate"

@@ -1,0 +1,73 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/106035031/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/106035031"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs1942496"
+          }
+        },
+        "accession_id": "GCST90270074",
+        "association_id": 106035031,
+        "beta": "-",
+        "bg_efo_traits": [],
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0007660",
+            "efo_trait": "neuroticism measurement"
+          },
+          {
+            "efo_id": "EFO_0008354",
+            "efo_trait": "cognitive function measurement"
+          }
+        ],
+        "first_author": "Hindley G",
+        "locations": [
+          "11:89107757"
+        ],
+        "mapped_genes": [
+          "GRM5",
+          "TYR"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 2e-11,
+        "pubmed_id": "37365406",
+        "pvalue_description": "",
+        "pvalue_exponent": -11,
+        "pvalue_mantissa": 2,
+        "range": "-",
+        "reported_trait": [
+          "Personality traits or cognitive traits (multivariate analysis)"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "?",
+            "rs_id": "rs1942496"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs1942496-?"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=GRM5&efo_id=EFO_0008354&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

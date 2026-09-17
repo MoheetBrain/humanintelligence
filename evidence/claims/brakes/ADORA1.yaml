@@ -1,0 +1,531 @@
+# Claims — ADORA1 (adenosine A1 receptor), Cognitive Brake Atlas.
+#
+# Brake class: arousal and sleep pressure. Adenosine accumulating with waking acts partly
+# through A1 receptors to reduce excitability and to build sleep pressure.
+#
+# The decisive question for this target is whether antagonising the brake improves
+# cognition in rested, non-withdrawn adults, or mostly restores a withdrawal deficit.
+# The human evidence collected here is the sceptical literature, because that is the
+# literature that actually tests the question. Note throughout that caffeine is a
+# non-selective antagonist at A1 and A2A receptors, so no human caffeine result isolates
+# ADORA1.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:ADORA1:001
+  statement: >-
+    Mice with a conditional central-nervous-system deletion of the adenosine A1 receptor
+    showed a selectively blunted slow-wave-activity rebound after restricted sleep and,
+    unlike controls, failed to maintain normal working-memory performance under sleep
+    restriction, while performing normally when sleep was not restricted.
+  subject: GENE:ADORA1
+  predicate: POSITIVELY_REGULATES
+  object: SV:stability.sleep_pressure
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_working_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a conditional CNS knockout does not establish the timing of onset; developmental consequences of losing A1 signalling are not excluded"
+      - "the cognitive deficit appears only under sleep restriction, so it is a state-dependent effect rather than a baseline cognitive effect"
+      - "male mice only"
+  evidence:
+    - source_id: SRC:PMID:19193874
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male mice with conditional CNS deletion of the adenosine A1 receptor and wild-type controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "slow-wave activity rebound after sleep restriction and working-memory task performance"
+      endpoint_category: animal_working_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "single study but a clean dissociation: removing the brake did not improve cognition and impaired it under load, which is the opposite of the brake-release expectation"
+    calibration_status: uncalibrated_subjective
+  risks: ["this claim is the principal counter-evidence to treating A1 antagonism as cognitive enhancement"]
+  confounders: ["sleep architecture changes", "developmental onset"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:002
+  statement: >-
+    Genetically inhibiting astrocytic gliotransmitter release in mice attenuated the
+    accumulation of sleep pressure measured as slow-wave activity and prevented the
+    cognitive deficits that normally follow sleep loss, and the effects of an A1 receptor
+    antagonist were absent in those animals, implicating A1 receptors in the pathway.
+  subject: GENE:ADORA1
+  predicate: POSITIVELY_REGULATES
+  object: SV:stability.sleep_pressure
+  claim_type: mechanistic
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: sleep_deprived_or_stressed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: adult_inducible_genetic_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the transgenic suppression of gliotransmission is upstream of the receptor, so A1 involvement is inferred from the loss of antagonist efficacy rather than from a receptor-level manipulation"
+      - "preventing a sleep-loss deficit is not the same as raising an intact baseline"
+  evidence:
+    - source_id: SRC:PMID:19186164
+      design: chemogenetic
+      species: SPECIES:NCBITaxon:10090
+      population: "transgenic mice with inducible inhibition of astrocytic SNARE-dependent release, and wild-type mice given intracerebroventricular A1 antagonist"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "slow-wave activity during NREM sleep and cognitive performance after sleep deprivation"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: deficit_state_only
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "converges with the receptor knockout on placing A1 in the sleep-pressure-to-cognition pathway; both are single studies from different groups, which is the useful part"
+    calibration_status: uncalibrated_subjective
+  risks: ["blocking the accumulation of a homeostatic signal may remove an adaptive restorative process"]
+  confounders: ["astrocytic release affects more than adenosine"]
+  dependencies: [CLM:brakes:ADORA1:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:003
+  statement: >-
+    In 64 moderate caffeine consumers deprived overnight, one, two and three spaced
+    cup-of-coffee-equivalent doses of caffeine improved mood and psychomotor performance to
+    the same extent relative to placebo, which the authors read as consistent with a flat
+    dose-response and with little net benefit from frequent caffeine use.
+  subject: DRUG:CHEMBL113
+  predicate: CHANGES_STATE
+  object: SV:stability.arousal_level
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "caffeine antagonises A1 and A2A receptors and inhibits phosphodiesterases at higher concentrations, so no part of this result isolates ADORA1"
+      - "all participants were habitual consumers deprived overnight, so the design cannot separate reversal of withdrawal from a net psychostimulant effect; the authors make that point themselves"
+      - "endpoints are reaction time and tapping, not reasoning or memory"
+  evidence:
+    - source_id: SRC:PMID:9862086
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "moderate caffeine consumers deprived of caffeine overnight, allocated to placebo or one to three caffeine doses"
+      sample_size:
+        reported_as: "n = 64, mean caffeine intake 453 mg/day"
+        value: 64
+        unit: participants
+      endpoint: "energetic mood ratings, one-minute tapping task and long-duration simple reaction time"
+      endpoint_category: processing_speed
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "totalling 86, 172 and 258 mg"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "randomised human intervention with a clear dose manipulation and an explicit negative conclusion about net benefit; weakened only by the non-selective pharmacology"
+    calibration_status: uncalibrated_subjective
+  risks: ["the flat dose-response is itself important: it means the state variable is not being titrated, it is being switched"]
+  confounders: ["withdrawal state", "expectancy", "time of day and post-lunch dip"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:004
+  statement: >-
+    In 49 moderate-to-high caffeine consumers given a controlled pre-dose and then a second
+    dose after 4, 6 or 8 hours, caffeine improved performance and mood relative to placebo
+    only after the 8-hour interval, and after the 4-hour interval it reduced hand steadiness
+    and increased perceived task demand.
+  subject: DRUG:CHEMBL113
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: SV:stability.arousal_level
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "non-selective adenosine antagonism; ADORA1 is not isolated"
+      - "the participants were habitual consumers, so the 8-hour condition is the condition closest to withdrawal; the design tests interval, not naivety"
+      - "a second dose of one size was tested, so this does not exclude benefit at other doses"
+  evidence:
+    - source_id: SRC:PMID:15696321
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "moderate to moderate-high caffeine consumers, double-blind placebo-controlled, second dose after 4, 6 or 8 h"
+      sample_size:
+        reported_as: "n = 49, 27 female"
+        value: 49
+        unit: participants
+      endpoint: "psychomotor and cognitive performance, mood, hand steadiness, blood pressure and heart rate"
+      endpoint_category: processing_speed
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: "mean daily intake 370 mg/day"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "randomised human design that directly manipulates the withdrawal interval, which is exactly the confound at issue, and finds benefit only at the longest interval"
+    calibration_status: uncalibrated_subjective
+  risks: ["adverse effects at short inter-dose intervals indicate the response is not monotone in exposure"]
+  confounders: ["circadian phase", "habitual intake level"]
+  dependencies: [CLM:brakes:ADORA1:003]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:005
+  statement: >-
+    In 26 children aged 9 to 11 tested after overnight abstinence, caffeine improved
+    cognitive-test accuracy in habitual consumers to approximately the level that
+    non-consumers already showed at baseline, and had no significant effect on the
+    performance, alertness or headache of non-consumers or low consumers.
+  subject: DRUG:CHEMBL113
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CHANGES_STATE
+  object: SV:stability.arousal_level
+  claim_type: clinical_null
+  direction: no_change
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "participants were children, so this claim does not establish the same pattern in adults; the adult evidence is claims 003 and 004"
+      - "non-selective adenosine antagonism"
+      - "small sample and a single number-search task"
+  evidence:
+    - source_id: SRC:PMID:16423144
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "habitual caffeine consumers and non or low consumers aged 9-11, tested on two days after overnight abstinence"
+      sample_size:
+        reported_as: "Twenty-six children aged between 9 and 11 years"
+        value: 26
+        unit: participants
+      endpoint: "number-search task accuracy, self-rated alertness and headache after 50 mg caffeine or placebo"
+      endpoint_category: processing_speed
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: "mean daily caffeine intake = 109 mg"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: null_result
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "the cleanest available test of the withdrawal-reversal hypothesis because it contrasts consumers with non-consumers, but the population is children and the sample is small"
+    calibration_status: uncalibrated_subjective
+  risks: ["the design this atlas most needs is an adult caffeine-naive enhancement trial, and this claim is the nearest substitute"]
+  confounders: ["habitual intake correlates with other lifestyle variables", "baseline group difference could be a selection effect"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:006
+  statement: >-
+    In 23 adults tested after overnight abstinence, doses of caffeine from 12.5 to 100 mg
+    all significantly affected cognitive performance with a dose-response relationship the
+    authors described as rather flat, and the performance effects were more marked in
+    participants with higher habitual intake.
+  subject: DRUG:CHEMBL113
+  predicate: CHANGES_STATE
+  object: SV:stability.arousal_level
+  claim_type: clinical_efficacy
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: processing_speed
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "non-selective adenosine antagonism"
+      - "greater effects in higher habitual consumers is the signature predicted by withdrawal reversal, not by enhancement"
+      - "all testing followed overnight abstinence, so no non-withdrawn condition exists in this design"
+  evidence:
+    - source_id: SRC:PMID:11057520
+      design: rct_crossover
+      species: SPECIES:NCBITaxon:9606
+      population: "adults with low and with moderate-to-high habitual caffeine intake, within-subjects, after overnight abstinence"
+      sample_size:
+        reported_as: "participants (n=23)"
+        value: 23
+        unit: participants
+      endpoint: "long-duration simple reaction time, rapid visual information processing, mood and thirst"
+      endpoint_category: processing_speed
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "0, 12.5, 25, 50 and 100 mg caffeine"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_same_group
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: no_enhancement_observed
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "human dose-response data on a real dose ladder; the shape (flat, larger in habitual users) is the informative content"
+    calibration_status: uncalibrated_subjective
+  risks: ["a flat dose-response means dose titration cannot be used to tune the state variable"]
+  confounders: ["withdrawal state", "tolerance", "expectancy"]
+  dependencies: [CLM:brakes:ADORA1:003]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:ADORA1:007
+  statement: >-
+    A curated safety-pharmacology compilation is the source, via the Open Targets Platform,
+    for associating adenosine A1 receptor pharmacology with bradycardia, atrioventricular
+    block, cardiac arrhythmia, heart failure, convulsions and death as potential functional
+    consequences.
+  subject: GENE:ADORA1
+  predicate: INCREASES_RISK
+  object: AE:cardiac_arrhythmia
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the mapping was read from the Open Targets Platform GraphQL response (API 26.6.3, data version 26.06), not from the source publication's own table; the underlying row was not read"
+      - "the compilation lists effects in both directions and across compounds of differing selectivity, so it assigns no direction to A1 antagonism specifically"
+  evidence:
+    - source_id: SRC:PMID:28216264
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "literature curation of adverse effects associated with interactions at 70 targets in a safety screening battery"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "curated functional and pathological outcomes associated with the target"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: database_record
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: false
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "secondary database mapping whose specific row was not verified; retained because the cardiac liability of A1 pharmacology is a real constraint that the atlas must carry, and marked weak so it can be downgraded"
+    calibration_status: uncalibrated_subjective
+  risks: ["A1 receptors are cardiac as well as neural; any brain-directed A1 intervention inherits a cardiac constraint"]
+  confounders: ["aggregation across compounds and species"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: database_ingestion
+    run_id: sprint1-brakes-01

@@ -12,7 +12,7 @@ spawn_log:
   - {agent: agent:alphacognition, launched: "2026-09-17T14:55Z"}
   - {agent: agent:comparative, launched: "2026-09-17T14:55Z"}
   - {agent: agent:integration, launched: "2026-09-17T14:58Z", phase: "1 of 2 (model + code + theory)"}
-  - {agent: agent:red_team, launched: null, note: "launched after the atlases land (gate G4 depends on them)"}
+  - {agent: agent:red_team, launched: "2026-09-17T18:40Z", note: "launched while two atlases were still settling; independent adversarial search does not depend on record shape, and claim ids are stable"}
 policy:
   - "Agents never spawn subagents."
   - "Agents never run git commit/push/checkout/reset."
@@ -100,7 +100,7 @@ agents:
   - id: agent:red_team
     role: Red Team / Evidence Auditor
     spawned: true
-    status: pending
+    status: running
     responsibilities:
       - independent adversarial search for contradiction, nulls, failed trials
       - mandatory check catalogue per target; downgrades only

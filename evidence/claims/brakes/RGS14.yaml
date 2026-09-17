@@ -1,0 +1,323 @@
+# Claims — RGS14, Cognitive Brake Atlas.
+#
+# Brake class: plasticity suppression (hippocampal area CA2).
+# The evidence base is rodent-only and rests on a germline knockout, so the two
+# distinctions that dominate this file are (a) germline deletion versus adult
+# modifiability and (b) the complete absence of any human interventional or human
+# genetic cognitive evidence.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:RGS14:001
+  statement: >-
+    Mice carrying a germline deletion of RGS14 exons 2-7 expressed robust long-term
+    potentiation at glutamatergic CA2 synapses, which wild-type littermates lack, with no
+    change in CA1 plasticity.
+  subject: GENE:RGS14
+  predicate: NEGATIVELY_REGULATES
+  object: SV:plasticity.ltp_magnitude
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: synaptic_plasticity_ltp_ltd
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a germline deletion cannot distinguish a developmental requirement from an ongoing adult brake"
+      - "RGS14 scaffolds G-protein, H-Ras/ERK and calcium pathways, so the plasticity change need not be a direct consequence of losing one of them; the reported block by a MEK inhibitor localises the effect to ERK signalling but does not isolate a single mechanism"
+  evidence:
+    - source_id: SRC:PMID:20837545
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "RGS14 germline knockout mice and wild-type littermates"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "long-term potentiation at Schaffer collateral synapses onto CA2 pyramidal neurons"
+      endpoint_category: synaptic_plasticity_ltp_ltd
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "striking and mechanistically specific, but a single originating laboratory, a germline knockout, and a cellular rather than cognitive endpoint"
+    calibration_status: uncalibrated_subjective
+  risks: ["unlocking plasticity in a subfield that normally lacks it may compromise whatever computation that subfield performs; no study retrieved here tests that"]
+  confounders: ["developmental compensation", "background strain"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RGS14:002
+  statement: >-
+    The same RGS14 germline knockout mice showed enhanced spatial learning and enhanced
+    object recognition memory relative to wild-type littermates, while performance on tasks
+    described as not hippocampus-dependent was unchanged.
+  subject: GENE:RGS14
+  predicate: NEGATIVELY_REGULATES
+  object: PHENO:animal_spatial_memory
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "germline deletion; the improvement could be a developmental consequence of lifelong CA2 plasticity rather than removal of an adult brake"
+      - "enhanced object recognition can reflect altered novelty preference or exploration rather than memory"
+  evidence:
+    - source_id: SRC:PMID:20837545
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "RGS14 germline knockout mice and wild-type littermates"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "spatial learning and novel object recognition performance"
+      endpoint_category: animal_recognition_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:26123307
+      design: narrative_review
+      species: SPECIES:NCBITaxon:10090
+      population: "review of RGS14 signalling and hippocampal physiology"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "reviewers' characterisation of RGS14 as a natural suppressor of CA2 potentiation and hippocampus-dependent learning"
+      endpoint_category: not_applicable
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "one primary study, echoed by reviews from the same group; rodent tasks only; no independent replication was located in this session"
+    calibration_status: uncalibrated_subjective
+  risks: ["rodent spatial and recognition memory are not measures of human intelligence and are not treated as such here"]
+  confounders: ["exploratory drive", "germline developmental effects"]
+  dependencies: [CLM:brakes:RGS14:001]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RGS14:003
+  statement: >-
+    RGS14 protein was undetectable in mouse brain at birth and rose progressively through
+    the first postnatal weeks to a sustained adult level, first becoming detectable in
+    hippocampus around postnatal day 7.
+  subject: GENE:RGS14
+  predicate: POSITIVELY_REGULATES
+  object: SV:plasticity.critical_period_permissiveness
+  claim_type: expression
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "an expression time course is not a causal statement about when the brake becomes functionally necessary"
+      - "the link to critical-period permissiveness is this agent's interpretation, not an assertion of the source"
+  evidence:
+    - source_id: SRC:PMID:23817783
+      design: expression_atlas
+      species: SPECIES:NCBITaxon:10090
+      population: "C57BL/6 mice sampled across postnatal development into adulthood"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "RGS14 protein immunoreactivity and mRNA across postnatal ages and brain regions"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "descriptive expression mapping with a clear developmental time course; directly relevant to the developmental-confound question and to whether adult expression persists"
+    calibration_status: uncalibrated_subjective
+  risks: ["sustained adult expression is a necessary but not sufficient condition for adult modifiability"]
+  confounders: ["antibody specificity", "regional sampling"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:RGS14:004
+  statement: >-
+    A review of RGS14 distribution reports postsynaptic enrichment in area CA2 and in
+    limbic and basal ganglia structures of primates as well as rodents, but the review
+    presents no human cognitive phenotype associated with RGS14 variation.
+  subject: GENE:RGS14
+  predicate: MODULATES
+  object: SV:plasticity.ltp_magnitude
+  claim_type: expression
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606, SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: correlational_expression
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "a narrative review is a secondary report; the primary human expression data were not retrieved in this session"
+      - "conservation of expression is not conservation of function"
+  evidence:
+    - source_id: SRC:PMID:36541898
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "review of RGS14 expression in hippocampus, amygdala and basal ganglia with stated implications for human brain physiology"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "reviewers' account of regional and subcellular RGS14 expression and its speculative functional roles"
+      endpoint_category: molecular_readout
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "secondary review evidence for expression only; the review's own framing of disease roles is explicitly speculative and is not used here"
+    calibration_status: uncalibrated_subjective
+  risks: ["this is the closest thing to human evidence for RGS14 in this atlas, and it is expression only"]
+  confounders: ["review-level aggregation", "antibody cross-reactivity across species"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

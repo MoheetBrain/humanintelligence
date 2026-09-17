@@ -1,0 +1,67 @@
+{
+  "data": {
+    "credibleSets": {
+      "count": 1,
+      "rows": [
+        {
+          "beta": -3.677384,
+          "colocalisation": {
+            "count": 527
+          },
+          "confidence": "PICS fine-mapped credible set based on reported top hit",
+          "finemappingMethod": "PICS",
+          "l2GPredictions": {
+            "count": 2,
+            "rows": [
+              {
+                "score": 0.6349966526031494,
+                "target": {
+                  "approvedSymbol": "APOE",
+                  "id": "ENSG00000130203"
+                }
+              },
+              {
+                "score": 0.09670526534318924,
+                "target": {
+                  "approvedSymbol": "APOC1",
+                  "id": "ENSG00000130208"
+                }
+              }
+            ]
+          },
+          "pValueExponent": -14,
+          "pValueMantissa": 2,
+          "region": null,
+          "standardError": 0.4806643265532361,
+          "study": {
+            "id": "GCST006671",
+            "nSamples": 812,
+            "projectId": "GCST",
+            "pubmedId": "30319691",
+            "studyType": "gwas",
+            "traitFromSource": "Cognitive impairment test score"
+          },
+          "studyLocusId": "bf6f501514badc18ded0e7eafcbdcbd9",
+          "variant": {
+            "id": "19_44906745_G_A",
+            "rsIds": [
+              "rs769449"
+            ]
+          }
+        }
+      ]
+    },
+    "meta": {
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "iteration": null,
+        "month": "06",
+        "year": "26"
+      }
+    }
+  }
+}

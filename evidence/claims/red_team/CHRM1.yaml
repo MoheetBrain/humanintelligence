@@ -1,0 +1,233 @@
+# Red-team contradicting evidence — CHRM1.
+# Contract: docs/DATA_CONTRACT.md section 4. schema_version 0.1.0.
+#
+# CLM:alphacognition:CHRM1:001 is, on that agent's own account, the ONLY healthy-adult
+# human cognitive result anywhere in this repository. Its quality therefore matters
+# disproportionately. The red team's independent search did not break the record - it is
+# accurately extracted and well caveated - but it found what happened NEXT to the
+# compound, which nothing in the repository recorded: the phase 2 was withdrawn before
+# enrolling anyone, for an unexpected animal toxicology finding.
+#
+# This is a safety and programme-viability fact, not a refutation of the cognitive
+# signal. It is recorded here so that the repository's single healthy-adult result
+# carries its own development history alongside it.
+
+- claim_id: CLM:red_team:CHRM1:001
+  schema_version: 0.1.0
+  statement: >-
+    The phase 2 dose-ranging trial of the selective M1 receptor agonist HTL0018318 in
+    dementia with Lewy bodies was withdrawn with zero participants enrolled, and the
+    registry records the reason as a pending investigation of an unexpected animal
+    toxicology finding; this is the same compound and sponsor whose earlier multiple
+    ascending dose study in healthy adults reported exploratory pro-cognitive effects.
+  subject: CPD:htl0018318
+  predicate: INCREASES_RISK
+  object: AE:preclinical_toxicology_finding
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the registry does not state what the toxicology finding was, in which species it occurred, at what exposure, or whether it was later resolved; the fact established is that the sponsor halted the programme pending its investigation, not the nature of the hazard"
+      - "a withdrawn trial with zero enrolment generates no human safety data of its own, so this record says nothing about what the compound does in a human at the doses previously tested"
+      - "an unexpected preclinical finding is a routine reason to pause a programme and does not necessarily indicate a hazard that would have appeared in humans"
+      - "the finding is about this compound, not necessarily about M1 agonism as a mechanism, although the wider muscarinic literature makes a class contribution plausible"
+  evidence:
+    - source_id: SRC:NCT:NCT03592862
+      design: registry_record
+      species: SPECIES:NCBITaxon:9606
+      population: "patients aged 50-85 with probable dementia with Lewy bodies; approximately 172 planned, registry-reported actual enrolment 0"
+      sample_size:
+        reported_as: "0"
+        value: 0
+        unit: participants
+      endpoint: "registry status and whyStopped field; declared primary outcomes were incidence and severity of treatment-related adverse events and change in blood pressure and heart rate over 12 weeks"
+      endpoint_category: not_applicable
+      endpoint_measured: not_measured_in_protocol
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: "Pending investigation of an unexpected animal toxicology finding."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:33883008
+      design: rct_parallel
+      species: SPECIES:NCBITaxon:9606
+      population: "healthy younger adult and elderly subjects given oral HTL0018318 15-35 mg/day or placebo for 10 days"
+      sample_size:
+        reported_as: "healthy younger adult (n = 36; 3 cohorts) and elderly (n = 50; 4 cohorts) subjects"
+        value: 86
+        unit: participants
+      endpoint: "safety, tolerability and cholinergic adverse events; blood pressure and pulse rate versus placebo"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "associated with mild or moderate cholinergic adverse events. There were modest increases in blood pressure and pulse rate when compared to placebo-treated subjects"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      a registry-recorded sponsor decision with a stated reason, corroborated by a
+      primary report of dose-related cholinergic and cardiovascular effects in healthy
+      volunteers; the fate of the programme is well documented while the nature of the
+      hazard is not disclosed
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "this must not be reported as 'HTL0018318 was found to be toxic'; the registry says an investigation was pending, and no outcome of that investigation was retrieved"
+  confounders: []
+  dependencies: [CLM:alphacognition:CHRM1:001]
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_pubmed_ids: ["33883008"]
+    supporting_accessions: ["NCT03592862"]
+
+- claim_id: CLM:red_team:CHRM1:002
+  schema_version: 0.1.0
+  statement: >-
+    Two independent curated safety-pharmacology reviews indexed by the Open Targets
+    Platform both attribute proconvulsant activity and increased convulsions to
+    activation of the M1 muscarinic receptor, alongside a broad peripheral cholinergic
+    adverse-effect set including salivation, lacrimation, sweating, vomiting,
+    bronchorrhea, bronchospasm and hyperthermia, and liver failure.
+  subject: GENE:CHRM1
+  predicate: INCREASES_RISK
+  object: AE:seizure
+  claim_type: safety
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: not_reported
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "both sources are curation reviews rather than primary experiments, and their rows carry no species, dose or design attribution"
+      - "much of the peripheral cholinergic set is plausibly driven by M2 and M3 agonism rather than central M1, which is what the xanomeline record in this repository already argues"
+      - "the two sources are not fully independent of each other: both are pharmaceutical-industry safety-pharmacology curation exercises drawing on overlapping published literature"
+  evidence:
+    - source_id: SRC:PMID:23197038
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "review of in vitro pharmacological profiling practice at four pharmaceutical companies; no per-row population is given"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "curated adverse-effect annotation for CHRM1, retrieved as Open Targets Platform 26.06 safetyLiabilities row 'proconvulsant' (direction: Activation/Increase/Upregulation, dosing: general)"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: database_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:28216264
+      design: narrative_review
+      species: SPECIES:NCBITaxon:9606
+      population: "literature curation across 70 targets with established links to adverse effects; no per-row population is given"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: null
+      endpoint: "curated adverse-effect annotations for CHRM1, retrieved as Open Targets Platform 26.06 safetyLiabilities rows including 'increased convulsions', 'liver failure', 'bronchorrhea', 'bronchospasm', 'increased salivation', 'lacrimation', 'sweating', 'vomiting', 'increased body temperature' and 'centrilobular liver congestion', all direction Activation/Increase/Upregulation, dosing acute"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: contradicts
+      extraction:
+        basis: database_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      two curation reviews agreeing on the direction, corroborated in this repository by
+      a randomised human trial of a muscarinic agonist in which 52 percent of the
+      high-dose arm discontinued for adverse events; the agreement of two curation
+      tables is weaker than it looks because they are not independent
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "recording a proconvulsant class annotation must not be read as a seizure signal observed with HTL0018318, for which no such human observation was retrieved"
+  confounders:
+    - "muscarinic subtype selectivity is not resolved in either curation table"
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    database_release: SRC:DB:opentargets:26.06
+    supporting_pubmed_ids: ["28216264", "23197038"]

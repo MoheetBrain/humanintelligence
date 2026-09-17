@@ -1,0 +1,181 @@
+# Facet assessment — generated file.
+# The four genetics facets are produced deterministically by
+# pipelines/alphacognition/build_assessments.py from the derived tables under
+# data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
+# present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
+# Re-run the script rather than editing this file.
+target_id: TGT:DRD1
+schema_version: 0.1.0
+assessed_by: agent:alphacognition
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: human_genetic_association
+  assessment_status: assessed
+  level: 1
+  rationale: 'weak or indirect only: 1 educational-attainment/literacy association(s); locus-to-gene candidacy
+    at 2 credible set(s) (1 on cognitive traits, 1 on educational attainment). No catalogued genome-wide
+    association on a cognitive-ability trait.'
+  claim_refs:
+  - CLM:alphacognition:gwas.DRD1:001
+  - CLM:alphacognition:l2g.DRD1:001
+  - CLM:alphacognition:l2g.DRD1:002
+  counter_level: 0
+  counter_rationale: 'No study reporting a null or opposite-direction association for this gene on a panel
+    trait was found by this sweep. That is a property of the sweep, not of the literature: the GWAS Catalog
+    records associations that passed a significance threshold and does not record non-associations, so
+    absence of a catalogued negative is uninformative and is recorded as 0 for that reason.'
+  counter_claim_refs: []
+  limiting_factor: 'level 4 is unreachable from this evidence: the catalogue''s `beta` field is heterogeneous
+    free text and effect alleles are often reported as ''?'', so direction consistency across studies
+    cannot be established. cognitive GWAS discovery samples are overwhelmingly European-ancestry, so neither
+    the association nor any locus-to-gene assignment built on it is established as transportable.'
+- facet: causal_gene_attribution
+  assessment_status: assessed
+  level: 2
+  rationale: Open Targets' locus-to-gene model (data version 26.06) ranks this gene among the candidates
+    at 1 fine-mapped credible set(s) for cognitive-panel traits, with 2 competing candidate gene(s) at
+    the same loci (MSX2, SFXN1); no molecular-QTL colocalisation for this gene was found at those loci
+  claim_refs:
+  - CLM:alphacognition:l2g.DRD1:001
+  counter_level: 2
+  counter_rationale: 2 other gene(s) are ranked as candidates at the same cognitive-trait credible set(s),
+    which is direct evidence against a confident assignment to this gene
+  counter_claim_refs:
+  - CLM:alphacognition:l2g.DRD1:001
+  limiting_factor: attribution is a published statistical model's output with competing candidates and
+    no QTL corroboration; not a demonstrated gene-level effect
+- facet: human_phenotype_specificity
+  assessment_status: assessed
+  level: 1
+  rationale: the gene carries 17 catalogued association(s) across 19 distinct non-cognitive trait(s) and
+    none on a cognitive-panel trait; whatever this locus does, the catalogue does not connect it to cognition
+  claim_refs:
+  - CLM:alphacognition:gwas.DRD1:001
+  counter_level: 0
+  counter_rationale: no contradicting pleiotropy evidence applies at this level
+  counter_claim_refs: []
+  limiting_factor: specificity is assessed from positional annotation, so 'this gene is pleiotropic' and
+    'this locus is gene-dense' are not separated. Mendelian randomisation and pan-phenome gene-level testing
+    were not run in v0.1.
+- facet: adult_expression_and_timing
+  assessment_status: assessed
+  level: 2
+  rationale: detected in all 13 sampled adult human brain regions (GTEx v8, adult post-mortem donors);
+    direct human adult tissue measurement, but bulk-tissue resolution and no evidence that the gene's
+    cognitive relevance extends into adulthood
+  claim_refs:
+  - CLM:alphacognition:expr.DRD1:001
+  counter_level: 0
+  counter_rationale: 'no evidence that this gene''s action is confined to development was retrieved. Developmental-restriction
+    evidence was NOT systematically searched for this target: no human developmental transcriptome (BrainSpan/PsychENCODE)
+    was ingested in v0.1, so this 0 means ''not found by the sweep that was run''.'
+  counter_claim_refs: []
+  limiting_factor: adult human brain CELL-TYPE resolution is unavailable in this release and is deferred
+    to docs/TASK_DAG.yaml Q003; developmental timing was not ingested from any atlas. Level 4 is therefore
+    unreachable for every target in v0.1.
+- facet: mechanistic_causal_perturbation
+  assessment_status: assessed
+  level: 2
+  rationale: Adult pharmacological perturbation in a healthy rodent baseline changed working-memory performance,
+    and the source states the same dose-response pattern is typical in rats and monkeys, i.e. replicated
+    non-human causal evidence.
+  claim_refs:
+  - CLM:alphacognition:DRD1:001
+  counter_level: 0
+  counter_rationale: searched; no study reporting no effect of D1 manipulation on working memory was retrieved
+  counter_claim_refs: []
+  limiting_factor: no available agent separates D1 from D5, as the source itself states
+- facet: adult_onset_perturbation
+  assessment_status: assessed
+  level: 2
+  rationale: acute systemic dosing of adult healthy mice changed working memory; adult modifiability is
+    demonstrated in a non-human species
+  claim_refs:
+  - CLM:alphacognition:DRD1:001
+  counter_level: 0
+  counter_rationale: no developmental-window requirement was found in what was retrieved
+  counter_claim_refs: []
+  limiting_factor: rodent; the only human-facing evidence is a review
+- facet: above_baseline_enhancement
+  assessment_status: assessed
+  level: 1
+  rationale: 'Weak and indirect only: a review states that dihydrexidine at low doses improved working
+    memory in monkeys. No primary healthy-baseline enhancement result was retrieved.'
+  claim_refs:
+  - CLM:alphacognition:DRD1:002
+  counter_level: 2
+  counter_rationale: The inverted-U relation means any enhancement is bounded and reverses with further
+    stimulation, and the optimum depends on baseline dopamine tone. Enhancement here is intrinsically
+    a narrow-window phenomenon rather than a headroom that can be pushed.
+  counter_claim_refs:
+  - CLM:alphacognition:DRD1:001
+  - CLM:alphacognition:DRD1:002
+  limiting_factor: no primary source for healthy-baseline enhancement was retrieved, only a review's summary
+    of one
+- facet: transfer_breadth
+  assessment_status: assessed
+  level: 0
+  rationale: 'searched: only spatial working memory was tested in the primary source; no second domain'
+  claim_refs:
+  - CLM:alphacognition:gap.DRD1:002
+  counter_level: 0
+  counter_rationale: no failure-to-transfer result was retrieved either
+  counter_claim_refs: []
+  limiting_factor: single-domain evidence base
+  search_basis: 'Searched: the endpoint lists of every study retrieved for this target, for a second cognitive
+    domain or an explicit transfer measure. A hit would have been improvement on two or more distinct
+    cognitive domains, or on an untrained real-world endpoint.'
+- facet: dose_response_knowledge
+  assessment_status: assessed
+  level: 3
+  rationale: 'This is DRD1''s genuine strength and the reason it is in the seed list: the shape of the
+    dose-response relation is characterised, not assumed. An explicit inverted-U dose/response curve was
+    measured in healthy mice, and the source reports the same shape as typical across rats and monkeys,
+    i.e. converging evidence across species for a non-monotonic response.'
+  claim_refs:
+  - CLM:alphacognition:DRD1:001
+  - CLM:alphacognition:DRD1:002
+  counter_level: 0
+  counter_rationale: no source retrieved disputes the inverted-U shape
+  counter_claim_refs: []
+  limiting_factor: the LOCATION of the optimum, and its dependence on baseline state, is not characterised
+    anywhere retrieved; knowing the shape without knowing the setpoint is not enough to dose anyone
+- facet: human_intervention_evidence
+  assessment_status: assessed
+  level: 0
+  rationale: 'Searched: no primary human interventional study of D1 agonism with a cognitive endpoint
+    was retrieved. A review reports that dihydrexidine has begun to be tested in patients with schizophrenia
+    or schizotypal disorder with results the authors call encouraging but limited by pharmacokinetics;
+    that is a secondary report of an early-stage patient study and cannot support a level here.'
+  claim_refs:
+  - CLM:alphacognition:gap.DRD1:002
+  counter_level: 0
+  counter_rationale: no negative human result was retrieved either
+  counter_claim_refs: []
+  limiting_factor: review-level evidence only; the primary trials were not located in this session
+  search_basis: 'Searched: PubMed for human interventional studies of this target with a cognitive endpoint,
+    and ClinicalTrials.gov API v2 for registered trials. A hit would have been a randomised or open-label
+    human study reporting a cognitive endpoint. A trial that measured no cognitive endpoint is a coverage
+    gap, not a hit and not a miss (R5).'
+facets_not_owned_by_this_agent: []
+notes: 'Evidence basis for the four genetics facets. Genes covered by this target: DRD1. GWAS Catalog
+  release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset
+  gtex_v8. Association records for this target: 1 total, of which 0 on cognitive-panel traits (0 on a
+  g_factor/fluid_reasoning trait, 0 single-domain) and 1 on educational-attainment or literacy traits,
+  across 1 distinct publications (0 for the cognitive associations). Cognitive traits hit: none. Fine-mapped
+  credible sets in which Open Targets'' L2G model ranks this gene: 2 in total, 1 on cognitive-panel traits,
+  with 0 molecular-QTL colocalisations for this gene at those loci and 2 competing candidate gene(s) there
+  (MSX2, SFXN1). Unfiltered GWAS Catalog sweep for this gene symbol: 17 catalogued association(s) in total,
+  16 of them with traits outside the cognitive/educational panel, spanning 19 distinct such trait(s).
+  GTEx reports 13 brain region(s); detected above zero median in all of them: True. Adult brain cell-type
+  resolution was not available in this release and is deferred to docs/TASK_DAG.yaml Q003. The level rules
+  applied here are in pipelines/alphacognition/build_assessments.py; lead-atlas facets for this target
+  are hand-written in atlases/alphacognition/lead_atlas_facets.yaml.'
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  method: derived_from_claims
+  pipeline: pipelines/alphacognition/build_assessments.py
+  run_id: sprint1-alphacognition-facets-01

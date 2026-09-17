@@ -1,0 +1,84 @@
+# Target dossier — AlphaCognition v0.1 (lead atlas: alphacognition).
+# `identifiers` is deliberately left empty: it is machine-filled from HGNC by
+# scripts/fetch_gene_identifiers.py (contract §5.1, §7). No accession is hand-written here.
+# `computational_primitives` is empty for every dossier in this atlas because
+# ontology/computational_primitives.yaml did not exist when these were authored; declaring
+# PRIM ids against a non-existent vocabulary would create unresolvable cross-references.
+target_id: TGT:GRIN2B
+schema_version: 0.1.0
+symbol: GRIN2B
+lead_atlas: alphacognition
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: ionotropic_receptor_subunit
+represented_entities:
+- GENE:GRIN2B
+- PROT:Q13224
+member_genes: []
+control_point_hypothesis:
+  statement: 'GRIN2B encodes the NMDA receptor GluN2B subunit, whose long channel open time and high calcium
+    charge transfer set the coincidence-detection window for Hebbian plasticity. The seed hypothesis is
+    that GluN2B-containing receptor availability is a rate-limiting control point on the threshold for
+    plasticity, so raising it should lower that threshold and improve learning. The evidence assembled
+    here supports that in rodents and CONTRADICTS the naive human extension: in humans, de novo GRIN2B
+    variation of either functional direction produces a neurodevelopmental disorder with intellectual
+    disability, and the human genetic association with cognitive ability is a single positional GWAS hit
+    with no gene-level attribution.'
+  proposed_modulation: context_dependent
+  mechanism_chain:
+  - CLM:alphacognition:GRIN2B:001
+  - CLM:alphacognition:GRIN2B:002
+  - CLM:alphacognition:GRIN2B:003
+  - CLM:alphacognition:GRIN2B:004
+  state_variables:
+  - id: SV:plasticity.ltp_threshold
+    asserted_relation: modulates
+    direction: decreases
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:GRIN2B:001
+  - id: SV:plasticity.ltp_magnitude
+    asserted_relation: modulates
+    direction: increases
+    response_shape: unknown
+    claim_refs:
+    - CLM:alphacognition:GRIN2B:002
+  - id: SV:safety.seizure_risk
+    asserted_relation: modulates
+    direction: increases
+    response_shape: unknown
+    claim_refs: []
+  computational_primitives: []
+known_liabilities:
+- AE:seizure
+- AE:excitotoxicity
+developmental_confound: high
+developmental_confound_rationale: Three independent reasons. (1) Every rodent enhancement result here
+  uses constitutive transgenic overexpression from development (CLM:...:GRIN2B:001, :002), so the adult
+  phenotype may be a developmental consequence. (2) NMDA receptor subunit composition shifts with postnatal
+  age, with GluN2B falling and GluN2A rising (CLM:...:GRIN2B:006, rodent and indirect), which is a mechanism
+  by which GRIN2B's cognitive role could be largely spent by adulthood. (3) The human phenotype of GRIN2B
+  perturbation is a neurodevelopmental encephalopathy with cortical malformation in some individuals (CLM:...:GRIN2B:004),
+  i.e. the human evidence is entirely about development. The one adult-onset result (CLM:...:GRIN2B:003)
+  acts through Cdk5, not through GRIN2B directly.
+open_questions:
+- Is GluN2B-containing receptor availability rate-limiting for plasticity in the ADULT human brain, or
+  is the adult system GluN2A-dominated? No human developmental transcriptome was ingested in v0.1.
+- The seizure and excitotoxicity liability of potentiating NMDA function is asserted from first principles
+  here and is NOT backed by a claim in this atlas; Open Targets safetyLiabilities for GRIN2B (convulsions,
+  dizziness, pain, with a PMID) were noted in docs/API_RECIPES.md §5.1 but not ingested by this agent.
+  The red team or agent:integration should ingest them.
+- 'No cell-type resolution: which adult human cell populations express GRIN2B is unknown here (deferred
+  to docs/TASK_DAG.yaml Q003).'
+- Is there any human evidence of GRIN2B variation in the normal range associating with cognitive ability
+  at gene level rather than locus level? Not found in v0.1.
+- 'State-variable coupling caveat — SV:safety.seizure_risk: potentiating NMDA receptor function is expected
+  to lower the seizure threshold, i.e. raise seizure risk; asserted from pharmacological first principles
+  and NOT supported by a claim in this atlas, which is why claim_refs is empty and the dossier''s open_questions
+  names it'
+status: under_review
+provenance:
+  created_by: agent:alphacognition
+  created_on: '2026-09-17'
+  run_id: sprint1-alphacognition-curation-01

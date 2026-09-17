@@ -1,0 +1,163 @@
+# Red-team audit - SLC16A7. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:SLC16A7:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:SLC16A7
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: 'Genuinely clean, and unusual in its atlas for being so: knockdown was performed in ADULT animals
+      and tested within days. The confound for this target is tool specificity, not developmental timing.'
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:SLC16A7:003
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: All evidence is loss-of-function knockdown producing impairment. Showing that removing something
+      hurts is not evidence that adding more helps, and the atlas says so.
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: fail
+    note: The entire evidence base is rodent. There is no human genetic, observational or interventional
+      evidence for this target, so the animal memory results are doing all the work with nothing to check
+      them against.
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: flag
+    note: 'SLC16A7''s level-3 human_genetic_association survives on a genuine cognitive-function-measurement
+      association (SRC:PMID:41413636), but its rationale counts gwas.SLC16A7:002 among the directly-relevant
+      records and all four of that claim''s records are ''mathematical ability'' rows from an educational-attainment
+      GWAS. Grade survives; stated breadth overstated. Repository-level: the trait panel classes GWAS
+      Catalog trait ''mathematical ability'' (EFO_0004875) as phenotype_class fluid_reasoning while marking
+      it use_in_ranking: supporting with the note ''never a stand-alone basis for a facet level''. pipelines/alphacognition/build_assessments.py
+      tests phenotype_class, not use_in_ranking, so that restriction never fires. The underlying records
+      are ''Self-reported math ability'' and ''Highest math class taken (MTAG)'' from SRC:PMID:30038396,
+      a genome-wide association study of EDUCATIONAL ATTAINMENT. Five claims rest entirely on such records:
+      gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002, gwas.PDE4B:003, gwas.SLC16A7:002. See evidence/audits/red_team/GENETICS_FACET_RULE.yaml.'
+    evidence_refs:
+    - CLM:alphacognition:gwas.SLC16A7:002
+    - SRC:PMID:30038396
+  - check: duplicated_evidence
+    result: flag
+    note: Three papers each carry claims in three files. The findings are genuinely different transporter-specific
+      results within each paper, but the ranking must be invariant to the pattern.
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:SLC16A7:002
+    - CLM:power:SLC16A7:003
+  - check: citation_dependence
+    result: fail
+    note: 'SRC:PMID:21376239 carries CLM:power:SLC16A1:001, SLC16A3:001, SLC16A7:001 AND anls:001 - one
+      paper supplying the founding evidence for three transporter targets AND for the shuttle hypothesis
+      they all inherit. SRC:PMID:31286064 and SRC:PMID:32693190 each appear in three files. agent:power
+      flagged all of this about itself and noted the consequence: four of its seven targets inherit the
+      astrocyte-neuron lactate shuttle''s credibility, so a downgrade of anls:001 should cascade. The
+      ranking invariance test exists for exactly this.'
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:SLC16A7:003
+    - CLM:power:anls:001
+  - check: publication_bias
+    result: fail
+    note: 'This target has the repository''s most striking coverage asymmetry: the best mechanistic evidence
+      in the power atlas (mechanistic level 3, adult-onset level 3) and ZERO human data of any kind. agent:power
+      states this itself and calls it the most important thing the integration agent needs to see. Separately,
+      SLC16A7 has no contradicting or null claim in its own file - the countervailing evidence lives in
+      the topic file and is wired in only through counter_claim_refs, so a reader opening SLC16A7.yaml
+      alone sees five supporting-or-qualifying claims and no counterweight. The file header says so in
+      capitals, which mitigates but does not fix it.'
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:anls:002
+  - check: negative_clinical_evidence
+    result: not_applicable
+    note: No human interventional study of MCT2 modulation exists. The only human MCT safety read-out
+      located is for MCT1 (NCT01791595), and its ophthalmic and haematological toxicities are MCT1-specific,
+      so it is deliberately NOT carried across to this target.
+    evidence_refs:
+    - SRC:NCT:NCT01791595
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: not_applicable
+    note: No seizure liability is annotated for this target in Open Targets Platform 26.06 and none was
+      located in the literature reviewed.
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: not_applicable
+    note: No systemic adverse-effect annotation exists for this target in Open Targets Platform 26.06,
+      and no human exposure to an agent directed at it was located.
+  - check: model_organism_translation_failure
+    result: flag
+    note: 'Unassessable: strong rodent mechanism, no human evidence to translate to. That combination
+      is not a failure but it is the maximum possible translation RISK.'
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+  - check: overclaiming
+    result: pass
+    note: agent:power records that no gain-of-function experiment exists anywhere in its atlas and that
+      SLC16A7.yaml states explicitly that its increase_activity proposal has zero supporting evidence.
+      Restraint, stated in the record.
+  - check: provenance_integrity
+    result: pass
+    note: Every claim id, source id and node id referenced for this target resolves. No numeric field
+      lacks an as_reported string or a derived_from pointer.
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:SLC16A7:001#f1
+    severity: major
+    category: publication_bias
+    description: SLC16A7 has the repository's strongest mechanistic grade and zero human data of any kind,
+      and its own claim file contains no counterweight - the contradicting evidence sits in a topic file
+      and reaches the target only through counter_claim_refs. A reader opening the target file alone sees
+      an unopposed case.
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:anls:002
+  - finding_id: AUD:red_team:SLC16A7:001#f2
+    severity: major
+    category: citation_dependence
+    description: One paper (SRC:PMID:21376239) supplies founding evidence for three transporter targets
+      and for the shuttle hypothesis all four power targets inherit. A downgrade of the shuttle claim
+      should cascade to four targets, which means they are not four independent lines of support.
+    evidence_refs:
+    - CLM:power:SLC16A7:001
+    - CLM:power:anls:001
+  verdict: retain
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

@@ -1,0 +1,75 @@
+{
+  "_embedded": {
+    "associations": [
+      {
+        "_links": {
+          "loci": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/62416324/loci"
+          },
+          "self": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations/62416324"
+          },
+          "snp": {
+            "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/single-nucleotide-polymorphisms/rs16904657"
+          }
+        },
+        "accession_id": "GCST010567",
+        "association_id": 62416324,
+        "beta": "0.64115 unit decrease",
+        "bg_efo_traits": [
+          {
+            "efo_id": "MONDO_0004975",
+            "efo_trait": "Alzheimer disease"
+          }
+        ],
+        "ci_lower": 0.36,
+        "ci_upper": 0.92,
+        "efo_traits": [
+          {
+            "efo_id": "EFO_0007710",
+            "efo_trait": "cognitive decline measurement"
+          }
+        ],
+        "first_author": "Sherva R",
+        "locations": [
+          "8:132318791"
+        ],
+        "mapped_genes": [
+          "KCNQ3"
+        ],
+        "multi_snp_haplotype": false,
+        "p_value": 6e-06,
+        "pubmed_id": "32573913",
+        "pvalue_description": "",
+        "pvalue_exponent": -6,
+        "pvalue_mantissa": 6,
+        "range": "[0.36-0.92]",
+        "reported_trait": [
+          "Rate of cognitive decline in Alzheimer's disease"
+        ],
+        "risk_frequency": "NR",
+        "snp_allele": [
+          {
+            "effect_allele": "A",
+            "rs_id": "rs16904657"
+          }
+        ],
+        "snp_effect_allele": [
+          "rs16904657-A"
+        ],
+        "snp_interaction": false
+      }
+    ]
+  },
+  "_links": {
+    "self": {
+      "href": "https://www.ebi.ac.uk/gwas/rest/api/v2/associations?mapped_gene=KCNQ3&efo_id=EFO_0007710&page=0&size=100"
+    }
+  },
+  "page": {
+    "number": 0,
+    "size": 100,
+    "totalElements": 1,
+    "totalPages": 1
+  }
+}

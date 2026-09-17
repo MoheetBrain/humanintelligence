@@ -1,0 +1,341 @@
+# Cross-clade behavioural comparison and the construct validity of its instrument.
+# Contract: docs/DATA_CONTRACT.md §4.
+#
+# WHY THESE THREE CLAIMS ARE FILED TOGETHER
+#
+# This is the only place in the atlas where a cognitive capacity was actually MEASURED
+# across many species with a phylogenetic model, so it is the strongest comparative
+# cognition evidence available — and it is also the clearest demonstration of why such
+# evidence does not license the conclusions usually drawn from it. Read in order:
+#
+#   :001  SRC:PMID:24753565 — 567 individuals, 36 species, phylogenetic analysis:
+#         absolute brain volume is the best cross-species predictor of detour-task score.
+#   :002  SRC:PMID:27152224 — three Corvus-genus species match great apes on the same
+#         task with brains 26 to 94 times smaller, which breaks the rule in :001 as soon
+#         as the taxonomic range widens.
+#   :003  SRC:PMID:31758353 + SRC:PMID:27152224 — the task itself is confounded by motor
+#         response learning, so scores in :001 and :002 are not clean measures of
+#         inhibitory control at all.
+#
+# The net position of this atlas: the best-controlled comparative cognition result in
+# the literature rests on an instrument whose construct validity has been directly
+# challenged by experiment. `phenotype_class` is an animal task category throughout.
+# Nothing in this file is evidence about human general cognitive ability.
+
+- claim_id: CLM:comparative:SELF_REGULATION:001
+  schema_version: 0.1.0
+  statement: >-
+    MacLean and colleagues tested 567 individuals from 36 species on two detour and
+    search tasks and, using phylogenetic analysis, found absolute brain volume the best
+    cross-species predictor of task score, with body-mass-corrected brain volume
+    accounting for considerably less variance, and dietary breadth but not social group
+    size predicting differences within primates.
+  subject: REGION:brain
+  predicate: CONSTRAINS
+  object: PRIM:distractor_suppression
+  claim_type: association
+  direction: increases
+  context:
+    species: []
+    species_count: 36
+    phylogenetic_control: other
+    phylogenetic_control_basis: >-
+      The abstract states that phylogenetic analysis was used and the PubMed record
+      carries the MeSH terms Phylogeny, Likelihood Functions and Models, Statistical, so
+      ancestry was modelled. The specific estimator (PGLS versus a phylogenetic mixed
+      model) was not extracted because the full text was not retrieved, so this is
+      recorded as `other` rather than `pgls`. A secondary description in
+      SRC:PMID:27152224 refers to a phylogenetic regression being used to compute
+      body-mass residuals. The sample is taxonomically unbalanced: SRC:PMID:27152224
+      reports that 29 of the 36 species were mammals, 23 of those primates, and only 7
+      were birds, and states that MacLean and colleagues themselves cautioned that
+      primate-dominated findings might not generalise.
+    life_stage: not_reported
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:brain]
+    cell_types: []
+  phenotype_class: animal_operant_task
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "absolute brain volume covaries with body mass, lifespan, gut morphology, rearing history and captivity conditions; the analysis separates it from body mass but not from the rest"
+      - "the species are 64 per cent primates, so a primate-specific relationship could produce the cross-species result"
+      - "the task is administered by different experimenters in different facilities to differently habituated animals, so between-species differences include between-laboratory differences"
+      - "construct validity of the instrument is directly challenged — see CLM:comparative:SELF_REGULATION:003"
+  evidence:
+    - source_id: SRC:PMID:24753565
+      design: phylogenetic_comparative_analysis
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9544
+      population: "567 individuals representing 36 species, mostly primates, tested in their home institutions"
+      sample_size:
+        reported_as: "567 individuals representing 36 species"
+        value: 567
+        unit: animals
+      endpoint: "proportion of correct first responses on the cylinder detour task and the A-not-B search task"
+      endpoint_category: animal_operant_task
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "Phylogenetic analysis revealed that absolute brain volume best predicted performance across species and accounted for considerably more variance than brain volume controlling for body mass."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      The largest and only genuinely phylogenetically modelled comparative cognition
+      dataset available here, which is why it reaches 2 rather than 1. It does not go
+      higher: it is correlational, single-study, taxonomically unbalanced, uses an
+      instrument whose validity is contested, and measures an animal task with no
+      demonstrated relation to human general cognitive ability.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "OVER-READING RISK: 'the evolution of self-control' is the paper's title; SRC:PMID:27152224 argues in its own text that the tasks measured motor self-regulation rather than self-control, because no choice between a smaller-sooner and larger-later reward was involved. The construct named in the title was not the construct measured."
+    - "`context.species` is empty because the 36 species were not enumerated in the retrieved abstract, and this atlas does not write a taxid it has not resolved; `species_count` carries the real number and the single evidence-item species is the one panel member the sample certainly included by clade"
+    - "absolute brain volume predicting an animal task score is not evidence that brain volume causes cognitive capacity, and is not evidence about variation within a species"
+    - "ENUM APPROXIMATION, recorded so it is not mistaken for a finding: `causal_attribution.basis` has no value for a cross-species behavioural association in non-human animals. `human_observational_association` would be species laundering, so `theoretical_argument` is used instead — which UNDERSTATES the design. See docs/blackboard/schema_change_requests/comparative-001.yaml."
+  confounders: ["body mass", "taxonomic sampling", "between-laboratory procedure", "captivity and rearing history", "prior task experience"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:SELF_REGULATION:002
+  schema_version: 0.1.0
+  statement: >-
+    Kabadayi and colleagues ran the same cylinder detour task in 5 ravens, 10 New
+    Caledonian crows and 10 jackdaws and recorded success rates matching those published
+    for great apes despite brains reported as 26 to 94 times smaller, which contradicts
+    absolute brain volume as a cross-clade predictor while leaving it a significant
+    predictor within birds.
+  subject: REGION:brain
+  predicate: NO_DETECTED_EFFECT_ON
+  negated_relation: CONSTRAINS
+  object: PRIM:distractor_suppression
+  claim_type: association
+  direction: no_change
+  context:
+    species:
+      - SPECIES:NCBITaxon:56781
+      - SPECIES:NCBITaxon:1196302
+      - SPECIES:NCBITaxon:30423
+      - SPECIES:NCBITaxon:9598
+      - SPECIES:NCBITaxon:9597
+      - SPECIES:NCBITaxon:9593
+    species_count: 10
+    phylogenetic_control: other
+    phylogenetic_control_basis: >-
+      Two generalised linear mixed-effect models of trial-level performance on absolute
+      and residual brain volume, where the residual was computed as the residual from a
+      phylogenetic regression of brain volume on body mass. So ancestry enters the
+      body-mass correction but the performance model itself carries no phylogenetic
+      random effect, and there is no phylogenetic term on the absolute-volume model that
+      the AIC comparison favoured. Recorded as `other`, not `pgls`.
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:brain]
+    cell_types: []
+  phenotype_class: animal_operant_task
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "ceiling effects: ravens scored 100 per cent and apes 94 to 100 per cent, so the task cannot distinguish the groups even if their capacities differ substantially"
+      - "the authors state their birds had lifelong experience of transparent surfaces from enrichment and prior experiments, whereas the comparison animals' experience is unknown — this is the confound CLM:comparative:SELF_REGULATION:003 makes explicit"
+      - "5, 10 and 10 individuals of three species from two research stations; the great-ape numbers come from a different study entirely"
+      - "the ape and corvid data were collected by different groups under procedures matched by description rather than by design"
+  evidence:
+    - source_id: SRC:PMID:27152224
+      design: phylogenetic_comparative_analysis
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:56781
+      population: "5 adult ravens, 10 adult New Caledonian crows and 10 adult jackdaws at two European research stations, compared with published great-ape and bird data from SRC:PMID:24753565"
+      sample_size:
+        reported_as: "Five adult ravens (three females), 10 adult New Caledonian crows (four females) and 10 adult jackdaws (five females)"
+        value: 25
+        unit: animals
+      endpoint: "proportion of correct first responses over 10 transparent-cylinder test trials"
+      endpoint_category: animal_operant_task
+      effect_direction: no_change
+      effect_size:
+        metric: not_extracted
+        as_reported: "All ravens succeeded on all trials (100%). The jackdaws averaged 97% success (min = 8, max = 10), the New Caledonian crows 92% (min = 7, max = 10). The results are comparable with those of the great apes: chimpanzees (100%), orangutans (99.1%), bonobos (95%) and gorillas (94.4%)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: replicated_independent
+      evidence_role: contradicts
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: other_species_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      An independent replication of the same task in new species that directly tests and
+      breaks the generalisation in :001 — which is exactly the kind of evidence this
+      atlas most wants. Held at 2 by small per-species samples, a ceiling effect, and a
+      partial rather than full phylogenetic treatment.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "DEFLATIONARY, AND ALSO A NARRATIVE TRAP IN ITS OWN RIGHT. The result refutes absolute brain size as a cross-clade predictor. It does NOT show that corvids and apes have the same cognitive mechanisms, although the paper's closing sentence ('they share similar fundamental cognitive mechanisms') invites that reading from a single ceiling-level task."
+    - "the 26-to-94-fold brain-size ratios are reported comparisons drawn from literature values, not measurements made in this study"
+    - "orangutan is not given a taxid because the retrieved text names only the common name and the genus contains more than one species"
+    - "MIGRATED TO NO_DETECTED_EFFECT_ON on the landing of V16b-sym (docs/blackboard/RESOLUTIONS.md R9), with negated_relation: CONSTRAINS. This claim previously compiled as a CONSTRAINS edge with direction: unclear, so a traversal that ignored `direction` could read a deflationary result as SUPPORT for 'bigger brain implies better inhibition'. It is now a null edge, which no traversal may count as support. `direction` is `no_change`, matching the evidence item."
+    - "ENUM APPROXIMATION, recorded so it is not mistaken for a finding: `causal_attribution.basis` has no value for a cross-species behavioural association in non-human animals. `human_observational_association` would be species laundering, so `theoretical_argument` is used instead — which UNDERSTATES the design. See docs/blackboard/schema_change_requests/comparative-001.yaml."
+  confounders: ["ceiling effect", "lifelong transparency experience", "small per-species n", "cross-study comparison of ape data", "research-station differences"]
+  dependencies: [CLM:comparative:SELF_REGULATION:001]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01
+
+- claim_id: CLM:comparative:SELF_REGULATION:003
+  schema_version: 0.1.0
+  statement: >-
+    van Horik and colleagues trained pheasant chicks on a transparent barrier with either
+    a fixed or an alternating barrier location and found that those whose fixed motor
+    response had been reinforced improved more on a subsequent cylinder task, showing
+    that detour-task scores index motor response learning as well as inhibition.
+  subject: PRIM:distractor_suppression
+  predicate: PREDICTS
+  object: SV:workspace.distractor_resistance
+  claim_type: methodological
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9054]
+    species_count: 1
+    phylogenetic_control: none
+    phylogenetic_control_basis: >-
+      A single-species experiment; no phylogenetic control is relevant. Its force is that
+      it is an EXPERIMENT on the instrument rather than another comparison using it.
+    life_stage: postnatal_developmental
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_operant_task
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "pheasant chicks are precocial galliform birds and may rely on motor routines more than corvids, parrots or primates do, so the size of the confound may differ between taxa even though its existence is established"
+      - "the training manipulation differed in reinforcement schedule as well as in barrier location, so response learning is the authors' interpretation of which difference mattered"
+      - "chicks were developing, and inhibitory control matures with age"
+  evidence:
+    - source_id: SRC:PMID:31758353
+      design: rct_parallel
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:9054
+      population: "pheasant chicks (Phasianus colchicus) assigned to stationary-barrier or moving-barrier training treatments after a baseline cylinder task"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "change in correct-response rate on a second transparent cylinder task after differential reinforcement of a fixed motor response"
+      endpoint_category: animal_operant_task
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "Birds in the stationary-barrier treatment showed a greater improvement in their subsequent IC performance after training compared to birds in the moving-barrier treatment."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+    - source_id: SRC:PMID:27152224
+      design: observational_cohort
+      endpoint_measured: measured
+      species: SPECIES:NCBITaxon:56781
+      population: "trial-level reanalysis of the seven bird species tested by SRC:PMID:24753565"
+      sample_size:
+        reported_as: "Only seven were birds."
+        value: 7
+        unit: species
+      endpoint: "effect of trial number on cylinder-task performance within species"
+      endpoint_category: animal_operant_task
+      effect_direction: increase
+      effect_size:
+        metric: p_value_only
+        as_reported: "Performance improved significantly over successive trials for the zebra finches (= 0.037), song sparrows (= 0.014), swamp sparrows (= 0.008) and orange amazons (= 0.029)"
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: full_text
+        extracted_by: agent:comparative
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: other_species_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      Two independent lines of evidence against the instrument's construct validity: an
+      experimental manipulation showing response learning improves scores, and a
+      trial-order reanalysis showing four of seven bird species in the original dataset
+      improved across the ten test trials. Converging designs on the same proposition,
+      which is level 3 on evidence_strength_v1, and it is a proposition about a
+      measurement rather than about a species, so the no-phylogenetic-control cap does
+      not apply.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "THE MOST CONSEQUENTIAL DEFLATIONARY CLAIM IN THIS ATLAS. The cylinder task is the instrument behind both :001 and :002. If its scores partly index motor routine acquisition, then the flagship cross-species result and its flagship refutation are both measuring something other than what they name, and the trial effects in four of seven original bird species show the problem was present in the original data."
+    - "this does NOT show the task measures nothing, and it does not license discarding :001 or :002; it shows the construct is contaminated and the effect size of the contamination is unknown in most taxa"
+    - "the chick experiment is developmental; the adult magnitude of the confound is untested"
+    - "ENUM APPROXIMATION: this was a randomised two-treatment behavioural experiment in birds. `evidence.design` has no behavioural-experiment value, so `rct_parallel` is used for its parallel-group randomised structure (the species, phenotype_class and translation fields make clear it is not a human trial), and `causal_attribution.basis` is set to `theoretical_argument`, which understates a genuine randomised manipulation. See the schema change request."
+  confounders: ["age", "species-typical reliance on motor routines", "reinforcement schedule", "prior transparency experience"]
+  dependencies: [CLM:comparative:SELF_REGULATION:001, CLM:comparative:SELF_REGULATION:002]
+  status: active
+  provenance:
+    created_by: agent:comparative
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-comparative-01

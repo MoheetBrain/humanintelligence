@@ -1,0 +1,136 @@
+# Facet assessment — SLC16A7 (MCT2). Contract §5.2 / §5.3.
+schema_version: 0.1.0
+target_id: TGT:SLC16A7
+assessed_by: agent:power
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+facets:
+  - facet: mechanistic_causal_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Converging causal loss-of-function evidence across two species, three
+      independent laboratories, two knockdown technologies and four behavioural
+      paradigms, with an internal substrate-rescue control that fails specifically
+      for the neuronal transporter while succeeding for the astrocytic ones. That
+      asymmetry is the strongest mechanistic argument in this atlas.
+    claim_refs: [CLM:power:SLC16A7:001, CLM:power:SLC16A7:002, CLM:power:SLC16A7:003, CLM:power:SLC16A7:005]
+    counter_level: 2
+    counter_rationale: >-
+      A published methodological critique states that lactate shuttling was never
+      measured in any of these studies and that the inhibitors and knockdown tools
+      used are not specific, offering testable alternatives including inhibition of
+      mitochondrial pyruvate transport by the blockers themselves. A separate rodent
+      study found that dorsal hippocampal acquisition used direct neuronal glucose
+      uptake rather than a monocarboxylate route, and the authors of the
+      cell-type-specific study report a heterologous neurogenesis effect that could
+      mediate the memory phenotype.
+    counter_claim_refs: [CLM:power:anls:002, CLM:power:anls:003, CLM:power:SLC16A7:004]
+    limiting_factor: "the entire strand depends on knockdown/antisense specificity, which is contested in print and has not been settled by an orthogonal method"
+
+  - facet: adult_onset_perturbation
+    assessment_status: assessed
+    level: 3
+    rationale: >-
+      Unusually strong for this atlas: every MCT2 manipulation retrieved was
+      performed in adult animals and tested within days to weeks, in two species and
+      by two independent methods. Adult dependence is not inferred, it is what was
+      measured.
+    claim_refs: [CLM:power:SLC16A7:001, CLM:power:SLC16A7:002, CLM:power:SLC16A7:005]
+    counter_level: 0
+    counter_rationale: "no adult-onset experiment on this target returned a null"
+    counter_claim_refs: []
+    limiting_factor: "adult dependence is established for loss of function only; nothing tests adult gain of function"
+
+  - facet: above_baseline_enhancement
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. Every study raises or restores lactate/pyruvate
+      availability against a knockdown background; no study increases MCT2 above wild
+      type, and the one manipulation that added substrate to intact neuronal
+      transport produced no rescue and no benefit.
+    search_basis: >-
+      Scope: PubMed across the whole index for MCT2 and SLC16A7 - the lactate-shuttle sets
+      ('astrocyte neuron lactate transport memory consolidation monocarboxylate
+      transporter', 10 results; 'astrocyte-neuron lactate transport required for long-term
+      memory formation Suzuki Alberini') plus the drug-memory reconsolidation literature -
+      read specifically for gain-of-function arms. A hit would have been any experiment
+      raising MCT2 above wild type, or any arm in which adding substrate to INTACT neuronal
+      transport improved performance above control. Neither exists: every retrieved study
+      reduces MCT2 and then fails to rescue it, which is informative about the floor and
+      silent about the ceiling.
+    claim_refs: []
+    counter_level: 1
+    counter_rationale: >-
+      Indirect only: in the founding study, neither L-lactate nor glucose improved
+      anything once neuronal transport was reduced, and no arm reports a
+      supra-normal effect in intact animals.
+    counter_claim_refs: [CLM:power:SLC16A7:001]
+    limiting_factor: "no gain-of-function or overexpression experiment exists for MCT2"
+
+  - facet: transfer_breadth
+    assessment_status: assessed
+    level: 1
+    rationale: >-
+      Weak: the MCT2 deficit appears across several distinct rodent paradigms
+      (inhibitory avoidance, spatial learning and retention, conditioned place
+      preference), which shows the requirement is not task-specific, but all of them
+      are animal memory tasks and none is a transfer or multi-domain measure.
+    claim_refs: [CLM:power:SLC16A7:001, CLM:power:SLC16A7:002, CLM:power:SLC16A7:005]
+    counter_level: 0
+    counter_rationale: "no task type tested has come back unaffected"
+    counter_claim_refs: []
+    limiting_factor: "breadth of a DEFICIT is not breadth of a benefit; no benefit exists to transfer"
+
+  - facet: dose_response_knowledge
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. No graded knockdown series, no partial-versus-full
+      reduction comparison and no rescue-substrate concentration series was retrieved
+      for MCT2.
+    search_basis: >-
+      Scope: the same MCT2 result sets, read for graded manipulations. A hit would have been
+      a graded knockdown series, a partial-versus-complete reduction comparison, or a
+      rescue-substrate concentration series. Knockdown depth is not reported quantitatively
+      in any of the four retrieved studies, so the target has no exposure axis despite
+      having the strongest mechanistic evidence in this atlas.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "nothing to contradict"
+    counter_claim_refs: []
+    limiting_factor: "knockdown depth is not reported quantitatively in any retrieved study"
+
+  - facet: human_intervention_evidence
+    assessment_status: assessed
+    level: 0
+    rationale: >-
+      Searched and found nothing. No human intervention, no human genetic phenotype
+      and no human imaging proxy for SLC16A7 was retrieved. This is the largest gap
+      in the deep half of this atlas: the target with the best mechanistic evidence
+      has zero human evidence of any kind.
+    search_basis: >-
+      PubMed searched across the whole index for SLC16A7 and MCT2 within the
+      lactate-transport result sets, with no date limit; ClinicalTrials.gov searched for
+      interventions matching lactate or monocarboxylate against cognition, memory or
+      cognitive function (19 trials, all screened), which returned only manipulations of
+      circulating substrate. A hit would have been any human record naming MCT2 or SLC16A7 -
+      interventional, genetic, or an imaging proxy - with a cognitive endpoint. There is
+      none. This zero is the single most important one in the atlas: the target with the
+      highest mechanistic and adult-onset grades has no human evidence whatsoever. The
+      target-directed registry search added in the second round (interventions matching
+      monocarboxylate, MCT1, MCT2, MCT4, GPR81, HCAR1 or lactate receptor; 20 trials, all
+      screened) returned no intervention directed at this gene: the MCT1 inhibitor
+      SRC:NCT:NCT01791595 is the only transporter-directed human trial and it targets a
+      different transporter, and the MCT8 trials returned are a different gene again
+      (SLC16A2). SRC:NCT:NCT01455376, which completed in 2010 with a neurocognitive
+      primary outcome and no posted results, is a genuine reporting gap in the
+      lactate-axis evidence base but is listed in reporting_gap_refs on the HCAR1 facet
+      only: it infuses circulating lactate, engaging this transporter's substrate rather
+      than the transporter, and one shared trial should not become four counts.
+    claim_refs: []
+    counter_level: 0
+    counter_rationale: "no human study has tested and failed; the question is unaddressed in humans"
+    counter_claim_refs: []
+    limiting_factor: "complete absence of human data"

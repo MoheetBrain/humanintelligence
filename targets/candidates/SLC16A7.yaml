@@ -1,0 +1,63 @@
+# Target dossier — SLC16A7 (MCT2, neuronal monocarboxylate transporter). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:SLC16A7
+symbol: SLC16A7
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: solute_carrier_transporter
+represented_entities: [GENE:SLC16A7, PROT:SLC16A7]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    If neurons import astrocyte-derived lactate to fuel the protein synthesis that
+    consolidation requires, then neuronal MCT2 is the last gate on that route and its
+    capacity could bound how much new long-term memory a circuit can lay down per unit
+    time. Four independent rodent knockdown studies agree that removing MCT2 blocks
+    long-term memory and that, unlike astrocytic transporter knockdown, the deficit is
+    NOT rescued by lactate, pyruvate, ketone body or glucose. That asymmetry is the
+    best mechanistic evidence in this atlas. It is also entirely rodent, entirely
+    loss-of-function, and rests on a toolkit whose specificity is published as disputed.
+  proposed_modulation: increase_activity
+  mechanism_chain:
+    - CLM:power:anls:001
+    - CLM:power:SLC16A7:001
+    - CLM:power:SLC16A7:003
+    - CLM:power:SLC16A7:002
+  state_variables:
+    - id: SV:consolidation.synaptic_consolidation_efficiency
+      asserted_relation: modulates
+      direction: increases
+      response_shape: threshold
+      claim_refs: [CLM:power:SLC16A7:001, CLM:power:SLC16A7:003]
+    - id: SV:consolidation.systems_consolidation_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A7:002]
+    - id: SV:plasticity.adult_neurogenesis_rate
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A7:004]
+    - id: SV:power.lactate_flux
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:SLC16A7:001, CLM:power:anls:001]
+  computational_primitives: [PRIM:memory_allocation]
+known_liabilities: []
+developmental_confound: low
+developmental_confound_rationale: >-
+  The MCT2 evidence base is unusual in this atlas for being genuinely adult and acute:
+  knockdown was performed in adult animals and tested within days. The confound here is
+  not developmental timing but tool specificity, and a heterologous route through
+  blunted adult neurogenesis that the authors of CLM:power:SLC16A7:004 report themselves.
+open_questions:
+  - "Is there any human data on SLC16A7 at all? None was retrieved: no human genetic phenotype, no imaging proxy, no intervention. This is the largest single gap in the deep half of this atlas."
+  - "Does the MCT2 no-rescue asymmetry survive a manipulation that does not rely on antisense oligodeoxynucleotides or viral knockdown, given the specificity critique in CLM:power:anls:002?"
+  - "Does raising MCT2 above normal do anything? No study retrieved tests gain of function, so the proposed_modulation above is a hypothesis with zero supporting evidence."
+  - "How much of the memory phenotype is mediated by the neurogenesis effect rather than by neuronal fuelling?"
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

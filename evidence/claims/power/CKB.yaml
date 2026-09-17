@@ -1,0 +1,485 @@
+# Claims — CKB (brain-type cytosolic creatine kinase, B-CK)
+#
+# Contract: docs/DATA_CONTRACT.md §4. Curated by agent:power.
+#
+# READ THIS BEFORE USING THESE CLAIMS
+# -----------------------------------
+# There is NO human perturbation evidence for CKB. The human records here (005, 006)
+# are 31P-MRS associations with the phosphocreatine pool, which is the substrate of
+# the creatine-kinase reaction but is not CKB-specific: no claim in this file
+# establishes that changing CKB changes human cognition.
+#
+# 003 is the key counterweight: the creatine-kinase system is partially redundant,
+# and the authors of the cited work state that the surviving reactions plus other
+# phosphoryl-transfer systems sufficed for basic function. A power atlas that treats
+# CKB as a bottleneck has not read that sentence.
+#
+# 001 is a SAFETY-DIRECTION result, not a cognitive one: creatine-kinase deficiency
+# suppressed chemically induced seizures. Lower seizure susceptibility in a knockout
+# is not evidence that inhibiting CKB is safe or useful.
+
+- claim_id: CLM:power:CKB:001
+  schema_version: 0.1.0
+  statement: >-
+    Mice lacking both brain-type cytosolic and ubiquitous mitochondrial creatine
+    kinase largely failed to develop pentylenetetrazole-induced generalised seizures
+    and showed no rhythmic electroencephalographic seizure activity, whereas all
+    wild-type animals developed full seizures.
+  subject: PROT:CKB
+  predicate: POSITIVELY_REGULATES
+  object: SV:safety.seizure_risk
+  claim_type: causal_perturbation
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: []
+  phenotype_class: electrophysiological_proxy
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the model deletes two creatine-kinase isoforms simultaneously, so the effect cannot be assigned to CKB alone"
+      - "germline deletion permits lifelong compensatory remodelling, including the hippocampal mossy-fibre changes reported by the same group"
+      - "the seizure stimulus is a chemical convulsant, not spontaneous epileptogenesis"
+  evidence:
+    - source_id: SRC:PMID:19624717
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "mice lacking both CK-B and UbCKmit, compared with wild-type"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "pentylenetetrazole-induced seizure behaviour and electroencephalographic rhythmic activity"
+      endpoint_category: electrophysiological_proxy
+      endpoint_measured: measured
+      effect_direction: decrease
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Clear causal rodent result with a physiological readout, but a double knockout
+      that cannot isolate CKB, no replication, and a convulsant-challenge paradigm.
+    calibration_status: uncalibrated_subjective
+  risks: ["a reduced-seizure phenotype in a knockout must not be read as evidence that CKB inhibition is safe"]
+  confounders: ["simultaneous loss of mitochondrial creatine kinase", "developmental mossy-fibre remodelling"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:CKB:002
+  schema_version: 0.1.0
+  statement: >-
+    In the introduction to their mitochondrial creatine kinase study the same group
+    report their own earlier finding that mice lacking the B-CK isoform showed an
+    abnormal behavioural phenotype covering exploration, habituation, seizure
+    susceptibility and spatial learning, associated with altered hippocampal
+    mossy-fibre field size.
+  subject: PROT:CKB
+  predicate: MODULATES
+  object: SV:cognition.learning_rate
+  claim_type: causal_perturbation
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "this is a secondary report of prior work inside another paper's abstract, not a primary extraction: the effect sizes, directions and task details were not retrieved"
+      - "the phenotype is accompanied by structural hippocampal remodelling, so it may be developmental rather than a direct energetic effect"
+  evidence:
+    - source_id: SRC:PMID:14977190
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "mice lacking the B-CK creatine kinase isoform, as described by the authors in their own prior work"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "exploration, habituation, seizure susceptibility and spatial learning"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: unknown
+      effect_direction: not_reported
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: not_assessed
+      evidence_role: qualifies
+      extraction:
+        basis: secondary_report
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: false
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Secondary report only; no primary text read, no effect sizes, no direction
+      specified for individual tasks.
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "content_checked is deliberately false: only the citing paper's one-sentence summary of the primary CKB-knockout behavioural study was read, not the primary paper. The red team should downgrade this claim and replace it with a primary source if the CKB behavioural phenotype matters to any ranking."
+  confounders: ["hippocampal mossy-fibre structural change"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:CKB:003
+  schema_version: 0.1.0
+  statement: >-
+    Mice lacking the ubiquitous mitochondrial creatine kinase isoform showed slower
+    Morris water maze acquisition and diminished open-field habituation while
+    retaining normal sensory and motor function, and the authors attribute that
+    preservation to the intact cytosolic B-CK reaction and other phosphoryl-transfer
+    systems being sufficient for basic physiological activity.
+  subject: PROC:phosphocreatine_shuttle
+  predicate: CONSTRAINS
+  object: SV:cognition.learning_rate
+  claim_type: mechanistic
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: germline_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the sufficiency statement is the authors' interpretation, framed in the retrieved text as a prediction rather than a measured result"
+      - "reduced acoustic startle and absent prepulse inhibition in the same animals indicate a broad sensorimotor gating change that could contribute to task performance"
+      - "redundancy demonstrated for one isoform does not establish the size of the reserve in the intact system"
+  evidence:
+    - source_id: SRC:PMID:14977190
+      design: knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "UbCKmit-null mice compared with controls in a battery of behavioural tasks"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "Morris water maze acquisition, open-field habituation, acoustic startle and prepulse inhibition"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: tested_in_healthy
+    supra_normal: no_enhancement_observed
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      A single knockout study, but one that directly speaks to redundancy in the
+      phosphocreatine shuttle and reports preserved basic function alongside a
+      learning deficit.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["altered sensorimotor gating"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:CKB:004
+  schema_version: 0.1.0
+  statement: >-
+    Hippocampal granule neurons from mice lacking both brain creatine-kinase isoforms
+    cleared elevated intracellular calcium faster than wild-type neurons after
+    repeated potassium-induced depolarisation, which the authors propose as a
+    contributor to the altered electroencephalographic and seizure phenotype.
+  subject: PROT:CKB
+  predicate: MODULATES
+  object: SV:efficiency.ion_homeostasis_load
+  claim_type: mechanistic
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: [REGION:hippocampus]
+    cell_types: [CELL:hippocampal_granule_cell]
+  phenotype_class: cellular_excitability
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "measured in vitro after artificial depolarisation, so the relevance to physiological firing is unestablished"
+      - "double knockout again prevents isoform attribution"
+      - "faster calcium clearance is a counter-intuitive direction for an energy-deficient cell and the mechanism is not resolved in the retrieved text"
+  evidence:
+    - source_id: SRC:PMID:19624717
+      design: electrophysiology
+      species: SPECIES:NCBITaxon:10090
+      population: "hippocampal granule neurons from CK double-knockout and wild-type mice"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: cells
+      endpoint: "intracellular calcium removal speed after single and repetitive depolarisation"
+      endpoint_category: cellular_excitability
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: "Single in-vitro measurement in a double knockout, no replication, mechanism unresolved."
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: []
+  dependencies: [CLM:power:CKB:001]
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:CKB:005
+  schema_version: 0.1.0
+  statement: >-
+    In a small 31P magnetic resonance spectroscopy study of older adults, grey-matter
+    phosphocreatine level was positively associated with Stroop interference
+    performance across all participants, and white-matter adenosine triphosphate level
+    was associated with Stroop interference only in the late-life-depression group.
+  subject: SV:power.phosphocreatine_reserve
+  predicate: PREDICTS
+  object: SV:cognition.attentional_control
+  claim_type: association
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: aged
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: executive_function
+  causal_attribution:
+    basis: human_observational_association
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "cross-sectional association with no perturbation: the direction of causality is unestablished and reverse causation is not excluded"
+      - "very small sample and a mixed clinical and control group, so the association may not generalise to healthy adults"
+      - "31P-MRS phosphocreatine is a pool size, not a flux, and does not identify creatine-kinase activity or CKB expression"
+  evidence:
+    - source_id: SRC:PMID:26891040
+      design: case_control
+      species: SPECIES:NCBITaxon:9606
+      population: "ten patients with late-life depression and eight normal elderly controls"
+      sample_size:
+        reported_as: "Ten patients with late life depression and eight normal elderly controls"
+        value: 18
+        unit: participants
+      endpoint: "Stroop colour and interference test scores against whole-brain 31P-MRS phosphocreatine, ATP, inorganic phosphate and pH"
+      endpoint_category: executive_function
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: mixed
+    supra_normal: untested
+    human_relevance: human_observational
+    general_intelligence_relevance: single_domain_cognitive
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 1
+    rationale: >-
+      Human, adult, and directly about a power state variable, but a single very small
+      cross-sectional study in a clinical sample with no causal leverage.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["depression status", "age", "vascular disease burden", "medication"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01
+
+- claim_id: CLM:power:CKB:006
+  schema_version: 0.1.0
+  statement: >-
+    A 31P magnetic resonance spectroscopic imaging study of 31 early-stage Alzheimer's
+    disease patients and 31 matched controls found phosphocreatine increased in
+    retrosplenial cortex and both hippocampi in the patient group, together with
+    increased phosphocreatine to inorganic phosphate ratio and increased pH, so a
+    larger phosphocreatine pool accompanied rather than protected against early
+    degeneration.
+  subject: SV:power.phosphocreatine_reserve
+  predicate: PREDICTS
+  object: SV:cognition.general_cognitive_ability
+  claim_type: association
+  direction: unclear
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: aged
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: metabolic_proxy
+  causal_attribution:
+    basis: human_observational_association
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the study measured group differences in metabolite levels, not a relationship to cognitive scores, so the cognitive interpretation is inferential"
+      - "raised phosphocreatine in disease may reflect reduced utilisation rather than increased reserve, which is precisely the identifiability problem recorded in atlases/power/metrics.yaml"
+      - "regional specificity could reflect partial-volume or atrophy artefacts"
+  evidence:
+    - source_id: SRC:PMID:29876246
+      design: case_control
+      species: SPECIES:NCBITaxon:9606
+      population: "31 early stage Alzheimer's disease patients and 31 age- and gender-matched controls"
+      sample_size:
+        reported_as: "31 early stage AD patients and 31 age- and gender-matched controls"
+        value: 62
+        unit: participants
+      endpoint: "regional phosphocreatine, phosphocreatine to inorganic phosphate ratio, pH and phospholipid metabolites"
+      endpoint_category: metabolic_proxy
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: abstract
+        extracted_by: agent:power
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: contradicted
+    human_relevance: human_observational
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: >-
+      Reasonably sized matched human imaging study bearing directly on whether a larger
+      phosphocreatine pool tracks better function; observational only, and the
+      cognitive link is inferred rather than measured.
+    calibration_status: uncalibrated_subjective
+  risks: []
+  confounders: ["regional atrophy", "disease stage", "tissue pH differences"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:power
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-power-01

@@ -1,0 +1,15 @@
+# FIXTURE — synthetic, for tests only. REJECTED BY V21: level 4 on a human-proposition facet whose only cited claim is rodent_only (contract §5.3).
+schema_version: "0.1.0"
+target_id: TGT:PLACEHOLDER
+assessed_by: agent:alphacognition
+assessed_on: "2026-09-17"
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+  - facet: human_genetic_association
+    assessment_status: assessed
+    level: 4
+    rationale: "synthetic fixture: graded strong on a human proposition"
+    claim_refs: [CLM:alphacognition:PLACEHOLDER:001]
+    counter_level: 0
+    counter_rationale: null

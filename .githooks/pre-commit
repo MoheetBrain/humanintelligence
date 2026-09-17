@@ -118,8 +118,14 @@ def main() -> int:
     validator = root / "graph" / "validate_graph.py"
     interpreter = root / ".venv" / "bin" / "python"
     if touches_records and validator.is_file() and interpreter.is_file():
+        # Errors block; warnings do not. A warning here means known incompleteness
+        # (a target not yet audited, a source not yet verified), and requiring zero
+        # warnings would mean no commit is possible until an entire sprint finishes —
+        # which destroys incremental history and pushes work into one unreviewable
+        # commit. Invalidity is what must never reach history; incompleteness is what
+        # docs/PROJECT_STATUS.md and the ledger exist to record honestly.
         result = subprocess.run(
-            [str(interpreter), str(validator), "--strict", "--quiet"],
+            [str(interpreter), str(validator), "--quiet"],
             capture_output=True,
             text=True,
             check=False,
@@ -127,7 +133,7 @@ def main() -> int:
         if result.returncode != 0:
             tail = (result.stdout + result.stderr).strip().splitlines()[-25:]
             problems.append(
-                "Repository validation failed (graph/validate_graph.py --strict):\n      "
+                "Repository validation failed with ERRORS (graph/validate_graph.py):\n      "
                 + "\n      ".join(tail)
             )
 

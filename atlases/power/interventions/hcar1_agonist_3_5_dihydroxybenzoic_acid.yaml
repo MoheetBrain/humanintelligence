@@ -1,0 +1,29 @@
+schema_version: 0.1.0
+id: CPD:hcar1_agonist_3_5_dihydroxybenzoic_acid
+node_type: Compound
+label: "3,5-dihydroxybenzoic acid (HCAR1/GPR81 agonist research probe)"
+identifiers:
+  chembl_id: null
+  identifier_provenance: >-
+    ChEMBL compound_search was run twice in the curation session, for
+    '3,5-dihydroxybenzoic acid' and for '3,5-dihydroxybenzoate'. Both returned zero
+    results. No identifier is therefore recorded, and none was guessed. The slug is
+    the contract's permitted fallback (§1.2).
+related_probes_named_in_retrieved_text:
+  - "3-chloro-5-hydroxybenzoic acid"
+  - "3,5-dihydroxybenzoic acid"
+targets: [TGT:HCAR1]
+mechanism_as_reported: "specific agonist at the hydroxycarboxylic acid receptor 1, a Gi-coupled receptor; downstream reduction of adenylyl cyclase activity and cyclic AMP"
+state_variables_touched:
+  - SV:workspace.recurrent_gain
+  - SV:consolidation.synaptic_consolidation_efficiency
+  - SV:cognition.sustained_attention_stability
+cited_by_claims: [CLM:power:HCAR1:001, CLM:power:HCAR1:002, CLM:power:HCAR1:004, CLM:power:HCAR1:006]
+direction_warning: >-
+  Agonist effects retrieved in this session point DOWNWARD on neural gain: reduced
+  cortical firing and spontaneous calcium activity, blunted exercise-associated PKA
+  phosphorylation, and impaired memory when given before training. The one positive
+  memory result required post-training administration. Do not model this probe as a
+  capacity enhancer.
+dose_information: omitted_by_policy
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

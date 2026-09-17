@@ -1,0 +1,233 @@
+# Red-team audit of a GENERATED RULE rather than of a target. agent:red_team, 2026-09-17.
+#
+# agent:alphacognition asked for this specifically: "Four facets x 27 targets were graded
+# by code, not by reading. If it is wrong it is wrong 108 times identically." Auditing a
+# sample of the outputs would not find a systematic error, because a systematic error looks
+# like consistent evidence. So the rule was read as source
+# (pipelines/alphacognition/build_assessments.py) alongside its input vocabulary
+# (atlases/alphacognition/cognitive_trait_panel.yaml) and its outputs.
+#
+# The finding is that the rule is well designed, states its own limits, and contains ONE
+# defect - and that the defect is the exact failure mode the agent predicted: a
+# single-line mismatch between which field the rule reads and which field carries the
+# restriction, repeated identically wherever the affected trait appears.
+
+- audit_id: AUD:red_team:GENETICS_FACET_RULE:001
+  schema_version: 0.1.0
+  scope:
+    kind: model
+    id: pipelines/alphacognition/build_assessments.py
+  audited_by: agent:red_team
+  audited_on: "2026-09-17"
+  checks:
+    - check: educational_attainment_mistaken_for_intelligence
+      result: fail
+      note: >-
+        THE DEFECT. atlases/alphacognition/cognitive_trait_panel.yaml classifies GWAS
+        Catalog trait 'mathematical ability' (EFO_0004875) with
+        phenotype_class: fluid_reasoning, and simultaneously marks it
+        use_in_ranking: supporting with the note "Partly an achievement measure (it depends
+        on instruction), so supporting only, never a stand-alone basis for a facet level."
+        That restriction is correct and the panel author clearly intended it. But
+        build_assessments.py tests membership of DIRECTLY_RELEVANT = {g_factor,
+        fluid_reasoning}, which reads phenotype_class and never reads use_in_ranking. So the
+        restriction never fires, and a 'mathematical ability' association alone is
+        sufficient to award human_genetic_association level 3 - the level the contract
+        reserves for "one human interventional/genetic result with a directly relevant
+        endpoint". The underlying records are 'Self-reported math ability' and 'Highest math
+        class taken (MTAG)' from SRC:PMID:30038396, whose own title is a genome-wide
+        association study of EDUCATIONAL ATTAINMENT in 1.1 million individuals. 'Highest
+        math class taken' is a record of which course a person enrolled in. The rule has an
+        explicit EA cap on causal_gene_attribution ("if the only L2G candidacy is on
+        educational-attainment traits, the level cannot exceed 1"), which shows the author
+        was guarding against exactly this - but the cap tests the phenotype_class LABEL, and
+        the laundering happens at the trait-to-class mapping step UPSTREAM of the cap, so
+        the cap cannot see it.
+      evidence_refs: [SRC:PMID:30038396]
+    - check: overclaiming
+      result: fail
+      note: >-
+        Five claims rest ENTIRELY on 'math' endpoints from SRC:PMID:30038396 while being
+        classed fluid_reasoning: gwas.CRTC1:002, gwas.GRIN2B:003, gwas.OTX2:002,
+        gwas.PDE4B:003, gwas.SLC16A7:002. For four of those five targets the level-3 grade
+        SURVIVES on genuine intelligence-trait associations from other publications, and
+        only the RATIONALE STRING is overstated - it counts the math records among the
+        directly-relevant ones. For CRTC1 the math record is the stand-alone basis and the
+        grade falls; that is the one downgrade.
+      evidence_refs:
+        - CLM:alphacognition:gwas.CRTC1:002
+        - CLM:alphacognition:gwas.GRIN2B:003
+        - CLM:alphacognition:gwas.OTX2:002
+        - CLM:alphacognition:gwas.PDE4B:003
+        - CLM:alphacognition:gwas.SLC16A7:002
+    - check: association_mistaken_for_causation
+      result: pass
+      note: >-
+        The rule's facet DECOMPOSITION is correct and should not be changed.
+        human_genetic_association asks whether a signal exists at this locus;
+        causal_gene_attribution asks separately whether it is attributable to this gene, and
+        reaches 3 or 4 for no target in the repository. Downgrading the association facet
+        for the attribution gap would double-count the same penalty. Every generated claim
+        carries basis: gwas_association_only and locus_to_gene_resolved: 'no', and each
+        statement ends "Positional mapping is not a causal gene assignment." The exposure is
+        not in the rule; it is in how D1 aggregates the two facets, which is audited in
+        evidence/audits/red_team/RANKING_MODEL.yaml.
+    - check: provenance_integrity
+      result: pass
+      note: >-
+        Exemplary. Every generated claim names its release, accession, association id,
+        mapping basis and snapshot directory; sample sizes appear as verbatim
+        `reported_as` strings with `value: null` where the number is not directly quotable;
+        and the rationale strings quote the counts the grade came from, so the grade is
+        re-derivable from the record. Level 4 is never awarded on any of the four facets and
+        each assessment states why in `limiting_factor`.
+    - check: duplicated_evidence
+      result: flag
+      note: >-
+        One publication can supply many association records, so a rationale that counts
+        RECORDS reads as broader than the same evidence counted by PUBLICATION. The rule
+        mitigates this by reporting both counts in the rationale string ("5 catalogued
+        genome-wide association record(s) ... across 2 publication(s)"), which is good
+        practice and let this audit find the problem quickly. The level itself is awarded on
+        record presence, not on record count, so the inflation does not change grades.
+    - check: citation_dependence
+      result: fail
+      note: >-
+        Two educational-attainment GWAS carry 40 of the repository's 289 curated claims -
+        SRC:PMID:30038396 with 20 and SRC:PMID:35361970 with 20. The largest single cohort
+        string in the repository is Okbay 2022's approximately 3.04 million European sample,
+        appearing 14 times, and SRC:PMID:37365406 is UK Biobank only (n=336,993) with 6
+        claims. Only 5 claims mention UK Biobank in text, so the concentration is invisible
+        to a text search and had to be found by grouping sample-size strings. The agent
+        flagged this about itself and stated that nothing in its atlas de-duplicates
+        cohorts; that remains true.
+      evidence_refs: [SRC:PMID:30038396]
+    - check: publication_bias
+      result: flag
+      note: >-
+        A GWAS catalogue is comparatively resistant to publication bias for the loci it
+        contains, since null loci within a study are simply not catalogued rather than
+        selectively reported. The residual asymmetry is trait selection: traits get GWAS
+        because cohorts measured them, and cohorts measure educational attainment far more
+        often than they measure fluid reasoning, which is a large part of why EA dominates
+        this evidence base at all.
+    - check: developmental_effect_mistaken_for_adult
+      result: flag
+      note: >-
+        The adult_expression_and_timing rule requires detection in all sampled adult human
+        brain regions for level 2 and caps at 3, never awarding 4, with the stated reason
+        that adult cell-type resolution was not reachable. The agent states that no
+        developmental statement anywhere is inferred from adult GTEx values, and that its
+        single developmental claim is rodent, indirect and graded 1. Verified: the
+        distribution is level 2 x 25, which is the rule's ceiling for expression-only
+        evidence.
+    - check: rescue_mistaken_for_enhancement
+      result: not_applicable
+      note: >-
+        Genetic association evidence speaks to neither rescue nor enhancement; it is
+        observational variation. The rule makes no supra-normal claim and every generated
+        claim carries translation.supra_normal: untested.
+    - check: animal_memory_mistaken_for_human_intelligence
+      result: not_applicable
+      note: >-
+        All four generated facets are human-only by construction; no animal evidence enters
+        this rule.
+    - check: negative_clinical_evidence
+      result: not_applicable
+      note: >-
+        The rule consumes catalogued associations and expression data. Clinical evidence is
+        outside its scope, and the agent correctly left safety liabilities to the red team
+        rather than ingesting them.
+    - check: dose_response_inversion
+      result: not_applicable
+      note: >-
+        Per-allele GWAS effects are not exposure-response relations, and every generated
+        claim states in `risks` that they must never be read as the expected effect of
+        modulating the gene. That warning is the right one and it is in a required field.
+    - check: seizure_liability
+      result: not_applicable
+      note: "Out of scope for a genetics facet rule."
+    - check: psychiatric_liability
+      result: not_applicable
+      note: "Out of scope for a genetics facet rule."
+    - check: systemic_adverse_effects
+      result: not_applicable
+      note: "Out of scope for a genetics facet rule."
+    - check: model_organism_translation_failure
+      result: not_applicable
+      note: "The rule uses human data only."
+    - check: proposes_prohibited_work
+      result: pass
+      note: >-
+        The rule ingests public database releases and proposes no experiment. Its deferred
+        items (brain QTL beyond Open Targets, AlphaGenome, cell-type resolution) are all
+        computational, and the agent states that no module was written that could produce a
+        number where the interface was unavailable - nothing imputes, zero-fills or
+        placeholders a prediction.
+  findings:
+    - finding_id: AUD:red_team:GENETICS_FACET_RULE:001#f1
+      severity: critical
+      category: educational_attainment_mistaken_for_intelligence
+      description: >-
+        A one-field mismatch launders educational attainment into fluid reasoning. The trait
+        panel marks 'mathematical ability' as supporting-only and says explicitly that it is
+        "never a stand-alone basis for a facet level"; build_assessments.py awards level 3
+        on phenotype_class membership and never reads use_in_ranking. The affected records
+        are self-reported math ability and highest math class taken, from an
+        educational-attainment GWAS. Five claims are entirely such records; for CRTC1 it is
+        the stand-alone basis of a level-3 grade and that grade is downgraded to 1 in
+        evidence/audits/red_team/CRTC1.yaml. For GRIN2B, OTX2, PDE4B and SLC16A7 the grade
+        survives on other evidence and only the rationale's claimed breadth is overstated.
+        This is precisely the "wrong 108 times identically" failure the authoring agent
+        predicted: a systematic error that looks like consistent evidence.
+      evidence_refs:
+        - SRC:PMID:30038396
+        - CLM:alphacognition:gwas.CRTC1:002
+        - CLM:alphacognition:gwas.PDE4B:003
+    - finding_id: AUD:red_team:GENETICS_FACET_RULE:001#f2
+      severity: minor
+      category: educational_attainment_mistaken_for_intelligence
+      description: >-
+        A second, subtler education channel that no cap addresses: SRC:PMID:29326435 is an
+        MTAG that combines education and intelligence GWAS explicitly to gain statistical
+        power, and its own abstract records the genetic correlation between the two as 0.70.
+        Records from it are classed g_factor. They are education-INFORMED composites rather
+        than pure intelligence endpoints, and they are load-bearing for GPR158, one of whose
+        two directly-relevant records comes from it. Unlike the 'mathematical ability' case
+        this is not a mislabelling - 'Intelligence (MTAG)' is what the catalogue calls it -
+        so it is recorded as a limit on interpretation rather than as a defect.
+      evidence_refs: [CLM:alphacognition:gwas.GPR158:001]
+    - finding_id: AUD:red_team:GENETICS_FACET_RULE:001#f3
+      severity: major
+      category: citation_dependence
+      description: >-
+        Two educational-attainment GWAS carry 40 of 289 curated claims, and the repository's
+        largest cohort is a single ~3.04 million European sample appearing in 14 evidence
+        items. Nothing in the repository de-duplicates cohorts, so two catalogued
+        associations on the same trait can be the same participants twice. The concentration
+        is invisible to a text search for "UK Biobank", which only 5 claims contain.
+      evidence_refs: [SRC:PMID:30038396]
+    - finding_id: AUD:red_team:GENETICS_FACET_RULE:001#f4
+      severity: info
+      category: other
+      description: >-
+        The headline result audited in both directions, as asked. The claim that no seed
+        target reaches level 3 on causal_gene_attribution and that zero of 27 have
+        molecular-QTL colocalisation supporting their gene assignment is NOT too charitable
+        and NOT too harsh; it is a correct statement about the pinned release, and the
+        framing that it reflects thin public brain-QTL coverage rather than the genes being
+        non-causal is also correct - but it is weaker than the framing implies in one
+        respect worth recording. Thin QTL coverage explains why colocalisation is ABSENT; it
+        does not license the inference that colocalisation would be FOUND with better
+        coverage. The honest position is that gene attribution for these targets is
+        unresolved, not pending. The red team did not locate colocalisation evidence in
+        sources the agent did not reach, and did not have access to PsychENCODE or MetaBrain
+        to check, so this finding is a limit on interpretation rather than a correction.
+  adjustments: []
+  claim_status_changes: []
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: derived_from_claims
+    run_id: sprint1-red-team-01

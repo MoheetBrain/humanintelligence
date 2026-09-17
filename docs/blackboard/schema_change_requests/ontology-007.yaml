@@ -1,0 +1,34 @@
+# Schema change request ontology-007
+#
+# Filed by agent:ontology during Sprint 1 Phase 1. Every request here came from a
+# defect found while turning docs/DATA_CONTRACT.md into executable form: the contract
+# either could not be satisfied, or could not be satisfied truthfully.
+#
+# Resolutions are recorded in docs/blackboard/RESOLUTIONS.md where the orchestrator
+# has ruled. `implemented_as` states what the code actually does now, so a reviewer can
+# check the implementation against the request rather than against the intent.
+
+schema_version: 0.1.0
+request_id: ontology-007
+filed_by: agent:ontology
+filed_on: "2026-09-17"
+blocking: false
+
+request: >-
+  Add context.phylogenetic_control and context.species_count.
+
+motivation: >-
+  The comparative atlas needs to state whether a cross-species comparison controlled for
+  relatedness. Without the field, a result that survived a phylogenetic mixed model and an
+  uncontrolled cross-species regression look identical to the validator and to the ranking
+  model. Related species share traits by descent, so an uncontrolled correlation is not
+  convergence.
+
+proposed_change: >-
+  Add both to the claim's context block, with `none` distinct from `not_reported`: 'we looked
+  and there was no control' and 'the methods do not say' are different facts.
+
+implemented_as: >-
+  APPROVED as R6. Both fields in claim.schema.json; the seven-value phylogenetic_control
+  vocabulary keeps `none` and `not_reported` apart. Rule V3b warns when a between-species
+  claim declares no control.

@@ -1,0 +1,2511 @@
+# MACHINE-GENERATED — do not hand-edit.
+# Produced by pipelines/alphacognition/build_coverage_gaps.py
+#
+# claim_type `evidence_gap` (contract §4.1, resolution R5): every record here states that a
+# MEASUREMENT DOES NOT EXIST. It is GRAPH-INERT — no biological or intervention edge is
+# compiled from it — it asserts no effect and no null, and it may never contribute to any
+# facet's counter_level. It exists so that a level-0 facet grade points at a record naming the
+# search that was performed and what it did not contain, instead of at an empty list.
+#
+# Records: 24
+#   kind A (gap.*:001) — the genetics sweep found no cognitive signal for this gene
+#   kind B (gap.*:002) — the studies that do exist did not measure these endpoints
+- claim_id: CLM:alphacognition:gap.ADORA1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for ADORA1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for ADORA1 on any cognitive-ability trait. The catalogue does record
+    53 association(s) for this gene symbol across 18 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.ADORA1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=ADORA1 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; ADORA1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.CHRM1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for CHRM1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for CHRM1 on any cognitive-ability trait. The catalogue does record
+    18 association(s) for this gene symbol across 7 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.CHRM1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=CHRM1 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; CHRM1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.CHRM1:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for CHRM1: the largest human M1 dataset by sample size measured no cognitive
+    endpoint at all, so with respect to cognition it is a gap and not a null. This record exists so that
+    the approval it supports can never be read as cognitive evidence in either direction. It supplies
+    no cognitive measurement of any kind. Absence of measurement is not measured absence, and this record
+    asserts no effect and no null.'
+  subject: CLM:alphacognition:CHRM1:004
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:39880004
+    design: meta_analysis
+    species: SPECIES:NCBITaxon:9606
+    population: adults with schizophrenia experiencing acute psychosis, pooled from three double-blind
+      randomised placebo-controlled trials
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: PANSS total and subscale scores, discontinuation and adverse events; NO cognitive endpoint
+      of any kind
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.CRTC1:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for CRTC1: no study retrieved for CRTC1 measured a second cognitive domain,
+    a transfer endpoint, a dose- or expression-level-response relation, or any human endpoint. The rodent
+    studies that do exist used a single viral overexpression level in a single paradigm. It therefore
+    supplies no measurement behind the level-0 grades on `transfer_breadth`, `dose_response_knowledge`,
+    `human_intervention_evidence`. Absence of measurement is not measured absence, and this record asserts
+    no effect and no null.'
+  subject: CLM:alphacognition:CRTC1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:23223304
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: mice receiving local viral CRTC1 overexpression in dorsal dentate gyrus
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: context fear memory only; no second cognitive domain, no transfer measure, no dose or expression-level
+      series, and no human participants
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.DRD1:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for DRD1: the primary DRD1 source measured one cognitive domain in one species.
+    No primary human interventional study of D1 agonism with a cognitive endpoint was retrieved; the only
+    human-facing record is a narrative review. It therefore supplies no measurement behind the level-0
+    grades on `transfer_breadth`, `human_intervention_evidence`. Absence of measurement is not measured
+    absence, and this record asserts no effect and no null.'
+  subject: CLM:alphacognition:DRD1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:12454947
+    design: pharmacological_perturbation
+    species: SPECIES:NCBITaxon:10090
+    population: male C57BL/6 mice performing a spatial working memory task
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: spatial working memory only; no second cognitive domain and no human participants
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2B1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2B1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2B1 on any cognitive-ability trait. The catalogue does record
+    5 association(s) for this gene symbol across 3 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2B1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2B1 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2B1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2B2:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2B2 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2B2 on any cognitive-ability trait. The catalogue does record
+    29 association(s) for this gene symbol across 21 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2B2:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2B2 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2B2 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2B3:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2B3 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2B3 on any cognitive-ability trait. The catalogue does record
+    11 association(s) for this gene symbol across 8 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2B3:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2B3 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2B3 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2B4:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2B4 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2B4 on any cognitive-ability trait. The catalogue does record
+    84 association(s) for this gene symbol across 30 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2B4:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2B4 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2B4 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2B5:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2B5 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2B5 on any cognitive-ability trait. The catalogue does record
+    0 association(s) for this gene symbol across 0 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2B5:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2B5 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2B5 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.EIF2S1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for EIF2S1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for EIF2S1 on any cognitive-ability trait. The catalogue does record
+    0 association(s) for this gene symbol across 0 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.EIF2S1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=EIF2S1 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; EIF2S1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.GRIN2B:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for GRIN2B: transgenic overexpression has one level by construction, so no
+    retrieved GRIN2B study measured a dose- or expression-response relation — which for a gene whose excess
+    function causes human disease is the most consequential gap in this dossier. No human interventional
+    study of GRIN2B for a cognitive endpoint exists. It therefore supplies no measurement behind the level-0
+    grades on `dose_response_knowledge`, `human_intervention_evidence`. Absence of measurement is not
+    measured absence, and this record asserts no effect and no null.'
+  subject: CLM:alphacognition:GRIN2B:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:10090
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:10485705
+    design: overexpression
+    species: SPECIES:NCBITaxon:10090
+    population: transgenic mice with forebrain-specific NR2B overexpression and wild-type littermates
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: behavioural learning and memory at one transgenic expression level; no dose or expression-level
+      series and no human interventional endpoint
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: rodent_only
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.GRM5:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for GRM5: no retrieved study of mGluR5 modulation included a healthy baseline,
+    in any species, so supra-normal potential has never been measured. The human trial''s own multi-endpoint
+    null is separately recorded as measured counter-evidence in CLM:alphacognition:GRM5:001 and is NOT
+    part of this gap. It therefore supplies no measurement behind the level-0 grades on `above_baseline_enhancement`,
+    `transfer_breadth`. Absence of measurement is not measured absence, and this record asserts no effect
+    and no null.'
+  subject: CLM:alphacognition:GRM5:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:37651202
+    design: rct_parallel
+    species: SPECIES:NCBITaxon:9606
+    population: 3- to 6-year-old children with fragile X syndrome; no healthy comparison arm
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: communication and cognitive/language measures in a deficit population; no healthy-baseline
+      arm and no far-transfer or real-world endpoint
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.HCAR1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for HCAR1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for HCAR1 on any cognitive-ability trait. The catalogue does record
+    70 association(s) for this gene symbol across 40 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.HCAR1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=HCAR1 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; HCAR1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.HDAC2:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for HDAC2 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for HDAC2 on any cognitive-ability trait. The catalogue does record
+    3 association(s) for this gene symbol across 3 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.HDAC2:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=HDAC2 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; HDAC2 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.HTR2A:002
+  schema_version: 0.1.0
+  statement: 'Coverage gap for HTR2A: no retrieved study measured objective cognitive performance above
+    a healthy baseline under 5-HT2A agonism. The measured cognitive null in CLM:alphacognition:HTR2A:003
+    is separate and IS counter-evidence; this record covers only the enhancement endpoint nobody measured.
+    It therefore supplies no measurement behind the level-0 grades on `above_baseline_enhancement`. Absence
+    of measurement is not measured absence, and this record asserts no effect and no null.'
+  subject: CLM:alphacognition:HTR2A:002
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: theoretical_argument
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - this is a statement about what the retrieved studies measured, not about what the target does
+    - the searches run in this session are recorded in evidence/sources/alphacognition.yaml; a study this
+      agent did not find would change the picture
+  evidence:
+  - source_id: SRC:PMID:35217796
+    design: rct_crossover
+    species: SPECIES:NCBITaxon:9606
+    population: 28 healthy subjects receiving placebo, LSD and psilocybin in a crossover design
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: self-rated subjective and autonomic effects; no objective cognitive performance test capable
+      of showing improvement above baseline
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: abstract
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - read as a null this would be a serious misreading
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.KCNQ2:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for KCNQ2 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for KCNQ2 on any cognitive-ability trait. The catalogue does record
+    11 association(s) for this gene symbol across 10 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.KCNQ2:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=KCNQ2 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; KCNQ2 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.KL:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for KL across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for KL on any cognitive-ability trait. The catalogue does record 70
+    association(s) for this gene symbol across 24 distinct other trait(s), so the gene is not absent from
+    the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence of measurement,
+    not a measured absence of effect.
+  subject: CLM:alphacognition:expr.KL:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=KL x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; KL appears in no l2GPredictions
+      row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.PTPN5:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for PTPN5 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for PTPN5 on any cognitive-ability trait. The catalogue does record
+    16 association(s) for this gene symbol across 14 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.PTPN5:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=PTPN5 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; PTPN5 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.RGS14:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for RGS14 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for RGS14 on any cognitive-ability trait. The catalogue does record
+    184 association(s) for this gene symbol across 74 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.RGS14:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=RGS14 x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; RGS14 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.RTN4R:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for RTN4R across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for RTN4R on any cognitive-ability trait. The catalogue does record
+    22 association(s) for this gene symbol across 11 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.RTN4R:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=RTN4R x each of the 22 panel EFO trait ids. No cognitive-ability association
+      record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; RTN4R appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.SLC16A1:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for SLC16A1 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for SLC16A1 on any cognitive-ability trait. The catalogue does record
+    8 association(s) for this gene symbol across 9 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.SLC16A1:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=SLC16A1 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; SLC16A1 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.SLC16A3:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for SLC16A3 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for SLC16A3 on any cognitive-ability trait. The catalogue does record
+    35 association(s) for this gene symbol across 22 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.SLC16A3:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=SLC16A3 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; SLC16A3 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py
+- claim_id: CLM:alphacognition:gap.SLC6A8:001
+  schema_version: 0.1.0
+  statement: A systematic sweep of GWAS Catalog release 2026-09-13 for SLC6A8 across all 22 queried cognitive-panel
+    traits, and of Open Targets 26.06 locus-to-gene predictions across the same panel, returned no association
+    and no candidate-gene ranking for SLC6A8 on any cognitive-ability trait. The catalogue does record
+    1 association(s) for this gene symbol across 1 distinct other trait(s), so the gene is not absent
+    from the catalogue — no cognitive endpoint has been measured in relation to it. This is an absence
+    of measurement, not a measured absence of effect.
+  subject: CLM:alphacognition:expr.SLC6A8:001
+  predicate: ABOUT
+  object: PHENO:g_factor
+  claim_type: evidence_gap
+  direction: unclear
+  context:
+    species:
+    - SPECIES:NCBITaxon:9606
+    life_stage: adult
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: g_factor
+  causal_attribution:
+    basis: computational_prediction
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+    - the catalogue records only associations that passed a genome-wide threshold, so absence here is
+      uninformative about small effects
+    - positional annotation means a real signal acting through this gene could be catalogued under a neighbouring
+      gene instead
+    - cognitive GWAS are overwhelmingly European-ancestry, so absence in this data is absence in one ancestry
+      group
+  evidence:
+  - source_id: SRC:DB:gwas_catalog:2026-09-13
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: GWAS Catalog release 2026-09-13, all catalogued studies
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: mapped_gene=SLC6A8 x each of the 22 panel EFO trait ids. No cognitive-ability
+      association record returned.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  - source_id: SRC:DB:opentargets:26.06
+    design: database_release
+    species: SPECIES:NCBITaxon:9606
+    population: Open Targets Platform data version 26.06, GWAS credible sets for the 22 panel traits
+    sample_size:
+      reported_as: null
+      value: null
+      unit: null
+    endpoint: 'queried: every fine-mapped GWAS credible set for the panel traits; SLC6A8 appears in no
+      l2GPredictions row for a cognitive-panel trait.'
+    endpoint_category: not_applicable
+    endpoint_measured: not_measured_in_protocol
+    effect_direction: not_reported
+    effect_size:
+      metric: not_extracted
+      as_reported: null
+      value: null
+      ci_lower: null
+      ci_upper: null
+      p_value: null
+    replication_status: not_assessed
+    evidence_role: qualifies
+    extraction:
+      basis: database_record
+      extracted_by: agent:alphacognition
+      extracted_on: '2026-09-17'
+      content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: human_genetic
+    general_intelligence_relevance: unknown
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 0
+    rationale: an evidence_gap claim carries no evidential weight for or against any proposition by construction;
+      level 0 records that the search was performed and the measurement does not exist
+    calibration_status: uncalibrated_subjective
+  risks:
+  - 'read as a null this would be a serious misreading: nothing here was tested and found absent; the
+    measurement does not exist'
+  - this record is graph-inert and may never raise any facet's counter_level
+  confounders: []
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:alphacognition
+    created_on: '2026-09-17'
+    method: derived_from_claims
+    run_id: sprint1-alphacognition-gaps-01
+    pipeline: pipelines/alphacognition/build_coverage_gaps.py

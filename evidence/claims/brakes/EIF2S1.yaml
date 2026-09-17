@@ -1,0 +1,156 @@
+# Claims — EIF2S1 (eIF2 alpha subunit), Cognitive Brake Atlas.
+#
+# Brake class: translational control. Phosphorylation of eIF2-alpha converts eIF2 from
+# substrate to competitive inhibitor of eIF2B, arresting cap-dependent translation.
+# EIF2S1 is the substrate; the inhibited node is the eIF2B complex, so this file and
+# atlases/brakes claims for EIF2B_COMPLEX share evidence and cross-reference each other.
+#
+# schema_version: 0.1.0
+
+- claim_id: CLM:brakes:EIF2S1:001
+  statement: >-
+    Learning reduced eIF2-alpha phosphorylation in mouse hippocampal excitatory neurons and
+    in somatostatin-expressing but not parvalbumin-expressing inhibitory neurons, and
+    genetically ablating the phosphorylation site in either of the two responsive
+    populations raised general mRNA translation, strengthened synaptic plasticity and
+    enhanced long-term memory.
+  subject: GENE:EIF2S1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: causal_perturbation
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:10090]
+    life_stage: adult
+    baseline_context: healthy_wildtype
+    brain_regions: []
+    cell_types: []
+  phenotype_class: animal_spatial_memory
+  causal_attribution:
+    basis: conditional_developmental_knockout
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the retrieved abstract does not state the age at which the cell-type-restricted ablation took effect, so adult onset is not established"
+      - "the manipulation removes a regulatory site permanently rather than transiently, so it is not a model of a drug"
+      - "male mice"
+  evidence:
+    - source_id: SRC:PMID:33029011
+      design: conditional_knockout
+      species: SPECIES:NCBITaxon:10090
+      population: "male C57BL/6 mice with cell-type-restricted ablation of eIF2-alpha phosphorylation and controls"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: animals
+      endpoint: "mRNA translation rate, CA1 long-term potentiation, and long-term memory"
+      endpoint_category: animal_spatial_memory
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: supports
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: plausible_untested
+    healthy_baseline: tested_in_healthy
+    supra_normal: enhancement_above_healthy_baseline
+    human_relevance: rodent_only
+    general_intelligence_relevance: animal_task_only
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: "cell-type-resolved genetic dissection in healthy animals, converging in direction with independent pharmacological evidence at the downstream eIF2B node"
+    calibration_status: uncalibrated_subjective
+  risks: ["the integrated stress response is protective; permanently removing the substrate site is not a therapeutic model and its long-run costs are untested here"]
+  confounders: ["cell-type-restricted Cre driver specificity", "onset timing"]
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01
+
+- claim_id: CLM:brakes:EIF2S1:002
+  statement: >-
+    The efficacy of the eIF2B-stabilising small molecule depends on the concentration of
+    phosphorylated eIF2-alpha, disappearing above a critical intracellular threshold, so
+    the phosphorylation state of EIF2S1 sets whether the downstream brake can be released
+    pharmacologically at all.
+  subject: GENE:EIF2S1
+  predicate: NEGATIVELY_REGULATES
+  object: SV:consolidation.consolidation_protein_synthesis_capacity
+  claim_type: pharmacodynamic
+  direction: decreases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: not_reported
+    baseline_context: mixed
+    brain_regions: []
+    cell_types: []
+  phenotype_class: molecular_readout
+  causal_attribution:
+    basis: in_vitro_perturbation
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "the threshold was measured in cultured cells; the corresponding threshold in adult neurons is unknown"
+      - "the manipulation acts on eIF2B, so this is evidence about the EIF2S1 phosphorylation state as a modifier rather than about EIF2S1 as a drug target"
+  evidence:
+    - source_id: SRC:PMID:30674674
+      design: pharmacological_perturbation
+      species: SPECIES:NCBITaxon:9606
+      population: "cultured cell lines with graded induction of the integrated stress response"
+      sample_size:
+        reported_as: null
+        value: null
+        unit: not_applicable
+      endpoint: "translational rescue by the compound as a function of phosphorylated eIF2-alpha level"
+      endpoint_category: molecular_readout
+      endpoint_measured: measured
+      effect_direction: mixed
+      effect_size:
+        metric: not_extracted
+        as_reported: null
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: qualifies
+      extraction:
+        basis: abstract
+        extracted_by: agent:brakes
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: unknown
+    healthy_baseline: unknown
+    supra_normal: untested
+    human_relevance: in_vitro_only
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 2
+    rationale: "in vitro only, but it defines the response shape of the whole translational brake as a threshold rather than a gain"
+    calibration_status: uncalibrated_subjective
+  risks: ["a state-gated mechanism cannot be dosed without a readout of that state, and no such human readout exists in this atlas"]
+  confounders: ["cell-line stress kinetics"]
+  dependencies: [CLM:brakes:EIF2B_COMPLEX:003]
+  status: active
+  provenance:
+    created_by: agent:brakes
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-brakes-01

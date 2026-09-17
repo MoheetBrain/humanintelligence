@@ -1,0 +1,124 @@
+# Red-team claim — SLC16A1 (MCT1). The only first-in-human safety read-out for any
+# target in the power atlas, routed here by agent:power because the facet is mine.
+# Contract: docs/DATA_CONTRACT.md section 4. schema_version 0.1.0.
+#
+# READ FROM THE PRIMARY REGISTRY RECORD, not from the power atlas's summary of it.
+# What the posted results establish is stronger than a summary conveys: the
+# protocol's own dose-limiting-toxicity definition names haematological, cardiac and
+# ophthalmic toxicity as the expected dose-limiting classes, and the posted
+# adverse-event tables show retinopathy in 13 of 51 patients as a non-serious event
+# plus 2 serious retinopathy events, and anaemia in 14. Both are ON-TARGET: MCT1 is
+# the erythrocyte lactate transporter and is essential to retinal metabolism.
+#
+# WHY THERE IS ONLY ONE CLAIM IN THIS FILE. A first draft of this file carried a second
+# record, CLM:red_team:SLC16A1:002, for NCT01455376 - a lactate-infusion trial with a
+# declared neurocognitive primary outcome that completed in June 2010 and has posted
+# nothing in sixteen years. It was typed `evidence_gap`, and that was WRONG on two
+# counts, both caught by the validator:
+#   * V16c. `evidence_gap` means the study reported results and NEVER ASKED the question.
+#     NCT01455376 asked it, as its primary outcome, and never published. That is a
+#     REPORTING gap, and the contract's mechanism for a reporting gap is
+#     `reporting_gap_refs` on the relevant facet - never a claim, and never anything that
+#     can reach a `counter_level`. agent:power has already placed it correctly, on HCAR1.
+#   * V3. The draft asserted `GENE:SLC16A1 -ABOUT-> PHENO:clinical_cognitive_composite`.
+#     `ABOUT` has an evidence-layer domain, so a Gene may not be its subject.
+# The record was removed rather than repaired because the right home for the fact is not a
+# claim at all. It survives as a `publication_bias` finding in
+# evidence/audits/red_team/{SLC16A1,HCAR1}.yaml and as a repository-level finding in
+# reports/red_team_audit_v0_1.md. Nothing is lost: the identifier is registered, the
+# source note records the fact, and no provenance is deleted - the id was never locked.
+#
+# ISOFORM DISCIPLINE. Retinopathy and anaemia are MCT1-specific consequences. They do
+# NOT transfer to SLC16A7 (MCT2) or SLC16A3 (MCT4), and this claim is deliberately not
+# cited in those targets' safety grades. Doing so would convert one isoform's toxicity
+# into three targets' liabilities, which is the same error as re-citing one paper to
+# inflate evidence.
+
+- claim_id: CLM:red_team:SLC16A1:001
+  schema_version: 0.1.0
+  statement: >-
+    In a completed phase 1 trial of the MCT1 inhibitor AZD3965 in 53 patients with
+    advanced cancer, the protocol defined dose-limiting toxicity in terms of
+    haematological, cardiac and ophthalmic events, and the posted results report
+    retinopathy in thirteen patients as a non-serious adverse event together with two
+    serious retinopathy events and anaemia in fourteen patients, in a population from
+    which known retinal disease had been excluded at screening.
+  subject: GENE:SLC16A1
+  predicate: INCREASES_RISK
+  object: AE:retinopathy
+  claim_type: clinical_harm
+  direction: increases
+  context:
+    species: [SPECIES:NCBITaxon:9606]
+    life_stage: adult
+    baseline_context: disease_population
+    brain_regions: []
+    cell_types: []
+  phenotype_class: not_applicable
+  causal_attribution:
+    basis: human_randomised_intervention
+    locus_to_gene_resolved: not_applicable
+    alternative_explanations:
+      - "this is a single-arm dose-escalation study in advanced cancer with no placebo control, so attribution of any individual event to the drug rests on the investigators' causality assessment rather than on randomised comparison"
+      - "advanced cancer patients on prior and concurrent therapy have a high background rate of anaemia and of constitutional adverse events, so the haematological signal is less cleanly attributable than the ophthalmic one"
+      - "the retinopathy signal is nonetheless difficult to attribute to background, because known retinal disease was an exclusion at screening and retinopathy is a mechanistically predicted consequence of inhibiting a transporter essential to retinal metabolism"
+      - "AZD3965 is described as an MCT1 inhibitor but has known activity at MCT2; the ophthalmic and haematological findings are conventionally attributed to MCT1, and this record does not resolve the isoform attribution"
+  evidence:
+    - source_id: SRC:NCT:NCT01791595
+      design: open_label_trial
+      species: SPECIES:NCBITaxon:9606
+      population: "patients with advanced cancer in a phase 1 dose-escalation and expansion study of AZD3965, 5-30 mg once daily and 10-15 mg twice daily; registry-reported actual enrolment 53"
+      sample_size:
+        reported_as: "53"
+        value: 53
+        unit: participants
+      endpoint: "POSTED RESULTS: protocol-defined dose-limiting toxicities, serious adverse events and non-serious adverse events, by NCI CTCAE v4.02 and MedDRA v23.0"
+      endpoint_category: not_applicable
+      endpoint_measured: measured
+      effect_direction: increase
+      effect_size:
+        metric: not_extracted
+        as_reported: "DLTs were defined as highly probably/probably AZD3965 related haematological, cardiac, ophthalmic, other Grade 3/4 toxicity, death or drug-related toxicity. Posted adverse-event tables: Retinopathy, 13 patients affected across the non-serious event groups and 2 across the serious event groups; Anemia, 14 non-serious and 2 serious; Fatigue 22; Nausea 17; Constipation 17; Anorexia 15."
+        value: null
+        ci_lower: null
+        ci_upper: null
+        p_value: null
+      replication_status: single_study
+      evidence_role: contradicts
+      extraction:
+        basis: registry_record
+        extracted_by: agent:red_team
+        extracted_on: "2026-09-17"
+        content_checked: true
+  translation:
+    adult_relevance: demonstrated_in_adults
+    healthy_baseline: disease_model_only
+    supra_normal: untested
+    human_relevance: direct_human_interventional
+    general_intelligence_relevance: none
+  uncertainty:
+    representation: ordinal_grade
+    scale: evidence_strength_v1
+    level: 3
+    rationale: >-
+      one human interventional result with a directly relevant endpoint, in 53
+      participants, with results posted in full and a protocol that names the
+      dose-limiting toxicity classes in advance; the ophthalmic finding is
+      mechanistically predicted and arose in a population screened to exclude
+      pre-existing retinal disease
+    calibration_status: uncalibrated_subjective
+  risks:
+    - "The population is advanced cancer, not healthy adults, so incidence here is not transportable to a healthy-adult exposure. What transports is the identification of the dose-limiting organ systems, which is the decision-relevant content."
+    - "This claim must NOT be cited in the safety grade for SLC16A7 or SLC16A3. Retinal and erythrocyte lactate transport are MCT1 functions; extending this to the other isoforms would manufacture two liabilities out of one."
+  confounders:
+    - "advanced cancer with prior and concurrent therapy"
+    - "no placebo arm"
+    - "reported AZD3965 activity at MCT2 as well as MCT1"
+  dependencies: []
+  status: active
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-17"
+    method: literature_curation
+    run_id: sprint1-red-team-01
+    supporting_accessions: ["NCT01791595"]

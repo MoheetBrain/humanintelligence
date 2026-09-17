@@ -1,0 +1,75 @@
+# Red-team facet assessment - HCAR1. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/HCAR1.yaml.
+schema_version: 0.1.0
+target_id: TGT:HCAR1
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. No adverse-effect annotation exists for this target in the pinned
+    Open Targets release and no agent directed at HCAR1 has been dosed in a human in any located study.
+  search_basis: Searched Open Targets Platform 26.06 safetyLiabilities for ENSG00000196917 (empty list)
+    and ClinicalTrials.gov API v2 for interventional studies of HCAR1-directed agents and of exogenous
+    lactate (which returned NCT01455376, a brain-trauma study with a neurocognitive primary outcome and
+    no posted results, and no safety readout usable here). A hit would have been any annotated adverse
+    event for this receptor or any human study of an HCAR1 agonist with a safety readout. The empty Open
+    Targets list means that source is silent; per contract section 5.4 this level is not lowered by the
+    weakness of the search.
+  claim_refs: []
+  counter_level: 0
+  counter_rationale: Nothing establishes that modulating HCAR1 is safe either.
+  counter_claim_refs: []
+  limiting_factor: no pharmacology exists for this receptor in humans
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 2
+  rationale: The clearest anatomical phenotype retrieved for this receptor is developmental - retinal
+    ganglion cell axon growth and ipsilateral dLGN projection - and both in-vivo knockout studies used
+    germline nulls, so lifelong compensation is permitted throughout the evidence base. Replicated non-human
+    causal evidence of the exposure.
+  claim_refs:
+  - CLM:power:HCAR1:006
+  - CLM:power:HCAR1:001
+  counter_level: 1
+  counter_rationale: One adult pharmacological agonist study exists in adult animals, which is weak evidence
+    that the receptor is engageable after development.
+  counter_claim_refs:
+  - CLM:power:HCAR1:004
+  limiting_factor: no adult-inducible genetic perturbation; the in-vivo arm is germline and the adult
+    arm is a single pharmacological study whose endpoint is motor
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: deep. Audit verdict: retain_with_downgrade. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

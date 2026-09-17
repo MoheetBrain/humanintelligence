@@ -1,0 +1,82 @@
+# State-variable annotations from agent:comparative.
+#
+# Contract §2: this path is a YAML list written by the domain agent. Records conform to
+# schemas/state_variable_annotation.schema.json. State-variable DEFINITIONS live in
+# state_model/{domain}.yaml and belong to agent:ontology; nothing here edits them.
+#
+# WHAT THIS FILE DELIBERATELY DOES NOT CONTAIN
+#
+# No `relation: response_shape` record. Every `response_shape` in the state model stays
+# `unknown` with basis `default_no_evidence_yet` as far as this atlas is concerned, and
+# that is a finding rather than an omission: not one of the 21 claims in
+# evidence/claims/comparative/ measured a dose-response, a non-monotonicity, or a state
+# variable at two or more levels of an intervention. Comparative biology in this sprint
+# produced between-species contrasts and cellular biophysics. Those constrain what may be
+# ASSUMED about a variable; they do not describe the shape of any response curve.
+#
+# No `relation: safety_coupling` record either. No claim curated here measured a safety
+# endpoint in any species, so `safety_coupling_basis` should remain
+# `not_asserted_pending_claims` on every variable on this atlas's evidence.
+#
+# The two records below are `relation: domain_note`, which is the honest relation for
+# what they are: constraints on how these variables may be modelled, each backed by
+# claim ids, neither asserting a shape.
+
+- state_variable_id: SV:stability.oscillatory_coordination_integrity
+  relation: domain_note
+  annotated_by: agent:comparative
+  annotated_on: "2026-09-17"
+  schema_version: 0.1.0
+  claim_refs:
+    - CLM:comparative:HCN1:002
+    - CLM:comparative:HCN1:004
+    - CLM:comparative:HCN1:003
+  rationale: >-
+    The coupling between h-current and this variable's cellular substrate is not a
+    species-invariant constant and must not be fitted as one. Blocking h-channels
+    hyperpolarised resting potential by 8.15 +/- 1.52 mV in human supragranular pyramidal
+    neurons against 0.59 +/- 0.97 mV in mouse, and raised input resistance by 60.43 +/-
+    9.94 per cent against 13.27 +/- 4.73 per cent, while abolishing voltage sag, rebound
+    and resonance in the human cells (CLM:comparative:HCN1:002). The sign is the same in
+    both species; the magnitude differs by roughly an order of magnitude. In layer 5 the
+    difference runs the other way, with human HCN conductance below the mammalian
+    allometric prediction (CLM:comparative:HCN1:003), so the discrepancy is
+    layer-specific rather than a single species offset (CLM:comparative:HCN1:004).
+  note: >-
+    Consequence for modelling: a model calibrated on rodent h-current will understate this
+    coupling in human supragranular cortex and may overstate it in human layer 5.
+    Caveats: the oscillatory element specifically (theta-frequency transfer from dendrite
+    to soma) is a biophysical-model result in the source, not a measurement; all human
+    values come from epilepsy and tumour neurosurgical tissue and h-channels are
+    implicated in epilepsy, which the source authors state as a limitation of their own
+    work; and the comparison is two species, so no phylogenetic control is possible and
+    the supporting claims are capped at level 2.
+
+- state_variable_id: SV:efficiency.information_throughput_per_unit_energy
+  relation: domain_note
+  annotated_by: agent:comparative
+  annotated_on: "2026-09-17"
+  schema_version: 0.1.0
+  claim_refs:
+    - CLM:comparative:NEURON_SCALING:006
+    - CLM:comparative:NEURON_SCALING:003
+    - CLM:comparative:NEURON_SCALING:005
+  rationale: >-
+    Two constraints on how this variable may be modelled, neither of which is a response
+    shape. First, increases achieved by adding neurons are not free: an energetic model of
+    primate feeding time against the caloric yield of raw food concludes that metabolic
+    limits impose a trade-off between body mass and brain neuron number, so the variable
+    is jointly constrained by energy supply rather than independently adjustable
+    (CLM:comparative:NEURON_SCALING:006). Second, neuron count is not usable as a
+    quantitative cross-clade input to it at all: the isotropic fractionator and stereology
+    disagree roughly fourfold on the cortical neuron count of the same cetacean species
+    (CLM:comparative:NEURON_SCALING:005), and total and cortical neuron counts point in
+    opposite directions in the same elephant brain
+    (CLM:comparative:NEURON_SCALING:003).
+  note: >-
+    Any aggregation that treats this variable as freely increasable is unsupported.
+    Caveats: CLM:comparative:NEURON_SCALING:006 is a model with no experimental
+    perturbation, graded level 1, and the cooking narrative attached to it is an
+    evolutionary story rather than a result; the coupling is inferred from cross-species
+    energetics, so it is a statement about what was evolutionarily attainable, not about
+    what an adult human intervention could change.

@@ -1,0 +1,556 @@
+{
+  "$id": "https://intelligence-blueprint.local/schemas/v0_1_0/assessment",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Facet assessments for one target (contract \u00a75.2, \u00a75.3). Facets are the ONLY place an agent expresses a graded judgement, and every grade needs a level, a rationale and claim references. Evidence FOR and evidence AGAINST are graded separately: 'nobody looked' (not_assessed, level null) must never be representable in the same way as 'it was tested and failed' (level 1, counter_level 3). An agent may only write facets it owns (rule V11), and a 3 or 4 on a human-proposition facet requires a human-evidence claim reference (rule V21).",
+  "examples": [
+    {
+      "assessed_by": "agent:ontology",
+      "assessed_on": "2026-09-17",
+      "facets": [
+        {
+          "assessment_status": "not_assessed",
+          "claim_refs": [],
+          "counter_claim_refs": [],
+          "counter_level": null,
+          "facet": "tractability",
+          "level": null
+        }
+      ],
+      "rubric": "facet_rubric_v0_1",
+      "schema_version": "0.1.0",
+      "target_id": "TGT:PLACEHOLDER"
+    }
+  ],
+  "properties": {
+    "assessed_by": {
+      "$comment": "vocabulary: agent_id",
+      "description": "Agent id that wrote this record.",
+      "enum": [
+        "agent:orchestrator",
+        "agent:ontology",
+        "agent:alphacognition",
+        "agent:brakes",
+        "agent:power",
+        "agent:comparative",
+        "agent:integration",
+        "agent:red_team"
+      ],
+      "type": "string"
+    },
+    "assessed_on": {
+      "description": "ISO date (UTC), YYYY-MM-DD.",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "type": "string"
+    },
+    "facets": {
+      "items": {
+        "additionalProperties": false,
+        "allOf": [
+          {
+            "$comment": "not_assessed / not_applicable require a null level (\u00a75.2).",
+            "if": {
+              "properties": {
+                "assessment_status": {
+                  "$comment": "vocabulary: assessment_status (requires_null_level)",
+                  "enum": [
+                    "not_assessed",
+                    "not_applicable"
+                  ]
+                }
+              },
+              "required": [
+                "assessment_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "counter_level": {
+                  "type": "null"
+                },
+                "level": {
+                  "type": "null"
+                }
+              }
+            }
+          },
+          {
+            "$comment": "An assessed facet needs an integer level and a rationale.",
+            "if": {
+              "properties": {
+                "assessment_status": {
+                  "const": "assessed"
+                }
+              },
+              "required": [
+                "assessment_status"
+              ]
+            },
+            "then": {
+              "properties": {
+                "level": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "level",
+                "rationale"
+              ]
+            }
+          },
+          {
+            "$comment": "level 0 means SEARCHED AND FOUND NOTHING: nothing to cite, so no claim_refs are required, but the search itself must be described.",
+            "if": {
+              "properties": {
+                "level": {
+                  "const": 0
+                }
+              },
+              "required": [
+                "level"
+              ]
+            },
+            "then": {
+              "properties": {
+                "search_basis": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "rationale",
+                "search_basis"
+              ]
+            }
+          },
+          {
+            "$comment": "A level of 1 or more is supported evidence, so it must be cited.",
+            "if": {
+              "properties": {
+                "level": {
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "level"
+              ]
+            },
+            "then": {
+              "anyOf": [
+                {
+                  "properties": {
+                    "claim_refs": {
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "claim_refs"
+                  ]
+                },
+                {
+                  "properties": {
+                    "source_refs": {
+                      "minItems": 1
+                    }
+                  },
+                  "required": [
+                    "source_refs"
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "$comment": "Contradicting evidence at 1 or more must be cited too.",
+            "if": {
+              "properties": {
+                "counter_level": {
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "counter_level"
+              ]
+            },
+            "then": {
+              "properties": {
+                "counter_claim_refs": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "counter_claim_refs"
+              ]
+            }
+          },
+          {
+            "$comment": "A non-zero counter_level needs its own rationale.",
+            "if": {
+              "properties": {
+                "counter_level": {
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "counter_level"
+              ]
+            },
+            "then": {
+              "required": [
+                "counter_rationale"
+              ]
+            }
+          },
+          {
+            "$comment": "reporting_gap_refs explain a zero; they do not replace the explanation, so search_basis must be present too (R14).",
+            "if": {
+              "properties": {
+                "reporting_gap_refs": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "reporting_gap_refs"
+              ]
+            },
+            "then": {
+              "properties": {
+                "search_basis": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "search_basis"
+              ]
+            }
+          },
+          {
+            "$comment": "source_refs is only meaningful alongside a declared evidence_basis.",
+            "if": {
+              "properties": {
+                "source_refs": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "source_refs"
+              ]
+            },
+            "then": {
+              "required": [
+                "evidence_basis"
+              ]
+            }
+          }
+        ],
+        "description": "One graded facet. Evidence and counter-evidence are graded SEPARATELY (\u00a75.2).",
+        "properties": {
+          "assessment_status": {
+            "$comment": "vocabulary: assessment_status",
+            "description": "Whether this facet was actually assessed. `not_assessed` requires `level: null`; writing 0 for an unexamined facet is a contract violation (\u00a75.2).",
+            "enum": [
+              "assessed",
+              "not_assessed",
+              "not_applicable"
+            ],
+            "type": "string"
+          },
+          "claim_refs": {
+            "description": "Claim ids. Every id must resolve (rule V4).",
+            "items": {
+              "description": "Claim id.",
+              "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "counter_claim_refs": {
+            "description": "Claim ids. Every id must resolve (rule V4).",
+            "items": {
+              "description": "Claim id.",
+              "pattern": "^CLM:[a-z0-9_]+:[A-Za-z0-9._-]+:[0-9]{3}$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "counter_level": {
+            "$comment": "vocabulary: evidence_strength_v1",
+            "description": "CONTRADICTING-evidence strength on the same scale. Graded independently so that 'nobody looked' can never look like 'tested and failed' (\u00a75.2).",
+            "maximum": 4,
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "counter_rationale": {
+            "description": "Why this contradicting level. null is correct when counter_level is 0 or null.",
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "evidence_basis": {
+            "$comment": "vocabulary: evidence_basis",
+            "description": "What kind of evidence this grade rests on. REQUIRED when source_refs is used.",
+            "enum": [
+              "curated_claims",
+              "database_release",
+              "mixed"
+            ],
+            "type": "string"
+          },
+          "facet": {
+            "$comment": "vocabulary: facet",
+            "description": "Facet name from the catalogue (rule V11).",
+            "enum": [
+              "human_genetic_association",
+              "causal_gene_attribution",
+              "human_phenotype_specificity",
+              "adult_expression_and_timing",
+              "mechanistic_causal_perturbation",
+              "adult_onset_perturbation",
+              "above_baseline_enhancement",
+              "transfer_breadth",
+              "dose_response_knowledge",
+              "human_intervention_evidence",
+              "cross_species_convergence",
+              "human_lineage_divergence_risk",
+              "safety_liability_burden",
+              "developmental_confound_risk",
+              "tractability"
+            ],
+            "type": "string"
+          },
+          "level": {
+            "$comment": "vocabulary: evidence_strength_v1",
+            "description": "SUPPORTING-evidence strength 0-4 on evidence_strength_v1, null iff not assessed. 0 means SEARCHED AND FOUND NOTHING.",
+            "maximum": 4,
+            "minimum": 0,
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "limiting_factor": {
+            "description": "What would have to change to raise the supporting level.",
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "rationale": {
+            "description": "Why this supporting level.",
+            "minLength": 1,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reporting_gap_refs": {
+            "description": "Registered interventions that COMPLETED WITHOUT POSTED RESULTS. This is how publication bias becomes visible in the data instead of remaining an observation in a handoff note: 'graded 0 because a completed trial reported nothing' is a different statement from 'graded 0 because nobody tried', and only one of them is usually true. It may appear at ANY level. It is NOT counter-evidence and may never raise `counter_level` \u2014 it is a finding about the evidence base, not about the target. When it is non-empty, `search_basis` must be non-empty too: the refs explain a zero, they do not replace the explanation (contract \u00a75.2, R14).",
+            "items": {
+              "description": "Registered intervention that completed without posted results.",
+              "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          },
+          "search_basis": {
+            "description": "REQUIRED when level is 0: what was searched, at what scope, and what would have counted as a hit. Level 0 on the shared scale means SEARCHED AND FOUND NOTHING, so there is nothing to cite \u2014 but the zero still has to be accountable, and this is where that accountability lives. Asking for a citation instead would push an agent into inventing a tangential one or quietly downgrading a truthful 0 to `not_assessed`, which is a different epistemic state the contract works to keep distinct.",
+            "minLength": 20,
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_refs": {
+            "description": "Sources a grade rests on when its evidence is a PINNED DATABASE RELEASE rather than curated papers. Permitted in place of claim_refs only for facets flagged `database_gradable: true` in models/ranking/facet_rubric_v0_1.yaml, and the rationale must name the exact field values used (contract \u00a75.2). Forcing a druggability annotation into a claim record would make a non-biological annotation look like biological evidence, and is prohibited.",
+            "items": {
+              "description": "Registered source id, normally a pinned DatabaseRelease.",
+              "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+              "type": "string"
+            },
+            "type": "array",
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "facet",
+          "assessment_status"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "facets_not_owned_by_this_agent": {
+      "description": "Facets this agent deliberately did not grade because it does not own them (rule V11). Stating them explicitly is better practice than silence: it distinguishes 'not mine to grade' from 'overlooked'.",
+      "items": {
+        "$comment": "vocabulary: facet",
+        "description": "A facet this agent did not grade.",
+        "enum": [
+          "human_genetic_association",
+          "causal_gene_attribution",
+          "human_phenotype_specificity",
+          "adult_expression_and_timing",
+          "mechanistic_causal_perturbation",
+          "adult_onset_perturbation",
+          "above_baseline_enhancement",
+          "transfer_breadth",
+          "dose_response_knowledge",
+          "human_intervention_evidence",
+          "cross_species_convergence",
+          "human_lineage_divergence_risk",
+          "safety_liability_burden",
+          "developmental_confound_risk",
+          "tractability"
+        ],
+        "type": "string"
+      },
+      "type": "array",
+      "uniqueItems": true
+    },
+    "notes": {
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": false,
+      "description": "Who wrote this record, when and how. The supporting_* lists exist so a database-derived record can name what it aggregates instead of hiding it.",
+      "properties": {
+        "created_by": {
+          "$comment": "vocabulary: agent_id",
+          "description": "Agent id that wrote this record.",
+          "enum": [
+            "agent:orchestrator",
+            "agent:ontology",
+            "agent:alphacognition",
+            "agent:brakes",
+            "agent:power",
+            "agent:comparative",
+            "agent:integration",
+            "agent:red_team"
+          ],
+          "type": "string"
+        },
+        "created_on": {
+          "description": "ISO date (UTC), YYYY-MM-DD.",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+          "type": "string"
+        },
+        "database_release": {
+          "description": "Pinned DatabaseRelease the record was derived from.",
+          "pattern": "^SRC:(PMID:[0-9]{1,9}|DOI:10\\.[0-9]{4,9}/[-._;()/:a-z0-9<>+\\[\\]]+|NCT:NCT[0-9]{8}|GCST:GCST[0-9]+|DB:[a-z0-9][a-z0-9_]*:[A-Za-z0-9._-]+|DATASET:[a-z0-9][a-z0-9_.-]*)$",
+          "type": "string"
+        },
+        "method": {
+          "$comment": "vocabulary: claim_method",
+          "description": "How this record was produced.",
+          "enum": [
+            "literature_curation",
+            "database_ingestion",
+            "derived_from_claims"
+          ],
+          "type": "string"
+        },
+        "pipeline": {
+          "description": "Repo-relative script that produced the record, for database_ingestion. Makes the record rebuildable (P7).",
+          "minLength": 1,
+          "type": "string"
+        },
+        "run_id": {
+          "description": "Agent run identifier, for tracing a record to a session.",
+          "minLength": 1,
+          "type": "string"
+        },
+        "supporting_accessions": {
+          "description": "Any other accessions the record rests on.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_pubmed_ids": {
+          "description": "PubMed ids the database record itself cites.",
+          "items": {
+            "pattern": "^[0-9]{1,9}$",
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_ids": {
+          "description": "Study accessions the database record aggregates.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        },
+        "supporting_study_locus_ids": {
+          "description": "Opaque per-locus keys from the source database.",
+          "items": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "type": "array",
+          "uniqueItems": true
+        }
+      },
+      "required": [
+        "created_by",
+        "created_on"
+      ],
+      "type": "object"
+    },
+    "rubric": {
+      "$comment": "vocabulary: rubric",
+      "description": "Named rubric these grades were made against.",
+      "enum": [
+        "facet_rubric_v0_1"
+      ],
+      "type": "string"
+    },
+    "run_id": {
+      "description": "Agent run identifier; also accepted inside `provenance`.",
+      "minLength": 1,
+      "type": "string"
+    },
+    "scale": {
+      "$comment": "vocabulary: uncertainty_scale",
+      "description": "The ordinal scale the levels are expressed on (contract \u00a75.3).",
+      "enum": [
+        "evidence_strength_v1"
+      ],
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "0.1.0",
+      "description": "Contract version this record was written against."
+    },
+    "target_id": {
+      "description": "Target being assessed.",
+      "pattern": "^TGT:[A-Z0-9][A-Z0-9_.-]*$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "target_id",
+    "assessed_by",
+    "assessed_on",
+    "rubric",
+    "facets"
+  ],
+  "title": "Facet assessment",
+  "type": "object"
+}

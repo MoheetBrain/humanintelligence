@@ -1,0 +1,18 @@
+# MACHINE-GENERATED source records — merged into evidence/sources/alphacognition.yaml
+# by pipelines/alphacognition/build_sources.py. Produced by fetch_expression.py.
+# Records: 1
+- source_id: SRC:DB:gtex:v8
+  source_type: database_release
+  title: GTEx Portal API v2 median gene expression, dataset gtex_v8
+  year: 2026
+  first_author: GTEx Consortium
+  container: GTEx Portal
+  identifiers:
+    dataset_id: gtex_v8
+  added_by: agent:alphacognition
+  added_on: '2026-09-17'
+  retrieval:
+    method: opentargets_api
+    endpoint: https://gtexportal.org/api/v2/expression/medianGeneExpression
+    note: retrieval.method enum in docs/DATA_CONTRACT.md §3 has no gtex_api value; see docs/blackboard/schema_change_requests/alphacognition-001.yaml
+  note: dataset id read from the API response's own datasetId field, not assumed.

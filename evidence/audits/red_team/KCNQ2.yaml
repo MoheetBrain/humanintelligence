@@ -1,0 +1,156 @@
+# Red-team audit - KCNQ2. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:KCNQ2:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:KCNQ2
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'Every GWAS-derived claim in this repository carries causal_attribution.basis: gwas_association_only
+      and locus_to_gene_resolved: ''no'' where attribution is positional, and causal_gene_attribution
+      reaches 3 or 4 for no target. The records do not confuse association with causation. human_genetic_association
+      reaches level 3 for nine targets on catalogued associations whose gene attribution is positional,
+      while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for none. The facet decomposition is
+      correct and the association grade is not downgraded for the attribution gap - that would double-count
+      it. The exposure is in the aggregation: D1 is a weighted sum, so a level-3 association contributes
+      support at 0.25 weight regardless of the attribution level. Recorded against the model, not the
+      atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: 'Exemplary handling by agent:brakes, and worth naming as such. The defining study EXPLICITLY
+      separates the two regimes: restricting M-channel suppression to the first postnatal weeks disturbed
+      hippocampal morphological development, while suppression after that window produced excitability
+      changes and a memory deficit. That is a measured dissociation rather than an argued one, and the
+      dossier grades the confound high on the strength of the developmental arm rather than despite it.'
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+  - check: rescue_mistaken_for_enhancement
+    result: not_applicable
+    note: No enhancement result exists for this target in any direction, so there is nothing to mistake
+      for a rescue.
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: flag
+    note: Rodent spatial memory on one side; human neonatal epileptic encephalopathy on the other. No
+      human cognitive endpoint.
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: CLM:brakes:KCNQ2:001 and CLM:brakes:KCNQ3:001 are the SAME experiment (SRC:PMID:15608631, a
+      dominant-negative KCNQ2 subunit acting on the KCNQ2/KCNQ3 heteromer) attributed to two targets.
+      That is legitimate - the heteromer implicates both - but it means KCNQ2 and KCNQ3 are not two independent
+      lines of evidence, and agent:brakes graded KCNQ3 one level lower for exactly this reason.
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+    - CLM:brakes:KCNQ3:001
+  - check: citation_dependence
+    result: flag
+    note: Checked for shared sources, shared cohorts and shared senior authorship across this target's
+      claims. Cohort concentration checked by grouping every evidence item's population string. Two educational-attainment
+      GWAS carry 40 of the 289 claims in the repository (SRC:PMID:30038396, 20 claims; SRC:PMID:35361970,
+      20 claims), and the largest single literature cohort string is Okbay 2022's ~3.04 million European
+      sample, appearing 14 times. SRC:PMID:37365406 is UK Biobank only (n=336,993) and carries 6 claims.
+      Only 5 claims name UK Biobank explicitly, so the concentration is invisible to a text search and
+      had to be found by grouping sample-size strings.
+  - check: publication_bias
+    result: flag
+    note: 'The repository''s evidence base is predominantly literature-derived, and a literature search
+      cannot see an intervention that was performed and never published. agent:power demonstrated this
+      concretely: a target-directed REGISTRY search overturned two of its own stated zeros. Treat every
+      level-0 human-evidence grade in this repository as provisional on a registry search having been
+      run.'
+  - check: negative_clinical_evidence
+    result: fail
+    note: The only marketed modulator of this channel family, retigabine, was WITHDRAWN FROM MARKET, which
+      the registry states in the whyStopped field of a terminated 376-patient long-term extension. A GlaxoSmithKline
+      post-marketing surveillance study specifically designed to quantify urinary retention in retigabine
+      users was itself terminated for insufficient numbers, so no incidence estimate was ever produced.
+      Separately, two phase 3 studies of the ezogabine prodrug XEN496 in KCNQ2 developmental and epileptic
+      encephalopathy were terminated at n=8, with the registry recording a sponsor decision explicitly
+      not related to safety. None of this was in the repository.
+    evidence_refs:
+    - CLM:red_team:KCNQ2:001
+    - SRC:NCT:NCT00310388
+  - check: dose_response_inversion
+    result: flag
+    note: No exposure-response relation for a cognitive endpoint exists for this target in any species,
+      so an inversion can be neither confirmed nor excluded. Recorded as a flag rather than a pass because
+      absence of a curve is not absence of an inversion.
+  - check: seizure_liability
+    result: fail
+    note: Bidirectional and severe. Loss-of-function variants in this gene cause neonatal epileptic encephalopathy
+      in humans; suppressing the M-current in the mouse produced spontaneous seizures. So the brake-release
+      direction carries a seizure liability evidenced by human monogenic disease. The sign chain from
+      intrinsic excitability to SV:safety.seizure_risk was checked end to end and is correct.
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+    - CLM:brakes:KCNQ2:003
+  - check: psychiatric_liability
+    result: not_applicable
+    note: No psychiatric liability is annotated for this target in Open Targets Platform 26.06 and none
+      was located in the literature reviewed.
+  - check: systemic_adverse_effects
+    result: flag
+    note: Urinary retention, dizziness and somnolence are in the dossier's liability list and are the
+      recognised class liabilities of KCNQ openers - but retigabine is an OPENER, which is the opposite
+      direction to brake release, so those liabilities belong to the wrong direction. agent:brakes flagged
+      this correctly with a `direction_warning` on the retigabine intervention record.
+    evidence_refs:
+    - CLM:red_team:KCNQ2:001
+  - check: model_organism_translation_failure
+    result: flag
+    note: There is no human evidence for this target against which a model-organism result could fail,
+      so translation is untested rather than failed. That is the maximum translation RISK and the minimum
+      translation INFORMATION.
+  - check: overclaiming
+    result: pass
+    note: The atlas records that suppressing this current produced DEFICITS, not improvements, in hippocampus-dependent
+      spatial memory - i.e. the brake-release direction failed in the one experiment that tested it. Recording
+      that plainly is the opposite of overclaiming.
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+  - check: provenance_integrity
+    result: flag
+    note: 'Sign chain verified correct for this target. See the repository-level finding on inconsistent
+      `direction` semantics: CLM:brakes:KCNQ2:001 is POSITIVELY_REGULATES with direction `decreases`,
+      which reads as the direction of the OBSERVED CHANGE, while CLM:brakes:GABRA5:001 is NEGATIVELY_REGULATES
+      with direction `decreases`, which reads as the sign of the REGULATION. Both cannot be right under
+      one convention.'
+    evidence_refs:
+    - CLM:brakes:KCNQ2:001
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:KCNQ2:001#f1
+    severity: major
+    category: negative_clinical_evidence
+    description: The only marketed KCNQ2/KCNQ3 modulator was withdrawn from market, as recorded in the
+      registry's own whyStopped text, and the surveillance study meant to quantify its leading liability
+      was terminated for insufficient numbers. The most decision-relevant facts about human pharmacology
+      of this channel family were absent from the repository.
+    evidence_refs:
+    - CLM:red_team:KCNQ2:001
+    - SRC:NCT:NCT00310388
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

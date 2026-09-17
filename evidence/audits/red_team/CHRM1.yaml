@@ -1,0 +1,197 @@
+# Red-team audit - CHRM1. agent:red_team, 2026-09-17.
+# Contract section 6: every check in the mandatory catalogue appears, and
+# `not_applicable` is a legitimate result but silence is not (rule V15).
+# Adjustments are DOWNGRADES ONLY (rule V12); for `field: counter_level` a
+# downgrade RAISES the level, because stronger contradicting evidence lowers
+# the target's standing. Nothing here deletes or upgrades anything (P6).
+- audit_id: AUD:red_team:CHRM1:001
+  schema_version: 0.1.0
+  scope:
+    kind: target
+    id: TGT:CHRM1
+  audited_by: agent:red_team
+  audited_on: '2026-09-17'
+  checks:
+  - check: association_mistaken_for_causation
+    result: flag
+    note: 'human_genetic_association is level 1 for CHRM1, so nothing causal rests on a positional association
+      here. human_genetic_association reaches level 3 for nine targets on catalogued associations whose
+      gene attribution is positional, while causal_gene_attribution reaches 0-2 for all 27 and 3-4 for
+      none. The facet decomposition is correct and the association grade is not downgraded for the attribution
+      gap - that would double-count it. The exposure is in the aggregation: D1 is a weighted sum, so a
+      level-3 association contributes support at 0.25 weight regardless of the attribution level. Recorded
+      against the model, not the atlas: evidence/audits/red_team/RANKING_MODEL.yaml.'
+  - check: developmental_effect_mistaken_for_adult
+    result: pass
+    note: The human evidence is adult and aged-adult pharmacology and the healthy-adult result is 10 days
+      into dosing in adults. The one developmental caveat, a germline rodent knockout, is recorded in
+      the dossier.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+    - CLM:alphacognition:CHRM1:005
+  - check: rescue_mistaken_for_enhancement
+    result: flag
+    note: CLM:alphacognition:CHRM1:002 is xanomeline in Alzheimer disease with cholinergic denervation
+      and is labelled rescue_only. Correct. The healthy-adult result (:001) is genuinely a healthy-baseline
+      study and is the exception - but it pools younger adults with elderly subjects, and cholinergic
+      tone declines with age, so part of the pooled effect may be restoration in the elderly cohort rather
+      than enhancement.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+    - CLM:alphacognition:CHRM1:002
+  - check: animal_memory_mistaken_for_human_intelligence
+    result: pass
+    note: CHRM1 is one of the few targets where the human evidence leads rather than follows the rodent
+      evidence. The endpoints are human n-back and Milner maze, labelled working_memory, not an animal
+      task.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+  - check: educational_attainment_mistaken_for_intelligence
+    result: pass
+    note: No educational-attainment result is doing work an intelligence result should do for this target.
+      Checked by tracing every claim_ref behind this target's human_genetic_association grade to its endpoint
+      string, not to its phenotype_class label.
+  - check: duplicated_evidence
+    result: flag
+    note: CLM:alphacognition:CHRM1:002, :003 and :004 all derive from the same xanomeline Alzheimer trial
+      (SRC:PMID:9109749), splitting one trial into an efficacy claim, a safety claim and a harm claim.
+      That split is legitimate - they assert different things - but three claims from one trial must not
+      read as three trials.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:002
+    - CLM:alphacognition:CHRM1:003
+    - CLM:alphacognition:CHRM1:004
+  - check: citation_dependence
+    result: fail
+    note: SINGLE-CITATION DEPENDENCE AT REPOSITORY SCALE. CLM:alphacognition:CHRM1:001 is the only healthy-adult
+      human cognitive result in the repository, and CHRM1 draws level 3 on three facets from it. It is
+      one unreplicated multiple-ascending-dose study whose cognitive battery was EXPLORATORY pharmacodynamics
+      inside a safety and pharmacokinetics trial with uncontrolled multiplicity; its effect size exists
+      only as the authors' phrase 'moderate to large effect sizes'; several authors are employed by the
+      developer; and two age cohorts are pooled in the reported finding. The red team retrieved the paper
+      independently and confirms every one of those caveats is accurately recorded by agent:alphacognition
+      in causal_attribution.alternative_explanations. The record is honest; the DEPENDENCE on it is the
+      defect.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+    - SRC:PMID:33883008
+  - check: publication_bias
+    result: flag
+    note: The atlas cited the trial's harms as carefully as its benefits, which is good practice. But
+      it did not search trial registries for the programme's fate, and the fate was a withdrawal for toxicology.
+      A literature-only search cannot find that, because a programme that stops generates no paper. This
+      is the specific publication-bias mechanism this repository is most exposed to.
+    evidence_refs:
+    - SRC:NCT:NCT03592862
+  - check: negative_clinical_evidence
+    result: fail
+    note: The phase 2 of HTL0018318 in dementia with Lewy bodies was WITHDRAWN with zero enrolment, and
+      the registry gives the reason as a pending investigation of an unexpected animal toxicology finding
+      (SRC:NCT:NCT03592862). This is the development fate of the compound that produced CLM:alphacognition:CHRM1:001
+      - on agent:alphacognition's own account the only healthy-adult human cognitive result anywhere in
+      this repository - and nothing in the repository recorded it. Separately, the atlas's own xanomeline
+      record shows 52 percent discontinuation for adverse events and 12.6 percent syncope in the dose
+      that produced the cognitive signal.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:003
+    - CLM:red_team:CHRM1:001
+    - SRC:NCT:NCT03592862
+  - check: dose_response_inversion
+    result: flag
+    note: The dose that produced the cognitive signal in the Alzheimer trial is the dose that produced
+      52 percent discontinuation and 12.6 percent syncope, so efficacy and dose-limiting toxicity co-locate.
+      That is not an inverted-U in efficacy but it is the narrow-window problem the D5 dimension exists
+      to catch, and the repository records it in a required field rather than in prose.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:003
+  - check: seizure_liability
+    result: flag
+    note: Both curation reviews independently annotate proconvulsant activity and increased convulsions
+      to M1 activation, which is the proposed direction. Class-level only; no seizure was reported in
+      the healthy-volunteer study.
+    evidence_refs:
+    - CLM:red_team:CHRM1:002
+  - check: psychiatric_liability
+    result: flag
+    note: The curation tables annotate irritability to M1 activation and decreased cognitive function
+      and memory to M1 antagonism. No psychiatric endpoint was measured in the healthy-volunteer study's
+      retrieved report.
+    evidence_refs:
+    - CLM:red_team:CHRM1:002
+  - check: systemic_adverse_effects
+    result: fail
+    note: 'The heaviest systemic burden of any target in this audit. Curated annotations cover the full
+      peripheral cholinergic toxidrome - salivation, lacrimation, sweating, vomiting, bronchorrhea, bronchospasm,
+      abdominal cramps, hyperthermia, bidirectional heart rate and blood pressure - plus liver failure
+      and centrilobular liver congestion. The repository''s own randomised human evidence corroborates
+      the direction: 52 percent discontinuation for adverse events and 12.6 percent syncope in the high-dose
+      arm. The healthy-volunteer study reported mild to moderate cholinergic events and modest blood-pressure
+      and pulse increases at the doses that produced the cognitive signal.'
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:003
+    - CLM:red_team:CHRM1:001
+    - CLM:red_team:CHRM1:002
+  - check: model_organism_translation_failure
+    result: flag
+    note: 'Not a translation failure - the human data exist and point the same way as the preclinical
+      data. The failure mode here is the reverse and less discussed: a preclinical TOXICOLOGY finding
+      halted a programme whose human efficacy signal was encouraging. Animal-to-human translation cut
+      against the target from the safety side, not the efficacy side.'
+    evidence_refs:
+    - CLM:red_team:CHRM1:001
+  - check: overclaiming
+    result: flag
+    note: 'The claim record itself does not overclaim - it says ''exploratory pro-cognitive effects''
+      and lists four alternative explanations. The overclaiming risk is downstream: three facets at level
+      3 from one exploratory secondary analysis. Any consumer treating CHRM1 as the repository''s demonstrated
+      human enhancement target has over-read a record that does not claim it.'
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+  - check: provenance_integrity
+    result: pass
+    note: Every identifier checked resolves. CLM:alphacognition:CHRM1:001's effect size is recorded only
+      as the authors' verbatim phrase with metric not_extracted, which is exactly right for a paper that
+      reports no number.
+    evidence_refs:
+    - SRC:PMID:33883008
+  - check: proposes_prohibited_work
+    result: pass
+    note: No record for this target proposes wet-lab, in-vitro, ex-vivo, animal or human experimentation
+      by this project. Every experiment referenced is an external published result ingested as evidence.
+      Proposed follow-ups in the dossiers and in atlases/power/competing_models.yaml are computational
+      (re-analysis, meta-analysis, public-data tests).
+  findings:
+  - finding_id: AUD:red_team:CHRM1:001#f1
+    severity: major
+    category: negative_clinical_evidence
+    description: The phase 2 of the M1 agonist that produced the repository's only healthy-adult human
+      cognitive result was withdrawn before enrolling anyone, for an unexpected animal toxicology finding.
+      The registry does not disclose what the finding was, so the hazard is not established - only the
+      programme halt is. Nothing in the repository recorded this.
+    evidence_refs:
+    - CLM:red_team:CHRM1:001
+    - SRC:NCT:NCT03592862
+  - finding_id: AUD:red_team:CHRM1:001#f2
+    severity: major
+    category: citation_dependence
+    description: One exploratory, unreplicated, developer-affiliated secondary analysis carries CHRM1's
+      level-3 grade on three facets and is simultaneously the repository's only healthy-adult human cognitive
+      result. The record is scrupulously caveated; the structural dependence on it is the risk. If it
+      does not replicate, the repository has no healthy-adult human cognitive evidence at all.
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:001
+  - finding_id: AUD:red_team:CHRM1:001#f3
+    severity: major
+    category: systemic_adverse_effects
+    description: 'CHRM1 carries the heaviest systemic liability burden in this audit: the full peripheral
+      cholinergic toxidrome plus liver failure annotations, corroborated by 52 percent discontinuation
+      and 12.6 percent syncope at the effective dose in a 343-patient randomised trial.'
+    evidence_refs:
+    - CLM:alphacognition:CHRM1:003
+    - CLM:red_team:CHRM1:002
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: '2026-09-17'
+    method: literature_curation
+    run_id: sprint1-red-team-01

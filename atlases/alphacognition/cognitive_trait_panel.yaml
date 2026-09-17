@@ -1,0 +1,370 @@
+# Cognitive trait panel — AlphaCognition v0.1
+#
+# The set of EFO trait terms this milestone queries for human genetic association.
+# NOTHING in this file is a scientific claim. It is a retrieval specification plus
+# the contract-mandated phenotype classification of each endpoint family.
+#
+# How every id here was obtained
+# ------------------------------
+# No EFO id in this file was written from memory (BLACKBOARD_PROTOCOL §5.3). Each was
+# returned by one or both of:
+#   route A  GET https://www.ebi.ac.uk/gwas/rest/api/v2/efo-traits?trait={substring}
+#            (substring match on the GWAS Catalog's own trait labels; the `retrieved_by`
+#            field records the substring that returned it)
+#   route B  POST https://api.platform.opentargets.org/api/v4/graphql
+#            query D($ids:[String!]!){ diseases(efoIds:$ids){ id name description } }
+#            (confirms the id resolves in Open Targets and returns the same label)
+# Both routes were executed on 2026-09-17. `pipelines/alphacognition/fetch_gwas_catalog.py`
+# re-checks every `queried: true` id against /v2/efo-traits/{id} on each run and snapshots
+# the answer, so a typo or a retired term fails the pipeline instead of silently producing
+# an empty result set.
+#
+# Registry versions seen in those responses:
+#   GWAS Catalog REST v2 metadata: data_release_date 2026-09-13, efo_version v3.93.0
+#   Open Targets Platform: apiVersion 26.6.3, dataVersion 26.06
+#
+# Field semantics
+# ---------------
+# phenotype_class    a value from docs/DATA_CONTRACT.md §4.2 (human list). This is the
+#                    class every claim built from associations under this trait must carry.
+# use_in_ranking     primary    — a cognitive-ability endpoint; may support a
+#                                 human_genetic_association facet level on its own
+#                    supporting — cognitive, but narrower/noisier; corroborating only
+#                    proxy_only — NOT an intelligence endpoint. May never on its own raise
+#                                 a facet level above 1, and must be reported separately.
+#                    excluded   — not queried; see `exclusion_reason`
+# queried            whether fetch_gwas_catalog.py / fetch_opentargets_genetics.py iterate it
+#
+# Why educational attainment is kept out (contract P4, §4.2)
+# ---------------------------------------------------------
+# EA GWAS are the largest and therefore the most tempting cognitive-adjacent datasets, and
+# EA is genetically correlated with cognitive test performance. They are still not
+# intelligence endpoints, for reasons that are properties of the measurement and not of the
+# effect size:
+#   1. EA measures years of schooling completed, a social-institutional outcome. It is
+#      jointly produced by ability, family resources, local school supply, cohort policy
+#      (school-leaving-age reforms), health, personality and motivation.
+#   2. EA is therefore exposed to gene-environment correlation and to demonstrated
+#      indirect (parental) genetic effects; an EA-associated locus can act on the
+#      rearing environment rather than on the carrier's cognition.
+#   3. EA is measured once, in adulthood, and is bounded by institutional ceilings, so it
+#      compresses variation at the top of the ability distribution — exactly the region a
+#      project about enhancement cares about.
+#   4. Assortative mating on education inflates apparent genetic signal.
+# Consequences enforced here and downstream: EA traits carry
+# `phenotype_class: educational_attainment`, `use_in_ranking: proxy_only`, and every claim
+# generated from them carries `translation.general_intelligence_relevance:
+# educational_attainment_proxy`. Counts of EA associations are reported separately from
+# cognitive counts in every summary. Reading-skill terms (word reading, non-word reading)
+# are treated the same way: they are literacy achievement measures.
+#
+# Ancestry caveat that applies to the whole panel
+# -----------------------------------------------
+# The discovery cohorts behind essentially every trait below are overwhelmingly of
+# European ancestry (UK Biobank, COGENT, CHARGE, SSGAC and their descendants).
+# Transportability of the associations, and of any locus-to-gene assignment built on top of
+# them, is unestablished outside that ancestry group. This is recorded per claim
+# (`risks`) and per assessment (`limiting_factor`), not only here.
+
+schema_version: 0.1.0
+panel_version: 0.1.0
+curated_by: agent:alphacognition
+curated_on: "2026-09-17"
+efo_version_seen: "v3.93.0"
+gwas_catalog_release_seen: "2026-09-13"
+open_targets_data_version_seen: "26.06"
+
+phenotype_class_source: "docs/DATA_CONTRACT.md §4.2 (human list)"
+
+traits:
+
+  # ------------------------------------------------ general cognitive ability ---
+  - efo_id: EFO_0004337
+    label: intelligence
+    phenotype_class: g_factor
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=intelligence", returned_label: intelligence}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0004337]", returned_label: intelligence}
+    note: >-
+      The GWAS Catalog maps the large general-cognitive-ability meta-analyses here; its
+      association rows keep the study's own wording in `reported_trait` (e.g. "General
+      cognitive ability"), which is preserved verbatim in the derived table. Treated as the
+      closest available proxy for g, not as g itself: the underlying studies differ in how
+      many subtests they combined.
+
+  - efo_id: EFO_0008354
+    label: cognitive function measurement
+    phenotype_class: g_factor
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=cognitive", returned_label: "cognitive function measurement"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0008354]", returned_label: "cognitive function measurement"}
+    note: >-
+      Open Targets describes this term as "quantification of some aspect of cognitive
+      function". It is heterogeneous: studies filed under it range from single-test scores
+      to multi-test composites. Classified g_factor because the large studies filed here are
+      general composites, but the heterogeneity is a known weakness of this panel and the
+      red team should check individual `reported_trait` strings before pooling.
+
+  # ------------------------------------------------------- reasoning / fluid ----
+  - efo_id: EFO_0008394
+    label: verbal-numerical reasoning measurement
+    phenotype_class: fluid_reasoning
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=verbal", returned_label: "verbal-numerical reasoning measurement"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0008394]", returned_label: "verbal-numerical reasoning measurement"}
+    note: >-
+      This is the UK Biobank touchscreen "fluid intelligence" 13-item test under its EFO
+      name. Short, ceiling-prone and administered unsupervised; a genuine reasoning
+      endpoint but a low-reliability one.
+
+  - efo_id: EFO_0004875
+    label: mathematical ability
+    phenotype_class: fluid_reasoning
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=math", returned_label: "mathematical ability"}
+    note: >-
+      Numeracy performance. Partly an achievement measure (it depends on instruction), so
+      supporting only, never a stand-alone basis for a facet level.
+
+  - efo_id: EFO_0803533
+    label: visuospatial function measurement
+    phenotype_class: fluid_reasoning
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=spatial", returned_label: "visuospatial function measurement"}
+    note: >-
+      Covers both fluid-g-loaded spatial reasoning tasks and clinical visuospatial
+      screening instruments; the mixture is why it is supporting rather than primary.
+
+  # --------------------------------------------------- speed / reaction time ----
+  - efo_id: EFO_0004363
+    label: information processing speed
+    phenotype_class: processing_speed
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=processing speed", returned_label: "information processing speed"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0004363]", returned_label: "information processing speed"}
+
+  - efo_id: EFO_0008393
+    label: reaction time measurement
+    phenotype_class: processing_speed
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=reaction time", returned_label: "reaction time measurement"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0008393]", returned_label: "reaction time measurement"}
+    note: >-
+      The UK Biobank reaction-time GWAS are very large, so this trait is where
+      single-cohort dependence is most acute. Speed is g-loaded but is also sensitive to
+      motor function, device latency and state (fatigue, time of day).
+
+  - efo_id: EFO_0009702
+    label: intra-individual reaction time variability measurement
+    phenotype_class: processing_speed
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=reaction time", returned_label: "intra-individual reaction time variability measurement"}
+    note: "Consistency of responding rather than speed; an attentional-stability index."
+
+  # ------------------------------------------------------------------ memory ----
+  - efo_id: EFO_0004333
+    label: episodic memory
+    phenotype_class: episodic_memory
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=memory", returned_label: "episodic memory"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0004333]", returned_label: "episodic memory"}
+
+  - efo_id: EFO_0009591
+    label: verbal memory measurement
+    phenotype_class: episodic_memory
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=memory", returned_label: "verbal memory measurement"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0009591]", returned_label: "verbal memory measurement"}
+
+  - efo_id: EFO_0004335
+    label: short-term memory
+    phenotype_class: working_memory
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=memory", returned_label: "short-term memory"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0004335]", returned_label: "short-term memory"}
+    note: >-
+      Mapped to working_memory rather than episodic_memory because the studies filed here
+      use span/immediate-recall paradigms. The EFO label ("short-term memory") and the
+      contract class (`working_memory`) are not synonyms in cognitive psychology; this is a
+      deliberate, documented approximation and a place the red team should look.
+
+  - efo_id: EFO_0004874
+    label: memory performance
+    phenotype_class: episodic_memory
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=memory", returned_label: "memory performance"}
+    note: "Unspecified memory composite; supporting because the endpoint is not resolvable from the term."
+
+  # ------------------------------------------------------- executive/attention --
+  - efo_id: EFO_0009332
+    label: executive function measurement
+    phenotype_class: executive_function
+    use_in_ranking: primary
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=executive function", returned_label: "executive function measurement"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0009332]", returned_label: "executive function measurement"}
+
+  - efo_id: EFO_0007969
+    label: cognitive inhibition measurement
+    phenotype_class: executive_function
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=cognitive", returned_label: "cognitive inhibition measurement"}
+
+  - efo_id: EFO_0007636
+    label: attention function measurement
+    phenotype_class: executive_function
+    use_in_ranking: supporting
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=attention", returned_label: "attention function measurement"}
+
+  # ----------------------------------------- clinical / decline (proxy only) ----
+  - efo_id: EFO_0007710
+    label: cognitive decline measurement
+    phenotype_class: clinical_cognitive_composite
+    use_in_ranking: proxy_only
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=cognitive", returned_label: "cognitive decline measurement"}
+    note: >-
+      Rate of change in ageing/patient samples. A locus that modifies decline need not
+      modify peak or adult level of ability; treating it as an intelligence endpoint would
+      collide with contract P4 (development ≠ adulthood, rescue ≠ enhancement).
+
+  - efo_id: EFO_0007998
+    label: cognitive impairment measurement
+    phenotype_class: clinical_cognitive_composite
+    use_in_ranking: proxy_only
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=cognitive", returned_label: "cognitive impairment measurement"}
+    note: "Deficit-state endpoint; rescue-vs-enhancement boundary applies."
+
+  - efo_id: EFO_0004785
+    label: south texas assessment of neurocognition
+    phenotype_class: clinical_cognitive_composite
+    use_in_ranking: proxy_only
+    queried: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=neurocognit", returned_label: "south texas assessment of neurocognition"}
+    note: "Single named battery in a specific cohort; kept for coverage, not for ranking."
+
+  # -------------------------------- educational attainment / literacy (proxy) ---
+  - efo_id: EFO_0011015
+    label: educational attainment
+    phenotype_class: educational_attainment
+    use_in_ranking: proxy_only
+    queried: true
+    is_educational_attainment: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=educational", returned_label: "educational attainment"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0011015]", returned_label: "educational attainment"}
+    note: "See the header section on why EA is never an intelligence endpoint."
+
+  - efo_id: EFO_0004784
+    label: self reported educational attainment
+    phenotype_class: educational_attainment
+    use_in_ranking: proxy_only
+    queried: true
+    is_educational_attainment: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=educational", returned_label: "self reported educational attainment"}
+      - {route: opentargets_diseases, query: "efoIds=[EFO_0004784]", returned_label: "self reported educational attainment"}
+    note: "Self-report adds measurement error on top of every objection to EA itself."
+
+  - efo_id: EFO_0005300
+    label: word reading
+    phenotype_class: educational_attainment
+    use_in_ranking: proxy_only
+    queried: true
+    is_educational_attainment: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=word reading", returned_label: "word reading"}
+    note: >-
+      Literacy achievement, dependent on instruction and exposure. Classified with EA
+      rather than with reasoning to avoid smuggling an achievement measure into an
+      intelligence endpoint.
+
+  - efo_id: EFO_0005299
+    label: non-word reading
+    phenotype_class: educational_attainment
+    use_in_ranking: proxy_only
+    queried: true
+    is_educational_attainment: true
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=word reading", returned_label: "non-word reading"}
+    note: "Decoding measure used in reading-disability genetics; achievement, not ability."
+
+  # ------------------------------------------------------- excluded from panel --
+  - efo_id: EFO_0009098
+    label: cognitive domain measurement
+    phenotype_class: not_applicable
+    use_in_ranking: excluded
+    queried: false
+    exclusion_reason: >-
+      EFO grouping term whose children are the actual endpoints. A term-level
+      phenotype_class would have to collapse memory, speed and reasoning into one class,
+      which the contract forbids in effect if not in letter.
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=cognitive", returned_label: "cognitive domain measurement"}
+
+  - efo_id: EFO_0007046
+    label: executive function
+    phenotype_class: not_applicable
+    use_in_ranking: excluded
+    queried: false
+    exclusion_reason: >-
+      Names the cognitive process, not a measurement of it. The measurement term
+      EFO_0009332 is used instead.
+    retrieved_by:
+      - {route: gwas_catalog_efo_traits, query: "trait=executive function", returned_label: "executive function"}
+
+counts:
+  total_terms: 24
+  queried: 22
+  excluded: 2
+  by_use_in_ranking: {primary: 9, supporting: 6, proxy_only: 7, excluded: 2}
+  educational_attainment_or_literacy: 4
+  by_phenotype_class:
+    g_factor: 2
+    fluid_reasoning: 3
+    processing_speed: 3
+    episodic_memory: 3
+    working_memory: 1
+    executive_function: 3
+    clinical_cognitive_composite: 3
+    educational_attainment: 4
+    not_applicable: 2
+
+known_gaps:
+  - "No dedicated working-memory (n-back / digit-span) EFO term surfaced: `trait=working memory` returned 0 hits in GWAS Catalog v2. EFO_0004335 is the nearest substitute and is flagged as an approximation."
+  - "No `fluid intelligence` term exists in the GWAS Catalog trait vocabulary (0 hits); UK Biobank's fluid test is filed under EFO_0008394."
+  - "No far-transfer, metacognition or learning-rate endpoints exist in this vocabulary at all, so the contract's `far_transfer`, `metacognition` and `learning_rate` phenotype classes are unreachable from GWAS data. Those facets cannot be supported by human genetics in v0.1 and must stay `not_assessed` rather than be inferred."
+  - "Substring search cannot prove completeness: a cognitive trait whose label shares no substring with the 21 probes used here would be missed. The probe list is recorded above so the search can be extended rather than repeated blindly."

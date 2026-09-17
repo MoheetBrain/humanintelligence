@@ -1,0 +1,90 @@
+# Red-team facet assessment - CHRM1. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/CHRM1.yaml.
+schema_version: 0.1.0
+target_id: TGT:CHRM1
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 4
+  rationale: 'REPLICATED HUMAN adverse evidence attributable to engaging this target and consistent in
+    direction, which is what level 4 requires. Two independent human studies: a 343-patient randomised
+    trial of a muscarinic agonist in which 52 percent of the effective-dose arm discontinued for adverse
+    events and 12.6 percent had syncope; and a separate healthy-volunteer multiple-ascending-dose study
+    of a subtype-selective agonist reporting dose-related cholinergic adverse events and increases in
+    blood pressure and pulse rate versus placebo. Behind them: two independent curation reviews annotating
+    proconvulsant activity, the full peripheral cholinergic toxidrome and liver failure to M1 activation,
+    and a phase 2 withdrawn for an unexpected animal toxicology finding. NOTE THE CONSEQUENCE, stated
+    so it is not a surprise downstream: at level 4 with counter_level at most 2 this grade fires `safety_liability_caps_d5`
+    in models/ranking/ranking_spec_v0_1.yaml, capping D5 at 0.20 - the lowest cap in that file. That is
+    the intended effect. A target whose lead clinical compound was halted for an undisclosed toxicology
+    finding, and whose effective dose in the one adequately sized trial produced 52 percent discontinuation,
+    should not be ranked as having a demonstrated safe controllable window.'
+  claim_refs:
+  - CLM:red_team:CHRM1:001
+  - CLM:red_team:CHRM1:002
+  - CLM:alphacognition:CHRM1:003
+  - CLM:alphacognition:CHRM1:004
+  counter_level: 1
+  counter_rationale: The healthy-volunteer study reported the compound generally well-tolerated up to
+    35 mg/day with only mild or moderate cholinergic events, no clinically significant laboratory, ECG
+    or Holter abnormalities, and attenuation of the blood-pressure rise on repeated dosing. That is genuine
+    evidence that a tolerable window may exist for a subtype-selective agonist, but it is one small 10-day
+    study and the programme was subsequently halted, so it is weak.
+  counter_claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  limiting_factor: the nature, species and exposure of the animal toxicology finding that halted the programme
+    are not disclosed in any retrieved source, so the decisive safety fact about this target is known
+    to exist but not known
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 1
+  rationale: Weak and indirect only. The human evidence is adult and aged-adult pharmacology and the healthy-adult
+    cognitive result was obtained in adults ten days into dosing. The single developmental exposure is
+    that the supporting rodent mechanistic claim uses a germline knockout, which cannot separate developmental
+    from adult contributions.
+  claim_refs:
+  - CLM:alphacognition:CHRM1:005
+  counter_level: 2
+  counter_rationale: Direct adult and aged-adult human pharmacological perturbation with cognitive endpoints,
+    in two independent human studies, establishes that the mechanism is engageable and behaviourally consequential
+    after development.
+  counter_claim_refs:
+  - CLM:alphacognition:CHRM1:001
+  - CLM:alphacognition:CHRM1:002
+  limiting_factor: no adult-inducible genetic perturbation of Chrm1; the rodent arm is germline
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: deep. Audit verdict: retain_with_downgrade. The red team owns only these two facets;
+  every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents'' facets,
+  where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by editing
+  another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01

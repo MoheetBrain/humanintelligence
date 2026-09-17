@@ -1,0 +1,55 @@
+# Target dossier — CKB (brain-type cytosolic creatine kinase). Contract §5.1.
+schema_version: 0.1.0
+target_id: TGT:CKB
+symbol: CKB
+lead_atlas: power
+seed_origin: user_seed_list
+dossier_depth: deep
+identifiers: {}
+target_class: enzyme
+represented_entities: [GENE:CKB, PROT:CKB]
+member_genes: []
+control_point_hypothesis:
+  statement: >-
+    CKB catalyses the reaction that regenerates ATP from phosphocreatine on a
+    millisecond-to-second timescale, so its activity could set how fast a neuron can
+    refill its energy charge during bursts. The evidence here is weak for that reading:
+    the only behavioural CKB data retrieved is a secondary report, the isoform-specific
+    knockouts are partially compensated by the surviving phosphoryl-transfer systems,
+    and the one clear causal phenotype is a SAFETY-DIRECTION result (suppressed
+    chemically induced seizures), not a capacity result. No human perturbation
+    evidence exists.
+  proposed_modulation: unknown
+  mechanism_chain:
+    - CLM:power:CKB:003
+    - CLM:power:CKB:002
+    - CLM:power:CKB:001
+  state_variables:
+    - id: SV:power.phosphocreatine_reserve
+      asserted_relation: modulates
+      direction: unclear
+      response_shape: unknown
+      claim_refs: [CLM:power:CKB:005, CLM:power:CKB:006]
+    - id: SV:safety.seizure_risk
+      asserted_relation: modulates
+      direction: increases
+      response_shape: unknown
+      claim_refs: [CLM:power:CKB:001]
+    - id: SV:efficiency.ion_homeostasis_load
+      asserted_relation: modulates
+      direction: unclear
+      response_shape: unknown
+      claim_refs: [CLM:power:CKB:004]
+  computational_primitives: []
+known_liabilities: []
+developmental_confound: high
+developmental_confound_rationale: >-
+  All CKB and creatine-kinase perturbations retrieved are germline knockouts, and the
+  authors themselves report accompanying hippocampal mossy-fibre structural change.
+  There is no adult-inducible manipulation of CKB in this dossier at any level.
+open_questions:
+  - "Is there a primary behavioural characterisation of the CKB single knockout? This dossier could only reach it as a secondary report (CLM:power:CKB:002) and that gap should be closed before CKB is ranked."
+  - "Does the 31P-MRS phosphocreatine pool carry any information about creatine-kinase flux, or only about pool size? CLM:power:CKB:006 shows a LARGER pool in early Alzheimer's disease, which is the wrong direction for a reserve interpretation."
+  - "Given the redundancy reported in CLM:power:CKB:003, is there any perturbation that would raise flux rather than remove a component?"
+status: seed_hypothesis
+provenance: {created_by: agent:power, created_on: "2026-09-17", run_id: sprint1-power-01}

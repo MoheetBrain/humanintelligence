@@ -1,0 +1,85 @@
+# Red-team facet assessment - HTR2A. Written by agent:red_team.
+# Contract: docs/DATA_CONTRACT.md sections 5.2-5.4. schema_version 0.1.0.
+#
+# Both facets here are INVERSE-POLARITY: a HIGHER level is WORSE for the target.
+# Per contract section 5.4, a methodological-weakness cap applies to `counter_level`
+# and NEVER to `level` on these facets, because weak evidence cannot establish the
+# ABSENCE of a risk. Every level-0 grade below therefore means "searched, found
+# nothing", never "probably fine": an empty Open Targets safetyLiabilities list is
+# recorded as that SOURCE BEING SILENT, and the accompanying `search_basis` says so.
+#
+# The corresponding audit, with the full 17-check catalogue, is
+# evidence/audits/red_team/HTR2A.yaml.
+schema_version: 0.1.0
+target_id: TGT:HTR2A
+assessed_by: agent:red_team
+assessed_on: '2026-09-17'
+rubric: facet_rubric_v0_1
+scale: evidence_strength_v1
+facets:
+- facet: safety_liability_burden
+  assessment_status: assessed
+  level: 3
+  rationale: 'Converging evidence across sources and designs for a substantial liability burden: two independent
+    curation reviews annotating hallucinations, and one adding psychosis, schizophrenia and serotonin
+    syndrome, to activation of this receptor; plus the acute human study''s own reported anxiety, ego
+    dissolution, blood-pressure and heart-rate effects, which the dossier already carries. Level 3 rather
+    than 4 because no psychosis or persistence endpoint has been formally measured in any located study,
+    so the incidence and durability of the psychiatric liability are unquantified.'
+  claim_refs:
+  - CLM:red_team:HTR2A:001
+  - CLM:alphacognition:HTR2A:001
+  counter_level: 0
+  counter_rationale: Searched for evidence that 5-HT2A agonism carries no meaningful psychiatric liability
+    and found none. The two randomised healthy-adult studies reported acute psychological effects rather
+    than their absence.
+  counter_claim_refs: []
+  limiting_factor: no study in this repository measured psychosis, persisting perceptual change or any
+    psychiatric endpoint as an outcome, so the liability is established in kind and not in degree
+- facet: developmental_confound_risk
+  assessment_status: assessed
+  level: 0
+  rationale: Searched and found nothing. Every located result for this target is acute adult human dosing;
+    no developmental manipulation of HTR2A appears anywhere in the claim set. The dossier records this
+    as `unknown`; the red team grades it 0 because the question was asked in this audit and the answer
+    was clean.
+  search_basis: 'Read every claim for HTR2A and inspected context.life_stage and causal_attribution.basis
+    on each, then searched the whole claim set for any perturbation of this target with life_stage prenatal,
+    postnatal_developmental or adolescent, or with basis germline_knockout or conditional_developmental_knockout.
+    A hit would have been any manipulation beginning before adulthood, or any reported developmental requirement
+    for this target. None exists in the located evidence: all three claims are acute adult human pharmacodynamics.
+    This corrects the dossier''s `unknown` to a searched zero for the red team''s own facet, while noting
+    that a searched zero over a THIN literature is weaker than a searched zero over a thick one.'
+  claim_refs: []
+  counter_level: 2
+  counter_rationale: Two randomised acute studies in healthy adults with measured cognitive endpoints
+    establish that the receptor is engageable and behaviourally consequential in the adult - one human
+    study with a relevant endpoint, twice.
+  counter_claim_refs:
+  - CLM:alphacognition:HTR2A:002
+  - CLM:alphacognition:HTR2A:003
+  limiting_factor: the developmental literature for this receptor was not systematically reviewed by any
+    agent, so the zero rests on the absence of developmental records in the claim set rather than on a
+    dedicated developmental search
+facets_not_owned_by_this_agent:
+- human_genetic_association
+- causal_gene_attribution
+- human_phenotype_specificity
+- adult_expression_and_timing
+- mechanistic_causal_perturbation
+- adult_onset_perturbation
+- above_baseline_enhancement
+- transfer_breadth
+- dose_response_knowledge
+- human_intervention_evidence
+- cross_species_convergence
+- human_lineage_divergence_risk
+- tractability
+notes: 'Dossier depth: shallow. Audit verdict: retain_with_downgrade. The red team owns only these two
+  facets; every other facet in the catalogue is listed above as not owned. Downgrades to OTHER agents''
+  facets, where this audit made any, are recorded in the audit record''s `adjustments` block and NOT by
+  editing another agent''s file.'
+provenance:
+  created_by: agent:red_team
+  created_on: '2026-09-17'
+  run_id: sprint1-red-team-01
