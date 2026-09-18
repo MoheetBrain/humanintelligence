@@ -101,9 +101,9 @@ genes:
     lof_upper_bin: 1
     note: >-
       High-affinity choline transporter (CHT1); the most LoF-constrained gene in the band
-      and the rate-limiting step for acetylcholine synthesis. Mechanistically the most
-      interesting gene here, and the one most likely to attract over-reading - see
-      `interpretation_guards`.
+      (second-most-constrained decile genome-wide) and the rate-limiting step for
+      acetylcholine synthesis. See `interpretation_guards` before reading anything into
+      that.
   - symbol: SULT1C3
     ensembl: ENSG00000196228
     loeuf: 1.514
@@ -147,9 +147,17 @@ constraint_caveat:
     silent. Recording the numbers together with the reason they do not answer the question
     is safer than omitting them and having someone fetch them later without the caveat.
   consequence: >-
-    SLC5A7 being in the most-constrained LoF decile is NOT evidence that duplicating it
-    improves cognition. It is evidence that losing it is bad, which is a different claim
-    about a different variant.
+    SLC5A7 being in the second-most-constrained LoF decile is NOT evidence that
+    duplicating it improves cognition. It is evidence that losing it is bad, which is a
+    different claim about a different variant.
+  correction_note: >-
+    This sentence originally said "the most-constrained LoF decile". That was wrong.
+    gnomAD's `oe_lof_upper_bin` is ZERO-indexed, so bin 0 is the most-constrained decile
+    and SLC5A7's recorded value of 1 places it in the second. Corrected 2026-09-18 after
+    a red-team pass checked the value against the stored snapshot
+    (data/raw/opentargets/2026-09-18/, oeUpper 0.462, upperBin 1). The error did not
+    change the argument — which is that LOEUF is the wrong metric for a duplication
+    either way — but a wrong fact inside a correct argument still propagates.
 
 # ------------------------------------------------------------ interpretation guards --
 interpretation_guards:
@@ -157,6 +165,12 @@ interpretation_guards:
     This is an ASSOCIATION between a CNV and a cognitive measure. It is not a demonstrated
     mechanism, not a causal gene, not a direction of benefit for any intervention, and not
     an adult-modifiable control parameter.
+  - >-
+    A previous version of this file called SLC5A7 "mechanistically the most interesting
+    gene here" inside its `genes[]` note. That was the exact over-reading the next guard
+    warns against, committed in a data field where a consumer reading only `genes[]`
+    would receive the promotion without the warning. Removed 2026-09-18. There is no
+    defensible ranking of the eight genes by interest; there is only a 2 Mb band.
   - >-
     The presence of SLC5A7 in the interval will invite a cholinergic story, because the
     repository already holds CHRM1 as a muscarinic target and a choline-transporter

@@ -1,0 +1,204 @@
+# Goal-Gated Plasticity & Retrieval Hypothesis — machine-readable specification.
+#
+# STATUS: THEORY NODE. Not a finding, not a validated mechanism, not a recommendation about
+# any compound, device or protocol. This file exists so the hypothesis can be USED —
+# candidate mechanisms scored against explicit channels and a measurable gap — rather than
+# admired as prose.
+#
+# COMPUTATIONAL-ONLY. "Broader than a pill" widens the space of mechanisms that may be
+# ANALYSED. It does not widen what may be DONE. No output derived from this file may
+# propose a device, an implant, a stimulation protocol, a training regimen to follow, a
+# dose, a route, or any self-experimentation (docs/COMPUTATIONAL_ONLY_POLICY.md).
+
+schema_version: 0.2.0
+theory_id: THEORY:goal_gated_plasticity_retrieval
+title: Goal-Gated Plasticity and Retrieval Hypothesis
+origin: project_lead_hypothesis
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+status: theory_node
+supersedes: null
+relates_to:
+  - THEORY:selective_encoding          # the phenotype spec; SE2 is the mechanism form of C1
+  - THEORY:open_write_select_lock      # THEORY.md section 2; its phases map onto C1-C3
+  - THEORY:cognitive_power_envelope    # THEORY.md section 1; this is a live alternative to it
+
+question: >-
+  How do we give a human more control over what gets learned, what becomes permanent, and
+  what can later be reconstructed on demand? That is broader than IQ, broader than memory,
+  and broader than a pill.
+
+hypothesis: >-
+  Human cognitive capacity is limited partly by an IMPERFECT INTERFACE between conscious
+  goals and the brain's plasticity and retrieval machinery. The brain can already perform
+  extraordinary one-shot encoding, abstraction and cue-triggered reconstruction. The
+  problem is that we cannot reliably issue a command of the form: this representation is
+  important, so encode its structure deeply, consolidate it, and make it retrievable
+  indefinitely.
+
+# ------------------------------------------------- what makes this a different claim ----
+reframing:
+  conventional_framing: capacity_limited
+  this_framing: control_limited
+  why_it_matters: >-
+    The two make OPPOSITE predictions about headroom. Under a capacity framing, peak
+    observed performance is near the system's limit. Under an interface framing, peak
+    observed performance — reached involuntarily, under conditions the person did not
+    choose — demonstrates headroom that voluntary control cannot reach. The intervention
+    target moves from the plasticity parameter to the ADDRESSING CHANNEL.
+  consequence_for_this_repository: >-
+    Every seed target in this repository was selected under the capacity framing. If the
+    binding constraint is an interface, the seed list is aimed at the wrong quantity — which
+    is a reason to test the framing, not a reason to discard the list.
+
+# ------------------------------------------------------------- decisive quantity --------
+decisive_quantity:
+  name: control_gap
+  formal_sketch: >-
+    control_gap = performance_when_salience_is_IMPOSED
+                - performance_when_salience_is_merely_INTENDED
+  informal: >-
+    Same person, same material, same delay. One condition makes the material matter by
+    external means the participant does not control; the other asks the participant to make
+    it matter by intending it. The difference is the headroom volition cannot reach.
+  why_it_matters: >-
+    control_gap > 0 IS the hypothesis and quantifies the opportunity. control_gap near zero
+    refutes it and returns the problem to the conventional capacity framing.
+  best_property: >-
+    IT REQUIRES NO INTERVENTION. The central claim is testable in unmodified humans, before
+    any mechanism is identified and without anything being administered. Almost nothing
+    else in this repository has that property, and it means the hypothesis can be attacked
+    cheaply and early.
+  required_study_design: >-
+    Within-subject comparison of encoding under externally imposed salience versus
+    participant-intended salience, matched for effort, arousal and time-on-task, with
+    retention tested at a consolidation-relevant delay. Matching is the hard part: an
+    unmatched arousal difference would manufacture a control_gap out of nothing.
+
+# ------------------------------------------------------------- the three channels -------
+# Separable failures needing separable mechanisms. Conflating them is how "memory
+# enhancement" becomes an incoherent target. A candidate must declare which it claims.
+control_channels:
+
+  - id: C1
+    name: gating
+    governs: what gets learned
+    command_that_cannot_be_issued: "this, not that"
+    failure_mode: intended material does not stick; unintended material does
+    timescale: within the episode
+    maps_to_selective_encoding: SE1, SE2
+    note: >-
+      SE2 ("activity as the address") is the mechanism-level statement of this channel.
+      Selective encoding says addressing must come from activity; this hypothesis says the
+      GOAL should set that activity, and that the goal-to-activity link is the weak step.
+
+  - id: C2
+    name: persistence
+    governs: what becomes permanent
+    command_that_cannot_be_issued: "keep this indefinitely"
+    failure_mode: the forgetting curve applies to material the person decided mattered
+    timescale: hours to days
+    maps_to_selective_encoding: SE3, SE7
+    tension: >-
+      SE7 requires forgetting to remain available. A persistence command that cannot be
+      revoked would violate it, so C2 must be a command with an OFF state.
+
+  - id: C3
+    name: retrieval
+    governs: what can be reconstructed on demand
+    command_that_cannot_be_issued: "give it back now"
+    failure_mode: knowing that you know, and being unable to produce it
+    timescale: arbitrary later moment
+    maps_to_selective_encoding: SE5
+    why_this_is_the_neglected_one: >-
+      The repository's entire seed list is oriented at encoding and consolidation. A trace
+      that exists and cannot be addressed is, from the person's point of view, identical to
+      one never stored — and that failure is not obviously a STORAGE failure. If the
+      practical deficit lies here, most of this repository's targets are aimed at the wrong
+      channel. There is currently NO retrieval-oriented target in the repository.
+
+# ------------------------------------------- phenomena appealed to, and their status ----
+# The hypothesis appeals to cases where encoding, consolidation or retrieval far exceeds
+# ordinary voluntary performance. THIS REPOSITORY HOLDS NO EVIDENCE FOR ANY OF THEM.
+# Recording them as appealed-to rather than established is the guard: an elegant frame
+# recruiting half-remembered literature as support is the failure mode that the
+# selective-encoding node already had to retract once.
+existence_proofs_appealed_to:
+  - phenomenon: vivid one-shot encoding of surprising or emotionally charged events
+    status: appealed_to_not_verified
+  - phenomenon: expert chunking and rapid domain-specific encoding
+    status: appealed_to_not_verified
+  - phenomenon: cue-triggered reconstruction of material not deliberately recallable
+    status: appealed_to_not_verified
+structural_note: >-
+  The hypothesis does NOT depend on which of these survives verification. It depends only
+  on involuntary performance exceeding voluntary performance, which is control_gap — a
+  measurement, not a literature appeal.
+
+# ------------------------------------------------------------------- falsifiers ---------
+falsified_if:
+  - id: no_control_gap
+    statement: >-
+      Performance under imposed salience does not exceed performance under intended
+      salience once effort, arousal and time-on-task are matched. The headroom is imaginary.
+  - id: gap_is_a_resource_not_an_interface
+    statement: >-
+      Imposed-salience encoding SPENDS something and degrades later encoding
+      proportionally. The machinery is then budgeted rather than badly addressed, and the
+      ceiling is real.
+  - id: gap_is_already_closable_behaviourally
+    statement: >-
+      Existing strategies — elaboration, spacing, testing, deliberate structuring — close
+      most of the gap. The hypothesis would be true and uninteresting: the interface exists,
+      it is called studying, and it works.
+    priority: >-
+      TEST THIS FIRST. It is the cheapest refutation available and it would reframe the
+      entire programme.
+  - id: channels_do_not_separate
+    statement: >-
+      C1, C2 and C3 prove to be one mechanism, so "control over what becomes permanent" is
+      not a distinct thing to intervene on.
+  - id: volitional_access_architecturally_impossible
+    statement: >-
+      No channel exists by which a goal state could address plasticity at representational
+      resolution, because the required information is not available to the systems that
+      would have to use it.
+
+# ------------------------------------------------------------ how to use this lens ------
+evaluation_protocol:
+  - >-
+    Estimate control_gap BEFORE pursuing any mechanism. Its size bounds the entire
+    opportunity, and it needs no intervention to measure.
+  - >-
+    Require every candidate to declare a channel (C1, C2 or C3). "Improves memory" is not a
+    channel. A candidate that cannot name one has not been specified.
+  - >-
+    Score a candidate against the channel it claims, not against total retention. A
+    candidate with no study addressing its channel is `not_assessable`, NOT `no_effect`.
+  - >-
+    Treat behavioural and training mechanisms as candidate objects of COMPUTATIONAL
+    ANALYSIS under the same contract as molecular ones — same evidence standards, same red
+    team, same refusal to treat conceptual fit as evidence.
+
+# ------------------------------------------------------------------------ guards --------
+guards:
+  - >-
+    "Broader than a pill" widens what may be ANALYSED, never what may be DONE. No output
+    derived from this file may propose a device, an implant, a stimulation protocol, a
+    training regimen to follow, a dose, a route, or self-experimentation. This framing is
+    the one most likely to invite a neurotech proposal, so the policy binds hardest here.
+  - >-
+    The existence proofs are UNVERIFIED and must not lend the hypothesis credibility until
+    retrieved, verified and given source records.
+  - >-
+    It must NOT be promoted above the human genetic evidence. No target has adult causal
+    attribution above level 2 and this reframing does not change that.
+  - >-
+    It must NOT license target selection on conceptual fit IN EITHER DIRECTION. A mechanism
+    fitting the interface framing elegantly with no adult human evidence is a hypothesis,
+    not a candidate; and a mechanism fitting it badly may not be demoted for that reason.
+    Recorded in advance because the companion theory node had to retract exactly this error
+    (selective_encoding_hypothesis.md section 3.1).
+  - >-
+    The red team should audit claims citing this file with extra suspicion: a well-formed
+    frame generates confirmatory reading.

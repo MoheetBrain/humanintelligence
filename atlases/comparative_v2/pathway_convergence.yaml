@@ -1,0 +1,72 @@
+# Comparative Intelligence 2.0 — pathway convergence.
+#
+# ============================== NOT COMPUTED ==============================
+# No convergence analysis has been run. There are no results here.
+# ==========================================================================
+#
+# Convergent molecular evolution — the same pathway changing independently in lineages
+# that arrived at cognitive complexity separately — is the most valuable thing this atlas
+# could produce. It is also the analysis most likely to produce a compelling artefact,
+# because the species that are easy to obtain are not the species that make the test
+# informative.
+
+schema_version: 0.2.0
+artefact_id: ATLAS:comparative_v2:pathway_convergence
+status: NOT_COMPUTED
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+results: []
+n_pathways_tested: 0
+
+blocking_prerequisites:
+  - id: depends_on_selection_signals
+    statement: >-
+      Pathway convergence aggregates gene-level selection results. selection_signals.yaml
+      is NOT_COMPUTED, so there is nothing to aggregate.
+  - id: independent_lineages_unavailable
+    statement: >-
+      Convergence requires INDEPENDENT arrivals. The independent lineages in this panel are
+      cetacean, afrotherian, corvid, parrot and — wanted but unobtainable — cephalopod. Two
+      of the five are absent from Ensembl Compara and the fifth is in a different resource
+      entirely. What remains is two mammalian lineages, which is the weakest possible test:
+      mammals share a cortical plan, so agreement between dolphin and elephant is far more
+      easily explained by shared mammalian architecture than by convergence on cognition.
+  - id: no_phylogenetic_control
+    statement: >-
+      Without a species tree, apparent convergence cannot be distinguished from shared
+      inheritance. Dolphin and cattle are both cetartiodactyls; a "dolphin signal" shared
+      with cattle is an artiodactyl signal.
+  - id: no_pathway_definition_ingested
+    statement: >-
+      No pathway/gene-set resource (Reactome, GO, KEGG) has been ingested for this atlas,
+      and pathway definitions are not neutral: overlapping and nested sets inflate apparent
+      convergence, and gene-set size drives enrichment more than biology does.
+
+interpretation_constraints_fixed_in_advance:
+  - id: convergence_is_a_hypothesis_generator
+    statement: >-
+      Convergence never establishes a causal role in humans. At its strongest it says a
+      mechanism is repeatedly recruited when cognition elaborates, which is a reason to
+      study it, not a reason to target it.
+  - id: shared_constraint_mimics_convergence
+    statement: >-
+      Highly constrained genes change slowly everywhere and appear in every lineage's
+      results. Convergence on a constrained pathway may be convergence on the fact that it
+      is constrained.
+  - id: the_controls_decide_it
+    statement: >-
+      A pathway is only interesting if it distinguishes the convergence candidates from
+      cattle and naked mole rat. If the controls are dropped to clean up the signal, the
+      signal IS the confound. Any future result must report the controls in the same table,
+      not in a supplement.
+  - id: birds_cannot_be_read_either_way
+    statement: >-
+      With both avian convergence candidates missing, no avian statement — positive or
+      negative — may be made from this panel. Not "no convergence in birds". Not
+      "convergence is mammal-specific". Not assessable.
+
+next_actions:
+  - Nothing here proceeds until selection_signals.yaml has results and a species tree exists.
+  - Decide explicitly whether a two-mammalian-lineage test is worth running at all; the
+    honest answer may be that it is not, and that the atlas's real output is the resource
+    gap it documented.

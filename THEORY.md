@@ -164,10 +164,25 @@ not narrow, that is the signature of failure rather than of insufficient data.
 > cycle's SELECT and LOCK phases. Its central move is to make the decisive quantity a
 > **contrast** — prioritised versus incidental retention within the same session — rather
 > than a level. That reclassifies most existing "cognitive enhancer" evidence as silent
-> rather than supportive, and it excludes, as a class, any mechanism whose action is a
-> tonic shift in a plasticity parameter, because such a mechanism cannot know which
-> synapses mattered. Machine-readable criteria:
+> rather than supportive. It also *predicts* that a mechanism acting tonically will fail
+> the selectivity requirement unless the resource it supplies is captured in an
+> activity-dependent way — a prediction, and explicitly **not** grounds for excluding a
+> candidate; see that file's §3.1, which retracts an earlier and stronger claim.
+> Machine-readable criteria:
 > [`theory/selective_encoding_criteria.yaml`](theory/selective_encoding_criteria.yaml).
+
+> **Sprint-2 addition — see
+> [`theory/goal_gated_plasticity_retrieval.md`](theory/goal_gated_plasticity_retrieval.md).**
+> The *Goal-Gated Plasticity & Retrieval Hypothesis* asks where the deficit **is**, rather
+> than what a mechanism must do: human cognitive capacity may be limited less by the
+> plasticity and retrieval machinery than by an **imperfect interface between conscious
+> goals and that machinery**. It maps onto this cycle directly — **C1 gating** onto
+> SELECT, **C2 persistence** onto LOCK, and **C3 retrieval** onto a channel this cycle
+> under-specifies and the repository has no target for at all. Its decisive quantity,
+> `control_gap`, is the difference between encoding under *imposed* and under merely
+> *intended* salience, and it is measurable in unmodified humans with no intervention.
+> Machine-readable form:
+> [`theory/goal_gated_plasticity_retrieval.yaml`](theory/goal_gated_plasticity_retrieval.yaml).
 
 
 ### 2.1 The cycle

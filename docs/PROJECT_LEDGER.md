@@ -631,3 +631,123 @@ whether its target list reflects the genetics: it does not.
 
 Task G (comparative intelligence 2.0), Task H (convergence layer), Task I (project truth
 table), then a red-team pass over all Sprint-2 claims.
+
+---
+
+## 2026-09-18T18:05Z — Sprint 2 part 3: comparative v2, convergence layer, truth table, red-team pass — and three pipeline defects that changed the numbers fourfold
+
+**Branch:** `sprint-2/causal-bridge` · **Stage:** Sprint 2 complete (tasks A–J), red-teamed
+
+### Objective of the change
+
+Close Sprint 2: build the species-first comparative programme (G), the convergence layer
+(H) and the project truth table (I), then run the red-team pass over every Sprint-2
+artefact and act on what it found rather than merely recording it.
+
+### Files and systems changed
+
+* **New — comparative v2:** `atlases/comparative_v2/{species_registry,trait_covariates,
+  selection_signals,pathway_convergence,negative_controls}.yaml`,
+  `pipelines/comparative/orthology_audit.py`.
+* **New — convergence:** `atlases/convergence/dependency_rules.yaml`,
+  `reports/convergence_v0_2.md`.
+* **New — truth table:** `pipelines/reports/build_truth_table.py`,
+  `reports/project_truth_table.{md,csv}`.
+* **New — theory:** `theory/goal_gated_plasticity_retrieval.{md,yaml}`.
+* **New — audit:** `evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml` (15 findings).
+* **Fixed:** `pipelines/registry_search/search_registry.py` (pagination, `RAN_STATUSES`
+  wired in, `no_matching_trial_found` rename); all 20 `evidence/registry_searches/*.yaml`
+  regenerated.
+* **Corrected:** `atlases/positive_genetics/2q12_3_duplication.yaml` (LOEUF decile,
+  SLC5A7 promotion removed), `theory/selective_encoding_hypothesis.md` +
+  `selective_encoding_criteria.yaml` (structural exclusion **retracted**),
+  `docs/integration/CODEX_HANDOFF_CONTRACT.md` (dangling adapter reference),
+  `docs/PROJECT_STATUS.md` (GABRA5 "independently re-retrieved" wording),
+  `reports/registry_search_v0_2.md` (all counts), `THEORY.md` (§2 cross-links).
+
+### What was completed
+
+Tasks G, H and I, the red-team pass, and seven corrections arising from it.
+
+### Decisions made and why
+
+1. **Fixed the pipeline rather than annotating it.** The red team found the registry
+   search fetched one page of 50 per query and never paginated, while recording the
+   registry's `totalCount` as `total_hits` — so `kept 25 of 1934` meant 25 of the **50**
+   examined. Two further defects: `RAN_STATUSES` was defined and never referenced (dead
+   safety code), so 95 not-yet-started trials were filed `tested_wrong_endpoint`; and 15
+   trials with an empty outcomes module were recorded as having measured no cognitive
+   outcome. All three convert absence of measurement into measured absence. Re-ran the
+   whole search: **1,534 studies (was 360), 72 reporting gaps (was 8), 40 posted-result
+   trials (was 5)**. Added `n_examined` and `screen_coverage` per query so a partial screen
+   can never again read as a complete one.
+2. **Did NOT re-attach the 72 reporting-gap refs.** The facets still carry the original 8
+   and are *known* to be stale. Re-attaching 72 refs across seven facet files is a
+   structural edit that belongs in its own change, not bolted onto a bug fix. Flagged
+   prominently in the report rather than half-done.
+3. **Retracted the selective-encoding "structural exclusion".** The red team showed it
+   inverted the file's own guard (exclusion is selection with the sign reversed), converted
+   "not assessed in this repository" into "this molecule acts tonically", and contradicted
+   the file's own tagging-and-capture logic, which describes a tonic agent producing
+   selective outcomes. Demoted to a prediction naming a measurement.
+4. **Encoded the convergence dependency rules as an artefact, not prose.** Seven verified
+   double-counting mechanisms (D001–D009) with the shared source named in each case.
+5. **Comparative v2 computes nothing and says so.** `selection_signals` and
+   `pathway_convergence` are `NOT_COMPUTED`; `trait_covariates` is a schema with zero
+   values, because filling brain masses and lifespans from memory would corrupt exactly the
+   control variables the design exists to protect.
+6. **Recorded the new project-lead hypothesis** (Goal-Gated Plasticity & Retrieval) as a
+   theory node with its guards fixed in advance, including the one the companion node had
+   to retract.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|---|---|---|
+| Test suite | `pytest -q` | **852 passed** in 79s |
+| Validator | `graph/validate_graph.py --strict` | **PASS** — 0 error, 0 warning, 3 info |
+| Registry re-run | `search_registry.py --all` | exit 0; 20 records; 1,534 studies |
+| Screen coverage | recomputed from records | 19/20 `complete`, ADORA1 `partial_capped` |
+| Ensembl Compara membership | one orthology query per species | 11/13 present; crow and budgerigar **absent** |
+| Species metadata | Ensembl `info/genomes` | 14/14 taxids and assemblies retrieved, snapshotted |
+| Filesystem clone sweep (re-run) | `find /Users -maxdepth 6 -name .git` | 69 repos; exactly 1 with a humanintelligence remote — the repo itself |
+| Truth table build | `build_truth_table.py` | 26 rows; `SUPPORTED`: **0** |
+
+### Failures or unresolved uncertainty
+
+* **The convergence correction is the sprint's most important result and it is negative.**
+  No target exceeds three independent modalities; three (HCAR1, SLC16A3, RTN4R) rest on
+  animal evidence alone. HCN1, the best-covered target, had three of its five apparent
+  modalities trace to two papers.
+* **The dependency rules are NOT enforced.** No validator rule and no scoring script
+  applies them; `independent_source_count` de-duplicates by `source_id` only and cannot
+  detect same-claim, same-sumstats or same-cohort duplication. A future agent can
+  reintroduce every double-count with nothing firing. This is the largest piece of
+  technical debt Sprint 2 created.
+* **The comparative avian arm is inoperable**, and dangerously so: both convergent-cognition
+  birds are absent from Compara while both avian *controls* are present, so a scan over
+  "available birds" would return a null that is absence of measurement.
+* **Eight genes failed the orthology audit** with errors rather than returning "no
+  orthologue" — recorded as `query_status: failed`, not as absence.
+* Eight red-team findings are **recorded and not fixed** (f8–f15): cohort overlap uncomputed
+  in the discovered registry; an educational-attainment GWAS contributing to all 18
+  discovery entries but flagged in one; ADHD symptom scales and a paediatric trial in the
+  extraction queue; stale facet refs; an X01 working assumption laundered as a
+  methodological constraint; three externally nominated genes whose provenance survives only
+  in free text; silent truncation of study lists; and implicit ranking by list order.
+* The ADORA1 screen remains capped at 1,000 records against 1,934 matches.
+
+### Effect on the overall project
+
+Sprint 2 is complete, and its net effect is to make the repository's evidence base look
+**weaker and more honest** than it did at the start of the sprint. The truth table records
+26 hypotheses of which zero are `SUPPORTED`; convergence turned out to be largely
+double-counting; and the one pipeline that produced new evidence was systematically
+under-screening. The project now has a compass (two theory nodes), a map (the truth table),
+and a mechanism for detecting when it is fooling itself (the dependency rules).
+
+### Next intended step
+
+Re-attach the 72 reporting-gap refs; build the convergence scorer and its validator rule;
+extract and red-team the 40 trials with posted cognitive results; then decide whether the
+comparative programme is worth continuing given the avian resource gap.

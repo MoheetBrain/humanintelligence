@@ -1,0 +1,92 @@
+# Comparative Intelligence 2.0 — negative controls.
+#
+# The controls are the design. Without them, a species-first comparative scan measures
+# "large, long-lived, social" and reports the answer as intelligence.
+#
+# This file states, IN ADVANCE OF ANY RESULT, what each control is for and what pattern
+# would falsify a cognitive interpretation. Fixing the falsifiers before the data exist is
+# the only way they survive contact with an attractive finding.
+
+schema_version: 0.2.0
+artefact_id: ATLAS:comparative_v2:negative_controls
+status: controls_specified_no_analysis_run
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+
+species_controls:
+
+  - control: bos_taurus
+    role: negative_control_large_body
+    breaks_correlation_between: [body_mass, absolute_brain_mass, cognitive_specialisation]
+    falsifies_if: >-
+      A pathway flagged in dolphin or elephant is equally flagged in cattle. That pattern
+      means the signal tracks body and brain SIZE, not cognition.
+    second_function: >-
+      Cattle are the closest outgroup to cetaceans in this panel. A dolphin signal shared
+      with cattle is an ARTIODACTYL signal — shared ancestry, not cetacean convergence.
+      This control does double duty and is the most load-bearing species here.
+
+  - control: heterocephalus_glaber_female
+    role: negative_control_longevity
+    breaks_correlation_between: [maximum_lifespan, eusociality, cognitive_specialisation]
+    falsifies_if: >-
+      A pathway flagged in the long-lived cognitive species is also flagged in naked mole
+      rat. Longevity and maintenance pathways are the commonest false positive in scans of
+      "intelligent" species precisely because long life and large brains covary.
+
+  - control: gallus_gallus
+    role: negative_control_bird
+    breaks_correlation_between: [avian_genome_background, corvid_parrot_cognition]
+    falsifies_if: >-
+      An avian signal appears equally in chicken. That is a bird signal, not a smart-bird
+      signal.
+    CURRENTLY_INOPERABLE: >-
+      This control can only do its job against a corvid or parrot, and BOTH are absent from
+      Ensembl Compara. The control is available and the thing it controls for is not, which
+      is the worst possible configuration: the panel can generate avian nulls and cannot
+      generate avian positives.
+
+  - control: taeniopygia_guttata
+    role: control_vocal_learner
+    breaks_correlation_between: [vocal_learning, general_cognitive_specialisation]
+    falsifies_if: >-
+      A signal attributed to general cognition appears in zebra finch, a vocal learner that
+      is not a tool user or general problem-solver. Vocal learning is the avian trait with
+      the largest molecular literature and therefore the one most likely to be mistaken for
+      the trait of interest.
+    CURRENTLY_INOPERABLE: same reason as chicken.
+
+  - control: pan_troglodytes_and_pan_paniscus
+    role: sister_lineage_not_convergence
+    falsifies_if: >-
+      Shared human-chimpanzee-bonobo states are counted as convergent arrivals. They are
+      inheritance. Treating them as independent evidence is the pseudoreplication failure.
+
+analytic_controls:
+  - id: phylogenetic_control_mandatory
+    statement: >-
+      Any comparative statistic must be computed with independent contrasts, PGLS or an
+      explicit tree-aware model. A raw count of species sharing a state is inadmissible.
+      Sprint 1's comparative ranking already applied caps because every cited comparative
+      claim had phylogenetic_control 'none'; this atlas must not reproduce that.
+  - id: assembly_quality_control
+    statement: >-
+      Gene absence correlates with assembly quality more strongly than with biology. Only
+      PRESENCE may be used as evidence; absence is not_assessable unless the locus has been
+      checked directly. The dolphin assembly (turTru1, low-coverage draft, no accession) is
+      the acute case.
+  - id: gene_length_control
+    statement: >-
+      Longer genes accumulate more substitutions and more apparent signal. Any gene-level
+      statistic must be length-normalised or length must enter the model.
+  - id: controls_reported_together
+    statement: >-
+      Control species must appear in the same table as candidates, never in a supplement.
+      A result that omits them cannot be evaluated, and omission is how the confound
+      survives review.
+
+failure_modes_this_file_exists_to_prevent:
+  - Dropping a control because it "contaminates" a clean signal. The contamination is the finding.
+  - Reading a null in an available species as a null in an unavailable one.
+  - Counting two species from one genus as two independent observations.
+  - Treating absolute brain mass as a cognitive measure; by that metric elephants outrank humans.

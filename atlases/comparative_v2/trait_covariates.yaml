@@ -1,0 +1,173 @@
+# Comparative Intelligence 2.0 — trait covariate SCHEMA.
+#
+# THIS FILE IS DELIBERATELY EMPTY OF VALUES.
+#
+# It defines the covariates the species-first design needs, and records that NONE of them
+# have been ingested. That is not an oversight and it is not a placeholder to be filled in
+# by whoever reads this next from memory.
+#
+# WHY NOT JUST FILL IT IN
+# -----------------------
+# Comparative trait values — brain mass, encephalisation quotient, maximum lifespan,
+# generation time, group size — are exactly the kind of number that feels recallable and
+# is not. They differ between sources by factors of two, they are often sex- or
+# population-specific, many published values trace back to a single 1980s compilation, and
+# once a wrong value is in a table nothing downstream will ever question it.
+#
+# The whole point of this atlas is to stop body size and lifespan masquerading as
+# cognition. Those are precisely the covariates below. Filling them from memory would
+# corrupt the control variables that the design depends on, which is worse than having no
+# controls at all — because the analysis would still run, and it would still produce a
+# number.
+#
+# An empty schema with an explicit gap is honest. A populated schema with recalled numbers
+# is a fabrication that looks like data.
+
+schema_version: 0.2.0
+artefact_id: ATLAS:comparative_v2:trait_covariates
+status: schema_defined_no_data_ingested
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+n_species_with_data: 0
+n_species_in_panel: 14
+
+ingestion_status:
+  state: not_ingested
+  blocking: true
+  what_would_unblock: >-
+    An ingest from a citable comparative dataset (for example AnAge for longevity and
+    generation time, a published brain/body mass compilation for neuroanatomy, and a
+    primary source for social group size), each snapshotted to data/raw/ with a sha256 in
+    MANIFEST.jsonl and a source record in evidence/sources/ — the same provenance standard
+    every other number in this repository meets.
+  consequence_until_then: >-
+    No phylogenetically controlled comparative statistic can be computed. Any comparative
+    result produced without these covariates would be uncontrolled for the three
+    confounds the panel was built to break.
+
+# ------------------------------------------------------------------ the covariates ----
+# `confound_role` is why the covariate is here. Most of these exist to be CONTROLLED FOR,
+# not to be correlated with cognition — reading them the other way round is the standard
+# way comparative cognition studies go wrong.
+covariates:
+
+  - id: phylogeny
+    name: phylogenetic_position
+    units: tree topology plus branch lengths
+    required_for: [independent_contrasts, PGLS, any_cross_species_statistic]
+    confound_role: >-
+      THE primary confound. Species are not independent observations. Without a tree,
+      every comparative statistic here is pseudoreplicated — chimpanzee and bonobo would
+      count as two arrivals at a trait they inherited once.
+    status: not_ingested
+    note: >-
+      Ensembl Compara holds gene trees, not a curated species tree with calibrated branch
+      lengths. A species tree must be sourced separately.
+
+  - id: body_mass
+    name: adult_body_mass
+    units: kilograms
+    confound_role: >-
+      Brain mass scales with body mass. Cattle are in this panel specifically so that
+      "large" and "cognitively specialised" can be told apart.
+    status: not_ingested
+
+  - id: brain_mass
+    name: absolute_brain_mass
+    units: grams
+    confound_role: >-
+      Correlates with body mass, and on its own ranks elephants and cetaceans above humans.
+      Absolute brain mass is NOT a cognitive measure and must never be used as one.
+    status: not_ingested
+
+  - id: encephalisation
+    name: encephalisation_quotient
+    units: dimensionless ratio to body-mass expectation
+    confound_role: >-
+      The standard correction, and itself contested: EQ depends on the scaling exponent
+      chosen, is not comparable across distant clades, and is meaningless for birds, whose
+      brains are built on a different plan with different neuron densities. Record the
+      exponent and the reference group or the number means nothing.
+    status: not_ingested
+
+  - id: neuron_number
+    name: telencephalic_neuron_number
+    units: count
+    confound_role: >-
+      Better motivated than EQ, and available for far fewer species. Corvid and parrot
+      pallia carry neuron counts comparable to primates at a fraction of the mass, which is
+      exactly why the avian arm mattered — and exactly which species the data resource
+      cannot supply.
+    status: not_ingested
+
+  - id: max_lifespan
+    name: maximum_lifespan
+    units: years
+    confound_role: >-
+      Covaries with brain size across mammals. The naked mole rat is in the panel to break
+      that covariance. Longevity genes are the commonest false positive in scans of
+      "intelligent" species.
+    status: not_ingested
+
+  - id: generation_time
+    name: generation_time
+    units: years
+    confound_role: >-
+      Drives the molecular clock. Species with long generations accumulate fewer
+      substitutions per unit time, which biases every dN/dS and selection statistic. A
+      selection scan that ignores generation time will find "selection" in short-generation
+      lineages as an artefact.
+    status: not_ingested
+
+  - id: social_group_size
+    name: typical_social_group_size
+    units: individuals
+    confound_role: >-
+      The social-brain hypothesis's predictor. Included so that a social explanation and a
+      general-cognition explanation can compete rather than being conflated. Also the
+      softest variable here: group size is defined differently by different fieldworkers
+      and varies by season and population.
+    status: not_ingested
+
+  - id: sensory_specialisation
+    name: dominant_sensory_modality
+    units: categorical
+    confound_role: >-
+      Large parts of a brain serve sensory processing, and echolocation in dolphins and
+      olfaction in elephants inflate regions that have nothing to do with the cognition of
+      interest. A gene expressed in an expanded auditory system will look like a cognition
+      gene.
+    status: not_ingested
+
+  - id: diet_and_foraging
+    name: dietary_breadth_and_extractive_foraging
+    units: categorical
+    confound_role: >-
+      The main competing ecological explanation for large brains, and the trait most
+      directly linked to tool use in corvids. Its absence means the panel cannot currently
+      distinguish a foraging-ecology explanation from a general-cognition one.
+    status: not_ingested
+
+  - id: domestication
+    name: domestication_status
+    units: boolean
+    confound_role: >-
+      Cattle and, in a different way, laboratory mice and rats are domesticated. Domestication
+      reduces brain size and alters behaviour genes independently of cognition, so it is a
+      confound in the CONTROLS rather than in the candidates — which is easy to miss, because
+      attention goes to the interesting species.
+    status: not_ingested
+
+# ------------------------------------------------------------------------- guards -----
+guards:
+  - >-
+    No value may be entered in this file from recall. Every value needs a snapshot, a
+    checksum and a source record before it is used.
+  - >-
+    Most covariates here exist to be CONTROLLED FOR, not correlated with cognition.
+    Reporting that brain mass predicts cognitive specialisation across this panel would be
+    rediscovering the sampling criterion.
+  - >-
+    The cognitive-specialisation variable itself is a curator judgement recorded as
+    `panel_role` in species_registry.yaml. It is a declared prior, not a measurement, and
+    must never be the dependent variable in a test run on this same panel.

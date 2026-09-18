@@ -1,0 +1,301 @@
+# Convergence dependency rules — the machinery that stops evidence being counted twice.
+#
+# WHY THIS FILE EXISTS
+# --------------------
+# Convergence across independent evidence modalities is the strongest argument this
+# project can make. It is also the easiest to fake by accident: the same dataset, read
+# through two pipelines and filed in two atlases, looks exactly like two observations.
+#
+# Before this file, the repository's only independence machinery was
+# `independent_source_count`, which de-duplicates by `source_id` (DATA_CONTRACT §6). That
+# catches the trivial case — the same PMID cited twice — and misses every case that
+# actually occurs here:
+#
+#   * the same CLAIM surfaced in two atlases and counted as two modalities;
+#   * the same SUMMARY STATISTICS processed by two pipelines under two source ids;
+#   * two different PMIDs drawing on the same COHORT;
+#   * a facet assessment counted as evidence alongside the claims it is computed from.
+#
+# Each rule below is a named, testable dependency with the shared object identified. The
+# rules were derived from an audit of the actual records, not from first principles, and
+# every `shared_object` named here was verified present in the cited files.
+#
+# HOW TO USE IT
+# -------------
+# Any convergence statement must apply these rules BEFORE counting modalities. A count
+# that has not had them applied is inadmissible. `corrected_independent_modalities` in
+# reports/convergence_v0_2.md is the count after application.
+#
+# STATUS: rules encoded and applied by hand in Sprint 2. They are NOT yet enforced by a
+# validator rule — see `enforcement` at the foot of this file. That gap is real and is
+# recorded rather than papered over.
+
+schema_version: 0.2.0
+artefact_id: CONV:dependency_rules
+title: Convergence dependency rules v0.2
+status: rules_encoded_enforcement_manual
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+derived_from: convergence audit of evidence/claims/, atlases/, evidence/registry_searches/
+
+# --------------------------------------------------------------- modality definitions --
+# A modality is an independent WAY OF KNOWING, not a folder. Two records are in the same
+# modality if a single methodological failure could take both of them down.
+modalities:
+  - id: M1
+    name: human_genetics
+    evidential: true
+  - id: M2
+    name: human_molecular
+    evidential: true
+  - id: M3
+    name: human_intervention
+    evidential: true
+    note: >-
+      Includes null and failed trials. A failed trial is a human-intervention observation
+      with a negative sign, not a separate modality — see rule D004.
+  - id: M4
+    name: animal_causal
+    evidential: true
+  - id: M5
+    name: comparative
+    evidential: true
+  - id: M6
+    name: extreme_cognition
+    evidential: true
+    note: NO ARTEFACTS EXIST. See coverage_gaps.
+  - id: M9
+    name: positive_genetics
+    evidential: true
+    note: Independence from M1 is UNRESOLVED — see rule D005.
+  - id: M11
+    name: theory
+    evidential: false
+    note: >-
+      Theory nodes are not evidence and may never contribute to a convergence count, however
+      well a candidate fits them. This includes THEORY:selective_encoding.
+
+# Modality ids deliberately NOT allocated, because the audit showed they are not modalities:
+retired_pseudo_modalities:
+  - id: M7_brake_hypothesis
+    reason: >-
+      An atlas, not a way of knowing. Its assessments are facet grades computed FROM the
+      M3/M4 claims; counting both double-counts. See rule D001.
+  - id: M8_power_envelope
+    reason: Same as M7 — an atlas over the same claim base. See rule D001.
+  - id: M10_clinical_failure
+    reason: A sign on an M3 observation, not an axis. See rule D004.
+
+# ------------------------------------------------------------------------- the rules ---
+rules:
+
+  - id: D001
+    name: atlas_assessment_is_not_evidence
+    severity: blocking
+    statement: >-
+      A facet assessment in atlases/{brakes,power,alphacognition,comparative,red_team}/ is
+      DERIVED from claims via claim_refs. It must never be counted as an evidence item
+      alongside the claims it was computed from.
+    verified_instances:
+      - "atlases/brakes/assessments/GABRA5.yaml facet mechanistic_causal_perturbation -> CLM:brakes:GABRA5:001/002/005/007, which are GABRA5's animal-causal claims"
+      - "atlases/brakes/assessments/ADORA1.yaml -> CLM:brakes:ADORA1:001 (SRC:PMID:19193874)"
+    effect_when_applied: >-
+      Removes one apparent modality from every target carried by the brake or power atlas.
+    detection: "for each assessment facet, subtract the modalities of its claim_refs before counting"
+
+  - id: D002
+    name: single_dataset_replicated_across_targets
+    severity: blocking
+    statement: >-
+      When every record in a modality cites the same underlying dataset, that modality
+      contributes ONE observation to the repository as a whole, not one per target.
+    verified_instances:
+      - shared_object: SRC:DB:gtex:v8
+        where: evidence/claims/alphacognition/expression_derived.yaml
+        detail: >-
+          All 31 expression claims cite this single GTEx v8 bulk-tissue run, which is why
+          the human_molecular column is populated for essentially every target. It is one
+          pipeline execution, it is bulk tissue, and it contains no QTL, no colocalisation
+          and no cell-type resolution.
+      - shared_object: SRC:PMID:21376239
+        where: evidence/claims/power/
+        detail: one paper supplying CLM:power:{SLC16A1,SLC16A3,SLC16A7,anls}:001 — four "targets", one source
+      - shared_object: SRC:PMID:28216264
+        where: evidence/claims/red_team/
+        detail: >-
+          One off-target-pharmacology review (Lynch 2017) supplies safety records for
+          ADORA1, CHRM1, DRD1, GABRA5, GRIN2B and HTR2A. Six targets agreeing on safety is
+          one review reached six times.
+    effect_when_applied: >-
+      M2 stops discriminating between targets entirely and must not raise any target's
+      count above any other's.
+
+  - id: D003
+    name: same_sumstats_two_pipelines
+    severity: blocking
+    statement: >-
+      GWAS Catalog records and Open Targets L2G records are two processings of overlapping
+      summary statistics. They are not two observations, and L2G — which blends GWAS signal
+      WITH molecular QTL evidence — must not be counted as M1 and M2 simultaneously.
+    verified_instances:
+      - "11 targets carry claims from both pipelines on shared PMIDs: CKB, HCN1, GRIN2B, GRM5, HTR2A, PDE4B, SLC16A7, CRTC1, OTX2, DRD1, GPR158"
+      - "e.g. CKB: PMIDs 29942086, 35764056, 36378351, 37365406 appear in both gwas_catalog_derived.yaml and opentargets_l2g_derived.yaml"
+    effect_when_applied: M1 counts once per target regardless of how many pipelines surfaced it.
+
+  - id: D004
+    name: null_result_is_a_sign_not_a_modality
+    severity: blocking
+    statement: >-
+      A failed or null trial is an M3 observation with direction no_change or a harm
+      direction. Filing it as a separate "clinical failure" modality counts one trial twice.
+    verified_instances:
+      - "CLM:red_team:GRM5:001 (SRC:NCT:NCT01348087) is GRM5's clinical-null record AND its human-intervention record"
+      - "CLM:red_team:KCNQ2:001 (SRC:NCT:NCT00310388) likewise"
+    effect_when_applied: >-
+      Removes an apparent modality from every target with a recorded null, which is
+      precisely the set of targets whose evidence is best — so the correction bites hardest
+      where the temptation to overcount is strongest.
+
+  - id: D005
+    name: cohort_overlap_unresolved_blocks_independence
+    severity: blocking
+    statement: >-
+      Two records drawn from the same cohort are not independent, and where the overlap is
+      UNKNOWN the records may not be scored as independent either. Unknown overlap is not
+      zero overlap.
+    verified_instances:
+      - shared_object: UK Biobank and the large cognitive-GWAS meta-analyses
+        detail: >-
+          26 M1 claims sit on UK-Biobank-containing populations; SRC:PMID:30038396
+          (educational attainment) and SRC:PMID:35361970 recur across CKB, HCN1, PDE4B,
+          SLC16A7 and others. Cross-target "genetic convergence" is substantially one or
+          two cohorts.
+      - shared_object: SRC:PMID:39667348 (Huguet 2024, N=258,292)
+        detail: >-
+          The 2q12.3 positive-genetics record. Its own red_team_should_attack list asks how
+          much of the cohort is UK Biobank and whether it overlaps the repository's existing
+          cognitive-GWAS base. That question is UNANSWERED, so M9 is scored
+          dependence_unknown, never independent.
+    effect_when_applied: M9 contributes to no convergence count until the overlap is resolved.
+
+  - id: D006
+    name: two_retrieval_routes_are_one_observation
+    severity: high
+    statement: >-
+      Reaching the same trial or paper by two different retrieval methods verifies the
+      METHOD. It does not create a second item of evidence.
+    verified_instances:
+      - shared_object: SRC:NCT:NCT02953639 (basmisanil, phase 2b CIAS)
+        detail: >-
+          Reached by the red team manually and by the Sprint-2 registry pipeline. One trial,
+          one result. docs/PROJECT_STATUS.md was corrected on 2026-09-18 because its earlier
+          wording ("independently re-retrieved") could be read as a second data point. The
+          genuine replication of the alpha5 null is a DIFFERENT trial, NCT02484703.
+
+  - id: D007
+    name: shared_paper_across_atlases
+    severity: high
+    statement: >-
+      A single paper registered by two atlases produces two claims in two modalities that
+      stand or fall together.
+    verified_instances:
+      - shared_object: SRC:PMID:20837545
+        detail: "CLM:brakes:RGS14:001/002 AND CLM:comparative:RGS14:001 — RGS14's animal-plus-comparative 'convergence' is one 2010 paper."
+      - shared_object: SRC:PMID:30340039
+        detail: "CLM:brakes:HCN1:006 AND CLM:comparative:DENDRITE:001 — one human-dendrite paper."
+      - shared_object: "SRC:PMID:30392798, SRC:PMID:34759318"
+        detail: >-
+          Each supplies molecular, animal AND comparative records for HCN1. HCN1 is the only
+          target touching five apparent modalities, and three of those marks trace to two
+          papers. The repository's best-covered target is its clearest case of this rule.
+
+  - id: D008
+    name: non_evidential_classes_never_converge
+    severity: blocking
+    statement: >-
+      Records whose provenance_class is outside evidential_classes contribute nothing to
+      convergence, and a convergence claim that would span one is refused rather than
+      caveated.
+    verified_instances:
+      - "analyses/external/X01_cell_type_enrichment.yaml — provenance_class external_analysis_unverified, listed in inert_classes (ontology/vocabularies.yaml). cohort_overlap_status: unresolvable_pending_source_list. Enforced mechanically by validator rule V-EXT."
+      - "theory/ nodes — status theory_node. THEORY:selective_encoding included."
+
+  - id: D009
+    name: shared_mechanistic_rationale_is_not_replication
+    severity: medium
+    statement: >-
+      Two targets in the same pathway do not corroborate each other. Counting them as two
+      independent lines of support overstates breadth.
+    verified_instances:
+      - "EIF2S1 and EIF2B_COMPLEX are the substrate and the GEF of one pathway; AUD:red_team:EIF2S1:001 finding f1 (citation_dependence) makes exactly this point."
+      - "SLC16A1, SLC16A3 and SLC16A7 are one transporter family sharing sources (D002)."
+
+# ------------------------------------------------- what survives once the rules apply --
+# The corrected picture. Derived by applying D001-D009 to the 27 seed targets.
+corrected_result:
+  headline: >-
+    NO TARGET IN THE REPOSITORY REACHES MORE THAN THREE INDEPENDENT EVIDENCE MODALITIES,
+    and the three are always the same three — human genetics, human intervention, animal
+    causal. There is no target whose case is built on genuinely diverse ways of knowing.
+  three_modalities_M1_M3_M4:
+    - CKB
+    - DRD1
+    - GRIN2B
+    - GRM5
+    - HTR2A
+    - HDAC2
+    - SLC16A1
+    - GABRA5
+    - EIF2S1
+    - EIF2B_COMPLEX
+    - GPR158
+    - KCNQ3
+    - HCN1
+  two_modalities:
+    M3_M4: [CHRM1, ADORA1, KCNQ2, KL, PTPN5, RGS14]
+    M1_M4: [CRTC1, OTX2, SLC16A7, SLC6A8]
+    M1_M3: [PDE4B]
+  one_modality_animal_only: [HCAR1, SLC16A3, RTN4R]
+  important_qualification: >-
+    Reaching three modalities is NOT a strength signal. GABRA5 reaches three and its human
+    intervention evidence is a replicated NULL. Breadth of modality and direction of
+    evidence are orthogonal, and this table says nothing about the latter.
+  second_qualification: >-
+    The M1 leg of most three-modality targets is positional GWAS mapping with
+    causal_gene_attribution 0-2 and ZERO molecular-QTL colocalisation anywhere in the
+    repository. A modality can be present and still be weak.
+
+# --------------------------------------------------------------------- coverage gaps ---
+coverage_gaps:
+  - id: M6_empty
+    statement: >-
+      The extreme-cognition modality has ZERO artefacts. No claim, source, assessment or
+      target record exists. Its only trace is an outstanding deliverable attributed to a
+      branch that docs/integration/CODEX_BRANCH_AUDIT.md establishes does not exist.
+    consequence: No target anywhere has extreme-cognition evidence. This is a gap, not a null.
+  - id: M5_mostly_ungraded
+    statement: "23 of 27 comparative assessments are assessment_status: not_assessed with no claim_refs. Only HCN1, RGS14, KCNQ2 and KCNQ3 are graded."
+  - id: M2_has_no_causal_layer
+    statement: >-
+      No QTL, no colocalisation, no evidential cell-type record exists. M2 is one bulk-tissue
+      expression dataset. The absence of colocalisation is MEASURED (70/70 L2G records carry
+      an empty qtl_colocalisations list), not merely unexamined.
+  - id: M9_orphaned
+    statement: >-
+      The single positive-genetics record's eight genes have zero overlap with the 27
+      candidates, so M9 contributes to no convergence anywhere in the repository.
+
+enforcement:
+  current: >-
+    MANUAL. These rules were applied by hand in Sprint 2. `independent_source_count`
+    (DATA_CONTRACT §6) de-duplicates by source_id only and cannot detect D001, D003, D004 or
+    D005.
+  not_yet_built: >-
+    No validator rule enforces them, and no scoring script recomputes the corrected counts
+    from the records. Until one exists, a future agent can reintroduce every one of these
+    double-counts without any check firing. This is the single largest piece of technical
+    debt created by Sprint 2 and it is recorded here rather than left implicit.
+  next_action: >-
+    Implement a convergence scorer that walks claim_refs, applies D001-D009, and emits
+    corrected_independent_modalities per target; then a validator rule forbidding any
+    convergence statement not produced by it.

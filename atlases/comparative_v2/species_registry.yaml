@@ -1,0 +1,427 @@
+# Comparative Intelligence 2.0 — species registry
+#
+# WHY THIS ATLAS IS SPECIES-FIRST, AND WHAT THAT FIXES
+# ----------------------------------------------------
+# The Sprint-1 comparative work was GENE-first: it took a seed gene list and asked what
+# other species do with those genes. That design cannot discover anything, because the
+# answer is bounded by the input list, and it cannot distinguish a gene that matters for
+# cognition from a gene that matters for being a large, long-lived mammal.
+#
+# This atlas inverts the design. It starts from SPECIES — chosen so that cognitive
+# specialisation is dissociated from the traits that normally travel with it (body size,
+# brain size, lifespan, sociality, phylogenetic proximity) — and only then asks what the
+# genomes say. The controls are the point of the design, not an afterthought.
+#
+# THE HARD RULE THIS ATLAS EXISTS TO ENFORCE:
+#   A pathway repeatedly changing in long-lived large mammals is NOT automatically an
+#   intelligence pathway. Longevity, body size and brain size are confounded with
+#   cognitive specialisation across mammals, and a scan that does not include species
+#   breaking that correlation will rediscover the correlation and call it a finding.
+#
+# STATUS: PANEL DEFINITION AND RESOURCE AUDIT ONLY. No selection scan has been run, no
+# pathway convergence has been computed, and no cognitive claim is made or supported here.
+# See `selection_signals.yaml` and `pathway_convergence.yaml`, both of which record
+# NOT COMPUTED rather than a result.
+
+schema_version: 0.2.0
+atlas_id: ATLAS:comparative_v2
+title: Comparative Intelligence 2.0 — species-first panel
+status: panel_defined_analysis_not_run
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+
+# ---------------------------------------------------------------- provenance ---------
+# Every taxid, assembly name and accession below was RETRIEVED from the Ensembl REST
+# `info/genomes` endpoint in this session and snapshotted to data/raw/ensembl/. None of
+# it is recalled. Compara membership was established by an actual orthology query per
+# species, not by assuming that a species with a genome has orthology computed for it —
+# an assumption that turns out to be false for two of the most important species here.
+provenance:
+  retrieved_on: "2026-09-18"
+  ensembl_endpoints:
+    - https://rest.ensembl.org/info/genomes/{species}
+    - https://rest.ensembl.org/homology/symbol/human/{gene}
+  snapshots: data/raw/ensembl/2026-09-18/
+  interim: data/interim/comparative_species_info.json
+
+# ------------------------------------------------------------- the panel -------------
+# `panel_role` is the reason the species is here. A species with no role is not in the
+# panel, however charismatic.
+#
+# orthology_available: whether Ensembl Compara can return orthologues for this species.
+# This is a DATA-AVAILABILITY fact, never a biological one. A gene with no orthologue
+# CALL in a species is not a gene absent from that species.
+species:
+
+  - species_id: SP:9606
+    ensembl_species: homo_sapiens
+    scientific_name: Homo sapiens
+    common_name: human
+    ncbi_taxon_id: 9606
+    ensembl_assembly: GRCh38.p14
+    assembly_accession: GCA_000001405.29
+    panel_role: reference
+    clade: primate
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: The query species; every orthology call is anchored here.
+
+  - species_id: SP:9598
+    ensembl_species: pan_troglodytes
+    scientific_name: Pan troglodytes
+    common_name: chimpanzee
+    ncbi_taxon_id: 9598
+    ensembl_assembly: Pan_tro_3.0
+    assembly_accession: GCA_000001515.5
+    panel_role: sister_lineage
+    clade: primate
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Closest living relative. Useful for human-specific change, and USELESS as evidence
+      of convergence: shared cognitive traits here are shared ancestry, not independent
+      arrival. Recorded as sister_lineage rather than convergence_candidate for exactly
+      that reason.
+
+  - species_id: SP:9597
+    ensembl_species: pan_paniscus
+    scientific_name: Pan paniscus
+    common_name: bonobo
+    ncbi_taxon_id: 9597
+    ensembl_assembly: panpan1.1
+    assembly_accession: GCA_000258655.2
+    panel_role: sister_lineage
+    clade: primate
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Second Pan species. Chimpanzee and bonobo are NOT two independent data points —
+      see `phylogenetic_pseudoreplication` below.
+
+  - species_id: SP:9544
+    ensembl_species: macaca_mulatta
+    scientific_name: Macaca mulatta
+    common_name: rhesus macaque
+    ncbi_taxon_id: 9544
+    ensembl_assembly: Mmul_10
+    assembly_accession: GCA_003339765.3
+    panel_role: primate_outgroup
+    clade: primate
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Old World monkey outgroup to the apes; polarises whether a change is ape-specific
+      or older. Also the primate in which most invasive cognitive neuroscience is done,
+      so it is the bridge species for animal-to-human inference.
+
+  - species_id: SP:9739
+    ensembl_species: tursiops_truncatus
+    scientific_name: Tursiops truncatus
+    common_name: bottlenose dolphin
+    ncbi_taxon_id: 9739
+    ensembl_assembly: turTru1
+    assembly_accession: null
+    panel_role: convergence_candidate
+    clade: cetacean
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Large brain, complex sociality, in a lineage that separated from primates ~95 Myr
+      ago. A genuinely independent arrival at cognitive complexity, which is what makes
+      convergence informative at all.
+    assembly_caveat: >-
+      turTru1 is a low-coverage draft assembly with no accession returned by Ensembl,
+      and it is by a wide margin the weakest genome in this panel. ABSENCE of an
+      orthologue call in dolphin is therefore uninformative — it is far more likely to
+      be an assembly gap than a gene loss. Presence is usable; absence is not.
+
+  - species_id: SP:9785
+    ensembl_species: loxodonta_africana
+    scientific_name: Loxodonta africana
+    common_name: African savanna elephant
+    ncbi_taxon_id: 9785
+    ensembl_assembly: Loxafr3.0
+    assembly_accession: GCA_000001905.1
+    panel_role: convergence_candidate
+    clade: afrotherian
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Third independent lineage with a large brain and long life. Also the species where
+      the body-size confound is most acute, which is precisely why the large-bodied
+      control below is mandatory rather than optional.
+
+  - species_id: SP:1196302
+    ensembl_species: corvus_moneduloides
+    scientific_name: Corvus moneduloides
+    common_name: New Caledonian crow
+    ncbi_taxon_id: 1196302
+    ensembl_assembly: bCorMon1.pri
+    assembly_accession: GCA_009650955.1
+    panel_role: convergence_candidate
+    clade: corvid
+    in_ensembl_compara: false          # genome exists; orthology does NOT
+    orthology_available: false
+    rationale: >-
+      The single most valuable species in this panel. Tool manufacture and metatool use
+      in a lineage ~320 Myr from mammals, with a brain built on a completely different
+      plan (pallium, not six-layer neocortex). Convergence HERE would be the strongest
+      available evidence that a mechanism is a general requirement of cognition rather
+      than a mammalian idiosyncrasy.
+    blocking_limitation: >-
+      Ensembl Compara returns "Could not find a GenomeDB named 'corvus_moneduloides'".
+      The assembly is in Ensembl; the species is NOT in the comparative database, so no
+      orthologues, gene trees or alignments are computed for it. The most informative
+      species in the design is the one the resource cannot analyse.
+
+  - species_id: SP:13146
+    ensembl_species: melopsittacus_undulatus
+    scientific_name: Melopsittacus undulatus
+    common_name: budgerigar
+    ncbi_taxon_id: 13146
+    ensembl_assembly: bMelUnd1.mat.Z
+    assembly_accession: GCA_012275295.1
+    panel_role: convergence_candidate
+    clade: parrot
+    in_ensembl_compara: false
+    orthology_available: false
+    rationale: >-
+      Parrots are a second, independent avian arrival at cognitive complexity and vocal
+      learning, separate from corvids. Corvid-plus-parrot agreement would be convergence
+      WITHIN birds, which is a much stronger test than either alone.
+    blocking_limitation: >-
+      Also absent from Compara ("Could not find a GenomeDB named
+      'melopsittacus_undulatus'"). Both avian convergence candidates are unavailable.
+
+  # ------------------------------------------------------------- the controls --------
+  # These species exist to BREAK correlations. Without them the panel measures "large,
+  # long-lived, social" and reports it as intelligence.
+
+  - species_id: SP:9031
+    ensembl_species: gallus_gallus
+    scientific_name: Gallus gallus
+    common_name: chicken
+    ncbi_taxon_id: 9031
+    ensembl_assembly: bGalGal1.mat.broiler.GRCg7b
+    assembly_accession: GCA_016699485.1
+    panel_role: negative_control_bird
+    clade: galliform
+    in_ensembl_compara: true
+    orthology_available: true
+    controls_for: avian_genome_background
+    rationale: >-
+      A bird with no corvid- or parrot-grade cognitive specialisation. Separates "this is
+      a bird thing" from "this is a smart-bird thing".
+
+  - species_id: SP:59729
+    ensembl_species: taeniopygia_guttata
+    scientific_name: Taeniopygia guttata
+    common_name: zebra finch
+    ncbi_taxon_id: 59729
+    ensembl_assembly: bTaeGut1_v1.p
+    assembly_accession: GCA_003957565.2
+    panel_role: control_vocal_learner
+    clade: passerine
+    in_ensembl_compara: true
+    orthology_available: true
+    controls_for: vocal_learning_without_general_cognitive_specialisation
+    rationale: >-
+      A vocal learner that is not a tool user or a general problem-solver. Vocal learning
+      is the trait most likely to be mistaken for the cognitive trait of interest,
+      because it is the avian trait with the largest existing molecular literature. This
+      species is here to absorb that signal so it is not misread as general cognition.
+
+  - species_id: SP:9913
+    ensembl_species: bos_taurus
+    scientific_name: Bos taurus
+    common_name: cattle
+    ncbi_taxon_id: 9913
+    ensembl_assembly: ARS-UCD2.0
+    assembly_accession: GCA_002263795.4
+    panel_role: negative_control_large_body
+    clade: artiodactyl
+    in_ensembl_compara: true
+    orthology_available: true
+    controls_for: body_size_and_absolute_brain_size
+    rationale: >-
+      Large-bodied, large absolute brain, long-lived relative to rodents, and not
+      cognitively specialised. Also the closest outgroup to cetaceans in this panel, so a
+      dolphin signal shared with cattle is an artiodactyl signal, not a cetacean
+      cognitive one. This is the single most load-bearing control here.
+
+  - species_id: SP:10181
+    ensembl_species: heterocephalus_glaber_female
+    scientific_name: Heterocephalus glaber
+    common_name: naked mole rat
+    ncbi_taxon_id: 10181
+    ensembl_assembly: Naked_mole-rat_maternal
+    assembly_accession: GCA_944319715.1
+    panel_role: negative_control_longevity
+    clade: rodent
+    in_ensembl_compara: true
+    orthology_available: true
+    controls_for: exceptional_lifespan_and_eusociality
+    rationale: >-
+      Extreme longevity and eusociality with a small, unremarkable brain. Longevity
+      genes are the most common false positive in comparative scans of "intelligent"
+      species, because long life and large brains covary. Any pathway that lights up in
+      elephant, dolphin AND naked mole rat is a longevity or body-maintenance pathway
+      being mislabelled.
+
+  - species_id: SP:10090
+    ensembl_species: mus_musculus
+    scientific_name: Mus musculus
+    common_name: house mouse
+    ncbi_taxon_id: 10090
+    ensembl_assembly: GRCm39
+    assembly_accession: GCA_000001635.9
+    panel_role: laboratory_model
+    clade: rodent
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: >-
+      Not a cognitive specialist and not a convergence test. Present because nearly all
+      the repository's animal causal evidence is murine, so whether a human gene even
+      HAS a 1:1 mouse orthologue determines whether that evidence can transfer at all.
+
+  - species_id: SP:10116
+    ensembl_species: rattus_norvegicus
+    scientific_name: Rattus norvegicus
+    common_name: brown rat
+    ncbi_taxon_id: 10116
+    ensembl_assembly: GRCr8
+    assembly_accession: GCA_036323735.1
+    panel_role: laboratory_model
+    clade: rodent
+    in_ensembl_compara: true
+    orthology_available: true
+    rationale: Second rodent model; same transferability role as mouse.
+
+# ------------------------------------------- species the design wanted and cannot have --
+# Recorded because a panel's OMISSIONS shape its conclusions as much as its contents, and
+# an unrecorded omission silently becomes an assumption.
+species_wanted_but_unavailable:
+  - scientific_name: Orcinus orca
+    common_name: orca
+    why_wanted: >-
+      A second cetacean with different social structure; would separate "cetacean" from
+      "dolphin" and give the cetacean arm an internal control.
+    status: not_in_ensembl_vertebrates
+  - scientific_name: Corvus corax
+    common_name: common raven
+    why_wanted: A second corvid; would give the corvid arm an internal replication.
+    status: not_in_ensembl_vertebrates
+  - scientific_name: Nestor notabilis
+    common_name: kea
+    why_wanted: >-
+      A parrot with strong problem-solving and exploratory cognition, and not a vocal
+      mimic in the budgerigar sense; would dissociate parrot cognition from vocal learning.
+    status: not_in_ensembl_vertebrates
+  - scientific_name: Octopus bimaculoides
+    common_name: California two-spot octopus
+    why_wanted: >-
+      The most independent cognitive lineage available anywhere — a protostome with a
+      distributed nervous system. Convergence with an octopus would be near-decisive
+      evidence that a mechanism is a general requirement of cognition. Its absence is the
+      largest single gap in this design.
+    status: >-
+      not_in_ensembl_vertebrates; cephalopods sit in Ensembl Metazoa, a separate resource
+      with a separate Compara, so including it requires a second orthology pipeline and
+      cross-resource orthology that this repository does not have.
+
+# --------------------------------------------------- what this panel CANNOT do --------
+# The most important section in this file.
+structural_limitations:
+
+  - id: avian_arm_is_unavailable
+    severity: blocking
+    statement: >-
+      BOTH avian convergence candidates — New Caledonian crow and budgerigar — are absent
+      from Ensembl Compara, while BOTH avian controls — chicken and zebra finch — are
+      present. The avian arm of this design is therefore not merely weakened; it is
+      inoperable in the exact direction that would have been informative.
+    why_this_is_dangerous: >-
+      The available birds are the uninformative ones. An orthology or convergence scan run
+      over "the birds in Compara" would return a null for birds, and that null would be
+      ABSENCE OF MEASUREMENT of the cognitively specialised species, not evidence that
+      avian cognition lacks the mechanism. This is the repository's recurring failure mode
+      (measured absence vs absence of measurement) appearing as a structural property of
+      the data resource rather than as a coding error.
+    required_handling: >-
+      No avian convergence claim may be made from this panel. Any bird-related output must
+      be classified as not_assessable, never as a negative result.
+    resolvable_by: >-
+      An orthology resource that includes corvids and parrots (for example NCBI Orthologs,
+      OrthoDB, or a reciprocal-best-hit pipeline built over the assemblies directly, all
+      three of which would need their own provenance and validation).
+
+  - id: phylogenetic_pseudoreplication
+    severity: high
+    statement: >-
+      The species in this panel are not independent observations. Chimpanzee and bonobo
+      share ~2 Myr of history; both share ~7 Myr with human; dolphin and cattle are both
+      cetartiodactyls; mouse and rat are both murids. Counting shared states across these
+      pairs as independent support inflates apparent convergence.
+    required_handling: >-
+      Any comparative statistic computed from this panel must be phylogenetically
+      controlled (independent contrasts, PGLS, or an explicit tree-aware model). A raw
+      count of species sharing a state is not admissible.
+
+  - id: trait_data_not_ingested
+    severity: high
+    statement: >-
+      This registry records GENOMES. The trait covariates that the design depends on —
+      brain mass, encephalisation, body mass, maximum lifespan, generation time, social
+      group size, sensory specialisation — are NOT in this repository. The schema for them
+      exists (`trait_covariates.yaml`) and is empty by design.
+    why_not_filled: >-
+      Filling it from memory would be exactly the failure this atlas exists to prevent.
+      Comparative trait values are the kind of number that is easy to half-recall and
+      impossible to audit afterwards, and a wrong brain mass would propagate silently into
+      every downstream contrast.
+    resolvable_by: An ingest from a citable comparative dataset, with a snapshot and checksums.
+
+  - id: cognitive_trait_is_not_operationalised
+    severity: high
+    statement: >-
+      "Cognitive specialisation" is assigned here by panel_role, from the published
+      behavioural literature, as a CATEGORICAL curator judgement. It is not a measured
+      variable, it is not blind to the hypothesis, and it is the softest input in the
+      whole design.
+    required_handling: >-
+      Treat panel_role as a declared prior, not as data. It must never be used as the
+      dependent variable in a statistical test run on this same panel.
+
+  - id: assembly_quality_is_uneven
+    severity: medium
+    statement: >-
+      Assembly quality ranges from GRCh38.p14 to turTru1, a low-coverage draft. Gene
+      absence correlates with assembly quality far more strongly than with biology.
+    required_handling: >-
+      Only PRESENCE of an orthologue may be used as evidence. Absence must be recorded as
+      not_assessable unless assembly quality at that locus has been checked directly.
+
+# ----------------------------------------------------------- interpretation guards ----
+interpretation_guards:
+  - >-
+    Nothing in this file is evidence that any gene or pathway is involved in cognition. It
+    is a panel definition and a resource audit. The analyses that could produce such
+    evidence have NOT been run.
+  - >-
+    Convergence is a hypothesis generator, never a causal claim in humans. A gene that
+    changed in parallel in elephants and dolphins is a candidate for study, not a target,
+    and certainly not an adult human control parameter.
+  - >-
+    in_ensembl_compara is a fact about a database. Any reading of it as a fact about a
+    genome or an animal is a category error, and the two crow/budgerigar entries above are
+    the cases where that error would be most tempting and most damaging.
+  - >-
+    The controls are not filler. A result that survives elephant and dolphin but not cattle
+    and naked mole rat is a body-size-and-longevity result. If the controls are dropped to
+    get a cleaner signal, the signal is the confound.
+
+next_actions:
+  - Ingest trait covariates from a citable comparative dataset; the schema is ready and empty.
+  - Evaluate a non-Compara orthology route that includes corvids and parrots, since that is
+    the only way to make the avian arm operable.
+  - Only after both: consider whether a selection or convergence scan is worth running.

@@ -1,0 +1,93 @@
+# Comparative Intelligence 2.0 — selection signals.
+#
+# ============================== NOT COMPUTED ==============================
+# No selection scan has been run. This file contains NO results because there are none,
+# and it exists to make that absence explicit and auditable rather than leaving an empty
+# directory that a later reader fills with assumptions.
+# ==========================================================================
+#
+# It would have been easy to produce something here. dN/dS across a handful of species is
+# a short script, and the output would have looked like a finding. The reasons not to are
+# below, and they are prerequisites, not excuses: every one of them is a way the resulting
+# numbers would have been wrong in a direction that favoured the hypothesis.
+
+schema_version: 0.2.0
+artefact_id: ATLAS:comparative_v2:selection_signals
+status: NOT_COMPUTED
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+results: []
+n_genes_tested: 0
+n_species: 0
+
+# ------------------------------------------------ why this has not been computed ------
+blocking_prerequisites:
+
+  - id: no_species_tree
+    statement: >-
+      Every branch-site and lineage-specific selection test requires a species tree with
+      branch lengths. trait_covariates.yaml records the tree as not_ingested. Without it a
+      selection test cannot be specified, let alone run.
+
+  - id: avian_arm_unavailable
+    statement: >-
+      The two species that would make an avian selection test worth running — New
+      Caledonian crow and budgerigar — are absent from Ensembl Compara, while the two
+      avian controls are present. A scan over the available birds would produce a null
+      for birds that is ABSENCE OF MEASUREMENT of the cognitively specialised species.
+    why_it_is_disqualifying: >-
+      A selection scan that returned "no signal in birds" would be read as evidence that
+      the mechanism is mammal-specific. It would be evidence that the crow is not in the
+      database.
+
+  - id: no_generation_time_data
+    statement: >-
+      dN/dS is confounded by generation time, which drives the molecular clock. Without the
+      covariate, apparent selection in short-generation lineages is a clock artefact.
+
+  - id: no_multiple_testing_frame
+    statement: >-
+      A scan over ~50 genes needs a pre-specified correction and a genome-wide null. Neither
+      exists here, and a handful of genes tested without a background distribution produces
+      p-values with no calibration.
+
+# --------------------------------------------------- what the result would NOT mean ---
+# Recorded NOW, before any result exists, because these constraints are easiest to state
+# honestly while there is no finding to protect.
+interpretation_constraints_fixed_in_advance:
+
+  - id: selection_is_not_cognition
+    statement: >-
+      Positive selection on a gene in a large-brained lineage is not evidence that the gene
+      affects cognition. Immune, reproductive, metabolic and sensory genes dominate
+      selection scans in every taxon, and large-bodied long-lived species are under strong
+      selection for cancer resistance and maintenance — none of which is intelligence.
+
+  - id: longevity_confound
+    statement: >-
+      THE HARD RULE. A pathway repeatedly changing in long-lived large mammals is NOT
+      automatically an intelligence pathway. Elephant, dolphin and naked mole rat agreeing
+      is a longevity or body-maintenance signal. The naked mole rat is in the panel
+      specifically so this can be detected rather than celebrated.
+
+  - id: false_positive_rate
+    statement: >-
+      Branch-site tests have well-documented false-positive behaviour under recombination,
+      alignment error, GC-biased gene conversion and model misspecification. Alignment
+      error alone produces more false positives than most real signals.
+
+  - id: no_direction
+    statement: >-
+      A selection signal carries no direction. It cannot say whether more or less of a gene
+      product is beneficial, in any species, let alone in adult humans.
+
+  - id: human_relevance
+    statement: >-
+      A gene under selection in dolphins is a hypothesis about dolphins. Transfer to adult
+      human cognition requires the human evidence this repository already shows to be
+      missing.
+
+next_actions:
+  - Ingest a species tree and generation-time data; both are prerequisites, not refinements.
+  - Resolve the avian orthology gap, or state permanently that the avian arm is out of scope.
+  - Only then: pre-specify a scan, including its null and its correction, before running it.

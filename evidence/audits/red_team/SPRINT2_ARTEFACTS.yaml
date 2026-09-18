@@ -1,0 +1,285 @@
+# Red-team audit of the Sprint-2 artefacts. agent:red_team, 2026-09-18.
+#
+# Scope: every artefact created or materially changed in Sprint 2 — the Codex branch audit
+# and handoff contract, the X01 external-analysis record, the 2q12.3 positive-genetics
+# watchlist, the discovered-target registry, the selective-encoding theory node, the
+# registry-search pipeline and its 20 records, and the discovery sweep.
+#
+# Attack axes were fixed in advance: cohort duplication, ancestry confounding, gene-size
+# and gene-density artefacts, LD artefacts, expression-correlation-as-causation,
+# selection-scan false positives, phylogenetic pseudoreplication, developmental-to-adult
+# inference, association-to-causation, endpoint substitution, negative-result
+# misclassification, publication bias, and any dose/regimen/route/sourcing content.
+#
+# THE HEADLINE: the most serious defects were not in the reasoning, which is heavily
+# guarded, but in a PIPELINE that silently converted un-examined records into
+# screened-and-rejected ones. The repository's stated discipline about measured absence
+# versus absence of measurement was being violated by code while the prose describing that
+# code stated the rule correctly. Documentation discipline does not survive contact with an
+# unaudited loop.
+#
+# Findings f1-f7 were FIXED in this sprint. Findings f8-f15 are RECORDED AND NOT FIXED,
+# each with the reason; they are live technical debt, not closed items.
+
+- audit_id: AUD:red_team:SPRINT2:001
+  schema_version: 0.1.0
+  scope:
+    kind: document
+    id: sprint_2_artefacts
+  audited_by: agent:red_team
+  audited_on: "2026-09-18"
+  verdict: retain_with_downgrade
+  provenance:
+    created_by: agent:red_team
+    created_on: "2026-09-18"
+    method: literature_curation
+    run_id: sprint2-red-team-01
+
+  checks:
+    - check: overclaiming
+      result: fail
+      note: >-
+        Two instances, both fixed: the `no_trial_identified` field asserting "NOBODY HAS
+        TESTED THIS" (f2), and the selective-encoding theory node claiming a structural
+        EXCLUSION of candidates in violation of its own guard (f3).
+    - check: provenance_integrity
+      result: fail
+      note: >-
+        Two instances, both fixed: a filesystem sweep whose depth limit could not have
+        found what it claimed to search (f4), and a contract naming an ingestion adapter
+        that does not exist (f7).
+    - check: duplicated_evidence
+      result: fail
+      note: >-
+        The discovered registry's 18 sweep genes rest on a shared publication set with no
+        cohort field anywhere, and the file converts study counts into a finding. See f8.
+    - check: educational_attainment_mistaken_for_intelligence
+      result: fail
+      note: >-
+        An educational-attainment GWAS contributes to all 18 discovery entries and is
+        flagged in exactly one. See f9.
+    - check: publication_bias
+      result: flag
+      note: >-
+        ADGRB1 admitted on a single sub-threshold association (p=2e-07) — winner's-curse
+        territory, caveated in the record and in the truth table, and still admitted.
+        Acceptable only because the registry confers no priority.
+    - check: proposes_prohibited_work
+      result: pass
+      note: >-
+        All Sprint-2 artefacts grepped for dose, mg/mcg, dosing, regimen, oral, intranasal,
+        subcutaneous, titration, stack, sourcing and self-experimentation. Every hit is
+        either a PROHIBITION or the phrase "gene dosage" in a paper title. No violation.
+    - check: association_mistaken_for_causation
+      result: pass
+      note: >-
+        The 2q12.3 LOEUF-for-a-duplication trap is CLOSED, not merely annotated: the wrong
+        metric is named, the right one (triplosensitivity) is named as absent, and the
+        reason for recording the numbers anyway is stated. Separately, the handoff
+        contract's effect-allele rules, its requirement for all five colocalisation
+        posteriors and for non-colocalising pairs, its mandatory developmental_stage field
+        and its refusal list close this axis for X02 prospectively.
+    - check: developmental_effect_mistaken_for_adult
+      result: pass
+      note: >-
+        The handoff contract requires a developmental_stage on every X02 regulatory
+        prediction, which is the mechanism that keeps a developmental annotation from
+        silently supporting an adult claim.
+
+  findings:
+
+    # --------------------------------------------------------- FIXED IN THIS SPRINT --
+    - finding_id: AUD:red_team:SPRINT2:001#f1
+      severity: critical
+      category: schema_or_process_violation
+      description: >-
+        FIXED. Three defects in the registry-search pipeline, all converting absence of
+        measurement into measured absence. (1) The search fetched ONE page of 50 records
+        per query and never paginated, then recorded the registry's totalCount as
+        `total_hits`, so a record reading "kept 25 of 1934" had actually kept 25 of the 50
+        examined; 1,884 records were never fetched and became indistinguishable from
+        screened-and-rejected. A completed trial with posted cognitive results at rank 51
+        was invisible. (2) `RAN_STATUSES` was defined and never referenced — dead safety
+        code — so 95 trials that have NOT STARTED were classified `tested_wrong_endpoint`,
+        which reads as a completed trial that measured something else. (3) 15 trials with
+        an EMPTY outcomes module were classified as having "measured no cognitive outcome",
+        inferring a protocol fact from a hole in a record. Fixed by paginating with an
+        explicit cap, recording `n_examined` and `screen_coverage` per query, and adding
+        `not_yet_run` and `outcomes_not_recorded` states. Studies classified 360 -> 1,534;
+        reporting gaps 8 -> 72; trials with posted cognitive results 5 -> 40.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f2
+      severity: major
+      category: overclaiming
+      description: >-
+        FIXED. The field `no_trial_identified` and its record text asserted "NOBODY HAS
+        TESTED THIS" — a claim about the world drawn from one registry, one term set, and
+        (before f1) a truncated slice of even that. Six other registries were never
+        searched and unregistered work is invisible. The repository's own report already
+        stated the correct weaker version, so the generated ARTEFACT was stronger than the
+        prose describing it. Renamed `no_matching_trial_found`; interpretation weakened to
+        what the query supports; `registries_not_searched` now recorded in every record.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f3
+      severity: major
+      category: overclaiming
+      description: >-
+        FIXED. The selective-encoding theory node claimed a "structural exclusion" ruling
+        out, as a class, candidates "whose only established action is to raise a plasticity
+        or consolidation parameter tonically". Three faults. (a) It inverted the file's own
+        guard against selecting targets on conceptual fit — exclusion is selection with the
+        sign reversed. (b) "only KNOWN action" describes this repository's COVERAGE, not a
+        molecule's biology; every criterion SE1-SE7 is not_assessed_in_repository, so
+        nothing has been assessed for activity-gating at all. (c) The file's own SE2
+        tagging-and-capture logic describes a TONIC agent whose selectivity comes from the
+        substrate — precisely the case the exclusion would discard, and precisely the
+        mechanism of EIF2B_COMPLEX and EIF2S1. Retracted and demoted to a prediction with a
+        named measurement; the retraction is recorded in both the .md and the .yaml.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f4
+      severity: major
+      category: provenance_integrity
+      description: >-
+        FIXED. The Codex branch audit's filesystem sweep row cited
+        `find / -maxdepth 3 -name .git`. The audited repository's own .git sits at depth 4,
+        so the command could not have found the repository itself, let alone a sibling
+        clone under a home directory. The row appeared in a table of completed checks
+        supporting a NEGATIVE verdict, and that audit's entire value is that the negative
+        is auditable rather than assumed. Re-run at depth 6 across /Users and /Volumes: 69
+        repositories, exactly one with a humanintelligence remote (the repository itself).
+        Verdict unchanged, now resting on a search that could have falsified it.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f5
+      severity: minor
+      category: extraction_error
+      description: >-
+        FIXED. The 2q12.3 record stated SLC5A7 was "in the most-constrained LoF decile".
+        gnomAD's oe_lof_upper_bin is ZERO-indexed; the recorded value of 1 is the SECOND
+        decile. Verified against the stored snapshot (oeUpper 0.462, upperBin 1). The error
+        sat inside a correct argument — that LOEUF is the wrong metric for a duplication —
+        but a wrong fact inside a right argument still propagates.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f6
+      severity: minor
+      category: overclaiming
+      description: >-
+        FIXED. The 2q12.3 `genes[].note` for SLC5A7 read "Mechanistically the most
+        interesting gene here" — the exact SLC5A7-centred over-reading the file's own
+        interpretation_guards warn against, committed in a data field where a consumer
+        reading only `genes[]` receives the promotion without the guard. Removed, and the
+        removal recorded as a guard so the reasoning survives.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f7
+      severity: minor
+      category: provenance_integrity
+      description: >-
+        FIXED. CODEX_HANDOFF_CONTRACT.md asserted that ingestion adapters "are built and
+        tested" and named `pipelines/integration/ingest_external_analysis.py`, which does
+        not exist. A document that demands artefacts of others must meet the same standard.
+        The status section now states precisely what is built (the X02 adapter and its 14
+        tests) and what is not.
+
+    # ------------------------------------------------------- RECORDED, NOT FIXED ----
+    - finding_id: AUD:red_team:SPRINT2:001#f8
+      severity: major
+      category: duplicated_evidence
+      description: >-
+        NOT FIXED. The discovered registry's 18 sweep-derived genes rest on a small shared
+        publication set — four PMIDs appear in ALL 18 entries — and the file contains no
+        cohort, overlap or ancestry field anywhere. Its header nonetheless converts study
+        counts into a finding ("151 genes not in the seed registry have >=8 distinct
+        studies"). Those are overlapping re-analyses of largely the same cohorts, not
+        independent replications. The gene-size, gene-density and cohort caveats exist in
+        the SCRIPT docstring but not in the artefact a reader opens. Needs per-gene
+        publication-versus-study counts and a cohort-overlap field. Contained meanwhile by
+        convergence dependency rule D005, which forbids any convergence claim resting on
+        unresolved cohort overlap.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f9
+      severity: major
+      category: educational_attainment_mistaken_for_intelligence
+      description: >-
+        NOT FIXED. An educational-attainment GWAS (PMID 30038396) contributes to all 18
+        computational_discovery entries, each carrying a g_factor phenotype class, and is
+        flagged in exactly ONE (GRM3). The trait panel's own rule marks educational
+        attainment `use_in_ranking: proxy_only` with counts to be reported separately; the
+        sweep queries by EFO id only and never inspects reported_trait, so EA-anchored
+        studies filed under a cognitive EFO enter silently. Needs the sweep to split
+        cognitive from proxy counts. The registry is unranked_by_design, so nothing
+        downstream currently consumes these counts.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f10
+      severity: major
+      category: extraction_error
+      description: >-
+        NOT FIXED. Two of the five extracted "cognitive results" are ADHD symptom rating
+        scales (ASRS, DuPaul ADHD-RS) — clinician- and parent-rated SEVERITY instruments,
+        the same category as PANSS and CGI which the term file explicitly excludes as
+        non-cognitive lookalikes. They pass because "attention" is a cognitive keyword and
+        no ADHD scale is on the lookalike list. One is a paediatric Tourette trial (ages
+        7-17) and the extraction record captures NO eligibility or age field, so a
+        paediatric result enters an adult-enhancement evidence base unmarked. Needs ADHD
+        scales added to the lookalike list and an age/population field in extraction.
+        Material because the extraction queue just grew from 5 to 40.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f11
+      severity: major
+      category: unverifiable_source
+      description: >-
+        NOT FIXED. X01's second adopted "methodological constraint" — that extreme
+        cognition is continuous with ordinary-range cognition — is not a method constraint.
+        It is a substantive claim about the genetic architecture of the distribution's tail
+        (the live rare-variant/threshold question), adopted from unverified prose plus an
+        unreferenced appeal to "this repository's own polygenic picture" with no claim id
+        behind it, and marked `safe_before_verification: true` alongside a genuinely safe
+        method constraint. The first constraint (no pyramidal-cell gate) IS safe because it
+        only widens what gets examined; this one narrows what gets questioned. Should move
+        to a `working_assumptions` block. Contained meanwhile by validator rule V-EXT,
+        which keeps X01 inert.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f12
+      severity: major
+      category: schema_or_process_violation
+      description: >-
+        NOT FIXED. The `reporting_gap_refs` attached to seven facets were computed from the
+        truncated screen: 8 refs where the corrected screen finds 72. Every ref attached is
+        a genuine reporting gap, so nothing is false — but the lists are a ninefold
+        undercount and a reader would take them as complete. Not fixed deliberately:
+        re-attaching 72 refs is a structural edit across seven facet files and belongs in
+        its own change rather than bolted onto a pipeline fix. Flagged prominently in
+        reports/registry_search_v0_2.md.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f13
+      severity: minor
+      category: extraction_error
+      description: >-
+        NOT FIXED. Every computational_discovery entry lists exactly 12 accessions and 12
+        PMIDs while declaring up to 29 distinct studies, with no `truncated` flag. The
+        sweep script writes full lists, so the cut happened in an unlogged registry-writing
+        step and the headline number cannot be audited from the record.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f14
+      severity: minor
+      category: unverifiable_source
+      description: >-
+        NOT FIXED. GRM3, ADGRB1 and GABBR1 entered the discovered registry despite failing
+        its stated inclusion rule (>=8 distinct studies, HGNC-approved) — they have 4, 1
+        and 1 studies and no HGNC id. They entered by nomination from unverified external
+        prose, and carry `seed_origin: human_genetics` because the vocabulary has no value
+        meaning "nominated by an unverified external agent", so the trail to the external
+        source survives only in a free-text note. Needs an `admission_route` field and a
+        vocabulary value.
+
+    - finding_id: AUD:red_team:SPRINT2:001#f15
+      severity: minor
+      category: other
+      description: >-
+        NOT FIXED, two items. (a) The discovered registry declares itself UNRANKED and
+        every entry carries rank_status unranked_by_design, but the targets list is ordered
+        strictly by descending n_distinct_studies — list order is the cheapest ranking
+        signal there is; it should be sorted alphabetically with the sort key stated.
+        (b) X01's guard list covers gene size, gene density, expression correlation,
+        causation and reference non-independence, but the analysis is titled "conditional
+        MODERN-HUMAN cell-type enrichment" and no guard addresses the provenance or
+        false-positive behaviour of the selection annotation it conditions on — the classic
+        failure mode for that design. The conditioning specification was never supplied.

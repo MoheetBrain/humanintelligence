@@ -96,14 +96,45 @@ depends on which synapses were active.
 
 This gives the hypothesis a strong structural prediction:
 
-> The viable mechanism space is restricted to mechanisms **gated by activity**, not set
-> by exposure.
+> The viable mechanism space is restricted to mechanisms whose *effect* is **gated by
+> activity**, rather than determined by exposure alone.
 
-That is a real, falsifiable claim about where to look, and it rules out a whole class of
-candidate before any ranking runs — including several of this repository's seed targets
-whose only established action is to raise a plasticity or consolidation parameter
-tonically. A hypothesis that eliminates candidates is doing more work than one that
-merely accommodates them.
+That is a real, falsifiable claim about where to look. It is a **prediction, not a
+filter**, and the distinction is not pedantic — an earlier version of this file got it
+wrong in a way worth recording.
+
+### 3.1 Why this does *not* license excluding a candidate (correction, 2026-09-18)
+
+This section previously said the prediction "rules out a whole class of candidate before
+any ranking runs — including several of this repository's seed targets whose only
+established action is to raise a plasticity or consolidation parameter tonically." A
+red-team pass found three things wrong with that, and it is retracted:
+
+1. **It inverted the file's own guard.** §8 forbids this hypothesis from licensing target
+   selection on conceptual fit. Exclusion is selection with the sign reversed. A framework
+   that may not promote a candidate on elegance may not demote one on elegance either.
+2. **It converted "not measured" into "does not exist".** "Whose *only known* action is
+   tonic" is a statement about this repository's coverage, not about a molecule. Every
+   criterion SE1–SE7 is recorded as `not_assessed_in_repository` or
+   `partially_addressed` — nothing here has been assessed for activity-gating at all. This
+   is precisely the measured-absence/absence-of-measurement confusion the project treats
+   as its recurring bug class, and the elegance of the framework is exactly what made it
+   invisible.
+3. **§2.2 refutes it directly.** The tagging-and-capture logic is that *the agent supplies
+   a resource and activity decides where it is captured*. That describes a **tonically
+   acting agent producing selective outcomes** — the very thing the exclusion would rule
+   out. A translation-capacity mechanism (`EIF2B_COMPLEX`, `EIF2S1`) is tonic in action and
+   could still be captured selectively. Whether it is, is an empirical question nobody here
+   has answered.
+
+The corrected form is narrower and still useful:
+
+> A mechanism whose action is tonic satisfies SE1–SE3 but is **predicted to fail SE6**
+> *unless* the resource it supplies is captured in an activity-dependent way. Whether
+> capture is activity-gated is the measurement that decides it — and for every target in
+> this repository, that measurement has not been made.
+
+That still tells us where to look. It no longer pretends to tell us what to discard.
 
 ## 4. What it would take to falsify it
 
@@ -166,9 +197,11 @@ Concretely, and these are the reasons to keep it rather than admire it:
 1. **A new endpoint requirement.** Evidence about a candidate is `not_assessable` for this
    hypothesis unless prioritised and incidental material were measured separately. Add
    that distinction when grading `transfer_breadth` and `above_baseline_enhancement`.
-2. **A structural exclusion.** Candidates whose only known action is tonic — a global
-   shift in threshold, gain, transcription or translation — are excluded *as a class* from
-   satisfying the full specification, whatever their effect size.
+2. **A measurement demand, not an exclusion.** For a candidate whose known action is tonic
+   — a global shift in threshold, gain, transcription or translation — the open question
+   becomes whether the resource it supplies is *captured* in an activity-dependent way.
+   That is a specific thing to go and measure. It is **not** grounds for discarding the
+   candidate, and §3.1 records why an earlier version of this file was wrong to say it was.
 3. **A search direction.** Prioritise mechanisms where activity supplies the address:
    tagging-and-capture, allocation by excitability state, and gating of the encoding state
    itself.
@@ -191,7 +224,15 @@ encoded in the YAML:
 
 ---
 
-*Cross-references:* `THEORY.md` §2 (OPEN → WRITE → SELECT → LOCK), of which this is a
+*Cross-references:*
+[`goal_gated_plasticity_retrieval.md`](goal_gated_plasticity_retrieval.md) — the companion
+hypothesis, which asks where the deficit *is* rather than what a mechanism must *do*, and
+whose **C1 (gating)** channel is the goal-level counterpart of SE2. Held together, the two
+say something neither says alone: the problem is not that the brain cannot encode deeply
+and selectively, but that **volition is a poor addressing mechanism and salience is a good
+one we do not control**. They could still come apart — a mechanism that merely sharpens
+existing gating would satisfy SE1–SE7 while leaving the control gap untouched.
+Also `THEORY.md` §2 (OPEN → WRITE → SELECT → LOCK), of which this is a
 sharper and more falsifiable statement of the SELECT and LOCK phases; the Sprint-2 brief's
 activity-gated plasticity theory node, with which it shares the activity-as-address idea;
 and `reports/project_truth_table.md`, where it appears as a tracked hypothesis with a

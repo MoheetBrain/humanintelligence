@@ -4,10 +4,20 @@
 its prose summary**. Codex and Claude remain independent scientific agents; this document
 is the interface, not a request for agreement on conclusions.
 
-**Status:** normative for X01 (retrospectively) and X02 (prospectively). Claude's
-ingestion adapters are built and tested against the formats below
-(`schemas/external_analysis.schema.json`, `schemas/x02_*.schema.json`,
-`pipelines/integration/ingest_external_analysis.py`).
+**Status:** normative for X01 (retrospectively) and X02 (prospectively).
+
+What exists, stated precisely, because this document demands artefacts of others and must
+meet the same standard:
+
+* **Built and tested** — `schemas/external_analysis.schema.json`, `schemas/x02_*.schema.json`
+  (5 files), and `pipelines/integration/ingest_x02.py` with 14 tests in
+  `tests/test_x02_ingestion.py`. The X02 adapter validates a delivery end to end; its
+  `--emit` path is deliberately unimplemented, because nothing may be written into the
+  graph before a real delivery is inspected.
+* **Not built** — there is no `ingest_external_analysis.py`. An earlier version of this
+  sentence named one; X01 was ingested by hand into a single record, which is what an
+  unverified external report warrants. Corrected 2026-09-18 after a red-team pass found
+  the reference dangling.
 
 ---
 

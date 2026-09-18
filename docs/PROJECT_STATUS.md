@@ -1,20 +1,38 @@
 # Project Status
 
-*Snapshot generated 2026-09-18 (UTC) — **Sprint 2 in progress.** Sprint 1's ten
-deliverables are complete and committed. Sprint 2 has delivered the Codex-branch audit
-(the branch does not exist), X01 recorded as an inert unverified external report, the
-X02 ingestion layer with its refusals under test, and target-directed registry searches
-classifying 360 studies across 20 targets. Repository validates with 0 errors; 852 tests
-pass. The Sprint-1 headline result stands: no target has a defensible causal case for
-adult cognitive enhancement, and `tier_1_analyse_next` is empty.*
+*Snapshot generated 2026-09-18 (UTC) — **Sprint 2 complete (all tasks A-J), red-teamed
+and corrected.** Sprint 1's ten deliverables remain complete and committed. Sprint 2 has
+delivered the Codex-branch audit (the branch does not exist), X01 recorded as an inert
+unverified external report, the X02 ingestion layer with its refusals under test,
+target-directed registry searches classifying **1,534** studies across 20 targets, a
+genome-wide discovery sweep, a species-first comparative atlas, a convergence layer with
+encoded dependency rules, and a 26-row project truth table. Repository validates with 0
+errors; 852 tests pass.*
+
+***Three headline results, all negative, and that is the finding:***
+*(1) the Sprint-1 result stands — no target has a defensible causal case for adult
+cognitive enhancement and `tier_1_analyse_next` is empty;*
+*(2) **apparent evidence convergence was largely double-counting** — after correction no
+target exceeds three independent modalities, and three rest on animal evidence alone;*
+*(3) **`SUPPORTED`: 0 of 26 tracked hypotheses** — the strongest human result in the
+repository is a replicated null.*
 
 ## Current Stage
 
-Sprint 2 — *integrate external analyses and close the human causal bridge*. Tasks A
-(Codex audit), B (registry searches), C (X01 ingestion), D (X02 readiness), E (target
-discovery), F (positive human natural experiments) and J (handoff contract) are **done**.
-Tasks G (comparative intelligence 2.0), H (convergence layer) and I (truth table) are
-**not started**, as is the red-team pass over Sprint-2 claims.
+Sprint 2 — *integrate external analyses and close the human causal bridge*. **All ten
+tasks A-J are done**, and the red-team pass over Sprint-2 claims has been run and its
+findings recorded (`evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml`).
+
+**The red team found three real defects in the registry-search pipeline, and fixing them
+changed the numbers by a factor of four.** The search fetched one page of 50 records per
+query and never paginated, while recording the registry's total as though it had been
+screened; separately, a guard constant existed in the code and was never referenced, so 95
+trials that have not started were filed as `tested_wrong_endpoint`, and 15 trials with an
+empty outcomes module were recorded as having measured no cognitive outcome. All three
+converted absence of measurement into measured absence — the project's recurring bug class,
+this time committed by code whose own docstring stated the rule correctly. After the fix:
+**1,534 studies classified (was 360), 72 reporting gaps (was 8), 40 trials with posted
+cognitive results (was 5)**, and 19 of 20 screens are now exhaustive rather than truncated.
 
 **Seed-list anchoring is now quantified, and it is severe.** A genome-wide sweep of
 10,741 cognition-GWAS associations maps to 4,459 distinct genes. Only **9 of the 31**
@@ -23,10 +41,20 @@ distinct studies) would rank outside the top 500; 151 non-seed genes have ≥10 
 studies. `targets/discovered/discovered_registry.yaml` holds 21 candidates, unranked by
 design.
 
-**A project-lead theory node was recorded**: the Selective Encoding Hypothesis
-(`theory/`), whose decisive quantity is the *contrast* between prioritised and incidental
-retention rather than a level — which reclassifies most existing cognitive-enhancer
-evidence as `not_assessable` rather than supportive.
+**Two project-lead theory nodes were recorded** in `theory/`, and they are complementary:
+
+* the **Selective Encoding Hypothesis**, whose decisive quantity is the *contrast* between
+  prioritised and incidental retention rather than a level — which reclassifies most
+  existing cognitive-enhancer evidence as `not_assessable` rather than supportive. Its
+  "structural exclusion" of tonically acting mechanisms was **retracted** after the red
+  team showed it inverted the file's own guard, converted not-measured into a property, and
+  contradicted the file's own tagging-and-capture logic (§3.1 records the retraction);
+* the **Goal-Gated Plasticity & Retrieval Hypothesis**, which relocates the deficit from
+  capacity to *controllability* — an imperfect interface between conscious goals and the
+  plasticity and retrieval machinery. Its decisive quantity, `control_gap` (imposed minus
+  intended salience), **requires no intervention to measure**, and it separates three
+  channels: gating, persistence and retrieval. The repository has **no retrieval-oriented
+  target at all**, which under this framing is a structural gap rather than an oversight.
 
 **Sprint 2's central blocker: the Codex/Astra branch does not exist.** No branch on
 `origin` or locally, no worktree, no bundle, no commit by any other author, and no Codex
@@ -37,16 +65,37 @@ claim spanning Codex and Claude evidence is refused rather than caveated**.
 
 ### Sprint-2 results so far
 
-* **360 registered studies classified** over 84 queries for 20 targets. Three targets —
-  CRTC1, OTX2, RTN4R — have **no registered trial**, recorded explicitly as a fact about
-  the registry and not as a biological null. No `counter_level` was raised anywhere by
-  the search.
-* **8 reporting gaps** (completed, cognitive outcome in protocol, nothing posted)
-  attached as `reporting_gap_refs` to ADORA1, DRD1, GRIN2B and HTR2A.
+* **1,534 registered studies classified** over 67 queries for 20 targets (was 360 before
+  the pagination fix). Three targets — CRTC1, OTX2, RTN4R — have **no matching trial**, now
+  on **complete** screens (21/21, 2/2, 15/15 records examined), recorded as a fact about
+  one registry and not as a biological null. No `counter_level` was raised anywhere.
+* **72 reporting gaps** found (completed, cognitive outcome in protocol, nothing posted).
+  Only the original 8 are attached as `reporting_gap_refs`; **the facets are known to be
+  stale** and re-attachment is deliberately deferred to its own change.
+* **CONVERGENCE IS LARGELY AN ARTEFACT.** After removing seven verified double-counting
+  mechanisms, **no target exceeds three independent evidence modalities**, and the three
+  are always the same three (human genetics, human intervention, animal causal). Atlas
+  facet grades were being counted beside the claims they are computed from; one GTEx run
+  populated the molecular column for every target; GWAS Catalog and Open Targets L2G were
+  counted as two observations of the same summary statistics; null trials were counted as
+  a separate modality. Three targets rest on animal evidence alone.
+* **`reports/project_truth_table.md` — 26 tracked hypotheses, of which `SUPPORTED`: 0.**
+  No hypothesis in this project has replicated adult human causal evidence. The strongest
+  *human* result in the repository remains a replicated **null** (GABRA5).
+* **Comparative Intelligence 2.0's avian arm is inoperable.** Both convergent-cognition
+  birds (New Caledonian crow, budgerigar) are absent from Ensembl Compara while both avian
+  *controls* (chicken, zebra finch) are present. The available birds are the uninformative
+  ones, so no avian statement may be made in either direction. Selection scans and pathway
+  convergence are recorded as **NOT COMPUTED** rather than faked.
 * **41 trial sources registered, 41/41 verified.**
-* The GABRA5 basmisanil null was **independently re-retrieved** by pipeline
-  (MATRICS treatment differences −0.36 p=0.730, +0.28 p=0.793), matching the red team's
-  manual figure by a different route.
+* The GABRA5 basmisanil null was **re-retrieved by a second route** — the Sprint-2
+  pipeline reproduced the red team's manual figures (MATRICS treatment differences
+  −0.36 p=0.730, +0.28 p=0.793). This is a **retrieval-method check, not an independent
+  replication**: both routes terminate on the same trial, NCT02953639. Wording corrected
+  2026-09-18 after the convergence audit (PC-5) found the earlier phrasing
+  ("independently re-retrieved") could be read as a second item of evidence. The
+  replication that does exist for the α5-GABA-A null is a *different trial*,
+  NCT02484703, not this second retrieval.
 * Two classifier bugs found by reading output rather than trusting counts: `wais`
   matching inside "waist circumference", and a mechanism phrase matched by its first
   token hitting a "Community Reintegration Workshop". Both had inflated findings by
@@ -79,8 +128,10 @@ repository's zeros are currently less trustworthy than its ones.
 
 ## Current Branch
 
-`sprint-1/foundation` (base `main` @ `9f0d552`, which contained only a README).
-Two commits so far: the scaffolding/contracts commit and the contract-amendment/tooling commit.
+`sprint-2/causal-bridge` (branched from `sprint-1/foundation`, which has four commits and
+is pushed). Three Sprint-2 commits so far: the Codex audit / X01 / X02 / registry-search
+commit, the theory-node / discovery-sweep / 2q12.3 commit, and this one (comparative v2,
+convergence layer, truth table, red-team pass and the pipeline fixes it forced).
 
 ## Current System Architecture
 
