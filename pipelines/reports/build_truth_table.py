@@ -59,6 +59,400 @@ NOT_ASSESSED = "none"
 
 ROWS: list[dict[str, str]] = [
 
+    # ------------------------------------------- architecture-level hypotheses -------
+    # These are the field-level claims the project's target selection silently assumes.
+    # Several are assessed here for the first time, and most come back thinner than the
+    # confidence with which they are usually asserted.
+    dict(
+        hypothesis="COGNITION IS SUBSTANTIALLY GENETIC (population variance in cognitive "
+                   "ability has a large heritable component)",
+        supporting_evidence="the repository's entire genetics base presupposes and is "
+                            "consistent with it: 10,741 cognition-trait associations across "
+                            "4,459 mapped genes, GWAS Catalog release 2026-09-13, plus "
+                            "Open Targets L2G credible sets",
+        contradictory_evidence="none in this repository",
+        human_genetics="extensive, and POLYGENIC — the architecture is thousands of "
+                       "small-effect loci, which is itself the result",
+        human_molecular="one bulk-tissue expression dataset; no QTL or colocalisation",
+        human_intervention="not applicable — this is a claim about variance, not a target",
+        animal_causal="not applicable", comparative="not applicable",
+        adult_relevance="LOW — heritability of a trait says nothing about whether an adult "
+                        "can change it",
+        developmental_relevance="unresolved; heritability estimates do not localise to a "
+                                "life stage",
+        replication="the most replicated finding the repository touches",
+        current_status="SUPPORTED",
+        why="THE ONLY `SUPPORTED` ROW IN THIS TABLE — and it licenses nothing. This project "
+            "did not itself test heritability; it ingested association data that presupposes "
+            "it. More importantly, heritability is a statement about variance in a "
+            "population, not about modifiability in an individual, and a highly heritable "
+            "trait can be highly modifiable. The one hypothesis that survives is the one "
+            "that cannot tell you what to do.",
+        next_kill_test="Not worth attacking. The productive question is the next row down: "
+                       "whether that polygenic architecture contains any single adult-"
+                       "modifiable control parameter.",
+        evidence_dependencies="evidence/claims/alphacognition/gwas_catalog_derived.yaml; "
+                              "opentargets_l2g_derived.yaml",
+    ),
+    dict(
+        hypothesis="A SINGLE GENIUS GENE — one gene of large effect substantially determines "
+                   "cognitive ability",
+        supporting_evidence="none",
+        contradictory_evidence="a genome-wide sweep maps 10,741 cognition associations to "
+                               "4,459 distinct genes; the strongest seed gene (CKB) appears "
+                               "in 5 studies and would rank outside the top 500; no gene in "
+                               "the repository has causal-gene attribution above level 2",
+        human_genetics="polygenic architecture with thousands of small-effect loci — this "
+                       "is measured, not assumed",
+        human_molecular="no colocalisation anywhere to nominate a dominant gene",
+        human_intervention="not applicable",
+        animal_causal="single-gene manipulations produce effects in animals and none has "
+                      "transferred to adult humans",
+        comparative="not applicable",
+        adult_relevance="not applicable", developmental_relevance="not applicable",
+        replication="the polygenic result is replicated across every cognitive GWAS here",
+        current_status="CONTRADICTED_IN_STUDIED_CONTEXT",
+        why="Contradicted for common variation in studied populations, which is where the "
+            "data are. Stated precisely, because the strict version is NOT refuted: rare "
+            "large-effect variants exist (GRIN2B de novo variants, 86 individuals), and they "
+            "act in the DELETERIOUS direction and cause neurodevelopmental disorder. Large "
+            "single-gene effects on cognition are real and they break things.",
+        next_kill_test="None needed. The row exists so the project cannot drift back toward "
+                       "single-gene thinking without passing it.",
+        evidence_dependencies="pipelines/discovery/sweep_cognition_genes.py; "
+                              "targets/discovered/discovered_registry.yaml; reports/sprint1_summary.md",
+    ),
+    dict(
+        hypothesis="EXTREME COGNITION IS QUALITATIVELY DISTINCT from ordinary-range cognition",
+        supporting_evidence="none in this repository",
+        contradictory_evidence="none in this repository",
+        human_genetics="not assessed here", human_molecular="not assessed here",
+        human_intervention="not applicable", animal_causal="not applicable",
+        comparative="not applicable",
+        adult_relevance="unknown", developmental_relevance="unknown",
+        replication="not applicable",
+        current_status="NOT_ASSESSED",
+        why="ZERO ARTEFACTS. And this matters more than an empty row usually would: X01 "
+            "adopted the CONTINUOUS assumption as a working constraint, taken from unverified "
+            "external prose plus an unreferenced appeal to 'this repository's polygenic "
+            "picture' with no claim id behind it. So the project is currently operating on an "
+            "assumed answer to an unassessed question. The red team flagged this (finding f11) "
+            "and it is not yet fixed.",
+        next_kill_test="Assemble the extreme-cognition evidence map independently, or obtain "
+                       "the external source list. Until then the assumption should be moved "
+                       "out of `methodological_constraints_adopted`.",
+        evidence_dependencies="analyses/external/X01_cell_type_enrichment.yaml; "
+                              "evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f11",
+    ),
+    dict(
+        hypothesis="PYRAMIDAL-CELL SPECIFICITY — cognition-associated variation acts "
+                   "preferentially through excitatory pyramidal neurons",
+        supporting_evidence="X01 reports a pyramidal association (beta ~0.097, nominal "
+                            "P ~0.011) — INERT, unverified, cited by nothing",
+        contradictory_evidence="a second reported figure is P=0.08",
+        human_genetics="cohort overlap with this repository's base is unresolvable",
+        human_molecular="INERT — the only cell-type analysis is "
+                        "external_analysis_unverified, excluded from evidential classes and "
+                        "enforced inert by validator rule V-EXT. No evidential cell-type "
+                        "record exists at all",
+        human_intervention="not applicable", animal_causal="not assessed",
+        comparative="not assessed",
+        adult_relevance="unstated in the source", developmental_relevance="unstated",
+        replication="none; no artefacts delivered",
+        current_status="UNRESOLVED",
+        why="Both over-readings are refused. Two nominal P-values near 0.011 are not proof "
+            "that pyramidal cells are the locus; P=0.08 is not proof that they do not matter. "
+            "Following X01's own methodological instruction, the discovery sweep was run "
+            "CELL-CLASS-AGNOSTIC and genome-wide with no pyramidal gate — the one X01 "
+            "constraint that is safe to adopt before verification, because it only widens "
+            "what gets examined.",
+        next_kill_test="An independent, verifiable cell-type enrichment with its conditioning "
+                       "specification and source list — enough to make cohort overlap "
+                       "computable.",
+        evidence_dependencies="analyses/external/X01_cell_type_enrichment.yaml; V-EXT",
+    ),
+    dict(
+        hypothesis="SYNAPTIC BIOLOGY is the dominant locus of cognition-relevant variation",
+        supporting_evidence="the overwhelming majority of this repository's targets and "
+                            "claims are synaptic — receptors, channels, plasticity machinery",
+        contradictory_evidence="that majority is a SELECTION ARTEFACT: the seed list was "
+                               "supplied, and the discovery sweep found only 9 of 31 seed "
+                               "genes anywhere in 10,741 cognition associations, with 151 "
+                               "non-seed genes carrying 10 or more distinct studies",
+        human_genetics="positional mapping implicates many non-synaptic genes (FOXO3, EXOC4, "
+                       "ZNF638, MMS22L, ARHGAP15) that no atlas covers",
+        human_molecular="bulk expression only; no cell-type or QTL layer to localise anything",
+        human_intervention="every registry-searched target is synaptic, which is circular",
+        animal_causal="strong and synaptic — and the animal literature is itself "
+                      "synapse-biased",
+        comparative="not assessed",
+        adult_relevance="synaptic mechanisms are the most plausibly adult-modifiable class, "
+                        "which is precisely why they were selected — and why their prevalence "
+                        "here is not evidence",
+        developmental_relevance="several leading synaptic targets act developmentally",
+        replication="not testable from a biased sample",
+        current_status="UNRESOLVED",
+        why="This repository CANNOT currently test this hypothesis, and that is the finding. "
+            "Its evidence base was assembled by selecting synaptic targets, so the "
+            "preponderance of synaptic evidence measures the selection criterion. The "
+            "discovery sweep is the first unbiased look and it does not support synaptic "
+            "dominance — it mostly implicates genes the atlases have never examined.",
+        next_kill_test="Pathway-annotate the 4,459 swept genes and ask whether synaptic terms "
+                       "are enriched above a gene-size and gene-density matched background. "
+                       "This is cheap and has not been done.",
+        evidence_dependencies="pipelines/discovery/sweep_cognition_genes.py; "
+                              "targets/discovered/discovered_registry.yaml; targets/seed_registry.yaml",
+    ),
+    dict(
+        hypothesis="DEVELOPMENTAL WIRING — adult cognitive capacity is largely set during "
+                   "development",
+        supporting_evidence="this is the repository's most persistent empirical pattern. "
+                            "GRIN2B: human variants act prenatally and cause "
+                            "neurodevelopmental disorder. RGS14: the protein is undetectable "
+                            "at birth and its only causal evidence is a germline knockout. "
+                            "OTX2 and RTN4R: critical-period mechanisms. Four red-team "
+                            "findings of `developmental_effect_mistaken_for_adult`",
+        contradictory_evidence="adult-onset perturbations DO produce effects in animals "
+                               "(CRTC1, GPR158, HCN1, EIF2B, KL) — the adult brain is not "
+                               "fixed",
+        human_genetics="the only locus-to-gene-resolved human genetics in the repository "
+                       "(GRIN2B de novo and rare-variant burden) is developmental and "
+                       "deleterious",
+        human_molecular="the NR2B-to-NR2A switch is direct evidence that adult and juvenile "
+                        "synaptic biology differ",
+        human_intervention="no adult intervention has demonstrated durable gain",
+        animal_causal="strong for the developmental side; weaker and thinner for adult-onset",
+        comparative="not assessed",
+        adult_relevance="THIS IS THE CRUX OF THE WHOLE PROJECT",
+        developmental_relevance="extensive",
+        replication="the pattern recurs across four independent targets",
+        current_status="PROMISING_BUT_UNRESOLVED",
+        why="Uncomfortable for the project's premise and the evidence keeps pointing at it. "
+            "Every time a target's causal evidence is examined closely, the perturbation "
+            "turns out to have happened during development even when the read-out was adult. "
+            "That does not prove adult capacity is fixed — adult-onset manipulations do work "
+            "in animals — but the ASYMMETRY in evidence quality is real and systematic, and "
+            "the project's ranking model already caps targets for it.",
+        next_kill_test="For any leading target, an adult-onset, time-restricted perturbation "
+                       "with a cognitive read-out. This single design would resolve more here "
+                       "than any new target would.",
+        evidence_dependencies="AUD:red_team:{GRIN2B,RGS14,OTX2,RTN4R}:001; "
+                              "CLM:alphacognition:GRIN2B:004-006",
+    ),
+    dict(
+        hypothesis="ADULT SYNAPTIC CONTROL — adult cognitive capacity can be raised by "
+                   "modulating synaptic parameters in the adult brain",
+        supporting_evidence="adult-inducible and adult-pharmacological animal perturbations "
+                            "exist for CRTC1, GPR158, HCN1, EIF2B and KL; PDE4B and CHRM1 "
+                            "have human cognitive results in adults",
+        contradictory_evidence="no target has causal-gene attribution above level 2; "
+                               "`tier_1_analyse_next` is EMPTY; the best-evidenced human "
+                               "test of an adult synaptic manipulation (GABRA5) is a "
+                               "replicated NULL; CHRM1's supporting trial was withdrawn "
+                               "before enrolment over an animal toxicology finding",
+        human_genetics="no adult-specific causal gene assignment anywhere",
+        human_molecular="no colocalisation; nothing localises an adult mechanism",
+        human_intervention="PDE4B (roflumilast, pan-PDE4) and CHRM1 (one unreplicated "
+                           "developer-affiliated secondary analysis) are the only positive "
+                           "adult human cognitive results, and neither is target-selective",
+        animal_causal="present, and repeatedly shown not to transfer",
+        comparative="mouse and rat carry 1:1 orthologues for 96% of targets, so transfer "
+                    "failures are NOT orthology failures — they are physiology and timing",
+        adult_relevance="the entire hypothesis",
+        developmental_relevance="confounds much of the supporting animal evidence",
+        replication="no positive adult human cognitive result in this repository has replicated",
+        current_status="UNRESOLVED",
+        why="THE PROJECT'S CENTRAL HYPOTHESIS, and after two sprints it is neither supported "
+            "nor refuted. The honest summary: the adult brain is demonstrably modifiable in "
+            "animals, and no one has yet shown a durable above-baseline gain in healthy adult "
+            "humans from any target here. The orthology audit sharpens the diagnosis — the "
+            "genes are present one-to-one in the model species, so the failure is not a "
+            "missing gene but a different physiology, which is a more tractable problem.",
+        next_kill_test="Raise any single target to causal-gene level 3 with adult human "
+                       "evidence. Everything downstream, including chemistry, waits on this.",
+        evidence_dependencies="reports/target_ranking_v0_1.csv; reports/sprint1_summary.md; "
+                              "atlases/comparative_v2/orthology.yaml",
+    ),
+    dict(
+        hypothesis="ASTROCYTE DOMINANCE — astrocytic support, notably lactate shuttling, "
+                   "limits cognitive performance",
+        supporting_evidence="the power atlas holds astrocyte-neuron lactate shuttle claims "
+                            "and the MCT transporter family (SLC16A1/3/7)",
+        contradictory_evidence="one paper (PMID 21376239) supplies the claims for FOUR "
+                               "'separate' targets, so the apparent breadth is one source "
+                               "counted four times; SLC16A1 carries red-team findings of both "
+                               "`publication_bias` and `systemic_adverse_effects`; the ANLS "
+                               "model is contested in its own literature",
+        human_genetics="SLC16A1 has monogenic human evidence; causal-gene attribution 0",
+        human_molecular="bulk expression only",
+        human_intervention="none — the power-atlas targets carry no registry search at all "
+                           "and their zeros come from a Sprint-1 literature route",
+        animal_causal="present, and concentrated in a small shared source set",
+        comparative="not assessed",
+        adult_relevance="plausible and untested",
+        developmental_relevance="not the main issue",
+        replication="poor — the same few sources recur across the family",
+        current_status="UNRESOLVED",
+        why="The clearest case in the repository of `duplicated_evidence`: three transporters "
+            "and a pathway claim that look like four lines of support and are one. Nothing "
+            "here refutes astrocytic involvement; there is simply much less independent "
+            "evidence than the target count suggests.",
+        next_kill_test="Run target-directed registry searches for the seven power-atlas "
+                       "targets, which have never had one; and count independent sources "
+                       "after applying convergence rule D002.",
+        evidence_dependencies="evidence/claims/power/*.yaml; "
+                              "atlases/convergence/dependency_rules.yaml D002",
+    ),
+    dict(
+        hypothesis="ENERGY DOMINANCE — metabolic supply is a binding constraint on adult "
+                   "cognitive performance (the COGNITIVE POWER ENVELOPE)",
+        supporting_evidence="the power atlas: 10 interventions, 7 assessments, creatine and "
+                            "MCT human work, a coherent theoretical model in THEORY.md §1",
+        contradictory_evidence="Sprint 1's own conclusion that the POWER factor MAY NOT BE "
+                               "LIMITING AT ALL in healthy adults — THEORY.md §1.4 is titled "
+                               "exactly that. Multiplicativity is declared a modelling "
+                               "choice, not a law",
+        human_genetics="SLC16A1 and SLC6A8 have monogenic evidence; both are "
+                       "rescue-of-deficit, not enhancement",
+        human_molecular="bulk expression only",
+        human_intervention="present for creatine; graded 2/counter 3 with a "
+                           "`rescue_mistaken_for_enhancement` finding",
+        animal_causal="present", comparative="not assessed",
+        adult_relevance="adult human creatine data exist and are about repletion",
+        developmental_relevance="SLC6A8 deficiency is developmental",
+        replication="the rescue findings replicate; the enhancement findings do not exist",
+        current_status="DOWNGRADED",
+        why="Downgraded by the project's own theory document before any red team touched it. "
+            "The recurring pattern is that metabolic interventions help where something is "
+            "DEPLETED — creatine in vegetarians, in sleep deprivation, in transporter "
+            "deficiency — and do little at a healthy adult baseline. A constraint that is not "
+            "binding cannot be relaxed to gain anything. This is also the finding that makes "
+            "the goal-gated interface hypothesis interesting: an interface limit would still "
+            "bind when no capacity is exhausted.",
+        next_kill_test="A healthy, non-depleted, non-sleep-deprived adult baseline with a "
+                       "cognitive endpoint. Most existing evidence fails this design.",
+        evidence_dependencies="THEORY.md §1.4; atlases/power/; AUD:red_team:{SLC6A8,SLC16A1}:001",
+    ),
+    dict(
+        hypothesis="MYELIN AND NETWORK TIMING — conduction speed and temporal precision limit "
+                   "cognitive capacity",
+        supporting_evidence="none in this repository",
+        contradictory_evidence="none in this repository",
+        human_genetics=NOT_ASSESSED, human_molecular=NOT_ASSESSED,
+        human_intervention=NOT_ASSESSED, animal_causal=NOT_ASSESSED,
+        comparative=NOT_ASSESSED,
+        adult_relevance="unknown — myelination continues into adulthood, which makes this "
+                        "one of the few plausibly adult-modifiable structural parameters",
+        developmental_relevance="unknown",
+        replication="not applicable",
+        current_status="NOT_ASSESSED",
+        why="ZERO ARTEFACTS — no target, claim, atlas or state variable addresses white "
+            "matter, conduction velocity or oligodendrocyte biology. This is a whole axis of "
+            "cognitive neuroscience the project has simply not touched, and its absence is a "
+            "selection artefact of the supplied seed list rather than a judgement. Notably, "
+            "adult myelination is activity-dependent, which places it squarely inside the "
+            "activity-gated mechanism class the theory nodes point at.",
+        next_kill_test="Ask whether the swept cognition genes are enriched for "
+                       "oligodendrocyte and myelin annotations. The data are already in hand.",
+        evidence_dependencies="none — this row records an absence",
+    ),
+    dict(
+        hypothesis="CLASSICAL NEUROMODULATOR DOMINANCE — dopaminergic, serotonergic, "
+                   "cholinergic and adenosinergic tone are the main levers",
+        supporting_evidence="the largest human intervention literature in the repository by "
+                            "far — ADORA1 434 studies, HTR2A 316, DRD1 47, CHRM1 38 — plus "
+                            "the only healthy-adult human cognitive result (CHRM1)",
+        contradictory_evidence="EVERY ONE of these targets is downgraded, and for four "
+                               "different reasons: ADORA1 `rescue_mistaken_for_enhancement`, "
+                               "DRD1 `dose_response_inversion` and `psychiatric_liability`, "
+                               "HTR2A `psychiatric_liability`, CHRM1 the heaviest systemic "
+                               "liability burden in the cohort (safety level 4) with its key "
+                               "trial withdrawn over animal toxicology",
+        human_genetics="weak across all four; none above causal-gene level 0 except by "
+                       "positional mapping",
+        human_molecular="bulk expression only",
+        human_intervention="by far the most-tested class in humans — and the testing has "
+                           "mostly not measured cognition, or has measured rescue",
+        animal_causal="extensive", comparative="not assessed",
+        adult_relevance="high — these are the classes with real adult human exposure",
+        developmental_relevance="not the main issue for this class",
+        replication="extensive replication of clinical effects; no replicated healthy-adult "
+                    "cognitive enhancement",
+        current_status="DOWNGRADED",
+        why="The most-tested hypothesis in the repository and the one with the clearest "
+            "verdict: decades of human exposure, enormous trial volume, and no replicated "
+            "above-baseline cognitive gain in healthy adults. The recurring failure mode is "
+            "that neuromodulator manipulations move state — arousal, motivation, mood — and "
+            "state changes are read as capacity changes. Where a baseline is depleted "
+            "(caffeine after withdrawal) the benefit is restoration.",
+        next_kill_test="Nothing new. The informative work is re-reading the 40 trials with "
+                       "posted cognitive results already sitting in the extraction queue, "
+                       "51 of which belong to this class.",
+        evidence_dependencies="AUD:red_team:{ADORA1,DRD1,HTR2A,CHRM1}:001; "
+                              "evidence/registry_searches/{ADORA1,HTR2A,DRD1,CHRM1}.yaml",
+    ),
+    dict(
+        hypothesis="MATHEMATICAL BIOLOGY BEYOND g — mathematical ability has biology "
+                   "separable from general cognitive ability",
+        supporting_evidence="'mathematical ability' appears as a distinct trait in Open "
+                            "Targets L2G credible sets for CRTC1, GRIN2B and PDE4B",
+        contradictory_evidence="those rows come from EDUCATIONAL-ATTAINMENT GWAS. CRTC1's "
+                               "entire human genetic grade rested on a single 'self-reported "
+                               "maths ability' association and was downgraded 3 to 1 by the "
+                               "cohort's only unresolved CRITICAL red-team finding",
+        human_genetics="present but confounded — the trait panel marks educational "
+                       "attainment `use_in_ranking: proxy_only` precisely because of this",
+        human_molecular="not assessed", human_intervention="not assessed",
+        animal_causal="not applicable — there is no animal model of mathematics",
+        comparative="not assessed",
+        adult_relevance="unknown", developmental_relevance="schooling is the obvious confound",
+        replication="no",
+        current_status="NOT_ASSESSED",
+        why="The repository holds maths-ability associations but has never asked whether they "
+            "are separable from g, and cannot: self-reported mathematical ability inside an "
+            "educational-attainment GWAS is a measure of schooling, self-concept and "
+            "attainment as much as of arithmetic biology. Treating it as a distinct cognitive "
+            "phenotype is exactly the endpoint substitution that produced this project's only "
+            "critical audit finding.",
+        next_kill_test="Genetic correlation between a properly measured mathematical "
+                       "phenotype and g, in a cohort where both are directly assessed rather "
+                       "than self-reported.",
+        evidence_dependencies="AUD:red_team:CRTC1:001; "
+                              "atlases/alphacognition/cognitive_trait_panel.yaml",
+    ),
+    dict(
+        hypothesis="ACTIVITY-GATED PLASTICITY — the useful mechanism class is one whose "
+                   "effect is gated by recent neural activity rather than set by exposure",
+        supporting_evidence="synaptic tagging and capture and neuronal memory allocation are "
+                            "the mechanism families the theory nodes point at; CRTC1, HDAC2 "
+                            "and GRIN2B are the repository's bearing targets",
+        contradictory_evidence="none — and no support either. NO TARGET IN THIS REPOSITORY "
+                               "HAS BEEN ASSESSED FOR ACTIVITY-GATING AT ALL",
+        human_genetics="not assessed", human_molecular="not assessed",
+        human_intervention="not_measured — no study here separated prioritised from "
+                           "incidental material, which is the measurement this requires",
+        animal_causal="the bearing targets have adult-onset animal evidence, none of which "
+                      "tested selectivity",
+        comparative="not assessed",
+        adult_relevance="adult by construction",
+        developmental_relevance="not applicable",
+        replication="not applicable",
+        current_status="NOT_ASSESSED",
+        why="This is where both project-lead theory nodes converge — SE2 'activity as the "
+            "address' and C1 'gating' are the same requirement stated from opposite ends. It "
+            "is also where this project came closest to fooling itself: the selective-encoding "
+            "node originally used this idea to EXCLUDE tonically acting candidates as a class, "
+            "which inverted its own guard and converted 'not assessed here' into 'this "
+            "molecule acts tonically'. Retracted 2026-09-18. The corrected form is a "
+            "measurement demand, not a filter.",
+        next_kill_test="For any bearing target, an animal study testing whether enhancement "
+                       "is confined to task-engaged representations — the SE6 contrast. No "
+                       "such study has been identified for any target here.",
+        evidence_dependencies="theory/selective_encoding_criteria.yaml; "
+                              "theory/goal_gated_plasticity_retrieval.yaml; "
+                              "evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f3",
+    ),
+
     # ------------------------------------------------------------------ theory ------
     dict(
         hypothesis="SELECTIVE ENCODING — an enhancer should raise the contrast between "
@@ -813,10 +1207,14 @@ def build() -> int:
                  "rests on.\n")
     lines.append("## The headline\n")
     supported = len(by_status.get("SUPPORTED", []))
-    lines.append(f"**`SUPPORTED`: {supported}.** No hypothesis in this project has adult "
-                 "human causal evidence that has replicated. The strongest *human* result in "
-                 "the repository is a replicated **null** (GABRA5). That is not a failure of "
-                 "the search — it is the finding.\n")
+    lines.append(
+        f"**`SUPPORTED`: {supported} of {len(ROWS)} — and it is the one that licenses "
+        "nothing.** The single supported hypothesis is *cognition is substantially "
+        "genetic*, which is a claim about variance in a population, not about "
+        "modifiability in a person. **No hypothesis about an intervention target has "
+        "replicated adult human causal evidence.** The strongest *human* result in the "
+        "repository is a replicated **null** (GABRA5). That is not a failure of the "
+        "search — it is the finding.\n")
     lines.append("| status | n | meaning |\n|---|---|---|")
     meaning = {
         "SUPPORTED": "adult human causal evidence, replicated",

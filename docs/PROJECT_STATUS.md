@@ -14,8 +14,9 @@ errors; 852 tests pass.*
 cognitive enhancement and `tier_1_analyse_next` is empty;*
 *(2) **apparent evidence convergence was largely double-counting** — after correction no
 target exceeds three independent modalities, and three rest on animal evidence alone;*
-*(3) **`SUPPORTED`: 0 of 26 tracked hypotheses** — the strongest human result in the
-repository is a replicated null.*
+*(3) of 39 tracked hypotheses **exactly one is `SUPPORTED`** — that cognition is
+substantially genetic, which licenses nothing about modifiability; the strongest human
+result in the repository is a replicated null.*
 
 ## Current Stage
 
@@ -79,9 +80,12 @@ claim spanning Codex and Claude evidence is refused rather than caveated**.
   populated the molecular column for every target; GWAS Catalog and Open Targets L2G were
   counted as two observations of the same summary statistics; null trials were counted as
   a separate modality. Three targets rest on animal evidence alone.
-* **`reports/project_truth_table.md` — 26 tracked hypotheses, of which `SUPPORTED`: 0.**
-  No hypothesis in this project has replicated adult human causal evidence. The strongest
-  *human* result in the repository remains a replicated **null** (GABRA5).
+* **`reports/project_truth_table.md` — 39 tracked hypotheses, of which `SUPPORTED`: 1**,
+  and that one is *cognition is substantially genetic* — a claim about population variance
+  that licenses nothing about modifiability. **No hypothesis about an intervention target
+  has replicated adult human causal evidence.** 13 are DOWNGRADED, 11 UNRESOLVED, 8
+  NOT_ASSESSED, 4 CONTRADICTED_IN_STUDIED_CONTEXT. The strongest *human* result in the
+  repository remains a replicated **null** (GABRA5).
 * **Comparative Intelligence 2.0's avian arm is inoperable.** Both convergent-cognition
   birds (New Caledonian crow, budgerigar) are absent from Ensembl Compara while both avian
   *controls* (chicken, zebra finch) are present. The available birds are the uninformative

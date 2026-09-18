@@ -751,3 +751,72 @@ and a mechanism for detecting when it is fooling itself (the dependency rules).
 Re-attach the 72 reporting-gap refs; build the convergence scorer and its validator rule;
 extract and red-team the 40 trials with posted cognitive results; then decide whether the
 comparative programme is worth continuing given the avian resource gap.
+
+---
+
+## 2026-09-18T18:40Z — Truth table completed to the brief's row specification
+
+**Branch:** `sprint-2/causal-bridge` · **Stage:** Sprint 2 complete
+
+### Objective of the change
+
+The first truth table covered targets and theory nodes but omitted 13 of the
+architecture-level hypotheses the brief listed explicitly — the field-level claims this
+project's target selection silently assumes.
+
+### Files and systems changed
+
+`pipelines/reports/build_truth_table.py`, regenerating
+`reports/project_truth_table.{md,csv}`; `docs/PROJECT_STATUS.md` counts.
+
+### What was completed
+
+Added: cognition substantially genetic; single genius gene; extreme IQ qualitatively
+distinct; pyramidal specificity; synaptic biology; developmental wiring; adult synaptic
+control; astrocyte dominance; energy dominance; myelin/network timing; classical
+neuromodulator dominance; math biology beyond g; activity-gated plasticity. **39 rows, 16
+columns exactly as specified.**
+
+### Decisions made and why
+
+1. **`SUPPORTED` is now 1, not 0** — *cognition is substantially genetic*. Recording it as
+   supported is more honest than a clean zero, and the row states why it changes nothing:
+   heritability is a claim about variance in a population, not modifiability in a person.
+   The only supported hypothesis is the one that cannot tell you what to do.
+2. **"Synaptic biology" is recorded as UNRESOLVED and untestable from this evidence base.**
+   The preponderance of synaptic evidence here measures the seed list's selection criterion,
+   not biology. The discovery sweep — the first unbiased look — mostly implicates genes no
+   atlas covers.
+3. **"Myelin / network timing" is NOT_ASSESSED with zero artefacts**, and the row says the
+   absence is a selection artefact rather than a judgement. Adult myelination is
+   activity-dependent, which places it inside the mechanism class both theory nodes point at.
+4. **"Single genius gene" is CONTRADICTED_IN_STUDIED_CONTEXT, stated precisely**: refuted
+   for common variation, NOT refuted for rare large-effect variants — which exist, act in
+   the deleterious direction, and cause neurodevelopmental disorder.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|---|---|---|
+| Truth table build | `build_truth_table.py` | 39 rows; SUPPORTED 1, PROMISING 2, DOWNGRADED 13, UNRESOLVED 11, CONTRADICTED 4, NOT_ASSESSED 8 |
+| Column conformance | CSV header vs brief | exact match, 16 columns |
+| Test suite | `pytest -q` | 852 passed |
+| Validator | `validate_graph.py --strict` | PASS — 0 error, 0 warning, 3 info |
+
+### Failures or unresolved uncertainty
+
+* Three architecture rows (extreme cognition, myelin/network timing, math beyond g) have
+  **zero supporting artefacts**. They are coverage gaps, not judgements.
+* "Developmental wiring" is the most uncomfortable row: the project's premise is adult
+  modifiability, and every close examination of a target's causal evidence finds the
+  perturbation happened during development. That asymmetry is real and systematic.
+
+### Effect on the overall project
+
+The truth table now covers the field-level assumptions, not just the targets — which is
+what makes it usable as a map rather than a scoreboard.
+
+### Next intended step
+
+Unchanged: re-attach the 72 reporting-gap refs, build the convergence scorer and its
+validator rule, extract and red-team the 40 trials with posted cognitive results.
