@@ -538,3 +538,96 @@ explicitly recorded as never tested rather than as failed.
 Tasks E (systematic target discovery), F (positive human natural experiments), G
 (comparative intelligence 2.0), H (convergence layer), I (project truth table), then a
 red-team pass over all new claims.
+
+---
+
+## 2026-09-18T14:10Z — Sprint 2 part 2: Selective Encoding Hypothesis, genome-wide discovery sweep, 2q12.3 watchlist
+
+* **Branch:** `sprint-2/causal-bridge`
+* **Project stage:** Sprint 2 — Tasks E and F, plus a project-lead theory node
+* **Objective of the change:** record the Selective Encoding Hypothesis as a usable
+  compass, break seed-list anchoring with a genome-wide sweep, and open the positive
+  human natural-experiment watchlist.
+
+### Files and systems changed
+
+* `theory/selective_encoding_hypothesis.md` and `theory/selective_encoding_criteria.yaml`
+  (new): the project lead's hypothesis, recorded as a THEORY NODE with seven criteria
+  SE1–SE7, a decisive quantity expressed as a difference-in-differences, per-criterion
+  falsifiers, the internal SE1–SE3 versus SE6–SE7 tension, and four guards. Cross-linked
+  from `THEORY.md` §2.
+* `pipelines/discovery/sweep_cognition_genes.py` (new) + gzipped snapshots under
+  `data/raw/gwas_catalog_sweep/` + `data/interim/discovery_cognition_genes.jsonl`.
+* `targets/discovered/discovered_registry.yaml` (new): 21 candidates, unranked by design.
+* `atlases/positive_genetics/2q12_3_duplication.yaml` (new) + Ensembl and Open Targets
+  snapshots + `data/interim/2q12_3_gene_annotations.json`.
+* `scripts/_provenance.py`: gzip snapshot support (`compress=True`, `read_snapshot`), so a
+  paginated API dump costs ~10x less repository space with byte-for-byte recovery.
+* `evidence/sources/orchestrator.yaml`: +1 source (Huguet 2024), 42/42 verified.
+
+### What was completed
+
+Tasks E and F. Tasks G, H and I remain, as does the red-team pass.
+
+### Decisions made and why
+
+1. **The Selective Encoding Hypothesis is recorded in two forms** — prose and
+   machine-readable criteria — so candidates can be scored against SE1–SE7 and rescored
+   as evidence changes, rather than the hypothesis being admired and forgotten.
+2. **Its decisive quantity is a contrast, not a level.** A global memory enhancer scores
+   zero on it however large its main effect; a pure selectivity mechanism can score
+   positive with no main effect at all. Consequence: most existing cognitive-enhancer
+   evidence is `not_assessable` for this hypothesis rather than supportive of it.
+3. **Codex's three named genes were checked independently rather than ingested.** GRM3
+   holds up at variant level (4 studies, p = 4e-13, though one contributing study is an
+   educational-attainment GWAS). GABBR1 has one genome-wide-significant study. **ADGRB1
+   rests on a single association at p = 2e-07, below the conventional threshold** — which
+   does not refute a gene-based claim, but means this repository's own variant-level
+   evidence for it is weak and may not be described as strong.
+4. **Non-coding positional labels are excluded as artefacts, not ranked as candidates.**
+   22 of the top 60 sweep hits were microRNA, Y_RNA, lincRNA, antisense or pseudogene
+   labels.
+5. **LOEUF is recorded for the 2q12.3 genes together with the reason it does not answer
+   the question.** The variant is a duplication; LOEUF measures intolerance to loss. The
+   correct metric is triplosensitivity and it is absent from the retrieved data.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Test suite | `pytest -q -m "not network"` | **852 passed, 0 failed** |
+| Validator | `graph/validate_graph.py` | **0 errors, 0 warnings, 3 info** |
+| Discovery sweep | `sweep_cognition_genes.py --primary` | 10,741 associations, 4,459 distinct mapped genes |
+| Source verification | `fetch_source_metadata.py --agent orchestrator` | **42/42 verified** |
+| Huguet 2024 verification | PubMed retrieval of PMID 39667348 | exists; abstract states the 2q12.3 claim attributed to it |
+| 2q12.3 gene content | Ensembl REST overlap, GRCh38 | 53 gene features, 8 protein-coding |
+| Constraint/expression | Open Targets GraphQL | retrieved for all 8 genes |
+
+### Failures or unresolved uncertainty
+
+* **The anchoring result is severe and should not be softened**: only **9 of 31** seed
+  genes appear anywhere in 10,741 cognition associations, and the best of them (CKB, 5
+  studies) would rank outside the top 500 in this sweep, while 151 non-seed genes have
+  ≥10 distinct studies.
+* The sweep ranks by distinct studies, which is still confounded by gene size, gene
+  density and study overlap. It is a coverage measure, not a causal ranking, and the
+  registry says so.
+* The 2q12.3 duplication breakpoints, carrier count and effect size are all **unknown to
+  this repository**; the eight genes listed are the CYTOBAND's content over a 2 Mb window,
+  not the duplicated interval's.
+* No replication of the 2q12.3 finding has been identified.
+* The Open Targets schema cost four failed queries before I read the error body instead of
+  guessing field names; a brain-tissue filter also matched "cortex of kidney", which is
+  the same substring class of bug found twice in Task B.
+* SE4 (encode latent structure, not detail) has no identified molecular control parameter
+  and is flagged as the hypothesis's most likely point of failure by underspecification.
+
+### Effect on the overall project
+
+The project now has a compass with falsifiers attached, and a quantified answer to
+whether its target list reflects the genetics: it does not.
+
+### Next intended step
+
+Task G (comparative intelligence 2.0), Task H (convergence layer), Task I (project truth
+table), then a red-team pass over all Sprint-2 claims.

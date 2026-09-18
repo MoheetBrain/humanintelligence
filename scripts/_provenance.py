@@ -17,6 +17,7 @@ usable before the ``blueprint`` package is installed.
 from __future__ import annotations
 
 import fcntl
+import gzip
 import hashlib
 import json
 import os
@@ -97,6 +98,14 @@ def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
+def read_snapshot(path: Path) -> Any:
+    """Read a snapshot written by :func:`write_snapshot`, gzipped or not."""
+    if path.suffix == ".gz":
+        with gzip.open(path, "rt", encoding="utf-8") as handle:
+            return json.load(handle)
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
 def write_snapshot(
     registry: str,
     payload: Any,
@@ -105,6 +114,7 @@ def write_snapshot(
     query: dict[str, Any],
     name_hint: str | None = None,
     date: str | None = None,
+    compress: bool = False,
 ) -> Path:
     """Persist ``payload`` immutably under ``data/raw/<registry>/<date>/``.
 
@@ -112,11 +122,15 @@ def write_snapshot(
     idempotent: an identical query overwrites nothing and re-registers nothing.
     """
     day = date or utc_date()
-    body = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False).encode("utf-8")
+    text = json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False).encode("utf-8")
+    # gzip keeps the response byte-for-byte recoverable while cutting a bulky paginated
+    # API dump by roughly 10x. The sha256 recorded in the manifest is of the STORED
+    # bytes, so integrity checking is unchanged; read it back with read_snapshot().
+    body = gzip.compress(text, mtime=0) if compress else text
     digest = sha256_bytes(json.dumps(query, sort_keys=True).encode("utf-8"))[:12]
     stem = f"{name_hint}_{digest}" if name_hint else digest
     stem = re.sub(r"[^A-Za-z0-9._-]", "-", stem)
-    path = RAW_DIR / registry / day / f"{stem}.json"
+    path = RAW_DIR / registry / day / (f"{stem}.json.gz" if compress else f"{stem}.json")
     path.parent.mkdir(parents=True, exist_ok=True)
     if path.exists() and sha256_bytes(path.read_bytes()) == sha256_bytes(body):
         return path
@@ -134,6 +148,7 @@ def write_snapshot(
             "endpoint": url,
             "query": query,
             "tool": f"{TOOL_NAME}/{TOOL_VERSION}",
+            "compressed": bool(compress),
         }
     )
     return path
@@ -156,7 +171,7 @@ def iter_snapshots(registry: str) -> list[Path]:
     base = RAW_DIR / registry
     if not base.exists():
         return []
-    return sorted(base.glob("*/*.json"))
+    return sorted(list(base.glob("*/*.json")) + list(base.glob("*/*.json.gz")))
 
 
 def write_jsonl(path: Path, rows: list[dict[str, Any]]) -> None:

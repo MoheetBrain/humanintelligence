@@ -1,0 +1,1027 @@
+# DISCOVERED candidate registry — Sprint 2, Task E.
+#
+# These genes were found by asking cognition GWAS which genes it implicates, rather than
+# by being named in the project brief. They are HYPOTHESES and they are deliberately
+# UNRANKED: entering this file confers no priority, and every entry faces the same
+# contract, the same red team and the same gates as a seeded target.
+#
+# WHAT THIS EVIDENCE IS: positional mapping. A gene is here because an associated variant
+# lies in or near it. That is the weakest available claim about causality — not a causal
+# gene, not a direction, not an adult mechanism.
+#
+# THE ANCHORING RESULT THAT PROMPTED THIS FILE: of the 31 genes in the brief-supplied seed
+# registry, only 9 appear anywhere in 10,741 cognition associations, and the best-supported
+# of them (CKB, 5 studies) would rank outside the top 500 genes in this sweep. 151 genes
+# not in the seed registry have >=10 distinct studies. The seed list is not what cognition
+# GWAS implicates.
+schema_version: 0.2.0
+registry_version: 0.2.0
+created_by: agent:orchestrator
+created_on: '2026-09-18'
+sprint: 2
+method:
+  pipeline: pipelines/discovery/sweep_cognition_genes.py
+  source: GWAS Catalog REST API v2
+  traits: the 9 primary-class traits of atlases/alphacognition/cognitive_trait_panel.yaml
+  associations_swept: 10741
+  distinct_mapped_genes: 4459
+  inclusion_rule: '>=8 distinct studies, then filtered to HGNC-approved protein-coding symbols'
+  artefact_filter: 22 of the top 60 were non-coding or unapproved symbols (microRNA, Y_RNA, lincRNA, antisense
+    and pseudogene labels) and were EXCLUDED as positional-mapping artefacts rather than candidates
+seed_origin_vocabulary:
+- brief
+- computational_discovery
+- human_genetics
+- comparative
+- natural_positive_variant
+- literature_generated
+targets:
+- target_id: TGT:FOXO3
+  symbol: FOXO3
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:3821
+  ensembl_gene_id: ENSG00000118689
+  gene_name: forkhead box O3
+  gwas_evidence:
+    n_distinct_studies: 29
+    n_distinct_efo_traits: 10
+    n_associations: 55
+    phenotype_classes:
+    - executive_function
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-27
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007044
+    - GCST008595
+    - GCST90011293
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36378351'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:EXOC4
+  symbol: EXOC4
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:30389
+  ensembl_gene_id: ENSG00000131558
+  gene_name: exocyst complex component 4
+  gwas_evidence:
+    n_distinct_studies: 25
+    n_distinct_efo_traits: 10
+    n_associations: 115
+    phenotype_classes:
+    - executive_function
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 7.000000000000001e-31
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007044
+    - GCST008595
+    - GCST90011293
+    - GCST90011296
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:DCC
+  symbol: DCC
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:2701
+  ensembl_gene_id: ENSG00000187323
+  gene_name: DCC netrin 1 receptor
+  gwas_evidence:
+    n_distinct_studies: 22
+    n_distinct_efo_traits: 10
+    n_associations: 68
+    phenotype_classes:
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    - working_memory
+    strongest_p_as_reported: 5.0e-26
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007471
+    - GCST008595
+    - GCST90011293
+    - GCST90011298
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '30741946'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35386118'
+    - '35764056'
+    - '36378351'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:MMS22L
+  symbol: MMS22L
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:21475
+  ensembl_gene_id: ENSG00000146263
+  gene_name: MMS22 like, DNA repair protein
+  gwas_evidence:
+    n_distinct_studies: 21
+    n_distinct_efo_traits: 8
+    n_associations: 77
+    phenotype_classes:
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 5.0e-39
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011875
+    - GCST90134330
+    - GCST90179114
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:SLC39A8
+  symbol: SLC39A8
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:20862
+  ensembl_gene_id: ENSG00000138821
+  gene_name: solute carrier family 39 member 8
+  gwas_evidence:
+    n_distinct_studies: 20
+    n_distinct_efo_traits: 10
+    n_associations: 49
+    phenotype_classes:
+    - executive_function
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 5.0e-28
+    gwas_catalog_studies:
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011293
+    - GCST90011298
+    - GCST90011875
+    - GCST90134330
+    - GCST90162547
+    - GCST90179114
+    pubmed_ids:
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:AKAP6
+  symbol: AKAP6
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:376
+  ensembl_gene_id: ENSG00000151320
+  gene_name: A-kinase anchoring protein 6
+  gwas_evidence:
+    n_distinct_studies: 20
+    n_distinct_efo_traits: 9
+    n_associations: 44
+    phenotype_classes:
+    - executive_function
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-18
+    gwas_catalog_studies:
+    - GCST002774
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011293
+    - GCST90011298
+    - GCST90011875
+    - GCST90134330
+    pubmed_ids:
+    - '25644384'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36378351'
+    - '38434247'
+    - '39242605'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:ARHGAP15
+  symbol: ARHGAP15
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:21030
+  ensembl_gene_id: ENSG00000075884
+  gene_name: Rho GTPase activating protein 15
+  gwas_evidence:
+    n_distinct_studies: 20
+    n_distinct_efo_traits: 9
+    n_associations: 29
+    phenotype_classes:
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 1.0e-20
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007044
+    - GCST008595
+    - GCST90011293
+    - GCST90011298
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36378351'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:AFG1L
+  symbol: AFG1L
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:16411
+  ensembl_gene_id: ENSG00000135537
+  gene_name: AFG1 like ATPase
+  gwas_evidence:
+    n_distinct_studies: 20
+    n_distinct_efo_traits: 8
+    n_associations: 28
+    phenotype_classes:
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-27
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007044
+    - GCST90011293
+    - GCST90011298
+    - GCST90011875
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '37106081'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:TSNARE1
+  symbol: TSNARE1
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:26437
+  ensembl_gene_id: ENSG00000171045
+  gene_name: t-SNARE domain containing 1
+  gwas_evidence:
+    n_distinct_studies: 19
+    n_distinct_efo_traits: 10
+    n_associations: 23
+    phenotype_classes:
+    - executive_function
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-31
+    gwas_catalog_studies:
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011293
+    - GCST90011296
+    - GCST90011875
+    - GCST90134330
+    - GCST90162547
+    - GCST90264174
+    pubmed_ids:
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '38965376'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:ST3GAL3
+  symbol: ST3GAL3
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:10866
+  ensembl_gene_id: ENSG00000126091
+  gene_name: ST3 beta-galactoside alpha-2,3-sialyltransferase 3
+  gwas_evidence:
+    n_distinct_studies: 18
+    n_distinct_efo_traits: 9
+    n_associations: 29
+    phenotype_classes:
+    - fluid_reasoning
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-21
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST008595
+    - GCST90011298
+    - GCST90011875
+    - GCST90134330
+    - GCST90264174
+    - GCST90270074
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '36378351'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:NR1D2
+  symbol: NR1D2
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:7963
+  ensembl_gene_id: ENSG00000174738
+  gene_name: nuclear receptor subfamily 1 group D member 2
+  gwas_evidence:
+    n_distinct_studies: 18
+    n_distinct_efo_traits: 8
+    n_associations: 28
+    phenotype_classes:
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-17
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006572
+    - GCST007044
+    - GCST008595
+    - GCST90011875
+    - GCST90134330
+    - GCST90264174
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '33414549'
+    - '35764056'
+    - '36378351'
+    - '37365406'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:ZNF638
+  symbol: ZNF638
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:17894
+  ensembl_gene_id: ENSG00000075292
+  gene_name: zinc finger protein 638
+  gwas_evidence:
+    n_distinct_studies: 18
+    n_distinct_efo_traits: 8
+    n_associations: 30
+    phenotype_classes:
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 4.0e-14
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST007044
+    - GCST008595
+    - GCST90011294
+    - GCST90011875
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '37365406'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:RBFOX1
+  symbol: RBFOX1
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:18222
+  ensembl_gene_id: ENSG00000078328
+  gene_name: RNA binding fox-1 homolog 1
+  gwas_evidence:
+    n_distinct_studies: 17
+    n_distinct_efo_traits: 9
+    n_associations: 35
+    phenotype_classes:
+    - executive_function
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 2.0e-26
+    gwas_catalog_studies:
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST90011875
+    - GCST90134330
+    - GCST90162547
+    - GCST90239696
+    - GCST90239704
+    - GCST90264174
+    pubmed_ids:
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '33414549'
+    - '35552371'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '39242605'
+    - '40374629'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:NEGR1
+  symbol: NEGR1
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:17302
+  ensembl_gene_id: ENSG00000172260
+  gene_name: neuronal growth regulator 1
+  gwas_evidence:
+    n_distinct_studies: 17
+    n_distinct_efo_traits: 6
+    n_associations: 58
+    phenotype_classes:
+    - g_factor
+    strongest_p_as_reported: 5.0e-27
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011875
+    - GCST90134330
+    - GCST90179114
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:CADM2
+  symbol: CADM2
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:29849
+  ensembl_gene_id: ENSG00000175161
+  gene_name: cell adhesion molecule 2
+  gwas_evidence:
+    n_distinct_studies: 16
+    n_distinct_efo_traits: 9
+    n_associations: 36
+    phenotype_classes:
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 3.0e-32
+    gwas_catalog_studies:
+    - GCST002774
+    - GCST002850
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011875
+    - GCST90134330
+    - GCST90239699
+    pubmed_ids:
+    - '25644384'
+    - '25869804'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '33414549'
+    - '35552371'
+    - '35764056'
+    - '37365406'
+    - '40374629'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:ATXN2L
+  symbol: ATXN2L
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:31326
+  ensembl_gene_id: ENSG00000168488
+  gene_name: ataxin 2 like
+  gwas_evidence:
+    n_distinct_studies: 16
+    n_distinct_efo_traits: 8
+    n_associations: 22
+    phenotype_classes:
+    - executive_function
+    - fluid_reasoning
+    - g_factor
+    strongest_p_as_reported: 8.0e-35
+    gwas_catalog_studies:
+    - GCST004364
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006570
+    - GCST007044
+    - GCST90011298
+    - GCST90134330
+    - GCST90179114
+    - GCST90264174
+    - GCST90270074
+    pubmed_ids:
+    - '28530673'
+    - '29186694'
+    - '29326435'
+    - '29520040'
+    - '29942086'
+    - '30038396'
+    - '32895543'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:BCL11A
+  symbol: BCL11A
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:13221
+  ensembl_gene_id: ENSG00000119866
+  gene_name: BCL11 transcription factor A
+  gwas_evidence:
+    n_distinct_studies: 16
+    n_distinct_efo_traits: 8
+    n_associations: 21
+    phenotype_classes:
+    - executive_function
+    - g_factor
+    strongest_p_as_reported: 1.0e-27
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006269
+    - GCST006570
+    - GCST006572
+    - GCST008595
+    - GCST90011875
+    - GCST90134330
+    - GCST90162547
+    - GCST90264174
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '33414549'
+    - '35764056'
+    - '36150907'
+    - '36378351'
+    - '37365406'
+    - '39242605'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:DDN
+  symbol: DDN
+  seed_origin: computational_discovery
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: HGNC:24458
+  ensembl_gene_id: ENSG00000181418
+  gene_name: dendrin
+  gwas_evidence:
+    n_distinct_studies: 16
+    n_distinct_efo_traits: 8
+    n_associations: 18
+    phenotype_classes:
+    - g_factor
+    - processing_speed
+    strongest_p_as_reported: 1.0e-28
+    gwas_catalog_studies:
+    - GCST005141
+    - GCST005142
+    - GCST005316
+    - GCST006250
+    - GCST006268
+    - GCST006570
+    - GCST008595
+    - GCST90011294
+    - GCST90011875
+    - GCST90134330
+    - GCST90267296
+    - GCST90270074
+    pubmed_ids:
+    - '29186694'
+    - '29326435'
+    - '29844566'
+    - '29942086'
+    - '30038396'
+    - '31374203'
+    - '32895543'
+    - '33414549'
+    - '35764056'
+    - '37106081'
+    - '37365406'
+    - '38434247'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: null
+- target_id: TGT:GRM3
+  symbol: GRM3
+  seed_origin: human_genetics
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: null
+  ensembl_gene_id: null
+  gene_name: null
+  gwas_evidence:
+    n_distinct_studies: 4
+    n_distinct_efo_traits: 5
+    n_associations: 5
+    phenotype_classes:
+    - g_factor
+    strongest_p_as_reported: 4.0e-13
+    gwas_catalog_studies:
+    - GCST006570
+    - GCST008595
+    - GCST90270074
+    - GCST90446169
+    pubmed_ids:
+    - '30038396'
+    - '31374203'
+    - '37365406'
+    - '39242605'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: 'Nominated by the Codex/Astra prose as a significant gene-based result. INDEPENDENTLY CHECKED
+    here against the GWAS Catalog: 4 distinct studies, 5 traits, strongest reported p = 4e-13. The support
+    is real at variant level, but note that one contributing study (PMID 30038396) is an EDUCATIONAL ATTAINMENT
+    GWAS, not an intelligence GWAS.'
+- target_id: TGT:ADGRB1
+  symbol: ADGRB1
+  seed_origin: human_genetics
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: null
+  ensembl_gene_id: null
+  gene_name: null
+  gwas_evidence:
+    n_distinct_studies: 1
+    n_distinct_efo_traits: 1
+    n_associations: 1
+    phenotype_classes:
+    - g_factor
+    strongest_p_as_reported: 2.0e-07
+    gwas_catalog_studies:
+    - GCST006269
+    pubmed_ids:
+    - '29844566'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: 'Nominated by the Codex/Astra prose as a significant gene-based result. INDEPENDENTLY CHECKED
+    here: the GWAS Catalog holds ONE association, from one study, at p = 2e-07 — BELOW the conventional
+    genome-wide threshold of 5e-08. A gene-based test can be significant where no single variant is, so
+    this does not refute the Codex claim, but this repository''s own variant-level evidence for ADGRB1
+    is weak and must not be described as strong until the gene-based result is delivered and verified.'
+- target_id: TGT:GABBR1
+  symbol: GABBR1
+  seed_origin: human_genetics
+  status: discovered_hypothesis
+  dossier_depth: none
+  hgnc_id: null
+  ensembl_gene_id: null
+  gene_name: null
+  gwas_evidence:
+    n_distinct_studies: 1
+    n_distinct_efo_traits: 1
+    n_associations: 1
+    phenotype_classes:
+    - g_factor
+    strongest_p_as_reported: 4.0e-11
+    gwas_catalog_studies:
+    - GCST90832687
+    pubmed_ids:
+    - '42092107'
+  causal_attribution:
+    basis: gwas_association_only
+    locus_to_gene_resolved: 'no'
+    note: GWAS Catalog mapped_genes are POSITIONAL. This gene is listed because an associated variant
+      lies in or near it. Not a causal gene, not a direction, not an adult mechanism, not a target.
+  rank_status: unranked_by_design
+  notes: 'Nominated by the Codex/Astra prose as weaker mapping-level evidence. INDEPENDENTLY CHECKED:
+    one study, strongest reported p = 4e-11, which is genome-wide significant but rests on a single study.'

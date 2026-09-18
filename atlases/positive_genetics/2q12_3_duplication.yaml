@@ -1,0 +1,191 @@
+# Positive human natural experiment — 2q12.3 duplication
+#
+# WATCHLIST ENTRY. This is NOT a validated enhancement mutation, and nothing here
+# licenses an intervention. It is the rarest and most valuable KIND of evidence this
+# project can find — a human variant associated with HIGHER cognitive performance rather
+# than with impairment — and it is recorded so that it can be tracked, attacked and
+# resolved rather than admired.
+#
+# THE HARD RULE THIS FILE EXISTS TO ENFORCE:
+#   loss of function causing intellectual disability  IS NOT  gain of function improving
+#   intelligence.
+# Most of what is known about dosage and cognition comes from deletions and from LoF
+# intolerance. Those data describe what breaks cognition. They do not describe what
+# improves it, and the two questions have different answers.
+
+schema_version: 0.2.0
+watchlist_id: POSGEN:2q12.3_duplication
+title: Duplication at 2q12.3 associated with higher cognitive performance
+status: watchlist_unreplicated
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+
+# ------------------------------------------------------------------- the finding ----
+primary_source:
+  source_id: SRC:PMID:39667348
+  citation_as_verified: >-
+    Huguet G, Renne T, Poulain C, et al. "Effects of gene dosage on cognitive ability: A
+    function-based association study across brain and non-brain processes." Cell Genomics
+    2024;4(12):100721.
+  doi: 10.1016/j.xgen.2024.100721
+  verification: >-
+    Retrieved and verified independently via PubMed in this session. The Sprint-2 brief
+    described this finding in prose; that prose was NOT taken on trust. The paper exists
+    and its abstract states the claim attributed to it.
+  what_the_abstract_states: >-
+    A genome-wide association study in 258,292 individuals "identified - for the first
+    time - a duplication at 2q12.3 associated with higher cognitive performance". The same
+    work reports a functional-burden analysis over 6,502 gene sets, of which 864 were
+    associated with cognition, with deletion and duplication effect sizes negatively
+    correlated, and biological processes sensitive to either deletions (subcortical
+    regions, postsynaptic) or duplications (cerebral cortex, presynaptic).
+
+# --------------------------------------------------------------- what we do NOT know --
+critical_unknowns:
+  - id: breakpoints_unknown
+    statement: >-
+      The precise duplication breakpoints are NOT known to this repository. The gene list
+      below is the content of the CYTOBAND 2q12.3, which is a 2 Mb window, not the
+      content of the duplicated interval. Those are different sets and conflating them
+      would be the single easiest way to misread this entry.
+    resolved_by: the paper's supplementary CNV coordinates
+  - id: carrier_count_unknown
+    statement: >-
+      The number of duplication carriers is not stated in the retrieved abstract. For a
+      rare CNV this is the number that determines whether the association is worth
+      anything, and it is not in hand.
+    resolved_by: the paper's supplementary tables
+  - id: effect_size_unknown
+    statement: >-
+      The magnitude of the cognitive difference is not in the retrieved abstract. "Higher
+      cognitive performance" without an effect size cannot be compared to anything.
+    resolved_by: the paper's results section
+  - id: driver_gene_unknown
+    statement: >-
+      A multi-gene duplication does not identify a causal gene. Which gene or genes in the
+      interval carry the association is unresolved, and a 2 Mb band containing eight
+      protein-coding genes offers no way to attribute it.
+    resolved_by: fine-mapping within the CNV, or dosage-matched functional work by others
+  - id: replication_absent
+    statement: >-
+      The paper describes the finding as first-of-its-kind. As of this record, no
+      independent replication has been identified. A single unreplicated CNV-GWAS
+      association at a rare locus is a hypothesis.
+    resolved_by: an independent cohort
+
+# ------------------------------------------------- the interval's gene content ------
+# RETRIEVED, not recalled: Ensembl REST overlap query on GRCh38, snapshotted to
+# data/raw/ensembl/. Constraint and expression from Open Targets, snapshotted likewise.
+cytoband:
+  id: 2q12.3
+  assembly: GRCh38
+  region: "chr2:106,700,001-108,700,000"
+  source: Ensembl REST karyotype band query
+  total_gene_features: 53
+  protein_coding_genes: 8
+
+genes:
+  - symbol: ST6GAL2
+    ensembl: ENSG00000144057
+    loeuf: 0.978
+    lof_upper_bin: 4
+    note: sialyltransferase; moderate LoF constraint
+  - symbol: RGPD4
+    ensembl: ENSG00000196862
+    loeuf: 1.223
+    lof_upper_bin: 6
+    note: RANBP2-like family; LoF-tolerant; segmental-duplication family, so CNV calling here is error-prone
+  - symbol: SLC5A7
+    ensembl: ENSG00000115665
+    loeuf: 0.462
+    lof_upper_bin: 1
+    note: >-
+      High-affinity choline transporter (CHT1); the most LoF-constrained gene in the band
+      and the rate-limiting step for acetylcholine synthesis. Mechanistically the most
+      interesting gene here, and the one most likely to attract over-reading - see
+      `interpretation_guards`.
+  - symbol: SULT1C3
+    ensembl: ENSG00000196228
+    loeuf: 1.514
+    lof_upper_bin: 8
+    note: sulfotransferase; LoF-tolerant
+  - symbol: SULT1C2
+    ensembl: ENSG00000198203
+    loeuf: 0.997
+    lof_upper_bin: 5
+    note: sulfotransferase; cerebral cortex protein expression reported
+  - symbol: SULT1C4
+    ensembl: ENSG00000198075
+    loeuf: 1.327
+    lof_upper_bin: 7
+    note: sulfotransferase; LoF-tolerant
+  - symbol: GCC2
+    ensembl: ENSG00000135968
+    loeuf: 0.626
+    lof_upper_bin: 2
+    note: golgin; second-most LoF-constrained in the band; high cerebral cortex protein expression
+  - symbol: LIMS1
+    ensembl: ENSG00000169756
+    loeuf: 0.867
+    lof_upper_bin: 4
+    note: LIM-domain adaptor; high cerebral cortex and brain protein expression
+
+# ------------------------------------------------------ why the constraint data is
+# ------------------------------------------------------ the WRONG metric here --------
+constraint_caveat:
+  statement: >-
+    LOEUF measures intolerance to LOSS of function. The variant of interest is a
+    DUPLICATION. LoF constraint therefore does not speak to the mechanism at all: a gene
+    can be highly LoF-constrained and completely insensitive to an extra copy, and vice
+    versa.
+  correct_metric: >-
+    Triplosensitivity (for example pTriplo, or dosage-sensitivity curation from ClinGen).
+    That metric is NOT in the data retrieved here, and its absence is the main gap in this
+    record.
+  why_it_is_recorded_anyway: >-
+    Because the temptation to reach for LOEUF as a proxy is strong and the substitution is
+    silent. Recording the numbers together with the reason they do not answer the question
+    is safer than omitting them and having someone fetch them later without the caveat.
+  consequence: >-
+    SLC5A7 being in the most-constrained LoF decile is NOT evidence that duplicating it
+    improves cognition. It is evidence that losing it is bad, which is a different claim
+    about a different variant.
+
+# ------------------------------------------------------------ interpretation guards --
+interpretation_guards:
+  - >-
+    This is an ASSOCIATION between a CNV and a cognitive measure. It is not a demonstrated
+    mechanism, not a causal gene, not a direction of benefit for any intervention, and not
+    an adult-modifiable control parameter.
+  - >-
+    The presence of SLC5A7 in the interval will invite a cholinergic story, because the
+    repository already holds CHRM1 as a muscarinic target and a choline-transporter
+    connection is narratively satisfying. There is no evidence here that SLC5A7 is the
+    driver gene, and eight protein-coding genes span the band. Treat any SLC5A7-centred
+    reading as a hypothesis generated by adjacency, not by data.
+  - >-
+    Duplication carriers are not "enhanced humans". A positive association at a population
+    level says nothing about any individual, and nothing about whether mimicking the
+    duplication pharmacologically would do anything at all.
+  - >-
+    RGPD4 lies in a segmental-duplication family, where CNV calling is systematically
+    error-prone. Any attribution to that gene needs the calling pipeline audited first.
+  - >-
+    The functional-burden result (deletions sensitive in subcortical/postsynaptic sets,
+    duplications in cortical/presynaptic sets) is the more general claim in the paper and
+    may be more robust than the single locus. It is also more easily over-generalised.
+
+# --------------------------------------------------------------- red-team attack list --
+red_team_should_attack:
+  - Cohort dependence: how much of the 258,292 is UK Biobank, and does that overlap this repository's existing cognitive-GWAS evidence base?
+  - Ancestry composition of the CNV-GWAS, and whether CNV frequency differs across ancestry groups in the same cohorts (the same group has published exactly that concern).
+  - Winner's curse on a first-reported association at a rare CNV.
+  - Whether the cognitive measure is a g-factor estimate or an educational-attainment proxy.
+  - CNV calling quality in a segmental-duplication-rich region.
+  - Whether "higher cognitive performance" survives adjustment for the correlates a CNV carrier population may differ on.
+
+next_actions:
+  - Obtain the supplementary CNV coordinates and carrier count; until then the gene list here is a cytoband, not a variant.
+  - Fetch ClinGen triplosensitivity ratings for the eight genes, which is the metric this record currently lacks.
+  - Search for independent replication in any other CNV-cognition cohort.
+  - Only after the above: decide whether any gene in the interval merits entry in targets/discovered/.

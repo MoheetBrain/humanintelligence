@@ -11,10 +11,22 @@ adult cognitive enhancement, and `tier_1_analyse_next` is empty.*
 ## Current Stage
 
 Sprint 2 — *integrate external analyses and close the human causal bridge*. Tasks A
-(Codex audit), B (registry searches), C (X01 ingestion), D (X02 readiness) and J (handoff
-contract) are **done**. Tasks E (target discovery), F (positive human natural
-experiments), G (comparative intelligence 2.0), H (convergence layer) and I (truth table)
-are **not started**.
+(Codex audit), B (registry searches), C (X01 ingestion), D (X02 readiness), E (target
+discovery), F (positive human natural experiments) and J (handoff contract) are **done**.
+Tasks G (comparative intelligence 2.0), H (convergence layer) and I (truth table) are
+**not started**, as is the red-team pass over Sprint-2 claims.
+
+**Seed-list anchoring is now quantified, and it is severe.** A genome-wide sweep of
+10,741 cognition-GWAS associations maps to 4,459 distinct genes. Only **9 of the 31**
+brief-supplied seed genes appear anywhere in that set, and the best of them (CKB, 5
+distinct studies) would rank outside the top 500; 151 non-seed genes have ≥10 distinct
+studies. `targets/discovered/discovered_registry.yaml` holds 21 candidates, unranked by
+design.
+
+**A project-lead theory node was recorded**: the Selective Encoding Hypothesis
+(`theory/`), whose decisive quantity is the *contrast* between prioritised and incidental
+retention rather than a level — which reclassifies most existing cognitive-enhancer
+evidence as `not_assessable` rather than supportive.
 
 **Sprint 2's central blocker: the Codex/Astra branch does not exist.** No branch on
 `origin` or locally, no worktree, no bundle, no commit by any other author, and no Codex

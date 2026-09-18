@@ -159,6 +159,17 @@ not narrow, that is the signature of failure rather than of insufficient data.
 
 ## 2. OPEN → WRITE → SELECT → LOCK
 
+> **Sprint-2 addition — see [`theory/selective_encoding_hypothesis.md`](theory/selective_encoding_hypothesis.md).**
+> The *Selective Encoding Hypothesis* is a sharper and more falsifiable statement of this
+> cycle's SELECT and LOCK phases. Its central move is to make the decisive quantity a
+> **contrast** — prioritised versus incidental retention within the same session — rather
+> than a level. That reclassifies most existing "cognitive enhancer" evidence as silent
+> rather than supportive, and it excludes, as a class, any mechanism whose action is a
+> tonic shift in a plasticity parameter, because such a mechanism cannot know which
+> synapses mattered. Machine-readable criteria:
+> [`theory/selective_encoding_criteria.yaml`](theory/selective_encoding_criteria.yaml).
+
+
 ### 2.1 The cycle
 
 A conceptual model of how a durable change to knowledge or capacity is supposed to

@@ -1,0 +1,235 @@
+# Selective Encoding Hypothesis — machine-readable specification.
+#
+# STATUS: THEORY NODE. Not a concluded programme, not a validated mechanism, and not a
+# recommendation about any compound. This file exists so the hypothesis can be USED —
+# candidate mechanisms scored against explicit criteria, and the scoring re-run when
+# evidence changes — rather than admired as prose.
+#
+# COMPUTATIONAL-ONLY: every criterion below is a specification of what a mechanism would
+# have to DO. Nothing here is a dose, a route, a regimen or a protocol, and the
+# "hypothetical agent" language is a design target for computational evaluation only
+# (docs/COMPUTATIONAL_ONLY_POLICY.md).
+
+schema_version: 0.2.0
+theory_id: THEORY:selective_encoding
+title: Selective Encoding Hypothesis
+origin: project_lead_hypothesis
+recorded_by: agent:orchestrator
+recorded_on: "2026-09-18"
+status: theory_node
+supersedes: null
+relates_to:
+  - THEORY:cognitive_power_envelope      # THEORY.md §1
+  - THEORY:open_write_select_lock        # THEORY.md §2 — this is a sharper SELECT/LOCK
+  - THEORY:activity_gated_plasticity     # Sprint-2 brief's theory node
+
+# ---------------------------------------------------------------- the hypothesis ----
+hypothesis: >-
+  A durable cognitive enhancer should not globally strengthen memory. It should increase
+  the CONTRAST between goal-relevant and incidental encoding, by amplifying
+  activity-dependent plasticity only within task-engaged representations. The decisive
+  phenotype is improved retention and transfer of explicitly prioritised information
+  WITHOUT proportional enhancement of unattended or low-value information.
+
+# The sharpest consequence, stated as a measurement rather than a slogan. This is what
+# makes the hypothesis falsifiable and what makes it differ from every "memory enhancer".
+decisive_quantity:
+  name: selectivity_gain
+  informal: >-
+    The ratio (or difference-in-differences) between the enhancement of prioritised
+    material and the enhancement of incidental material encountered in the same session.
+  formal_sketch: >-
+    selectivity_gain = (retention_prioritised_treated - retention_prioritised_control)
+                     - (retention_incidental_treated - retention_incidental_control)
+  why_it_matters: >-
+    A global memory enhancer scores ZERO on this quantity no matter how large its main
+    effect, because both terms rise together. A pure selectivity mechanism can score
+    positive with NO main effect on total material retained. Any study that reports only
+    total recall cannot measure this hypothesis at all — which means most existing
+    "cognitive enhancer" evidence is silent on it rather than supportive of it.
+  required_study_design: >-
+    Within-session manipulation of item value or task relevance, with retention tested
+    separately for prioritised and incidental items, at a delay long enough for
+    consolidation to matter. A single-arm total-recall endpoint is not admissible
+    evidence for or against.
+
+# ------------------------------------------------------------ the seven criteria ----
+# Each is a REQUIREMENT on a candidate mechanism, with the repository objects it maps to
+# and how it could be falsified. `evidence_status` is the state of evidence in THIS
+# repository, not in the literature at large.
+criteria:
+
+  - id: SE1
+    name: voluntary_encoding_mode
+    requirement: >-
+      A top-down goal state ("this matters") must materially alter the plasticity
+      threshold of the representations currently being processed.
+    maps_to_state_variables: [SV:plasticity.ltp_threshold, SV:plasticity.metaplasticity_state, SV:workspace.attentional_gain]
+    maps_to_primitives: [PRIM:attentional_gating, PRIM:gain_control, PRIM:memory_allocation]
+    candidate_mechanism_families:
+      - top-down attentional gating of cortical gain
+      - neuromodulatory (noradrenergic / cholinergic) gating of plasticity threshold
+      - hippocampal encoding-state control
+    falsified_if: >-
+      Plasticity threshold proves insensitive to voluntary goal state in adults, or the
+      only way to shift it is to shift arousal globally — in which case SE1 collapses
+      into SE6's failure mode.
+    evidence_status: not_assessed_in_repository
+
+  - id: SE2
+    name: activity_as_the_address
+    requirement: >-
+      Only the neurons and synapses representing the studied material should become
+      preferentially eligible for strengthening. Activity, not a drug's biodistribution,
+      must supply the addressing.
+    maps_to_state_variables: [SV:plasticity.synaptic_tagging_capacity, SV:efficiency.neural_sparsity]
+    maps_to_primitives: [PRIM:memory_allocation, PRIM:pattern_separation, PRIM:gain_control]
+    candidate_mechanism_families:
+      - synaptic tagging and capture
+      - neuronal memory allocation via excitability / CREB-family state
+      - behavioural tagging
+    why_this_is_the_crux: >-
+      This is the single hardest requirement and the one that separates the hypothesis
+      from a conventional nootropic. A systemically administered agent reaches every
+      synapse; the selectivity must therefore come from the SUBSTRATE being in a
+      permissive state only where activity has marked it. If a mechanism cannot use
+      activity as its address, criteria SE6 and SE7 are almost certainly violated too.
+    falsified_if: >-
+      Eligibility proves to be set cell-wide or region-wide rather than synapse-specific,
+      so that enhancement cannot be confined to task-engaged representations.
+    evidence_status: partially_addressed_in_repository
+    repository_bearing_targets: [TGT:CRTC1, TGT:HDAC2, TGT:GRIN2B]
+
+  - id: SE3
+    name: transient_to_stable
+    requirement: >-
+      Initial potentiation must be converted into a maintained trace through
+      stabilisation, consolidation and maintenance; potentiation that decays is not
+      enhancement.
+    maps_to_state_variables: [SV:consolidation.translation_capacity, SV:consolidation.memory_persistence, SV:stability.representational_drift]
+    maps_to_primitives: [PRIM:reconsolidation, PRIM:memory_retrieval]
+    candidate_mechanism_families:
+      - CREB / CRTC-dependent transcription
+      - cap-dependent translation control (eIF2alpha / eIF2B)
+      - sleep-dependent consolidation
+    falsified_if: >-
+      Enhanced encoding reliably fails to survive consolidation, or the consolidation step
+      is saturated in healthy adults so that no additional stabilisation is available.
+    evidence_status: partially_addressed_in_repository
+    repository_bearing_targets: [TGT:CRTC1, TGT:EIF2B_COMPLEX, TGT:EIF2S1, TGT:HDAC2]
+
+  - id: SE4
+    name: latent_structure_not_sensory_detail
+    requirement: >-
+      What is retained must be the reusable schema, not a high-fidelity record of the
+      surface. Algebra should become a transferable structure, not a photograph of a page.
+    maps_to_state_variables: [SV:cognition.abstraction_capacity, SV:cognition.far_transfer]
+    maps_to_primitives: [PRIM:abstraction, PRIM:latent_structure_discovery, PRIM:rule_extraction, PRIM:composition, PRIM:generalisation, PRIM:far_transfer]
+    candidate_mechanism_families:
+      - hierarchical / schema-level consolidation
+      - replay-driven abstraction
+    why_this_is_underspecified: >-
+      This is the criterion with the weakest mechanistic handle. There is no established
+      molecular control parameter that selectively favours schema extraction over
+      veridical detail, and it is entirely possible that the trade-off is architectural
+      rather than pharmacological. Treat SE4 as the hypothesis's most likely point of
+      failure-by-underspecification rather than by refutation.
+    falsified_if: >-
+      Enhanced retention proves to be detail-biased in a way that does not improve
+      transfer, i.e. SE4 and the decisive phenotype come apart.
+    evidence_status: not_assessed_in_repository
+
+  - id: SE5
+    name: efficient_retrieval_index
+    requirement: >-
+      The trace must be retrievable from partial cues. A stored representation that
+      cannot be addressed at retrieval is indistinguishable from one that was never
+      stored.
+    maps_to_state_variables: [SV:workspace.representational_fidelity, SV:stability.interference_susceptibility]
+    maps_to_primitives: [PRIM:pattern_completion, PRIM:memory_retrieval, PRIM:relational_binding]
+    candidate_mechanism_families:
+      - hippocampal indexing and pattern completion
+      - cortical schema integration
+    falsified_if: >-
+      Enhancement increases storage without improving cued retrieval, which would make
+      the benefit unmeasurable in practice.
+    evidence_status: not_assessed_in_repository
+
+  - id: SE6
+    name: preserve_selectivity
+    requirement: >-
+      Incidental material encountered in the same period must NOT receive the same
+      enhancement.
+    maps_to_state_variables: [SV:workspace.distractor_resistance, SV:stability.interference_susceptibility, SV:efficiency.signal_to_noise]
+    maps_to_primitives: [PRIM:distractor_suppression, PRIM:gain_control]
+    falsified_if: >-
+      Any candidate that raises prioritised retention also raises incidental retention
+      proportionally. This is the criterion most existing candidates would fail, and the
+      reason the decisive quantity is a contrast rather than a level.
+    evidence_status: not_assessed_in_repository
+
+  - id: SE7
+    name: keep_forgetting_available
+    requirement: >-
+      Low-value representations must still weaken. Forgetting is a function, not a defect;
+      removing it risks interference and clutter that make cognition worse.
+    maps_to_state_variables: [SV:stability.forgetting_rate, SV:stability.interference_susceptibility, SV:stability.extinction_capacity]
+    maps_to_primitives: [PRIM:reconsolidation, PRIM:credit_assignment]
+    falsified_if: >-
+      A mechanism that satisfies SE1-SE5 is found to abolish normal weakening, producing
+      net cognitive harm through interference — which would be a refutation of the whole
+      design target, not a tuning problem.
+    evidence_status: not_assessed_in_repository
+    safety_coupling: [SV:safety.excitotoxicity, SV:safety.seizure_risk]
+
+# -------------------------------------------------------- internal tension (key) ----
+# The hypothesis's own structure contains a conflict, and naming it is more useful than
+# resolving it by assertion.
+internal_tension:
+  statement: >-
+    SE1-SE3 ask for MORE plasticity in the addressed representations. SE6-SE7 ask for
+    plasticity to remain LOW everywhere else, including for material processed seconds
+    apart in the same session and, in SE7's case, for the addressed material itself once
+    its value has passed.
+  why_it_is_the_main_prediction: >-
+    Any mechanism whose action is a global shift in a plasticity parameter — threshold,
+    gain, transcription, translation — will satisfy SE1-SE3 and violate SE6-SE7 by
+    construction. The hypothesis therefore predicts that the viable mechanism space is
+    restricted to mechanisms that are GATED BY ACTIVITY rather than set by exposure. That
+    is a strong, falsifiable structural claim about where to look, and it is the part of
+    the hypothesis most worth trying to break.
+  consequence_for_this_project: >-
+    It rules out, as a class, candidates whose only known action is to raise a plasticity
+    or consolidation parameter tonically. Several seed targets fall into that class, and
+    the hypothesis says so before any ranking does.
+
+# ------------------------------------------------------- how to use this as a lens ----
+evaluation_protocol:
+  - >-
+    For each candidate mechanism, record which of SE1-SE7 it could satisfy, with the
+    claim ids supporting each. A candidate satisfying SE1-SE3 but not SE6 is NOT a
+    partial success — it is a conventional memory enhancer and outside the hypothesis.
+  - >-
+    Score against the decisive quantity, not against total retention. If no study of a
+    candidate separated prioritised from incidental material, the candidate's status on
+    this hypothesis is `not_assessable`, not `no_effect`.
+  - >-
+    Re-run whenever new evidence lands. This file is versioned so a change of status is
+    visible as a diff.
+
+# What this hypothesis must not be allowed to do to the project.
+guards:
+  - >-
+    It must NOT be promoted above the human genetic evidence. As of Sprint 2, no seed or
+    discovered target has causal-gene attribution above level 2, and this hypothesis does
+    not change that.
+  - >-
+    It must NOT license target selection on conceptual fit. A mechanism that fits SE1-SE7
+    beautifully and has no adult human causal evidence is a hypothesis, not a candidate.
+  - >-
+    Its attractiveness is itself a risk. A well-formed, elegant specification is the kind
+    of object that starts generating confirmatory reading, so the red team should audit
+    claims that cite this file with extra suspicion.
+  - >-
+    No output derived from this file may contain a dose, a regimen, a route or a sourcing
+    route; it specifies what a mechanism must DO, never how anyone would take anything.
