@@ -1,0 +1,158 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "low dose, Capsule, Once Daily, Day 1 through Day 28",
+              "interventionNames": [
+                "Drug: FRM-0334"
+              ],
+              "label": "FRM-0334; Arm 1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "high dose, Capsule, Once Daily, Day 1 through Day 28",
+              "interventionNames": [
+                "Drug: FRM-0334"
+              ],
+              "label": "FRM-0334; Arm 2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo, Capsule, Once Daily, Day 1 through Day 28",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo Comparator; Arm 3",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "FRM-0334; Arm 1",
+                "FRM-0334; Arm 2"
+              ],
+              "name": "FRM-0334",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo Comparator; Arm 3"
+              ],
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study to Assess the Safety, Tolerability, and Pharmacodynamic (PD) Effects of FRM-0334 in Subjects With Prodromal to Moderate Frontotemporal Dementia With Granulin Mutation",
+          "nctId": "NCT02149160",
+          "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled, Dose-Escalating, Phase 2a Safety, Tolerability, and Pharmacodynamic Study of Two Doses of an Histone Deacetylase Inhibitor (FRM-0334) in Subjects With Prodromal to Moderate Frontotemporal Dementia With Granulin Mutation",
+          "orgStudyIdInfo": {
+            "id": "FRM-0334-002"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "FORUM Pharmaceuticals Inc"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2014-001489-85",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "id": "2014",
+              "link": "https://reporter.nih.gov/quickSearch/2014",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "* Number and percentage of subjects with AEs\n* Number and percentage of subjects with SAEs\n* Number and percentage of subjects who discontinue due to AEs\n* Number and percentage of subject deaths",
+              "measure": "Evaluate the safety and tolerability of FRM-0334",
+              "timeFrame": "Baseline to Day 28 or Early Termination"
+            },
+            {
+              "measure": "Assess the pharmacodynamic (PD) effects of FRM-0334 on the change from baseline in plasma concentrations of progranulin (PGRN) after 28 days",
+              "timeFrame": "Baseline to Day 28 or Early Termination"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Change in CSF progranulin concentration from baseline",
+              "measure": "Assess the pharmacodynamic effects of FRM-0334 on the change from baseline in cerebrospinal fluid (CSF) concentrations of PGRN after 28 days",
+              "timeFrame": "Baseline and Day 28"
+            },
+            {
+              "description": "Cmax, Ctrough, tmax, t1/2, λz, AUC(0-τ), CL/F, Cav in plasma",
+              "measure": "Characterize the plasma concentrations of FRM-0334 and metabolites following once daily dosing for 28 days",
+              "timeFrame": "Day 1 to Day 28 or Early Termination"
+            },
+            {
+              "description": "Cmax, Ctrough, tmax, t1/2, AUC0-τ, CL/F, Cav in CSF",
+              "measure": "Characterize the CSF concentrations of FRM-0334 and metabolites following once daily dosing for 28 days",
+              "timeFrame": "Day 1 to Day 28 or Early Termination"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "ACTIVE_NOT_RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2016-03-23",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-03-22",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2016-08",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2014-10"
+          },
+          "statusVerifiedDate": "2015-05",
+          "studyFirstPostDateStruct": {
+            "date": "2014-05-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-05-20",
+          "studyFirstSubmitQcDate": "2014-05-23"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

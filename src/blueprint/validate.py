@@ -2003,6 +2003,124 @@ def check_measured_null_direction(ctx: ValidationContext) -> list[Violation]:
     return out
 
 
+# ================================ V-EXT: unverified external analysis stays inert ===
+
+@rule(
+    "V-EXT",
+    "An unverified external analysis may not be cited as evidence by any record.",
+)
+def check_external_analysis_inertness(ctx: ValidationContext) -> list[Violation]:
+    """Keep an unverified external result out of the evidence chain, mechanically.
+
+    An external agent's analysis whose only record is prose has no artefact to check, so
+    it cannot fail a check — which is exactly why it must not be citable. If a claim
+    could name ``ANALYSIS:X01`` as its evidence, a number transcribed from a task
+    description would acquire the authority of a measured result, and this repository's
+    provenance guarantees would stop meaning anything at the point where an external
+    collaborator is involved.
+
+    Verified external analyses are unaffected: once checksums recompute and schemas
+    validate, ``external_analysis_verified`` is an evidential provenance class like any
+    other.
+    """
+    violations: list[Violation] = []
+    unverified = {
+        analysis_id: record
+        for analysis_id, record in ctx.repo.external_analyses.items()
+        if record.raw.get("verification_status") != "verified"
+    }
+    if not unverified:
+        return violations
+
+    def _cites(value: object) -> set[str]:
+        if isinstance(value, str):
+            return {value} & unverified.keys()
+        if isinstance(value, list):
+            found: set[str] = set()
+            for item in value:
+                found |= _cites(item)
+            return found
+        return set()
+
+    # Claims: no evidence item, no provenance field, may reach an unverified analysis.
+    for claim_id, record in ctx.claims.items():
+        hits: set[str] = set()
+        for item in record.raw.get("evidence") or []:
+            if isinstance(item, dict):
+                hits |= _cites(item.get("source_id"))
+                hits |= _cites(item.get("analysis_id"))
+        hits |= _cites((record.raw.get("provenance") or {}).get("analysis_id"))
+        for analysis_id in sorted(hits):
+            violations.append(
+                Violation(
+                    "V-EXT",
+                    "error",
+                    f"{record.path}#/{claim_id}",
+                    f"claim cites {analysis_id}, whose verification_status is "
+                    f"'{unverified[analysis_id].raw.get('verification_status')}'. An "
+                    "external analysis known only from prose has no artefact to verify "
+                    "and cannot fail a check, so it may not support a claim (contract "
+                    "P2). Record it in analyses/external/ and leave it inert until the "
+                    "artefacts in its outstanding_artefacts list arrive.",
+                    record_id=claim_id,
+                )
+            )
+
+    # Facet assessments: neither claim_refs nor source_refs may reach one.
+    for record in ctx.repo.assessments:
+        for index, facet in enumerate(record.raw.get("facets") or []):
+            if not isinstance(facet, dict):
+                continue
+            hits = _cites(facet.get("claim_refs")) | _cites(facet.get("source_refs"))
+            hits |= _cites(facet.get("counter_claim_refs"))
+            for analysis_id in sorted(hits):
+                violations.append(
+                    Violation(
+                        "V-EXT",
+                        "error",
+                        f"{record.path}#/facets/{index}",
+                        f"facet '{facet.get('facet')}' cites {analysis_id}, an "
+                        "unverified external analysis. A facet level may not rest on a "
+                        "figure that has no artefact behind it; that is what "
+                        "verification_status exists to prevent.",
+                        record_id=record.record_id,
+                    )
+                )
+
+    # Self-consistency of the record itself.
+    for analysis_id, record in unverified.items():
+        for index, result in enumerate(record.raw.get("reported_results") or []):
+            if isinstance(result, dict) and (result.get("claim_refs") or []):
+                violations.append(
+                    Violation(
+                        "V-EXT",
+                        "error",
+                        f"{record.path}#/reported_results/{index}",
+                        f"{analysis_id} is unverified but its reported result "
+                        f"'{result.get('result_id')}' names claim_refs. An unverified "
+                        "result may not license a claim in either direction.",
+                        record_id=analysis_id,
+                    )
+                )
+        if record.raw.get("provenance_class") != "external_analysis_unverified":
+            violations.append(
+                Violation(
+                    "V-EXT",
+                    "error",
+                    f"{record.path}#/provenance_class",
+                    f"{analysis_id} has verification_status "
+                    f"'{record.raw.get('verification_status')}' but provenance_class "
+                    f"'{record.raw.get('provenance_class')}'. Anything short of "
+                    "verified must carry external_analysis_unverified, which is "
+                    "excluded from the vocabulary's evidential_classes and is therefore "
+                    "what keeps the graph compiler and the ranking model from reading "
+                    "it as support.",
+                    record_id=analysis_id,
+                )
+            )
+    return violations
+
+
 # ======================================= V22: sources registered but never cited ===
 
 @rule("V22", "Sources registered but cited by no claim (informational).")

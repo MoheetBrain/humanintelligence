@@ -1,0 +1,1258 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D003704",
+          "term": "Dementia"
+        },
+        {
+          "id": "D001927",
+          "term": "Brain Diseases"
+        },
+        {
+          "id": "D002493",
+          "term": "Central Nervous System Diseases"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D024801",
+          "term": "Tauopathies"
+        },
+        {
+          "id": "D019636",
+          "term": "Neurodegenerative Diseases"
+        },
+        {
+          "id": "D019965",
+          "term": "Neurocognitive Disorders"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D000544",
+          "term": "Alzheimer Disease"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C011010",
+          "term": "hydromethylthionine"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "interventionNames": [
+            "Drug: TRx0237"
+          ],
+          "label": "TRx0237",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "TRx0237"
+          ],
+          "description": "TRx0237 tablets 250 mg/day (given as 125 mg bid) for 4 weeks",
+          "name": "TRx0237",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Placebo tablets will be administered twice daily (b.i.d.) for 4 weeks. The placebo tablets include 4 mg of TRx0237 as a urinary and faecal colourant to maintain blinding; hence, the placebo group will receive a total of 8 mg/day of TRx0237.",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Alzheimer's Disease"
+      ],
+      "keywords": [
+        "Alzheimer's Disease",
+        "TRx0237",
+        "Safety Study",
+        "AD"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Achim",
+          "country": "Germany",
+          "geoPoint": {
+            "lat": 53.01416,
+            "lon": 9.0263
+          }
+        },
+        {
+          "city": "Berlin",
+          "country": "Germany",
+          "geoPoint": {
+            "lat": 52.52437,
+            "lon": 13.41053
+          }
+        },
+        {
+          "city": "Leipzig",
+          "country": "Germany",
+          "geoPoint": {
+            "lat": 51.33962,
+            "lon": 12.37129
+          }
+        },
+        {
+          "city": "München",
+          "country": "Germany",
+          "geoPoint": {
+            "lat": 51.60698,
+            "lon": 13.31243
+          }
+        },
+        {
+          "city": "Birmingham",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 52.48142,
+            "lon": -1.89983
+          }
+        },
+        {
+          "city": "Bradford",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 53.79391,
+            "lon": -1.75206
+          }
+        },
+        {
+          "city": "Crowborough",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 51.06098,
+            "lon": 0.16342
+          }
+        },
+        {
+          "city": "Duston",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 52.24916,
+            "lon": -0.95022
+          }
+        },
+        {
+          "city": "Oxford",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 51.75222,
+            "lon": -1.25596
+          }
+        },
+        {
+          "city": "Saint Leonards-on-Sea",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 50.85565,
+            "lon": 0.5452
+          }
+        },
+        {
+          "city": "Sheffield",
+          "country": "United Kingdom",
+          "geoPoint": {
+            "lat": 53.38297,
+            "lon": -1.4659
+          }
+        },
+        {
+          "city": "Staffordshire",
+          "country": "United Kingdom"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "MAC Clinical Research",
+          "name": "Mark Dale, MD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "The primary purpose of this study is to assess the safety and tolerability of TRx0237 when taken at the same time as acetylcholinesterase inhibitors (i.e., donepezil, galantamine, or rivastigmine) and / or memantine to treat patients with mild to moderate Alzheimer's Disease."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 9,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria\n\n* Clinical diagnosis of all cause dementia and probable Alzheimer's disease (AD)\n* Mini-Mental State Examination (MMSE) score of 14-26 (inclusive)\n* Cognitive impairment present for at least 6 months\n* Age ≤90 years\n* Modified Hachinski ischaemic score of ≤4\n* Females, if of childbearing potential, must use adequate contraception and maintain this use throughout participation in the study\n* Patient is able to read, understand, and provide written informed consent\n* Has one or more identified caregivers who are able to verify daily compliance with study drug and provide information on safety and tolerability; the caregiver(s) must also give consent to participate\n* Currently taking an taking an acetylcholinesterase inhibitor and/or memantine; the subject must have been taking such medication(s) for ≥3 months. The dosage regimen must have remained stable for ≥6 weeks and it must be planned to remain stable throughout participation in the study.\n* Able to comply with the study procedures\n\nExclusion Criteria:\n\n* Significant central nervous system disorder other than Alzheimer's disease\n* Patients in whom baseline MRI is contraindicated such as metal implants in head (except dental), pacemaker, and cochlear implant\n* Significant focal or intracranial pathology that would lead to a diagnosis other than probable Alzheimer's disease\n* Clinical evidence or history of stroke, transient ischemic attack, significant head injury or other unexplained or recurrent loss of consciousness\n* Epilepsy\n* Major depressive disorder, schizophrenia or other psychotic disorders, bipolar disorder, substance (including alcohol) related disorders\n* Resides in a hospital or continuous care facility\n* History of swallowing difficulties\n* Pregnant or breastfeeding\n* History of significant hematological abnormality or current acute or chronic clinically significant abnormality\n* Abnormal serum chemistry laboratory value at Screening deemed to be clinically relevant by the investigator\n* Clinically significant cardiovascular disease or abnormal assessments\n* Pre-existing or current signs or symptoms of respiratory failure\n* Concurrent acute or chronic clinically significant immunologic, renal, hepatic, or endocrine disease (not adequately treated) and/or other unstable or major disease other than Alzheimer's disease\n* Prior intolerance to methylthioninium-containing drug or any of the excipients\n* Treatment currently or within 3 months before Baseline with any of the following medications (unless otherwise noted):\n\n  * Tacrine\n  * Anxiolytics and/or sedatives/hypnotics (exceptions: sedation for MRI or occasional short-acting benzodiazepines, chloral hydrate, or zolpidem as needed at bedtime)\n  * Antipsychotics (clozapine, chlorpromazine, thioridazine, or ziprasidone)\n  * Carbamazepine\n  * Drugs associated with methaemoglobinaemia (e.g., dapsone, local anesthetics such as benzocaine used chronically, primaquine and related antimalarials, sulfonamides)\n  * Warfarin (and other Coumadin derivates such as phenprocoumon)\n* Current or prior participation in a clinical trial of a drug, biologic, or device in which the last dose was received within 28 days prior to Baseline",
+      "healthyVolunteers": false,
+      "maximumAge": "90 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD",
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Safety Study of TRx0237 in Patients Already Taking Medications for Mild and Moderate Alzheimer's Disease",
+      "nctId": "NCT01626391",
+      "officialTitle": "A Double-Blind, Placebo-Controlled, Randomised, 4-Week Safety and Tolerability Study of TRx0237 in Subjects With Mild to Moderate Alzheimer's Disease on Pre-Existing Stable Acetylcholinesterase Inhibitor and/or Memantine Therapy",
+      "orgStudyIdInfo": {
+        "id": "TRx-237-008"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "TauRx Therapeutics Ltd"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "This was assessed by the number of participants who experienced adverse events within each treatment group (TRx0237 versus placebo) during 8 weeks of treatment.",
+          "measure": "Safety and Tolerability of TRx0237 When Coadministered With an Acetylcholinesterase Inhibitor (AChEI) and/or Memantine",
+          "timeFrame": "8 weeks"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "TauRx Therapeutics Ltd"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2013-03",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2014-07-11",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2014-06-10",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2013-03",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2014-07-11",
+        "type": "ESTIMATED"
+      },
+      "resultsFirstSubmitDate": "2014-04-28",
+      "resultsFirstSubmitQcDate": "2014-06-10",
+      "startDateStruct": {
+        "date": "2012-09"
+      },
+      "statusVerifiedDate": "2014-06",
+      "studyFirstPostDateStruct": {
+        "date": "2012-06-22",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2012-06-20",
+      "studyFirstSubmitQcDate": "2012-06-20",
+      "whyStopped": "This study has been terminated for administrative reasons only."
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "At every visit, each subject was asked if he or she has experienced any adverse events and safety evaluations (including vital signs, clinical laboratory tests, pulse co-oximetry, 12-lead ECGs, physical and neurological evaluations, Columbia Suicide Severity Rating Scale and serotonin syndrome assessments) were performed throughout the study",
+      "eventGroups": [
+        {
+          "description": "One 125-mg TRx0237 tablet administered twice daily (250 mg/day TRx0237)",
+          "id": "EG000",
+          "otherNumAffected": 4,
+          "otherNumAtRisk": 5,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 5,
+          "title": "TRx0237"
+        },
+        {
+          "description": "One placebo tablet containing 4-mg TRx0237 administered twice daily (8 mg/day TRx0237)",
+          "id": "EG001",
+          "otherNumAffected": 4,
+          "otherNumAtRisk": 4,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 4,
+          "title": "Placebo"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Dyspepsia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Retching"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Vomiting"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Neck Pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Pain in Extremity"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Dizziness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Cough"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Wheezing"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Urobilinogen urine increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Electrocardiogram QT prolonged"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Troponin I increased"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Lower respiratory tract infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Fall"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Hypertension"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Depression"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Intentional self-injury"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Hair colour changes"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Surgical and medical procedures",
+          "sourceVocabulary": "MedDRA 15.0",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 4
+            }
+          ],
+          "term": "Tooth repair"
+        }
+      ],
+      "timeFrame": "8 weeks"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "5"
+            },
+            {
+              "groupId": "BG001",
+              "value": "4"
+            },
+            {
+              "groupId": "BG002",
+              "value": "9"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "One 125-mg TRx0237 tablet administered twice daily (250 mg/day TRx0237)",
+          "id": "BG000",
+          "title": "TRx0237"
+        },
+        {
+          "description": "One placebo tablet containing 4-mg TRx0237 administered twice daily (8 mg/day TRx0237)",
+          "id": "BG001",
+          "title": "Placebo"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "8.7",
+                      "value": "74.2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "spread": "3.3",
+                      "value": "74.3"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "spread": "6.5",
+                      "value": "74.2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "5"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "4"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "9"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "9"
+                    }
+                  ],
+                  "title": "Not Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Ethnicity (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "9"
+                    }
+                  ]
+                }
+              ],
+              "title": "United Kingdom"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "9"
+                    }
+                  ]
+                }
+              ],
+              "title": "AChEI"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Memantine"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Both"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Anti-dementia Therapy",
+          "unitOfMeasure": "participants"
+        }
+      ],
+      "populationDescription": "Safety Population"
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictionType": "GT60",
+        "restrictiveAgreement": true
+      },
+      "limitationsAndCaveats": {
+        "description": "Early termination leading to small numbers of subjects analyzed"
+      },
+      "pointOfContact": {
+        "email": "JHH@taurx.com",
+        "organization": "TauRx Therapeutics Ltd",
+        "phone": "+44 (0)1224438550",
+        "title": "Dr. Jiri Hardlund"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "5"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "4"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "This was assessed by the number of participants who experienced adverse events within each treatment group (TRx0237 versus placebo) during 8 weeks of treatment.",
+          "groups": [
+            {
+              "description": "One 125-mg TRx0237 tablet administered twice daily (250 mg/day TRx0237)",
+              "id": "OG000",
+              "title": "TRx0237"
+            },
+            {
+              "description": "One placebo tablet containing 4-mg TRx0237 administered twice daily (8 mg/day TRx0237)",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "Safety Population",
+          "reportingStatus": "POSTED",
+          "timeFrame": "8 weeks",
+          "title": "Safety and Tolerability of TRx0237 When Coadministered With an Acetylcholinesterase Inhibitor (AChEI) and/or Memantine",
+          "type": "PRIMARY",
+          "unitOfMeasure": "participants"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "One 125-mg TRx0237 tablet administered twice daily (250 mg/day TRx0237)",
+          "id": "FG000",
+          "title": "TRx0237"
+        },
+        {
+          "description": "One placebo tablet containing 4-mg TRx0237 administered twice daily (8 mg/day TRx0237)",
+          "id": "FG001",
+          "title": "Placebo"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Physician Decision"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Withdrawal by Subject"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "5"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "4"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "4"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ]
+    }
+  }
+}

@@ -1,9 +1,44 @@
 # Project Status
 
-*Snapshot generated 2026-09-17 (UTC) — **Sprint 1 complete.** All ten deliverables
-exist. Repository validates with 0 errors and 0 warnings; 832 tests pass. The headline
-result is negative: no target has a defensible causal case for adult cognitive
-enhancement, and `tier_1_analyse_next` is empty.*
+*Snapshot generated 2026-09-18 (UTC) — **Sprint 2 in progress.** Sprint 1's ten
+deliverables are complete and committed. Sprint 2 has delivered the Codex-branch audit
+(the branch does not exist), X01 recorded as an inert unverified external report, the
+X02 ingestion layer with its refusals under test, and target-directed registry searches
+classifying 360 studies across 20 targets. Repository validates with 0 errors; 852 tests
+pass. The Sprint-1 headline result stands: no target has a defensible causal case for
+adult cognitive enhancement, and `tier_1_analyse_next` is empty.*
+
+## Current Stage
+
+Sprint 2 — *integrate external analyses and close the human causal bridge*. Tasks A
+(Codex audit), B (registry searches), C (X01 ingestion), D (X02 readiness) and J (handoff
+contract) are **done**. Tasks E (target discovery), F (positive human natural
+experiments), G (comparative intelligence 2.0), H (convergence layer) and I (truth table)
+are **not started**.
+
+**Sprint 2's central blocker: the Codex/Astra branch does not exist.** No branch on
+`origin` or locally, no worktree, no bundle, no commit by any other author, and no Codex
+session referencing this repository — `docs/integration/CODEX_BRANCH_AUDIT.md` records
+the search command by command. X01 is therefore `unverified_external_report` and inert
+(rule V-EXT). Cross-agent evidence dependence cannot be computed, so **any convergence
+claim spanning Codex and Claude evidence is refused rather than caveated**.
+
+### Sprint-2 results so far
+
+* **360 registered studies classified** over 84 queries for 20 targets. Three targets —
+  CRTC1, OTX2, RTN4R — have **no registered trial**, recorded explicitly as a fact about
+  the registry and not as a biological null. No `counter_level` was raised anywhere by
+  the search.
+* **8 reporting gaps** (completed, cognitive outcome in protocol, nothing posted)
+  attached as `reporting_gap_refs` to ADORA1, DRD1, GRIN2B and HTR2A.
+* **41 trial sources registered, 41/41 verified.**
+* The GABRA5 basmisanil null was **independently re-retrieved** by pipeline
+  (MATRICS treatment differences −0.36 p=0.730, +0.28 p=0.793), matching the red team's
+  manual figure by a different route.
+* Two classifier bugs found by reading output rather than trusting counts: `wais`
+  matching inside "waist circumference", and a mechanism phrase matched by its first
+  token hitting a "Community Reintegration Workshop". Both had inflated findings by
+  roughly half.
 
 ## Project Objective
 
@@ -18,9 +53,9 @@ computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`); external wet-lab, animal an
 clinical results are ingested as evidence with provenance and are never repeated,
 planned or recommended by this project.
 
-## Current Stage
+### Sprint 1 — *infrastructure and first evidence ingestion* (complete)
 
-Sprint 1 — *infrastructure and first evidence ingestion*. The type system, 12 schemas,
+Sprint 1 — The type system, 12 schemas,
 a 31-rule validator, the state model, the ranking/uncertainty model, `THEORY.md` and all
 four evidence atlases are complete. **The repository validates with zero errors** (39
 warnings, all of them known incompleteness waiting on the red team). Two deliverables

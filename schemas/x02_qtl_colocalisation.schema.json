@@ -1,0 +1,219 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intelligence-blueprint.local/schemas/v0_2_0/x02_qtl_colocalisation",
+  "title": "X02QtlColocalisationRow",
+  "description": "One row of qtl_colocalisation.tsv: the result of ONE colocalisation test between a trait credible set and a molecular QTL signal. Rows exist for tested-and-negative pairs; that is the point.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "credible_set_id",
+    "qtl_dataset",
+    "qtl_dataset_version",
+    "qtl_type",
+    "tissue",
+    "developmental_stage",
+    "gene_id",
+    "coloc_method",
+    "coloc_version",
+    "outcome",
+    "pp_h0",
+    "pp_h1",
+    "pp_h2",
+    "pp_h3",
+    "pp_h4",
+    "prior_p1",
+    "prior_p2",
+    "prior_p12",
+    "direction_on_gene"
+  ],
+  "properties": {
+    "credible_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "qtl_dataset": {
+      "type": "string",
+      "minLength": 1
+    },
+    "qtl_dataset_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "qtl_type": {
+      "type": "string",
+      "$comment": "vocabulary: qtl_type",
+      "enum": [
+        "eqtl",
+        "sqtl",
+        "pqtl",
+        "caqtl",
+        "mqtl"
+      ]
+    },
+    "tissue": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tissue_ontology_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cell_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "cell_type_ontology_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "donor_age_range": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "developmental_stage": {
+      "type": "string",
+      "$comment": "vocabulary: developmental_stage",
+      "enum": [
+        "prenatal",
+        "perinatal",
+        "infant",
+        "child",
+        "adolescent",
+        "adult",
+        "aged",
+        "mixed",
+        "unknown"
+      ]
+    },
+    "gene_id": {
+      "type": "string",
+      "pattern": "^ENSG[0-9]{11}(\\\\.[0-9]+)?$"
+    },
+    "gene_symbol": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "intron_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "sQTL only: a splicing result with no named junction is not a splicing result."
+    },
+    "coloc_method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "coloc_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "$comment": "vocabulary: colocalisation_outcome",
+      "enum": [
+        "colocalised",
+        "tested_not_colocalised",
+        "tested_indeterminate",
+        "failed_qc"
+      ]
+    },
+    "pp_h0": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pp_h1": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pp_h2": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "pp_h3": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "MANDATORY. H3 (two independent causal variants) versus H4 (one shared) is the entire question; an analysis reporting only H4 makes colocalisation unfalsifiable."
+    },
+    "pp_h4": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "prior_p1": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "prior_p2": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "prior_p12": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "MANDATORY: p12 drives H4 and is a choice, not a fact."
+    },
+    "n_snps_overlap": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "threshold_used": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "qtl_effect_allele": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^[ACGTN]+$"
+    },
+    "qtl_beta": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "qtl_se": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "direction_on_gene": {
+      "type": "string",
+      "$comment": "vocabulary: qtl_direction_on_gene",
+      "enum": [
+        "increases",
+        "decreases",
+        "alters_splicing",
+        "not_determined"
+      ]
+    }
+  }
+}

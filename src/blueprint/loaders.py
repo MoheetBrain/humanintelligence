@@ -60,6 +60,7 @@ class Repository:
     state_variables: dict[str, LoadedRecord] = field(default_factory=dict)
     state_variable_annotations: list[LoadedRecord] = field(default_factory=list)
     definitional_edges: list[LoadedRecord] = field(default_factory=list)
+    external_analyses: dict[str, LoadedRecord] = field(default_factory=dict)
     seed_registry: dict[str, Any] = field(default_factory=dict)
     lock_claim_ids: tuple[str, ...] = ()
     shared_sources: dict[str, tuple[str, ...]] = field(default_factory=dict)
@@ -74,6 +75,7 @@ class Repository:
                 len(r.raw.get("evidence") or []) for r in self.claims.values()
             ),
             "targets": len(self.targets),
+            "external_analyses": len(self.external_analyses),
             "assessments": len(self.assessments),
             "audits": len(self.audits),
             "interventions": len(self.interventions),
@@ -643,6 +645,13 @@ def load_repository(root: Path | str | None = None) -> Repository:
         )
         for record in interventions
     ]
+    external_analyses = _load_document_files(
+        paths.external_analysis_files(resolved),
+        "external_analysis",
+        "analysis_id",
+        resolved,
+        collected,
+    )
     state_variables, sv_violations = load_state_variables(resolved)
     collected.extend(sv_violations)
     axioms, axiom_violations = load_definitional_edges(resolved)
@@ -662,6 +671,7 @@ def load_repository(root: Path | str | None = None) -> Repository:
             annotations, key=lambda r: (r.path, r.record_id or "")
         ),
         definitional_edges=axioms,
+        external_analyses=_index_by_id(external_analyses, "external_analysis", collected),
         seed_registry=load_seed_registry(resolved),
         lock_claim_ids=load_lock(resolved),
         shared_sources=shared_sources,

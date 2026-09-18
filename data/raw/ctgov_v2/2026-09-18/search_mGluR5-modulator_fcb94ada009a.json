@@ -1,0 +1,902 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 120 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059 Matching Placebo"
+              ],
+              "label": "ADX10059 Matching Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ADX10059 120 mg"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 Matching Placebo"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059 Matching Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 120,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "ADX10059 as a Monotherapy in Patients With Gastroesophageal Reflux (GERD)",
+          "nctId": "NCT00820079",
+          "officialTitle": "A Phase 2B, Randomised, Double-blind, Placebo-controlled, Parallel Group, Multi-centre Study to Investigate the Efficacy, Mechanism of Action, Pharmacokinetics, Safety and Tolerability of the mGluR5 Negative Allosteric Modulator ADX10059 as Monotherapy in Patients With Gastroesophageal Reflux Disease (GERD)",
+          "orgStudyIdInfo": {
+            "id": "ADX10059-204"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Addex Pharma S.A."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2008-005104-10"
+            },
+            {
+              "id": "2008",
+              "link": "https://reporter.nih.gov/quickSearch/2008",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of GERD symptom free days in week 2 of study medication treatment",
+              "timeFrame": "2 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "GERD symptoms",
+              "timeFrame": "2 weeks"
+            },
+            {
+              "measure": "Sleep disturbance",
+              "timeFrame": "2 weeks"
+            },
+            {
+              "measure": "Use of antacid rescue medication",
+              "timeFrame": "2 weeks"
+            },
+            {
+              "measure": "Global assessment of GERD",
+              "timeFrame": "2 weeks"
+            },
+            {
+              "measure": "Effect on lower oesophageal sphincter and reflux episodes",
+              "timeFrame": "2 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2009-12-24",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2009-12-23",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2009-10",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2008-12"
+          },
+          "statusVerifiedDate": "2009-12",
+          "studyFirstPostDateStruct": {
+            "date": "2009-01-09",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2009-01-08",
+          "studyFirstSubmitQcDate": "2009-01-08"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Group A",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "interventionNames": [
+                "Drug: GET73"
+              ],
+              "label": "Group B",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Group A"
+              ],
+              "description": "Participants will be getting placebo for 8 days of dosing.",
+              "name": "Placebo",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Group B"
+              ],
+              "description": "Participants will be getting GET73 for 8 days of dosing.",
+              "name": "GET73",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 79,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Novel mGluR5 Modulator Effects on Alcohol Drinking and MRI Outcomes",
+          "nctId": "NCT04831684",
+          "officialTitle": "Effects of a Novel mGluR5 Negative Allosteric Modulator on Alcohol Drinking, Neurochemistry, and Brain Reactivity to Alcohol Cues in Alcohol Use Disorder",
+          "orgStudyIdInfo": {
+            "id": "Pro00102334"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Medical University of South Carolina"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of drinks consumed during bar-lab paradigm (free drinking period)",
+              "timeFrame": "165 minutes"
+            },
+            {
+              "description": "Acquired via spectroscopy sequence completed at baseline and day 7 scans",
+              "measure": "Change in Gamma aminobutyric acid (GABA) and glutamate levels",
+              "timeFrame": "baseline to day 7"
+            },
+            {
+              "description": "Acquired via functional magnetic resonance imaging completed at baseline and day 7 scans",
+              "measure": "Levels of cortical activation to visual cues of alcohol",
+              "timeFrame": "baseline to day 7"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2025-12-29",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-02-05",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-02-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2025-12-29",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2021-09-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-01",
+          "studyFirstPostDateStruct": {
+            "date": "2021-04-05",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-04-01",
+          "studyFirstSubmitQcDate": "2021-04-01"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 50 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 100 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 150 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "twice-daily",
+              "interventionNames": [
+                "Drug: ADX10059 Matching Placebo"
+              ],
+              "label": "ADX10059 Matching Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ADX10059 50 mg"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 100 mg"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 150 mg"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 Matching Placebo"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059 Matching Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 298,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "ADX10059 as an add-on Therapy to Proton Pump Inhibitors (PPIs) in Patients With Gastroesophageal Reflux (GERD)",
+          "nctId": "NCT00810485",
+          "officialTitle": "A Phase 2B, Randomised, Double-blind, Placebo-controlled, Parallel Group, Dose-ranging, Multi-centre Study to Investigate the Efficacy, Safety and Tolerability of the mGluR5 Negative Allosteric Modulator ADX10059 in Patients With Gastroesophageal Reflux Disease (GERD) Who Are Partial Responders to Proton Pump Inhibitor (PPI) Treatment",
+          "orgStudyIdInfo": {
+            "id": "ADX10059-205"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Addex Pharma S.A."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2008-005105-18"
+            },
+            {
+              "id": "2008",
+              "link": "https://reporter.nih.gov/quickSearch/2008",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of GERD symptom free days in week 4 of study medication treatment",
+              "timeFrame": "4 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "GERD symptoms",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Sleep disturbance",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Use of antacid medications",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Global assessment of GERD",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Safety and tolerability assessments",
+              "timeFrame": "4 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2012-07-16",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2012-07-13",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2009-12",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2008-12"
+          },
+          "statusVerifiedDate": "2012-07",
+          "studyFirstPostDateStruct": {
+            "date": "2008-12-18",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2008-12-17",
+          "studyFirstSubmitQcDate": "2008-12-17"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "50mg BID",
+              "interventionNames": [
+                "Drug: BMS-9894923"
+              ],
+              "label": "50 mg Active",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "100mg BID",
+              "interventionNames": [
+                "Drug: BMS-9894923"
+              ],
+              "label": "100mg Active",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "50 and 100 mg matching placebo",
+              "interventionNames": [
+                "Drug: BMS-9894923"
+              ],
+              "label": "Matching Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "100mg Active",
+                "50 mg Active",
+                "Matching Placebo"
+              ],
+              "description": "50 mg capsules, oral administration",
+              "name": "BMS-9894923",
+              "otherNames": [
+                "ALX-001"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Double blind, parallel, 3-arm, placebo controlled",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "maskingDescription": "Matching placebo",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 18,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study to Assess the Safety of BMS-984923 Compared to Placebo, in People With Parkinson's",
+          "nctId": "NCT06309147",
+          "officialTitle": "A Double-Blind, Single Center, Randomized, Placebo-Controlled Study of BMS-984923 in Participants With Parkinson's Disease",
+          "orgStudyIdInfo": {
+            "id": "ALX-923-107"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Allyx Therapeutics"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "α-synuclein plasma concentration will be assessed for changes",
+              "measure": "To evaluate changes in α-synuclein",
+              "timeFrame": "Up to 14 days after last dose"
+            },
+            {
+              "description": "Changes in dopamine transporter measured by single-photon emission computed tomography imaging",
+              "measure": "Change from baseline dopamine transporter",
+              "timeFrame": "Up to 3 days after last dose"
+            },
+            {
+              "description": "Change from baseline in motor aspects of experiences of daily living as measured by the Movement Disorder Society Unified Parkinson's Disease Rating Scale (MDS-UPDRS).\n\nThe MDS-UPDRS is a clinical rating scale that assesses the symptomatic burden of Parkinson's Disease. The scale has four main sections, and each item is measured on a 5-point scale (0 to 4) where higher scores are associated with more disability.",
+              "measure": "Assess changes in motor function",
+              "timeFrame": "Up to 14 days after last dose"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Safety",
+              "measure": "Incidence of treatment-emergent adverse events (TEAEs)",
+              "timeFrame": "Up to 14 days after last dose"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Total plasma concentration as determined by pharmacokinetic modeling",
+              "measure": "Area under the curve for the first 24 hours of dosing (AUC24h) and at steady state as determined by pharmacokinetic modeling",
+              "timeFrame": "Up to 14 days after last dose"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2025-07-15",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-03-18",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-03-15",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2025-02-15",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2024-03-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-03",
+          "studyFirstPostDateStruct": {
+            "date": "2024-03-13",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-03-01",
+          "studyFirstSubmitQcDate": "2024-03-06"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Weeks 1-2: once daily Weeks 3-12: twice daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 25 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Weeks 1-2: once daily Weeks 3-12: twice daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 50 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Weeks 1-2: once daily Weeks 3-12: twice daily",
+              "interventionNames": [
+                "Drug: ADX10059"
+              ],
+              "label": "ADX10059 100 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Weeks 1-2: once daily Weeks 3-12: twice daily",
+              "interventionNames": [
+                "Drug: ADX10059 Matching Placebo"
+              ],
+              "label": "ADX10059 Matching Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ADX10059 25 mg"
+              ],
+              "description": "oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 50 mg"
+              ],
+              "description": "Oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 100 mg"
+              ],
+              "description": "Oral administration",
+              "name": "ADX10059",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ADX10059 Matching Placebo"
+              ],
+              "description": "Oral administration",
+              "name": "ADX10059 Matching Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 350,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "ADX10059 Migraine Prevention Study",
+          "nctId": "NCT00820105",
+          "officialTitle": "A Phase 2B, Randomised, Double-blind, Placebo-controlled, Parallel Group, Dose-ranging, Multicentre Study to Investigate the Efficacy, Safety and Tolerability of the mGluR5 Negative Allosteric Modulator ADX10059 for the Prevention of Migraine",
+          "orgStudyIdInfo": {
+            "id": "ADX10059-206"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Addex Pharma S.A."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2008-005481-30"
+            },
+            {
+              "id": "2008",
+              "link": "https://reporter.nih.gov/quickSearch/2008",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of migraine headache days during weeks 9-12 of the treatment period",
+              "timeFrame": "12 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Migraine frequency",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Migraine severity",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Migraine duration",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Occurrence of aura",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Functional impairment severity",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Rescue medication use",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Proportion of responders",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "measure": "Global assessment of study medication",
+              "timeFrame": "12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2009-12-24",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2009-12-23",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2010-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2008-12"
+          },
+          "statusVerifiedDate": "2009-12",
+          "studyFirstPostDateStruct": {
+            "date": "2009-01-09",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2009-01-08",
+          "studyFirstSubmitQcDate": "2009-01-08",
+          "whyStopped": "Incidence of abnormalities of liver function tests is higher than expected in this population."
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "A receptor occupancy dose curve will be obtained by using an adaptive design in this arm.",
+              "interventionNames": [
+                "Drug: ADX48621",
+                "Radiation: [18F]FPEB"
+              ],
+              "label": "Part 1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "In this arm, the time course of the receptor occupancy will be studied for the dose which gives 70% receptor occupancy as determined in Part 1.",
+              "interventionNames": [
+                "Drug: ADX48621",
+                "Radiation: [18F]FPEB"
+              ],
+              "label": "Part 2",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Part 1",
+                "Part 2"
+              ],
+              "description": "ADX4862, an investigational compound, is a potent, selective, negative allosteric modulator of the metabotropic glutamate receptor 5 (mGlu5 NAM).",
+              "name": "ADX48621",
+              "otherNames": [
+                "dipraglurant"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Part 1",
+                "Part 2"
+              ],
+              "description": "radiotracer used for PET scanning",
+              "name": "[18F]FPEB",
+              "type": "RADIATION"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 12,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "PET Imaging Study to Evaluate the mGlu5r Occupancy Following ADX48621 (Dipraglurant) Administration",
+          "nctId": "NCT02447640",
+          "officialTitle": "An Open Label PET Imaging Study to Evaluate the mGlu5 Receptor Occupancy Following ADX48621 (Dipraglurant) Administration",
+          "orgStudyIdInfo": {
+            "id": "ADX48621-104"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Johns Hopkins University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "This is composite",
+              "measure": "The primary outcome will be the maximum receptor occupancy and EC 50 for the receptor occupancy/ADX48621 plasma concentration relationship",
+              "timeFrame": "During Day 1 PET scan"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-12",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-08-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-08-15",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-12",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2015-04"
+          },
+          "statusVerifiedDate": "2018-08",
+          "studyFirstPostDateStruct": {
+            "date": "2015-05-19",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-04-02",
+          "studyFirstSubmitQcDate": "2015-05-18"
+        }
+      }
+    }
+  ],
+  "totalCount": 6
+}

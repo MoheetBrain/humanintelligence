@@ -28,7 +28,7 @@
 # docs/blackboard/schema_change_requests/ontology-00*.yaml.
 
 schema_version: 0.1.0
-ontology_version: 0.1.0
+ontology_version: 0.2.0
 defined_by: agent:ontology
 defined_on: "2026-09-17"
 
@@ -73,6 +73,13 @@ prefixes:
   - CLM
   - EVD
   - AUD
+  # --- X02 statistical-genetics layer (Sprint 2, ontology_version 0.2.0) ---
+  - CS
+  - QTL
+  - COLOC
+  - REGPRED
+  - DEVSTAGE
+  - ANALYSIS
 
 nodes:
 
@@ -582,3 +589,100 @@ nodes:
     parent: null
     required_attributes: [term]
     optional_attributes: [severity_class, organ_system, safety_state_variables, term_source]
+
+  # ------------------------------------------------------------------------
+  # X02 statistical-genetics types (Sprint 2).
+  #
+  # These exist so that an external fine-mapping / colocalisation analysis can be
+  # represented WITHOUT its conclusions being pre-baked into the type system. Three
+  # modelling decisions are load-bearing:
+  #
+  # 1. A posterior inclusion probability is an ATTRIBUTE of credible-set membership,
+  #    not a node and not a relation to a number. The brief asked for a HAS_PIP
+  #    concept; an edge whose object is a float is not a graph edge, so PIP rides on
+  #    MEMBER_OF_CREDIBLE_SET where it can be read alongside the method that produced
+  #    it.
+  # 2. ColocalisationResult and RegulatoryPrediction live in the EVIDENCE layer, not
+  #    the biological layer. They are statistical findings about biological entities,
+  #    in the same family as Measurement. Putting them in the biological layer would
+  #    let a posterior probability masquerade as a mechanism.
+  # 3. DevelopmentalStage is a first-class node because "adult or fetal" is the
+  #    project's central question, and an annotation buried in an edge attribute is an
+  #    annotation nobody filters on.
+  # ------------------------------------------------------------------------
+
+  - name: CredibleSet
+    layer: biological
+    description: >-
+      A set of variants at a locus that a named fine-mapping method assigns posterior
+      probability of containing the causal variant, for one study and one trait. A
+      credible set is a statement about a method's posterior, not a set of causal
+      variants.
+    id_prefixes: [CS]
+    id_pattern: '^CS:[A-Za-z0-9][A-Za-z0-9._-]*$'
+    parent: null
+    required_attributes: [study_id, trait, finemapping_method, coverage]
+    optional_attributes: [locus_id, n_variants, purity_min_r2, ld_reference_panel, ld_panel_ancestry, conditioned_on, genome_build]
+
+  - name: MolecularQTL
+    layer: biological
+    description: >-
+      A molecular quantitative-trait locus signal from a named dataset release: an
+      association between genotype and a molecular measurement (expression, splicing,
+      protein abundance) in a named tissue or cell type, at a named developmental
+      stage.
+    id_prefixes: [QTL]
+    id_pattern: '^QTL:[A-Za-z0-9][A-Za-z0-9._:-]*$'
+    parent: null
+    required_attributes: [qtl_dataset, qtl_dataset_version, qtl_type, tissue, developmental_stage]
+    optional_attributes: [cell_type, tissue_ontology_id, cell_type_ontology_id, donor_age_range, gene_id, intron_id, genome_build]
+
+  - name: ColocalisationResult
+    layer: evidence
+    description: >-
+      The output of a colocalisation test between a trait credible set and a molecular
+      QTL signal, carrying the full posterior vector and the priors that produced it. A
+      result record, not a mechanism: it exists whether or not the signals colocalise,
+      so that a tested-and-negative pair is representable.
+    id_prefixes: [COLOC]
+    id_pattern: '^COLOC:[A-Za-z0-9][A-Za-z0-9._:-]*$'
+    parent: null
+    required_attributes: [coloc_method, coloc_version, pp_h4, priors_stated]
+    optional_attributes: [pp_h0, pp_h1, pp_h2, pp_h3, prior_p1, prior_p2, prior_p12, n_snps_overlap, threshold_used, outcome]
+
+  - name: RegulatoryPrediction
+    layer: evidence
+    description: >-
+      A sequence-model prediction of a variant's regulatory effect (for example
+      AlphaGenome), for a named assay and context, with the model version. Orthogonal
+      predicted support, never causal evidence on its own.
+    id_prefixes: [REGPRED]
+    id_pattern: '^REGPRED:[A-Za-z0-9][A-Za-z0-9._:-]*$'
+    parent: null
+    required_attributes: [model, model_version, assay, effect_allele]
+    optional_attributes: [tissue_or_cell_type, predicted_effect, effect_units, score, score_scale, reference_distribution, percentile, concordant_with_qtl_direction]
+
+  - name: DevelopmentalStage
+    layer: biological
+    description: >-
+      A named developmental window in which a molecular observation was made or a
+      mechanism is active. Declared as a node because the adult-versus-developmental
+      distinction is this project's central question and must be filterable, not buried
+      in an attribute.
+    id_prefixes: [DEVSTAGE]
+    id_pattern: '^DEVSTAGE:(prenatal|perinatal|infant|child|adolescent|adult|aged|mixed|unknown)$'
+    parent: null
+    required_attributes: [stage]
+    optional_attributes: [age_range_years, ontology_id]
+
+  - name: DatasetAnalysis
+    layer: evidence
+    description: >-
+      A named analysis run over named input datasets, by this project or by an external
+      agent, with software versions, parameters and input checksums. The node that makes
+      an external contribution attributable and its verification state explicit.
+    id_prefixes: [ANALYSIS]
+    id_pattern: '^ANALYSIS:[A-Za-z0-9][A-Za-z0-9._:-]*$'
+    parent: null
+    required_attributes: [analysis_id, agent, verification_status]
+    optional_attributes: [title, completed_at, git_commit, genome_build, software, input_checksums, parameters, seed, negative_results_included, known_limitations]

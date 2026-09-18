@@ -1,0 +1,441 @@
+{
+  "studies": [
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Imipenem 500 mg + relebactam 250 mg + cilastatin 500 mg as a FDC administered intravenously (IV) every 6 hours for a minimum of 7 days, up to 14 days. At study entry open label linezolid 600 mg will also be administered by IV every 12 hours for up to 14 days.",
+              "interventionNames": [
+                "Drug: Imipenem",
+                "Drug: Relebactam",
+                "Drug: Cilastatin",
+                "Drug: Linezolid"
+              ],
+              "label": "IMI/REL",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Piperacillin 4000 mg + tazobactam 500 mg as a FDC administered IV every 6 hours for a minimum of 7 days, up to 14 days. At study entry open label linezolid 600 mg will also be administered by IV every 12 hours for up to 14 days.",
+              "interventionNames": [
+                "Drug: Piperacillin",
+                "Drug: Tazobactam",
+                "Drug: Linezolid"
+              ],
+              "label": "PIP/TAZ",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "IMI/REL"
+              ],
+              "description": "Imipenem 500 mg as part of a FDC administered by IV every 6 hours for a minimum of 7 days, up to 14 days",
+              "name": "Imipenem",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "IMI/REL"
+              ],
+              "description": "Relebactam 250 mg as part of a FDC administered by IV every 6 hours for a minimum of 7 days, up to 14 days",
+              "name": "Relebactam",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "IMI/REL"
+              ],
+              "description": "Cilastatin 500 mg as part of a FDC administered by IV every 6 hours for a minimum of 7 days, up to 14 days",
+              "name": "Cilastatin",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "PIP/TAZ"
+              ],
+              "description": "Piperacillin 4000 mg as part of a FDC administered by IV every 6 hours for a minimum of 7 days, up to 14 days",
+              "name": "Piperacillin",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "PIP/TAZ"
+              ],
+              "description": "Tazobactam 500 mg as part of a FDC administered by IV every 6 hours for a minimum of 7 days, up to 14 days",
+              "name": "Tazobactam",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "IMI/REL",
+                "PIP/TAZ"
+              ],
+              "description": "Linezolid 600 mg administered open-label by IV every 12 hours for up to 14 days",
+              "name": "Linezolid",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 537,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "RESTORE-IMI 2",
+          "briefTitle": "Imipenem/Relebactam/Cilastatin Versus Piperacillin/Tazobactam for Treatment of Participants With Bacterial Pneumonia (MK-7655A-014)",
+          "nctId": "NCT02493764",
+          "officialTitle": "A Phase III, Randomized, Double-Blind, Active Comparator-Controlled Clinical Trial to Study the Safety, Tolerability, and Efficacy of Imipenem/Cilastatin/Relebactam (MK-7655A) Versus Piperacillin/Tazobactam in Subjects With Hospital-Acquired Bacterial Pneumonia or Ventilator-Associated Bacterial Pneumonia",
+          "orgStudyIdInfo": {
+            "id": "7655A-014"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Merck Sharp & Dohme LLC"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2015-000246-34",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "JAPIC-CTI",
+              "id": "163240",
+              "type": "REGISTRY"
+            },
+            {
+              "domain": "Merck Protocol Number",
+              "id": "MK-7655A-014",
+              "type": "OTHER"
+            },
+            {
+              "id": "2015",
+              "link": "https://reporter.nih.gov/quickSearch/2015",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The percentage of participants in the MITT population with mortality due to any cause from randomization through Day 28 was determined for each arm.",
+              "measure": "Percentage of Participants With All-cause Mortality (ACM) Through Day 28 in the Modified Intention-to-treat (MITT) Population",
+              "timeFrame": "Up to 28 days"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The percentage of participants with a FCR at EFU was determined for each arm. Favorable clinical response at EFU was defined as either \"sustained cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] with no evidence of resurgence and no additional antibiotics are required) or \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the MITT Population With a Favorable Clinical Response (FCR) at Early Follow-up (EFU) Visit",
+              "timeFrame": "Up to 16 days after end of therapy (up to 30 days)"
+            },
+            {
+              "description": "An AE is defined as any untoward medical occurrence in a participant administered a pharmaceutical product and which does not necessarily have to have a causal relationship with this treatment.",
+              "measure": "Percentage of Participants With ≥1 Adverse Event (AE)",
+              "timeFrame": "Up to 30 days"
+            },
+            {
+              "description": "An AE is defined as any untoward medical occurrence in a participant administered a pharmaceutical product and which does not necessarily have to have a causal relationship with this treatment.",
+              "measure": "Percentage of Participants Discontinuing Study Therapy Due to an AE",
+              "timeFrame": "Up to 14 days"
+            },
+            {
+              "description": "The percentage of participants in the mMITT population with mortality due to any cause from randomization through Day 28 was determined for each arm.",
+              "measure": "Percentage of Participants With ACM in the Microbiological Modified Intention-to-treat (mMITT) Population",
+              "timeFrame": "Up to 28 days"
+            },
+            {
+              "description": "The percentage of participants in the MITT population with mortality due to any cause from randomization through EFU was determined for each arm.",
+              "measure": "Percentage of Participants With ACM at EFU in the MITT Population",
+              "timeFrame": "Up to 16 days after end of therapy (up to 30 days)"
+            },
+            {
+              "description": "The percentage of participants in the mMITT population with mortality due to any cause from randomization through EFU was determined for each arm.",
+              "measure": "Percentage of Participants With ACM at EFU in the mMITT Population",
+              "timeFrame": "Up to 16 days after end of therapy (up to 30 days)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX1 was determined for each arm. Favorable clinical response at OTX1 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the Clinically Evaluable (CE) Population With a FCR at On-therapy Visit 1 (OTX1) [Day 3]",
+              "timeFrame": "Day 3 (OTX1)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX2 was determined for each arm. Favorable clinical response at OTX2 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the CE Population With a FCR at OTX2 (Day 6)",
+              "timeFrame": "Day 6 (OTX2)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX3 was determined for each arm. Favorable clinical response at OTX3 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the CE Population With a FCR at OTX3 (Day 10)",
+              "timeFrame": "Day 10 (OTX3)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at EOT was determined for each arm. Favorable clinical response at EOT was defined as either \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required) or \"improved\" (the majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the CE Population With a FCR at EOT Visit",
+              "timeFrame": "From Day 7 to Day 14"
+            },
+            {
+              "description": "The percentage of participants with a FCR at Day 28 was determined for each arm. Favorable clinical response at Day 28 was defined as either \"sustained cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] with no evidence of resurgence and no additional antibiotics are required) or \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the CE Population With a FCR at Day 28",
+              "timeFrame": "Day 28"
+            },
+            {
+              "description": "The percentage of participants with a FCR at EFU was determined for each arm. Favorable clinical response at EFU was defined as either \"sustained cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] with no evidence of resurgence and no additional antibiotics are required) or \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the CE Population With a FCR at EFU Visit",
+              "timeFrame": "Up to 16 days after end of therapy (up to Day 30)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX1 was determined for each arm. Favorable clinical response at OTX1 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the MITT Population With a FCR at OTX1 (Day 3)",
+              "timeFrame": "Day 3 (OTX1)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX2 was determined for each arm. Favorable clinical response at OTX2 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the MITT Population With a FCR at OTX2 (Day 6)",
+              "timeFrame": "Day 6 (OTX2)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at OTX3 was determined for each arm. Favorable clinical response at OTX3 was defined as \"improved\" (majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\]).",
+              "measure": "Percentage of Participants in the MITT Population With a FCR at OTX3 (Day 10)",
+              "timeFrame": "Day 10 (OTX3)"
+            },
+            {
+              "description": "The percentage of participants with a FCR at EOT was determined for each arm. Favorable clinical response at EOT was defined as either \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required) or \"improved\" (the majority of pre-therapy signs and symptoms of the index infection have improved or resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the MITT Population With a FCR at EOT",
+              "timeFrame": "From Day 7 to Day 14"
+            },
+            {
+              "description": "The percentage of participants with a FCR at Day 28 was determined for each arm. Favorable clinical response at Day 28 was defined as either \"sustained cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] with no evidence of resurgence and no additional antibiotics are required) or \"cure\" (all pre-therapy signs and symptoms of the index infection have resolved \\[or returned to \"pre-infection status\"\\] and no additional antibiotics are required).",
+              "measure": "Percentage of Participants in the MITT Population With a FCR at Day 28",
+              "timeFrame": "Day 28"
+            },
+            {
+              "description": "The percentage of participants with a FMR at EOT was determined for each arm. Favorable microbiological response at EOT was defined as either \"eradication\" (a lower respiratory tract culture taken at EOT showing eradication of baseline pathogen) or \"presumed eradication\" (no specimen collected because the participant deemed clinically cured or improved).",
+              "measure": "Percentage of Participants in the mMITT Population With a Favorable Microbiological Response (FMR) at End of Treatment (EOT) Visit",
+              "timeFrame": "From Day 7 to Day 14"
+            },
+            {
+              "description": "The percentage of participants with a FMR at EFU was determined for each arm. Favorable microbiological response at EOT was defined as either \"eradication\" (a lower respiratory tract culture taken at EFU showing eradication of baseline pathogen) or \"presumed eradication\" (no specimen collected because the participant deemed clinically cured or improved).",
+              "measure": "Percentage of Participants in the mMITT Population With a FMR at EFU Visit",
+              "timeFrame": "Up to 16 days after end of therapy (up to Day 30)"
+            },
+            {
+              "description": "The percentage of participants with a FMR at EOT was determined for each arm. Favorable microbiological response at EOT was defined as either \"eradication\" (a lower respiratory tract culture taken at EOT showing eradication of baseline pathogen) or \"presumed eradication\" (no specimen collected because the participant deemed clinically cured or improved).",
+              "measure": "Percentage of Participants in the Microbiologically Evaluable (ME) Population With a FMR at EOT Visit",
+              "timeFrame": "From Day 7 to Day 14"
+            },
+            {
+              "description": "The percentage of participants with a FMR at EOT was determined for each arm. Favorable microbiological response at EOT was defined as either \"eradication\" (a lower respiratory tract culture taken at EOT showing eradication of baseline pathogen) or \"presumed eradication\" (no specimen collected because the participant deemed clinically cured or improved).",
+              "measure": "Percentage of Participants in the ME Population With a FMR at EFU Visit",
+              "timeFrame": "Up to 16 days after end of therapy (up to Day 30)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-04-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-04-16",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-04-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-04-03",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-04-16",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-04-03",
+          "resultsFirstSubmitQcDate": "2020-04-03",
+          "startDateStruct": {
+            "date": "2015-11-24",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-03",
+          "studyFirstPostDateStruct": {
+            "date": "2015-07-09",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-07-07",
+          "studyFirstSubmitQcDate": "2015-07-07"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Other: Blood samples"
+              ],
+              "label": "early / intermediate AMD without neovessels and without macular atrophy",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Other: Blood samples"
+              ],
+              "label": "Late exsudative AMD with neovessels",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Other: Blood samples"
+              ],
+              "label": "Late AMD with macular atrophy without neovessels",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Other: Blood samples"
+              ],
+              "label": "Patientes with No AMD",
+              "type": "SHAM_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Late AMD with macular atrophy without neovessels",
+                "Late exsudative AMD with neovessels",
+                "Patientes with No AMD",
+                "early / intermediate AMD without neovessels and without macular atrophy"
+              ],
+              "description": ": The blood sample from all groups will be taken on the day of inclusion, in the ophthalmology department. The patient will be cared for by a nurse and then taken to the collection room. A 100 ml sample will be taken (10 tubes of 10 ml). Blood samples will be labeled with the patient's identification number as part of the protocol. They will be transported to the research laboratory in order to be picked up for monocyte extraction. The purification of blood monocytes will be done. In case of excess, the samples will be destroyed at the end of the study.",
+              "name": "Blood samples",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "HEALTH_SERVICES_RESEARCH"
+          },
+          "enrollmentInfo": {
+            "count": 80,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SURViVOR",
+          "briefTitle": "Survival of Monocytes Collected From Patients With Atrophic AMD in Retinal Pigmented Epithelium Explants",
+          "nctId": "NCT04697095",
+          "officialTitle": "Survival of Monocytes Collected From Patients With Atrophic AMD in Retinal Pigmented Epithelium Explants",
+          "orgStudyIdInfo": {
+            "id": "69HCL20_0027"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Hospices Civils de Lyon"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Survival will be evaluated by automated counting of monocytes",
+              "measure": "Comparison of the survival of human monocytes on ARPE-19 cultures, between the group of patients with atrophic AMD and patient with no retinal pathology (control).",
+              "timeFrame": "through study completion, an average of 1 year"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Survival will be assessed by automated counting of monocytes on the culture plate after specific immunostaining of the monocytes.",
+              "measure": "Comparison of human monocyte survival on ARPE-19 cell lines between different groups of patients with AMD or according to severity of disease.",
+              "timeFrame": "through study completion, an average of 1 year"
+            },
+            {
+              "description": "Comparison of alterations in ARPE-19 cells lines after culture by human monocytes:\n\n* Between the atrophic AMD group and the control group,\n* With respect to the stage of the AMD (early / intermediate AMD, exudative or atrophic AMD),\n* With respect to the evolving profile of atrophic AMD defined by autofluorescence examination,\n* With respect to the severity of the clinical involvement of atrophic AMD,\n* With respect to the recognized risk factors of the disease (age, sex, smoking status and obesity).\n\nThe alteration of ARPE-19 cells on expression level of OTX2, a ubiquitous transcription factor in EPR cells, will be studied. OTX2 is normally under-expressed in-vitro when a supernatant of lipopolysaccharide-activated monocytes is added to the culture medium.",
+              "measure": "Comparison of alterations in ARPE-19 cells lines after culture by human monocytes:",
+              "timeFrame": "through study completion, an average of 1 year"
+            },
+            {
+              "description": "To compare the secretion of IL1 from patient's monocytes:\n\n* Between the atrophic AMD group and the control group, With respect to the stage of the AMD (early / intermediate AMD, exudative or atrophic AMD),\n* With respect to the evolving profile of atrophic AMD defined by autofluorescence examination,\n* With respect to the severity of the clinical involvement of atrophic AMD,\n* With respect to the recognized risk factors of the disease (age, sex, smoking status and obesity).\n\nThe secretory activity of monocytes on the following cytokines will be evaluated : IL1, IL6 and TNF by two techniques: qPCR and ELISA.",
+              "measure": "To compare the secretion of IL1 from patient's monocytes:",
+              "timeFrame": "through study completion, an average of 1 year"
+            },
+            {
+              "description": "To compare the secretion of IL6 from patient's monocytes:",
+              "measure": "To compare the secretion of IL6 from patient's monocytes:",
+              "timeFrame": "through study completion, an average of 1 year"
+            },
+            {
+              "description": "To compare the secretion of TNF from patient's monocytes:",
+              "measure": "To compare the secretion of TNF from patient's monocytes",
+              "timeFrame": "through study completion, an average of 1 year"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2027-12-02",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-09-04",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-12-02",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2022-06-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-09",
+          "studyFirstPostDateStruct": {
+            "date": "2021-01-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-12-22",
+          "studyFirstSubmitQcDate": "2021-01-04"
+        }
+      }
+    }
+  ],
+  "totalCount": 2
+}

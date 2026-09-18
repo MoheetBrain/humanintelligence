@@ -1,0 +1,113 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants in the Parkinson's Disease Dementia group:\n\n* Must be taking a stable parkinsonian medication\n* Must have a diagnosis of clinically definite Parkinson's disease \\>1 year prior to cognitive deficit with at least two of the following symptoms: asymmetric resting tremor, rigidity or bradykinesia, and definite motor response to dopaminergic agents.\n* Response to cholinesterase inhibitor over a period of six months will be monitored.",
+              "interventionNames": [
+                "Drug: Cholinesterase Inhibitors (Rivastigmine, Aricept, Galantamine)"
+              ],
+              "label": "Parkinson's Disease Dementia"
+            },
+            {
+              "description": "Participants in the Dementia with Lewy Bodies group:\n\n* Diagnosis of clinically probable or possible Dementia with Lewy bodies with at least 1 of the following: Marked fluctuations in cognition, visual hallucinations or spontaneous parkinsonism.\n* Response to cholinesterase inhibitor over a period of six months will be monitored.",
+              "interventionNames": [
+                "Drug: Cholinesterase Inhibitors (Rivastigmine, Aricept, Galantamine)"
+              ],
+              "label": "Dementia with Lewy Bodies"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Dementia with Lewy Bodies",
+                "Parkinson's Disease Dementia"
+              ],
+              "name": "Cholinesterase Inhibitors (Rivastigmine, Aricept, Galantamine)",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Functional and tag SNPs in the following genes will be assessed:\n\nacetylcholinesterase (ACHE); butyrylcholinesterase (BCHE); M1 muscarinic receptor (CHRM1); alpha7-nicotinic receptor (CHRNA7); Apolipoprotein E (ApoE); Cytochrome P450 2D6 (protein: CYP2D6 /gene: CYP2D6); CYP3A4; all genes related to blood pressure disregulation, white matter changes found on neuroimaging, and genes related to Lewy Body Spectrum disorders in general.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 57,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Genetic and Perfusion Study of Response to Cognitive Enhancers in Lewy Body Disease",
+          "nctId": "NCT01944436",
+          "officialTitle": "Lewy Body Spectrum Disorders: Investigating Neuropsychiatric Benefit and Adverse Effects in Response to Cholinesterase Inhibitors Using Genetics and Brain SPECT",
+          "orgStudyIdInfo": {
+            "id": "LBD-312-2006"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Sunnybrook Health Sciences Centre"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Change from baseline in perfusion brain SPECT at 6 months",
+              "timeFrame": "0 and 6 months"
+            },
+            {
+              "measure": "Change from baseline in neuropsychological assessment scores at 6 months",
+              "timeFrame": "0 and 6 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Volumetric Brain MRI",
+              "timeFrame": "Baseline"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2016-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-04-13",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-04-12",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2016-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2006-09"
+          },
+          "statusVerifiedDate": "2016-04",
+          "studyFirstPostDateStruct": {
+            "date": "2013-09-17",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2013-09-10",
+          "studyFirstSubmitQcDate": "2013-09-12"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

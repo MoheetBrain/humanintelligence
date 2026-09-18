@@ -1,0 +1,217 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D019967",
+          "term": "Schizophrenia Spectrum and Other Psychotic Disorders"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D012559",
+          "term": "Schizophrenia"
+        },
+        {
+          "id": "D011618",
+          "term": "Psychotic Disorders"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "DAR-0100A is a dopamine D1 full agonist, the active component of the racemic mixture DAR-0100",
+          "interventionNames": [
+            "Drug: DAR-100A"
+          ],
+          "label": "DAR-100A",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Intravenously over 30 minutes for 5 days, 9 days off then again for 5 more days",
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "DAR-100A"
+          ],
+          "description": "15mg or 0.5mg of DAR-100A intravenously over 30 minutes for 5 days, 9 days off then again for 5 more days",
+          "name": "DAR-100A",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Placebo",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Schizophrenia",
+        "Schizoaffective Disorder"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "New York",
+          "country": "United States",
+          "facility": "New York State Psychiatric Institute",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "zip": "10032"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "New York State Psychiatric Institute",
+          "name": "Jeffrey A Lieberman, M.D.",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "The investigators propose to recruit individuals with schizophrenia who are symptomatically stable and already taking medications to participate in this study. The investigators will recruit 90 individuals with schizophrenia and randomize them to low and high doses of DAR-0100A, as well as to placebo. The investigators will have them stay in the hospital for several weeks and receive up to 10 doses of DAR-0100A. The investigators will also test their cognition before and after receiving DAR-0100A to see if DAR-0100A is helpful and perform MRI scans before and after taking the medication to see which areas of the brain are activated when DAR-0100A is administered. These tests will be very important because they will help the investigators determine whether the D1 receptor is a good treatment target for schizophrenia and whether more research and resources should be devoted to finding medications that target this system.\n\nPatients with schizophrenia will be free of other medical, psychiatric and neurological disorders including alcohol and substance dependence, and will be able to understand the nature of the study and to provide informed consent.",
+      "detailedDescription": "Schizophrenia (SCZ) manifests as positive symptoms, negative symptoms and cognitive disturbances. To date, all of the available medications to treat schizophrenia bind primarily to the dopamine-2 (D2) receptor in the brain, and are only effective at treating the positive symptoms of schizophrenia. This is unfortunate given that negative and cognitive symptoms account for most of the disability in schizophrenia.\n\nEmerging research over the past several decades has suggested a potential role for the dopamine-1 (D1) receptor in schizophrenia, as well as a role for D1 receptor stimulation in improving cognitive deficits. DAR-0100A is a new medication that binds selectively to the D1 receptor. It has been found to be safe when given to individuals with schizophrenia, and preliminary data suggests that it may be able to help with cognitive deficits.\n\nThe investigators propose to recruit individuals with schizophrenia who are symptomatically stable and already taking medications to participate in this study. The investigators will recruit 90 individuals with schizophrenia and randomize them to low and high doses of DAR-0100A, as well as to placebo. Patients will stay in the hospital for several weeks and receive up to 10 doses of DAR-0100A. The investigators will also test their cognition before and after receiving DAR-0100A to see if DAR-0100A is helpful and perform MRI scans before and after taking the medication to see which areas of the brain are activated when DAR-0100A is administered. These tests will be very important because they will help the investigators determine whether the D1 receptor is a good treatment target for schizophrenia and whether more research and resources should be devoted to finding medications that target this system.\n\nPatients with schizophrenia will be free of other medical, psychiatric and neurological disorders including alcohol and substance dependence, and will be able to understand the nature of the study and to provide informed consent."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 68,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "EARLY_PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Males or females between 18 and 55 years old\n* Fulfill Diagnostic and Statistical Manual, version 4 (DSM-IV) criteria schizophrenic illness, schizophreniform or schizoaffective disorder\n* A negative urine toxicology\n* Capacity to understand the study and to give written informed consent\n* Must be on a stable dose of risperidone, aripiprazole, lurasidone, iloperidone, paliperidone, or haloperidol for at least 4 weeks if oral adn 2 cycles if depot. Absence of any antipsychotic medications other than risperidone, aripiprazole, or haloperidol for at least 4 weeks if oral or 2 cycles if depot prior to the study. Mood stabilizers, benzodiazepines and antidepressants are allowed as long as the drugs have not been changed for 4 weeks.\n* Psychiatrically stable\n\nExclusion Criteria:\n\n* Pregnancy or lactation, lack of effective birth control during the 15 days before the initial day of the study and for the duration of the drug trial\n* Presence or positive history of severe medical or neurological illness, or any cardiovascular or liver disease\n* Any current use of amphetamines, opiates, cocaine, sedative-hypnotics, cannabis, or other psychoactive drugs (other than nicotine)\n* Metal implants or paramagnetic objects contained within the body which may interfere with MRI scan\n* A history of substance dependence (other than nicotine or cannabis) or substance abuse within the previous 6 months (other than nicotine)\n* Any current use of anticholinergic or anticoagulant medications. Any current use of any medications that can affect cognition or clotting other than occasional nonsteroidal antiinflammatory drug (NSAID)\n* Impaired intellectual functioning\n* Orthostatic hypotension\n* BP systolic BP \\<90 or \\> 140 or diastolic BP \\< 60 or \\> 90\n* Antipsychotic polypharmacy within the previous four weeks.",
+      "healthyVolunteers": false,
+      "maximumAge": "55 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Pharmacologic and Clinical Testing of a D1 Agonist for Cognitive Enhancement in Neuropsychiatric Disorders",
+      "nctId": "NCT01519557",
+      "officialTitle": "Pharmacologic and Clinical Testing of a D1 Agonist for Cognitive Enhancement in Neuropsychiatric Disorders",
+      "orgStudyIdInfo": {
+        "id": "#6329"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "New York State Psychiatric Institute"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "U01MH076544-03",
+          "link": "https://reporter.nih.gov/quickSearch/U01MH076544-03",
+          "type": "NIH"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The investigators will measure neural activity during working memory (WM) tasks using blood-oxygen-level-dependent (BOLD)contrast function magnetic resonance imaging (fMRI) and the n-back task and self-ordered object working memory task (SOWMT), prior to (day 0, baseline) and after receiving sub-acute (day 5) treatment with DAR-0100A (15mg or 0.5mg) or placebo.",
+          "measure": "Change from Baseline in resting blood flow and neural activity during working memory tasks in the dorsolateral prefrontal cortex (DLPFC)after 5 days study drug administration.",
+          "timeFrame": "Day 0 (baseline) and Day 5"
+        },
+        {
+          "description": "The investigators will measure neural activity during working memory (WM) tasks using blood-oxygen-level-dependent (BOLD)contrast function magnetic resonance imaging(fMRI) and the n-back task and self-ordered object working memory task (SOWMT), prior to (day 0, baseline) and after receiving sub-acute (day 5) treatment with DAR-0100A (15mg or 0.5mg) or placebo.",
+          "measure": "Change from Baseline in resting blood flow and neural activity during working memory tasks in the dorsolateral prefrontal cortex (DLPFC)after 5 days study drug administration.",
+          "timeFrame": "Day 0 (baseline) and Day 5"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "The main outcome measures will be the change in composite score on the MATRICS Consensus Cognitive Battery (MCCB) and CogState Schizophrenia Test batteries from baseline(Day 0) and after repeated administration of DAR-0100A or placebo (Day 5). These batteries are also designed to be repeatable (insensitive to practice effects)and to allow for measurements of changes in performance (no floor or ceiling effects).",
+          "measure": "Change from Baseline in cognitive performance after 5 days study drug administration.",
+          "timeFrame": "Patients will be tested at baseline and after repeated administration of DAR-0100A or placebo, and 3 months after the cessation of treatment with the D1 agonist"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "New York State Psychiatric Institute"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2013-11",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2015-03-04",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2015-03-03",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2013-08",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2011-04"
+      },
+      "statusVerifiedDate": "2015-02",
+      "studyFirstPostDateStruct": {
+        "date": "2012-01-27",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2012-01-13",
+      "studyFirstSubmitQcDate": "2012-01-24"
+    }
+  }
+}

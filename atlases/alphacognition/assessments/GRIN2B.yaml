@@ -4,6 +4,13 @@
 # data/interim/; the level rules are in that script's docstring. Lead-atlas facets, where
 # present, are hand-written in atlases/alphacognition/lead_atlas_facets.yaml and merged in.
 # Re-run the script rather than editing this file.
+#
+# Sprint 2 (2026-09-18): agent:orchestrator added reporting_gap_refs to
+# human_intervention_evidence from the Task-B target-directed registry search, and
+# extended that facet's search_basis. No level and no counter_level was changed: a
+# completed-but-unreported trial is a reporting gap, not a tested null.
+# This file was re-emitted by a script, so inline comments below this point were lost;
+# the record content is unchanged apart from the two fields named above.
 target_id: TGT:GRIN2B
 schema_version: 0.1.0
 assessed_by: agent:alphacognition
@@ -200,7 +207,14 @@ facets:
   search_basis: 'Searched: PubMed for human interventional studies of this target with a cognitive endpoint,
     and ClinicalTrials.gov API v2 for registered trials. A hit would have been a randomised or open-label
     human study reporting a cognitive endpoint. A trial that measured no cognitive endpoint is a coverage
-    gap, not a hit and not a miss (R5).'
+    gap, not a hit and not a miss (R5). Sprint-2 Task B additionally ran a target-directed ClinicalTrials.gov
+    search (terms, per-term hit counts and full classification in evidence/registry_searches/GRIN2B.yaml),
+    which the Sprint-1 grade did not have. It identified 2 completed trial(s) carrying a cognitive outcome
+    measure with no posted results; those are in reporting_gap_refs and are NOT counter-evidence, because
+    a trial that never reported cannot have failed.'
+  reporting_gap_refs:
+  - SRC:NCT:NCT00234637
+  - SRC:NCT:NCT00334906
 facets_not_owned_by_this_agent: []
 notes: 'Evidence basis for the four genetics facets. Genes covered by this target: GRIN2B. GWAS Catalog
   release 2026-09-13, 24 panel terms of which 22 queried; Open Targets data version 26.06; GTEx dataset

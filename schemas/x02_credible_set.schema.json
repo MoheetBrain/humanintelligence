@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intelligence-blueprint.local/schemas/v0_2_0/x02_credible_set",
+  "title": "X02CredibleSetRow",
+  "description": "One row of credible_sets.tsv: a fine-mapping credible set for one study, one trait, one locus.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "credible_set_id",
+    "study_id",
+    "trait",
+    "finemapping_method",
+    "coverage",
+    "genome_build",
+    "ld_reference_panel",
+    "ld_panel_ancestry"
+  ],
+  "properties": {
+    "credible_set_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "study_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "trait": {
+      "type": "string",
+      "minLength": 1
+    },
+    "efo_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^EFO_[0-9]+$"
+    },
+    "locus_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "finemapping_method": {
+      "type": "string",
+      "$comment": "vocabulary: finemapping_method",
+      "enum": [
+        "susie",
+        "finemap",
+        "abf",
+        "caviar",
+        "dap_g",
+        "other"
+      ]
+    },
+    "finemapping_method_version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "n_variants": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 1
+    },
+    "coverage": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMaximum": 1.0000001,
+      "description": "Nominal credible-set coverage, e.g. 0.95. A method parameter, not a probability we assert."
+    },
+    "purity_min_r2": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ld_reference_panel": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ld_panel_ancestry": {
+      "type": "string",
+      "minLength": 1,
+      "description": "MANDATORY: an LD panel whose ancestry differs from the GWAS population is a known artefact source and the red team attacks it first."
+    },
+    "conditioned_on": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "genome_build": {
+      "type": "string",
+      "$comment": "vocabulary: genome_build",
+      "enum": [
+        "GRCh37",
+        "GRCh38",
+        "T2T-CHM13"
+      ]
+    }
+  }
+}

@@ -1,0 +1,235 @@
+# Target-directed trial-registry search terms.
+#
+# WHY THIS FILE EXISTS
+# --------------------
+# Sprint 1 found that three atlases graded `human_intervention_evidence: 0` after
+# LITERATURE-only searching. The power atlas, forced by resolution R11 to declare what it
+# had actually searched, then ran registry searches and overturned two of its own
+# published statements: it had asserted that no human klotho intervention and no human
+# MCT1 intervention existed, and both were wrong. A registry holds interventions that
+# were performed and never published, which is precisely the category a
+# human-intervention facet depends on and precisely what a literature search cannot
+# return.
+#
+# TERM PROVENANCE
+# ---------------
+# Search terms are not claims — a term either retrieves records or it does not — but
+# where a term asserts a compound-target pairing, that pairing is sourced:
+#
+#   claim_derived              the pairing is already asserted by a claim in this
+#                              repository, in evidence/claims/<atlas>/<SYMBOL>.yaml
+#   intervention_record        the repository's intervention record links it via `targets`
+#   repo_intervention_unlinked the compound is a registered intervention entity here and
+#                              the owning atlas discusses it for this target, but no
+#                              `targets` link was written
+#   gene_symbol                the symbol itself; registries index some gene names in
+#                              titles and descriptions
+#   mechanism_class            a free-text pharmacological class phrase used purely as a
+#                              retrieval heuristic, asserting nothing
+#
+# A target with no compound term is searched by symbol and mechanism class alone. If that
+# returns nothing, the result is `no_trial_identified` — which is a statement about the
+# registry, NOT a biological null, and is recorded as such.
+
+schema_version: 0.2.0
+created_by: agent:orchestrator
+created_on: "2026-09-18"
+registry: clinicaltrials_gov_v2
+
+# Outcome-measure keywords used to decide whether a trial measured cognition at all.
+# Deliberately broad on instruments and narrow on constructs: a trial that measured
+# adaptive behaviour or symptom severity did not measure cognition, and conflating them
+# is how "tested and null" gets manufactured out of "tested something else".
+cognitive_endpoint_keywords:
+  - cognit
+  - neurocognit
+  - neuropsycholog
+  - memory
+  - recall
+  - recognition task
+  - working memory
+  - attention
+  - executive function
+  - processing speed
+  - reaction time
+  - intelligence
+  - iq
+  - learning
+  - matrics
+  - mccb
+  - moca
+  - mmse
+  - adas-cog
+  - cantab
+  - wais
+  - wisc
+  - ravlt
+  - digit span
+  - stroop
+  - trail making
+  - verbal fluency
+  - n-back
+
+# Instruments that are NOT cognition, listed so the classifier does not count them.
+# Vineland is adaptive behaviour; CGI and PANSS are clinical severity. A trial whose only
+# "cognitive-sounding" outcome is one of these is `tested_wrong_endpoint`.
+non_cognitive_lookalikes:
+  - vineland
+  - adaptive behavior
+  - adaptive behaviour
+  - clinical global impression
+  - panss
+  - cgi-
+  - quality of life
+  - caregiver burden
+
+targets:
+
+  # ----------------------------------------------------------------- brakes ------
+  TGT:GABRA5:
+    symbol: GABRA5
+    terms:
+      - {term: basmisanil, provenance: claim_derived}
+      - {term: "L-655,708", provenance: claim_derived}
+      - {term: ONO-8590580, provenance: claim_derived}
+      - {term: GABRA5, provenance: gene_symbol}
+      - {term: "alpha5 GABAA receptor", provenance: mechanism_class}
+
+  TGT:RGS14:
+    symbol: RGS14
+    terms:
+      - {term: RGS14, provenance: gene_symbol}
+
+  TGT:EIF2S1:
+    symbol: EIF2S1
+    terms:
+      - {term: EIF2S1, provenance: gene_symbol}
+      - {term: "integrated stress response", provenance: mechanism_class}
+      - {term: "eIF2 alpha", provenance: mechanism_class}
+
+  TGT:EIF2B_COMPLEX:
+    symbol: EIF2B_COMPLEX
+    terms:
+      - {term: DNL343, provenance: repo_intervention_unlinked}
+      - {term: ISRIB, provenance: repo_intervention_unlinked}
+      - {term: "eIF2B activator", provenance: mechanism_class}
+      - {term: eIF2B, provenance: mechanism_class}
+
+  TGT:PTPN5:
+    symbol: PTPN5
+    terms:
+      - {term: TC-2153, provenance: claim_derived}
+      - {term: PTPN5, provenance: gene_symbol}
+      - {term: "STEP inhibitor", provenance: mechanism_class}
+
+  TGT:HCN1:
+    symbol: HCN1
+    terms:
+      - {term: ZD7288, provenance: repo_intervention_unlinked}
+      - {term: HCN1, provenance: gene_symbol}
+      - {term: "HCN channel blocker", provenance: mechanism_class}
+
+  TGT:KCNQ2:
+    symbol: KCNQ2
+    terms:
+      - {term: ezogabine, provenance: claim_derived}
+      - {term: retigabine, provenance: claim_derived}
+      - {term: KCNQ2, provenance: gene_symbol}
+      - {term: "KCNQ potassium channel opener", provenance: mechanism_class}
+
+  TGT:KCNQ3:
+    symbol: KCNQ3
+    terms:
+      - {term: KCNQ3, provenance: gene_symbol}
+      - {term: "Kv7 channel", provenance: mechanism_class}
+
+  TGT:RTN4R:
+    symbol: RTN4R
+    terms:
+      - {term: RTN4R, provenance: gene_symbol}
+      - {term: "Nogo receptor", provenance: mechanism_class}
+      - {term: "NgR1", provenance: repo_intervention_unlinked}
+
+  TGT:OTX2:
+    symbol: OTX2
+    terms:
+      - {term: OTX2, provenance: gene_symbol}
+      - {term: "perineuronal net", provenance: mechanism_class}
+
+  TGT:ADORA1:
+    symbol: ADORA1
+    terms:
+      - {term: caffeine, provenance: claim_derived}
+      - {term: ADORA1, provenance: gene_symbol}
+      - {term: "adenosine A1 receptor antagonist", provenance: mechanism_class}
+
+  TGT:HDAC2:
+    symbol: HDAC2
+    terms:
+      - {term: FRM-0334, provenance: claim_derived}
+      - {term: "trichostatin A", provenance: claim_derived}
+      - {term: valproic acid, provenance: claim_derived}
+      - {term: HDAC2, provenance: gene_symbol}
+      - {term: "histone deacetylase inhibitor cognition", provenance: mechanism_class}
+
+  TGT:PDE4B:
+    symbol: PDE4B
+    terms:
+      - {term: roflumilast, provenance: claim_derived}
+      - {term: PDE4B, provenance: gene_symbol}
+      - {term: "phosphodiesterase 4 inhibitor cognition", provenance: mechanism_class}
+
+  TGT:GPR158:
+    symbol: GPR158
+    terms:
+      - {term: GPR158, provenance: gene_symbol}
+      - {term: osteocalcin, provenance: repo_intervention_unlinked}
+
+  # -------------------------------------------------------- alphacognition -------
+  TGT:GRIN2B:
+    symbol: GRIN2B
+    terms:
+      - {term: memantine, provenance: intervention_record}
+      - {term: GRIN2B, provenance: gene_symbol}
+      - {term: "NMDA receptor GluN2B", provenance: mechanism_class}
+
+  TGT:CRTC1:
+    symbol: CRTC1
+    terms:
+      - {term: CRTC1, provenance: gene_symbol}
+      - {term: "CREB coactivator", provenance: mechanism_class}
+
+  TGT:CHRM1:
+    symbol: CHRM1
+    terms:
+      - {term: xanomeline, provenance: claim_derived}
+      - {term: HTL0018318, provenance: claim_derived}
+      - {term: CHRM1, provenance: gene_symbol}
+      - {term: "muscarinic M1 receptor agonist", provenance: mechanism_class}
+
+  TGT:GRM5:
+    symbol: GRM5
+    terms:
+      - {term: mavoglurant, provenance: intervention_record}
+      - {term: basimglurant, provenance: mechanism_class}
+      - {term: GRM5, provenance: gene_symbol}
+      - {term: "mGluR5 modulator", provenance: mechanism_class}
+      - {term: mGluR5, provenance: mechanism_class}
+
+  TGT:DRD1:
+    symbol: DRD1
+    terms:
+      - {term: dihydrexidine, provenance: intervention_record}
+      - {term: DRD1, provenance: gene_symbol}
+      - {term: "dopamine D1 receptor agonist", provenance: mechanism_class}
+      - {term: "dopamine receptor 1 agonist", provenance: mechanism_class}
+      - {term: "D1 agonist", provenance: mechanism_class}
+      - {term: ecopipam, provenance: mechanism_class}
+
+  TGT:HTR2A:
+    symbol: HTR2A
+    terms:
+      - {term: psilocybin, provenance: intervention_record}
+      - {term: volinanserin, provenance: intervention_record}
+      - {term: HTR2A, provenance: gene_symbol}
+      - {term: "5-HT2A receptor", provenance: mechanism_class}

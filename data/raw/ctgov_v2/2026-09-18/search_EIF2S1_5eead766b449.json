@@ -1,0 +1,667 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "health control group",
+              "type": "NO_INTERVENTION"
+            },
+            {
+              "interventionNames": [
+                "Drug: Tongxieyaofang(granule)"
+              ],
+              "label": "Tongxieyaofang granule group",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Tongxieyaofang granule group"
+              ],
+              "description": "Take this granule twice a day,one bag for each time,one hour after a meal,for 4 weeks",
+              "name": "Tongxieyaofang(granule)",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Mechanism of PERK - eIF2a Pathways in Intestinal Mucosal Barrier of IBS-D and the Role \"Metabolism Ingredients\" of Tongxieyaofang",
+          "nctId": "NCT04122586",
+          "officialTitle": "Mechanism of PERK - eIF2a Pathways in Intestinal Mucosal Barrier of IBS-D and the Role \"Metabolism Ingredients \" of Tongxieyaofang",
+          "orgStudyIdInfo": {
+            "id": "81774304"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Xiyuan Hospital of China Academy of Chinese Medical Sciences"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Patients are graded according to their own symptoms（abdominal pain，bloating，defecation satisfaction，the extent to which the disease affects the lives of patients，bowel movements）, the total score less than 75 points was considered as in remission, 75\\~175 as mild, 175\\~300 as moderate, and over 300 as severe. We will assess changes in patient scores before and after treatment to reflect the extent of disease remission.",
+              "measure": "Irritable Bowel Syndrome Symptom Severity(IBS-SSS) scale",
+              "timeFrame": "IBS-SSS was evaluated by patients at 4th week"
+            },
+            {
+              "description": "Different fecal types can reflect different intestinal transit times, the lower the score, the longer the transmission time; the higher the score, the shorter the transmission time. We will assess changes in scores before and after treatment to reflect the extent of disease remission.",
+              "measure": "Bristol stool form scale（BSFS）",
+              "timeFrame": "BSFS was evaluated by patients at 4th week"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Grading from the field of physiology, independence, and psychology，Use score changes to assess improvement in all areas of the patient.Minimum score is 0，means no symptoms，maximum score is 144，means all symptoms are severe.",
+              "measure": "IBS-D PRO( patient reported outcomes) Scale",
+              "timeFrame": "IBS-D PRO Scale was evaluated at 4th week"
+            },
+            {
+              "description": "Score evaluation from 8 aspects: physical function, role-physical, pain, global health status, vitality，social function,role-emotional， mental health.Use score changes to assess improvement in all areas of the patient. Maximum score is147.The higher the score, the better the status in all aspects.",
+              "measure": "SF-36(the MOS item short from health survey)Scale",
+              "timeFrame": "SF-36 Scale was evaluated at 4th week"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2020-01-02",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-12-29",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2020-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2018-08-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-10",
+          "studyFirstPostDateStruct": {
+            "date": "2019-10-10",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-09-25",
+          "studyFirstSubmitQcDate": "2019-10-09"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients with SLE",
+              "label": "Patients"
+            },
+            {
+              "label": "Healthy subjects"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 90,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "GADD34-IFN",
+          "briefTitle": "GADD34 and Type I IFN Response Genes in SLE",
+          "nctId": "NCT03206359",
+          "officialTitle": "Evaluation of GADD34 and Type I IFN Response Gene Expression in Patients Suffering From Systemic Lupus Erythematosus",
+          "orgStudyIdInfo": {
+            "id": "38RC17.197"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University Hospital, Grenoble"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Evaluation of GADD34 expression in PBMC of patients suffering from SLE compared to GADD34 expression in PBMC of healthy subjets. GADD34 gene expression level is quantified in the PBMC by quantitative PCR",
+              "measure": "GADD34 expression in SLE patients",
+              "timeFrame": "4 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Evaluation of the relation between IFN response gene expression and GADD34 expression in PBMC of patients suffering from SLE. IFN response gene and GADD34 expression level is quantified in the PBMC by quantitative PCR",
+              "measure": "GADD34 and IFN response gene expression",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the relation between GADD34 overexpression and the activity of the pathology",
+              "measure": "GADD34 expression and pathology activity",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the relation between GADD34 overexpression and the presence of anti-DNA antibodies.",
+              "measure": "GADD34 expression and pathology activity",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the expression of other genes of UPR (like CHOP and BiP) in PBMC of patients with SLE, compared to the expression of these genes in PBMC of healthy subjets.",
+              "measure": "CHOP and BiP expression",
+              "timeFrame": "4 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2015-04-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-07-05",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-07-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2015-04-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2012-01-25",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-06",
+          "studyFirstPostDateStruct": {
+            "date": "2017-07-02",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-06-30",
+          "studyFirstSubmitQcDate": "2017-06-30"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Group K +: cancer of the upper aerodigestive tract with or without cachexia",
+              "interventionNames": [
+                "Procedure: carcinological surgery"
+              ],
+              "label": "Group K +"
+            },
+            {
+              "description": "Group K-: absence of cancer and absence of cachexia",
+              "interventionNames": [
+                "Procedure: cervical surgery"
+              ],
+              "label": "Group K-"
+            },
+            {
+              "description": "The MYOMEC study includes the inclusion of healthy patients (to form a control group",
+              "interventionNames": [
+                "Procedure: carcinological surgery",
+                "Procedure: cervical surgery"
+              ],
+              "label": "Control group"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Control group",
+                "Group K +"
+              ],
+              "description": "carcinological surgery for Group K +",
+              "name": "carcinological surgery",
+              "type": "PROCEDURE"
+            },
+            {
+              "armGroupLabels": [
+                "Control group",
+                "Group K-"
+              ],
+              "description": "cervical surgery for Group K-",
+              "name": "cervical surgery",
+              "type": "PROCEDURE"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "OTHER",
+            "timePerspective": "RETROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "MYOMEC",
+          "briefTitle": "Mitochondrial Activity and Myosteatosis in the Cachexia of Cancers of the Upper Aerodigestive Tract",
+          "nctId": "NCT03111771",
+          "officialTitle": "Mitochondrial Activity and Myosteatosis in the Cachexia of Cancers of the Upper Aerodigestive Tract",
+          "orgStudyIdInfo": {
+            "id": "CHU-313"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University Hospital, Clermont-Ferrand"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "2016-A00611-50",
+              "id": "2016-A00611-50",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The ratio of ATP produced by mitochondria and oxygen consumed by muscle mitochondria",
+              "measure": "ATP / Oxygen ratio",
+              "timeFrame": "at day 1"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "(Expression of cytochrome c oxidase, citrate synthase, HAD, complexes 1, 2 and 3 of the mitochondrial respiratory chain)",
+              "measure": "Study of enzymatic mitochondrial activity",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(Expression of ATGL and HSL)",
+              "measure": "Study of the activity of muscle lipases",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(Expression of the Perilipines 3 and 5)",
+              "measure": "Study of the mobilization of the muscular lipid droplets",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(Muscular ceramide concentration, DAG and TAG)",
+              "measure": "Study of the muscular lipid infiltration",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "myosteatosis (Computed tomography in L3 for quantification in Hounsfield units)",
+              "measure": "Study of myosteatosis",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(phosphorylation rate of mTOR and EiF2alpha)",
+              "measure": "Study of the activity of signaling pathways of protein anabolism",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(AkT phosphorylation rate)",
+              "measure": "Study of the activity of the signaling pathway of insulin in the muscle",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(Expression of MURF1 and MAF-box ligases)",
+              "measure": "Study of muscle proteolytic activity",
+              "timeFrame": "at day 1"
+            },
+            {
+              "description": "(Insulinemia, Fasting Glycemia, Hepatic and Lipid Assessment, CRP, Albumin, Pre-albumin, Blood Ionogram, Inflammatory Markers)",
+              "measure": "Evaluation of the preoperative metabolic and nutritional plasma status of patients",
+              "timeFrame": "at day 1"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-09",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2017-04-13",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-04-07",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2017-08",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2016-11",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-04",
+          "studyFirstPostDateStruct": {
+            "date": "2017-04-13",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-03-31",
+          "studyFirstSubmitQcDate": "2017-04-07"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "28-day cycles of ganetespib + sirolimus",
+              "interventionNames": [
+                "Drug: ganetespib",
+                "Drug: Sirolimus"
+              ],
+              "label": "ganetespib / sirolimus",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ganetespib / sirolimus"
+              ],
+              "description": "Phase 1 Dose 1: 150 mg/m² IV on days 1, 8, and 15 intravenously over 1 hour; Phase 1 Dose 2: 200 mg/m² IV on days 1, 8, and 15 intravenously over 1 hour; Phase 2: 200 mg/m² IV on days 1, 8, and 15 intravenously over 1 hour",
+              "name": "ganetespib",
+              "otherNames": [
+                "STA-9090"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ganetespib / sirolimus"
+              ],
+              "description": "4mg taken orally once daily on a continuous dosing schedule; Loading dose 12 mg on cycle 1 day 1 only.",
+              "name": "Sirolimus",
+              "otherNames": [
+                "Rapamycin"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 20,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "SARC023: Ganetespib and Sirolimus in Patients With MPNST (Malignant Peripheral Nerve Sheath Tumors)",
+          "nctId": "NCT02008877",
+          "officialTitle": "A Phase I/II Trial of Ganetespib in Combination With the mTOR Inhibitor Sirolimus for Patients With Recurrent or Refractory Sarcomas Including Unresectable or Metastatic Malignant Peripheral Nerve Sheath Tumors",
+          "orgStudyIdInfo": {
+            "id": "SARC023"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Sarcoma Alliance for Research through Collaboration"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "Department of Defense",
+              "id": "CDMRP-NF120087",
+              "type": "OTHER_GRANT"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "To assess the safety, tolerability, and maximum tolerated/ recommended dose of ganetespib when administered in combination with sirolimus in patients with refractory sarcomas or unresectable or metastatic sporadic or neurofibromatosis type 1 (NF1) associated MPNST. Toxicities observed during the first cycle will be used to define the MTD/Recommended dose. Toxicity will be graded using the NCI Common Terminology Criteria for Adverse Events (CTCAE) version 4.0. DLT will be defined as any of the following events that are possibly, probably, or definitely attributable to ganetespib or sirolimus. The DLT observation period for the purposes of dose escalation will be the first cycle of therapy.",
+              "measure": "Number of Dose Limiting Toxicities of Ganetespib When Administered in Combination With Sirolimus.",
+              "timeFrame": "Toxicities will be evaluated over the first treatment cycle (each cycle=28 days)"
+            },
+            {
+              "description": "Assessed using the World Health Organization (WHO) criteria. Tumor assessments will be obtained every 2 cycles. Clinical benefit is defined as stable disease, Partial Response (PR), Complete Response (CR). For patients who experience progression by WHO but in the opinion of the treating investigator are deriving benefit from therapy and have not otherwise met off treatment or off study criteria, may continue on treatment as long as patient has not met progression by RECIST 1.1.",
+              "measure": "Clinical Benefit of Ganetespib in Combination With Sirolimus",
+              "timeFrame": "Response evaluations will be performed after every 2 treatment cycles (each cycle=28 days)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "To describe the plasma pharmacokinetic profile of ganetespib and sirolimus when administered in combination therapy.",
+              "measure": "Change in Plasma Pharmacokinetic Profile of Ganetespib and Sirolimus When Administered in Combination-Observed Maximum Plasma Concentration (Cmax)",
+              "timeFrame": "Pre-therapy levels drawn at baseline and pharmacokinetic analysis occurs on Cycle 1 Day 15"
+            },
+            {
+              "description": "To explore changes in pharmacodynamic parameters in peripheral blood mononuclear cells performed on day 1 prior to ganetespib and sirolimus administration, and on day 15, 6 hours post drug administration. Hsp inhibition (Hsp70), mTOR inhibition (phospho-S6 and Akt Phosphorylation), UPR activation (EIF2alpha phosphorylation) will be explored. Western blot analyses were performed for phospho (p)-Akt, p-eIF2α, p-S6, and Hsp70. The absorbance of each phosphoprotein lane was recorded and protein levels were determined after normalizing for levels of corresponding total protein.",
+              "measure": "Changes in Pharmacodynamic Parameters in Peripheral Blood Mononuclear Cells",
+              "timeFrame": "Baseline and Cycle 1 Day 15"
+            },
+            {
+              "description": "To assess patient-reported pain severity and the impact of pain on daily activities before and during treatment with ganetespib and sirolimus. The Numerical Rating Scale-11 (NRS-11) will be used to assess pain severity. The NRS-11 is a self-report segmented 11-point numeric scale that assesses pain severity. It consists of a horizontal line with 0 representing \"no pain\" at the right end of the line and 10 representing \"worst pain you can imagine\" at the left end.The Brief Pain Inventory is a 7-item self-report questionnaire that measures the extent to which pain interferes with daily functioning. Patients are asked to indicate how much pain interfered with various activities in the past week, with scores ranging from 0 (does not interfere) to 10 (completely interferes). A total score is obtained by taking the mean of the scores for all 7 items; thus, the total pain interference score can range from 0 to 10.",
+              "measure": "Patient-reported Pain Severity and the Impact of Pain on Daily Activities",
+              "timeFrame": "Baseline and prior to Cycle 3"
+            },
+            {
+              "description": "To evaluate the utility of three-dimensional MRI (3D-MRI) analysis in comparison to 1-dimensional and 2-dimensional measurements as a method to more sensitively monitor response.",
+              "measure": "Utility of Three-dimensional MRI (3D-MRI) Analysis in Comparison to 1-dimensional and 2-dimensional Measurements",
+              "timeFrame": "4 months"
+            },
+            {
+              "description": "To describe the plasma pharmacokinetic profile of ganetespib in terms of half life.",
+              "measure": "Plasma Pharmacokinetic Profile of Ganetespib When Administered in Combination With Sirolimus",
+              "timeFrame": "Cycle 1 Day 15"
+            },
+            {
+              "description": "A conventional 3+3 dose escalation design was used for phase 1. All patients in phase 2 were treated with the recommended dose.",
+              "measure": "Determine Maximum Tolerated Dose (MTD)/Recommended Dose (RD) of Ganetespib",
+              "timeFrame": "Phase 1 of study"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-05-15",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-05-01",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-04",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-05-02",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2018-09-06",
+          "resultsFirstSubmitQcDate": "2019-04-11",
+          "startDateStruct": {
+            "date": "2013-12"
+          },
+          "statusVerifiedDate": "2019-04",
+          "studyFirstPostDateStruct": {
+            "date": "2013-12-11",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2013-11-25",
+          "studyFirstSubmitQcDate": "2013-12-06"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Women without periodontal disease neither PCOS",
+              "label": "Control group without periodontal disease"
+            },
+            {
+              "description": "Women with PCOS with or without periodontal disease",
+              "label": "PCOS group with or without periodontal disease"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 100,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Periodontal Status and Endothelial Dysfunction in Patients With Polycystic Ovary Syndrome",
+          "nctId": "NCT06184412",
+          "officialTitle": "Periodontal Status Assessment, Molecular Mechanisms Underlying Inflammatory Response, and Endothelial Dysfunction Evaluation in Patients With Polycystic Ovary Syndrome",
+          "orgStudyIdInfo": {
+            "id": "PI19/00437B"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Fundación para el Fomento de la Investigación Sanitaria y Biomédica de la Comunitat Valenciana"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Determine leukocyte-endothelial cell interactions and cellular adhesion molecules in serum (ICAM, VCAM and p-Selectin)",
+              "measure": "Evaluate subclinical atherosclerotic markers in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine proinflammatory cytokines in serum (TNF-alpha, IL6) and expression of inflammatory mediators in leukocytes by Western blot (JNK, NFkB, MCP1)",
+              "measure": "Evaluate inflammatory markers in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine serum oxidative stress markers (MPO, glutathione), expression of GPX-1 by Western blot and total ROS, mitochondrial ROS and superoxide by flow cytometry in leukocytes.",
+              "measure": "Evaluate oxidative stress markers in the study population",
+              "timeFrame": "At recruitment"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Determine expression of NLRP3, ASC, procaspase 1 and caspase 1 by Western blot in leukocytes and serum levels of IL1 beta and IL18 in serum.",
+              "measure": "Evaluate inflammasome complex activation in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of Beclin, ATG5-ATG12, p62, LC3 I, LC3 II and Pink by Western blot in leukocytes.",
+              "measure": "Evaluate markers of autophagy in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of GRP78, eIF2alpha, IRE1 alpha, ATF6 and CHOP by Western blot in leukocytes.",
+              "measure": "Evaluate markers of ER stress in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of PGC1 alpha, mTFA, VDAC, Complex I, II, III, IV and V by Western blot in leukocytes.",
+              "measure": "Evaluate markers of mitochondrial biogenesis and complexes in the study population",
+              "timeFrame": "At recruitment"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-09-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-01-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-01-05",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-06-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2020-02-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-01",
+          "studyFirstPostDateStruct": {
+            "date": "2023-12-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2023-12-14",
+          "studyFirstSubmitQcDate": "2023-12-14"
+        }
+      }
+    }
+  ],
+  "totalCount": 5
+}

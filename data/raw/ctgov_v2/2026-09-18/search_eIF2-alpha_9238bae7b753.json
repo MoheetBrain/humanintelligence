@@ -1,0 +1,336 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "health control group",
+              "type": "NO_INTERVENTION"
+            },
+            {
+              "interventionNames": [
+                "Drug: Tongxieyaofang(granule)"
+              ],
+              "label": "Tongxieyaofang granule group",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Tongxieyaofang granule group"
+              ],
+              "description": "Take this granule twice a day,one bag for each time,one hour after a meal,for 4 weeks",
+              "name": "Tongxieyaofang(granule)",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Mechanism of PERK - eIF2a Pathways in Intestinal Mucosal Barrier of IBS-D and the Role \"Metabolism Ingredients\" of Tongxieyaofang",
+          "nctId": "NCT04122586",
+          "officialTitle": "Mechanism of PERK - eIF2a Pathways in Intestinal Mucosal Barrier of IBS-D and the Role \"Metabolism Ingredients \" of Tongxieyaofang",
+          "orgStudyIdInfo": {
+            "id": "81774304"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Xiyuan Hospital of China Academy of Chinese Medical Sciences"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Patients are graded according to their own symptoms（abdominal pain，bloating，defecation satisfaction，the extent to which the disease affects the lives of patients，bowel movements）, the total score less than 75 points was considered as in remission, 75\\~175 as mild, 175\\~300 as moderate, and over 300 as severe. We will assess changes in patient scores before and after treatment to reflect the extent of disease remission.",
+              "measure": "Irritable Bowel Syndrome Symptom Severity(IBS-SSS) scale",
+              "timeFrame": "IBS-SSS was evaluated by patients at 4th week"
+            },
+            {
+              "description": "Different fecal types can reflect different intestinal transit times, the lower the score, the longer the transmission time; the higher the score, the shorter the transmission time. We will assess changes in scores before and after treatment to reflect the extent of disease remission.",
+              "measure": "Bristol stool form scale（BSFS）",
+              "timeFrame": "BSFS was evaluated by patients at 4th week"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Grading from the field of physiology, independence, and psychology，Use score changes to assess improvement in all areas of the patient.Minimum score is 0，means no symptoms，maximum score is 144，means all symptoms are severe.",
+              "measure": "IBS-D PRO( patient reported outcomes) Scale",
+              "timeFrame": "IBS-D PRO Scale was evaluated at 4th week"
+            },
+            {
+              "description": "Score evaluation from 8 aspects: physical function, role-physical, pain, global health status, vitality，social function,role-emotional， mental health.Use score changes to assess improvement in all areas of the patient. Maximum score is147.The higher the score, the better the status in all aspects.",
+              "measure": "SF-36(the MOS item short from health survey)Scale",
+              "timeFrame": "SF-36 Scale was evaluated at 4th week"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2020-01-02",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-12-29",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2020-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2018-08-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-10",
+          "studyFirstPostDateStruct": {
+            "date": "2019-10-10",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-09-25",
+          "studyFirstSubmitQcDate": "2019-10-09"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients with SLE",
+              "label": "Patients"
+            },
+            {
+              "label": "Healthy subjects"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 90,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "GADD34-IFN",
+          "briefTitle": "GADD34 and Type I IFN Response Genes in SLE",
+          "nctId": "NCT03206359",
+          "officialTitle": "Evaluation of GADD34 and Type I IFN Response Gene Expression in Patients Suffering From Systemic Lupus Erythematosus",
+          "orgStudyIdInfo": {
+            "id": "38RC17.197"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University Hospital, Grenoble"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Evaluation of GADD34 expression in PBMC of patients suffering from SLE compared to GADD34 expression in PBMC of healthy subjets. GADD34 gene expression level is quantified in the PBMC by quantitative PCR",
+              "measure": "GADD34 expression in SLE patients",
+              "timeFrame": "4 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Evaluation of the relation between IFN response gene expression and GADD34 expression in PBMC of patients suffering from SLE. IFN response gene and GADD34 expression level is quantified in the PBMC by quantitative PCR",
+              "measure": "GADD34 and IFN response gene expression",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the relation between GADD34 overexpression and the activity of the pathology",
+              "measure": "GADD34 expression and pathology activity",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the relation between GADD34 overexpression and the presence of anti-DNA antibodies.",
+              "measure": "GADD34 expression and pathology activity",
+              "timeFrame": "4 years"
+            },
+            {
+              "description": "Evaluation of the expression of other genes of UPR (like CHOP and BiP) in PBMC of patients with SLE, compared to the expression of these genes in PBMC of healthy subjets.",
+              "measure": "CHOP and BiP expression",
+              "timeFrame": "4 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2015-04-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-07-05",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-07-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2015-04-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2012-01-25",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-06",
+          "studyFirstPostDateStruct": {
+            "date": "2017-07-02",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-06-30",
+          "studyFirstSubmitQcDate": "2017-06-30"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Women without periodontal disease neither PCOS",
+              "label": "Control group without periodontal disease"
+            },
+            {
+              "description": "Women with PCOS with or without periodontal disease",
+              "label": "PCOS group with or without periodontal disease"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 100,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Periodontal Status and Endothelial Dysfunction in Patients With Polycystic Ovary Syndrome",
+          "nctId": "NCT06184412",
+          "officialTitle": "Periodontal Status Assessment, Molecular Mechanisms Underlying Inflammatory Response, and Endothelial Dysfunction Evaluation in Patients With Polycystic Ovary Syndrome",
+          "orgStudyIdInfo": {
+            "id": "PI19/00437B"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Fundación para el Fomento de la Investigación Sanitaria y Biomédica de la Comunitat Valenciana"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Determine leukocyte-endothelial cell interactions and cellular adhesion molecules in serum (ICAM, VCAM and p-Selectin)",
+              "measure": "Evaluate subclinical atherosclerotic markers in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine proinflammatory cytokines in serum (TNF-alpha, IL6) and expression of inflammatory mediators in leukocytes by Western blot (JNK, NFkB, MCP1)",
+              "measure": "Evaluate inflammatory markers in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine serum oxidative stress markers (MPO, glutathione), expression of GPX-1 by Western blot and total ROS, mitochondrial ROS and superoxide by flow cytometry in leukocytes.",
+              "measure": "Evaluate oxidative stress markers in the study population",
+              "timeFrame": "At recruitment"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Determine expression of NLRP3, ASC, procaspase 1 and caspase 1 by Western blot in leukocytes and serum levels of IL1 beta and IL18 in serum.",
+              "measure": "Evaluate inflammasome complex activation in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of Beclin, ATG5-ATG12, p62, LC3 I, LC3 II and Pink by Western blot in leukocytes.",
+              "measure": "Evaluate markers of autophagy in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of GRP78, eIF2alpha, IRE1 alpha, ATF6 and CHOP by Western blot in leukocytes.",
+              "measure": "Evaluate markers of ER stress in the study population",
+              "timeFrame": "At recruitment"
+            },
+            {
+              "description": "Determine expression of PGC1 alpha, mTFA, VDAC, Complex I, II, III, IV and V by Western blot in leukocytes.",
+              "measure": "Evaluate markers of mitochondrial biogenesis and complexes in the study population",
+              "timeFrame": "At recruitment"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-09-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-01-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-01-05",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-06-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2020-02-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-01",
+          "studyFirstPostDateStruct": {
+            "date": "2023-12-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2023-12-14",
+          "studyFirstSubmitQcDate": "2023-12-14"
+        }
+      }
+    }
+  ],
+  "totalCount": 3
+}

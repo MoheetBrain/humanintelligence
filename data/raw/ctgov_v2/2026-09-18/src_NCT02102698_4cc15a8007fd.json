@@ -1,0 +1,1482 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D001480",
+          "term": "Basal Ganglia Diseases"
+        },
+        {
+          "id": "D001927",
+          "term": "Brain Diseases"
+        },
+        {
+          "id": "D002493",
+          "term": "Central Nervous System Diseases"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D013981",
+          "term": "Tic Disorders"
+        },
+        {
+          "id": "D009069",
+          "term": "Movement Disorders"
+        },
+        {
+          "id": "D020271",
+          "term": "Heredodegenerative Disorders, Nervous System"
+        },
+        {
+          "id": "D019636",
+          "term": "Neurodegenerative Diseases"
+        },
+        {
+          "id": "D030342",
+          "term": "Genetic Diseases, Inborn"
+        },
+        {
+          "id": "D009358",
+          "term": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+        },
+        {
+          "id": "D065886",
+          "term": "Neurodevelopmental Disorders"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D005879",
+          "term": "Tourette Syndrome"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C058081",
+          "term": "ecopipam"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2025-03-20",
+          "filename": "Prot_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": false,
+          "label": "Study Protocol",
+          "size": 5952958,
+          "typeAbbrev": "Prot",
+          "uploadDate": "2025-06-06T12:32"
+        },
+        {
+          "date": "2016-12-21",
+          "filename": "SAP_001.pdf",
+          "hasIcf": false,
+          "hasProtocol": false,
+          "hasSap": true,
+          "label": "Statistical Analysis Plan",
+          "size": 2109518,
+          "typeAbbrev": "SAP",
+          "uploadDate": "2025-06-06T12:34"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Given Ecopipam first and then crossed over to Placebo",
+          "interventionNames": [
+            "Drug: Ecopipam"
+          ],
+          "label": "Ecopipam/Placebo",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Given placebo first and crossed over to Ecopipam",
+          "interventionNames": [
+            "Drug: Ecopipam"
+          ],
+          "label": "Placebo/Ecopipam",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Ecopipam/Placebo",
+            "Placebo/Ecopipam"
+          ],
+          "description": "Ecopipam is a selective antagonist of the dopamine D1 receptor family.",
+          "name": "Ecopipam",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Tourette's Syndrome"
+      ],
+      "keywords": [
+        "Tourette's Syndrome",
+        "Ecopipam",
+        "D1 Receptor",
+        "Phase 2"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Los Angeles",
+          "country": "United States",
+          "facility": "UCLA",
+          "geoPoint": {
+            "lat": 34.05223,
+            "lon": -118.24368
+          },
+          "state": "California",
+          "zip": "90024"
+        },
+        {
+          "city": "St. Petersburg",
+          "country": "United States",
+          "facility": "University of South Florida/Rothman Center for Neuropsychiatry",
+          "geoPoint": {
+            "lat": 27.77086,
+            "lon": -82.67927
+          },
+          "state": "Florida",
+          "zip": "33701"
+        },
+        {
+          "city": "Atlanta",
+          "country": "United States",
+          "facility": "Emory University School Of Medicine",
+          "geoPoint": {
+            "lat": 33.749,
+            "lon": -84.38798
+          },
+          "state": "Georgia",
+          "zip": "30322"
+        },
+        {
+          "city": "Chicago",
+          "country": "United States",
+          "facility": "University of Chicago Medical School",
+          "geoPoint": {
+            "lat": 41.85003,
+            "lon": -87.65005
+          },
+          "state": "Illinois",
+          "zip": "60637"
+        },
+        {
+          "city": "Kansas City",
+          "country": "United States",
+          "facility": "Children's Mercy Kansas City",
+          "geoPoint": {
+            "lat": 39.11417,
+            "lon": -94.62746
+          },
+          "state": "Kansas",
+          "zip": "64108"
+        },
+        {
+          "city": "St Louis",
+          "country": "United States",
+          "facility": "Washington University School of Medicine",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "zip": "63110"
+        },
+        {
+          "city": "Summit",
+          "country": "United States",
+          "facility": "Overlook Hospital",
+          "geoPoint": {
+            "lat": 40.71562,
+            "lon": -74.36468
+          },
+          "state": "New Jersey",
+          "zip": "07902"
+        },
+        {
+          "city": "Manhasset",
+          "country": "United States",
+          "facility": "North Shore-Long Island Jewish Hosptial",
+          "geoPoint": {
+            "lat": 40.79788,
+            "lon": -73.69957
+          },
+          "state": "New York",
+          "zip": "11030"
+        },
+        {
+          "city": "New York",
+          "country": "United States",
+          "facility": "Weill Cornell Medical School",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "zip": "10065"
+        },
+        {
+          "city": "Cincinnati",
+          "country": "United States",
+          "facility": "Cincinnati Children's Hospital",
+          "geoPoint": {
+            "lat": 39.12711,
+            "lon": -84.51439
+          },
+          "state": "Ohio",
+          "zip": "45228"
+        },
+        {
+          "city": "Houston",
+          "country": "United States",
+          "facility": "Baylor College of Medicine",
+          "geoPoint": {
+            "lat": 29.76328,
+            "lon": -95.36327
+          },
+          "state": "Texas",
+          "zip": "77030"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Children's Hospital Medical Center, Cincinnati",
+          "name": "Donald Gilbert, MD",
+          "role": "STUDY_CHAIR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Tourette's Syndrome is a neurological disease characterized by motor and vocal tics. It has been hypothesized that abnormal interactions of dopamine with its receptors may cause the tics. The purpose of this study is to test the hypothesis that a drug (ecopipam) that selectively blocks dopamine D1/D5 receptors can reduce the frequency and severity of the tics.",
+      "detailedDescription": "This is a double blind, randomized, placebo-controlled crossover study to determine whether ecopipam can reduce the symptoms of Tourette's in children age 7-17 years."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 40,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:• Subjects must have Tourette's Syndrome (TS) based on the clinician-administered Diagnostic Confidence Index (DCI) for TS.\n\n* Subjects must exhibit both motor and vocal tics.\n* Subjects must have a minimum score of 20 at both Screening and Baseline (just prior to the first treatment) on the Yale Global Tic Severity Scale.\n* Subjects must be age (≥ 7 to \\< 18 years of age)\n* Subjects must weigh ≥ 20 kg (45 lbs)\n* Adolescent females of childbearing potential who are sexually active must be using effective contraception (i.e., oral contraceptives, intrauterine device, double barrier method of condom and spermicide) and agree to continue use of contraception for the duration of their participation in the study. They must also agree to use contraception for 30 days after their last dose of study drug.\n* Sexually active male subjects must use a barrier method of contraception during the study and agree to continue the use of male contraception for at least 30 days after the last dose of study drug.\n* Subject's parent or legal guardian must execute a written informed consent.\n* Subject must execute a written informed assent.\n\nExclusion Criteria:\n\n* Subjects who have unstable medical illness or clinically significant abnormalities on laboratory tests, or ECG at Screening.\n* Subjects with a major depressive episode in the past 2 years\n* Subjects with a history of attempted suicide\n* Subjects with clinically significant suicidality (based on the Columbia Suicide Rating Scale (C-SSRS)\n* Subjects with a first-degree relative with a major depressive episode that resulted in any psychiatric hospitalization, or attempted/ completed suicide with the exception of a hospitalization for post-partum depression.\n* Subjects with a history of seizures (excluding febrile seizures that occurred \\>2 years in the past)\n* Subjects with a myocardial infarction within 6 months.\n* Girls who are currently pregnant or lactating.\n* Subjects who have a need for medication (other than ecopipam) with possible effects on TS symptoms (i.e., lithium, psychostimulants)\n* Subjects who have a need for medications which would have unfavorable interactions with ecopipam, e.g., dopamine antagonists or agonists \\[including bupropion\\], tetrabenazine, or monoamine oxidase inhibitors.\n* Subjects with a lifetime history of bipolar disorder type I or II, dementia, schizophrenia, or any psychotic disorder determined by the Structured Clinical Interview for Diagnostic and Statistical Manual of Mental Disorders - 4th Edition (DSM-IV) Axis-I Disorders (SCID).\n* Subjects with current or recent (past 3 months) DSM-IV substance abuse or dependence (with the exception of nicotine).\n* Subjects with positive urine drug screen (cocaine, amphetamine, methamphetamine, tetrahydrocannabinol (THC), benzodiazepines, barbiturates, phencyclidine (PCP), opiates) at Screening. Subjects with urine positive only for benzodiazepines and/or marijuana (i.e., a user but not an abuser as based on DSM-IV criteria) may be eligible.\n* Subjects who have had previous treatment with ecopipam.\n* Subjects who have had treatment with:\n\n  * investigational medication within 3 months of starting study\n  * depot neuroleptics within 3 months of starting study\n  * other psychotropics with possible effects on TS symptoms (i.e., lithium, tetrabenazine) within 2 weeks prior to Screening.\n  * oral neuroleptics within 4 weeks\n  * selective serotonin reuptake inhibitors unless the dosage has been stable for a minimum of 4 weeks prior to study start and not prescribed to relieve the neurological signs of TS",
+      "healthyVolunteers": false,
+      "maximumAge": "17 Years",
+      "minimumAge": "7 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Ecopipam Treatment of Tourette's Syndrome in Subjects 7-17 Years",
+      "nctId": "NCT02102698",
+      "officialTitle": "Ecopipam Treatment of Tourette's Syndrome in Subjects 7-17 Years",
+      "orgStudyIdInfo": {
+        "id": "PSY302"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Emalex Biosciences Inc."
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The Yale Global Tic Severity Scale (YGTSS) is the standard rating scale used to assess the effects of a new treatment on the symptoms of Tourette's Disorder (TD).\n\nThe YGTSS is a clinician-rated, multi-dimensional instrument for assessing tic symptom severity in children and adults with TD. Both motor and vocal tics are assessed for symptom number, frequency, intensity, complexity, and interference on a 0-5 Likert scale. Scores from each dimension are totaled to reflect the severity of motor tics (range 0-25) (min of 0 to max 25), vocal tics (range 0-25) (min of 0 to max 25) and combined tics, or Total Tic Score (TTS) (range 0-50) (min of 0 to max of 50, sum of motor tics and vocal tic scores). For all scores, lower score represents better outcome.\n\nThe primary outcome measure is the YGTSS-TTS (Yale Global Tic Severity Scale Total Tic Score which includes both the motor and phonic tic scores).",
+          "measure": "Yale Global Tic Severity Scale - Total Tic Score",
+          "timeFrame": "Baseline and 30 days"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "The Yale Global Tic Severity Scale (YGTSS) is the standard rating scale used to assess the effects of a new treatment on the symptoms of Tourette's Disorder (TD).\n\nThe YGTSS is a clinician-rated, multi-dimensional instrument for assessing tic symptom severity in children and adults with TD. Both motor and vocal tics are assessed for symptom number, frequency, intensity, complexity, and interference on a 0-5 Likert scale. Scores from each dimension are totaled to reflect the severity of motor tics (range 0-25) (min of 0 to max 25), vocal tics (range 0-25) (min of 0 to max 25) and combined tics, or Total Tic Score (TTS) (range 0-50) (min of 0 to max of 50, sum of motor tics and vocal tic scores). For all scores, lower score represents better outcome. The outcome measure described is the YGTSS-TTS (Yale Global Tic Severity Scale Total Tic Score which includes both the motor and phonic tic scores) at Day 16 vs baseline.",
+          "measure": "YGTSS Day 16",
+          "timeFrame": "Baseline and Day 16"
+        },
+        {
+          "description": "This is a validated rating scale for the symptoms of attention deficit disorder. Scale includes 18 core items, with higher score indicating greater severity of ADHD (Total score 0-54). These scores are compared from baseline and 30 days below; There are also subscales but not individually shown. The subscales include 9 items measured for Inattention; 9 for Hyperactivity/Impulsivity. A score of 2 or 3 on any item is considered clinically significant. Measure on 4-point Likert scale and also include optional performance items. Raw scores are summed for each subscale. Scores are compared to norm-referenced percentiles based on age and gender. Higher scores may indicate ADHD.",
+          "measure": "DuPaul ADHD (Attention Deficit Hyperactivity Disorder) Rating Scale-IV",
+          "timeFrame": "Baseline and 30 days"
+        },
+        {
+          "description": "The CY-BOCS is a clinician-rated, 10-item scale to both determine severity of OCD and to monitor improvement during treatment, with a higher score indicating greater severity.\n\nThe scale is a clinician-rated, 10-item scale (5 items regarding severity and 5 items regarding obsessions) that includes questions about the amount of time spent on obsessions/compulsions, level of impairment or distress, and how much resistance and control subjects have over these thoughts. The 10 items are assessed on a 6-point scale with an overall score. Total score from 0 to 40 with higher score indicating greater severity. Total score change shown below.",
+          "measure": "Child Yale-Brown Obsessive Compulsive Scale",
+          "timeFrame": "Baseline and 30 days"
+        },
+        {
+          "description": "Clinical Global Impression Scales (improvement and severity) are validated rating scales that measure whether the treatment improves the symptoms of the disease (CGI-I) and whether the treatment reduces the severity of the disease (CGI-S). The CGI consists of two reliable and valid 7-item Likert scales used to assess severity and change in clinical symptoms. The severity scale (CGI-S) ranges from 1 (Normal, not ill) to 7 (extremely ill). The improvement scale (CGI-I) ranges from 1 (very much improved) to 7 (very much worse) with a score of 1 or 2 defining positive response. The improvement rating compares the subject's overall clinical condition to the Baseline visit and the rater should consider the following question: \"Compared to tic severity at baseline, how much has the subject changed?\" Data shows how much improvement at Day 30 with Ecopipam vs Placebo.",
+          "measure": "Clinical Global Impression Scale - Severity",
+          "timeFrame": "Baseline and 30 days"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true,
+      "oversightHasDmc": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Gilbert DL, Budman CL, Singer HS, Kurlan R, Chipkin RE. A D1 receptor antagonist, ecopipam, for treatment of tics in Tourette syndrome. Clin Neuropharmacol. 2014 Jan-Feb;37(1):26-30. doi: 10.1097/WNF.0000000000000017.",
+          "pmid": "24434529",
+          "type": "BACKGROUND"
+        },
+        {
+          "citation": "Gilbert DL, Murphy TK, Jankovic J, Budman CL, Black KJ, Kurlan RM, Coffman KA, McCracken JT, Juncos J, Grant JE, Chipkin RE. Ecopipam, a D1 receptor antagonist, for treatment of tourette syndrome in children: A randomized, placebo-controlled crossover study. Mov Disord. 2018 Aug;33(8):1272-1280. doi: 10.1002/mds.27457. Epub 2018 Sep 7.",
+          "pmid": "30192018",
+          "type": "DERIVED"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Psyadon Pharma"
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Emalex Biosciences Inc."
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2019-12",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2026-05-22",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-05-19",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2019-12",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2026-05-22",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2025-06-15",
+      "resultsFirstSubmitQcDate": "2026-05-19",
+      "startDateStruct": {
+        "date": "2014-06-19",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2026-05",
+      "studyFirstPostDateStruct": {
+        "date": "2014-04-03",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2014-03-31",
+      "studyFirstSubmitQcDate": "2014-03-31"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 40,
+          "description": "Treatment Phase 1: 30 days (ecopipam) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.\n\nPlacebo tablets were administered orally each day at bed time.",
+          "id": "EG000",
+          "otherNumAffected": 32,
+          "otherNumAtRisk": 40,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 40,
+          "title": "Ecopipam"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 40,
+          "description": "Treatment Phase 1: 30 days (ecopipam) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.\n\nPlacebo tablets were administered orally each day at bed time.",
+          "id": "EG001",
+          "otherNumAffected": 26,
+          "otherNumAtRisk": 40,
+          "seriousNumAffected": 1,
+          "seriousNumAtRisk": 40,
+          "title": "Placebo"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 4,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Abdominal pain upper"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Nausea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Vomiting"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Decreased appetite"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Fatigue"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 5,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Nasopharyngitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 6,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 5,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Insomnia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Somnolence"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "sedation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Restlessness"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 18.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 40
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 40
+            }
+          ],
+          "term": "Psychotic Disorder/Psychosis"
+        }
+      ],
+      "timeFrame": "The time period included from enrollment (first day of study drug) until follow up (14 days after the subject's last visit) or until resolution of the AE whichever came first. Time period from enrollment until follow up visit can be up to 88 days."
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "21"
+            },
+            {
+              "groupId": "BG001",
+              "value": "19"
+            },
+            {
+              "groupId": "BG002",
+              "value": "40"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Ecopipam first, then Placebo Treatment Phase 1: 30 days (ecopipam) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.\n\nPlacebo tablets were administered orally each day at bed time.",
+          "id": "BG000",
+          "title": "Ecopipam First Then Placebo"
+        },
+        {
+          "description": "Placebo first then Ecopipam Treatment Phase 1: 30 days (ecopipam) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.\n\nPlacebo tablets were administered orally each day at bed time.",
+          "id": "BG001",
+          "title": "Placebo First Then Ecopipam"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "calculatePct": false,
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "21"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "40"
+                    }
+                  ],
+                  "title": "<=18 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Between 18 and 65 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": ">=65 years"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Age, Categorical",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "calculatePct": false,
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "8"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "15"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "32"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "calculatePct": false,
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "3"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "16"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "33"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "2"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "calculatePct": false,
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "20"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "39"
+                    }
+                  ],
+                  "title": "Not Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Ethnicity (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "21"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "40"
+                    }
+                  ]
+                }
+              ],
+              "title": "United States"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictiveAgreement": true
+      },
+      "pointOfContact": {
+        "email": "dkim@emalexbiosciences.com",
+        "organization": "Emalex Bosciences",
+        "phone": "312.847.1342",
+        "title": "David Kim"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-5.4871",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "95",
+              "ciUpperLimit": "1.2139",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "<0.05",
+              "paramType": "Mean Difference (Final Values)",
+              "paramValue": "0.2045",
+              "statisticalMethod": "ANOVA"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.7",
+                      "value": "-5.6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.8",
+                      "value": "-3.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "40"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Yale Global Tic Severity Scale (YGTSS) is the standard rating scale used to assess the effects of a new treatment on the symptoms of Tourette's Disorder (TD).\n\nThe YGTSS is a clinician-rated, multi-dimensional instrument for assessing tic symptom severity in children and adults with TD. Both motor and vocal tics are assessed for symptom number, frequency, intensity, complexity, and interference on a 0-5 Likert scale. Scores from each dimension are totaled to reflect the severity of motor tics (range 0-25) (min of 0 to max 25), vocal tics (range 0-25) (min of 0 to max 25) and combined tics, or Total Tic Score (TTS) (range 0-50) (min of 0 to max of 50, sum of motor tics and vocal tic scores). For all scores, lower score represents better outcome.\n\nThe primary outcome measure is the YGTSS-TTS (Yale Global Tic Severity Scale Total Tic Score which includes both the motor and phonic tic scores).",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Dosed with Ecopipam first and crossed over to Placebo",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Dosed with Placebo first and crossed over to Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "Crossover design. Both groups received Ecopipam and Placebo. Total numbers include 40 for each group.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline and 30 days",
+          "title": "Yale Global Tic Severity Scale - Total Tic Score",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Score on a scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-7.5449",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "95",
+              "ciUpperLimit": "-0.8590",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "<0.05",
+              "paramType": "Mean Difference (Final Values)",
+              "paramValue": "-5.0",
+              "statisticalMethod": "ANOVA"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.1574",
+                      "value": "-6.1275"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.1574",
+                      "value": "-1.9225"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "40"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Yale Global Tic Severity Scale (YGTSS) is the standard rating scale used to assess the effects of a new treatment on the symptoms of Tourette's Disorder (TD).\n\nThe YGTSS is a clinician-rated, multi-dimensional instrument for assessing tic symptom severity in children and adults with TD. Both motor and vocal tics are assessed for symptom number, frequency, intensity, complexity, and interference on a 0-5 Likert scale. Scores from each dimension are totaled to reflect the severity of motor tics (range 0-25) (min of 0 to max 25), vocal tics (range 0-25) (min of 0 to max 25) and combined tics, or Total Tic Score (TTS) (range 0-50) (min of 0 to max of 50, sum of motor tics and vocal tic scores). For all scores, lower score represents better outcome. The outcome measure described is the YGTSS-TTS (Yale Global Tic Severity Scale Total Tic Score which includes both the motor and phonic tic scores) at Day 16 vs baseline.",
+          "dispersionType": "Standard Error",
+          "groups": [
+            {
+              "description": "Dosed with Ecopipam first and crossed over to Placebo and second group crossed over with placebo first and Ecopipam second. Day 16 YGTSS",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Dosed with Placebo first and crossed over to Ecopipam.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "LEAST_SQUARES_MEAN",
+          "populationDescription": "Crossover design. YGTSS at Day 16",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline and Day 16",
+          "title": "YGTSS Day 16",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.2",
+                      "value": "-1.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.6",
+                      "value": "-2.7"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "40"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "This is a validated rating scale for the symptoms of attention deficit disorder. Scale includes 18 core items, with higher score indicating greater severity of ADHD (Total score 0-54). These scores are compared from baseline and 30 days below; There are also subscales but not individually shown. The subscales include 9 items measured for Inattention; 9 for Hyperactivity/Impulsivity. A score of 2 or 3 on any item is considered clinically significant. Measure on 4-point Likert scale and also include optional performance items. Raw scores are summed for each subscale. Scores are compared to norm-referenced percentiles based on age and gender. Higher scores may indicate ADHD.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Dosed with Ecopipam first and crossed over to Placebo",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Dosed with Placebo first and crossed over to Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "Change from Baseline at Day 30",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline and 30 days",
+          "title": "DuPaul ADHD (Attention Deficit Hyperactivity Disorder) Rating Scale-IV",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "3.3",
+                      "value": "-0.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "4.1",
+                      "value": "-0.9"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "40"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The CY-BOCS is a clinician-rated, 10-item scale to both determine severity of OCD and to monitor improvement during treatment, with a higher score indicating greater severity.\n\nThe scale is a clinician-rated, 10-item scale (5 items regarding severity and 5 items regarding obsessions) that includes questions about the amount of time spent on obsessions/compulsions, level of impairment or distress, and how much resistance and control subjects have over these thoughts. The 10 items are assessed on a 6-point scale with an overall score. Total score from 0 to 40 with higher score indicating greater severity. Total score change shown below.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Dosed with Ecopipam first and crossed over to Placebo",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Dosed with Placebo first and crossed over to Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "Change from baseline at Day 30",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline and 30 days",
+          "title": "Child Yale-Brown Obsessive Compulsive Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "-0.9049",
+                      "upperLimit": "-0.1678",
+                      "value": "-0.7637"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "-0.9930",
+                      "upperLimit": "0.1090",
+                      "value": "-0.2293"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "40"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "40"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Clinical Global Impression Scales (improvement and severity) are validated rating scales that measure whether the treatment improves the symptoms of the disease (CGI-I) and whether the treatment reduces the severity of the disease (CGI-S). The CGI consists of two reliable and valid 7-item Likert scales used to assess severity and change in clinical symptoms. The severity scale (CGI-S) ranges from 1 (Normal, not ill) to 7 (extremely ill). The improvement scale (CGI-I) ranges from 1 (very much improved) to 7 (very much worse) with a score of 1 or 2 defining positive response. The improvement rating compares the subject's overall clinical condition to the Baseline visit and the rater should consider the following question: \"Compared to tic severity at baseline, how much has the subject changed?\" Data shows how much improvement at Day 30 with Ecopipam vs Placebo.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Dosed with Ecopipam first and crossed over to Placebo",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Dosed with Placebo first and crossed over to Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "LEAST_SQUARES_MEAN",
+          "populationDescription": "CGI Severity",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline and 30 days",
+          "title": "Clinical Global Impression Scale - Severity",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Ecopipam first, then Placebo Treatment Phase 1: 30 days (ecopipam) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.\n\nPlacebo tablets were administered orally each day at bed time.",
+          "id": "FG000",
+          "title": "Ecopipam First, Then Placebo"
+        },
+        {
+          "description": "Placebo first then Ecopipam Treatment Phase 1: 30 days (placebo) Washout Phase 2: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Treatment Phase 3: 30 days (placebo) Follow-up Phase: 14 days (down-titration Days 1-4 and then washout/no study drug for 10 days) Placebo tablets were administered orally each day at bed time. Ecopipam HCl tablets (12.5 mg/tablet and 50 mg/tablet) were administered orally each day at bed time. The dose was based on body weight at baseline (range 12.5 mg/day to 100 mg/day) following a protocol-specified regimen.",
+          "id": "FG001",
+          "title": "Placebo First Then Ecopipam"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Adverse Event"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Lack of Efficacy"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "19"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "21"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "19"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "19"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "preAssignmentDetails": "19 in Ecopipam/Placebo arm and 21 in Placebo/Ecopipam arm",
+      "recruitmentDetails": "First subject enrolled 19Jun2014 and last subject enrolled 17Nov2016"
+    }
+  }
+}

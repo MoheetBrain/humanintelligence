@@ -1,0 +1,259 @@
+{
+  "derivedSection": {
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D014970",
+          "term": "Xanthines"
+        },
+        {
+          "id": "D000470",
+          "term": "Alkaloids"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D011688",
+          "term": "Purinones"
+        },
+        {
+          "id": "D011687",
+          "term": "Purines"
+        },
+        {
+          "id": "D006574",
+          "term": "Heterocyclic Compounds, 2-Ring"
+        },
+        {
+          "id": "D000072471",
+          "term": "Heterocyclic Compounds, Fused-Ring"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D002110",
+          "term": "Caffeine"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Methylphenidate",
+          "interventionNames": [
+            "Drug: Drugs use: methylphenidate"
+          ],
+          "label": "Methylphenidate",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "modafinil",
+          "interventionNames": [
+            "Drug: Drug use: modafinil"
+          ],
+          "label": "modafinil",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "caffeine",
+          "interventionNames": [
+            "Drug: caffeine"
+          ],
+          "label": "caffeine",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "placebo",
+          "interventionNames": [
+            "Drug: placebo"
+          ],
+          "label": "placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Methylphenidate"
+          ],
+          "description": "40 mg tablets",
+          "name": "Drugs use: methylphenidate",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "modafinil"
+          ],
+          "description": "40 mg tablets",
+          "name": "Drug use: modafinil",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "caffeine"
+          ],
+          "description": "400 mg",
+          "name": "caffeine",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "placebo"
+          ],
+          "description": "placebo",
+          "name": "placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Cognitively Healthy Subjects Influenced by Psychoactive Drugs"
+      ],
+      "keywords": [
+        "chess, cognition"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Mainz",
+          "country": "Germany",
+          "facility": "Department of Psychiatry and Psychotherapy",
+          "geoPoint": {
+            "lat": 49.98185,
+            "lon": 8.28008
+          },
+          "zip": "55131"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Effects of caffeine, methylphenidate, modafinil and placebo on cognitive performance of chess players in chess games and neuropsychiatric standardized tests. We hypothesize that substances will change cognitive performance in chess players leading to changed results in chess games and neuropsychiatric tests."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "TRIPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "HEALTH_SERVICES_RESEARCH"
+      },
+      "enrollmentInfo": {
+        "count": 40,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* male\n* 18-60 years old\n* existence of ELO-number\n\nExclusion Criteria:\n\n* physical diseases (e.g. diabetes mellitus, etc.) with necessity of using prescription drugs\n* psychiatric diseases (e.g. psychosis, bipolar disorders, etc.) with necessity of using prescription drugs\n* addiction of psychoactive substances\n* smoker or quitter (\\< 5 years)\n* use of more than 5 cups of coffee per day\n* irregular day-night-rhythm (e.g. shift workers)",
+      "healthyVolunteers": true,
+      "maximumAge": "60 Years",
+      "minimumAge": "18 Years",
+      "sex": "MALE",
+      "stdAges": [
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "CHESS",
+      "briefTitle": "Cognitive Hyper-performance - Effects of Stimulating Substances in Chess-players",
+      "nctId": "NCT01834547",
+      "officialTitle": "Phase I Study About Effects of Caffeine, Methylphenidate, Modafinil and Placebo on Cognitive Performance of Chess Players.",
+      "orgStudyIdInfo": {
+        "id": "1234"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Johannes Gutenberg University Mainz"
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Chess games (win/ lose/ tie)",
+          "timeFrame": "two years"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "time period for decision of chess games",
+          "timeFrame": "results of ches games"
+        },
+        {
+          "measure": "Cognitive performance measured with standardized neuropsychiatric tests (Tower of Hanoi, Trail-Making test, Stroop-Test, Psycho-Motor-Vigilance test, Wisconsin-Card-Sorting-Test, Balloon Analog Risk Task)",
+          "timeFrame": "outcome of tests"
+        },
+        {
+          "measure": "measuring of risk taking behaviour, motivation, mood using standardized questionnaires",
+          "timeFrame": "outcome of tests"
+        },
+        {
+          "measure": "adverse events",
+          "timeFrame": "type of adverse events"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "K. Lieb"
+      },
+      "responsibleParty": {
+        "investigatorAffiliation": "Johannes Gutenberg University Mainz",
+        "investigatorFullName": "K. Lieb",
+        "investigatorTitle": "Prof. Dr. med. K. Lieb",
+        "type": "SPONSOR_INVESTIGATOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2013-04",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2013-04-18",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2013-04-17",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2013-04",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2011-05"
+      },
+      "statusVerifiedDate": "2013-04",
+      "studyFirstPostDateStruct": {
+        "date": "2013-04-18",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2011-05-25",
+      "studyFirstSubmitQcDate": "2013-04-17"
+    }
+  }
+}

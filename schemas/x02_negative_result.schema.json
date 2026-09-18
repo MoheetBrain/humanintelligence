@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intelligence-blueprint.local/schemas/v0_2_0/x02_negative_result",
+  "title": "X02NegativeResultRow",
+  "description": "One row of negative_results.tsv. This table is MANDATORY and may not be empty: an analysis with no negatives has either not searched or not reported, and an ingestion cannot tell which.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "test_id",
+    "what_was_tested",
+    "method",
+    "outcome"
+  ],
+  "properties": {
+    "test_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "what_was_tested": {
+      "type": "string",
+      "minLength": 8
+    },
+    "method": {
+      "type": "string",
+      "minLength": 1
+    },
+    "outcome": {
+      "type": "string",
+      "$comment": "vocabulary: negative_result_outcome",
+      "enum": [
+        "null_result",
+        "below_threshold",
+        "insufficient_power",
+        "failed_qc"
+      ]
+    },
+    "threshold_used": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "observed_value": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ]
+    },
+    "n": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

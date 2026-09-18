@@ -1,0 +1,404 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Type 2 diabetes"
+            },
+            {
+              "label": "Prediabetes"
+            },
+            {
+              "label": "Normal glucose regulation"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Blood and urine samples were collected and retained for biomarker analysis",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 200000,
+            "type": "ESTIMATED"
+          },
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "REACTION",
+          "briefTitle": "Risk Evaluation of cAncers in Chinese diabeTic Individuals: a lONgitudinal Study",
+          "nctId": "NCT01506869",
+          "officialTitle": "A Prospective Cohort Study on the Associations of Diabetes With Cancer Risk in Chinese Men and Women",
+          "orgStudyIdInfo": {
+            "id": "CCEMD010"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Shanghai Jiao Tong University School of Medicine"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "number of participants who develop cancer during follow-up",
+              "timeFrame": "3 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2015-06",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2012-01-10",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2012-01-09",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2014-12",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2011-05"
+          },
+          "statusVerifiedDate": "2012-01",
+          "studyFirstPostDateStruct": {
+            "date": "2012-01-10",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2012-01-05",
+          "studyFirstSubmitQcDate": "2012-01-09"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "description": "to evaluate the efficacy of afatinib, an EGFR TKI, on lung adenocarcinomas, EGFR wild-type, bearing the NTS/NTSR1 complex with a high level of expression",
+              "name": "Afatinib",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "THEN",
+          "briefTitle": "Phase II Study of Afatinib as Third- or Further-line Treatment for Patients With Stage IV Bronchial Adenocarcinoma, Harboring Wild-type EGFR, Expressing the Neurotensin - Neurotensin Receptor Complex",
+          "nctId": "NCT02876081",
+          "officialTitle": "Phase II Study of Afatinib as Third- or Further-line Treatment for Patients With Stage IV Bronchial Adenocarcinoma, Harboring Wild-type EGFR, Expressing the Neurotensin - Neurotensin Receptor Complex",
+          "orgStudyIdInfo": {
+            "id": "Afatinib THEN"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Fondation Hôpital Saint-Joseph"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "disease-control rate with Complete Response CR, Partial response PR or Stable Disease S, after 2 months of treatment",
+              "measure": "Assessment of disease-control rate",
+              "timeFrame": "Two months after treatment"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Assessment of Progression Free Survival PFS",
+              "timeFrame": "Two months after treatment"
+            },
+            {
+              "measure": "Assessment of Overall Survival OS",
+              "timeFrame": "Two months after treatment"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-12",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-09-11",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-09-07",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2017-09-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2017-09-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-09",
+          "studyFirstPostDateStruct": {
+            "date": "2016-08-23",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-08-18",
+          "studyFirstSubmitQcDate": "2016-08-22",
+          "whyStopped": "medical decision"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients will receive standard trabectedin 1.5 mg/m2 as a 24-hour central intravenous (IV) infusion on day 1, q d 22 x until disease progression or contraindications against further application.",
+              "interventionNames": [
+                "Drug: Trabectedin"
+              ],
+              "label": "Arm 1: Standard chemotherapy with trabectidin (in-label)",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Patients will receive standard trabectedin according to arm 1 plus 0.5 mg/m2 tTF-NGR (1-hour ratecontrolled infusion, port central venous access, 0.9 % NaCl ad 100 mL) on days 2 and 3 following each trabectedin cycle (within 1 hour interval between end of trabectedin infusion and tTF-NGR: e.g.: trabectedin on monday 8 am to tuesday 8 am followed by tTF-NGR on tuesday 9 am and on the following day, q d 22 x until disease progression or contraindications against further application.",
+              "interventionNames": [
+                "Drug: Trabectedin",
+                "Biological: tTF-NGR"
+              ],
+              "label": "Arm 2: tTF-NGR added to standard trabectedin",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm 1: Standard chemotherapy with trabectidin (in-label)",
+                "Arm 2: tTF-NGR added to standard trabectedin"
+              ],
+              "description": "Patients will receive standard trabectedin 1.5 mg/m2 as a 24-hour central intravenous (IV) infusion on day 1, q d 22 x until disease progression or contraindications against further application.",
+              "name": "Trabectedin",
+              "otherNames": [
+                "Yondelis"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm 2: tTF-NGR added to standard trabectedin"
+              ],
+              "description": "Patients will receive standard trabectedin according to arm 1 plus 0.5 mg/m2 of tTF-NGR (1-hour ratecontrolled infusion, port central venous access, 0.9 % NaCl ad 100 mL) on days 2 and 3 following each trabectedin cycle (within 1 hour interval between end of trabectedin infusion and tTF-NGR: e.g.: trabectedin on monday 8 am to tuesday 8 am followed by tTF-NGR on tuesday 9 am and on the following day, q d 22 x until disease progression or contraindications against further application.",
+              "name": "tTF-NGR",
+              "type": "BIOLOGICAL"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 126,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "TRABTRAP",
+          "briefTitle": "tTF-NGR Randomized Study - STS",
+          "nctId": "NCT05597917",
+          "officialTitle": "Phase III Study Comparing Trabectedin (T) Versus T Plus tTF-NGR to Entrap T Inside the Tumor in Patients With Metastatic and/or Refractory Soft Tissue Sarcoma (STS)",
+          "orgStudyIdInfo": {
+            "id": "WWU19_0007"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Universität Münster"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2024-516392-33-00",
+              "type": "CTIS"
+            },
+            {
+              "id": "2020-005858-21",
+              "type": "EUDRACT_NUMBER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The primary objective of the trial is to evaluate whether tTF-NGR in combination with standard trabectedin chemotherapy given for unresectable or metastatic soft tissue sarcoma after failure of anthracycline-containing first line therapy or with contraindications to these drugs prolongs progression-free survival, as compared with trabectedin alone.\n\nThe following efficacy endpoint (for the randomized phase III part) will be considered:\n\n\\- Progression-free survival (PFS) according to iRECIST (Seymour L, Lancet Oncol. 2017) as judged by central radiology in a blinded fashion after end of trial.",
+              "measure": "Efficacy: Prolongation of progression-free survival (PFS) according to iRECIST as judged by central radiology in a blinded fashion after end of trial.",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "To assess the efficacy, the following measurement will be considered:\n\nOverall response rate (ORR, consisting of CR and PR)",
+              "measure": "Evaluation of the efficacy of tTF-NGR in combination with standard trabectedin chemotherapy (OOR)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the efficacy, the following measurement will be considered:\n\n\\- Disease control rate (DCR, consisting of CR, PR, and stable disease (SD) for \\>18 weeks)",
+              "measure": "Evaluation of the efficacy of tTF-NGR in combination with standard trabectedin chemotherapy (DCR)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the efficacy, the following measurement will be considered:\n\n\\- Median progression-free survival (mPFS)",
+              "measure": "Evaluation of the efficacy of tTF-NGR in combination with standard trabectedin chemotherapy (mPFS)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the efficacy, the following measurement will be considered:\n\n\\- Median overall survival (mOS)",
+              "measure": "Evaluation of the efficacy of tTF-NGR in combination with standard trabectedin chemotherapy (mOS)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the efficacy, the following measurement will be considered:\n\n\\- Overall survival (OS) rate at 12 and 18 months",
+              "measure": "Evaluation of the efficacy of tTF-NGR in combination with standard trabectedin chemotherapy (OS)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Adverse Events (AEs) assessment based on CTCAE v.5.0.",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (AE)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- laboratory parameter: Troponin T hs \\[ng/l\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Standard laboratory parameters)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Height \\[m\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Physical examination: Height)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Weight \\[kg\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Physical examination: Weight)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Body surface area \\[m2\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Physical examination: Body surface)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Vital sign: breathing rate by watching and counting \\[breaths per minute\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Vital sign: breathing)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Vital sign: consciousness by talking to the patient",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Vital sign: consciousness)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: Vital sign: heart rate by pulse \\[beats per minute\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Vital sign: heart rate)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Physical examination: ECOG perfomance status",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Physical examination: ECOG perfomance status)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- ECG (rythm, puls rate, Vector, P Wave, PQ time, QRS Complex, R progression from V1 to V6, QT Interval, PQ time, QRS time, T wave)",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (ECG)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Echocardiography (diameters of both atria and left and right cardiac chambers at end-diastolic and end-systolic times \\[mm\\], ejection fraction \\[%\\], wall diameters \\[mm\\])",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (Echocardiography)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- Patient reported outcomes (PRO) by EORTC QLQ C30 questionnaire",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (PRO)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            },
+            {
+              "description": "To assess the safety profile of tTF-NGR combined with trabectedin the following safety endpoint will be considered:\n\n\\- pharmacokinetics: AUC \\[ng\\*h/ml\\]",
+              "measure": "Evaluation of the safety profile of tTF-NGR combined with standard trabectedin chemotherapy (PK)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever came first, assessed up to 100 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-12",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-04-04",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-04-01",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-08",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2021-10-26",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-04",
+          "studyFirstPostDateStruct": {
+            "date": "2022-10-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-06-14",
+          "studyFirstSubmitQcDate": "2022-10-24"
+        }
+      }
+    }
+  ],
+  "totalCount": 3
+}

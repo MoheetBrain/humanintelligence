@@ -1,0 +1,200 @@
+{
+  "studies": [
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Part 1 - Single ascending doses; Part 2 - Repeated dose",
+              "interventionNames": [
+                "Drug: AXER-204"
+              ],
+              "label": "AXER-204",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Part 2 only - Repeated dose",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "AXER-204"
+              ],
+              "description": "human NoGo Trap fusion protein",
+              "name": "AXER-204",
+              "otherNames": [
+                "human NoGo Trap",
+                "human Nogo Receptor decoy"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Phosphate buffered saline formulation",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Part 1 is open-label single-ascending dose. Part 2 is double-blind, placebo-controlled, repeat dose.",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "maskingDescription": "Part 1 - None; Part 2 - Quadruple",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 52,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "RESET",
+          "briefTitle": "AXER-204 in Participants With Chronic Spinal Cord Injury",
+          "nctId": "NCT03989440",
+          "officialTitle": "A Multicenter, Two Part Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of AXER-204 in Subjects With Chronic Spinal Cord Injury",
+          "orgStudyIdInfo": {
+            "id": "RNX-AX204-101"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "ReNetX Bio, Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "An AE is any untoward medical occurrence in a patient or clinical investigation participant administered a pharmaceutical product and that does not necessarily have a causal relationship with this treatment. An AE can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with the use of a medicinal (investigational) product, whether or not related to the medicinal (investigational) product. An SAE is any untoward medical occurrence that at any dose results in death, is a life-threatening event, requires inpatient hospitalization or prolongation of existing hospitalization, results in a significant disability/incapacity or congenital anomaly, or is a medically important event.",
+              "measure": "Incidence of Treatment-emergent Adverse Events (AEs) and Serious Adverse Events (SAEs)",
+              "timeFrame": "Up to Day 29 for Part 1 and Day 253 for Part 2"
+            },
+            {
+              "measure": "Area Under the Concentration-Time Curve From Time 0 to Time of the Last Measurable Concentration (AUClast) of AXER-204 in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Cmax in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Tmax in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "t1/2 in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Clearance From Serum",
+              "timeFrame": "Day 1 pre-dose up to Day 29 in Part 1, Pre-dose up to Day 253 in Part 2"
+            },
+            {
+              "description": "Volume of distribution calculated from serum exposure data",
+              "measure": "Volume of Distribution",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Area Under the Concentration-Time Curve From Time 0 to Time of the Last Measurable Concentration (AUClast) of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "Cmax of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "Tmax of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "t1/2 of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The ISNCSCI bilateral Upper Extremity Motor Score (UEMS) is determined by examining the muscle function within each of the 5 myotomes encompassing arm and hand function on each side of the body. A score ranging from 0 to 5 can be given to each myotome tested resulting in a maximum score of 50. Higher values indicate greater strength.",
+              "measure": "Change in International Standards for Neurological Classification of SCI (ISNCSCI) Bilateral Upper Extremity Motor Score (UEMS)",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The GRASSP Bilateral Prehension Performance Score is determined based on performance of four tasks with each hand with scores ranging from 0 to 5 for each task resulting in a maximum score of 40. Higher scores indicate better function.",
+              "measure": "Change in Graded Redefined Assessment of Strength, Sensation and Prehension (GRASSP) Bilateral Prehension Performance Score",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The SCIM III questionnaire self-care score assesses activities of daily living including feeding, bathing, dressing, and grooming. The self-care score ranges 0-20 with higher scores correspond to better ability to carry out these self-care activities.",
+              "measure": "Change in Version III of the Spinal Cord Independence Measure (SCIM III) Self-care",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The PGIC instrument captures the patient's overall evaluation of response to treatment. Specifically, the PGIC asks: \"Since beginning this clinical trial, how would you describe the overall change (if any) related to your chronic spinal cord injury?\" The patient is asked to report the degree to which they have changed since entering the treatment period using a 7-point Likert scale (1='Much worse', 2='Worse', 3='A little worse', 4='No change', 5='A little better', 6='Better', 7='Much better') and \"If better or worse, what has changed?\". Patients that have evaluation results including \"Much better\", \"Better\", or \"A little better\" are considered Responders.",
+              "measure": "Patient Global Impression of Change (PGIC) Responder Rate",
+              "timeFrame": "Day 169"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-06-21",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-08-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-07-28",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-06-21",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2023-08-22",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2023-06-09",
+          "resultsFirstSubmitQcDate": "2023-07-28",
+          "startDateStruct": {
+            "date": "2019-07-16",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-07",
+          "studyFirstPostDateStruct": {
+            "date": "2019-06-18",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-06-11",
+          "studyFirstSubmitQcDate": "2019-06-17"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

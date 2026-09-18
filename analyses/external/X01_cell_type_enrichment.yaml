@@ -1,0 +1,212 @@
+# X01 — conditional modern-human cell-type enrichment for cognition GWAS
+#
+# EXTERNAL ANALYSIS, UNVERIFIED. Run by Codex/GPT-6 Astra, not by this repository.
+#
+# WHY THIS RECORD LOOKS THE WAY IT DOES
+# -------------------------------------
+# The only record of X01 available to this repository is the prose of the Sprint-2
+# task description. No branch, bundle, clone, dataset, code or checksum was found
+# (docs/integration/CODEX_BRANCH_AUDIT.md documents the search). So every number below
+# sits in `value_as_reported` as a VERBATIM STRING, and this analysis is inert:
+#
+#   * it supports no facet grade;
+#   * it contributes no biological-layer support edge;
+#   * it moves no target's rank;
+#   * `reported_results[*].claim_refs` is empty and the schema forbids filling it while
+#     verification_status is unverified_external_report.
+#
+# This is the same standard the brief itself sets for X02 ("Claude should be able to
+# ingest X02 WITHOUT trusting prose summaries"), applied to X01. It is not a judgement
+# about Codex's competence: it is what provenance means when the analysis happened
+# somewhere this repository cannot see.
+#
+# WHAT IS NEVERTHELESS ADOPTED
+# ----------------------------
+# X01's methodological instruction — do not gate future human genetics on pyramidal
+# cells — is adopted immediately, because it constrains OUR method rather than asserting
+# Codex's finding. If the finding is later refuted, staying genome-wide cost nothing.
+
+analysis_id: ANALYSIS:X01
+schema_version: "0.2.0"
+title: Conditional modern-human cell-type enrichment of cognition GWAS gene-level signal
+agent: codex/gpt-6-astra
+verification_status: unverified_external_report
+provenance_class: external_analysis_unverified
+
+delivery:
+  mechanism: none_prose_only
+  artefacts_present: false
+  received_on: null
+  repo: null
+  branch: null
+  commit: null
+  bundle_sha256: null
+  search_evidence: >-
+    Searched 2026-09-18: git branch --all and the GitHub branches API (two branches
+    only, both this repository's own), git worktree list, git stash list, git fsck
+    --lost-found (dangling blobs and trees only, no dangling commits), commit authorship
+    across all refs (two identities, both the repository owner's), a filesystem sweep for
+    *.bundle and *astra* outside ~/.codex, 13 other git repositories on this machine
+    (none a clone of humanintelligence), and ~/.codex/session_index.jsonl for
+    'humanintelligence', 'astra', 'extreme cognition', 'alphamath', 'X01', 'X02' — one
+    hit, a thread named "Build ASTRA cognitive substrate" last updated 2026-09-11, six
+    days before this repository's initial commit and a different project.
+
+genome_build: null
+
+software: []
+
+inputs:
+  - role: gwas_sumstats
+    description: >-
+      Complete public Davies cognition GWAS, as described by the producer. Not retrieved
+      by this repository; no local copy exists under data/raw/.
+    path: null
+    sha256: null
+    bytes: null
+    source_url: null
+    source_id: null
+    retrieved_at: null
+    reported_size: "approximately 12.87 million variants, N approximately 282,014"
+
+  - role: expression_reference_primary_1
+    description: Siletti adult human brain single-cell expression reference.
+    path: null
+    sha256: null
+    source_url: null
+    source_id: null
+    reported_size: null
+
+  - role: expression_reference_primary_2
+    description: Allen human cortex expression reference.
+    path: null
+    sha256: null
+    source_url: null
+    source_id: null
+    reported_size: null
+
+  - role: expression_reference_supplementary
+    description: Supplementary striatal expression reference, for coverage of striatal classes.
+    path: null
+    sha256: null
+    source_url: null
+    source_id: null
+    reported_size: null
+
+outputs: []
+
+parameters:
+  conditioning: "stated as 'conditional' by the producer; the conditioning specification was not provided"
+  correction: "a dependence-safe cross-reference correction; procedure not provided"
+  prespecified_criterion: "stated as prespecified; the specification document was not provided"
+
+reported_results:
+  - result_id: pyramidal_positive_both_references
+    statement: >-
+      Cortical and hippocampal pyramidal or excitatory neuron expression is positively
+      associated with cognition gene-level association strength in both primary human
+      references.
+    value_as_reported: "Siletti beta approximately 0.097, nominal P approximately 0.011; Allen beta approximately 0.086, nominal P approximately 0.011"
+    verification: unverified_prose
+    would_be_verified_by: >-
+      The per-cell-class effect table (class, beta, SE, nominal P, corrected P, n_genes,
+      reference) plus the gene-level association input and its checksum.
+    claim_refs: []
+
+  - result_id: corrected_specificity_criterion_not_met
+    statement: >-
+      No broad cell class met the producer's prespecified corrected cross-reference
+      specificity criterion.
+    value_as_reported: "dependence-safe corrected replication value approximately 0.08"
+    verification: unverified_prose
+    would_be_verified_by: >-
+      The prespecified criterion as written before the analysis ran, the correction
+      procedure, and the code that applied it.
+    claim_refs: []
+
+  - result_id: no_alternative_class_replicated
+    statement: >-
+      No other broad cell class replicated as uniquely enriched: astrocyte,
+      oligodendrocyte, microglial and striatal dominance were each not demonstrated.
+    value_as_reported: null
+    verification: unverified_prose
+    would_be_verified_by: >-
+      The full per-cell-class table including the classes that did not reach the
+      criterion, which is the part of such a table most often omitted.
+    claim_refs: []
+
+  - result_id: power_insufficient_to_exclude_modest_specificity
+    statement: >-
+      Statistical power was insufficient to exclude modest cell-type specificity.
+    value_as_reported: null
+    verification: unverified_prose
+    would_be_verified_by: A power analysis or the effect-size confidence intervals per class.
+    claim_refs: []
+
+# Mandatory. The predictable failure mode of this result is over-reading it in whichever
+# direction the reader already preferred, and BOTH over-readings are available here.
+interpretation_guards:
+  - >-
+    A corrected P of approximately 0.08 does NOT mean pyramidal cells do not matter for
+    cognition. It means this analysis, at this power, did not meet its own prespecified
+    specificity threshold.
+  - >-
+    Two nominal P values of approximately 0.011 in two references do NOT mean pyramidal
+    cells are proven intelligence cells. The references are not fully independent — they
+    sample overlapping biology with related annotation pipelines — and the corrected
+    value is the one the producer prespecified as decisive.
+  - >-
+    The analysis does NOT establish that cell-type effects are equal. Failure to
+    demonstrate specificity is not demonstration of uniformity.
+  - >-
+    The analysis does NOT establish the absence of modest specificity; the producer
+    reports power was insufficient to exclude it.
+  - >-
+    The analysis does NOT establish a causal cell type. Expression-weighted enrichment of
+    association signal is a correlational design: gene size, gene density and the
+    correlation structure between cell-class expression profiles are all live confounders,
+    and none is addressed by a positive beta.
+  - >-
+    Nothing here licenses an intervention. A cell class is not a target, and an enriched
+    cell class would not tell us which direction to push anything.
+
+methodological_constraints_adopted:
+  - constraint: >-
+      Claude-side human-genetics analysis stays genome-wide and cell-class-agnostic. No
+      pyramidal-only gate, and no cell-class prefilter of any kind, on candidate discovery
+      or on X02 ingestion.
+    rationale: >-
+      X01 reportedly failed to establish cell-class specificity while leaving pyramidal
+      effects positive in both references. Under that result a pyramidal gate would
+      discard signal on the strength of a criterion that was not met.
+    safe_before_verification: true
+
+  - constraint: >-
+      Extreme cognition is treated as continuous with ordinary-range cognition unless
+      evidence shows otherwise, so discovery does not carve out an "exceptional" stratum
+      by assumption.
+    rationale: >-
+      Reported by the producer and consistent with this repository's own polygenic
+      picture; treating it as an assumption to be tested rather than a finding costs
+      nothing and avoids building a separate evidence silo on unverified grounds.
+    safe_before_verification: true
+
+outstanding_artefacts:
+  - Gene-level or variant-level association input actually used, with path, sha256 and source URL.
+  - Expression reference matrices with versions for Siletti, Allen and the striatal supplement.
+  - Per-cell-class effect table with beta, SE, nominal P, corrected P and n_genes per class and reference.
+  - The prespecified criterion as written before the analysis, plus the correction procedure and its code.
+  - Conditioning specification: what was conditioned on, in what order.
+  - Gene-size and gene-density covariates used, if any.
+  - Analysis code with a commit sha.
+  - The source list for the ~60-study extreme-cognition evidence map, with cohorts named, so evidence dependence against this repository's 182 sources can be computed.
+
+cohort_overlap_status: unresolvable_pending_source_list
+
+provenance:
+  recorded_by: agent:orchestrator
+  recorded_on: "2026-09-18"
+  record_basis: >-
+    Sprint-2 task description prose only. No artefact was available to check any figure
+    against; see delivery.search_evidence and docs/integration/CODEX_BRANCH_AUDIT.md.
+  run_id: sprint2-orchestrator-01

@@ -1,0 +1,333 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects will take two 10 mg capsules of XEN1101 daily for 8 weeks for a total daily dose of 20 mg.",
+              "interventionNames": [
+                "Drug: XEN1101"
+              ],
+              "label": "XEN1101",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Subjects will take a matching placebo daily for eight weeks.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "XEN1101"
+              ],
+              "description": "two 10 mg capsules",
+              "name": "XEN1101",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "matching placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "This is a phase II, randomized, parallel-arm, placebo-controlled clinical trial were 60 patients with major depressive disorder will be randomized in 1:1 fashion to XEN1101 (N=30) or matching placebo (N=30).",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 44,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "XEN1101 for Major Depressive Disorder",
+          "nctId": "NCT04827901",
+          "officialTitle": "A Proof of Concept Randomized Controlled Trial of XEN1101 for the Treatment of Major Depressive Disorder",
+          "orgStudyIdInfo": {
+            "id": "GCO 16-0374-02"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "4R33MH111932-03",
+              "link": "https://reporter.nih.gov/quickSearch/4R33MH111932-03",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The change in activation within the bilateral ventral striatum (VS) from baseline (week 0) to end of treatment (week 8) as measured by fMRI during an Incentive Flanker Task.",
+              "measure": "Change in activation within the reward circuit by fMRI",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The Montgomery-Åsberg Depression Rating Scale (MADARS) is a 10-item instrument used for the evaluation of depressive symptoms in adults and for the assessment of any changes to those symptoms. Each of the 10 items is rated on a scale of 0 to 6, with differing descriptors for each item. These individual item scores are added together to form a total score, which can range between 0 and 60 points, higher score indicating poorer health outcomes. The MADRS provides a measure of the overall level of depression.",
+              "measure": "Change in Montgomery-Åsberg Depression Rating Scale Score",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Quick Inventory of Depressive Symptomatology, Self-Report (QIDS-SR) is a 16-item self-rated instrument designed to assess the severity of depressive symptoms. The 16 items cover the nine symptom domains of major depression and are rated on a scale of 0-3. Total score ranges from 0 to 27, with ranges of 0-5 (normal), 6-10 (mild), 11-15 (moderate), 16-20 (moderate to severe), and 21+ (severe).",
+              "measure": "Change in Quick Inventory of Depressive Symptomatology, Self-Report [QIDS-SR] Score",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Snaith-Hamilton Pleasure Scale (SHAPS) is a well-validated 14-item self-report questionnaire commonly used to assess anhedonia. Each item on the SHAPS is worded so that higher scores indicate greater pleasure capacity. A total score can be derived by summing the responses to each item. Items answered with \"strongly agree\" are coded as \"1\", while a \"strongly disagree\" response was assigned a score of \"4.\" Total scores on the SHAPS can range from 14 to 56, with higher scores corresponding to higher levels of anhedonia.",
+              "measure": "Change in Snaith-Hamilton Pleasure Scale (SHAPS)",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Temporal Experience of Pleasure Scale (TEPS) is an 18-item self-report measurement of anhedonia which consists of a series of statements that must be rated according to how accurate they are for the individual. The scale produces a sub-score that differentiates the role of anticipatory pleasure ('wanting') and is derived of 10 items. Total scores range is 16-108. Lower scores indicate greater levels of anhedonia.",
+              "measure": "Change in Temporal Experience of Pleasure Scale",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "This is a widely administered clinician rated scale that assesses the subject overall illness severity and the degree of improvement from the initial assessment.\n\nIllness severity is rated on a 1-7 scale where 1 corresponds to \"Normal, Not at All Ill\", 2 is \"Borderline Mentally Ill\", the anchor for 3 is \"Mildly Ill\", the anchor for 4 is \"Moderately Ill\", 5 is \"Markedly Ill\", 6 is \"Severely Ill\", and 7 is \"Among the Most Extremely Ill Patients\".\n\nThe degree of improvement is rated on a 1-7 scale where 1 corresponds to \"Very Much Improved\", 2 is \"Much Improved\", the anchor for 3 is \"Minimally Improved\", the anchor for 4 is \"No Change\", 5 is \"Minimally Worse\", 6 is \"Much Worse\", and 7 is \"Very Much Worse\".",
+              "measure": "Change in Clinical Global Impression Scale",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-11-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-04-02",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-03-27",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2024-10-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2021-10-19",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-03",
+          "studyFirstPostDateStruct": {
+            "date": "2021-04-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-03-30",
+          "studyFirstSubmitQcDate": "2021-03-30"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants will receive treatment with ezogabine up to 900mg/day.",
+              "interventionNames": [
+                "Drug: Ezogabine"
+              ],
+              "label": "Ezogabine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Participants will receive treatment with a matching placebo pill.",
+              "interventionNames": [
+                "Drug: Placebos"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Ezogabine"
+              ],
+              "description": "daily for 5 weeks",
+              "name": "Ezogabine",
+              "otherNames": [
+                "Potiga"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "placebo pill daily for 5 weeks",
+              "name": "Placebos",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "maskingDescription": "Double blind",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 45,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study to Treat Major Depressive Disorder With a New Medication",
+          "nctId": "NCT03043560",
+          "officialTitle": "Developing Neuronal KCNQ Channel Modulators for Mood Disorders",
+          "orgStudyIdInfo": {
+            "id": "GCO 16-0374"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "1R61MH111932-01",
+              "link": "https://reporter.nih.gov/quickSearch/1R61MH111932-01",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "change in activation during reward anticipation within the bilateral VS from baseline (Study Visit 0) to the primary outcome visit (Study Visit 5) as measured by functional MRI during the incentive flanker task (IFT). The IFT, like the Monetary Incentive Delay task, permits discrete modeling of brain activity during anticipation of an incentive.\n\nFunctional scans were preprocessed and denoised for motion and physiological noise using multi-echo independent component analysis (ME-ICA). Task-based modeling was conducted using AFNI and FSL software. The primary outcome for reward anticipation was the contrast of reward cue compared to neutral cue (reward\\>neutral cue). The primary imaging outcome was analyzed using a linear mixed model with a single random intercept term treating time as discrete or continuous as appropriate.",
+              "measure": "Change in Ventral Striatum (VS) Activation",
+              "timeFrame": "baseline and 5 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The SHAPS is a well-validated 14-item self-report questionnaire commonly used to assess anhedonia. Each item on the SHAPS is worded so that higher scores indicate greater pleasure capacity. A total score can be derived by summing the responses to each item. Items answered with \"strongly agree\" are coded as \"1\", while a \"strongly disagree\" response was assigned a score of \"4.\" Total scores on the SHAPS can range from 14 to 56, with higher scores corresponding to higher levels of anhedonia.",
+              "measure": "Change in Snaith-Hamilton Pleasure Scale (SHAPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A widely administered clinician rated global measure of the degree of improvement from the initial assessment in subject overall illness severity. 7 point scale rated as: 1, very much improved; 2, much improved; 3, minimally improved; 4, no change; 5, minimally worse; 6, much worse; or 7, very much worse.",
+              "measure": "Clinical Global Impression - Improvement (CGI-I)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "Clinician rated global measure of subject overall illness severity. a 7-point scale rated as 1, normal, not at all ill; 2, borderline mentally ill; 3, mildly ill; 4, moderately ill; 5, markedly ill; 6, severely ill; or 7, extremely ill.",
+              "measure": "Clinical Global Impression - Severity (CGI-S)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A measure specifically designed to assess hedonic capacity for social and interpersonal pleasure.The ACIPS is a 17-item self-report measure scored on a likert scale, ranging from 1 (very false for me) to 6 (very true for me). Full scale from 17-102, higher score indicates higher hedonic capacity",
+              "measure": "Anticipatory and Consummatory Interpersonal Pleasure Scale (ACIPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A 10-item instrument used for the evaluation of depressive symptoms in adults and for the assessment of any changes to those symptoms. Each items is scored 0 (normal) to 6 (severe depression) with overall score ranges from 0 (normal) to 60 (severe depression).",
+              "measure": "Montgomery-Asberg Depression Rating Scale (MADRS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A 12-item generic assessment instrument that measures the level of functioning. Each item is scored from 0 to 4 and the items are summed to provide a total score. The score therefore ranges from 0 to 48, with higher scores indicating greater disability.",
+              "measure": "World Health Organization Disability Assessment Schedule 2.0 (WHODAS 2.0)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "The TEPS is composed of 18-items rated on a likert-type scale ranging from 1 (Very True for me) to 6 (Very False for me), and yields two subscales. Ten items make up the TEPS-Anticipatory Pleasure (TEPS-ANT) scale with a range from 10 (not motivated) to 60 (highly motivated). The other eight TEPS items make up the TEPS-Consummatory Pleasure (TEPS-CON) scale; range from 8 (not responsive) to 48 (highly responsive). Total scores range is 18-108. Lower scores indicate greater levels of anhedonia.",
+              "measure": "Temporal Experience of Pleasure Scale (TEPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "The SLIPS is a recently developed and validated measure of anhedonia that is tailored to detect recent changes in anhedonia. A 23-item measure, each item range from 0-3. Full scale from 0 to 69, higher score indicates more recent changes.",
+              "measure": "Specific Loss of Interest and Pleasure Scale (SLIPS)",
+              "timeFrame": "baseline 5 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-08-30",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-10-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-09-25",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-08-30",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-10-23",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-08-29",
+          "resultsFirstSubmitQcDate": "2020-09-25",
+          "startDateStruct": {
+            "date": "2017-09-25",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-09",
+          "studyFirstPostDateStruct": {
+            "date": "2017-02-06",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2017-02-02",
+          "studyFirstSubmitQcDate": "2017-02-03"
+        }
+      }
+    }
+  ],
+  "totalCount": 2
+}

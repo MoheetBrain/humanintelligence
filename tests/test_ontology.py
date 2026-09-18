@@ -526,7 +526,20 @@ def test_tool_mediated_is_a_distinct_provenance_class(onto: ontology.Ontology) -
     assert "mcp_tool" in vocab.values("retrieval_method")
     assert vocab.subset("retrieval_method", "tool_mediated_values") == ["mcp_tool"]
     evidential = set(vocab.subset("provenance_class", "evidential_classes"))
-    assert evidential == {"claim_derived", "reference_data", "tool_mediated"}
+    assert evidential == {
+        "claim_derived",
+        "reference_data",
+        "tool_mediated",
+        "external_analysis_verified",
+    }
+    # Sprint 2: an external agent's analysis is evidential ONLY once its artefacts
+    # verify. The unverified class must stay out of `evidential_classes`, because that
+    # subset is what the graph compiler and the ranking model read to decide whether an
+    # edge may support anything.
+    assert "external_analysis_unverified" not in evidential
+    assert vocab.subset("provenance_class", "inert_classes") == [
+        "external_analysis_unverified"
+    ]
     assert "ontology_axiom" not in evidential, (
         "an axiom is definitional, not evidence; it must not be counted as evidential"
     )

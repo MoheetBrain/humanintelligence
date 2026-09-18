@@ -1,0 +1,80 @@
+{
+  "analysis_id": "ANALYSIS:X02-FIXTURE",
+  "title": "SYNTHETIC FIXTURE \u2014 not a real analysis",
+  "agent": "agent:orchestrator (fixture)",
+  "completed_at": "2026-09-18T00:00:00Z",
+  "git": {
+    "repo": "n/a-fixture",
+    "branch": "n/a",
+    "commit": "0000000"
+  },
+  "genome_build": "GRCh38",
+  "software": [
+    {
+      "name": "susie",
+      "version": "0.12.35",
+      "source": "CRAN"
+    },
+    {
+      "name": "coloc",
+      "version": "5.2.3",
+      "source": "CRAN"
+    }
+  ],
+  "inputs": [
+    {
+      "role": "gwas_sumstats",
+      "description": "SYNTHETIC summary statistics; external to the delivery by design",
+      "path": null,
+      "sha256": "e8947138b4f44ad678ba52b2ebb788d104b133ef5dba8e61952d9ba9c7bbabdc",
+      "source_url": "https://example.invalid/synthetic_sumstats.tsv.gz"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "credible_sets.tsv",
+      "sha256": "1ff38103d240ba488aa1949cd47dc026082cd16ee89cec6d49c14b86c9862ae9",
+      "bytes": 323,
+      "description": "synthetic credible_sets.tsv",
+      "schema": "credible_sets"
+    },
+    {
+      "path": "credible_set_variants.tsv",
+      "sha256": "a664e1527bc9929cc767c26de3488e5abe2364208606181b9e06e5ddc37bbb58",
+      "bytes": 269,
+      "description": "synthetic credible_set_variants.tsv",
+      "schema": "credible_set_variants"
+    },
+    {
+      "path": "qtl_colocalisation.tsv",
+      "sha256": "eb1c4a3b7322674b5a54051c6f62ecdaca99d54f8c09a48e3832da53f8facb80",
+      "bytes": 815,
+      "description": "synthetic qtl_colocalisation.tsv",
+      "schema": "qtl_colocalisation"
+    },
+    {
+      "path": "regulatory_predictions.tsv",
+      "sha256": "247bef13a4f4aed0c71b3c0eb933d3c530f95c317e031cb54e0e91e03a201f7e",
+      "bytes": 350,
+      "description": "synthetic regulatory_predictions.tsv",
+      "schema": "regulatory_predictions"
+    },
+    {
+      "path": "negative_results.tsv",
+      "sha256": "b3b0bab0ebf1b81454ce559726deb9737e1f21c8301176aa92548e5de0e3f1b4",
+      "bytes": 319,
+      "description": "synthetic negative_results.tsv",
+      "schema": "negative_results"
+    }
+  ],
+  "parameters": {
+    "coverage": 0.95,
+    "coloc_p12": 1e-05,
+    "pp_h4_threshold": 0.75
+  },
+  "seed": 1,
+  "negative_results_included": true,
+  "known_limitations": [
+    "Entirely synthetic. Exists only to prove the ingestion adapter's checks fire."
+  ]
+}

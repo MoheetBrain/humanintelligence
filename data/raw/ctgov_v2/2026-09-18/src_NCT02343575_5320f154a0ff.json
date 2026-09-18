@@ -1,0 +1,1086 @@
+{
+  "derivedSection": {
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D010421",
+          "term": "Pentanoic Acids"
+        },
+        {
+          "id": "D014631",
+          "term": "Valerates"
+        },
+        {
+          "id": "D000144",
+          "term": "Acids, Acyclic"
+        },
+        {
+          "id": "D002264",
+          "term": "Carboxylic Acids"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D005232",
+          "term": "Fatty Acids, Volatile"
+        },
+        {
+          "id": "D005227",
+          "term": "Fatty Acids"
+        },
+        {
+          "id": "D008055",
+          "term": "Lipids"
+        },
+        {
+          "id": "D002090",
+          "term": "Butyrophenones"
+        },
+        {
+          "id": "D007659",
+          "term": "Ketones"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D014635",
+          "term": "Valproic Acid"
+        },
+        {
+          "id": "D006220",
+          "term": "Haloperidol"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2014-03-12",
+          "filename": "Prot_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": false,
+          "label": "Study Protocol",
+          "size": 694780,
+          "typeAbbrev": "Prot",
+          "uploadDate": "2019-05-31T12:42"
+        }
+      ],
+      "noSap": true
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "1. Start:\n\n   VPA PO/NGT 500 mg BID\n2. If need to increase in 24 or more hours:\n\n   VPA 500 mg PO/NGT q am, 1000 mg PO/NGT QHS\n3. If need to increase in 24 or more hours:\n\n   VPA 500 mg PO/NGT q am, 1500 mg PO/NGT QHS\n4. If need to increase in 24 or more hours:\n\nVPA 500 mg PO/NGT Q am, 2000 mg PO/NGT QHS\n\nRescue at all stages: HAL IV 2-5 mg Q4hr PRN",
+          "interventionNames": [
+            "Drug: Valproic Acid",
+            "Drug: Haloperidol"
+          ],
+          "label": "Valproic Acid",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Placebo: PO/NGT BID\n\nRescue: HAL IV 2-5 mg Q4hr PRN",
+          "interventionNames": [
+            "Drug: Placebo",
+            "Drug: Haloperidol"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Valproic Acid"
+          ],
+          "description": "1\\.\n\nStart:\n\nVPA PO/NGT 500 mg BID\n\n2\\.\n\nIf need to increase in 24 or more hours:\n\nVPA 500 mg PO/NGT q am, 1000 mg PO/NGT QHS\n\n3\\.\n\nIf need to increase in 24 or more hours:\n\nVPA 500 mg PO/NGT q am, 1500 mg PO/NGT QHS\n\n4.If need to increase in 24 or more hours:\n\nVPA 500 mg PO/NGT Q am, 2000 mg PO/NGT QHS",
+          "name": "Valproic Acid",
+          "otherNames": [
+            "VPA",
+            "Valproate",
+            "Depakote"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Placebo 500 mg matched to VPA BID PO/NGT",
+          "name": "Placebo",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo",
+            "Valproic Acid"
+          ],
+          "description": "Both arms (intervention VPA and placebo) will receive flexible as needed haloperidol: Rescue: HAL IV 2-5 mg Q4hr PRN",
+          "name": "Haloperidol",
+          "otherNames": [
+            "Haldol"
+          ],
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Hyperactive Delirium",
+        "Mixed Delirium"
+      ],
+      "keywords": [
+        "Hyperactive delirium",
+        "Mixed delirium",
+        "Anti-psychotic",
+        "Haldol",
+        "Valproic Acid"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Stanford",
+          "country": "United States",
+          "facility": "Stanford Hospital and Clinics",
+          "geoPoint": {
+            "lat": 37.42411,
+            "lon": -122.16608
+          },
+          "state": "California",
+          "zip": "94305"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Stanford University",
+          "name": "Yelizaveta Sher, M.D.",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        },
+        {
+          "affiliation": "Stanford University",
+          "name": "Jose R Maldonado, M.D.",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Delirium is the most often encountered psychiatric diagnosis in the general hospital, with incidence up to 85% in the intensive care unit (ICU) setting and with significant consequences on patients' morbidity and mortality. Currently, although not FDA approved, antipsychotics are often considered the first-line pharmacological treatment. However, there can be limitations to their use, including side effects or lack of efficacy. Valproic acid (VPA) is one of the alternatives at times used in such patients which from limited case series data appears to be helpful and tolerated. VPA can provide relief from agitation that poses a threat to the safety and recovery of the patient. Moreover, mechanistically it addresses the neurochemical and cellular abnormalities inherent in delirium (it has NMDA-antagonist, anti-dopaminergic, GABAergic,anti-inflammatory, anti-apoptotic, and histone deacetylase inhibitor properties, among others). The purpose of this study is to evaluate the efficacy and tolerability of the VPA in the first known to us randomized controlled trial.",
+      "detailedDescription": "The investigators plan to investigate the efficacy and tolerability of scheduled VPA as compared to placebo with as needed basis (PRN) haloperidol (as a back-up in both arms) for treatment of hyperactive or mixed delirium. Patients will be randomized to scheduled VPA or placebo (normal saline) and both arms will have flexible PRN dosing of haloperidol. Thus, the investigators plan to learn the time to delirium resolution in patients treated with VPA versus placebo; percentage of patients responding to VPA versus placebo; tolerability of VPA versus placebo. If addition of scheduled VPA proves to shorten time to delirium resolution as compared to placebo, lead to less use of haloperidol, and/or have fewer side effects, it would provide a very important addition to our limited evidence-based repertoire of delirium treatment. Moreover, this pilot study would then pave the way for the bigger randomized control trial powered to detect its effect size."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 3,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE4"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* patients 18 years of age and older\n* admitted to surgical ICU\n* diagnosed with hyperactive or mixed delirium\n\nExclusion Criteria:\n\n* hypoactive delirium\n* primary team does not think patient is appropriate to participate\n* no oral access (PO or NGT)\n* non-English speaking\n* contraindication to study medications\n* pregnant women or woman of child-bearing age not on documented contraception\n* QTc = or greater than 480\n* hepatic dysfunction\n* decreased platelets or platelet dysfunction\n* bleeding disorder, current major bleeding\n* history of NMS, epilepsy, or PD\n* diagnosis of schizophrenia, bipolar disorder or schizoaffective disorder\n* on warfarin or carbapenems\n* delirium due to alcohol withdrawal\n* treated with antipsychotics for more than 48 hours prior to study enrollment.",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Valproic Acid for Treatment of Hyperactive or Mixed Delirium in ICU",
+      "nctId": "NCT02343575",
+      "officialTitle": "Valproic Acid for Treatment of Hyperactive or Mixed Delirium in ICU",
+      "orgStudyIdInfo": {
+        "id": "28330"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Stanford University"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "Delirium resolution was defined as three negative Confusion Assessment Method (CAM) assessments, performed by nurses every 12 hours.",
+          "measure": "Time to Delirium Resolution",
+          "timeFrame": "Up to 5 days"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Amount of Haldol administered.",
+          "measure": "Use of as Needed Anti-psychotic Agent",
+          "timeFrame": "Up to 5 days"
+        },
+        {
+          "description": "Side effects may have included liver function test (LFT) increase, platelet decrease, bleeding, or QTc prolongation.",
+          "measure": "Side Effects From Medications",
+          "timeFrame": "Up to 5 days"
+        },
+        {
+          "description": "The items include the assessment of: (1) consciousness ( deep sedation/coma, agitation, normal wakefulness, or light sedation); (2) inattention; (3) disorientation; (4) hallucination, delusion, or psychosis; (5) psychomotor agitation or retardation; (6) inappropriate speech or mood; (7) sleep-wake cycle disturbances; and (8) fluctuation of symptomatology. The maximum score is eight; scores of ≥4 indicate the presence of delirium and score zero is indicate not in delirium. Each item is scored 0-8.",
+          "measure": "Intensity of Delirium as Measured by the Intensive Care Delirium Screening Checklist (ICDSC) Delirium Severity Scale",
+          "timeFrame": "Up to 5 days"
+        },
+        {
+          "measure": "Length of ICU Stay",
+          "timeFrame": "During expected average hospitalization (of 1 month)"
+        },
+        {
+          "description": "Participation in the study ended once delirium was resolved and the patient was off study drug. This outcome presents the total length of hospital stay, which may have been longer than participation in the study.",
+          "measure": "Length of Hospital Stay",
+          "timeFrame": "During expected average hospitalization (of 1 month)"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "Stanford University"
+      },
+      "responsibleParty": {
+        "investigatorAffiliation": "Stanford University",
+        "investigatorFullName": "Yelizaveta Sher",
+        "investigatorTitle": "Clinical Assistant Professor",
+        "type": "PRINCIPAL_INVESTIGATOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2018-01",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2019-06-26",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2019-05-31",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2018-01",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2019-06-26",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2019-05-31",
+      "resultsFirstSubmitQcDate": "2019-05-31",
+      "startDateStruct": {
+        "date": "2015-01"
+      },
+      "statusVerifiedDate": "2019-05",
+      "studyFirstPostDateStruct": {
+        "date": "2015-01-22",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2015-01-08",
+      "studyFirstSubmitQcDate": "2015-01-21",
+      "whyStopped": "We did not recruit the research assistant and terminated the study"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 1,
+          "description": "Participants received VPA and flexible haloperidol as needed.",
+          "id": "EG000",
+          "otherNumAffected": 0,
+          "otherNumAtRisk": 1,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 1,
+          "title": "Valproic Acid"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 2,
+          "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+          "id": "EG001",
+          "otherNumAffected": 1,
+          "otherNumAtRisk": 2,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 2,
+          "title": "Placebo"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 2
+            }
+          ],
+          "term": "QTc prolongation"
+        }
+      ],
+      "timeFrame": "Up to 5 days"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "1"
+            },
+            {
+              "groupId": "BG001",
+              "value": "2"
+            },
+            {
+              "groupId": "BG002",
+              "value": "3"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Participants received VPA and flexible haloperidol as needed.",
+          "id": "BG000",
+          "title": "Valproic Acid"
+        },
+        {
+          "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+          "id": "BG001",
+          "title": "Placebo"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "<=18 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Between 18 and 65 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "2"
+                    }
+                  ],
+                  "title": ">=65 years"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Age, Categorical",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "3"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": true
+      },
+      "limitationsAndCaveats": {
+        "description": "The study terminated early and did not meet its planned sample size of 30 participants, leading to a small number of subjects analyzed."
+      },
+      "pointOfContact": {
+        "email": "ysher@stanford.edu",
+        "organization": "Stanford University",
+        "phone": "650-736-0459",
+        "title": "Yelizaveta Sher, MD"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.7",
+                      "value": "1.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Delirium resolution was defined as three negative Confusion Assessment Method (CAM) assessments, performed by nurses every 12 hours.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Up to 5 days",
+          "title": "Time to Delirium Resolution",
+          "type": "PRIMARY",
+          "unitOfMeasure": "days"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.2",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Amount of Haldol administered.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Up to 5 days",
+          "title": "Use of as Needed Anti-psychotic Agent",
+          "type": "SECONDARY",
+          "unitOfMeasure": "mg"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "LFT increase"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Platelet decrease"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Bleeding"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "QTc prolongation"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Side effects may have included liver function test (LFT) increase, platelet decrease, bleeding, or QTc prolongation.",
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Up to 5 days",
+          "title": "Side Effects From Medications",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.7",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The items include the assessment of: (1) consciousness ( deep sedation/coma, agitation, normal wakefulness, or light sedation); (2) inattention; (3) disorientation; (4) hallucination, delusion, or psychosis; (5) psychomotor agitation or retardation; (6) inappropriate speech or mood; (7) sleep-wake cycle disturbances; and (8) fluctuation of symptomatology. The maximum score is eight; scores of ≥4 indicate the presence of delirium and score zero is indicate not in delirium. Each item is scored 0-8.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Up to 5 days",
+          "title": "Intensity of Delirium as Measured by the Intensive Care Delirium Screening Checklist (ICDSC) Delirium Severity Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "0"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "0"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "populationDescription": "Data were not collected for this outcome",
+          "reportingStatus": "POSTED",
+          "timeFrame": "During expected average hospitalization (of 1 month)",
+          "title": "Length of ICU Stay",
+          "type": "SECONDARY"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.5",
+                      "value": "8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Participation in the study ended once delirium was resolved and the patient was off study drug. This outcome presents the total length of hospital stay, which may have been longer than participation in the study.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received VPA and flexible haloperidol as needed.",
+              "id": "OG000",
+              "title": "Valproic Acid"
+            },
+            {
+              "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "During expected average hospitalization (of 1 month)",
+          "title": "Length of Hospital Stay",
+          "type": "SECONDARY",
+          "unitOfMeasure": "days"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Participants received Valproic Acid (VPA) and flexible haloperidol as needed.",
+          "id": "FG000",
+          "title": "Valproic Acid"
+        },
+        {
+          "description": "Participants received VPA placebo and flexible haloperidol as needed.",
+          "id": "FG001",
+          "title": "Placebo"
+        }
+      ],
+      "periods": [
+        {
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ]
+    }
+  }
+}

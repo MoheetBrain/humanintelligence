@@ -1,0 +1,1991 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Caffeine tablet, 200mg",
+              "interventionNames": [
+                "Drug: Caffeine (200 mg)"
+              ],
+              "label": "Caffeine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Lactose tablet",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Caffeine"
+              ],
+              "description": "Caffeine (200mg) will be administered per os 20 minutes prior to the PET/fMRI data acquisition.",
+              "name": "Caffeine (200 mg)",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Lactose tablet will be administered per os 20 minutes prior to the PET/fMRI data acquisition.",
+              "name": "Placebo",
+              "otherNames": [
+                "Lactose"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 12,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE4"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "Caffeine-RAC",
+          "briefTitle": "Effects of Caffeine on Reinforcement Learning in Healthy Adults Using PET/MRI",
+          "nctId": "NCT06763172",
+          "officialTitle": "Measure Striatal Adenosine-dopamine Receptors Interactions: from Molecule to Behaviors",
+          "orgStudyIdInfo": {
+            "id": "IRB2022P001681"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Martinos Center for Biomedical Imaging"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "1R21MH138923-01",
+              "link": "https://reporter.nih.gov/quickSearch/1R21MH138923-01",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Cerebral blood flow will be measured using an MR sequence, Arterial Spin Labeling, during the fMRI acquisition and used as a covariate in fMRI analysis. This outcome measurement will be used as a potential covariate in the fMRI analyses to account for the impact of caffeine's vasoconstrictive effects.",
+              "measure": "Effects of caffeine on cerebral blood flow",
+              "timeFrame": "During the PET/fMRI scan on the study day"
+            },
+            {
+              "description": "KSS is a 10-point cale, in which 1 is equivalent to extremely alert, while 10 is equivalent to extremely sleepy. The scale is to measure the participant's sleepiness state, which will be used as a potential covariate in the behavioral analyses.",
+              "measure": "Effects of caffeine on subjective sleepiness as measured by Karolinska Sleepiness Scale (KSS)",
+              "timeFrame": "After the PET/fMRI scan on the study day"
+            },
+            {
+              "description": "The part of STAI-A that assesses the anxiety level for the moment of answering includes 20 statements, such as \"I feel calm\", \"I feel tense\" etc. Participants will use a 4-point scale to answer whether they feel \"not at all\", \"somewhat\", \"moderately so\", or \"very much so\" to each statement. This outcome measurement will be used as a potential covariate in the behavioral analyses.",
+              "measure": "Effects of caffeine on anxiety levels measured by State-Trait Anxiety Inventory- adult version (STAI-A)",
+              "timeFrame": "After the PET/fMRI scan on the study day"
+            },
+            {
+              "description": "As an exploratory outcome, resting-state fMRI sequence will be sued to examine whether caffeine intake will affect brain connectivity.",
+              "measure": "Effects of caffeine on fMRI brain connectivity during resting state",
+              "timeFrame": "During the PET/fMRI scan on the study day"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Dopamine D2/D3 receptor availability will be measured and indexed by the \\[11C\\]Raclopride nondisplaceable binding potential (BPND).",
+              "measure": "Dopamine D2/D3 receptor availability",
+              "timeFrame": "During the PET/fMRI scan on the study day"
+            },
+            {
+              "description": "Reinforcement learning and the associated brain activity will be measured using PST in a fMRI scan. The reinforcement learning is indexed by the accuracy of the task performance on the behavioral level and the hemodynamic response to reward feedback on the neural level.",
+              "measure": "Effects of caffeine on reinforcement learning assessed by Probabilistic Selection Task (PST) in fMRI",
+              "timeFrame": "During the PET/fMRI scan on the study day"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Motor inhibition and the associated brain activity will be examined using Go/NoGo in a fMRI scan. The reinforcement learning is indexed by the accuracy of the task performance on the behavioral level and the hemodynamic response during the inhibition of motor reactions on the neural level.",
+              "measure": "Effects of caffeine on motor inhibition assessed by a Go/NoGo task in fMRI",
+              "timeFrame": "During the PET/fMRI scan on the study day"
+            },
+            {
+              "description": "Participants' salience to reward stimuli linked to the Probabilistic Selection Task will be assessed using Salience Attribution Test. In the task, participants will use a visual analogue scale to indicate their estimation of the reward probability (0 to 100%) of each stimulus they have learned in the task during the scan. The salience will be indicated by the difference between their estimation and the real probability, as well as the contrast between high and low probability in estimation and in reality.",
+              "measure": "Effects of caffeine on salience measured by Salience Attribution Test (SAT)",
+              "timeFrame": "After the PET/fMRI scan on the study day"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-01-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-01-07",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2023-05-17",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-01",
+          "studyFirstPostDateStruct": {
+            "date": "2025-01-08",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-12-31",
+          "studyFirstSubmitQcDate": "2024-12-31"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants will be prescribed tabs containing guanfacine immediate release (GIR) to be taken for 8 weeks and will be monitored by one of the study psychiatrists/nurse practitioners. Subjects will start with 0.5mg GIR nightly and increase by 0.5mg every 3 days with a goal dose of 2mg.",
+              "interventionNames": [
+                "Drug: Guanfacine Tablets"
+              ],
+              "label": "Guanfacine Treatment Group",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Guanfacine Treatment Group"
+              ],
+              "description": "Guanfacine immediate release, sold under the brand name Tenex among others, is a medication used to treat high blood pressure and off-label to treat attention deficit hyperactivity disorder (ADHD). It is taken by mouth and will be compounded by a pharmacy to the required doses used in this study.",
+              "name": "Guanfacine Tablets",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 28,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE4"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "The BIomarker Guided (BIG) Study for Depression",
+          "nctId": "NCT04181736",
+          "officialTitle": "Precision Mental Health: Evaluating Biotype-guided Interventions for Depression",
+          "orgStudyIdInfo": {
+            "id": "49147"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Stanford University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "During functional magnetic resonance imaging (fMRI), the cognitive control circuit was engaged by a Go-NoGo task, and circuit activation was quantified by blood flow in three regions of interest in the brain (dorsal anterior cingulate cortex \\[dACC\\], left dorsolateral prefrontal cortex \\[dLPFC\\], and right dLPFC) and the extent of functional connectivity between them. Task-evoked activation and connectivity are expressed as Z-scores, which represent the number of standard deviations the observed value is from the mean of a healthy reference dataset (population mean = 0). There is no fixed minimum or maximum for Z-scores. Standard deviations above the mean (a positive Z-score) indicate that the observed activation or connectivity is higher than the mean of the healthy reference dataset, while standard deviations below the mean (a negative Z-score) indicate it is lower. A negative Z-score indicates a worse outcome. For this study, a Z-score of \\<= -0.5 indicates poor cognitive control.",
+              "measure": "Change in Cognitive Control Circuit Function Z-score",
+              "timeFrame": "pre-treatment, 8 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Possible HDRS-17 scores range from 0 (no depression) to 52 (severe depression).",
+              "measure": "Number of Participants With a Score of ≤7 on the 17-item Hamilton Depression Rating Scale (HDRS-17) at Week 8 as a Measure of Depression Remission.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Possible QIDS-SR scores range from 0 (no depression) to 27 (severe depression).",
+              "measure": "Number of Participants With a Score ≤5 on the Quick Inventory of Depressive Symptoms-Self Report (QIDS-SR) at Week 8 as a Measure of Depression Remission.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Possible HDRS-17 scores range from 0 (no depression) to 52 (severe depression).",
+              "measure": "Number of Participants With a ≥50% Reduction on the 17-item Hamilton Depression Rating Scale (HDRS-17) as a Measure of Depression Response.",
+              "timeFrame": "pre-treatment, 8 weeks"
+            },
+            {
+              "description": "Possible QIDS-SR scores range from 0 (no depression) to 27 (severe depression).",
+              "measure": "Number of Participants With a ≥50% Reduction From Baseline on the Quick Inventory of Depressive Symptoms-Self Report (QIDS-SR) as a Measure of Depression Response.",
+              "timeFrame": "pre-treatment, 8 weeks"
+            },
+            {
+              "description": "Possible HDRS-17 scores range from 0 (no depression) to 52 (severe depression).",
+              "measure": "Change in Depression Scores on the 17-item Hamilton Depression Rating Scale (HDRS-17)",
+              "timeFrame": "baseline, 2 weeks, 8 weeks"
+            },
+            {
+              "description": "Possible QIDS-SR scores range from 0 (no depression) to 27 (severe depression).",
+              "measure": "Change in Depression Scores on the Quick Inventory of Depressive Symptoms-Self Report (QIDS-SR)",
+              "timeFrame": "pre-treatment, 2 weeks, 4 weeks, 6 weeks, 8 weeks"
+            },
+            {
+              "description": "Cognitive control behavioral performance was assessed using the WebNeuro computerized battery measuring cognitive control. Test performance is expressed as a composite Z-score, representing deviations from the mean of a healthy reference dataset (population mean = 0). Composite Z-scores were calculated by averaging: Maze (trials completed, completion and path learning time, errors), Digit Span (recall span, correct trials), Verbal Interference (total errors, reaction time), and Switching of Attention (completion time, connection time, errors). For GoNoGo, only reaction times were used as data was collected in-scanner, and data for this measure was normalized to the group. Extreme scores were winsorized to a threshold of 5 standard deviations. Z-scores have no fixed range; positive scores indicate better performance, negative scores indicate worse performance. For this study, a Z-score of \\<= -0.5 indicates poor cognitive control performance.",
+              "measure": "Change in Cognitive Control Behavioral Performance Z-score",
+              "timeFrame": "pre-treatment, 8 weeks"
+            },
+            {
+              "description": "Possible scores on the SWLS range from 5 (extreme dissatisfaction) to 35 (extreme satisfaction).",
+              "measure": "Change in the Satisfaction With Life Scale (SWLS) Score",
+              "timeFrame": "pre-treatment, 2 weeks, 8 weeks"
+            },
+            {
+              "description": "Scores on the WHOQOL-BREF are transformed to a scale of 0 (poor quality of life) to 100 (excellent quality of life).",
+              "measure": "Change in the World Health Organization Quality of Life - Brief (WHOQOL-BREF) Scale Scale Score",
+              "timeFrame": "pre-treatment, 2 weeks, 8 weeks"
+            },
+            {
+              "description": "Possible scores on the C-SSRS ideation range from 0 (no suicidal ideation) to 5 (high suicidal ideation).",
+              "measure": "Change in the Columbia-Suicide Severity Rating Scale (C-SSRS) Ideation Score",
+              "timeFrame": "pre-treatment, 8 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-02-12",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-03-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-03-07",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2024-01-17",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2025-03-20",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2025-01-18",
+          "resultsFirstSubmitQcDate": "2025-03-07",
+          "startDateStruct": {
+            "date": "2022-09-14",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-03",
+          "studyFirstPostDateStruct": {
+            "date": "2019-11-29",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-11-26",
+          "studyFirstSubmitQcDate": "2019-11-26"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "* Information gathering: patient history, medical history and current treatments, clinical examination and available paraclinical tests, assessment of alcohol consumption\n* A dedicated consultation at the Croix Rousse hospital to perform:\n\n  * Measurements of autonomic nervous system (ANS) activity at rest and during sensory stimulation.\n  * Self-administered questionnaires to assess psycho-behavioral traits\n* Analysis of nocturnal cardiac activity (at home): electrocardiographic (ECG) recording of heart activity during one night.\n* A study of the liver biopsy (performed as part of routine care) will be carried out to analyze ANS activity at the intrahepatic level for calculating the NRS score",
+              "interventionNames": [
+                "Other: Measurements of autonomic nervous system (ANS) activity at rest and during sensory stimulation.",
+                "Other: Self-administered questionnaires to assess psycho-behavioral traits",
+                "Other: Analysis of nocturnal cardiac activity (at home): electrocardiographic (ECG) recording of heart activity during one night.",
+                "Other: Calculation of the NRS score. A study of the liver biopsy will be carried out to analyze ANS activity at the intrahepatic level.",
+                "Other: Intervention name 5 * (Limit: 100 characters) Optionnal biocollection"
+              ],
+              "label": "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "* Information gathering: patient history, medical history and current treatments, clinical examination and available paraclinical tests, assessment of alcohol consumption\n* A dedicated consultation at the Croix Rousse hospital to perform:\n\n  * Measurements of autonomic nervous system (ANS) activity at rest and during sensory stimulation.\n  * Self-administered questionnaires to assess psycho-behavioral traits\n* Analysis of nocturnal cardiac activity (at home): electrocardiographic (ECG) recording of heart activity during one night.\n* A study of the liver biopsy (performed as part of routine care) will be carried out to analyze ANS activity at the intrahepatic level for calculating the NRS score",
+              "interventionNames": [
+                "Other: Measurements of autonomic nervous system (ANS) activity at rest and during sensory stimulation.",
+                "Other: Self-administered questionnaires to assess psycho-behavioral traits",
+                "Other: Analysis of nocturnal cardiac activity (at home): electrocardiographic (ECG) recording of heart activity during one night.",
+                "Other: Calculation of the NRS score. A study of the liver biopsy will be carried out to analyze ANS activity at the intrahepatic level.",
+                "Other: Intervention name 5 * (Limit: 100 characters) Optionnal biocollection"
+              ],
+              "label": "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+                "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car"
+              ],
+              "description": "Participants are informed that they will need to watch the screen, on which images will appear around a central symbol. They must click the mouse button as quickly as possible when they see an \"x\" sign and do nothing when they see a \"+\" sign appear in the center of the screen.\n\nSensory stimulation is carried out using OpenSesame software. It is divided into four blocks of seven minutes each, with a break systematically offered to participants between each block. Each block comprises three phases: rest (sitting with hands on knees, palms facing upwards and eyes closed) for two minutes, responding to stimuli according to instructions for three minutes, and a second rest phase for two minutes. In fact, participants are only active for a total of 12 minutes. The blocks are presented in the same order for all participants: Go block, neutral Go/NoGo block, emotional Go/NoGo block, then social Go/NoGo block.",
+              "name": "Measurements of autonomic nervous system (ANS) activity at rest and during sensory stimulation.",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+                "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car"
+              ],
+              "description": "Participants answer self-questionnaires on tablets by selecting the answer that seems most appropriate to them. They are told that there are no right or wrong answers and that they should answer as honestly as possible based on what they think and feel at that moment. The self-questionnaires are the QA-10 items, the short version of the UPPS-P, the BPAQ-SF, the CERQ, the DEX, the PSS-10, the HAD, and the ISI.",
+              "name": "Self-administered questionnaires to assess psycho-behavioral traits",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+                "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car"
+              ],
+              "description": "The investigator presents the NeuroCoach test kit to the participant and gives it to them. This kit consists of a recorder, two electrodes, a single-use pouch for nighttime use, a prepaid envelope for returning the equipment, and installation instructions. The investigator explains the installation instructions for the device, which the participant will set up independently at home.\n\nThe equipment used is CE 60601-1 certified (general requirements for basic safety and essential performance of medical electrical equipment). There is a risk of temporary local skin irritation where the electrodes come into contact with the skin.\n\nA prepaid envelope will be given to the patient to return the device.",
+              "name": "Analysis of nocturnal cardiac activity (at home): electrocardiographic (ECG) recording of heart activity during one night.",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+                "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car"
+              ],
+              "description": "Liver biopsy is performed as part of routine care. After pathological analysis as part of routine care, the biopsy sample will be sent to the Unité PaThLiv laboratory (UMR UCBL1 INSERM U1350; PathLiv team) for NRS histological scoring.",
+              "name": "Calculation of the NRS score. A study of the liver biopsy will be carried out to analyze ANS activity at the intrahepatic level.",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Patients with cirrhosis complicated by HCC, histologically confirmed by liver biopsy performed as pa",
+                "Patients with histologically proven cirrhosis based on liver biopsy performed as part of routine car"
+              ],
+              "description": "Venous blood samples (taken during two visits): for a total volume of 32mL(serum, plasma) for the biobank will be aliquoted and stored in cryotubes. Each sample taken will be labeled with the patient's anonymized code (the patient's first and last names will not appear on the tubes). The tubes will be transported to the laboratory (PaThLiv Unit - UMR UCBL1 INSERM U1350; PathLiv Team).",
+              "name": "Intervention name 5 * (Limit: 100 characters) Optionnal biocollection",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Prospective, single-center, case-control pilot study",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 100,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "PSYLIVER-PILOT",
+          "briefTitle": "PSYLIVER-PILOTE: Involvement of the Autonomic Nervous System in Hepatocellular Carcinoma (HCC)",
+          "nctId": "NCT07393074",
+          "officialTitle": "Involvement of the Autonomic Nervous System in Hepatocellular Carcinoma (HCC): a Pilot Psycho-behavioral and Neurophysiological Study",
+          "orgStudyIdInfo": {
+            "id": "69HCL25_0750"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Hospices Civils de Lyon"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "ID-RCB",
+              "id": "2025-A01879-40",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The NRS is based on the RNA expression values of 6 human genes encoding all adrenergic receptors, and 21 genes encoding all cholinergic receptors or subunits.\n\nThe NRS is defined by the difference between the sum of the expression values of adrenergic receptors on the one hand, and the sum of the expression values of cholinergic receptors on the other hand. Hence, the lower the NRS, the more cholinergic the sample is.",
+              "measure": "RNA expression values encoding all adrenergic receptors, and all cholinergic receptors or subunits.",
+              "timeFrame": "At liver biopsy, within 6 months after inclusion"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "A short screening questionnaire (AQ-10 (Autism Spectrum Quotient - 10 items)) designed to identify autistic traits in adults, focusing on social skills, attention switching, communication, and imagination.",
+              "measure": "Identify autistic traits",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A self-report measure assessing five dimensions of impulsivity: negative urgency, positive urgency, lack of premeditation, lack of perseverance, and sensation seeking.",
+              "measure": "Measure assessing five dimensions of impulsivity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A questionnaire (BPAQ (Buss-Perry Aggression Questionnaire)) measuring different aspects of aggression, including physical aggression, verbal aggression, anger, and hostility.",
+              "measure": "Measure assessing different aspects of aggression",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A self-report instrument (CERQ (Cognitive Emotion Regulation Questionnaire)) that evaluates the cognitive strategies individuals use to regulate their emotions after experiencing stressful or negative events.",
+              "measure": "Evaluation of the cognitive strategies individuals",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A measure (DEX (Dysexecutive Questionnaire)) assessing everyday problems related to executive dysfunction, such as difficulties with planning, emotional regulation, inhibition, and self-awareness.",
+              "measure": "Measure assessing everyday problems related to executive dysfunction",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A screening tool (HADS (Hospital Anxiety and Depression Scale)) designed to detect symptoms of anxiety and depression, particularly in medical or clinical settings, while minimizing the influence of physical symptoms.",
+              "measure": "Screening to detect symptoms of anxiety and depression",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A global measure of heart rate variability (SDNN (Standard Deviation of NN intervals)) reflecting overall autonomic nervous system activity.",
+              "measure": "Measure of heart rate variability",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "An index (pNN50 (Percentage of NN intervals differing by more than 50 ms) of parasympathetic (vagal) activity based on short-term heart rate variability.",
+              "measure": "An index of parasympathetic (vagal) activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "A time-domain (rMSSD (Root Mean Square of Successive Differences)) measure of HRV mainly reflecting parasympathetic nervous system activity.",
+              "measure": "Measure of HRV reflecting parasympathetic nervous system activity.",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "The total (Ptot (Total Power)) variance of heart rate variability across all frequency bands, reflecting overall autonomic regulation.",
+              "measure": "Measure of total variance of heart rate variability",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "An index of the parasympathetic activity .",
+              "measure": "An index (HF (High-Frequency)) of the parasympathetic activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "An index (LF/HF-HRV Ratio) often used to estimate the balance between sympathetic and parasympathetic activity (with interpretative limitations).",
+              "measure": "An index often used to estimate the balance between sympathetic and parasympathetic activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A measure (DC (Deceleration Capacity)) of the heart's ability to slow down, reflecting cardiac vagal modulation.",
+              "measure": "A measure of cardiac vagal modulation.",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A spectral measure (PIP (Pulse Interval Power)) of pulse interval variability indicating autonomic modulation of heart rate.",
+              "measure": "Mesure spectrale du pouls cardiaque",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A measure (VLFI (Very Low Frequency Index)) associated with slow regulatory mechanisms of the autonomic nervous system, including thermoregulation and hormonal influences.",
+              "measure": "A measure associated with slow regulatory mechanisms of the autonomic nervous system",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A measure (EDR (Electrodermal Response)) of rapid changes in skin conductance reflecting phasic sympathetic nervous system activity.",
+              "measure": "A measure of rapid changes in skin conductance",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A tonic measure of skin conductance (SCL (Skin Conductance Level)) indicating baseline sympathetic arousal.",
+              "measure": "A tonic measure of skin conductance",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A cardiac measure inversely (PEP (Pre-Ejection Period)) related to sympathetic activity; shorter PEP reflects increased sympathetic drive.",
+              "measure": "A cardiac measure inversely related to sympathetic activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A frequency-domain measure (HF-HRV (High-Frequency Heart Rate Variability)) associated with parasympathetic (vagal) activity and respiratory influences.",
+              "measure": "A frequency-domain measure associated with parasympathetic (vagal) activity and respiratory influences.",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A composite index (SAI (Sympathetic Activity Index)) representing overall sympathetic nervous system activation.",
+              "measure": "An index representing overall sympathetic nervous system activation",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "A composite index (PAI (Parasympathetic Activity Index)) representing overall parasympathetic (vagal) nervous system activity.",
+              "measure": "An index representing overall parasympathetic (vagal) nervous system activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            },
+            {
+              "description": "An index (CAB (Cardiac Autonomic Balance)) describing the relative balance between sympathetic and parasympathetic cardiac control",
+              "measure": "An index describing the relative balance between sympathetic and parasympathetic cardiac control",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "A measure (CSAB (Cardiac Sympathetic Autonomic Balance)) emphasizing the contribution of sympathetic activity to cardiac autonomic regulation.",
+              "measure": "Measure the contribution of sympathetic activity to cardiac autonomic regulation",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "An indicator (CAR (Cardiac Autonomic Regulation)) of overall effectiveness and flexibility of autonomic control over cardiac function.",
+              "measure": "An indicator of overall effectiveness and flexibility of autonomic control over cardiac function",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "A measure (CSAR (Cardiac Sympathetic Autonomic Regulation)) reflecting the efficiency of sympathetic regulation of cardiac activity",
+              "measure": "Measure reflecting the efficiency of sympathetic regulation of cardiac activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion"
+            },
+            {
+              "description": "A ratio (SAI/PAI Ratio) expressing the relative dominance of sympathetic versus parasympathetic autonomic activity.",
+              "measure": "A ratio expressing dominance of sympathetic versus parasympathetic autonomic activity",
+              "timeFrame": "During the visit, before the liver biopsy, within a maximum of 6 months after inclusion."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2028-04-17",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-04-29",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-04-23",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2028-04-17",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2026-04-17",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-04",
+          "studyFirstPostDateStruct": {
+            "date": "2026-02-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-01-13",
+          "studyFirstSubmitQcDate": "2026-01-30"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Healthy controls will apply placebo skin patch for up to two hours prior to behavioral and EEG task during the first visit in week 1. After a washout period, they will return and apply a nicotine patch (7 mg/24 hour dose) for up to two hours prior to behavioral and EEG task during the second visit in week 2.",
+              "interventionNames": [
+                "Drug: Nicotine Patch, 7 Mg/24 Hr",
+                "Drug: Placebo patch"
+              ],
+              "label": "Healthy: placebo first, nicotine last",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Healthy controls will apply nicotine skin patch (7 mg/24 hour dose) for up to two hours prior to behavioral and EEG task during the first visit in week 1. After a washout period, they will return and apply a placebo patch for up to two hours prior to behavioral and EEG task during the second visit in week 2.",
+              "interventionNames": [
+                "Drug: Nicotine Patch, 7 Mg/24 Hr",
+                "Drug: Placebo patch"
+              ],
+              "label": "Healthy: nicotine first, placebo last",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Subjects with schizophrenia (SCZ) will apply placebo skin patch for up to two hours prior to behavioral and EEG task during the first visit in week 1. After a washout period, they will return and apply a nicotine patch (7 mg/24 hour dose) for up to two hours prior to behavioral and EEG task during the second visit in week 2.",
+              "interventionNames": [
+                "Drug: Nicotine Patch, 7 Mg/24 Hr",
+                "Drug: Placebo patch"
+              ],
+              "label": "SCZ: placebo first, nicotine last",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Subjects with schizophrenia (SCZ) will apply nicotine skin patch (7 mg/24 hour dose) for up to two hours prior to behavioral and EEG task during the first visit in week 1. After a washout period, they will return and apply a placebo patch for up to two hours prior to behavioral and EEG task during the second visit in week 2.",
+              "interventionNames": [
+                "Drug: Nicotine Patch, 7 Mg/24 Hr",
+                "Drug: Placebo patch"
+              ],
+              "label": "SCZ: nicotine first, placebo last",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Healthy: nicotine first, placebo last",
+                "Healthy: placebo first, nicotine last",
+                "SCZ: nicotine first, placebo last",
+                "SCZ: placebo first, nicotine last"
+              ],
+              "description": "Nicotine patch, 7 mg/24 hour will be applied to the skin.",
+              "name": "Nicotine Patch, 7 Mg/24 Hr",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Healthy: nicotine first, placebo last",
+                "Healthy: placebo first, nicotine last",
+                "SCZ: nicotine first, placebo last",
+                "SCZ: placebo first, nicotine last"
+              ],
+              "description": "Placebo skin patch will be applied to the skin.",
+              "name": "Placebo patch",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 18,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Effects of Transdermal Nicotine on Response Inhibition to Emotional Cues in Schizophrenia",
+          "nctId": "NCT03838484",
+          "officialTitle": "Effects of Transdermal Nicotine on Response Inhibition to Emotional Cues in Schizophrenia",
+          "orgStudyIdInfo": {
+            "id": "190021"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Vanderbilt University Medical Center"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "7K23MH116339",
+              "link": "https://reporter.nih.gov/quickSearch/7K23MH116339",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Participants will be shown fearful, sad, angry, and disgust faces (negative valence) and neutral faces performed in 5 blocks (3 emotional blocks with angry/fearful/sad/disgust faces and 2 non-emotional blocks). In each block the subject is instructed on the go/no-go targets and will press a key (\"Go\") or withhold pressing a key (\"NoGo\"). The False Alarm Error Rate will be measured by the proportion of incorrect responses.",
+              "measure": "False Alarm Error Rate",
+              "timeFrame": "Week 1"
+            },
+            {
+              "description": "Participants will be shown fearful, sad, angry, and disgust faces (negative valence) and neutral faces performed in 5 blocks (3 emotional blocks with angry/fearful/sad/disgust faces and 2 non-emotional blocks). In each block the subject is instructed on the go/no-go targets and will press a key (\"Go\") or withhold pressing a key (\"NoGo\"). The False Alarm Error Rate will be measured by the proportion of incorrect responses.",
+              "measure": "False Alarm Error Rate",
+              "timeFrame": "Week 2"
+            },
+            {
+              "description": "Participants will be shown fearful, sad, angry, and disgust faces (negative valence) and neutral faces performed in 5 blocks (3 emotional blocks with angry/fearful/sad/disgust faces and 2 non-emotional blocks). In each block the subject is instructed on the go/no-go targets and will press a key (\"Go\") or withhold pressing a key (\"NoGo\"). The Omission Error Rate will be measured by the proportion of questions asked with a failure to respond.",
+              "measure": "Omission Error Rate",
+              "timeFrame": "Week 1"
+            },
+            {
+              "description": "Participants will be shown fearful, sad, angry, and disgust faces (negative valence) and neutral faces performed in 5 blocks (3 emotional blocks with angry/fearful/sad/disgust faces and 2 non-emotional blocks). In each block the subject is instructed on the go/no-go targets and will press a key (\"Go\") or withhold pressing a key (\"NoGo\"). The Omission Error Rate will be measured by the proportion of questions asked with a failure to respond.",
+              "measure": "Omission Error Rate",
+              "timeFrame": "Week 2"
+            },
+            {
+              "description": "Time taken from stimulus presentation to button push during Go trials",
+              "measure": "Reaction Time for Correct Hits",
+              "timeFrame": "Week 1"
+            },
+            {
+              "description": "Time taken from stimulus presentation to button push during Go trials",
+              "measure": "Reaction Time for Correct Hits",
+              "timeFrame": "Week 2"
+            },
+            {
+              "description": "Time taken from stimulus presentation to button push during NoGo trials",
+              "measure": "Reaction Time for False Alarms",
+              "timeFrame": "Week 1"
+            },
+            {
+              "description": "Time taken from stimulus presentation to button push during NoGo trials",
+              "measure": "Reaction Time for False Alarms",
+              "timeFrame": "Week 2"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-02-24",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2022-04-29",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2022-04-27",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-02-24",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2022-04-29",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2021-12-20",
+          "resultsFirstSubmitQcDate": "2022-04-27",
+          "startDateStruct": {
+            "date": "2019-05-10",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2022-04",
+          "studyFirstPostDateStruct": {
+            "date": "2019-02-12",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-02-07",
+          "studyFirstSubmitQcDate": "2019-02-08",
+          "whyStopped": "Recruitment challenges due to Covid19."
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subject will receive transdermal nicotine 7 mg daily for 7 days, placebo patch for 7 days, then placebo patch for a final 7 days.",
+              "interventionNames": [
+                "Drug: Transdermal nicotine",
+                "Other: Transdermal placebo"
+              ],
+              "label": "Transdermal nicotine first, placebo last",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Subject will receive transdermal placebo daily for 7 days, placebo patch for another 7 days, then transdermal nicotine 7 mg daily for a final 7 days.",
+              "interventionNames": [
+                "Drug: Transdermal nicotine",
+                "Other: Transdermal placebo"
+              ],
+              "label": "Transdermal placebo first, nicotine last",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Transdermal nicotine first, placebo last",
+                "Transdermal placebo first, nicotine last"
+              ],
+              "name": "Transdermal nicotine",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Transdermal nicotine first, placebo last",
+                "Transdermal placebo first, nicotine last"
+              ],
+              "name": "Transdermal placebo",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 8,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Nicotinic Cholinergic Modulation as a Novel Treatment Strategy for Aggression Associated With Autism",
+          "nctId": "NCT02552147",
+          "officialTitle": "Nicotinic Cholinergic Modulation as a Novel Treatment Strategy for Aggression Associated With Autism",
+          "orgStudyIdInfo": {
+            "id": "1502015384"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Yale University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Aberrant Behavior Checklist (ABC) measures symptom subscales for individuals with neurodevelopmental disorders. The ABC-irritability subscale measures irritability and related symptoms and the subscale score range is 0 (least symptomatic) to 45 (most symptomatic). The ABC is completed by parents/caregivers.",
+              "measure": "Change From Baseline in Aberrant Behavior Checklist Irritability Subscale (ABC-I)",
+              "timeFrame": "Baseline and 7 days."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The Social Responsiveness Scale (SRS) - 2 quantifies impairments in social behaviors seen in autism spectrum disorder and related conditions and their severity. The version used in this study is completed by parents/caregivers. The raw score range is 0 (unaffected) to \\> 134 (extremely affected). The ABC is completed by parents/caregivers.",
+              "measure": "Change in Social Responsiveness Scale-Adults (SRS-A)",
+              "timeFrame": "Baseline and 7 days."
+            },
+            {
+              "description": "Brief qualitative reports of the patient's subjective experience will be recorded by asking \"In what ways did you find the patch helpful or harmful during the past week, if at all?\".",
+              "measure": "Change in Qualitative Description of Irritability and Aggression Symptoms",
+              "timeFrame": "Baseline and 7 days"
+            },
+            {
+              "description": "Subjects will perform a computerized frustration-induction task and complete a rating scale of irritability and frustration levels.",
+              "measure": "Change in Frustration and Irritability Ratings During Frustration-induction Go-NoGo Task",
+              "timeFrame": "Baseline and one week"
+            },
+            {
+              "description": "The State-Trait Anxiety Inventory (STAI) is a measure of trait and state anxiety. It ranges from a score of 20 (least affected) to 80 (most affected).",
+              "measure": "Change in State/Trait Anxiety Inventory (STAI) Score",
+              "timeFrame": "Baseline and day 7"
+            },
+            {
+              "description": "Caregivers rated nightly sleep quality from 0 (worst) to 10 (best). Average rating for each treatment week is compared.",
+              "measure": "Nightly Sleep Quality",
+              "timeFrame": "Day 7"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-11-17",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2022-05-06",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2022-05-04",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-11-17",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-03-14",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2018-03-09",
+          "resultsFirstSubmitQcDate": "2018-11-23",
+          "startDateStruct": {
+            "date": "2015-09"
+          },
+          "statusVerifiedDate": "2022-05",
+          "studyFirstPostDateStruct": {
+            "date": "2015-09-16",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-09-14",
+          "studyFirstSubmitQcDate": "2015-09-15"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Galantamine 8 mg/day",
+              "interventionNames": [
+                "Drug: Galantamine"
+              ],
+              "label": "Galantamine 8 mg/day",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "placebo",
+              "interventionNames": [
+                "Drug: placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Galantamine 8 mg/day"
+              ],
+              "description": "Galantamine 8 mg/day",
+              "name": "Galantamine",
+              "otherNames": [
+                "Nivalin,",
+                "Razadyne,",
+                "Razadyne ER,",
+                "Reminyl,",
+                "Lycoremine"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "sugar pill",
+              "name": "placebo",
+              "otherNames": [
+                "Sugar Pill"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 34,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Galantamine Effects on Cognitive Function in Abstinent Cocaine Users",
+          "nctId": "NCT00606801",
+          "officialTitle": "Galantamine Effects on Cognitive Function in Abstinent Cocaine Users",
+          "orgStudyIdInfo": {
+            "id": "0706002768"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Yale University"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "P50DA009241",
+              "link": "https://reporter.nih.gov/quickSearch/P50DA009241",
+              "type": "NIH"
+            },
+            {
+              "domain": "Principal Investigator of P50 grant",
+              "id": "B Rounsaville",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the RVIP, subjects must detect either odd or even 3 digit sequences appearing in a box in a pseudo-random order at 100 digits per minute. Reaction time (RT) to correct answers was measured.",
+              "measure": "Performance on the Cambridge Neuropsychological Test Automated Battery (CANTAB) - RVIP Reaction Time",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the RVIP, subjects must detect either odd or even 3 digit sequences appearing in a box in a pseudo-random order at 100 digits per minute. The total hits were measured",
+              "measure": "Performance on the Cambridge Neuropsychological Test Automated Battery (CANTAB) - RVIP Total Hits",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the RVIP, subjects must detect either odd or even 3 digit sequences appearing in a box in a pseudo-random order at 100 digits per minute. The number of correct rejections was measured.",
+              "measure": "Performance on the Cambridge Neuropsychological Test Automated Battery (CANTAB) - RVIP Total Correct Rejections",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the RVIP, subjects must detect either odd or even 3 digit sequences appearing in a box in a pseudo-random order at 100 digits per minute. A' is a measure of sensitivity to target sequences and it reflects probabilities of hits and false alarms to provide a score of sensitivity to the target regardless of response tendency. The scores range from 0 (bad) to 1 (good).",
+              "measure": "Performance on the Cambridge Neuropsychological Test Automated Battery (CANTAB) - RVIP A' (Sensitivity to Target Sequences)",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the RVIP, subjects must detect either odd or even 3 digit sequences appearing in a box in a pseudo-random order at 100 digits per minute. B reflects the probability of hits and false alarms to provide a measure of the participants tendency to respond regardless of whether the target sequence is presented. The scores range from -1 to +1 with scores near +1 indicative of a subject that gave few false alarms.",
+              "measure": "Performance on the Cambridge Neuropsychological Test Automated Battery (CANTAB) - RVIP B' (Strength to Detect to Target Sequences)",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the Paired Associate Learning (PAL) task, boxes are displayed on the screen and are opened in a random order. One or more of the boxes will contain a pattern. After the subjects have seen the patterns behind each box, the patterns are then displayed in the middle of the screen, one at a time, and the subject must touch the box where the pattern was originally located. An error will cause the test to open the boxes again to remind the subject of their locations. The number of boxes with patterns increases throughout the test. The stages completed and number of errors are measures of interest.",
+              "measure": "Paired Associate Learning (PAL) - Stages Complete",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Rapid Visual Processing test (RVIP) is a measure of sustained attention with a small working memory component that is sensitive to cholinergic enhancers. In the Paired Associate Learning (PAL) task, boxes are displayed on the screen and are opened in a random order. One or more of the boxes will contain a pattern. After the subjects have seen the patterns behind each box, the patterns are then displayed in the middle of the screen, one at a time, and the subject must touch the box where the pattern was originally located. An error will cause the test to open the boxes again to remind the subject of their locations. The number of boxes with patterns increases throughout the test. The stages completed and number of errors are measures of interest.",
+              "measure": "Paired Associate Learning (PAL) - Mean Errors",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "In the PRM, the subject is presented with a series of 12 visual patterns, one at a time, in the center of the screen. These patterns are designed so that they cannot easily be given verbal labels. In the recognition phase, the subject is required to choose between a pattern they have already seen and a novel pattern. The time to correct answer was measured.",
+              "measure": "Pattern Recognition Memory (PRM) - Response Time for Correct Answers",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "Pattern Recognition Memory (PRM) tests visual pattern recognition memory in a two choice forced discrimination paradigm. 12 visual patterns are presented, then the subject must choose between each of these patterns and a novel pattern. The number of correct responses are measured.",
+              "measure": "Pattern Recognition Memory (PRM) - Number Correct Answers",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The SART is a Go / NoGo task measuring the ability to activate or inhibit responses. In this 4.5 minute task, 225 single digits (25 × 9 digits) were presented on a computer monitor. Each digit was presented for 250 ms, and was immediately followed by a mask for 900 ms. The mask consists of a ring with a diagonal cross in the center. Subjects were instructed to press a spacebar to every digit except the 3, and to give equal importance to speed and accuracy. Responses were allowed during the presentation of both the digit and mask. The digits were presented in a different random order for each subject. There were 18 practice trials, containing 2 no-response targets (3s). For the Go/NoGo task, response inhibition was measured as the number of errors on the no- Go trials, with low errors indicating better response inhibition.\n\nComplete data for 3 subjects in the Placebo group, and for 1 subject in the galantamine group were not capture do to experimenter and computer errors.",
+              "measure": "Performance on the Sustained Attention to Response Task (SART) - Number of Errors on NoGo Trials",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "The SART is a Go / NoGo task measuring the ability to activate or inhibit responses. In this 4.5 minute task, 225 single digits (25 × 9 digits) were presented on a computer monitor. Each digit was presented for 250 ms, and was immediately followed by a mask for 900 ms. The mask consists of a ring with a diagonal cross in the center. Subjects were instructed to press a spacebar to every digit except the 3, and to give equal importance to speed and accuracy. Responses were allowed during the presentation of both the digit and mask. The digits were presented in a different random order for each subject. There were 18 practice trials, containing 2 no-response targets (3s). The number of errors on Go trials reflected the response activation function, with fewer errors indicating greater response activation.\n\nComplete data for 3 subjects in the Placebo group, and for 1 subject in the galantamine group were not capture do to experimenter and computer errors.",
+              "measure": "Performance on the Sustained Attention to Response Task (SART)- Number of Errors on Go Trials",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "The SART is a Go / NoGo task measuring the ability to activate or inhibit responses. In this 4.5 minute task, 225 single digits (25 × 9 digits) were presented on a computer monitor. Each digit was presented for 250 ms, and was immediately followed by a mask for 900 ms. The mask consists of a ring with a diagonal cross in the center. Subjects were instructed to press a spacebar to every digit except the 3, and to give equal importance to speed and accuracy. Responses were allowed during the presentation of both the digit and mask. The digits were presented in a different random order for each subject. There were 18 practice trials, containing 2 no-response targets (3s).\n\nFor the Go trial, the reaction time reflected the response activation function, faster reaction time indicating greater response activation.\n\nComplete data for 3 subjects in the Placebo group, and for 1 subject in the galantamine group were not capture do to experimenter and computer errors.",
+              "measure": "Performance on the Sustained Attention to Response Task (SART)- Mean Reaction Time for Correct Press on Go Trial",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "The Cocaine-Stroop task measures attention capture (attentional bias) secondary to cocaine cues; (Stroop effect - calculated as the difference between mean RT on cocaine words and mean RT on control words). Subjects completed 2 counterbalanced blocks (150 trials per block). One block contained 15 cocaine words and neutral words in a mixed order. The other block contained 15 control words matched in length and frequency to cocaine words, and a different set of neutral words. Subjects were required to indicate the colors in which the words were written as quickly and accurately as possible. Reaction times for identification of word color was measured. In addition, the difference in RT to words following cocaine and control words were measured (carry-over effect). Complete data for 3 participants (2 placebo and 1 galantamine) were not capture due to experimenter and computer errors.",
+              "measure": "Performance on the Modified Stroop Task (Cocaine-Stroop)- Reaction Time",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "The Cocaine-Stroop task measures attention capture (attentional bias) secondary to cocaine cues; (Stroop effect - calculated as the difference between mean RT on cocaine words and mean RT on control words). Subjects completed 2 counterbalanced blocks (150 trials per block). One block contained 15 cocaine words and neutral words in a mixed order. The other block contained 15 control words matched in length and frequency to cocaine words, and a different set of neutral words. Subjects were required to indicate the colors in which the words were written as quickly and accurately as possible. Reaction times for identification of word color was measured. In addition, the difference in RT to words following cocaine and control words were measured (carry-over effect). Complete data for 3 participants (2 placebo and 1 galantamine) were not capture due to experimenter and computer errors.",
+              "measure": "Performance on the Modified Stroop Task (Cocaine-Stroop)- Stroop Effect",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            },
+            {
+              "description": "The Cocaine-Stroop task measures attention capture (attentional bias) secondary to cocaine cues; (Stroop effect - calculated as the difference between mean RT on cocaine words and mean RT on control words). Subjects completed 2 counterbalanced blocks (150 trials per block). One block contained 15 cocaine words and neutral words in a mixed order. The other block contained 15 control words matched in length and frequency to cocaine words, and a different set of neutral words. Subjects were required to indicate the colors in which the words were written as quickly and accurately as possible. Reaction times for identification of word color was measured. In addition, the difference in RT to words following cocaine and control words were measured (carry-over effect). Complete data for 3 participants (2 placebo and 1 galantamine) were not capture due to experimenter and computer errors.",
+              "measure": "Performance on the Modified Stroop Task (Cocaine-Stroop)- Carry-over Effect",
+              "timeFrame": "Baseline, Day 5 and Day 10"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2009-02",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-03-15",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-02-19",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2009-02",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2013-07-31",
+            "type": "ESTIMATED"
+          },
+          "resultsFirstSubmitDate": "2012-02-08",
+          "resultsFirstSubmitQcDate": "2013-06-24",
+          "startDateStruct": {
+            "date": "2007-06"
+          },
+          "statusVerifiedDate": "2021-02",
+          "studyFirstPostDateStruct": {
+            "date": "2008-02-05",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2008-01-23",
+          "studyFirstSubmitQcDate": "2008-02-04"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All participants will complete psychiatric assessment and cognitive testing.",
+              "interventionNames": [
+                "Behavioral: Psychiatric and Cognitive Testing"
+              ],
+              "label": "Psychiatric and Cognitive Testing",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "This arm plans to assess the subjective (e.g., euphoric) and behavioral effects (e.g., self-administration) of cocaine in experienced, non-treatment seeking users of the drug in a human laboratory study of self-regulated cocaine administration.",
+              "interventionNames": [
+                "Drug: Cocaine Self-adminstration"
+              ],
+              "label": "Cocaine Self-adminstration",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "All participants will complete a PET scan to assess mGluR5 receptors using \\[18-F\\]FPEB",
+              "interventionNames": [
+                "Radiation: Positron Emission Tomography"
+              ],
+              "label": "Positron Emission Tomography",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "All participants will complete one MRI scan to assess brain structure and function.",
+              "interventionNames": [
+                "Other: Magnetic Resonance Imaging"
+              ],
+              "label": "Magnetic Resonance Imaging",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Psychiatric and Cognitive Testing"
+              ],
+              "description": "Interviews, questionnaires, and computer testing.",
+              "name": "Psychiatric and Cognitive Testing",
+              "type": "BEHAVIORAL"
+            },
+            {
+              "armGroupLabels": [
+                "Cocaine Self-adminstration"
+              ],
+              "description": "The intervention will include a training and safety session that consists of physician/nurse-administered cocaine followed by a self-regulated cocaine administration period under carefully controlled and closely monitored conditions.",
+              "name": "Cocaine Self-adminstration",
+              "otherNames": [
+                "cocaine hydrochloride"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Positron Emission Tomography"
+              ],
+              "description": "PET scans will be performed on a High Resolution Research Tomograph (HRRT), the highest resolution human brain scanner available. Antecubital venous catheters will be used for IV administration of the radiotracer and for venous blood sampling. A radial artery catheter may also be inserted by an experienced physician before the PET scan. At the beginning of each scan, the participants's head will be immobilized and a 6-minute transmission scan, using an orbiting 137Cs point-source, is obtained and used for attenuation correction. PET scans will be acquired using bolus or bolus plus constant infusion administration of \\[18F\\]FPEB.",
+              "name": "Positron Emission Tomography",
+              "otherNames": [
+                "PET"
+              ],
+              "type": "RADIATION"
+            },
+            {
+              "armGroupLabels": [
+                "Magnetic Resonance Imaging"
+              ],
+              "description": "Structural and functional MRI data will be acquired using a Siemens Trio TIM 3.0T system at the Yale Magnetic Resonance Research Center. High-resolution structural MRI data will be acquired to facilitate analysis of PET data and may be used in additional analysis of tissue volume and brain structure. Resting-state and task-based functional MRI data will be acquired using state-of-the-art multiband echo-planar imaging (EPI) gradient-echo sequences. Diffusion-weighted MRI data will also be acquired using multiband imaging sequences to investigate anatomical connectivity.",
+              "name": "Magnetic Resonance Imaging",
+              "otherNames": [
+                "MRI, functional MRI"
+              ],
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 32,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Investigation of Cocaine Addiction Using mGluR5 PET and fMRI",
+          "nctId": "NCT03471182",
+          "officialTitle": "Investigation of Cocaine Addiction Using mGluR5 PET and fMRI",
+          "orgStudyIdInfo": {
+            "id": "2000021196"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Yale University"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "1K01DA042998-01A1",
+              "link": "https://reporter.nih.gov/quickSearch/1K01DA042998-01A1",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Receptor availability assessed as the volume of distribution (VT) of \\[18F\\]FPEB radiotracer, measured using positron emission tomography (PET). Higher \\[18F\\]FPEB VT values indicate a greater availability of mGluR5 receptors.",
+              "measure": "Regional Availability of Metabotropic Glutamate Type-5 Receptors (mGluR5)",
+              "timeFrame": "Following 2-5 days of cocaine abstinence"
+            },
+            {
+              "description": "Independent component analysis (ICA) of functional MRI data separates brain activity associated with distinct functional networks. Comparing the activity in these networks to the fMRI task events using a regression analysis produces a beta-weight where a larger beta indicates the network was more activated or 'engaged' in processing the task demands. In this study, participants completed a Go/NoGo task to assess brain processing associated with infrequent-stimulus response inhibition (i.e., correct NoGo's) compared to frequent-stimulus responses (i.e., correct Go's).",
+              "measure": "Functional Brain Network Engagement Associated With Response Inhibition",
+              "timeFrame": "Following 2-5 days of cocaine abstinence."
+            },
+            {
+              "description": "Independent component analysis (ICA) of functional MRI data separates brain activity associated with distinct functional networks. The fractional amplitude of low-frequency fluctuations (fALFF) during resting-state reflects a measure of the general health status of a network, comprised of both the strength of network activity and within-network connectivity absent of any specific cognitive demands.",
+              "measure": "Resting-state Functional Brain Network Activity, Fractional Amplitude of Low-frequency Fluctuations (fALFF)",
+              "timeFrame": "Following 2-5 days of cocaine abstinence."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-08-18",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-02-29",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-02-27",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-08-18",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2023-10-06",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2023-08-09",
+          "resultsFirstSubmitQcDate": "2023-10-05",
+          "startDateStruct": {
+            "date": "2018-02-26",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-02",
+          "studyFirstPostDateStruct": {
+            "date": "2018-03-20",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-02-26",
+          "studyFirstSubmitQcDate": "2018-03-13"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Part 1 - Single ascending doses; Part 2 - Repeated dose",
+              "interventionNames": [
+                "Drug: AXER-204"
+              ],
+              "label": "AXER-204",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Part 2 only - Repeated dose",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "AXER-204"
+              ],
+              "description": "human NoGo Trap fusion protein",
+              "name": "AXER-204",
+              "otherNames": [
+                "human NoGo Trap",
+                "human Nogo Receptor decoy"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Phosphate buffered saline formulation",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Part 1 is open-label single-ascending dose. Part 2 is double-blind, placebo-controlled, repeat dose.",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "maskingDescription": "Part 1 - None; Part 2 - Quadruple",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 52,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "RESET",
+          "briefTitle": "AXER-204 in Participants With Chronic Spinal Cord Injury",
+          "nctId": "NCT03989440",
+          "officialTitle": "A Multicenter, Two Part Study to Evaluate the Safety, Tolerability, Pharmacokinetics, and Efficacy of AXER-204 in Subjects With Chronic Spinal Cord Injury",
+          "orgStudyIdInfo": {
+            "id": "RNX-AX204-101"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "ReNetX Bio, Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "An AE is any untoward medical occurrence in a patient or clinical investigation participant administered a pharmaceutical product and that does not necessarily have a causal relationship with this treatment. An AE can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with the use of a medicinal (investigational) product, whether or not related to the medicinal (investigational) product. An SAE is any untoward medical occurrence that at any dose results in death, is a life-threatening event, requires inpatient hospitalization or prolongation of existing hospitalization, results in a significant disability/incapacity or congenital anomaly, or is a medically important event.",
+              "measure": "Incidence of Treatment-emergent Adverse Events (AEs) and Serious Adverse Events (SAEs)",
+              "timeFrame": "Up to Day 29 for Part 1 and Day 253 for Part 2"
+            },
+            {
+              "measure": "Area Under the Concentration-Time Curve From Time 0 to Time of the Last Measurable Concentration (AUClast) of AXER-204 in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Cmax in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Tmax in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "t1/2 in Serum",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Clearance From Serum",
+              "timeFrame": "Day 1 pre-dose up to Day 29 in Part 1, Pre-dose up to Day 253 in Part 2"
+            },
+            {
+              "description": "Volume of distribution calculated from serum exposure data",
+              "measure": "Volume of Distribution",
+              "timeFrame": "Part 1: pre-dose and 1 h, 6 h, 12 h, and 24 h post-dose, Day 4, 8, 15, and 29, Part 2: pre-dose and 4 h post-dose on days 1, 21, 42, 63, and 104; and on Study Days 169 and 253."
+            },
+            {
+              "measure": "Area Under the Concentration-Time Curve From Time 0 to Time of the Last Measurable Concentration (AUClast) of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "Cmax of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "Tmax of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            },
+            {
+              "measure": "t1/2 of AXER-204 in CSF",
+              "timeFrame": "Part 1: pre-dose, post-dose at 24 h, 72 h, Days 8 and 29, Part 2: pre-dose on Days 1, 21, 42, 63, and 104, and on Day 253."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The ISNCSCI bilateral Upper Extremity Motor Score (UEMS) is determined by examining the muscle function within each of the 5 myotomes encompassing arm and hand function on each side of the body. A score ranging from 0 to 5 can be given to each myotome tested resulting in a maximum score of 50. Higher values indicate greater strength.",
+              "measure": "Change in International Standards for Neurological Classification of SCI (ISNCSCI) Bilateral Upper Extremity Motor Score (UEMS)",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The GRASSP Bilateral Prehension Performance Score is determined based on performance of four tasks with each hand with scores ranging from 0 to 5 for each task resulting in a maximum score of 40. Higher scores indicate better function.",
+              "measure": "Change in Graded Redefined Assessment of Strength, Sensation and Prehension (GRASSP) Bilateral Prehension Performance Score",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The SCIM III questionnaire self-care score assesses activities of daily living including feeding, bathing, dressing, and grooming. The self-care score ranges 0-20 with higher scores correspond to better ability to carry out these self-care activities.",
+              "measure": "Change in Version III of the Spinal Cord Independence Measure (SCIM III) Self-care",
+              "timeFrame": "Baseline to Day 169"
+            },
+            {
+              "description": "The PGIC instrument captures the patient's overall evaluation of response to treatment. Specifically, the PGIC asks: \"Since beginning this clinical trial, how would you describe the overall change (if any) related to your chronic spinal cord injury?\" The patient is asked to report the degree to which they have changed since entering the treatment period using a 7-point Likert scale (1='Much worse', 2='Worse', 3='A little worse', 4='No change', 5='A little better', 6='Better', 7='Much better') and \"If better or worse, what has changed?\". Patients that have evaluation results including \"Much better\", \"Better\", or \"A little better\" are considered Responders.",
+              "measure": "Patient Global Impression of Change (PGIC) Responder Rate",
+              "timeFrame": "Day 169"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-06-21",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-08-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-07-28",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-06-21",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2023-08-22",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2023-06-09",
+          "resultsFirstSubmitQcDate": "2023-07-28",
+          "startDateStruct": {
+            "date": "2019-07-16",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-07",
+          "studyFirstPostDateStruct": {
+            "date": "2019-06-18",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-06-11",
+          "studyFirstSubmitQcDate": "2019-06-17"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants who use and are dependent on cocaine",
+              "interventionNames": [
+                "Drug: Mirtazapine 15 MG Oral Tablet"
+              ],
+              "label": "Cocaine-dependent",
+              "type": "OTHER"
+            },
+            {
+              "description": "Participants who are not drug users",
+              "interventionNames": [
+                "Drug: Mirtazapine 15 MG Oral Tablet"
+              ],
+              "label": "Non-drug using Healthy Controls",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Cocaine-dependent",
+                "Non-drug using Healthy Controls"
+              ],
+              "description": "The intervention will be a 15mg of mirtazapine oral tablet given to participants prior to their treatment scan and assessments. In order to ensure that biases or social desirability do not contaminate baseline assessments, all participants will also be given a tablet consisting of dextrose in gelatin prior to their baseline scan and assessment.",
+              "name": "Mirtazapine 15 MG Oral Tablet",
+              "otherNames": [
+                "Remeron"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 90,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "5HT2CR Balance in Brain Connectivity in Cocaine Dependence",
+          "nctId": "NCT03921151",
+          "officialTitle": "5-HT2AR: 5HT2CR Balance in Brain Connectivity in Cocaine Dependence",
+          "orgStudyIdInfo": {
+            "id": "HM15289"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Virginia Commonwealth University"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "P20DA024157-04S1",
+              "link": "https://reporter.nih.gov/quickSearch/P20DA024157-04S1",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Change in Impulsivity as measured by Go/NoGo task with placebo dose vs Mirtazapine dose",
+              "measure": "Change in Effective Connectivity Involved in the 5-HT2AR:5-HT2CR Homeostasis Impulsive Action",
+              "timeFrame": "Baseline to 1 week"
+            },
+            {
+              "description": "Change in Cue reactivity as measured by Attentional bias task with placebo dose vs Mirtazapine dose",
+              "measure": "Change in Effective Connectivity Involved in the 5-HT2AR:5-HT2CR Homeostasis Cue Reactivity",
+              "timeFrame": "Baseline to 1 week"
+            },
+            {
+              "description": "Change in fMRI activation with other 5-HT2CR SNPs during Attentional bias task with placebo dose vs Mirtazapine dose",
+              "measure": "Change in Explore Interactions Between Other 5-HT2CR SNPs and Brain Activation During Attentional Bias Task After a 5- HT2AR Antagonist",
+              "timeFrame": "Baseline to 1 week"
+            },
+            {
+              "description": "Change in fMRI activation with other 5-HT2CR SNPs during Go/NoGo (impulsivity) task with placebo dose vs Mirtazapine dose",
+              "measure": "Change in Explore Interactions Between Other 5-HT2CR SNPs and Brain Activation During Go/NoGo (Impulsivity) Task After a 5- HT2AR Antagonist",
+              "timeFrame": "Baseline to 1 week"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Change in fMRI activation during Go/NoGo (impulsivity) task with placebo dose vs Mirtazapine dose.\n\nBrain activation measured using blood-oxygen-level dependent (BOLD) contrast",
+              "measure": "Change in Interaction of the Serotonin Receptor (5-HTR) Type-2C Cys23Ser Single Nucleotide Polymorphism (SNP) and a 5-HT2AR Antagonist on the Functional Circuitry Underlying Impulsive Action.",
+              "timeFrame": "Baseline to 1 week"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Change in fMRI activation during Attentional bias task with placebo dose vs Mirtazapine dose measured using whole brain blood oxygenation level dependent (BOLD) signal",
+              "measure": "Change in Interaction of the 5-HT2CR Cys23Ser SNP and a 5-HT2AR Antagonist on the Functional Circuitry Underlying Cue Reactivity",
+              "timeFrame": "Baseline to 1 week"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-01-24",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2020-12-23",
+            "type": "ACTUAL"
+          },
+          "dispFirstSubmitDate": "2020-11-12",
+          "dispFirstSubmitQcDate": "2020-12-15",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-11-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-11-19",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-01-24",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2021-11-22",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2021-10-25",
+          "resultsFirstSubmitQcDate": "2021-11-19",
+          "startDateStruct": {
+            "date": "2014-05-13",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-11",
+          "studyFirstPostDateStruct": {
+            "date": "2019-04-19",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-04-10",
+          "studyFirstSubmitQcDate": "2019-04-15"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Pearl millet variety ICTP8203-Fe (82 mg/kg iron content)",
+              "interventionNames": [
+                "Other: Iron bio-fortified pearl millet"
+              ],
+              "label": "Iron bio-fortified pearl millet",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Conventional pearl millet: variety DG9444 (22 mg/kg iron content) and JKBH778 (52 mg/kg iron content)",
+              "interventionNames": [
+                "Other: Control pearl millet"
+              ],
+              "label": "Control pearl millet",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Iron bio-fortified pearl millet"
+              ],
+              "description": "Pearl millet variety ICTP8203-Fe (82 mg/kg iron content) prepared as a traditional flatbread (bhakri)",
+              "name": "Iron bio-fortified pearl millet",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Control pearl millet"
+              ],
+              "description": "Conventional pearl millet: variety DG9444 (22 mg/kg iron content) and JKBH778 (52 mg/kg iron content), prepared as a traditional flatbread (bhakri)",
+              "name": "Control pearl millet",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 246,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Feeding Trial of Bio-fortified Pearl Millet",
+          "nctId": "NCT02152150",
+          "officialTitle": "Efficacy of Iron Bio-fortified Pearl Millet in Improving the Iron Status of Adolescents in India",
+          "orgStudyIdInfo": {
+            "id": "IRB #: 1107002349"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Cornell University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Hemoglobin, serum ferritin, serum transferrin receptor, body iron",
+              "measure": "Change in iron status",
+              "timeFrame": "6 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Five tests of perceptual and cognitive performance: i) the simple reaction time task; ii) the go-nogo task; iii) the attentional network task; iv) the composite face task; and v) the cued recognition memory task.\n\nApproximately 1/2 of participants performed these tasks with concurrent recording of electroencephelography (EEG).",
+              "measure": "Differences in cognitive function",
+              "timeFrame": "6 months"
+            },
+            {
+              "description": "i) estimation of maximal oxygen consumption, ii) determination of energy expenditure and work efficiency at modest levels of exertion, and iii) determination of time spent at 3 levels of physical exertion while performing normal daily activities.",
+              "measure": "Differences in physical performance",
+              "timeFrame": "6 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2012-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2014-06-02",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2014-05-28",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2012-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2011-09"
+          },
+          "statusVerifiedDate": "2014-05",
+          "studyFirstPostDateStruct": {
+            "date": "2014-06-02",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-05-13",
+          "studyFirstSubmitQcDate": "2014-05-28"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Placebo oral capsule"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "interventionNames": [
+                "Drug: Cariprazine Oral Capsule [Vraylar]"
+              ],
+              "label": "1.5 mg/d cariprazine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Cariprazine Oral Capsule [Vraylar]"
+              ],
+              "label": "3.0 mg/d cariprazine",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "1.5 mg/d cariprazine",
+                "3.0 mg/d cariprazine"
+              ],
+              "description": "Cariprazine Groups (1.5 or 3mg/d): Cariprazine (VRAYLAR) capsules will be administered orally, once per day. Subjects in the 1.5mg group will receive 1 VRAYLAR capsule containing 1.5 mg cariprazine each day that study drug is administered. Subjects in the 3 mg group will be gradually titrated up to full dose: they will receive 1 VRAYLAR capsule containing 1.5mg cariprazine on the first and second days that study drug is administered and will receive 1 VRAYLAR capsule containing 3mg cariprazine each day for the rest of the medication period. The study medication period begins during the inpatient/induction phase and ends on the last day of outpatient treatment week 8 (approx. 10 weeks total). All VRAYLAR capsules will be over-encapsulated by the University of Pennsylvania Investigational Drug Services (IDS).",
+              "name": "Cariprazine Oral Capsule [Vraylar]",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "PLACEBO Group: Visually identical placebo capsules will be supplied by the University of Pennsylvania Investigational Drug Service, with a dosing regimen matching the cariprazine groups.",
+              "name": "Placebo oral capsule",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "PARTICIPANT"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 14,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Cariprazine Effects on Brain and Behavior in Cocaine Use Disorder",
+          "nctId": "NCT03430544",
+          "officialTitle": "A Randomized, Single-blind, Placebo-controlled Phase II Study to Assess the Effects of Cariprazine on Brain and Behavior in Subjects With Cocaine Use Disorder",
+          "orgStudyIdInfo": {
+            "id": "828585"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of Pennsylvania"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The primary fMRI outcome is the extracted BOLD signal change during visual stimuli reminiscent of cocaine (i.e., cocaine cues) in an a priori circuit-level ROI.",
+              "measure": "Primary fMRI outcome measure - BOLD signal change during visual cocaine vs. neutral cues.",
+              "timeFrame": "Collected during fMRI scan 1, which takes place approximately 12-13 days after subject enrollment."
+            },
+            {
+              "description": "The primary clinical outcome is percentage of urines cocaine-positive or missing (assessed by urines positive for benzoylecgonine (BE), a metabolite of cocaine) throughout the outpatient treatment phase \\[Urines are counted as BE-positive if BE exceeds 300 ng/ml or if they are missing (no sample provided for a time point)\\].",
+              "measure": "Primary clinical outcome measure - percentage of urines cocaine-positive or missing during outpatient phase.",
+              "timeFrame": "Urines are collected 3x per week during the 8 week outpatient phase."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The secondary fMRI outcome is the extracted BOLD signal change during attempted inhibition of cue-triggered drug craving in an a priori ROI .",
+              "measure": "Secondary fMRI outcome measure - BOLD signal change during attempted inhibition of cue-triggered drug craving.",
+              "timeFrame": "Collected during fMRI scan 2, which takes place approximately 13-14 days after subject enrollment."
+            },
+            {
+              "description": "Attentional bias scores derived from reaction time (msec) during attentional bias task",
+              "measure": "Attentional bias scores",
+              "timeFrame": "Completed on approximately day 14-15 after subject enrollment."
+            },
+            {
+              "description": "Affective bias scores derived from reaction time (msec) during affective bias task",
+              "measure": "Affective bias scores",
+              "timeFrame": "Completed on approximately day 14-15 after subject enrollment."
+            },
+            {
+              "description": "\\# of average adjusted pumps on BART",
+              "measure": "Balloon Analogue Risk Task scores",
+              "timeFrame": "Completed on approximately day 14-15 after subject enrollment."
+            },
+            {
+              "description": "\\# of errors of commission",
+              "measure": "Go-NoGo Task scores",
+              "timeFrame": "Completed on approximately day 14-15 after subject enrollment."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-09-04",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-09-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-09-05",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-09-04",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2018-04-04",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-09",
+          "studyFirstPostDateStruct": {
+            "date": "2018-02-13",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-01-29",
+          "studyFirstSubmitQcDate": "2018-02-05",
+          "whyStopped": "Low recruitment in final grant year, halted on-site research due to COVID-19 during NCE year."
+        }
+      }
+    }
+  ],
+  "totalCount": 11
+}

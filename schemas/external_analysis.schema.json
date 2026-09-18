@@ -1,0 +1,488 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intelligence-blueprint.local/schemas/v0_2_0/external_analysis",
+  "title": "ExternalAnalysis",
+  "description": "An analysis run by an agent other than this repository's own pipelines. Exists so that an external contribution can be attributed, its verification state made explicit and queryable, and its reported numbers held INERT until artefacts arrive. See docs/integration/CODEX_HANDOFF_CONTRACT.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "analysis_id",
+    "schema_version",
+    "title",
+    "agent",
+    "verification_status",
+    "provenance_class",
+    "delivery",
+    "reported_results",
+    "interpretation_guards",
+    "outstanding_artefacts",
+    "provenance"
+  ],
+  "properties": {
+    "analysis_id": {
+      "type": "string",
+      "pattern": "^ANALYSIS:[A-Za-z0-9][A-Za-z0-9._:-]*$",
+      "description": "Node id for the DatasetAnalysis node this record compiles to."
+    },
+    "schema_version": {
+      "type": "string",
+      "const": "0.2.0"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 8
+    },
+    "agent": {
+      "type": "string",
+      "description": "Which agent ran it, e.g. codex/gpt-6-astra. Not a person."
+    },
+    "verification_status": {
+      "type": "string",
+      "enum": [
+        "unverified_external_report",
+        "artefacts_received_pending_check",
+        "verified",
+        "verification_failed",
+        "withdrawn_by_producer"
+      ],
+      "description": "unverified_external_report means the ONLY record of this analysis is prose. It is inert: no facet grade, no biological-layer support edge, no rank movement.",
+      "$comment": "vocabulary: external_verification_status"
+    },
+    "provenance_class": {
+      "type": "string",
+      "$comment": "vocabulary: provenance_class",
+      "enum": [
+        "claim_derived",
+        "reference_data",
+        "tool_mediated",
+        "ontology_axiom",
+        "external_analysis_verified",
+        "external_analysis_unverified"
+      ]
+    },
+    "delivery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mechanism",
+        "artefacts_present"
+      ],
+      "properties": {
+        "mechanism": {
+          "type": "string",
+          "enum": [
+            "branch_pushed",
+            "git_bundle",
+            "local_clone_path",
+            "none_prose_only"
+          ],
+          "$comment": "vocabulary: external_delivery_mechanism"
+        },
+        "artefacts_present": {
+          "type": "boolean"
+        },
+        "received_on": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date"
+        },
+        "repo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "branch": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "commit": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{7,40}$"
+        },
+        "bundle_sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "search_evidence": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "description": "When mechanism is none_prose_only: where the artefacts were looked for. A negative delivery finding must be auditable, exactly as a level-0 facet needs a search_basis."
+        }
+      }
+    },
+    "genome_build": {
+      "description": "Reference assembly, or null while unknown (unverified analyses often do not state one).",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "string",
+          "$comment": "vocabulary: genome_build",
+          "enum": [
+            "GRCh37",
+            "GRCh38",
+            "T2T-CHM13"
+          ]
+        }
+      ]
+    },
+    "software": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "name"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "version": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "inputs": {
+      "type": "array",
+      "description": "Input datasets. sha256 is null ONLY while artefacts_present is false.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "role",
+          "description"
+        ],
+        "properties": {
+          "role": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "bytes": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 0
+          },
+          "source_url": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_id": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^SRC:[A-Za-z]+:[A-Za-z0-9._/:-]+$",
+            "description": "Registered source id, when the input corresponds to one."
+          },
+          "retrieved_at": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "reported_size": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Verbatim size as the producer described it, e.g. '~12.87 million variants, N = 282,014'. A string, because an unverified count is not a measurement."
+          }
+        }
+      }
+    },
+    "outputs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "description"
+        ],
+        "properties": {
+          "description": {
+            "type": "string"
+          },
+          "path": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "schema": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "parameters": {
+      "type": "object",
+      "additionalProperties": {
+        "type": [
+          "string",
+          "number",
+          "boolean",
+          "null"
+        ]
+      },
+      "description": "Non-default settings as the producer stated them."
+    },
+    "reported_results": {
+      "type": "array",
+      "minItems": 1,
+      "description": "What the producer says it found. Values are VERBATIM STRINGS, never typed numbers: a figure with no artefact behind it must not occupy a numeric field where a downstream consumer would read it as measured (contract P3, rule V9).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "result_id",
+          "statement",
+          "value_as_reported",
+          "verification"
+        ],
+        "properties": {
+          "result_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9_]+$"
+          },
+          "statement": {
+            "type": "string",
+            "minLength": 12
+          },
+          "value_as_reported": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "description": "Verbatim, e.g. 'beta approximately 0.097, nominal P approximately 0.011'. Null when the producer reported no number."
+          },
+          "verification": {
+            "type": "string",
+            "enum": [
+              "unverified_prose",
+              "artefact_checked",
+              "artefact_mismatch",
+              "not_applicable"
+            ],
+            "$comment": "vocabulary: external_result_verification"
+          },
+          "would_be_verified_by": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "claim_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^CLM:[a-z_]+:[A-Za-z0-9_.:-]+:[0-9]+$"
+            },
+            "description": "Populated only once verified; an unverified result may not license a claim."
+          }
+        }
+      }
+    },
+    "interpretation_guards": {
+      "type": "array",
+      "minItems": 1,
+      "description": "What this analysis does NOT establish. Mandatory, because the predictable failure of an external result is over-reading in whichever direction suits the reader.",
+      "items": {
+        "type": "string",
+        "minLength": 12
+      }
+    },
+    "methodological_constraints_adopted": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "constraint",
+          "rationale",
+          "safe_before_verification"
+        ],
+        "properties": {
+          "constraint": {
+            "type": "string"
+          },
+          "rationale": {
+            "type": "string"
+          },
+          "safe_before_verification": {
+            "type": "boolean",
+            "description": "True only when the constraint restricts OUR method rather than asserting the producer's finding, so adopting it costs nothing if the finding is later refuted."
+          }
+        }
+      }
+    },
+    "outstanding_artefacts": {
+      "type": "array",
+      "description": "Exactly what must arrive for verification_status to advance. Empty only when verified.",
+      "items": {
+        "type": "string",
+        "minLength": 8
+      }
+    },
+    "cohort_overlap_status": {
+      "type": "string",
+      "enum": [
+        "resolved",
+        "unresolvable_pending_source_list",
+        "no_overlap_possible"
+      ],
+      "description": "Whether this analysis's evidence dependence against this repository's own sources has been computed. Any convergence claim spanning the two is refused while unresolvable.",
+      "$comment": "vocabulary: cohort_overlap_status"
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "recorded_by",
+        "recorded_on"
+      ],
+      "properties": {
+        "recorded_by": {
+          "type": "string",
+          "pattern": "^agent:[a-z_]+$"
+        },
+        "recorded_on": {
+          "type": "string",
+          "format": "date"
+        },
+        "record_basis": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "run_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "verification_status": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "verification_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provenance_class": {
+            "const": "external_analysis_verified"
+          },
+          "outstanding_artefacts": {
+            "maxItems": 0
+          },
+          "delivery": {
+            "properties": {
+              "artefacts_present": {
+                "const": true
+              }
+            }
+          }
+        },
+        "required": [
+          "genome_build",
+          "inputs",
+          "outputs"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "verification_status": {
+            "const": "unverified_external_report"
+          }
+        },
+        "required": [
+          "verification_status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "provenance_class": {
+            "const": "external_analysis_unverified"
+          },
+          "outstanding_artefacts": {
+            "minItems": 1
+          },
+          "reported_results": {
+            "items": {
+              "properties": {
+                "claim_refs": {
+                  "maxItems": 0
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

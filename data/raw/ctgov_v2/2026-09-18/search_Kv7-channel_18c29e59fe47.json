@@ -1,0 +1,215 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "description": "directive questionnaire administered during an individual face-to-face interview",
+              "name": "Survey",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 200,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": true,
+          "studyType": "OBSERVATIONAL",
+          "targetDuration": "3 Years"
+        },
+        "identificationModule": {
+          "acronym": "IMPROVE",
+          "briefTitle": "Creation of a Register of Patients With Neonatal-onset Epileptic Encephalopathy",
+          "nctId": "NCT04802135",
+          "officialTitle": "Creation of a Register of Patients With Neonatal-onset Epileptic Encephalopathy",
+          "orgStudyIdInfo": {
+            "id": "2019-51"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Assistance Publique Hopitaux De Marseille"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "2020-A01363-36",
+              "id": "ID-RCB",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Developmental quotient",
+              "measure": "importance of the developmental disorder",
+              "timeFrame": "Month 36"
+            },
+            {
+              "description": "Presence of at least monthly seizures and interictal EEG showing paroxysmal abnormalities",
+              "measure": "definition of the active phase of epilepsy",
+              "timeFrame": "Month 36"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2032-09",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-11-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-11-17",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-09",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2021-03-06",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-11",
+          "studyFirstPostDateStruct": {
+            "date": "2021-03-17",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-03-14",
+          "studyFirstSubmitQcDate": "2021-03-14"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Volunteers receive placebo first and after a cross-over period of at least 7 days flupirtine second. On the days of the experiment outcome is taken as the change in excitability from Baseline (all measures before intervention) to a timepoint two hours after intervention",
+              "interventionNames": [
+                "Drug: flupirtine"
+              ],
+              "label": "Placebo first",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Volunteers receive flupirtine first and after a cross-over period of at least 7 days placebo second. On the days of the experiment outcome is taken as the change in excitability from Baseline (all measures before intervention) to a timepoint two hours after intervention",
+              "interventionNames": [
+                "Drug: flupirtine"
+              ],
+              "label": "Flupirtine first",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Flupirtine first",
+                "Placebo first"
+              ],
+              "description": "Potassium channel opener (SNEPCO)",
+              "name": "flupirtine",
+              "otherNames": [
+                "brand names: Trancopal Dolo, Katadolon"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            }
+          },
+          "enrollmentInfo": {
+            "count": 20,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Effect of the Kv7-channel Opener Flupirtine on the Excitability of Human Peripheral Myelinated Axons in Vivo",
+          "nctId": "NCT01450865",
+          "officialTitle": "Evaluation of the Effect of the K+-Channel Opener Flupirtine on the Excitability of Human Peripheral Myelinated Axons in Vivo: a Randomised Controlled Trial",
+          "orgStudyIdInfo": {
+            "id": "EudraCT 2007-007314-10"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Ludwig-Maximilians - University of Munich"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The primary outcome parameter of axonal excitability was the relative refractory period (RRP) as assessed with threshold tracking techniques. Strength-duration time constant, rheobase current, refractoriness determined at 2 and 2.5 ms, superexcitability at 7 ms and threshold electrotonus over the 90 100 ms period were used as secondary outcome measures.",
+              "measure": "Axonal Excitability as assessed with QTrac",
+              "timeFrame": "Change of neuronal excitability from Baseline (before) to two hours after intervention"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Further secondary outcome measures were power content for the surface EMG and the ranked summed scores for the McGill pain questionnaire.",
+              "measure": "Ectopic Discharge",
+              "timeFrame": "Change of neuronal excitability from Baseline (before) to two hours after intervention"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2010-08",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2015-01-13",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2015-01-12",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2010-07",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2009-10"
+          },
+          "statusVerifiedDate": "2015-01",
+          "studyFirstPostDateStruct": {
+            "date": "2011-10-12",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2011-10-10",
+          "studyFirstSubmitQcDate": "2011-10-10"
+        }
+      }
+    }
+  ],
+  "totalCount": 2
+}

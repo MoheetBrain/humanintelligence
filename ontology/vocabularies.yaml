@@ -99,7 +99,20 @@ vocabularies:
       - reference_data     # from an identifier/annotation database, pinned to a release
       - tool_mediated      # from an MCP tool payload, snapshotted to data/raw/
       - ontology_axiom     # definitional; only from ontology/definitional_edges.yaml
-    evidential_classes: [claim_derived, reference_data, tool_mediated]
+      - external_analysis_verified    # external agent's analysis, artefacts checksum-verified
+      - external_analysis_unverified  # external agent's result known only from prose
+    evidential_classes: [claim_derived, reference_data, tool_mediated, external_analysis_verified]
+    inert_classes: [external_analysis_unverified]
+    external_analysis_note: >-
+      An external agent's analysis is `external_analysis_verified` only when its input and
+      output checksums recompute, its schemas validate and its direction conventions
+      check out (docs/integration/CODEX_HANDOFF_CONTRACT.md §6). Until then it is
+      `external_analysis_unverified`: visible, attributed and INERT — it supports no facet
+      grade, contributes no biological-layer support edge and moves no rank. The
+      distinction exists because a figure transcribed from a prose summary has no artefact
+      to verify, cannot fail a check, and would otherwise silently acquire the authority of
+      a measured result. `external_analysis_unverified` is deliberately excluded from
+      `evidential_classes`.
     tool_mediated_note: >-
       `tool_mediated` is DELIBERATELY DISTINCT from `reference_data`. An MCP tool returns
       a payload into an agent's context and writes nothing to disk, so before
@@ -138,8 +151,18 @@ vocabularies:
       - theoretical_construct
       - methodological
       - evidence_gap
+      - computational_prediction
     efficacy_licensing_values: [causal_perturbation, pharmacodynamic, clinical_efficacy]
     graph_inert_values: [evidence_gap]
+    computational_prediction_note: >-
+      Added in Sprint 2 for sequence-model outputs (AlphaGenome and equivalents) arriving
+      from X02. It is a SEPARATE class from `mechanistic` and `theoretical_construct` on
+      purpose: a model prediction is neither an observation of a mechanism nor a
+      conceptual construct, and folding it into either would let a prediction read as
+      evidence about biology. It licenses only PREDICTED_TO_REGULATE, never an efficacy
+      relation, and it is the one claim type permitted to carry
+      external_analysis_unverified provenance — because a prediction is explicitly not
+      being treated as evidence in the first place.
     human_harm_values: [clinical_harm]
     harm_values: [clinical_harm, preclinical_harm, clinical_null]
     preclinical_harm_note: >-
@@ -1182,3 +1205,145 @@ vocabularies:
       Severity of a validator violation. Under --strict a warning is treated as an
       error; without it, warnings are reported and the run can still exit 0.
     values: [error, warning]
+
+  external_verification_status:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md"
+    ordinal: false
+    description: >-
+      How far an external agent's analysis has got through verification. Only `verified`
+      makes it evidential; everything else keeps it inert (rule V-EXT).
+    values:
+      - unverified_external_report
+      - artefacts_received_pending_check
+      - verified
+      - verification_failed
+      - withdrawn_by_producer
+    evidential_values: [verified]
+
+  external_delivery_mechanism:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md"
+    ordinal: false
+    description: How the external analysis reached this repository.
+    values:
+      - branch_pushed
+      - git_bundle
+      - local_clone_path
+      - none_prose_only
+    no_artefact_values: [none_prose_only]
+
+  external_result_verification:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md"
+    ordinal: false
+    description: >-
+      Whether an individual reported figure has been checked against a delivered
+      artefact. `unverified_prose` means the number exists only in a summary.
+    values:
+      - unverified_prose
+      - artefact_checked
+      - artefact_mismatch
+      - not_applicable
+
+  cohort_overlap_status:
+    contract_ref: "docs/integration/CODEX_BRANCH_AUDIT.md"
+    ordinal: false
+    description: >-
+      Whether an external analysis's evidence dependence against this repository's own
+      sources has been computed. While `unresolvable_pending_source_list`, any
+      convergence claim spanning the two bodies of evidence is refused rather than
+      caveated: apparently independent lines resting on the same cohort are one line.
+    values:
+      - resolved
+      - unresolvable_pending_source_list
+      - no_overlap_possible
+
+  genome_build:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md"
+    ordinal: false
+    description: >-
+      Reference assembly. Declared explicitly because mixed builds are the commonest
+      silent error in variant-level pipelines, and a coordinate is meaningless without
+      one.
+    values:
+      - GRCh37
+      - GRCh38
+      - T2T-CHM13
+
+  developmental_stage:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.3"
+    ordinal: false
+    description: >-
+      The developmental window an observation belongs to. MANDATORY on a molecular QTL,
+      because a fetal-brain QTL is not evidence about an adult-modifiable control
+      parameter and this project's whole question is adult modifiability. `unknown` is a
+      real value and is NOT a synonym for adult.
+    values:
+      - prenatal
+      - perinatal
+      - infant
+      - child
+      - adolescent
+      - adult
+      - aged
+      - mixed
+      - unknown
+    adult_values: [adult, aged]
+    developmental_values: [prenatal, perinatal, infant, child, adolescent]
+
+  qtl_type:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.3"
+    ordinal: false
+    description: What molecular measurement the QTL was called on.
+    values: [eqtl, sqtl, pqtl, caqtl, mqtl]
+
+  finemapping_method:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.1"
+    ordinal: false
+    description: >-
+      The method that produced the credible set and its posterior inclusion
+      probabilities. Recorded because a PIP is a model output and is meaningless without
+      the model that produced it.
+    values: [susie, finemap, abf, caviar, dap_g, other]
+
+  colocalisation_outcome:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.3"
+    ordinal: false
+    description: >-
+      The outcome of a colocalisation TEST. `tested_not_colocalised` is the value that
+      makes a negative result representable; without it, a tested-and-negative pair is
+      indistinguishable from an untested one.
+    values:
+      - colocalised
+      - tested_not_colocalised
+      - tested_indeterminate
+      - failed_qc
+    supporting_values: [colocalised]
+
+  qtl_direction_on_gene:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.3"
+    ordinal: false
+    description: >-
+      Direction of the QTL effect allele on the named gene. `not_determined` is
+      distinct from a direction of zero.
+    values: [increases, decreases, alters_splicing, not_determined]
+
+  negative_result_outcome:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.5"
+    ordinal: false
+    description: >-
+      Why a test did not yield a positive. `insufficient_power` is separated from `null`
+      because they license different conclusions: one is an absence of evidence, the
+      other is evidence of absence at the tested effect size.
+    values: [null_result, below_threshold, insufficient_power, failed_qc]
+
+  prediction_qtl_concordance:
+    contract_ref: "docs/integration/CODEX_HANDOFF_CONTRACT.md §5.4"
+    ordinal: false
+    description: >-
+      Whether a sequence-model prediction agrees with a MEASURED QTL direction for the
+      same variant. `untested` (no comparison was made) is deliberately separate from
+      `not_applicable` (no measured direction exists to compare against): the first is a
+      gap in the analysis, the second a property of the evidence.
+    # QUOTED DELIBERATELY: unquoted yes/no are booleans in YAML 1.1, which silently
+    # turned these into [True, False, ...] and drifted from the schema enum.
+    values: ["yes", "no", not_applicable, untested]
+    concordant_values: ["yes"]

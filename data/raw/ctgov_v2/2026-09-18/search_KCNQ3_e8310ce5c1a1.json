@@ -1,0 +1,463 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Healthy volunteers with no pre-existing or current psychiatric, neurological or server somatic illness.",
+              "interventionNames": [
+                "Drug: Levetiracetam"
+              ],
+              "label": "Healthy Controls"
+            },
+            {
+              "description": "Patients who have a history of only one epileptic seizure.",
+              "label": "Cohort I"
+            },
+            {
+              "description": "Patients who are newly diagnosed with epilepsy.",
+              "interventionNames": [
+                "Drug: Levetiracetam Tablets",
+                "Drug: Lamotrigine tablet"
+              ],
+              "label": "Cohort II"
+            },
+            {
+              "description": "Patients who are newly diagnosed with epilepsy and have an epileptogenic lesion on MRI concordant with seizure semiology and/or EEG.",
+              "interventionNames": [
+                "Drug: Levetiracetam"
+              ],
+              "label": "Cohort III"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Cohort III",
+                "Healthy Controls"
+              ],
+              "description": "Healthy subjects and patients in Cohort III will undergo a 120 min. \\[11C\\]-UCB-J PET-MR brain scan followed by intravenous administration of levetiracetam after approx. 60 min. in a displacement paradigm. Before, during and after the intervention arterial spin labeling and resting-state functional MRI will be acquired.\n\nTo measure the radiolabelled tracer's arterial input function, including its radiolabelled metabolites, blood samples will be drawn during the PET scan from an arterial catheter.\n\nThe selected regions for the primary analyses are the epileptogenic lesion(s) (patients) and the neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala. \\[11C\\]-UCB-J binding, volume of distribution and SV2A occupancy will be quantified by analyzing the PET images with well-validated kinetic models.",
+              "name": "Levetiracetam",
+              "otherNames": [
+                "[11C]-UCB-J PET-MR scan"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Cohort II"
+              ],
+              "description": "Patients in Cohort II will be randomized to treatment with an ASM (levetiracetam) in accordance with standard treatment procedures. The patients will enter a 4 weeks titration period receiving increasing doses. During weeks 5-30, patients will enter an evaluation period where the dose can be increased (continued seizures) or decreased (adverse reactions). In cases of unacceptable seizure control and/or intolerable adverse reactions; shift to lamotrigine arm.",
+              "name": "Levetiracetam Tablets",
+              "otherNames": [
+                "Levetiracetam"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Cohort II"
+              ],
+              "description": "Patients in Cohort II will be randomized to treatment with an ASM (lamotrigine) in accordance with standard treatment procedures. The patients will enter a 6 weeks titration period receiving increasing doses. During weeks 5-30, patients will enter an evaluation period where the dose can be increased (continued seizures) or decreased (adverse reactions). In cases of unacceptable seizure control and/or intolerable adverse reactions; shift to levetiracetam arm.",
+              "name": "Lamotrigine tablet",
+              "otherNames": [
+                "Lamotrigine"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Blood and stool.\n\nBlood-derived neurotrophic factor (BDNF), S100B, inflammatory markers and purine concentrations.\n\nGenes involved with GABA-ergic, glutamatergic and dopaminergic neurotransmission, GRIN2A/B, CLDN5, PIGA, PIGV, PIGT, ALDH7A1, PNPO, SLC2A1, PDYN, MTHFR, PCDH7, NRG, BDNF, MMP-2/3, TRKB, SV2A, SYNGAP1, SNAP25, HLA-B\\*15:02, HLA-A\\*31:01, HLA-A\\*11:01, CYP2D6, CYP2C9, CYP2C19, UGT1A1, ABCB1, ABCC1, CLCN4, SCN1-3A, SCN8A, KCNA2, KCNT1, KCNQ2/3, KCNJ10, HCN1A, GABRA1, ASIC1a, AQP4, neuropeptide Y.\n\nEpigenetics: microRNA, TSC1/2, NPRL2/3, DEPDC5, AK3, MECP2, ARX, SCN2/3/8A, KCNQ3, GABRG2, GABRA1, GABRB2/3.\n\nShotgun DNA sequencing will be performed on gut microbial DNA.\n\nThe analysis of genetic biomarkers may change during the study period.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 550,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "BDE",
+          "briefTitle": "Precision Medicine in the Treatment of Epilepsy",
+          "nctId": "NCT05450822",
+          "officialTitle": "The BrainDrugs-Epilepsy Study: A Prospective Open-label Cohort Precision Medicine Study in Epilepsy",
+          "orgStudyIdInfo": {
+            "id": "H-21031962"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Rigshospitalet, Denmark"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Treatment outcome as percentage change in the State-Trait Anger Expression Inventory 2 (STAXI-2).",
+              "measure": "Continuous treatment outcome rating state aggression (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Aggression Questionnaire (AQ).",
+              "measure": "Continuous treatment outcome rating trait aggression (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Epilepsy Self-management Scale.",
+              "measure": "Continuous treatment outcome as a measure of self-management of epilepsy (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Epilepsy Outcome Expectancy Scale.",
+              "measure": "Continuous treatment outcome as a measure of expectations to treatment outcome (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in the Epilepsy Stigmatization Scale.",
+              "measure": "Continuous outcome as epilepsy stigmatization (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in the Becks Depression Inventory (BDI).",
+              "measure": "A continuous rating of depression (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the self-report Cognitive Complaints in Bipolar Disorder Rating Assesment.(COBRA).",
+              "measure": "Continuous outcome of subjective, cognitive complains (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Cohen's Perceived Stress Scale (PSS).",
+              "measure": "Continuous outcome of perceived stress (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in NEO Personality Inventory 3 (NEO-FFI-3).",
+              "measure": "Continuous outcome of personality traits (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Impact of Event Scale-Revised (IES-R).",
+              "measure": "Continuous outcome of the psychological impact of traumatic event (first seizure/epilepsy diagnosis) (Cohort I-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Coping Self-Efficacy Scale (CSES).",
+              "measure": "Continuous outcome of coping strategies (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Pittsburgh Sleep Quality Index (PSQI).",
+              "measure": "Continuous outcome of sleep quality (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in Stressful Life Event scale (SLE).",
+              "measure": "Continuous outcome of negative life events (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Genotyping of epilepsy candidate genes at baseline such as genes involved with GABA-ergic, glutamatergic and dopaminergic neurotransmission, GRIN2A/B, CLDN5, PIGA, PIGV, PIGT, ALDH7A1, PNPO, SLC2A1, PDYN, MTHFR, PCDH7, NRG, BDNF, MMP-2/3, TRKB, SV2A, SYNGAP1, SNAP25, HLA-B\\*15:02, HLA-A\\*31:01, HLA-A\\*11:01, CYP2D6, CYP2C9, CYP2C19, UGT1A1, ABCB1, ABCC1, CLCN4, SCN1-3A, SCN8A, KCNA2, KCNT1, KCNQ2/3, KCNJ10, HCN1A, GABRA1, ASIC1a, AQP4, neuropeptide Y.",
+              "measure": "Genotyping of epilepsy candidate genes at baseline between Cohort I-III and healthy controls.",
+              "timeFrame": "At baseline between groups (HCs and patients)."
+            },
+            {
+              "description": "Epigenetic mechanisms and regulation of microRNA, TSC1/2, NPRL2/3, DEPDC5, AK3, MECP2, ARX, SCN2/3/8A, KCNQ3, GABRG2, GABRA1, GABRB2/3.",
+              "measure": "Epigenetic changes in Cohort I-III and healthy controls.",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Identify microbial biomarkers between patients with drug failure vs. patients with no drug failure in Cohort II-III.",
+              "measure": "Gut microbial biomarkers for drug treatment response (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify microbial biomarkers between healthy subjects and patients in cohort II-III.",
+              "measure": "Baseline gut microbial biomarkers (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify functional microbial signatures between patients in cohort II-III.",
+              "measure": "Gut microbial signatures between epilepsy subtypes (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify functional microbial signatures between patients with and without psychiatric symptoms in cohort II-III.",
+              "measure": "Gut microbial signatures for psychiatric symptoms (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and IQ measured as percentage change in Wechsler Adult Intelligence Scale (WAIS-IV) and quantification of binding both globally and in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Changes from baseline to follow-up in intelligence quotient (IQ) and index scores and cerebral synaptic vesicle glycoprotein 2A (SV2A) binding as imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding between patients without cognitive impairment vs. patients with cognitive impairment in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Cerebral SV2A binding in patients with cognitive impairment vs. no cognitive impairment imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to the development of a potential cognitive dysfunction and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding both globally and in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients and healthy controls.",
+              "measure": "Cerebral SV2A binding as imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with drug failure vs. no drug failure.",
+              "measure": "Cerebral SV2A binding between drug failure vs. no drug failure as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with drug resistance vs. no drug resistance.",
+              "measure": "Cerebral SV2A binding between patients with drug resistance vs. no drug resistance as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential drug resistance and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and arterial spin labeling after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and arterial spin labeling following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and arterial spin labeling after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and arterial spin labeling following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and resting-state functional connectivity after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and resting-state functional connectivity following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and resting-state functional connectivity after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and resting-state functional connectivity following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with side effects vs. no side effects.",
+              "measure": "Cerebral SV2A binding between patients with side effects vs. no side effects as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding between patients without psychiatric symptoms vs. patients with psychiatric symptoms in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Cerebral SV2A binding in patients with psychiatric symptoms vs. no psychiatric symptoms imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to a potential psychiatric diagnosis and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Estimation of the occupied SV2A binding sites from the plasma concentration of levetiracetam.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and the plasma concentration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients)."
+            },
+            {
+              "description": "Structural MRI scans of hippocampus in healthy subjects and patients in cohort II-III.",
+              "measure": "Hippocampal volume is associated with drug failure (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Structural MRI scans and volume of thalamus and hippocampus.",
+              "measure": "Volume of thalamus and hippocampus is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans of cortical thickness of precentral gyri, parahippocampal cortex, entorhinal and fusiform gyri, precuneus and frontal gyri.",
+              "measure": "Cortical thickness is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans and volume of amygdala.",
+              "measure": "Volume of amygdala is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans and cortical thickness of orbitofrontal cortex.",
+              "measure": "Cortical thickness is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Resting-state functional MRI scans and within network connectivity.",
+              "measure": "Within network resting-state functional connectivity (rsfMRI) is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Diffusion Tensor MRI scans and structural connectomics.",
+              "measure": "Whole-brain structural connectomics is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Diffusion Tensor MRI scan and structural connectivity between temporal lobe, the limbic system and orbitofrontal cortex (DTI).",
+              "measure": "Structural connectivity is associated with psychiatric symptoms and drug failure (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Resting-state functional MRI scans and between the anterior cingulate cortex, between prefrontal-limbic systems, angular gyrus, temporal lobe, precuneus, cerebellum, default mode network and executive control network (rsfMRI).",
+              "measure": "Between network resting-state functional connectivity (rsfMRI) is associated with psychiatric symptoms and drug failure (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG functional connectivity in the theta band.",
+              "measure": "High density EEG functional connectivity is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG functional connectivity in the anterior cingulate cortex.",
+              "measure": "High density EEG functional connectivity is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG and frontal and occipital alpha asymmetry and theta current source density in the anterior cingulate cortex.",
+              "measure": "High density EEG asymmetry and current source is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "1\\) Seizure-free within six months after starting ASM treatment and remained seizure-free for at least one year (last observed seizure within the six months after starting ASM treatment); 2) Seizure-free more than six months after starting ASM treatment and the seizure-free period lasts at least one year; 3) Fluctuations with both seizure-freedom and seizure-relapse; or 4) Never seizure-free for a year at the third- and fifth-year follow-up timepoint.",
+              "measure": "Categorical effect of anti-seizure medication (ASM) on treatment outcome (Cohort II-III).",
+              "timeFrame": "As change over time from the ASM evaluation period (after 4-7 weeks titration period) to six months, one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "The proportion of patients in Cohort I with one epileptic seizure who become diagnosed with epilepsy.",
+              "measure": "Categorical effect of a second seizure/epilepsy diagnosis for patients in Cohort I.",
+              "timeFrame": "As change over time of epilepsy diagnosis at six months, one, three and five years after inclusion of patients in Cohort I."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Treatment outcome as percentage change in the Seizure Severity Questionnaire (SSQ).",
+              "measure": "Continuous treatment outcome using a seizure severity index (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from the ASM evaluation period (after 4-7 weeks titration period) to one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Liverpool Adverse Event Profile (LAEP).",
+              "measure": "Continuous treatment outcome rating adverse events (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in in Patient's Global Impression of Change (PGIC).",
+              "measure": "Continuous treatment outcome rating impression of change (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from the ASM evaluation period (after 4-7 weeks titration period) to one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in Major Depression Inventory (MDI).",
+              "measure": "A continuous rating of depression diagnosis (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Inventory of Depressive Symptomatology (IDS-SR30).",
+              "measure": "A continuous rating of depressive symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Neurological Disorders Depression Inventory for Epilepsy (NDDI-E).",
+              "measure": "A continuous rating of specific depressive symptoms associated with neurological disease (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Psychopathology assessed by WHO International Classification of Diseases 10 (ICD-10) diagnostic classification and a semi-structured psychiatric, clinical interview.",
+              "measure": "Categorical outcome of psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Generalized Anxiety Disorder 7-item (GAD-7).",
+              "measure": "A continuous rating of symptoms of anxiety (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in recognizing facial expressions and emotions.",
+              "measure": "Performance in EMOTICOM Emotional Recognition Task (ERT-eyes) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in verbal learning and memory.",
+              "measure": "Performance in Rey Auditory Verbal Learning Test (RAVLT) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in executive function.",
+              "measure": "Performance in D-KEFS Color-Word Interference Test (Stroop) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in executive function.",
+              "measure": "Performance in D-KEFS Verbal Fluency (Fluency) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in IQ and specific index scores measured as percentage change in Wechsler Adult Intelligence Scale (WAIS-IV).",
+              "measure": "A continuous rating of Wechsler Adult Intelligence Scale (WAIS-IV) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in visio-spatial learning.",
+              "measure": "Performance in Rey Complex Figure Test (RCFT) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to 1, 3 and 5 years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between patient cohorts in word-retrieval.",
+              "measure": "Performance in Boston Naming Test (BNT) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between patient cohorts in psychomotor speed.",
+              "measure": "Performance in Trail Making Test A & B (Trail A & B) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in Quality of Life in Epilepsy (QUOLIE-31).",
+              "measure": "A continuous rating of Quality of Life in Epilepsy (QUOLIE-31) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to 1, 3 and 5 years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in Sheehans Disability Score (SDS).",
+              "measure": "A continuous rating of Sheehans Disability Score (SDS) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in WHO 5 wellbeing index.",
+              "measure": "A continuous rating of WHO 5 wellbeing index (WHO-5) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2031-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-04-11",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-04-09",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2022-02-18",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-04",
+          "studyFirstPostDateStruct": {
+            "date": "2022-07-11",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2022-07-05",
+          "studyFirstSubmitQcDate": "2022-07-05"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

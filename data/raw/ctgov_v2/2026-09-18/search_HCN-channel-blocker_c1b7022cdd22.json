@@ -1,0 +1,147 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Ivabradine 5mg",
+              "interventionNames": [
+                "Drug: Ivabradine + Usual Care"
+              ],
+              "label": "Ivabradine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Matching placebo",
+              "interventionNames": [
+                "Drug: Placebo + usual care"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Ivabradine"
+              ],
+              "description": "For patients in the ivabradine arm targeting for strict rate control, ivabradine is started at 5mg BID, and titrated at follow-up visits if needed, up to 7.5mg BID to aim at the target heart rate \\<80bpm. Uptitration of other existing or additional conventional rate control agents will considered after maximally tolerated dose of ivabradine. Conversely, if not tolerated, or if resting heart rate is persistently \\<50bpm, ivabradine will be reduced to 2.5mg BID, followed by reassessment.",
+              "name": "Ivabradine + Usual Care",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "For patients in the lenient rate control arm, medications will be adjusted, bidirectionally as appropriate, with a maximum heart rate that is tolerable by patient which is at \\<110bpm. Routine heart rate control agents included betablockers, nondihydropyridine calcium channel blockers, or digoxin. All patients will be prescribed a matching placebo (morphologically identical to the comparison arm: ivabradine) that contains pharmacologically inactive cellulose.",
+              "name": "Placebo + usual care",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "maskingDescription": "Double blinding will be adopted. Patients will be given either ivabradine in the strict rate control arm, or matching placebo in the lenient control arm. They will also be blinded to the target heart rate prescribed (\\<80bpm for strict control versus \\<110bpm for lenient control). Treatment clinicians will not be blinded to the treatment nor target heart rate, as they will be responsible for administering the appropriate treatments to achieve the respective target heart rates. Instead, all outcome accessors will be blinded to the intervention received.",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 200,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE4"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "STRICT-4-FUN",
+          "briefTitle": "Atrial Fibrillation: In Search for the Optimal Target for Rate Control",
+          "nctId": "NCT07135258",
+          "officialTitle": "A Randomized Controlled Trial on Effects of Ivabradine for Strict Rate Control in Persistent Atrial Fibrillation: Ameliorating Myocardial Dysfunction and Inflammation",
+          "orgStudyIdInfo": {
+            "id": "UW 23-155"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "The University of Hong Kong"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Composite endpoint of cardiovascular death, congestive heart failure, acute coronary syndrome/ myocardial infarction, stroke, cardiovascular hospitalizations, symptomatic bradycardia and pacemaker implantation",
+              "timeFrame": "15 months"
+            },
+            {
+              "description": "Measured by the 36-Item Short Form Health Survey (SF-36) (Physical Component Summary (PCS), ranging from 0-100 with higher score means better quality of life.",
+              "measure": "Health-Related Quality of Life",
+              "timeFrame": "15 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "All-cause mortality",
+              "timeFrame": "15 months"
+            },
+            {
+              "description": "Ranging from 0-100 with higher score means better quality of life.",
+              "measure": "36-Item Short Form Health Survey (SF-36) (Mental Component Summary (MCS))",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Two-class improvement in NYHA/ EHRA functional status",
+              "timeFrame": "15 months"
+            },
+            {
+              "measure": "Days alive outside hospital",
+              "timeFrame": "15 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2027-10-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-08-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-08-18",
+          "overallStatus": "NOT_YET_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-10-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-10-01",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2025-08",
+          "studyFirstPostDateStruct": {
+            "date": "2025-08-22",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-08-13",
+          "studyFirstSubmitQcDate": "2025-08-18"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

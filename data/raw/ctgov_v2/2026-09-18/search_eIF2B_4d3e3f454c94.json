@@ -1,0 +1,1006 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Other: disease phenotype"
+              ],
+              "label": "SSc patients without specific or associated autoantibodies (\"seronegative\" patients)"
+            },
+            {
+              "interventionNames": [
+                "Other: disease phenotype"
+              ],
+              "label": "SSc patients with specific or associated autoantibodies"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "SSc patients with specific or associated autoantibodies",
+                "SSc patients without specific or associated autoantibodies (\"seronegative\" patients)"
+              ],
+              "description": "evaluation of SSc phenotypes",
+              "name": "disease phenotype",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "RETROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 300,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SCLERONAB",
+          "briefTitle": "Evaluation of Patients With Systemic Sclerosis Without Specific or Associated Autoantibodies",
+          "nctId": "NCT06412614",
+          "officialTitle": "Phenotypic Evaluation of Patients With Systemic Sclerosis Without Specific or Associated Autoantibodies",
+          "orgStudyIdInfo": {
+            "id": "2024PI015"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Central Hospital, Nancy, France"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "duration between date of first symptom (excluding Raynaud's phenomenon) and SSc diagnosis",
+              "measure": "diagnosis time",
+              "timeFrame": "baseline (J0)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "sine scleroderma (no scleroderma), limited scleroderma or diffuse scleroderma",
+              "measure": "number of patients with scleroderma",
+              "timeFrame": "baseline (J0)"
+            },
+            {
+              "measure": "number of patients with raynaud's phenomenon",
+              "timeFrame": "baseline (J0)"
+            },
+            {
+              "measure": "number of patients with digital ulcers",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with calcinosis",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with telangiectases",
+              "timeFrame": "baseline (J0)"
+            },
+            {
+              "measure": "number of patients with articular involvement",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with muscular involvement",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with cardiac involvement",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with interstitial lung disease",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with pulmonary arterial hypertension",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with scleroderma renal crisis",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "number of patients with gastrointestinal involvement",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "modified Rodnan skin score",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "description": "%predicted FVC values",
+              "measure": "forced vital capacity (FVC)",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "description": "%predicted DLCO values",
+              "measure": "diffusing capacity for carbon monoxide (DLCO)",
+              "timeFrame": "baseline (J0), 3 years of follow-up and through study completion (an average of 5 years)"
+            },
+            {
+              "measure": "rate of patients without death",
+              "timeFrame": "3 years and 5 years of follow-up"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2025-06-29",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "NOT_YET_RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2024-05-14",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-05-08",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2025-06-29",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2024-09-02",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2024-05",
+          "studyFirstPostDateStruct": {
+            "date": "2024-05-14",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-05-06",
+          "studyFirstSubmitQcDate": "2024-05-08"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Fosigotifator",
+              "interventionNames": [
+                "Drug: Fosigotifator"
+              ],
+              "label": "Single patient trial",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Single patient trial"
+              ],
+              "description": "Fosigotifator",
+              "name": "Fosigotifator",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 1,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Single Patient Investigational Treatment for Cree Leukoencephalopathy",
+          "nctId": "NCT07300397",
+          "officialTitle": "Single Patient Investigational Treatment for Cree Leukoencephalopathy (Vanishing White Matter Disease)",
+          "orgStudyIdInfo": {
+            "id": "CLE02-ABBV-CLS-7262"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "McGill University Health Centre/Research Institute of the McGill University Health Centre"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Time to death or permanent ventilation",
+              "measure": "Time to death or permanent ventilation",
+              "timeFrame": "From enrollment to 2 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2029-01-03",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-01-16",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-01-14",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-01-03",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-12-03",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-01",
+          "studyFirstPostDateStruct": {
+            "date": "2025-12-23",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-11-26",
+          "studyFirstSubmitQcDate": "2025-12-09"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "whey protein- hydrolyzed whey protein-micellar casein blend (50:43:7 whey:hydrolyzed-whey:casein), vitamin D, and free leucine",
+              "interventionNames": [
+                "Dietary Supplement: Leucine-enriched protein"
+              ],
+              "label": "Leucine-enriched protein + exercise",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "habitual diet only",
+              "interventionNames": [
+                "Behavioral: Habitual diet only"
+              ],
+              "label": "Habitual diet + exercise",
+              "type": "SHAM_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Leucine-enriched protein + exercise"
+              ],
+              "description": "Supplement contains 16g of protein given twice per exercise session (4 total exercise sessions)",
+              "name": "Leucine-enriched protein",
+              "type": "DIETARY_SUPPLEMENT"
+            },
+            {
+              "armGroupLabels": [
+                "Habitual diet + exercise"
+              ],
+              "description": "Habitual diet only (no supplementation) for 4 exercise sessions",
+              "name": "Habitual diet only",
+              "type": "BEHAVIORAL"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 8,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "EARLY_PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Supplementation of a Leucine-enriched Protein Blend",
+          "nctId": "NCT03796897",
+          "officialTitle": "Supplementation of a Leucine-Enriched Dairy Protein Blend: Chronic and Acute Metabolic Responses in Young Men and Women",
+          "orgStudyIdInfo": {
+            "id": "5706"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "McMaster University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "oral deuterium consumption: Isotope protocol (See ref., PMID 23821570)",
+              "measure": "Integrated Muscle Protein Synthetic Rate",
+              "timeFrame": "10 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-03-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-06-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-06-18",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-03-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2019-06-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-06",
+          "studyFirstPostDateStruct": {
+            "date": "2019-01-08",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-01-07",
+          "studyFirstSubmitQcDate": "2019-01-07"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Procedure: bronchoscopic navigation with CLE"
+              ],
+              "label": "CLE based bronchoscopic navigation Group"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "CLE based bronchoscopic navigation Group"
+              ],
+              "description": "bronchoscopic navigation with real-time imagine (Confocal Laser Endomicroscopy)",
+              "name": "bronchoscopic navigation with CLE",
+              "type": "PROCEDURE"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "RETROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 70,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SCORACLE",
+          "briefTitle": "Real-Time Imaging to Improve Lung Cancer Diagnosis : Comparing Confocal Laser Endomicroscopy (CLE) With Standard Biopsy for Quicker and Safer Detection of Non-Small Cell Lung Cancer",
+          "nctId": "NCT07538947",
+          "officialTitle": "Confocal Laser Endomicroscopy (CLE) Score for the Detection of Non-Small Cell Lung Cancer (NSCLC) and Rapid Surgical Decision-Making",
+          "orgStudyIdInfo": {
+            "id": "2025PI085"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Central Hospital, Nancy, France"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Proportion of cases in which the CLE imaging score correctly identifies NSCLC, using standard histopathology from biopsy samples as the reference standard",
+              "measure": "Diagnostic accuracy of the CLE-based score for non-small cell lung cancer (NSCLC) detection",
+              "timeFrame": "During the endoscopic procedure and confirmed after biopsy analysis (up to 7 days)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Proportion of biopsy samples considered adequate for histopathological diagnosis when guided by CLE imaging features.",
+              "measure": "Improvement of biopsy yield using CLE imaging criteria",
+              "timeFrame": "During the endoscopic procedure and confirmed after pathology analysis (up to 7 days)"
+            },
+            {
+              "description": "Accuracy of CLE imaging criteria in differentiating NSCLC subtypes (e.g., squamous cell carcinoma, adenocarcinoma, carcinoid tumors) compared with standard histopathology.",
+              "measure": "Identification of NSCLC histological subtypes using CLE imaging",
+              "timeFrame": "During the procedure and confirmed after biopsy analysis (up to 7 days)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-06-15",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-04-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-04-13",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-06-15",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2026-04-03",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-04",
+          "studyFirstPostDateStruct": {
+            "date": "2026-04-20",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-04-08",
+          "studyFirstSubmitQcDate": "2026-04-13"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Standard of care, high resolution endoscopy surveillance/ evaluation of BE and or IEN",
+              "label": "High Resolution endoscopy (HRE)",
+              "type": "NO_INTERVENTION"
+            },
+            {
+              "description": "Standard of care, high resolution endoscopy surveillance/ evaluation of BE and or IEN and endomicroscopy esophageal evaluation",
+              "interventionNames": [
+                "Procedure: endomicroscopy"
+              ],
+              "label": "Endomicroscopy (EM)",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Endomicroscopy (EM)"
+              ],
+              "description": "endomicroscopy scope lens has capability to optically evaluate mucosa/submucosa as a microscope",
+              "name": "endomicroscopy",
+              "otherNames": [
+                "Confocal Laser Microscopy (CLE), EM, confocal microscopy"
+              ],
+              "type": "PROCEDURE"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "SCREENING"
+          },
+          "enrollmentInfo": {
+            "count": 68,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "CEBE",
+          "briefTitle": "Confocal Endomicroscopy for Improved Diagnosis of Barrett's Esophagus and Early Esophageal Cancer(CEBE Study)",
+          "nctId": "NCT01124214",
+          "officialTitle": "In Vivo Endomicroscopy (EM) for Improved Diagnosis of Barrett's Esophagus (BE) and Associated Neoplasia: A Multicenter Randomized Controlled Trial of Diagnostic Yield and Clinical Impact",
+          "orgStudyIdInfo": {
+            "id": "NA_00025471"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Johns Hopkins University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Compare the diagnostic yield (defined as the proportion of mucosal biopsy samples with neoplasia) of HRE plus EM with directed biopsy (HRE-EM-DB) over HRE with directed biopsy of all mucosal lesions followed by random biopsy (HRE-DB-RB) to diagnose BE in flat mucosa and mucosal lesions\n\nThe mean diagnostic yield for IEN will be calculated (number of mucosal biopsies and EMR specimens with High Grade Dysplasia (HGD) or Carcinoma (CA) divided by total number of mucosal biopsies obtained) by group and compared, using a chi square or Fisher's exact test for independent groups, depending on the distribution of the data.",
+              "measure": "compare diagnostic yield",
+              "timeFrame": "1 year"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "To prospectively assess the potential clinical impact of EM on the diagnosis and endoscopic surveillance of BE by determining if EM alters the decision to biopsy or EMR and change the total of biopsies per procedure.",
+              "measure": "assess clinical impact of EM",
+              "timeFrame": "1 year"
+            },
+            {
+              "description": "To compare the performance (sensitivity and specificity) characteristics of HRE-EM-DB with HRE-RB for prediction of BE/IEN using the pathologic diagnosis of mucosal biopsies the as the reference standard.",
+              "measure": "compare the specificity and sensitivity of HRE with EM",
+              "timeFrame": "1 year"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2013-06",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-05-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-05-15",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2012-12",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2010-07"
+          },
+          "statusVerifiedDate": "2023-05",
+          "studyFirstPostDateStruct": {
+            "date": "2010-05-17",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2010-05-13",
+          "studyFirstSubmitQcDate": "2010-05-14"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants will consume a low protein containing breakfast and 2 hours later will consume the enriched protein supplement",
+              "interventionNames": [
+                "Dietary Supplement: Enriched Protein®"
+              ],
+              "label": "Supplementation with Enriched Protein®"
+            },
+            {
+              "description": "No supplementation",
+              "label": "Low protein breakfast"
+            },
+            {
+              "description": "No supplementation",
+              "label": "High protein breakfast"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Supplementation with Enriched Protein®"
+              ],
+              "description": "This product contains high quality bovine milk proteins enriched with additional leucine.",
+              "name": "Enriched Protein®",
+              "type": "DIETARY_SUPPLEMENT"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Blood plasma",
+            "retention": "SAMPLES_WITHOUT_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "CASE_CROSSOVER",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 8,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Supplementation of a Leucine-Enriched Dairy Protein Blend",
+          "nctId": "NCT03712761",
+          "officialTitle": "Supplementation of a Leucine-Enriched Dairy Protein Blend: Effects on Plasma Amino Acids in Older Adults",
+          "orgStudyIdInfo": {
+            "id": "2502"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "McMaster University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "plasma amino acid concentrations",
+              "measure": "Easy-fast amino acid sample testing kit for gas chromatography mass spectrometry",
+              "timeFrame": "375 minutes"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "plasma glucose concentrations",
+              "measure": "Hexokinase/G-6-PDH methodology",
+              "timeFrame": "375 minutes"
+            },
+            {
+              "description": "plasma insulin concentrations",
+              "measure": "Chemiluminescent Microparticle Immunoassay",
+              "timeFrame": "375 minutes"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = lowest score and 100mm = highest score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception desire to eat",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = lowest score and 100mm = highest score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for hunger",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = lowest score and 100mm = highest score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for fullness",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = lowest score and 100mm = highest score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for thirst",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = lowest score and 100mm = highest score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for how much food could be eaten",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for liking or disliking of food",
+              "timeFrame": "Average score across 13 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for visual appeal",
+              "timeFrame": "Average score across 2 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for smell",
+              "timeFrame": "Average score across 2 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for taste",
+              "timeFrame": "Average score across 2 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for aftertaste",
+              "timeFrame": "Average score across 2 measurements"
+            },
+            {
+              "description": "Units on a 100mm Paper Scale, 0mm = worst score and 100mm = best score",
+              "measure": "Visual Analog Scale Questionnaires for food sensory perception for pleasantness",
+              "timeFrame": "Average score across 2 measurements"
+            },
+            {
+              "description": "Stadiometer",
+              "measure": "Height in meters",
+              "timeFrame": "One measurement at baseline"
+            },
+            {
+              "description": "Physician scale",
+              "measure": "Weight in kilograms",
+              "timeFrame": "One measurement at baseline"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-06-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-06-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-06-18",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-12-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2018-03-28",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-06",
+          "studyFirstPostDateStruct": {
+            "date": "2018-10-19",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-10-16",
+          "studyFirstSubmitQcDate": "2018-10-18"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "N=1 trial",
+              "interventionNames": [
+                "Drug: Fosigotifator (FGT/ABBV-CLS-7262)"
+              ],
+              "label": "N=1 trial",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "N=1 trial"
+              ],
+              "description": "This study aims to provide under compassionate use program access to an investigational drug (FGT) for a patient diagnosed with Cree Leukoencephalopathy (CLE)/Vanishing White Matter (VWM) which has no treatment options currently available. The study will also evaluate the risk/benefit of FGT in slowing or halting the progression of white matter degeneration in a patient with CLE. By targeting the underlying pathophysiological mechanisms of white matter damage, FGT is expected to alleviate neurological symptoms and improve the quality of life for the patient. The outcomes of this study could provide critical insights into the disease's management and pave the way for the development of targeted therapies, ultimately offering hope to a population with limited treatment options.",
+              "name": "Fosigotifator (FGT/ABBV-CLS-7262)",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 1,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "EARLY_PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Research Study for Single-Patient Treatment of Cree Leukoencephalopathy/Vanishing White Matter Disease",
+          "nctId": "NCT07272525",
+          "officialTitle": "Research Study for Single-Patient Treatment of Cree Leukoencephalopathy/Vanishing White Matter Disease",
+          "orgStudyIdInfo": {
+            "id": "2025-10780 (CLE-ABBV-CLS-7262)"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "McGill University Health Centre/Research Institute of the McGill University Health Centre"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2025",
+              "link": "https://reporter.nih.gov/quickSearch/2025",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Patient survival (yes/no) or need for continuous ventilatory support (yes/no) at 2 years",
+              "measure": "Patient survival or need for continuous ventilatory support at 2 years",
+              "timeFrame": "3 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2027-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-12-30",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-12-22",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-11-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2024-11-14",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-12",
+          "studyFirstPostDateStruct": {
+            "date": "2025-12-09",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-10-11",
+          "studyFirstSubmitQcDate": "2025-11-26"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "After the standard diagnostic (spirometry, body plethysmography, exhaled NO, skin prick test) all patients with dyspnea while exercising undergo exercise challenges in a cold chamber (ECC).\n\nIn case of a positive reaction in the ECC the patients get asthma medication (ICS/LABA combination).\n\nBoth groups negative and positive should fill out a symptom diary and the next visit will be booked 6 weeks later.\n\nIf they still have dyspnea while exercising with ICS/LABA combination or hat a negative ECC the patients undergo an ECC with continuous laryngoscopy. In case of an EILO diagnosis patients will be sent to speech therapy and checked at a follow up visit.\n\nAll patients and their parents should complete questionnaires for symptoms and quality of life at every visit.",
+              "interventionNames": [
+                "Other: ECC",
+                "Other: ECC with CLE",
+                "Other: Speech therapy"
+              ],
+              "label": "ECC, ECC with CLE, speech therapy"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ECC, ECC with CLE, speech therapy"
+              ],
+              "description": "Exercise challenge is defined as running on a treadmill for 6-8 minutes on submaximal work load in a cold chamber.",
+              "name": "ECC",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "ECC, ECC with CLE, speech therapy"
+              ],
+              "description": "Continuous Laryngoscopy is endoscopy of the larynx used to obtain a view of laryngeal obstruction during exercise.",
+              "name": "ECC with CLE",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "ECC, ECC with CLE, speech therapy"
+              ],
+              "description": "Patients with diagnosis of EILO will be sent to a speech therapist for at least 6 training sessions.",
+              "name": "Speech therapy",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "OTHER",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 40,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Diagnostics and Quality of Life With EIA and EILO",
+          "nctId": "NCT03550456",
+          "officialTitle": "Diagnostics of the Quality of Life With Exercise Induced Asthma (EIA) and Exercise Induced Laryngeal Obstruction (EILO)",
+          "orgStudyIdInfo": {
+            "id": "KGU-83/18"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Johann Wolfgang Goethe University Hospital"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The primary endpoint is the quality of life of all subjects with EIA and EILO assessed by questionnaires (Child Behavior Checklist (CBCL/4-18) for parents and Youth Self-Report (YSR 11-18) for adolescents) at the time of diagnosis and after therapy in accordance with the diagnosis with ICS/LABA combination or speech therapy. Both questionnaires are almost identical and contain 120 items (CBCL/4-18) and 119 items (YSR), respectively, in eight different categories: anxious/depressed, withdrawn/depressed, somatic complaints, social problems, thought problems, attention problems, rule-breaking behavior, and aggressive behavior. Answers to each item are coded on a 3-point Likert-scale, 0 = not true, 1 = somewhat or sometimes true, 2 = very true or often true. Raw scores are transformed into T-scores to allow comparison with children from the same gender and age.",
+              "measure": "Quality of life in subjects with exercise induced asthma and exercise induced laryngeal obstruction",
+              "timeFrame": "5 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Comparison of symptom score ACT and DI between EIA and EILO.",
+              "measure": "Symptoms of EIA and EILO",
+              "timeFrame": "5 years"
+            },
+            {
+              "description": "Patients suffering from exercise induced dyspnea are evaluated of prevalence of EIA-, EILO and combinations of EIA+EILO.",
+              "measure": "Prevalence",
+              "timeFrame": "1 year"
+            },
+            {
+              "description": "Success monitoring of speech therapy of EILO or combination of EIA+EILO on the basis of a survey concerning the quality of life and symptoms.",
+              "measure": "Speech therapy",
+              "timeFrame": "5 years"
+            },
+            {
+              "description": "Changes in the concentration of carbon dioxide in the blood by capillary blood gas analysis before and after the exercise challenge in a cold chamber and before and after CLE diagnostics.",
+              "measure": "Carbon dioxide",
+              "timeFrame": "5 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-12-31",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-07-30",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-07-28",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-12-31",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2018-11-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-07",
+          "studyFirstPostDateStruct": {
+            "date": "2018-06-08",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-05-23",
+          "studyFirstSubmitQcDate": "2018-06-07"
+        }
+      }
+    }
+  ],
+  "totalCount": 8
+}

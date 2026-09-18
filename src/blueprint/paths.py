@@ -227,6 +227,19 @@ def audit_files(root: Path | str | None = None) -> list[Path]:
     return sorted(directory.glob("*/*.yaml"))
 
 
+def external_analysis_files(root: Path | str | None = None) -> list[Path]:
+    """Every ``analyses/external/*.yaml``, sorted.
+
+    An external agent's analysis record. Kept in its own directory rather than mixed
+    into ``evidence/`` because its verification state, not its content, is what a reader
+    must see first: everything here is inert until artefacts arrive.
+    """
+    directory = resolve_root(root) / "analyses" / "external"
+    if not directory.is_dir():
+        return []
+    return sorted(directory.glob("*.yaml"))
+
+
 def target_files(root: Path | str | None = None) -> list[Path]:
     """Every ``targets/candidates/*.yaml``, sorted."""
     directory = target_candidates_dir(root)

@@ -1,0 +1,633 @@
+# Sources registered by agent:orchestrator during Sprint 2.
+#
+# Every record here came from a target-directed ClinicalTrials.gov search
+# (pipelines/registry_search/), and every title and sponsor is the registry's own text
+# taken from a snapshotted API response — not a description written by an agent.
+#
+# These exist because Sprint 1 graded `human_intervention_evidence: 0` for three atlases
+# on the strength of LITERATURE searches alone. A registry holds trials that ran and were
+# never published, which is exactly the category those zeros were missing.
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00234637
+  source_type: clinical_trial_registration
+  title: An Open-label Study to Evaluate the Efficacy and Safety of add-on Memantine [5-10 mg b.i.d (10-20
+    mg/Day)] to Rivastigmine [1.5-6 mg b.i.d. (3-12 mg/Day)] Treatment in Patients With Alzheimer's Disease
+    Who Continued With Rivastigmine Treatment After a Previous Decline While on Donepezil or Galantamine
+    Treatment
+  year: 2003
+  first_author: Novartis
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00234637
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00310388
+  source_type: clinical_trial_registration
+  title: A Multicenter, Open-Label, Long-Term, Safety, Tolerability and Efficacy Study of Retigabine in
+    Adult Epilepsy Patients With Partial-Onset Seizures (Extension of Study VRX-RET-E22-302)
+  year: 2006
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00310388
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00334906
+  source_type: clinical_trial_registration
+  title: 'An Open-Label Exploratory Study With Memantine: Assessment of Selected Measures of Volumetric
+    MRI and Cognition in Patients With Moderate Dementia of the Alzheimer''s Type'
+  year: 2005
+  first_author: Forest Laboratories
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00334906
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00464061
+  source_type: clinical_trial_registration
+  title: 'Efficacy and Safety of 2mg/Day of M100907 on Sleep Maintenance Insomnia With a Sub-study of
+    the Effect of M100907 on Stable Type II Diabetes Mellitus: a One Year, Multi-center, Randomized, Double-blind,
+    Placebo-controlled Study'
+  year: 2007
+  first_author: Sanofi
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00464061
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HTR2A; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00649220
+  source_type: clinical_trial_registration
+  title: Prospective, Single-arm, Multi-centre, Open-label Study to Investigate the Potential to Reduce
+    Concomitant Antipsychotics Use in Patients With Moderate to Severe Dementia of Alzheimer's Type (DAT)
+    Treated With Memantine
+  year: 2008
+  first_author: Merz Pharmaceuticals GmbH
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00649220
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00744341
+  source_type: clinical_trial_registration
+  title: A Double-Blind, Placebo-Controlled, Randomized, Multi-Center, Dose-Finding Study of SLV320, a
+    Selective A1 Adenosine Receptor Antagonist, to Evaluate the Effect on Renal Function and Safety in
+    Subjects Hospitalized With Acute Decompensated Heart Failure and Renal Dysfunction (Reno-Defend 1)
+  year: 2009
+  first_author: Solvay Pharmaceuticals
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00744341
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for ADORA1; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00788515
+  source_type: clinical_trial_registration
+  title: Comparison of the Safety and Efficacy of Volinanserin and Lormetazepam in the Treatment of Insomnia
+    Characterized by Sleep Maintenance Difficulties. A 4 Week,Randomized, Double-blind, Comparative, Parallel-group
+    Study.
+  year: 2008
+  first_author: Sanofi
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00788515
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HTR2A; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00820105
+  source_type: clinical_trial_registration
+  title: A Phase 2B, Randomised, Double-blind, Placebo-controlled, Parallel Group, Dose-ranging, Multicentre
+    Study to Investigate the Efficacy, Safety and Tolerability of the mGluR5 Negative Allosteric Modulator
+    ADX10059 for the Prevention of Migraine
+  year: 2008
+  first_author: Addex Pharma S.A.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00820105
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRM5; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT00857233
+  source_type: clinical_trial_registration
+  title: An Open-label Extension Study Examining the Safety and Tolerability of Memantine in Patients
+    With Moderate to Severe Dementia of the Alzheimer's Type Having Completed Study 10158
+  year: 2004
+  first_author: H. Lundbeck A/S
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT00857233
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01244633
+  source_type: clinical_trial_registration
+  title: Ecopipam Treatment of Tourette Syndrome
+  year: 2010
+  first_author: Psyadon Pharma
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01244633
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: results_posted.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01462656
+  source_type: clinical_trial_registration
+  title: A Post Marketing Surveillance Study to Monitor the Risk of Urinary Retention in Retigabine Users
+  year: 2011
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01462656
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01494584
+  source_type: clinical_trial_registration
+  title: Open-label, Multiple Dose Study to Evaluate the Parmacokinetics, Safety and Tolerability of Ezogabine/Retigabine
+    as Adjunctive Treatment in Subjects Aged From 12 Years to Less Than 18 Years With Partial Onset Seizures
+    or Lennox-Gastaut Syndrome
+  year: 2012
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01494584
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01519557
+  source_type: clinical_trial_registration
+  title: Pharmacologic and Clinical Testing of a D1 Agonist for Cognitive Enhancement in Neuropsychiatric
+    Disorders
+  year: 2011
+  first_author: New York State Psychiatric Institute
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01519557
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01552434
+  source_type: clinical_trial_registration
+  title: A Phase I Trial of Bevacizumab, Temsirolimus Alone and in Combination With Valproic Acid, or
+    Cetuximab in Patients With Advanced Malignancy and Other Indications
+  year: 2012
+  first_author: M.D. Anderson Cancer Center
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01552434
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HDAC2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01626391
+  source_type: clinical_trial_registration
+  title: A Double-Blind, Placebo-Controlled, Randomised, 4-Week Safety and Tolerability Study of TRx0237
+    in Subjects With Mild to Moderate Alzheimer's Disease on Pre-Existing Stable Acetylcholinesterase
+    Inhibitor and/or Memantine Therapy
+  year: 2012
+  first_author: TauRx Therapeutics Ltd
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01626391
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01648101
+  source_type: clinical_trial_registration
+  title: A Randomised, Double-blind, Placebo-controlled, Parallel-group, Multicentre Study to Determine
+    the Efficacy and Safety of 2 Doses of Retigabine Immediate Release (900 mg/Day and 600 mg/Day) Used
+    as Adjunctive Therapy in Adult Asian Subjects With Drug-resistant Partial-onset Seizures.
+  year: 2012
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01648101
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01668654
+  source_type: clinical_trial_registration
+  title: RTG113388, a Long-term, Open-label Safety Extension Study of Retigabine/Ezogabine in Pediatric
+    Subjects With Partial Onset Seizures (>= 12 Years Old) and Subjects With Lennox-Gastaut Syndrome (>=12
+    Years Old)
+  year: 2012
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01668654
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01701934
+  source_type: clinical_trial_registration
+  title: 'Impact of Roflumilast on Visceral Adiposity and MetaBolic Profile in Chronic Obstructive Lung
+    Disease: a Randomized and Controlled Trial: the RAMBO Trial.'
+  year: 2013
+  first_author: Laval University
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01701934
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for PDE4B; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01721317
+  source_type: clinical_trial_registration
+  title: Study PTG116878, a Dose-Optimization Study of Ezogabine/Retigabine Immediate Release Tablets
+    Versus Placebo in the Adjunctive Treatment of Subjects With Partial-Onset Seizures
+  year: 2012
+  first_author: GlaxoSmithKline
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01721317
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01751802
+  source_type: clinical_trial_registration
+  title: An Outpatient Phase 3 Efficacy Study of Ecopipam (PSYRX 101) in the Symptomatic Treatment of
+    Self-Injurious Behavior in Subjects With Lesch-Nyhan Disease
+  year: 2012
+  first_author: Emalex Biosciences Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01751802
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01813019
+  source_type: clinical_trial_registration
+  title: A Randomized, Double-blind, Placebo-controlled, Parallel-group Proof of Concept Study to Evaluate
+    the Effect of AFQ056 in Obsessive Compulsive Disorder (OCD) Patients Resistant to Selective Serotonin
+    Reuptake Inhibitor (SSRI) Therapy
+  year: 2013
+  first_author: Novartis Pharmaceuticals
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01813019
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRM5; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT01834547
+  source_type: clinical_trial_registration
+  title: Phase I Study About Effects of Caffeine, Methylphenidate, Modafinil and Placebo on Cognitive
+    Performance of Chess Players.
+  year: 2011
+  first_author: K. Lieb
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT01834547
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for ADORA1; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02102698
+  source_type: clinical_trial_registration
+  title: Ecopipam Treatment of Tourette's Syndrome in Subjects 7-17 Years
+  year: 2014
+  first_author: Emalex Biosciences Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02102698
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: results_posted.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02343575
+  source_type: clinical_trial_registration
+  title: Valproic Acid for Treatment of Hyperactive or Mixed Delirium in ICU
+  year: 2015
+  first_author: Stanford University
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02343575
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HDAC2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02507206
+  source_type: clinical_trial_registration
+  title: A D1 Agonist For Working Memory Enhancement In The Schizophrenia Spectrum
+  year: 2013
+  first_author: Antonia New
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02507206
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02893371
+  source_type: clinical_trial_registration
+  title: Longitudinal Comparative Effectiveness of Bipolar Disorder Therapies
+  year: 2016
+  first_author: University of New Mexico
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02893371
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HDAC2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02928393
+  source_type: clinical_trial_registration
+  title: A Randomized, Double-Blind, Placebo-Controlled, Parallel Group, Safety, Efficacy and Pharmacodynamic
+    Study of Basmisanil (RO5186582) in Adults With Severe Motor Impairment Following an Ischemic Stroke
+  year: 2017
+  first_author: Hoffmann-La Roche
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02928393
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GABRA5; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT02953639
+  source_type: clinical_trial_registration
+  title: A Phase IIb, Multicenter, Randomized, Double-Blind, Parallel Group, Placebo Controlled Study
+    to Evaluate the Efficacy, Safety and Tolerability of Basmisanil (RO5186582) as Adjunctive Treatment
+    in Patients With Cognitive Impairment Associated With Schizophrenia Treated With Antipsychotics
+  year: 2016
+  first_author: Hoffmann-La Roche
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT02953639
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GABRA5; classification: results_posted.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT03218969
+  source_type: clinical_trial_registration
+  title: Treatment of Restless Leg Syndrome (RLS) Augmentation With Ecopipam, a D1 Specific Antagonist
+  year: 2017
+  first_author: William Ondo, MD
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT03218969
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: results_posted.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT03416530
+  source_type: clinical_trial_registration
+  title: ONC201 in Newly Diagnosed Diffuse Intrinsic Pontine Glioma and Recurrent/Refractory Pediatric
+    H3 K27M Gliomas
+  year: 2018
+  first_author: Jazz Pharmaceuticals
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT03416530
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT03468543
+  source_type: clinical_trial_registration
+  title: A Study Designed to Determine the Gastro-Retentive and Modified Release Properties of Memantine
+    Hydrochloride (HCl) Prototype Capsule Formulations in Healthy Subjects
+  year: 2017
+  first_author: Lyndra Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT03468543
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT04033419
+  source_type: clinical_trial_registration
+  title: Memantine for Prevention of Cognitive Decline During Adjuvant or Neoadjuvant Chemotherapy in
+    Patients With Breast Cancer
+  year: 2019
+  first_author: UNC Lineberger Comprehensive Cancer Center
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT04033419
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GRIN2B; classification: results_posted.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT04639310
+  source_type: clinical_trial_registration
+  title: A Phase 3 Study of Adjunctive XEN496 in Pediatric Subjects With KCNQ2 Developmental and Epileptic
+    Encephalopathy
+  year: 2021
+  first_author: Xenon Pharmaceuticals Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT04639310
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT04764851
+  source_type: clinical_trial_registration
+  title: A Phase 1, Open-Label, Fixed Sequence Drug-Drug Interaction Study to Evaluate the Effects of
+    Repeat Doses of Ecopipam on the Pharmacokinetics of Multiple Substrates for Drug Metabolism and Transport
+    in Healthy Subjects
+  year: 2021
+  first_author: Emalex Biosciences Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT04764851
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT04912856
+  source_type: clinical_trial_registration
+  title: An Open-Label Extension of the Study XEN496 in Children With KCNQ2 Developmental and Epileptic
+    Encephalopathy
+  year: 2021
+  first_author: Xenon Pharmaceuticals Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT04912856
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for KCNQ2; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT05307679
+  source_type: clinical_trial_registration
+  title: A Phase II, Randomized, Double-Blind, Placebo-Controlled, Parallel Group Study to Evaluate the
+    Safety, Efficacy, and Pharmacodynamics of 52 Weeks of Treatment With Basmisanil in Participants Aged
+    2 to 14 Years Old With Dup15q Syndrome Followed by a 2-Year Optional Open-Label Extension
+  year: 2022
+  first_author: Hoffmann-La Roche
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT05307679
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for GABRA5; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT05643170
+  source_type: clinical_trial_registration
+  title: A Multi-center, Open-label Study to Assess the Effectiveness, Long-term Safety, Tolerability,
+    and Durability of Effect of KarXT in Patients With DSM-5 Diagnosis of Schizophrenia
+  year: 2022
+  first_author: Karuna Therapeutics, Inc., a Bristol Myers Squibb company
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT05643170
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for CHRM1; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT06194864
+  source_type: clinical_trial_registration
+  title: A Phase 1, Sequential Drug Interaction Study to Evaluate the Effect of CYP3A4 and P-glycoprotein
+    Inhibition by Itraconazole or Induction by Rifampicin on the Pharmacokinetics of Ecopipam and Its
+    Metabolites in Healthy Subjects
+  year: 2024
+  first_author: Emalex Biosciences Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT06194864
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for DRD1; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT06258031
+  source_type: clinical_trial_registration
+  title: 'PsilOCD: Evaluating the Effects of the 5-HT2A Agonist Psilocybin on the Neurocognitive and Clinical
+    Correlates of Compulsivity (A Pharmacological-Challenge Feasibility Study)'
+  year: 2022
+  first_author: Imperial College London
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT06258031
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HTR2A; classification: reporting_gap.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT07329621
+  source_type: clinical_trial_registration
+  title: A Phase 1, Open-label, Positron Emission Tomography (PET) Trial to Measure Serotonin 5-HT2A Receptor
+    Occupancy Following Single Oral Doses of MSP-2020 in Healthy Male Adults
+  year: 2026
+  first_author: Otsuka Pharmaceutical Development & Commercialization, Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT07329621
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HTR2A; classification: terminated_with_reason.'
+- schema_version: 0.1.0
+  source_id: SRC:NCT:NCT07710027
+  source_type: clinical_trial_registration
+  title: A Randomized, Double-Blind, Single Ascending Dose Study to Identify a Safe and Non-Psychedelic
+    Dose of Psilocybin
+  year: 2021
+  first_author: Diamond Therapeutics Inc.
+  container: ClinicalTrials.gov
+  identifiers:
+    nct_id: NCT07710027
+  added_by: agent:orchestrator
+  added_on: '2026-09-18'
+  retrieval:
+    method: ctgov_api
+  notes: 'Registered by Sprint-2 Task B target-directed registry search for HTR2A; classification: reporting_gap.'

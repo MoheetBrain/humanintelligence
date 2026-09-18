@@ -1,0 +1,1173 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects will receive experimental drug in a blinded fashion.",
+              "interventionNames": [
+                "Drug: Nicotinamide"
+              ],
+              "label": "1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Identical in size, shape and color to experimental drug.",
+              "interventionNames": [
+                "Drug: Enduramide placebo"
+              ],
+              "label": "2",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "1"
+              ],
+              "description": "1500 mg twice a day for 6 months",
+              "name": "Nicotinamide",
+              "otherNames": [
+                "Enduramide"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "2"
+              ],
+              "description": "1 tab twice a day",
+              "name": "Enduramide placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 50,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Safety Study of Nicotinamide to Treat Alzheimer's Disease",
+          "nctId": "NCT00580931",
+          "officialTitle": "Efficacy of Nicotinamide for the Treatment of Alzheimer's Disease",
+          "orgStudyIdInfo": {
+            "id": "IIRG-07-61197"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of California, Irvine"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Alzheimer's Disease Assessment Scale-Cognitive Subscale",
+              "timeFrame": "Baseline, 6 wk, 12 wk, 18 wk, 24 wk"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2014-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-01-25",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2017-01-23",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2014-07",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2008-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-01",
+          "studyFirstPostDateStruct": {
+            "date": "2007-12-27",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-12-24",
+          "studyFirstSubmitQcDate": "2007-12-26"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "This group will receive this sequence after the 1 initial week washout:\n\nvorinstat (4 weeks) placebo (1 week) placebo (4 weeks)",
+              "interventionNames": [
+                "Drug: Vorinostat Oral Capsule Group 1"
+              ],
+              "label": "Vorinostat Group 1 (P-V-P-P)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive this sequence after the 1 initial week washout:\n\nplacebo (4 weeks) placebo (1 week) vorinostat (4 weeks)",
+              "interventionNames": [
+                "Drug: Vorinostat Oral Capsule Group 2"
+              ],
+              "label": "Vorinostat Group 2 (P-P-P-V)",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Vorinostat Group 1 (P-V-P-P)"
+              ],
+              "description": "Following the initial washout and first 4-week period of the trial, all patients will enter a second 1-week washout. After the washout, all patients will then enter a second 4 week alternate treatment (vorinostat or placebo). During the vorinostat sequence, doses will be increased over the first 2 weeks in each phase of the crossover study, starting by 100 mg per day, and increasing to 200 mg by week 2 and 300 mg per day at the start of week 3 until the end of week 4.",
+              "name": "Vorinostat Oral Capsule Group 1",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Vorinostat Group 2 (P-P-P-V)"
+              ],
+              "description": "Following the initial washout and first 4-week period of the trial, all patients will enter a second 1-week washout. After the washout, all patients will then enter a second 4 week alternate treatment (vorinostat or placebo). During the vorinostat sequence, doses will be increased over the first 2 weeks in each phase of the crossover study, starting by 100 mg per day, and increasing to 200 mg by week 2 and 300 mg per day at the start of week 3 until the end of week 4.",
+              "name": "Vorinostat Oral Capsule Group 2",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "EARLY_PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "HDAC Inhibitor Augmentation to Clozapine",
+          "nctId": "NCT03263533",
+          "officialTitle": "HDAC Inhibitor Augmentation to Clozapine",
+          "orgStudyIdInfo": {
+            "id": "HM20007977"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Virginia Commonwealth University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Safety of vorinostat measured by number of adverse events",
+              "measure": "Incidence of Treatment-Emergent Adverse Events (Safety and Tolerability)",
+              "timeFrame": "10 weeks"
+            },
+            {
+              "description": "Participants will be given a cognitive test to assess executive function and speed.",
+              "measure": "Change in clinical cognitive symptoms during adjunctive vorinostat therapy in schizophrenia patients treated with clozapine",
+              "timeFrame": "Baseline, Visit 4 (end of first intervention group/week 4), Visit 7 (end of study/10 weeks)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-02",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-10-15",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-10-11",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2019-02",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2017-04",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2024-10",
+          "studyFirstPostDateStruct": {
+            "date": "2017-08-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-08-14",
+          "studyFirstSubmitQcDate": "2017-08-21",
+          "whyStopped": "PIs were unable to recruit any participants"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Dietary Supplement: Sodium Butyrate 4.38 gms of sodium butyrate per day for 12 weeks",
+              "interventionNames": [
+                "Drug: Sodium Butyrate"
+              ],
+              "label": "Sodium Butyrate",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo Oral Capsule placebo capsules containing approximately 9 mg of sodium butyrate per day",
+              "interventionNames": [
+                "Drug: Placebo Oral Capsule"
+              ],
+              "label": "Placebo Oral Capsule",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Sodium Butyrate"
+              ],
+              "description": "Sodium butyrate is being supplied by T.E. Neesby (Brain White, T.E. Neesby, Inc.) in 730 mg capsules. The company asserts that their material is 98% pure and food grade. We will have identical placebo capsules. Subjects will receive 3 capsules twice daily (morning and late afternoon or evening) for a total of 4380 mg/day.",
+              "name": "Sodium Butyrate",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo Oral Capsule"
+              ],
+              "description": "Placebo Oral Capsule is also being supplied by T.E. Neesby (Brain White, T.E. Neesby, Inc.) and there is no difference from appearance, smell and taste. It contains 1.5 mg sodium butyrate per capsule. Subjects will receive 3 capsules twice daily (morning and late afternoon or evening) for a total of 9 mg/day.",
+              "name": "Placebo Oral Capsule",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Sodium Butyrate For Improving Cognitive Function In Schizophrenia",
+          "nctId": "NCT03010865",
+          "officialTitle": "Sodium Butyrate As A Treatment For Improving Cognitive Function In Schizophrenia",
+          "orgStudyIdInfo": {
+            "id": "2016-12"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Shanghai Mental Health Center"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Patient self-report of side-effects of active or placebo medication",
+              "measure": "Change from baseline in Side-Effect Scale Score",
+              "timeFrame": "Basline, week 2, week 6, up to 12 weeks"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "MATRICS Cognitive Battery",
+              "measure": "Change from baseline in MATRICS Battery Score",
+              "timeFrame": "Basline, week 6, up to 12 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Logical Memory Test for longer term memory",
+              "measure": "Change from baseline in Logical Memory Test score",
+              "timeFrame": "Basline, up to 12 weeks"
+            },
+            {
+              "description": "Positive and Negative Syndrome Scale (PANSS) symptom rating scale",
+              "measure": "Change from baseline in Positive and Negative Syndrome Scale (PANSS) total score",
+              "timeFrame": "Basline, week 6, up to 12 weeks"
+            },
+            {
+              "description": "Alternate working memory test",
+              "measure": "Change from baseline in Paced Auditory Serial Addition Test (PASAT) score",
+              "timeFrame": "Basline, week 6, up to 12 weeks"
+            },
+            {
+              "description": "University of California, San Diego (UCSD) Performance-Based Skills Assessment Battery",
+              "measure": "Change from baseline in UCSD Performance-Based Skills Assessment (UPSA) total score",
+              "timeFrame": "Baseline, up to 12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-02",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-01-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-01-15",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2019-12",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2017-06-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-06",
+          "studyFirstPostDateStruct": {
+            "date": "2017-01-05",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-12-28",
+          "studyFirstSubmitQcDate": "2017-01-03",
+          "whyStopped": "sponsor withdrew the funds because the smell of sodium butyrate made blinding impossible"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "VR high intensity: Virtual reality Based Cognitive Remediation Therapy (VR-CRT). The cognitive remediation programme has a duration of three weeks and involves weekly virtual reality-based cognitive training sessions with a therapist accompanied by additional between session homework assignments consisting of cognitively challenging daily life tasks.\n\nIn this arm, VR high intensity (VR-CRT) is combined with daily intake of HDACi sodium butyrate.",
+              "interventionNames": [
+                "Behavioral: Virtual Reality-based cognitive remediation therapy (VR-CRT)",
+                "Dietary Supplement: HDACi butyrate"
+              ],
+              "label": "Group 1/4: VR high intensity + sodium butyrate",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "VR high intensity (VR-CRT): Same as above.\n\nIn this arm, VR high intensity (VR-CRT) is combined with placebo.",
+              "interventionNames": [
+                "Behavioral: Virtual Reality-based cognitive remediation therapy (VR-CRT)",
+                "Dietary Supplement: Placebo"
+              ],
+              "label": "Group 2/4: VR high intensity + placebo",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "VR low intensity: A virtual reality-based control treatment (VR-CT). This alternate treatment programme also has a duration of three weeks and involves one weekly 2-hour session with a therapist.\n\nIn this arm, VR-based control treatment (VR-CT) is combined with daily intake of HDACi sodium butyrate.",
+              "interventionNames": [
+                "Behavioral: Virtual Reality-based control treatment (VR-CT)",
+                "Dietary Supplement: HDACi butyrate"
+              ],
+              "label": "Group 3/4: VR low intensity + sodium butyrate",
+              "type": "SHAM_COMPARATOR"
+            },
+            {
+              "description": "VR low intensity (VR-CT): Same as above.\n\nIn this arm, VR-based control treatment (VR-CT) is combined with placebo.",
+              "interventionNames": [
+                "Behavioral: Virtual Reality-based control treatment (VR-CT)",
+                "Dietary Supplement: Placebo"
+              ],
+              "label": "Group 4/4: VR low intensity + placebo",
+              "type": "SHAM_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Group 1/4: VR high intensity + sodium butyrate",
+                "Group 2/4: VR high intensity + placebo"
+              ],
+              "description": "VR-CRT on 360° Meta Quest 2-software in which participants train cognitive abilities guided by a therapist. The platform includes three immersive scenarios: (1) a kitchen scenario focusing on planning and cooking a meal, (2) a supermarket scenario focusing on grocery shopping and (3) a restaurant scenario focusing on remembering names and personal information. The virtual reality training is supported by a psychoeducation program that focuses on application of learned cognitive strategies in daily life.",
+              "name": "Virtual Reality-based cognitive remediation therapy (VR-CRT)",
+              "type": "BEHAVIORAL"
+            },
+            {
+              "armGroupLabels": [
+                "Group 3/4: VR low intensity + sodium butyrate",
+                "Group 4/4: VR low intensity + placebo"
+              ],
+              "description": "VR-CT: The virtual reality control training involves completing different virtual reality games that are available through the Meta Quest games store. The chosen games involve no direct training of cognitive abilities such as planning skills og strategic learning, but merely involves simple reaction time and interaction with an entertaining environment that is meaningful to the participant and gives the impression of training cognitive skills.",
+              "name": "Virtual Reality-based control treatment (VR-CT)",
+              "type": "BEHAVIORAL"
+            },
+            {
+              "armGroupLabels": [
+                "Group 1/4: VR high intensity + sodium butyrate",
+                "Group 3/4: VR low intensity + sodium butyrate"
+              ],
+              "description": "Daily intake of sodium butyrate.",
+              "name": "HDACi butyrate",
+              "type": "DIETARY_SUPPLEMENT"
+            },
+            {
+              "armGroupLabels": [
+                "Group 2/4: VR high intensity + placebo",
+                "Group 4/4: VR low intensity + placebo"
+              ],
+              "description": "Daily intake of placebo.",
+              "name": "Placebo",
+              "type": "DIETARY_SUPPLEMENT"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 160,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "EPIC",
+          "briefTitle": "Epigenetic Enhancement of Cognitive Training in Aging Mood Disorder Populations",
+          "nctId": "NCT07404085",
+          "officialTitle": "Epigenetic Priming to Enhance Cognitive Training Gains and Neuroplasticity in Middle-age and Older Adults With Past Depression or Bipolar Disorder (EPIC)",
+          "orgStudyIdInfo": {
+            "id": "H-25020884"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Mental Health Centre Copenhagen, Bispebjerg and Frederiksberg Hospital"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "[Registry ID: Danish Data Protection Agency]",
+              "id": "P-2025-18923",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Neuropsychological test assessing verbal memory. Outcomes include total recall (score range 0-75), immediate recall (score range 0-15), and delayed recall (score range 0-15). Higher scores mean a better outcome.",
+              "measure": "Rey Auditory Verbal Learning Test",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Neuropsychological test assessing working memory. Score range 0-21. Higher scores mean a better outcome.",
+              "measure": "Wechsler Adult Intelligence Scale (WAIS)-III Letter-Number Sequencing",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Computerized neuropsychological test assessing working memory. Outcomes include errors (score range 0-153, higher scores mean a worse outcome) and strategy (score range 3-26, higher scores mean a worse outcome).",
+              "measure": "Spatial Working Memory Test from Cambridge Cognition (CANTAB)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Neuropsychological test assessing psychomotor speed. Score range 0-89. Higher scores mean a better outcome.",
+              "measure": "Repeatable Battery for the Assessment of Neuropsychological Status (RBANS) Coding",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Neuropsychological test assessing executive functions. No score range. Higher scores mean a better outcome.",
+              "measure": "Verbal fluency with letters \"S\" and \"D\"",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Computerized neuropsychological test assessing executive functions. Outcomes include mean choices to correct (no score range, low scores mean a better outcome), problems solved on first choice (score range 1-15, higher scores mean a better outcome) and latency to correct (no score range, higher scores mean a worse outcome).",
+              "measure": "One Touch Stockings of Cambridge (OTS) from Cambridge Cognition (CANTAB)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Neuropsychological test assessing attention. Score range 0-16. Higher scores mean a better outcome.",
+              "measure": "Repeatable Battery for the Assessment of Neuropsychological Status (RBANS) Digit Span Test",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Computerized neuropsychological test assessing attention. Outcomes include signal detection (score range 0-1, higher scores mean a better outcome), probability of hit (score range 0-1, higher scores mean a better outcome), total false alarms (score range 0-546, higher scores mean a worse outcome), and latency to correct (score range 100-1900, higher scores mean a worse outcome).",
+              "measure": "Rapid Visual Information Processing from Cambridge Cognition (CANTAB)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Computerized neuropsychological test assessing emotion recognition. Outcomes include reaction time (no score range, higher scores mean a worse outcome) and hit rate (score range 0-1, higher scores mean a better outcome).",
+              "measure": "Emotion Recognition Task",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire on subjective cognitive complaints. Score range 0-48. Higher scores means worse outcome",
+              "measure": "Cognitive Complaints in Bipolar Disorder Rating Scale (COBRA)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire on subjective cognitive complaints. Score range 0-48. Higher scores means worse outcome",
+              "measure": "Cognitive Difficulties in Everyday Life (CODEL)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Rating inventory assessing depressive symptoms. Score range 0-52. Higher scores mean a worse outcome.",
+              "measure": "Hamilton Depression Rating Scale (HDRS-17)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Rating inventory assessing (hypo)manic symptoms. Score range 0-60. Higher scores mean a worse outcome.",
+              "measure": "Young Mania Rating Scale (YMRS)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire assessing quality of life. Score range 33-176. Higher scores mean a worse outcome.",
+              "measure": "Assessment of Quality of Life (AQoL-8D)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire assessing quality of life. Score range 26-130. Higher scores mean a better outcome.",
+              "measure": "World Health Organization Quality of Life (WHOQOL-BREF)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire assessing occupational functioning. Score range 0-40. Higher scores mean a worse outcome.",
+              "measure": "Work and Social Adjustment Scale (WSAS)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire assessing everyday functioning. Score range 0-30. Higher scores mean a worse outcome.",
+              "measure": "Sheehan's Disability Scale (SDS)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "Questionnaire assessing quality of sleep. Score range 0-21. Higher scores mean a worse outcome.",
+              "measure": "Pittsburgh Sleep Quality Index (PSQI)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "A global composite score based on the neuropsychological test across several cognitive domains: the Rey Auditory Verbal Learning Test (RAVLT)66 (verbal learning and memory), WAIS-III Letter-Number Sequencing 67 and Spatial Working Memory Test (CANTAB, SWM) (working memory), Repeatable Battery for the Assessment of Neuropsychological Status (RBANS)68 Coding (psychomotor speed), phonemic fluency and One Touch Stockings of Cambridge (CANTAB69, OTS) (executive function), RBANS Digit Span Test and Rapid Visual Information Processing (CANTAB69 , RVP), (attention) and Emotion Recognition Task (CANTAB69, emotional processing). No score range. higher scores mean a better outcome.",
+              "measure": "Cognitive composite measure",
+              "timeFrame": "Baseline, week 4 (treatment completion. Primary outcome assessment time point) and week 8 (follow-up)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "A composite score of RAVLT based on three subtests: total recall, immediate recall, and delayed recall (verbal learning and memory). No score range. higher scores mean a better outcome.",
+              "measure": "Verbal memory composite",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "The total score on our newly developed virtual reality-based daily-life real-world functioning test, Cognition Assessment in Virtual Reality (CAVIR). CAVIR includes 5 tests of verbal memory, executive functions, processing speed, working memory and attention, respectively. No score range. higher scores mean a better outcome.",
+              "measure": "Cognition Assessment in Virtual Reality (CAVIR)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            },
+            {
+              "description": "A semi-structured interview assessing level of psychosocial functioning. Score range 0-72. Higher scores mean a worse outcome.",
+              "measure": "Functional Assessment Short Test (FAST)",
+              "timeFrame": "Baseline, week 4 (treatment completion) and week 8 (follow-up)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2028-07-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-02-11",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-02-04",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-07-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-11-14",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-02",
+          "studyFirstPostDateStruct": {
+            "date": "2026-02-11",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-12-11",
+          "studyFirstSubmitQcDate": "2026-02-04"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": "sodium phenylbutyrate",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Safety and Tolerability Study of Phenylbutyrate in Huntington's Disease (PHEND-HD)",
+          "nctId": "NCT00212316",
+          "officialTitle": "Phenylbutyrate Development for Huntington's Disease (PHEND-HD): A Multi-Center, Double-Blind, Placebo-Controlled Study With Open-Label Follow-Up to Determine the Safety and Tolerability of Phenylbutyrate in Subjects With Huntington's Disease",
+          "orgStudyIdInfo": {
+            "id": "R01NS45242"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of Rochester"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Proportion of subjects able to complete treatment (Week 16)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Secondary safety and tolerability outcomes at Weeks 1, 4, 5, 10, 16, & 20 include:"
+            },
+            {
+              "measure": "adverse events,"
+            },
+            {
+              "measure": "changes in vital signs,"
+            },
+            {
+              "measure": "and clinical lab assessments."
+            },
+            {
+              "measure": "Secondary clinical measures at Weeks 4, 10, 16, and 20 include components of the UHDRS:"
+            },
+            {
+              "measure": "total motor,"
+            },
+            {
+              "measure": "Stroop,"
+            },
+            {
+              "measure": "independence,"
+            },
+            {
+              "measure": "& total functional capacity."
+            },
+            {
+              "measure": "Secondary biological indicators of treatment affects at Weeks 4, 10, 16, & 20 include:"
+            },
+            {
+              "measure": "markers of neuroprotection (e.g. NAA) via MRS,"
+            },
+            {
+              "measure": "histone acetylation (levels in WBC; fetal hemoglobin levels in blood),"
+            },
+            {
+              "measure": "depletion of glutamine,"
+            },
+            {
+              "measure": "gene expression analyses,"
+            },
+            {
+              "measure": "and biochemical analyses for pharmacokinetics."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2006-06",
+            "type": "ACTUAL"
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2012-08-15",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2012-08-14",
+          "overallStatus": "COMPLETED",
+          "startDateStruct": {
+            "date": "2005-08"
+          },
+          "statusVerifiedDate": "2007-12",
+          "studyFirstPostDateStruct": {
+            "date": "2005-09-21",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2005-09-19",
+          "studyFirstSubmitQcDate": "2005-09-20"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "investigational Drug",
+              "interventionNames": [
+                "Drug: CKD-504"
+              ],
+              "label": "CKD-504",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "investigational Drug",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "CKD-504"
+              ],
+              "description": "orally administered once with investigational drug assigned on 1d morning with 240 mL of water",
+              "name": "CKD-504",
+              "otherNames": [
+                "HDAC inhibitor"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "orally administered",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 88,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "CKD-504 in SAD and MAD in Healthy Korean and Caucasian Adult Male and Female Subjects",
+          "nctId": "NCT03713892",
+          "officialTitle": "Phase I Randomized, Double-blind, Placebo-controlled Study to Evaluate the Safety, Tolerability, PK, PD of CKD-504 in Single SAD and MAD in Healthy Korean and Caucasian Adult Male and Female Subjects",
+          "orgStudyIdInfo": {
+            "id": "175MAD17021"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Chong Kun Dang Pharmaceutical"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Peak Plasma Concentration (Cmax) of CKD-504",
+              "measure": "Cmax of CKD-504",
+              "timeFrame": "Day1, Day2, Day3, Day4"
+            },
+            {
+              "description": "Area under the plasma concentration versus time curve (AUC) of CKD-504",
+              "measure": "AUC of CKD-504",
+              "timeFrame": "Day1, Day2, Day3, Day4"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-12",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2020-02-24",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-02-21",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2020-12",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2018-05-23",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-02",
+          "studyFirstPostDateStruct": {
+            "date": "2018-10-22",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-10-17",
+          "studyFirstSubmitQcDate": "2018-10-18"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Drug: MBF-015 16 mg oral capsules. Single daily dose. One hard gelatin capsule during 28 days.",
+              "interventionNames": [
+                "Drug: MBF-015 16 mg oral capsules"
+              ],
+              "label": "MBF-015 16 mg oral multiple dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Drug: MBF-015 16 mg oral capsules. Single daily dose. Two hard gelatin capsules during 28 days.",
+              "interventionNames": [
+                "Drug: MBF-015 16 mg oral capsules"
+              ],
+              "label": "MBF-015 32 mg oral multiple dose",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "MBF-015 16 mg oral multiple dose",
+                "MBF-015 32 mg oral multiple dose"
+              ],
+              "description": "MBF-015 oral capsules HDAC inhibitor",
+              "name": "MBF-015 16 mg oral capsules",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 10,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study to Assess the Safety, Pharmacokinetics, and Pharmacodynamics of MBF-015 in Huntington's Disease Patients",
+          "nctId": "NCT06469853",
+          "officialTitle": "A Phase IIa, Open Label, Single Centre Study to Assess the Safety, Tolerability, Pharmacokinetics, Pharmacodynamics and Preliminary Efficacy of Orally Dosed MBF-015 in Huntington's Disease Patients",
+          "orgStudyIdInfo": {
+            "id": "MBF-015CT-02"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Medibiofarma S.L."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Evaluate safety and tolerability of MBF-015 in participants with Huntington's Disease (HD) on top of standard of care over 28 days, with follow-up to day 43.",
+              "measure": "Adverse Events",
+              "timeFrame": "43 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-12-04",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-03-03",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-02-27",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2024-12-04",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2024-02-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-02",
+          "studyFirstPostDateStruct": {
+            "date": "2024-06-24",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-06-17",
+          "studyFirstSubmitQcDate": "2024-06-17"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "6.57 gms of sodium butyrate per day for 12 weeks",
+              "interventionNames": [
+                "Dietary Supplement: Sodium Butyrate"
+              ],
+              "label": "Sodium Butyrate",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo capsule with 2 mg of sodium butyrate for making taste or odor, (9 mg/day)",
+              "interventionNames": [
+                "Other: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Sodium Butyrate"
+              ],
+              "description": "6.57 gms of sodium butyrate per day for 12 weeks",
+              "name": "Sodium Butyrate",
+              "type": "DIETARY_SUPPLEMENT"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "placebo capsules containing approximately 9 mg of sodium butyrate/day",
+              "name": "Placebo",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Sodium Butyrate For Improving Cognitive Function In Schizophrenia",
+          "nctId": "NCT02654405",
+          "officialTitle": "Sodium Butyrate As A Treatment For Improving Cognitive Function In Schizophrenia",
+          "orgStudyIdInfo": {
+            "id": "809383"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Nathan Kline Institute for Psychiatric Research"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Patient self-report of side-effects of active or placebo medication",
+              "measure": "Change from baseline in Side-Effect Scale Score",
+              "timeFrame": "baseline,2 weeks, 6 weeks, up to 12 weeks"
+            },
+            {
+              "description": "common clinical laboratory parameters",
+              "measure": "Change from baseline in clinical laboratory measures",
+              "timeFrame": "baseline, 12 weeks"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "MATRICS Cognitive Battery",
+              "measure": "Change from baseline in MATRICS Battery Score",
+              "timeFrame": "Baseline, week 6, up to 12 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Logical Memory Test for longer Term Memory",
+              "measure": "Change from baseline Logical Memory test score",
+              "timeFrame": "baseline, 12 weeks"
+            },
+            {
+              "description": "PANSS symptom rating scale",
+              "measure": "Change from baseline in PANSS Total Score",
+              "timeFrame": "baseline, 6 weeks, up to 12 weeks"
+            },
+            {
+              "description": "Alternate working memory test",
+              "measure": "Change from baseline in PASAT Score",
+              "timeFrame": "baseline,6 weeks, up to 12 weeks"
+            },
+            {
+              "description": "USCD (University of California San Diego) Performance- Based Skills Assessment Battery",
+              "measure": "change from baseline in UPSA Total score",
+              "timeFrame": "baseline, 12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2016-05",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-08-15",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-08-11",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2016-04",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2016-04"
+          },
+          "statusVerifiedDate": "2016-08",
+          "studyFirstPostDateStruct": {
+            "date": "2016-01-13",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-01-07",
+          "studyFirstSubmitQcDate": "2016-01-12",
+          "whyStopped": "Nathan Kline Institute (NKI) decided not to accept study grant from Stanley Medical Research Foundation. because of budget considerations."
+        }
+      }
+    }
+  ],
+  "totalCount": 8
+}

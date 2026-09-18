@@ -1,0 +1,846 @@
+{
+  "derivedSection": {
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D000547",
+          "term": "Amantadine"
+        },
+        {
+          "id": "D000218",
+          "term": "Adamantane"
+        },
+        {
+          "id": "D001952",
+          "term": "Bridged-Ring Compounds"
+        },
+        {
+          "id": "D006844",
+          "term": "Hydrocarbons, Cyclic"
+        },
+        {
+          "id": "D006838",
+          "term": "Hydrocarbons"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        },
+        {
+          "id": "D013057",
+          "term": "Spectrum Analysis"
+        },
+        {
+          "id": "D002623",
+          "term": "Chemistry Techniques, Analytical"
+        },
+        {
+          "id": "D008919",
+          "term": "Investigative Techniques"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D008559",
+          "term": "Memantine"
+        },
+        {
+          "id": "D009682",
+          "term": "Magnetic Resonance Spectroscopy"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2017-07-06",
+          "filename": "Prot_SAP_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": true,
+          "label": "Study Protocol and Statistical Analysis Plan",
+          "size": 407612,
+          "typeAbbrev": "Prot_SAP",
+          "uploadDate": "2019-02-26T19:44"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation A; then formulation B; following each administration MRI will be performed for up to 14 days",
+          "interventionNames": [
+            "Drug: Memantine Hydrochloride MR Prototype Capsule Formulation A",
+            "Drug: Memantine Hydrochloride MR Prototype Capsule Formulation B",
+            "Procedure: Magnetic Resonance Imaging"
+          ],
+          "label": "Cohort 1",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation C; then formulation D; following each administration MRI will be performed for up to 14 days",
+          "interventionNames": [
+            "Drug: Memantine Hydrochloride MR Prototype Capsule Formulation C",
+            "Drug: Memantine Hydrochloride MR Prototype Capsule Formulation D",
+            "Procedure: Magnetic Resonance Imaging"
+          ],
+          "label": "Cohort 2",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation E; followed by MRI for up to 14 days",
+          "interventionNames": [
+            "Drug: Memantine Hydrochloride MR Prototype Capsule Formulation E",
+            "Procedure: Magnetic Resonance Imaging"
+          ],
+          "label": "Cohort 3",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Cohort 1"
+          ],
+          "description": "Memantine HCl MR capsule formulation will be administered orally in a single dose",
+          "name": "Memantine Hydrochloride MR Prototype Capsule Formulation A",
+          "otherNames": [
+            "Memantine HCl Capsule Formulation A (50 mg)"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Cohort 1"
+          ],
+          "description": "Memantine HCl MR capsule formulation will be administered orally in a single dose",
+          "name": "Memantine Hydrochloride MR Prototype Capsule Formulation B",
+          "otherNames": [
+            "Memantine HCl Capsule Formulation B (50 mg)"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Cohort 2"
+          ],
+          "description": "Memantine HCl MR capsule formulation will be administered orally in a single dose",
+          "name": "Memantine Hydrochloride MR Prototype Capsule Formulation C",
+          "otherNames": [
+            "Memantine HCl Capsule Formulation C (50 mg)"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Cohort 2"
+          ],
+          "description": "Memantine HCl MR capsule formulation will be administered orally in a single dose",
+          "name": "Memantine Hydrochloride MR Prototype Capsule Formulation D",
+          "otherNames": [
+            "Memantine HCl Capsule Formulation D (50 mg)"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Cohort 3"
+          ],
+          "description": "Memantine HCl MR capsule formulation will be administered orally in a single dose",
+          "name": "Memantine Hydrochloride MR Prototype Capsule Formulation E",
+          "otherNames": [
+            "Memantine HCl Capsule Formulation E (50 mg)"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Cohort 1",
+            "Cohort 2",
+            "Cohort 3"
+          ],
+          "description": "MRI will be performed on specified days according to protocol",
+          "name": "Magnetic Resonance Imaging",
+          "otherNames": [
+            "MRI"
+          ],
+          "type": "PROCEDURE"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Gastric Retention",
+        "Healthy"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Ruddington",
+          "country": "United Kingdom",
+          "facility": "Quotient Sciences (formerly Quotient Clinical)",
+          "geoPoint": {
+            "lat": 52.89254,
+            "lon": -1.14953
+          },
+          "state": "Nottingham",
+          "zip": "NG11 6JS"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Quotient Clinical",
+          "name": "Stuart Mair, MBChB, DRCOG",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "To assess how long modified release (MR) memantine hydrochloride prototype capsule formulations stay in the stomach as determined by magnetic resonance imaging (MRI).",
+      "detailedDescription": "This is a single center, open-label, single dose, 5-period study in 24 healthy male and female subjects, with an optional Period 6, if required. It is expected the study will be executed in 3 cohorts of 8 subjects, with each cohort participating in up to 2 study periods (total of up to 6 study periods). Cohort 3 may be conducted in parallel with Cohort 2.\n\nSubjects will be dosed in a sequential manner, as appropriate. Each subject will be administered up to 2 regimens (2 different prototype capsule formulations) across 2 study periods. There will be a minimum 35-day interval between each dose administration.\n\nSubjects will have an MRI scan performed on Days 2, 4, 7, 10 and 14 of each period to assess the gastric retentive properties of the formulation."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "SEQUENTIAL",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "BASIC_SCIENCE"
+      },
+      "enrollmentInfo": {
+        "count": 3,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "EARLY_PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n1. Healthy male and female subjects.\n2. Body mass index of 18.0 to 32.0 kg/m2.\n3. Subjects must demonstrate their ability to swallow a test capsule at screening.\n4. Must provide written informed consent.\n\nExclusion Criteria:\n\n1. Subjects who have received any investigational medicinal product in a clinical research study within the previous 3 months.\n2. Subjects who have previously been enrolled in this study.\n3. History of any drug or alcohol abuse in the past 2 years.\n4. Current smokers and those who have smoked within the last 12 months.\n5. Individuals with clinically significant medical history relating to the gastrointestinal tract and potential for complications, thereof\n6. Positive hepatitis B surface antigen (HBsAg), hepatitis C virus antibody (HCV Ab) or human immunodeficiency virus (HIV) results.\n7. Serious adverse reaction or serious hypersensitivity to any drug or the formulation excipients.\n8. Individuals with contraindication to MRI imaging.\n\nOther protocol defined criteria may apply.",
+      "healthyVolunteers": true,
+      "maximumAge": "60 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Study Determining Gastric-Retentive and Modified Release Properties of Prototype Capsules in Healthy Subjects",
+      "nctId": "NCT03468543",
+      "officialTitle": "A Study Designed to Determine the Gastro-Retentive and Modified Release Properties of Memantine Hydrochloride (HCl) Prototype Capsule Formulations in Healthy Subjects",
+      "orgStudyIdInfo": {
+        "id": "QCL117924"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Lyndra Inc."
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "2017-000982-61",
+          "type": "EUDRACT_NUMBER"
+        },
+        {
+          "id": "2017",
+          "link": "https://reporter.nih.gov/quickSearch/2017",
+          "type": "NIH"
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "NO"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "Number of Participants with Gastric Retention by Magnetic Resonance Imaging (MRI), as measured after dosing",
+          "measure": "Gastric Retention by Magnetic Resonance Imaging (MRI)",
+          "timeFrame": "7 Days"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": false,
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Lyndra Inc."
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2017-09-18",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2019-06-05",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2019-02-26",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2017-09-18",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2019-06-05",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2018-03-19",
+      "resultsFirstSubmitQcDate": "2019-02-26",
+      "startDateStruct": {
+        "date": "2017-07-26",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2018-08",
+      "studyFirstPostDateStruct": {
+        "date": "2018-03-16",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2018-03-05",
+      "studyFirstSubmitQcDate": "2018-03-15",
+      "whyStopped": "Per protocol stopping rules"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "Additional information:\n\nAdverse events were collected for five weeks after each dose of study drug in Cohort 1 only. Cohorts 2 and 3 were not performed as the study was stopped, therefore the number of participants at risk for AE's (all types) is zero.",
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 3,
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation A; then formulation B; following each administration MRI will be performed for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation A: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMemantine Hydrochloride MR Prototype Capsule Formulation B: Memantine HCl MR capsule formulation was NOT administered\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+          "id": "EG000",
+          "otherNumAffected": 2,
+          "otherNumAtRisk": 3,
+          "seriousNumAffected": 1,
+          "seriousNumAtRisk": 3,
+          "title": "Cohort 1"
+        }
+      ],
+      "frequencyThreshold": "5",
+      "otherEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "presyncope"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "crying"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "non-cardiac chest pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "anxiety"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "abdominal discomfort"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 4
+            }
+          ],
+          "term": "abdominal pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "dysphagia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "nausea"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "vomiting"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "medication stuck in throat",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "sourceVocabulary": "MedDRA (20.0)",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 3,
+              "numEvents": 1
+            }
+          ],
+          "term": "foreign body"
+        }
+      ],
+      "timeFrame": "Adverse events were collected for five weeks after each dose of study drug."
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "3"
+            },
+            {
+              "groupId": "BG001",
+              "value": "0"
+            },
+            {
+              "groupId": "BG002",
+              "value": "0"
+            },
+            {
+              "groupId": "BG003",
+              "value": "3"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation A; then formulation B; following each administration MRI will be performed for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation A: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMemantine Hydrochloride MR Prototype Capsule Formulation B: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+          "id": "BG000",
+          "title": "Cohort 1"
+        },
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation C; then formulation D; following each administration MRI will be performed for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation C: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMemantine Hydrochloride MR Prototype Capsule Formulation D: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+          "id": "BG001",
+          "title": "Cohort 2"
+        },
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation E; followed by MRI for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation E: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+          "id": "BG002",
+          "title": "Cohort 3"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG003",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "12.3",
+                      "value": "33.7"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "spread": "12.3",
+                      "value": "33.7"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "3"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "2"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "United Kingdom"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        }
+      ],
+      "populationDescription": "Cohorts 2 and 3 were not executed, as the study was stopped during Cohort 1"
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictionType": "OTHER",
+        "restrictiveAgreement": true
+      },
+      "limitationsAndCaveats": {
+        "description": "The trial was prematurely ended after the dosing of three subjects."
+      },
+      "pointOfContact": {
+        "email": "abellinger@lyndra.com",
+        "organization": "Lyndra",
+        "phone": "857-302-7878",
+        "title": "Andrew Bellinger, MD, PhD"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "2"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Number of Participants with Gastric Retention by Magnetic Resonance Imaging (MRI), as measured after dosing",
+          "groups": [
+            {
+              "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation A; then formulation B; following each administration MRI will be performed for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation A: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMemantine Hydrochloride MR Prototype Capsule Formulation B: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+              "id": "OG000",
+              "title": "Cohort 1"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Subjects who completed dosing and at least one MRI assessment after dosing",
+          "reportingStatus": "POSTED",
+          "timeFrame": "7 Days",
+          "title": "Gastric Retention by Magnetic Resonance Imaging (MRI)",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Subjects will receive an oral administration of 50 mg of Memantine HCl prototype capsule formulation A; then formulation B; following each administration MRI will be performed for up to 14 days\n\nMemantine Hydrochloride MR Prototype Capsule Formulation A: Memantine HCl MR capsule formulation will be administered orally in a single dose\n\nMemantine Hydrochloride MR Prototype Capsule Formulation B: Memantine HCl MR capsule formulation did NOT get administered\n\nMagnetic Resonance Imaging: MRI will be performed on specified days according to protocol",
+          "id": "FG000",
+          "title": "Cohort 1"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "Protocol stopping rules met"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ]
+    }
+  }
+}

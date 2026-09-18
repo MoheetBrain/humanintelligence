@@ -41,6 +41,14 @@ SCHEMA_FOR_KIND: dict[str, str] = {
     "node": "node",
     "edge": "edge",
     "verification": "verification",
+    "external_analysis": "external_analysis",
+    # X02 row kinds: one row of a delivered external table, validated by
+    # pipelines/integration/ingest_x02.py before anything is compiled into the graph.
+    "x02_credible_set": "x02_credible_set",
+    "x02_credible_set_variant": "x02_credible_set_variant",
+    "x02_qtl_colocalisation": "x02_qtl_colocalisation",
+    "x02_regulatory_prediction": "x02_regulatory_prediction",
+    "x02_negative_result": "x02_negative_result",
 }
 
 

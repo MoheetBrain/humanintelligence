@@ -1,0 +1,253 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D020919",
+          "term": "Sleep Disorders, Intrinsic"
+        },
+        {
+          "id": "D020920",
+          "term": "Dyssomnias"
+        },
+        {
+          "id": "D012893",
+          "term": "Sleep Wake Disorders"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D007319",
+          "term": "Sleep Initiation and Maintenance Disorders"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C079049",
+          "term": "volinanserin"
+        },
+        {
+          "id": "C023842",
+          "term": "lormetazepam"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "interventionNames": [
+            "Drug: Volinanserin (M100907)"
+          ],
+          "label": "1",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "interventionNames": [
+            "Drug: Lormetazepam"
+          ],
+          "label": "2",
+          "type": "ACTIVE_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "1"
+          ],
+          "description": "2 mg tablets QD",
+          "name": "Volinanserin (M100907)",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "2"
+          ],
+          "description": "1 mg tablets (overencapsulated) QD",
+          "name": "Lormetazepam",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Sleep Initiation and Maintenance Disorders"
+      ],
+      "keywords": [
+        "insomnia",
+        "sleep maintenance"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Paris",
+          "country": "France",
+          "facility": "Sanofi-Aventis Administrative Office",
+          "geoPoint": {
+            "lat": 48.85341,
+            "lon": 2.3488
+          }
+        },
+        {
+          "city": "Barcelona",
+          "country": "Spain",
+          "facility": "Sanofi-Aventis Administrative Office",
+          "geoPoint": {
+            "lat": 41.38879,
+            "lon": 2.15899
+          }
+        },
+        {
+          "city": "Bromma",
+          "country": "Sweden",
+          "facility": "Sanofi-Aventis Administrative Office",
+          "geoPoint": {
+            "lat": 59.34,
+            "lon": 17.94
+          }
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Sanofi",
+          "name": "ICD CSD",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "The primary objective is to compare the potential for next-day residual effects of volinanserin 2 mg/day and lormetazepam 1 mg/day by measuring the sleepiness in the morning using the patient's sleep questionnaire during 4 weeks of treatment in patients with chronic primary insomnia and sleep maintenance difficulties.\n\nSecondary objectives are to compare the clinical safety of both products, including the potential for rebound insomnia and withdrawal symptoms after treatment discontinuation, to compare the efficacy of both products on subjective sleep parameters and to compare the effects of both products on patient's daytime functioning."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 33,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Out-patients with Primary Insomnia according to Diagnostic and Statistical Manual of Mental Disorders (DSM-IV-TR) criteria\n\nExclusion Criteria:\n\n* Based on patient's information, the patient has spent less than 6.5 hours or more than 9.0 hours, in bed, each night, over the preceding two weeks\n* Based on patient's information, the patient complains of less than one hour of wakefulness after sleep onset for at least 3 nights per week over the preceding month\n* Disturbances of sleep maintenance parameters based on the patient's sleep questionnaire during the run-in period differing from pre-defined criteria.\n* Pregnant or breastfeeding women and women of childbearing potential without effective contraceptive method of birth control\n* Night shift workers and individuals who nap 3 or more times per week\n* Consumption of xanthine-containing beverages (i.e., tea, coffee or cola) that comprises more than 5 cups or glasses per day\n\nThe above information is not intended to contain all considerations relevant to a patient's potential participation in a clinical trial.",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "REST",
+      "briefTitle": "Comparison of Volinanserin and Lormetazepam in the Treatment of Insomnia Characterized by Sleep Maintenance Difficulties",
+      "nctId": "NCT00788515",
+      "officialTitle": "Comparison of the Safety and Efficacy of Volinanserin and Lormetazepam in the Treatment of Insomnia Characterized by Sleep Maintenance Difficulties. A 4 Week,Randomized, Double-blind, Comparative, Parallel-group Study.",
+      "orgStudyIdInfo": {
+        "id": "EFC10550"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Sanofi"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "EudraCT: 2008-001492-30"
+        }
+      ]
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "measure": "Sleepiness in the morning measured on a visual analog scale of the patient's sleep questionnaire",
+          "timeFrame": "4 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "measure": "Other measure of next-day residual effects (ability to concentrate of the patient's sleep questionnaire)",
+          "timeFrame": "4 weeks"
+        },
+        {
+          "measure": "Rebound effect measured by pr-WASO and pr-SOL on patient's sleep questionnaire during the run-out period",
+          "timeFrame": "4 weeks"
+        },
+        {
+          "measure": "Subjective sleep parameters",
+          "timeFrame": "4 weeks"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Sanofi"
+      },
+      "responsibleParty": {
+        "oldNameTitle": "ICD Study Director",
+        "oldOrganization": "sanofi-aventis"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2009-01",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2009-08-28",
+        "type": "ESTIMATED"
+      },
+      "lastUpdateSubmitDate": "2009-08-27",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2009-01",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2008-11"
+      },
+      "statusVerifiedDate": "2009-08",
+      "studyFirstPostDateStruct": {
+        "date": "2008-11-11",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2008-11-10",
+      "studyFirstSubmitQcDate": "2008-11-10",
+      "whyStopped": "Sponsor's decision due to absence of demonstration of efficacy of volinanserin in primary insomnia with predominant sleep maintenance problems"
+    }
+  }
+}

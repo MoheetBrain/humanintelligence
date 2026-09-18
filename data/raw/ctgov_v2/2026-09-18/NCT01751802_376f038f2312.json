@@ -1,0 +1,1550 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D020739",
+          "term": "Brain Diseases, Metabolic, Inborn"
+        },
+        {
+          "id": "D001928",
+          "term": "Brain Diseases, Metabolic"
+        },
+        {
+          "id": "D001927",
+          "term": "Brain Diseases"
+        },
+        {
+          "id": "D002493",
+          "term": "Central Nervous System Diseases"
+        },
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D038901",
+          "term": "X-Linked Intellectual Disability"
+        },
+        {
+          "id": "D008607",
+          "term": "Intellectual Disability"
+        },
+        {
+          "id": "D019954",
+          "term": "Neurobehavioral Manifestations"
+        },
+        {
+          "id": "D009461",
+          "term": "Neurologic Manifestations"
+        },
+        {
+          "id": "D040181",
+          "term": "Genetic Diseases, X-Linked"
+        },
+        {
+          "id": "D030342",
+          "term": "Genetic Diseases, Inborn"
+        },
+        {
+          "id": "D009358",
+          "term": "Congenital, Hereditary, and Neonatal Diseases and Abnormalities"
+        },
+        {
+          "id": "D020271",
+          "term": "Heredodegenerative Disorders, Nervous System"
+        },
+        {
+          "id": "D008661",
+          "term": "Metabolism, Inborn Errors"
+        },
+        {
+          "id": "D011686",
+          "term": "Purine-Pyrimidine Metabolism, Inborn Errors"
+        },
+        {
+          "id": "D008659",
+          "term": "Metabolic Diseases"
+        },
+        {
+          "id": "D009750",
+          "term": "Nutritional and Metabolic Diseases"
+        },
+        {
+          "id": "D001526",
+          "term": "Behavioral Symptoms"
+        },
+        {
+          "id": "D001519",
+          "term": "Behavior"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D007926",
+          "term": "Lesch-Nyhan Syndrome"
+        },
+        {
+          "id": "D016728",
+          "term": "Self-Injurious Behavior"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C058081",
+          "term": "ecopipam"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Active substance being tested, orally once a day at bedtime",
+          "interventionNames": [
+            "Drug: Ecopipam"
+          ],
+          "label": "Ecopipam",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Inactive substance being tested, orally once a day at bedtime",
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Ecopipam"
+          ],
+          "description": "Antagonist of the dopamine D1 receptor",
+          "name": "Ecopipam",
+          "otherNames": [
+            "PSYRX 101",
+            "SCH 39166"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Placebo for Ecopipam",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Lesch-Nyhan Disease",
+        "Self-injurious Behavior"
+      ],
+      "keywords": [
+        "Lesch Nyhan Disease",
+        "Self-Injury"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Atlanta",
+          "country": "United States",
+          "facility": "H.J. Jinnah",
+          "geoPoint": {
+            "lat": 33.749,
+            "lon": -84.38798
+          },
+          "state": "Georgia",
+          "zip": "30322"
+        },
+        {
+          "city": "Madrid",
+          "country": "Spain",
+          "facility": "Hospital Universitario La Paz",
+          "geoPoint": {
+            "lat": 40.4165,
+            "lon": -3.70256
+          }
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Emory University",
+          "name": "H J Jinnah, MD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "The purpose of this research study is to gather scientific information about the effectiveness and safety of the study drug, Ecopipam (PSYRX 101), for the treatment of self-injurious behaviors when compared with the effectiveness and safety of placebo (inactive substance) in subjects with Lesch-Nyhan Disease.",
+      "detailedDescription": "This study will be done in approximately 6 centers in approximately 4 countries, and approximately 24 subjects will be included. This study is divided into two parts. The first is a double-blinded portion lasting up to 18 weeks in total. The second portion is an optional open-label extension and lasts up to 54 weeks total. The total duration of the study, if you choose to participate in both portions, is anticipated to be up to approximately 78 weeks.\n\nThe first portion of this study is double-blind and assignment to a treatment group is done randomly. In this study, there are two treatment groups. One group will receive Ecopipam for one 6-week period and placebo for two 6-week periods, and the other group will receive Ecopipam for two 6-week periods and placebo for one 6-week period.\n\nSubjects who did not experience any clinically significant side effects during the blinded portion of the study may be eligible to participate in an open-label extension that may last up to 54 weeks."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "QUADRUPLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "CARE_PROVIDER",
+            "INVESTIGATOR",
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 9,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE3"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Subjects must have classic LND as defined by (a) characteristic clinical syndrome (evidence of overproduction of uric acid, severe generalized dystonia, frequent and persistent self-injurious behavior (SIB), and cognitive impairment) and (b) laboratory confirmation for mutation of the HPRT gene or severe deficiency of the associated enzyme.\n* Subjects must have a minimum combined score of 20 on the Behavior Problems Inventory (BPI) SIB subscales for frequency and severity as assessed by the caregiver.\n* Subjects must have a minimum score of 4 on the Physician's Global Impression (PGI) severity scale.\n* Subject must be ≥ 6 years old.\n* Subjects must weigh \\> 10 kg.\n\nExclusion Criteria:\n\n* Subjects who are currently treated with medications for seizures.\n* Subjects who are on neuroleptics or dopamine-depleting agents.\n* Subjects with impaired renal function as defined by a serum creatinine \\>1.5 mg/dL.",
+      "healthyVolunteers": false,
+      "maximumAge": "70 Years",
+      "minimumAge": "6 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "CHILD",
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Ecopipam Treatment of Self-Injurious Behavior in Subjects With Lesch-Nyhan Disease",
+      "nctId": "NCT01751802",
+      "officialTitle": "An Outpatient Phase 3 Efficacy Study of Ecopipam (PSYRX 101) in the Symptomatic Treatment of Self-Injurious Behavior in Subjects With Lesch-Nyhan Disease",
+      "orgStudyIdInfo": {
+        "id": "PSY102"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Emalex Biosciences Inc."
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The primary endpoint is the BPI (SIB subscales - total for frequency and severity) as assessed by the caregiver. BPI Self-Injurious Behavior Subscale ranges from 0 to 45, with higher scores indicating more self-injurious behavior.",
+          "measure": "Behavior Problems Inventory - Self-Injurious Behavior Subscale",
+          "timeFrame": "Baseline, end of period 1 (6 weeks), end of period 2 (12 weeks), end of period 3 (18 weeks),"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "The secondary objectives of this study are to assess the effect of withdrawal and maintenance of ecopipam's effects in subjects with LND. Measured by the number of participants whose score changes significantly from baseline on ecopipam or placebo",
+          "measure": "Effect of Ecopipam Withdrawal and Maintenance",
+          "timeFrame": "Baseline, 6 weeks, 12 weeks, 18 weeks"
+        },
+        {
+          "description": "An additional objective of the study is to assess the safety of ecopipam in subjects with LND for up to 52 weeks. Total number of serious and non-serious adverse events experienced by participants while receiving ecopipam or placebo. For additional detail, see Adverse Events",
+          "measure": "Safety Summary of Ecopipam in Patients With Lesch-Nyhan Disease: Total Number of Serious and Non-Serious Adverse Events Experienced During 3 Double-blind Crossover Periods",
+          "timeFrame": "Total duration over which participants recieved double-blind ecopipam or placebo, up to 6 or 12 weeks"
+        }
+      ]
+    },
+    "oversightModule": {
+      "oversightHasDmc": true
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "INDUSTRY",
+          "name": "Psyadon Pharma"
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Emalex Biosciences Inc."
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2014-12",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2024-04-22",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2024-04-18",
+      "overallStatus": "TERMINATED",
+      "primaryCompletionDateStruct": {
+        "date": "2013-12",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2015-10-08",
+        "type": "ESTIMATED"
+      },
+      "resultsFirstSubmitDate": "2015-10-05",
+      "resultsFirstSubmitQcDate": "2015-10-05",
+      "startDateStruct": {
+        "date": "2012-12"
+      },
+      "statusVerifiedDate": "2015-10",
+      "studyFirstPostDateStruct": {
+        "date": "2012-12-18",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2012-12-14",
+      "studyFirstSubmitQcDate": "2012-12-14",
+      "whyStopped": "Study terminated for commercial reasons"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "Adverse events were collected for 3 double-blind periods",
+      "eventGroups": [
+        {
+          "description": "Active substance being tested, orally once a day at bedtime\n\nEcopipam: Antagonist of the dopamine D1 receptor",
+          "id": "EG000",
+          "otherNumAffected": 8,
+          "otherNumAtRisk": 9,
+          "seriousNumAffected": 2,
+          "seriousNumAtRisk": 9,
+          "title": "Ecopipam"
+        },
+        {
+          "description": "Inactive substance being tested, orally once a day at bedtime\n\nPlacebo: Placebo for Ecopipam",
+          "id": "EG001",
+          "otherNumAffected": 2,
+          "otherNumAtRisk": 6,
+          "seriousNumAffected": 1,
+          "seriousNumAtRisk": 6,
+          "title": "Placebo"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Abdominal pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Agitation"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Anxiety"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Body temperature increased"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Bronchospasm"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Choking"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Compulsive lip biting"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Constipation"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Depressed mood"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 9,
+              "numEvents": 3
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Depression"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Diarrhoea"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 9,
+              "numEvents": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Dysphagia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Dyskinesia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Dystonia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Eosinophilia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Insomnia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Lip injury"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Mucosal inflammation"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Nephrolithiasis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Opisthotonus"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Oral candidiasis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Pyrexia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 9,
+              "numEvents": 4
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Self injurious behaviour"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 9,
+              "numEvents": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Somnolence"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Transaminases increased"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Tremor"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6,
+              "numEvents": 0
+            }
+          ],
+          "term": "Vomiting"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "During hospitalization, subject also experienced opisthotonus, bronchospasm, hypereosinophilia, \\& elevated transaminase; all AEs rated as unrelated to ecopipam. Ecopipam continued during hospitalization. All symptoms resolved w/o sequelae.",
+          "organSystem": "Renal and urinary disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 9
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 6,
+              "numEvents": 1
+            }
+          ],
+          "term": "Nephrolithiasis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Subject 05-001 was hospitalized a second time (July 2013) for a dystonic crisis, difficulty swallowing (dysphagia), and depressed mood.",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6
+            }
+          ],
+          "term": "Dystonic crisis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Subject hospitalized for dysphagia, unusual somnolence and depressed mood, as reported by parents. Causality was rated Reasonable Possibility by investigator. Subject was discharged as somnolence resolved; and subject withdrew because of these AEs.",
+          "organSystem": "Psychiatric disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 9
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 6
+            }
+          ],
+          "term": "Unusual somnolence"
+        }
+      ],
+      "timeFrame": "adverse events collected while participants were receiving ecopipam or placebo, either for 1 period (up to 6 weeks) or 2 periods (up to 12 weeks)"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "5"
+            },
+            {
+              "groupId": "BG001",
+              "value": "4"
+            },
+            {
+              "groupId": "BG002",
+              "value": "9"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks",
+          "id": "BG000",
+          "title": "Ecopipam Then Placebo Then Ecopipam"
+        },
+        {
+          "description": "Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks",
+          "id": "BG001",
+          "title": "Placebo Then Ecopipam Then Placebo"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "6",
+                      "upperLimit": "22",
+                      "value": "10.8"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "6",
+                      "upperLimit": "12",
+                      "value": "9.8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "6",
+                      "upperLimit": "22",
+                      "value": "10.3"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "FULL_RANGE",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "5"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "9"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "United States"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "6"
+                    }
+                  ]
+                }
+              ],
+              "title": "Spain"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "16.5",
+                      "upperLimit": "55.4",
+                      "value": "28.3"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "16.0",
+                      "upperLimit": "26.5",
+                      "value": "21.9"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "16.0",
+                      "upperLimit": "55.4",
+                      "value": "25.4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "FULL_RANGE",
+          "paramType": "MEAN",
+          "title": "Weight",
+          "unitOfMeasure": "kg"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "13.9",
+                      "upperLimit": "18.1",
+                      "value": "15.6"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "lowerLimit": "13.1",
+                      "upperLimit": "15.5",
+                      "value": "13.8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "lowerLimit": "13.1",
+                      "upperLimit": "18.1",
+                      "value": "14.8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "FULL_RANGE",
+          "paramType": "MEAN",
+          "title": "BMI",
+          "unitOfMeasure": "kg/m^2"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictiveAgreement": false
+      },
+      "pointOfContact": {
+        "email": "info@psyadonrx.com",
+        "organization": "Psyadon Pharmaceuticals",
+        "phone": "301-919-2020",
+        "title": "President/CEO"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "26"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "10"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "78"
+                    },
+                    {
+                      "groupId": "OG003",
+                      "value": "27"
+                    }
+                  ]
+                }
+              ],
+              "title": "BPI Self-Injurious Behavior Subscale, Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "24.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "4.3"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "58.3"
+                    },
+                    {
+                      "groupId": "OG003",
+                      "value": "22.6"
+                    }
+                  ]
+                }
+              ],
+              "title": "BPI Self-Injurious Behavior Subscale, 6 weeks"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "25.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "11.6"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "21.5"
+                    },
+                    {
+                      "groupId": "OG003",
+                      "value": "16.0"
+                    }
+                  ]
+                }
+              ],
+              "title": "BPI Self-Injurious Behavior Subscale, 12 weeks"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "21"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "6.6"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "28.7"
+                    },
+                    {
+                      "comment": "participant did not complete subscale survey at 18 wks",
+                      "groupId": "OG003",
+                      "value": "NA"
+                    }
+                  ]
+                }
+              ],
+              "title": "BPI Self-Injurious Behavior Subscale, 18 weeks"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG002",
+                  "value": "1"
+                },
+                {
+                  "groupId": "OG003",
+                  "value": "1"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The primary endpoint is the BPI (SIB subscales - total for frequency and severity) as assessed by the caregiver. BPI Self-Injurious Behavior Subscale ranges from 0 to 45, with higher scores indicating more self-injurious behavior.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks",
+              "id": "OG000",
+              "title": "Subject #1: Ecopipam Then Placebo Then Ecopipam"
+            },
+            {
+              "description": "Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks",
+              "id": "OG001",
+              "title": "Subject #2: Ecopipam Then Placebo Then Ecopipam"
+            },
+            {
+              "description": "Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks",
+              "id": "OG002",
+              "title": "Subject #3: Placebo Then Ecopipam Then Placebo"
+            },
+            {
+              "description": "Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks",
+              "id": "OG003",
+              "title": "Subject #4: Placebo Then Ecopipam Then Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who completed the BPI-Self Injurious Behavior survey for 3 or more time points",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline, end of period 1 (6 weeks), end of period 2 (12 weeks), end of period 3 (18 weeks),",
+          "title": "Behavior Problems Inventory - Self-Injurious Behavior Subscale",
+          "type": "PRIMARY",
+          "unitOfMeasure": "scores on a scale"
+        },
+        {
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "0"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "0"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The secondary objectives of this study are to assess the effect of withdrawal and maintenance of ecopipam's effects in subjects with LND. Measured by the number of participants whose score changes significantly from baseline on ecopipam or placebo",
+          "groups": [
+            {
+              "description": "Active substance being tested, orally once a day at bedtime\n\nEcopipam: Antagonist of the dopamine D1 receptor",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Inactive substance being tested, orally once a day at bedtime\n\nPlacebo: Placebo for Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "populationDescription": "0 participants analyzed because data are not reliable",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline, 6 weeks, 12 weeks, 18 weeks",
+          "title": "Effect of Ecopipam Withdrawal and Maintenance",
+          "type": "SECONDARY"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "42"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "7"
+                    }
+                  ]
+                }
+              ],
+              "title": "Non-Serious"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "Serious"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "9"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "6"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "An additional objective of the study is to assess the safety of ecopipam in subjects with LND for up to 52 weeks. Total number of serious and non-serious adverse events experienced by participants while receiving ecopipam or placebo. For additional detail, see Adverse Events",
+          "groups": [
+            {
+              "description": "Active substance being tested, orally once a day at bedtime for 6 weeks\n\nEcopipam: Antagonist of the dopamine D1 receptor",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Inactive substance being tested, orally once a day at bedtime for 6 weeks\n\nPlacebo: Placebo for Ecopipam",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "All participants who received at least one dose",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Total duration over which participants recieved double-blind ecopipam or placebo, up to 6 or 12 weeks",
+          "title": "Safety Summary of Ecopipam in Patients With Lesch-Nyhan Disease: Total Number of Serious and Non-Serious Adverse Events Experienced During 3 Double-blind Crossover Periods",
+          "type": "SECONDARY",
+          "unitOfMeasure": "adverse events"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks",
+          "id": "FG000",
+          "title": "Ecopipam Then Placebo Then Ecopipam"
+        },
+        {
+          "description": "Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks; then Ecopipam, the active substance being tested, 100mg tablets for body weight \\> 20kg OR 50 mg tablets for body weight up to 20kg, once daily at bedtime for 6 weeks; then Placebo, the inactive substance being tested to be taken once a day at bedtime for 6 weeks",
+          "id": "FG001",
+          "title": "Placebo Then Ecopipam Then Placebo"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "Adverse Event"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "5"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "4"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "4"
+                }
+              ],
+              "type": "Completed Period 1"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Completed Period 2"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Completed Period 3"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ]
+    }
+  }
+}

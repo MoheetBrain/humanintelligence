@@ -1,0 +1,1662 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "The first active treatment arm of the study during Part A (multiple ascending doses).",
+              "interventionNames": [
+                "Drug: ANAVEX3-71 oral capsules"
+              ],
+              "label": "ANAVEX3-71 30 mg TID (Part A)",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "The second active treatment arm of the study during Part A (multiple ascending doses).",
+              "interventionNames": [
+                "Drug: ANAVEX3-71 oral capsules"
+              ],
+              "label": "ANAVEX3-71 60 mg TID (Part A)",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "The placebo arm of Part A (multiple ascending doses).",
+              "interventionNames": [
+                "Drug: Placebo oral capsules"
+              ],
+              "label": "ANAVEX3-71 Placebo TID (Part A)",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "description": "The active arm of Part B of the study. The dose will be determined based on data obtained in Part A.",
+              "interventionNames": [
+                "Drug: ANAVEX3-71 oral capsules"
+              ],
+              "label": "ANAVEX3-71 TBD mg TID (Part B)",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "The placebo arm of Part B of the study.",
+              "interventionNames": [
+                "Drug: Placebo oral capsules"
+              ],
+              "label": "ANAVEX3-71 Placebo TID (Part B)",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ANAVEX3-71 30 mg TID (Part A)",
+                "ANAVEX3-71 60 mg TID (Part A)",
+                "ANAVEX3-71 TBD mg TID (Part B)"
+              ],
+              "description": "ANAVEX®3-71 (formerly AF710B) is a dual SIGMAR1 receptor agonist and M1 positive allosteric modulator with agonistic effects. This novel mechanism of action offers the potential to treat all symptom domains (positive, negative, and cognitive) of schizophrenia without the side effects of standard of care antipsychotics.",
+              "name": "ANAVEX3-71 oral capsules",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ANAVEX3-71 Placebo TID (Part A)",
+                "ANAVEX3-71 Placebo TID (Part B)"
+              ],
+              "description": "The placebo comparator for the study.",
+              "name": "Placebo oral capsules",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Parallel Assignment in Part A and Part B. Part A: n = 16; Part B: n = 55;",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 71,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SZ-001",
+          "briefTitle": "A Study of ANAVEX3-71 in Adults With Schizophrenia",
+          "nctId": "NCT06245213",
+          "officialTitle": "A Study to Evaluate the Safety, Tolerability, Efficacy, Pharmacokinetics, and Electrophysiology of ANAVEX3-71 in Adult Patients With Schizophrenia in a Multiple Ascending Dose Study (Part A), Followed by a Double-Blind, Randomized, Placebo-Controlled Study (Part B)",
+          "orgStudyIdInfo": {
+            "id": "ANAVEX3-71-SZ-001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Anavex Life Sciences Corp."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Pharmacokinetic blood measurements of ANAVEX3-71 and metabolite M8 at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose.",
+              "measure": "Single Dose Maximum Observed Plasma Concentration (Cmax)",
+              "timeFrame": "Part A: Day 1"
+            },
+            {
+              "description": "Pharmacokinetic blood measurements of ANAVEX3-71 and metabolite M8 at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose.",
+              "measure": "Multiple Dose Maximum Observed Plasma Concentration (Cmax)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The maximum plasma concentration of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "Cmax (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The time to maximum plasma concentration of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "Tmax (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The area under the curve of the plasma concentration of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "AUC (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The area under the curve of the plasma concentration of ANAVEX3-71 and metabolite M8 after a single day of dosing. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "AUC (single state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The oral clearance of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "CL/F (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The volume of distribution based on the terminal elimination phase following administration ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "Vz/F (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The time to elimination of half the quantity of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "T1/2 (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The observed accumulation rate of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "Rac (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The observed accumulation ratio for Cmax of ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "Rac, Cmax (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "The peak-to-trough ratio at steady state for ANAVEX3-71 and metabolite M8 after reaching a steady state. With measurements taken at pre-dose, 0.5, 1, 2-, 3-, 4-, and 8-hours post-dose on Days 1 and 9.",
+              "measure": "PTR (steady state)",
+              "timeFrame": "Part A: Day 1 and Day 9"
+            },
+            {
+              "description": "Safety as measured by the number of participants with treatment-related adverse events and the number of treatment-related adverse events, as assessed by CTCAE v4.0.",
+              "measure": "Adverse Events",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in vital signs including heart rate (beats per minute), blood pressure (mmHg), respiration rate (breaths per minute), and body temperature (degrees centigrade). These measurements will be reported together for the investigator to assess their clinical relevance and relation to potential treatment emergent adverse events.",
+              "measure": "Vital Signs",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the time elapsed between two successive R-waves of the QRS signal on the electrocardiogram (in seconds).",
+              "measure": "12-lead ECG (RR interval)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the electrical depolarization of the atria of the heart (in milliseconds).",
+              "measure": "12-lead ECG (P wave)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the conduction between the atria and ventricles (in milliseconds).",
+              "measure": "12-lead ECG (PR interval)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the portion of the ECG from the end of the P wave to the beginning of the QRS complex as measured by the electrocardiogram.",
+              "measure": "12-lead ECG (PR segment)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in ventricular depolarization as measured by the Q, R, and S waves on the electrocardiogram.",
+              "measure": "12-lead ECG (QRS complex)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the interval between ventricular depolarization and repolarization as represented by the end of the S wave and beginning of the T wave on the electrocardiogram.",
+              "measure": "12-lead ECG (ST segment)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in ventricular repolarization (in milliseconds).",
+              "measure": "12-lead ECG (T wave)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in ventricular depolarization and repolarization as represented by the interval between the QRS complex to the end of the T wave.",
+              "measure": "12-lead ECG (QT interval)",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including glucose, calcium, phosphorus, blood urea nitrogen, creatinine, sodium, potassium, chloride, and bicarbonate. These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Renal Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including albumin, alanine aminotransferase, alkaline phosphatase, aspartate aminotransferase, total bilirubin, direct bilirubin, indirect bilirubin, total protein, lactate dehydrogenase, and gamma-glutamyl transferase. These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Hepatic Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including triglycerides, cholesterol (low-density lipoprotein \\[LDL\\], high-density lipoprotein \\[HDL\\]), and creatine phosphokinase.These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Lipid Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including Red blood cell (RBC) count, hemoglobin, hematocrit, white blood cell counts with differential, platelet count, RBC indices (mean corpuscular volume \\[MCV\\], mean corpuscular hemoglobin \\[MCH\\], and mean corpuscular hemoglobin concentration \\[MCHC\\]) and if RBC indices are abnormal, and reflex to RBC morphology if indices are abnormal.These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Hematology Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including Protein, glucose, pH, blood, leukocytes, leukocyte esterase, urobilinogen, bilirubin, ketones, and nitrite. These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Urinalysis Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in clinical safety laboratory parameters including activated partial thromboplastin time, prothrombin time, and international normalized ratio.These measurements will be combined to report whether clinical safety labs are abnormal and/or clinically significant by the investigator.",
+              "measure": "Clinical Safety Labs - Coagulation Panel",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the general appearance of nails, skin, hair, body habitus, movement coordination, odors, breathing pattern, eyes, ears, nose, mouth, face, salivary glands, lymph nodes, thyroid, anterior and posterior torso, proximal/distal motor strength, and distal pulses. These measurements are combined to assess the general neurological status of the participant to report abnormalities and/or clinical significance by the investigator.",
+              "measure": "Brief Physical Examination",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the participant's mental status, gait, truncal stability, motor function, and visual capabilities. These measurements are combined to assess the general neurological status of the participant to report abnormalities and/or clinical significance by the investigator.",
+              "measure": "Brief Neurological Examination",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the Abnormal Involuntary Movement Scale (AIMS). This is a rating scale that was designed to measure involuntary movements known as tardive dyskinesia (TD), which sometimes develops as a side effect of long-term treatment with neuroleptic (anti-psychotic) medications. The test, which can be completed in about 5 minutes, has a total of twelve items rating involuntary movements of various areas of the patient's body. Items are scored on a 0 (none) to 4 (severe) basis; the scale provides a total score (items 1 through 7) or item 8 can be used in isolation as an indication of overall severity of symptoms.",
+              "measure": "AIMS",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Safety as measured by changes in the Simpson-Angus Scale (SAS), administered typically within 5 minutes, it is a performance scale that measures anti-psychotic-induced parkinsonism symptoms. The rater asks the patient to perform 10 tasks and rates responses on a scale of 0-4 (normal to severe).",
+              "measure": "SAS",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "The Brief Adherence Rating Scale (BARS), administered typically within 5 minutes, is a 4-item questionnaire to assess a patient's adherence with their currently prescribed medication regimen. Medication non-adherence is common in patients with psychiatric conditions and associated with worse clinical outcomes. The BARS assesses a patient's compliance with their prescribed medication regimen. The tool is administered by a clinician and includes 4 items: 3 questions and an overall visual analog rating scale to estimate the proportion of doses taken by the patient in the past month (0-100%). The three questions probe patients' knowledge about their medication regimen: number of prescribed doses per day, number of days the patient did not take the prescribe dose, and number of days the patient took less than the prescribed dose.",
+              "measure": "BARS",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "The Calgary Depression Scale for Schizophrenia (CDSS) is a 9-item clinician-rated outcome measure that assesses the level of depression in people with schizophrenia spectrum disorder, including attenuated psychosis syndrome. It distinguishes depressive symptoms from negative, positive, and extrapyramidal symptoms. The scales take approximately 10 minutes to administer and has a lookback period of 2-weeks. Each item is rated on a scale of 0-3 (absent to severe).",
+              "measure": "CDSS",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "The Columbia Suicide Severity Rating Scale (C-SSRS) is a suicidal ideation rating scale. The scale identifies behaviors and thoughts that are associated with an increased risk of suicidal actions in the future. The C-SSRS baseline/screening version will be conducted at screening. The C-SSRS Since Last Visit version will be conducted for all visits after screening. Answers are \"Yes\" or \"No\" with the opportunity for the participant to explain their answers further.",
+              "measure": "C-SSRS",
+              "timeFrame": "Part A and Part B Screening to Safety Follow Up Visit; Up to 78 days (Part A) and Up to 114 days (Part B)"
+            },
+            {
+              "description": "Electroencephalography (EEG) and event-related potential (ERP) measures of the duration deviant mismatch negativity paradigm. In this paradigm, 2 tones of the same frequency and sound intensity, one short duration (Standard) and one longer duration (Deviant), are sequentially presented to the patient through inserted earphones. Standard stimuli are presented more often than Deviant stimuli. While the auditory stimuli are being played, the patient is instructed to perform a picture-word matching task where they press a button on the COGNISON® handset when they see a picture and a word on a monitor positioned in front of them that do not match.",
+              "measure": "EEG-ERP - Passive, Duration Deviant, Oddball ERP",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "Electroencephalography (EEG) and event-related potential (ERP) measures. In this paradigm, 2 tones of the same sound intensity, one low frequency (Standard) and one higher frequency (Target) are sequentially presented to the patient through inserted earphones. The Standard stimuli are presented more often than the Target stimuli. The patient is told to listen for the high-frequency stimuli (Target) and press a button on the COGNISION® handset as fast as they can.",
+              "measure": "EEG-ERP - Active, Auditory, Oddball ERP",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "Electroencephalography (EEG) and event-related potential (ERP) measures. In this paradigm, a short stream of clicks is repeatedly presented to the patient through inserted earphones. While the click-streams are being presented, the patient is instructed to fix their gaze on a white cross displayed on a computer monitor positioned in front of them.",
+              "measure": "EEG-ERP - Auditory Steady State Response",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "Electroencephalography (EEG) and event-related potential (ERP) measures. In this paradigm, the patient is asked to close their eyes and relax for 5 minutes while EEGs are recorded.",
+              "measure": "EEG-ERP - Resting EEG",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The Positive and Negative Syndrome Scale (PANSS) is an approximate 30-minute structured interview scale used for measuring the symptom severity of patients with schizophrenia. It is widely used in the study of antipsychotic therapy.",
+              "measure": "Positive and Negative Syndrome Scale (PANSS)",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "The Brief Assessment of Cognition in Schizophrenia (BACS) assesses the aspects of cognition found to be most impaired and most strongly correlated with outcomes in patients with schizophrenia. The BACS requires less than 35 min to complete.",
+              "measure": "Brief Assessment of Cognition in Schizophrenia (BACS)",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "The Clinical Global Impression-Schizophrenia Scale (CGI-SCH) assesses the positive, negative, depressive, cognitive symptoms, and overall severity of schizophrenia. The (CGI-SCH) scale is a brief assessment instrument which is originally adapted from the Clinical Global Impression (CGI) scale and the CGI Bipolar Patients (CGI-BP) scale. It was developed to study the outcome of antipsychotic treatment in schizophrenia in an observational study (Schizophrenia Outpatient Health Outcomes (SOHO) Study. The CGI-SCH has shown strong validity, and it has slightly higher interrater reliability than the PANSS (Kumari et al., 2017).",
+              "measure": "Clinical Global Impressions Scale Schizophrenia (CGI-SCH)",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "The Virtual Reality Functional Capacity Assessment Tool (VRFCAT) is a computerized measure that was developed to be a reliable, valid, and sensitive measure of functional capacity, with the potential to demonstrate real-world functional improvements associated with cognitive change. The VRFCAT, typically administered within 15 minutes, presents patients with a realistic simulated environment to re-create routine activities of daily living, including, e.g., exploring a kitchen, catching a bus to a grocery store, finding/purchasing food in a grocery store, and returning home on a bus. To permit repeated testing while avoiding learning effects, 6 alternate forms were created that vary the ingredients stored in the cabinets, items on the recipe and grocery list, cost of the bus rides, cost of groceries, and money available in a wallet.",
+              "measure": "Virtual Reality Functional Capacity Assessment Tool (VRFCAT)",
+              "timeFrame": "Part A and Part B: Up to 12 days (Part A) and Up to 30 days (PartB)"
+            },
+            {
+              "description": "Previous studies have identified genetic variants of the chitinase-3-like protein 1 gene (which expresses YKL-40) and elevated serum YKL-40 with an increased risk for schizophrenia in certain populations (Ohi et al., 2010). Subsequent studies in broader populations demonstrated monocyte activation and elevated YKL-40 in the plasma and cerebrospinal fluid of patients experiencing first-episode psychosis (Orhan et al., 2018). This study seeks to explore blood levels of YKL-40 before and after treatment with ANAVEX3-71 to investigate the immune calming effects associated with Sigma-1 receptor activation in patients with schizophrenia. The expected effect of Sigma-1 activation on inflammation may be an upstream effect by attenuating disease-related, chronic pro-inflammatory signaling by monocytes and glia, to prevent downstream injury due to inflammation (Zhang et al., 2023).",
+              "measure": "Blood measurements of chitinase-3-like protein 1 (YKL-40)",
+              "timeFrame": "Part B: Baseline to End of Treatment (Day -2 to Day 28)"
+            },
+            {
+              "description": "Immune dysfunction theories of schizophrenia include glial-related dysfunction and assume that initial disturbances in glial cells can lead or contribute to neuronal abnormalities that drive symptoms of schizophrenia. Glial perturbations in schizophrenia are associated with a neuroinflammatory response and elevated levels of glial fibrillary acidic protein (GFAP) (Wang et al., 2015).",
+              "measure": "Blood measurements of glial fibrillary acidic protein (GFAP)",
+              "timeFrame": "Part B: Baseline to End of Treatment (Day -2 to Day 28)"
+            },
+            {
+              "description": "Changes in the metabolomic profile of circulating amino acids and related metabolites are implicated in the etiology of numerous neurological and neuropsychiatric disorders (Donatti et al., 2020). Metabolomics studies of patients with schizophrenia demonstrate numerous metabolite signatures of schizophrenia including elevated glutamate (Davison et al., 2018). Changes in these metabolite levels may result from treatment, based on previous research into the treatment of other central nervous system disorders with Sigma-1 receptor agonists such as ANAVEX3-71.",
+              "measure": "Blood measurements of circulating amino acid metabolites",
+              "timeFrame": "Part B: Baseline to End of Treatment (Day -2 to Day 28)"
+            },
+            {
+              "description": "Exploratory DNA/RNA, including whole genome analysis and whole transcriptome mRNA. Assessed in whole blood via next generation sequencing (NGS) method. Whole genome sequencing (WGS) with 30x read depth. These measurements will be used to understand the potential effects of genetic variation on treatment response and the potential effect of treatment on changes in gene expression which may be relevant to the etiology of schizophrenia.",
+              "measure": "Exploratory DNA/RNA, including whole genome analysis and whole transcriptome mRNA",
+              "timeFrame": "Part B: Baseline to End of Treatment (Day -2 to Day 28)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2025-06-30",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-05-04",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-04-30",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2025-06-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2024-03-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-04",
+          "studyFirstPostDateStruct": {
+            "date": "2024-02-07",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-01-19",
+          "studyFirstSubmitQcDate": "2024-01-29"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "40 mg QD of NSC001",
+              "interventionNames": [
+                "Drug: NSC001"
+              ],
+              "label": "Arm 1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "40 mg QD of NSC001 + 20 mg of Trospium",
+              "interventionNames": [
+                "Drug: NSC001"
+              ],
+              "label": "Arm 2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo: with or without 20 mg of Trospium",
+              "interventionNames": [
+                "Other: Placebo"
+              ],
+              "label": "Arm 3",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm 1",
+                "Arm 2"
+              ],
+              "description": "rigid, orthosteric acetylcholine analog, highly specific for M1 muscarinic receptor",
+              "name": "NSC001",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm 3"
+              ],
+              "description": "matching placebo to NSC001",
+              "name": "Placebo",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 90,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study to Assess Safety and Tolerability and to Explore Efficacy of NSC001 in Mild to Moderate Alzheimer's Disease",
+          "nctId": "NCT06995573",
+          "officialTitle": "A Phase 2a, Multi-Center, Randomized, Parallel Group, Double Blind and Placebo-controlled Clinical Trial to Assess Safety and Tolerability as Well as Explorative Efficacy of the Orthosteric Selective Muscarinic M1 Agonist NSC001 in Mild to Moderate Alzheimer's Disease",
+          "orgStudyIdInfo": {
+            "id": "NSC24001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "NSC-Therapeutics"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2024-518563-35-00",
+              "type": "CTIS"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Alzheimer's disease Assessment Scale (ADAS-Cog) The ADAS-Cog measures the cognitive decline over time. The increase of the ADAS-cog score indicates a worsening of the disease. The score goes from 0 to 85max.",
+              "measure": "ADAS-cog as exploratory outcome on cognitive function and neuropsychiatric symptoms",
+              "timeFrame": "At week 0, 4, 16"
+            },
+            {
+              "description": "Mini Mental State Examination (MMSE) The MMSE measures the cognitive decline over time. The decrease of the MMSE score indicates a worsening of the disease. The score goes from 0 to 30max. For the study an MMSE between 18 -26 is required. Subjects with a lower or higher MMSE are excluded.",
+              "measure": "MMSE as exploratory outcome on cognitive function and neuropsychiatric symptoms",
+              "timeFrame": "At week 0, 1, 2, 3, 4, 16"
+            },
+            {
+              "description": "Concentration of Neurofilament light chain (NFL) as biomarker for neuronal damage.",
+              "measure": "Concentration of NFL as exploratory outcome on blood-based AD-related biomarkers",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "Concentration of Amyloid Beta (AB42) as key biomarker for Alzheimer's Disease.",
+              "measure": "Concentration of Amyloid Beta (AB42) as exploratory outcome on blood-based AD-related biomarkers",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "Concentration of Amyloid Beta (AB40) as key biomarker for Alzheimer's Disease.",
+              "measure": "Concentration of Amyloid Beta (AB40) as exploratory outcome on blood-based AD-related biomarkers",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "Concentration of total Tau as key biomarker for Alzheimer's Disease.",
+              "measure": "Tau concentration as blood-based AD-related biomarker",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "Concentration of p-Tau181 as key biomarker for Alzheimer's Disease.",
+              "measure": "p-Tau181 concentration as blood-based AD-related biomarker",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "Concentration of p-Tau 217 as key biomarker for Alzheimer's Disease.",
+              "measure": "p-Tau217 concentration as blood-based AD-related biomarker",
+              "timeFrame": "At week 0,4,16"
+            },
+            {
+              "description": "To evaluate the effects of NSC001, with or without trospium, on QTc interval (Fridericia correction to be used)",
+              "measure": "Exploratory outcome on QTc interval",
+              "timeFrame": "16 weeks"
+            },
+            {
+              "description": "In a subgroup the absolute and relative EEG power spectral density in the following frequency ranges will be meassured: Delta (1.5 to \\< 6.0 Hz) Theta (6.0 to \\< 8.5 Hz) Alpha1 (8.5 to \\< 10.5 Hz) Alpha2 (10.5 to \\< 12.5 Hz) Beta1 (12.5 to \\< 18.5 Hz) Beta 2 (18.5 to \\< 21.0 Hz) Beta3 (21.0 to \\< 30.0 Hz) Total power (1.5 to \\< 30.0 Hz) Gamma (30.0 to \\< 40 Hz) Dominant frequency (6.0 to \\< 12.5 Hz) Alpha Slow Wave Index (ASI) Theta/Beta Ratio (TBR) Alpha reactivity (AR) Centroid frequencies Auditory event related potential (ERP) assessed as P50/P300 Latency and Amplitude",
+              "measure": "Exploratory outcome on oscillatory brain activity",
+              "timeFrame": "At week 0 and 12"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Number of Adverse Events (AEs) between V1 (Baseline) -V5 (End of Treatment)",
+              "measure": "Safety and tolerability of NSC001",
+              "timeFrame": "Week 0 and week16"
+            },
+            {
+              "description": "Number of Serious Adverse Events (SAEs) between V1 (Baseline) -V5 (End of Treatment)",
+              "measure": "Safety during the treatment period",
+              "timeFrame": "Week 0 and week16"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Maximum concentration of NSC001 in Plasma, C (max)",
+              "measure": "Maximum concentration in plasma",
+              "timeFrame": "At week 0, 1, 2, 3, 4, 16 at pre-dose, 0.5, 1, 1.5, 2, 2.5, 3, 4 and 6 hours)"
+            },
+            {
+              "description": "Time at maximum concentration of NSC001 in Plasma, T(max)",
+              "measure": "Time at maximum concentration in plasma",
+              "timeFrame": "At week 0, 1, 2, 3, 4, 16 at pre-dose, 0.5, 1, 1.5, 2, 2.5, 3, 4 and 6 hours)"
+            },
+            {
+              "description": "Area under the curve; Concentration of NSC001 in blood plasma as a function of time.",
+              "measure": "Area under the curve",
+              "timeFrame": "At week 0, 1, 2, 3, 4, 16 at pre-dose, 0.5, 1, 1.5, 2, 2.5, 3, 4 and 6 hours)"
+            },
+            {
+              "description": "Half Life of NSC001; The time it takes for the concentration of NSC001 in the plasma to be reduced by 50%",
+              "measure": "Half Life of NSC001 in plasma",
+              "timeFrame": "At week 0, 1, 2, 3, 4, 16 at pre-dose, 0.5, 1, 1.5, 2, 2.5, 3, 4 and 6 hours)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-09-30",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-04-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-04-14",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-07-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-08-25",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-04",
+          "studyFirstPostDateStruct": {
+            "date": "2025-05-29",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-04-02",
+          "studyFirstSubmitQcDate": "2025-05-21"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "HTL0009936 single and multiple ascending oral doses.",
+              "interventionNames": [
+                "Drug: HTL0009936"
+              ],
+              "label": "HTL0009936",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "HTL0009936 matching placebo",
+              "interventionNames": [
+                "Drug: HTL0009936 placebo"
+              ],
+              "label": "HTL0009936 Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "HTL0009936"
+              ],
+              "description": "Single dose",
+              "name": "HTL0009936",
+              "otherNames": [
+                "9936, HTL0009936"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "HTL0009936 Placebo"
+              ],
+              "description": "Placebo single dose",
+              "name": "HTL0009936 placebo",
+              "otherNames": [
+                "Placebo"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 108,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Phase I, Healthy Subject, Safety, Tolerability and Pharmacokinetic Study of an M1 Agonist to Treat Cognitive Impairment",
+          "nctId": "NCT02291783",
+          "officialTitle": "A Double-Blind, Placebo-Controlled, Single and Multiple Oral Dose, Safety, Tolerability, Pharmacokinetic and Pharmacodynamic Study of HTL0009936 in Healthy Subjects",
+          "orgStudyIdInfo": {
+            "id": "9936-101"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Nxera Pharma UK Limited"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2013-002307-34",
+              "type": "EUDRACT_NUMBER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "AE reports include a description of the AE, date and time of onset and resolution, intensity, and relationship to IMP.",
+              "measure": "Number of participants with Adverse Events, as a measure of safety and tolerability",
+              "timeFrame": "From signing of informed consent up to 30 days after the final visit"
+            },
+            {
+              "description": "Hematology, clinical chemistry, urinalysis",
+              "measure": "Changes in Safety Lab parameters as a measure of safety and tolerability",
+              "timeFrame": "Screening, Day-1, at select dosing days, and at 5 to 7 days post dose for single doseand 15 to 17 days post first dose in multiple dosing."
+            },
+            {
+              "description": "Pulse rate,body temperature,blood pressure, and orthostatic changes.",
+              "measure": "Changes in vital signs as a measure of safety and tolerability",
+              "timeFrame": "Screening, Day-1, at select dosing days and at 5 to 7 days post dose for single dose, and 15 to 17 days post first dose in multiple dosing."
+            },
+            {
+              "description": "Change in ECG parameters",
+              "measure": "Changes in 12-lead electrocardiograms as a measure of safety and tolerability",
+              "timeFrame": "Screening, pre-dose, at select dosing days and at 5 to 7 days post dose for single dose,and 15 to 17 days post first dose in multiple dosing."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Peak plasma concentration (Cmax), time at occurrence of Cmax (tmax), Area under the plasma concentration versus time curve (AUC) 0-t, 0- infinity, percent of AUC 0-infinity, Cmax normalized by dose, AUC 0-t normalized for dose.",
+              "measure": "Pharmacokinetic measures in plasma as measured by Peak plasma concentration (Cmax)",
+              "timeFrame": "Pre-dose, multiple time points to 24h, at select dosing days, and 5 to 7 days post dosefor single dose,and 15 to 17 days post first dose in multiple dosing."
+            },
+            {
+              "description": "Maximum observed CSF concentration (Cmax CSF), area under the CSF concentration versus time",
+              "measure": "Pharmacokinetic measures in cerebro spinal fluid (CSF) in young males as measured by max observed CSF (Cmax CSF)",
+              "timeFrame": "Part 1 - 1h, 2h,3h post dose"
+            },
+            {
+              "description": "Food effect analysis will be based on analysis of variance (ANOVA) for treatment differences.",
+              "measure": "Pharmacokinetic measures to assess the food effect as measured by ANOVA",
+              "timeFrame": "Pre-dose, multiple time points to 24h, and at 12h, 24h and 5 to 7 days post dose."
+            },
+            {
+              "description": "Changes in average pupil diameter as measured in 3 different conditions of lux.",
+              "measure": "Pharmacodynamic response as measured by pupillometry",
+              "timeFrame": "Multiple time points Day1 to 6h post dose Part 1 only."
+            },
+            {
+              "description": "Amount excreted in urine at each collection interval (Ae1-t2) all parts. Cumulative amount excreted to 12h and 24h (Ae0-t) depending on Part. Cumulative urine excreted of unchanged drug to 24h (Fe%) and to 12h depending on Part. Volume of urine collected during each collection interval (Vur), and renal clearance (CLr) all parts",
+              "measure": "Pharmacokinetic measures in urine in young males and elderly male and female subjects as measured by amount of urine excreted at collection intervals",
+              "timeFrame": "Pre-dose,multiple 4h collection intervals to 24h post dose on select dosing days to Day 10 for multiple dosing."
+            },
+            {
+              "description": "Changes in 3 factor scores (Alertness, Contentedness and Calmness) which will be derived from the individual VAS scores",
+              "measure": "Pharmacodynamic response as measured by Bond and Lader visual analogue scale",
+              "timeFrame": "Day 1 at multiple timepoints to 24h post dose."
+            },
+            {
+              "description": "qEEg and ERP (P50 sensory gating, Mismatch Negativity and P300)",
+              "measure": "Pharmacodynamic response as measured by changes in qEEG and Event Related Potentials (ERP)",
+              "timeFrame": "Screening, Day-1, Day 4, Day 9 multiple dosing regimen only"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2014-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-06-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-06-19",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2014-07",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2013-11"
+          },
+          "statusVerifiedDate": "2017-06",
+          "studyFirstPostDateStruct": {
+            "date": "2014-11-14",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-10-07",
+          "studyFirstSubmitQcDate": "2014-11-11"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Group I (DP group) will receive dexmedetomidine 0.5 mic/kg and paracetamol 10mg/kg",
+              "interventionNames": [
+                "Drug: Dexmedetomidine 0.5 mic/kg",
+                "Drug: Paracetamol 10mg/kg"
+              ],
+              "label": "DP group",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Group II (TP group) will receive tramadol 1mg/kg and paracetamol 10mg/kg.",
+              "interventionNames": [
+                "Drug: Tramadol 1mg/kg",
+                "Drug: Paracetamol 10mg/kg"
+              ],
+              "label": "TP group",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "DP group"
+              ],
+              "description": "Group I (DP group) will receive dexmedetomidine 0.5 mic/kg and paracetamol 10mg/kg,",
+              "name": "Dexmedetomidine 0.5 mic/kg",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "TP group"
+              ],
+              "description": "Group II (TP group) will receive tramadol 1mg/kg and paracetamol 10mg/kg.",
+              "name": "Tramadol 1mg/kg",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "DP group",
+                "TP group"
+              ],
+              "description": "Group I (DP group) will receive dexmedetomidine 0.5 mic/kg and paracetamol 10mg/kg. Group II (TP group) will receive tramadol 1mg/kg and paracetamol 10mg/kg.",
+              "name": "Paracetamol 10mg/kg",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Adding Dexmedetomidine or Tramadol to Paracetamol- An Effort to Attenuate Catheter Related Bladder Discomfort",
+          "nctId": "NCT06274333",
+          "officialTitle": "The Effect of Adding Dexmedetomidine or Tramadol to Paracetamol- An Effort to Attenuate Catheter Related Bladder Discomfort: A Randomized, Triple-Blind Clinical Trial",
+          "orgStudyIdInfo": {
+            "id": "RC.18.1.2024"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Al-Azhar University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The incidence of catheter-related bladder discomfort (CRBD) will be assessed at 30 minutes and 1, 2, 4, 6,8,10,12 and 24 hours postoperatively.",
+              "measure": "The incidence of catheter-related bladder discomfort (CRBD)",
+              "timeFrame": "24 hours postoperative"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Postoperative pain will be assessed with the Visual Analog Scale (VAS) (0, no discomfort and no pain; 10, a high level of discomfort and maximum pain)",
+              "measure": "Postoperative pain",
+              "timeFrame": "24 hours postoperatively"
+            },
+            {
+              "description": "Total amount of consumed meperidine will be documented",
+              "measure": "Meperidine requirement",
+              "timeFrame": "24 hours postoperatively"
+            },
+            {
+              "description": "Patients' satisfaction was measured immediately postoperative and after 24 hours using a five-point Likert scale consisting of \"very dissatisfied,\" \"dissatisfied,\" \"unsure,\" \"satisfied,\" and \"very satisfied.",
+              "measure": "Patient satisfaction",
+              "timeFrame": "24 hours postoperatively"
+            },
+            {
+              "description": "Surgeon' satisfaction was measured immediately postoperative and after 24 hours using a five-point Likert scale consisting of \"very dissatisfied,\" \"dissatisfied,\" \"unsure,\" \"satisfied,\" and \"very satisfied.",
+              "measure": "Surgeon satisfaction",
+              "timeFrame": "24 hours postoperatively"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-09-30",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-01-06",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-01-04",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-08-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2024-02-28",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-02",
+          "studyFirstPostDateStruct": {
+            "date": "2024-02-23",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2024-02-07",
+          "studyFirstSubmitQcDate": "2024-02-21"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Saline infusion, oral glucose (POTS and healthy)",
+              "interventionNames": [
+                "Other: Saline/Placebo"
+              ],
+              "label": "Saline",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "GIP(3-30)NH2 infusion, oral glucose (POTS and healthy)",
+              "interventionNames": [
+                "Other: GIPR antagonist"
+              ],
+              "label": "GIP antagonist",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Exendin(9-39)NH2 infusion, oral glucose (only in healthy)",
+              "interventionNames": [
+                "Other: GLP-1R antagonist"
+              ],
+              "label": "GLP-1 antagonist",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "CCK-8 infusion, oral glucose (POTS and healthy)",
+              "interventionNames": [
+                "Other: CCK agonist"
+              ],
+              "label": "CCK agonist",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Saline"
+              ],
+              "description": "NaCl(9mg/ml)",
+              "name": "Saline/Placebo",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "GIP antagonist"
+              ],
+              "description": "GIP(3-30)NH2",
+              "name": "GIPR antagonist",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "GLP-1 antagonist"
+              ],
+              "description": "GLP-1(9-39)NH2",
+              "name": "GLP-1R antagonist",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "CCK agonist"
+              ],
+              "description": "CCK-8",
+              "name": "CCK agonist",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "interventionModelDescription": "Single blinded, randomized, crossover trial",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "PARTICIPANT"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "GA22",
+          "briefTitle": "POTS-FLOW: Interplay Between Gut Hormones and Autonomic Postprandial Blood Flow Regulation in Patients With POTS",
+          "nctId": "NCT07019519",
+          "officialTitle": "Interplay Between Gut Hormones and Autonomic Postprandial Blood Flow Regulation in Patients With POTS",
+          "orgStudyIdInfo": {
+            "id": "H-24030176"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of Copenhagen"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Blood flow in the superior mesenteric artery measured with MR ml/min",
+              "measure": "Redistribution of splanchnic blood flow in the vessel mesenteric superior artery (MR)",
+              "timeFrame": "Continuously for 80 minutes/during infusions"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Blood flow in the portal vein measured with MR-scans in ml/min",
+              "measure": "Blood flow in portal vein",
+              "timeFrame": "Continuously for 80 minutes/during infusions"
+            },
+            {
+              "description": "Blood flow in the celiac trunk measured with MR-scans in ml/min",
+              "measure": "Blood Flow in celiac trunk",
+              "timeFrame": "Continuously for 80 minutes/during infusions"
+            },
+            {
+              "description": "Blood flow in the hepatic artery measured with MR-scans in ml/min",
+              "measure": "Blood Flow in the hepatic artery",
+              "timeFrame": "Continuously for 80 minutes/during infusions"
+            },
+            {
+              "description": "Blood samples of hormones types:\n\nGLP-1(7-36 NH2), GLP-2(1-33), GIP(1-42), Exendin(9-39)NH2, GLP-2(3-33), GIP(3-30)NH2, Glucagon, Insulin/C-peptid, CCK",
+              "measure": "Blood samples for hormones",
+              "timeFrame": "Every 10-20 minutes before and during and after the infusions and MR scans (120 minutes)"
+            },
+            {
+              "description": "Uptake/amount of paracetamol in the blood over time as a measure of gastric emptying",
+              "measure": "Gastric emptying/Blood sample of paracetamol",
+              "timeFrame": "Every 10-20 minutes before, during and after the infusions and MRI scans (120 minutes)"
+            },
+            {
+              "description": "Symptomscoring of autonome dysfunction with VOSS (Vanderbilt Orthostatic Symptom Score) questionnaire: this consists of 10 symptoms: lightheadedness, brain fog, shortness of breath, palpitations, tremor, headache, tightness in chest, blurred vision, nausea and sleepiness rated from 0-10 where 0 is not ocurring and 10 is worts experienced.",
+              "measure": "Symptomscoring",
+              "timeFrame": "Continously before and during the infusions (120 minutes)"
+            },
+            {
+              "description": "Genes analyzed from buffycoat:\n\nGLP-1R: NM\\_002062, GLP-2R: NM\\_004246, GIPR: NM\\_000164 and NM\\_001308418, CCKR: NM\\_000730 and NM\\_176875,",
+              "measure": "Blood samples for genes",
+              "timeFrame": "One measurement at baseline visit"
+            },
+            {
+              "description": "Glucose measurements",
+              "measure": "Blood sample for glucose",
+              "timeFrame": "Every 10-20 minutes before and during and after the infusions and MR scans (120 minutes)"
+            },
+            {
+              "description": "Autoantibodies:\n\nAngiotensin-II-receptor-1 AT1R-ab, Endothelin-receptor-A ETAR-ab, Alpha1 adrenergic-receptor-ab, Alpha2 adrenergic-receptor-ab, Beta1 adrenergic-receptor-ab, Beta2 adrenergic-receptor-ab, Muscarinic cholinergic M1-receptor-ab, Muscarinic cholinergic M2-receptor-ab, Muscarinic cholinergic M3-receptor-ab, Muscarinic cholinergic M4-receptor-ab, Muscarinic cholinergic M5-receptor-ab",
+              "measure": "Blood samples for autoantibodies",
+              "timeFrame": "One measurement at baseline visit"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-09-30",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-06-13",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-06-10",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-06-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-03-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-06",
+          "studyFirstPostDateStruct": {
+            "date": "2025-06-13",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-03-13",
+          "studyFirstSubmitQcDate": "2025-06-10"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects will be receive GSK1034702 0.5 milligram (mg) following the dose escalation plan",
+              "interventionNames": [
+                "Drug: GSK1034702",
+                "Drug: Placebo"
+              ],
+              "label": "Cohort 1",
+              "type": "OTHER"
+            },
+            {
+              "description": "Subjects will be receive GSK1034702 5 mg following the dose escalation plan",
+              "interventionNames": [
+                "Drug: GSK1034702",
+                "Drug: Placebo"
+              ],
+              "label": "Cohort 2",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Cohort 1",
+                "Cohort 2"
+              ],
+              "description": "Oral or liquid",
+              "name": "GSK1034702",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Cohort 1",
+                "Cohort 2"
+              ],
+              "description": "To match GSK1034702",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "PARTICIPANT"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Safety, Tolerability and Pharmacokinetics of GSK1034702 in Healthy Subjects",
+          "nctId": "NCT00743405",
+          "officialTitle": "Single-blind, Randomised, Placebo Controlled Study to Evaluate the Safety, Tolerability and Pharmacokinetics of GSK1034702 in Healthy Subjects",
+          "orgStudyIdInfo": {
+            "id": "110623"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "GlaxoSmithKline"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "•Safety and tolerability determined by adverse events; ECG; Holter; blood pressure, heart rate, respiration rate; clinical laboratory evaluations, pupil size & temperature.•Blood concentrations of GSK1034702.",
+              "timeFrame": "20 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Assessment of the Bond-Lader Visual Analogue Scale.",
+              "timeFrame": "20 weeks"
+            },
+            {
+              "measure": "Assessment of exploratory PD markers: neuroendocrine markers, e.g. growth hormone.",
+              "timeFrame": "20 weeks"
+            },
+            {
+              "measure": "Relationship between GSK1034702 plasma concentrations and safety/tolerability or exploratory PD endpoints with selected pharmacodynamic and safety parameters.",
+              "timeFrame": "20 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-12-15",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-07-21",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-07-18",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-12-15",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2008-05-02",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-07",
+          "studyFirstPostDateStruct": {
+            "date": "2008-08-28",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2008-08-27",
+          "studyFirstSubmitQcDate": "2008-08-27"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "GSK961081",
+              "interventionNames": [
+                "Drug: GSK961081"
+              ],
+              "label": "GSK961081",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "GSK961081"
+              ],
+              "name": "GSK961081",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "DOUBLE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 82,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A 2 Part Study Examining Doses Of GSK961081 In Healthy Volunteers And Then In COPD Patients",
+          "nctId": "NCT00478738",
+          "officialTitle": "A Study to Assess the Pharmacokinetics of Single Escalating Doses of Inhaled GSK961081 DPI (a Dual Pharmacophore) in Healthy Subjects (Part 1) and a Randomised, Double-blind, Double Dummy, Crossover (Incomplete Block) Study to Assess the Safety, Tolerability, Pharmacodynamics (Pulmonary and Systemic) and Pharmacokinetics of 14 Days Dosing With Inhaled GSK961081 DPI Compared With Placebo and Tiotropium Plus Salmeterol in Patients With COPD (Part 2)",
+          "orgStudyIdInfo": {
+            "id": "MAB104958"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "GlaxoSmithKline"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Plasma samples for PK analysis were drawn on Day (D) 1 at indicated time points. The AUC from time zero (0M) to 2h (AUC 0-2) was area under the plasma concentration-time curve over the 2h time period. AUC(0-6) was area under the plasma concentration-time curve from 0M to 6h. AUC(0-t) was area under the plasma concentration-time curve from 0M to last quantifiable concentration. The AUC extrapolated to infinity (inf) (AUC\\[0-inf\\]) was calculated as the sum of AUC(0-t) and Ct/lambda z, where Ct is the observed GSK961081 concentration obtained from the log-linear regression analysis of the last quantifiable time-point and lambda z is the terminal phase rate constant estimated by linear regression analysis of the log transformed concentration-time data. The number of time points used in the estimation of lambda z. Different participants may have been analyzed at different time points; thus, the overall number of participants analyzed reflects everyone in the PK population.",
+              "measure": "Part 1: Summary of area under the GSK961081 concentration-time curve (AUC) after a single dose",
+              "timeFrame": "Pre-dose (0.0 hour [h]) and 15, 30, 45 minutes (M), 1, 2, 3, 4, 6, 8, 12 and 24 h post dose of each treatment period"
+            },
+            {
+              "description": "Plasma samples for PK analysis were drawn on D1 at indicated time points. The first occurrence of the maximum observed GSK961081 concentration determined directly from the raw concentration-time data after each single dose. All participants were present at the time of measurement.",
+              "measure": "Part 1: Summary of maximum observed concentration (Cmax) of GSK961081 after a single dose",
+              "timeFrame": "Pre-dose (0.0h) and 15, 30, 45 M, 1, 2, 3, 4, 6, 8, 12 and 24 h post dose of each treatment period"
+            },
+            {
+              "description": "Plasma samples for PK analysis were drawn on D1 at indicated time points. The t-last and t-max was determined directly from the raw concentration-time data after each single dose. The t-half was obtained as the ratio of ln2/lambda z, where ln(2) is the natural logarithm of 2 (approximately 0.693) and lambda z is the terminal phase rate constant estimated by linear regression analysis of the log transformed concentration-time data after each single dose. Data for adjusted mean is presented as least square mean. Only those participants available at the specified time points were analyzed (represented by n=x,x,x in the category titles). Different participants may have been analyzed at different time points; thus, the overall number of participants analyzed reflects everyone in the All Subjects population.",
+              "measure": "Part 1: Summary of last observed plasma concentration (t-last), time of maximum observed concentration (t-max) and terminal elimination half-life (t-half)",
+              "timeFrame": "Pre-dose (0.0h) and 15, 30, 45 M, 1, 2, 3, 4, 6, 8, 12 and 24 h post dose of each treatment period"
+            },
+            {
+              "description": "Lung function tests (FEV1) was recorded whilst the participant was in a sitting position (if taken whilst the participant was on the bed, their legs should be over the edge). All lung function tests was repeated, until three technically acceptable measurements were made. Each measurement should be done at least 1 M apart. Participants must be resting in the body box for at least 30 seconds prior to any assessments. The FEV1 was measured at 15, 30 M, 1, 4, 12 and 24 h post dose of each treatment period on D1 and 14. Data for adjusted mean is presented as least square mean. Only those participants available at the specified time points were analyzed (represented by n=x,x,x,x in the category titles). Different participants may have been analyzed at different time points; thus, the overall number of participants analyzed reflects everyone in the All Subjects population. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Forced Expiratory Volume in 1 second (FEV1) over 24 hours post-dose on D1 and 14",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "An AE was defined as any untoward medical occurrence (MO) in a participant temporally associated with the use of a medicinal product (MP), whether or not considered related to the MP and can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with its use. The SAE was any untoward MO that, at any dose, results in death, life threatening, persistent or significant disability/incapacity, results in or prolongs inpatient hospitalization, congenital abnormality or birth defect, that may not be immediately life-threatening or result in death or hospitalization but may jeopardize the participant or may require medical or surgical intervention to prevent one of the other outcomes listed in this definition. Refer to the general AE/SAE module for a list of AEs and SAEs.",
+              "measure": "Part 1: Number of participants with Adverse Events (AE) and Serious adverse events (SAE)",
+              "timeFrame": "Up to 16 weeks"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1 pre-dose and 24h post dose in Part 1 of study. All participants were present at the time of measurement.",
+              "measure": "Part 1: Mean values for urea, sodium, potassium, cholesterol, chloride, high density lipids-cholesterol (HDLC), and triglyceride",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1 pre-dose and 24h post dose in Part 1 of study. All participants were present at the time of measurement.",
+              "measure": "Part 1: Mean values for creatinine and total bilirubin",
+              "timeFrame": "Up to D1of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1 pre-dose and 24h post dose in Part 1 of study. All participants were present at the time of measurement.",
+              "measure": "Part 1: Mean values for total protein and albumin",
+              "timeFrame": "Up to D1of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1 pre-dose and 24h post dose in Part 1 of study. All participants were present at the time of measurement.",
+              "measure": "Part 1: Mean values for aspartate aminotransferase (AST), alanine aminotransferase (ALT), alkaline phosphatase (ALP), creatine kinase and gamma glutamyl transferase (GGT). All participants were present at the time of measurement.",
+              "timeFrame": "Up to D1of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for platelet and white blood cell (WBC)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for hemoglobin and mean corpuscle hemoglobin concentration (MCHC)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for hematocrit",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for mean corpuscle volume (MCV)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for mean corpuscle hemoglobin (MCH)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for reticulocytes, total neutrophil, lymphocyte, monocyte, eosinophil and basophil",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated hematology tests on D1 pre-dose and 24h post dose in Part 1 of study.",
+              "measure": "Part 1: Mean values for red blood cells (RBC)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Lung function tests (FEV1) was recorded whilst the participant was in a sitting position (if taken whilst the participant was on the bed, their legs should be over the edge). All lung function tests was repeated, until three technically acceptable measurements were made. Each measurement should be done at least 1 M apart. Participants must be resting in the body box for at least 30 seconds prior to any assessments. FEV1 measurements were taken after sGaw measurements. The FEV1 was measured at 15, 1, 4, 12 and 24 h post dose of each treatment period on D1. Data for adjusted mean is presented as least square mean. All participants were present at the time of measurement.",
+              "measure": "Part 1: Summary of Results of Statistical Serial Time point Analysis of FEV1 Data-Treatment Differences",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "ECG measurements were made with the participants in a supine position having rested in this position for at least 10 M before each reading. Data is presented as maximum value 0-4 h of each treatment period on D1. The QTcB was derived automatically by the machine. The QTcF was manually derived by dividing QT interval with cube root of division of RR interval by 1000. Where, RR interval (milliseconds \\[msec\\]) was calculated as square of QT interval divided by QTcB, which was multiplied by 1000. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline value was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Change from Baseline derived Electrocardiogram (ECG) parameters- QT interval corrected according to Bazzet's formula (QTcF) and QT interval corrected according to Fridericia's formula (QTcB) Maximum value (0-4 h)",
+              "timeFrame": "Up to D1of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "ECG measurements was made with the participants in a supine position having rested in this position for at least 10 M before each reading. The QTcB was derived automatically by the machine. The QTcF was manually derived by dividing QT interval with cube root of division of RR interval by 1000. Where, RR interval (msec) was calculated as square of QT interval divided by QTcB, which was multiplied by 1000. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline value was defined as the mean of the three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points (0- 4 h) calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Change from Baseline derived ECG parameters-QTc(F) and QTc(B) Weighted mean (0-4 h)-Part",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP was measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1.Three baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Mean supine systolic blood pressure (SBP) maximum value (0-4 h)",
+              "timeFrame": "Up to D1of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. DBP was measured with an automatic measuring device. Data is presented as minimum change 0-4 h of each treatment period on D1. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Mean supine diastolic blood pressure (DBP) minimum change (0-4 h)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP and DBP were measured with an automatic measuring device. It was measured at 0- 4 h post dose of each treatment period on D1. The baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Mean supine SBP and supine DBP Weighted mean (0-4 h)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. Heart rate was measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. The baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Change from Baseline supine heart rate maximum value (0-4 h)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. Heart rate was measured with an automatic measuring device. It was measured at 0-4 h post dose of each treatment period on D1. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Change from Baseline supine heart rate Weighted mean (0-4 h)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP and DBP were measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Maximum change in postural SBP and DBP (0-4 h) was derived as post dose standing reading minus post dose supine reading. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Maximum change in postural SBP and DBP (0-4h)",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Data is presented as maximum value of glucose at 0-4 h of each treatment period on D1. Blood samples were collected for measurement of glucose at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Maximum change from Baseline value (0-4h) for glucose",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Data is presented as minimum change for potassium at 0-4 h of each treatment period on D1. Blood samples were collected for measurement of potassium at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Minimum change from Baseline value (0-4h) for potassium",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of glucose at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1. The data for maximum change from Baseline for potassium was not analyzed.",
+              "measure": "Part 1: Maximum change from Baseline value (0-4h) for potassium",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of glucose and potassium at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 1: Weighted mean change from baseline (0-4h) for glucose and potassium",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Holter monitoring (24 h) was conducted at screening and after each dose during. Holter tapes were analyzed locally at site. A screening visit was taken place within 28 days of the first dosing occasion. Participants with abnormal (not clinically significant \\[NCS\\]), abnormal (clinically significant \\[CS\\]) and no result were presented.",
+              "measure": "Part 1: Number of participants with abnormal Holter ECG findings as a function of cardiac monitoring",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Lead II ECG monitoring (via telemetry) will be recorded from pre-dose until 6 h after the dose. Participants with abnormal (NCS), abnormal (CS) and no result were presented.",
+              "measure": "Part 1: Number of participants with abnormal Lead II ECG findings as a function of cardiac monitoring",
+              "timeFrame": "Up to D1 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "An AE was defined as any untoward MO in a participant temporally associated with the use of a MP, whether or not considered related to the MP and can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with its use. The SAE was any untoward MO that, at any dose, results in death, life threatening, persistent or significant disability/incapacity, results in or prolongs inpatient hospitalization, congenital abnormality or birth defect, that may not be immediately life-threatening or result in death or hospitalization but may jeopardize the participant or may require medical or surgical intervention to prevent one of the other outcomes listed in this definition. Refer to the general AE/SAE module for a list of AEs and SAEs.",
+              "measure": "Part 2: Number of participants with AE and SAE",
+              "timeFrame": "Up to 16 weeks"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for urea, sodium, potassium, cholesterol, chloride, high density lipids-cholesterol (HDLC), and triglyceride",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for creatinine and total bilirubin",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for total protein and albumin",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for AST, ALT, ALP, creatine kinase and GGT",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for hemoglobin and MCHC",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for hematocrit",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for MCV",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for MCH",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for total neutrophil, lymphocyte, monocyte, eosinophil and basophil",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for platelets and WBC",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7, 14 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for RBC",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of indicated laboratory biochemistry tests on D1, 4, 7 pre-dose and 24h post dose on D14 in Part 2 of study.",
+              "measure": "Part 2: Mean values for reticulocytes",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "ECG measurements were made with the participants in a supine position having rested in this position for at least 10 M before each reading. Data is presented as maximum value of glucose at 0-4 h of each treatment period on D1 and D14. The QTcB was derived automatically by the machine. The QTcF was manually derived by dividing QT interval with cube root of division of RR interval by 1000. Where, RR interval (msec) was calculated as square of QT interval divided by QTcB, which was multiplied by 1000. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline value was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Change from Baseline derived ECG parameters- QTcF and QTcB Maximum value (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "ECG measurements was made with the participants in a supine position having rested for at least 10 M before reading. Data is presented as maximum value of glucose at 0-4 h of each treatment period on D1 and D14. The QTcB was derived automatically by the machine. The QTcF was manually derived by dividing QT interval with cube root of division of RR interval by 1000. Where RR interval (msec) was calculated as square of QT interval divided by QTcB, which was multiplied by 1000. The change from Baseline was calculated by subtracting the Baseline values from the post-randomization values. Baseline value was defined as the mean of three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points (0-4 h) calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Change from Baseline derived ECG parameters-QTcF and QTcB Weighted mean (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of glucose at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1 and D14. The data for maximum change from Baseline was not analyzed.",
+              "measure": "Part 2: Maximum change from Baseline value (0-4h) for potassium",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Ambulatory blood pressure was monitored over 0-8 h and 8-24 h after dosing of each treatment period on D1 and D14. The data for ambulatory blood pressure was not analyzed.",
+              "measure": "Part 2: Ambulatory blood pressure: maximum, minimum, time to maximum, time to minimum and weighted mean for systolic and diastolic blood pressure, and weighted mean arterial pressure over 0-8 and 8-24 h after dosing on Days 1 and 14",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Holter monitoring (24 h) was conducted at screening and on D1 and 14 of each treatment period. Holter tapes were analyzed locally at site. A screening visit was taken place within 28 days of the first dosing occasion. Participants with abnormal (not clinically significant), abnormal (clinically significant) and no result were presented.",
+              "measure": "Part 2: Number of participants with abnormal Holter ECG findings as a function of cardiac monitoring",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Lead II ECG monitoring (via telemetry) will be recorded from pre-dose until 8 h after the dose on D1 and D14 of each treatment period. Participants with abnormal (not clinically significant), abnormal (CS) and no result were presented.",
+              "measure": "Part 2: Number of participants with abnormal Lead II ECG findings as a function of cardiac monitoring",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP was measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1 and D14. The baseline was defined as the mean of the three pre-dose measurements on D1 and D14 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Mean supine SBP maximum value (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. DBP was measured with an automatic measuring device. Data is presented as minimum change 0-4 h of each treatment period on D1 and D14. The baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Mean supine DBP minimum change (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP and DBP were measured with an automatic measuring device. It was measured at 0- 4 h post dose of each treatment period on D1 and D14. The baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Mean supine SBP and supine DBP Weighted mean (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. Heart rate was measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1 and D14. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. The baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Change from Baseline supine heart rate maximum value (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. Heart rate was measured with an automatic measuring device. It was measured at 0-4 h post dose of each treatment period on D1 and D14. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Change from Baseline supine heart rate Weighted mean (0-4 h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Participants were required to rest in the supine position for at least 10 M before each reading. SBP and DBP were measured with an automatic measuring device. Data is presented as maximum value 0-4 h of each treatment period on D1 and D14. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. Maximum change in postural SBP and DBP (0-4h) was derived as post dose standing reading minus post dose supine reading. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Maximum change in postural SBP and DBP (0-4h)",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Data is presented as minimum change for potassium at 0-4 h of each treatment period on D1 and D14. Blood samples were collected for measurement of potassium at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1 and D14. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Minimum change from Baseline value (0-4h) for potassium",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Blood samples were collected for measurement of glucose and potassium at pre-dose (0.0), 30 M, 1, 2 and 4 h post dose of each treatment period on D1 and D14. The Baseline was defined as the mean of the three pre-dose measurements on D1 for each treatment period. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. All available data at the actual relative times were included in the derivation of the weighted mean with pre-dose measurements representing the time point zero, and all subsequent time points calculated relative to dosing in that period. Data for adjusted mean is presented as least square mean.",
+              "measure": "Part 2: Weighted mean change from baseline (0-4h) for potassium",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            },
+            {
+              "description": "Plasma samples for PK analysis were drawn on D1, 7 and 14 at indicated time points of each treatment period. The AUC from time zero (0M) to 2h (AUC 0-2) was area under the plasma concentration-time curve over the 2h time period. AUC(0-6) was area under the plasma concentration-time curve from 0M to 6h. AUC(0-t) was area under the plasma concentration-time curve from 0M to last quantifiable concentration. The AUC extrapolated to inf (AUC\\[0-inf\\]) was calculated as the sum of AUC(0-t) and Ct/lambda z, where Ct is the observed GSK961081 concentration obtained from the log-linear regression analysis of the last quantifiable time-point and lambda z is the terminal phase rate constant estimated by linear regression analysis of the log transformed concentration-time data. The number of time points used in the estimation of lambda z.",
+              "measure": "Part 2: Summary of AUC after a single dose",
+              "timeFrame": "Pre-dose (0.0 h) and 30 M, 1, 2, 4, 6, 8, 12 and 24 h post dose of each treatment period on D1 and D14; Pre-dose (0.0 h) and 30 M, 1, 2, 4 and 6 h post dose of each treatment period on D7."
+            },
+            {
+              "description": "Plasma samples for PK analysis were drawn on D1, 7 and 14 at indicated time points of each treatment period. The first occurrence of the maximum observed GSK961081 concentration determined directly from the raw concentration-time data after each single dose. All participants were present at the time of measurement.",
+              "measure": "Part 2: Summary of Cmax of GSK961081 after a single dose",
+              "timeFrame": "Pre-dose (0.0 h) and 30 M, 1, 2, 4, 6, 8, 12 and 24 h post dose of each treatment period on D1 and D14; Pre-dose (0.0 h) and 30 M, 1, 2, 4 and 6 h post dose of each treatment period on D7."
+            },
+            {
+              "description": "PK population. Only those participants available at the specified time points were analyzed (represented by n=x,x in the category titles). Different participants may have been analyzed at different time points; thus, the overall number of participants analyzed reflects everyone in the PK population.",
+              "measure": "Part 2: Summary of t-last, t-max and t-half",
+              "timeFrame": "Pre-dose (0.0 h) and 30 M, 1, 2, 4, 6, 8, 12 and 24 h post dose of each treatment period on D1 and D14; Pre-dose (0.0 h) and 30 M, 1, 2, 4 and 6 h post dose of each treatment period on D7."
+            },
+            {
+              "description": "sGaw was assessed by whole body plethysmography at 30 M, 1, 4, 12 and 24 h post dose of each treatment period on D1 and D14. Participants must be resting in the body box for at least 30 seconds prior to any assessments. Data for adjusted",
+              "measure": "Part 2: Serial sGaw measurement over 24 hours post-dose on D1 and 14",
+              "timeFrame": "Up to D14 of each treatment period (up to 16 weeks)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-05",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2009-08-10",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2009-07-22",
+          "dispFirstSubmitQcDate": "2009-07-22",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-02-02",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2017-02-01",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-05",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-06"
+          },
+          "statusVerifiedDate": "2017-01",
+          "studyFirstPostDateStruct": {
+            "date": "2007-05-25",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-05-24",
+          "studyFirstSubmitQcDate": "2007-05-24"
+        }
+      }
+    }
+  ],
+  "totalCount": 7
+}

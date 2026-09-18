@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://intelligence-blueprint.local/schemas/v0_2_0/x02_regulatory_prediction",
+  "title": "X02RegulatoryPredictionRow",
+  "description": "One row of regulatory_predictions.tsv: a sequence-model prediction for a variant. Orthogonal predicted support, never causal evidence on its own.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "variant_id",
+    "effect_allele",
+    "other_allele",
+    "model",
+    "model_version",
+    "assay",
+    "concordant_with_qtl_direction"
+  ],
+  "properties": {
+    "variant_id": {
+      "type": "string",
+      "pattern": "^(rs[0-9]+|chr(?:[1-9]|1[0-9]|2[0-2]|X|Y|MT)_[0-9]+_[ACGTN]+_[ACGTN]+)$"
+    },
+    "effect_allele": {
+      "type": "string",
+      "pattern": "^[ACGTN]+$"
+    },
+    "other_allele": {
+      "type": "string",
+      "pattern": "^[ACGTN]+$"
+    },
+    "model": {
+      "type": "string",
+      "minLength": 1
+    },
+    "model_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "assay": {
+      "type": "string",
+      "minLength": 1
+    },
+    "tissue_or_cell_type": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "gene_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "pattern": "^ENSG[0-9]{11}(\\\\.[0-9]+)?$"
+    },
+    "predicted_effect": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "effect_units": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "score": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "score_scale": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "reference_distribution": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "percentile": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0,
+      "maximum": 100
+    },
+    "concordant_with_qtl_direction": {
+      "type": "string",
+      "enum": [
+        "yes",
+        "no",
+        "not_applicable",
+        "untested"
+      ],
+      "description": "Whether the prediction agrees with a measured QTL direction. 'untested' is distinct from 'not_applicable'.",
+      "$comment": "vocabulary: prediction_qtl_concordance"
+    }
+  }
+}

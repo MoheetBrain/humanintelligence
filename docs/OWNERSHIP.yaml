@@ -19,6 +19,27 @@ owners:
     - "targets/seed_registry.yaml"
     - "requirements-lock.txt"
     - "reports/sprint1_summary.md"
+    - "reports/sprint2_summary.md"
+    - "reports/registry_search_v0_2.md"
+    - "reports/comparative_v2_summary.md"
+    - "reports/convergence_v0_2.md"
+    - "reports/project_truth_table.md"
+    - "reports/project_truth_table.csv"
+    # Sprint 2: the orchestrator owns external-run ingestion, registry-search hygiene,
+    # cross-agent dependence resolution and the discovery/convergence layers, per the
+    # non-overlap contract in the Sprint-2 brief.
+    - "analyses/external/**"
+    - "evidence/registry_searches/**"
+    - "evidence/sources/orchestrator.yaml"
+    - "evidence/claims/orchestrator/**"
+    - "pipelines/registry_search/**"
+    - "pipelines/integration/ingest_x02.py"
+    - "pipelines/integration/ingest_external_analysis.py"
+    - "pipelines/discovery/**"
+    - "docs/integration/**"
+    - "targets/discovered/**"
+    - "atlases/positive_genetics/**"
+    - "atlases/comparative_v2/**"
 
   # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
   # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because

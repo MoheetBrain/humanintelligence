@@ -1,0 +1,4771 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D010003",
+          "term": "Osteoarthritis"
+        },
+        {
+          "id": "D001168",
+          "term": "Arthritis"
+        },
+        {
+          "id": "D007592",
+          "term": "Joint Diseases"
+        },
+        {
+          "id": "D009140",
+          "term": "Musculoskeletal Diseases"
+        },
+        {
+          "id": "D012216",
+          "term": "Rheumatic Diseases"
+        },
+        {
+          "id": "D001519",
+          "term": "Behavior"
+        },
+        {
+          "id": "D009461",
+          "term": "Neurologic Manifestations"
+        },
+        {
+          "id": "D012816",
+          "term": "Signs and Symptoms"
+        },
+        {
+          "id": "D013568",
+          "term": "Pathological Conditions, Signs and Symptoms"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D020370",
+          "term": "Osteoarthritis, Knee"
+        },
+        {
+          "id": "D009043",
+          "term": "Motor Activity"
+        },
+        {
+          "id": "D010146",
+          "term": "Pain"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D009043",
+          "term": "Motor Activity"
+        },
+        {
+          "id": "D009068",
+          "term": "Movement"
+        },
+        {
+          "id": "D009142",
+          "term": "Musculoskeletal Physiological Phenomena"
+        },
+        {
+          "id": "D055687",
+          "term": "Musculoskeletal and Neural Physiological Phenomena"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D015444",
+          "term": "Exercise"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2023-11-15",
+          "filename": "Prot_SAP_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": true,
+          "label": "Study Protocol and Statistical Analysis Plan",
+          "size": 583850,
+          "typeAbbrev": "Prot_SAP",
+          "uploadDate": "2023-11-15T15:40"
+        },
+        {
+          "date": "2023-02-05",
+          "filename": "ICF_001.pdf",
+          "hasIcf": true,
+          "hasProtocol": false,
+          "hasSap": false,
+          "label": "Informed Consent Form",
+          "size": 315647,
+          "typeAbbrev": "ICF",
+          "uploadDate": "2023-10-29T19:34"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.",
+          "interventionNames": [
+            "Behavioral: Exercise"
+          ],
+          "label": "Group TX (Telehealth Exercise)",
+          "type": "ACTIVE_COMPARATOR"
+        },
+        {
+          "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.",
+          "interventionNames": [
+            "Behavioral: Mindful Exercise program"
+          ],
+          "label": "Group TMX (Telehealth Exercise and Mindfulness)",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Group TMX (Telehealth Exercise and Mindfulness)"
+          ],
+          "description": "In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+          "name": "Mindful Exercise program",
+          "type": "BEHAVIORAL"
+        },
+        {
+          "armGroupLabels": [
+            "Group TX (Telehealth Exercise)"
+          ],
+          "description": "In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+          "name": "Exercise",
+          "type": "BEHAVIORAL"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Knee Osteoarthritis"
+      ],
+      "keywords": [
+        "telehealth",
+        "exercise",
+        "mindfulness",
+        "pain",
+        "feasibility"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Movement and Applied Imaging Lab, Boston University",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02215"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Boston University",
+          "name": "Deepak Kumar, PT, PhD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This is a parallel-arm mixed-methods randomized controlled trial to investigate the feasibility of telehealth delivered mindful exercise vs. usual exercise interventions for people with knee osteoarthritis.",
+      "detailedDescription": "In this RCT, the feasibility of an 8-week telehealth mindful exercise intervention compared to an 8-week telehealth exercise only intervention for people with knee osteoarthritis (OA) will be assessed. Forty adults with knee OA will be assigned to either a mindful exercise arm OR exercise arm. Both interventions will be delivered via real-time videoconferencing in a group setting (n=8-10 per group). All participants will be administered questionnaires for self-reported symptoms, mood, quality of life, etc. throughout the study period. Participants will be given the choice to opt in for in-person data collection visits wherein their physical function, muscle strength, sensitivity to painful stimuli, and brain function will be assessed before and at the end of the interventions. At the end of the 8-week interventions, 10 participants will be purposively sampled from each arm (n=20 total) for individual interviews to determine acceptability of the telehealth interventions. Feasibility of the intervention will be determined post-intervention by outcome measures such as recruitment rate, retention rate, and adherence."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "interventionModelDescription": "Parallel-arm randomized controlled trial",
+        "maskingInfo": {
+          "masking": "SINGLE",
+          "maskingDescription": "For some of the outcomes that are not patient-reported, researchers collecting the at the post-intervention visit timepoint will be blinded to group allocation.",
+          "whoMasked": [
+            "OUTCOMES_ASSESSOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 45,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "NA"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Meet National Institute for Health and Clinical Excellence clinical guidelines for knee osteoarthritis (i.e., age ≥ 50 years, presence of activity related pain, presence of morning knee stiffness ≤ 30 minutes)\n* BMI\\<40\n* Knee pain on most days for 3 months or more\n* Average overall knee pain severity of ≥= 4 on a 11-point numeric rating scale during previous week\n* Able to attend remote sessions\n* Can speak and understand English at a sufficient level to understand the study procedures and informed consent.\n* Available for study duration\n\nExclusion Criteria:\n\n* Contraindications to exercise\n* Other pain in lower back or legs that is greater than knee pain\n* Received physical therapy treatment for knee OA in the past 6 months or currently receiving physical therapy\n* Received any mindfulness programs such as Tai Chi, meditation, etc. in the past 6 months or currently receiving such program\n* Currently receiving chemotherapy or radiation therapy for cancer except non-melanoma skin cancer\n* History of other disease that may involve the index joint including inflammatory joint disease such as rheumatoid arthritis, seronegative spondyloarthropathy (eg, ankylosing spondylitis, psoriatic arthritis, inflammatory bowel disease related arthropathy), crystalline disease (eg, gout or pseudogout), lupus erythematosus, knee joint infections, Paget's disease affecting the knee, or knee joint tumors.\n* Any knee surgery in the previous 6 months\n* Joint replacement in either hip or ankle\n* Previous knee osteotomy partial or total knee replacement in either knee\n* Planned major treatment for knee OA (e.g., surgery, injections, physical therapy) during the study period\n* Planned major surgery in the next 6 months\n* Corticosteroid or hyaluronic acid injections in either knee in the previous 3 months\n* Neurological conditions that impacts motor functioning (e.g., stroke, Parkinson's disease, Alzheimer's disease, Multiple Sclerosis, diabetic neuropathy, etc).\n* Pregnancy (self-report)\n* Participation in another clinical trial for any joint or muscle pain\n* Suspected or known drugs or alcohol abuse",
+      "healthyVolunteers": false,
+      "minimumAge": "50 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "TEMPO",
+      "briefTitle": "Telehealth Exercise and Mindfulness for Pain in Osteoarthritis",
+      "nctId": "NCT05524116",
+      "officialTitle": "Telehealth Exercise and Mindfulness for Pain in Osteoarthritis: A Feasibility Study",
+      "orgStudyIdInfo": {
+        "id": "6492"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "Boston University Charles River Campus"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "description": "Requests will be considered on an individual basis",
+      "ipdSharing": "NO"
+    },
+    "outcomesModule": {
+      "otherOutcomes": [
+        {
+          "description": "66-word recognition adult health literacy test. Each correct pronunciation of word is scored as 1. The total score is classified into 1 to 4 reading grade levels where higher scores (61-66) represent ninth grade and above reading level",
+          "measure": "Arthritis - Rapid Estimate of Adult Literacy in Medicine (A-REALM)",
+          "timeFrame": "baseline"
+        },
+        {
+          "description": "functional test that measures the time taken to sit and stand from chair five times",
+          "measure": "Sit to Stand Test [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "functional test that measures the maximal distance covered while walking at fast-pace for six minutes",
+          "measure": "6-minute Walk Test [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "functional test that measures comfortable walking speed as participant walks back and forth over 7 meters twice",
+          "measure": "7-meter Walk Test [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "functional test that measures the time taken to ascend and descend a flight of stairs",
+          "measure": "Stair Climb Test [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "a test of pain sensitivity",
+          "measure": "Pressure Pain Threshold [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "a test of central pain sensitization",
+          "measure": "Mechanical Temporal Summation [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "a test of descending pain modulation",
+          "measure": "Conditioned Pain Modulation [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "a test of change in pain sensitivity after a bout of exercise",
+          "measure": "Exercise Induced Hypoalgesia [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "knee extensor isometric muscle strength",
+          "measure": "Isometric Knee Extensor Force [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "knee flexor isometric muscle strength",
+          "measure": "Isometric Knee Flexor Force [OPTIONAL IN-PERSON VISIT]",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "scale evaluating the usability and satisfaction of telehealth implementation and services. Each item is rated on a seven-point Likert scale, with a rating of one indicating disagree and a rating of seven indicating agree; higher ratings indicate better system usability",
+          "measure": "Telehealth Usability Questionnaire",
+          "timeFrame": "8-week"
+        },
+        {
+          "description": "log of minutes and days spent doing strengthening exercises, aerobic exercises, and mindfulness practice (mindfulness practice only applicable to people in the TMX group). Survey also includes log of oral analgesic use.",
+          "measure": "Weekly Log",
+          "timeFrame": "Weekly for 14-weeks"
+        },
+        {
+          "description": "6-item survey assessing participant's attitude and expectations of the intervention measured on a 5-point likert scale. higher scores indicate more positive attitude and expectations for the treatment",
+          "measure": "Heal Treatment Expectancy Survey - Short Form",
+          "timeFrame": "baseline"
+        },
+        {
+          "description": "a survey that collects information about the treatments the individual has undertaken for their knee osteoarthritis",
+          "measure": "Treatment History",
+          "timeFrame": "baseline, week 8, week 14"
+        },
+        {
+          "description": "8-item scale measuring one's perceived ability and comfort with accessing digital services for health information. each item is rated on a 5-point likert scale. total scores are summed. higher scores indicate greater perceived skills at using online health information to help solve health problems",
+          "measure": "eHealth Literacy Scale",
+          "timeFrame": "baseline"
+        }
+      ],
+      "primaryOutcomes": [
+        {
+          "description": "Number of participants that are randomized for the study",
+          "measure": "Recruitment",
+          "timeFrame": "through the recruitment process, up to 6 months from the start of the study"
+        },
+        {
+          "description": "Proportion of sessions attended",
+          "measure": "Attendance",
+          "timeFrame": "post-intervention (at 8-weeks)"
+        },
+        {
+          "description": "Proportion of participants who complete patient-reported outcome surveys",
+          "measure": "Retention Rate",
+          "timeFrame": "post-intervention visit (at the end of 8-weeks)"
+        },
+        {
+          "description": "Custom scale measuring feedback on interventionists and interventions. Scores range from 0-4 (0 - Strongly Disagree, 1 - Disagree, 2 - Neither Agree no Disagree, 3 - Agree, and 4 - Strongly Agree)",
+          "measure": "Participant Feedback Survey",
+          "timeFrame": "8-week"
+        },
+        {
+          "description": "Custom 4-item (0-10 scale) to determine satisfaction with individual components of the intervention (i.e.,, exercise, mindfulness, telehealth, and overall satisfaction). There are 4 items and each item is scored separately. Higher scores for each item mean greater satisfaction for that dimension.",
+          "measure": "Satisfaction Scale",
+          "timeFrame": "8-week"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Patient-reported outcome for knee pain and disability; a percentage score from 0 to 100, 0 representing extreme problems and 100 representing no problems.",
+          "measure": "Knee Injury and Osteoarthritis Outcome Score",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "Assesses Pain Intensity and Interference. the response range is 0-10; the PEG scale score is the mean of the three individual item scores. Higher scores represent worse pain.",
+          "measure": "Pain, Enjoyment, General Activity Scale",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "average rating of knee pain from 0-10, where 0 represents no pain and 10 represents worst pain imaginable, in the past week in a nominated activity selected at baseline",
+          "measure": "Numeric Rating Scale - Nominated Activity",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "participant's rating of change in condition on a 14-point scale ranging from \"a very great deal worse\" to \"a very great deal better\". Values range from -7 to +7 (excluding 0). Score \\>=1 represent improvement and scores \\<= -1 represent worsening.",
+          "measure": "Participant Global Impression of Change",
+          "timeFrame": "8-week, 14-week"
+        },
+        {
+          "description": "participant's assessment of impact of osteoarthritis on their general health on a 0-100 mm scale. higher scores represent higher impact of disease or worse global health",
+          "measure": "Patient Global Assessment of Osteoarthritis",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "3-item scale which measures of catastrophizing related to pain. Each item is rated on a 5-point scale: 0 (Not at all) to 4 (all the time).",
+          "measure": "Pain Catastrophizing Scale",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "self-report on severity of cognitive symptoms such as fatigue, trouble thinking or remembering, waking up tired, and other physical symptoms such as headache, dizziness, etc. Each symptom is scored on a 4-point scale where 0 indicates no problem and 3 indicates severe problem. Scores are calculated by summing items, with higher scores (out of a maximum score of 12) indicating greater symptom severity.",
+          "measure": "Widespread Pain Index Symptom Severity Scale",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "self-report measure on presence of neuropathic pain. each question is scored from 0 to 5 where higher scores indicate higher gradation of pain. The final score is between -1 and 38 and a score of 19 and higher indicates higher likelihood of neuropathic pain",
+          "measure": "Pain DETECT",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "8-item questionnaire assessing depression symptoms. Each question is scored from 0 to 3 where higher scores indicate higher frequency of experiencing depressive symptoms. Total score is the sum of individual item scores. Score range is 0-24. Higher total scores indicate greater severity of depression",
+          "measure": "Patient Health Questionnaire 8-item",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "12-item scale on dispositional mindfulness. Items are rated on a 4-point Likert scale from 1 (rarely/not at all) to 4 (almost always). Scores on the scale are summed. Higher scores reflect greater mindfulness.",
+          "measure": "Cognitive and Affective Mindfulness Scale - Revised",
+          "timeFrame": "baseline, 8-week, 14-week"
+        },
+        {
+          "description": "4-item questionnaire to determine how one's fear avoidance beliefs contributes to the cognitive/affective part of their knee pain. Each item is scored from 0 to 6. Total scores are summation of each item scores. Range is 0-24. Higher total scores indicate greater fear of physical activity",
+          "measure": "Fear Avoidance Beliefs Questionnaire - Physical Activity",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "Questionnaire to assess confidence in one's capacity to function despite pain. Each item in the questionnaire is scored on a 1-10 scale. It provides three subscales of pain, function, and other symptoms calculated as average of items contributing to that subscale. Range for each subscale is 1-10. Higher scores indicate greater self-efficacy to manage osteoarthritis.",
+          "measure": "Arthritis Self Efficacy Scale",
+          "timeFrame": "baseline, 8-week"
+        },
+        {
+          "description": "Measures three domains of pain self-efficacy: pain management, physical functioning, and coping with symptoms. Each item is scored on a scale of 0 (very uncertain) to 100 (very certain). Score for each domain is the average of all items contributing to that domain. Higher total scores indicate greater self-efficacy to manage one's chronic pain.",
+          "measure": "Chronic Pain Self-efficacy Questionnaire",
+          "timeFrame": "baseline, 8-week"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": false,
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "Boston University Charles River Campus"
+      },
+      "responsibleParty": {
+        "investigatorAffiliation": "Boston University Charles River Campus",
+        "investigatorFullName": "Deepak Kumar",
+        "investigatorTitle": "Assistant Professor",
+        "type": "PRINCIPAL_INVESTIGATOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2023-07-03",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2025-01-16",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2024-11-26",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2023-06-06",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2025-01-16",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2023-11-15",
+      "resultsFirstSubmitQcDate": "2024-11-26",
+      "startDateStruct": {
+        "date": "2022-10-04",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2024-11",
+      "studyFirstPostDateStruct": {
+        "date": "2022-09-01",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2022-08-25",
+      "studyFirstSubmitQcDate": "2022-08-29"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "The adverse events were self-reported by participants during the course of the study. No serious adverse events were reported by participants in either groups.",
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 19,
+          "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+          "id": "EG000",
+          "otherNumAffected": 8,
+          "otherNumAtRisk": 19,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 19,
+          "title": "Group TX (Telehealth Exercise)"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 21,
+          "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+          "id": "EG001",
+          "otherNumAffected": 3,
+          "otherNumAtRisk": 21,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 21,
+          "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "There were four reports of adverse events potentially related to the study in TX group and 0 in the TMX group. These adverse events were related to exacerbation of knee pain. The remaining adverse events were unrelated to the study.",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Exacerbation of knee pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Adverse event unrelated to study",
+          "organSystem": "Surgical and medical procedures",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Hernia surgery"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Adverse event unrelated to study",
+          "organSystem": "Infections and infestations",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Flu"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Adverse event unrelated to study because event was reported before the start of the intervention sessions",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Ankle injury"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Participant had scheduled a knee replacement surgery during the course of the study",
+          "organSystem": "Surgical and medical procedures",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Knee replacement surgery"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "Participant reported generally feeling unwell",
+          "organSystem": "General disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 19
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 21
+            }
+          ],
+          "term": "Generally feeling unwell"
+        }
+      ],
+      "timeFrame": "14-weeks"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "19"
+            },
+            {
+              "groupId": "BG001",
+              "value": "21"
+            },
+            {
+              "groupId": "BG002",
+              "value": "40"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+          "id": "BG000",
+          "title": "Group TX (Telehealth Exercise)"
+        },
+        {
+          "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+          "id": "BG001",
+          "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG002",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "7.4",
+                      "value": "67.4"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "spread": "8.9",
+                      "value": "63.8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "spread": "8.3",
+                      "value": "65.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "35"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "5"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "37"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "6"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "14"
+                    }
+                  ],
+                  "title": "High school or College 1 - 3 years"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "13"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "13"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "26"
+                    }
+                  ],
+                  "title": "Undergraduate, graduate, or doctorate"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Education",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "10"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "11"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "21"
+                    }
+                  ],
+                  "title": "More than 50,000$"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "8"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "9"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "17"
+                    }
+                  ],
+                  "title": "Less than 50,000$"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "2"
+                    }
+                  ],
+                  "title": "Did not report"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Annual income",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "9"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "10"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "19"
+                    }
+                  ],
+                  "title": "Married"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "10"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "11"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "21"
+                    }
+                  ],
+                  "title": "Widowed, divorced, single, or not reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Marital Status",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": true,
+        "restrictiveAgreement": false
+      },
+      "limitationsAndCaveats": {
+        "description": "There are limitations to consider while interpreting the findings of our study.\n\n1. All outcomes are participant-reported which can introduce bias as we did not include any objective measures (e.g., physical performance).\n2. There was lack of diversity in race, education, socioeconomic status, and technological abilities, which limits the external validity of our findings"
+      },
+      "pointOfContact": {
+        "email": "kumard@bu.edu",
+        "organization": "Boston University",
+        "phone": "3026901455",
+        "title": "Dr. Deepak Kumar"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Number of participants that are randomized for the study",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "A total of 40 randomized over 6 months (Oct 2022 - March 2023)",
+          "reportingStatus": "POSTED",
+          "timeFrame": "through the recruitment process, up to 6 months from the start of the study",
+          "title": "Recruitment",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "34",
+                      "value": "68"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "39",
+                      "value": "54"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Proportion of sessions attended",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "reportingStatus": "POSTED",
+          "timeFrame": "post-intervention (at 8-weeks)",
+          "title": "Attendance",
+          "type": "PRIMARY",
+          "unitOfMeasure": "% sessions attended"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "18"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Proportion of participants who complete patient-reported outcome surveys",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "reportingStatus": "POSTED",
+          "timeFrame": "post-intervention visit (at the end of 8-weeks)",
+          "title": "Retention Rate",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.56"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The exercise instructor demonstrated good knowledge"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.44"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.35"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The exercise instructor was a good role model"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "3.33"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.38"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The exercise instructor explained lessons clearly"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.39"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.44"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The exercise instructor was engaging"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "3.33"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.44"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The exercise instructor was helpful/answered all questions"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "3.11"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "2.88"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I enjoyed the exercise lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "3.39"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.12"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was engaged in the exercise lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.56"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.24"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was able to understand the exercise lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.39"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.19"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was able to integrate the information from the different exercise lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "4",
+                      "value": "3.22"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.25"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I will be able to use the exercise lessons in my life"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.35"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The mindfulness instructor demonstrated good knowledge"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.35"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The mindfulness instructor was a good role model"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.24"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The mindfulness instructor explained lessons clearly"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The mindfulness instructor was engaging"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "The mindfulness instructor was helpful/answered all questions"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "2.71"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I enjoyed the mindfulness lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.12"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was engaged in the mindfulness lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1",
+                      "upperLimit": "4",
+                      "value": "3.12"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was able to understand the mindfulness lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3.24"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I was able to integrate the information from the different mindfulness lessons"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "I will be able to use the mindfulness lessons in my life"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "18"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "17"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Custom scale measuring feedback on interventionists and interventions. Scores range from 0-4 (0 - Strongly Disagree, 1 - Disagree, 2 - Neither Agree no Disagree, 3 - Agree, and 4 - Strongly Agree)",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8.\n\nSince the TX group did not receive any mindfulness training, outcome related to rating of the mindfulness intervention or instructor were not collected for this group.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "8-week",
+          "title": "Participant Feedback Survey",
+          "type": "PRIMARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.0",
+                      "upperLimit": "10.0",
+                      "value": "8.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.0",
+                      "upperLimit": "10.0",
+                      "value": "8.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Exercise component"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.0",
+                      "upperLimit": "10.0",
+                      "value": "7.3"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Mindfulness Component"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1.0",
+                      "upperLimit": "10.0",
+                      "value": "8.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.0",
+                      "upperLimit": "10.0",
+                      "value": "7.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Telehealth component"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1.0",
+                      "upperLimit": "10.0",
+                      "value": "7.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.0",
+                      "upperLimit": "10.0",
+                      "value": "8.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "General participation"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "18"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "17"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Custom 4-item (0-10 scale) to determine satisfaction with individual components of the intervention (i.e.,, exercise, mindfulness, telehealth, and overall satisfaction). There are 4 items and each item is scored separately. Higher scores for each item mean greater satisfaction for that dimension.",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8.\n\nTX group did not receive the mindfulness intervention so the mindfulness item on this scale was not administered to this group",
+          "reportingStatus": "POSTED",
+          "timeFrame": "8-week",
+          "title": "Satisfaction Scale",
+          "type": "PRIMARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "57.6",
+                      "upperLimit": "64.9",
+                      "value": "61.3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "52.6",
+                      "upperLimit": "62.7",
+                      "value": "57.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "57.9",
+                      "upperLimit": "69.5",
+                      "value": "63.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "54.4",
+                      "upperLimit": "69.1",
+                      "value": "61.8"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "57.3",
+                      "upperLimit": "70.3",
+                      "value": "63.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "57",
+                      "upperLimit": "71.4",
+                      "value": "64.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Week-14"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "54.3",
+                      "upperLimit": "65",
+                      "value": "59.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "53.9",
+                      "upperLimit": "65",
+                      "value": "59.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Symptoms Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "58.5",
+                      "upperLimit": "67.8",
+                      "value": "63.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "53.7",
+                      "upperLimit": "66.1",
+                      "value": "59.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Symptoms Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "63",
+                      "upperLimit": "74.5",
+                      "value": "68.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "54",
+                      "upperLimit": "70.3",
+                      "value": "62.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Symptoms Week-14"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "66.7",
+                      "upperLimit": "77.6",
+                      "value": "72.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "57.8",
+                      "upperLimit": "68.1",
+                      "value": "63"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Activity of Daily Living Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "66.4",
+                      "upperLimit": "78.8",
+                      "value": "72.6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "60.3",
+                      "upperLimit": "76.1",
+                      "value": "68.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Activity of Daily Living Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "64.2",
+                      "upperLimit": "78.7",
+                      "value": "71.4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "62.4",
+                      "upperLimit": "74.6",
+                      "value": "68.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Activity of Daily Living Week-14"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "37.5",
+                      "upperLimit": "58.6",
+                      "value": "48.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "31.1",
+                      "upperLimit": "43.7",
+                      "value": "37.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Sports and Recreation Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "34.2",
+                      "upperLimit": "60.3",
+                      "value": "47.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "32.4",
+                      "upperLimit": "48.7",
+                      "value": "40.6"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Sports and Recreation Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "30.6",
+                      "upperLimit": "55.1",
+                      "value": "42.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "36.5",
+                      "upperLimit": "54.1",
+                      "value": "45.3"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Sports and Recreation Week-14"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "41.6",
+                      "upperLimit": "50",
+                      "value": "45.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "35.1",
+                      "upperLimit": "47.1",
+                      "value": "41.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Quality Of Life Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "44.1",
+                      "upperLimit": "53.8",
+                      "value": "49"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "42.4",
+                      "upperLimit": "54.6",
+                      "value": "48.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Quality Of Life Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "46.4",
+                      "upperLimit": "57.8",
+                      "value": "52.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "44.4",
+                      "upperLimit": "60.7",
+                      "value": "52.6"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Quality Of Life Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Patient-reported outcome for knee pain and disability; a percentage score from 0 to 100, 0 representing extreme problems and 100 representing no problems.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8 and week 14. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8 and week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Knee Injury and Osteoarthritis Outcome Score",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "4.2",
+                      "upperLimit": "5.6",
+                      "value": "4.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "4.6",
+                      "upperLimit": "6.1",
+                      "value": "5.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.9",
+                      "upperLimit": "5",
+                      "value": "4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "3",
+                      "upperLimit": "4.7",
+                      "value": "3.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.9",
+                      "upperLimit": "4.9",
+                      "value": "3.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.5",
+                      "upperLimit": "4.4",
+                      "value": "3.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Assesses Pain Intensity and Interference. the response range is 0-10; the PEG scale score is the mean of the three individual item scores. Higher scores represent worse pain.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8 and week 14. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8 and week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Pain, Enjoyment, General Activity Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "5.3",
+                      "upperLimit": "6.9",
+                      "value": "6.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "6.1",
+                      "upperLimit": "6.9",
+                      "value": "6.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "4",
+                      "upperLimit": "6.2",
+                      "value": "5.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "4.4",
+                      "upperLimit": "5.9",
+                      "value": "5.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "3.8",
+                      "upperLimit": "5.9",
+                      "value": "4.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "3.8",
+                      "upperLimit": "5.7",
+                      "value": "4.8"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "average rating of knee pain from 0-10, where 0 represents no pain and 10 represents worst pain imaginable, in the past week in a nominated activity selected at baseline",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8 and week 14. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8 and week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Numeric Rating Scale - Nominated Activity",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1",
+                      "upperLimit": "3.4",
+                      "value": "2.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.2",
+                      "upperLimit": "3.7",
+                      "value": "2.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0.1",
+                      "upperLimit": "2.7",
+                      "value": "1.4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.1",
+                      "upperLimit": "3.3",
+                      "value": "2.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "18"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "17"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "participant's rating of change in condition on a 14-point scale ranging from \"a very great deal worse\" to \"a very great deal better\". Values range from -7 to +7 (excluding 0). Score \\>=1 represent improvement and scores \\<= -1 represent worsening.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8 and week 14. Of the 21 participants assigned to the TMX group, 16 provided data for this outcome at week 8 and 17 provided data for this outcome at week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "8-week, 14-week",
+          "title": "Participant Global Impression of Change",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "49.2",
+                      "upperLimit": "70.4",
+                      "value": "59.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "54.7",
+                      "upperLimit": "72.6",
+                      "value": "63.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "54.5",
+                      "upperLimit": "74.5",
+                      "value": "64.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "56.9",
+                      "upperLimit": "74.5",
+                      "value": "65.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "50.8",
+                      "upperLimit": "69.5",
+                      "value": "60.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "60.7",
+                      "upperLimit": "76.7",
+                      "value": "68.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "participant's assessment of impact of osteoarthritis on their general health on a 0-100 mm scale. higher scores represent higher impact of disease or worse global health",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "One participant in TX group and four participants in TMX Group were lost to follow-up",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Patient Global Assessment of Osteoarthritis",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.7",
+                      "upperLimit": "4.4",
+                      "value": "3.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.9",
+                      "upperLimit": "4.9",
+                      "value": "3.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.3",
+                      "upperLimit": "4.6",
+                      "value": "3.4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2",
+                      "upperLimit": "4.1",
+                      "value": "3.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "3-item scale which measures of catastrophizing related to pain. Each item is rated on a 5-point scale: 0 (Not at all) to 4 (all the time).",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Pain Catastrophizing Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "3",
+                      "upperLimit": "4.8",
+                      "value": "3.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.2",
+                      "upperLimit": "4.1",
+                      "value": "3.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.9",
+                      "upperLimit": "5.3",
+                      "value": "4.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "2.6",
+                      "upperLimit": "4.9",
+                      "value": "3.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "18"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "self-report on severity of cognitive symptoms such as fatigue, trouble thinking or remembering, waking up tired, and other physical symptoms such as headache, dizziness, etc. Each symptom is scored on a 4-point scale where 0 indicates no problem and 3 indicates severe problem. Scores are calculated by summing items, with higher scores (out of a maximum score of 12) indicating greater symptom severity.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Widespread Pain Index Symptom Severity Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "7.1",
+                      "upperLimit": "12.4",
+                      "value": "9.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "6.6",
+                      "upperLimit": "10.4",
+                      "value": "8.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "20"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "7",
+                      "upperLimit": "11.8",
+                      "value": "9.4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "4.9",
+                      "upperLimit": "10.4",
+                      "value": "7.6"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "18"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "20"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "self-report measure on presence of neuropathic pain. each question is scored from 0 to 5 where higher scores indicate higher gradation of pain. The final score is between -1 and 38 and a score of 19 and higher indicates higher likelihood of neuropathic pain",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 20 provided data at baseline and 16 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Pain DETECT",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.3",
+                      "upperLimit": "6.9",
+                      "value": "4.6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.7",
+                      "upperLimit": "4.3",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.2",
+                      "upperLimit": "5.3",
+                      "value": "3.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.9",
+                      "upperLimit": "6",
+                      "value": "3.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "2.4",
+                      "upperLimit": "5.5",
+                      "value": "3.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "1.9",
+                      "upperLimit": "6.3",
+                      "value": "4.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "8-item questionnaire assessing depression symptoms. Each question is scored from 0 to 3 where higher scores indicate higher frequency of experiencing depressive symptoms. Total score is the sum of individual item scores. Score range is 0-24. Higher total scores indicate greater severity of depression",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 14. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8 and week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Patient Health Questionnaire 8-item",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "32.7",
+                      "upperLimit": "37.8",
+                      "value": "35.3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "34.5",
+                      "upperLimit": "40.3",
+                      "value": "37.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "30.6",
+                      "upperLimit": "37.3",
+                      "value": "33.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "33",
+                      "upperLimit": "39.9",
+                      "value": "36.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "32.1",
+                      "upperLimit": "38.4",
+                      "value": "35.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "33.4",
+                      "upperLimit": "41.2",
+                      "value": "37.3"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-14"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "12-item scale on dispositional mindfulness. Items are rated on a 4-point Likert scale from 1 (rarely/not at all) to 4 (almost always). Scores on the scale are summed. Higher scores reflect greater mindfulness.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8 and 17 provided data at week 14. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8 and week 14.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week, 14-week",
+          "title": "Cognitive and Affective Mindfulness Scale - Revised",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "16.1",
+                      "upperLimit": "20.5",
+                      "value": "18.3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "12.9",
+                      "upperLimit": "18.1",
+                      "value": "15.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "13.4",
+                      "upperLimit": "20",
+                      "value": "16.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "11.6",
+                      "upperLimit": "18.1",
+                      "value": "14.8"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "17"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "4-item questionnaire to determine how one's fear avoidance beliefs contributes to the cognitive/affective part of their knee pain. Each item is scored from 0 to 6. Total scores are summation of each item scores. Range is 0-24. Higher total scores indicate greater fear of physical activity",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 18 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 17 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Fear Avoidance Beliefs Questionnaire - Physical Activity",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "5.8",
+                      "upperLimit": "7.3",
+                      "value": "6.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.6",
+                      "upperLimit": "6.6",
+                      "value": "6.1"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "6.3",
+                      "upperLimit": "7.9",
+                      "value": "7.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "5.3",
+                      "upperLimit": "7.1",
+                      "value": "6.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "7.4",
+                      "upperLimit": "8.7",
+                      "value": "8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "7.1",
+                      "upperLimit": "8.2",
+                      "value": "7.7"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Function Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "7.2",
+                      "upperLimit": "9.1",
+                      "value": "8.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "7.2",
+                      "upperLimit": "8.8",
+                      "value": "8"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Function Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "6.2",
+                      "upperLimit": "7.7",
+                      "value": "7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "6.2",
+                      "upperLimit": "7.3",
+                      "value": "6.8"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Other symptoms Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "6.3",
+                      "upperLimit": "7.9",
+                      "value": "7.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "6.4",
+                      "upperLimit": "8.1",
+                      "value": "7.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Other symptoms Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Questionnaire to assess confidence in one's capacity to function despite pain. Each item in the questionnaire is scored on a 1-10 scale. It provides three subscales of pain, function, and other symptoms calculated as average of items contributing to that subscale. Range for each subscale is 1-10. Higher scores indicate greater self-efficacy to manage osteoarthritis.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "Of the 21 participants assigned to the TMX group, 16 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Arthritis Self Efficacy Scale",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "64.6",
+                      "upperLimit": "78.4",
+                      "value": "71.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "59.6",
+                      "upperLimit": "72.7",
+                      "value": "66.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "56.8",
+                      "upperLimit": "76.8",
+                      "value": "66.8"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "59.1",
+                      "upperLimit": "74.8",
+                      "value": "66.9"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Pain Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "78.8",
+                      "upperLimit": "93.2",
+                      "value": "86"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "74.7",
+                      "upperLimit": "88.1",
+                      "value": "81.4"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Function Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "72.3",
+                      "upperLimit": "92.2",
+                      "value": "82.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "66.5",
+                      "upperLimit": "89.9",
+                      "value": "78.2"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Function Week-8"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "60.1",
+                      "upperLimit": "76",
+                      "value": "68.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "66.3",
+                      "upperLimit": "78.8",
+                      "value": "72.6"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "21"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Coping Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "62.1",
+                      "upperLimit": "80.3",
+                      "value": "71.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "60.6",
+                      "upperLimit": "80.5",
+                      "value": "70.5"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "17"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "16"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Coping Week-8"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "19"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "21"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Measures three domains of pain self-efficacy: pain management, physical functioning, and coping with symptoms. Each item is scored on a scale of 0 (very uncertain) to 100 (very certain). Score for each domain is the average of all items contributing to that domain. Higher total scores indicate greater self-efficacy to manage one's chronic pain.",
+          "dispersionType": "95% Confidence Interval",
+          "groups": [
+            {
+              "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+              "id": "OG000",
+              "title": "Group TX (Telehealth Exercise)"
+            },
+            {
+              "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+              "id": "OG001",
+              "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "On the 19 participants randomized to TX group, 17 provided data for this outcome at week 8. Of the 21 participants assigned to the TMX group, 16 provided data for this outcome at week 8.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Chronic Pain Self-efficacy Questionnaire",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "66-word recognition adult health literacy test. Each correct pronunciation of word is scored as 1. The total score is classified into 1 to 4 reading grade levels where higher scores (61-66) represent ninth grade and above reading level",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline",
+          "title": "Arthritis - Rapid Estimate of Adult Literacy in Medicine (A-REALM)",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "functional test that measures the time taken to sit and stand from chair five times",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Sit to Stand Test [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "functional test that measures the maximal distance covered while walking at fast-pace for six minutes",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "6-minute Walk Test [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "functional test that measures comfortable walking speed as participant walks back and forth over 7 meters twice",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "7-meter Walk Test [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "functional test that measures the time taken to ascend and descend a flight of stairs",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Stair Climb Test [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "a test of pain sensitivity",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Pressure Pain Threshold [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "a test of central pain sensitization",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Mechanical Temporal Summation [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "a test of descending pain modulation",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Conditioned Pain Modulation [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "a test of change in pain sensitivity after a bout of exercise",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Exercise Induced Hypoalgesia [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "knee extensor isometric muscle strength",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Isometric Knee Extensor Force [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "knee flexor isometric muscle strength",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, 8-week",
+          "title": "Isometric Knee Flexor Force [OPTIONAL IN-PERSON VISIT]",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "scale evaluating the usability and satisfaction of telehealth implementation and services. Each item is rated on a seven-point Likert scale, with a rating of one indicating disagree and a rating of seven indicating agree; higher ratings indicate better system usability",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "8-week",
+          "title": "Telehealth Usability Questionnaire",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "log of minutes and days spent doing strengthening exercises, aerobic exercises, and mindfulness practice (mindfulness practice only applicable to people in the TMX group). Survey also includes log of oral analgesic use.",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "Weekly for 14-weeks",
+          "title": "Weekly Log",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "6-item survey assessing participant's attitude and expectations of the intervention measured on a 5-point likert scale. higher scores indicate more positive attitude and expectations for the treatment",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline",
+          "title": "Heal Treatment Expectancy Survey - Short Form",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "a survey that collects information about the treatments the individual has undertaken for their knee osteoarthritis",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline, week 8, week 14",
+          "title": "Treatment History",
+          "type": "OTHER_PRE_SPECIFIED"
+        },
+        {
+          "denomUnitsSelected": "Participants",
+          "description": "8-item scale measuring one's perceived ability and comfort with accessing digital services for health information. each item is rated on a 5-point likert scale. total scores are summed. higher scores indicate greater perceived skills at using online health information to help solve health problems",
+          "reportingStatus": "NOT_POSTED",
+          "timeFrame": "baseline",
+          "title": "eHealth Literacy Scale",
+          "type": "OTHER_PRE_SPECIFIED"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Participants in this group will receive a supervised and group-based exercise program once a week for 8 weeks via telehealth.\n\nExercise: In this 8-week intervention, participants will be given recommended strengthening and neuromuscular exercises for knee osteoarthritis. Participants in both the intervention and control group will receive these exercises.",
+          "id": "FG000",
+          "title": "Group TX (Telehealth Exercise)"
+        },
+        {
+          "description": "Participants in this group will receive a supervised, group-based integrated mindfulness and exercise program once a week for 8 weeks via telehealth.\n\nMindful Exercise program: In this 8-week intervention, components of Mindful Based Stress Reduction Program will be integrated with strengthening and neuromuscular exercises recommended for knee osteoarthritis. The goal of this program is to train participants how to be mindful during their exercises.",
+          "id": "FG001",
+          "title": "Group TMX (Telehealth Exercise and Mindfulness)"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Brain tumor flare up"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "concussion"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "hernia surgery"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "19"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "21"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "19"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "18"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Baseline to Postintervention (Week 8)"
+        },
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Caregiver for sick family member"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Lost to Follow-up"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "19"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "18"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "18"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "17"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Week 8 to Follow-up (Week 14)"
+        }
+      ],
+      "preAssignmentDetails": "A total of 45 participants were enrolled (i.e., signed the consent form) and 40 of these were randomized to Group TX (n=19) or Group TMX (n=21).\n\nFive participants withdrew from the study prior to randomization due to work schedule changes (n=2), severe back pain (n=1), family emergency (n=1), and lack of motivation (n=1)."
+    }
+  }
+}

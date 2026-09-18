@@ -1,0 +1,111 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "early infantile epileptic encephalopathy with HCN1 channel mutation",
+              "interventionNames": [
+                "Device: measure of neuronal excitability"
+              ],
+              "label": "Dravet syndrome - HCN1 channel mutation"
+            },
+            {
+              "interventionNames": [
+                "Device: measure of neuronal excitability"
+              ],
+              "label": "control with epilepsy"
+            },
+            {
+              "interventionNames": [
+                "Device: measure of neuronal excitability"
+              ],
+              "label": "control without epilepsy"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Dravet syndrome - HCN1 channel mutation",
+                "control with epilepsy",
+                "control without epilepsy"
+              ],
+              "name": "measure of neuronal excitability",
+              "type": "DEVICE"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "OTHER",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 92,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "EXCIDRAH",
+          "briefTitle": "Neuronal Excitability of HCN1 Channel Mutations in Dravet Syndrome",
+          "nctId": "NCT02896608",
+          "officialTitle": "Neuronal Excitability of Hyperpolarization-activated Cyclic Nucleotide-gated (HCN1) Channel Mutations in Dravet Syndrome",
+          "orgStudyIdInfo": {
+            "id": "AGN_2015_11"
+          },
+          "organization": {
+            "class": "NETWORK",
+            "fullName": "Fondation Ophtalmologique Adolphe de Rothschild"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "hyperpolarizing electrotonus",
+              "timeFrame": "baseline"
+            },
+            {
+              "measure": "hyperpolarizing threshold current",
+              "timeFrame": "baseline"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-10-16",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-02-15",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-02-14",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-10-16",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2015-10-29",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-02",
+          "studyFirstPostDateStruct": {
+            "date": "2016-09-12",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-08-23",
+          "studyFirstSubmitQcDate": "2016-09-06"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

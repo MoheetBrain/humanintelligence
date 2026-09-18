@@ -1,0 +1,164 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients diagnosed with ASD in a child psychiatry clinic.",
+              "interventionNames": [
+                "Diagnostic Test: Neurl1 gene expression",
+                "Diagnostic Test: RGS14 gene expression"
+              ],
+              "label": "Patients with Autism Spectrum Disorder (ASD)"
+            },
+            {
+              "description": "Patients diagnosed with ASD in a child psychiatry clinic and with an IQ above 70.",
+              "interventionNames": [
+                "Diagnostic Test: Neurl1 gene expression",
+                "Diagnostic Test: RGS14 gene expression"
+              ],
+              "label": "Patients with High Functioning Autism (HFA)"
+            },
+            {
+              "description": "Healthy volunteers who are in the age range compatible with the patient groups.",
+              "interventionNames": [
+                "Diagnostic Test: Neurl1 gene expression",
+                "Diagnostic Test: RGS14 gene expression"
+              ],
+              "label": "Healty control"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Healty control",
+                "Patients with Autism Spectrum Disorder (ASD)",
+                "Patients with High Functioning Autism (HFA)"
+              ],
+              "description": "This observational case control study. The gene expression was examined.",
+              "name": "Neurl1 gene expression",
+              "type": "DIAGNOSTIC_TEST"
+            },
+            {
+              "armGroupLabels": [
+                "Healty control",
+                "Patients with Autism Spectrum Disorder (ASD)",
+                "Patients with High Functioning Autism (HFA)"
+              ],
+              "description": "This observational case control study. The gene expression was examined.",
+              "name": "RGS14 gene expression",
+              "type": "DIAGNOSTIC_TEST"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "In this study, 2 ml of peripheral blood was taken from each subject. RNA was isolated from peripheral blood followed by cDNA synthesis. RNA and cDNA samples of the subjects were preserved.",
+            "retention": "SAMPLES_WITHOUT_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "OTHER",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Neuralized1 and RGS14 Genes",
+          "nctId": "NCT04865198",
+          "officialTitle": "Role of Neuralized1 and RGS14 Genes With ASD Patients",
+          "orgStudyIdInfo": {
+            "id": "NEURL1RGS14"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "TC Erciyes University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "After RNA isolation from blood samples of the subjects, NEURL1 gene expression was studied by QPCR method. The 2-ΔΔCT method was applied for the relative quantification of the samples that were normalized with ACTB.",
+              "measure": "NEURL1 gene expression levels",
+              "timeFrame": "Two months"
+            },
+            {
+              "description": "After RNA isolation from blood samples of the subjects, RGS14 gene expression was studied by QPCR method. The 2-ΔΔCT method was applied for the relative quantification of the samples that were normalized with ACTB.",
+              "measure": "RGS14 gene expression levels",
+              "timeFrame": "Two months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Age of subjects",
+              "measure": "Age",
+              "timeFrame": "an average of 1 year"
+            },
+            {
+              "description": "Gender (male/female) of subjects",
+              "measure": "Gender",
+              "timeFrame": "an average of 1 year"
+            },
+            {
+              "description": "Intellectual disability is when a person has certain limitations in cognitive functioning and skills, including communication, social and self-care skills.It was determined according to DSM-IV diagnostic criteria and clinical evaluation.",
+              "measure": "Intellectual disability (ID)",
+              "timeFrame": "an average of 1 year"
+            },
+            {
+              "description": "Relationships of consanguinity between subjects were evaluated in terms of pathogenesis of the disease.",
+              "measure": "Consanguinity",
+              "timeFrame": "an average of 1 year"
+            },
+            {
+              "description": "In the presence of a neurological disease in relatives, its relationship with the pathogenesis of the disease was evaluated.",
+              "measure": "Presence of Neurological Disease in Relatives",
+              "timeFrame": "an average of 1 year"
+            },
+            {
+              "description": "The relationships of the clinical and demographical findings in the study groups with the genes were evaluated statistically.",
+              "measure": "Corelation tests",
+              "timeFrame": "an average of 1 year\""
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2014-08-30",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2022-07-26",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2022-07-22",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2014-08-30",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2013-01-10",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2022-07",
+          "studyFirstPostDateStruct": {
+            "date": "2021-04-29",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-04-20",
+          "studyFirstSubmitQcDate": "2021-04-26"
+        }
+      }
+    }
+  ],
+  "totalCount": 1
+}

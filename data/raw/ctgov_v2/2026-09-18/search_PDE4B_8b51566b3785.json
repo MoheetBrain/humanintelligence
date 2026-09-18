@@ -1,0 +1,1874 @@
+{
+  "studies": [
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Crisaborole ointment 2% BID"
+              ],
+              "label": "Crisaborole ointment",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Placebo ointment (vehicle)"
+              ],
+              "label": "Placebo ointment (vehicle)",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Crisaborole ointment"
+              ],
+              "description": "Crisaborole ointment 2% BID for 15 days (double blind); additional 28 days (open label)",
+              "name": "Crisaborole ointment 2% BID",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo ointment (vehicle)"
+              ],
+              "description": "Placebo ointment (vehicle) BID for 15 days (double blind)",
+              "name": "Placebo ointment (vehicle)",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "BASIC_SCIENCE"
+          },
+          "enrollmentInfo": {
+            "count": 40,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Crisaborole Ointment 2% Skin Biomarker Biopsy Study in Atopic Dermatitis",
+          "nctId": "NCT03233529",
+          "officialTitle": "A PHASE 2A, RANDOMIZED, DOUBLE-BLIND, VEHICLE-CONTROLLED STUDY, TO CHARACTERIZE THE MECHANISM OF ACTION OF CRISABOROLE OINTMENT 2%, BY EVALUATION OF EFFICACY AND CHANGES IN SKIN BIOMARKERS, IN ADULT SUBJECTS WITH MILD TO MODERATE ATOPIC DERMATITIS, WITH A 4 WEEK OPEN-LABEL EXTENSION",
+          "orgStudyIdInfo": {
+            "id": "C3291001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Pfizer"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The lesion TSS is an assessment of target lesion severity based on the severity of the following 4 clinical signs: (1) erythema, (2) induration/papulation, (3) excoriation, and (4) lichenification, each of which was rated on a scale of 0 to 3 (0=none, 1=mild, 2=moderate, 3=severe). These 4 ratings were then added to create the TSS, which ranges from 0 (none) to 12 (most severe), with higher score representing greater severity.",
+              "measure": "Change From Baseline in Lesion Total Sign Score (TSS) for Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "CCL17 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by Taqman low density array (TLDA) reverse-transcriptase (RT) polymerase chain reaction (PCR) were normalized to the housekeeping gene ribosomal protein lateral stalk subunit P0 (RPLP0) and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker Chemokine Ligand (CCL)17 Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "CCL18 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker CCL18 Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "CCL22 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker CCL22 Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "IL-13 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker Interleukin (IL)-13 Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "KRT16 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker Keratin 16 (KRT16) Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "Elafin/PI3 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker Elafin/Peptidase Inhibitor 3 (PI3) Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "S100A12 is one of the key skin biomarkers of atopic dermatitis. Expression levels tested by TLDA RT PCR were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Key Skin Biomarker S100 Calcium Binding Protein A12 (S100A12) Expression in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Epidermal thickness was one of the other skin biomarkers of atopic dermatitis and was studied using immunohistochemistry (IHC). Expression data were log2-transformed.",
+              "measure": "Change From Baseline in Expression of Other Skin Biomarker (Epidermal Thickness) in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "CD11c+ dendritic cells (DCs), CD3+ T cells, FcEpsilon + DCs, Ki 67+ cells, and langerin+ cells (for langerhans cells) were studied using IHC. These parameters were referred to as CD11c, CD3, FceR1, Ki67, langerin, respectively, in the outcome measure title above and data table below. Expression data were log2-transformed.",
+              "measure": "Change From Baseline in Expression of Other Skin Biomarkers (CD11c, CD3, FceR1, Ki67, Langerin) in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "TLDA RT PCR was used to analyze the following other skin biomarkers: CCL13, CCL20, CCL26, CRLF2, CXCL1, CXCL2, CXCL9, CXCL10, DEFB4A, filaggrin (FLG), FOXP3, IFNG, IL-1B, IL-2, IL-2RA, IL-5, IL-6, IL-8, IL-9, IL-10, IL-12A, IL-15, IL-15RA, IL-17A, IL-17F, IL-19, IL-22, IL-23A, IL-31, IL-32, LOR, MMP-12, PDE4A, PDE4B, PDE4D, PPL, RNA18SP5, S100A7, S100A8, and S100A9. Expression levels were normalized to the housekeeping gene RPLP0 and log2-transformed prior to analysis.",
+              "measure": "Change From Baseline in Expression of Other Skin Biomarkers (CCL13, Etc) in Target Lesions Treated With Crisaborole Ointment 2% or Vehicle at Day 15",
+              "timeFrame": "Baseline (Day 1), Day 15"
+            },
+            {
+              "description": "FLG expression was studied using IHC and categorized as no change, partial normalization, full normalization, or worsening by a blinded expert pathologist based on visual scoring.",
+              "measure": "Number of Participants With Categorical Filaggrin (FLG) Expression at Day 15",
+              "timeFrame": "Day 15"
+            },
+            {
+              "description": "Histological response was studied using IHC and categorized as non-responder or responder by a blinded expert pathologist based on a global assessment of all thickness, KRT16 and FLG stains.",
+              "measure": "Number of Participants With Categorical Histological Response at Day 15",
+              "timeFrame": "Day 15"
+            },
+            {
+              "description": "KRT16 expression was studied using IHC and categorized as no change, slight improvement, good improvement, excellent improvement, or worsening by a blinded expert pathologist based on visual scoring.",
+              "measure": "Number of Participants With Categorical KRT16 Expression at Day 15",
+              "timeFrame": "Day 15"
+            },
+            {
+              "description": "The lesion TSS is an assessment of target lesion severity based on the severity of the following 4 clinical signs: (1) erythema, (2) induration/papulation, (3) excoriation, and (4) lichenification, each of which was rated on a scale of 0 to 3 (0=none, 1=mild, 2=moderate, 3=severe). These 4 ratings were then added to create the TSS, which ranges from 0 (none) to 12 (most severe), with higher score representing greater severity.",
+              "measure": "Change From Baseline in Lesion Severity as Measured by TSS at Day 8",
+              "timeFrame": "Baseline (Day 1), Day 8"
+            },
+            {
+              "description": "The lesion ISGA is an assessment of target lesion severity of atopic dermatitis. The lesion ISGA score ranges from 0 to 4 (0=clear, 1=almost clear, 2=mild, 3=moderate, 4=severe), with higher score representing greater severity.",
+              "measure": "Change From Baseline in Lesion Severity as Measured by Investigator Static Global Assessment (ISGA) at Day 8 and Day 15",
+              "timeFrame": "Baseline (Day 1), Days 8 and 15"
+            },
+            {
+              "description": "The intensity of pruritus was assessed by an NRS, which was a numeric rating scale ranging from 0 (no itching) to 10 (worst imaginable itching), with higher score indicating greater severity.",
+              "measure": "Change From Baseline in Lesion Severity as Measured by Pruritus Numerical Rating Scale (NRS) at Each Visit up to Day 15",
+              "timeFrame": "Baseline (Day 1), Days 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, and 15"
+            },
+            {
+              "description": "AE was any untoward medical occurrence in a participant who received study drug without regard to possibility of causal relationship. SAE was an AE resulting in any of the following outcomes or deemed significant for any other reason: death; life-threatening (immediate risk of death); initial or prolonged inpatient hospitalization; persistent or significant disability/incapacity; congenital anomaly/birth defect. AEs included both SAEs and non-serious AEs. Treatment-emergent AEs were those with initial onset or increasing in severity on or after the first dose of study treatment. Each participant received both crisaborole (for one target lesion) and vehicle (for the other target lesion) on the same days during double-blind period, and only crisaborole during open-label period; therefore AEs were reported for each treatment group for participants to capture all AEs, instead of each treatment for treated area as it only captures AEs occurred at treated areas (see next Outcome Measure).",
+              "measure": "Number of Participants With Treatment Emergent Adverse Events (AEs) and Serious Adverse Events (SAEs) by Treatment Groups",
+              "timeFrame": "From first dose of study treatment up to Day 71"
+            },
+            {
+              "description": "An AE was any untoward medical occurrence in a participant who received study treatment without regard to possibility of causal relationship. Treatment-emergent AEs were those with initial onset or increasing in severity on or after the first dose of study treatment. During double-blind period, there were a total of 2 treatment areas (for target lesions) for each participant. For this outcome measure, treatment-emergent AEs occurred at each treated area during double-blind period were summarized. MedDRA version 21.0 coding dictionary was used.",
+              "measure": "Number of Participants With Treatment Emergent Adverse Events (AEs) by Medical Dictionary for Regulatory Activities (MedDRA) Preferred Term, Which Occurred in the Treatment Area During the Double-Blind Period",
+              "timeFrame": "From first dose of study treatment (on Day 1) to Day 15 skin biopsy collection"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-05-04",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-08-13",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-07-22",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-05-04",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-08-13",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2019-04-26",
+          "resultsFirstSubmitQcDate": "2019-07-22",
+          "startDateStruct": {
+            "date": "2017-07-31",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-07",
+          "studyFirstPostDateStruct": {
+            "date": "2017-07-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-07-12",
+          "studyFirstSubmitQcDate": "2017-07-25"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": "GSK256066",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 78,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Clinical Endpoint Trial Investigating Once Daily and Bronchodilator Dosing",
+          "nctId": "NCT00549744",
+          "officialTitle": "A Randomized, Double-blind, Double-dummy, Placebocontrolled,Three-period, Incomplete Block, Crossover Study, to a Investigate the Effect of 14 Days Repeat Inhaled Dosing With GSK256066 in Mild/Moderate Asthmatic Patients.",
+          "orgStudyIdInfo": {
+            "id": "IPA107948"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "GlaxoSmithKline"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "FEV1 is a lung function measure defined as the maximal amount of air that can be forcefully exhaled in one second. Mean FEV1 from the 3 acceptable spirometric efforts were recorded after withholding salbutamol used as bronchodilator at all visits for at least 6 hours (h) and at pre-dose. Baseline was defined as the mean of the 3 pre-dose measurements on Day 1 of each treatment period. The change from Baseline was calculated by subtracting the Baseline value (Day 1, pre-dose) from the individual post-Baseline (pre-dose, Day 14) value. Adjusted mean was reported as least square (LS) mean.",
+              "measure": "Change from Baseline (pre-bronchodilator and pre-dose) forced expiratory volume at 1 second (FEV1) on Day 14",
+              "timeFrame": "Baseline (Day 1, pre-dose) and Day 14 of each treatment period"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "FEV1 is a lung function measure defined as the maximal amount of air that can be forcefully exhaled in one second. Mean FEV1 from the 3 acceptable spirometric efforts were recorded after withholding salbutamol used as bronchodilator at all visits for at least 6 h and at pre-dose on Day 7, one h post-dose on Day 7 and one h post-dose on Day 14. Baseline was defined as the mean of the 3 pre-dose measurements on Day 1 of each treatment period. The change from Baseline was calculated by subtracting the Baseline value (Day 1, pre-dose) from the individual post-Baseline (pre-dose Day 7, one h post-dose on Day 7 and one h post-dose on Day 14) values. Adjusted mean was reported as LS mean.",
+              "measure": "Change from Baseline (pre-bronchodilator and pre-dose) FEV1 on Day 7 and at one h post-dose on Day 7 and Day 14",
+              "timeFrame": "Day 1 (Baseline, pre-dose), Day 7 and Day 14 of each treatment period"
+            },
+            {
+              "description": "FEV1 is a lung function measure defined as the maximal amount of air that can be forcefully exhaled in one second. Mean FEV1 from the 3 acceptable spirometric efforts were recorded after at pre-dose, 0.5 h, 1 h, 2 h, 8 h and 12 h post-dose on Day 1. Baseline was defined as the mean of the 3 pre-dose measurements on Day 1 of each treatment period. The change from Baseline was calculated by subtracting the Baseline value (Day 1, pre-dose) from the individual post-Baseline (0.5 h, 1 h, 2 h, 8 h and 12 h post-dose) values on Day 1. Adjusted mean was reported as LS mean.",
+              "measure": "Change from Baseline in FEV1 over 12 h post-dose on Day 1",
+              "timeFrame": "Baseline (Day 1, pre-dose) and Day 1 (0.5 h, 1 h, 2 h, 8 h and 12 h post-dose) of each treatment period"
+            },
+            {
+              "description": "FEV1 is a lung function measure defined as the maximal amount of air that can be forcefully exhaled in one second. Mean FEV1 from the 3 acceptable spirometric efforts were recorded after at pre-dose, 0.5 h, 1 h, 2 h, 8 h and 12 h post-dose on Day 1. Baseline was defined as the mean of the 3 pre-dose measurements on Day 1 of each treatment period. The change from Baseline was calculated by subtracting the Baseline value (Day 1, pre-dose) from the individual post-Baseline (0.5 h, 1 h, 2 h, 8 h and 12 h post-dose) values on Day 14. Adjusted mean was reported as LS mean.",
+              "measure": "Change from Baseline in FEV1 over 12 h post-dose on Day 14",
+              "timeFrame": "Baseline (Day 1, pre-dose) and Day 14 (0.5 h, 1 h, 2 h, 8 h and 12 h post-dose) of each treatment period"
+            },
+            {
+              "description": "PEF is a measure of lung function and measures how fast a person can breathe out. It was measured using a peak flow meter by the participants and recorded on diary cards during Day 1 to Day 14 pre-dose am and pm of each treatment period. The efforts were recorded after withholding salbutamol used as bronchodilator for at least 6 hours. The averaged PEFR over the 14-day treatment period was calculated as the mean of the 14 pre-dose observations during each treatment period. Baseline was defined as the assessment done during Screening (the average of am and average of pm measurements over the last 7 days pre-dose prior to Day 1 of treatment period 1). The change from Baseline was calculated by subtracting the Baseline value (average of am and average of pm screening values) from the individual post-Baseline (average of am and average of pm values over 14 days) values. Adjusted mean was reported as LS mean.",
+              "measure": "Mean change from Baseline (pre-bronchodilator and pre-dose) Peak Expiratory Flow Rate (PEFR) averaged over the 14-day period",
+              "timeFrame": "Baseline (Screening, 7 days prior to Day 1 of Treatment period 1) and Day 1 to 14 of each treatment period"
+            },
+            {
+              "description": "The exhaled nitric oxide assessment is used as a marker for airway inflammation. The exhaled nitric oxide was assessed using breath test on Day 1 (pre-dose and 1 h post-dose on Day 1), Day 7 (pre-dose) and Day 14 (pre-dose, 1 h and 24 h post-dose). Baseline was defined as the assessment done pre-dose on Day 1. The change from Baseline was calculated by subtracting the Baseline value (Day 1, pre-dose) from the individual post-Baseline (1 h post-dose Day 1, pre-dose Day 7 and Day 14 at pre-dose, 1 h post-dose and 24 h post-dose) values. Data was analyzed using repeated measures mixed effects model for the ratio of change from Baseline values, derived from dividing doses of GSK256066 by placebo, adjusted for period, treatment, Day (1, 7 or 14), time (pre-dose, 1 or 24 h), period-level Baseline of exhaled nitric oxide and participant-level Baseline exhaled nitric oxide as fixed effects and participant as a random effect. Adjusted geometric mean is reported as LS geometric mean.",
+              "measure": "Mean change from Baseline ratio of exhaled nitric oxide on Day 1, Day 7 and Day 14",
+              "timeFrame": "Baseline (Day 1 pre-dose), Day 7 and Day 14 of each treatment period"
+            },
+            {
+              "description": "The PC20 was assessed using the methacholine challenge. This is a physiological measurement derived from repeated breathing maneuvers which measures airway reactivity. Participants were exposed to higher and higher concentrations of an airway irritant (in this case methacholine), and between each dose spirometry was performed. The test was stopped after the FEV1 fell 20% below the Baseline. The concentration of methacholine at which this occurred was called the PC20. The methacholine challenge was performed at 24 h post-dose on Day 14 (morning of Day 15) after exhaled nitric oxide assessment. Data was analyzed using mixed effect model, where the model was adjusted for period and treatment as fixed effects and participant as a random effect. Adjusted geometric mean is reported as LS geometric mean.",
+              "measure": "Mean provocative concentration of methacholine resulting in a 20% reduction in FEV1 (PC20) on Day 15",
+              "timeFrame": "Day 15 of each treatment period"
+            },
+            {
+              "description": "Blood samples were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The AUC (0-t) was determined using the linear trapezoidal rule for increasing concentrations and the logarithmic trapezoidal rule for decreasing concentrations. AUC (0-infinity) was planned to be calculated, where data permitted, as the sum of AUC (0-t) and Ct/z, where Ct was the observed plasma concentration obtained from the log-linear regression analysis of the last quantifiable time-point and z is the terminal phase rate constant. Data for AUC (0-infinity) was not derived due to non quantifiable data.",
+              "measure": "Area under the concentration-time curve from time zero (pre-dose) to last time of quantifiable concentration (AUC [0-t]) and to infinity (AUC [0-infinity]) of GSK256066 at Day 1 and Day 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "Blood samples were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The first occurrence of the Cmax was determined directly from the raw concentration-time data.",
+              "measure": "Maximum observed concentration (Cmax) of GSK256066 at Day 1 and 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "Blood samples were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The time at which Cmax was observed was determined directly from the raw concentration-time data. The t1/2 was planned to be obtained as the ratio of ln2/λz, where λz is the terminal phase rate constant estimated by linear regression analysis of the log transformed concentration-time data. The data for t1/2 was not derived due to non quantifiable data.",
+              "measure": "Time of occurrence of Cmax (Tmax) and time to apparent terminal elimination phase half-life (t1/2) of GSK256066 at Day 1 and Day 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "GSK614917 is a metabolite of GSK256066. Blood samples for PK analysis were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The AUC 0-t was planned to be determined using the linear trapezoidal rule for increasing concentrations and the logarithmic trapezoidal rule for decreasing concentrations. AUC (0-infinity) was planned to be calculated, where data permitted, as the sum of AUC (0-t) and Ct/z, where Ct was the observed plasma concentration obtained from the log-linear regression analysis of the last quantifiable time-point and z is the terminal phase rate constant. Data for this outcome measure was not derived due to non quantifiable data.",
+              "measure": "AUC (0-t) and AUC (0-infinity) of GSK614917 at Day 1 and Day 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "GSK614917 is a metabolite of GSK256066. Blood samples for PK analysis were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The first occurrence of the Cmax was planned to be determined directly from the raw concentration-time data. Data for this outcome measure was not derived due to non quantifiable data.",
+              "measure": "Cmax of GSK614917 at Day 1 and Day 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "Blood samples were collected on Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h). The time at which Cmax was observed was planned to be determined directly from the raw concentration-time data. The t1/2 was planned to be obtained as the ratio of ln2/λz, where λz is the terminal phase rate constant estimated by linear regression analysis of the log transformed concentration-time data. Data for this outcome measure was not derived due to non quantifiable data.",
+              "measure": "Tmax and t1/2 of GSK614917 at Day 1 and Day 14",
+              "timeFrame": "Day 1 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h and 12 h) and Day 14 (pre-dose, 0.25 h, 0.5 h, 1 h, 2 h, 4 h, 6 h, 8 h, 12 h and 24 h)"
+            },
+            {
+              "description": "An AE is defined as any untoward medical occurrence in a participant, temporally associated with the use of a medicinal product, whether or not considered related to the medicinal product. An SAE is defined as any untoward medical occurrence that, at any dose, results in death, is life-threatening, requires hospitalization or prolongation of existing hospitalization, results in disability/incapacity, or is a congenital anomaly/birth defect, may jeopardize the participant or may require medical or surgical intervention to prevent one of the other outcomes listed in this definition.",
+              "measure": "Number of participants with any adverse event (AE), serious adverse event (SAE) or death",
+              "timeFrame": "Up to Follow-up (18 weeks)"
+            },
+            {
+              "description": "The ECG measurements were made with the participant in a supine position having rested in this position for at least 10 minutes before each time-point. 12-lead ECG assessments were obtained on Day 1 (pre-dose triplicate assessment, 0.5 h, 1 h, 2 h, 8 h and 12 h), Day 7 (pre-dose) and Day 14 (pre-dose, 0.5 h, 1 h, 2 h, 8 h, 12 h and 24 h) using a machine that automatically calculated PR, QRS, QT and QTcB. Abnormal ECG findings (CNS and CS) were categorized. The abnormal PCI range included QTc interval of \\<300 and \\>500 milliseconds (msec) and increase from baseline QTc interval of \\>60 msec, PR interval \\<110 and \\>220 msec and QRS interval \\<75 and \\>110 msec. Baseline was Day 1 (mean of triplicate assessments done at pre dose).",
+              "measure": "Number of participants with abnormal both clinically non-significant (CNS) and clinically significant (CS) electrocardiograph (ECG) values",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "The assessments were done at pre-dose on Day 1, Day 7 and Day 14 of each treatment period. The following laboratory parameters of clinical haematology were analyzed: platelet count, red blood cells (RBC) count, absolute white blood cells (WBC) count, reticulocyte count, hemoglobin, hematocrit, mean corpuscular volume (MCV), mean corpuscular hemoglobin (MCH), mean corpuscular hemoglobin concentration (MCHC), total neutrophils, lymphocytes, monocytes, eosinophils and basophils. Only those parameters for which at least one value of PCI was reported are summarized.",
+              "measure": "Number of participants with hematology abnormalities of potential clinical importance (PCI) during the treatment period",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "The assessments were done at pre-dose on Day 1, Day 7 and Day 14 of each treatment period. The following laboratory parameters of clinical chemistry were analyzed: blood urea nitrogen (BUN), creatinine, total cholesterol, sodium, potassium, chloride, total bicarbonate, calcium, C-reactive protein (CRP), aspartate aminotransferase (AST), alanine amino transferase (ALT), gamma glutamyltransferase (GGT), alkaline phosphatase, creatine kinase (CK), lactate dehydrogenase (LDH), total and direct bilirubin, uric acid, albumin and total protein. Only those parameters for which at least one value of PCI was reported are summarized.",
+              "measure": "Number of participants with clinical chemistry abnormalities of PCI during the treatment period",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "The assessments were done at Day 1, Day 7 and Day 14 for urine glucose, protein, occult blood, ketones, nitrites, bilirubin, leukocytes esterase and urobilinogen by dipstick. The participants were categorized with results of 1 +, 2+, 3+, 4+, 7+, positive, trace, not rated (NR), 0, 0.2, 1, 16 and 3.2. Only those parameters for which at least one value of these categories reported are summarized.",
+              "measure": "Number of participants with abnormal urinalysis results",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "The assessments were done at pre-dose on Day 1 (taken in triplicate at pre-dose, 0.5, 1, 2, 8 and 12 h post-dose), Day 7 (pre-dose) and Day 14 (24 h post-dose) of each treatment period. Supine vital signs measurements were made with the participant in a supine position having rested in that position for at least 5 minutes before the first reading at each time point. Vital signs assessment included heart rate (HR), systolic blood pressure (SBP) and diastolic blood pressure (DBP). Criteria for vital sign values meeting PCI included: SBP \\< 70 millimeters of mercury (mmHg) and \\> 160 mmHg; DBP \\< 45 mmHg and \\> 110 mmHg; \\< 35 beats per minute and \\> 160 beats per minute. Only those parameters for which at least one value of PCI was reported are summarized.",
+              "measure": "Number of participants with vital sign value of PCI during the treatment period",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "The assessment of troponin (I and or T) was done to ensure participants safety and further characterize potential renal and cardiac effects. It was monitored at pre dose on Day 1, Day 7 and Day 14. Data is categorized according to the troponin levels of \\<0.03 µg/L, \\>0.03 µg/L but \\<0.10 µg/L and negative. The PCI value for troponin T: low= 0 µg/L and high \\>0.4 µg/L.",
+              "measure": "Number of participants with troponin results",
+              "timeFrame": "Up to Day 14 of each treatment period"
+            },
+            {
+              "description": "This included the study of variability in drug response due to hereditary factors in different populations. There is increasing evidence that an individual's genetic composition (i.e., genotype) may impact the pharmacokinetics (absorption, distribution, metabolism, elimination), pharmacodynamics (relationship between concentrations and pharmacologic effects or the time course of pharmacologic effects) and/or clinical outcome (in terms of efficacy and/or safety and tolerability). A whole blood sample (10ml) was planned to be collected. The data for this outcome measure was not collected.",
+              "measure": "Genetic variations of participants for relationship between genetic variants and or PK, tolerability and efficacy of GSK256066",
+              "timeFrame": "At any time post-Randomization"
+            },
+            {
+              "description": "PDEs are a super family of enzymes that catalyze the breakdown of cyclic adenosine monophosphate (cAMP) and/or cyclic guanosine monophosphate (GMP) to their inactive form. PDE4 is the main selective cAMP-metabolizing enzyme in inflammatory and immune cells. Because PDE4 is highly expressed in leukocytes and other inflammatory cells involved in the pathogenesis of inflammatory lung diseases, such as asthma, inhibition of PDE4 had been predicted to have an anti inflammatory effect for them. PDE4 was assessed in sputum samples, collected 2-3 h post-dose on Day 7 by transcriptomic analysis on sputum ribonucleic acid (RNA) samples. Data is reported for PDE4B.",
+              "measure": "Mean phosphodiesterase-4 (PDE4) values",
+              "timeFrame": "Day 7 of each treatment period"
+            },
+            {
+              "description": "Sputum samples were collected 2-3 h post-dose on Day 7 to measure the differential cell counts which is used as an indicator of the anti-inflammatory activities. The cells include neutrophils, macrophages, lymphocytes, total leukocyte count and bronchial epithelial cells.",
+              "measure": "Mean differential cell counts during sputum analysis",
+              "timeFrame": "Day 7 of each treatment period"
+            },
+            {
+              "description": "The anti-inflammatory activity was assessed by measuring novel candidate biomarkers of the biological response associated with the action of GSK256066, in sputum samples, collected 2-3 h post-dose on Day 7 by transcriptomic analysis on sputum ribonucleic acid (RNA) samples. Data is reported for the biomarkers of glyceraldehyde-3-phosphate dehydrogenase (GAPDH), oncostatin M (OSM), cyclophilin, B actin, suppressor of cytokine signaling 3 (SOCS3), ETS proto-oncogene 2 transcription factor (ETS2), amphiregulin (AREG), cAMP responsive element modulator (CREM) and salt inducible kinase 1 (SNF1LK).",
+              "measure": "Biomarkers of sputum analysis",
+              "timeFrame": "Day 7 of each treatment period"
+            },
+            {
+              "description": "Cytokine sampling was planned of Day 7, 2-3 h post-dose to measure the IL10, IL-13 and TNFα for anti-inflammatory activity in sputum. However the data was not collected for this outcome measure.",
+              "measure": "Mean interleukin-10 (IL-10), IL-13 and tumour necrosis factor alfa (TNFα) values",
+              "timeFrame": "Day 7 of each treatment period"
+            },
+            {
+              "description": "Sputum samples were collected 2-3 h post-dose on Day 7 to measure the anti-inflammatory activities by SNF1LK nuclear intensity of staining and cytoplasmic intensity of staining of the cells.",
+              "measure": "Anti inflammatory activity in sputum assessed by SNF1LK Cytospin on Day 7",
+              "timeFrame": "Day 7 of each treatment period"
+            },
+            {
+              "description": "Sputum samples were collected 2-3 h post-dose on Day 7 to measure the anti-inflammatory activities by the ratio of SNF1LK nuclear intensity of staining and cytoplasmic intensity of staining of the cells.",
+              "measure": "Anti-inflammatory activity in sputum assessed by ratio of SNF1LK Cytospin on Day 7",
+              "timeFrame": "Day 7 of each treatment period"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-08-27",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2009-08-10",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2009-07-22",
+          "dispFirstSubmitQcDate": "2009-07-22",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-06-26",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-06-22",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-08-27",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-11-16",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-06",
+          "studyFirstPostDateStruct": {
+            "date": "2007-10-26",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-10-25",
+          "studyFirstSubmitQcDate": "2007-10-25"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": "PET",
+              "type": "OTHER"
+            },
+            {
+              "name": "MRI",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 5,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Novel Positron Emission Tomography (PET) Radiotracer to Image Phosphodiesterase-4B (PDE4B)",
+          "nctId": "NCT03030391",
+          "officialTitle": "Evaluation of a Novel Positron Emission Tomography (PET) Radiotracer to Image Phosphodiesterase-4B (PDE4B)",
+          "orgStudyIdInfo": {
+            "id": "170041"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "17-M-0041"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Quantification of 18F-PF-06445974 binding in brain",
+              "timeFrame": "2 hours"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Biodistribution of 18F-PF-06445974 in the body.",
+              "timeFrame": "2 hours"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-03-16",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-12-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-12-14",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-03-16",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2017-01-10"
+          },
+          "statusVerifiedDate": "2018-03-16",
+          "studyFirstPostDateStruct": {
+            "date": "2017-01-25",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2017-01-24",
+          "studyFirstSubmitQcDate": "2017-01-24"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All subjects will receive the same tests.",
+              "interventionNames": [
+                "Drug: 18F-PF-06445974"
+              ],
+              "label": "One-arm",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "One-arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "18F-PF-06445974",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "PET Imaging of Phosphodiesterase-4B (PDE4B) in Alcohol Use Disorder",
+          "nctId": "NCT06795581",
+          "officialTitle": "PET Imaging of Phosphodiesterase-4B (PDE4B) in Alcohol Use Disorder",
+          "orgStudyIdInfo": {
+            "id": "10002210"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "002210-M"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Target quantification",
+              "measure": "To measure distribution volume",
+              "timeFrame": "36 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2029-01-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-18",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-08-15",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2028-12-11",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-03-20",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-08-14",
+          "studyFirstPostDateStruct": {
+            "date": "2025-01-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-01-25",
+          "studyFirstSubmitQcDate": "2025-01-25"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "label": "Chinese PPF Prospective Registry Cohort"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 600,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": true,
+          "studyType": "OBSERVATIONAL",
+          "targetDuration": "2 Years"
+        },
+        "identificationModule": {
+          "briefTitle": "A Prospective, Multi-Center Registry Study of Progressive Pulmonary Fibrosis (PPF) in China (PROFINA)",
+          "nctId": "NCT07683728",
+          "officialTitle": "A Prospective, Multi-Center Registry Study of Progressive Pulmonary Fibrosis (PPF) in China (PROFINA)",
+          "orgStudyIdInfo": {
+            "id": "PROFINA"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Peking Union Medical College Hospital"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Absolute change in FVC (mL) at 1-year and 2-year follow-up.",
+              "measure": "Absolute change in FVC (mL)",
+              "timeFrame": "at 1-year and 2-year follow-up"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The percentage of patients with CTD-ILD, HP, iNSIP, exposure-related ILD, sarcoidosis, unclassified ILD, and other ILDs at baseline and following 2 years of follow-up.",
+              "measure": "CTD-ILD, HP, iNSIP, exposure-related ILD, sarcoidosis, unclassified ILD, and other ILDs",
+              "timeFrame": "at baseline and after 2 years of follow-up"
+            },
+            {
+              "description": "The percentage of patients who meet at least two of the following three inclusion criteria for PPF at baseline, 1-year, and 2-year follow-up:\n\n1. Worsening respiratory symptoms;\n2. Physiological evidence of disease progression (FVC decline \\>5% or DLCO\n3. Imaging evidence of disease progression (e.g., increased or worsened traction bronchiectasis, new ground-glass opacities with traction bronchiectasis, new reticular patterns, or new honeycombing).",
+              "measure": "The percentage of patients who meet at least two of the following three inclusion criteria for PPF",
+              "timeFrame": "at baseline, 1-year, and 2-year follow-up"
+            },
+            {
+              "description": "The percentage of patients receiving treatment with corticosteroids, immunosuppressive agents (including cyclophosphamide, mycophenolate mofetil, azathioprine, and other commonly used immunosuppressants for ILDs), and antifibrotic drugs (nintedanib, pirfenidone) or PDE4B inhibitors (e.g., nerandomilast) during the 2-year follow-up period.",
+              "measure": "The percentage of patients receiving treatment with corticosteroids, immunosuppressive agents, and antifibrotic drugs or PDE4B inhibitors",
+              "timeFrame": "during the 2-year follow-up period"
+            },
+            {
+              "description": "Change in absolute DLCO of pulmonary function expressed as percent predicted after 1 year and 2 years of follow-up.",
+              "measure": "Change in absolute DLCO of pulmonary function expressed as percent predicted",
+              "timeFrame": "after 1 year and 2 years of follow-up"
+            },
+            {
+              "description": "Changes in the absolute score of the dyspnea severity questionnaire at 1-year and 2-year follow-up.",
+              "measure": "Changes in the absolute score of the dyspnea severity questionnaire",
+              "timeFrame": "at 1-year and 2-year follow-up"
+            },
+            {
+              "description": "Changes in the absolute score of the Cough Severity Numerical Rating Scale (CNSRS) at 1-year and 2-year follow-up.",
+              "measure": "Changes in the absolute score of the Cough Severity Numerical Rating Scale (CNSRS)",
+              "timeFrame": "at 1-year and 2-year follow-up"
+            },
+            {
+              "description": "Frequency of acute exacerbations of ILD during the 2-year follow-up.",
+              "measure": "Frequency of acute exacerbations of ILD",
+              "timeFrame": "during the 2-year follow-up"
+            },
+            {
+              "description": "Time to first acute exacerbation during the 2-year follow-up.",
+              "measure": "Time to first acute exacerbation",
+              "timeFrame": "during the 2-year follow-up"
+            },
+            {
+              "description": "The percentage of patients with acute exacerbations, lung transplantation, or death at 2-year follow-up.",
+              "measure": "The percentage of patients with acute exacerbations, lung transplantation, or death",
+              "timeFrame": "at 2-year follow-up"
+            },
+            {
+              "description": "The percentage of patients with ILD progression (FVC decline \\>10% of predicted value) at 2-year follow-up",
+              "measure": "The percentage of patients with ILD progression (FVC decline >10% of predicted value)",
+              "timeFrame": "at 2-year follow-up"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2029-10-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-07-06",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-07-01",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-07-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-09-23",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-07",
+          "studyFirstPostDateStruct": {
+            "date": "2026-07-06",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-06-25",
+          "studyFirstSubmitQcDate": "2026-07-01"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All subjects will receive the same tests.",
+              "interventionNames": [
+                "Drug: 11C-ZTP-1"
+              ],
+              "label": "One-arm",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "One-arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "11C-ZTP-1",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 40,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Evaluation of [11C]ZTP-1 to Image PDE4B",
+          "nctId": "NCT07625345",
+          "officialTitle": "Evaluation of [11C]ZTP-1 to Image PDE4B",
+          "orgStudyIdInfo": {
+            "id": "10002536"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "002536-M"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Quantification of 11C-ZPT-1",
+              "measure": "Total Volume of Distribution",
+              "timeFrame": "120 minutes"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Quantification of 11C-ZPT-1",
+              "measure": "Dosimetry, ICC, aTRV, and biodistribution.",
+              "timeFrame": "120 minutes"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2030-10-03",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-08-14",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-03-19",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2026-07-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-08-13",
+          "studyFirstPostDateStruct": {
+            "date": "2026-06-04",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-06-03",
+          "studyFirstSubmitQcDate": "2026-06-03"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Galunisertib + Nerandomilast Combination"
+              ],
+              "label": "Galunisertib + Nerandomilast Combination",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "interventionNames": [
+                "Drug: Galunisertib + Nerandomilast Combination"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Galunisertib + Nerandomilast Combination",
+                "Placebo"
+              ],
+              "description": "Galunisertib + Nerandomilast Combination",
+              "name": "Galunisertib + Nerandomilast Combination",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "SINGLE",
+              "whoMasked": [
+                "PARTICIPANT"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "This Study Evaluates the Safety, Target Engagement, and Preliminary Efficacy of Galunisertib (TGF-βR1/ALK5 Inhibitor)Combined With Nerandomilast (PDE4 Inhibitor) in GREM2-positive ALS, a Biomarker-defined Subgroup Hypothesized to Reflect Heightened TGF-β/SMAD-driven Astrocytic and Fibrotic Signaling",
+          "nctId": "NCT07321860",
+          "officialTitle": "Randomized, Double-Blind, Placebo-Controlled Phase 2a Study of Partial TGF-βR1 (ALK5) Inhibition With Galunisertib Combined With PDE4 Inhibition With Nerandomilast in GREM2-Positive ALS",
+          "orgStudyIdInfo": {
+            "id": "GALNERAN-KI"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Gipfel Life Sciences GmbH"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Pharmacodynamic Biomarkers - Change from Baseline in GREM2 and TGF-β Pathway Marker Levels (CSF or plasma; Time Frame: Baseline to 24 Weeks). Definition: GREM2 (Gremlin-2) concentration in cerebrospinal fluid or plasma will be measured at baseline and 24 weeks. GREM2 is a TGF-β-inducible protein ￼ used to stratify patients (GREM2-positive) and serves as a proxy for TGF-β pathway activity. In addition, downstream TGF-β signaling biomarkers will be assessed over the same period, including phosphorylated SMAD2/3 (pSMAD2/3) in peripheral blood cells and plasminogen activator inhibitor-1 (PAI-1, SERPINE1) in plasma. These are direct readouts of TGF-β receptor activity ￼ and are strongly upregulated by TGF-β signaling ￼. Glial/neuroinflammatory markers such as glial fibrillary acidic protein (GFAP) and neurofilament light chain (NfL) in CSF or blood will also be measured, as they indicate astrocyte activation and neuroaxonal injury in ALS ￼. Analysis: Changes from baseline in GREM2 and the",
+              "measure": "Pharmacodynamic Biomarkers - Change from Baseline in GREM2 and TGF-β Pathway Marker Levels",
+              "timeFrame": "Time Frame: Baseline to 24 Weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2028-01-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-01-07",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-01-05",
+          "overallStatus": "NOT_YET_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-06-30",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2026-06-30",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2026-01",
+          "studyFirstPostDateStruct": {
+            "date": "2026-01-07",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-01-02",
+          "studyFirstSubmitQcDate": "2026-01-05"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All subjects will receive 18F-PF-06445974. In addition to 18F-PF-06445974 some subjects may receive ethanol infusion.",
+              "interventionNames": [
+                "Drug: Intravenous Ethanol",
+                "Drug: 18F-PF-06445974"
+              ],
+              "label": "One arm",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "One arm"
+              ],
+              "description": "Intravenous ethanol infusion before PET Scan",
+              "name": "Intravenous Ethanol",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "One arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "18F-PF-06445974",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Acute Effects of Alcohol on PET Imaging of Phosphodiesterase-4B (PDE4B)",
+          "nctId": "NCT07027839",
+          "officialTitle": "Acute Effects of Alcohol on PET Imaging of Phosphodiesterase-4B (PDE4B)",
+          "orgStudyIdInfo": {
+            "id": "10002393"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "002393-M"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Target quantification",
+              "measure": "To measure distribution volume",
+              "timeFrame": "36 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2029-02-22",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-08-14",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2028-02-22",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-12-11",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-08-13",
+          "studyFirstPostDateStruct": {
+            "date": "2025-06-19",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-06-17",
+          "studyFirstSubmitQcDate": "2025-06-18"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All subjects will receive the same tests.",
+              "interventionNames": [
+                "Drug: 18F-PF974",
+                "Drug: 18F-florbetaben"
+              ],
+              "label": "One-Arm",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "One-Arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "18F-PF974",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "One-Arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "18F-florbetaben",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 90,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "PET Imaging of Phosphodiesterase-4 (PDE4) in Volunteers With Alzheimer Disease (AD) or Mild Cognitive Impairment (MCI)",
+          "nctId": "NCT07169630",
+          "officialTitle": "PET Imaging of Phosphodiesterase-4 (PDE4) in Volunteers With Alzheimer s Disease (AD) or Mild Cognitive Impairment (MCI)",
+          "orgStudyIdInfo": {
+            "id": "10002277"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "002277-M"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "To determine whether PDE4B radioligand binding is increased in medial temporal lobe of participants with AD or MCI (both A <= positive) compared to age-and sex matched HVs (who are A <= negative.",
+              "timeFrame": "48 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2030-04-11",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-09-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-09-16",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-04-11",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2026-09-22",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2026-08-13",
+          "studyFirstPostDateStruct": {
+            "date": "2025-09-12",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2025-09-11",
+          "studyFirstSubmitQcDate": "2025-09-11"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "In these cases, only endometrium biopsy is investigated for the selected biomarkers gene expression profile.",
+              "interventionNames": [
+                "Other: endometrium biopsy"
+              ],
+              "label": "endometrium biopsy only"
+            },
+            {
+              "description": "In these cases before the endometrium tissue biopsy, an endometrial lavage is performed and from both samples, the selected biomarkers gene expression profile are investigated.",
+              "interventionNames": [
+                "Other: endometrium biopsy",
+                "Other: endometrium lavage"
+              ],
+              "label": "endometrium lavage followed by endometrium tissue biopsy"
+            },
+            {
+              "description": "In these cases before the endometrium tissue biopsy, at different days endometrial lavage samples are taken. From all samples, the selected biomarkers gene expression profile are investigated.",
+              "interventionNames": [
+                "Other: endometrium biopsy",
+                "Other: repeated endometrium lavage"
+              ],
+              "label": "serial endometrium lavage followed by endometrium biopsy"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "endometrium biopsy only",
+                "endometrium lavage followed by endometrium tissue biopsy",
+                "serial endometrium lavage followed by endometrium biopsy"
+              ],
+              "description": "All patients will have endometrium biopsy.",
+              "name": "endometrium biopsy",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "endometrium lavage followed by endometrium tissue biopsy"
+              ],
+              "description": "In some selected cases biopsy is preceded by endometrium lavage.",
+              "name": "endometrium lavage",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "serial endometrium lavage followed by endometrium biopsy"
+              ],
+              "description": "Endometrium lavage is repeated during the same cycle.",
+              "name": "repeated endometrium lavage",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "CROSS_SECTIONAL"
+          },
+          "enrollmentInfo": {
+            "count": 67,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "The Study of the Implantation Window From Endometrial Biopsy With Gene Expression Methods",
+          "nctId": "NCT04052464",
+          "officialTitle": "The Study of the Implantation Window From Endometrial Biopsy With Gene Expression Methods",
+          "orgStudyIdInfo": {
+            "id": "PRELIFE-V8"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Prelife Kft"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "the endometrium derived samples are measured for the mRNA level expression of a selected list of biomarkers as it follows: ABCC3, ACTB, ADAMTS2, ADAMTS8, ARG2, ASPN, B2M, BAMBI, C10orf10, C1QTNF6, C2CD4A, CCDC71L, CD55, CEBPD, CP, CRISP3, CTHRC1, CYP24A1, CSRP2, DDX52, DPP4, DUOX1, DUOXA1, EDNRB, FCER1G, G0S2, GADD45G, GNG2, GNG4, GPX3, GRAMD1C, GREM2, GZMA, HPGD, HTR2B, IGFBP1, IGFBP3, IGFBP6, IL1B, IRX3, ITGA2, ITGB6, KAL1, KCND2, KCNK3, LCP2, LEFTY2, LRP4, LTBP2, LUM, MAOA, MAP2K6, MFSD4, MMP10, MS4A7, MT1M, MUC16, NID2, NNMT, OPRK1, PAEP, PDE4B, PHLDB2, PKHD1L1, PLAT, PLD1, POLR2A, PPIA, RARRES1, RDH10, RGS1, RHOB, RHPN2, RIMKLB, SGIP1, SLAIN1, SLC15A1, SLC15A2, SLC1A1, SLC26A7, SLC5A3, SOD2, SPP1, SYT11, TBP, TCN1, TFPI2, THBS1, TIMP3, TMC5, TMED6, TNFRSF11B, TSPAN8",
+              "measure": "gene expression profile",
+              "timeFrame": "measurements are performed within 3 weeks after samples are shipped to the laboratory"
+            },
+            {
+              "description": "based on the gene expression profile endometrium samples are phase assigned based on published reference samples",
+              "measure": "endometrium phase assesment",
+              "timeFrame": "phase assignment is performed within two weeks after the measurements are performed."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-08-28",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-08-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-08-08",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-12-20",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2016-09-26",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-08",
+          "studyFirstPostDateStruct": {
+            "date": "2019-08-09",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-08-06",
+          "studyFirstSubmitQcDate": "2019-08-08"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects with Post-Traumatic Stress Disorder",
+              "interventionNames": [
+                "Drug: PF974"
+              ],
+              "label": "PTSD"
+            },
+            {
+              "description": "Subjects with Alcohol Use Disorder",
+              "interventionNames": [
+                "Drug: PF974"
+              ],
+              "label": "AUD"
+            },
+            {
+              "description": "Healthy control subjects without AUD or PTSD/Trauma",
+              "interventionNames": [
+                "Drug: PF974"
+              ],
+              "label": "Healthy Controls (HC)"
+            },
+            {
+              "description": "Trauma Exposed Healthy Controls without AUD or PTSD",
+              "interventionNames": [
+                "Drug: PF974"
+              ],
+              "label": "Trauma Controls (TC)"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "AUD",
+                "Healthy Controls (HC)",
+                "PTSD",
+                "Trauma Controls (TC)"
+              ],
+              "description": "PF974 Radiotracer.",
+              "name": "PF974",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Blood Samples",
+            "retention": "SAMPLES_WITHOUT_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 160,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Imaging Phosphodiesterase 4B (PDE4B) in People With Psychiatric Disorders With Positron Emission Tomography (PET) and the Radiotracer [18F]PF974",
+          "nctId": "NCT07488819",
+          "officialTitle": "Imaging PDE4B in People With Psychiatric Disorders With PET and the Radiotracer [18F]PF974",
+          "orgStudyIdInfo": {
+            "id": "2000040000"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Yale University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "proportional to the levels of PDE4B available for radiotracer binding",
+              "measure": "Regional [18F]PF974 volume of distribution (VT)",
+              "timeFrame": "Once at baseline"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Ventromedial and dorsolateral prefrontal cortex; the insula, occipital, parietal, and temporal cortices; amygdala, and thalamus.",
+              "measure": "Secondary Region Of Interest (ROI) Binding of [18F]PF974",
+              "timeFrame": "Once at Baseline"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2032-03-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-06-11",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-06-10",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2031-03-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2025-07-07",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-06",
+          "studyFirstPostDateStruct": {
+            "date": "2026-03-23",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2026-01-29",
+          "studyFirstSubmitQcDate": "2026-03-18"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "All subjects will receive the same testsGroup D will have a baseline and block with apremilastGroup A \\&amp; D will have a lung scan",
+              "interventionNames": [
+                "Radiation: Lung scan",
+                "Drug: Apremilast",
+                "Drug: 18F-PF-06445974"
+              ],
+              "label": "one arm",
+              "type": "OTHER"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "one arm"
+              ],
+              "description": "Immediately after the brain scan",
+              "name": "Lung scan",
+              "type": "RADIATION"
+            },
+            {
+              "armGroupLabels": [
+                "one arm"
+              ],
+              "description": "Oral administration of apremilast",
+              "name": "Apremilast",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "one arm"
+              ],
+              "description": "Injected IV followed by PET scanning",
+              "name": "18F-PF-06445974",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "DIAGNOSTIC"
+          },
+          "enrollmentInfo": {
+            "count": 108,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "[18F]PF-06445974 to Image PDE4B in Major Depressive Disorder Using PET",
+          "nctId": "NCT05703685",
+          "officialTitle": "[18F]PF-06445974 to Image PDE4B in Major Depressive Disorder Using PET",
+          "orgStudyIdInfo": {
+            "id": "10000676"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "000676-M"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Target quantification",
+              "measure": "To measure distribution volume",
+              "timeFrame": "36 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Target quantification",
+              "measure": "To determine the optimal length",
+              "timeFrame": "36 months"
+            },
+            {
+              "description": "Target quantification",
+              "measure": "To measure whole-brain distribution volume in retest",
+              "timeFrame": "36 months"
+            },
+            {
+              "description": "Assess the severity of depression",
+              "measure": "measure clinical rating scales and PDE4B binding",
+              "timeFrame": "36 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2029-04-11",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-08-14",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2028-10-03",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2023-06-22",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-08-13",
+          "studyFirstPostDateStruct": {
+            "date": "2023-01-30",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2023-01-27",
+          "studyFirstSubmitQcDate": "2023-01-27"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "25 microgram inhaled once daily",
+              "interventionNames": [
+                "Drug: GSK256066"
+              ],
+              "label": "25 mcg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "87.5 microgram inhaled once daily",
+              "interventionNames": [
+                "Drug: GSK256066"
+              ],
+              "label": "87.5 mcg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo inhaled once daily",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "25 mcg",
+                "87.5 mcg"
+              ],
+              "description": "PDE4 inhibitor",
+              "name": "GSK256066",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 104,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study To Evaluate Safety And Tolerability Of GSK256066 In Chronic Obstructive Pulmonary Disease (COPD) Patients",
+          "nctId": "NCT00549679",
+          "officialTitle": "A Randomised, Double-blind, Placebo-controlled Study to Investigate the Safety and Tolerability of Inhaled GSK256066 in Mild to Moderate COPD Patients",
+          "orgStudyIdInfo": {
+            "id": "IPC101939"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "GlaxoSmithKline"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "An AE was defined as any untoward medical occurrence (MO) in a participant temporally associated with the use of a medicinal product (MP), whether or not considered related to the MP and can therefore be any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with its use. The SAE was any untoward MO that, at any dose, results in death, life threatening, persistent or significant disability/incapacity, results in or prolongs inpatient hospitalization, congenital abnormality or birth defect, that may not be immediately life-threatening or result in death or hospitalization but may jeopardize the participant or may require medical or surgical intervention.",
+              "measure": "Number of participants with adverse events (AEs) and serious adverse events (SAEs)",
+              "timeFrame": "Up to follow up (approximately 56 days)"
+            },
+            {
+              "description": "ECG parameters consist of QT interval corrected by Bazett's (QTcB) and Fridericia's (QTcF) formulas, QT interval, QRS duration and PR interval. Baseline was defined as value at Day 0 (pre-bronchodilator). The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline was the mean of the 3 pre-salbutamol measurements at Day 0. It was assessed on Baseline, Day 1, 7, 14, 15, 21, 27 and 28. Post Baseline, ECG was performed 1-2 hours post dose.",
+              "measure": "Change from Baseline (Day 0 [pre-bronchodilator]) in 12-lead electrocardiogram (ECG) findings",
+              "timeFrame": "Baseline (Day 0 [pre-bronchodilator]) and up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "ECG parameters consist of ventricular rate. The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline was the mean of the 3 pre-salbutamol measurements at Day 0. It was as/sessed on Baseline, Day 1, 7, 14, 15, 21, 27 and 28. Post Baseline, ECG was performed 1-2 hours post dose.",
+              "measure": "Change from Baseline (Day 0 [pre-bronchodilator]) in 12-lead electrocardiogram (ECG) findings-ventricular rate",
+              "timeFrame": "Baseline (Day 0 [pre-bronchodilator]) and up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "The PCI range for SBP was \\< 85 and \\> 160 millimeters of mercury (mmHg), DBP was \\< 45 and \\> 100 mmHg and for HR \\< 40 and \\> 110 beats per minute. It was assessed on Baseline (pre-bronchodilator), Day 14 and 27. Data for SBP high, SBP low, DBP high, DBP low, HR high and HR low is presented.",
+              "measure": "Number of participants with abnormal (potential clinical importance [PCI]) systolic blood pressure (SBP), diastolic blood pressure (DBP) and heart rate (HR)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Clinical chemistry included: albumin, bicarbonate, alanine aminotransferase (ALT), albumin, alkaline phosphatase (ALP), aspartate aminotransferase (AST), blood urea, creatinine, magnesium, sodium, potassium, chloride, glucose, total bilirubin, direct bilirubin, indirect bilirubin, total protein, gamma glutamyltransferase (GGT), calcium, creatinine kinase, creatine kinase-MB, creatinine clearance (estimated; male and female), lactate dehydragenase, and troponin, triglycerides. Data for abnormal parameters (above and below range) is provided. It was assessed on Baseline (Day -3), Day 14, 28 and on follow up visit (Day 42). Data for only abnormal observations is presented.",
+              "measure": "Number of participants with abnormal (PCI) clinical chemistry",
+              "timeFrame": "Up to Day 42 (follow up visit)"
+            },
+            {
+              "description": "Hematology included: haemoglobin, haematocrit, mean corpuscular volume (MCV), mean corpuscular hemoglobin (MCH), mean corpuscular hemoglobin concentration (MCHC), red blood cell (RBC) indices, white blood cell (WBC), basophils, eosinophils, lymphocytes, monocytes, neutrophils and platelet count. Data for abnormal parameters (above and below range) is provided. It was assessed on Baseline (Day -3), Day 14, 28 and on follow up visit (Day 42). Data for only abnormal observations is presented.",
+              "measure": "Number of participants with abnormal (PCI) hematology",
+              "timeFrame": "Up to Day 42 (follow up visit)"
+            },
+            {
+              "description": "Abnormal urinalysis data for RBC in urine and haematuria presented. Data for abnormal parameters (above and below range) is provided. It was assessed on Baseline (Day -3), Day 7, 14, 21, 28 and on follow up visit (Day 42). Data for only abnormal observations is presented.",
+              "measure": "Number of participants with abnormal urinalysis",
+              "timeFrame": "Up to Day 56 (Visit follow up)"
+            },
+            {
+              "description": "The change from Baseline was calculated by subtracting the Baseline values from the individual post-randomization values. Baseline value defined as the value on Day 0. It was assessed on Baseline (Day 0), Day 14 and 27. Spirometry tests was performed before and 30 minutes after dosing with salbutamol (bronchodilator) on Day 0 and before dosing with GSK256066. As they were analyzed separately, there were two Baselines for these tests, 'pre bronchodilator Baseline' and 'post bronchodilator Baseline'. Smoking and short acting bronchodilators were avoided 6 hour prior to administration of the salbutamol. Observations with best test review (BTR) grading of 'not acceptable' were excluded.",
+              "measure": "Change from Baseline (Day 0) in lung function parameters: forced expiratory volume in one second (FEV1) and forced vital capacity (FVC)",
+              "timeFrame": "Baseline (Day 0) and up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Holter parameters were derived by visit over the 24 hour period as: maximum HR over 24 hours was the maximum HR of all time slices and mean HR over 24 hours was the mean HR of all time slices, weighted by the time length of each slice. The total number of ventricular runs and the number of supraventricular runs over 24 hours were derived by summing each count across all time slices. Data for normal, abnormal: not clinically significant and abnormal: clinically significant is presented. It was assessed on Baseline (Day 0), Day 14and 27. Data for normal, abnormal: clinically significant and abnormal: clinically not significant presented.",
+              "measure": "Number of participants with abnormal Holter interpretations",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "An exacerbation of COPD was defined as worsening of COPD symptoms requiring changes to normal treatment including antimicrobial therapy, short courses of oral steroids and other bronchodilator therapy. If clinically indicated, short-term treatment with antibiotics could be prescribed for the exacerbation. Any participants requiring treatment with inhaled or oral corticosteroids or admission to hospital were withdrawn from the study.",
+              "measure": "Number of participants who withdrawn for exacerbations of chronic obstructive pulmonary disease (COPD)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "AUC0-last determined using the linear trapezoidal rule for increasing concentrations and the logarithmic trapezoidal rule for decreasing concentrations. AUC0-last for GSK256066 is presented. As GSK614917 concentrations were generally non-quantifiable, no summary statistics were derived for GSK614917 pharmacokinetic parameters due to the large number of missing values resulting from non-quantifiable concentration-time data. AUC(0-t) imputed with half lowest observed AUC(0-t) (half of 1.28 hour×picogram/ milliliters \\[mL\\]).",
+              "measure": "Plasma concentrations of GSK256066 and active metabolite GSK614917 and derived pharmacokinetic parameters: area under the plasma drug concentration versus time curve (AUC0-last)",
+              "timeFrame": "Pre-dose and at 15, 30 minutes, 1, 2, 3, 4, 6, 8, 10 and 24 hour post dosing at Baseline (Visit 2a) and Days 14 and 27 (Visits 4a and 6a)"
+            },
+            {
+              "description": "The first occurrence of the maximum observed concentration determined directly from the raw concentration-time data. Cmax for GSK256066 is presented. As GSK614917 concentrations were generally non-quantifiable, no summary statistics were derived for GSK614917 pharmacokinetic parameters due to the large number of missing values resulting from non-quantifiable concentration-time data. One pre-dose GSK614917 concentration at the Baseline visit which was \\>5% of the corresponding Cmax was excluded from the pharmacokinetic analysis. Cmax imputed with half lower limit of quantification (LLQ; half of 5 picogram/mL).",
+              "measure": "Plasma concentrations of GSK256066 and active metabolite GSK614917 and derived pharmacokinetic parameters: maximum observed plasma drug concentration (Cmax)",
+              "timeFrame": "Pre-dose and at 15, 30 minutes, 1, 2, 3, 4, 6, 8, 10 and 24 hour post dosing at Baseline (Visit 2a) and Days 14 and 27 (Visits 4a and 6a)"
+            },
+            {
+              "description": "The tmax was the time at which Cmax was observed. Tmax was determined directly from the raw concentration-time data. Pharmacokinetic data of GSK256066 is presented. As GSK614917 concentrations were generally non-quantifiable, no summary statistics were derived for GSK614917 pharmacokinetic parameters due to the large number of missing values resulting from non-quantifiable concentration-time data.",
+              "measure": "Plasma concentrations of GSK256066 and GSK614917 and derived pharmacokinetic parameters: time to maximum observed plasma drug concentration (tmax)",
+              "timeFrame": "Pre-dose and at 15, 30 minutes, 1, 2, 3, 4, 6, 8, 10 and 24 hour post dosing at Baseline (Visit 2a) and Days 14 and 27 (Visits 4a and 6a)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. One participant had a total number of neutrophil cell/ mLs count of 0 which was imputed to 1. Data for adjusted geometric means of macrophages, neutrophils cells per mLs and total leukocyte count is presented as geometric mean. The change from Baseline was calculated by subtracting the Baseline values from the Day 28 values. Baseline was defined as the value at Day -3. Total number of cells per mL was calculated by percentage of cells divided by 100 multiplied by total leukocyte count. It was assessed on Baseline and Day 28.",
+              "measure": "Change from Baseline (Day -3) total cell number (cells/mL) in induced sputum",
+              "timeFrame": "Baseline (Day -3) and Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. One participant had a total number of neutrophil cell/ mLs count of 0 which was imputed to 1. Data for adjusted means of percentage of total cells macrophages and neutrophils is presented as least square mean. The change from Baseline was calculated by subtracting the Baseline values from the Day 28 values. Baseline was defined as the value at Day -3. Percentage cells was calculated by absolute cell count divided by total non squamous cell count multiplied by 100. It was assessed on Baseline and Day 28.",
+              "measure": "Change from Baseline (Day -3) in neutrophils and macrophages as a percentage of total cells in induced sputum",
+              "timeFrame": "Baseline (Day -3) and Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. Data for adjusted means of percentage of total cells macrophages and neutrophils is presented as geometric mean. The change from Baseline was calculated by subtracting the Baseline values from the Day 28 values. Baseline was defined as the value at Day -3. Percentage cells was calculated by absolute cell count divided by total non squamous cell count multiplied by 100. It was assessed on Baseline and Day 28.",
+              "measure": "Summary of mean lymphocytes, bronchial epithelial cells and eosinophils as a percentage of total cells in induced sputum",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. One participant had a total number of neutrophil cell/ mLs count of 0 which was imputed to 1. Total number of cells per mL was calculated by percentage of cells divided by 100 multiplied by total leukocyte count. It was assessed on Baseline and Day 28. One participant had a total number of neutrophil cell/ mLs count of 0 which was imputed to 1.",
+              "measure": "Absolute numbers of leukocytes, neutrophils and macrophages in induced sputum",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. One participant had a total number of neutrophil cell/ mL count of 0 which was imputed to 1. Total number of cells per mL was calculated by percentage of cells divided by 100 multiplied by total leukocyte count. It was assessed on Baseline and Day 28.",
+              "measure": "Absolute numbers of bronchial epithelial cells, lymphocytes and eosinophils in induced sputum",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. It was assessed on Baseline and Day 28. Values below LLQ or above upper limit of quantification (ULQ) was imputed to half the LLQ or ULQ, LLQs: total protein: 62.5 µg/mL and ULQ: total protein: 400 µg/mL. Adjusted mean values for current smokers and former smokers is presented as least square mean.",
+              "measure": "Summary of concentration of total protein in induced sputum supernatant",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. It was assessed on Baseline and Day 28. Values below LLQ or above ULQ was imputed to half the LLQ or ULQ, LLQs: IL8: 70000 picograms/mL and ULQ: IL8: 360000 picograms/mL.",
+              "measure": "The concentration of inflammatory biomarkers in induced sputum supernatant: interleukin (IL) 8",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. It was assessed on Baseline and Day 28. Values below LLQ or above ULQ was imputed to half the LLQ or ULQ, LLQs: MPO: 90 nanograms/mL and ULQ: IL8: 5000 nanograms/mL.",
+              "measure": "The concentration of inflammatory biomarkers in induced sputum supernatant: myeloperoxidase (MPO)",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. It was assessed on Baseline and Day 28. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of messenger ribonucleic acid (mRNA) and/or protein in induced sputum of established and exploratory markers of inflammation: IL-6, IL-1 beta and IL-8",
+              "timeFrame": "Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Sputum was performed using ipratropium bromide. Participants must fast for 2 hour prior to the sputum induction (only water was allowed) and on Day 28 (Visit 6b), it was performed 2-4 hours after the final dose of study medication. It was assessed on Baseline and Day 28.",
+              "measure": "Summary of mRNA and/or protein in induced sputum of established and exploratory pharmacodynamic markers: Phosphodiesterase-4 B (PDE4B), SNF1 like kinase (SNF1LK)",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Spirometry tests was performed before and 30 minutes after dosing with salbutamol (bronchodilator) on Day 0 and before dosing with GSK256066. As they were analyzed separately, there were two Baselines for these tests, 'pre bronchodilator Baseline' and 'post bronchodilator Baseline'. Smoking and short acting bronchodilators were avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0), Day 14 and 27. Observations with BTR grading of 'not acceptable' were excluded.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): mean spirometry measures FEV1 and FVC",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Plethysmography procedures was performed 30 minutes after dosing with salbutamol and prior to dosing with GSK256066. Participants were resting in the body box for at least 1 minute prior to any assessments. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): plethysmography measures: inspiratory capacity (IC), residual volume (RV), total lung capacity (TLC), slow vital capacity (SVC) and thoracic gas volume (TGV)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Plethysmography procedures was performed 30 minutes after dosing with salbutamol and prior to dosing with GSK256066. Participants were resting in the body box for at least 1 minute prior to any assessments. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): plethysmography measures: plus airway resistance (Raw)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Plethysmography procedures was performed 30 minutes after dosing with salbutamol and prior to dosing with GSK256066. Participants were resting in the body box for at least 1 minute prior to any assessments. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): plethysmography measures: specific airway conductance (sGaw)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "IOS tests were performed prior to other measurements of pulmonary function to avoid any influence of forced expiratory manoeuvres on airway function during resting breathing. IOS test was performed before and 30 minutes after dosing with salbutamol and before dosing with GSK256066. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Observations with BTR grading of 'not acceptable' were excluded. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): impulse oscillometry (IOS): total resistance (R5) and large airway resistance (R25); low frequence reactance (X5)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "IOS tests were performed prior to other measurements of pulmonary function to avoid any influence of forced expiratory manoeuvres on airway function during resting breathing. IOS test was performed before and 30 minutes after dosing with salbutamol and before dosing with GSK256066. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Observations with BTR grading of 'not acceptable' were excluded. Data for adjusted mean is presented as least square mean.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): IOS-resonant frequency (RF)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "IOS tests were performed prior to other measurements of pulmonary function to avoid any influence of forced expiratory manoeuvres on airway function during resting breathing. IOS test was performed before and 30 minutes after dosing with salbutamol and before dosing with GSK256066. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Observations with BTR grading of 'not acceptable' were excluded. The parameter 'R5-R15' was derived by subtracting R15 from R5 for each subject at each time point.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): impulse oscillometry (IOS): peripheral resistance (R5-R15) and R15",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "IOS tests were performed prior to other measurements of pulmonary function to avoid any influence of forced expiratory manoeuvres on airway function during resting breathing. IOS test was performed before and 30 minutes after dosing with salbutamol and before dosing with GSK256066. Smoking and short acting bronchodilators should be avoided 6 hour prior to administration of the salbutamol. It was assessed on Baseline (Day 0) and 27. Observations with BTR grading of 'not acceptable' were excluded.",
+              "measure": "Summary of lung function parameters (pre and post-bronchodilator): IOS-low frequence reactance area (AX)",
+              "timeFrame": "Up to Day 27 (Visit 6a)"
+            },
+            {
+              "description": "Blood samples were collected to determine serum concentrations of inflammation biomarkers such as fibrinogen, tumour necrosis factor (TNF)-alpha, soluble TNF receptors (sTNF-Rs), IL-8, IL-6, IL-1-beta using an appropriately validated assay including ELISA and multiplex analysis. TNFα, sTNF-Rs, IL-8, IL-6 and IL-1-beta data were not collected. Values below LLQ or above ULQ have been imputed to half the LLQ or ULQ. LLQ for fibrinogen-0.4 grams per liter and ULQs for fibrinogen-14 grams per liter. Data for adjusted mean is presented as least square mean.",
+              "measure": "The concentration of serum inflammatory biomarkers: fibrinogen",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            },
+            {
+              "description": "Blood samples were collected to determine serum concentrations of inflammation biomarkers such as fibrinogen, tumour necrosis factor-alpha (TNF-alpha), sTNF-Rs, IL-8, IL-6, IL-1-beta using an appropriately validated assay including ELISA and multiplex analysis. TNFα, sTNF-Rs, IL-8, IL-6 and IL-1-beta data were not collected. Surfactant protein D (SP-D) was collected. Values below LLQ or above ULQ have been imputed to half the LLQ or ULQ. LLQ for SP-D-7.8 nanograms per mL and ULQs for SP-D-2000 nanograms per mL. Data for adjusted mean is presented as least square mean.",
+              "measure": "The concentration of serum inflammatory biomarkers: surfactant protein-D (SP-D)",
+              "timeFrame": "Up to Day 28 (Visit 6b)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-12-15",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2009-12-02",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2009-11-30",
+          "dispFirstSubmitQcDate": "2009-11-30",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-07-28",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-07-25",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-12-15",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-10-04"
+          },
+          "statusVerifiedDate": "2017-07",
+          "studyFirstPostDateStruct": {
+            "date": "2007-10-26",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-10-24",
+          "studyFirstSubmitQcDate": "2007-10-25"
+        }
+      }
+    }
+  ],
+  "totalCount": 13
+}

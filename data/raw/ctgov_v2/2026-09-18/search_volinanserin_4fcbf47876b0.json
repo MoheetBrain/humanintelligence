@@ -1,0 +1,553 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Volinanserin (M100907)"
+              ],
+              "label": "1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Lormetazepam"
+              ],
+              "label": "2",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "1"
+              ],
+              "description": "2 mg tablets QD",
+              "name": "Volinanserin (M100907)",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "2"
+              ],
+              "description": "1 mg tablets (overencapsulated) QD",
+              "name": "Lormetazepam",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 33,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "REST",
+          "briefTitle": "Comparison of Volinanserin and Lormetazepam in the Treatment of Insomnia Characterized by Sleep Maintenance Difficulties",
+          "nctId": "NCT00788515",
+          "officialTitle": "Comparison of the Safety and Efficacy of Volinanserin and Lormetazepam in the Treatment of Insomnia Characterized by Sleep Maintenance Difficulties. A 4 Week,Randomized, Double-blind, Comparative, Parallel-group Study.",
+          "orgStudyIdInfo": {
+            "id": "EFC10550"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Sanofi"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "EudraCT: 2008-001492-30"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Sleepiness in the morning measured on a visual analog scale of the patient's sleep questionnaire",
+              "timeFrame": "4 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Other measure of next-day residual effects (ability to concentrate of the patient's sleep questionnaire)",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Rebound effect measured by pr-WASO and pr-SOL on patient's sleep questionnaire during the run-out period",
+              "timeFrame": "4 weeks"
+            },
+            {
+              "measure": "Subjective sleep parameters",
+              "timeFrame": "4 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2009-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2009-08-28",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2009-08-27",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2009-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2008-11"
+          },
+          "statusVerifiedDate": "2009-08",
+          "studyFirstPostDateStruct": {
+            "date": "2008-11-11",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2008-11-10",
+          "studyFirstSubmitQcDate": "2008-11-10",
+          "whyStopped": "Sponsor's decision due to absence of demonstration of efficacy of volinanserin in primary insomnia with predominant sleep maintenance problems"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Volinanserin 2 mg for a maximum of 87 days",
+              "interventionNames": [
+                "Drug: volinanserin (M100907)"
+              ],
+              "label": "Volinanserin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo for volinanserin for a maximum of 106 days",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Volinanserin"
+              ],
+              "description": "oral, one tablet taken around bedtime",
+              "name": "volinanserin (M100907)",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "oral, one tablet taken around bedtime",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 848,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SAMS12",
+          "briefTitle": "Efficacy and Safety of M100907 on Sleep Maintenance Insomnia With a Sub-study in Stable Type II Diabetes Mellitus",
+          "nctId": "NCT00495885",
+          "officialTitle": "Efficacy and Safety of 2 mg/Day of M100907 on Sleep Maintenance Insomnia With a Sub-study of the Effect of M100907 on Stable Type II Diabetes Mellitus: a 12-week, Multi-center, Randomized, Double-blind, Placebo-controlled Study",
+          "orgStudyIdInfo": {
+            "id": "LTE6672"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Sanofi"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "Eudract: 2006-006677-25"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "change from baseline to 12 weeks for Sleep Maintenance Insomnia using patient reported Wake After Sleep Onset (pr-WASO)",
+              "timeFrame": "12 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Change from baseline to 12-week of \"General Productivity\" domain from Functional Outcomes of Sleep Questionnaire (FOSQ).",
+              "timeFrame": "12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-10",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2016-05-26",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2016-04-26",
+          "dispFirstSubmitQcDate": "2016-04-26",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-05-26",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-04-26",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-10",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-06"
+          },
+          "statusVerifiedDate": "2016-04",
+          "studyFirstPostDateStruct": {
+            "date": "2007-07-03",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-07-02",
+          "studyFirstSubmitQcDate": "2007-07-02"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "2 mg volinanserin tablets orally once daily",
+              "interventionNames": [
+                "Drug: volinanserin"
+              ],
+              "label": "Volinanserin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "tablets orally once daily",
+              "interventionNames": [
+                "Drug: placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Volinanserin"
+              ],
+              "description": "oral administration",
+              "name": "volinanserin",
+              "otherNames": [
+                "M100907"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "oral administration",
+              "name": "placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 604,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "NOCTURNE907",
+          "briefTitle": "Efficacy and Safety of Volinanserin on Sleep Maintenance Insomnia - Polysomnographic Study",
+          "nctId": "NCT00464243",
+          "officialTitle": "Efficacy and Safety of 2 mg/Day M100907 on Sleep Maintenance Insomnia: a 6-week, Multicenter, Randomized, Double-blind, Placebo-controlled Polysomnographic Study",
+          "orgStudyIdInfo": {
+            "id": "EFC6072"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Sanofi"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "EUDRACT : 2006-005303-34"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Change from baseline to 6 weeks of treatment of the mean night polysomnographic (NPSG) wake time after sleep onset (WASO).",
+              "timeFrame": "6 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Functional Outcomes of Sleep Questionnaire at 6 weeks",
+              "timeFrame": "6 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2008-01",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2017-08-08",
+            "type": "ACTUAL"
+          },
+          "dispFirstSubmitDate": "2017-08-04",
+          "dispFirstSubmitQcDate": "2017-08-04",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-08-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-08-04",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2008-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-04"
+          },
+          "statusVerifiedDate": "2017-08",
+          "studyFirstPostDateStruct": {
+            "date": "2007-04-23",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-04-20",
+          "studyFirstSubmitQcDate": "2007-04-20"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Volinanserin"
+              ],
+              "label": "Volinanserin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Volinanserin"
+              ],
+              "description": "oral administration",
+              "name": "Volinanserin",
+              "otherNames": [
+                "M100907"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "oral administration",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 1847,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SAMS",
+          "briefTitle": "Efficacy an Safety of Volinanserin on Sleep Maintenance Insomnia With a Sub-study on Stable Type II Diabetes Mellitus",
+          "nctId": "NCT00464061",
+          "officialTitle": "Efficacy and Safety of 2mg/Day of M100907 on Sleep Maintenance Insomnia With a Sub-study of the Effect of M100907 on Stable Type II Diabetes Mellitus: a One Year, Multi-center, Randomized, Double-blind, Placebo-controlled Study",
+          "orgStudyIdInfo": {
+            "id": "LTE6673"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Sanofi"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "EudraCT : 2006-004942-18"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Efficacy: change from baseline for Sleep Maintenance Insomnia using patient reported Wake After Sleep Onset (pr-WASO)",
+              "timeFrame": "at 3 months"
+            },
+            {
+              "measure": "Efficacy (sub-study): change from baseline for glycemic measure HbA1c",
+              "timeFrame": "at 6 and 12 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Efficacy: change from baseline of the pr-WASO",
+              "timeFrame": "at 6 and 12 months"
+            },
+            {
+              "measure": "Efficacy: change from baseline of \"General Productivity\" domain score of the Functional Outcomes of Sleep Questionnaire",
+              "timeFrame": "at 3 months"
+            },
+            {
+              "measure": "Safety: adverse events and laboratory abnormalities",
+              "timeFrame": "during 12 months of treatment"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2009-03",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2016-05-26",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2016-04-26",
+          "dispFirstSubmitQcDate": "2016-04-26",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-05-26",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-04-26",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2009-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2007-04"
+          },
+          "statusVerifiedDate": "2016-04",
+          "studyFirstPostDateStruct": {
+            "date": "2007-04-20",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-04-19",
+          "studyFirstSubmitQcDate": "2007-04-19",
+          "whyStopped": "Sponsor's decision due to absence of demonstration of efficacy of volinanserin in primary insomnia with predominant sleep maintenance problems"
+        }
+      }
+    }
+  ],
+  "totalCount": 4
+}

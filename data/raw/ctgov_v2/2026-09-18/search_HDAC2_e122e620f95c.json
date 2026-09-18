@@ -1,0 +1,2061 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Abiraterone 1000 mg orally once daily and prednisone 5 mg orally twice daily, days 1-28 in 28 day cycles.",
+              "interventionNames": [
+                "Drug: Abiraterone Acetate",
+                "Drug: Prednisone"
+              ],
+              "label": "Arm I: Abiraterone + Prednisone",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Olaparib 300 mg orally twice daily for days 1-28 in 28 day cycles.",
+              "interventionNames": [
+                "Drug: Olaparib"
+              ],
+              "label": "Arm II: Olaparib",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Abiraterone 1000 mg orally once daily, prednisone 5 mg orally twice daily, olaparib 300 mg orally twice daily for days 1-28 in 28 day cycles.",
+              "interventionNames": [
+                "Drug: Olaparib",
+                "Drug: Abiraterone Acetate",
+                "Drug: Prednisone"
+              ],
+              "label": "Arm III: Abiraterone + Prednisone + Olaparib",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Olaparib 300 mg orally twice daily for days 1-28 in 28 day cycles.",
+              "interventionNames": [
+                "Drug: Olaparib"
+              ],
+              "label": "Olaparib",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm II: Olaparib",
+                "Arm III: Abiraterone + Prednisone + Olaparib",
+                "Olaparib"
+              ],
+              "name": "Olaparib",
+              "otherNames": [
+                "Lynparza"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm I: Abiraterone + Prednisone",
+                "Arm III: Abiraterone + Prednisone + Olaparib"
+              ],
+              "name": "Abiraterone Acetate",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm I: Abiraterone + Prednisone",
+                "Arm III: Abiraterone + Prednisone + Olaparib"
+              ],
+              "name": "Prednisone",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 70,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Abiraterone/Prednisone, Olaparib, or Abiraterone/Prednisone + Olaparib in Patients With Metastatic Castration-Resistant Prostate Cancer With DNA Repair Defects",
+          "nctId": "NCT03012321",
+          "officialTitle": "BRCAAway: A Randomized Phase II Trial of Abiraterone, Olaparib, or Abiraterone + Olaparib in Patients With Metastatic Castration-Resistant Prostate Cancer With DNA Repair Defects",
+          "orgStudyIdInfo": {
+            "id": "NU_16U05"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Northwestern University"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "Northwestern IRB",
+              "id": "STU00203960",
+              "type": "OTHER"
+            },
+            {
+              "domain": "CTRP (Clinical Trial Reporting Program)",
+              "id": "NCI-2016-01834",
+              "type": "REGISTRY"
+            },
+            {
+              "domain": "PCCTC",
+              "id": "PCCTC #: c16-168",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Evaluate the objective PFS of abiraterone/prednisone, olaparib or the combination abiraterone/prednisone + olaparib in mCRPC patients with canonical DNA repair defects in BRCA1, BRCA2, or ATM.",
+              "measure": "Objective Progression Free Survival (PFS)",
+              "timeFrame": "Up to 2 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Objective disease response (complete response \\[CR\\] + partial response \\[PR\\]) assessed using RECIST 1.1.",
+              "measure": "Measurable disease response rate by RECIST",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "PSA response rate (CR + PR) will be measured.",
+              "measure": "PSA response rate",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "The rate of undetectable PSA (CR) will be measured.",
+              "measure": "Rate of undetectable PSA",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Evaluate if noncanonical DNA repair defects have clinical susceptibility to PARP inhibition alone.",
+              "measure": "Poly[ADP-ribose] polymerase (PARP) inhibition",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "To evaluate the safety of the combination of abiraterone/prednisone + olaparib combination therapy. Adverse events will be assessed by the National Cancer Institute's CTCAE 4.0.",
+              "measure": "Incidence of Adverse Events",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "The response rate will be evaluated in patients who cross over to olaparib or abiraterone post progression on therapy with abiraterone or olaparib respectively by treatment arm.",
+              "measure": "The post progression response rate with cross over to olaparib or abiraterone",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "The PFS will be evaluated in patients who cross over to olaparib or abiraterone post progression on therapy with abiraterone or olaparib respectively by treatment arm.",
+              "measure": "The post progression PFS with cross over to olaparib or abiraterone",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Adverse Event summaries will be reported by treatment arm and organized by body system, frequency of occurrence, intensity (i.e., severity grade), and causality or attribution. Treatment exposure will be summarized for all patients, including dose administration, number of cycles, dose modifications or delays, and duration of therapy.",
+              "measure": "Qualitative toxicities",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Adverse Event summaries will be reported by treatment arm and organized by body system, frequency of occurrence, intensity (i.e., severity grade), and causality or attribution. Treatment exposure will be summarized for all patients, including dose administration, number of cycles, dose modifications or delays, and duration of therapy.",
+              "measure": "Quantitative toxicities",
+              "timeFrame": "Up to 2 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2027-01-16",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-06-01",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-05-28",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2023-10-21",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2017-01-12",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-05",
+          "studyFirstPostDateStruct": {
+            "date": "2017-01-06",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2017-01-03",
+          "studyFirstSubmitQcDate": "2017-01-04"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "28 day treatment of 400 mg Solithromycin taken once a day.",
+              "interventionNames": [
+                "Drug: Solithromycin"
+              ],
+              "label": "Solithromycin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "28 day treatment with placebo taken once per day.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Solithromycin"
+              ],
+              "name": "Solithromycin",
+              "otherNames": [
+                "CEM-101"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 6,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study to Evaluate the Anti-inflammatory Effects of Solithromycin in Chronic Obstructive Pulmonary Disease",
+          "nctId": "NCT02628769",
+          "officialTitle": "A Single-center, Double-blind, Randomised, Placebo-controlled Crossover Study to Evaluate the Effect of Solithromycin on Airway Inflammation in Male and Female Patients With Chronic Obstructive Pulmonary Disease",
+          "orgStudyIdInfo": {
+            "id": "CE01-204"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Imperial College London"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2014-003077-42",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "NRES Reference Number",
+              "id": "14/LO/2066",
+              "type": "OTHER"
+            },
+            {
+              "id": "2014",
+              "link": "https://reporter.nih.gov/quickSearch/2014",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "measure": "Exploratory Outcome: Activity of HDAC2 in Sputum Macrophages From Patients, Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Exploratory Outcome: Activity of PI3K in Sputum Macrophages From Patients, Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "84 days"
+            },
+            {
+              "measure": "Exploratory Outcome: Activity of NF-κB in Sputum Macrophages From Patients, Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Exploratory Outcome: Levels of the Serum Biomarker C-reactive Protein Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Exploratory Outcome: Levels of Serum Biomarkers Fibrinogen Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "A number of sputum neutrophils per mL after treatment with solithromycin and placebo.",
+              "measure": "Number of Sputum Neutrophils Per mL at 28 Days",
+              "timeFrame": "28 days"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Concentrations of sputum CXCL8 after treatment with solithromycin and placebo.",
+              "measure": "Concentrations of Sputum CXCL8 at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of Sputum IL-6 Before and After Treatment With Solithromycin and Placebo at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of Sputum MPO Before and After Treatment With Solithromycin and Placebo at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of Sputum MMP-9 Before and After Treatment With Solithromycin and Placebo at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of Sputum MCP-1 Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of Sputum TNF-α Before and After Treatment With Solithromycin and Placebo.",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "Concentrations of CXCL8 in Nasal Lining Fluid With Solithromycin and Placebo at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "FEV1 After Treatment With Solithromycin and Placebo at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "description": "R5-R20 assessed by impulse oscillometry after treatment with solithromycin and placebo.",
+              "measure": "R5-R20 After Treatment at 28 Days",
+              "timeFrame": "28 days"
+            },
+            {
+              "description": "COPD Assessment Test (CAT) scores after treatment with solithromycin and placebo.\n\nscore of 0-40 to indicate the impact of the disease, the higher score better outcome",
+              "measure": "COPD Assessment Test (CAT) Scores",
+              "timeFrame": "28 days"
+            },
+            {
+              "measure": "The Number of Adult COPD Patients With Treatment-related Adverse Events, as Assessed by CTCAE v4.0.",
+              "timeFrame": "28 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-01-05",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-12-30",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-12-10",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-01-05",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-12-30",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2019-10-17",
+          "resultsFirstSubmitQcDate": "2019-12-10",
+          "startDateStruct": {
+            "date": "2015-07",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-12",
+          "studyFirstPostDateStruct": {
+            "date": "2015-12-11",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-12-01",
+          "studyFirstSubmitQcDate": "2015-12-09"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Combination Antiretroviral Therapy (cART) preferably including raltegravir prescribed at week 0 for the duration of the study up to post-randomisation week 18 (42 weeks in total)",
+              "interventionNames": [
+                "Drug: Combination Antiretroviral Therapy (cART)",
+                "Drug: Raltegravir"
+              ],
+              "label": "Control",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Combination Antiretroviral Therapy (cART) preferably including raltegravir prescribed at week 0 for the duration of the study up to post-randomisation week 18 (42 weeks in total) Plus ChAdV63.HIVconsv prime (post-randomisation week 00) and MVA.HIVconsv boost (post randomisation week 08 day 1) vaccines; followed by a 28-day course of vorinostat (10 doses in total).",
+              "interventionNames": [
+                "Drug: Combination Antiretroviral Therapy (cART)",
+                "Drug: Raltegravir",
+                "Drug: Vorinostat",
+                "Biological: ChAdV63.HIVconsv (ChAd)",
+                "Biological: MVA.HIVconsv (MVA)"
+              ],
+              "label": "Intervention",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Control",
+                "Intervention"
+              ],
+              "description": "Likely consisting of an Nucleoside reverse-transcriptase inhibitor (NRTI) backbone i.e. Truvada plus a ritonavir-boosted protease inhibitor (PI) e.g. Darunavir + ritonavir. Prescribed at week 0 for the duration of the study.",
+              "name": "Combination Antiretroviral Therapy (cART)",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Control",
+                "Intervention"
+              ],
+              "description": "All participants will be dispensed sufficient supplies of Raltegravir to ensure they have sufficient medication to last to the next study visit. Raltegravir is supplied in marketed pack with 30 tablets per bottle.",
+              "name": "Raltegravir",
+              "otherNames": [
+                "Isentress"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Intervention"
+              ],
+              "description": "Vorinostat (suberoylanilide hydroxamic acid abbreviated to SAHA) inhibits the histone deacetylases HDAC1, HDAC2, HDAC3 (Class I) and HDAC6 (Class II).\n\nVorinostat is supplied as capsules containing 100mg vorinostat and the following inactive ingredients: microcrystalline cellulose, sodium croscarmellose and magnesium stearate.",
+              "name": "Vorinostat",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Intervention"
+              ],
+              "description": "Dosage: 5x1010vp .This dose is obtained by injecting 0.37ml of the vaccine at 1.35x1011vp/ml without dilution. This prime vaccination is administered intramuscularly (IM) into the deltoid muscle of the non-dominant arm at post-randomisation week 00.",
+              "name": "ChAdV63.HIVconsv (ChAd)",
+              "type": "BIOLOGICAL"
+            },
+            {
+              "armGroupLabels": [
+                "Intervention"
+              ],
+              "description": "Dosage: 2x108pfu Administration: This dose is obtained by injecting 0.23 ml of the vaccine IM at 8.6x108pfu/ml without dilution. This boost vaccination is administered intramuscularly (IM) into the deltoid muscle of the non-dominant arm at post-randomisation week 08 Day 1 (2 prior to start of vorinostat)",
+              "name": "MVA.HIVconsv (MVA)",
+              "type": "BIOLOGICAL"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "RIVER",
+          "briefTitle": "Research In Viral Eradication of HIV Reservoirs",
+          "nctId": "NCT02336074",
+          "officialTitle": "Research In Viral Eradication of HIV Reservoirs",
+          "orgStudyIdInfo": {
+            "id": "CCT-NAPN-24772"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Imperial College London"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2014-001425-32",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "id": "2014",
+              "link": "https://reporter.nih.gov/quickSearch/2014",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The average of two measures taken at post-randomisation week 16 and 18",
+              "measure": "Total HIV DNA From CD4 T-cells",
+              "timeFrame": "Averaged across post-randomisation week 16 and 18"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Clinical adverse events of any grade post-randomization.",
+              "measure": "Clinical Adverse Events",
+              "timeFrame": "From randomization to the final visit at week 18."
+            },
+            {
+              "description": "Number of Participants with undetectable quantitative viral outgrowth",
+              "measure": "Quantitative Viral Outgrowth",
+              "timeFrame": "At week 16"
+            },
+            {
+              "description": "Percentage of CD4+ CD154+ IFNγ+ T cells , assessed using an optimized and qualified flow cytometry panel.",
+              "measure": "Percentage of CD4+ CD154+ IFNγ+ T Cells",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Percentage of CD8+ CD107a+ IFNγ+ T cells , assessed using an optimized and qualified flow cytometry panel.",
+              "measure": "CD8+ T-cell Responses",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "CD8+ T cell antiviral suppressive activity was expressed as percentage elimination and determined as follows: \\[(fraction of p24+ cells in CD4+ T cells cultured alone) - (fraction of p24 + in CD4+ T cells cultured with CD8+ cells)\\]/(fraction of p24+ cells in CD4+ T cells cultured alone) × 100.\n\nViral inhibition Assay",
+              "measure": "Viral Inhibition",
+              "timeFrame": "12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2023-03-31",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-10-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-10-16",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-11-15",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-09-25",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2019-06-24",
+          "resultsFirstSubmitQcDate": "2019-08-22",
+          "startDateStruct": {
+            "date": "2015-11-27",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-10",
+          "studyFirstPostDateStruct": {
+            "date": "2015-01-12",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-10-23",
+          "studyFirstSubmitQcDate": "2015-01-07"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "CUDC-907 for thyroid cancer",
+              "interventionNames": [
+                "Drug: CUDC-907"
+              ],
+              "label": "Group",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Group"
+              ],
+              "description": "60 mg (2 capsules of 30 mg capsules) will be given orally once a day 5 days on and 2 days off.",
+              "name": "CUDC-907",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "interventionModelDescription": "This is a single group assignment. All patients regardless of subtype of thyroid cancer received one single treatment and follow up plan with option to continue the treatment when scan was negative.",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 7,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "CUDC-907 Treatment in People With Metastatic and Locally Advanced Thyroid Cancer",
+          "nctId": "NCT03002623",
+          "officialTitle": "A Phase II Trial of CUDC-907 in Patients With Metastatic and Locally Advanced Thyroid Cancer",
+          "orgStudyIdInfo": {
+            "id": "170029"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institutes of Health Clinical Center (CC)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "17-C-0029"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Clinical response, defined as a complete response + partial response (CR+PR) to CUDC-907 treatment, was assessed by the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1. Complete response is disappearance of all target lesions. Any pathological lymph nodes (whether target or non-target) must have reduction in short axis to \\<10 mm. Partial response is at least a 30% decrease in the sum of diameters of target lesions taking as reference the baseline sum diameters.",
+              "measure": "Number of Participants With a Clinical Response (Complete Response (CR) + Partial Response (PR)) Assessed by the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1",
+              "timeFrame": "Approximately 6 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Time in days from initiation of treatment until tumor grows more than 20%. Progression was assessed by the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 and is at least a 20% increase in the sum of diameters of target lesions taking as reference the smallest sum on study (this includes the baseline sum if that is the smallest on study) or the appearance of one or more new lesions.",
+              "measure": "Median Amount of Time Subject Survives Without Disease Progression After Treatment",
+              "timeFrame": "Approximately 6 months"
+            },
+            {
+              "description": "Time in days from the initiation of treatment until death estimated by the Kaplan-Meier method.",
+              "measure": "Median Amount of Time Subject Survives After Therapy",
+              "timeFrame": "Approximately 12 months"
+            },
+            {
+              "description": "The amount of time subject survives without disease progression is compared by patient tumor mutation status.",
+              "measure": "Correlation Between Mutation Status of Tumor and Median Amount of Time Subject Survives Without Disease Progression After Treatment",
+              "timeFrame": "At disease progression"
+            },
+            {
+              "description": "The amount of time subject survives without disease progression is compared by the protein levels of PI3K/AKT and epidermal growth factor receptor (EGFR)/rat sarcoma (RAS)/rapidly accelerated fibrosarcoma (RAF)/methyl ethyl ketone (MEK)/extracellular-signal regulated kinase (ERK) in tumor tissue.",
+              "measure": "Correlation Between Activation of the Phosphoinositide 3-kinase (PI3K)/Protein Kinase B (AKT) and EGFR/RAS/RAF/MEK/ERK Pathways in Tumor Tissue and Median Amount of Time Subject Survives Without Disease Progression After Treatment",
+              "timeFrame": "At disease progression"
+            },
+            {
+              "description": "The amount of time subject survives without disease progression is compared by the protein levels of HDAC2 and surviving in tumor tissue. Progression was assessed by the Response Evaluation Criteria in Solid Tumors (RECIST) v1.1 and is at least a 20% increase in the sum of diameters of target lesions taking as reference the smallest sum on study (this includes the baseline sum if that is the smallest on study) or the appearance of one or more new lesions.",
+              "measure": "Correlation Between Histone Deacetylase 2 (HDAC2) and Survivin Protein Levels in Tumor Tissue With Median Amount of Time Subject Survives Without Disease Progression After Treatment",
+              "timeFrame": "At disease progression"
+            },
+            {
+              "description": "Here is the count of participants with serious and non-serious adverse events assessed by the Common Terminology Criteria in Adverse Events (CTCAE v4.0). A non-serious adverse event is any untoward medical occurrence. A serious adverse event is an adverse event or suspected adverse reaction that results in death, a life threatening adverse drug experience, hospitalization, disruption of the ability to conduct normal life functions, congenital anomaly/birth defect or important medical events that jeopardize the patient or subject and may require medical or surgical intervention to prevent one of the previous outcomes mentioned.",
+              "measure": "Count of Participants With Serious and Non-serious Adverse Events Assessed by the Common Terminology Criteria in Adverse Events (CTCAE v4.0)",
+              "timeFrame": "Date treatment consent signed to date off study, approximately 12 months and 13 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-02-12",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-12-21",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-12-18",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-02-12",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2018-12-21",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2018-07-27",
+          "resultsFirstSubmitQcDate": "2018-12-18",
+          "startDateStruct": {
+            "date": "2016-12-22",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2018-12",
+          "studyFirstPostDateStruct": {
+            "date": "2016-12-26",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-12-22",
+          "studyFirstSubmitQcDate": "2016-12-22",
+          "whyStopped": "Study was closed because investigator left the National Institutes of Health."
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "The AECOPD cohort will be hospitalized for an acute exacerbation of chronic obstructive pulmonary disease (AECOPD) with respiratory failure requiring invasive or non-invasive mechanical ventilation. We will be following patients from admission through to discharge, and during a follow-up visit (\\~2 months from discharge). During the follow-up visit we will be administering 60mg of methylprednisolone once to study possible steroid resistance.",
+              "interventionNames": [
+                "Drug: Methylprednisolone"
+              ],
+              "label": "AECOPD with Respiratory Failure"
+            },
+            {
+              "description": "The Stable COPD cohort will not have had an AECOPD within the past 6 months and will be frequency matched to the AECOPD cohort. The Stable COPD cohort will have one research visit where we will administer 60mg of methylprednisolone once to study possible steroid resistance.",
+              "interventionNames": [
+                "Drug: Methylprednisolone"
+              ],
+              "label": "Stable COPD"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "AECOPD with Respiratory Failure",
+                "Stable COPD"
+              ],
+              "description": "1\\. Methylprednisolone is a steroid (corticosteroid) similar to a product produced in the adrenal glands. It is used to help relieve inflammation (swelling, heat, redness, and pain) and is used to treat certain medical issues including COPD.",
+              "name": "Methylprednisolone",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Collection of whole blood, serum, plasma, PBMCs, urine, nasal cells, and microbiome from the mouth, sinonasal passage, lung and stool.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 46,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": true,
+          "studyType": "OBSERVATIONAL",
+          "targetDuration": "2 Months"
+        },
+        "identificationModule": {
+          "briefTitle": "Steroid Resistance During COPD Exacerbations With Respiratory Failure",
+          "nctId": "NCT03680495",
+          "officialTitle": "Targeting Steroid Resistance During Acute Exacerbations of Chronic Obstructive Pulmonary Disease With Respiratory Failure - The AECOPD Resistance Study",
+          "orgStudyIdInfo": {
+            "id": "16-0256"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of Colorado, Denver"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The ability of methylprednisolone to suppress interleukin-8 (IL-8) release from lipopolysaccharide (LPS)-stimulated peripheral blood mononuclear cells (PBMCs).",
+              "measure": "Presence of steroid resistance in patients recently admitted with an acute exacerbation of chronic obstructive pulmonary disease with respiratory failure.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Baseline expression and induction of Dual Specificity Phosphatase 1 (DUSP1) in peripheral blood monocytes from patients recently admitted with an acute exacerbation of chronic obstructive pulmonary disease with respiratory failure versus stable, matched controls.",
+              "measure": "Expression of Dual Specificity Phosphatase 1 (DUSP1)",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            },
+            {
+              "description": "Differences in Mitogen-activated Protein (MAP) Kinase Pathway activity in peripheral blood monocytes from patients recently admitted with an acute exacerbation of chronic obstructive pulmonary disease with respiratory failure versus stable, matched controls.",
+              "measure": "Activity of the Mitogen-activated Protein (MAP) Kinase Pathway.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            },
+            {
+              "description": "Baseline expression and induction of Glucocorticoid-induced Leucine Zipper (GILZ) and DUSP isoforms in peripheral blood monocytes from patients recently admitted with an acute exacerbation of chronic obstructive pulmonary disease with respiratory failure versus stable, matched controls.",
+              "measure": "Expression of Glucocorticoid-induced leucine zipper (GILZ) and DUSP Isoforms.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            },
+            {
+              "description": "The role of HDAC2 in steroid resistance will be examined by measuring HDAC2 expression and histone transacetylase and deacetylase activity in PBMCs.",
+              "measure": "Role of Phosphoinositide 3-kinase (PI3K) and Histone Deacetylase 2 (HDAC2) in steroid resistance.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            },
+            {
+              "description": "Measuring methylprednisolone pharmacokinetics in patients following an acute exacerbation of COPD with respiratory failure versus a stable, matched control.",
+              "measure": "Methylprednisolone pharmacokinetics following an acute exacerbation of chronic obstructive pulmonary disease with respiratory failure.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            },
+            {
+              "description": "Ribonucleic acid (RNA) sequencing will be performed on PBMCs from patients and controls before and after exposure to methylprednisolone.",
+              "measure": "Examination of steroid-responsive gene expression patterns following an acute exacerbation of COPD with respiratory failure.",
+              "timeFrame": "Once at ≥ 45 days after hospital discharge"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2020-01-18",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-01-14",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2020-03",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2017-07-21",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-01",
+          "studyFirstPostDateStruct": {
+            "date": "2018-09-21",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-06-21",
+          "studyFirstSubmitQcDate": "2018-09-19"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Theophylline for one week, followed by the addition of Roflumilast for a further one week.",
+              "interventionNames": [
+                "Drug: Theophylline",
+                "Drug: Roflumilast"
+              ],
+              "label": "thophylline and roflumilast",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "thophylline and roflumilast"
+              ],
+              "description": "Oral",
+              "name": "Theophylline",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "thophylline and roflumilast"
+              ],
+              "description": "Oral",
+              "name": "Roflumilast",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 13,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Enhancement of Corticosteroid Efficacy in COPD",
+          "nctId": "NCT02340520",
+          "officialTitle": "Enhancement of Corticosteroid Efficacy in COPD",
+          "orgStudyIdInfo": {
+            "id": "14-032-3"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "UConn Health"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Change in FEV1 L and FVC L",
+              "measure": "Bronchodilation",
+              "timeFrame": "Baseline, Week 1 and 2"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "circulating Histone Deacetylase2 levels measured in blood sample",
+              "measure": "Change in HDAC2 Levels",
+              "timeFrame": "Baseline, Week 1 and 2"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2016-08",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-06-19",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-05-21",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2016-08",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2018-06-19",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2018-04-16",
+          "resultsFirstSubmitQcDate": "2018-05-21",
+          "startDateStruct": {
+            "date": "2014-12"
+          },
+          "statusVerifiedDate": "2018-05",
+          "studyFirstPostDateStruct": {
+            "date": "2015-01-16",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-01-13",
+          "studyFirstSubmitQcDate": "2015-01-15"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Mesalamine (5-ASA) 500 mg capsules four times per day for 6 weeks in Chronic Beryllium Disease subjects.",
+              "interventionNames": [
+                "Drug: Mesalamine"
+              ],
+              "label": "Mesalamine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sugar pill 500 mg capsules four times per day for 6 weeks in Chronic Beryllium Disease subjects.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Mesalamine"
+              ],
+              "description": "Mesalamine (5-ASA) 500 mg capsules four times per day for 6 weeks in Chronic Beryllium Disease subjects.",
+              "name": "Mesalamine",
+              "otherNames": [
+                "Pentasa",
+                "5-ASA"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Sugar pill 500 mg capsules four times per day for 6 weeks in Chronic Beryllium Disease subjects.",
+              "name": "Placebo",
+              "otherNames": [
+                "Sugar Pill"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 18,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Targeting Oxidative Stress in Chronic Beryllium Disease",
+          "nctId": "NCT01088243",
+          "officialTitle": "Targeting Oxidative Stress in Chronic Beryllium Disease",
+          "orgStudyIdInfo": {
+            "id": "HS-2360B"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "National Jewish Health"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Primary endpoints are beryllium proliferation responses (BeLPT) in PBMCs (peripheral blood mononuclear cells) and BAL (bronchoalveolar lavage) cells. The BeLPT is a blood test that measures the immune response to beryllium exposure. If immune cells multiply in response to beryllium, this is considered an abnormal test results. If immune cells do not multiple, this is considered a normal test results. Results are reported as \"stimulation index\", which is a ratio of the number of cells grown with beryllium compared to the number of cells grown without beryllium. A value of 2.5 or less is considered normal, and a value greater than 2.5 is abnormal.",
+              "measure": "Change in Beryllium Lymphocyte Proliferation Responses (BeLPT) From Baseline to Week 6",
+              "timeFrame": "baseline and week 6"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Secondary outcomes include changes in bronchoalveolar lavage (BAL) tumor necrosis factor alpha (TNFa)",
+              "measure": "Changes in Bronchoalveolar Lavage (BAL) Tumor Necrosis Factor Alpha (TNFa)",
+              "timeFrame": "baseline and week 6"
+            },
+            {
+              "description": "Secondary outcomes include changes in steady-state GSH levels in beryllium specific CD4+ T cell in bronchoalveolar lavage fluid (BALF)",
+              "measure": "Changes in Steady-state Glutathione (GSH) Levels From Baseline to Week 6",
+              "timeFrame": "baseline and week 6"
+            },
+            {
+              "description": "Secondary outcomes include changes in HDAC2 levels",
+              "measure": "HDAC2 Levels",
+              "timeFrame": "baseline and week 6"
+            },
+            {
+              "description": "Secondary outcomes include changes in glucocorticoid receptors modification in PBMCs and BAL cells.",
+              "measure": "Glucocorticoid Receptors",
+              "timeFrame": "baseline and week 6"
+            },
+            {
+              "description": "Secondary outcomes include changes in lung function, which will be assessed with Forced expiratory volume in 1 second percent predicted (FEV1), Forced vital capacity percent predicted (FVC) and Diffusing capacity percent predicted (DLCO).",
+              "measure": "Lung Function",
+              "timeFrame": "baseline and week 6"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2015-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-10-12",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-09-12",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2015-03",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2017-12-12",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2017-09-14",
+          "resultsFirstSubmitQcDate": "2017-11-09",
+          "startDateStruct": {
+            "date": "2010-03"
+          },
+          "statusVerifiedDate": "2018-09",
+          "studyFirstPostDateStruct": {
+            "date": "2010-03-17",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2010-03-15",
+          "studyFirstSubmitQcDate": "2010-03-16"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Mainly from students, family members of patients without chronic lung disease, healthy population, age 18-75 years old, the gender is not limited.",
+              "label": "healthy control group"
+            },
+            {
+              "description": "Patients diagnosed with asthma in the outpatient clinic, in accordance with the inclusion criteria and exclusion criteria.",
+              "label": "mild and moderate asthma group"
+            },
+            {
+              "description": "Outpatient patients with severe asthma diagnosis, in accordance with the inclusion criteria and exclusion criteria.",
+              "interventionNames": [
+                "Other: severe asthma group"
+              ],
+              "label": "severe asthma group"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "severe asthma group"
+              ],
+              "description": "No intervention",
+              "name": "severe asthma group",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "blood",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "CASE_CONTROL",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Clinical Study of Relationship Between Granulocyte Activation, HDAC2 and Severe Asthma",
+          "nctId": "NCT02881502",
+          "orgStudyIdInfo": {
+            "id": "Haiqin Guo"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Xijing Hospital"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Compare the difference was not statistically significant of the different groups by testing the concentration of blood related indicators of subjects",
+              "measure": "Evidence of clinically definite severe asthma confirmed by the plasma concentration of blood related indexes(MPO、MMP-9、NE、ECP、HDAC2)",
+              "timeFrame": "one year"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-07",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2016-08-29",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-08-23",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2017-07",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2016-06"
+          },
+          "statusVerifiedDate": "2016-08",
+          "studyFirstPostDateStruct": {
+            "date": "2016-08-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-07-15",
+          "studyFirstSubmitQcDate": "2016-08-23"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "description": "100 twice a day",
+              "interventionNames": [
+                "Drug: Theophylline"
+              ],
+              "label": "Theophylline",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Theophylline"
+              ],
+              "description": "100 mg twice a day",
+              "name": "Theophylline",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 30,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "NA"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "COPD",
+          "briefTitle": "The Effect on Small Airways of Addition of Theophylline as Inducer of Histone Deacilase Activity for Patients With Moderate to Severe Chronic Obstructive Pulmonary Disease (COPD), Treated With Inhaled Steroids and Long Acting Beta Agonists",
+          "nctId": "NCT00893009",
+          "orgStudyIdInfo": {
+            "id": "02/09"
+          },
+          "organization": {
+            "class": "OTHER_GOV",
+            "fullName": "Assaf-Harofeh Medical Center"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Air trapping",
+              "timeFrame": "1 year"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "endurance time",
+              "timeFrame": "1 year"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2009-12",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "NOT_YET_RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2011-04-05",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2011-04-04",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2009-10",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2009-07"
+          },
+          "statusVerifiedDate": "2009-04",
+          "studyFirstPostDateStruct": {
+            "date": "2009-05-05",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2009-05-04",
+          "studyFirstSubmitQcDate": "2009-05-04"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 1.2mg/m^2"
+              ],
+              "label": "1.2mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 2.4mg/m^2"
+              ],
+              "label": "2.4mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 4.0mg/m^2"
+              ],
+              "label": "4.0mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 6.0mg/m^2"
+              ],
+              "label": "6.0mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 8.4mg/m^2"
+              ],
+              "label": "8.4mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 11.2mg/m^2"
+              ],
+              "label": "11.2mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Drug: Purinostat Mesylate 15mg/m^2"
+              ],
+              "label": "15mg/m^2",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "1.2mg/m^2"
+              ],
+              "description": "1 case,The starting dose,Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 1.2mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "2.4mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 2.4mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "4.0mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 4.0mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "6.0mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 6.0mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "8.4mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 8.4mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "11.2mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 11.2mg/m^2",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "15mg/m^2"
+              ],
+              "description": "Take the medicine once on D1, D8, D11, D15.",
+              "name": "Purinostat Mesylate 15mg/m^2",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SEQUENTIAL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 29,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study of Purinostat Mesylate for Injection in the Treatment of Relapsed or Refractory B Cell-related Tumor-predominant",
+          "nctId": "NCT05526313",
+          "officialTitle": "Single-center, Dose-escalation Phase I Tolerability, Safety, Pharmacokinetics and Efficacy of Purinostat Mesylate (PM) for Injection in the Treatment of Relapsed or Refractory B Cell-related Tumor-predominant Hematologic Tumors Clinical Trials for Pharmacodynamic Evaluation",
+          "orgStudyIdInfo": {
+            "id": "GZ2018-001-1.0"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Chengdu Zenitar Biomedical Technology Co., Ltd"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Estimation of maximum observed plasma concentration",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：Cmax",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of time to reach Cmax",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：Tmax",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of AUC from time zero to the last measured time point",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：AUC0-72h",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of AUC from time zero extrapolated to infinity",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：AUC0-∞",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of mean residence time",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：MRT",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of apparent volume of distribution",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：Vd",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of terminal elimination half-life",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：t1/2",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of clearance when dosed orally",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：CLz/F",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of apparent volume of distribution when dosed orally",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：Vz/F",
+              "timeFrame": "72hours"
+            },
+            {
+              "description": "Estimation of the elimination rate constant of a drug in the body",
+              "measure": "Purinostat Mesylate Pharmacokinetics (PK)：Ke",
+              "timeFrame": "72hours"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-03-29",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-10-01",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-09-26",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-09-07",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2020-08-10",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-09",
+          "studyFirstPostDateStruct": {
+            "date": "2022-09-02",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2022-08-31",
+          "studyFirstSubmitQcDate": "2022-08-31"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Phase 1: Escalating Panobinostat dose with routine ICE Chemotherapy",
+              "interventionNames": [
+                "Drug: Panobinostat",
+                "Drug: Ifosfamide",
+                "Drug: Mesna",
+                "Drug: Carboplatin",
+                "Drug: Etoposide"
+              ],
+              "label": "Panobinostat MTD + ICE",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Phase 2: Routine ICE Chemotherapy (Ifosfamide, Carboplatin, + Etoposide)",
+              "interventionNames": [
+                "Drug: Ifosfamide",
+                "Drug: Mesna",
+                "Drug: Carboplatin",
+                "Drug: Etoposide",
+                "Drug: Pegfilgrastim"
+              ],
+              "label": "ICE Chemotherapy",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Phase 2: Panobinostat with ICE Chemotherapy",
+              "interventionNames": [
+                "Drug: Panobinostat",
+                "Drug: Ifosfamide",
+                "Drug: Mesna",
+                "Drug: Carboplatin",
+                "Drug: Etoposide",
+                "Drug: Pegfilgrastim"
+              ],
+              "label": "Panobinostat + ICE",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Panobinostat + ICE",
+                "Panobinostat MTD + ICE"
+              ],
+              "description": "Starting Day -6 of Cycle 1, 20 mg orally on Monday, Wednesday, and Friday during Cycles 1 and 2 (Days -6, -4, and -2 of Cycle 1 and Days 1, 3, 5, 8, 10, and 12 of Cycles 1 and 2); MTD found in Phase 1 used for same schedule in Phase 2.",
+              "name": "Panobinostat",
+              "otherNames": [
+                "LBH589B"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ICE Chemotherapy",
+                "Panobinostat + ICE",
+                "Panobinostat MTD + ICE"
+              ],
+              "description": "Day 1 of Cycles 1-3, 5 grams/m2 by vein over 24 hours.",
+              "name": "Ifosfamide",
+              "otherNames": [
+                "Ifex"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ICE Chemotherapy",
+                "Panobinostat + ICE",
+                "Panobinostat MTD + ICE"
+              ],
+              "description": "On Day 1 of Cycles 1-3, 2 grams/m2 by vein over 12 hours.",
+              "name": "Mesna",
+              "otherNames": [
+                "Mesnex"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ICE Chemotherapy",
+                "Panobinostat + ICE",
+                "Panobinostat MTD + ICE"
+              ],
+              "description": "On Day 1 of Cycles 1-3, Standard Dose (Target area under curve (AUC) = 5mg/ml/min) by vein over 1 hour.",
+              "name": "Carboplatin",
+              "otherNames": [
+                "Paraplatin"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ICE Chemotherapy",
+                "Panobinostat + ICE",
+                "Panobinostat MTD + ICE"
+              ],
+              "description": "On Days 1-3 of Cycles 1-3, 100 mg/m2 by vein over 2 hours.",
+              "name": "Etoposide",
+              "otherNames": [
+                "VePesid"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ICE Chemotherapy",
+                "Panobinostat + ICE"
+              ],
+              "description": "Beginning Day 4 of Cycles 1-3, 6 mg under the skin.",
+              "name": "Pegfilgrastim",
+              "otherNames": [
+                "Neulasta",
+                "PEG-G-CSF"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 62,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Panobinostat Plus Ifosfamide, Carboplatin, and Etoposide (ICE) Compared With ICE For Relapsed Hodgkin Lymphoma",
+          "nctId": "NCT01169636",
+          "officialTitle": "Phase I Study of Panobinostat Plus ICE Chemotherapy Followed by a Randomized Phase-II Study of ICE Compared With Panobinostat Plus ICE for Patients With Relapsed and Refractory Classical Hodgkin Lymphoma",
+          "orgStudyIdInfo": {
+            "id": "2010-0065"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "M.D. Anderson Cancer Center"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "NCI CTRP",
+              "id": "NCI-2012-01779",
+              "type": "REGISTRY"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Maximum Tolerated Dose (MTD) of Panobinostat + ICE",
+              "measure": "Maximum Tolerated Dose (MTD) of Panobinostat + ICE",
+              "timeFrame": "From first dose of panobinostat (or chemotherapy, in the arm of ICE alone) until 30 days after last dose, up to 6 years"
+            },
+            {
+              "description": "Will be assessed by Kaplan-Meier methods.",
+              "measure": "Number of Participants With Complete Remission (CR)",
+              "timeFrame": "Assessed after 3 cycles of ICE (2 months)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "FFS duration was calculated from date of study entry to date of progression or death or change of therapy, whichever came first.",
+              "measure": "Percentage of Participants With Failure Free Survival (FFS)",
+              "timeFrame": "16 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-05-17",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-01-06",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-12-10",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-05-17",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2021-01-06",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-06-18",
+          "resultsFirstSubmitQcDate": "2020-12-10",
+          "startDateStruct": {
+            "date": "2011-01-31",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-12",
+          "studyFirstPostDateStruct": {
+            "date": "2010-07-26",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2010-07-22",
+          "studyFirstSubmitQcDate": "2010-07-23"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "R-CHOP includes rituximab plus cyclophosphamide, doxorubicin, vincristine, and prednisone treatment therapies.",
+              "interventionNames": [
+                "Drug: enzastaurin",
+                "Drug: rituximab",
+                "Drug: cyclophosphamide",
+                "Drug: doxorubicin",
+                "Drug: vincristine",
+                "Drug: prednisone"
+              ],
+              "label": "R-CHOP and Enzastaurin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "R-CHOP includes rituximab plus cyclophosphamide, doxorubicin, vincristine, and prednisone treatment therapies.",
+              "interventionNames": [
+                "Drug: rituximab",
+                "Drug: cyclophosphamide",
+                "Drug: doxorubicin",
+                "Drug: vincristine",
+                "Drug: prednisone"
+              ],
+              "label": "R-CHOP",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "1125 milligrams (mg) then 500 mg, oral, daily, six 21-day cycles or up to 3 years",
+              "name": "enzastaurin",
+              "otherNames": [
+                "LY317615"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "R-CHOP",
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "375 milligrams per square meter (mg/m\\^2), intravenous (IV), Day 1 every 21 days, six 21-day cycles",
+              "name": "rituximab",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "R-CHOP",
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "750 mg/m\\^2, IV, Day 1 every 21 days, six 21-day cycles",
+              "name": "cyclophosphamide",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "R-CHOP",
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "50 mg/m\\^2, IV, Day 1 every 21 days, six 21-day cycles",
+              "name": "doxorubicin",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "R-CHOP",
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "1.4 mg/m\\^2, IV, Day 1 every 21 days, six 21-day cycles",
+              "name": "vincristine",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "R-CHOP",
+                "R-CHOP and Enzastaurin"
+              ],
+              "description": "100 mg, oral, Days 1-5, six 21-day cycles",
+              "name": "prednisone",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 101,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study of Participants With Lymphoma Who Take R-CHOP and Enzastaurin Compared to Participants Who Take R-CHOP Only",
+          "nctId": "NCT00451178",
+          "officialTitle": "An Open-label, Randomized, Phase 2 Study of R-CHOP Plus Enzastaurin Versus R-CHOP in the First-Line Treatment of Patients With Intermediate and High-Risk Diffuse Large B-Cell Lymphoma",
+          "orgStudyIdInfo": {
+            "id": "9824"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Eli Lilly and Company"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "Eli Lilly and Company",
+              "id": "H6Q-MC-S028",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "PFS time is the elapsed time from the date of randomization to the first date of objectively-determined PD or death from any cause. PD was assessed according to International Working Group recommendations (Cheson et al. 1999). PD: Enlarging liver/spleen nodules, new or increased lymph nodes/masses and reappearance of bone marrow infiltrate. For participants not known to have died as of the data cut-off date and who did not have objective PD, PFS was censored at the date of the last objective progression-free disease assessment. For participants who received subsequent anticancer therapy (other than enzastaurin maintenance therapy) prior to objectively determined disease progression or death, PFS was censored at the date of the last objective progression-free disease assessment prior to the date of subsequent therapy.",
+              "measure": "Progression-Free Survival (PFS) Time",
+              "timeFrame": "Randomization to measured PD or death from any cause (up to 55 months)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "CR, CRu, and PR were defined using International Working Group recommendations (Cheson et al. 1999). CR is a complete disappearance of all disease with the exception of nodes. No new lesions. Previously enlarged organs must have regressed and not be palpable. Bone marrow must be negative if positive at baseline. Normalization of markers. CRu does not qualify for CR above, due to a residual nodal mass or an indeterminate bone marrow. PR is a 50% decrease in the sum of the products of diameters for up to 6 identified dominant lesions, including splenic and hepatic nodules from baseline. No new lesions and no increase in the size of liver, spleen or other nodes. The percentage of participants with complete response (CR/CRu) and objective response (Cr/CRu/PR)=(Number of participants whose best overall response was CR/CRu or Cr/CRu/PR)/(Number of participants treated)\\*100.",
+              "measure": "Percentage of Participants With Complete Response (CR and CRu) and Objective Response [CR, CRu, and Partial Response (PR)] (Overall Response Rate)",
+              "timeFrame": "Baseline through long-term follow-up (up to 2 years post last dose)"
+            },
+            {
+              "description": "PD was assessed according to International Working Group recommendations (Cheson et al. 1999). PD: Enlarging liver/spleen nodules, new or increased lymph nodes/masses and reappearance of bone marrow infiltrate. Percentage of participants alive progression-free at Year 2=(Number of participants alive progression free at Year 2)/(Number of participants assessed)\\*100.",
+              "measure": "Percentage of Participants Alive Progression-Free at Year 2 (2-Year PFS Rate)",
+              "timeFrame": "Randomization to measured PD (up to Year 2)"
+            },
+            {
+              "description": "The percentage of participants with a PET-negative scan=(Number of participants who had a PET-negative scan at Cycle 6)/(Number of participants who had a PET-positive scan at baseline)\\*100.",
+              "measure": "Percentage of Participants With a PET-Negative Scan (PET-Negative Rate)",
+              "timeFrame": "Cycle 6 (21 days/cycle)"
+            },
+            {
+              "description": "Lesion response was assessed according to International Working Group recommendations (Cheson et al. 1999). CR is a complete disappearance of all disease with the exception of nodes. No new lesions. Previously enlarged organs must have regressed and not be palpable. Bone marrow must be negative if positive at baseline. Normalization of markers. CRu does not qualify for CR above, due to a residual nodal mass or an indeterminate bone marrow. Percentage of participants with CR/CRu and/or PET-negative scan=(Number of participants with complete response and/or PET-negative scan at Cycle 6)/(Number of participants with a PET-positive scan at baseline)\\*100.",
+              "measure": "Percentage of Participants With Complete Response (CR/CRu) and/or Post-Baseline PET-Negative Scan (Concordance Between Response and PET Scan)",
+              "timeFrame": "Cycle 6 (21 days/cycle)"
+            },
+            {
+              "description": "EFS is the elapsed time from the date of randomization to the first date of objectively-determined PD, institution of a new anticancer treatment (other than maintenance therapy), or death from any cause. PD was assessed according to International Working Group recommendations (Cheson et al. 1999). PD: Enlarging liver/spleen nodules, new or increased lymph nodes/masses and reappearance of bone marrow infiltrate. For participants not known to have died as of the data cut-off date, who did not have objectively determined disease progression, and who were not treated with a new anticancer treatment, EFS was censored at the date of the last objectively determined disease-free assessment.",
+              "measure": "Event-Free Survival (EFS)",
+              "timeFrame": "Randomization to measured PD, start of new therapy, or death from any cause (up to 55 months)"
+            },
+            {
+              "description": "OS is the elapsed time from the date of study enrollment (baseline) to the date of death from any cause. For participants not known to have died as of the data cutoff date, OS was censored at the last contact date or last date known to be alive, whichever was later.",
+              "measure": "Overall Survival (OS)",
+              "timeFrame": "Baseline to death from any cause (up to 55 months)"
+            },
+            {
+              "description": "Duration of response (DOR) either CR or CRu: Elapsed time from date CR or CRu criteria met to first objectively-determined PD. For responding participants (pts) who died without PD and pts not known to have died as of data cut-off date, who did not have PD, DOR censored at date of last objective progression-free disease assessment. For responding pts who received subsequent systemic anticancer therapy (other than enzastaurin maintenance therapy) prior to PD, DOR was censored at date of last objective progression-free disease assessment prior to subsequent therapy. CR and CRu defined using International Working Group recommendations (Cheson et al. 1999). CR is a complete disappearance of all disease with the exception of nodes. No new lesions. Previously enlarged organs must have regressed and not be palpable. Bone marrow (BM) must be negative if positive at baseline. Normalization of markers. CRu does not qualify for CR above, due to a residual nodal mass or an indeterminate BM.",
+              "measure": "Duration of Complete Response (CR or CRu)",
+              "timeFrame": "Time of response to PD (up to 55 months)"
+            },
+            {
+              "description": "Data presented are the number of participants who experienced at least 1 TEAE, Grade 3 or 4 Common Terminology Criteria for Adverse Events (CTCAE), serious adverse event (SAE), as well as the number of participants who discontinued due to an adverse event (AE) or SAE, who died on therapy, died within 30 days post treatment or within 60 days of first dose. A summary of SAEs and other non-serious AEs, regardless of causality, is located in the Reported Adverse Events module.",
+              "measure": "Participants Who Had Treatment-Emergent Adverse Events (TEAEs) or Died (Evaluate Toxicity and Tolerability of R-CHOP Plus Enzastaurin)",
+              "timeFrame": "First dose through 30 days post study treatment discontinuation (up to 56 months)"
+            },
+            {
+              "description": "Reported is PFS of participants (pts) with high or low biomarker expression levels. PFS: time from randomization to first date of PD/death from any cause. PD assessed according to International Working Group recommendations (Cheson et al. 1999). PD: Enlarging liver/spleen nodules, new/increased lymph node/masses and reappearance of bone marrow infiltrate. For pts who had subsequent anticancer therapy, PFS censored at date of last assessment prior to subsequent therapy. Biomarkers and number of pts censored: EIF4EBP1 Cytoplasm (C) 4,3,7,3; EIF4EBP1 Nucleus (N) 0,2,11,4; EIF4E C 5,2,6,4; EIF4E N 0,0,11,6; HDAC2 N 5,1,5,5; PCREB N 5,3,6,4; PEIF3746 C 4,2,7,4; PEIF3746 N 5,2,6,4; PEIFS209 C 5,2,5,4; PEIFS65 N 7,2,4,4; PEIFT70 C 5,2,6,4; PEIFT70 N 6,4,5,2; P GSK3B C 7,3,4,3; PKCb2 C 4,3,7,3; PS6 C 9,4,1,1; PTEN C 5,2,6,4; PTEN N 3,0,8,6. Correlation of biomarkers with PFS (statistical analyses) reported if high expression groups combined and low expression groups combined each had ≥10 pts.",
+              "measure": "PFS of Participants With High or Low Expression of Protein Biomarkers and Correlation of Biomarkers to PFS",
+              "timeFrame": "Randomization to measured PD or death from any cause (up to 55 months)]"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2013-01",
+            "type": "ACTUAL"
+          },
+          "dispFirstPostDateStruct": {
+            "date": "2012-06-01",
+            "type": "ESTIMATED"
+          },
+          "dispFirstSubmitDate": "2012-05-24",
+          "dispFirstSubmitQcDate": "2012-05-24",
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-07-21",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-07-20",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2012-02",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-07-21",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-06-09",
+          "resultsFirstSubmitQcDate": "2020-07-20",
+          "startDateStruct": {
+            "date": "2007-05"
+          },
+          "statusVerifiedDate": "2020-07",
+          "studyFirstPostDateStruct": {
+            "date": "2007-03-23",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2007-03-21",
+          "studyFirstSubmitQcDate": "2007-03-21"
+        }
+      }
+    }
+  ],
+  "totalCount": 12
+}

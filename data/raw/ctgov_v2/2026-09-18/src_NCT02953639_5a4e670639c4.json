@@ -1,0 +1,5087 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D019967",
+          "term": "Schizophrenia Spectrum and Other Psychotic Disorders"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D012559",
+          "term": "Schizophrenia"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C000720034",
+          "term": "basmisanil"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2018-07-31",
+          "filename": "Prot_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": false,
+          "label": "Study Protocol",
+          "size": 2516063,
+          "typeAbbrev": "Prot",
+          "uploadDate": "2020-12-07T10:23"
+        },
+        {
+          "date": "2019-11-29",
+          "filename": "SAP_001.pdf",
+          "hasIcf": false,
+          "hasProtocol": false,
+          "hasSap": true,
+          "label": "Statistical Analysis Plan",
+          "size": 2915795,
+          "typeAbbrev": "SAP",
+          "uploadDate": "2020-12-07T10:23"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+          "interventionNames": [
+            "Drug: Placebo"
+          ],
+          "label": "Placebo",
+          "type": "PLACEBO_COMPARATOR"
+        },
+        {
+          "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+          "interventionNames": [
+            "Drug: Basmisanil"
+          ],
+          "label": "Basmisanil 80mg BID",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+          "interventionNames": [
+            "Drug: Basmisanil"
+          ],
+          "label": "Basmisanil 240mg BID",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Basmisanil 240mg BID",
+            "Basmisanil 80mg BID"
+          ],
+          "description": "Participants received either 80 milligrams (mg) or 240 mg of Basmisanil, as per the dosing schedules described above.",
+          "name": "Basmisanil",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Placebo"
+          ],
+          "description": "Participants received matching Placebo to Basmisanil, as per the dosing schedules described above.",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Schizophrenia"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Little Rock",
+          "country": "United States",
+          "facility": "Woodland International Research Group Inc.",
+          "geoPoint": {
+            "lat": 34.74648,
+            "lon": -92.28959
+          },
+          "state": "Arkansas",
+          "zip": "72211"
+        },
+        {
+          "city": "Rogers",
+          "country": "United States",
+          "facility": "Woodland Research Northwest, LLC",
+          "geoPoint": {
+            "lat": 36.33202,
+            "lon": -94.11854
+          },
+          "state": "Arkansas",
+          "zip": "72758"
+        },
+        {
+          "city": "Culver City",
+          "country": "United States",
+          "facility": "ProScience Research Group",
+          "geoPoint": {
+            "lat": 34.02112,
+            "lon": -118.39647
+          },
+          "state": "California",
+          "zip": "90230"
+        },
+        {
+          "city": "Garden Grove",
+          "country": "United States",
+          "facility": "Collaborative Neuroscience Network, Inc.",
+          "geoPoint": {
+            "lat": 33.77391,
+            "lon": -117.94145
+          },
+          "state": "California",
+          "zip": "92845"
+        },
+        {
+          "city": "Glendale",
+          "country": "United States",
+          "facility": "California Clinical Trials",
+          "geoPoint": {
+            "lat": 34.14251,
+            "lon": -118.25508
+          },
+          "state": "California",
+          "zip": "91206"
+        },
+        {
+          "city": "Long Beach",
+          "country": "United States",
+          "facility": "Alliance for Wellness, dba Alliance for Research",
+          "geoPoint": {
+            "lat": 33.76696,
+            "lon": -118.18923
+          },
+          "state": "California",
+          "zip": "90807"
+        },
+        {
+          "city": "National City",
+          "country": "United States",
+          "facility": "Synergy Clinical Research",
+          "geoPoint": {
+            "lat": 32.67811,
+            "lon": -117.0992
+          },
+          "state": "California",
+          "zip": "91950"
+        },
+        {
+          "city": "Oakland",
+          "country": "United States",
+          "facility": "Pacific Research Partners, LLC",
+          "geoPoint": {
+            "lat": 37.80437,
+            "lon": -122.2708
+          },
+          "state": "California",
+          "zip": "94607"
+        },
+        {
+          "city": "Orange",
+          "country": "United States",
+          "facility": "NRC Research Institute",
+          "geoPoint": {
+            "lat": 33.78779,
+            "lon": -117.85311
+          },
+          "state": "California",
+          "zip": "92868"
+        },
+        {
+          "city": "Pico Rivera",
+          "country": "United States",
+          "facility": "CNRI - Los Angeles, LLC",
+          "geoPoint": {
+            "lat": 33.98307,
+            "lon": -118.09673
+          },
+          "state": "California",
+          "zip": "90660"
+        },
+        {
+          "city": "San Diego",
+          "country": "United States",
+          "facility": "Artemis Institute for Clinical Research, LLC",
+          "geoPoint": {
+            "lat": 32.71571,
+            "lon": -117.16472
+          },
+          "state": "California",
+          "zip": "92103"
+        },
+        {
+          "city": "Torrance",
+          "country": "United States",
+          "facility": "Collaborative Neuroscience Network Inc.",
+          "geoPoint": {
+            "lat": 33.83585,
+            "lon": -118.34063
+          },
+          "state": "California",
+          "zip": "90502"
+        },
+        {
+          "city": "New Haven",
+          "country": "United States",
+          "facility": "Yale School of Medicine - CT Mental Health Center (CMHC) - Schizophrenia Research Clinic",
+          "geoPoint": {
+            "lat": 41.30815,
+            "lon": -72.92816
+          },
+          "state": "Connecticut",
+          "zip": "06519"
+        },
+        {
+          "city": "Largo",
+          "country": "United States",
+          "facility": "Vantage Clinical Trials",
+          "geoPoint": {
+            "lat": 27.90979,
+            "lon": -82.78842
+          },
+          "state": "Florida",
+          "zip": "33770"
+        },
+        {
+          "city": "Lauderhill",
+          "country": "United States",
+          "facility": "Innovative Clinical Research, Inc.",
+          "geoPoint": {
+            "lat": 26.14036,
+            "lon": -80.21338
+          },
+          "state": "Florida",
+          "zip": "33319"
+        },
+        {
+          "city": "Maitland",
+          "country": "United States",
+          "facility": "Meridien Research",
+          "geoPoint": {
+            "lat": 28.62778,
+            "lon": -81.36312
+          },
+          "state": "Florida",
+          "zip": "32751"
+        },
+        {
+          "city": "Miami",
+          "country": "United States",
+          "facility": "University of Miami Dept of Psychiatry",
+          "geoPoint": {
+            "lat": 25.77427,
+            "lon": -80.19366
+          },
+          "state": "Florida",
+          "zip": "33136"
+        },
+        {
+          "city": "North Miami",
+          "country": "United States",
+          "facility": "Behavioral Clinical Research, Inc.",
+          "geoPoint": {
+            "lat": 25.89009,
+            "lon": -80.18671
+          },
+          "state": "Florida",
+          "zip": "33161"
+        },
+        {
+          "city": "Decatur",
+          "country": "United States",
+          "facility": "iResearch Atlanta",
+          "geoPoint": {
+            "lat": 33.77483,
+            "lon": -84.29631
+          },
+          "state": "Georgia",
+          "zip": "30030"
+        },
+        {
+          "city": "Hoffman Estates",
+          "country": "United States",
+          "facility": "Alexian Brothers Center for Psychiatric Research",
+          "geoPoint": {
+            "lat": 42.04281,
+            "lon": -88.0798
+          },
+          "state": "Illinois",
+          "zip": "60169"
+        },
+        {
+          "city": "Anderson",
+          "country": "United States",
+          "facility": "Community Clinical Research Center",
+          "geoPoint": {
+            "lat": 40.10532,
+            "lon": -85.68025
+          },
+          "state": "Indiana",
+          "zip": "46060"
+        },
+        {
+          "city": "Shreveport",
+          "country": "United States",
+          "facility": "Booker, J. Gary, MD, APMC",
+          "geoPoint": {
+            "lat": 32.52515,
+            "lon": -93.75018
+          },
+          "state": "Louisiana",
+          "zip": "71104-2136"
+        },
+        {
+          "city": "Shreveport",
+          "country": "United States",
+          "facility": "Louisiana Clinical Research, LLC",
+          "geoPoint": {
+            "lat": 32.52515,
+            "lon": -93.75018
+          },
+          "state": "Louisiana",
+          "zip": "71115"
+        },
+        {
+          "city": "Gaithersburg",
+          "country": "United States",
+          "facility": "CBH Health",
+          "geoPoint": {
+            "lat": 39.14344,
+            "lon": -77.20137
+          },
+          "state": "Maryland",
+          "zip": "20877"
+        },
+        {
+          "city": "Boston",
+          "country": "United States",
+          "facility": "Boston Medical Center",
+          "geoPoint": {
+            "lat": 42.35843,
+            "lon": -71.05977
+          },
+          "state": "Massachusetts",
+          "zip": "02114"
+        },
+        {
+          "city": "St Louis",
+          "country": "United States",
+          "facility": "Arch Clinical Trials, LLC",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "zip": "63118"
+        },
+        {
+          "city": "St Louis",
+          "country": "United States",
+          "facility": "St Louis Clinical Trials",
+          "geoPoint": {
+            "lat": 38.62727,
+            "lon": -90.19789
+          },
+          "state": "Missouri",
+          "zip": "63141"
+        },
+        {
+          "city": "Berlin",
+          "country": "United States",
+          "facility": "Hassman Research Institute",
+          "geoPoint": {
+            "lat": 39.79123,
+            "lon": -74.92905
+          },
+          "state": "New Jersey",
+          "zip": "08009"
+        },
+        {
+          "city": "Cedarhurst",
+          "country": "United States",
+          "facility": "Neurobehavioral Research, Inc.",
+          "geoPoint": {
+            "lat": 40.62288,
+            "lon": -73.7243
+          },
+          "state": "New York",
+          "zip": "11516"
+        },
+        {
+          "city": "New York",
+          "country": "United States",
+          "facility": "Manhattan Psychiatric Center; Psychopharmacology Research Unit",
+          "geoPoint": {
+            "lat": 40.71427,
+            "lon": -74.00597
+          },
+          "state": "New York",
+          "zip": "10035"
+        },
+        {
+          "city": "Rochester",
+          "country": "United States",
+          "facility": "Finger Lakes Clinical Research",
+          "geoPoint": {
+            "lat": 43.15478,
+            "lon": -77.61556
+          },
+          "state": "New York",
+          "zip": "14618"
+        },
+        {
+          "city": "Canton",
+          "country": "United States",
+          "facility": "Neuro-Behavioral Clinical Research, Inc.",
+          "geoPoint": {
+            "lat": 40.79895,
+            "lon": -81.37845
+          },
+          "state": "Ohio",
+          "zip": "44718"
+        },
+        {
+          "city": "Cleveland",
+          "country": "United States",
+          "facility": "University Hospitals",
+          "geoPoint": {
+            "lat": 41.4995,
+            "lon": -81.69541
+          },
+          "state": "Ohio",
+          "zip": "44106"
+        },
+        {
+          "city": "Dayton",
+          "country": "United States",
+          "facility": "Midwest Clinical Research Center",
+          "geoPoint": {
+            "lat": 39.75895,
+            "lon": -84.19161
+          },
+          "state": "Ohio",
+          "zip": "45417"
+        },
+        {
+          "city": "Garland",
+          "country": "United States",
+          "facility": "Pillar Clinical Research LLC",
+          "geoPoint": {
+            "lat": 32.91262,
+            "lon": -96.63888
+          },
+          "state": "Texas",
+          "zip": "75042"
+        },
+        {
+          "city": "Irving",
+          "country": "United States",
+          "facility": "University Hills Clinical Research - Irving;Office of Dr. Knesevich",
+          "geoPoint": {
+            "lat": 32.81402,
+            "lon": -96.94889
+          },
+          "state": "Texas",
+          "zip": "75062"
+        },
+        {
+          "city": "Bellevue",
+          "country": "United States",
+          "facility": "Northwest Clinical Research Center",
+          "geoPoint": {
+            "lat": 47.61038,
+            "lon": -122.20068
+          },
+          "state": "Washington",
+          "zip": "98007"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Hoffmann-La Roche",
+          "name": "Clinical Trials",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This multicenter study assessed the effects of 24 weeks of basmisanil treatment on cognition and functioning of stable schizophrenia participants treated with antipsychotics."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 214,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Diagnosis of schizophrenia of any type utilizing the Mini International Neuropsychiatric Interview and diagnostic and statistical manual of mental disorders, fifth edition (DSM-5) direct clinical assessments, family informants and past medical records\n* Evidence of stability of symptoms for 3 months at screening, that is, without hospitalizations for schizophrenia or increase in level of psychiatric care due to worsening of symptoms of schizophrenia\n* Participants with schizophrenia clinical symptom severity defined by the following: hallucinatory behavior item score less than or equal to (\\</=) 5 and a delusion item score \\</= 5 of the PANSS\n* Participants on a stable regimen of antipsychotic therapy for at least 3 months at screening and receiving no more than two antipsychotics\n\nExclusion Criteria:\n\n* Participants with current DSM-5 diagnosis other than schizophrenia including bipolar disorder, schizoaffective disorder and major depressive disorder\n* Clinically significant neurological illness or significant head trauma that affects cognitive function, in the judgment of the principal investigator\n* Full scale intelligence quotient \\</=65 on the Wechsler Abbreviated Scale of Intelligence at screening\n* Positive result at screening for hepatitis B, hepatitis C, or human immunodeficiency virus-1 and 2\n* Moderate to severe substance use disorder (other than nicotine or caffeine), as defined by the DSM-5, within the last 12 months\n* Suicide attempt within 1 year or currently at risk of suicide in the opinion of the Investigator",
+      "healthyVolunteers": false,
+      "maximumAge": "50 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "A Study to Evaluate the Effects of Basmisanil in Participants With Cognitive Impairment Associated With Schizophrenia (CIAS) Treated With Antipsychotics",
+      "nctId": "NCT02953639",
+      "officialTitle": "A Phase IIb, Multicenter, Randomized, Double-Blind, Parallel Group, Placebo Controlled Study to Evaluate the Efficacy, Safety and Tolerability of Basmisanil (RO5186582) as Adjunctive Treatment in Patients With Cognitive Impairment Associated With Schizophrenia Treated With Antipsychotics",
+      "orgStudyIdInfo": {
+        "id": "BP39207"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Hoffmann-La Roche"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "description": "Qualified researchers may request access to individual patient level data through the clinical study data request platform (www.vivli.org). Further details on Roche's criteria for eligible studies are available here (https://vivli.org/ourmember/roche/). For further details on Roche's Global Policy on the Sharing of Clinical Information and how to request access to related clinical study documents, see here (https://www.roche.com/research\\_and\\_development/who\\_we\\_are\\_how\\_we\\_work/clinical\\_trials/our\\_commitment\\_to\\_data\\_sharing.htm).",
+      "ipdSharing": "YES"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The MCCB is a cognitive battery to assess 7 domains recommended by the MATRICS initiative (i.e., working memory, verbal learning, speed of processing, attention/vigilance, visual learning, social cognition, reasoning and problem solving). The MCCB neurocognitive composite T-score is a standardized mean of the six domain scores (excluding social cognition). Raw scores are converted to age and sex adjusted t-scores which are standardized to normative data, and have a mean of 50 and standard deviation of 10 in the general healthy population. A higher composite T-score represents lower impairment.",
+          "measure": "Change From Baseline to Week 24 in MATRICS Consensus Cognitive Battery (MCCB) Neurocognitive Composite Score",
+          "timeFrame": "Baseline up to Week 24"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "The MCCB is a cognitive battery to assess 7 domains recommended by the MATRICS initiative (i.e., working memory, verbal learning, speed of processing, attention/vigilance, visual learning, social cognition, reasoning and problem solving). Raw scores are converted to age and sex adjusted t-scores which are standardized to normative data, and have a mean of 50 and standard deviation of 10 in the general healthy population. A higher T-score represents lower impairment.",
+          "measure": "Change From Baseline to Week 24 in MCCB Cognitive Domain Scores",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "The Paired Associates Learning (PAL I and II) of the WMS-IV (Wechsler Memory Scale Fourth edition) is a test of verbal learning and memory that requires the participant to learn novel word pairs. The participant learns the word pairs across learning trials and is asked to recall them immediately (PAL I) or after a 30-minute delay (PAL II). Data is presented here for 3 Scores: VPA I total raw score, VPA II total raw score and VPA II Recognition total raw score. The total raw score ranges for these 3 Scores are 0 to 56, 0 to 14 and 0 to 40 respectively, with larger total raw scores indicating better performance.",
+          "measure": "Change From Baseline to Week 24 in Wechsler Memory Scale Fourth Edition, Verbal Paired Associates (WMS IV-PAL) Score",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "Logical memory (LM) assesses narrative memory under free-recall conditions. Two short stories are presented orally. The examinee is asked to retell each story from memory immediately after hearing it (LM I). In the delayed condition (LM II), the examinee is asked to retell both stories from the immediate condition (delayed free recall). Data is presented here for 2 Scores: LM I total raw score and LM II total raw score. The total raw score range is from 0 to 50 with larger total raw scores indicating better performance.",
+          "measure": "Change From Baseline to Week 24 in Wechsler Memory Scale Fourth Edition, Logical Memory Test (WMS IV-LM) Score",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "The TMT consists of two parts: Trail Making Part A, which is a part of the standard MCCB and Trail Making Part B additionally included in this study. Circles containing numbers (Part A) or both numbers and letters (Part B) must be sequentially connected. The difference (ratio) in performance between Part A and Part B reflects executive processes and will be used to assess executive functioning including cognitive set shifting abilities and data for this ratio is presented here. Smaller ratio values, hence decreases from baseline (TMT-B/TMT-A ratio values below 1) indicate higher executive functioning capabilities.",
+          "measure": "Change From Baseline to Week 24 in Ratio Between Trail Making Test (TMT)- Part B and TMT- Part A Scores",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "The PSP Total Score is an integer result in the range of 0 to 100. Larger values, hence increases from baseline in the PSP total score, indicate higher social and personal functioning.",
+          "measure": "Change From Baseline to Week 24 in Personal and Social Performance (PSP) Total Score",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "The main parameter of interest for the Schizophrenia Cognition Rating Scale (SCoRS) is the SCoRS 'Total Score'. The total score range is from 0 to 80 with lower scores indicating better day-to-day functioning.",
+          "measure": "Change From Baseline to Week 24 in Schizophrenia Cognition Rating Scale (SCoRS) Total Score",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "Values for the CGI-S Scale are encoded by the numerical values from 1 to 7 respectively. Higher numerical values represent greater impairment.",
+          "measure": "Change From Baseline to Week 24 in Clinical Global Impression Severity (CGI-S) Rating",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "Values for the CGI-I Scale are encoded by the numerical values from 1 to 7 respectively. Higher numerical values represent greater impairment.",
+          "measure": "Change From Baseline to Week 24 in Clinical Global Impression Improvement (CGI-I) Rating",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "The SQLS is a patient reported scale consisting of 33 items: 2 domain scores (Cognition \\& Vitality Score \\[SQLS-CV\\] and Psycho-social Score \\[SQLS-P\\]) as well as a Total score (SQLS-T) are derived. The overall score range is from 0 to 100. On all scales, higher scores represent a lower quality of life.",
+          "measure": "Change From Baseline to Week 24 in Schizophrenia Quality of Life Scale (SQLS)",
+          "timeFrame": "Baseline up to Week 24"
+        },
+        {
+          "description": "An Adverse Event (AE) is any untoward medical occurrence in a participant administered a pharmaceutical product and which does not necessarily have to have a causal relationship with the treatment. An Adverse Event can therefore be any unfavorable and unintended sign (including abnormal laboratory values or abnormal clinical test results), symptom, or disease temporally associated with the use of a pharmaceutical product, whether or not considered related to the pharmaceutical product. Preexisting conditions which worsen during a study are also considered as Adverse Events.",
+          "measure": "Percentage of Participants With Adverse Events (AEs)",
+          "timeFrame": "Baseline up to 4 weeks after the last dose of study drug (up to 28 weeks)"
+        },
+        {
+          "description": "Population PK model estimated apparent oral clearance of Basmisanil at steady-state.",
+          "measure": "Apparent Clearance of Basmisanil at Steady State (CL/F,ss)",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168"
+        },
+        {
+          "description": "Population PK model estimated apparent volume of distribution of Basmisanil at steady-state.",
+          "measure": "Apparent Volume of Distribution of Basmisanil at Steady State (Vz/F,ss)",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168"
+        },
+        {
+          "description": "Population PK model estimated AUC of Basmisanil at steady-state.",
+          "measure": "Area Under the Curve of Basmisanil at Steady State (AUC,ss)",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168"
+        },
+        {
+          "description": "Population PK model estimated maximum plasma concentration of Basmisanil at steady-state (ss).",
+          "measure": "Maximum Plasma Concentration of Basmisanil at Steady State (Cmax,ss)",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Umbricht D, Abt M, Derks M, Hernandez MC, Parkar N, Negron D, Koerner A, Holiga S, Goeldner C. A Phase 2b Multicenter Study to Evaluate Basmisanil as an Adjunctive Treatment in Patients With Cognitive Impairment Associated With Schizophrenia. J Clin Psychiatry. 2026 Apr 15;87(2):25m16022. doi: 10.4088/JCP.25m16022.",
+          "pmid": "41983730",
+          "type": "DERIVED"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Hoffmann-La Roche"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2019-12-12",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2021-02-09",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2021-01-21",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2019-12-12",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2021-02-09",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2020-12-07",
+      "resultsFirstSubmitQcDate": "2021-01-21",
+      "startDateStruct": {
+        "date": "2016-11-30",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2021-01",
+      "studyFirstPostDateStruct": {
+        "date": "2016-11-03",
+        "type": "ESTIMATED"
+      },
+      "studyFirstSubmitDate": "2016-11-01",
+      "studyFirstSubmitQcDate": "2016-11-01"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 81,
+          "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+          "id": "EG000",
+          "otherNumAffected": 10,
+          "otherNumAtRisk": 81,
+          "seriousNumAffected": 5,
+          "seriousNumAtRisk": 81,
+          "title": "Placebo"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 54,
+          "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+          "id": "EG001",
+          "otherNumAffected": 10,
+          "otherNumAtRisk": 54,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 54,
+          "title": "Basmisanil 80mg BID"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 78,
+          "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+          "id": "EG002",
+          "otherNumAffected": 12,
+          "otherNumAtRisk": 78,
+          "seriousNumAffected": 4,
+          "seriousNumAtRisk": 78,
+          "title": "Basmisanil 240mg BID"
+        }
+      ],
+      "frequencyThreshold": "5",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 81,
+              "numEvents": 4
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 54,
+              "numEvents": 4
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 2,
+              "numAtRisk": 78,
+              "numEvents": 2
+            }
+          ],
+          "term": "Diarrhoea"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 6,
+              "numAtRisk": 81,
+              "numEvents": 7
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 54,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 1,
+              "numAtRisk": 78,
+              "numEvents": 1
+            }
+          ],
+          "term": "Fatigue"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 81,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 54,
+              "numEvents": 3
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 0,
+              "numAtRisk": 78,
+              "numEvents": 0
+            }
+          ],
+          "term": "Arthralgia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 54,
+              "numEvents": 3
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 7,
+              "numAtRisk": 78,
+              "numEvents": 9
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 81,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 4,
+              "numAtRisk": 78,
+              "numEvents": 4
+            }
+          ],
+          "term": "Somnolence"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 0,
+              "numAtRisk": 78,
+              "numEvents": 0
+            }
+          ],
+          "term": "Supraventricular extrasystoles"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 0,
+              "numAtRisk": 78,
+              "numEvents": 0
+            }
+          ],
+          "term": "Pancreatitis"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Hepatobiliary disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 81,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 1,
+              "numAtRisk": 78,
+              "numEvents": 1
+            }
+          ],
+          "term": "Cholecystitis acute"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 81,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 1,
+              "numAtRisk": 78,
+              "numEvents": 1
+            }
+          ],
+          "term": "Diabetic complication"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 2
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 2,
+              "numAtRisk": 78,
+              "numEvents": 2
+            }
+          ],
+          "term": "Psychotic disorder"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 0,
+              "numAtRisk": 78,
+              "numEvents": 0
+            }
+          ],
+          "term": "Schizophrenia"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "MedDRA 22.1",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 81,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 54,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG002",
+              "numAffected": 0,
+              "numAtRisk": 78,
+              "numEvents": 0
+            }
+          ],
+          "term": "Suicide attempt"
+        }
+      ],
+      "timeFrame": "Baseline up to 4 weeks after the last dose of study drug (up to 28 weeks)"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "81"
+            },
+            {
+              "groupId": "BG001",
+              "value": "54"
+            },
+            {
+              "groupId": "BG002",
+              "value": "78"
+            },
+            {
+              "groupId": "BG003",
+              "value": "213"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+          "id": "BG000",
+          "title": "Placebo"
+        },
+        {
+          "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+          "id": "BG001",
+          "title": "Basmisanil 80mg BID"
+        },
+        {
+          "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+          "id": "BG002",
+          "title": "Basmisanil 240mg BID"
+        },
+        {
+          "description": "Total of all reporting groups",
+          "id": "BG003",
+          "title": "Total"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "8.2",
+                      "value": "36.4"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "spread": "8.6",
+                      "value": "36.8"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "spread": "8.4",
+                      "value": "37.4"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "spread": "8.4",
+                      "value": "36.9"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "Years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "20"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "12"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "50"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "61"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "42"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "60"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "163"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "13"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "7"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "12"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "32"
+                    }
+                  ]
+                }
+              ],
+              "title": "Hispanic or Latino"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "68"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "47"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "66"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "181"
+                    }
+                  ]
+                }
+              ],
+              "title": "Not Hispanic or Latino"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Race/Ethnicity, Customized",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "5"
+                    }
+                  ]
+                }
+              ],
+              "title": "Asian"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "51"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "30"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "51"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "132"
+                    }
+                  ]
+                }
+              ],
+              "title": "Black or African American"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "MULTIPLE"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "UNKNOWN"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "25"
+                    },
+                    {
+                      "groupId": "BG001",
+                      "value": "23"
+                    },
+                    {
+                      "groupId": "BG002",
+                      "value": "23"
+                    },
+                    {
+                      "groupId": "BG003",
+                      "value": "71"
+                    }
+                  ]
+                }
+              ],
+              "title": "White"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Race/Ethnicity, Customized",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "otherDetails": "The Study being conducted under this Agreement is part of the Overall Study. Investigator is free to publish in reputable journals or to present at professional conferences the results of the Study, but only after the first publication or presentation that involves the Overall Study. The Sponsor may request that Confidential Information be deleted and/or the publication be postponed in order to protect the Sponsor's intellectual property rights.",
+        "piSponsorEmployee": false,
+        "restrictionType": "OTHER",
+        "restrictiveAgreement": true
+      },
+      "limitationsAndCaveats": {
+        "description": "Following a planned futility analysis, enrolment into the 80mg Basmisanil arm was discontinued as of 8th November 2018. Results from the 80mg Basmisanil arm are thus not presented."
+      },
+      "pointOfContact": {
+        "email": "genentech@druginfo.com",
+        "organization": "Hoffmann-La Roche",
+        "phone": "800 821-8590",
+        "title": "Medical Communications"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-2.11",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.38",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.730",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.36",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.47",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.02",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.793",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.28",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "14.47",
+                      "value": "32.50"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "11.44",
+                      "value": "32.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.07",
+                      "value": "-0.17"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.08",
+                      "value": "-0.28"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.78",
+                      "value": "1.08"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "4.80",
+                      "value": "1.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The MCCB is a cognitive battery to assess 7 domains recommended by the MATRICS initiative (i.e., working memory, verbal learning, speed of processing, attention/vigilance, visual learning, social cognition, reasoning and problem solving). The MCCB neurocognitive composite T-score is a standardized mean of the six domain scores (excluding social cognition). Raw scores are converted to age and sex adjusted t-scores which are standardized to normative data, and have a mean of 50 and standard deviation of 10 in the general healthy population. A higher composite T-score represents lower impairment.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in MATRICS Consensus Cognitive Battery (MCCB) Neurocognitive Composite Score",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Composite T-Score"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-3.46",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.64",
+              "groupDescription": "Week 12 Day 84 (Attention/Vigilance)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.556",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.91",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.59",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.05",
+              "groupDescription": "Week 24 Day 168 (Attention/Vigilance)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.848",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.27",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.08",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.16",
+              "groupDescription": "Week 12 Day 84 (Reasoning and Problem Solving)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.973",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.04",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.53",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.67",
+              "groupDescription": "Week 24 Day 168 (Reasoning and Problem Solving)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.651",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.57",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.89",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.08",
+              "groupDescription": "Week 12 Day 84 (Social Cognition)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.350",
+              "paramType": "Treatment Difference",
+              "paramValue": "-1.44",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-0.14",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "4.50",
+              "groupDescription": "Week 24 Day 168 (Social Cognition)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.121",
+              "paramType": "Treatment Difference",
+              "paramValue": "2.18",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.10",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.83",
+              "groupDescription": "Week 12 Day 84 (Speed of Processing)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.911",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.13",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.99",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.03",
+              "groupDescription": "Week 24 Day 168 (Speed of Processing)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.987",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.02",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.62",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.93",
+              "groupDescription": "Week 12 Day 84 (Verbal Learning)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.803",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.34",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.26",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.38",
+              "groupDescription": "Week 24 Day 168 (Verbal Learning)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.502",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.94",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.74",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.52",
+              "groupDescription": "Week 12 Day 84 (Visual Learning)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.945",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.11",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.54",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "3.76",
+              "groupDescription": "Week 24 Day 168 (Visual Learning)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.488",
+              "paramType": "Treatment Difference",
+              "paramValue": "1.11",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.38",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.64",
+              "groupDescription": "Week 12 Day 84 (Working Memory)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.262",
+              "paramType": "Treatment Difference",
+              "paramValue": "-1.37",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.01",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.23",
+              "groupDescription": "Week 24 Day 168 (Working Memory)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.489",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.89",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.31",
+                      "value": "40.75"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "12.08",
+                      "value": "39.66"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Attention/Vigilance)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.00",
+                      "value": "-0.16"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.80",
+                      "value": "-0.14"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Attention/Vigilance)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.89",
+                      "value": "0.63"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.49",
+                      "value": "0.51"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Attention/Vigilance)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.61",
+                      "value": "42.75"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "10.12",
+                      "value": "43.71"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Reasoning and Problem Solving)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.94",
+                      "value": "0.05"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.07",
+                      "value": "0.05"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Reasoning and Problem Solving)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.23",
+                      "value": "1.69"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.13",
+                      "value": "2.18"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Reasoning and Problem Solving)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "13.30",
+                      "value": "37.79"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "13.09",
+                      "value": "38.38"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Social Cognition)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.74",
+                      "value": "0.62"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.55",
+                      "value": "-0.62"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Social Cognition)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.24",
+                      "value": "-1.71"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.10",
+                      "value": "0.96"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Social Cognition)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "13.10",
+                      "value": "37.08"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "12.70",
+                      "value": "37.81"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Speed of Processing)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.41",
+                      "value": "-1.48"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.07",
+                      "value": "-1.66"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Speed of Processing)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.85",
+                      "value": "0.37"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "4.88",
+                      "value": "0.13"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Speed of Processing)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "9.20",
+                      "value": "37.34"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.41",
+                      "value": "36.53"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Verbal Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.99",
+                      "value": "0.26"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.01",
+                      "value": "0.45"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Verbal Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.33",
+                      "value": "0.46"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.53",
+                      "value": "0.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Verbal Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.18",
+                      "value": "35.96"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "11.98",
+                      "value": "35.38"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Visual Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.14",
+                      "value": "-0.91"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "9.35",
+                      "value": "-0.48"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Visual Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.56",
+                      "value": "-0.98"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "9.33",
+                      "value": "0.53"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Visual Learning)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.56",
+                      "value": "35.99"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "10.09",
+                      "value": "36.23"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (Working Memory)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.99",
+                      "value": "1.62"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.41",
+                      "value": "0.76"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (Working Memory)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.34",
+                      "value": "2.37"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.68",
+                      "value": "1.76"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (Working Memory)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The MCCB is a cognitive battery to assess 7 domains recommended by the MATRICS initiative (i.e., working memory, verbal learning, speed of processing, attention/vigilance, visual learning, social cognition, reasoning and problem solving). Raw scores are converted to age and sex adjusted t-scores which are standardized to normative data, and have a mean of 50 and standard deviation of 10 in the general healthy population. A higher T-score represents lower impairment.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in MCCB Cognitive Domain Scores",
+          "type": "SECONDARY",
+          "unitOfMeasure": "T-score"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-3.78",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.52",
+              "groupDescription": "Week 12 Day 84 (VPA I total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.211",
+              "paramType": "Treatment Difference",
+              "paramValue": "-1.63",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.81",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.52",
+              "groupDescription": "Week 24 Day 168 (VPA I total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.787",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.35",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-0.37",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.94",
+              "groupDescription": "Week 12 Day 84 (VPA II total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.477",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.28",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "0.23",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.58",
+              "groupDescription": "Week 24 Day 168 (VPA II total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.028",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.91",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.51",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.91",
+              "groupDescription": "Week 12 Day 84 (VPA II recognition total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.683",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.30",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.13",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.22",
+              "groupDescription": "Week 24 Day 168 (VPA II recognition total raw score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.954",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.04",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.53",
+                      "value": "31.14"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "11.75",
+                      "value": "32.30"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (VPA I total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.55",
+                      "value": "2.14"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.33",
+                      "value": "0.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (VPA I total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.58",
+                      "value": "4.42"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.40",
+                      "value": "5.09"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (VPA I total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "3.76",
+                      "value": "9.25"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "3.54",
+                      "value": "9.77"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (VPA II total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "2.29",
+                      "value": "0.12"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.15",
+                      "value": "0.26"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (VPA II total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "2.16",
+                      "value": "0.69"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.33",
+                      "value": "1.60"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (VPA II total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.37",
+                      "value": "36.24"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.12",
+                      "value": "37.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "75"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "76"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (VPA II recognition total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.43",
+                      "value": "0.48"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.92",
+                      "value": "-0.55"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "56"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (VPA II recognition total raw score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.60",
+                      "value": "1.12"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.80",
+                      "value": "0.36"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "50"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "44"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (VPA II recognition total raw score)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Paired Associates Learning (PAL I and II) of the WMS-IV (Wechsler Memory Scale Fourth edition) is a test of verbal learning and memory that requires the participant to learn novel word pairs. The participant learns the word pairs across learning trials and is asked to recall them immediately (PAL I) or after a 30-minute delay (PAL II). Data is presented here for 3 Scores: VPA I total raw score, VPA II total raw score and VPA II Recognition total raw score. The total raw score ranges for these 3 Scores are 0 to 56, 0 to 14 and 0 to 40 respectively, with larger total raw scores indicating better performance.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Wechsler Memory Scale Fourth Edition, Verbal Paired Associates (WMS IV-PAL) Score",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-0.27",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "3.17",
+              "groupDescription": "Week 12 Day 84 (LM I)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.164",
+              "paramType": "Treatment Difference",
+              "paramValue": "1.45",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.02",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.14",
+              "groupDescription": "Week 24 Day 168 (LM I)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.559",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.56",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.70",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.94",
+              "groupDescription": "Week 12 Day 84 (LM II)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.912",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.12",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.93",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.22",
+              "groupDescription": "Week 24 Day 168 (LM II)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.706",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.36",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.80",
+                      "value": "16.55"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.13",
+                      "value": "16.22"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (LM I)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "5.33",
+                      "value": "-2.60"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.66",
+                      "value": "-0.83"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (LM I)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "4.96",
+                      "value": "-3.02"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.29",
+                      "value": "-2.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (LM I)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.57",
+                      "value": "13.72"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.22",
+                      "value": "14.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (LM II)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.04",
+                      "value": "-2.91"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.08",
+                      "value": "-2.63"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "56"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (LM II)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "4.94",
+                      "value": "-2.73"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.15",
+                      "value": "-3.22"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (LM II)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Logical memory (LM) assesses narrative memory under free-recall conditions. Two short stories are presented orally. The examinee is asked to retell each story from memory immediately after hearing it (LM I). In the delayed condition (LM II), the examinee is asked to retell both stories from the immediate condition (delayed free recall). Data is presented here for 2 Scores: LM I total raw score and LM II total raw score. The total raw score range is from 0 to 50 with larger total raw scores indicating better performance.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Wechsler Memory Scale Fourth Edition, Logical Memory Test (WMS IV-LM) Score",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "0.94",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.15",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.527",
+              "paramType": "Treatment Difference",
+              "paramValue": "1.04",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "0.92",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.17",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.636",
+              "paramType": "Treatment Difference",
+              "paramValue": "1.04",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.65",
+                      "value": "3.27"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.58",
+                      "value": "3.12"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.19",
+                      "value": "-0.37"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.34",
+                      "value": "-0.12"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "56"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "56"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "2.00",
+                      "value": "-0.23"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.22",
+                      "value": "-0.06"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "50"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "43"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The TMT consists of two parts: Trail Making Part A, which is a part of the standard MCCB and Trail Making Part B additionally included in this study. Circles containing numbers (Part A) or both numbers and letters (Part B) must be sequentially connected. The difference (ratio) in performance between Part A and Part B reflects executive processes and will be used to assess executive functioning including cognitive set shifting abilities and data for this ratio is presented here. Smaller ratio values, hence decreases from baseline (TMT-B/TMT-A ratio values below 1) indicate higher executive functioning capabilities.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Ratio Between Trail Making Test (TMT)- Part B and TMT- Part A Scores",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Ratio"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-3.63",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.91",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.323",
+              "paramType": "Treatment Difference",
+              "paramValue": "-1.36",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.77",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "1.88",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.579",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.95",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "11.88",
+                      "value": "59.82"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "10.87",
+                      "value": "60.88"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "74"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "76"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.30",
+                      "value": "3.13"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.68",
+                      "value": "2.26"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "55"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "57"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "9.66",
+                      "value": "3.75"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "10.05",
+                      "value": "4.14"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "51"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "44"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "74"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "76"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The PSP Total Score is an integer result in the range of 0 to 100. Larger values, hence increases from baseline in the PSP total score, indicate higher social and personal functioning.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Personal and Social Performance (PSP) Total Score",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-2.27",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.94",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.493",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.67",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-2.32",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.07",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.926",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.12",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "8.52",
+                      "value": "37.07"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "9.84",
+                      "value": "36.53"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.06",
+                      "value": "-2.91"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "5.78",
+                      "value": "-3.66"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.19",
+                      "value": "-3.71"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.79",
+                      "value": "-4.02"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "51"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The main parameter of interest for the Schizophrenia Cognition Rating Scale (SCoRS) is the SCoRS 'Total Score'. The total score range is from 0 to 80 with lower scores indicating better day-to-day functioning.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Schizophrenia Cognition Rating Scale (SCoRS) Total Score",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-0.22",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.17",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.839",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.02",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-0.27",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.15",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.625",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.06",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "0.62",
+                      "value": "2.45"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.75",
+                      "value": "2.39"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "75"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "0.67",
+                      "value": "-0.21"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.60",
+                      "value": "-0.24"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "57"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "0.56",
+                      "value": "-0.19"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.76",
+                      "value": "-0.29"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "75"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Values for the CGI-S Scale are encoded by the numerical values from 1 to 7 respectively. Higher numerical values represent greater impairment.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Clinical Global Impression Severity (CGI-S) Rating",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-0.28",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.23",
+              "groupDescription": "Week 12 Day 84",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.865",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.03",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-0.31",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "0.29",
+              "groupDescription": "Week 24 Day 168",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.964",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.01",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "0.86",
+                      "value": "-0.45"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.86",
+                      "value": "-0.45"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.01",
+                      "value": "-0.62"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "0.91",
+                      "value": "-0.64"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "58"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "58"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Values for the CGI-I Scale are encoded by the numerical values from 1 to 7 respectively. Higher numerical values represent greater impairment.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Clinical Global Impression Improvement (CGI-I) Rating",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "analyses": [
+            {
+              "ciLowerLimit": "-0.40",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "6.95",
+              "groupDescription": "Week 12 Day 84 (SQLS Cognition \\& Vitality Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.142",
+              "paramType": "Treatment Difference",
+              "paramValue": "3.27",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-7.04",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "2.40",
+              "groupDescription": "Week 24 Day 168 (SQLS Cognition \\& Vitality Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.416",
+              "paramType": "Treatment Difference",
+              "paramValue": "-2.32",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.86",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "5.83",
+              "groupDescription": "Week 12 Day 84 (SQLS Psychosocial Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.394",
+              "paramType": "Treatment Difference",
+              "paramValue": "1.98",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-3.44",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "4.87",
+              "groupDescription": "Week 24 Day 168 (SQLS Psychosocial Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.776",
+              "paramType": "Treatment Difference",
+              "paramValue": "0.71",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-1.09",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "5.94",
+              "groupDescription": "Week 12 Day 84 (SQLS Total Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.254",
+              "paramType": "Treatment Difference",
+              "paramValue": "2.43",
+              "statisticalMethod": "Mixed Models Analysis"
+            },
+            {
+              "ciLowerLimit": "-4.64",
+              "ciNumSides": "TWO_SIDED",
+              "ciPctValue": "90",
+              "ciUpperLimit": "3.50",
+              "groupDescription": "Week 24 Day 168 (SQLS Total Score)",
+              "groupIds": [
+                "OG000",
+                "OG001"
+              ],
+              "nonInferiorityType": "SUPERIORITY",
+              "pValue": "0.816",
+              "paramType": "Treatment Difference",
+              "paramValue": "-0.57",
+              "statisticalMethod": "Mixed Models Analysis"
+            }
+          ],
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "17.41",
+                      "value": "33.81"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "18.59",
+                      "value": "34.21"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "76"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (SQLS Cognition & Vitality Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.66",
+                      "value": "-2.26"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "14.00",
+                      "value": "0.21"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "57"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (SQLS Cognition & Vitality Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "15.71",
+                      "value": "-0.78"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "13.59",
+                      "value": "-4.32"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (SQLS Cognition & Vitality Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "20.26",
+                      "value": "31.48"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "20.88",
+                      "value": "30.84"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "77"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (SQLS Psychosocial Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.42",
+                      "value": "-0.88"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "14.49",
+                      "value": "0.80"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "57"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (SQLS Psychosocial Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.87",
+                      "value": "-1.78"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "13.27",
+                      "value": "-1.58"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (SQLS Psychosocial Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "18.51",
+                      "value": "32.40"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "19.19",
+                      "value": "32.14"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "76"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "76"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Baseline (SQLS Total Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "11.80",
+                      "value": "-1.42"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "12.98",
+                      "value": "0.57"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "57"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "58"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 12 Day 84 (SQLS Total Score)"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "12.89",
+                      "value": "-1.38"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "12.31",
+                      "value": "-2.66"
+                    }
+                  ]
+                }
+              ],
+              "denoms": [
+                {
+                  "counts": [
+                    {
+                      "groupId": "OG000",
+                      "value": "52"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "45"
+                    }
+                  ],
+                  "units": "Participants"
+                }
+              ],
+              "title": "Week 24 Day 168 (SQLS Total Score)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "76"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "77"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The SQLS is a patient reported scale consisting of 33 items: 2 domain scores (Cognition \\& Vitality Score \\[SQLS-CV\\] and Psycho-social Score \\[SQLS-P\\]) as well as a Total score (SQLS-T) are derived. The overall score range is from 0 to 100. On all scales, higher scores represent a lower quality of life.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The EAP2 Population was defined as all participants in the Efficacy Analysis Population (EAP) who were randomized to placebo or 240mg Basmisanil (excluded participants randomized to 80mg Basmisanil due to the results of a futility analysis which meant that enrolment into the 80mg Basmisanil arm was discontinued). Data presented below is only for participants that were included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to Week 24",
+          "title": "Change From Baseline to Week 24 in Schizophrenia Quality of Life Scale (SQLS)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Scores on a Scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "39.5"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "46.3"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "48.7"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "81"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "54"
+                },
+                {
+                  "groupId": "OG002",
+                  "value": "78"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "An Adverse Event (AE) is any untoward medical occurrence in a participant administered a pharmaceutical product and which does not necessarily have to have a causal relationship with the treatment. An Adverse Event can therefore be any unfavorable and unintended sign (including abnormal laboratory values or abnormal clinical test results), symptom, or disease temporally associated with the use of a pharmaceutical product, whether or not considered related to the pharmaceutical product. Preexisting conditions which worsen during a study are also considered as Adverse Events.",
+          "groups": [
+            {
+              "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+              "id": "OG000",
+              "title": "Placebo"
+            },
+            {
+              "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 80mg BID"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG002",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "NUMBER",
+          "populationDescription": "The Safety-evaluable population was defined as all participants who received at least one dose of study medication, whether prematurely withdrawn from the study or not. Data are summarized according to actual treatment arm participants were randomized to.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline up to 4 weeks after the last dose of study drug (up to 28 weeks)",
+          "title": "Percentage of Participants With Adverse Events (AEs)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Percentage of Participants"
+        },
+        {
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "0"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "0"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Population PK model estimated apparent oral clearance of Basmisanil at steady-state.",
+          "groups": [
+            {
+              "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG000",
+              "title": "Basmisanil 80mg BID"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "populationDescription": "Please note that for this Outcome Measure, incomplete PK data was collected as a result of early termination of the study which meant that data for the (CL/F,ss) parameter could not be generated via the Population PK model.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168",
+          "title": "Apparent Clearance of Basmisanil at Steady State (CL/F,ss)",
+          "type": "SECONDARY"
+        },
+        {
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "0"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "0"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Population PK model estimated apparent volume of distribution of Basmisanil at steady-state.",
+          "groups": [
+            {
+              "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG000",
+              "title": "Basmisanil 80mg BID"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "populationDescription": "Please note that for this Outcome Measure, incomplete PK data was collected as a result of early termination of the study which meant that data for the (Vz/F,ss) parameter could not be generated via the Population PK model.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168",
+          "title": "Apparent Volume of Distribution of Basmisanil at Steady State (Vz/F,ss)",
+          "type": "SECONDARY"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "31464",
+                      "upperLimit": "51816",
+                      "value": "41640"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "66504",
+                      "upperLimit": "108768",
+                      "value": "87624"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "54"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "78"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Population PK model estimated AUC of Basmisanil at steady-state.",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG000",
+              "title": "Basmisanil 80mg BID"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "The Safety-evaluable population was defined as all participants who received at least one dose of study medication, whether prematurely withdrawn from the study or not. Data are summarized according to actual treatment arm participants were randomized to. Data presented below is only for participants included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168",
+          "title": "Area Under the Curve of Basmisanil at Steady State (AUC,ss)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "ng*mL/hr"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "1645",
+                      "upperLimit": "2513",
+                      "value": "2079"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "3455",
+                      "upperLimit": "5294",
+                      "value": "4374"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "54"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "78"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Population PK model estimated maximum plasma concentration of Basmisanil at steady-state (ss).",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG000",
+              "title": "Basmisanil 80mg BID"
+            },
+            {
+              "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+              "id": "OG001",
+              "title": "Basmisanil 240mg BID"
+            }
+          ],
+          "paramType": "MEDIAN",
+          "populationDescription": "The Safety-evaluable population was defined as all participants who received at least one dose of study medication, whether prematurely withdrawn from the study or not. Data are summarized according to actual treatment arm participants were randomized to. Data presented below is only for participants included in the actual analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Pre-dose (hour 0) in Days 7, 14, 42, 84, 168",
+          "title": "Maximum Plasma Concentration of Basmisanil at Steady State (Cmax,ss)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "ng/mL"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Participants received matching Placebo to Basmisanil orally twice daily for 24 weeks.",
+          "id": "FG000",
+          "title": "Placebo"
+        },
+        {
+          "description": "Participants received Basmisanil 80 mg orally twice daily (BID) for 24 weeks.",
+          "id": "FG001",
+          "title": "Basmisanil 80mg BID"
+        },
+        {
+          "description": "Participants received Basmisanil 240 mg orally twice daily (BID) for 24 weeks.",
+          "id": "FG002",
+          "title": "Basmisanil 240mg BID"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Adverse Event"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "8"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "3"
+                }
+              ],
+              "type": "Lost to Follow-up"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "2"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Non-Compliance With Study Drug"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "1"
+                }
+              ],
+              "type": "Multiple Reasons"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Physician Decision"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "7"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "8"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "10"
+                }
+              ],
+              "type": "Withdrawal by Subject"
+            },
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Completed or Discontinued information is missing"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "81"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "54"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "78"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "61"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "40"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "62"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "20"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "14"
+                },
+                {
+                  "groupId": "FG002",
+                  "numSubjects": "16"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "preAssignmentDetails": "Overall, 214 participants were enrolled into the study across 37 sites in the US. Of these, 213 participants received study treatment and were included in the Intent-To-Treat (ITT) and Safety populations. One participant randomized to the placebo arm withdrew prior to the first study treatment administration.",
+      "recruitmentDetails": "The study was conducted at 37 centers in 1 country."
+    }
+  }
+}

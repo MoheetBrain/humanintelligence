@@ -1,0 +1,33 @@
+# FIXTURE — synthetic, for tests only. An unverified external analysis, present so that
+# rule V-EXT has something to refuse a citation against.
+analysis_id: ANALYSIS:X01
+schema_version: "0.2.0"
+title: Synthetic unverified external analysis for fixture purposes
+agent: fixture/synthetic
+verification_status: unverified_external_report
+provenance_class: external_analysis_unverified
+delivery:
+  mechanism: none_prose_only
+  artefacts_present: false
+  search_evidence: "synthetic fixture; nothing was searched for"
+genome_build: null
+software: []
+inputs: []
+outputs: []
+parameters: {}
+reported_results:
+  - result_id: synthetic_result
+    statement: "A synthetic reported result that no artefact backs."
+    value_as_reported: "beta approximately 0.1, nominal P approximately 0.01"
+    verification: unverified_prose
+    would_be_verified_by: "a delivered effect table"
+    claim_refs: []
+interpretation_guards:
+  - "Synthetic fixture: establishes nothing whatsoever."
+outstanding_artefacts:
+  - "everything; this is a fixture"
+cohort_overlap_status: unresolvable_pending_source_list
+provenance:
+  recorded_by: agent:orchestrator
+  recorded_on: "2026-09-18"
+  record_basis: "fixture"

@@ -1,0 +1,646 @@
+{
+  "derivedSection": {
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D014230",
+          "term": "Triazoles"
+        },
+        {
+          "id": "D001393",
+          "term": "Azoles"
+        },
+        {
+          "id": "D006573",
+          "term": "Heterocyclic Compounds, 1-Ring"
+        },
+        {
+          "id": "D006571",
+          "term": "Heterocyclic Compounds"
+        },
+        {
+          "id": "D010879",
+          "term": "Piperazines"
+        },
+        {
+          "id": "D012294",
+          "term": "Rifamycins"
+        },
+        {
+          "id": "D006576",
+          "term": "Heterocyclic Compounds, 4 or More Rings"
+        },
+        {
+          "id": "D000072471",
+          "term": "Heterocyclic Compounds, Fused-Ring"
+        },
+        {
+          "id": "D047029",
+          "term": "Lactams, Macrocyclic"
+        },
+        {
+          "id": "D047028",
+          "term": "Macrocyclic Compounds"
+        },
+        {
+          "id": "D011083",
+          "term": "Polycyclic Compounds"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D017964",
+          "term": "Itraconazole"
+        },
+        {
+          "id": "D012293",
+          "term": "Rifampin"
+        },
+        {
+          "id": "C058081",
+          "term": "ecopipam"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "hasResults": false,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "ecopipam 89.6 mg on Days 1 and 9 with repeat doses of itraconazole Days 6-16.",
+          "interventionNames": [
+            "Drug: Itraconazole",
+            "Drug: Ecopipam"
+          ],
+          "label": "Part 1",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "ecopipam 179.2 mg on Days 1 and 13 with repeat doses of rifampicin days 6-20.",
+          "interventionNames": [
+            "Drug: rifampicin",
+            "Drug: Ecopipam"
+          ],
+          "label": "Part 2",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Part 1"
+          ],
+          "description": "itraconazole 200 mg QD Days 6 to 16",
+          "name": "Itraconazole",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Part 2"
+          ],
+          "description": "rifampicin 600 mg QD Days 6 to 20",
+          "name": "rifampicin",
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Part 1",
+            "Part 2"
+          ],
+          "description": "89.6 mg on Days 1 and 9 for Part 1 or 179.2 mg on Days 1 and 13 for Part 2",
+          "name": "Ecopipam",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Drug Interaction"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Québec",
+          "country": "Canada",
+          "facility": "Syneos Health Clinic Inc.",
+          "geoPoint": {
+            "lat": 46.81228,
+            "lon": -71.21454
+          },
+          "state": "Quebec",
+          "zip": "G1P 0A2"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Emalex Biosciences",
+          "name": "Rick Munschauer, MSc, MD, FAAN",
+          "role": "STUDY_DIRECTOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This is a single center, 2-Part, Phase 1, open-label, fixed-sequence, drug-drug interaction study designed to compare the PK of ecopipam when administered alone and in combination with itraconazole (Part 1) or rifampicin (Part 2) in healthy subjects."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NON_RANDOMIZED",
+        "interventionModel": "PARALLEL",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "BASIC_SCIENCE"
+      },
+      "enrollmentInfo": {
+        "count": 45,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE1"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Male subjects or femail subjects of non-childbearing potential\n* ≥18 and ≤55 years of age\n* BMI \\>18.5 and \\<30.0 kg/m2 and body weight ≥50.0 kg for males and ≥45.0 kg for females.\n* Subjects must be healthy, as determined by the Investigator, based on medical history, physical examination, ECG, vital signs, and standard panel of blood and laboratory tests at Screening.\n* Sexually active males must use a double barrier method of contraception during the study and for at least 90 days after the last dose of study drug.\n* Male subjects must be willing not to donate sperm until 90 days following the last study drug administration.\n* Willing to take off dentures or mouth piercing at the time of dosing.\n\nExclusion Criteria:\n\n* History of significant medical illness\n* Clinically significant abnormalities on screening tests/exams\n* History of or significant risk of committing suicide\n* Donation of plasma within 7 days prior to dosing\n* Donation or significant loss of blood within 8 weeks prior to the first dosing\n* Major surgery within 3 months or minor surgery within 1 month prior to admission\n* Use of prohibited prescription, over-the-counter medications or natural health products\n* Female subjects who are currently pregnant or lactating\n* Positive pregnancy test\n* Positive urine drug screen, urine cotinine test, or alcohol breath test\n* Use of tobacco or nicotine products within 1 month prior to Screening\n* Significant alcohol consumption\n* History of drug abuse within the previous year, or a positive drug screen\n* History of allergy to study medications\n* Part 1 only: Presence of orthodontic braces or orthodontic retention wires\n* Recent participation in a clinical research study\n* Not suitable for study in the opinion of the Principal Investigator",
+      "healthyVolunteers": true,
+      "maximumAge": "55 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Drug Interaction Study",
+      "nctId": "NCT06194864",
+      "officialTitle": "A Phase 1, Sequential Drug Interaction Study to Evaluate the Effect of CYP3A4 and P-glycoprotein Inhibition by Itraconazole or Induction by Rifampicin on the Pharmacokinetics of Ecopipam and Its Metabolites in Healthy Subjects",
+      "orgStudyIdInfo": {
+        "id": "EBS-101-HV-106"
+      },
+      "organization": {
+        "class": "INDUSTRY",
+        "fullName": "Emalex Biosciences Inc."
+      }
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of ecopipam when administered with itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of ecopipam when administered without itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of ecopipam when administered with rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of ecopipam when administered without rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of ecopipam when administered with itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of ecopipam when administered without itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of ecopipam when administered with rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of ecopipam when administered without rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of ecopipam when administered with itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of ecopipam when administered without itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of ecopipam when administered with rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of ecopipam when administered without rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of ecopipam when administered with itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of ecopipam when administered without itraconazole",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of ecopipam when administered with rifampicin",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of ecopipam when administered without rifampicin",
+          "timeFrame": "Up to Day 21"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of EBS-101-40853",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of ecopipam glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-inf of EBS-101-40853 glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of EBS-101-40853",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of ecopipam glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-t of EBS-101-40853 glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of EBS-101-40853",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of ecopipam glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "Cmax of EBS-101-40853 glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of EBS-101-40853",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of ecopipam glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "T½ el of EBS-101-40853 glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-4 for ecopipam",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-4 for EBS-101-40853",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-4 for ecopipam glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Up to 38 samples will be collected at the indicated time points for pharmacokinetic analysis",
+          "measure": "AUC0-4 for EBS 101-40853 glucuronide",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Score from 0-5 where 0 is no response and 5 is responds readily. MOAA/S measures will be recorded at the indicated timepoints",
+          "measure": "Minimum Modified Observer's Assessment of Alertness/Sedation (MOAA/S) score",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Score from 0 - 100 where 0 is not sedated and 100 is very sedated. VAS measures will be recorded at the indicated timepoints.",
+          "measure": "AUEC for Visual Analogue Scale (VAS)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Score from 0 - 100 where 0 is not sedated and 100 is very sedated. VAS measures will be recorded at the indicated timepoints.",
+          "measure": "Maximum sedation for Visual Analogue Scale (VAS)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Reaction time for subject to release the response button after presentation of target stimulus.",
+          "measure": "AUEC for Reaction Time Index (RTI) score",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Reaction time for subject to release the response button after presentation of target stimulus.",
+          "measure": "Maximum sedation for Reaction Time Index (RTI) score",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Subjects will be continually monitored for adverse events",
+          "measure": "Safety and tolerability as demonstrated by AEs with itraconazole",
+          "timeFrame": "Up to Day 30"
+        },
+        {
+          "description": "Subjects will be continually monitored for adverse events",
+          "measure": "Safety and tolerability as demonstrated by AEs without itraconazole",
+          "timeFrame": "Up to Day 30"
+        },
+        {
+          "description": "Subjects will be continually monitored for adverse events",
+          "measure": "Safety and tolerability as demonstrated by AEs with rifampicin",
+          "timeFrame": "Up to Day 30"
+        },
+        {
+          "description": "Subjects will be continually monitored for adverse events",
+          "measure": "Safety and tolerability as demonstrated by AEs without rifampicin",
+          "timeFrame": "Up to Day 30"
+        },
+        {
+          "description": "Blood pressure will be assessed as part of vital signs",
+          "measure": "Safety and tolerability as demonstrated by Systolic blood pressure (SBP) and diastolic blood pressure (DBP) with itraconazole (mmHG)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood pressure will be assessed as part of vital signs",
+          "measure": "Safety and tolerability as demonstrated by Systolic blood pressure (SBP) and diastolic blood pressure (DBP) without itraconazole(mmHG)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood pressure will be assessed as part of vital signs",
+          "measure": "Safety and tolerability as demonstrated by Systolic blood pressure (SBP) and diastolic blood pressure (DBP) with rifampicin(mmHG)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood pressure will be assessed as part of vital signs",
+          "measure": "Safety and tolerability as demonstrated by Systolic blood pressure (SBP) and diastolic blood pressure (DBP) without rifampicin(mmHG)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Heart rate will be assessed as part of vital signs",
+          "measure": "Heart rate with itraconazole (beats/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Heart rate will be assessed as part of vital signs",
+          "measure": "Heart rate without itraconazole (beats/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Heart rate will be assessed as part of vital signs",
+          "measure": "Heart rate with rifampicin (beats/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Heart rate will be assessed as part of vital signs",
+          "measure": "Heart rate without rifampicin (beats/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Respiratory rate will be assessed as part of vital signs",
+          "measure": "Respiratory rate pressure with itraconazole (breaths/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Respiratory rate will be assessed as part of vital signs",
+          "measure": "Respiratory rate without itraconazole (breaths/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Respiratory rate will be assessed as part of vital signs",
+          "measure": "Respiratory rate with rifampicin (breaths/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Respiratory rate will be assessed as part of vital signs",
+          "measure": "Respiratory rate without rifampicin (breaths/minute)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Temperature will be assessed as part of vital signs",
+          "measure": "Oral temperature with itraconazole (degrees Celsius)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Temperature will be assessed as part of vital signs",
+          "measure": "Oral temperature without itraconazole (degrees Celsius)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Temperature will be assessed as part of vital signs",
+          "measure": "Oral temperature with rifampicin (degrees Celsius)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Temperature will be assessed as part of vital signs",
+          "measure": "Oral temperature without rifampicin (degrees Celsius)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Twelve-lead ECGs will be obtained at the indicated timepoints",
+          "measure": "Electrocardiogram (ECG) parameters: PR, RR, QRS, QT, and QT interval corrected for heart rate using Fridericia's formula (QTcF) with itraconazole (Milliseconds)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Twelve-lead ECGs will be obtained at the indicated timepoints",
+          "measure": "Electrocardiogram (ECG) parameters: PR, RR, QRS, QT, and QT interval corrected for heart rate using Fridericia's formula (QTcF) without itraconazole (Milliseconds)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Twelve-lead ECGs will be obtained at the indicated timepoints",
+          "measure": "Electrocardiogram (ECG) parameters: PR, RR, QRS, QT, and QT interval corrected for heart rate using Fridericia's formula (QTcF) with rifampicin (Milliseconds)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Twelve-lead ECGs will be obtained at the indicated timepoints",
+          "measure": "Electrocardiogram (ECG) parameters: PR, RR, QRS, QT, and QT interval corrected for heart rate using Fridericia's formula (QTcF) without rifampicin (Milliseconds)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "C-SSRS to be administered at the indicated timepoints",
+          "measure": "Safety and tolerability as demonstrated by the Columbia Suicide Severity Rating Scale (C-SSRS)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of hematology parameters",
+          "measure": "Values of white blood cell (WBC), neutrophils, lymphocytes, monocytes, eosinophils, basophils and platelets (1000/mm3)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of hematology parameters",
+          "measure": "Value of hematocrit (percent)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of hematology parameters",
+          "measure": "Value of hemoglobin (g/dL)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of hematology parameters",
+          "measure": "Red blood cell (RBC) count (M/mm3)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of clinical chemistry parameters",
+          "measure": "Values of sodium, potassium, chloride (mmol/L)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of clinical chemistry parameters",
+          "measure": "Values of urea, phosphorus, calcium, glucose, and total, direct and indirect bilirubin (mg/dL)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of clinical chemistry parameters",
+          "measure": "Values of albumin and total protein (g/dL)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Blood samples will be collected for the assessment of clinical chemistry parameters",
+          "measure": "Values of alanine aminotransferase (ALT), aspartate aminotransferase (AST),alkaline phosphatase (ALP), gamma glutamyl transferase (GGT), creatininephosphokinase (CPK), and creatinine (U/L)",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine specific gravity",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine pH",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine glucose",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine protein",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine blood",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine ketones",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine bilirubin and nitrite",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urobilinogen",
+          "timeFrame": "Up to Day 21"
+        },
+        {
+          "description": "Urine samples will be collected for the assessment of urine parameters",
+          "measure": "Values of urine leukocyte esterase by dipstick",
+          "timeFrame": "Up to Day 21"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true,
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "OTHER",
+          "name": "Syneos Health"
+        },
+        {
+          "class": "INDUSTRY",
+          "name": "Cambridge Cognition Ltd"
+        }
+      ],
+      "leadSponsor": {
+        "class": "INDUSTRY",
+        "name": "Emalex Biosciences Inc."
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2024-05-22",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2024-09-19",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2024-09-12",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2024-05-14",
+        "type": "ACTUAL"
+      },
+      "startDateStruct": {
+        "date": "2024-01-18",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2024-09",
+      "studyFirstPostDateStruct": {
+        "date": "2024-01-08",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2023-12-22",
+      "studyFirstSubmitQcDate": "2023-12-22"
+    }
+  }
+}

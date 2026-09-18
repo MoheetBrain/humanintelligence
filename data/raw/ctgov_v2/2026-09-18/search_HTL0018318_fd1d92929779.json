@@ -1,0 +1,742 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "HTL0018318",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "Low dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "HTL0018318",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "Medium dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "HTL0018318",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "High dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "High dose",
+                "Low dose",
+                "Medium dose"
+              ],
+              "description": "HTL0018318",
+              "name": "HTL0018318",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Multi-centre Study of HTL0018318 in Patients as an add-on to Standard-of-care",
+          "nctId": "NCT03456349",
+          "officialTitle": "A Phase 1b Randomized, Double-blind, Placebo-controlled, Parallel Group, Multi-center Study to Determine the Safety and Tolerability of HTL0018318 in Subjects With Alzheimer's Disease Receiving Standard-of-care",
+          "orgStudyIdInfo": {
+            "id": "HTL0018318-202"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Nxera Pharma UK Limited"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2017-000649-34",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "id": "2017",
+              "link": "https://reporter.nih.gov/quickSearch/2017",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Treatment emergent adverse events (TEAEs), Safety and Tolerability",
+              "timeFrame": "Baseline to Day 28"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-07-16",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-07-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-07-19",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-07-16",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2017-11-10",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2018-07",
+          "studyFirstPostDateStruct": {
+            "date": "2018-03-07",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-02-22",
+          "studyFirstSubmitQcDate": "2018-03-05"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "low dose aqueous solution and/or equivalent low dose capsule",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 low dose",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "mid dose aqueous solution and/or equivalent mid dose capsule",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 mid dose",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "high dose aqueous solution and/or equivalent high dose capsule(s)",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 high dose",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "HTL0018318 high dose",
+                "HTL0018318 low dose",
+                "HTL0018318 mid dose"
+              ],
+              "description": "Two single doses of active drug (low, mid or high dose either as aqueous solution or capsule) separated by a washout of at least 12 days.",
+              "name": "HTL0018318",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 37,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Relative Bioavailability of HTL0018318 Oral Aqueous Solution Versus Capsules",
+          "nctId": "NCT02958696",
+          "officialTitle": "A Phase 1, Randomised, Open Label, 2-period Crossover, Single Centre, 3-arm, Single Dose Study to Investigate the Relative Bioavailability of HTL0018318 Oral Aqueous Solution Versus Capsule Formation in Healthy Volunteers",
+          "orgStudyIdInfo": {
+            "id": "HTL0018318-104"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Nxera Pharma UK Limited"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2016-003313-99",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "HMR Protocol Code",
+              "id": "16-024",
+              "type": "OTHER"
+            },
+            {
+              "id": "2016",
+              "link": "https://reporter.nih.gov/quickSearch/2016",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Comparison of bioavailability in plasma",
+              "measure": "Maximum plasma concentration (Cmax) of HTL0018318",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Comparison of bioavailability in plasma",
+              "measure": "Area under the curve (AUC) of HTL0018318",
+              "timeFrame": "Predose to 168h post dose"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Time to maximum concentration (tmax)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Half-life (t1/2)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Apparent volume of distribution (Vz/F)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Apparent clearance (CLp/F)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in urine",
+              "measure": "Amount excreted in urine (Ae)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in urine",
+              "measure": "Fraction excreted in urine (fe/F)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Pharmacokinetics in urine",
+              "measure": "Clearance in urine (CLr)",
+              "timeFrame": "Predose to 168h post dose"
+            },
+            {
+              "description": "Adverse events",
+              "measure": "Treatment-emergent adverse events",
+              "timeFrame": "Predose up to 28 days post dose"
+            },
+            {
+              "description": "Heart rate and blood pressure",
+              "measure": "Vital signs",
+              "timeFrame": "Predose up to 28 days post dose"
+            },
+            {
+              "description": "Physical examinations",
+              "measure": "Physical examinations",
+              "timeFrame": "Predose up to 28 days post dose"
+            },
+            {
+              "description": "Hematology",
+              "measure": "Laboratory safety assessments",
+              "timeFrame": "Predose up to 28 days post dose"
+            },
+            {
+              "description": "ECG",
+              "measure": "ECG",
+              "timeFrame": "Predose up to 28 days post dose"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-01",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-02-03",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2017-02-02",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-01",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2016-10"
+          },
+          "statusVerifiedDate": "2017-02",
+          "studyFirstPostDateStruct": {
+            "date": "2016-11-08",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-11-01",
+          "studyFirstSubmitQcDate": "2016-11-04"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Part A. 1 single dose on day 1. Discharged on day 4 of Period 1 (following 10 day washout).",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 Low dose, Part A.",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "1 single dose on day 1. Discharged on day 4 of period 2 (following 10 day washout).",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 High dose, Part A",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "1 dose daily for 5 days (5 active doses total). Discharged on day 8 of period 1.",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 Low dose, Part B",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "1 dose daily for 5 days (5 active doses total). Discharged on day 8 of period 1.",
+              "interventionNames": [
+                "Drug: Placebo oral capsule"
+              ],
+              "label": "Placebo oral capsule, Part B",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "description": "1 dose daily for 5 days (5 active doses total). Discharged on day 8 of period 2.",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 High dose, Part B.",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "1 dose daily for 5 days (5 active doses total). Discharged on day 8 of period 2.",
+              "interventionNames": [
+                "Drug: Placebo oral capsule"
+              ],
+              "label": "Placebo oral capsule, Part B.",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "HTL0018318 High dose, Part A",
+                "HTL0018318 High dose, Part B.",
+                "HTL0018318 Low dose, Part A.",
+                "HTL0018318 Low dose, Part B"
+              ],
+              "description": "Part A single dose Part B five doses",
+              "name": "HTL0018318",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo oral capsule, Part B",
+                "Placebo oral capsule, Part B."
+              ],
+              "description": "Part B only",
+              "name": "Placebo oral capsule",
+              "otherNames": [
+                "placebo, placebo - cap"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "maskingDescription": "Part A open label, Part B double blind.",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 54,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "HTL0018318",
+          "briefTitle": "Pharmacokinetics of Oral Capsule in Healthy Japanese vs. Caucasian Subjects",
+          "nctId": "NCT03198624",
+          "officialTitle": "A Two-part, Single and Multiple Dose, Parallel Group Study to Assess Safety and Pharmacokinetics of Oral HTL0018318 in Healthy Japanese and Caucasian Subjects",
+          "orgStudyIdInfo": {
+            "id": "HTL0018318-105"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Nxera Pharma UK Limited"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2017-001245-27",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "Richmond Pharmacology",
+              "id": "C17011",
+              "type": "OTHER"
+            },
+            {
+              "id": "2017",
+              "link": "https://reporter.nih.gov/quickSearch/2017",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Comparison of pharmacokinetics in plasma",
+              "measure": "Cmax",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Comparison of pharmacokinetics in plasma",
+              "measure": "Tmax",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Comparison of pharmacokinetics in plasma",
+              "measure": "Area under the curve",
+              "timeFrame": "Baseline to 72 hours"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Delay in absorption (Tlag)",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Rate of elimination",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Pharmacokinetics in plasma",
+              "measure": "Half life (t1/2)",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Pharmacokinetics in urine",
+              "measure": "Amount excreted in urine",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Pharmacokinetics in urine",
+              "measure": "Fraction of dose eliminated unchanged in urine (fe/F)",
+              "timeFrame": "Baseline to 72 hours"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "Treatment emergent adverse events (TEAEs)",
+              "timeFrame": "Up to 14 day post dose"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "Number of participants with abnormal physical exam results",
+              "timeFrame": "Up to 14 day post dose"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "Heart Rate",
+              "timeFrame": "Up to 14 day post dose"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "Number of participants with abnormal laboratory values",
+              "timeFrame": "Up to 14 day post dose"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "ECG",
+              "timeFrame": "Up to 14 day post dose"
+            },
+            {
+              "description": "Safety and tolerability",
+              "measure": "Blood pressure",
+              "timeFrame": "Up to 14 day post dose"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-08-20",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2017-09-07",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2017-09-06",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2017-08-20",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2017-05-16",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2017-09",
+          "studyFirstPostDateStruct": {
+            "date": "2017-06-26",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-06-19",
+          "studyFirstSubmitQcDate": "2017-06-23"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "oral capsule, once daily",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 high dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "oral capsule, once daily",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 mid dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "oral capsule, once daily",
+              "interventionNames": [
+                "Drug: HTL0018318"
+              ],
+              "label": "HTL0018318 low dose",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "oral capsule, once daily",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "HTL0018318 high dose",
+                "HTL0018318 low dose",
+                "HTL0018318 mid dose"
+              ],
+              "description": "Oral capsule",
+              "name": "HTL0018318",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Oral capsule",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "Placebo controlled",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "maskingDescription": "Double blind",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "DLB",
+          "briefTitle": "A Study to Assess Safety, Tolerability, and Efficacy of HTL0018318 in Patients With Dementia With Lewy Bodies",
+          "nctId": "NCT03592862",
+          "officialTitle": "A Randomized, Double-blind, Placebo Controlled, Dose Ranging Study to Assess the Safety, Tolerability, and Efficacy of HTL0018318 in Patients With Dementia With Lewy Bodies",
+          "orgStudyIdInfo": {
+            "id": "HTL0018318-203"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Nxera Pharma UK Limited"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Comparison of HTL0018318 treatment with placebo",
+              "measure": "Incidence and severity of treatment related adverse events",
+              "timeFrame": "Baseline to 12 weeks"
+            },
+            {
+              "description": "Comparison of HTL0018318 treatment with placebo",
+              "measure": "Change in systolic, diastolic blood pressure and heart rate",
+              "timeFrame": "Baseline to 12 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Comparison of HTL0018318 treatment with placebo",
+              "measure": "Change from baseline in measures of cognitive impairment",
+              "timeFrame": "Baseline to 12 weeks"
+            },
+            {
+              "description": "Comparison of HTL0018318 treatment with placebo",
+              "measure": "Change from baseline in measures of psychosis (i.e. hallucinations and delusions)",
+              "timeFrame": "Baseline to 12 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-10-01",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-09-30",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2020-07",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2019-07",
+            "type": "ESTIMATED"
+          },
+          "statusVerifiedDate": "2019-09",
+          "studyFirstPostDateStruct": {
+            "date": "2018-07-19",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-06-25",
+          "studyFirstSubmitQcDate": "2018-07-18",
+          "whyStopped": "Pending investigation of an unexpected animal toxicology finding."
+        }
+      }
+    }
+  ],
+  "totalCount": 4
+}

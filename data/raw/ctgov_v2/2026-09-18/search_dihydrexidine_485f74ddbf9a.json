@@ -1,0 +1,586 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "15 mg is dissolved in 150 cc NS administered over 30 minutes x 3 consecutive days. Subjects will return a minimum of two weeks later for Visit 5 to receive drug (if randomized initially to placebo) or placebo (if randomized to drug).",
+              "interventionNames": [
+                "Drug: DAR 0-100A",
+                "Drug: Placebo"
+              ],
+              "label": "DAR 0-100A then Placebo",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "15 mg dissolved in 150 cc NS saline is administered over 30 minutes x 3 consecutive days. Subjects will return a minimum of two weeks later for Visit 5 to receive drug (if randomized initially to placebo) or placebo (if randomized to drug).",
+              "interventionNames": [
+                "Drug: DAR 0-100A",
+                "Drug: Placebo"
+              ],
+              "label": "Placebo then DAR 0-100A",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "description": "patients without diagnosis of SPD",
+              "label": "Healthy Control",
+              "type": "NO_INTERVENTION"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "DAR 0-100A then Placebo",
+                "Placebo then DAR 0-100A"
+              ],
+              "description": "15 mg DAR 0100A is dissolved in 150 cc NS administered over 30 minutes intravenously.",
+              "name": "DAR 0-100A",
+              "otherNames": [
+                "DHX",
+                "dihydrexidine"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "DAR 0-100A then Placebo",
+                "Placebo then DAR 0-100A"
+              ],
+              "description": "15 mg DAR placebo is dissolved in 150 cc NS administered over 30 minutes intravenously.",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 120,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A D1 Agonist For Working Memory",
+          "nctId": "NCT02507206",
+          "officialTitle": "A D1 Agonist For Working Memory Enhancement In The Schizophrenia Spectrum",
+          "orgStudyIdInfo": {
+            "id": "GCO 11-1279"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "5R01MH097799-02",
+              "link": "https://reporter.nih.gov/quickSearch/5R01MH097799-02",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "A cognitive tests of working memory - the N-Back (% correct at the 2-back condition)",
+              "measure": "the N-Back",
+              "timeFrame": "Baseline"
+            },
+            {
+              "description": "A cognitive tests of working memory - the N-Back (% correct at the 2-back condition)",
+              "measure": "the N-Back",
+              "timeFrame": "Day one"
+            },
+            {
+              "description": "A cognitive tests of working memory - the N-Back (% correct at the 2-back condition)",
+              "measure": "the N-Back",
+              "timeFrame": "Day three"
+            },
+            {
+              "description": "A cognitive tests of working memory - the N-Back (% correct at the 2-back condition)",
+              "measure": "the N-Back",
+              "timeFrame": "One month"
+            },
+            {
+              "description": "A cognitive tests of working memory - the DOT Task (distance error at 30 second delay--no delay)",
+              "measure": "the DOT Task",
+              "timeFrame": "Baseline"
+            },
+            {
+              "description": "A cognitive tests of working memory - the DOT Task (distance error at 30 second delay--no delay)",
+              "measure": "the DOT Task",
+              "timeFrame": "Day one"
+            },
+            {
+              "description": "A cognitive tests of working memory - the DOT Task (distance error at 30 second delay--no delay)",
+              "measure": "the DOT Task",
+              "timeFrame": "Day three"
+            },
+            {
+              "description": "A cognitive tests of working memory - the DOT Task (distance error at 30 second delay--no delay)",
+              "measure": "the DOT Task",
+              "timeFrame": "One month"
+            },
+            {
+              "description": "A cognitive tests of working memory - the Paced Auditory Serial Addition Task",
+              "measure": "the Paced Auditory Serial Addition Task (PASAT)",
+              "timeFrame": "Baseline"
+            },
+            {
+              "description": "A cognitive tests of working memory - the Paced Auditory Serial Addition Task",
+              "measure": "the Paced Auditory Serial Addition Task (PASAT)",
+              "timeFrame": "Day one"
+            },
+            {
+              "description": "A cognitive tests of working memory - the Paced Auditory Serial Addition Task",
+              "measure": "the Paced Auditory Serial Addition Task (PASAT)",
+              "timeFrame": "Day three"
+            },
+            {
+              "description": "A cognitive tests of working memory - the Paced Auditory Serial Addition Task",
+              "measure": "the Paced Auditory Serial Addition Task (PASAT)",
+              "timeFrame": "One month"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "A cognitive test of working memory",
+              "measure": "The Modified AX-CPT (d')",
+              "timeFrame": "Baseline performance"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "A cognitive test of working memory",
+              "measure": "The Modified AX-CPT (d')",
+              "timeFrame": "Day one"
+            },
+            {
+              "description": "A cognitive test of working memory",
+              "measure": "The Modified AX-CPT (d')",
+              "timeFrame": "Day three"
+            },
+            {
+              "description": "A cognitive test of working memory",
+              "measure": "The Modified AX-CPT (d')",
+              "timeFrame": "One month"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-01-12",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-04-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-04-05",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-01-12",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2013-04"
+          },
+          "statusVerifiedDate": "2018-04",
+          "studyFirstPostDateStruct": {
+            "date": "2015-07-23",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-07-22",
+          "studyFirstSubmitQcDate": "2015-07-22"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "name": "Dihydrexidine",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 0
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Infusion Laboratory: Protocol 4 (Dihydrexidine) - 13",
+          "nctId": "NCT00000348",
+          "officialTitle": "Infusion Laboratory: Protocol 4 (Dihydrexidine)",
+          "orgStudyIdInfo": {
+            "id": "NIDA-3-0010-13"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Institute on Drug Abuse (NIDA)"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "Y01-3-0010-13"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Degree of drug craving"
+            },
+            {
+              "measure": "Frequency of IV drug use and sexual risk behaviors"
+            },
+            {
+              "measure": "History, incidence and amount of drug use"
+            },
+            {
+              "measure": "Type and severity of stimulant withdrawal symptoms"
+            },
+            {
+              "measure": "Characterization of study population"
+            },
+            {
+              "measure": "Population incidence of symptoms of depression, po"
+            },
+            {
+              "measure": "Evidence of change in neurophysiology and brain ac"
+            },
+            {
+              "measure": "Evidence of change in subjective responses to coca"
+            },
+            {
+              "measure": "Clinical physiological response to cocaine challen"
+            },
+            {
+              "measure": "Degree to which study medication influences change"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "ACTIVE_NOT_RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2017-01-11",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2017-01-10",
+          "overallStatus": "UNKNOWN",
+          "statusVerifiedDate": "2002-12",
+          "studyFirstPostDateStruct": {
+            "date": "1999-09-21",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "1999-09-20",
+          "studyFirstSubmitQcDate": "1999-09-20"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "DAR-0100A is a dopamine D1 full agonist, the active component of the racemic mixture DAR-0100",
+              "interventionNames": [
+                "Drug: DAR-100A"
+              ],
+              "label": "DAR-100A",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Intravenously over 30 minutes for 5 days, 9 days off then again for 5 more days",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "DAR-100A"
+              ],
+              "description": "15mg or 0.5mg of DAR-100A intravenously over 30 minutes for 5 days, 9 days off then again for 5 more days",
+              "name": "DAR-100A",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 68,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "EARLY_PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Pharmacologic and Clinical Testing of a D1 Agonist for Cognitive Enhancement in Neuropsychiatric Disorders",
+          "nctId": "NCT01519557",
+          "officialTitle": "Pharmacologic and Clinical Testing of a D1 Agonist for Cognitive Enhancement in Neuropsychiatric Disorders",
+          "orgStudyIdInfo": {
+            "id": "#6329"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "New York State Psychiatric Institute"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "U01MH076544-03",
+              "link": "https://reporter.nih.gov/quickSearch/U01MH076544-03",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The investigators will measure neural activity during working memory (WM) tasks using blood-oxygen-level-dependent (BOLD)contrast function magnetic resonance imaging (fMRI) and the n-back task and self-ordered object working memory task (SOWMT), prior to (day 0, baseline) and after receiving sub-acute (day 5) treatment with DAR-0100A (15mg or 0.5mg) or placebo.",
+              "measure": "Change from Baseline in resting blood flow and neural activity during working memory tasks in the dorsolateral prefrontal cortex (DLPFC)after 5 days study drug administration.",
+              "timeFrame": "Day 0 (baseline) and Day 5"
+            },
+            {
+              "description": "The investigators will measure neural activity during working memory (WM) tasks using blood-oxygen-level-dependent (BOLD)contrast function magnetic resonance imaging(fMRI) and the n-back task and self-ordered object working memory task (SOWMT), prior to (day 0, baseline) and after receiving sub-acute (day 5) treatment with DAR-0100A (15mg or 0.5mg) or placebo.",
+              "measure": "Change from Baseline in resting blood flow and neural activity during working memory tasks in the dorsolateral prefrontal cortex (DLPFC)after 5 days study drug administration.",
+              "timeFrame": "Day 0 (baseline) and Day 5"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The main outcome measures will be the change in composite score on the MATRICS Consensus Cognitive Battery (MCCB) and CogState Schizophrenia Test batteries from baseline(Day 0) and after repeated administration of DAR-0100A or placebo (Day 5). These batteries are also designed to be repeatable (insensitive to practice effects)and to allow for measurements of changes in performance (no floor or ceiling effects).",
+              "measure": "Change from Baseline in cognitive performance after 5 days study drug administration.",
+              "timeFrame": "Patients will be tested at baseline and after repeated administration of DAR-0100A or placebo, and 3 months after the cessation of treatment with the D1 agonist"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2013-11",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2015-03-04",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2015-03-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2013-08",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2011-04"
+          },
+          "statusVerifiedDate": "2015-02",
+          "studyFirstPostDateStruct": {
+            "date": "2012-01-27",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2012-01-13",
+          "studyFirstSubmitQcDate": "2012-01-24"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "The examination of SPD subjects, who are more likely than schizophrenia patients to show significant cognitive improvement after the use of single doses of dopamine agonists, such as DAR-0100A provides an excellent opportunity to demonstrate the effectiveness of D1 agonists on cognition in the schizophrenia spectrum.",
+              "interventionNames": [
+                "Drug: DAR-0100A"
+              ],
+              "label": "DAR 0-100A",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Some subjects receive placebo, instead of the study drug, in a double-blind randomized fashion. This allows for performance comparison between SPD subjects on DAR-0100A and those on placebo. The hypothesis is that SPD subjects on DAR-100A will show improvement on primary measures greater than SPD subjects randomized to placebo between baseline and post-drug.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "DAR 0-100A"
+              ],
+              "description": "DAR-0100A will be administered intravenously in a dose of 15mg in 150mls of saline over 30 minutes at approximately 11:00AM on each of three consecutive days of administration. Additional saline will be co-administered to ensure hydration.",
+              "name": "DAR-0100A",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "150mls of saline is administered over 30 minutes at approximately 11:00AM on each of three consecutive days of administration. Additional saline will be co-administered to ensure hydration.",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 20,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "SPD",
+          "briefTitle": "Clinical Testing of a D1 Agonist for Cognitive Enhancement in Schizotypal Personality Disorder",
+          "nctId": "NCT01466205",
+          "officialTitle": "Clinical Testing of a D1 Agonist for Cognitive Enhancement in Schizotypal Personality Disorder",
+          "orgStudyIdInfo": {
+            "id": "11-0110"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The cognitive tests of working memory serving as primary outcome measures will include the modified AX-CPT (d'), the N-Back (% correct at the 2-back condition), the DOT Task (distance error at 30 second delay--no delay), and the Paced Auditory Serial Addition Task (PASAT)(correct responses).",
+              "measure": "Efficacy of a D1 Agonist for Cognitive Enhancement of Working Memory in Schizotypal Personality Disorder",
+              "timeFrame": "Baseline performance"
+            },
+            {
+              "description": "The cognitive tests of working memory serving as primary outcome measures will include the modified AX-CPT (d'), the N-Back (% correct at the 2-back condition), the DOT Task (distance error at 30 second delay--no delay), and the Paced Auditory Serial Addition Task (PASAT)(correct responses).",
+              "measure": "Efficacy of a D1 Agonist for Cognitive Enhancement of Working Memory in Schizotypal Personality Disorder",
+              "timeFrame": "day one of drug administration"
+            },
+            {
+              "description": "The cognitive tests of working memory serving as primary outcome measures will include the modified AX-CPT (d'), the N-Back (% correct at the 2-back condition), the DOT Task (distance error at 30 second delay--no delay), and the Paced Auditory Serial Addition Task (PASAT)(correct responses).",
+              "measure": "Efficacy of a D1 Agonist for Cognitive Enhancement of Working Memory in Schizotypal Personality Disorder",
+              "timeFrame": "after three days of drug administration"
+            },
+            {
+              "description": "The cognitive tests of working memory serving as primary outcome measures will include the modified AX-CPT (d'), the N-Back (% correct at the 2-back condition), the DOT Task (distance error at 30 second delay--no delay), and the Paced Auditory Serial Addition Task (PASAT)(correct responses).",
+              "measure": "Efficacy of a D1 Agonist for Cognitive Enhancement of Working Memory in Schizotypal Personality Disorder",
+              "timeFrame": "one month after drug administration"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2013-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2012-07-20",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2012-07-19",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2013-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2011-01"
+          },
+          "statusVerifiedDate": "2012-07",
+          "studyFirstPostDateStruct": {
+            "date": "2011-11-07",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2011-10-27",
+          "studyFirstSubmitQcDate": "2011-11-02"
+        }
+      }
+    }
+  ],
+  "totalCount": 4
+}

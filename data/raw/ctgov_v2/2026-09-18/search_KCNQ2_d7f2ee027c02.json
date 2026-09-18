@@ -1,0 +1,1484 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "CASE_ONLY",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 41,
+            "type": "ACTUAL"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Molecular Genetics in Infantile Spasms",
+          "nctId": "NCT02885389",
+          "officialTitle": "Molecular Characterization of a Cohort of 73 Patients With Infantile Spasms Syndrome",
+          "orgStudyIdInfo": {
+            "id": "2010.614"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Hospices Civils de Lyon"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Presence of deleterious gene variants in candidate genes for infantile spasms/west syndrome and for deleterious Copy-Number variations (CNV). A pan-genome analysis by microarray",
+              "timeFrame": "Day one"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2012-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-08-31",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-08-26",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2012-07",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2010-10"
+          },
+          "statusVerifiedDate": "2016-08",
+          "studyFirstPostDateStruct": {
+            "date": "2016-08-31",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-08-23",
+          "studyFirstSubmitQcDate": "2016-08-26"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "24-day blinded transition/titration period. Subjects who received XEN496 in the preceding study will continue to receive XEN496 at the same dose, in a blinded manner, without any further titration. To maintain the blinded aspect of the study, placebo will be dispensed to all subjects during the transition/titration period to ensure the total number of capsules are consistent across all subjects.\n\nSubjects who discontinue will be required to taper off study drug over a period of up to 15 days",
+              "interventionNames": [
+                "Drug: XEN496"
+              ],
+              "label": "Group 1: XEN496 only",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "24-day blinded transition/titration period. Subjects who were allocated to placebo in the preceding study, will be titrated to a tolerated dose up to a maximum dose of 21 mg/kg/day, with a maximum daily dose of 672 mg/day. To maintain the blinded aspect of the study, placebo will be dispensed to all subjects during the transition/titration period to ensure the total number of capsules are consistent across all subjects\n\nSubjects who discontinue or complete the study treatment will be required to taper off study drug over a period of up to 15 days.",
+              "interventionNames": [
+                "Drug: XEN496"
+              ],
+              "label": "Group 2: Placebo to XEN496",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Group 1: XEN496 only",
+                "Group 2: Placebo to XEN496"
+              ],
+              "description": "XEN496 sprinkle capsules. Parents / caregivers will be instructed to sprinkle and mix the contents of the capsules into soft foods or liquids and feed it to the child.",
+              "name": "XEN496",
+              "otherNames": [
+                "ezogabine",
+                "retigabine"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SEQUENTIAL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "maskingDescription": "Patients will enter a blinded titration period (24 days) before moving to the open label treatment period for the remaining 35 months.",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 8,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "EPIK-OLE",
+          "briefTitle": "An Open-Label Extension of the Study XEN496 (Ezogabine) in Children With KCNQ2-DEE",
+          "nctId": "NCT04912856",
+          "officialTitle": "An Open-Label Extension of the Study XEN496 in Children With KCNQ2 Developmental and Epileptic Encephalopathy",
+          "orgStudyIdInfo": {
+            "id": "XPF-009-302"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Xenon Pharmaceuticals Inc."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2020-003447-28",
+              "type": "EUDRACT_NUMBER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Safety and tolerability of XEN496 as assessed by incidence and severity of AEs and SAEs",
+              "measure": "Incidence of Adverse Events (AEs) and Serious Adverse Events (SAEs) Related to Intervention",
+              "timeFrame": "From Screening/Baseline through to 4 weeks post last dose"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2023-11-17",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-02-14",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-02-12",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2023-11-17",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2025-02-14",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2024-11-15",
+          "resultsFirstSubmitQcDate": "2025-02-12",
+          "startDateStruct": {
+            "date": "2021-08-17",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-12",
+          "studyFirstPostDateStruct": {
+            "date": "2021-06-03",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-05-03",
+          "studyFirstSubmitQcDate": "2021-05-27",
+          "whyStopped": "Sponsor decision; not a safety decision"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Infants who met the inclusion criteria were enrolled in this study. The infants will get their own DNA sequencing results by WES technology. The researchers found that some of them carried mutations in the KCNQ2 gene. so they wanted to compare whether there were differences with or without KCNQ2 gene mutations in the efficacy of anticonvulsants or long-term neurodevelopment in different exposure groups.",
+              "interventionNames": [
+                "Genetic: KCNQ2"
+              ],
+              "label": "infants with seizure with KCNQ2 gene mutation."
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "infants with seizure with KCNQ2 gene mutation."
+              ],
+              "description": "The researchers extracted DNA from the baby's serum and sent it to WES to get the baby's total exon sequence.",
+              "name": "KCNQ2",
+              "type": "GENETIC"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "The researchers retained the neonates' or infants' 2ml serum as a biological sample for the Whole Exon Sequencing.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 100,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Cohort Study on the Prognosis of Neonatal KCNQ2 Gene-associated Epileptic Encephalopathy",
+          "nctId": "NCT03934268",
+          "officialTitle": "A Cohort Study on the Prognosis of Neonatal KCNQ2 Gene-associated Epileptic Encephalopathy",
+          "orgStudyIdInfo": {
+            "id": "CHFudanU_NNICU12"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Children's Hospital of Fudan University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The investigators used WES to screen for neonatal onset seizure and calculated the incidence of KCNQ2 gene mutations in these neonates.",
+              "measure": "Incidence of seizure in children with KCNQ2 within 28 days of age",
+              "timeFrame": "From birth to under 28 days of age"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Some neonates with seizure associated with KCNQ2 gene mutation will develop epileptic encephalopathy or syndrome at a later stage.\n\nThe researchers calculated the probability of recurrent seizures or progression in neonates with seizure associated with KCNQ2 gene mutations within the age of one year.",
+              "measure": "Recurrence rate of KNCQ2 gene-related convulsion in children under 1 year of age",
+              "timeFrame": "From birth to under 1 year of age"
+            },
+            {
+              "description": "Some non-benign KCNQ2 gene-related convulsions require anticonvulsant intervention, and investigators hope to observe and obtain the effective rate of first-line anticonvulsant intervention. To determine whether the convulsion stopped or the frequency of convulsion decreased within 72 hours after taking the drug. If convulsions stop or the frequency of seizures decreases, drug intervention is considered effective.",
+              "measure": "Efficacy of first-line anticonvulsants in children with KCNQ2 gene-related convulsions",
+              "timeFrame": "From the beginning of drug intervention to 72 hours after taking the drug."
+            },
+            {
+              "description": "The investigators plan to use the bayley Neurodevelopmental scale to assess the neurodevelopmental status of infants with KCNQ2 gene-associated epileptic encephalopathy within 2 years of age.",
+              "measure": "Proportion of infants classified as having \"developmental delay\" (MDI <70 on BSID-III or either Language or Cognitive Score <70 on the Bayley-III)",
+              "timeFrame": "The infants will be evaluated by bayley Neurodevelopment scale at the age of about two years."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2023-12",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2023-09-21",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-09-19",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2023-12",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2017-01-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-09",
+          "studyFirstPostDateStruct": {
+            "date": "2019-05-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-04-29",
+          "studyFirstSubmitQcDate": "2019-04-30"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "24-day dose titration period to a top dose of 21 mg/kg/day. Subjects continue at the top dose, or the highest tolerated dose up to the top dose, for 12-week maintenance period. If the subject does not immediately enter into the separate open-label extension (OLE) study, the maintenance period will be followed by a 15-day taper period.",
+              "interventionNames": [
+                "Drug: XEN496"
+              ],
+              "label": "XEN496",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "To maintain the blinded aspect of the study, subjects will be titrated on placebo over the 24-day period and remain at this dose for the 12-week maintenance period. If the subject does not immediately enter into the separate OLE study, the maintenance period will be followed by a 15-day taper period.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "XEN496"
+              ],
+              "description": "XEN496 sprinkle capsules. Parents / caregivers will be instructed to sprinkle and mix the contents of the capsules into soft foods or liquids and feed it to the child TID.",
+              "name": "XEN496",
+              "otherNames": [
+                "ezogabine",
+                "retigabine"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo sprinkle capsules. Parents / caregivers will be instructed to sprinkle and mix the contents of the capsules into soft foods or liquids and feed it to the child TID.",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 8,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "EPIK",
+          "briefTitle": "XEN496 (Ezogabine) in Children With KCNQ2 Developmental and Epileptic Encephalopathy",
+          "nctId": "NCT04639310",
+          "officialTitle": "A Phase 3 Study of Adjunctive XEN496 in Pediatric Subjects With KCNQ2 Developmental and Epileptic Encephalopathy",
+          "orgStudyIdInfo": {
+            "id": "XPF-009-301"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Xenon Pharmaceuticals Inc."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2020-002396-35",
+              "type": "EUDRACT_NUMBER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "To assess adverse events as criteria for safety and tolerability",
+              "measure": "Safety and Tolerability of XEN496 (e.g., Adverse Events) in Pediatric Subjects With KCNQ2-DEE",
+              "timeFrame": "From screening through study completion (Day 109) or Day 151 for those not entering the OLE"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Parent/caregiver seizure diary record will be used to assess frequency, type and duration of seizure activity",
+              "measure": "Percent Change From Baseline in Monthly (28 Day) Countable Motor Seizure Frequency During the Blinded Treatment Period",
+              "timeFrame": "From baseline to the end of the double-blind, 12 week treatment period (maintenance)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Parent/caregiver seizure diary record will be used to assess frequency, type of seizure with a duration of at least 3 seconds.",
+              "measure": "Percentage of Subjects With ≥50 Percent Reduction in Monthly (28 Day) Seizure Frequency",
+              "timeFrame": "From baseline to the end of the double-blind, 12 week treatment period (maintenance)"
+            },
+            {
+              "description": "CaGI-C scale is a caregiver-reported assessment of the change from baseline in the subject's overall condition and seizure severity. Responses to the CaGI-C questionnaire are to be rated on a 7-point Likert scale anchored at 1=\"Very much improved\" and 7=\"Very much worse\".\n\nSubjects at least minimally improved compared to baseline (a score of \\<=3) for overall condition or for seizure severity are reported in the analysis population.\n\nThe primary comparison between treatments will be based on the last visit in the double-blind treatment period (or the early termination visit if the patient discontinued the treatment early). The results at Study Day 109 (end of treatment period) are provided.",
+              "measure": "Caregiver Global Impression of Change (CaGI-C) Scores for the Subject's Overall Condition and for Seizures",
+              "timeFrame": "Study Day 109"
+            },
+            {
+              "description": "CaGI-S scale is Caregiver-reported assessment of the severity of the subject's seizures and overall condition over the previous 7 days. Responses to the CaGI-S questionnaire are to be rated on a 5-point Likert scale ranging from none to very severe. The CaGI-S consists of single items relating to each concept and is scored by the caregiver using a 5-point response ranging from 1 to 5, anchored at 1=\"None\" and 5=\"Very Severe\".\n\nSubjects with improvement of at least 1 level compared to baseline for overall condition or for seizure severity are reported in the analysis population.\n\nThe results at Study Day 109 (end of treatment period) are provided.",
+              "measure": "Change From Baseline in the Caregiver Global Impression of Severity (CaGI-S) for the Subject's Overall Condition and for Seizures",
+              "timeFrame": "Study Day 109"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2023-05-16",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-08-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-08-21",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2023-05-16",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2024-08-23",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2024-05-17",
+          "resultsFirstSubmitQcDate": "2024-08-21",
+          "startDateStruct": {
+            "date": "2021-03-29",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-08",
+          "studyFirstPostDateStruct": {
+            "date": "2020-11-20",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-11-04",
+          "studyFirstSubmitQcDate": "2020-11-19",
+          "whyStopped": "Sponsor decision; Not a safety decision"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects will take two 10 mg capsules of XEN1101 daily for 8 weeks for a total daily dose of 20 mg.",
+              "interventionNames": [
+                "Drug: XEN1101"
+              ],
+              "label": "XEN1101",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Subjects will take a matching placebo daily for eight weeks.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "XEN1101"
+              ],
+              "description": "two 10 mg capsules",
+              "name": "XEN1101",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "matching placebo",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "interventionModelDescription": "This is a phase II, randomized, parallel-arm, placebo-controlled clinical trial were 60 patients with major depressive disorder will be randomized in 1:1 fashion to XEN1101 (N=30) or matching placebo (N=30).",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 44,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "XEN1101 for Major Depressive Disorder",
+          "nctId": "NCT04827901",
+          "officialTitle": "A Proof of Concept Randomized Controlled Trial of XEN1101 for the Treatment of Major Depressive Disorder",
+          "orgStudyIdInfo": {
+            "id": "GCO 16-0374-02"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "4R33MH111932-03",
+              "link": "https://reporter.nih.gov/quickSearch/4R33MH111932-03",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The change in activation within the bilateral ventral striatum (VS) from baseline (week 0) to end of treatment (week 8) as measured by fMRI during an Incentive Flanker Task.",
+              "measure": "Change in activation within the reward circuit by fMRI",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The Montgomery-Åsberg Depression Rating Scale (MADARS) is a 10-item instrument used for the evaluation of depressive symptoms in adults and for the assessment of any changes to those symptoms. Each of the 10 items is rated on a scale of 0 to 6, with differing descriptors for each item. These individual item scores are added together to form a total score, which can range between 0 and 60 points, higher score indicating poorer health outcomes. The MADRS provides a measure of the overall level of depression.",
+              "measure": "Change in Montgomery-Åsberg Depression Rating Scale Score",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Quick Inventory of Depressive Symptomatology, Self-Report (QIDS-SR) is a 16-item self-rated instrument designed to assess the severity of depressive symptoms. The 16 items cover the nine symptom domains of major depression and are rated on a scale of 0-3. Total score ranges from 0 to 27, with ranges of 0-5 (normal), 6-10 (mild), 11-15 (moderate), 16-20 (moderate to severe), and 21+ (severe).",
+              "measure": "Change in Quick Inventory of Depressive Symptomatology, Self-Report [QIDS-SR] Score",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Snaith-Hamilton Pleasure Scale (SHAPS) is a well-validated 14-item self-report questionnaire commonly used to assess anhedonia. Each item on the SHAPS is worded so that higher scores indicate greater pleasure capacity. A total score can be derived by summing the responses to each item. Items answered with \"strongly agree\" are coded as \"1\", while a \"strongly disagree\" response was assigned a score of \"4.\" Total scores on the SHAPS can range from 14 to 56, with higher scores corresponding to higher levels of anhedonia.",
+              "measure": "Change in Snaith-Hamilton Pleasure Scale (SHAPS)",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "The Temporal Experience of Pleasure Scale (TEPS) is an 18-item self-report measurement of anhedonia which consists of a series of statements that must be rated according to how accurate they are for the individual. The scale produces a sub-score that differentiates the role of anticipatory pleasure ('wanting') and is derived of 10 items. Total scores range is 16-108. Lower scores indicate greater levels of anhedonia.",
+              "measure": "Change in Temporal Experience of Pleasure Scale",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            },
+            {
+              "description": "This is a widely administered clinician rated scale that assesses the subject overall illness severity and the degree of improvement from the initial assessment.\n\nIllness severity is rated on a 1-7 scale where 1 corresponds to \"Normal, Not at All Ill\", 2 is \"Borderline Mentally Ill\", the anchor for 3 is \"Mildly Ill\", the anchor for 4 is \"Moderately Ill\", 5 is \"Markedly Ill\", 6 is \"Severely Ill\", and 7 is \"Among the Most Extremely Ill Patients\".\n\nThe degree of improvement is rated on a 1-7 scale where 1 corresponds to \"Very Much Improved\", 2 is \"Much Improved\", the anchor for 3 is \"Minimally Improved\", the anchor for 4 is \"No Change\", 5 is \"Minimally Worse\", 6 is \"Much Worse\", and 7 is \"Very Much Worse\".",
+              "measure": "Change in Clinical Global Impression Scale",
+              "timeFrame": "Baseline (week 0), End of treatment (week 8)"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-11-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-04-02",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-03-27",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2024-10-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2021-10-19",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-03",
+          "studyFirstPostDateStruct": {
+            "date": "2021-04-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-03-30",
+          "studyFirstSubmitQcDate": "2021-03-30"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Healthy volunteers with no pre-existing or current psychiatric, neurological or server somatic illness.",
+              "interventionNames": [
+                "Drug: Levetiracetam"
+              ],
+              "label": "Healthy Controls"
+            },
+            {
+              "description": "Patients who have a history of only one epileptic seizure.",
+              "label": "Cohort I"
+            },
+            {
+              "description": "Patients who are newly diagnosed with epilepsy.",
+              "interventionNames": [
+                "Drug: Levetiracetam Tablets",
+                "Drug: Lamotrigine tablet"
+              ],
+              "label": "Cohort II"
+            },
+            {
+              "description": "Patients who are newly diagnosed with epilepsy and have an epileptogenic lesion on MRI concordant with seizure semiology and/or EEG.",
+              "interventionNames": [
+                "Drug: Levetiracetam"
+              ],
+              "label": "Cohort III"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Cohort III",
+                "Healthy Controls"
+              ],
+              "description": "Healthy subjects and patients in Cohort III will undergo a 120 min. \\[11C\\]-UCB-J PET-MR brain scan followed by intravenous administration of levetiracetam after approx. 60 min. in a displacement paradigm. Before, during and after the intervention arterial spin labeling and resting-state functional MRI will be acquired.\n\nTo measure the radiolabelled tracer's arterial input function, including its radiolabelled metabolites, blood samples will be drawn during the PET scan from an arterial catheter.\n\nThe selected regions for the primary analyses are the epileptogenic lesion(s) (patients) and the neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala. \\[11C\\]-UCB-J binding, volume of distribution and SV2A occupancy will be quantified by analyzing the PET images with well-validated kinetic models.",
+              "name": "Levetiracetam",
+              "otherNames": [
+                "[11C]-UCB-J PET-MR scan"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Cohort II"
+              ],
+              "description": "Patients in Cohort II will be randomized to treatment with an ASM (levetiracetam) in accordance with standard treatment procedures. The patients will enter a 4 weeks titration period receiving increasing doses. During weeks 5-30, patients will enter an evaluation period where the dose can be increased (continued seizures) or decreased (adverse reactions). In cases of unacceptable seizure control and/or intolerable adverse reactions; shift to lamotrigine arm.",
+              "name": "Levetiracetam Tablets",
+              "otherNames": [
+                "Levetiracetam"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Cohort II"
+              ],
+              "description": "Patients in Cohort II will be randomized to treatment with an ASM (lamotrigine) in accordance with standard treatment procedures. The patients will enter a 6 weeks titration period receiving increasing doses. During weeks 5-30, patients will enter an evaluation period where the dose can be increased (continued seizures) or decreased (adverse reactions). In cases of unacceptable seizure control and/or intolerable adverse reactions; shift to levetiracetam arm.",
+              "name": "Lamotrigine tablet",
+              "otherNames": [
+                "Lamotrigine"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Blood and stool.\n\nBlood-derived neurotrophic factor (BDNF), S100B, inflammatory markers and purine concentrations.\n\nGenes involved with GABA-ergic, glutamatergic and dopaminergic neurotransmission, GRIN2A/B, CLDN5, PIGA, PIGV, PIGT, ALDH7A1, PNPO, SLC2A1, PDYN, MTHFR, PCDH7, NRG, BDNF, MMP-2/3, TRKB, SV2A, SYNGAP1, SNAP25, HLA-B\\*15:02, HLA-A\\*31:01, HLA-A\\*11:01, CYP2D6, CYP2C9, CYP2C19, UGT1A1, ABCB1, ABCC1, CLCN4, SCN1-3A, SCN8A, KCNA2, KCNT1, KCNQ2/3, KCNJ10, HCN1A, GABRA1, ASIC1a, AQP4, neuropeptide Y.\n\nEpigenetics: microRNA, TSC1/2, NPRL2/3, DEPDC5, AK3, MECP2, ARX, SCN2/3/8A, KCNQ3, GABRG2, GABRA1, GABRB2/3.\n\nShotgun DNA sequencing will be performed on gut microbial DNA.\n\nThe analysis of genetic biomarkers may change during the study period.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 550,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "acronym": "BDE",
+          "briefTitle": "Precision Medicine in the Treatment of Epilepsy",
+          "nctId": "NCT05450822",
+          "officialTitle": "The BrainDrugs-Epilepsy Study: A Prospective Open-label Cohort Precision Medicine Study in Epilepsy",
+          "orgStudyIdInfo": {
+            "id": "H-21031962"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Rigshospitalet, Denmark"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Treatment outcome as percentage change in the State-Trait Anger Expression Inventory 2 (STAXI-2).",
+              "measure": "Continuous treatment outcome rating state aggression (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Aggression Questionnaire (AQ).",
+              "measure": "Continuous treatment outcome rating trait aggression (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Epilepsy Self-management Scale.",
+              "measure": "Continuous treatment outcome as a measure of self-management of epilepsy (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Epilepsy Outcome Expectancy Scale.",
+              "measure": "Continuous treatment outcome as a measure of expectations to treatment outcome (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in the Epilepsy Stigmatization Scale.",
+              "measure": "Continuous outcome as epilepsy stigmatization (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in the Becks Depression Inventory (BDI).",
+              "measure": "A continuous rating of depression (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the self-report Cognitive Complaints in Bipolar Disorder Rating Assesment.(COBRA).",
+              "measure": "Continuous outcome of subjective, cognitive complains (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Cohen's Perceived Stress Scale (PSS).",
+              "measure": "Continuous outcome of perceived stress (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in NEO Personality Inventory 3 (NEO-FFI-3).",
+              "measure": "Continuous outcome of personality traits (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Impact of Event Scale-Revised (IES-R).",
+              "measure": "Continuous outcome of the psychological impact of traumatic event (first seizure/epilepsy diagnosis) (Cohort I-III).",
+              "timeFrame": "As change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Coping Self-Efficacy Scale (CSES).",
+              "measure": "Continuous outcome of coping strategies (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Pittsburgh Sleep Quality Index (PSQI).",
+              "measure": "Continuous outcome of sleep quality (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in Stressful Life Event scale (SLE).",
+              "measure": "Continuous outcome of negative life events (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Genotyping of epilepsy candidate genes at baseline such as genes involved with GABA-ergic, glutamatergic and dopaminergic neurotransmission, GRIN2A/B, CLDN5, PIGA, PIGV, PIGT, ALDH7A1, PNPO, SLC2A1, PDYN, MTHFR, PCDH7, NRG, BDNF, MMP-2/3, TRKB, SV2A, SYNGAP1, SNAP25, HLA-B\\*15:02, HLA-A\\*31:01, HLA-A\\*11:01, CYP2D6, CYP2C9, CYP2C19, UGT1A1, ABCB1, ABCC1, CLCN4, SCN1-3A, SCN8A, KCNA2, KCNT1, KCNQ2/3, KCNJ10, HCN1A, GABRA1, ASIC1a, AQP4, neuropeptide Y.",
+              "measure": "Genotyping of epilepsy candidate genes at baseline between Cohort I-III and healthy controls.",
+              "timeFrame": "At baseline between groups (HCs and patients)."
+            },
+            {
+              "description": "Epigenetic mechanisms and regulation of microRNA, TSC1/2, NPRL2/3, DEPDC5, AK3, MECP2, ARX, SCN2/3/8A, KCNQ3, GABRG2, GABRA1, GABRB2/3.",
+              "measure": "Epigenetic changes in Cohort I-III and healthy controls.",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Identify microbial biomarkers between patients with drug failure vs. patients with no drug failure in Cohort II-III.",
+              "measure": "Gut microbial biomarkers for drug treatment response (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify microbial biomarkers between healthy subjects and patients in cohort II-III.",
+              "measure": "Baseline gut microbial biomarkers (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify functional microbial signatures between patients in cohort II-III.",
+              "measure": "Gut microbial signatures between epilepsy subtypes (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Identify functional microbial signatures between patients with and without psychiatric symptoms in cohort II-III.",
+              "measure": "Gut microbial signatures for psychiatric symptoms (Cohort II-III).",
+              "timeFrame": "As change over time from baseline to one year after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and IQ measured as percentage change in Wechsler Adult Intelligence Scale (WAIS-IV) and quantification of binding both globally and in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Changes from baseline to follow-up in intelligence quotient (IQ) and index scores and cerebral synaptic vesicle glycoprotein 2A (SV2A) binding as imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding between patients without cognitive impairment vs. patients with cognitive impairment in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Cerebral SV2A binding in patients with cognitive impairment vs. no cognitive impairment imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to the development of a potential cognitive dysfunction and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding both globally and in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients and healthy controls.",
+              "measure": "Cerebral SV2A binding as imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with drug failure vs. no drug failure.",
+              "measure": "Cerebral SV2A binding between drug failure vs. no drug failure as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with drug resistance vs. no drug resistance.",
+              "measure": "Cerebral SV2A binding between patients with drug resistance vs. no drug resistance as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential drug resistance and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and arterial spin labeling after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and arterial spin labeling following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and arterial spin labeling after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and arterial spin labeling following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and resting-state functional connectivity after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and resting-state functional connectivity following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential drug failure and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of the \\[11C\\]-UCB-J PET SV2A occupancy and resting-state functional connectivity after a levetiracetam displacement paradigm in healthy controls compared with patients.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and resting-state functional connectivity following intravenous administration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding and SV2A occupancy in the epileptogenic lesion(s) in patients with side effects vs. no side effects.",
+              "measure": "Cerebral SV2A binding between patients with side effects vs. no side effects as imaged by [11C]-UCB-J PET (Cohort III).",
+              "timeFrame": "As change over time from baseline to potential development of side effects and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Latent variable construct of \\[11C\\]-UCB-J binding between patients without psychiatric symptoms vs. patients with psychiatric symptoms in primary volumes of interest; neocortex, hippocampus, entorhinal cortex, fusiform gyrus, dorsolateral prefrontal cortex, ventrolateral prefrontal cortex, orbitofrontal cortex, striatum, anterior cingulate cortex and amygdala in patients from cohort III and healthy controls.",
+              "measure": "Cerebral SV2A binding in patients with psychiatric symptoms vs. no psychiatric symptoms imaged by [11C]-UCB-J PET (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to a potential psychiatric diagnosis and one, three and five years after inclusion for patients in cohort III."
+            },
+            {
+              "description": "Estimation of the occupied SV2A binding sites from the plasma concentration of levetiracetam.",
+              "measure": "Cerebral [11C]-UCB-J PET SV2A occupancy and the plasma concentration of the ASM levetiracetam (Cohort III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients)."
+            },
+            {
+              "description": "Structural MRI scans of hippocampus in healthy subjects and patients in cohort II-III.",
+              "measure": "Hippocampal volume is associated with drug failure (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Structural MRI scans and volume of thalamus and hippocampus.",
+              "measure": "Volume of thalamus and hippocampus is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans of cortical thickness of precentral gyri, parahippocampal cortex, entorhinal and fusiform gyri, precuneus and frontal gyri.",
+              "measure": "Cortical thickness is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans and volume of amygdala.",
+              "measure": "Volume of amygdala is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Structural MRI scans and cortical thickness of orbitofrontal cortex.",
+              "measure": "Cortical thickness is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Resting-state functional MRI scans and within network connectivity.",
+              "measure": "Within network resting-state functional connectivity (rsfMRI) is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Diffusion Tensor MRI scans and structural connectomics.",
+              "measure": "Whole-brain structural connectomics is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Diffusion Tensor MRI scan and structural connectivity between temporal lobe, the limbic system and orbitofrontal cortex (DTI).",
+              "measure": "Structural connectivity is associated with psychiatric symptoms and drug failure (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Resting-state functional MRI scans and between the anterior cingulate cortex, between prefrontal-limbic systems, angular gyrus, temporal lobe, precuneus, cerebellum, default mode network and executive control network (rsfMRI).",
+              "measure": "Between network resting-state functional connectivity (rsfMRI) is associated with psychiatric symptoms and drug failure (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG functional connectivity in the theta band.",
+              "measure": "High density EEG functional connectivity is associated with seizure recurrence (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG functional connectivity in the anterior cingulate cortex.",
+              "measure": "High density EEG functional connectivity is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "High density EEG and frontal and occipital alpha asymmetry and theta current source density in the anterior cingulate cortex.",
+              "measure": "High density EEG asymmetry and current source is associated with psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "1\\) Seizure-free within six months after starting ASM treatment and remained seizure-free for at least one year (last observed seizure within the six months after starting ASM treatment); 2) Seizure-free more than six months after starting ASM treatment and the seizure-free period lasts at least one year; 3) Fluctuations with both seizure-freedom and seizure-relapse; or 4) Never seizure-free for a year at the third- and fifth-year follow-up timepoint.",
+              "measure": "Categorical effect of anti-seizure medication (ASM) on treatment outcome (Cohort II-III).",
+              "timeFrame": "As change over time from the ASM evaluation period (after 4-7 weeks titration period) to six months, one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "The proportion of patients in Cohort I with one epileptic seizure who become diagnosed with epilepsy.",
+              "measure": "Categorical effect of a second seizure/epilepsy diagnosis for patients in Cohort I.",
+              "timeFrame": "As change over time of epilepsy diagnosis at six months, one, three and five years after inclusion of patients in Cohort I."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Treatment outcome as percentage change in the Seizure Severity Questionnaire (SSQ).",
+              "measure": "Continuous treatment outcome using a seizure severity index (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from the ASM evaluation period (after 4-7 weeks titration period) to one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in the Liverpool Adverse Event Profile (LAEP).",
+              "measure": "Continuous treatment outcome rating adverse events (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Treatment outcome as percentage change in in Patient's Global Impression of Change (PGIC).",
+              "measure": "Continuous treatment outcome rating impression of change (Cohort II-III).",
+              "timeFrame": "As a monthly change over time from the ASM evaluation period (after 4-7 weeks titration period) to one, three and five years after for patients in cohort II-III."
+            },
+            {
+              "description": "Percentage change in Major Depression Inventory (MDI).",
+              "measure": "A continuous rating of depression diagnosis (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in Inventory of Depressive Symptomatology (IDS-SR30).",
+              "measure": "A continuous rating of depressive symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Neurological Disorders Depression Inventory for Epilepsy (NDDI-E).",
+              "measure": "A continuous rating of specific depressive symptoms associated with neurological disease (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Psychopathology assessed by WHO International Classification of Diseases 10 (ICD-10) diagnostic classification and a semi-structured psychiatric, clinical interview.",
+              "measure": "Categorical outcome of psychiatric symptoms (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Percentage change in the Generalized Anxiety Disorder 7-item (GAD-7).",
+              "measure": "A continuous rating of symptoms of anxiety (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in recognizing facial expressions and emotions.",
+              "measure": "Performance in EMOTICOM Emotional Recognition Task (ERT-eyes) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in verbal learning and memory.",
+              "measure": "Performance in Rey Auditory Verbal Learning Test (RAVLT) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in executive function.",
+              "measure": "Performance in D-KEFS Color-Word Interference Test (Stroop) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in executive function.",
+              "measure": "Performance in D-KEFS Verbal Fluency (Fluency) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in IQ and specific index scores measured as percentage change in Wechsler Adult Intelligence Scale (WAIS-IV).",
+              "measure": "A continuous rating of Wechsler Adult Intelligence Scale (WAIS-IV) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in visio-spatial learning.",
+              "measure": "Performance in Rey Complex Figure Test (RCFT) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to 1, 3 and 5 years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between patient cohorts in word-retrieval.",
+              "measure": "Performance in Boston Naming Test (BNT) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between patient cohorts in psychomotor speed.",
+              "measure": "Performance in Trail Making Test A & B (Trail A & B) (Cohort II-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort II-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in Quality of Life in Epilepsy (QUOLIE-31).",
+              "measure": "A continuous rating of Quality of Life in Epilepsy (QUOLIE-31) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to 1, 3 and 5 years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in Sheehans Disability Score (SDS).",
+              "measure": "A continuous rating of Sheehans Disability Score (SDS) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as change over time from baseline to one, three and five years after inclusion for patients in cohort I-III."
+            },
+            {
+              "description": "Differences between healthy controls and patients in quality of life measured as percentage change in WHO 5 wellbeing index.",
+              "measure": "A continuous rating of WHO 5 wellbeing index (WHO-5) (Cohort I-III and healthy).",
+              "timeFrame": "At baseline between groups (HCs and patients) and as a monthly change over time from baseline and one, three and five years after inclusion for patients in cohort II-III."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2031-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-04-11",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-04-09",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2026-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2022-02-18",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-04",
+          "studyFirstPostDateStruct": {
+            "date": "2022-07-11",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2022-07-05",
+          "studyFirstSubmitQcDate": "2022-07-05"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "description": "directive questionnaire administered during an individual face-to-face interview",
+              "name": "Survey",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 200,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": true,
+          "studyType": "OBSERVATIONAL",
+          "targetDuration": "3 Years"
+        },
+        "identificationModule": {
+          "acronym": "IMPROVE",
+          "briefTitle": "Creation of a Register of Patients With Neonatal-onset Epileptic Encephalopathy",
+          "nctId": "NCT04802135",
+          "officialTitle": "Creation of a Register of Patients With Neonatal-onset Epileptic Encephalopathy",
+          "orgStudyIdInfo": {
+            "id": "2019-51"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Assistance Publique Hopitaux De Marseille"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "2020-A01363-36",
+              "id": "ID-RCB",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Developmental quotient",
+              "measure": "importance of the developmental disorder",
+              "timeFrame": "Month 36"
+            },
+            {
+              "description": "Presence of at least monthly seizures and interictal EEG showing paroxysmal abnormalities",
+              "measure": "definition of the active phase of epilepsy",
+              "timeFrame": "Month 36"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2032-09",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-11-20",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-11-17",
+          "overallStatus": "RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2029-09",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2021-03-06",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-11",
+          "studyFirstPostDateStruct": {
+            "date": "2021-03-17",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-03-14",
+          "studyFirstSubmitQcDate": "2021-03-14"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "(1) Epileptic seizure in neonatal period; (2) Epileptic seizure duration is short, which under spontaneous control in 4\\~6 months; (3) The patient was in normal state of feeding, physical examination and psychomotor development; (4) There were no signs of hypsarrhythmia or burst suppression in EEG.",
+              "interventionNames": [
+                "Other: Electrophysiological detection of KCNQ2 mutation",
+                "Other: Multi-modal brain image and EEG",
+                "Other: Omics testing"
+              ],
+              "label": "BFNS group"
+            },
+            {
+              "description": "(1) Epileptic seizures occur within a week after birth and recur frequently; (2) Epilepsy is refractory; (3) Feeding difficulties, accompanied by moderate to severe mental retardation and psychomotor retardation; (4) The EEG showed hypsarrhythmia or burst suppression.",
+              "interventionNames": [
+                "Other: Electrophysiological detection of KCNQ2 mutation",
+                "Other: Multi-modal brain image and EEG",
+                "Other: Omics testing"
+              ],
+              "label": "DEE group"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "BFNS group",
+                "DEE group"
+              ],
+              "description": "Electrophysiological detection of KCNQ2 mutation performed using patch clamp technique in an in vitro cell model. Analyze the association between phenotype and genotype.",
+              "name": "Electrophysiological detection of KCNQ2 mutation",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "BFNS group",
+                "DEE group"
+              ],
+              "description": "Multi-modal brain image include brain magnetic resonance imaging (MRI) or positron emission tomography-computed tomography (PET-CT). The electroencephalogram (EEG) incuding video electroencephalogram (VEEG) and sleep electroencephalogram (SEEG).",
+              "name": "Multi-modal brain image and EEG",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "BFNS group",
+                "DEE group"
+              ],
+              "description": "Omics testing include proteomics, metabolomics, transcriptomics.",
+              "name": "Omics testing",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "bioSpec": {
+            "description": "Biospecimen include whole blood 4ml (isolate plasma and blood cells), urine 15ml, feces 3-5g.",
+            "retention": "SAMPLES_WITH_DNA"
+          },
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "PROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 200,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": true,
+          "studyType": "OBSERVATIONAL",
+          "targetDuration": "3 Years"
+        },
+        "identificationModule": {
+          "briefTitle": "Clinical Phenotype and Omics Study of KCNQ2-related Epilepsy",
+          "nctId": "NCT05157737",
+          "officialTitle": "Clinical Phenotype and Omics Study of KCNQ2-related Epilepsy",
+          "orgStudyIdInfo": {
+            "id": "2020-520"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Fudan University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Analysis of Clinical information of KCNQ2-related Epilepsy such as phenotype, genotype, brain image ,EEG, living quality and comorbidity.",
+              "measure": "Establish the phenotype database and genotype-phenotype association of KCNQ2-related Epilepsy",
+              "timeFrame": "0-18 years old"
+            },
+            {
+              "description": "Analysis of brain network of KCNQ2-related epilepsy based on multi-modal brain image and EEG",
+              "measure": "Study on the brain network of KCNQ2-related epilepsy",
+              "timeFrame": "0-18 years old"
+            },
+            {
+              "description": "Analysis of prognostic biomarker of KCNQ2-related epilepsy based on proteomics, metabolomics, transcriptomics.",
+              "measure": "Study on the omics testing of KCNQ2-related epilepsy",
+              "timeFrame": "0-18 years old"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2024-12-31",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2021-12-15",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-12-01",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2023-12-31",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2021-01-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-12",
+          "studyFirstPostDateStruct": {
+            "date": "2021-12-15",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-12-01",
+          "studyFirstSubmitQcDate": "2021-12-01"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Participants will receive treatment with ezogabine up to 900mg/day.",
+              "interventionNames": [
+                "Drug: Ezogabine"
+              ],
+              "label": "Ezogabine",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Participants will receive treatment with a matching placebo pill.",
+              "interventionNames": [
+                "Drug: Placebos"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Ezogabine"
+              ],
+              "description": "daily for 5 weeks",
+              "name": "Ezogabine",
+              "otherNames": [
+                "Potiga"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "placebo pill daily for 5 weeks",
+              "name": "Placebos",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "maskingDescription": "Double blind",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 45,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Study to Treat Major Depressive Disorder With a New Medication",
+          "nctId": "NCT03043560",
+          "officialTitle": "Developing Neuronal KCNQ Channel Modulators for Mood Disorders",
+          "orgStudyIdInfo": {
+            "id": "GCO 16-0374"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Icahn School of Medicine at Mount Sinai"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "1R61MH111932-01",
+              "link": "https://reporter.nih.gov/quickSearch/1R61MH111932-01",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "change in activation during reward anticipation within the bilateral VS from baseline (Study Visit 0) to the primary outcome visit (Study Visit 5) as measured by functional MRI during the incentive flanker task (IFT). The IFT, like the Monetary Incentive Delay task, permits discrete modeling of brain activity during anticipation of an incentive.\n\nFunctional scans were preprocessed and denoised for motion and physiological noise using multi-echo independent component analysis (ME-ICA). Task-based modeling was conducted using AFNI and FSL software. The primary outcome for reward anticipation was the contrast of reward cue compared to neutral cue (reward\\>neutral cue). The primary imaging outcome was analyzed using a linear mixed model with a single random intercept term treating time as discrete or continuous as appropriate.",
+              "measure": "Change in Ventral Striatum (VS) Activation",
+              "timeFrame": "baseline and 5 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The SHAPS is a well-validated 14-item self-report questionnaire commonly used to assess anhedonia. Each item on the SHAPS is worded so that higher scores indicate greater pleasure capacity. A total score can be derived by summing the responses to each item. Items answered with \"strongly agree\" are coded as \"1\", while a \"strongly disagree\" response was assigned a score of \"4.\" Total scores on the SHAPS can range from 14 to 56, with higher scores corresponding to higher levels of anhedonia.",
+              "measure": "Change in Snaith-Hamilton Pleasure Scale (SHAPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A widely administered clinician rated global measure of the degree of improvement from the initial assessment in subject overall illness severity. 7 point scale rated as: 1, very much improved; 2, much improved; 3, minimally improved; 4, no change; 5, minimally worse; 6, much worse; or 7, very much worse.",
+              "measure": "Clinical Global Impression - Improvement (CGI-I)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "Clinician rated global measure of subject overall illness severity. a 7-point scale rated as 1, normal, not at all ill; 2, borderline mentally ill; 3, mildly ill; 4, moderately ill; 5, markedly ill; 6, severely ill; or 7, extremely ill.",
+              "measure": "Clinical Global Impression - Severity (CGI-S)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A measure specifically designed to assess hedonic capacity for social and interpersonal pleasure.The ACIPS is a 17-item self-report measure scored on a likert scale, ranging from 1 (very false for me) to 6 (very true for me). Full scale from 17-102, higher score indicates higher hedonic capacity",
+              "measure": "Anticipatory and Consummatory Interpersonal Pleasure Scale (ACIPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A 10-item instrument used for the evaluation of depressive symptoms in adults and for the assessment of any changes to those symptoms. Each items is scored 0 (normal) to 6 (severe depression) with overall score ranges from 0 (normal) to 60 (severe depression).",
+              "measure": "Montgomery-Asberg Depression Rating Scale (MADRS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "A 12-item generic assessment instrument that measures the level of functioning. Each item is scored from 0 to 4 and the items are summed to provide a total score. The score therefore ranges from 0 to 48, with higher scores indicating greater disability.",
+              "measure": "World Health Organization Disability Assessment Schedule 2.0 (WHODAS 2.0)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "The TEPS is composed of 18-items rated on a likert-type scale ranging from 1 (Very True for me) to 6 (Very False for me), and yields two subscales. Ten items make up the TEPS-Anticipatory Pleasure (TEPS-ANT) scale with a range from 10 (not motivated) to 60 (highly motivated). The other eight TEPS items make up the TEPS-Consummatory Pleasure (TEPS-CON) scale; range from 8 (not responsive) to 48 (highly responsive). Total scores range is 18-108. Lower scores indicate greater levels of anhedonia.",
+              "measure": "Temporal Experience of Pleasure Scale (TEPS)",
+              "timeFrame": "baseline and 5 weeks"
+            },
+            {
+              "description": "The SLIPS is a recently developed and validated measure of anhedonia that is tailored to detect recent changes in anhedonia. A 23-item measure, each item range from 0-3. Full scale from 0 to 69, higher score indicates more recent changes.",
+              "measure": "Specific Loss of Interest and Pleasure Scale (SLIPS)",
+              "timeFrame": "baseline 5 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-08-30",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-10-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-09-25",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-08-30",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-10-23",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-08-29",
+          "resultsFirstSubmitQcDate": "2020-09-25",
+          "startDateStruct": {
+            "date": "2017-09-25",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-09",
+          "studyFirstPostDateStruct": {
+            "date": "2017-02-06",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2017-02-02",
+          "studyFirstSubmitQcDate": "2017-02-03"
+        }
+      }
+    }
+  ],
+  "totalCount": 9
+}

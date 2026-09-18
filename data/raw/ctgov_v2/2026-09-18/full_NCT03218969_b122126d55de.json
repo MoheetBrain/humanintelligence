@@ -1,0 +1,1369 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D009422",
+          "term": "Nervous System Diseases"
+        },
+        {
+          "id": "D020919",
+          "term": "Sleep Disorders, Intrinsic"
+        },
+        {
+          "id": "D020920",
+          "term": "Dyssomnias"
+        },
+        {
+          "id": "D012893",
+          "term": "Sleep Wake Disorders"
+        },
+        {
+          "id": "D020447",
+          "term": "Parasomnias"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D012148",
+          "term": "Restless Legs Syndrome"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "meshes": [
+        {
+          "id": "C058081",
+          "term": "ecopipam"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2017-09-25",
+          "filename": "Prot_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": false,
+          "label": "Study Protocol",
+          "size": 781562,
+          "typeAbbrev": "Prot",
+          "uploadDate": "2019-12-06T15:05"
+        }
+      ],
+      "noSap": true
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "* Ecopipam or matching placebo 25 mg by mouth for 7 days (week 1), followed by\n* Ecopipam or matching placebo 50 mg by mouth for 7 days (week 2), followed by\n* Ecopipam or matching placebo 100 mg by mouth for 23 days (weeks 3).",
+          "interventionNames": [
+            "Drug: Ecopipam",
+            "Drug: Placebo"
+          ],
+          "label": "Study period 1",
+          "type": "EXPERIMENTAL"
+        },
+        {
+          "description": "* Matching placebo or ecopipam 25 mg by mouth for 7 days (week 7), followed by\n* Matching placebo or ecopipam 50 mg by mouth for 7 days (week 8), followed by\n* Matching placebo or ecopipam 100 mg by mouth for 23 days (week 9).",
+          "interventionNames": [
+            "Drug: Ecopipam",
+            "Drug: Placebo"
+          ],
+          "label": "Study period 2",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Study period 1",
+            "Study period 2"
+          ],
+          "description": "oral drug in subjection currently experiencing dopamine agonist induced augmentation",
+          "name": "Ecopipam",
+          "otherNames": [
+            "PSYRX101"
+          ],
+          "type": "DRUG"
+        },
+        {
+          "armGroupLabels": [
+            "Study period 1",
+            "Study period 2"
+          ],
+          "description": "matching placebo",
+          "name": "Placebo",
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Restless Legs Syndrome",
+        "Augmentation"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Houston",
+          "country": "United States",
+          "facility": "Houston Methodist Hospital",
+          "geoPoint": {
+            "lat": 29.76328,
+            "lon": -95.36327
+          },
+          "state": "Texas",
+          "zip": "77030"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "The Methodist Hospital Research Institute",
+          "name": "William G. Ondo, MD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "This is an exploratory, double blinded cross-over study of the D1 antagonist ecopipam treat patients currently having dopamine agonist induced augmentation in restless legs syndrome. Each arm is 6 weeks composed of an unforced titration up to 100mg/day separated by a 2-week wash-out period. Efficacy points will include the IRLS, augmentation scales, sleep scales, clinical impressions and fatigue/mood scales.",
+      "detailedDescription": "This is a double-blind, exploratory proof of concept, cross-over trial of the D1 antagonist ecopipam for subjects with augmented Restless legs syndrome (RLS). Investigators will recruit 10 subjects taking dopamine agonists for RLS who are currently experiencing augmentation. The goal is to have 8 completers. There is no power analysis as this is an exploratory study and there is no previous data on treatment of augmentation. \"Meaningful improvement\" is not even established. A safety analysis will be done after 5 subjects have been enrolled. Duration of study and is based mostly on contracted drug availability for this pilot study."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "RANDOMIZED",
+        "interventionModel": "CROSSOVER",
+        "maskingInfo": {
+          "masking": "DOUBLE",
+          "maskingDescription": "placebo",
+          "whoMasked": [
+            "PARTICIPANT",
+            "INVESTIGATOR"
+          ]
+        },
+        "primaryPurpose": "TREATMENT"
+      },
+      "enrollmentInfo": {
+        "count": 10,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE1",
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Provide consent to participate in the study\n* Individuals of either sex, 21-80 years of age\n* Clinically defined Restless Leg Syndrome, and problematic augmentation currently on monotherapy with dopaminergic treatment.\n\nExclusion Criteria:\n\n* Current use of Opioid medications\n* Clinical relevant depression or other medical problems that in the opinion of the investigator would not allow for safe completion of the protocol.\n* Suicidal ideation\n* History of epilepsy\n* Current MAO inhibitors",
+      "healthyVolunteers": false,
+      "maximumAge": "80 Years",
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "acronym": "RLS-Ecopipam",
+      "briefTitle": "Treatment of Restless Leg Syndrome (RLS) Augmentation With Ecopipam, a D1 Specific Antagonist",
+      "nctId": "NCT03218969",
+      "officialTitle": "Treatment of Restless Leg Syndrome (RLS) Augmentation With Ecopipam, a D1 Specific Antagonist",
+      "orgStudyIdInfo": {
+        "id": "Pro#00016705"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "The Methodist Hospital Research Institute"
+      }
+    },
+    "ipdSharingStatementModule": {
+      "ipdSharing": "UNDECIDED"
+    },
+    "outcomesModule": {
+      "otherOutcomes": [
+        {
+          "description": "The ESS is a self-administered questionnaire with 8 questions. Respondents are asked to rate, on a 4-point scale (0-3), their usual chances of dozing off or falling asleep while engaged in eight different activities. The ESS score (the sum of 8 item scores, 0-3) can range from 0 to 24. The higher the ESS score, the higher that person's average sleep propensity in daily life (ASP), or their 'daytime sleepiness'.",
+          "measure": "Change in Mean From Baseline Epworth Sleep Scale (ESS) at the End of the Intervention",
+          "timeFrame": "Baseline (Pre-intervention), and at Week 5"
+        },
+        {
+          "description": "The Montreal Cognitive Assessment (MoCA) was designed as a rapid screening instrument for mild cognitive dysfunction. It assesses different cognitive domains: attention and concentration, executive functions, memory, language, visuoconstructional skills, conceptual thinking, calculations, and orientation. Score range from 0 - 30 with lower scores reflecting worse outcomes.",
+          "measure": "Change in Mean Score From Baseline Montreal Cognitive Assessment (MoCA) at End of Intervention",
+          "timeFrame": "Baseline (Pre-intervention), and at Week 5"
+        }
+      ],
+      "primaryOutcomes": [
+        {
+          "description": "IRLS scale is a patient-administered test that measures the severity of restless legs syndrome symptoms. The IRLS scale consists of 10 questions rated from 0 to 4. The total score on symptom severity range from 0 (none) to 40 (worst).",
+          "measure": "Change From Baseline (Predose) in Mean International Restless Legs Syndrome (IRLS) Rating Scale at End of Intervention Period",
+          "timeFrame": "Baseline (Pre-intervention), and at 5 weeks"
+        },
+        {
+          "description": "ASRS scale has three items and probes symptoms over the past week. The first item asks the time at which symptoms began in the last week. The second item probes how quickly symptoms begin when sitting at various times of the day during the past week, and the third item probes which body parts were involved in the past week. Each item has a total of 8 points for a 24-point total scale. 0 is no augmentation and 24 is the most severe augmentation.\n\nIn the third item, participants are asked to shade in the figure the portions of his/her body affected by RLS symptoms for a total of 8 points. The higher the score the worse the outcome",
+          "measure": "Change From Baseline in Mean Body Part Affected by RLS Symptoms Using Augmentation Severity Rating Scale (ASRS)",
+          "timeFrame": "Baseline (Pre-intervention), and at 5 weeks"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "Patient reported diary of RLS symptoms 72 hours prior to clinic visit. Participants were asked to record the number of hours each day they were bothered by RLS symptoms and when symptoms were present but not bothersome. The range can be 0 (no symptoms) to 72 (uniterupted symptoms)",
+          "measure": "Mean 24 Hour Restless Legs Syndrome (RLS) Diary at End of Intervention",
+          "timeFrame": "at end of intervention Ecopipam, at end of intervention Placebo"
+        },
+        {
+          "description": "A Modified clinician-administered scale used to evaluate the effect of an intervention on participant symptoms. Responses range from None/worse, mild, Marked or very marked.",
+          "measure": "Number of Participants With Effect on the Clinical Global Impression Scale at the End of the Intervention",
+          "timeFrame": "At end of intervention Ecopipam, at end of intervention Placebo"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true,
+      "oversightHasDmc": false
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "UNKNOWN",
+          "name": "Restless Legs Syndrome Foundation"
+        }
+      ],
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "William Ondo, MD"
+      },
+      "responsibleParty": {
+        "investigatorAffiliation": "The Methodist Hospital Research Institute",
+        "investigatorFullName": "William Ondo, MD",
+        "investigatorTitle": "Principal Investigator",
+        "type": "SPONSOR_INVESTIGATOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2018-11-28",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2026-04-27",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2026-04-06",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2018-09-28",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2026-04-27",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2019-08-28",
+      "resultsFirstSubmitQcDate": "2026-04-06",
+      "startDateStruct": {
+        "date": "2017-09-18",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2026-04",
+      "studyFirstPostDateStruct": {
+        "date": "2017-07-17",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2017-04-21",
+      "studyFirstSubmitQcDate": "2017-07-12"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "Safety population included all participants who received at least one dose of intervention",
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 10,
+          "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial",
+          "id": "EG000",
+          "otherNumAffected": 6,
+          "otherNumAtRisk": 10,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 10,
+          "title": "Ecopipam"
+        },
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 9,
+          "description": "Participants who received Placebo (Matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+          "id": "EG001",
+          "otherNumAffected": 6,
+          "otherNumAtRisk": 9,
+          "seriousNumAffected": 1,
+          "seriousNumAtRisk": 9,
+          "title": "Placebo"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 10,
+              "numEvents": 5
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 3,
+              "numAtRisk": 9,
+              "numEvents": 3
+            }
+          ],
+          "term": "sedation"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Endocrine disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 10,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            }
+          ],
+          "term": "Dry mouth"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 2,
+              "numAtRisk": 9,
+              "numEvents": 2
+            }
+          ],
+          "term": "Fatigue"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Endocrine disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 10,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Elevated glucose"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 10,
+              "numEvents": 1
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 0,
+              "numAtRisk": 9,
+              "numEvents": 0
+            }
+          ],
+          "term": "Upper Respiratory Infection"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Neck pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Reproductive system and breast disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Breast Pain"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Generalized muscle cramps"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Shingles"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Generalized stiffness"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Headache"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Injury, poisoning and procedural complications",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Poison Ivy rash"
+        },
+        {
+          "assessmentType": "SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Nausea"
+        }
+      ],
+      "seriousEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "notes": "unrelated respiratory infection",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 0,
+              "numAtRisk": 10,
+              "numEvents": 0
+            },
+            {
+              "groupId": "EG001",
+              "numAffected": 1,
+              "numAtRisk": 9,
+              "numEvents": 1
+            }
+          ],
+          "term": "Hospitalization"
+        }
+      ],
+      "timeFrame": "5 weeks for each interevention"
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "10"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Baseline characteristics of all study participants",
+          "id": "BG000",
+          "title": "All Study Participants"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "spread": "7.3",
+                      "value": "64.5"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "STANDARD_DEVIATION",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "8"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "Caucasian"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Race/Ethnicity, Customized",
+          "unitOfMeasure": "participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "United States"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        }
+      ]
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": false,
+        "restrictiveAgreement": false
+      },
+      "pointOfContact": {
+        "email": "wondo@houstonmethodist.org",
+        "organization": "Methodist Neurological Institute",
+        "phone": "713-363-8484",
+        "title": "William Ondo, MD"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.5",
+                      "value": "20.6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.89",
+                      "value": "21.6"
+                    }
+                  ]
+                }
+              ],
+              "title": "IRLS mean at Baseline (Pre-intervention))"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "10.6",
+                      "value": "16"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "8.62",
+                      "value": "18.8"
+                    }
+                  ]
+                }
+              ],
+              "title": "IRLS mean at Week 5 (end of intervention)"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "IRLS scale is a patient-administered test that measures the severity of restless legs syndrome symptoms. The IRLS scale consists of 10 questions rated from 0 to 4. The total score on symptom severity range from 0 (none) to 40 (worst).",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received placebo tablet (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline (Pre-intervention), and at 5 weeks",
+          "title": "Change From Baseline (Predose) in Mean International Restless Legs Syndrome (IRLS) Rating Scale at End of Intervention Period",
+          "type": "PRIMARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.52",
+                      "value": "3.1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.33",
+                      "value": "2.44"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean affected body part at Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.6",
+                      "value": "2.9"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "1.41",
+                      "value": "2.33"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean affected body part at week 5"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "ASRS scale has three items and probes symptoms over the past week. The first item asks the time at which symptoms began in the last week. The second item probes how quickly symptoms begin when sitting at various times of the day during the past week, and the third item probes which body parts were involved in the past week. Each item has a total of 8 points for a 24-point total scale. 0 is no augmentation and 24 is the most severe augmentation.\n\nIn the third item, participants are asked to shade in the figure the portions of his/her body affected by RLS symptoms for a total of 8 points. The higher the score the worse the outcome",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received placebo tablet (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline (Pre-intervention), and at 5 weeks",
+          "title": "Change From Baseline in Mean Body Part Affected by RLS Symptoms Using Augmentation Severity Rating Scale (ASRS)",
+          "type": "PRIMARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "lowerLimit": "0",
+                      "upperLimit": "22",
+                      "value": "10.2"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "lowerLimit": "0",
+                      "upperLimit": "45",
+                      "value": "15"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Patient reported diary of RLS symptoms 72 hours prior to clinic visit. Participants were asked to record the number of hours each day they were bothered by RLS symptoms and when symptoms were present but not bothersome. The range can be 0 (no symptoms) to 72 (uniterupted symptoms)",
+          "dispersionType": "Full Range",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial.",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received Placebo (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis. At end of intervention (Week 5), the total number of hours of RLS symptoms experience (whether mild or bothersome) was recorded 72 hours prior to clinic visit.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "at end of intervention Ecopipam, at end of intervention Placebo",
+          "title": "Mean 24 Hour Restless Legs Syndrome (RLS) Diary at End of Intervention",
+          "type": "SECONDARY",
+          "unitOfMeasure": "hours"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Very marked on CGI"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ],
+              "title": "Marked on CGI"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "2"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mild on CGI"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "5"
+                    }
+                  ]
+                }
+              ],
+              "title": "None/Worse on CGI"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "A Modified clinician-administered scale used to evaluate the effect of an intervention on participant symptoms. Responses range from None/worse, mild, Marked or very marked.",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial.",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received placebo tablet (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis",
+          "reportingStatus": "POSTED",
+          "timeFrame": "At end of intervention Ecopipam, at end of intervention Placebo",
+          "title": "Number of Participants With Effect on the Clinical Global Impression Scale at the End of the Intervention",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "7.4",
+                      "value": "11"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "6.66",
+                      "value": "13.11"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean ESS at baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "6.65",
+                      "value": "12.7"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "7.08",
+                      "value": "11.33"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean ESS at Week 5"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The ESS is a self-administered questionnaire with 8 questions. Respondents are asked to rate, on a 4-point scale (0-3), their usual chances of dozing off or falling asleep while engaged in eight different activities. The ESS score (the sum of 8 item scores, 0-3) can range from 0 to 24. The higher the ESS score, the higher that person's average sleep propensity in daily life (ASP), or their 'daytime sleepiness'.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial.",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received placebo tablet (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline (Pre-intervention), and at Week 5",
+          "title": "Change in Mean From Baseline Epworth Sleep Scale (ESS) at the End of the Intervention",
+          "type": "OTHER_PRE_SPECIFIED",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "2.59",
+                      "value": "27.4"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2",
+                      "value": "27.33"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean MoCA at Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "1.89",
+                      "value": "27.6"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "2.82",
+                      "value": "26.33"
+                    }
+                  ]
+                }
+              ],
+              "title": "Mean MoCA at Week 5"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "9"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Montreal Cognitive Assessment (MoCA) was designed as a rapid screening instrument for mild cognitive dysfunction. It assesses different cognitive domains: attention and concentration, executive functions, memory, language, visuoconstructional skills, conceptual thinking, calculations, and orientation. Score range from 0 - 30 with lower scores reflecting worse outcomes.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants who received Ecopipam 25-100mg in either the first arm or the second arm of the cross-over trial.",
+              "id": "OG000",
+              "title": "Ecopipam"
+            },
+            {
+              "description": "Participants who received placebo tablet (matching Ecopipam 25-100mg) in either the first arm or the second arm of the cross-over trial",
+              "id": "OG001",
+              "title": "Placebo"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "All participants who received at least one dose of each intervention were included in the analysis",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline (Pre-intervention), and at Week 5",
+          "title": "Change in Mean Score From Baseline Montreal Cognitive Assessment (MoCA) at End of Intervention",
+          "type": "OTHER_PRE_SPECIFIED",
+          "unitOfMeasure": "score on a scale"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Participants received Ecopipam 25mg by mouth for 7 days (week 1), followed by Ecopipam 50mg by mouth for 7 days (week 2), followed by Ecopipam 100mg by mouth for 23 days.\n\nAfter a wash-out period of 2 weeks, they then received Placebo 25mg by mouth for 7 days (week 1), followed by Placebo 50mg by mouth for 7 days (week 2), followed by Placebo 100mg by mouth for 23 days.",
+          "id": "FG000",
+          "title": "Ecopipam First, Then Placebo"
+        },
+        {
+          "description": "Participants received Placebo 25mg by mouth for 7 days (week 1), followed by Placebo 50mg by mouth for 7 days (week 2), followed by Placebo 100mg by mouth for 23 days.\n\nAfter a wash-out period of 2 weeks, they then received Ecopipam 25mg by mouth for 7 days (week 1), followed by Ecopipam 50mg by mouth for 7 days (week 2), followed by Ecopipam 100mg by mouth for 23 days.",
+          "id": "FG001",
+          "title": "Placebo First, Then Ecopipam"
+        }
+      ],
+      "periods": [
+        {
+          "dropWithdraws": [
+            {
+              "reasons": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "Lost to Follow-up"
+            }
+          ],
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "5"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "1"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "First Intervention (5 weeks)"
+        },
+        {
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Washout (2 weeks)"
+        },
+        {
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "4"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "5"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "0"
+                },
+                {
+                  "groupId": "FG001",
+                  "numSubjects": "0"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Second Intervention (5 weeks)"
+        }
+      ],
+      "preAssignmentDetails": "This is a double-blind, exploratory proof of concept, cross over trial where a two week washout period separating group interventions (ecopipam first, then placebo) and (placebo first, then ecopipam)\n\n10 of 10 participants were randomized. Of those randomized, 1 was lost to follow-up",
+      "recruitmentDetails": "10 Participants screened for eligibility between September 2017 through June 2018 at a hospital-associated specialty clinic in Houston, TX"
+    }
+  }
+}

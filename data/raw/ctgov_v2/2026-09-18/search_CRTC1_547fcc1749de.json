@@ -1,0 +1,3881 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "interventions": [
+            {
+              "description": "comparison of different dosages of drug",
+              "name": "Palomid 529",
+              "otherNames": [
+                "P529"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 13,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "P52901",
+          "briefTitle": "Phase I Study of Palomid 529 a Dual TORC1/2 Inhibitor of the PI3K/Akt/mTOR Pathway for Advanced Neovascular Age-Related Macular Degeneration",
+          "nctId": "NCT01033721",
+          "officialTitle": "A Phase I Open-Label Study to Investigate the Safety, Tolerability and Pharmacokinetic Profile of Single Intravitreal and Subconjunctival Doses of Palomid 529 in Patients With Advanced Neovascular Age-Related Macular Degeneration (AMD)",
+          "orgStudyIdInfo": {
+            "id": "Paloma P529 Ocular"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Paloma Pharmaceuticals, Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Safety-Review AEs, concomitant meds-Vitals, HR, systolic/diastolic BP, temperature, weight-ECG changes; Physical exam-Laboratory parameters-Ophthalmic exam-visual acuity, IOP, slit lamp fundus exam, fundus photography, fluorescein angiography, OCT",
+              "timeFrame": "43 days"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Efficacy-Mean change in visual acuity by ETDRS testing-Decreased leakage and/or size on FA, decreased retinal thickness in OCT-Decreased fibrosis if detectable based on fundus examination, photography, angiography and OCT",
+              "timeFrame": "43 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2011-12",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2012-09-24",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2012-09-20",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2011-12",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2010-06"
+          },
+          "statusVerifiedDate": "2012-09",
+          "studyFirstPostDateStruct": {
+            "date": "2009-12-16",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2009-12-15",
+          "studyFirstSubmitQcDate": "2009-12-15"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Arm will be comprised of \\[14C\\]AZD2014 followed by AZD2014 Monotherapy",
+              "interventionNames": [
+                "Drug: [14C]AZD2014",
+                "Drug: Multiple dose AZD2014"
+              ],
+              "label": "[14C]AZD2014 followed by AZD2014 Monotherapy",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Arm will be comprised of \\[14C\\]AZD2014 followed by AZD2014 + Fulvestrant",
+              "interventionNames": [
+                "Drug: [14C]AZD2014",
+                "Drug: Multiple dose AZD2014",
+                "Drug: Fulvestrant"
+              ],
+              "label": "[14C]AZD2014 followed by AZD2014 + Fulvestrant",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Arm will be comprised of \\[14C\\]AZD2014 followed by AZD2014 + Paclitaxel",
+              "interventionNames": [
+                "Drug: [14C]AZD2014",
+                "Drug: Multiple dose AZD2014",
+                "Drug: Paclitaxel"
+              ],
+              "label": "[14C]AZD2014 followed by AZD2014 + Paclitaxel",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "[14C]AZD2014 followed by AZD2014 + Fulvestrant",
+                "[14C]AZD2014 followed by AZD2014 + Paclitaxel",
+                "[14C]AZD2014 followed by AZD2014 Monotherapy"
+              ],
+              "description": "Radiolabelled dual TORC1/TORC2 inhibitor",
+              "name": "[14C]AZD2014",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "[14C]AZD2014 followed by AZD2014 + Fulvestrant",
+                "[14C]AZD2014 followed by AZD2014 + Paclitaxel",
+                "[14C]AZD2014 followed by AZD2014 Monotherapy"
+              ],
+              "description": "Dual TORC1/TORC2 inhibitor",
+              "name": "Multiple dose AZD2014",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "[14C]AZD2014 followed by AZD2014 + Fulvestrant"
+              ],
+              "description": "Hormonal Agent",
+              "name": "Fulvestrant",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "[14C]AZD2014 followed by AZD2014 + Paclitaxel"
+              ],
+              "description": "Taxane",
+              "name": "Paclitaxel",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 4,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "acronym": "14C",
+          "briefTitle": "Absorption, Metabolism, Excretion and Pharmacokinetics of a Single Dose [14C]AZD2014 Followed by a Multiple Dose Phase",
+          "nctId": "NCT02640755",
+          "officialTitle": "A Phase I, Open-Label, Non-randomised, Single Centre Study of the Absorption, Metabolism, Excretion and Pharmacokinetics of AZD2014 After a Single Oral Dose of [14C]AZD2014, Followed by Multiple Doses of AZD2014 Either As Monotherapy or In Combination With Either Fulvestrant or Paclitaxel in Patients With Advanced Solid Malignancies",
+          "orgStudyIdInfo": {
+            "id": "D2270C00015"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "AstraZeneca"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2015-000198-11",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "id": "2015",
+              "link": "https://reporter.nih.gov/quickSearch/2015",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The mean concentrations of total radioactivity in plasma collected from each patient who received a single oral dose of 125 mg \\[14C\\]-AZD2014 are presented for time points of plasma sampling up to 48 hours post-dose. Geometric mean concentrations were not quantifiable after 48 hours. The total \\[14C\\] radioactivity in plasma was converted to concentration equivalents of AZD2014 based on the actual specific activity of the dose.",
+              "measure": "Total Radioactivity in Plasma Following Administration of [14C]-AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32 and 48 hours (h) post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean concentrations of AZD2014 in plasma collected from each patient who received a single oral dose of 125 mg \\[14C\\]-AZD2014 are presented for time points of plasma sampling up to 24 hours post-dose. Geometric mean concentrations were not quantifiable after 24 hours.",
+              "measure": "AZD2014 Concentrations in Plasma Following Administration of [14C]-AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean concentrations of total radioactivity in saliva collected from each patient who received a single oral dose of 125 mg \\[14C\\]-AZD2014 are presented for time points of saliva collection up to 12 hours post-dose. Geometric mean concentrations were not quantifiable after 12 hours. The total \\[14C\\] radioactivity in saliva was converted to concentration equivalents of AZD2014 based on the actual specific activity of the dose.",
+              "measure": "Total Radioactivity Concentrations in Saliva Following Administration of [14C]-AZD2014",
+              "timeFrame": "Saliva was collected at 1, 2, 4, 6, 8, 10 and 12 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean concentrations of AZD2014 in saliva collected from each patient who received a single oral dose of 125 mg \\[14C\\]-AZD2014 are presented for time points of plasma sampling up to 12 hours post-dose. Geometric mean concentrations were not quantifiable after 12 hours.",
+              "measure": "AZD2014 Concentrations in Saliva Following Administration of [14C]-AZD2014",
+              "timeFrame": "Saliva was collected at 1, 2, 4, 6, 8, 10 and 12 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean concentrations of total radioactivity in blood collected from each patient who received a single oral dose of 125 mg \\[14C\\]-AZD2014 are presented for time points of blood sampling up to 12 hours post-dose. Geometric mean concentrations were not quantifiable after 12 hours. The total \\[14C\\] radioactivity in plasma was converted to concentration equivalents of AZD2014 based on the actual specific activity of the dose.",
+              "measure": "Total Radioactivity Concentrations in Blood Following Administration of [14C]-AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8 and 12 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean cumulative percentage of \\[14C\\]-AZD2014 dose recovered as total radioactivity by the end of the Single Dose Period (Day 1 - 8) is presented. The total \\[14C\\] radioactivity in plasma was converted to concentration equivalents of AZD2014 based on the actual specific activity of the dose.\n\nRadioactivity excreta data for 1 patient was not included due to technical issues with radioactivity sample collection.",
+              "measure": "Cumulative Percentage of [14C]-AZD2014 Recovered by Day 8",
+              "timeFrame": "From pre-dose Day 1 to Day 8 of the Single Dose Period."
+            },
+            {
+              "description": "Mean AZD2014 Cmax values in plasma and saliva following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "Maximum Observed Concentration (Cmax) of AZD2014 in Plasma and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "AZD2014 Tmax values for plasma and saliva following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "Time to Maximum Observed Concentration (Tmax) for AZD2014 in Plasma and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "AZD2014 t(last) values in plasma and saliva following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "Time to Last Measurable Concentration (t[Last]) for AZD2014 in Plasma and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "Mean AUC for AZD2014 following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Area Under the Plasma Concentration-time Curve (AUC) for AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "Mean AUC(0-t) values in plasma and saliva for AZD2014 following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "Area Under the Concentration-time Curve From Time 0 to the Time of the Last Quantifiable Concentration (AUC[0-t]) for AZD2014 in Plasma and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean CL/F of AZD2014 in plasma following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Apparent Total Body Clearance (CL/F) of AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The MRT of AZD2014 in plasma following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Mean Residence Time (MRT) of AZD2014",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean Vss/F of AZD2014 in plasma following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Apparent Volume of Distribution at Steady State (Vss/F) for AZD2014 in Plasma",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean lambda\\_z of AZD2014 in plasma following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Terminal Elimination Rate Constant (lambda_z) for AZD2014 in Plasma",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean t1/2(lambda\\_z) for AZD2014 in plasma following administration of \\[14C\\]-AZD2014 on Day 1 is presented.",
+              "measure": "Half-life Associated With Terminal Slope (lambda_z) of a Semi-logarithmic Concentration-time Curve (t1/2[lambda_z]) for AZD2014 in Plasma",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h ost [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "Mean \\[14C\\] radioactivity Cmax values in whole blood and saliva following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "Cmax for Total [14C] Radioactivity in Whole Blood and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "\\[14C\\] radioactivity tmax in whole blood and saliva following administration of \\[14C\\]-AZD2014 on Day 1 is presented .",
+              "measure": "Tmax for [14C] Radioactivity in Whole Blood and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "Mean \\[14C\\] radioactivity t(last) values in whole blood and saliva following administration of \\[14C\\]-AZD2014 on Day 1 are presented.",
+              "measure": "T(Last) for [14C] Radioactivity in Whole Blood and Saliva",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose. Saliva was collected at 1, 2, 4, 6, 8, 10, 12 and 24 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "The mean ratios of whole blood total radioactivity to plasma total radioactivity are presented for the timepoints of sample collection up to 12 hours post-dose. Geometric mean ratios were not calculated after 12 hours.",
+              "measure": "Ratio of Whole Blood Total Radioactivity to Plasma Total Radioactivity",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8 and 12 h post [14C]-AZD2014 dose."
+            },
+            {
+              "description": "The mean ratios of saliva AZD2014 to saliva radioactivity concentrations are presented for the timepoints of saliva collection up to 10 hours post-dose. Geometric mean ratios were not calculated after 10 hours. Radioactivity excreta data for 1 patient was not included due to technical issues with radioactivity sample collection.",
+              "measure": "Ratio of AZD2014 Concentration to Total Radioactivity Concentration in Saliva",
+              "timeFrame": "Saliva was collected at 1, 2, 4, 6, 8 and 10 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "Mean fe%(R) values per urine collection period are presented as a percentage of the total \\[14C\\]-AZD2014 dose administered on Day 1.",
+              "measure": "Fraction of AZD2014 Excreted in Urine as a Percentage of the Dose (fe%[R])",
+              "timeFrame": "Urine was collected during the following periods: 0-6, 6-12, 12-24, 24-48, 48-72, 72-96, 96-120, 120-144 and 144-168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "CL(R) of AZD2014 from plasma up to 168 h post-dose.",
+              "measure": "Renal Clearance (CL[R]) of AZD2014 From Plasma.",
+              "timeFrame": "Blood samples collected: Day 1 at pre-dose, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 24, 32, 48, 72, 96, 120, 144 and 168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "fe cum%(R) by the end of each collection period is presented following administration of \\[14C\\]-AZD2014.\n\nRadioactivity excreta data for 1 patient was not included due to technical issues with radioactivity sample collection.",
+              "measure": "Cumulative Percentage of Total [14C] Radioactivity Excreted in Urine as a Percentage of the Dose (fe Cum%[R])",
+              "timeFrame": "Urine was collected during the following periods: 0-6, 6-12, 12-24, 24-48, 48-72, 72-96, 96-120, 120-144 and 144-168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            },
+            {
+              "description": "fe cum%(f) by the end of each collection period is presented following administration of \\[14C\\]-AZD2014.\n\nRadioactivity excreta data for 1 patient was not included due to technical issues with radioactivity sample collection.",
+              "measure": "Cumulative Percentage of Total [14C] Radioactivity Excreted in Stool as a Percentage of the Dose (fe Cum%[f])",
+              "timeFrame": "Stool was collected during the following periods: 0-6, 6-12, 12-24, 24-48, 48-72, 72-96, 96-120, 120-144 and 144-168 h post [14C]-AZD2014 dose in the Single Dose Period."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "AEs (including serious AEs \\[SAEs\\]) were collected from the time of informed consent (Visit 1) and throughout the study, including the 30-day follow-up. The numbers of patients experiencing any AEs and SAEs, causally related AEs and SAEs, and SAEs which were fatal are presented.",
+              "measure": "Number of AEs Experienced by Patients.",
+              "timeFrame": "From Day 1 of the Single Dose Period to 30 days after the last dose of AZD2014 administered in the Multiple Dose Period."
+            },
+            {
+              "description": "Anti-tumour activity through assessment of BOR. BOR was defined for each patient as follows according to the RECIST 1.1 criteria:\n\nComplete Response (CR): Disappearance of all target lesions since baseline. Partial Response (PR): At least a 30% decrease in the sum of the diameters of target lesions.\n\nStable Disease (SD): Any cases that do not qualify for either PR or progressive disease (PD).\n\nPD: At least a 20% increase in the sum of the diameters of target lesions. BOR for each patient was determined as the best response recorded from the day study treatment started until progression or until the last evaluable RECIST tumour assessment in the absence of progression.",
+              "measure": "Best Overall Response (BOR) Assessment",
+              "timeFrame": "RECIST 1.1 assessments were performed pre-dose at screening and then once every 8 weeks relative to the start of treatment in the Multiple Dose Period."
+            },
+            {
+              "description": "Assessment of anti-tumour activity through measurement of tumour lesions. Tumour size was defined as the sum of the lengths of the longest diameters of the RECIST 1.1 target lesions.",
+              "measure": "Best Percentage Change in Tumour Size From Baseline",
+              "timeFrame": "RECIST 1.1 assessments were performed pre-dose at screening and then once every 8 weeks relative to the start of treatment in the Multiple Dose Period."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2017-07-06",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-04-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-01-25",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2016-12-21",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2019-04-22",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2017-09-15",
+          "resultsFirstSubmitQcDate": "2019-01-25",
+          "startDateStruct": {
+            "date": "2016-01-28",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-01",
+          "studyFirstPostDateStruct": {
+            "date": "2015-12-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-12-14",
+          "studyFirstSubmitQcDate": "2015-12-22"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "To enroll approximately 40 hepatitis B virus (HBV) positive, unresectable HCC subjects who have previously received at least one prior line of systemic therapy. Among which, approximately 20 subjects will receive oral ATG-008 at an initial dose of 45 mg, once daily (QD) and another approximately 20 subjects will receive oral ATG-008 at an initial dose of 20 mg, twice daily (BID). The pharmacokinetic (PK) samples will be collected from 10 subjects each in the two dose groups.",
+              "interventionNames": [
+                "Drug: ATG-008"
+              ],
+              "label": "ATG-008",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ATG-008"
+              ],
+              "description": "Approximately 20 subjects will receive oral ATG-008 at an initial dose of 45 mg/QD and another 20 subjects will receive oral ATG-008 at an initial dose of 20mg/BID for 28 days each cycle.",
+              "name": "ATG-008",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 73,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Dual TORC1/TORC2 Inhibitor ATG-008 (CC-223) in HBV Positive Advanced Hepatocellular Carcinoma (HCC) Subjects",
+          "nctId": "NCT03591965",
+          "officialTitle": "An Open-label Phase 2 Trial of Dual TORC1/TORC2 Inhibitor ATG-008 in HBV+ Advanced Hepatocellular Carcinoma (HCC) Subjects Who Have Received at Least One Prior Line of Systemic Therapy (TORCH)",
+          "orgStudyIdInfo": {
+            "id": "ATG-008-HCC-001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Antengene Corporation"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "The changes in potential biomarkers including but not limited to TORC1/TORC2 activity in peripheral blood samples and tumor tissue following treatment with ATG-008",
+              "measure": "Potential biomarkers in plasma and tumor tissues",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "Additional metabolites of ATG-008 in plasma and urine, and the extent of their urinary excretion/clearance",
+              "measure": "Additional metabolites of ATG-008 in plasma and urine",
+              "timeFrame": "Day 1 - Day 15"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Peak Plasma Concentration (Cmax)",
+              "measure": "Cmax",
+              "timeFrame": "Day 1 - Day 15"
+            },
+            {
+              "description": "Area under the plasma concentration versus time curve (AUC)",
+              "measure": "AUC",
+              "timeFrame": "Day 1 - Day 15"
+            },
+            {
+              "description": "The treatment emergent adverse events (TEAEs) \\& SAE case No. in total subject No.",
+              "measure": "The incidence of treatment emergent adverse events (TEAEs) & SAE assessed by CTCAE v4.03",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "Percentage of subjects with PR, or CR",
+              "measure": "ORR",
+              "timeFrame": "365 DAYS"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Kaplan-Meier estimate of Overall Survival",
+              "measure": "OS",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "The time from the first dose date until disease progression",
+              "measure": "TTP",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "The time from the first dose date until disease progression or death from any cause",
+              "measure": "PFS",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "The percentage of subjects with CR, or PR or stable disease (SD)",
+              "measure": "DCR",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "The time from the criteria are first met for CR/PR (whichever is first recorded) until the first date that recurrent or progressive disease is objectively documented",
+              "measure": "DOR",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "The time from the first dose date to the first documentation of response of PR or better.",
+              "measure": "TTR",
+              "timeFrame": "365 DAYS"
+            },
+            {
+              "description": "Percentage of patients alive",
+              "measure": "6, 9 and 12 month of survival rate",
+              "timeFrame": "365 DAYS"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-08-03",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-07-10",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-07-06",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2022-08-03",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2018-08-07",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-01",
+          "studyFirstPostDateStruct": {
+            "date": "2018-07-19",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2018-06-20",
+          "studyFirstSubmitQcDate": "2018-07-17",
+          "whyStopped": "Based on the adjustment of clinical research and development strategy，sponsor decided to terminate the study"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "This group will receive a Dose-Escalation: Combination of MLN0128 and Alisertib using a standard 3 + 3 design. The starting dose of Alisertib is 30 mg given PO twice daily (BID) Days 1-7 repeat every 21 days. The starting dose for MLN0128 is 1 mg given by mouth (PO) once daily with continuous dosing.\n\nAlisertib: Participants will receive Alisertib in the dose-escalation and the dose-expansion part of the study.\n\nMLN0128: Participants will receive MLN0128 in the dose-escalation and the dose-expansion part of the study.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose level 1: Alisertib 30mg/MLNO128 1mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Escalation: Combination of MLN0128 and Alisertib using a standard 3 + 3 design. The starting dose of Alisertib is 30 mg given PO twice daily (BID) Days 1-7 repeat every 21 days. The starting dose for MLN0128 is 2 mg given by mouth (PO) once daily with continuous dosing.\n\nAlisertib: Participants will receive Alisertib in the dose-escalation and the dose-expansion part of the study.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose Level 2: Alisertib 30mg/MLNO128 2 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Escalation: Combination of MLN0128 and Alisertib using a standard 3 + 3 design. The starting dose of Alisertib is 40 mg given PO twice daily (BID) Days 1-7 repeat every 21 days. The starting dose for MLN0128 is 1 mg given by mouth (PO) once daily with continuous dosing.\n\nAlisertib: Participants will receive Alisertib in the dose-escalation and the dose-expansion part of the study.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose Level 3: Alisertib 40 mg/MLNO128 2 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Escalation: Combination of MLN0128 and Alisertib using a standard 3 + 3 design. The starting dose of Alisertib is 40 mg given PO twice daily (BID) Days 1-7 repeat every 21 days. The starting dose for MLN0128 is 3 mg given by mouth (PO) once daily with continuous dosing.\n\nAlisertib: Participants will receive Alisertib in the dose-escalation and the dose-expansion part of the study.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose Level 4: Alisertib 40 mg/MLN0128 3 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Expansion of Alisertib and Dose-Expansion of MLN0128. In cycle 1, single agent Alisertib will be administered at the MTD on days 1-7 and MLN0128 will be administered on days 8-21. In cycle 2 and beyond, dosing with both agents will begin on day 1, with Alisertib administered days 1-7 and MLN0128 administered days 1-21.\n\nPancreatic Cancer Cohort:\n\nThis group will receive a Dose-Expansion of Alisertib and Dose-Expansion of MLN0128. On each cycle, Alisertib will be administered on days 1-7, while MLN0128 will be administered continuously on days 1-21.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 1",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Expansion of Alisertib and Dose-Expansion of MLN0128. In cycle 1, MLN0128 will be administered at the MTD days 1-28 and Alisertib will be administered at the MTD on days 8-15. In cycle 2 and beyond, dosing with both agents will begin on day 1, with Alisertib administered days 1-7 and MLN0128 administered days 1-21.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "This group will receive a Dose-Expansion of Alisertib and Dose-Expansion of MLN0128. On each cycle, Alisertib will be administered on days 1-7, while MLN0128 will be administered continuously on days 1-21.",
+              "interventionNames": [
+                "Drug: Alisertib",
+                "Drug: MLN0128"
+              ],
+              "label": "Pancreatic Cohort",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Dose Level 2: Alisertib 30mg/MLNO128 2 mg",
+                "Dose Level 3: Alisertib 40 mg/MLNO128 2 mg",
+                "Dose Level 4: Alisertib 40 mg/MLN0128 3 mg",
+                "Dose level 1: Alisertib 30mg/MLNO128 1mg",
+                "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 1",
+                "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 2",
+                "Pancreatic Cohort"
+              ],
+              "description": "Participants will receive Alisertib in the dose-escalation and the dose-expansion part of the study.",
+              "name": "Alisertib",
+              "otherNames": [
+                "Dual TORC1/2 Inhibitor"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Dose Level 2: Alisertib 30mg/MLNO128 2 mg",
+                "Dose Level 3: Alisertib 40 mg/MLNO128 2 mg",
+                "Dose Level 4: Alisertib 40 mg/MLN0128 3 mg",
+                "Dose level 1: Alisertib 30mg/MLNO128 1mg",
+                "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 1",
+                "Dose-Expansion of Alisertib and Dose-Expansion of MLN0128: Group 2",
+                "Pancreatic Cohort"
+              ],
+              "description": "Participants will receive MLN0128 in the dose-escalation and the dose-expansion part of the study.",
+              "name": "MLN0128",
+              "otherNames": [
+                "MLN8237 (Aurora A inhibitor)"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 47,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Phase I Study of MLN0128 and MLN8237 in Patients With Advanced Solid Tumors and Metastatic Triple-negative Breast Cancer",
+          "nctId": "NCT02719691",
+          "officialTitle": "A Phase Ib Study of the Combination of MLN0128 (Dual TORC1/2 Inhibitor) and MLN8237 (Aurora A Inhibitor, Alisertib) in Patients With Advanced Solid Tumors With an Expansion Cohort in Metastatic Triple-negative Breast Cancer (TNBC)",
+          "orgStudyIdInfo": {
+            "id": "15-1135.cc"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "University of Colorado, Denver"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The maximum tolerated dose (MTD) will be defined as the highest dose level evaluated in which 0 or 1 patient out of 6 patients experiences dose limiting toxicity (DLT) in the combination of MLN0128 and Alisertib. Toxicity will be graded according to the National Cancer Institute Common Terminology Criteria for Adverse Events (NCI CTCAE) Version 4.03.",
+              "measure": "The Maximum Tolerated Dose (MTD) in the Combination of MLN0128 and Alisertib in Patients With Advanced Solid Tumors Measured by Treatment Adverse Events as Assessed by the CTCAE v4.03",
+              "timeFrame": "Up to 28 days"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Adverse events will be tabulated by type and grade according to the NCI CTCAE v.4.03. Please see adverse events section.",
+              "measure": "The Safety Profile and Tolerability of the Combination of MLN0128 and Alisertib in Adult Patients With Advanced Solid Tumors.",
+              "timeFrame": "At least 30 days after the last dose of MLN0128 or alisertib"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-03-18",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2022-07-25",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2022-05-17",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-03-18",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2022-01-19",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2021-10-27",
+          "resultsFirstSubmitQcDate": "2021-12-20",
+          "startDateStruct": {
+            "date": "2016-05-13",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2022-05",
+          "studyFirstPostDateStruct": {
+            "date": "2016-03-25",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-03-21",
+          "studyFirstSubmitQcDate": "2016-03-24"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Fulvestrant 500 mg, intramuscularly (IM), once on Days 1 and 15 in Cycle 1, and then on Day 1 of each subsequent 28-day cycle until progressive disease, unacceptable toxicity, or withdrawal of consent (Median duration of treatment was 16.0 weeks).",
+              "interventionNames": [
+                "Drug: Fulvestrant"
+              ],
+              "label": "Fulvestrant 500 mg",
+              "type": "ACTIVE_COMPARATOR"
+            },
+            {
+              "description": "Fulvestrant 500 mg, IM, once on Days 1 and 15 in Cycle 1, and then on Day 1 of each subsequent 28-day cycle along with the sapanisertib 4 mg, capsules, orally, once daily in each 28-day treatment cycle until progressive disease, unacceptable toxicity, or withdrawal of consent (Median duration of treatment was 20.1 and 20.3 weeks for fulvestrant and sapanisertib respectively).",
+              "interventionNames": [
+                "Drug: Fulvestrant",
+                "Drug: Sapanisertib"
+              ],
+              "label": "Fulvestrant 500 mg + Sapanisertib 4 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Fulvestrant 500 mg, IM, once on Days 1 and 15 in Cycle 1, and then on Day 1 of each subsequent 28-day cycle along with sapanisertib 30 mg, capsule, orally, once weekly in each 28-day treatment cycle until progressive disease, unacceptable toxicity, or withdrawal of consent (Median duration of treatment was 17.0 weeks for fulvestrant and sapanisertib, each).",
+              "interventionNames": [
+                "Drug: Fulvestrant",
+                "Drug: Sapanisertib"
+              ],
+              "label": "Fulvestrant 500 mg + Sapanisertib 30 mg",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Fulvestrant 500 mg",
+                "Fulvestrant 500 mg + Sapanisertib 30 mg",
+                "Fulvestrant 500 mg + Sapanisertib 4 mg"
+              ],
+              "description": "Fulvestrant IM injection.",
+              "name": "Fulvestrant",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Fulvestrant 500 mg + Sapanisertib 30 mg",
+                "Fulvestrant 500 mg + Sapanisertib 4 mg"
+              ],
+              "description": "Sapanisertib capsule.",
+              "name": "Sapanisertib",
+              "otherNames": [
+                "MLN0128"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 141,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Sapanisertib in Combination With Fulvestrant in Women With Advanced or Metastatic Breast Cancer After Aromatase Inhibitor Therapy",
+          "nctId": "NCT02756364",
+          "officialTitle": "An Open-Label Phase 2 Study of MLN0128 (A TORC1/2 Inhibitor) in Combination With Fulvestrant in Women With ER-Positive/HER2-Negative Advanced or Metastatic Breast Cancer That Has Progressed During or After Aromatase Inhibitor Therapy",
+          "orgStudyIdInfo": {
+            "id": "C31006"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Calithera Biosciences, Inc"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2015-003612-20",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "WHO",
+              "id": "U1111-1174-2165",
+              "type": "REGISTRY"
+            },
+            {
+              "id": "2015",
+              "link": "https://reporter.nih.gov/quickSearch/2015",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "PFS was defined as the time from the date of randomization to the date of first documentation of progressive disease (PD) or death due to any cause, whichever occurred first. Per Response Evaluation Criteria in Solid Tumors (RECIST) v1.1, PD was defined as at least a 20% increase in the sum of the longest diameter (LD) of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Progression Free Survival (PFS)",
+              "timeFrame": "Up to 40 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "OS was defined as the time from the date of randomization to the date of death.",
+              "measure": "Overall Survival (OS)",
+              "timeFrame": "Up to 164 weeks"
+            },
+            {
+              "description": "TTP was defined as the time from the date of randomization to the date of first documentation of progression. Per RECIST v1.1, PD was defined as at least a 20% increase in the sum of the LD of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Time to Progression (TTP)",
+              "timeFrame": "Up to 40 months"
+            },
+            {
+              "description": "ORR was defined as the percentage of participants who achieve a best response of complete response (CR) or partial response (PR) according to RECIST v1.1 criteria. CR was defined as disappearance of all target lesions, non-target lesions, no new lesions, and normalization of tumor marker level. PR was defined as at least a 30% decrease in the sum of diameters of target lesions, no progression in non-target lesion, and no new lesions.",
+              "measure": "Objective Response Rate (ORR)",
+              "timeFrame": "Up to 40 months"
+            },
+            {
+              "description": "CBR was defined as the percentage of participants who achieved a best response of CR, PR, or stable disease (SD) of any duration. CR was defined as disappearance of all target lesions, non-target lesions, no new lesions, and normalization of tumor marker level. PR was defined as at least a 30% decrease in the sum of diameters of target lesions, no progression in non-target lesion, and no new lesions. SD was defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD.",
+              "measure": "Clinical Benefit Rate (CBR)",
+              "timeFrame": "Up to 40 months"
+            },
+            {
+              "description": "An Adverse Event (AE) is defined as any untoward medical occurrence in a clinical investigation participant administered a drug; it does not necessarily have to have a causal relationship with this treatment. A TEAE is defined as an adverse event with an onset that occurs after receiving study drug.",
+              "measure": "Percentage of Participants Who Experienced at Least One Treatment-emergent Adverse Event (TEAE)",
+              "timeFrame": "Up to 164 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-11-25",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-02-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-02-06",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-11-25",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-12-19",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-11-20",
+          "resultsFirstSubmitQcDate": "2020-11-20",
+          "startDateStruct": {
+            "date": "2016-07-28",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-02",
+          "studyFirstPostDateStruct": {
+            "date": "2016-04-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-04-28",
+          "studyFirstSubmitQcDate": "2016-04-28"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Rapamycin 3mg orally daily x 4weeks prior to radical cystectomy",
+              "interventionNames": [
+                "Drug: Rapamycin"
+              ],
+              "label": "Rapamycin",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "label": "Control",
+              "type": "NO_INTERVENTION"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Rapamycin"
+              ],
+              "name": "Rapamycin",
+              "otherNames": [
+                "Sirolimus, Rapamune"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 29,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "EARLY_PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Neoadjuvant Rapamycin in Patients Undergoing Radical Cystectomy",
+          "nctId": "NCT01827618",
+          "officialTitle": "An Immunopharmacodynamic Phase 0/I Study of Rapamycin in Patients Undergoing Radical Cystectomy for Bladder Cancer",
+          "orgStudyIdInfo": {
+            "id": "HSC20120135H"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "The University of Texas Health Science Center at San Antonio"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "NIH/NCRR; UTHSCSA-Institute for Integration",
+              "id": "KL2 TR000118-05/CTSA",
+              "type": "OTHER"
+            },
+            {
+              "id": "KL2TR000118-05",
+              "link": "https://reporter.nih.gov/quickSearch/KL2TR000118-05",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "PD response defined by significant phospho rpS6 Kinase 1 (S6K1) inhibition (comparing post-treatment to baseline).",
+              "measure": "Tissue pharmacodynamic (PD) response to TORC1 inhibition",
+              "timeFrame": "30 days"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2014-04",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2015-07-02",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2015-06-30",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2014-04",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2012-04"
+          },
+          "statusVerifiedDate": "2015-06",
+          "studyFirstPostDateStruct": {
+            "date": "2013-04-09",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2013-03-29",
+          "studyFirstSubmitQcDate": "2013-04-08"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Part 1 - Dose escalation of DS-3078a to determine the maximum tolerated dose (MTD) will be guided by the modified continuous reassessment method (mCRM) using a Bayesian logistic regression model (BLRM) following escalation with overdose control (EWOC) principle.\n\nBefore starting mCRM, initial dose escalation will proceed following an accelerated titration in which single subjects will be enrolled into sequential dose levels with a dose increment of up to 100% from the previous dose.\n\nUpon completion of Part 1 with established MTD and tentative recommended phase 2 dose (RP2D), the Dose Expansion (Part 2) will begin with the intention of further assessing the safety and tolerability of DS-3078a, confirming the RP2D, determining the Pharmacodynamic response in tumor samples, and evaluating preliminary efficacy of DS-3078a in subjects.",
+              "interventionNames": [
+                "Drug: DS-3078a"
+              ],
+              "label": "DS-3078a",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "DS-3078a"
+              ],
+              "description": "DS-3078a will be administered as oral capsules once daily and will be supplied in 5, 20, 50, and 150 mg capsules.",
+              "name": "DS-3078a",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 32,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Open-Label, Multiple Ascending Dose Study of DS-3078a, an Oral TORC1/2 Kinase Inhibitor, in Subjects With Advanced Solid Tumors or Lymphomas",
+          "nctId": "NCT01588678",
+          "officialTitle": "A Phase 1, Open-Label, Multiple Ascending Dose Study of DS-3078a, an Oral TORC1/2 Kinase Inhibitor, in Subjects With Advanced Solid Tumors or Lymphomas",
+          "orgStudyIdInfo": {
+            "id": "DS3078-A-U101"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Daiichi Sankyo"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "To determine the maximum tolerated dose (MTD) and tentative recommended Phase 2 dose (RP2D) of DS 3078a",
+              "measure": "Maximum tolerated dose",
+              "timeFrame": "3 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "determine the Cmax (maximum concentration) of DS-3078a administered under fed and unfed conditions",
+              "measure": "determine the Cmax profile of DS 3078a",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "determine the effect of DS-3078a on glucose metabolism by measuring serum glucose and C peptide",
+              "measure": "effect on glucose metabolism",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "assess the pharmacodynamic effects of DS 3078a by determining tumor glucose uptake using (18F) fluorodeoxyglucose positron emission tomography (FDG-PET)",
+              "measure": "assess pharmacodynamic effects tumor glucose uptake",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "assess tumor response to DS-3078a in subjects with advanced non-Hodgkin lymphomas or advanced solid tumor types in which the mammalian target of rapamycin (mTOR) signaling pathway is frequently activated",
+              "measure": "assess tumor response",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "assess the pharmacodynamic effects of DS 3078a by measuring v-akt murine thymoma viral oncogene homolog 1 (Akt) phosphorylation in platelet rich plasma (PRP)",
+              "measure": "assess pharmacodynamic effects v-akt murine thymoma viral oncogene",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "determine the Area under the concentration versus time curve (AUC) of DS-3078a administered under fed and unfed conditions",
+              "measure": "determine the AUC of DS 3078a",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "determine the time of maximum concentyration (Tmax) of DS-3078a administered under fed and unfed conditions",
+              "measure": "determine the Tmax of DS 3078a",
+              "timeFrame": "3 years"
+            },
+            {
+              "description": "determine the terminal half-life (T1/2) of DS-3078a administered under fed and unfed conditions",
+              "measure": "determine the terminal half-life of DS 3078a",
+              "timeFrame": "3 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2014-06",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-02-12",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-02-08",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2014-06",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2012-04"
+          },
+          "statusVerifiedDate": "2015-04",
+          "studyFirstPostDateStruct": {
+            "date": "2012-05-01",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2012-04-26",
+          "studyFirstSubmitQcDate": "2012-04-27"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Paclitaxel 80 milligrams per square meter (mg/m\\^2), IV, weekly on Days 1, 8, and 15 of a 28-day cycle until disease progression, unacceptable toxicity, or withdraw consent (the median exposure was up to approximately 13 weeks).",
+              "interventionNames": [
+                "Drug: Paclitaxel"
+              ],
+              "label": "Paclitaxel 80 mg/m^2",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Paclitaxel 80 mg/m\\^2, IV, weekly on Days 1, 8, and 15 of a 28-day cycle along with sapanisertib 4 milligrams (mg), capsule, orally on Days 2-4, 9-11, 16-18, and 23-25 of a 28-day cycle until disease progression, unacceptable toxicity, or withdraw consent (the median exposure was up to approximately 20 weeks).",
+              "interventionNames": [
+                "Drug: Paclitaxel",
+                "Drug: Sapanisertib"
+              ],
+              "label": "Paclitaxel 80 mg/m^2 + Sapanisertib 4 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 30 mg, capsule, orally, once weekly on Days 1, 8, 15, and 22 of a 28-day cycle until disease progression, unacceptable toxicity, or withdraw consent (the median exposure was up to approximately 6 weeks).",
+              "interventionNames": [
+                "Drug: Sapanisertib"
+              ],
+              "label": "Sapanisertib 30 mg",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, capsule, orally and MLN1117 200 mg, capsule, orally on Days 1-3, 8-10, 15-17, and 22-24 of a 28-day cycle until disease progression, unacceptable toxicity, or withdraw consent (the median exposure was up to approximately 8 weeks).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: MLN1117"
+              ],
+              "label": "Sapanisertib 4 mg + MLN1117 200 mg",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Paclitaxel 80 mg/m^2",
+                "Paclitaxel 80 mg/m^2 + Sapanisertib 4 mg"
+              ],
+              "description": "Paclitaxel intravenous solution.",
+              "name": "Paclitaxel",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Paclitaxel 80 mg/m^2 + Sapanisertib 4 mg",
+                "Sapanisertib 30 mg",
+                "Sapanisertib 4 mg + MLN1117 200 mg"
+              ],
+              "description": "Sapanisertib capsules.",
+              "name": "Sapanisertib",
+              "otherNames": [
+                "MLN0128",
+                "INK128",
+                "TAK-228"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Sapanisertib 4 mg + MLN1117 200 mg"
+              ],
+              "description": "MLN1117 capsules.",
+              "name": "MLN1117",
+              "otherNames": [
+                "TAK-117",
+                "INK1117"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 241,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study of Sapanisertib, Combination of Sapanisertib With MLN1117, Paclitaxel and Combination of Sapanisertib With Paclitaxel in Women With Endometrial Cancer",
+          "nctId": "NCT02725268",
+          "officialTitle": "A Phase 2, Randomized Study of MLN0128 (a Dual TORC1/2 Inhibitor), MLN0128+MLN1117 (a PI3Kα Inhibitor), Weekly Paclitaxel, or the Combination of Weekly Paclitaxel and MLN0128 in Women With Advanced, Recurrent, or Persistent Endometrial Cancer",
+          "orgStudyIdInfo": {
+            "id": "C31004"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Takeda"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "WHO",
+              "id": "U1111-1168-1824",
+              "type": "OTHER"
+            },
+            {
+              "id": "2014-005394-37",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "ClinicalTrials.gov",
+              "id": "02725268",
+              "type": "REGISTRY"
+            },
+            {
+              "id": "2014",
+              "link": "https://reporter.nih.gov/quickSearch/2014",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "PFS is defined as the time in months from the date of randomization to the date of first documentation of progressive disease (PD) or death due to any cause, whichever occurs first. Per RECIST v1.1, PD was defined as at least a 20% increase in the sum of the longest diameter (LD) of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Progression Free Survival (PFS)",
+              "timeFrame": "Up to approximately 30 months"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "An Adverse Event (AE) is defined as any untoward medical occurrence in a clinical investigation participant administered a drug; it does not necessarily have to have a causal relationship with this treatment. A TEAE is defined as an adverse event with an onset that occurs after receiving study drug.",
+              "measure": "Number of Participants Who Experienced at Least One Treatment-emergent Adverse Event (TEAE)",
+              "timeFrame": "From the first dose of study drug through 30 days after the last dose of study drug (Up to approximately 54 months)"
+            },
+            {
+              "description": "OS is defined as the time in months from the date of randomization to the date of death.",
+              "measure": "Overall Survival (OS)",
+              "timeFrame": "Up to approximately 54 months"
+            },
+            {
+              "description": "TTP is defined as the time in months from the date of randomization to the date of first documentation of progression. Per RECIST 1.1, PD was defined as at least a 20% increase in the sum of the longest diameter (LD) of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Time to Tumor Progression (TTP)",
+              "timeFrame": "Up to 30 months"
+            },
+            {
+              "description": "ORR is defined as the percentage of participants who achieved a best response of a complete response (CR) or partial response (PR). Per RECIST v1.1, CR was defined as disappearance of all target lesions, non-target lesions, no new lesions, and normalization of tumor marker level. PR was defined as at least a 30% decrease in the sum of diameters of target lesions, no progression in non-target lesion, and no new lesions.",
+              "measure": "Overall Response Rate (ORR)",
+              "timeFrame": "Up to 30 months"
+            },
+            {
+              "description": "CBR is defined as the percentage of participants with CR or PR or SD (SD of any duration). Per RECIST v1.1, CR was defined as disappearance of all target lesions, non-target lesions, no new lesions, and normalization of tumor marker level. PR is defined as at least a 30% decrease in the sum of diameters of target lesions, no progression in non-target lesion, and no new lesions. SD was defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD. PD was defined as at least a 20% increase in the sum of the longest diameter (LD) of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Clinical Benefit Rate (CBR)",
+              "timeFrame": "Up to 30 months"
+            },
+            {
+              "description": "CBR-16 is defined as the percentage of participants who achieved CR or PR of any duration or have SD with a duration of at least 16 weeks. Per RECIST v1.1, CR was defined as disappearance of all target lesions, non-target lesions, no new lesions, and normalization of tumor marker level. PR was defined as at least a 30% decrease in the sum of diameters of target lesions, no progression in non-target lesion, and no new lesions. SD was defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD. PD was defined as at least a 20% increase in the sum of the longest diameter (LD) of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Clinical Benefit Rate (CBR) at Week 16 (CBR-16)",
+              "timeFrame": "Week 16"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-10-30",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-11-24",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-10-28",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-07-02",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-06-09",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-05-22",
+          "resultsFirstSubmitQcDate": "2020-05-22",
+          "startDateStruct": {
+            "date": "2016-04-01",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-10",
+          "studyFirstPostDateStruct": {
+            "date": "2016-03-31",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2016-03-28",
+          "studyFirstSubmitQcDate": "2016-03-28"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Open-label AZD2014 given twice daily 3 days on, 4 days off during weekly paclitaxel",
+              "interventionNames": [
+                "Drug: Open-label AZD2014",
+                "Drug: paclitaxel"
+              ],
+              "label": "Open-label AZD2014",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Open-label AZD2014"
+              ],
+              "description": "Dual TORC1/TORC2 inhibitor",
+              "name": "Open-label AZD2014",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Open-label AZD2014"
+              ],
+              "description": "Taxane",
+              "name": "paclitaxel",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 11,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "AZD2014 and Weekly Paclitaxel in Squamous NSCLC",
+          "nctId": "NCT02403895",
+          "officialTitle": "A Phase 2a, Multi-centre, Single-arm Trial of the Combination of AZD2014 and Weekly Paclitaxel in Patients With Relapsed or Refractory Squamous Non-Small Cell Lung Cancer After At Least One Line of Prior Therapy",
+          "orgStudyIdInfo": {
+            "id": "D2274C00001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "AstraZeneca"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Calculation of the percentage of patient who have a Complete Response or Partial Response to treatment which is confirmed by a repeat assessment 4 weeks later",
+              "measure": "Percentage of Patients Who Have a Partial Response or Complete Response Through Measurement of Tumour Lesion Sizes",
+              "timeFrame": "From first dose until disease progression (Approximately 3 months)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The safety and tolerability of AZD2014 with weekly paclitaxel as assessed with the collection of Adverse Events and Serious Adverse Events as reported during clinic visits. In addition, clinical assessments were made throughout the on treatment period including blood test for chemistry, haematology, and blood clotting. In addition to clinical observations such as vital signs, and cardiac function through the use of ECG.\n\nAny findings from the above assessments which were considered to be abnornal and clinically significant by the doctor were reported as (AEs or SAEs).",
+              "measure": "Number of Patients Who Experienced at Least One Adverse Event (AE) or Serious Adverse Event (SAE)",
+              "timeFrame": "Informed consent until end of safety follow up (Approx 10 months if all treatment cycles are completed)"
+            },
+            {
+              "description": "Assessment of the duration of overall survival in weeks through direct patient follow-up. Any patient not known to have died at the time of analysis censored at the last recorded date the patient was known to be alive",
+              "measure": "Overall Survival: Median Number of Days Between the First Dose and End of Life Due to Any Cause",
+              "timeFrame": "From first dose until end of life (Approx 9 months)"
+            },
+            {
+              "description": "Per Response Evaluation Criteria In Solid Tumours (RECIST v1.1) for target lesions assessed through imaging (CT or MRI scan) or clinical examination; Complete Response (CR): Disappearance of all target lesions; Partial Response (PR) \\>=30% decrease in sum of target lesion longest diameter; Progressive Disease \\>=20% increase in sum of target lesion longest diameter; Stable Disease (SD) increase or decrease amounting to neither PR or PD. Overall tumour assessment based on quantitative assessment of target lesions and qualitative assessment of non-target lesions in line with RECIST criteria.",
+              "measure": "Best Objective Response: Number of Patients Who Experienced a Best Response of Complete Response (CR), Partial Response (PR), Stable Disease (SD), Progressive Disease (PD), Not-Evaluable (NE), Through Measurement of Tumour Lesion Sizes.",
+              "timeFrame": "From Baseline until Disease Progression (Approx 3 months)"
+            },
+            {
+              "description": "Assessment of the duration of tumour response through assessment of tumour lesions by RECIST 1.1 criteria. Response is defined as the point at which the criteria for Partial Response (PR) was met) \\>=30% decrease in sum of target lesion longest diameter. Progression is defined as the point at which the criteria for Progressive Disease (PD) was met \\>=20% increase in sum of target lesion longest diameter, or until end of life.",
+              "measure": "Duration of Response: Median Number of Days From the Date of First Documented Response Until the Date of Documented Progression Through Measurement of Tumour Lesion Sizes",
+              "timeFrame": "From date of first documented response until documented progression or end of life in the absence of progression (Approx 3 months)"
+            },
+            {
+              "description": "Assessment of the disease control rate, percentage of patients who experience a response through assessment of tumour lesions by RECIST 1.1 criteria",
+              "measure": "Disease Control Rate: Percentage of Patients Who Achieve Partial Response, Complete Response or Stable Disease Through Assessment of Tumour Lesion Sizes",
+              "timeFrame": "From first dose until documented progression and at least 6 weeks after the start of treatment for assessment of Stable Disease - Assessed at 6, 13 and 20 Weeks"
+            },
+            {
+              "description": "Assessment of the degree of tumour response through measurement of the change in tumour lesion sizes",
+              "measure": "Change in Tumour Size: Median Percentage Change in Tumour Size in mm by Measurement of Tumour Lesion Sizes",
+              "timeFrame": "From baseline until documented progression (Approx 3 months)"
+            },
+            {
+              "description": "Assessment of the duration of progression free survival through assessment of tumour lesions by RECIST 1.1 criteria",
+              "measure": "Progression Free Survival: Median Number of Days Between Start of Dosing Until Objective Disease Progression Through Measurement of Tumour Lesion Sizes",
+              "timeFrame": "From date of first dose until documented progression or end of life (Approx 3 months)"
+            },
+            {
+              "description": "To determine the effect of co-administration of paclitaxel on the PK of oral AZD2014 and the effect of co administration of oral AZD2014 on the PK of paclitaxel (Group A) by: PK parameters for each in the presence and absence of the other by intensive PK sampling and NCA techniques.",
+              "measure": "Evaluate the Effect of the Combination of AZD2014 and Paclitaxel on Pharmacokinetics Assessment of Cmax",
+              "timeFrame": "Assessment at multiple timepoints in Group A patients. Samples will be taken at pre-dose and at 10 further timepoints on day 1 and at pre-dose and 9 further timepoints on days 3 and 8"
+            },
+            {
+              "description": "Group B patients: PK parameters for AZD2014 estimated from a sparse PK sampling regimen and use of population PK modelling techniques (may be reported outside the clinical study report (CSR))",
+              "measure": "Estimated Pharmacokinetic Exposure to AZD2014 Through the Use of Population PK Modelling",
+              "timeFrame": "Assessment at multiple timepoints in Group B patients between study day 1 and day 3. Samples will be taken at 3 points on day 1 and at predose and at a further 2 points on day 3"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2016-12-29",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2018-07-03",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2018-06-04",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2016-12-29",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2018-07-03",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2017-12-22",
+          "resultsFirstSubmitQcDate": "2018-06-04",
+          "startDateStruct": {
+            "date": "2015-04-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2018-06",
+          "studyFirstPostDateStruct": {
+            "date": "2015-03-31",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-03-07",
+          "studyFirstSubmitQcDate": "2015-03-26"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Subjects will receive MLN0128 orally on days 1, 8, 15 and 22 in successive cohorts.\n\nCohort 1 MLN0128 15mg each week (QW); Cohort 2 MLN0128 20mg QW; Cohort 3 MLN0128 30mg QW",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "Phase I MLN0128 Dose Escalation Study",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Subjects randomized to experimental arm will receive MLN0128 orally at the recommended phase II dose (RP2D) once weekly.",
+              "interventionNames": [
+                "Drug: MLN0128 (RP2D)"
+              ],
+              "label": "Phase II Arm A: MLN0128",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Subjects randomized to control arm will receive sorafenib 400mg by mouth (PO) twice a day (BID) daily.",
+              "interventionNames": [
+                "Drug: Sorafenib"
+              ],
+              "label": "Phase II Arm B: Sorafenib",
+              "type": "ACTIVE_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Phase I MLN0128 Dose Escalation Study"
+              ],
+              "description": "Phase I Dose Escalation Study Cohort 1 MLN0128 15mg QW; Cohort 2 MLN0128 20mg QW; Cohort 3 MLN0128 30mg QW",
+              "name": "MLN0128",
+              "otherNames": [
+                "Sapanisertib"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Phase II Arm A: MLN0128"
+              ],
+              "description": "Phase II Arm A:\n\nMLN0128 administered orally at the recommended phase II dose (RP2D) once weekly.",
+              "name": "MLN0128 (RP2D)",
+              "otherNames": [
+                "Sapanisertib"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Phase II Arm B: Sorafenib"
+              ],
+              "description": "Phase II Arm B:\n\nSorafenib administered at 400mg PO BID daily",
+              "name": "Sorafenib",
+              "otherNames": [
+                "Nexavar"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 11,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "MLN0128 Compared to Sorafenib in Advanced or Metastatic Hepatocellular Carcinoma",
+          "nctId": "NCT02575339",
+          "officialTitle": "An Open Label Randomized Phase I/II Trial of MLN0128 Compared to Sorafenib in Patients With Advanced or Metastatic Hepatocellular Carcinoma: Big Ten Cancer Research Consortium BTCRC-GI13-002",
+          "orgStudyIdInfo": {
+            "id": "BTCRC GI13-002"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Big Ten Cancer Research Consortium"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The primary objective for phase I of this study is to determine the maximum tolerated dose (MTD) of MLN0128.\n\nMaximum Tolerated Dose is defined as the dose level at which fewer than 33% of subjects experience a dose limiting toxicity (DLT).",
+              "measure": "Phase I: Maximum Tolerated Dose (MTD) of MLN0128",
+              "timeFrame": "From start of treatment Day 1 (D1) until completion of two cycles of treatment (maximum 56 days)"
+            },
+            {
+              "description": "The primary endpoint of Phase II of the study is to evaluate the time to progression, which is defined as the time from randomization until tumor progression as defined by RECIST v1.1.",
+              "measure": "Phase II: Time to Progression (TTP)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever occurs first, assessed up to 7 months (estimated)."
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Toxicity assessed using Common Terminology Criteria for Adverse Events v4.0 (CTCAE) criteria",
+              "measure": "Phase I: Characterize Adverse Effects (AE)",
+              "timeFrame": "From date of first dose until 30 days after the last treatment, assessed for estimated 7 cycles (est. 196 days)"
+            },
+            {
+              "description": "Overall Survival of subjects receiving MLN0128 is defined by the time from randomization to date of death from any cause.Here median overall survival in months has been reported for subjects per dose level with 95% confidence interval.",
+              "measure": "Phase I: Overall Survival (OS) Rate",
+              "timeFrame": "From date of registration until death from any cause, up to a maximum of 27 months"
+            },
+            {
+              "description": "Overall Survival of subjects randomized to both MLN0128 and sorafenib arms is defined by the time from randomization to date of death from any cause.",
+              "measure": "Phase II: Overall Survival (OS) Rate",
+              "timeFrame": "From date of registration until death from any cause, up to a maximum of 24 months"
+            },
+            {
+              "description": "Time to progression (TTP) of subjects receiving MLN0128 assessed using RECIST v1.1 criteria is defined as the time from randomization until tumor progression as defined by RECIST v1.1. Here median Time to Progression in months has been reported for subjects per dose level with 95% confidence interval.",
+              "measure": "Phase I: Time to Progression (TTP)",
+              "timeFrame": "From date of randomization until the date of first documented progression or date of death from any cause, whichever occurs first, assessed up to 6 months (estimated)."
+            },
+            {
+              "description": "Progression free survival (PFS) of subjects receiving MLN0128 assessed using RECIST v1.1 criteria is defined by time from randomization to tumor progression or death from any cause. Here median Progression-free survival in months has been reported for subjects per dose level with 95% confidence interval.",
+              "measure": "Phase I: Progression-free Survival (PFS)",
+              "timeFrame": "From date of randomization to tumor progression or death from any cause, up to a maximum of 6 months"
+            },
+            {
+              "description": "Progression Free Survival of subjects randomized to both MLN0128 and sorafenib arms assessed using RECIST v1.1 criteria, is defined as time from randomization to tumor progression or death from any cause.",
+              "measure": "Phase II: Progression Free Survival (PFS)",
+              "timeFrame": "From date of randomization to tumor progression or death from any cause, up to a maximum of 24 months"
+            },
+            {
+              "description": "Objective Response Rate (ORR) of subjects receiving MLN0128 defined as complete response (CR)+partial response (PR), as defined by RECIST v1.1.",
+              "measure": "Phase I: Objective Response Rate (ORR)",
+              "timeFrame": "Objective Response Rate is assessed at 16 weeks and 24 weeks from start of treatment cycle until Progressive disease is documented."
+            },
+            {
+              "description": "Disease Control Rate (DCR) of subjects receiving MLN0128 as a sum of stable disease (SD for 8 weeks or longer), partial response (PR), and complete response (CR), as defined by RECIST v1.1.",
+              "measure": "Phase I: Disease Control Rate (DCR)",
+              "timeFrame": "Disease Control Rate is assessed at 16 weeks and 24 weeks from start of treatment cycle until Progressive disease is documented."
+            },
+            {
+              "description": "Toxicity for subjects randomized to both MLN0128 and sorafenib arms, assessed using CTCAE v4 criteria",
+              "measure": "Phase II: Characterize Adverse Effects (AE)",
+              "timeFrame": "From date of first dose until 30 days after the last treatment, assessed for estimated 7 cycles (est. 196 days)"
+            },
+            {
+              "description": "Radiographic Response Rate for subjects randomized to both MLN0128 and sorafenib arms, determined utilizing objective response rate (ORR) and disease control rate (DCR) at 16 and 24 weeks.",
+              "measure": "Phase II: Radiographic Response Rate (RRR)",
+              "timeFrame": "Radiographic Response Rate is assessed at 16 weeks and 24 weeks from start of treatment cycle until Progressive disease is documented."
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2020-11-24",
+            "type": "ACTUAL"
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2022-07-26",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2022-07-22",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-06-26",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2022-03-31",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2021-12-17",
+          "resultsFirstSubmitQcDate": "2022-03-03",
+          "startDateStruct": {
+            "date": "2016-07-18",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2022-07",
+          "studyFirstPostDateStruct": {
+            "date": "2015-10-14",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-10-09",
+          "studyFirstSubmitQcDate": "2015-10-12",
+          "whyStopped": "Funder Decision"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Archived tissue samples of matched primary-relapsed and non-matched primary are analyzed for genomic DNA, DNA methylation profiles, RNA sequencing, differences between alveolar rhabdomyosarcoma (ARMS) and embryonal rhabdomyosarcoma (ERMS), gene expression profiles, target-of-rapamycin complex 1 (TORC1) and TORC2 pathway intermediates, and paired box 3 (PAX3)/forkhead box O1 (FOXO1) translocation by microarray, immunohistochemical staining, and fluorescence in situ hybridization (FISH).",
+              "interventionNames": [
+                "Other: laboratory biomarker analysis"
+              ],
+              "label": "Correlative (laboratory biomarker analysis)"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Correlative (laboratory biomarker analysis)"
+              ],
+              "description": "Correlative studies",
+              "name": "laboratory biomarker analysis",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "observationalModel": "COHORT",
+            "timePerspective": "RETROSPECTIVE"
+          },
+          "enrollmentInfo": {
+            "count": 20,
+            "type": "ESTIMATED"
+          },
+          "patientRegistry": false,
+          "studyType": "OBSERVATIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Studying Mechanisms of Radiation Therapy Resistance in Samples From Younger Patients With Rhabdomyosarcoma",
+          "nctId": "NCT01626170",
+          "officialTitle": "Observational - Identifying and Validating Novel Mechanisms of Radiation Resistance in Rhabdomyosarcoma",
+          "orgStudyIdInfo": {
+            "id": "ARST12B6"
+          },
+          "organization": {
+            "class": "NETWORK",
+            "fullName": "Children's Oncology Group"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "CTRP (Clinical Trial Reporting Program)",
+              "id": "NCI-2012-01979",
+              "type": "REGISTRY"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Molecular response",
+              "timeFrame": "Up to 1 year"
+            },
+            {
+              "measure": "Novel pathway/biomarkers detected within clinically annotated patient tumor tissue samples",
+              "timeFrame": "Up to 1 year"
+            }
+          ]
+        },
+        "statusModule": {
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-07-14",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-07-13",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2013-10",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2012-06"
+          },
+          "statusVerifiedDate": "2016-07",
+          "studyFirstPostDateStruct": {
+            "date": "2012-06-22",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2012-06-20",
+          "studyFirstSubmitQcDate": "2012-06-20"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "TORC1 inhibitor",
+              "interventionNames": [
+                "Drug: RTB101"
+              ],
+              "label": "10 mg daily RTB101",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "10 mg daily RTB101"
+              ],
+              "description": "Oral RTB101 10 mg hard gelatin capsule once daily for 4 weeks",
+              "name": "RTB101",
+              "otherNames": [
+                "Dactolisib",
+                "BEZ235"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Oral matching placebo once daily for 4 weeks",
+              "name": "Placebo",
+              "otherNames": [
+                "Placebo capsule"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 36,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Phase 2 Study to Determine if RTB101 Reduces the Severity of COVID-19 in Older Adults Residing in Nursing Homes",
+          "nctId": "NCT04409327",
+          "officialTitle": "Randomized Double Blind Placebo-Controlled Study to Determine if Prophylaxis With RTB101 Compared to Placebo Reduces Severity of Lab Confirmed COVID19 in Adults ≥65 Years in a Nursing Home in Which ≥1 Person(s) Have Lab Confirmed COVID19",
+          "orgStudyIdInfo": {
+            "id": "RTB101-210"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Restorbio Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "The percentage of subjects who develop laboratory-confirmed COVID-19: - with protocol-defined progressive symptoms OR - are hospitalized OR - die",
+              "timeFrame": "Through Week 4"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "The percentage of subjects who develop symptomatic laboratory-confirmed COVID-19 infection",
+              "timeFrame": "Through Week 4"
+            },
+            {
+              "measure": "Mortality rate in subjects who develop laboratory-confirmed COVID19",
+              "timeFrame": "Through Week 8"
+            },
+            {
+              "measure": "Percent of subjects who are hospitalized due to having one or more predefined COVID-19 symptoms and laboratory-confirmed SARS-CoV-2",
+              "timeFrame": "Through Week 4"
+            },
+            {
+              "measure": "Percent of subjects who require mechanical ventilation, noninvasive ventilation, high flow nasal canula oxygen delivery or ICU admission during the hospitalization for COVID19",
+              "timeFrame": "Through Week 8"
+            },
+            {
+              "measure": "Safety and tolerability will be assessed by report of AE/SAEs",
+              "timeFrame": "Through Week 5 and 8"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-01-24",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-02-10",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-02-05",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-12-27",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2020-07-11",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-02",
+          "studyFirstPostDateStruct": {
+            "date": "2020-06-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-05-28",
+          "studyFirstSubmitQcDate": "2020-05-28",
+          "whyStopped": "Insufficient accrual rate"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients receive TORC1/2 inhibitor INK128 PO QD on days 1-28 and bevacizumab IV on days 1 and 15. Courses repeat every 28 days in the absence of disease progression or unacceptable toxicity.",
+              "interventionNames": [
+                "Biological: Bevacizumab",
+                "Other: Laboratory Biomarker Analysis",
+                "Other: Pharmacological Study",
+                "Drug: Sapanisertib"
+              ],
+              "label": "Treatment (TORC1/2 inhibitor INK128, bevacizumab)",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Treatment (TORC1/2 inhibitor INK128, bevacizumab)"
+              ],
+              "description": "Given IV",
+              "name": "Bevacizumab",
+              "otherNames": [
+                "ABP 215",
+                "ABP-215",
+                "ABP215",
+                "Alymsys",
+                "Anti-VEGF",
+                "Anti-VEGF Humanized Monoclonal Antibody",
+                "Anti-VEGF Monoclonal Antibody SIBP04",
+                "Anti-VEGF rhuMAb",
+                "Avastin",
+                "Avegra",
+                "Avzivi",
+                "Aybintio",
+                "BAT 1706",
+                "BAT-1706",
+                "BAT1706",
+                "BAT1706 Biosimilar",
+                "Bevacizumab awwb",
+                "Bevacizumab Biosimilar ABP 215",
+                "Bevacizumab Biosimilar BAT1706",
+                "Bevacizumab Biosimilar BEVZ92",
+                "Bevacizumab Biosimilar BI 695502",
+                "Bevacizumab Biosimilar CBT 124",
+                "Bevacizumab Biosimilar CT-P16",
+                "Bevacizumab Biosimilar FKB238",
+                "Bevacizumab Biosimilar GB-222",
+                "Bevacizumab Biosimilar HD204",
+                "Bevacizumab Biosimilar HLX04",
+                "Bevacizumab Biosimilar IBI305",
+                "Bevacizumab Biosimilar LY01008",
+                "Bevacizumab Biosimilar MB02",
+                "Bevacizumab Biosimilar MIL60",
+                "Bevacizumab Biosimilar Mvasi",
+                "Bevacizumab Biosimilar MYL-1402O",
+                "Bevacizumab Biosimilar QL 1101",
+                "Bevacizumab Biosimilar QL1101",
+                "Bevacizumab Biosimilar RPH-001",
+                "Bevacizumab Biosimilar SCT501",
+                "Bevacizumab Biosimilar Zirabev",
+                "Bevacizumab-adcd",
+                "Bevacizumab-aveg",
+                "Bevacizumab-awwb",
+                "Bevacizumab-aybi",
+                "Bevacizumab-bvzr",
+                "Bevacizumab-byva",
+                "Bevacizumab-equi",
+                "Bevacizumab-maly",
+                "Bevacizumab-nwgd",
+                "Bevacizumab-onbe",
+                "Bevacizumab-tnjn",
+                "BP102",
+                "BP102 Biosimilar",
+                "Byvasda",
+                "CT P16",
+                "CT-P16",
+                "CTP16",
+                "Equidacent",
+                "FKB 238",
+                "FKB-238",
+                "FKB238",
+                "HD204",
+                "IBI 305",
+                "IBI-305",
+                "IBI305",
+                "Immunoglobulin G1 (Human-Mouse Monoclonal rhuMab-VEGF Gamma-Chain Anti-Human Vascular Endothelial Growth Factor), Disulfide With Human-Mouse Monoclonal rhuMab-VEGF Light Chain, Dimer",
+                "Jobevne",
+                "MB 02",
+                "MB-02",
+                "MB02",
+                "Mvasi",
+                "MYL-1402O",
+                "Onbevzi",
+                "Oyavas",
+                "PF 06439535",
+                "PF-06439535",
+                "PF06439535",
+                "QL1101",
+                "Recombinant Humanized Anti-VEGF Monoclonal Antibody",
+                "rhuMab-VEGF",
+                "SCT501",
+                "SIBP 04",
+                "SIBP-04",
+                "SIBP04",
+                "Vegzelma",
+                "Zirabev"
+              ],
+              "type": "BIOLOGICAL"
+            },
+            {
+              "armGroupLabels": [
+                "Treatment (TORC1/2 inhibitor INK128, bevacizumab)"
+              ],
+              "description": "Correlative studies",
+              "name": "Laboratory Biomarker Analysis",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Treatment (TORC1/2 inhibitor INK128, bevacizumab)"
+              ],
+              "description": "Correlative studies",
+              "name": "Pharmacological Study",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Treatment (TORC1/2 inhibitor INK128, bevacizumab)"
+              ],
+              "description": "Given PO",
+              "name": "Sapanisertib",
+              "otherNames": [
+                "INK-128",
+                "INK128",
+                "MLN-0128",
+                "MLN0128",
+                "TAK-228"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SINGLE_GROUP",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 50,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "TORC1/2 Inhibitor MLN0128 and Bevacizumab in Treating Patients With Recurrent Glioblastoma or Advanced Solid Tumors",
+          "nctId": "NCT02142803",
+          "officialTitle": "A Phase 1 Study of MLN0128 and Bevacizumab in Patients With Recurrent Glioblastoma and Other Solid Tumors",
+          "orgStudyIdInfo": {
+            "id": "NCI-2014-01118"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Cancer Institute (NCI)"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "CTRP (Clinical Trial Reporting Program)",
+              "id": "NCI-2014-01118",
+              "type": "REGISTRY"
+            },
+            {
+              "id": "14-079"
+            },
+            {
+              "domain": "Dana-Farber Cancer Institute",
+              "id": "9552",
+              "type": "OTHER"
+            },
+            {
+              "domain": "CTEP",
+              "id": "9552",
+              "type": "OTHER"
+            },
+            {
+              "id": "P30CA006516",
+              "link": "https://reporter.nih.gov/quickSearch/P30CA006516",
+              "type": "NIH"
+            },
+            {
+              "id": "U01CA062490",
+              "link": "https://reporter.nih.gov/quickSearch/U01CA062490",
+              "type": "NIH"
+            },
+            {
+              "id": "U01CA076576",
+              "link": "https://reporter.nih.gov/quickSearch/U01CA076576",
+              "type": "NIH"
+            },
+            {
+              "id": "UM1CA186709",
+              "link": "https://reporter.nih.gov/quickSearch/UM1CA186709",
+              "type": "NIH"
+            },
+            {
+              "id": "UM1CA186712",
+              "link": "https://reporter.nih.gov/quickSearch/UM1CA186712",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Plasma and CSF PK levels of TORC1/2 inhibitor MLN0128 obtained before and after bevacizumab administration will be evaluated and summarized. The ration of plasma to CSF PK levels will also be summarized.",
+              "measure": "Cerebrospinal Fluid (CSF) Penetration of TORC1/2 Inhibitor MLN0128, Evaluated Using Plasma and CSF Pharmacokinetic (PK) Parameters of MLN0128",
+              "timeFrame": "2-3 hours post-dose day 15 of course 1 and day 1 of course 2"
+            },
+            {
+              "description": "The biomarkers predicting response to mechanistic target of rapamycin (mTOR) inhibitor activity will be resulted by dose level and response status.",
+              "measure": "Markers Associated With Dysregulated Cell Signaling",
+              "timeFrame": "Baseline"
+            },
+            {
+              "measure": "Change in Phosphorylated Proteins Within Tumor Biopsies From Patients With Ovarian and Endometrial Cancers",
+              "timeFrame": "Baseline to within 7 days after last study drug or within 7 days after decision to end treatment"
+            },
+            {
+              "measure": "Change in Circulating Plasma Levels of Angiogenic Growth Factors in Patients With Ovarian and Endometrial Cancers",
+              "timeFrame": "Baseline to day 1 of last course of treatment"
+            },
+            {
+              "measure": "Mutation Analysis of Tissue From Biopsies of Patients With Ovarian and Endometrial Cancers",
+              "timeFrame": "Baseline"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Maximum Tolerated Dose (MTD) and Recommended Phase 2 Dose (R2PD) of TORC1/2 inhibitor MLN0128, determined according to incidence of dose-limiting toxicity, as graded using the National Cancer Institute (NCI) CTCAE version 4.0",
+              "measure": "Maximum Tolerated Dose (MTD) and Recommended Phase 2 Dose (R2PD) of Daily Oral MLN0128 When Administered With Bevacizumab",
+              "timeFrame": "28 days"
+            },
+            {
+              "description": "Most common related toxicities that led to dose hold/reductions (AEs graded according to NCI CTCAE version 4.0). Safety assessed through summaries of adverse events, changes in selected laboratory test results, changes in vital signs, and TORC1/2 inhibitor MLN0128 and bevacizumab exposure.",
+              "measure": "Most Common Related Toxicities That Led to Dose Hold/Reductions",
+              "timeFrame": "Up to 2 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Progression is defined as follows:\n\n1. Non-GBM Solid Tumors (Endometrial \\& Ovarian Cancers) - using Response Evaluation Criteria In Solid Tumors Criteria (RECIST) guideline (v.1.1):\n\n   * Target Lesions: \\>/= 20% increase in the sum of the longest diameters of target lesions. The sum must also demonstrate an absolute increase of at least 5 mm. The appearance of one or more new lesions is also considered progression.\n   * Non-Target Lesions: The appearance of one or more new lesions and/or unequivocal progression of existing non-target lesions.\n2. GBM - Using the Response Assessment in Neuro-Oncology (RANO) criteria, any of the criteria below qualify for progression:\n\n   * \\>/= 25% increase in sum of the products of perpendicular diameters of enhancing lesions on stable/increasing dose of corticosteroids\n\n     * Significant increase in T2/FLAIR non-enhancing lesion on stable/increasing dose of corticosteroids\n     * Any new lesion\n     * Clear clinical deterioration not attributable to other cause",
+              "measure": "Progression-free Survival (PFS)",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Objective Response Rate (ORR), defined as a Complete Response (CR) or Partial Response (PR) utilizing:\n\n1. RECIST criteria v.1.1 (Endometrial \\& Ovarian Cancers):\n\n   * CR: Disappearance of all target \\& non-target lesions (+ normalization of tumor marker level)\n   * PR: \\>/= 30% decrease in sum of the longest diameters of target lesions (from baseline) \\& no new lesions\n2. RANO criteria (GBM patients):\n\n   * CR:\n\n     * Disappearance of all enhancing measurable \\& non-measurable disease (sustained \\>/= 4 wks)\n     * No new lesions\n     * No steroids (physiologic replacement doses only)\n     * Stable or improved non-enhancing lesions\n     * Clinically stable or improved\n   * PR:\n\n     * \\>/= 50% decrease compared to baseline in the sum of products of perpendicular diameters of all measurable enhancing lesions (sustained \\>/= 4 wks)\n     * No progression of non-measurable disease\n     * No new lesions\n     * Steroid \\</= dose at time of baseline scan\n     * Stable or improved non-enhancing lesions\n     * Clinically stable or improved",
+              "measure": "Objective Response Rate (ORR)",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Overall Survival (OS) listed for all patients by dose level.",
+              "measure": "Overall Survival (OS)",
+              "timeFrame": "Up to 4 years"
+            },
+            {
+              "description": "Number of Participants with Toxicities Leading to Missed Doses or Delays",
+              "measure": "Number of Participants With Toxicities Leading to Missed Doses or Delays",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Number of patients who had to have their MLN0128 dose reduced while on study.",
+              "measure": "Number of Participants Who Had an MLN0128 Dose-Reduction On Study",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Number of patients that discontinue study drugs due to treatment related toxicity; percentage will be summarized.",
+              "measure": "Number of Patients That Discontinue Study Drugs Due to Treatment Related Toxicity",
+              "timeFrame": "Up to 2 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2026-10-16",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-08-28",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-08-27",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2020-12-31",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2023-10-04",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2022-11-21",
+          "resultsFirstSubmitQcDate": "2023-09-11",
+          "startDateStruct": {
+            "date": "2014-05-20",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-08",
+          "studyFirstPostDateStruct": {
+            "date": "2014-05-20",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-05-16",
+          "studyFirstSubmitQcDate": "2014-05-16"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "interventionNames": [
+                "Drug: Dactolisib"
+              ],
+              "label": "Dactolisib 10mg once daily",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "interventionNames": [
+                "Other: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Dactolisib 10mg once daily"
+              ],
+              "description": "TORC1 inhibitor",
+              "name": "Dactolisib",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo",
+              "name": "Placebo",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "TRIPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 1024,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Phase 3 Study to Determine if RTB101 Prevents Clinically Symptomatic Respiratory Illness in the Elderly",
+          "nctId": "NCT04668352",
+          "officialTitle": "A Phase 3 Study to Determine if RTB101 Prevents Clinically Symptomatic Respiratory Illness in the Elderly",
+          "orgStudyIdInfo": {
+            "id": "RTB-101-204"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Restorbio Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "To determine if RTB101 as compared to placebo decreases the percentage of subjects with clinically symptomatic respiratory illness (with or without an associated laboratory-confirmed pathogen) through Week 16",
+              "measure": "Percentage of Subjects With Clinically Symptomatic Respiratory Illness",
+              "timeFrame": "Week 0-16"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-12-02",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-06-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-05-31",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-12-02",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2021-06-23",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2021-05-31",
+          "resultsFirstSubmitQcDate": "2021-05-31",
+          "startDateStruct": {
+            "date": "2019-04-15",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-05",
+          "studyFirstPostDateStruct": {
+            "date": "2020-12-16",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-12-08",
+          "studyFirstSubmitQcDate": "2020-12-08"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Oral RTB101 10 mg hard gelatin capsule once daily for 16 weeks",
+              "interventionNames": [
+                "Drug: Dactolisib"
+              ],
+              "label": "10 mg daily RTB101",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Oral matching placebo once daily for 16 weeks",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "10 mg daily RTB101"
+              ],
+              "description": "TORC1 inhibitor",
+              "name": "Dactolisib",
+              "otherNames": [
+                "RTB101",
+                "BEZ235"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Placebo capsule",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 0,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Effect of RTB101 on Illness Associated With Respiratory Tract Infections in the Elderly",
+          "nctId": "NCT04139915",
+          "officialTitle": "A Multicenter, Randomized, Double Blind, Placebo-Controlled, Phase 3 Study to Determine if RTB101 Prevents Clinically Symptomatic Respiratory Illness in the Elderly",
+          "orgStudyIdInfo": {
+            "id": "RTB-101-205"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Restorbio Inc."
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Percentage of subjects with clinically symptomatic respiratory illness",
+              "timeFrame": "Through Week 16"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Percentage of subjects with clinically symptomatic respiratory illness associated with ≥1 laboratory-confirmed pathogen(s)",
+              "timeFrame": "Through Week 16"
+            },
+            {
+              "measure": "Rate of clinically symptomatic respiratory illness (with or without an associated laboratory-confirmed pathogen)",
+              "timeFrame": "Through Week 16"
+            },
+            {
+              "measure": "Rate of clinically symptomatic respiratory illnesses associated with ≥1 laboratory-confirmed pathogen(s)",
+              "timeFrame": "Through Week 16"
+            },
+            {
+              "measure": "Time to alleviation of moderate and severe respiratory illness symptoms due to clinically symptomatic respiratory illness",
+              "timeFrame": "Through Week 16"
+            },
+            {
+              "measure": "Percentage of subjects with severe respiratory illness symptoms due to clinically symptomatic respiratory illnesses",
+              "timeFrame": "Through Week 16"
+            },
+            {
+              "measure": "Number of participants with treatment-emergent adverse events as assessed by CTCAE v5.0",
+              "timeFrame": "Through Week 20"
+            },
+            {
+              "description": "Descriptive statistics will be provided for the rate of clinically symptomatic respiratory illnesses associated with specific laboratory-confirmed viruses. No formal statistical tests will be conducted.",
+              "measure": "Rate of clinically symptomatic respiratory illnesses associated with specific laboratory-confirmed viruses",
+              "timeFrame": "Through Week 16"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-11-15",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2019-11-22",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2019-11-20",
+          "overallStatus": "WITHDRAWN",
+          "primaryCompletionDateStruct": {
+            "date": "2019-11-15",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2019-10-21",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2019-11",
+          "studyFirstPostDateStruct": {
+            "date": "2019-10-25",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2019-10-17",
+          "studyFirstSubmitQcDate": "2019-10-23",
+          "whyStopped": "Phase 3 trial RTB-101-204 study did not meet its primary endpoint"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "MLN0128 2 mg, 4 mg, 6 mg or 7 mg, capsule, orally, once daily (QD) in 28-day cycle in the Dose Escalation Phase until Maximum Tolerated Dose (MTD) was established (Up to 52.1 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 QD",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 7 mg, 10 mg, 15 mg, 20 mg, 30 mg or 40 mg capsule, orally, once weekly (QW) in 28-day cycle in the Dose Escalation Phase until Maximum Tolerated Dose (MTD) was established (Up to 139.4 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 QW",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 6 mg, 9 mg, 12 mg, 16 mg or 20 mg capsule, orally, once daily every 3 days a week (QDx3d QW) in 28-day cycle in the Dose Escalation Phase until Maximum Tolerated Dose (MTD) was established (Up to 129.4 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 QDx3d QW",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 7 mg, 10 mg or 13 mg capsule, orally, once daily every 5 days a week (QDx5d QW) in 28-day cycle in the Dose Escalation Phase until Maximum Tolerated Dose (MTD) was established (Up to 161.9 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 QDx5d QW",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 5 mg, capsule, orally, QD in 28-day cycle until disease progression or unacceptable toxicity in the Dose Expansion Phase (Up to 98.3 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 5 mg QD",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 30 mg, capsule, orally QW in 28-day cycle until disease progression or unacceptable toxicity in the Dose Expansion Phase (Up to 240 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 30 mg QW",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "MLN0128 40 mg, capsule, orally, QW in 28-day cycle until disease progression or unacceptable toxicity in the Dose Expansion Phase (Up to 100.1 weeks).",
+              "interventionNames": [
+                "Drug: MLN0128"
+              ],
+              "label": "MLN0128 40 mg QW",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "MLN0128 30 mg QW",
+                "MLN0128 40 mg QW",
+                "MLN0128 5 mg QD",
+                "MLN0128 QD",
+                "MLN0128 QDx3d QW",
+                "MLN0128 QDx5d QW",
+                "MLN0128 QW"
+              ],
+              "description": "MLN0128 capsules",
+              "name": "MLN0128",
+              "otherNames": [
+                "INK128",
+                "TAK-128"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "SEQUENTIAL",
+            "interventionModelDescription": "The Escalation Phase was sequential and the Expansion Phase was parallel.",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 198,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Dose Escalation Study of MLN0128 in Participants With Advanced Malignancies",
+          "nctId": "NCT01058707",
+          "officialTitle": "A Phase I, Open Label, Dose Escalation Study of Oral Administration of Single Agent INK128 in Subjects With Advanced Malignancies Followed by an Expansion in Subjects With Measurable Disease",
+          "orgStudyIdInfo": {
+            "id": "INK128-001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Takeda"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2009-017284-42",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "World Health Organization",
+              "id": "U1111-1187-4258",
+              "type": "OTHER"
+            },
+            {
+              "id": "2009",
+              "link": "https://reporter.nih.gov/quickSearch/2009",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "MTD was defined as the highest dose level of MLN0128 at which no more than 1 out of 6 evaluable participants experienced a DLT during the first cycle (28 days) of therapy.",
+              "measure": "Dose Escalation Phase: Maximum Tolerated Dose (MTD)",
+              "timeFrame": "Cycle 1 (28 Days)"
+            },
+            {
+              "description": "DLTs were defined as MLN0128-related treatment-emergent adverse events (TEAEs) that occurred within the Cycle 1 (first 28 days of treatment) as per Common Terminology Criteria for Adverse Events (CTCAE): Any ≥Grade 3 or non-hematologic toxicity except for Grade 3 nausea and/or vomiting and diarrhea, Grade 3 hyperglycemia lasting ≤ 14 days, Grade 3 rash lasting ≤ 3 days; Grade 4 neutropenia lasting \\>7 days in the absence of growth factor support; Grade 4 neutropenia of any duration associated with fever ≥38.5 degree celsius and/or systemic infection; Any other Grade 4 hematologic toxicity; Inability to administer at least 75% of planned doses of MLN0128 within Cycle 1 due to drug-related toxicity and any clinically significant occurrence that the investigators and sponsor agreed would place participants at an undue safety risk.",
+              "measure": "Dose Escalation Phase: Number of Participants With Dose Limiting Toxicities (DLTs)",
+              "timeFrame": "Cycle 1 (28 days)"
+            },
+            {
+              "description": "An Adverse Event (AE) is defined as any untoward medical occurrence in a clinical investigation participant administered a drug; it does not necessarily have to have a causal relationship with this treatment. A treatment-emergent adverse event (TEAE) is defined as an adverse event with an onset that occurs after receiving study drug. A serious adverse event is any experience that suggests a significant hazard, contraindication, side effect or precaution that: results in death, is life-threatening, required in-patient hospitalization or prolongation of existing hospitalization, results in persistent or significant disability/incapacity, is a congenital anomaly/birth defect or is medically significant.",
+              "measure": "Number of Participants Experiencing One or More Treatment-Emergent Adverse Events (AEs), Serious Adverse Events (SAEs), AEs Resulting in Discontinuation of MLN0128 and Fatal AEs Within 30 Days of Last Dose of Study Drug",
+              "timeFrame": "First dose of study drug through 30 days after the administration of the last dose of study drug (Up to approximately 244 weeks)"
+            },
+            {
+              "description": "ORR is defined as the percentage of participants who achieved complete response (CR) or partial response (PR based on Response Evaluation Criteria in Solid Tumors (RECIST) 1.1. CR is defined as disappearance of all target lesions and PR was defined of at least a 30% decrease in the sum of the longest diameter (LD) of target lesions, taking as reference the baseline sum LD and for non-target lesions. Data was categorized as per type of cancer.",
+              "measure": "Dose Expansion: Objective Response Rate (ORR)",
+              "timeFrame": "From the first dose of study drug up to disease progression or death (Up to approximately 240 weeks)"
+            },
+            {
+              "description": "Duration of objective response is defined as the number of months from the start date of CR or PR (whichever occurred first) based on RECIST Criteria version 1.1 to the first date of objectively documented progressive disease (PD) for participants who achieved CR or PR. PD is defined as at least a 20% increase in the sum of diameters of target lesions, taking as reference the smallest sum on study (this includes the baseline sum if that is the smallest on study).",
+              "measure": "Dose Expansion Phase: Duration of Objective Response",
+              "timeFrame": "From the first dose of study drug up to disease progression or death (Up to approximately 240 weeks)"
+            },
+            {
+              "description": "Duration of SD was evaluated for participants with best response of SD and is defined as number of months from date of first dose to date of PD. As per RECIST 1.1, SD is defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD, taking as reference the smallest sum diameters while on study. PR was defined of at least a 30% decrease in sum of longest diameter (LD) of target lesions, taking as reference the baseline sum LD and for non-target lesions. PD is defined as at least a 20% increase in sum of diameters of target lesions, taking as reference smallest sum on study (this includes baseline sum if that is smallest on study).",
+              "measure": "Dose Expansion: Duration of Stable Disease (SD)",
+              "timeFrame": "From the first dose of study drug up to disease progression or death (Up to approximately 240 weeks)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Cmax: Maximum Observed Plasma Concentration for MLN0128",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "Ctrough: Observed Concentration at the End of a Dosing Interval",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "Terminal Phase Elimination Half-life (T1/2) for MLN0128",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "AUC∞: Area Under the Plasma Concentration-time Curve From Time 0 to Infinity for MLN0128",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "AUClast: Area Under the Plasma Concentration-time Curve From Time 0 to the Time of the Last Quantifiable Concentration for MLN0128",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "Tmax: Time to Maximum Observed Plasma Concentration for MLN0128",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "measure": "Percentage Area Under Plasma Concentration Time Curve Extrapolated",
+              "timeFrame": "Pre-dose and multiple time-points up to 8 hours post-dose on Day 1 of Cycles 1 and 2"
+            },
+            {
+              "description": "P4EBP, PAKT and PS6 were assayed in skin biopsies. A negative percentage change from Baseline indicates improvement.",
+              "measure": "Percentage Change From Baseline in Eukaryotic Initiation Factor 4E-binding Protein 1 (P4EBP1), Serine/Threonine Protein Kinase B (PAKT) and Ribosomal Protein S6 (PS6)",
+              "timeFrame": "Baseline, Cycle 1 Week 2"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-02-07",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2020-04-01",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2020-03-18",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-02-07",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-04-01",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-02-04",
+          "resultsFirstSubmitQcDate": "2020-03-18",
+          "startDateStruct": {
+            "date": "2010-01-04",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2020-03",
+          "studyFirstPostDateStruct": {
+            "date": "2010-01-29",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2010-01-27",
+          "studyFirstSubmitQcDate": "2010-01-27"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "RTB101\n\nTORC1 inhibitor",
+              "interventionNames": [
+                "Drug: RTB101"
+              ],
+              "label": "10 mg daily RTB101",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "10 mg daily RTB101"
+              ],
+              "description": "Oral RTB101 10 mg hard gelatin capsule once daily for 2 weeks",
+              "name": "RTB101",
+              "otherNames": [
+                "Dactolisib",
+                "BEZ235"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo"
+              ],
+              "description": "Oral matching placebo once daily for 2 weeks",
+              "name": "Placebo",
+              "otherNames": [
+                "Placebo capsule"
+              ],
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "QUADRUPLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "CARE_PROVIDER",
+                "INVESTIGATOR",
+                "OUTCOMES_ASSESSOR"
+              ]
+            },
+            "primaryPurpose": "PREVENTION"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Phase 2 Study of RTB101 as COVID-19 Post-Exposure Prophylaxis in Older Adults",
+          "nctId": "NCT04584710",
+          "officialTitle": "A Randomized, Double-Blind, Placebo-Controlled Phase 2a Study of RTB101 as COVID-19 Post-Exposure Prophylaxis in Adults Age ≥65 Years",
+          "orgStudyIdInfo": {
+            "id": "RTB101-211"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Restorbio Inc."
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "3R01AG064802-02S1",
+              "link": "https://reporter.nih.gov/quickSearch/3R01AG064802-02S1",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "The number of days from the date of receipt of a positive SARS-CoV-2 swab test result to the date of first dose of study drug in asymptomatic subjects who:\n\n* have SARS-CoV-2 detected on a surveillance nasal or nasopharyngeal swab OR\n* live in the same house or apartment as someone who has laboratory-confirmed symptomatic COVID-19",
+              "measure": "To determine the length of time from date of receipt of a positive SARS-CoV2 test result to date of first dose of study drug in asymptomatic adults age ≥ 65 years",
+              "timeFrame": "Beginning of randomization through Week 2"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Study drug compliance determined from the number of capsules of study drug taken by the subject based on data reported in an eDiary",
+              "measure": "To determine the feasibility of using an eDiary to assess study drug compliance in the study drug population",
+              "timeFrame": "Beginning of randomization through Week 2"
+            },
+            {
+              "description": "Study drug compliance determined from the number of capsules of study drug taken by the subject based on data from twice weekly phone calls",
+              "measure": "To determine the feasibility of using an eDiary to assess study drug compliance in the study drug population",
+              "timeFrame": "Beginning of randomization through Week 2"
+            },
+            {
+              "description": "Study drug compliance determined from the number of capsules of study drug taken by the subject based on a pill count done by phone when subjects complete study drug treatment",
+              "measure": "To determine the feasibility of using an eDiary to assess study drug compliance in the study drug population",
+              "timeFrame": "Beginning of randomization through Week 2"
+            },
+            {
+              "description": "Incidence and severity of COVID-19 symptoms based on data reported in an eDiary",
+              "measure": "To determine the feasibility of using an eDiary to assess COVID-19 symptoms in the study population",
+              "timeFrame": "From time of first dose through Week 3"
+            },
+            {
+              "description": "Incidence and severity of COVID-19 symptoms based on data from twice weekly phone calls",
+              "measure": "To determine the feasibility of using an eDiary to assess COVID-19 symptoms in the study population",
+              "timeFrame": "From time of first dose through Week 3"
+            },
+            {
+              "description": "Safety and tolerability will be assessed by report of AE/SAEs from first dose of study drug through Week 3",
+              "measure": "To assess the incidence of treatment-emergent of AEs and SAEs in subjects assigned to RTB101 as compared to placebo",
+              "timeFrame": "From time of first dose through Week 3"
+            },
+            {
+              "description": "The percentage of subjects who have SARS-CoV-2 detected on nasal or nasopharyngeal swab and who develop 2 or more concurrent symptoms of COVID-19 from first dose of study drug through Day 14",
+              "measure": "To determine the percentage of subjects treated with RTB101 as compared to placebo who develop symptomatic laboratory-confirmed COVID-19 from first dose through Day 14",
+              "timeFrame": "From time of first dose through Week 2"
+            },
+            {
+              "description": "The percentage of subjects who die from any cause from first dose of study drug through Day 14 and 21",
+              "measure": "To determine the percentage of subjects treated with RTB101 as compared to placebo who die from any cause from first dose of study drug through Day 14 and 21",
+              "timeFrame": "From time of first dose through Week 3"
+            },
+            {
+              "description": "The percentage of subjects who develop laboratory-confirmed COVID-19 from first dose of study drug through Day 14 and are subsequently hospitalized for any reason through Day 21",
+              "measure": "To determine the percentage of subjects treated with RTB101 as compared to placebo who develop laboratory-confirmed COVID-19 from first dose through Day 14 and are subsequently hospitalized for any reason through Day 21",
+              "timeFrame": "From time of first dose through Week 3"
+            },
+            {
+              "description": "The percentage of subjects who have SARS-CoV-2 detected on nasal or nasopharyngeal swab regardless of symptoms from first dose of study drug through Day 7, 14, and 21 among subjects who are not SARS-CoV-2 positive at screening or baseline",
+              "measure": "To determine the percent of subjects treated with RTB101 or placebo who have laboratory-confirmed SARS-CoV-2 infection regardless of symptoms from first dose of study drug through Days 7, 14, 21.",
+              "timeFrame": "From time of first dose through Week 3"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2021-02",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2021-02-09",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-02-05",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2021-02",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2020-10-13",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-02",
+          "studyFirstPostDateStruct": {
+            "date": "2020-10-14",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-10-08",
+          "studyFirstSubmitQcDate": "2020-10-09"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Sapanisertib 5 mg, unmilled active pharmaceutical ingredient (API) capsule, once daily in a 28-day cycle plus exemestane 25 mg, tablets, once daily in a 28-day cycle (Up to 12 cycles).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Exemestane"
+              ],
+              "label": "Phase 1 (Part 1): Sapanisertib 5 mg + Exemestane",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 5 mg, unmilled API capsule, once daily in a 28-day cycle plus fulvestrant 500 mg, injection, intramuscularly (IM), once on Day 1 of each cycle (Up to 57 cycles).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Fulvestrant"
+              ],
+              "label": "Phase 1 (Part 1): Sapanisertib 5 mg + Fulvestrant",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 3 mg, milled API capsule, once daily in a 28-day cycle plus exemestane 25 mg, tablets, once daily in a 28-day cycle (Up to 8 cycles).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Exemestane"
+              ],
+              "label": "Phase 1 (Part 2): Sapanisertib 3 mg + Exemestane",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 3 mg, milled API capsule, once daily in a 28-day cycle up to 14 cycles plus fulvestrant 500 mg, injection, IM, once on Day 1 of each cycle (Up to 14 cycles).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Fulvestrant"
+              ],
+              "label": "Phase 1 (Part 2): Sapanisertib 3 mg + Fulvestrant",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, milled API capsule, once daily, in a 28-day cycle plus exemestane 25 mg, tablets, once daily in a 28-day cycle (Up to 18 cycles).",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Exemestane"
+              ],
+              "label": "Phase 1 (Part 2): Sapanisertib 4 mg + Exemestane",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, milled API capsule once daily in a 28-day cycle plus exemestane 25 mg, tablets, once daily in a 28-day cycle (Up to 14 cycles) in everolimus sensitive participants.",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Exemestane"
+              ],
+              "label": "Phase 2: Sapanisertib 4 mg + Exemestane (Everolimus Sensitive)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, milled API capsule once daily in a 28-day cycle plus fulvestrant 500 mg, injection IM, once on Day 1 of each cycle (Up to 17 cycles) in everolimus sensitive participants.",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Fulvestrant"
+              ],
+              "label": "Phase 2:Sapanisertib 4 mg+Fulvestrant (Everolimus Sensitive)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, milled API capsule, once daily, in a 28-day cycle plus once daily in a 28-day cycle (Up to 12 cycles) in everolimus resistant participants.",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Exemestane"
+              ],
+              "label": "Phase 2: Sapanisertib 4 mg+Exemestane (Everolimus Resistant)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Sapanisertib 4 mg, milled API capsule, once daily in a 28-day cycle plus fulvestrant 500 mg, injection IM, once on Day 1 of each cycle (Up to 9 cycles) in everolimus resistant participants.",
+              "interventionNames": [
+                "Drug: Sapanisertib",
+                "Drug: Fulvestrant"
+              ],
+              "label": "Phase 2: Sapanisertib 4 mg+Fulvestrant (Everolimus Resistant)",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Phase 1 (Part 1): Sapanisertib 5 mg + Exemestane",
+                "Phase 1 (Part 1): Sapanisertib 5 mg + Fulvestrant",
+                "Phase 1 (Part 2): Sapanisertib 3 mg + Exemestane",
+                "Phase 1 (Part 2): Sapanisertib 3 mg + Fulvestrant",
+                "Phase 1 (Part 2): Sapanisertib 4 mg + Exemestane",
+                "Phase 2: Sapanisertib 4 mg + Exemestane (Everolimus Sensitive)",
+                "Phase 2: Sapanisertib 4 mg+Exemestane (Everolimus Resistant)",
+                "Phase 2: Sapanisertib 4 mg+Fulvestrant (Everolimus Resistant)",
+                "Phase 2:Sapanisertib 4 mg+Fulvestrant (Everolimus Sensitive)"
+              ],
+              "description": "Sapnisertib capsules",
+              "name": "Sapanisertib",
+              "otherNames": [
+                "MLN0128"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Phase 1 (Part 1): Sapanisertib 5 mg + Fulvestrant",
+                "Phase 1 (Part 2): Sapanisertib 3 mg + Fulvestrant",
+                "Phase 2: Sapanisertib 4 mg+Fulvestrant (Everolimus Resistant)",
+                "Phase 2:Sapanisertib 4 mg+Fulvestrant (Everolimus Sensitive)"
+              ],
+              "description": "Fulvestrant IM injection.",
+              "name": "Fulvestrant",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Phase 1 (Part 1): Sapanisertib 5 mg + Exemestane",
+                "Phase 1 (Part 2): Sapanisertib 3 mg + Exemestane",
+                "Phase 1 (Part 2): Sapanisertib 4 mg + Exemestane",
+                "Phase 2: Sapanisertib 4 mg + Exemestane (Everolimus Sensitive)",
+                "Phase 2: Sapanisertib 4 mg+Exemestane (Everolimus Resistant)"
+              ],
+              "description": "Exemestane tablets.",
+              "name": "Exemestane",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 118,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Safety and Efficacy Study of Sapanisertib in Combination With Exemestane or Fulvestrant in Postmenopausal Women With Estrogen Receptor Positive/Human Epidermal Growth Factor Receptor 2 Negative (ER+/HER2-) Metastatic Breast Cancer",
+          "nctId": "NCT02049957",
+          "officialTitle": "A Phase 1b/2 Study of Safety and Efficacy of MLN0128 (Dual TORC1/2 Inhibitor) in Combination With Exemestane or Fulvestrant Therapy in Postmenopausal Women With ER+/HER2- Advanced or Metastatic Breast Cancer That Has Progressed on Treatment With Everolimus in Combination With Exemestane or Fulvestrant",
+          "orgStudyIdInfo": {
+            "id": "C31001"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Calithera Biosciences, Inc"
+          },
+          "secondaryIdInfos": [
+            {
+              "id": "2014-001921-34",
+              "type": "EUDRACT_NUMBER"
+            },
+            {
+              "domain": "WHO",
+              "id": "U1111-1195-3894",
+              "type": "REGISTRY"
+            },
+            {
+              "id": "2014",
+              "link": "https://reporter.nih.gov/quickSearch/2014",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "An AE is defined as any unfavorable and unintended sign (including an abnormal laboratory finding), symptom, or disease temporally associated with the use of a medicinal (investigational) product whether or not it is related to the medicinal product. This includes any newly occurring event, or a previous condition that has increased in severity or frequency since the administration of study drug.\n\nA SAE is any untoward medical occurrence that at any dose results in death, is life-threatening, requires inpatient hospitalization or prolongation of an existing hospitalization, results in persistent or significant disability or incapacity, is a congenital anomaly/birth defect or is a medically important event. Relationship of each AE to study drug will be determined by the Investigator.",
+              "measure": "Phase 1: Number of Participants With Adverse Events (AEs) and Serious Adverse Events (SAEs)",
+              "timeFrame": "First dose of study drug through 30 days after the last dose (Up to 52 months)"
+            },
+            {
+              "description": "CBR-16 was defined as the percentage of participants who achieved confirmed complete response (CR) or partial response (PR) of any duration or had confirmed stable disease (SD) as best response and the first 2 or more post baseline scans had PR/SD and the duration of SD was \\>112 days. Disease response was assessed for target lesions by computed tomography (CT) or magnetic resonance imaging (MRI) according to Response Evaluation Criteria in Solid Tumors (RECIST) version 1.1 guidelines. CR is disappearance of all target lesions. PR is \\>=30% decrease in the sum of the longest diameter of target lesions. SD is defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for disease progression (PD).",
+              "measure": "Phase 2: Clinical Benefit Rate at 16 Weeks (CBR-16)",
+              "timeFrame": "Week 16"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "CBR-24 was defined as the percentage of participants who achieved confirmed CR or PR at any time or had confirmed SD as best response and the first 2 or more post baseline scans had PR/SD and the duration of stable disease was \\>168 days. Disease response was assessed for target lesions by CT or MRI according to RECIST version 1.1 guidelines. CR is disappearance of all target lesions. PR is \\>=30% decrease in the sum of the longest diameter of target lesions. SD is defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for PD.",
+              "measure": "Phase 2: Clinical Benefit Rate at 24 Weeks (CBR-24)",
+              "timeFrame": "Week 24"
+            },
+            {
+              "description": "ORR is defined as the percentage of participants with confirmed CR or PR as per RECIST version1.1 guidelines. CR is disappearance of all target lesions. PR is \\>=30% decrease in the sum of the longest diameter of target lesions.",
+              "measure": "Phase 2: Overall Response Rate (ORR)",
+              "timeFrame": "Baseline then every 2 cycles from Cycles 2 through 6, and every 3 cycles thereafter in a 28-day cycle up to End of Treatment (EOT) (Up to 24 months)"
+            },
+            {
+              "description": "PFS is defined as the time in months from the date of first dose of study treatment to the date of the first documented disease progression or death. Disease progression was defined using Response Evaluation Criteria In Solid Tumors Criteria (RECIST v1.0) as at least a 20% increase in the sum of diameters of target lesions, taking as reference the smallest sum on study, including baseline; an absolute increase of at least 5 mm in the sum of diameters of target lesions; or the appearance of one or more new lesions.",
+              "measure": "Phase 2: Progression-Free Survival (PFS)",
+              "timeFrame": "Baseline then every 2 cycles from Cycles 2 through 6, and every 3 cycles thereafter in a 28-day cycle, then every 3 months after EOT until disease progression or death (Up to 24 months)"
+            },
+            {
+              "description": "OS is the time in months from start of study treatment to date of death due to any cause. Data for the analysis of OS included the censored data at the timepoint that the participant was last known to be alive.",
+              "measure": "Phase 2: Overall Survival (OS)",
+              "timeFrame": "Up to 24 months"
+            },
+            {
+              "measure": "Phase 2: Best Percent Change From Baseline in Tumor Size",
+              "timeFrame": "Baseline to Month 24"
+            },
+            {
+              "measure": "Phase1: Cmax: Maximum Observed Plasma Concentration for Sapanisertib",
+              "timeFrame": "Cycle 1 Day 15 and Cycle 2 Day 1 pre-dose and multiple timepoints (Up to 8 hours) post-dose"
+            },
+            {
+              "measure": "Phase 1: Tmax: Time to Reach the Maximum Plasma Concentration (Cmax) for Sapanisertib",
+              "timeFrame": "Cycle 1 Day 15 and Cycle 2 Day 1 pre-dose and multiple timepoints (Up to 8 hours) post-dose"
+            },
+            {
+              "description": "AUC(0-24) is the area under the plasma concentration-time curve of the samples collected up to 8 hours and extrapolated up to 24 hours.",
+              "measure": "Phase 1: AUC(0-24): Area Under the Plasma Concentration-time Curve From Time 0 to Time 24 Hours for Sapanisertib",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and multiple timepoints (Up to 8 hours) post-dose, extrapolated to 24 hours post-dose"
+            },
+            {
+              "description": "AUC(0-last) is the area under the plasma concentration-time curve of the samples collected up to 8 hours and extrapolated up to last time point.",
+              "measure": "Phase 1: AUC(0-last): Area Under the Plasma Concentration-time Curve From Time 0 to Last Extrapolated Concentration Over the Dosing Interval for Sapanisertib",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and multiple timepoints (Up to 8 hours) post-dose, extrapolated to last timepoint"
+            },
+            {
+              "measure": "Phase 1: Terminal Elimination Half-life (T1/2) for Sapanisertib",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and multiple timepoints (Up to 8 hours) post-dose"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2018-06-29",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-02-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-02-06",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2018-06-29",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-01-27",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2019-06-28",
+          "resultsFirstSubmitQcDate": "2020-01-14",
+          "startDateStruct": {
+            "date": "2014-02-13",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-02",
+          "studyFirstPostDateStruct": {
+            "date": "2014-01-30",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2013-12-12",
+          "studyFirstSubmitQcDate": "2014-01-28"
+        }
+      }
+    },
+    {
+      "hasResults": true,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "TAK-228, milled capsule, orally, once daily, on an empty stomach in a 28-day treatment cycle for up to 12 months or until disease progression or unacceptable toxicity or withdrawal of consent with a starting dose of 2 milligram (mg) in Cohort 1. Dose escalation will follow a standard 3+3 schema. If 2 mg, once daily, is safe and tolerable, then the dose will be escalated to 4 mg, once daily, until RP2D is determined.",
+              "interventionNames": [
+                "Drug: TAK-228"
+              ],
+              "label": "TAK-228 Once Daily",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "TAK-228, milled capsule, orally, once weekly, on an empty stomach in Cycle 1 of a 28-day treatment cycle and following a light meal from Cycle 2 for up to 12 months or until disease progression or unacceptable toxicity or withdrawal of consent with a starting dose of 20 mg in Cohort 1. Dose escalation will follow a standard 3+3 schema. If 20 mg, once weekly, is safe and tolerable, then the dose will be escalated to 30 mg, once weekly, until RP2D is determined.",
+              "interventionNames": [
+                "Drug: TAK-228"
+              ],
+              "label": "TAK-228 Once Weekly",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "TAK-228 Once Daily",
+                "TAK-228 Once Weekly"
+              ],
+              "description": "TAK-228 Capsules.",
+              "name": "TAK-228",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NON_RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "OTHER"
+          },
+          "enrollmentInfo": {
+            "count": 28,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study to Evaluate the Safety, Tolerability, and Pharmacokinetics (PK) of TAK-228 as Single Agent in Adult East Asian Participants With Advanced Nonhematological Malignancies",
+          "nctId": "NCT03370302",
+          "officialTitle": "A Phase 1, Open-label Study to Evaluate the Safety, Tolerability, and Pharmacokinetics of TAK-228 (a Catalytic TORC1/2 Inhibitor) as Single Agent in Adult East Asian Patients With Advanced Nonhematological Malignancies",
+          "orgStudyIdInfo": {
+            "id": "C31008"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Calithera Biosciences, Inc"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "WHO",
+              "id": "U1111-1202-4296",
+              "type": "REGISTRY"
+            },
+            {
+              "domain": "Taiwan Ministry of Health and Welfare",
+              "id": "1066064639",
+              "type": "REGISTRY"
+            },
+            {
+              "domain": "Korea Food and Drug Administration",
+              "id": "20170270241",
+              "type": "OTHER"
+            },
+            {
+              "domain": "Japan Ministry of Health",
+              "id": "JapicCTI-183822",
+              "type": "REGISTRY"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Number of Participants With Treatment Emergent Adverse Events (TEAEs)",
+              "timeFrame": "Baseline up to 30 days after the last dose of study drug (up to Cycle 12 Day 58) (Cycle length= 28 days)"
+            },
+            {
+              "description": "Adverse event (AE) Grades were evaluated as per National Cancer Institute Common Terminology Criteria for Adverse Event (NCI CTCAE), version 4.03. Grade 1 scaled as Mild; Grade 2 scaled as Moderate; Grade 3 scaled as severe or medically significant but not immediately life-threatening; Grade 4 scaled as life-threatening consequences; and Grade 5 scaled as death related to AE.",
+              "measure": "Number of Participants With Grade 3 or Higher TEAEs",
+              "timeFrame": "Baseline up to 30 days after the last dose of study drug (up to Cycle 12 Day 58) (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Number of Participants With Serious TEAEs",
+              "timeFrame": "Baseline up to 30 days after the last dose of study drug (up to Cycle 12 Day 58) (Cycle length= 28 days)"
+            },
+            {
+              "description": "Toxicity was evaluated according to NCI CTCAE version 4.03. DLT was defined as any of the following occurred events within the first 28 days of the administration of TAK-228 that were considered by investigator to be possibly related to therapy: Grade \\>=3 nonhematologic toxicity except for inadequately treated Grade 3 nausea and/or vomiting and diarrhea, Grade 3 hyperglycemia lasting \\<=14 days, Grade 3 rash lasting \\<=3 days; Grade 3 thrombocytopenia with hemorrhage or requiring platelet transfusion; Grade 3 anemia requiring blood transfusion; Grade 4 neutropenia lasting \\>7 days; Grade \\>=3 neutropenia of any duration with fever \\>=38.5 degree celsius and/or systemic infection; Any other \\>=Grade 4 hematologic toxicity; Inability to administer at least 75 percent (%) of planned doses of TAK-228 within Cycle 1 due to treatment-related toxicity and any clinically significant occurrence that the investigators and sponsor agreed would place participants at an undue safety risk.",
+              "measure": "Dose Escalation Phase: Number of Participants With Dose-limiting Toxicities (DLTs) During Cycle 1",
+              "timeFrame": "Baseline up to Day 28 in Cycle 1 (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Number of Participants With TEAEs Leading to Study Drug Discontinuation",
+              "timeFrame": "Baseline up to 30 days after the last dose of study drug (up to Cycle 12 Day 58) (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Cmax: Maximum Observed Plasma Concentration for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Cmax: Maximum Observed Plasma Concentration for TAK-228 on Cycle 1 Day 15",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Tmax: Time to Reach the Maximum Plasma Concentration (Cmax) for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Tmax: Time to Reach the Maximum Plasma Concentration (Cmax) for TAK-228 on Cycle 1 Day 15",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Daily Dosing Arms, AUC24: Area Under the Plasma Concentration-time Curve From 0 to 24 Hours for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Daily Dosing Arms, AUC24: Area Under the Plasma Concentration-time Curve From 0 to 24 Hours for TAK-228 on Cycle 1 Day 15",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and at multiple time points (up to 24 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Weekly Dosing Arms, AUC168: Area Under the Concentration-time Curve From 0 to 168 Hours for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 168 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "Weekly Dosing Arms, AUC168: Area Under the Concentration-time Curve From 0 to 168 Hours for TAK-228 on Cycle 1 Day 15",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and at multiple time points (up to 168 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "AUClast: Area Under the Plasma Concentration-time Curve From 0 to Time of Last Measurable Concentration for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 168 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "AUClast: Area Under the Plasma Concentration-time Curve From 0 to Time of Last Measurable Concentration for TAK-228 on Cycle 1 Day 15",
+              "timeFrame": "Cycle 1 Day 15 pre-dose and at multiple time points (up to 168 hours) post-dose (Cycle length= 28 days)"
+            },
+            {
+              "measure": "AUC∞: Area Under the Plasma Concentration-time Curve From 0 to Infinity for TAK-228 on Cycle 1 Day 1",
+              "timeFrame": "Cycle 1 Day 1 pre-dose and at multiple time points (up to 168 hours) post-dose (Cycle length= 28 days)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "The CBR was defined as the percentage of participants with a best overall response (BOR) of complete response (CR), partial response (PR), or stable disease (SD). BOR was defined as the best response recorded after the first dose of study drug until subsequent therapy. As per Response Evaluation Criteria Solid Tumors (RECIST) version 1.1 guidelines, CR was defined as disappearance of all target lesions and non-target lesions, and normalization of tumor marker level. PR was defined as \\>= 30% decrease in the sum of the longest diameter (LD) of target lesions, no progression in non-target lesion, and no new lesions. SD was defined as neither sufficient shrinkage to qualify for PR nor sufficient increase to qualify for disease progression (PD). PD was defined as at least a 20% increase in the sum of the LD of target lesions, taking as reference the smallest sum LD recorded since the treatment started or the appearance of one or more new lesions.",
+              "measure": "Clinical Benefit Rate (CBR)",
+              "timeFrame": "Baseline Up to 1 Year 7 Months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2019-08-28",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2023-02-08",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2023-02-06",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2019-08-28",
+            "type": "ACTUAL"
+          },
+          "resultsFirstPostDateStruct": {
+            "date": "2020-09-09",
+            "type": "ACTUAL"
+          },
+          "resultsFirstSubmitDate": "2020-08-20",
+          "resultsFirstSubmitQcDate": "2020-08-20",
+          "startDateStruct": {
+            "date": "2018-01-17",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2023-02",
+          "studyFirstPostDateStruct": {
+            "date": "2017-12-12",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2017-12-07",
+          "studyFirstSubmitQcDate": "2017-12-07",
+          "whyStopped": "More favorable safety profile was observed in QD schedule, therefore further enrollment in QW schedule was terminated."
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Toripalimab will be combined with ATG-008.",
+              "interventionNames": [
+                "Drug: ATG-008",
+                "Drug: Toripalimab"
+              ],
+              "label": "ATG-008 and Toripalimab",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "ATG-008 and Toripalimab"
+              ],
+              "description": "Tablet",
+              "name": "ATG-008",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "ATG-008 and Toripalimab"
+              ],
+              "description": "IV infusion",
+              "name": "Toripalimab",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "NA",
+            "interventionModel": "SEQUENTIAL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 60,
+            "type": "ESTIMATED"
+          },
+          "phases": [
+            "PHASE1",
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "ATG-008 Combined With Toripalimab in Advanced Solid Tumors",
+          "nctId": "NCT04337463",
+          "officialTitle": "An Open, Dose-escalation and Expansion Study With a Dual TORC1/2 Inhibitor of ATG-008 Combined With PD-1 Antibody of Toripalimab in Advanced Solid Tumors",
+          "orgStudyIdInfo": {
+            "id": "ATG-008-HX-001"
+          },
+          "organization": {
+            "class": "OTHER",
+            "fullName": "Sichuan University"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "description": "Maximum Tolerated Dose",
+              "measure": "MTD",
+              "timeFrame": "Within 21 days after dosing"
+            },
+            {
+              "description": "Recommended phase 2 dose",
+              "measure": "RP2D",
+              "timeFrame": "Within 21 days after dosing"
+            },
+            {
+              "description": "Overall Response Rate",
+              "measure": "ORR",
+              "timeFrame": "Through study completion (approximately 2 years)"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Peak Plasma Concentration (Cmax)",
+              "measure": "Cmax",
+              "timeFrame": "Day 1 - Day 15"
+            },
+            {
+              "description": "Area under the plasma concentration versus time curve (AUC)",
+              "measure": "AUC",
+              "timeFrame": "Day 1 - Day 15"
+            },
+            {
+              "description": "Duration from the first observation of at least PR to time of disease progression, or deaths due to disease progression, whichever occurs first.",
+              "measure": "DOR",
+              "timeFrame": "12 months"
+            },
+            {
+              "description": "Disease Control Rate (DCR=CBR+Stable Disease\\[SD; for a minimum of 12 weeks\\])",
+              "measure": "DCR",
+              "timeFrame": "12 months"
+            },
+            {
+              "description": "Duration from start of study treatment to PD or death (regardless of cause), whichever comes first",
+              "measure": "PFS",
+              "timeFrame": "12 months"
+            },
+            {
+              "description": "The estimates of Kaplan-Meier",
+              "measure": "OS",
+              "timeFrame": "12 months"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2022-12-01",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastKnownStatus": "RECRUITING",
+          "lastUpdatePostDateStruct": {
+            "date": "2021-05-17",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2021-05-13",
+          "overallStatus": "UNKNOWN",
+          "primaryCompletionDateStruct": {
+            "date": "2022-05-01",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2020-04-23",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2021-05",
+          "studyFirstPostDateStruct": {
+            "date": "2020-04-07",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2020-03-21",
+          "studyFirstSubmitQcDate": "2020-04-03"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Patients receive sapanisertib PO according to the results from Part I. Patients also undergo surgery on day 0. Within 45 days after surgery, patients receive sapanisertib PO according to the results from Part I. Courses repeat every 28 days in the absence of disease progression or unacceptable toxicity.",
+              "interventionNames": [
+                "Other: Laboratory Biomarker Analysis",
+                "Other: Pharmacological Study",
+                "Drug: Sapanisertib",
+                "Procedure: Therapeutic Conventional Surgery"
+              ],
+              "label": "Arm I (sapanisertib before and after surgery)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Patients undergo surgery on day 0. Within 45 days after surgery, patients receive sapanisertib PO according to the results from Part I. Courses repeat every 28 days in the absence of disease progression or unacceptable toxicity.",
+              "interventionNames": [
+                "Other: Laboratory Biomarker Analysis",
+                "Other: Pharmacological Study",
+                "Drug: Sapanisertib",
+                "Procedure: Therapeutic Conventional Surgery"
+              ],
+              "label": "Arm II (sapanisertib after surgery)",
+              "type": "EXPERIMENTAL"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm I (sapanisertib before and after surgery)",
+                "Arm II (sapanisertib after surgery)"
+              ],
+              "description": "Correlative studies",
+              "name": "Laboratory Biomarker Analysis",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Arm I (sapanisertib before and after surgery)",
+                "Arm II (sapanisertib after surgery)"
+              ],
+              "description": "Correlative studies",
+              "name": "Pharmacological Study",
+              "type": "OTHER"
+            },
+            {
+              "armGroupLabels": [
+                "Arm I (sapanisertib before and after surgery)",
+                "Arm II (sapanisertib after surgery)"
+              ],
+              "description": "Given PO",
+              "name": "Sapanisertib",
+              "otherNames": [
+                "INK-128",
+                "INK128",
+                "MLN-0128",
+                "MLN0128",
+                "TAK-228"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm I (sapanisertib before and after surgery)",
+                "Arm II (sapanisertib after surgery)"
+              ],
+              "description": "Undergo surgery",
+              "name": "Therapeutic Conventional Surgery",
+              "type": "PROCEDURE"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "NONE"
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 40,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Sapanisertib Before and After Surgery in Treating Patients With Recurrent Glioblastoma",
+          "nctId": "NCT02133183",
+          "officialTitle": "Pilot Study of MLN0128 (TAK-228) in Preoperative Recurrent Glioblastoma (GBM) Patients",
+          "orgStudyIdInfo": {
+            "id": "NCI-2014-00907"
+          },
+          "organization": {
+            "class": "NIH",
+            "fullName": "National Cancer Institute (NCI)"
+          },
+          "secondaryIdInfos": [
+            {
+              "domain": "CTRP (Clinical Trial Reporting Program)",
+              "id": "NCI-2014-00907",
+              "type": "REGISTRY"
+            },
+            {
+              "id": "ABTC-1301"
+            },
+            {
+              "id": "1301"
+            },
+            {
+              "domain": "Adult Brain Tumor Consortium",
+              "id": "ABTC-1301",
+              "type": "OTHER"
+            },
+            {
+              "domain": "CTEP",
+              "id": "ABTC-1301",
+              "type": "OTHER"
+            },
+            {
+              "id": "U01CA137443",
+              "link": "https://reporter.nih.gov/quickSearch/U01CA137443",
+              "type": "NIH"
+            },
+            {
+              "id": "UM1CA137443",
+              "link": "https://reporter.nih.gov/quickSearch/UM1CA137443",
+              "type": "NIH"
+            }
+          ]
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "MSI from treated vs untreated enhancing and non- enhancing tumor will be compared using visualization and presented by graph and descriptive statistics.",
+              "measure": "MSI from treated versus (vs) untreated enhancing and non- enhancing tumor",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Fisher's exact test will be used for testing a difference in the proportion between the two groups.",
+              "measure": "Ex-vivo sensitivity of tumor sphere cultures established from surgical specimens to sapanisertib, defined by a minimum of 20% reduction in cell proliferation as measured by cell titer glow in the sapanisertib group compared to the untreated group",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Cox regression model or logistic regression model will be used to explore associations between PD outcome or tumor genotype and overall survival or progression-free survival. All estimated associations will be reported along with 95% confidence intervals.",
+              "measure": "Tumor genotype",
+              "timeFrame": "Up to 2 years"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "The proportion of patients who achieve a drug concentration \\>= 70 nM in contrast enhancing tumor tissue will be calculated and the 90% confidence interval will be estimated using binomial distribution.",
+              "measure": "Proportion of patients who achieve a drug concentration >= 70 nM in contrast enhancing tumor tissue",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Two sample t-test will be used for the hypothesis testing of a difference in ratio of the S6 phosphorylation over the total between the two groups.",
+              "measure": "Difference in ratio of the S6 phosphorylation over the total between the two groups",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Two sample t-test will be used for the hypothesis testing of a difference in ratio of the S6 phosphorylation over the total between the two groups. A \"heat map\" or \"heat map visualization\" may also be used to present and examine possible difference in clustering signaling pathway activation between the groups.",
+              "measure": "Difference of the pS6 concentration between the two groups",
+              "timeFrame": "Up to 2 years"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Will be summarized using descriptive statistics or two-group comparison between groups. The Spearman correlation coefficient might be used to assess potential correlations between pathway modulation scores and tumor growth measured by KI67 (proliferation) and cleaved caspase 3 (apoptosis/cell death).",
+              "measure": "Sapanisertib concentration in non-enhancing tumor",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Will be summarized using descriptive statistics or two-group comparison between Groups A and B. The Spearman correlation coefficient might be used to assess potential correlations between pathway modulation scores and tumor growth measured by KI67 (proliferation) and cleaved caspase 3 (apoptosis/cell death).",
+              "measure": "Sapanisertib concentration in blood",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Will be summarized using descriptive statistics or two-group comparison between Groups A and B. The Spearman correlation coefficient might be used to assess potential correlations between pathway modulation scores and tumor growth measured by KI67 (proliferation) and cleaved caspase 3 (apoptosis/cell death).",
+              "measure": "Inhibition TORC1/2 in the non-enhancing components of the tumor as determined by modulation of RPS6 pS235 in reverse phase protein array (RPPA) assays",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "Will be summarized using descriptive statistics or two-group comparison between Groups A and B. The Spearman correlation coefficient might be used to assess potential correlations between pathway modulation scores and tumor growth measured by KI67 (proliferation) and cleaved caspase 3 (apoptosis/cell death).",
+              "measure": "Pharmacodynamic marker such as pS6 (by immunohistochemistry), p4EBP, pmTOR, and AKTpSer473 compared to the control",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "All treatment or surgically related adverse events will be reported descriptively. A proportion of toxicity grade \\>= 3 will be estimated using binomial distribution.",
+              "measure": "Incidence of toxicity graded according to the National Cancer Institute Common Terminology Criteria for Adverse Events version 5.0",
+              "timeFrame": "Up to 30 days"
+            },
+            {
+              "description": "The proportion of patients who had tumor response (partial response + complete response) during the course of treatment will be estimated using the exact binomial distribution.",
+              "measure": "Tumor response",
+              "timeFrame": "Up to 2 years"
+            },
+            {
+              "description": "PFS along with 95% confidence interval will be estimated using Kaplan-Meier method.",
+              "measure": "Progression-free survival (PFS)",
+              "timeFrame": "Time from date of post-surgical treatment start to the date progressive disease was defined, assessed up to 2 years"
+            },
+            {
+              "description": "Overall survival along with 95% confidence interval will be estimated using Kaplan-Meier method.",
+              "measure": "Overall survival (death)",
+              "timeFrame": "Time from the date of post-surgical treatment start to the date death occurred, assessed up to 2 years"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2023-10-31",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2024-04-04",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2024-04-03",
+          "overallStatus": "TERMINATED",
+          "primaryCompletionDateStruct": {
+            "date": "2020-01-31",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2014-07-02",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2024-04",
+          "studyFirstPostDateStruct": {
+            "date": "2014-05-07",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2014-05-06",
+          "studyFirstSubmitQcDate": "2014-05-06",
+          "whyStopped": "Other - Lapse in funding"
+        }
+      }
+    }
+  ],
+  "totalCount": 21
+}

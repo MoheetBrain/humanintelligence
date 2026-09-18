@@ -68,11 +68,11 @@
 # written, never which sentences are true.
 
 schema_version: 0.1.0
-ontology_version: 0.1.0
+ontology_version: 0.2.0
 defined_by: agent:ontology
 defined_on: "2026-09-17"
 
-provenance_classes: [claim_derived, reference_data, tool_mediated, ontology_axiom]
+provenance_classes: [claim_derived, reference_data, tool_mediated, ontology_axiom, external_analysis_verified, external_analysis_unverified]
 
 # Convenience groupings, expanded by blueprint.ontology when it indexes this file.
 # A group name may be used anywhere a node type may be used in domain/range.
@@ -923,3 +923,227 @@ edges:
       ontology/definitional_edges.yaml so that domain membership is queryable in the
       graph rather than hidden in string parsing. Not an empirical relation and never
       claim_derived.
+
+  # ========================================================================
+  # X02 statistical-genetics relations (Sprint 2).
+  #
+  # The chain these encode is the project's central unresolved problem:
+  #   variant -> credible set -> QTL -> gene -> direction -> adult context.
+  #
+  # Two guards are built into the type system rather than left to reviewers:
+  #
+  # (a) TESTED_FOR_COLOCALISATION_WITH exists alongside COLOCALISES_WITH so that a
+  #     pair that WAS tested and did not colocalise is representable. Without it,
+  #     "tested and negative" and "never tested" collapse into the same absence —
+  #     the error this repository has now made and fixed five times (R5, R11, R14,
+  #     R15, V-DIR2). A colocalisation analysis that ships only its hits is not
+  #     ingestible.
+  #
+  # (b) NONE of these relations asserts an effect, and none may be chained into an
+  #     intervention-layer direction. A variant that increases a gene's expression
+  #     and associates with higher cognitive score does NOT imply that agonising the
+  #     gene product helps: the sign of a useful intervention depends on where the
+  #     system sits on a response curve nobody has measured. AGONISES / ANTAGONISES /
+  #     UPREGULATES / DOWNREGULATES remain reachable only from pharmacological claims
+  #     about actual compounds. This is the project's single most dangerous shortcut
+  #     and it is refused structurally.
+  # ========================================================================
+
+  - name: MEMBER_OF_CREDIBLE_SET
+    layers: [biological]
+    description: >-
+      A variant is in a named fine-mapping credible set, with the posterior inclusion
+      probability that method assigned it.
+    domain: [Variant]
+    range: [CredibleSet]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [association, methodological]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [pip, pip_method, pip_method_version, effect_allele, other_allele, beta, se, p_value, eaf]
+    semantics: >-
+      PIP rides on this edge rather than on a HAS_PIP relation, because an edge whose
+      object is a float is not a graph edge. The PIP is a MODEL OUTPUT of the named
+      method and is recorded with `derived_from`; it is not P(causal) and must never be
+      read as one. A credible set built on an LD panel whose ancestry differs from the
+      GWAS population is a known artefact source: ld_panel_ancestry is a required
+      attribute of the CredibleSet so the red team can attack it.
+
+  - name: TESTED_FOR_COLOCALISATION_WITH
+    layers: [biological]
+    description: >-
+      A colocalisation test between this credible set and this QTL signal was performed
+      and reported, whatever its outcome.
+    domain: [CredibleSet]
+    range: [MolecularQTL]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [methodological, association]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [colocalisation_result_id, outcome, pp_h4, threshold_used]
+    semantics: >-
+      EXISTS SO THAT A NEGATIVE IS VISIBLE. A tested pair with low PP.H4 carries this
+      relation and NOT COLOCALISES_WITH; an untested pair carries neither. Traversals
+      that mean "evidence for" must exclude it. Its presence with a low PP.H4 is
+      evidence AGAINST that gene assignment at that locus, and is more informative than
+      silence.
+
+  - name: COLOCALISES_WITH
+    layers: [biological]
+    description: >-
+      The trait credible set and the molecular QTL signal are supported as sharing a
+      causal variant, by a named colocalisation method above a stated threshold.
+    domain: [CredibleSet]
+    range: [MolecularQTL]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [association, mechanistic]
+    asserts_effect: false
+    directional: false
+    inverse: COLOCALISES_WITH
+    edge_attributes: [colocalisation_result_id, pp_h4, pp_h3, coloc_method, coloc_version, prior_p12, threshold_used]
+    semantics: >-
+      REQUIRES THE FULL POSTERIOR VECTOR, not PP.H4 alone: H3 (two independent causal
+      variants) versus H4 (one shared) is the entire question, and an analysis reporting
+      only H4 makes colocalisation unfalsifiable. The prior p12 is a CHOICE that drives
+      H4, so it is a required edge attribute. Colocalisation supports a gene assignment;
+      it does not establish a mechanism, a direction of benefit, or adult modifiability.
+
+  - name: INCREASES_EXPRESSION_OF
+    layers: [biological]
+    description: >-
+      The QTL's effect allele is associated with higher abundance of the named gene's
+      transcript in the QTL's tissue or cell type.
+    domain: [MolecularQTL, Variant]
+    range: [Gene, Transcript]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [association, expression, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [effect_allele, other_allele, qtl_beta, qtl_se, tissue, cell_type, developmental_stage]
+    semantics: >-
+      THE EFFECT ALLELE IS MANDATORY. A direction without the allele it is relative to
+      is meaningless and inverts silently under a strand or allele flip. This relation
+      says nothing about whether more of the gene product would help cognition: see the
+      block comment above this group.
+
+  - name: DECREASES_EXPRESSION_OF
+    layers: [biological]
+    description: >-
+      The QTL's effect allele is associated with lower abundance of the named gene's
+      transcript in the QTL's tissue or cell type.
+    domain: [MolecularQTL, Variant]
+    range: [Gene, Transcript]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [association, expression, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [effect_allele, other_allele, qtl_beta, qtl_se, tissue, cell_type, developmental_stage]
+    semantics: >-
+      Effect allele mandatory, as for INCREASES_EXPRESSION_OF. The pair is deliberately
+      two relations rather than one signed relation so that a direction cannot be lost
+      by dropping an attribute.
+
+  - name: ALTERS_SPLICING_OF
+    layers: [biological]
+    description: >-
+      The QTL's effect allele is associated with changed usage of a named intron or
+      junction of the named gene or transcript.
+    domain: [MolecularQTL, Variant]
+    range: [Gene, Transcript]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified]
+    allowed_claim_types: [association, expression, mechanistic]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [effect_allele, other_allele, intron_id, qtl_beta, qtl_se, tissue, cell_type, developmental_stage, usage_direction]
+    semantics: >-
+      Names the intron or junction, not only the gene: a splicing change with no
+      identified junction is not a splicing result. Isoform-level direction is recorded
+      in usage_direction because "altered" alone cannot be reasoned over.
+
+  - name: ACTIVE_DURING
+    layers: [biological]
+    description: >-
+      The molecular observation or mechanism is present in the named developmental
+      window.
+    domain: [MolecularQTL, Gene, CredibleSet, MolecularProcess]
+    range: [DevelopmentalStage]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, reference_data, external_analysis_verified]
+    allowed_claim_types: [expression, association, mechanistic, methodological]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [donor_age_range, evidence_basis]
+    semantics: >-
+      THE PROJECT'S CENTRAL FILTER. A fetal-brain QTL is not evidence about an
+      adult-modifiable control parameter, and a target whose only molecular evidence is
+      ACTIVE_DURING DEVSTAGE:prenatal must not accrue adult-modifiability credit
+      (contract P4, facet developmental_confound_risk). Absent this edge the
+      developmental context is UNKNOWN, which is not the same as adult.
+
+  - name: PREDICTED_TO_REGULATE
+    layers: [biological]
+    description: >-
+      A sequence model predicts that this variant alters regulatory activity affecting
+      the named gene, in a named assay and context.
+    domain: [Variant]
+    range: [Gene, Transcript]
+    requires_claim: true
+    allowed_provenance_classes: [claim_derived, external_analysis_verified, external_analysis_unverified]
+    allowed_claim_types: [computational_prediction]
+    asserts_effect: false
+    directional: true
+    inverse: null
+    edge_attributes: [model, model_version, assay, score, percentile, effect_allele, concordant_with_qtl_direction]
+    semantics: >-
+      ORTHOGONAL SUPPORT, NEVER CAUSAL EVIDENCE. A model prediction may corroborate a
+      measured QTL direction — concordant_with_qtl_direction records whether it does —
+      but a prediction alone establishes nothing about a gene, a direction or a
+      phenotype. This is the one X02 relation that may carry
+      external_analysis_unverified provenance, because a prediction is explicitly not
+      being treated as evidence in the first place.
+
+  - name: ASSESSES
+    layers: [evidence]
+    description: >-
+      A result record reports on the entities it was computed over.
+    domain: [ColocalisationResult, RegulatoryPrediction]
+    range: [CredibleSet, MolecularQTL, Variant, Gene]
+    requires_claim: false
+    allowed_provenance_classes: [external_analysis_verified, external_analysis_unverified, claim_derived]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Bookkeeping that keeps a posterior attached to the exact pair it was computed for,
+      so a PP.H4 cannot drift onto a neighbouring gene during summarisation.
+
+  - name: PRODUCED_BY
+    layers: [evidence]
+    description: >-
+      This record was produced by the named analysis run.
+    domain: [CredibleSet, MolecularQTL, ColocalisationResult, RegulatoryPrediction, Measurement]
+    range: [DatasetAnalysis]
+    requires_claim: false
+    allowed_provenance_classes: [external_analysis_verified, external_analysis_unverified, claim_derived, tool_mediated]
+    allowed_claim_types: []
+    asserts_effect: false
+    directional: true
+    inverse: null
+    semantics: >-
+      Makes external contributions attributable and their verification state queryable:
+      every record carries a path back to the analysis, its agent, its software versions
+      and its input checksums. A graph query can therefore ask "show me everything that
+      rests on an unverified external analysis" and get a complete answer.

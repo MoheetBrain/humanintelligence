@@ -1,0 +1,582 @@
+{
+  "studies": [
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Basimglurant to Placebo",
+              "interventionNames": [
+                "Drug: Basimglurant with crossover to Placebo"
+              ],
+              "label": "Arm A (Basimglurant/NOE-101 to Placebo)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Placebo to Basimglurant",
+              "interventionNames": [
+                "Drug: Placebo with crossover to Basimglurant"
+              ],
+              "label": "Arm B (Placebo to Basimglurant/NOE-101)",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm A (Basimglurant/NOE-101 to Placebo)"
+              ],
+              "description": "Basimglurant with crossover to Placebo",
+              "name": "Basimglurant with crossover to Placebo",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm B (Placebo to Basimglurant/NOE-101)"
+              ],
+              "description": "Placebo with crossover to Basimglurant",
+              "name": "Placebo with crossover to Basimglurant",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "CROSSOVER",
+            "interventionModelDescription": "This is a multi-center, randomized, double-blind, placebo-controlled, 30-week, cross-over (Part A) followed by a 52-week open-label extension (OLE) (Part B) study.",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 61,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "Basimglurant (NOE-101) in Children, Adolescents, and Young Adults With TSC",
+          "nctId": "NCT05059327",
+          "officialTitle": "A Phase 2B, Multicenter, 30-week, Prospective, Cross-over, Double-blind, Randomized, Placebo-controlled Study Followed by a 52-Week Open-label Extension Study to Evaluate the Efficacy and Safety of Basimglurant Adjunctive to Ongoing Anticonvulsive Therapy in Children, Adolescents, and Young Adults With Uncontrolled Seizures Associated With Tuberous Sclerosis Complex",
+          "orgStudyIdInfo": {
+            "id": "NOE-TSC-201"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Noema Pharma AG"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "measure": "Change in seriousness of disease as assessed by Most Impactful Symptoms Scale in Periods 2 (weeks 13 to 16) and Period 4 (weeks 27 to 30) compared to baseline.",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "measure": "Frequency of seizures detected by the wearable device evaluated as the change from Baseline compared to study treatment in Period 1 (weeks 13 to 16) and Period 4 (weeks 27 to 30).",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "measure": "Intensity of seizures detected by the wearable device evaluated as the change from Baseline compared to study treatment Periods 1 and 4.",
+              "timeFrame": "30 weeks"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "measure": "Mean percentage in monthly seizure frequency during the maintenance dosing in Period 2 (Weeks 13 to 16) and Period 4 (Weeks 27-30).",
+              "timeFrame": "30 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Number of patients considered treatment responders.",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "measure": "Longest seizure free interval (i.e., seizure free days).",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "measure": "Change in the severity of symptoms of TSC as measured by Caregiver Global Impression of Change (CGIC) score during maintenance dosing in Period 2 (Weeks 13 to 16) and Period 4 (Weeks 27-30) compared to Baseline.",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "measure": "Change in the Sheehan Disability Scale during maintenance dosing in Period 2 (Weeks 13 to 16) and Period 4 (Weeks 27-30) compared to baseline.",
+              "timeFrame": "30 weeks"
+            },
+            {
+              "description": "Measured in terms of incidence, nature, and severity of adverse events, vital signs, physical examination, clinical chemistry, hematology, electrocardiograms, and urinalysis, as well as treatment delays, dose reductions, and dose discontinuations. In addition, suicidal ideation will be assessed using S-STS.",
+              "measure": "Safety of the study drug in children, adolescents and young adults with seizures associated with TSC.",
+              "timeFrame": "82 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2025-04-28",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2025-06-04",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2025-06-03",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2025-02-06",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2022-03-03",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2025-05",
+          "studyFirstPostDateStruct": {
+            "date": "2021-09-28",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-08-20",
+          "studyFirstSubmitQcDate": "2021-09-20"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "Healthy participants assigned to basimglurant will receive a 22-day ascending dose regimen. Cohort 1 will receive a prespecified titration scheme; however, adaptive titration schemes may be applied in subsequent cohorts.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Basimglurant: Healthy Cohort (1)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Healthy participants assigned to basimglurant will receive a 22-day ascending dose regimen. The dosing scheme for Cohort 2 will be selected in accordance with decision criteria on the basis of the incidence of severe AEs in Cohort 1.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Basimglurant: Healthy Cohort (2)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Healthy participants assigned to basimglurant will receive a 22-day ascending dose regimen. The dosing scheme for Cohort 3 will be selected in accordance with decision criteria on the basis of the incidence of severe AEs in preceding Cohorts 1 and 2.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Basimglurant: Healthy Cohort (3)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Healthy participants assigned to basimglurant will receive a 22-day ascending dose regimen. The dosing scheme for Cohort 4 will be selected in accordance with decision criteria on the basis of the incidence of severe AEs in preceding Cohorts 1, 2, and 3.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Basimglurant: Healthy Cohort (4)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Participants with MDD assigned to basimglurant will receive a 22-day ascending dose regimen. The dosing scheme for Cohort 5 may differ from those previously evaluated; however, the titration steps and the highest dose tested will remain equal to or lower than the doses tested in Cohorts 1 to 4.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Basimglurant: MDD Cohort (5)",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "Healthy participants will receive a 22-day regimen of matching placebo capsules.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo: Healthy Cohorts (1 to 4)",
+              "type": "PLACEBO_COMPARATOR"
+            },
+            {
+              "description": "Participants with MDD will receive a 22-day regimen of matching placebo capsules.",
+              "interventionNames": [
+                "Drug: Placebo"
+              ],
+              "label": "Placebo: MDD Cohort (5)",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Basimglurant: Healthy Cohort (1)",
+                "Basimglurant: Healthy Cohort (2)",
+                "Basimglurant: Healthy Cohort (3)",
+                "Basimglurant: Healthy Cohort (4)",
+                "Basimglurant: MDD Cohort (5)"
+              ],
+              "description": "Participants will receive once-daily oral basimglurant capsules in a multiple ascending dose regimen. Basimglurant dose will be titrated over 22 days; dose escalations will be separated by at least 4 days, with the final dose administered for a minimum of 14 days. The minimum starting dose will be 1.5 mg, which can be titrated up to a maximum dose of 4.0 mg. Intrapatient dose increments will not exceed 1.0 mg every 4 days.",
+              "name": "Basimglurant",
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Placebo: Healthy Cohorts (1 to 4)",
+                "Placebo: MDD Cohort (5)"
+              ],
+              "description": "Participants will receive 22 days of once-daily oral matching placebo capsules.",
+              "name": "Placebo",
+              "type": "DRUG"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            }
+          },
+          "enrollmentInfo": {
+            "count": 56,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE1"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "A Study of the Safety, Tolerability, and Pharmacokinetics of Multiple-Ascending Dose Basimglurant in Healthy Subjects and in Patients With Major Depressive Disorder (MDD)",
+          "nctId": "NCT02433093",
+          "officialTitle": "A Single-Center, Randomized, Investigator/Participant-Blind, Placebo-Controlled, Multiple-Ascending Dose, Semi-Sequential Adaptive Study to Investigate the Safety, Tolerability, and Pharmacokinetics of Basimglurant Following Oral Administration in Healthy Subjects and in Patients With Major Depressive Disorder",
+          "orgStudyIdInfo": {
+            "id": "NP29583"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Hoffmann-La Roche"
+          }
+        },
+        "outcomesModule": {
+          "primaryOutcomes": [
+            {
+              "measure": "Safety: Incidence of adverse events (AEs)",
+              "timeFrame": "Up to 10 weeks"
+            },
+            {
+              "measure": "Safety: Suicidality as assessed using the Columbia Suicide Severity Rating Scale (C-SSRS)",
+              "timeFrame": "Up to 10 weeks"
+            },
+            {
+              "measure": "Safety: Sleep habits as assessed using a participant-recorded sleep diary",
+              "timeFrame": "Up to 21 days"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "measure": "Pharmacokinetics: Maximum plasma concentration (Cmax)",
+              "timeFrame": "Post dose on Day 1 and Day 22 (or final dose)"
+            },
+            {
+              "measure": "Pharmacokinetics: Area under the plasma concentration-time curve from 0 to 24 hours (AUC0-24)",
+              "timeFrame": "Post dose on Day 1"
+            },
+            {
+              "measure": "Pharmacokinetics: Area under the plasma concentration-time curve over the dosing interval (AUC0-tau)",
+              "timeFrame": "Post dose on Day 22 (or final dose)"
+            },
+            {
+              "measure": "Pharmacokinetics: Time to maximum plasma concentration (Tmax)",
+              "timeFrame": "Post dose on Day 1 and Day 22 (or final dose)"
+            },
+            {
+              "measure": "Pharmacokinetics: Trough plasma concentration (Ctrough)",
+              "timeFrame": "Post dose on Day 1 and Day 22 (or final dose)"
+            },
+            {
+              "measure": "Pharmacokinetics: Apparent terminal elimination half-life (t1/2)",
+              "timeFrame": "Post dose on Day 22 (or final dose)"
+            },
+            {
+              "measure": "Safety: QT interval corrected using the Fridericia method (QTcF)",
+              "timeFrame": "Up to 10 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2015-09",
+            "type": "ACTUAL"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2016-11-02",
+            "type": "ESTIMATED"
+          },
+          "lastUpdateSubmitDate": "2016-11-01",
+          "overallStatus": "COMPLETED",
+          "primaryCompletionDateStruct": {
+            "date": "2015-09",
+            "type": "ACTUAL"
+          },
+          "startDateStruct": {
+            "date": "2015-04"
+          },
+          "statusVerifiedDate": "2016-11",
+          "studyFirstPostDateStruct": {
+            "date": "2015-05-04",
+            "type": "ESTIMATED"
+          },
+          "studyFirstSubmitDate": "2015-04-29",
+          "studyFirstSubmitQcDate": "2015-05-01"
+        }
+      }
+    },
+    {
+      "hasResults": false,
+      "protocolSection": {
+        "armsInterventionsModule": {
+          "armGroups": [
+            {
+              "description": "* Period 1 (Run-in: Baseline1 to Week 8): Basimglurant once daily dosing starting dose 1.5mg\n* Period 2 (Double blind: Weeks 9 to 20): Participants will receive double-blind treatment with Basimglurant once daily.\n* Open-label Extension (OLE): On completion of Period 2, participants will be offered open label treatment with Basimglurant in an open label extension for up to 52 weeks.",
+              "interventionNames": [
+                "Drug: Basimglurant"
+              ],
+              "label": "Arm A: Basimglurant/NOE-101",
+              "type": "EXPERIMENTAL"
+            },
+            {
+              "description": "\\- Period 2 (Double blind: Week 9 to Week 20): Participant randomized to placebo will receive the corresponding number of matching placebo capsules.",
+              "interventionNames": [
+                "Other: Placebo"
+              ],
+              "label": "Arm B: Placebo",
+              "type": "PLACEBO_COMPARATOR"
+            }
+          ],
+          "interventions": [
+            {
+              "armGroupLabels": [
+                "Arm A: Basimglurant/NOE-101"
+              ],
+              "description": "Period 1: Basimglurant 1.5 to 3.5 mg QD titrated on individual tolerability.\n\nPeriod 2: Patients randomized to receive either double blind Basimglurant at the tolerated dose from Period 1 or Placebo.\n\nOLE: Open label Basimglurant at the dose tolerated from Period 2, patients previously assigned placebo in period to be titrated to the Period 1.",
+              "name": "Basimglurant",
+              "otherNames": [
+                "NOE-101"
+              ],
+              "type": "DRUG"
+            },
+            {
+              "armGroupLabels": [
+                "Arm B: Placebo"
+              ],
+              "description": "Participant randomized to receive matching placebo once daily.",
+              "name": "Placebo",
+              "type": "OTHER"
+            }
+          ]
+        },
+        "designModule": {
+          "designInfo": {
+            "allocation": "RANDOMIZED",
+            "interventionModel": "PARALLEL",
+            "maskingInfo": {
+              "masking": "DOUBLE",
+              "whoMasked": [
+                "PARTICIPANT",
+                "INVESTIGATOR"
+              ]
+            },
+            "primaryPurpose": "TREATMENT"
+          },
+          "enrollmentInfo": {
+            "count": 166,
+            "type": "ACTUAL"
+          },
+          "phases": [
+            "PHASE2",
+            "PHASE3"
+          ],
+          "studyType": "INTERVENTIONAL"
+        },
+        "identificationModule": {
+          "briefTitle": "An Efficacy and Safety Study of Basimglurant (NOE-101) in Patients With Trigeminal Neuralgia.",
+          "nctId": "NCT05217628",
+          "officialTitle": "A Phase II/III, Multicentre, 8-week run-in Phase Followed by a 12-week, Prospective, Parallel-group, Double-blind, Randomized Withdrawal, Placebo-controlled Study, With a 52 Week Open Label Extension, to Evaluate the Efficacy and Safety of Daily 1.5 to 3.5 mg Basimglurant in Patients With Pain Associated With Trigeminal Neuralgia With Suboptimal Response to Their Current Anti-pain Therapy.",
+          "orgStudyIdInfo": {
+            "id": "NOE-TGN-201"
+          },
+          "organization": {
+            "class": "INDUSTRY",
+            "fullName": "Noema Pharma AG"
+          }
+        },
+        "outcomesModule": {
+          "otherOutcomes": [
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Mean change from Period 1 baseline (BL1) to Week 8 in the total patient-rated Penn-Facial Pain Scale-Revised (Penn-FPS-R) scale.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Measure Global Impression of change from Period 1 baseline (BL1) to Week 8.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Number and severity of attacks (paroxysms).",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following as measured by patient rated scale via Penn-FPS-R:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Duration of continuous pain compared with BL1.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following as measured by patient rated scale via Penn-FPS-R:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Severity of continuous pain compared with BL1.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Number of pain free days.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "Evaluate 8-week once daily basimglurant on pain associated with TN on the following:\n\n* Impact on Facial Pain\n* Patient perceived change of the pain\n* Pain assessments\n* Pain freedom\n* Patient medication satisfaction",
+              "measure": "Period 1: Patient reported rating of the Medication Satisfaction Questionnaire (MSQ).",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "measure": "Period 2: The impact of pain on general activities of daily living captured in patient diary cards.",
+              "timeFrame": "12 weeks"
+            }
+          ],
+          "primaryOutcomes": [
+            {
+              "description": "Change in pain as measured by the pain diary (TnED).",
+              "measure": "Period 1: Incidence and severity of adverse events, laboratory, vital signs and cardiovascular events.",
+              "timeFrame": "8 weeks"
+            },
+            {
+              "description": "To assess the maintenance of effect on pain.",
+              "measure": "Period 2: Time to Loss of Efficacy or pain recurrence defined as the confirmed increase in the number of weekly paroxysms or re-emergence of continuous pain and/or the need for rescue medication.",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "To evaluate the long-term safety of basimglurant daily dosing.",
+              "measure": "Open Label Extension: Incidence and severity of adverse events, laboratory, vital signs and cardiovascular events.",
+              "timeFrame": "52 weeks"
+            }
+          ],
+          "secondaryOutcomes": [
+            {
+              "description": "Impact on facial pain.",
+              "measure": "Period 2: Mean change in the total patient-rated Penn-Facial Pain Scale-Revised (Penn-FPS-R) scale compared with Period 2 baseline (BL2).",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Period 2: Frequency of attacks (paroxysms).",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Period 2: Severity of attacks (paroxysms).",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Period 2: Severity of continuous pain.",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Period 2: Duration of continuous pain.",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain.",
+              "measure": "Period 2: Change in Patient Global Impression of Change (P-GIC).",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Impact on facial pain.",
+              "measure": "Period 2: Change in Medication Satisfaction Questionnaire (MSQ).",
+              "timeFrame": "12 weeks"
+            },
+            {
+              "description": "Evaluate the continued efficacy of basimglurant on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Open Label Extension: Frequency of attacks (paroxysms).",
+              "timeFrame": "52 weeks"
+            },
+            {
+              "description": "Evaluate the continued efficacy of basimglurant on facial pain measured by patient rated scale via Penn-FPS-R",
+              "measure": "Open Label Extension: Severity of attacks (paroxysms).",
+              "timeFrame": "52 weeks"
+            },
+            {
+              "description": "Evaluate the continued efficacy of basimglurant on facial pain.",
+              "measure": "Open Label Extension: Severity and duration of continuous pain reported in patient pain diary.",
+              "timeFrame": "52 weeks"
+            },
+            {
+              "description": "Evaluate the continued efficacy of basimglurant on facial pain.",
+              "measure": "Open Label Extension: Measure Global Impression of Severity as captured by PGI-S.",
+              "timeFrame": "52 weeks"
+            }
+          ]
+        },
+        "statusModule": {
+          "completionDateStruct": {
+            "date": "2027-04-24",
+            "type": "ESTIMATED"
+          },
+          "expandedAccessInfo": {
+            "hasExpandedAccess": false
+          },
+          "lastUpdatePostDateStruct": {
+            "date": "2026-01-23",
+            "type": "ACTUAL"
+          },
+          "lastUpdateSubmitDate": "2026-01-22",
+          "overallStatus": "ACTIVE_NOT_RECRUITING",
+          "primaryCompletionDateStruct": {
+            "date": "2027-02-02",
+            "type": "ESTIMATED"
+          },
+          "startDateStruct": {
+            "date": "2022-01-11",
+            "type": "ACTUAL"
+          },
+          "statusVerifiedDate": "2026-01",
+          "studyFirstPostDateStruct": {
+            "date": "2022-02-01",
+            "type": "ACTUAL"
+          },
+          "studyFirstSubmitDate": "2021-12-15",
+          "studyFirstSubmitQcDate": "2022-01-20"
+        }
+      }
+    }
+  ],
+  "totalCount": 3
+}

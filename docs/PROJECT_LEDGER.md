@@ -428,3 +428,113 @@ empty, and the most-studied brake target carries a replicated human null.
 Sprint 2, starting with target-directed registry searches across the three atlases that
 never ran one, then brain QTL colocalisation to resolve `causal_gene_attribution` above
 level 2 or accept that it cannot be resolved with current public data.
+
+---
+
+## 2026-09-18T11:30Z — Sprint 2 part 1: Codex branch audit (absent), X01 ingested as inert, X02 ingestion built, target-directed registry searches
+
+* **Branch:** `sprint-2/causal-bridge` (from `sprint-1/foundation` @ `24f4f92`)
+* **Project stage:** Sprint 2 — integrate external analyses, close the human causal bridge
+* **Objective of the change:** audit the Codex/Astra branch, make the repository able to
+  ingest X01/X02 without trusting prose, and run the target-directed registry searches
+  that Sprint 1 identified as its top outstanding risk.
+
+### Files and systems changed
+
+* `docs/integration/CODEX_BRANCH_AUDIT.md` (new): the branch does not exist; the search
+  is documented so the negative result is auditable.
+* `docs/integration/CODEX_HANDOFF_CONTRACT.md` (new): exactly what Codex must deliver for
+  X01/X02, in machine-ingestible form, with what Claude will refuse and why.
+* `ontology/nodes.yaml` +6 types (CredibleSet, MolecularQTL, ColocalisationResult,
+  RegulatoryPrediction, DevelopmentalStage, DatasetAnalysis), +6 prefixes;
+  `ontology/edges.yaml` +10 relations including the `TESTED_FOR_COLOCALISATION_WITH` /
+  `COLOCALISES_WITH` pair; ontology_version 0.2.0.
+* `ontology/vocabularies.yaml` +12 vocabularies; `claim_type` gained
+  `computational_prediction`; `provenance_class` gained `external_analysis_verified` and
+  `external_analysis_unverified` (the latter excluded from `evidential_classes`).
+* `schemas/` +6 (external_analysis, x02_credible_set, x02_credible_set_variant,
+  x02_qtl_colocalisation, x02_regulatory_prediction, x02_negative_result).
+* `analyses/external/X01_cell_type_enrichment.yaml` (new): X01 recorded as
+  `unverified_external_report`, every figure a verbatim string, licensing nothing.
+* `src/blueprint/validate.py`: rule **V-EXT**; `paths.py`, `schemas.py`, `loaders.py`
+  wired for external analyses.
+* `pipelines/integration/ingest_x02.py` (new) + `tests/fixtures/x02_delivery_valid/` +
+  `tests/test_x02_ingestion.py` (14 tests).
+* `pipelines/registry_search/` (new): `target_search_terms.yaml`, `search_registry.py`,
+  `extract_results.py`; `evidence/registry_searches/` (20 records + 5 extractions);
+  `evidence/sources/orchestrator.yaml` (41 verified trial sources).
+* Four facets gained `reporting_gap_refs` (ADORA1, DRD1, GRIN2B, HTR2A).
+* `reports/registry_search_v0_2.md` (new); `docs/OWNERSHIP.yaml` extended.
+
+### What was completed
+
+Tasks A, B, C, D and J. Tasks E, F, G, H and I are not started at this commit.
+
+### Decisions made and why
+
+1. **X01's figures are recorded but inert.** The only record of X01 is the task
+   description's prose. A number with no artefact cannot fail a check, so it may not
+   support a claim (rule V-EXT). This is the standard the brief itself sets for X02,
+   applied to X01.
+2. **X01's methodological instruction is adopted anyway** — no pyramidal-only gate —
+   because it constrains our method rather than asserting Codex's finding, so it costs
+   nothing if the finding is later refuted.
+3. **A null must be representable wherever a positive is.** `COLOCALISES_WITH` is paired
+   with `TESTED_FOR_COLOCALISATION_WITH`, and an X02 delivery with an empty
+   negative-results table is refused, because "tested and did not colocalise" and "never
+   tested" are different states.
+4. **No gene association may license an intervention direction.** None of the ten new
+   relations asserts an effect, and the intervention-layer direction relations remain
+   reachable only from pharmacological claims about actual compounds.
+5. **Positive-versus-null is not assigned mechanically** in the registry search; the five
+   trials with posted cognitive results are extracted verbatim for judgement.
+6. **G (no trial identified) is never a biological null.** Each such record says so in
+   words, and no `counter_level` was raised anywhere by this search.
+
+### Tests and verification actually executed
+
+| Check | Command | Result |
+|-------|---------|--------|
+| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **852 passed, 0 failed** (80 s) |
+| Validator | `graph/validate_graph.py --strict` | **exit 0** — 0 errors, 0 warnings, 3 info; 33 rules |
+| Schema/vocabulary drift | `blueprint.sync_schema_enums --check` | schemas and vocabularies agree |
+| X02 adapter | `ingest_x02.py --self-test` | ACCEPTED on the synthetic fixture; 14 tests prove the refusals |
+| Registry search | `search_registry.py --all` | 20 records, **360 studies classified**, 84 queries |
+| Results extraction | `extract_results.py --queued` | 5 trials extracted verbatim |
+| Source verification | `fetch_source_metadata.py --agent orchestrator` | **41/41 verified** against ClinicalTrials.gov |
+| Branch search | `git branch --all`, GitHub branches API, `git worktree list`, `git fsck`, filesystem sweep, Codex session index | **no Codex/Astra branch exists** |
+
+### Failures or unresolved uncertainty
+
+* **The Codex/Astra branch does not exist**, so X01 cannot be verified, its method cannot
+  be audited, and cross-agent evidence dependence cannot be computed. Codex reportedly
+  assembled ~60 extreme-cognition studies; without that source list, overlap against this
+  repository's 182 sources is unknowable and **any convergence claim spanning the two
+  bodies of evidence is refused rather than caveated**.
+* Two classifier bugs were found by reading output rather than trusting counts — `wais`
+  matching inside "waist circumference", and a mechanism phrase matched by its first
+  token hitting a "Community Reintegration Workshop". Both had inflated findings by about
+  half. Fixed; the second required two attempts because the first fix over-corrected and
+  dropped a genuinely relevant D1 trial.
+* The registry search is term-bounded and ClinicalTrials.gov-only. Targets with no named
+  clinical modulator are searched by gene symbol and mechanism phrase alone, which is
+  weak; `no_trial_identified` means *not found with these terms*.
+* Four assessment files were re-emitted by script, so inline comments below their headers
+  were lost. The record content is unchanged apart from the two fields named in each
+  file's new header note.
+* `--emit` on the X02 adapter is deliberately unimplemented: the canonical record's shape
+  depends on what a real delivery contains, and generating one from a fixture would bake
+  a guess into the repository.
+
+### Effect on the overall project
+
+The repository can now accept an external analysis without believing its prose, and the
+distinction is enforced by a rule rather than a convention. The zeros that Sprint 1
+flagged as its weakest claims are now classified against a registry, with three targets
+explicitly recorded as never tested rather than as failed.
+
+### Next intended step
+
+Tasks E (systematic target discovery), F (positive human natural experiments), G
+(comparative intelligence 2.0), H (convergence layer), I (project truth table), then a
+red-team pass over all new claims.

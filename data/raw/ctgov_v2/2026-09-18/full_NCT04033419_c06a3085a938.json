@@ -1,0 +1,2764 @@
+{
+  "derivedSection": {
+    "conditionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D003072",
+          "term": "Cognition Disorders"
+        },
+        {
+          "id": "D019965",
+          "term": "Neurocognitive Disorders"
+        },
+        {
+          "id": "D001523",
+          "term": "Mental Disorders"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D060825",
+          "term": "Cognitive Dysfunction"
+        }
+      ]
+    },
+    "interventionBrowseModule": {
+      "ancestors": [
+        {
+          "id": "D000547",
+          "term": "Amantadine"
+        },
+        {
+          "id": "D000218",
+          "term": "Adamantane"
+        },
+        {
+          "id": "D001952",
+          "term": "Bridged-Ring Compounds"
+        },
+        {
+          "id": "D006844",
+          "term": "Hydrocarbons, Cyclic"
+        },
+        {
+          "id": "D006838",
+          "term": "Hydrocarbons"
+        },
+        {
+          "id": "D009930",
+          "term": "Organic Chemicals"
+        }
+      ],
+      "meshes": [
+        {
+          "id": "D008559",
+          "term": "Memantine"
+        }
+      ]
+    },
+    "miscInfoModule": {
+      "submissionTracking": {
+        "firstMcpInfo": {
+          "postDateStruct": {
+            "date": "2022-12-22",
+            "type": "ACTUAL"
+          }
+        }
+      },
+      "versionHolder": "2026-09-17"
+    }
+  },
+  "documentSection": {
+    "largeDocumentModule": {
+      "largeDocs": [
+        {
+          "date": "2021-04-23",
+          "filename": "Prot_SAP_000.pdf",
+          "hasIcf": false,
+          "hasProtocol": true,
+          "hasSap": true,
+          "label": "Study Protocol and Statistical Analysis Plan",
+          "size": 13726460,
+          "typeAbbrev": "Prot_SAP",
+          "uploadDate": "2022-11-29T12:22"
+        }
+      ]
+    }
+  },
+  "hasResults": true,
+  "protocolSection": {
+    "armsInterventionsModule": {
+      "armGroups": [
+        {
+          "description": "Subjects receive memantin",
+          "interventionNames": [
+            "Drug: Memantine"
+          ],
+          "label": "Memantine",
+          "type": "EXPERIMENTAL"
+        }
+      ],
+      "interventions": [
+        {
+          "armGroupLabels": [
+            "Memantine"
+          ],
+          "description": "memantine dose\n\n* Week 1: 5 mg dose once daily\n* Week 2: 5 mg dose twice daily\n* Week 3: 5 mg each morning/10 mg each evening\n* Week 4 through the end of Chemotherapy: 10 mg dose twice daily\n* Total duration: 12 - 26 weeks (depending on chemotherapy regimen)",
+          "name": "Memantine",
+          "otherNames": [
+            "Namenda"
+          ],
+          "type": "DRUG"
+        }
+      ]
+    },
+    "conditionsModule": {
+      "conditions": [
+        "Cognitive Decline",
+        "Chemo-brain"
+      ]
+    },
+    "contactsLocationsModule": {
+      "locations": [
+        {
+          "city": "Chapel Hill",
+          "country": "United States",
+          "facility": "University of North Carolina at Chapel Hill",
+          "geoPoint": {
+            "lat": 35.9132,
+            "lon": -79.05584
+          },
+          "state": "North Carolina",
+          "zip": "27514"
+        }
+      ],
+      "overallOfficials": [
+        {
+          "affiliation": "Univesity of North Carolina at Chapel Hill",
+          "name": "Zev M Nakamura, MD",
+          "role": "PRINCIPAL_INVESTIGATOR"
+        }
+      ]
+    },
+    "descriptionModule": {
+      "briefSummary": "Purpose: To conduct a one-arm phase II trial to: (1) compare changes in pre- to post-chemotherapy cognitive function in a cohort of patients with breast cancer receiving memantine to historical controls; (2) examine how depression, anxiety, fatigue, baseline Intelligence Quotient (IQ), and cognitive effort relate to objective and self-reported cognitive function; and (3) estimate the feasibility of conducting a clinical trial of memantine for attenuating cognitive decline in patients with breast cancer during chemotherapy.\n\nParticipants: Adult patients with stage I-III breast cancer scheduled for adjuvant or neoadjuvant chemotherapy.\n\nProcedures (methods): Cognitive assessments will be performed within one week of initiating and four weeks after completion of chemotherapy. Patients will receive memantine 10 mg twice daily between the pre- and post-chemotherapy study assessments. Cognitive function will be assessed objectively using a computerized cognitive test (Delayed Matching to Sample (DMS) test) and a standard neuropsychological battery. To assess subjective cognitive function, the Patient Reported Outcome Measurement Information System (PROMIS) Cognitive Function measure will be used. Depression, anxiety, fatigue, menopausal status, and sleep will be assessed as covariates.",
+      "detailedDescription": "This is a one-arm phase II interventional study in patients with breast cancer to investigate whether memantine can prevent cognitive decline during chemotherapy. The investigators will recruit 56 participants referred to the University of North Carolina (UNC) Breast Center and affiliated outpatient clinics for initiation of adjuvant or neoadjuvant chemotherapy, perform a cognitive assessment within one week of initiating and four weeks after completion of chemotherapy, and treat with memantine 10 mg twice daily between the pre- and post-chemotherapy study assessments (estimated duration: 12-26 weeks, depending on the chemotherapy regimen). Cognitive function will be assessed objectively using a computerized cognitive assessment (Delayed Matching to Sample (DMS) test) and a standard neuropsychological battery. To assess subjective cognitive function, the Patient Reported Outcome Measurement Information System (PROMIS) Cognitive Function measure will be used. Depression, anxiety, fatigue, menopausal status, and sleep are comorbidities known to affect cognitive function, and therefore will be assessed as covariates pre- and post-chemotherapy. Depression, anxiety, health-related quality of life (HRQOL) and functional status will be evaluated as secondary outcomes. The feasibility of the investigator's study by monitoring recruitment, retention, and adherence to memantine will be assessed."
+    },
+    "designModule": {
+      "designInfo": {
+        "allocation": "NA",
+        "interventionModel": "SINGLE_GROUP",
+        "maskingInfo": {
+          "masking": "NONE"
+        },
+        "primaryPurpose": "PREVENTION"
+      },
+      "enrollmentInfo": {
+        "count": 55,
+        "type": "ACTUAL"
+      },
+      "phases": [
+        "PHASE2"
+      ],
+      "studyType": "INTERVENTIONAL"
+    },
+    "eligibilityModule": {
+      "eligibilityCriteria": "Inclusion Criteria:\n\n* Able to provide informed consent\n* At least 18 years of age\n* Able to speak English\n* Diagnosed with breast cancer, Stages I-III\n* Scheduled for adjuvant or neoadjuvant chemotherapy\n\nExclusion Criteria:\n\n* A history of adverse reaction to memantine\n* Another cancer diagnosis with an estimated survival of less than five years\n* Previous chemotherapy exposure\n* Severe cognitive impairment, defined as Blessed Orientation Memory Concentration Test (BOMC) ≥ 11.\n* Pregnancy, confirmed by a negative pregnancy test within 30 days of study enrollment, or breastfeeding\n* Current alcohol or drug abuse",
+      "healthyVolunteers": false,
+      "minimumAge": "18 Years",
+      "sex": "ALL",
+      "stdAges": [
+        "ADULT",
+        "OLDER_ADULT"
+      ]
+    },
+    "identificationModule": {
+      "briefTitle": "Memantine for Prevention of Cognitive Decline in Patients With Breast Cancer",
+      "nctId": "NCT04033419",
+      "officialTitle": "Memantine for Prevention of Cognitive Decline During Adjuvant or Neoadjuvant Chemotherapy in Patients With Breast Cancer",
+      "orgStudyIdInfo": {
+        "id": "LCCC1921"
+      },
+      "organization": {
+        "class": "OTHER",
+        "fullName": "UNC Lineberger Comprehensive Cancer Center"
+      },
+      "secondaryIdInfos": [
+        {
+          "id": "5K12HD001441",
+          "link": "https://reporter.nih.gov/quickSearch/5K12HD001441",
+          "type": "NIH"
+        }
+      ]
+    },
+    "ipdSharingStatementModule": {
+      "accessCriteria": "IRB, IEC, or REB approval, as applicable, and execution of a data use/sharing agreement with UNC.",
+      "description": "Deidentified individual data that supports the results will be shared beginning 9 to 36 months following publication provided the investigator who proposes to use the data has approval from an Institutional Review Board (IRB), Independent Ethics Committee (IEC), or Research Ethics Board (REB), as applicable, and executes a data use/sharing agreement with UNC.",
+      "infoTypes": [
+        "STUDY_PROTOCOL",
+        "SAP",
+        "ICF"
+      ],
+      "ipdSharing": "YES",
+      "timeFrame": "9 to 36 months following publication"
+    },
+    "outcomesModule": {
+      "primaryOutcomes": [
+        {
+          "description": "The Delayed Matching to Sample Test (DMS) is a computerized cognitive assessment of visual working memory. The DMS will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown an image with four patterns and asked to match patterns simultaneously or after delay. The investigators will use the percent correct (0 to 100, higher is better) at the 12-second delay on the DMS test for the primary analysis.",
+          "measure": "Change in Visual Working Memory - Delayed Matching to Sample Test",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        }
+      ],
+      "secondaryOutcomes": [
+        {
+          "description": "The Hopkins Verbal Learning Test-Revised (HVLT-R) is an objective measure of verbal learning and memory. The examiner reads a list of 12 nouns to the participant, who repeats as many words as remembered. Approximately 20-25 minutes later, participants are asked to recall as many words as possible. Then, the examiner reads a list of 24 words, including the 12 words from the original list, and the participant is asked to determine which words were and were not on the original list. These tasks result in three subscales: total recall (range: 0-36; higher is better), delayed recall (range: 0-12; higher is better), and the Recognition Discrimination Index (range: 0-12; higher is better).",
+          "measure": "Change in Verbal Memory - Hopkins Verbal Learning Test-Revised",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Trail Making Test (TMT) is an objective measure of processing speed (part A) and executive function (part B). In part A, the participant is given a diagram of 25 circles, labeled 1 - 25, and asked to connect the circles in ascending order. In part B, the diagram of 25 circles includes some with numbers (1-13) and some with letters (A-L), and the participant is asked to connect the circles alternating between numbers and letters. Performance is measured in the number of seconds required to complete each task (lower is better).",
+          "measure": "Change in Processing Speed and Executive Function - Trail Making Test",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Rapid Visual Processing test (RVP) is a computerized cognitive assessment of processing speed and sustained attention. The RVP will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown a series of pseudo-random digits from 2 to 9 and asked to recognize target digit sequences by pressing a button on the screen as quickly as possible. The investigators will measure total correct responses (higher is better).\n\nThis test was added at the start of the COVID-19 pandemic as a substitute for the Trail Making Test.",
+          "measure": "Change in Processing Speed - Rapid Visual Processing (RVP)",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The One Touch Stockings (OTS) of Cambridge is a computerized cognitive assessment of executive function. The OTS will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown two displays with three colored balls presented as stacks suspended from a beam and a row of numbered boxes along the bottom of the screen. The participant is asked to work out in their head how many moves are required to match the two displays. The investigators will measure mean number of choices to the correct response (lower is better).",
+          "measure": "Change in Executive Function - One Touch Stockings (OTS) of Cambridge",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Digit Span is an objective measure of attention and working memory. The participant is asked to recite sequences of numbers in forward, backwards, and sequential order. The score for each sequence type is the number of correct responses (higher is better).",
+          "measure": "Change in Attention and Working Memory - Digit Span",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Controlled Oral Word Association Test (COWA) is an objective measure of verbal fluency. The participant is asked to name as many words as possible, excluding proper nouns, in one minute. This is repeated for a total for three different letters. The score is the total number of different words produced between all three letters (higher is better).",
+          "measure": "Change in Verbal Fluency - Controlled Oral Word Association Test",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Animal Naming Test (ANT) is an objective measure of semantic fluency. The participant is asked to name as many animals as possible in one minute. The score is the number of unique animals stated (higher is better).",
+          "measure": "Change in Semantic Fluency - Animal Naming Test",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains a cognitive function bank. The PROMIS Cognitive Function 8a short form will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of cognitive complaints.",
+          "measure": "Change in Self-reported Cognitive Function - PROMIS Cognitive Function",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains a depression bank. The PROMIS Depression 8a short form will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of depression. We evaluated the proportion of patients with at least moderately severe symptoms (T-score ≥ 65) at baseline and follow-up.",
+          "measure": "Change in Depressive Symptoms - PROMIS Depression",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains an anxiety bank. The PROMIS Emotional Distress-Anxiety - Short Form 6a will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of anxiety. We evaluated the proportion of patients with at least moderately severe symptoms (T-score ≥ 65) at baseline and follow-up.",
+          "measure": "Change in Anxiety Symptoms - PROMIS Emotional Distress-Anxiety",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy."
+        },
+        {
+          "description": "The number of subjects with Karnofsky Performance Status equal to or more than 80, at baseline and 4 weeks after chemotherapy were compared.\n\nThe Patient-reported Karnofsky Performance Status (KPS) provides a self-characterization of functional status, ranging from severe/requiring continuous nursing care to normal/no complaints/no symptoms of the disease. Scores range from 30 to 100. Higher scores indicate better function.",
+          "measure": "Change in Karnofsky Performance Status",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "The Functional Assessment of Cancer Therapy-General (FACT-G) is a 27-item patient-administered assessment of general quality-of-life measures in cancer patients. It has been validated in the literature and permits the measurement of a number of symptoms including nausea, pain, and insomnia. Responses to each item are on a 5-point Likert scale. The FACT-G total score (range: 0-108; higher is better) will be assessed.",
+          "measure": "Change in Quality of Life - Functional Assessment of Cancer Therapy-General",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "Feasibility will be based on recruitment success as measured by the proportion of invited participants who enroll.",
+          "measure": "Proportion of Invited Participants Who Enroll - Recruitment",
+          "timeFrame": "Baseline (pre-chemotherapy) over the duration of the accrual period"
+        },
+        {
+          "description": "Feasibility will be based on retention success as measured by the proportion of enrolled participants who are not eligible for analysis of the primary outcome.",
+          "measure": "Proportion of Enrolled Participants Who do Not Meet the Primary Outcome Measure - Attrition",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "Feasibility will be based on adherence success as measured by the proportion of self-reported doses of memantine taken.",
+          "measure": "Proportion of Scheduled Drug Doses Taken - Adherence",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy"
+        },
+        {
+          "description": "Safety is based on the number of all adverse events (AE) associated with memantine. The following most common side effects of memantine were explicitly solicited: headache, dizziness, confusion, constipation, diarrhea, and fatigue.\n\nAE was assessed and graded according to the NCI Common Terminology Criteria. A grading (severity) scale is provided for each AE term. Grade 1 Mild; asymptomatic or mild symptoms; clinical or diagnostic observations only; intervention not indicated. Grade 2 Moderate; minimal, local, or noninvasive intervention indicated; limiting age-appropriate instrumental Activities of Daily Living (ADL). Grade 3 Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of hospitalization indicated; disabling; limiting self-care ADL. Grade 4 Life-threatening consequences; urgent intervention indicated. Grade 5 Death related to AE.",
+          "measure": "Number of Adverse Events - Safety",
+          "timeFrame": "From baseline to 4 weeks after chemotherapy (up to 30 weeks)"
+        }
+      ]
+    },
+    "oversightModule": {
+      "isFdaRegulatedDevice": false,
+      "isFdaRegulatedDrug": true,
+      "isUsExport": false,
+      "oversightHasDmc": true
+    },
+    "referencesModule": {
+      "references": [
+        {
+          "citation": "Nakamura ZM, Deal AM, Park EM, Stanton KE, Lopez YE, Quillen LJ, O'Hare Kelly E, Heiling HM, Nyrop KA, Ray EM, Dees EC, Reeder-Hayes KE, Jolly TA, Carey LA, Abdou Y, Olajide OA, Rauch JK, Joseph R, Copeland A, McNamara MA, Ahles TA, Muss HB. A phase II single-arm trial of memantine for prevention of cognitive decline during chemotherapy in patients with early breast cancer: Feasibility, tolerability, acceptability, and preliminary effects. Cancer Med. 2023 Apr;12(7):8172-8183. doi: 10.1002/cam4.5619. Epub 2023 Jan 16.",
+          "pmid": "36645168",
+          "type": "DERIVED"
+        }
+      ]
+    },
+    "sponsorCollaboratorsModule": {
+      "collaborators": [
+        {
+          "class": "NIH",
+          "name": "Eunice Kennedy Shriver National Institute of Child Health and Human Development (NICHD)"
+        }
+      ],
+      "leadSponsor": {
+        "class": "OTHER",
+        "name": "UNC Lineberger Comprehensive Cancer Center"
+      },
+      "responsibleParty": {
+        "type": "SPONSOR"
+      }
+    },
+    "statusModule": {
+      "completionDateStruct": {
+        "date": "2022-04-04",
+        "type": "ACTUAL"
+      },
+      "expandedAccessInfo": {
+        "hasExpandedAccess": false
+      },
+      "lastUpdatePostDateStruct": {
+        "date": "2023-04-20",
+        "type": "ACTUAL"
+      },
+      "lastUpdateSubmitDate": "2023-04-18",
+      "overallStatus": "COMPLETED",
+      "primaryCompletionDateStruct": {
+        "date": "2022-04-04",
+        "type": "ACTUAL"
+      },
+      "resultsFirstPostDateStruct": {
+        "date": "2023-04-20",
+        "type": "ACTUAL"
+      },
+      "resultsFirstSubmitDate": "2022-11-29",
+      "resultsFirstSubmitQcDate": "2023-04-18",
+      "startDateStruct": {
+        "date": "2019-09-25",
+        "type": "ACTUAL"
+      },
+      "statusVerifiedDate": "2023-04",
+      "studyFirstPostDateStruct": {
+        "date": "2019-07-26",
+        "type": "ACTUAL"
+      },
+      "studyFirstSubmitDate": "2019-07-23",
+      "studyFirstSubmitQcDate": "2019-07-25"
+    }
+  },
+  "resultsSection": {
+    "adverseEventsModule": {
+      "description": "AE were assessed according to the NCI Common Toxicity Criteria for Adverse Events (CTCAE), version 5.0. All patient-reported symptoms were recorded and examined for their association with memantine. Adverse Events associated with memantine. The most common adverse events of memantine: headache, dizziness, confusion, constipation, diarrhea, and fatigue were specifically collected.",
+      "eventGroups": [
+        {
+          "deathsNumAffected": 0,
+          "deathsNumAtRisk": 51,
+          "description": "Subjects who had at least one dose of memantine.",
+          "id": "EG000",
+          "otherNumAffected": 40,
+          "otherNumAtRisk": 51,
+          "seriousNumAffected": 0,
+          "seriousNumAtRisk": 51,
+          "title": "All Subjects"
+        }
+      ],
+      "frequencyThreshold": "0",
+      "otherEvents": [
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Anemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Eosinophilia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Febrile neutropenia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Blood and lymphatic system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Thrombocytopenia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Cardiac disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Palpitations"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Ear and labyrinth disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Tinnitus"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Eye disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "blurred vision"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "abdominal pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 12,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "constipation"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 12,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "diarrhea"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "dyspepsia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "gastritis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "gastrointestinal pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "gastrointestinal reflux"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hematochezia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hemorrhoids"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Mucositis oral"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 7,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "nausea"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "vomiting"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Gastrointestinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Chills"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 19,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Fatigue"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "fever"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Generalized edema"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "General disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Non-cardiac chest pain"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Infections and infestations",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "lung infection"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Alkaline phosphatase increased"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Aspartate aminotransferase increased"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Investigations",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Creatinine Increased"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hypercalcemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Hyperglycemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Hyperkalemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hypoalbuminemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hypocalcemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Metabolism and nutrition disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hypokalemia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "arthralgia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Generalized muscle weakness"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Myalgia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Musculoskeletal and connective tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Pain in extremity"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Cognitive disturbance"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 4,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "confusion"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Depressed level of consciousness"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 10,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "dizziness"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Extrapyramidal disorder"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 16,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "headache"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Memory Impairment"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "paresthesia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Peripheral sensory neuropathy"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Nervous system disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Syncope"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 7,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "insomnia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Psychiatric disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Restlessness"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Renal and urinary disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Dysuria"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 5,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Cough"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 3,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Dyspnea"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Epistaxis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Respiratory, thoracic and mediastinal disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "pneumonitis"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "alopecia"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Dry skin"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Erythroderma"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Pruritus"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 7,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "rash (pistular)"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 2,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Rash Maculo-papular"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Skin and subcutaneous tissue disorders - Other, specify"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Skin and subcutaneous tissue disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "Flushing"
+        },
+        {
+          "assessmentType": "NON_SYSTEMATIC_ASSESSMENT",
+          "organSystem": "Vascular disorders",
+          "sourceVocabulary": "CTCAE",
+          "stats": [
+            {
+              "groupId": "EG000",
+              "numAffected": 1,
+              "numAtRisk": 51
+            }
+          ],
+          "term": "hypotension"
+        }
+      ],
+      "timeFrame": "Adverse events (AE) were collected from day one of the study drug administration to 4 weeks after completion of treatment (up to 30 weeks)."
+    },
+    "baselineCharacteristicsModule": {
+      "denoms": [
+        {
+          "counts": [
+            {
+              "groupId": "BG000",
+              "value": "55"
+            }
+          ],
+          "units": "Participants"
+        }
+      ],
+      "groups": [
+        {
+          "description": "Memantine: - Week 1: 5 mg dose once daily\n\n* Week 2: 5 mg dose twice daily\n* Week 3: 5 mg each morning/10 mg each evening\n* Week 4 through end of Chemotherapy: 10 mg dose twice daily\n* Total duration: 12 - 26 weeks (depending on chemotherapy regimen)",
+          "id": "BG000",
+          "title": "Memantine"
+        }
+      ],
+      "measures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "lowerLimit": "27",
+                      "upperLimit": "78",
+                      "value": "56.1"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "dispersionType": "FULL_RANGE",
+          "paramType": "MEAN",
+          "title": "Age, Continuous",
+          "unitOfMeasure": "years"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "54"
+                    }
+                  ],
+                  "title": "Female"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "1"
+                    }
+                  ],
+                  "title": "Male"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Sex: Female, Male",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "2"
+                    }
+                  ],
+                  "title": "Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "53"
+                    }
+                  ],
+                  "title": "Not Hispanic or Latino"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Ethnicity (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "American Indian or Alaska Native"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Asian"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "Native Hawaiian or Other Pacific Islander"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "10"
+                    }
+                  ],
+                  "title": "Black or African American"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "42"
+                    }
+                  ],
+                  "title": "White"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "0"
+                    }
+                  ],
+                  "title": "More than one race"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "3"
+                    }
+                  ],
+                  "title": "Unknown or Not Reported"
+                }
+              ]
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "title": "Race (NIH/OMB)",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "BG000",
+                      "value": "55"
+                    }
+                  ]
+                }
+              ],
+              "title": "United States"
+            }
+          ],
+          "paramType": "NUMBER",
+          "title": "Region of Enrollment",
+          "unitOfMeasure": "participants"
+        }
+      ],
+      "populationDescription": "Overall Number of Baseline Participants"
+    },
+    "moreInfoModule": {
+      "certainAgreement": {
+        "piSponsorEmployee": true
+      },
+      "pointOfContact": {
+        "email": "zev_nakamura@med.unc.edu",
+        "organization": "University of North Carolina at Chapel Hill, Department of Psychiatry",
+        "phone": "(984) 974-3829",
+        "title": "Zev Nakamura, MD"
+      }
+    },
+    "outcomeMeasuresModule": {
+      "outcomeMeasures": [
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "13"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Delayed Matching to Sample Test (DMS) is a computerized cognitive assessment of visual working memory. The DMS will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown an image with four patterns and asked to match patterns simultaneously or after delay. The investigators will use the percent correct (0 to 100, higher is better) at the 12-second delay on the DMS test for the primary analysis.",
+          "groups": [
+            {
+              "description": "Subjects received memantine and completed the visual working memory - Delayed Matching to Sample Test",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Visual Working Memory - Delayed Matching to Sample Test",
+          "type": "PRIMARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "22"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "7"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Hopkins Verbal Learning Test-Revised (HVLT-R) is an objective measure of verbal learning and memory. The examiner reads a list of 12 nouns to the participant, who repeats as many words as remembered. Approximately 20-25 minutes later, participants are asked to recall as many words as possible. Then, the examiner reads a list of 24 words, including the 12 words from the original list, and the participant is asked to determine which words were and were not on the original list. These tasks result in three subscales: total recall (range: 0-36; higher is better), delayed recall (range: 0-12; higher is better), and the Recognition Discrimination Index (range: 0-12; higher is better).",
+          "groups": [
+            {
+              "description": "Subjects received memantine and completed the HVLT-R test.",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Verbal Memory - Hopkins Verbal Learning Test-Revised",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "2.325",
+                      "value": "27.58"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "25.54",
+                      "value": "79.42"
+                    }
+                  ]
+                }
+              ],
+              "title": "Baseline"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "11.32",
+                      "value": "32.65"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "spread": "11.32",
+                      "value": "87.53"
+                    }
+                  ]
+                }
+              ],
+              "title": "Post-chemotherapy"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "3"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "3"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Trail Making Test (TMT) is an objective measure of processing speed (part A) and executive function (part B). In part A, the participant is given a diagram of 25 circles, labeled 1 - 25, and asked to connect the circles in ascending order. In part B, the diagram of 25 circles includes some with numbers (1-13) and some with letters (A-L), and the participant is asked to connect the circles alternating between numbers and letters. Performance is measured in the number of seconds required to complete each task (lower is better).",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "Participants received memantine and completed both pre- and post-assessments.",
+              "id": "OG000",
+              "title": "The Trail Making Test PART A Time (Secs.)"
+            },
+            {
+              "description": "Participants received memantine and completed both pre- and post-assessments.",
+              "id": "OG001",
+              "title": "The Trail Making Test PART B Time (Secs.)"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "The participants received memantine and completed both pre- and post-assessments. Due COVID-19 pandemic, only 3 participants received memantine and completed both pre- and post-assessments. Their data was entered.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Processing Speed and Executive Function - Trail Making Test",
+          "type": "SECONDARY",
+          "unitOfMeasure": "time seconds"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "17"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "31"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Rapid Visual Processing test (RVP) is a computerized cognitive assessment of processing speed and sustained attention. The RVP will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown a series of pseudo-random digits from 2 to 9 and asked to recognize target digit sequences by pressing a button on the screen as quickly as possible. The investigators will measure total correct responses (higher is better).\n\nThis test was added at the start of the COVID-19 pandemic as a substitute for the Trail Making Test.",
+          "groups": [
+            {
+              "description": "Subjects received memantine and completed The Rapid Visual Processing test (RVP) test",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments. There are data available for 31 subjects.\n\nand, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Processing Speed - Rapid Visual Processing (RVP)",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "9"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "6"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "31"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The One Touch Stockings (OTS) of Cambridge is a computerized cognitive assessment of executive function. The OTS will be administered using Cambridge Neuropsychological Test Automated Battery (CANTAB) eclipse software (Cambridge Cognition, Cambridge, UK). The participant is shown two displays with three colored balls presented as stacks suspended from a beam and a row of numbered boxes along the bottom of the screen. The participant is asked to work out in their head how many moves are required to match the two displays. The investigators will measure mean number of choices to the correct response (lower is better).",
+          "groups": [
+            {
+              "description": "Subjects received memantine and completed the One Touch Stockings (OTS) of Cambridge",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "This test was added at the start of the COVID-19 pandemic as a substitute for the Trail Making Test. Accordingly, 31 subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Executive Function - One Touch Stockings (OTS) of Cambridge",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "7"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "31"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "7"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Digit Span is an objective measure of attention and working memory. The participant is asked to recite sequences of numbers in forward, backwards, and sequential order. The score for each sequence type is the number of correct responses (higher is better).",
+          "groups": [
+            {
+              "description": "Subjects received memantine and completed the Digit Span test",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Attention and Working Memory - Digit Span",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "9"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Controlled Oral Word Association Test (COWA) is an objective measure of verbal fluency. The participant is asked to name as many words as possible, excluding proper nouns, in one minute. This is repeated for a total for three different letters. The score is the total number of different words produced between all three letters (higher is better).",
+          "groups": [
+            {
+              "description": "The subjects received memantine and completed The Controlled Oral Word Association Test",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Verbal Fluency - Controlled Oral Word Association Test",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "Improved"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "No Change"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    }
+                  ]
+                }
+              ],
+              "title": "Declined"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Animal Naming Test (ANT) is an objective measure of semantic fluency. The participant is asked to name as many animals as possible in one minute. The score is the number of unique animals stated (higher is better).",
+          "groups": [
+            {
+              "description": "The subjects received memantine and completed The Animal Naming Test (ANT).",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-five subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Semantic Fluency - Animal Naming Test",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "18"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "2"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "Normal Function at Follow-Up"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "14"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "8"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Decline to Mild at Follow-Up Cognitive Difficulties"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "0"
+                    },
+                    {
+                      "groupId": "OG002",
+                      "value": "0"
+                    }
+                  ]
+                }
+              ],
+              "title": "Decline to Moderate at Follow-Up Cognitive Difficulties"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "33"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "10"
+                },
+                {
+                  "groupId": "OG002",
+                  "value": "1"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains a cognitive function bank. The PROMIS Cognitive Function 8a short form will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of cognitive complaints.",
+          "groups": [
+            {
+              "description": "Baseline Cognitive Function based on PROMIS patient-reported outcome",
+              "id": "OG000",
+              "title": "Initial Normal Function"
+            },
+            {
+              "description": "Baseline Cognitive Function based on PROMIS patient-reported outcome",
+              "id": "OG001",
+              "title": "Initial Mild Decline"
+            },
+            {
+              "description": "Baseline Cognitive Function based on PROMIS patient-reported outcome",
+              "id": "OG002",
+              "title": "Initial Severe Decline"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Forty-four subjects had at least one dose of memantine and completed both pre- and post-assessments and, thus, were evaluable for cognitive change.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Self-reported Cognitive Function - PROMIS Cognitive Function",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "50"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "43"
+                    }
+                  ]
+                }
+              ],
+              "title": "PROMIS Depression Score <65"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "1"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "1"
+                    }
+                  ]
+                }
+              ],
+              "title": "PROMIS Depression Score Value ≥ 65"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "51"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "44"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains a depression bank. The PROMIS Depression 8a short form will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of depression. We evaluated the proportion of patients with at least moderately severe symptoms (T-score ≥ 65) at baseline and follow-up.",
+          "groups": [
+            {
+              "description": "Subjects who had at least one dose of memantine and completed a baseline assessment of depression",
+              "id": "OG000",
+              "title": "Baseline Depression"
+            },
+            {
+              "description": "Subjects who had at least one dose of memantine and completed post-assessment of depression",
+              "id": "OG001",
+              "title": "Post-assessment Depression"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Fifty-one subjects provided data regarding depression symptoms at baseline and forty-four provided data at follow-up. All available data were included to evaluate changes in depressive symptoms.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Depressive Symptoms - PROMIS Depression",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "48"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "40"
+                    }
+                  ]
+                }
+              ],
+              "title": "PROMIS Anxiety Score <65"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    },
+                    {
+                      "groupId": "OG001",
+                      "value": "5"
+                    }
+                  ]
+                }
+              ],
+              "title": "PROMIS Anxiety Score ≥ 65"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "51"
+                },
+                {
+                  "groupId": "OG001",
+                  "value": "45"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The National Institute of Health's Patient-Reported Outcomes Measurement Information System (PROMIS) contains an anxiety bank. The PROMIS Emotional Distress-Anxiety - Short Form 6a will be used. Scores for all PROMIS measures are reported on the T-score metric in which the mean=50 and standard deviation (SD) = 10 are centered on the general population means. Higher scores represent greater degrees of anxiety. We evaluated the proportion of patients with at least moderately severe symptoms (T-score ≥ 65) at baseline and follow-up.",
+          "groups": [
+            {
+              "description": "Subjects who had at least one dose of memantine and completed a baseline assessment of anxiety",
+              "id": "OG000",
+              "title": "Baseline Anxiety"
+            },
+            {
+              "description": "Subjects who had at least one dose of memantine and completed post-assessment of anxiety",
+              "id": "OG001",
+              "title": "Post-assessment Anxiety"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Anxiety was assessed using the PROMIS Emotional Distress-Anxiety measure, in 51 subjects at baseline (all enrolled who had at least one dose of memantine) and in 45 subjects at the post-assessment (all who completed this measure at the post-assessment timepoint and had at least one dose of memantine)",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy.",
+          "title": "Change in Anxiety Symptoms - PROMIS Emotional Distress-Anxiety",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "37"
+                    }
+                  ],
+                  "title": "=> 80"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "5"
+                    }
+                  ],
+                  "title": "<80"
+                }
+              ],
+              "title": "Baseline Karnofsky Performance Status"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "39"
+                    }
+                  ],
+                  "title": "=> 80"
+                },
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ],
+                  "title": "<80"
+                }
+              ],
+              "title": "Post-treatment Karnofsky Performance Status"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "42"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The number of subjects with Karnofsky Performance Status equal to or more than 80, at baseline and 4 weeks after chemotherapy were compared.\n\nThe Patient-reported Karnofsky Performance Status (KPS) provides a self-characterization of functional status, ranging from severe/requiring continuous nursing care to normal/no complaints/no symptoms of the disease. Scores range from 30 to 100. Higher scores indicate better function.",
+          "groups": [
+            {
+              "description": "Karnofsky Performance Status of subjects was assessed both at baseline and 4 weeks after the completion of chemotherapy.",
+              "id": "OG000",
+              "title": "Karnofsky Performance Status Change"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "Karnofsky Performance Status of subjects was assessed both at baseline and 4 weeks after the completion of chemotherapy.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Karnofsky Performance Status",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "15.1",
+                      "value": "83.7"
+                    }
+                  ]
+                }
+              ],
+              "title": "Baseline FACT-G"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "spread": "13.9",
+                      "value": "82.6"
+                    }
+                  ]
+                }
+              ],
+              "title": "Post-treatment FACT-G"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "43"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "The Functional Assessment of Cancer Therapy-General (FACT-G) is a 27-item patient-administered assessment of general quality-of-life measures in cancer patients. It has been validated in the literature and permits the measurement of a number of symptoms including nausea, pain, and insomnia. Responses to each item are on a 5-point Likert scale. The FACT-G total score (range: 0-108; higher is better) will be assessed.",
+          "dispersionType": "Standard Deviation",
+          "groups": [
+            {
+              "description": "FACT-G scores of subjects was assessed both at baseline and 4 weeks after the completion of chemotherapy.",
+              "id": "OG000",
+              "title": "FACT-G Scores Change"
+            }
+          ],
+          "paramType": "MEAN",
+          "populationDescription": "Subjects FACT-G scores were assessed both at baseline and 4 weeks after the completion of chemotherapy.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Change in Quality of Life - Functional Assessment of Cancer Therapy-General",
+          "type": "SECONDARY",
+          "unitOfMeasure": "score on a scale"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "412"
+                    }
+                  ]
+                }
+              ],
+              "title": "Assessed for eligibility"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "55"
+                    }
+                  ]
+                }
+              ],
+              "title": "Enrolled"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "Withdrew"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "51"
+                    }
+                  ]
+                }
+              ],
+              "title": "Received at least 1 dose"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "412"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Feasibility will be based on recruitment success as measured by the proportion of invited participants who enroll.",
+          "groups": [
+            {
+              "description": "The subjects who were invited to the study enrolled, received, and completed the treatment.",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "The number of subjects who were assessed for eligibility enrolled and withdrawn.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "Baseline (pre-chemotherapy) over the duration of the accrual period",
+          "title": "Proportion of Invited Participants Who Enroll - Recruitment",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "45"
+                    }
+                  ]
+                }
+              ],
+              "title": "Evaluable"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "Withdrew"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "3"
+                    }
+                  ]
+                }
+              ],
+              "title": "Lost to follow-up"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "51"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Feasibility will be based on retention success as measured by the proportion of enrolled participants who are not eligible for analysis of the primary outcome.",
+          "groups": [
+            {
+              "description": "10 mg twice a day",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "The subject received at least one dose of memantine.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Proportion of Enrolled Participants Who do Not Meet the Primary Outcome Measure - Attrition",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "never initiated memantine"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "39"
+                    }
+                  ]
+                }
+              ],
+              "title": ">= 90% compliance"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "12"
+                    }
+                  ]
+                }
+              ],
+              "title": "<90% compliance"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "55"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Feasibility will be based on adherence success as measured by the proportion of self-reported doses of memantine taken.",
+          "groups": [
+            {
+              "description": "The subjects received memantine",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "All subjects enrolled in the study.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline (pre-chemotherapy) to 4 weeks post-chemotherapy",
+          "title": "Proportion of Scheduled Drug Doses Taken - Adherence",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        },
+        {
+          "classes": [
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "19"
+                    }
+                  ]
+                }
+              ],
+              "title": "fatigue"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "16"
+                    }
+                  ]
+                }
+              ],
+              "title": "headache"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "12"
+                    }
+                  ]
+                }
+              ],
+              "title": "constipation"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "12"
+                    }
+                  ]
+                }
+              ],
+              "title": "diarrhea"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "10"
+                    }
+                  ]
+                }
+              ],
+              "title": "dizziness"
+            },
+            {
+              "categories": [
+                {
+                  "measurements": [
+                    {
+                      "groupId": "OG000",
+                      "value": "4"
+                    }
+                  ]
+                }
+              ],
+              "title": "confusion"
+            }
+          ],
+          "denoms": [
+            {
+              "counts": [
+                {
+                  "groupId": "OG000",
+                  "value": "51"
+                }
+              ],
+              "units": "Participants"
+            }
+          ],
+          "description": "Safety is based on the number of all adverse events (AE) associated with memantine. The following most common side effects of memantine were explicitly solicited: headache, dizziness, confusion, constipation, diarrhea, and fatigue.\n\nAE was assessed and graded according to the NCI Common Terminology Criteria. A grading (severity) scale is provided for each AE term. Grade 1 Mild; asymptomatic or mild symptoms; clinical or diagnostic observations only; intervention not indicated. Grade 2 Moderate; minimal, local, or noninvasive intervention indicated; limiting age-appropriate instrumental Activities of Daily Living (ADL). Grade 3 Severe or medically significant but not immediately life-threatening; hospitalization or prolongation of hospitalization indicated; disabling; limiting self-care ADL. Grade 4 Life-threatening consequences; urgent intervention indicated. Grade 5 Death related to AE.",
+          "groups": [
+            {
+              "description": "All subjects who received at least one dose of memantine were evaluated for adverse events.",
+              "id": "OG000",
+              "title": "Memantine"
+            }
+          ],
+          "paramType": "COUNT_OF_PARTICIPANTS",
+          "populationDescription": "All subjects who received at least one dose of memantine were assessed for adverse events. Four of the 55 subjects who enrolled did not receive memantine and were not evaluated for adverse events.",
+          "reportingStatus": "POSTED",
+          "timeFrame": "From baseline to 4 weeks after chemotherapy (up to 30 weeks)",
+          "title": "Number of Adverse Events - Safety",
+          "type": "SECONDARY",
+          "unitOfMeasure": "Participants"
+        }
+      ]
+    },
+    "participantFlowModule": {
+      "groups": [
+        {
+          "description": "Memantine: - Week 1: 5 mg dose once daily\n\n* Week 2: 5 mg dose twice daily\n* Week 3: 5 mg each morning/10 mg each evening\n* Week 4 through end of Chemotherapy: 10 mg dose twice daily\n* Total duration: 12 - 26 weeks (depending on chemotherapy regimen)",
+          "id": "FG000",
+          "title": "Memantine"
+        }
+      ],
+      "periods": [
+        {
+          "milestones": [
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "51"
+                }
+              ],
+              "type": "STARTED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "45"
+                }
+              ],
+              "type": "COMPLETED"
+            },
+            {
+              "achievements": [
+                {
+                  "groupId": "FG000",
+                  "numSubjects": "6"
+                }
+              ],
+              "type": "NOT COMPLETED"
+            }
+          ],
+          "title": "Overall Study"
+        }
+      ],
+      "preAssignmentDetails": "A total of fifty-six participants consented to the study, but one of them was deemed to be ineligible therefore 55 participants were enrolled in the study.",
+      "recruitmentDetails": "Participants were recruited from 09/25/2019 through 08/13/2021 at six cancer centers in North Carolina."
+    }
+  }
+}
