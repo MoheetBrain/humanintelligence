@@ -15,7 +15,7 @@ PY ?= PYTHONPATH=src .venv/bin/python
 PIP ?= .venv/bin/pip
 
 .DEFAULT_GOAL := help
-.PHONY: help setup validate build store graph rank reports test test-network all \
+.PHONY: help setup validate build store graph rank reports test test-network all tournament identifiers \
         fetch-sources fetch-identifiers fetch-gwas fetch-tractability clean-derived \
         check-ownership hooks index-sources
 
@@ -61,7 +61,22 @@ reports: ## Generate reports/ (interactive graph HTML, ranking CSV, audit summar
 	$(PY) graph/export_graph.py --html
 	$(PY) -m blueprint.reports.build
 
-build: validate store graph ## Validate then build store + graph
+identifiers: ## Rebuild the HGNC identifier index from committed snapshots (offline)
+	$(PY) scripts/fetch_gene_identifiers.py --offline
+
+build: validate identifiers store graph ## Validate then build identifiers + store + graph
+
+tournament: ## Sprint-3 gene tournament from committed snapshots + local MAGMA outputs (offline)
+	$(PY) pipelines/gene_tournament/classify_studies.py
+	$(PY) pipelines/gene_tournament/build_master_universe.py
+	$(PY) pipelines/gene_tournament/analyse_extreme_tail.py
+	$(PY) pipelines/gene_tournament/build_gene_ranks.py
+	$(PY) pipelines/gene_tournament/run_pathway_enrichment.py --collect-only
+	$(PY) pipelines/gene_tournament/build_pathway_panel.py
+	$(PY) pipelines/gene_tournament/build_modules.py
+	$(PY) pipelines/gene_tournament/fetch_gwas_credible_sets.py
+	$(PY) pipelines/gene_tournament/build_consensus.py
+	$(PY) pipelines/gene_tournament/build_red_team_and_cards.py
 
 test: ## Run the offline test suite
 	$(PY) -m pytest -m "not network"

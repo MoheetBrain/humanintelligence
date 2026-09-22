@@ -1,0 +1,390 @@
+# AUDIT: exact biosample strings counted as brain/neural in this run.
+# Format: <count of QTL credible sets>\t<biosampleName>
+
+## MATCHED AS BRAIN (curated allowlist)
+2344	dorsolateral prefrontal cortex
+923	cerebellum
+316	frontal cortex
+274	putamen
+258	nucleus accumbens
+255	caudate nucleus
+235	neocortex
+196	hypothalamus
+186	anterior cingulate cortex
+171	C1 segment of cervical spinal cord
+163	Ammon's horn
+141	substantia nigra
+137	amygdala
+124	neural progenitor cell
+111	sensory neuron
+78	neuron
+45	floor plate
+25	microglial cell
+15	dopaminergic neuron
+14	serotonergic neuron
+11	ependymal cell
+6	astrocyte
+
+
+## REVIEWED AND EXCLUDED (matched a brain keyword but is not CNS/neural)
+-	cortex of kidney	# renal cortex, not brain
+-	pituitary gland	# endocrine gland; anterior lobe is epithelial, not neural tissue
+-	tibial nerve	# peripheral nerve, not CNS
+
+
+## UNREVIEWED biosample names decided by the fallback regex
+## (empty = every biosample encountered was in the curated set)
+not-brain	B cell
+not-brain	CD14-low, CD16-positive monocyte
+not-brain	CD14-positive, CD16-negative classical monocyte
+not-brain	CD16-negative, CD56-bright natural killer cell, human
+not-brain	CD4-positive, alpha-beta T cell
+not-brain	CD4-positive, alpha-beta cytotoxic T cell
+not-brain	CD4-positive, alpha-beta memory T cell
+not-brain	CD8-positive, alpha-beta T cell
+not-brain	Peyer's patch
+not-brain	T cell
+not-brain	T follicular helper cell
+not-brain	T-helper 1 cell
+not-brain	T-helper 17 cell
+not-brain	T-helper 2 cell
+not-brain	adipose tissue
+not-brain	adrenal gland
+not-brain	anterior lingual gland
+not-brain	ascending aorta
+not-brain	blood
+not-brain	blood plasma
+not-brain	body of pancreas
+not-brain	breast epithelium
+not-brain	cartilage tissue
+not-brain	central memory CD4-positive, alpha-beta T cell
+not-brain	central memory CD8-positive, alpha-beta T cell
+not-brain	coronary artery
+not-brain	dendritic cell
+not-brain	double negative thymocyte
+not-brain	effector memory CD4-positive, alpha-beta T cell
+not-brain	effector memory CD8-positive, alpha-beta T cell
+not-brain	esophagus muscularis mucosa
+not-brain	esophagus squamous epithelium
+not-brain	fibroblast
+not-brain	gamma-delta T cell
+not-brain	gastroesophageal sphincter
+not-brain	hematopoietic precursor cell
+not-brain	hepatocyte
+not-brain	ileum
+not-brain	induced pluripotent stem cell
+not-brain	islet of Langerhans
+not-brain	layer of synovial tissue
+not-brain	left ventricle myocardium
+not-brain	lymphoblastoid cell line
+not-brain	macrophage
+not-brain	memory B cell
+not-brain	memory regulatory T cell
+not-brain	mucosal-associated invariant T cell
+not-brain	naive regulatory T cell
+not-brain	natural killer cell
+not-brain	neutrophil
+not-brain	omental fat pad
+not-brain	ovary
+not-brain	placenta
+not-brain	plasmablast
+not-brain	plasmacytoid dendritic cell
+not-brain	platelet
+not-brain	prostate gland
+not-brain	rectum
+not-brain	right atrium auricular region
+not-brain	right lobe of liver
+not-brain	sigmoid colon
+not-brain	skeletal muscle tissue
+not-brain	skin of body
+not-brain	spleen
+not-brain	stomach
+not-brain	suprapubic skin
+not-brain	testis
+not-brain	thyroid gland
+not-brain	tibial artery
+not-brain	transverse colon
+not-brain	upper lobe of left lung
+not-brain	uterus
+not-brain	vagina
+
+
+## COGNITION GWAS TRAITS MATCHED (count\ttrait)
+19118	Qualifications - None of the above (UKB data field 6138)
+16427	Intelligence
+14070	Educational attainment (years of education)
+13977	Educational attainment
+6983	Intelligence (MTAG)
+6981	Cognitive performance
+6778	Cognitive aspects of educational attainment
+6732	Educational attainment (MTAG)
+6384	Common executive function
+6110	Fluid intelligence score (UKB data field 20016)
+5952	Qualifications - A levels/AS levels or equivalent (UKB data field 6138)
+5903	Educational attainment (college completion)
+5613	Cognitive performance (MTAG)
+5109	Fluid intelligence score (baseline)
+4791	General cognitive ability
+4738	Attention deficit hyperactivity disorder or autism spectrum disorder or intelligence (pleiotropy)
+4630	Self-reported math ability (MTAG)
+4539	Qualifications: College or University degree (UKB data field 6138_1)
+4478	Cognitive ability (MTAG)
+4284	Age complete full time education (UKB data field 845)
+3902	Education attainment (UKB data field 6138)
+3823	Personality traits or cognitive traits (multivariate analysis)
+3675	Highest math class taken (MTAG)
+3594	Cognitive ability, years of educational attainment or schizophrenia (pleiotropy)
+3372	Alzheimer's disease or educational attainment (pleiotropy)
+3339	Verbal-numerical reasoning
+3268	Self-reported math ability
+3168	Educational attainment (years of education)(excluding related participants)
+3128	Highest math class taken
+2790	Qualifications: PHESANT recoding (UKB data field 6138_100)
+2756	Qualifications: A levels/AS levels or equivalent (UKB data field 6138_2)
+2733	FI8: chained arithmetic (UKB data field 5012)
+2577	Cognitive processing accuracy
+2575	Cognitive ability
+2520	Frailty (Factor 5 - Poorer Cognition)
+2021	Pairs matching - Time to complete round (UKB data field 400)
+1862	Education attainment or alcohol use disorders
+1585	Educational attainment (confirmatory factor analysis Factor 10)
+1498	Age when finished full-time education (standard GWA)
+1487	Qualifications - O levels/GCSEs or equivalent (UKB data field 6138)
+1476	Qualifications - Other professional qualifications eg: nursing, teaching (UKB data field 6138)
+1414	Fluid intelligence
+1235	Symbol digit substitution test performance (baseline)
+1041	Executive function (trail making test B)
+1032	Cognitive processing speed
+979	Cognitive traits (MTAG)
+964	Cognitive function (baseline)
+879	Lifetime smoking (without educational attainment)
+802	Education attainment or autism spectrum disorders
+744	Reaction time
+679	Noncognitive aspects of educational attainment
+610	Education attainment or anorexia nervosa
+596	Age when finished full-time education (weighted GWA)
+422	Reaction time (standard GWA)
+329	Qualifications: Other professional qualifications eg: nursing, teaching (UKB data field 6138_6)
+329	Pairs matching task
+328	Qualifications: O levels/GCSEs or equivalent (UKB data field 6138_3)
+254	Reaction time (baseline)
+165	Working memory
+160	Education attainment or posttraumatic stress disorder
+136	Digit span task
+135	Extremely high intelligence
+129	Subjective wellbeing conditioned on cognitive performance (multi-trait conditioning and joint analysis)
+63	Subjective wellbeing conditioned on highest math class (multi-trait conditioning and joint analysis)
+63	Subjective wellbeing conditioned on educational attainment (multi-trait conditioning and joint analysis)
+63	Subjective wellbeing conditioned on self-rated math ability (multi-trait conditioning and joint analysis)
+40	FI3: word interpolation (UKB data field 4957)
+22	Education attainment or attention deficit hyperactivity disorder
+17	FI7: synonym (UKB data field 5001)
+15	Education attainment or cannabis use disorder
+11	Information processing speed
+6	Education attainment or major depressive disorder
+4	Cognition and processing speed (confirmatory factor analysis Factor 34)
+4	Cognitive function
+
+
+## GWAS TRAITS SEEN BUT NOT COUNTED AS COGNITION (top 200 by frequency)
+## Provided so the recall of the cognition filter is auditable.
+45574	Body mass index
+29367	Docosahexaenoic acid levels
+22862	Omega-6 fatty acids to omega-3 fatty acids ratio
+22556	Height
+22158	Docosahexaenoic acid to total fatty acids percentage
+22003	Omega-3 fatty acids to total fatty acids percentage
+19510	Red blood cell count
+19110	Degree of unsaturation
+17153	Parkinson's disease
+16835	Mean corpuscular volume
+15610	Systolic blood pressure
+15224	Creatinine levels
+14965	Neutrophill count (UKB data field 30140)
+14945	Omega-3 fatty acids to Omega-6 fatty acids ratio
+14932	Standing height (UKB data field 50)
+14927	Hematocrit
+14698	HDL cholesterol levels
+14208	Mean corpuscular volume (UKB data field 30040)
+13892	Non-albumin protein levels
+13484	Eosinophil count
+13357	Omega-3 fatty acid levels
+13322	Average diameter for HDL particles
+13042	Eosinophill count (UKB data field 30150)
+12888	Weight
+12869	Red blood cell (erythrocyte) count (UKB data field 30010)
+12865	Impedance of arm right (UKB data field 23109)
+12797	Total lipids in large HDL
+12648	Mean corpuscular hemoglobin
+12602	Cholesterol in Medium HDL
+12527	Apolipoprotein A1 levels
+12253	Mean arterial pressure, combined automated + manual reading
+12211	Testosterone levels
+11915	Monounsaturated fatty acids to total fatty acids percentage
+11910	Cholesteryl Esters in Medium HDL
+11892	Haemoglobin concentration (UKB data field 30020)
+11867	Total Lipids in HDL
+11853	Free cholesterol in medium HDL
+11807	Cholesterol in Large HDL
+11792	Concentration of large HDL particles
+11688	Phospholipids in large HDL
+11556	Free Cholesterol in HDL
+11525	Diastolic blood pressure
+11512	Waist-hip ratio
+11461	Impedance of arm left (UKB data field 23110)
+11346	Concentration of medium HDL particles
+11161	Cortical surface area
+11159	Neuroticism
+11159	Pulse pressure, combined automated + manual reading
+11157	Sitting height (UKB data field 20015)
+11019	red blood cell count (RBC, maximum, inv-norm transformed)
+10857	Type 1 diabetes
+10750	Free cholesterol in large HDL
+10652	Red blood cell (erythrocyte) distribution width (UKB data field 30070)
+10650	Albumin levels
+10648	Cholesteryl Esters in Large HDL
+10584	High density lipoprotein cholesterol levels
+10542	Pulse pressure
+10534	red blood cell count (RBC, mean, inv-norm transformed)
+10439	Phospholipids in very large HDL
+10363	Waist circumference (UKB data field 48)
+10358	Free Cholesterol to Total Lipids in Very Large HDL percentage
+10346	Impedance of whole body (UKB data field 23106)
+10309	Total lipids in very large HDL
+10266	Eosinophill percentage (UKB data field 30210)
+10251	Alkaline phosphatase levels
+10143	Hand grip strength right (UKB data field 47)
+10125	Impedance of leg left (UKB data field 23108)
+10114	Linoleic acid to total fatty acids percentage
+10045	Mean reticulocyte volume (UKB data field 30260)
+10018	Whole body water mass (UKB data field 23102)
+9999	Phospholipids in HDL
+9949	Cholesteryl Esters in HDL
+9846	Impedance of leg right (UKB data field 23107)
+9688	Schizophrenia
+9638	Peak expiratory flow (UKB data field 3064)
+9591	Mean platelet volume
+9385	Atrial fibrillation
+9313	Immature reticulocyte fraction (UKB data field 30280)
+9277	High light scatter reticulocyte percentage (UKB data field 30290)
+9259	Hand grip strength left (UKB data field 46)
+9191	IGF 1 (UKB data field 30770)
+9175	Hemoglobin concentration
+9125	Asthma
+9042	Body mass index (UKB data field 21001)
+9032	Total cholesterol levels
+9026	Mean sphered cell volume (UKB data field 30270)
+8957	Haematocrit percentage (UKB data field 30030)
+8931	Hip circumference (UKB data field 49)
+8839	Lymphocyte count
+8829	Body fat percentage (UKB data field 23099)
+8824	Nervous feelings (UKB data field 1970)
+8788	Worrier / anxious feelings (UKB data field 1980)
+8661	Comparative height size at age 10 (UKB data field 1697)
+8652	Mean corpuscular haemoglobin (UKB data field 30050)
+8630	Basal metabolic rate (UKB data field 23105)
+8530	Total lipids in medium HDL
+8449	Trunk fat percentage (UKB data field 23127)
+8437	Reticulocyte count (UKB data field 30250)
+8326	Red cell distribution width
+8245	IGF-1 levels
+8241	Phospholipids in medium HDL
+8200	Brain morphology (MOSTest)
+8164	Serum total protein levels
+8137	Arm fat mass left (UKB data field 23124)
+8055	Reticulocyte percentage (UKB data field 30240)
+8041	Leg fat mass right (UKB data field 23112)
+8024	Lymphocyte percentage (UKB data field 30180)
+7987	Whole body fat mass (UKB data field 23100)
+7972	Aspartate aminotransferase levels
+7957	Leg predicted mass right (UKB data field 23114)
+7924	Red blood cell erythrocyte count (UKB data field 30010)
+7918	Serum albumin levels
+7885	Total protein levels (UKB data field 30860)
+7879	Leg fat percentage right (UKB data field 23111)
+7872	Weight (UKB data field 21002)
+7794	Glycoprotein acetyls levels
+7793	Sex hormone-binding globulin levels
+7741	Seated height (UKB data field 51)
+7697	Arm fat mass right (UKB data field 23120)
+7696	Leg predicted mass left (UKB data field 23118)
+7679	Mean platelet (thrombocyte) volume (UKB data field 30100)
+7670	Testosterone levels (UKB data field 30850)
+7645	Arm predicted mass left (UKB data field 23126)
+7626	Polyunsaturated fatty acids to monounsaturated fatty acids ratio
+7575	Estimated glomerular filtration rate
+7570	Neutrophil count
+7535	Systolic blood pressure, combined automated + manual reading, adjusted by medication
+7534	Alkaline phosphatase levels (UKB data field 30610)
+7456	Platelet count
+7425	red blood cell count (RBC, minimum, inv-norm transformed)
+7387	High light scatter reticulocyte count (UKB data field 30300)
+7377	Monocyte count (UKB data field 30130)
+7267	Systolic blood pressure, combined automated + manual reading, adjusted by medication - raw
+7256	Leg fat percentage left (UKB data field 23115)
+7240	Gamma glutamyl transferase levels
+7208	Whole body fat free mass (UKB data field 23101)
+7208	hemoglobin (maximum, inv-norm transformed)
+7135	Monocyte count
+7117	Leg fat mass left (UKB data field 23116)
+7114	Waist circumference adjusted for body mass index
+7090	Estimated glomerular filtration rate (creatinine)
+7073	Serum alkaline phosphatase levels
+7038	Phospholipids to Total Lipids in Very Large HDL percentage
+7009	Arm predicted mass right (UKB data field 23122)
+7001	Total protein levels
+6991	Mood swings (UKB data field 1920)
+6974	Type 2 diabetes
+6741	Sensitivity hurt feelings (UKB data field 1950)
+6736	Mean arterial pressure, combined automated + manual reading, adjusted by medication
+6665	Trunk predicted mass (UKB data field 23130)
+6640	Body mass index (BMI, minimum, inv-normal transformed)
+6637	Total testosterone levels
+6622	Trunk fat mass (UKB data field 23128)
+6619	eosinophil (absolute count, maximum, inv-norm transformed)
+6618	Mean arterial pressure, automated reading, adjusted by medication - raw
+6615	Concentration of HDL particles
+6605	Arm fat percentage right (UKB data field 23119)
+6605	Cholesteryl Esters to Total Lipids in Large HDL percentage
+6591	Mean arterial pressure, combined automated + manual reading, adjusted by medication - raw
+6519	mean corpuscular volume (MCV, mean, inv-norm transformed)
+6518	Diabetes mellitus (PheCode 250)
+6514	Weight (UKB data field 23098)
+6457	Mean arterial pressure, automated reading, adjusted by medication
+6441	Overweight, obesity and other hyperalimentation (PheCode 278)
+6428	Waist-to-hip ratio adjusted for BMI
+6370	Triglyceride levels
+6369	Body mass index (BMI) (UKB data field 23104)
+6368	Cholesterol to Total Lipids in Large HDL percentage
+6365	Alanine aminotransferase levels
+6344	Lung function (FVC)
+6334	mean corpuscular volume (MCV, minimum, inv-norm transformed)
+6333	Concentration of very large HDL particles
+6319	Systolic blood pressure, automated reading, adjusted by medication
+6262	Lymphocyte count (UKB data field 30120)
+6214	Omega-3 fatty acids
+6211	Neutrophill percentage (UKB data field 30200)
+6200	Systolic blood pressure, automated reading, adjusted by medication - raw
+6114	Glucose levels
+6110	Type 2 diabetes (PheCode 250.2)
+6042	Free Cholesterol to Total Lipids in Medium HDL percentage
+6008	Sodium (mean, inv-norm transformed)
+5985	Phospholipids to Total Lipids in Large HDL percentage
+5887	Forced expiratory volume in 1-second (FEV1) (UKB data field 3063)
+5878	Systolic blood pressure, automated reading (UKB data field 4080)
+5859	mean corpuscular hemoglobin concentration (MCHC, maximum, inv-norm transformed)
+5830	Estimated glomerular filtration rate (cystatin c)
+5818	Whole body fat-free mass (UKB data field 23101)
+5813	Arm fat-free mass right (UKB data field 23121)
+5811	Body mass index (BMI) (UKB data field 21001)
+5771	White blood cell count
+5686	Smoking status, ever vs never
+5685	Phosphate levels (UKB data field 30810)
+5671	Irritability (UKB data field 1940)
+5639	Pulse pressure, automated reading, adjusted by medication
+5616	Occupational prestige
+5606	Body mass index (BMI, maximum, inv-normal transformed)
+5603	Pulse pressure, combined automated + manual reading, adjusted by medication - raw
+5592	red cell diameter width (RDW, minimum, inv-norm transformed)
+5579	Pulse pressure, combined automated + manual reading, adjusted by medication
+5576	Crohn's disease

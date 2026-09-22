@@ -1,349 +1,249 @@
 # Project Status
 
-*Snapshot generated 2026-09-18 (UTC) — **Sprint 2 complete (all tasks A-J), red-teamed
-and corrected.** Sprint 1's ten deliverables remain complete and committed. Sprint 2 has
-delivered the Codex-branch audit (the branch does not exist), X01 recorded as an inert
-unverified external report, the X02 ingestion layer with its refusals under test,
-target-directed registry searches classifying **1,534** studies across 20 targets, a
-genome-wide discovery sweep, a species-first comparative atlas, a convergence layer with
-encoded dependency rules, and a 26-row project truth table. Repository validates with 0
-errors; 852 tests pass.*
+*Snapshot 2026-09-22 (UTC) — **Sprint 3 (Gene Tournament) complete and red-teamed.**
+Sprints 1 and 2 remain complete. Repository validates with 0 errors / 0 warnings / 3 info;
+**879 tests pass, 0 fail**; ownership check clean (819 paths).*
 
-***Three headline results, all negative, and that is the finding:***
-*(1) the Sprint-1 result stands — no target has a defensible causal case for adult
-cognitive enhancement and `tier_1_analyse_next` is empty;*
-*(2) **apparent evidence convergence was largely double-counting** — after correction no
-target exceeds three independent modalities, and three rest on animal evidence alone;*
-*(3) of 39 tracked hypotheses **exactly one is `SUPPORTED`** — that cognition is
-substantially genetic, which licenses nothing about modifiability; the strongest human
-result in the repository is a replicated null.*
+***Sprint-3 headline results***
+1. **The cognition gene universe can be ranked, but only coarsely.** A verified gene-level
+   analysis of general cognition (MAGMA, Davies 2018, N=282,014) finds 375 Bonferroni genes =
+   **159 independent LD loci**. Beyond the top ~20 the consensus ranking is unstable (39 of the
+   top 50 have rank intervals reaching past 200; ranks 51+ tie).
+2. **Extreme cognition is continuous with ordinary cognition at gene level** — the extreme-IQ
+   sample (IQ~170) shows 1.13x the shift pure power-scaling predicts; 121/159 loci agree in sign
+   (P=9e-05); 0 genes are significant in the tail. Individual-level commonality is **not
+   computable with current access**.
+3. **Synaptic biology is the only pathway signal surviving an unbiased, fully conditioned test**
+   (6 of 6,200 sets at global FDR, presynaptic/adhesion rather than postsynaptic). Reproduced in an
+   overlapping meta-analysis; untested (not refuted) in the only UK-Biobank-free sample. Myelin,
+   energy, astrocytes, ion channels, GPCRs, neuromodulators, translation, chromatin: do not survive.
+4. **No gene has a directionally resolved adult-brain effect**, and 91% of locus-to-gene calls are
+   driven by distance or gene density. The chemistry gate stays closed because there is no
+   direction to push in.
+5. **The hand-picked seed list fails the genome test**: 1 of 25 seeds passes Bonferroni (CKB).
 
 ## Current Stage
 
-Sprint 2 — *integrate external analyses and close the human causal bridge*. **All ten
-tasks A-J are done**, and the red-team pass over Sprint-2 claims has been run and its
-findings recorded (`evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml`).
+**Sprint 3 — Human intelligence gene tournament + biological compression. All parts A–S
+delivered**, with explicit NOT_COMPUTABLE records where access blocks a part:
 
-**The red team found three real defects in the registry-search pipeline, and fixing them
-changed the numbers by a factor of four.** The search fetched one page of 50 records per
-query and never paginated, while recording the registry's total as though it had been
-screened; separately, a guard constant existed in the code and was never referenced, so 95
-trials that have not started were filed as `tested_wrong_endpoint`, and 15 trials with an
-empty outcomes module were recorded as having measured no cognitive outcome. All three
-converted absence of measurement into measured absence — the project's recurring bug class,
-this time committed by code whose own docstring stated the rule correctly. After the fix:
-**1,534 studies classified (was 360), 72 reporting gaps (was 8), 40 trials with posted
-cognitive results (was 5)**, and 19 of 20 screens are now exhaustive rather than truncated.
-
-**Seed-list anchoring is now quantified, and it is severe.** A genome-wide sweep of
-10,741 cognition-GWAS associations maps to 4,459 distinct genes. Only **9 of the 31**
-brief-supplied seed genes appear anywhere in that set, and the best of them (CKB, 5
-distinct studies) would rank outside the top 500; 151 non-seed genes have ≥10 distinct
-studies. `targets/discovered/discovered_registry.yaml` holds 21 candidates, unranked by
-design.
-
-**Two project-lead theory nodes were recorded** in `theory/`, and they are complementary:
-
-* the **Selective Encoding Hypothesis**, whose decisive quantity is the *contrast* between
-  prioritised and incidental retention rather than a level — which reclassifies most
-  existing cognitive-enhancer evidence as `not_assessable` rather than supportive. Its
-  "structural exclusion" of tonically acting mechanisms was **retracted** after the red
-  team showed it inverted the file's own guard, converted not-measured into a property, and
-  contradicted the file's own tagging-and-capture logic (§3.1 records the retraction);
-* the **Goal-Gated Plasticity & Retrieval Hypothesis**, which relocates the deficit from
-  capacity to *controllability* — an imperfect interface between conscious goals and the
-  plasticity and retrieval machinery. Its decisive quantity, `control_gap` (imposed minus
-  intended salience), **requires no intervention to measure**, and it separates three
-  channels: gating, persistence and retrieval. The repository has **no retrieval-oriented
-  target at all**, which under this framing is a structural gap rather than an oversight.
-
-**Sprint 2's central blocker: the Codex/Astra branch does not exist.** No branch on
-`origin` or locally, no worktree, no bundle, no commit by any other author, and no Codex
-session referencing this repository — `docs/integration/CODEX_BRANCH_AUDIT.md` records
-the search command by command. X01 is therefore `unverified_external_report` and inert
-(rule V-EXT). Cross-agent evidence dependence cannot be computed, so **any convergence
-claim spanning Codex and Claude evidence is refused rather than caveated**.
-
-### Sprint-2 results so far
-
-* **1,534 registered studies classified** over 67 queries for 20 targets (was 360 before
-  the pagination fix). Three targets — CRTC1, OTX2, RTN4R — have **no matching trial**, now
-  on **complete** screens (21/21, 2/2, 15/15 records examined), recorded as a fact about
-  one registry and not as a biological null. No `counter_level` was raised anywhere.
-* **72 reporting gaps** found (completed, cognitive outcome in protocol, nothing posted).
-  Only the original 8 are attached as `reporting_gap_refs`; **the facets are known to be
-  stale** and re-attachment is deliberately deferred to its own change.
-* **CONVERGENCE IS LARGELY AN ARTEFACT.** After removing seven verified double-counting
-  mechanisms, **no target exceeds three independent evidence modalities**, and the three
-  are always the same three (human genetics, human intervention, animal causal). Atlas
-  facet grades were being counted beside the claims they are computed from; one GTEx run
-  populated the molecular column for every target; GWAS Catalog and Open Targets L2G were
-  counted as two observations of the same summary statistics; null trials were counted as
-  a separate modality. Three targets rest on animal evidence alone.
-* **`reports/project_truth_table.md` — 39 tracked hypotheses, of which `SUPPORTED`: 1**,
-  and that one is *cognition is substantially genetic* — a claim about population variance
-  that licenses nothing about modifiability. **No hypothesis about an intervention target
-  has replicated adult human causal evidence.** 13 are DOWNGRADED, 11 UNRESOLVED, 8
-  NOT_ASSESSED, 4 CONTRADICTED_IN_STUDIED_CONTEXT. The strongest *human* result in the
-  repository remains a replicated **null** (GABRA5).
-* **Comparative Intelligence 2.0's avian arm is inoperable.** Both convergent-cognition
-  birds (New Caledonian crow, budgerigar) are absent from Ensembl Compara while both avian
-  *controls* (chicken, zebra finch) are present. The available birds are the uninformative
-  ones, so no avian statement may be made in either direction. Selection scans and pathway
-  convergence are recorded as **NOT COMPUTED** rather than faked.
-* **41 trial sources registered, 41/41 verified.**
-* The GABRA5 basmisanil null was **re-retrieved by a second route** — the Sprint-2
-  pipeline reproduced the red team's manual figures (MATRICS treatment differences
-  −0.36 p=0.730, +0.28 p=0.793). This is a **retrieval-method check, not an independent
-  replication**: both routes terminate on the same trial, NCT02953639. Wording corrected
-  2026-09-18 after the convergence audit (PC-5) found the earlier phrasing
-  ("independently re-retrieved") could be read as a second item of evidence. The
-  replication that does exist for the α5-GABA-A null is a *different trial*,
-  NCT02484703, not this second retrieval.
-* Two classifier bugs found by reading output rather than trusting counts: `wais`
-  matching inside "waist circumference", and a mechanism phrase matched by its first
-  token hitting a "Community Reintegration Workshop". Both had inflated findings by
-  roughly half.
+| Part | Deliverable | State |
+|---|---|---|
+| A | `data/gene_tournament/master_gene_universe.parquet` | done — 9,221 gene strings; EA a separate proxy channel; 419 studies tiered |
+| B | `direct_cognition_rank.csv` | done — MAGMA (verified) + Savage + catalog strict units |
+| C | `extreme_tail_rank.csv`, `extreme_tail_distribution_stats.csv` | Mode 1 done; **Mode 2 NOT COMPUTABLE** |
+| D | `cognitive_breadth.csv` | done — breadth by distinct cohort units (bipartite matching) |
+| E | `math_gene_rank.csv` | done — A/B/C separate; **0 math-specific genes identifiable** |
+| F | `within_family_rank.csv` | **NOT COMPUTABLE** (OpenGWAS registration; 0 catalog hits) |
+| G | `fine_mapping_support.csv` | done — study-first GWAS credible sets + L2G with SHAP drivers |
+| H | `adult_brain_directionality.csv` | done — 0 genes direction-resolved at pre-set rule |
+| I | two rankings inside the TOP50 files | done — natural vs adult-gated |
+| J | `positive_human_perturbations.csv` | done — 2q12.3 corrected; ClinGen as safety |
+| K | `pathway_enrichment.csv`, `pathway_hypothesis_panel.csv`, `pathway_replication.csv` | done |
+| L | `biological_modules.csv`, `module_report.md` | done — 11 modules; boundaries unstable |
+| M | `minimal_control_set.csv` | done — collapses to one gene; no control set |
+| N | `TOP50_HUMAN_COGNITION_GENES.csv`, `TOP50_ADULT_MODIFIABLE_GENES.csv` | done — RRA + Borda + Pareto + LODO + bootstrap |
+| O | `TOP10_COGNITION_MODULES.csv` | done |
+| P | `red_team_top50_*.csv`, `red_team_modules.csv` | done — 19/50 and 16/50 downgraded |
+| Q | `GENE_CARDS_TOP50_*.md` | done |
+| R | `comparative_top_genes.csv` | **partial** — 30/83 genes (Ensembl REST slow/failing); selection & convergence NOT computed |
+| S | 20 questions | answered in `reports/GENE_TOURNAMENT_FINAL.md` |
 
 ## Project Objective
 
-Build a fully computational causal-control framework for adult human cognitive
-capacity: identify the smallest set of **adult-modifiable biological control
-parameters** that determine how much useful computation, learning, abstraction,
-working memory, transfer and durable knowledge a healthy adult human brain can
-achieve.
-
-Not a nootropics list, not a search for an "intelligence gene". All work here is
-computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`); external wet-lab, animal and
-clinical results are ingested as evidence with provenance and are never repeated,
-planned or recommended by this project.
-
-### Sprint 1 — *infrastructure and first evidence ingestion* (complete)
-
-Sprint 1 — The type system, 12 schemas,
-a 31-rule validator, the state model, the ranking/uncertainty model, `THEORY.md` and all
-four evidence atlases are complete. **The repository validates with zero errors** (39
-warnings, all of them known incompleteness waiting on the red team). Two deliverables
-all 27 targets are audited (30 audit records), the graph compiler, DuckDB/Parquet store,
-exporters and all four reports are built, and the post-audit ranking has been run and
-published as PRELIMINARY. **Sprint 1 is complete.** The next sprint's first task is not a
-feature: three of the four atlases never ran a target-directed registry search, so the
-repository's zeros are currently less trustworthy than its ones.
+Build a fully computational causal-control framework for adult human cognitive capacity:
+identify the smallest set of **adult-modifiable biological control parameters** that determine
+how much useful computation, learning, abstraction, working memory, transfer and durable
+knowledge a healthy adult brain can achieve. Not a nootropics list, not a search for an
+"intelligence gene". All work is computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`).
 
 ## Current Branch
 
-`sprint-2/causal-bridge` (branched from `sprint-1/foundation`, which has four commits and
-is pushed). Three Sprint-2 commits so far: the Codex audit / X01 / X02 / registry-search
-commit, the theory-node / discovery-sweep / 2q12.3 commit, and this one (comparative v2,
-convergence layer, truth table, red-team pass and the pipeline fixes it forced).
+`sprint-3/gene-tournament`, branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
+**`/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`** (remote
+`github.com/MoheetBrain/humanintelligence`). The earlier clone at `/Users/moheet/humanintelligence`
+no longer exists. A second, **Codex-owned** linked worktree exists at
+`/Users/moheet/Documents/ChatGPT/intelligence-codex` (branch `agent/codex-positive-genetics`,
+local and never pushed); it was audited read-only and never modified.
 
 ## Current System Architecture
 
-Three linked graph layers compiled from curated records:
+Three linked graph layers compiled from curated records (evidence graph; biological causal graph
+Variant → Gene → … → CognitivePhenotype; intervention graph), a blackboard execution model with
+disjoint path ownership (`docs/OWNERSHIP.yaml`), and an immutable provenance spine
+(`data/raw/` + sha256 `MANIFEST.jsonl`). Storage: curated YAML → Parquet → DuckDB → NetworkX.
 
-1. **Evidence graph** — Paper / Preprint / Dataset / DatabaseRelease / Experiment /
-   Measurement / ClinicalTrial / Claim / Replication / Audit / Species.
-2. **Biological causal graph** — Variant → Gene → Transcript → Protein →
-   MolecularProcess → CellType → BrainRegion → Circuit → StateVariable →
-   ComputationalPrimitive → CognitivePhenotype.
-3. **Intervention graph** — Compound / Drug / Biologic / RNAIntervention /
-   GeneRegulation / MetabolicIntervention / Neurotechnology / Target / Mechanism /
-   StateVariable / DesiredEffect / AdverseEffect.
+**Sprint 3 adds a gene-tournament layer** (`pipelines/gene_tournament/`, orchestrator-owned):
 
-Every layer-2 and layer-3 edge derives from a claim carrying provenance; only
-identifier/ontology facts are claim-free (`reference_data`, `ontology_axiom`). Null
-results are representable as first-class `NO_DETECTED_EFFECT_ON` edges and are excluded
-from support counts.
-
-Storage: curated YAML → Parquet → DuckDB → NetworkX, with Neo4j deferred to an
-exporter. Execution: a blackboard — the repository is the shared medium, agents own
-disjoint path sets, the orchestrator enforces gates and performs all commits.
+```
+GWAS Catalog (22 traits) ─► study tiers ─► master universe ─┐
+MAGMA gene analyses (Davies✓, Savage, Zabaneh, FI4) ─► LD blocks ─┼─► per-dimension ranks (B–J)
+Open Targets (credible sets/L2G; brain coloc) ────────────────┤         │
+GTEx v10 + BrainSpan (timing) ─ ClinGen/gnomAD (dosage) ──────┘         ▼
+MAGMA gene-set (GO/Reactome/SynGO, conditioned) ─► pathway panel ─► modules (L) ─► control set (M)
+                                                                     └► RRA consensus (N) ─► red team (P) ─► cards (Q)
+```
 
 ## Capabilities Implemented
 
-* **Contract v0.1.0** (`docs/DATA_CONTRACT.md`), amended repeatedly during the run in
-  response to defects the agents found in use — 16 rulings recorded in
-  `docs/blackboard/RESOLUTIONS.md`. The substantive ones: separate
-  evidence/counter-evidence grading; null-result edges (V16b) and the symmetry rule that
-  a null must be expressible wherever the positive claim is (V16b-sym); the
-  measured-absence versus absence-of-measurement distinction (`evidence_gap`, V16c);
-  polarity-aware methodological caps (§5.4) with the precautionary asymmetry declared and
-  measured; `search_basis` instead of demanding a citation for the absence of evidence;
-  `reporting_gap_refs` for completed-but-unreported trials; `preclinical_harm` so animal
-  harm cannot wear a clinical label; duplicate source registration policy (§1.3).
-* **Machine-checked provenance**: PubMed ESummary, ClinicalTrials.gov v2, GWAS Catalog
-  v2, DOI→PMID resolution, and snapshot-based verification for database releases.
-  Immutable raw snapshots plus a sha256 manifest; full offline rebuild.
-* **HGNC identifier resolution** — no agent hand-writes an accession.
-* **Formal ontology**: node/edge type system with domain/range constraints,
-  24 computational primitives, state-variable type system, controlled vocabularies.
-* **12 JSON Schemas** + pydantic record models + a **31-rule validator** with
-  actionable messages (including nearest-declared-id suggestions on dangling refs).
-* **Provenance for tool-mediated data** (`scripts/record_tool_snapshot.py`), so MCP tool
-  payloads can be snapshotted and verified like an HTTP fetch.
-* **State model**: 101 state variables across 8 domains + a dynamics specification.
-* **Ranking + uncertainty model**: facet rubric, facet→dimension spec, ordinal→Beta
-  mapping, Monte Carlo rank intervals, polarity-aware caps, information-gain priority,
-  convergence/centrality analysis.
-* **Chemistry gate** (`src/blueprint/pharmacology/gates.py`) — virtual pharmacology
-  refuses targets that have not survived integration and audit.
-* Pre-commit gate combining the Commit Continuity Protocol with repository validation.
+* All Sprint 1–2 capabilities (contract v0.1.0 + amendments R1–R20, 33-rule validator,
+  provenance tooling, HGNC resolution, ranking/uncertainty model, chemistry gate, registry
+  search, discovery sweep, comparative v2, convergence dependency rules, truth table).
+* **Sprint 3:**
+  * **Independent recomputation of an external analysis**: X01's MAGMA gene layer re-derived from
+    the raw 518 MB summary statistics; verdict logic separates deterministic agreement
+    (NSNPS/NPARAM) from MAGMA's stochastic permutation noise.
+  * **Study-level evidence tiers** (strict / MTAG / clinical-ageing / excluded EA-or-cross-trait /
+    proxy) so EA cannot leak into direct cognition through trait labels.
+  * **LD-aware locus blocks** from MAGMA gene–gene correlations.
+  * **Extreme-tail continuity test** with power-scaling prediction and size-matched permutation.
+  * **Conditioned competitive gene-set analysis** (size, density, LD, annotation density, LoF
+    constraint) with **global FDR** and cross-dataset replication.
+  * **Study-first fine-mapping** with L2G SHAP-driver classification (positional vs biological).
+  * **Directionality rule** requiring cross-colocalisation sign agreement with trait polarity.
+  * **Rank aggregation**: RRA, Borda, Pareto, leave-one-dimension-out, dimension bootstrap.
+  * **Module compression** (Louvain/hierarchical/NMF, bootstrap, leave-source-out, leave-study-out).
+  * `make tournament` rebuilds Parts A–Q from committed inputs.
 
 ## Work Completed to Date
 
-1. Scaffolding, contracts, ownership map, task DAG, policy documents (commit 1).
-2. Verified reachability of every provenance API the design depends on; recorded working
-   query patterns in `docs/API_RECIPES.md` (including the Open Targets
-   trait → GWAS study → credible set → L2G/colocalisation route).
-3. Spawned 5 of 7 planned subagents; 3 atlases and the ranking model have produced
-   records. All five were interrupted by a session usage limit and have been resumed
-   with precise remaining-work instructions.
-4. Triaged 581 validator violations; fixed the contract/tooling share (intervention
-   schema too narrow for real ChEMBL data, V6 failing open on cross-agent duplicates,
-   database releases unverifiable by literature registry).
-5. Recorded 13 architecture decisions (`docs/DECISIONS.md`) and 16 schema-change
-   rulings (`docs/blackboard/RESOLUTIONS.md`), each with rationale, alternatives and the
-   cost the fix accepts.
-6. Drove the repository from 581 validation violations to **zero errors**, with the
-   majority of the fixes landing on the contract rather than on the records — five
-   separate constraints turned out to forbid a true record.
-7. Ruled that the ranking composite must be **conjunctive** rather than additive, since
-   the six dimensions are conditions that must all hold; this moved ranks by up to nine
-   places and exposed three further defects (a tautological sensitivity variant, an inert
-   composite gate, and the fact that principle P8 does not hold at the composite).
-8. Completed all four evidence atlases and the red team's launch; the red team is
-   running.
+1. **Sprint 1** (complete): scaffolding, contracts, four evidence atlases, type system, ranking
+   model, red-team audit, graph layer, reports; `tier_1_analyse_next` empty.
+2. **Sprint 2** (complete): registry searches (1,534 studies after fixing three pipeline defects),
+   discovery sweep, 2q12.3 watchlist, comparative v2, convergence layer, truth table (39 rows), X02
+   ingestion readiness, two theory nodes.
+3. **Sprint 3** (complete, this branch):
+   * Located the real work location; restored the canonical tree; rebuilt the gitignored identifier
+     index offline and added it to `make build`.
+   * **Found the Codex/Astra branch** Sprint 2 declared nonexistent; audited it read-only;
+     independently verified X01's gene-level layer; corrected the audit, the X01 record and the
+     GRM3/ADGRB1/GABBR1 attribution.
+   * Built Parts A–S (table above) and the final report `reports/GENE_TOURNAMENT_FINAL.md`.
+   * **Corrected the 2q12.3 atlas**: the Sprint-2 gene list came from the hg38 cytoband for an hg19
+     label; the verified duplication is EDAR/SH3RF3/SEPTIN10/SOWAHC.
+   * Applied a **Sprint-3 layer to the truth table** (7 status changes; seed rows gain verified
+     gene-level results).
 
 ## Important Files and Artifacts
 
 | Path | Role |
 |------|------|
-| `docs/DATA_CONTRACT.md` | authoritative record/ID/validation contract (v0.1.0, amended) |
-| `docs/DECISIONS.md` | D001–D013, including the defects found in use |
-| `docs/blackboard/RESOLUTIONS.md` | R1–R16: every schema-change request and its ruling |
-| `THEORY.md` | Cognitive Power Envelope + OPEN→WRITE→SELECT→LOCK, with falsification sections |
-| `docs/API_RECIPES.md` | verified live query patterns for all five external APIs |
-| `ontology/`, `schemas/`, `state_model/` | type system, 12 schemas, 100 state variables |
-| `graph/validate_graph.py` | 31-rule validator, `--strict`/`--json`/`--root`/`--update-lock` |
-| `models/ranking/`, `models/uncertainty/` | facet rubric, ranking spec, ordinal→Beta model |
-| `scripts/fetch_source_metadata.py` | citation verification, offline rebuild |
-| `scripts/fetch_gene_identifiers.py` | HGNC resolution |
-| `data/raw/MANIFEST.jsonl` | checksummed manifest of every raw snapshot |
+| `reports/GENE_TOURNAMENT_FINAL.md` | Sprint-3 final report (A–J, Part S, limits, robustness, downgrades) |
+| `reports/gene_tournament/` | all per-part outputs, gene cards, red-team tables, module report |
+| `data/gene_tournament/master_gene_universe.parquet` | Part A universe with per-channel and strict-tier provenance |
+| `data/gene_tournament/study_classification.csv` | 419 studies tiered |
+| `data/raw/magma_x01/2026-09-22/REPLICATION_CHECK.json` | X01 gene-layer verification |
+| `data/raw/magma_sprint3/2026-09-22/` | committed MAGMA outputs (Savage, Zabaneh, FI4, Davies re-run) + provenance |
+| `atlases/gene_tournament/phenotype_channels.yaml` | phenotype channel map; EA as proxy |
+| `atlases/positive_genetics/2q12_3_duplication.yaml` | corrected (v0.3.0) |
+| `analyses/external/X01_cell_type_enrichment.yaml` | corrected; artefacts_received_pending_check |
+| `docs/integration/CODEX_BRANCH_AUDIT.md` | Sprint-2 verdict superseded by a correction block |
+| `reports/project_truth_table.{md,csv}` | 39 rows with Sprint-3 layer |
+| `docs/blackboard/RESOLUTIONS.md` | R1–R20 (R20: X01 test invariant; pipelines/reports ownership) |
 
 ## Data Sources and Provenance
 
-| Source | Access | Status |
+| Source | Access | Use in Sprint 3 |
 |--------|--------|--------|
-| HGNC REST | public | 31/31 seed symbols resolved |
-| NCBI E-utilities (pubmed, taxonomy) | public, optional `NCBI_API_KEY` | in use; 115 literature sources verified |
-| ClinicalTrials.gov v2 | public | in use (trial verification, terminated-trial search) |
-| GWAS Catalog REST v2 (release 2026-09-13) | public | ingestion pipeline written |
-| Open Targets GraphQL (data version 26.06) | public | tractability/safety/credible sets |
-| AlphaGenome | **requires key — absent** | interface-only, deferred (Q001) |
+| GWAS Catalog REST v2 (release 2026-09-13) | public | 22 traits, 33,506 associations, 419 study records — snapshotted |
+| Davies 2018 open subset (Edinburgh DataShare) | public, CC-BY-4.0 | MAGMA input; sha256 recomputed (518 MB, not stored) |
+| Savage 2018, Zabaneh 2018, UKB FI4 (GWAS Catalog FTP) | public | MAGMA inputs; checksums recorded (not stored) |
+| MAGMA v1.10 + 1000G EUR | public (binary not redistributable) | used from the Codex worktree |
+| Open Targets Platform 26.06 | public | credible sets, L2G + SHAP, brain QTL colocalisation |
+| GTEx v10 median TPM; BrainSpan | public (BrainSpan non-commercial) | developmental classification |
+| NCBI gene2go, GO, Reactome 97, SynGO 1.3, HPA v25.1 | public | pathway sets; HPA brain cell specificity |
+| STRING v12 | CC BY 4.0 | module graph (FDR<0.01 genes) |
+| ClinGen dosage (FTP, 2026-09-22) | public | safety flags; 2q12.3 recheck |
+| gnomAD v2.1.1 constraint | public | covariate and safety |
+| HGNC complete set | public | symbol verification |
+| EuropePMC full text (PMC11701252) | open access | 2q12.3 verification |
+| Ensembl Compara REST | public | Part R orthology (partial) |
+
+Bulk raw downloads over the 5 MiB commit limit are kept out of git; each has URL + sha256 in a
+committed `PROVENANCE.json`.
 
 ## Decisions and Rationale
 
-See `docs/DECISIONS.md` for the full record. The four that shaped this run most:
-identifiers and citations are fetched, never typed (D001); no hand-written
-probabilities anywhere in curated records (D002); evidence and counter-evidence graded
-separately (D003); methodological-weakness caps are polarity-aware and the resulting
-precautionary asymmetry is declared and measured rather than hidden (D010, D011).
+* **Gene-based test over catalog counts** for direct cognition — counts measure gene length and
+  study attention; MAGMA conditions on neither but tests signal properly per gene.
+* **A gene is not a finding; an LD block is.** Every "number of genes" is reported with its block count.
+* **EA separated at study level, not only trait level.**
+* **Global FDR is primary** for pathways (within-collection FDR favoured the small SynGO family).
+* **A dimension enters the primary consensus only if ≥1 gene passes its own multiple-testing
+  threshold; safety is a flag, never a promoting dimension.** Adopted *after* an all-dimensions run
+  was dominated by near-noise dimensions — disclosed as such; all-dimensions ranks retained.
+* **Direction requires ≥3 strong gene-level brain colocalisations with ≥80% polarity-adjusted sign
+  agreement** — set after the first version's single-best-coloc rule proved self-contradicting.
+* **Nearest gene is never sufficient**: L2G calls dominated by distance/gene-density SHAP features
+  do not count as support.
+* **Codex branch: read-only.** Its results were verified by recomputation, not by trust.
 
 ## Verification and Test Results
 
-All results below were executed; none are projected.
+All executed 2026-09-22; none projected.
 
-| Check | Command | Result (2026-09-17) |
-|-------|---------|---------------------|
-| Test suite | `.venv/bin/python -m pytest -q -m "not network"` | **740 passed, 0 failed** in 35.6 s |
-| Validator | `.venv/bin/python graph/validate_graph.py --strict` | **PASS, exit 0** — 0 errors, 0 warnings, 2 info findings, 32 rules run |
-| Store | `make store` | 11 tables + provenance, 12 views; nodes 1284, edges 1703 |
-| Graph | `make graph` | 1284 nodes / 1703 edges; 636 claim-derived, 942 reference-data, 125 axiom |
-| Reports | `make reports` | interactive graph 1.67 MB, **0 remote references**, byte-identical across renders |
-| Ranking | `models/ranking/rank_targets.py` | 27 rows, all PRELIMINARY; **tier_1 empty**; gates fired 23/3/2/2 |
-| Ownership | `.venv/bin/python scripts/check_ownership.py` | **all 1550 paths owned as expected** |
-| Claim registry lock | `graph/validate_graph.py --update-lock` | 289 claim ids locked; V13 now protects provenance |
-| Source verification (offline rebuild, no network) | `scripts/fetch_source_metadata.py --all --offline` | **117/117 verified** from committed snapshots |
-| Source verification (live) | `scripts/fetch_source_metadata.py --agent power` | 41/41 verified |
-| Independent citation spot-check | live PubMed ESummary for PMID 14561278 | title/journal/DOI match the stored record exactly (similarity 1.0) |
-| Seed symbol resolution | `scripts/fetch_gene_identifiers.py` | 31/31 HGNC-approved |
-| Ownership | `scripts/check_ownership.py --paths …` | clean after specificity fix |
-| Record counts (validator census) | — | 182 sources, 290 claims, 393 evidence items, 27 targets, 129 assessments, **29 audits** |
-| Audit outcomes | — | 20 retain-with-downgrade · 4 retain · 3 deprioritise · 2 insufficient-evidence; 5 downgrades applied; findings 4 critical / 31 major / 11 minor / 7 info |
-| Per-atlas sources/claims | — | genetics 58/149 · brakes 53/57 · power 44/50 · comparative 20/21 · red team 17/12 (in progress) |
-| Facet assessments | — | genetics 27 · comparative 27 · integration 27 · brakes 14 · power 7 · red team 0 (in progress) |
+| Check | Command | Result |
+|-------|---------|--------|
+| Test suite | `PYTHONPATH=src .venv/bin/python -m pytest -q -m "not network"` | **879 passed, 0 failed** (81.9 s) |
+| Tournament guard tests | `pytest pipelines/gene_tournament/test_gene_tournament.py` | 27 passed |
+| Validator | `PYTHONPATH=src .venv/bin/python graph/validate_graph.py --strict` | **PASS** — 0 error, 0 warning, 3 info |
+| Ownership | `PYTHONPATH=src .venv/bin/python scripts/check_ownership.py` | all 819 paths owned as expected |
+| X01 gene-layer recomputation | `ingest_magma_gene_analysis.py --replication …matched.genes.out` | REPRODUCED_WITHIN_MONTE_CARLO_ERROR (NSNPS/NPARAM identical for 18,418 genes; Spearman 0.9999995; 4 genes flip Bonferroni) |
+| Input checksum | `shasum -a 256 davies2018_open_complete.txt` | matches recorded 01990c3e…ca6573 |
+| Savage checksum | `md5` vs publisher CHECKSUM file | match (fa7e947e…) |
+| GWAS fetch completeness | page audit | 22/22 traits read to exhaustion |
+| Open Targets coloc run | `fetch_opentargets_coloc.py` | 400/400 genes ok, 0 errors |
+| Open Targets GWAS credible sets | `fetch_gwas_credible_sets.py` | 118 studies ok, 3 not in Open Targets; 2,013 credible sets |
+| Offline identifier rebuild | `scripts/fetch_gene_identifiers.py --offline` | 31/31 resolved (fixed 2 graph-test failures on fresh clone) |
 
 ## Known Failures and Limitations
 
-* **The repository does not currently validate.** ~180 V4 violations are the genetics
-  atlas's unmerged sources; 235 V1 violations are a mix of schema gaps already fixed and
-  agent-side record shape errors awaiting the resumed agents.
-* **No red-team audit exists** (0 audit records), so gate G4 is unmet and no ranking
-  table has been generated. Nothing in `reports/` yet.
-* **`THEORY.md` does not exist yet** (Sprint-1 Deliverable 2, assigned to the
-  integration agent, in flight).
-* **The graph compiler, DuckDB store, exporters and the interactive HTML report are not
-  built** (ontology agent Phase 2, not yet started).
-* Five agents were interrupted mid-task by a session usage limit; their work is resumed
-  but unfinished, so all counts above are provisional.
-* The power atlas could not reject the hypothesis that healthy, rested, well-fed adult
-  cognition is **not** power-limited. That is a finding, and it weakens the POWER factor
-  of the project's own organising hypothesis.
-* Coverage is uneven by construction: the comparative atlas could honestly assess only
-  4 of 27 targets; the rest are `not_assessed` with null levels.
+* **Within-family evidence absent** (Part F not computable).
+* **Individual-level extreme-IQ analysis absent** (Mode 2 not computable).
+* **All gene-level statistics European-ancestry; ancestry sensitivity not computable.**
+* **Davies and Savage share UK Biobank** — cross-meta agreement is reproducibility, not replication;
+  the only UKB-free gene-level statistic (Zabaneh) is 65x underpowered.
+* **Possible HRS/CHARGE sample overlap** between Zabaneh controls and Davies is unresolved.
+* **Part R partial** (30/83 genes); selection and convergence not computed.
+* **Module boundaries are method-dependent** (cross-method ARI 0.19–0.24).
+* **Consensus ranks beyond ~20 are unstable**; the top-50 files show intervals and ties.
+* 122 MAGMA Entrez IDs without a current symbol are excluded from the consensus (1 Bonferroni).
+* The X01 **cell-type layer** is not yet re-derived here.
+* Catalog study classification is rule-based; memory studies without a cohort field in ageing
+  cohorts can escape the clinical tier (APOE's appearance is a symptom, flagged by the red team).
 
 ## Risks and Technical Debt
 
 | Risk | Status |
 |------|--------|
-| Hallucinated citations | mitigated and now exercised: 117/117 verified, one independent spot-check passed |
-| Hallucinated mechanism behind a real citation | partially mitigated (`extraction.content_checked`); depends on the red team |
-| Seed-list anchoring (27 brief-supplied targets) | declared in the registry; ranking must expose `dossier_depth` and `coverage` |
-| Precautionary asymmetry under-ranking good targets | declared (D011); `symmetric_caps` sensitivity variant required before any ranking is published |
-| Ranking read as a safety or efficacy claim | report must carry PRELIMINARY plus rank intervals; not yet produced, so not yet demonstrated |
-| Cross-agent citation dependence (shared cohorts, shared sources) | 2 shared sources already detected by the validator; red team owns the check |
-| Session usage limits interrupting long agent runs | observed; mitigated by resumable agents and frequent orchestrator checkpoints |
+| Codex worktree is local-only; its 9.5 GB of inputs are unversioned | recorded; checksums carried here for the inputs this repo used |
+| MAGMA binary lives outside this repo (licence forbids vendoring) | `make tournament` uses committed MAGMA outputs; re-running MAGMA needs the binary |
+| Several dimensions are coarse/tied (module, adult modifiability) | disclosed via `carried_by` and tie notes |
+| Convergence dependency rules (D001–D009) still unenforced by a validator rule | carried from Sprint 2 |
+| 17q21.31 inversion and 6p22/MHC regions produce non-gene-specific colocalisation | flagged in Part H and the red team |
+| Several MCP connectors unauthorised (GitHub, Synapse, Wiley, etc.) | not needed this sprint |
 
 ## Current Blockers
 
-**None.** AlphaGenome remains deferred for want of an API key (`ALPHAGENOME_API_KEY`),
-which was already planned for Sprint 2 (Q001); the module is interface-only and cannot
-emit a number. Several MCP connectors in the working environment are unauthorised
-(GitHub, Linear, Notion, Slack, Figma, and the bio-research Synapse/Wiley/Owkin servers);
-none was needed, because every data source this sprint used is a public API requiring no
-key. Synapse and Wiley would widen literature access in later sprints and need
-authorising outside this session.
+* **No UKB-free, adequately powered cognition GWAS in open access** — blocks independent replication
+  of the synaptic finding, continuity, and every top gene.
+* **Within-family data require an OpenGWAS registration**, which this project does not make on its
+  own authority.
+* **Ensembl Compara REST is intermittently failing** (Part R partial).
+* No directed causal gene graph exists, so controllability analysis is not meaningful.
 
 ## Exact Next Actions
 
-Ranked by how much they would change what this repository can honestly claim.
-
-1. **Target-directed registry searches for the three atlases that never ran one**
-   (brakes, comparative, alphacognition). Four of the red team's five headline findings
-   came from `whyStopped` and `resultsSection` fields no literature search returns, and
-   the power atlas overturned two of its own published statements this way. Every
-   `human_intervention_evidence: 0` in those atlases carries that exposure. Until this is
-   done, the repository's zeros are less trustworthy than its ones.
-2. **Resolve `causal_gene_attribution` above level 2 or accept that it cannot be** —
-   brain eQTL/sQTL colocalisation (GTEx, PsychENCODE, MetaBrain) for cognitive-trait
-   credible sets (Q002). Seventeen of 27 targets sit at level 0 and nothing exceeds 2;
-   this is the binding constraint on the entire causal case.
-3. **Fix the 5 `causal_perturbation` claims carrying `direction: unclear`** where the
-   study measured a direction, and re-check the other atlases for the `no_change`
-   misuse that V-DIR2 now catches.
-4. **Adult cell-type expression ingestion** (Allen / Human Brain Cell Atlas, Q003), to
-   separate adult-expressed from developmentally-expressed targets properly rather than
-   from GTEx bulk tissue.
-5. **Calibrate or drop the probabilities.** Either find a calibration set for the
-   ordinal→Beta mapping or restrict published output to ordinal levels and rank
-   intervals. Currently every number is an uncalibrated subjective prior.
-6. **Model dimension dependence**, or state the interval inflation quantitatively. The
-   independence assumption is false in a known direction.
-7. **Unify the three surviving field spellings** and clear the 10 implementation
-   deviations in `docs/ONTOLOGY_NOTES.md` §4 as contract v0.2.0.
-8. **Agent-proposed targets.** Every current target came from the brief; the seed list
-   has never been tested against a systematic sweep, so its composition is an anchoring
-   risk the ranking cannot detect.
-9. **AlphaGenome integration** (Q001) once `ALPHAGENOME_API_KEY` exists.
-10. **Re-run the red team on the corrected records.** The genetics grades fell after its
-    audit, so its own findings were written against superseded levels.
+1. **UKB-free replication** of the six synaptic sets and of the continuity result (CHARGE/COGENT
+   components by application, or within-sibship data via a free OpenGWAS registration — the user's
+   call). Highest expected value: one computation tests the sprint's three central claims.
+2. **Re-derive X01's cell-property layer** here (MAGMA `--gene-covar` on the cell-type matrices),
+   completing its verification.
+3. **Resume Part R** when Ensembl recovers: `PYTHONPATH=src .venv/bin/python pipelines/gene_tournament/comparative_top_genes.py`
+   (snapshots are reused), then build the species tree + trait covariates Sprint 2 left as prerequisites.
+4. **SuSiE-coloc on eQTL Catalogue brain datasets** (tabix byte-range reads) for the near-miss
+   direction genes (NEGR1, SYT1), to test whether any gene reaches the direction rule.
+5. **Resolve HRS/CHARGE overlap** for the continuity test.
+6. **Encode convergence rules D001–D009 as a validator rule** (Sprint-2 debt).
+7. Merge `sprint-2/causal-bridge` and `sprint-3/gene-tournament` into `main` when reviewed
+   (`main` still holds only the initial commit).

@@ -1,0 +1,143 @@
+{
+  "record_created_utc": "2026-09-22T15:30:00Z",
+  "task": "Adult vs developmental human brain gene expression reference for the gene tournament",
+  "downloaded_by": "pipelines/gene_tournament/build_developmental_classification.py (inputs); this record written alongside it",
+  "output_built_from_these_files": "data/gene_tournament/developmental_classification.parquet",
+  "integrity_note": "sha256 is recomputed here from the file on disk and compared against the hash taken at the moment of download; sha256_stable must be true for every entry.",
+  "critical_licence_flag": "The two primary sources DO NOT share licence terms. GTEx carries no non-commercial restriction. BrainSpan (Allen Institute) is RESEARCH / NON-COMMERCIAL USE ONLY with copyright reserved. Any downstream commercial use of developmental_classification.parquet is constrained by the Allen Institute terms, because every BrainSpan-derived column in it is a derivative work of their Content.",
+  "units_warning": "GTEx is TPM on GENCODE v39; BrainSpan is RPKM on GENCODE v10. These are different units on different annotations from different pipelines. They are never divided, subtracted or otherwise combined numerically anywhere in this build.",
+  "files": [
+    {
+      "file": "data/raw/brain_expression/2026-09-22/GTEx_Analysis_v10_RNASeQCv2.4.2_gene_median_tpm.gct.gz",
+      "source": "GTEx Consortium / Broad Institute (Adult GTEx)",
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-gex/v10/rna-seq/GTEx_Analysis_v10_RNASeQCv2.4.2_gene_median_tpm.gct.gz",
+      "retrieved_utc": "2026-09-22T15:30:02Z",
+      "bytes": 8846936,
+      "sha256": "b951fd32aae5cad48435026e07225860596a411a75efd0519e00f330b7a98294",
+      "sha256_at_download": "b951fd32aae5cad48435026e07225860596a411a75efd0519e00f330b7a98294",
+      "sha256_stable": true,
+      "release": "GTEx Analysis v10",
+      "licence": "GTEx Portal Data License (https://gtexportal.org/home/license), read 2026-09-22. Verbatim key terms: 'Downloading data from the GTEx Portal servers indicates your acceptance of the following Terms and Conditions: No charges, usage fees or royalties are paid to the GTEx Portal for this data.' Users agree to acknowledge the GTEx Portal as the source using the prescribed citation phrase, and not to imply GTEx endorsement. Redistributors must keep the most current version or conspicuously state that they do not. Data provided without warranty. NOT a standard open licence (not CC-BY, not public domain), but it carries NO non-commercial restriction and no registration requirement. This is browsewrap: the file was fetched over plain HTTPS from the official public Google Cloud Storage bucket. No account was created, no form was submitted and no licence was affirmatively accepted by the operator.",
+      "description": "Median gene-level TPM per tissue, 59,033 genes x 54 tissues (68 columns incl. sub-tissues); the 13 brain tissues are extracted from this file. PRIMARY adult source.",
+      "gencode_version": "v39",
+      "genome_build": "GRCh38/hg38",
+      "quantification": "RNA-SeQC v2.4.2, median TPM across donors per tissue",
+      "unit": "TPM",
+      "donor_age_range_documented": "adult donors 20-70 yr; the open-access subject annotation releases AGE only in 10-year brackets, observed 20-29 through 70-79",
+      "n_subjects_in_release": 946
+    },
+    {
+      "file": "data/raw/brain_expression/2026-09-22/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+      "source": "GTEx Consortium / Broad Institute (Adult GTEx)",
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-gex/v8/rna-seq/GTEx_Analysis_2017-06-05_v8_RNASeQCv1.1.9_gene_median_tpm.gct.gz",
+      "retrieved_utc": "2026-09-22T15:30:04Z",
+      "bytes": 6952331,
+      "sha256": "ee7201ff2f280b0de5657d4b08e9a240362d9757efed7f7bd5dba35a5f8617b8",
+      "sha256_at_download": "ee7201ff2f280b0de5657d4b08e9a240362d9757efed7f7bd5dba35a5f8617b8",
+      "sha256_stable": true,
+      "release": "GTEx Analysis v8",
+      "licence": "GTEx Portal Data License (https://gtexportal.org/home/license), read 2026-09-22. Verbatim key terms: 'Downloading data from the GTEx Portal servers indicates your acceptance of the following Terms and Conditions: No charges, usage fees or royalties are paid to the GTEx Portal for this data.' Users agree to acknowledge the GTEx Portal as the source using the prescribed citation phrase, and not to imply GTEx endorsement. Redistributors must keep the most current version or conspicuously state that they do not. Data provided without warranty. NOT a standard open licence (not CC-BY, not public domain), but it carries NO non-commercial restriction and no registration requirement. This is browsewrap: the file was fetched over plain HTTPS from the official public Google Cloud Storage bucket. No account was created, no form was submitted and no licence was affirmatively accepted by the operator.",
+      "description": "Median gene-level TPM per tissue for the previous release. Used ONLY as an independent cross-check column (adult_brain_max_tpm_gtex_v8); it does not feed the classification.",
+      "gencode_version": "v26",
+      "genome_build": "GRCh38/hg38",
+      "unit": "TPM",
+      "n_subjects_in_release": 948
+    },
+    {
+      "file": "data/raw/brain_expression/2026-09-22/GTEx_Analysis_v10_Annotations_SubjectPhenotypesDS.txt",
+      "source": "GTEx Consortium / Broad Institute",
+      "url": "https://storage.googleapis.com/adult-gtex/annotations/v10/metadata-files/GTEx_Analysis_v10_Annotations_SubjectPhenotypesDS.txt",
+      "retrieved_utc": "2026-09-22T15:30:05Z",
+      "bytes": 20292,
+      "sha256": "2313caeaaf3718ac8aead8c6b9eab92b3f613509cfe1a6f7b6286310a7200e73",
+      "sha256_at_download": "2313caeaaf3718ac8aead8c6b9eab92b3f613509cfe1a6f7b6286310a7200e73",
+      "sha256_stable": true,
+      "release": "GTEx Analysis v10",
+      "licence": "GTEx Portal Data License (https://gtexportal.org/home/license), read 2026-09-22. Verbatim key terms: 'Downloading data from the GTEx Portal servers indicates your acceptance of the following Terms and Conditions: No charges, usage fees or royalties are paid to the GTEx Portal for this data.' Users agree to acknowledge the GTEx Portal as the source using the prescribed citation phrase, and not to imply GTEx endorsement. Redistributors must keep the most current version or conspicuously state that they do not. Data provided without warranty. NOT a standard open licence (not CC-BY, not public domain), but it carries NO non-commercial restriction and no registration requirement. This is browsewrap: the file was fetched over plain HTTPS from the official public Google Cloud Storage bucket. No account was created, no form was submitted and no licence was affirmatively accepted by the operator.",
+      "description": "Open-access subject phenotype annotation: SUBJID, SEX, AGE (10-year bracket), DTHHRDY. Used to record the true donor age distribution rather than assuming it.",
+      "age_bracket_counts": {
+        "20-29": 84,
+        "30-39": 78,
+        "40-49": 153,
+        "50-59": 315,
+        "60-69": 318,
+        "70-79": 33
+      }
+    },
+    {
+      "file": "data/raw/brain_expression/2026-09-22/GTEx_Analysis_v10_Annotations_SampleAttributesDS.txt",
+      "source": "GTEx Consortium / Broad Institute",
+      "url": "https://storage.googleapis.com/adult-gtex/annotations/v10/metadata-files/GTEx_Analysis_v10_Annotations_SampleAttributesDS.txt",
+      "retrieved_utc": "2026-09-22T15:30:05Z",
+      "bytes": 38497961,
+      "sha256": "98c246b3855edf62cb050982a7ca50f3069d010624baea47ef84a9465900ca4b",
+      "sha256_at_download": "98c246b3855edf62cb050982a7ca50f3069d010624baea47ef84a9465900ca4b",
+      "sha256_stable": true,
+      "release": "GTEx Analysis v10",
+      "licence": "GTEx Portal Data License (https://gtexportal.org/home/license), read 2026-09-22. Verbatim key terms: 'Downloading data from the GTEx Portal servers indicates your acceptance of the following Terms and Conditions: No charges, usage fees or royalties are paid to the GTEx Portal for this data.' Users agree to acknowledge the GTEx Portal as the source using the prescribed citation phrase, and not to imply GTEx endorsement. Redistributors must keep the most current version or conspicuously state that they do not. Data provided without warranty. NOT a standard open licence (not CC-BY, not public domain), but it carries NO non-commercial restriction and no registration requirement. This is browsewrap: the file was fetched over plain HTTPS from the official public Google Cloud Storage bucket. No account was created, no form was submitted and no licence was affirmatively accepted by the operator.",
+      "description": "Open-access sample attribute annotation. Used to count the RNA-seq samples behind each of the 13 brain-tissue medians, so the reader can see the power behind each column."
+    },
+    {
+      "file": "data/raw/brain_expression/2026-09-22/brainspan_genes_matrix_csv.zip",
+      "source": "BrainSpan: Atlas of the Developing Human Brain, Allen Institute for Brain Science",
+      "url": "https://www.brainspan.org/api/v2/well_known_file_download/267666525",
+      "retrieved_utc": "2026-09-22T15:30:15Z",
+      "bytes": 62218535,
+      "sha256": "c0e7293bcffde300272b56643ac17706268f4d4617eb5975f3fe8e2dd38b3b66",
+      "sha256_at_download": "c0e7293bcffde300272b56643ac17706268f4d4617eb5975f3fe8e2dd38b3b66",
+      "sha256_stable": true,
+      "release": "BrainSpan Developmental Transcriptome, RNA-Seq Gencode v10 summarised to genes (files dated 2013-10-04)",
+      "licence": "Allen Institute Terms of Use (https://alleninstitute.org/legal/terms-use/) and Citation Policy (https://alleninstitute.org/legal/citation-policy/), both read 2026-09-22. THIS IS NOT CC-BY AND NOT PUBLIC DOMAIN -- do not treat it as such. Verbatim key terms: 'Your use of the Content, including creation of derivative works of the services, data, and tools, must be for research or other noncommercial purposes unless it is otherwise stated in these Terms or agreed to in writing by the Allen Institute.' Commercial use is defined as 'the incorporation of the Allen Institute's Content into anything that is designed for the purpose of sale or use of the Content to perform a commercial service for a third party'. Publication of a limited set of Content in a scholarly or journalistic publication with appropriate citation is expressly permitted without further permission. A 'Freedom to Innovate' clause permits Improvements but prohibits asserting intellectual property rights over them in a way that would limit the Allen Institute's freedom to innovate. The Allen Institute states it owns the copyright in and reserves all rights to the copyrightable Content. Citation of the primary publication is REQUIRED when citing the data resource in a scientific publication. ACTIONABLE CONSTRAINT: any commercial application of this project that incorporates BrainSpan-derived values needs written permission from the Allen Institute. This is browsewrap: the file was fetched over plain HTTPS from the public download link listed on https://www.brainspan.org/static/download.html. No account was created, no form was submitted and no licence was affirmatively accepted by the operator.",
+      "description": "Zip containing expression_matrix.csv (52,376 genes x 524 samples, RPKM), rows_metadata.csv (ensembl_gene_id, gene_symbol, entrez_id), columns_metadata.csv (donor, age, structure) and readme.txt. PRIMARY developmental source.",
+      "gencode_version": "v10",
+      "unit": "RPKM",
+      "n_genes": 52376,
+      "n_samples": 524,
+      "n_donors": 42,
+      "age_span": "8 post-conceptional weeks to 40 years",
+      "well_known_file_id": 267666525,
+      "link_text_on_download_page": "RNA-Seq Gencode v10 summarized to genes",
+      "primary_publication_required_by_citation_policy": "Miller JA et al. (2014) Transcriptional landscape of the prenatal human brain. Nature 508:199-206. doi:10.1038/nature12586"
+    }
+  ],
+  "reused_not_downloaded_by_this_task": [
+    {
+      "file": "data/raw/hgnc_complete/2026-09-22/hgnc_complete_set.txt.gz",
+      "source": "HGNC (HUGO Gene Nomenclature Committee), EMBL-EBI",
+      "url": "https://storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt",
+      "retrieved_utc": "2026-09-22T15:23:00Z",
+      "bytes": 4053733,
+      "sha256": "44ff7a987b5dfe0c3f35e830f57c56ea29539b495ef800d471bb364de1d4cf66",
+      "release": "HGNC complete set, 45,083 records",
+      "licence": "HGNC data are freely available without restriction; see https://www.genenames.org/about/",
+      "description": "NOT downloaded by this task -- reused from an earlier step of the same sprint. Supplies the gene universe spine (19,254 approved protein-coding genes with an Ensembl ID) and the entrez_id / symbol cross-references that make the tiered join possible."
+    }
+  ],
+  "not_obtained": [
+    {
+      "item": "GTEx individual-level / per-sample expression and exact donor ages",
+      "reason": "Held in dbGaP under accession phs000424 and requires an authorized-access application with a signed Data Use Certificate and institutional signing official. That is a registration and a form submission, which this task is forbidden to perform. NOT ATTEMPTED.",
+      "consequence": "Donor age is known only in 10-year brackets. No per-donor variance is available behind the GTEx medians, so no confidence interval can be put on any adult TPM value here."
+    },
+    {
+      "item": "GTEx v10 entry in the GTEx Portal fileList API (https://gtexportal.org/api/v2/dataset/fileList)",
+      "reason": "The API's fileList response is stale: it enumerates releases up to v9 only and returns no v10 RNA-seq entries, and it returns no direct URLs at all. This is a defect in the portal API, not an access restriction.",
+      "consequence": "The canonical v10 URL was instead confirmed directly against the official public GCS bucket listing (https://storage.googleapis.com/storage/v1/b/adult-gtex/o?prefix=bulk-gex/v10/rna-seq/), which is the bucket the portal's own downloads page serves from. Object name, byte count (8,846,936) and md5 were verified there before download."
+    },
+    {
+      "item": "Cell-type-resolved developmental expression (single-nucleus RNA-seq, e.g. PsychENCODE2 / BICAN / Velmeshev)",
+      "reason": "Out of scope for this task and none of it is a small median-summary file; the relevant matrices are tens of GB and several require controlled access.",
+      "consequence": "The bulk-vs-cell-type limitation recorded in the script docstring CANNOT be resolved with the data obtained here. PAX6 and RELN are worked examples in this very build: both are genuinely progenitor- or Cajal-Retzius-restricted, both are diluted in bulk homogenate, and both consequently classify as MIXED rather than as the developmentally-weighted genes they are known to be."
+    },
+    {
+      "item": "A DOI-bearing open mirror of BrainSpan (Zenodo / figshare)",
+      "reason": "Not needed. The Allen Institute primary source was reachable directly with no registration, no account and no form, so the primary source was used. A third-party mirror would have weaker provenance and would not change the Allen Institute licence terms, which follow the data rather than the host.",
+      "consequence": "None."
+    },
+    {
+      "item": "Per-donor variance / replicate structure within BrainSpan age windows",
+      "reason": "The summarised gene-level RPKM matrix is the smallest file that answers the question and carries no per-sample QC or variance summary.",
+      "consequence": "Window means are unweighted means over samples, NOT over donors. Structures and donors contribute unequally: the adult window is 93 samples from only 6 donors, so a single unusual donor can move an adult mean. No standard error is computed anywhere in this build and none should be inferred."
+    }
+  ]
+}

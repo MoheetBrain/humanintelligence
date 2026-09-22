@@ -13,12 +13,39 @@
 # intolerance. Those data describe what breaks cognition. They do not describe what
 # improves it, and the two questions have different answers.
 
-schema_version: 0.2.0
+schema_version: 0.3.0
 watchlist_id: POSGEN:2q12.3_duplication
 title: Duplication at 2q12.3 associated with higher cognitive performance
 status: watchlist_unreplicated
 recorded_by: agent:orchestrator
 recorded_on: "2026-09-18"
+corrected_on: "2026-09-22"
+
+# ------------------------------------------------------------ CORRECTION 2026-09-22 --
+correction_2026_09_22:
+  what_was_wrong: >-
+    Versions 0.1-0.2 of this record listed the eight protein-coding genes of cytoband 2q12.3
+    as resolved on GRCh38 (chr2:106.7-108.7 Mb): ST6GAL2, RGPD4, SLC5A7, SULT1C3, SULT1C2,
+    SULT1C4, GCC2, LIMS1. NONE of them is in the duplication. The paper uses hg19
+    coordinates, and cytoband boundaries differ between builds: hg19 2q12.3 spans
+    chr2:107.5-110.2 Mb, hg38 2q12.3 spans 106.7-108.7 Mb. The duplicated interval lies in
+    hg19 2q12.3 but, once lifted to hg38, in 2q13. Resolving a band LABEL against the wrong
+    build moved the entire gene list roughly 2 Mb away from the variant.
+  how_it_was_found: >-
+    Sprint 3 audit of the Codex/Astra branch, whose watchlist (RP01) named EDAR, SH3RF3,
+    SEPT10 and SOWAHC. The two gene lists shared nothing, so neither agent was trusted: the
+    open-access full text (PMC11701252, snapshotted to
+    data/raw/europepmc_fulltext/2026-09-22/) was read directly.
+  what_this_invalidates:
+    - Every gene-level statement in versions 0.1-0.2 (LOEUF values, expression notes).
+    - The SLC5A7/cholinergic guard below is now moot in the strongest sense -- SLC5A7 is
+      not in the duplication at all. The guard is kept as a record of the temptation.
+    - The Sprint-3 recon result "0 of 18 genes in 2q12.3 carry ClinGen curation" ran on the
+      same wrong (hg38-band) region. It was re-run on the real genes (below).
+  what_it_does_not_invalidate: >-
+    The record's own warning that "the gene list below is the content of the CYTOBAND, not
+    the content of the duplicated interval". That warning was correct; the error was that
+    even the cytoband was resolved on the wrong build.
 
 # ------------------------------------------------------------------- the finding ----
 primary_source:
@@ -73,10 +100,51 @@ critical_unknowns:
       association at a rare locus is a hypothesis.
     resolved_by: an independent cohort
 
-# ------------------------------------------------- the interval's gene content ------
+# ------------------------------------------------ the DUPLICATED INTERVAL (verified) --
+# From the paper's full text (Figure 1F legend and Results), read 2026-09-22.
+duplicated_interval:
+  coordinates: "chr2:109,510,927-110,376,563"
+  assembly: hg19 (GRCh37) -- the paper states hg19 throughout
+  hg38_cytoband_note: lies in 2q13 on GRCh38; the "2q12.3" label is an hg19 band
+  size_kb: 865
+  carriers: 36
+  cohort_n: 258292
+  population_frequency: "~1/7,200 (1-2 in 10,000 across cohorts)"
+  effect_z: 0.434
+  effect_p: 7.58e-3
+  effect_in_iq_points_as_stated: 6.5
+  reciprocal_deletion: {z: -0.526, p: 0.058, carriers: 12, note: "trend only, underpowered"}
+  dosage_model_per_copy: {z: 0.415, p: 2.65e-3}
+  post_hoc_carrier_t_test: {t: -3.76, df: 18.01, p: 0.001}
+  multiple_testing_note: >-
+    The gene-level CNV-GWAS tested 596 genes covered by >=30 duplications. p = 7.58e-3 is
+    not below a Bonferroni threshold across those tests (0.05/596 = 8.4e-5). No corrected
+    p-value for this locus was found in the text read here. Treat as nominal.
+  genes:
+    - {symbol: EDAR,     loeuf_as_stated: 0.91, gnomad_v2_loeuf: 0.906, clingen_dosage: uncurated,
+       common_variant_magma_davies_p: 0.0895, note: "ectodysplasin A receptor; ectodermal (hair, teeth, sweat gland) biology"}
+    - {symbol: SH3RF3,   loeuf_as_stated: 0.53, clingen_dosage: uncurated,
+       common_variant_magma_davies_p: not_in_magma_output}
+    - {symbol: SEPTIN10, previous_symbol: SEPT10, loeuf_as_stated: 1.17, gnomad_v2_loeuf: 1.169,
+       clingen_dosage: uncurated, common_variant_magma_davies_p: 0.00225}
+    - {symbol: SOWAHC,   loeuf_as_stated: 0.77, gnomad_v2_loeuf: 0.772, clingen_dosage: uncurated,
+       common_variant_magma_davies_p: 0.00140}
+  clingen_recheck: >-
+    ClinGen gene curation (FTP, GRCh38, pulled 2026-09-22): none of EDAR, SH3RF3,
+    SEPTIN10/SEPT10, SOWAHC has any dosage curation. UNEVALUATED -- not benign, not
+    triplosensitive. The only nearby region curation (ISCA-37405, TS=40 "dosage
+    sensitivity unlikely", hg38 chr2:110.10-110.23 Mb) lies outside the lifted interval.
+  weak_convergence_note: >-
+    SOWAHC and SEPTIN10 carry nominal COMMON-variant cognition signal (MAGMA, Davies 2018;
+    ranks ~1,570 and ~1,780 of 18,418). Rare-CNV and common-variant signal in the same small
+    region is a weak convergence, nominal on both sides, and the two genes are adjacent --
+    it is one observation about a region, not two about genes.
+
+# ---------------------------------- SUPERSEDED: the wrong-build cytoband window ------
+# Retained unchanged below as the record of the error. Do NOT consume these genes.
 # RETRIEVED, not recalled: Ensembl REST overlap query on GRCh38, snapshotted to
 # data/raw/ensembl/. Constraint and expression from Open Targets, snapshotted likewise.
-cytoband:
+superseded_cytoband_window:
   id: 2q12.3
   assembly: GRCh38
   region: "chr2:106,700,001-108,700,000"
@@ -84,7 +152,7 @@ cytoband:
   total_gene_features: 53
   protein_coding_genes: 8
 
-genes:
+superseded_cytoband_genes:
   - symbol: ST6GAL2
     ensembl: ENSG00000144057
     loeuf: 0.978
@@ -199,7 +267,7 @@ red_team_should_attack:
   - Whether "higher cognitive performance" survives adjustment for the correlates a CNV carrier population may differ on.
 
 next_actions:
-  - Obtain the supplementary CNV coordinates and carrier count; until then the gene list here is a cytoband, not a variant.
-  - Fetch ClinGen triplosensitivity ratings for the eight genes, which is the metric this record currently lacks.
+  - DONE 2026-09-22 -- coordinates, carriers and effect size read from the full text (duplicated_interval).
+  - DONE 2026-09-22 -- ClinGen re-checked for the REAL genes; all four uncurated.
   - Search for independent replication in any other CNV-cognition cohort.
   - Only after the above: decide whether any gene in the interval merits entry in targets/discovered/.

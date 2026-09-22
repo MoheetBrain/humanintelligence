@@ -1,0 +1,148 @@
+{
+  "gene2go_stats": {
+    "rows_dropped_by_policy": 0,
+    "rows_kept": 445272,
+    "rows_not_qualified": 1402,
+    "rows_total": 446674,
+    "rows_unknown_category": 0,
+    "rows_wrong_tax": 0
+  },
+  "go_evidence_breakdown_all_human_rows": {
+    "author_or_curator": 52769,
+    "computational_similarity": 102879,
+    "electronic_IEA": 137413,
+    "experimental": 153613,
+    "total": 446674
+  },
+  "go_evidence_breakdown_kept_rows": {
+    "author_or_curator": 52729,
+    "computational_similarity": 102601,
+    "electronic_IEA": 137413,
+    "experimental": 152529,
+    "total": 445272
+  },
+  "go_evidence_codes_raw": {
+    "EXP": 9495,
+    "HDA": 7565,
+    "HEP": 44,
+    "HMP": 146,
+    "HTP": 1135,
+    "IBA": 68113,
+    "IC": 1393,
+    "IDA": 84367,
+    "IEA": 137413,
+    "IEP": 907,
+    "IGI": 2031,
+    "IKR": 46,
+    "IMP": 24430,
+    "IPI": 23493,
+    "ISA": 1435,
+    "ISM": 3,
+    "ISO": 18,
+    "ISS": 33119,
+    "NAS": 16944,
+    "ND": 268,
+    "RCA": 145,
+    "TAS": 34164
+  },
+  "go_namespace_mismatches_gene2go_vs_obo": {
+    "count": 0,
+    "examples": []
+  },
+  "go_obo_terms_parsed": 38092,
+  "go_term_name_source": {
+    "from_gene2go_fallback": 0,
+    "from_obo": 17943,
+    "unnamed": 0
+  },
+  "out_dir": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets",
+  "outputs": [
+    {
+      "description": "GO Biological Process, human (tax_id 9606), evidence policy 'all'",
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_bp_human.setannot",
+      "max_set_size": 2000,
+      "min_set_size": 10,
+      "n_distinct_genes_after_filter": 17747,
+      "n_distinct_genes_before_filter": 18196,
+      "n_sets_after_filter": 2707,
+      "n_sets_before_filter": 11156,
+      "n_sets_removed_too_large": 0,
+      "n_sets_removed_too_small": 8449,
+      "names_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_bp_human.setannot.names.tsv"
+    },
+    {
+      "description": "GO Cellular Component, human (tax_id 9606), evidence policy 'all'",
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_cc_human.setannot",
+      "max_set_size": 2000,
+      "min_set_size": 10,
+      "n_distinct_genes_after_filter": 14507,
+      "n_distinct_genes_before_filter": 19533,
+      "n_sets_after_filter": 661,
+      "n_sets_before_filter": 1945,
+      "n_sets_removed_too_large": 8,
+      "n_sets_removed_too_small": 1276,
+      "names_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_cc_human.setannot.names.tsv"
+    },
+    {
+      "description": "GO Molecular Function, human (tax_id 9606), evidence policy 'all'",
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_mf_human.setannot",
+      "max_set_size": 2000,
+      "min_set_size": 10,
+      "n_distinct_genes_after_filter": 16069,
+      "n_distinct_genes_before_filter": 18660,
+      "n_sets_after_filter": 912,
+      "n_sets_before_filter": 4842,
+      "n_sets_removed_too_large": 1,
+      "n_sets_removed_too_small": 3929,
+      "names_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/go_mf_human.setannot.names.tsv"
+    },
+    {
+      "description": "Reactome pathways, Homo sapiens, from NCBI2Reactome_All_Levels.txt",
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/reactome_human.setannot",
+      "max_set_size": 2000,
+      "min_set_size": 10,
+      "n_distinct_genes_after_filter": 11760,
+      "n_distinct_genes_before_filter": 11766,
+      "n_sets_after_filter": 1793,
+      "n_sets_before_filter": 2866,
+      "n_sets_removed_too_large": 5,
+      "n_sets_removed_too_small": 1068,
+      "names_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/reactome_human.setannot.names.tsv"
+    },
+    {
+      "description": "SynGO 1.3 synaptic terms (hierarchically rolled-up ontologies table)",
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/syngo.setannot",
+      "max_set_size": 2000,
+      "min_set_size": 10,
+      "n_distinct_genes_after_filter": 1789,
+      "n_distinct_genes_before_filter": 1789,
+      "n_sets_after_filter": 138,
+      "n_sets_before_filter": 303,
+      "n_sets_removed_too_large": 0,
+      "n_sets_removed_too_small": 165,
+      "names_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/pathway_sets/syngo.setannot.names.tsv"
+    }
+  ],
+  "parameters": {
+    "go_evidence_policy": "all",
+    "max_set_size": 2000,
+    "min_set_size": 10,
+    "offline": true,
+    "reactome_file": "NCBI2Reactome_All_Levels.txt",
+    "reactome_species": "Homo sapiens",
+    "tax_id": "9606"
+  },
+  "raw_dir": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22",
+  "reactome_stats": {
+    "rows_bad_gene_id": 232,
+    "rows_kept": 159339,
+    "rows_total": 788194,
+    "rows_wrong_species": 628623
+  },
+  "staleness_check": "skipped: --offline",
+  "syngo_stats": {
+    "bad_gene_ids": 0,
+    "terms_kept": 303,
+    "terms_total": 303
+  }
+}

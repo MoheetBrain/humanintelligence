@@ -41,6 +41,13 @@ owners:
     - "atlases/positive_genetics/**"
     - "atlases/comparative_v2/**"
     - "theory/**"
+    # Sprint 3: the gene tournament is orchestrator-owned end to end.
+    - "pipelines/gene_tournament/**"
+    - "pipelines/reports/**"            # unclaimed since Sprint 2 (R20)
+    - "atlases/gene_tournament/**"
+    - "data/gene_tournament/**"
+    - "reports/gene_tournament/**"
+    - "reports/GENE_TOURNAMENT_FINAL.md"
 
   # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
   # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because

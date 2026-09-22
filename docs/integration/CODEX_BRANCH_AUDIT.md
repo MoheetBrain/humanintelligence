@@ -2,7 +2,31 @@
 
 **Audit date:** 2026-09-18
 **Auditor:** `agent:orchestrator` (Claude), read-only
-**Verdict: THE BRANCH DOES NOT EXIST IN THIS REPOSITORY OR ANYWHERE REACHABLE FROM IT.**
+> ## CORRECTION — 2026-09-22 (Sprint 3): THIS VERDICT WAS WRONG
+>
+> **The branch exists.** `agent/codex-positive-genetics` (commits `9be87c2`, `8e88623`; 764 files,
+> 736,637 lines) is a **local, never-pushed linked worktree** at
+> `/Users/moheet/Documents/ChatGPT/intelligence-codex`, registered in the canonical clone's
+> `.git/worktrees` and visible to `git worktree list` from
+> `/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`.
+>
+> **Why the search below missed it.** (1) It ran from a different clone
+> (`/Users/moheet/humanintelligence`, since removed) whose `.git` did not register this worktree;
+> (2) a linked worktree's `.git` is a *file*, not a directory; (3) the filesystem sweep was
+> depth-limited. The GitHub API check was correct — the branch was never pushed — and "not on
+> GitHub" was read as "does not exist".
+>
+> **What the read-only Sprint-3 audit found.** X01 is a real, executed MAGMA 1.10 analysis on
+> checksum-verified public data (Davies 2018 open subset; gnomAD v2.1.1), with an unusually complete
+> provenance record (171/171 SHA256 hashes in its handoff manifest). Its gene-level layer has since
+> been **independently re-derived and reproduced** in this repository
+> (`data/raw/magma_x01/2026-09-22/REPLICATION_CHECK.json`). GRM3/ADGRB1/GABBR1 came from a separate
+> Savage 2018 supplementary screen, not from X01. X02 does not exist — it was only ever proposed.
+> `analyses/external/X01_cell_type_enrichment.yaml` carries the corrected record.
+>
+> The original text is kept below unchanged, as the record of the error.
+
+**Verdict (2026-09-18, SUPERSEDED): THE BRANCH DOES NOT EXIST IN THIS REPOSITORY OR ANYWHERE REACHABLE FROM IT.**
 
 Nothing was merged, cherry-picked, rebased or modified, because there was nothing to
 act on. This document records the search so the negative result is auditable and so a

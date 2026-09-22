@@ -820,3 +820,101 @@ what makes it usable as a map rather than a scoreboard.
 
 Unchanged: re-attach the 72 reporting-gap refs, build the convergence scorer and its
 validator rule, extract and red-team the 40 trials with posted cognitive results.
+
+## 2026-09-22T21:10Z — Sprint 3: human cognition gene tournament + biological compression
+
+**Branch:** `sprint-3/gene-tournament` (from `sprint-2/causal-bridge` @ `daa7354`) · **Stage:** Sprint 3 complete
+
+### Objective of the change
+
+Rank the whole human cognition gene universe rather than a hand-picked list, test whether its
+thousands of signals compress into a few biological modules and adult-modifiable control points,
+and answer the brief's twenty questions — computationally, with explicit NOT_COMPUTABLE records
+wherever access blocks a part.
+
+### Files and systems changed
+
+New: `pipelines/gene_tournament/` (20 pipeline modules + 1 guard-test module), `atlases/gene_tournament/`,
+`data/gene_tournament/`, `reports/gene_tournament/`, `reports/GENE_TOURNAMENT_FINAL.md`, raw
+snapshot trees `data/raw/{gwas_catalog_tournament,gwas_catalog_tournament_studies,magma_x01,
+magma_sprint3,hgnc_complete,clingen,string,opentargets_gwas_cs,europepmc_fulltext,
+brain_expression,pathway_annotations,opentargets_tournament}` (bulk files gitignored, provenance
+committed). Changed: `analyses/external/X01_cell_type_enrichment.yaml`,
+`docs/integration/CODEX_BRANCH_AUDIT.md`, `atlases/positive_genetics/2q12_3_duplication.yaml`,
+`targets/discovered/discovered_registry.yaml`, `pipelines/reports/build_truth_table.py` (+ regenerated
+truth table), `tests/test_x02_ingestion.py` (one assertion, R20), `docs/OWNERSHIP.yaml`,
+`docs/blackboard/RESOLUTIONS.md` (R20), `Makefile` (`identifiers`, `tournament`), `.gitignore`, `data/processed/MANIFEST.json` (refreshed by `make build`; stale at the Sprint-2 tip, audits 30 -> 31),
+`docs/PROJECT_STATUS.md`.
+
+### What was completed
+
+* **Work location resolved.** The session's folder was an empty worktree; the Sprint 1–2 work lived
+  only on `origin/sprint-2/causal-bridge`. Checked it out, rebuilt `.venv`, rebuilt the gitignored
+  identifier index offline (two graph tests failed on the fresh clone until then) and added that
+  step to `make build`.
+* **Codex/Astra branch found** — local, never pushed, a linked worktree. Audited read-only. X01 is a
+  real MAGMA 1.10 run; I recomputed the 518 MB input's sha256 (match) and re-ran the gene analysis
+  from an independently built p-value file: **REPRODUCED_WITHIN_MONTE_CARLO_ERROR**.
+* Parts A–S delivered (see `docs/PROJECT_STATUS.md` table). Key results: 375 Bonferroni genes = 159
+  loci; extreme-tail continuity (1.13x prediction; 121/159 loci; 0 tail-significant genes); only
+  synaptic sets survive the conditioned, global-FDR pathway test (6/6,200); 91% of L2G calls
+  positional; 0 direction-resolved genes; 1/25 seeds Bonferroni; 11 modules with unstable
+  boundaries; the "minimal control set" collapses to one gene.
+
+### Decisions made and why
+
+1. **Verify external work by recomputation, not by audit prose.** The replication criterion was
+   first written as exact equality and returned DISCREPANT; MAGMA's gene P for strong genes comes
+   from adaptive permutation, so the criterion now separates deterministic fields (NSNPS/NPARAM,
+   identical for all genes) from stochastic ones — and reports the 4 genes that flip Bonferroni.
+2. **EA separated at study level** (419 studies tiered) because trait labels leak: GenomicSEM EA
+   decompositions, MTAG-with-EA and pleiotropy scans are filed under cognition EFO terms.
+3. **Global FDR is primary for pathways**; within-collection FDR gave SynGO an advantage.
+4. **Consensus dimensions restricted to those with ≥1 gene passing their own threshold; safety is a
+   flag.** Adopted after the all-dimensions run was carried by near-noise dimensions (30/50 genes)
+   and by LoF tolerance. Disclosed as post hoc; all-dimensions ranks kept in every row.
+5. **Direction rule tightened** (≥3 strong gene-level brain colocs, ≥80% polarity-adjusted
+   agreement) after the single-best-coloc rule was contradicted by most genes' other colocs.
+6. **Module tail engagement measured against other cognition genes**, not the genome — the genome
+   comparison credited every module with continuity inherited from gene selection.
+7. **Part M's module bar aligned to global FDR**; nominal P had admitted two modules.
+8. Truth-table changes applied as a **layer** so prior judgements stay readable.
+
+### Tests and verification actually executed
+
+* `PYTHONPATH=src .venv/bin/python -m pytest -q -m "not network"` → **879 passed, 0 failed** (81.9 s).
+* `pytest pipelines/gene_tournament/test_gene_tournament.py` → 27 passed.
+* `PYTHONPATH=src .venv/bin/python graph/validate_graph.py --strict` → **PASS**, 0 error / 0 warning / 3 info.
+* `PYTHONPATH=src .venv/bin/python scripts/check_ownership.py` → all 819 paths owned as expected.
+* X01 replication check, checksum checks, fetch-completeness audits: see `docs/PROJECT_STATUS.md`.
+* Not run: `make tournament` end-to-end in a fresh clone (each stage was run individually after its
+  last change); network tests (`-m network`).
+
+### Results
+
+Final report `reports/GENE_TOURNAMENT_FINAL.md`. Truth table: SUPPORTED 1, PROMISING 3, DOWNGRADED 13,
+UNRESOLVED 13, CONTRADICTED 5, NOT_ASSESSED 4 (seven status changes, all evidenced in the rows).
+
+### Failures and unresolved uncertainty
+
+* **Errors of my own found and fixed during the sprint**: the Sprint-2 "branch does not exist"
+  verdict; the 2q12.3 gene list (wrong genome build); an activity-dependent-transcription anchor
+  that was actually the ERK cascade; an L2G support count inflated 602 vs 34 by an object-dtype `~`;
+  a study classifier matching trait rules against sample text; a set-cover tie-break by symbol length
+  (picked STH); a module report claiming M01 "survives everything" while the red team downgraded it.
+* Part F and Part C Mode 2 not computable; Part R partial (30/83); X01 cell layer not re-derived;
+  HRS/CHARGE overlap unresolved; all evidence European-ancestry.
+* Subagent usage: 5 agents spawned (max allowed 8); the Open Targets agent hit a usage limit
+  mid-run and its script was completed by the orchestrator.
+
+### Effect on the overall project
+
+The project's premise is sharpened rather than advanced: the human genetics points at synaptic
+(presynaptic) biology and at a continuous polygenic architecture, but supplies **no gene with a
+known direction of effect**, so no adult-modifiable control parameter can yet be named and the
+chemistry gate remains closed for a concrete reason.
+
+### Next intended step
+
+UKB-free replication of the synaptic sets and the continuity result (§J of the final report), then
+re-derivation of X01's cell layer and SuSiE-coloc for the direction near-misses.

@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-09-22T15:47:10Z",
+  "replication_file": "data/interim/magma_replication/davies_replication_matched.genes.out",
+  "n_genes_compared": 18418,
+  "deterministic_agreement": {
+    "nsnps_and_nparam_identical_for_every_gene": true,
+    "meaning": "These fields are fully determined by the SNP set, annotation and LD reference. Identity proves the two runs analysed the same data."
+  },
+  "stochastic_agreement": {
+    "n_genes_with_identical_Z": 18360,
+    "n_genes_differing": 58,
+    "all_differing_genes_have_identical_snp_counts": true,
+    "max_abs_z_difference": 1.3235999999999999,
+    "spearman_rho": 0.9999994618198758,
+    "cause": "MAGMA estimates gene p-values by adaptive permutation where the analytic approximation is inadequate, i.e. for strongly associated genes. Two correct runs differ there and nowhere else."
+  },
+  "monte_carlo_instability": {
+    "bonferroni_threshold": 2.714735584754045e-06,
+    "n_genes_changing_significance": 4,
+    "genes_changing_significance": [
+      "11011",
+      "5078",
+      "51517",
+      "85004"
+    ],
+    "consequence": "Any top-N list cut at this threshold inherits this instability. Genes near the boundary are not stably ranked, and the tournament marks them rather than presenting the cut as exact."
+  },
+  "verdict": "REPRODUCED_WITHIN_MONTE_CARLO_ERROR",
+  "provenance_class_after_check": "external_analysis_verified",
+  "what_this_does_and_does_not_establish": "Establishes that the gene statistics follow from the stated inputs and method, re-derived here from the raw summary statistics with an independently built p-value file. Establishes nothing about whether Davies 2018 is the right GWAS, whether 10 kb is the right window, or whether any of these genes is causal for cognition."
+}

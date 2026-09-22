@@ -189,7 +189,9 @@ def test_x01_is_recorded_as_unverified_and_licenses_nothing() -> None:
     record = yaml.safe_load(
         (REPO_ROOT / "analyses" / "external" / "X01_cell_type_enrichment.yaml").read_text()
     )
-    assert record["verification_status"] == "unverified_external_report"
+    # R20: the delivery state may advance once artefacts exist; the LICENSING invariant may not.
+    assert record["verification_status"] in {"unverified_external_report",
+                                             "artefacts_received_pending_check"}
     assert record["provenance_class"] == "external_analysis_unverified"
     assert record["outstanding_artefacts"], "an unverified analysis must say what is missing"
     assert record["interpretation_guards"], "both over-readings must be written down"

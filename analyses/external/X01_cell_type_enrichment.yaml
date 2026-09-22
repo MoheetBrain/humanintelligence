@@ -1,5 +1,26 @@
 # X01 — conditional modern-human cell-type enrichment for cognition GWAS
 #
+# ============================== CORRECTION 2026-09-22 (Sprint 3) ==============================
+# The Sprint-2 conclusion recorded below -- "no branch, bundle, clone ... was found" -- was
+# WRONG. The Codex/Astra work exists as a LOCAL, UNPUSHED git worktree at
+#   /Users/moheet/Documents/ChatGPT/intelligence-codex   (branch agent/codex-positive-genetics,
+#   commits 9be87c2 and 8e88623, 764 files)
+# Its .git is a FILE (linked worktree), and the Sprint-2 sweep was also depth-limited, so it
+# was not found. A read-only Sprint-3 audit found X01 to be a real, executed MAGMA 1.10 analysis
+# on checksum-verified public data. What changed here, and what did not:
+#   * VERIFIED (by independent recomputation): the gene-level MAGMA analysis X01 rests on.
+#     The 518 MB Davies 2018 input sha256 was recomputed and matches; an independent re-run from
+#     a separately built p-value file reproduced all 18,418 genes (NSNPS/NPARAM identical for
+#     every gene; 58 genes differ only by MAGMA's adaptive-permutation noise; Spearman 0.9999995).
+#     Record: data/raw/magma_x01/2026-09-22/REPLICATION_CHECK.json.
+#   * NOT YET RE-DERIVED: the cell-property (cell-type enrichment) layer itself. So
+#     provenance_class stays external_analysis_unverified for the pyramidal claim, and
+#     verification_status advances only to artefacts_received_pending_check.
+#   * ATTRIBUTION CORRECTED: GRM3, ADGRB1 and GABBR1 were NOT nominated by X01. They come from a
+#     separate Codex screen of Savage 2018 supplementary gene-based tables.
+#   * X01's own verdict is "outcome D -- inconclusive": corrected conjunction P = 0.080255.
+# ===============================================================================================
+#
 # EXTERNAL ANALYSIS, UNVERIFIED. Run by Codex/GPT-6 Astra, not by this repository.
 #
 # WHY THIS RECORD LOOKS THE WAY IT DOES
@@ -30,49 +51,50 @@ analysis_id: ANALYSIS:X01
 schema_version: "0.2.0"
 title: Conditional modern-human cell-type enrichment of cognition GWAS gene-level signal
 agent: codex/gpt-6-astra
-verification_status: unverified_external_report
+verification_status: artefacts_received_pending_check
 provenance_class: external_analysis_unverified
 
 delivery:
-  mechanism: none_prose_only
-  artefacts_present: false
-  received_on: null
-  repo: null
-  branch: null
-  commit: null
+  mechanism: local_clone_path
+  artefacts_present: true
+  received_on: "2026-09-22"
+  repo: /Users/moheet/Documents/ChatGPT/intelligence-codex
+  branch: agent/codex-positive-genetics
+  commit: 8e88623
   bundle_sha256: null
   search_evidence: >-
-    Searched 2026-09-18: git branch --all and the GitHub branches API (two branches
-    only, both this repository's own), git worktree list, git stash list, git fsck
-    --lost-found (dangling blobs and trees only, no dangling commits), commit authorship
-    across all refs (two identities, both the repository owner's), a filesystem sweep for
-    *.bundle and *astra* outside ~/.codex, 13 other git repositories on this machine
-    (none a clone of humanintelligence), and ~/.codex/session_index.jsonl for
-    'humanintelligence', 'astra', 'extreme cognition', 'alphamath', 'X01', 'X02' — one
-    hit, a thread named "Build ASTRA cognitive substrate" last updated 2026-09-11, six
-    days before this repository's initial commit and a different project.
+    CORRECTED 2026-09-22. The 2026-09-18 search (git branches, GitHub API, worktree/stash/fsck,
+    a depth-limited filesystem sweep, ~/.codex session index) concluded the branch did not
+    exist. It exists as a local, never-pushed linked worktree registered in this repository's
+    own .git/worktrees (visible to `git worktree list` from the canonical clone at
+    /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE, which is where Sprint 3 runs). Audited
+    read-only; nothing in it was modified.
 
-genome_build: null
+genome_build: GRCh37
 
-software: []
+software:
+  - name: MAGMA
+    version: v1.10
+    source: https://cncr.nl/research/magma/ (binary in the Codex worktree; licence forbids redistribution)
 
 inputs:
   - role: gwas_sumstats
     description: >-
-      Complete public Davies cognition GWAS, as described by the producer. Not retrieved
-      by this repository; no local copy exists under data/raw/.
-    path: null
-    sha256: null
-    bytes: null
-    source_url: null
+      Davies 2018 general cognitive function, OPEN subset (5 cohorts removed), N=282,014,
+      Davies2018_OPEN_DATASET_summary_results.txt. sha256 recomputed in this repository on
+      2026-09-22 and matches the producer's record. Too large to store (518 MB); checksum carried.
+    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/davies2018_open_complete.txt
+    sha256: 01990c3e30661db518579d8f84dfddd7f79bc9b476e8a65b45d28c0489ca6573
+    bytes: 518103030
+    source_url: https://datashare.ed.ac.uk/server/api/core/bitstreams/def9f088-4454-4cdf-8e34-f9ce978baac0/content
     source_id: null
-    retrieved_at: null
-    reported_size: "approximately 12.87 million variants, N approximately 282,014"
+    retrieved_at: "2026-09-17"
+    reported_size: "12,871,897 variants, N 282,014"
 
   - role: expression_reference_primary_1
-    description: Siletti adult human brain single-cell expression reference.
-    path: null
-    sha256: null
+    description: Siletti 2023 adult human brain (adult_human_20221007_Pool_Clean.agg.loom), per producer provenance; not re-checksummed here.
+    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/atlas_a
+    sha256: 98e60952faecbdefd9d3461fef9930b1f158be2c8dc3dd0d8887243d213ae129
     source_url: null
     source_id: null
     reported_size: null
@@ -86,14 +108,22 @@ inputs:
     reported_size: null
 
   - role: expression_reference_supplementary
-    description: Supplementary striatal expression reference, for coverage of striatal classes.
-    path: null
-    sha256: null
+    description: Tran 2021 nucleus accumbens snRNA-seq (SCE_NAc-n8_tran-etal.rda), per producer provenance; not re-checksummed here.
+    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/atlas_c
+    sha256: f16501918c30c33a6fc83ceac46aadaedad1102f6ceb1210dd64e74a29170b1b
     source_url: null
     source_id: null
     reported_size: null
 
-outputs: []
+outputs:
+  - description: Per-cell-class MAGMA gene-property results (3,338 rows), read directly in the Sprint-3 audit.
+    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/reports/astra/x01/cell_enrichment_results.parquet
+    sha256: db86fc3dc0fd1cbf4555af3c8f5cad75e6a047402395c39dbb2bd0bb9ef6cd64
+    schema: null
+  - description: Genome-wide MAGMA gene analysis (10 kb), copied into this repository and VERIFIED by independent re-run.
+    path: data/raw/magma_x01/2026-09-22/davies2018_10kb.genes.out
+    sha256: d41a44fc0c9c5650093b78c0840eb87dd3e627b9302181829496eacaece71503
+    schema: null
 
 parameters:
   conditioning: "stated as 'conditional' by the producer; the conditioning specification was not provided"
@@ -192,14 +222,9 @@ methodological_constraints_adopted:
     safe_before_verification: true
 
 outstanding_artefacts:
-  - Gene-level or variant-level association input actually used, with path, sha256 and source URL.
-  - Expression reference matrices with versions for Siletti, Allen and the striatal supplement.
-  - Per-cell-class effect table with beta, SE, nominal P, corrected P and n_genes per class and reference.
-  - The prespecified criterion as written before the analysis, plus the correction procedure and its code.
-  - Conditioning specification: what was conditioned on, in what order.
-  - Gene-size and gene-density covariates used, if any.
-  - Analysis code with a commit sha.
-  - The source list for the ~60-study extreme-cognition evidence map, with cohorts named, so evidence dependence against this repository's 182 sources can be computed.
+  - An independent re-derivation of the CELL-PROPERTY layer (MAGMA --gene-covar on the cell-type expression matrices), comparable to the gene-level re-run that already passed.
+  - Re-checksumming of the expression reference matrices against their upstream hosts (producer hashes recorded above, not yet recomputed here).
+  - A computed cohort-overlap ledger between the Codex 60-study registry (research/extreme_cognition/study_registry.csv, now available) and this repository's sources.
 
 cohort_overlap_status: unresolvable_pending_source_list
 

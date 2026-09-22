@@ -1,0 +1,275 @@
+{
+  "generated_utc": "2026-09-22T15:45:55.603678Z",
+  "n_genes": 19254,
+  "gene_universe": "HGNC complete set, status=Approved, locus_group=protein-coding gene, non-empty ensembl_gene_id",
+  "adult_source": {
+    "dataset": "GTEx Analysis v10",
+    "unit": "median TPM per tissue",
+    "gencode": "v39",
+    "genome_build": "GRCh38/hg38",
+    "donor_age_brackets": {
+      "20-29": 84,
+      "30-39": 78,
+      "40-49": 153,
+      "50-59": 315,
+      "60-69": 318,
+      "70-79": 33
+    },
+    "documented_age_range": "adults 20-70 yr (released in 10-year brackets)",
+    "brain_tissues": [
+      "cortex",
+      "frontal_cortex_ba9",
+      "anterior_cingulate_ba24",
+      "hippocampus",
+      "amygdala",
+      "caudate",
+      "putamen",
+      "nucleus_accumbens",
+      "hypothalamus",
+      "substantia_nigra",
+      "cerebellum",
+      "cerebellar_hemisphere",
+      "spinal_cord_c1"
+    ],
+    "brain_rnaseq_sample_counts": {
+      "frontal_cortex_ba9": 269,
+      "cerebellar_hemisphere": 277,
+      "substantia_nigra": 183,
+      "anterior_cingulate_ba24": 233,
+      "amygdala": 181,
+      "caudate": 300,
+      "nucleus_accumbens": 285,
+      "putamen": 254,
+      "cortex": 270,
+      "hypothalamus": 257,
+      "cerebellum": 266,
+      "spinal_cord_c1": 204,
+      "hippocampus": 255
+    }
+  },
+  "developmental_source": {
+    "dataset": "BrainSpan Developmental Transcriptome, RNA-Seq summarised to genes",
+    "unit": "RPKM",
+    "gencode": "v10",
+    "n_samples_total": 524,
+    "n_genes_total": 52376,
+    "primary_structures": [
+      "A1C",
+      "AMY",
+      "CBC",
+      "DFC",
+      "HIP",
+      "IPC",
+      "ITC",
+      "M1C",
+      "MD",
+      "MFC",
+      "OFC",
+      "S1C",
+      "STC",
+      "STR",
+      "V1C",
+      "VFC"
+    ]
+  },
+  "units_are_never_merged": "Every developmental contrast is computed inside BrainSpan in RPKM; every adult-expression statement is computed inside GTEx in TPM. The two are combined only as boolean conditions. No column is a function of both.",
+  "adult_expressed_is_necessary_not_sufficient": "adult_expressed means only that a transcript is detectable in adult post-mortem bulk brain. It is not evidence that the gene is modifiable in an adult, and must not be used as a positive tractability signal.",
+  "bulk_not_cell_type": "All values are homogenate averages. A gene high in 1% of cells is indistinguishable from a gene low in all cells. Cell-type-restricted genes are systematically diluted and may be called MIXED for compositional reasons.",
+  "age_window_definition": {
+    "prenatal": "years_from_birth < 0 (all 'N pcw' samples; 40 pcw taken as term)",
+    "early_postnatal": "0 <= years < 12",
+    "adolescent": "12 <= years < 20",
+    "adult": "years >= 20"
+  },
+  "thresholds": {
+    "PSEUDOCOUNT_RPKM": 0.1,
+    "DETECT_RPKM": 1.0,
+    "STRONG_LOG2": 1.0,
+    "WEAK_LOG2": 0.5849625007211562,
+    "TPM_EXPRESSED": 1.0,
+    "HIGH_CONF_PEAK_RPKM": 5.0,
+    "note": "all conventions, not estimates; see 'sensitivity'"
+  },
+  "brainspan_window_counts_primary": {
+    "prenatal": {
+      "n_samples": 211,
+      "n_donors": 20,
+      "n_structures": 16
+    },
+    "early_postnatal": {
+      "n_samples": 144,
+      "n_donors": 12,
+      "n_structures": 16
+    },
+    "adolescent": {
+      "n_samples": 50,
+      "n_donors": 4,
+      "n_structures": 16
+    },
+    "adult": {
+      "n_samples": 93,
+      "n_donors": 6,
+      "n_structures": 16
+    }
+  },
+  "brainspan_window_counts_all_structures": {
+    "prenatal": {
+      "n_samples": 237,
+      "n_donors": 20,
+      "n_structures": 26
+    },
+    "early_postnatal": {
+      "n_samples": 144,
+      "n_donors": 12,
+      "n_structures": 16
+    },
+    "adolescent": {
+      "n_samples": 50,
+      "n_donors": 4,
+      "n_structures": 16
+    },
+    "adult": {
+      "n_samples": 93,
+      "n_donors": 6,
+      "n_structures": 16
+    }
+  },
+  "class_distribution": {
+    "UNKNOWN": 6008,
+    "MIXED": 5869,
+    "ADULT_DYNAMIC": 3200,
+    "DEVELOPMENTAL": 2290,
+    "PRENATAL_DOMINANT": 1874,
+    "ADOLESCENT": 13
+  },
+  "confidence_distribution": {
+    "none": 6008,
+    "low": 5880,
+    "medium": 4376,
+    "high": 2990
+  },
+  "basis_distribution": {
+    "gtex_v10+brainspan": 13221,
+    "measured_below_detection_in_brain": 5734,
+    "gtex_only_no_developmental_data": 248,
+    "no_expression_data": 26,
+    "brainspan_only": 25
+  },
+  "coverage": {
+    "with_adult_data_gtex_v10": 19196,
+    "with_developmental_data_brainspan": 18980,
+    "with_both": 18948,
+    "with_neither": 26,
+    "gtex_genes_off_spine": 39796,
+    "brainspan_genes_off_spine": 33737
+  },
+  "join_routes": {
+    "why_tiered": "BrainSpan is GENCODE v10 (2011); the spine is current HGNC. Ensembl gene IDs are not stable across that gap and the failures are not random -- GRIN2B alone moves ENSG00000150086 -> ENSG00000273079. Ambiguous candidates are dropped, not guessed.",
+    "gtex_v10": {
+      "matched_by": {
+        "ensembl": 19192,
+        "symbol": 4
+      },
+      "ambiguous_dropped": {
+        "ensembl": 0,
+        "symbol": 0
+      },
+      "unmatched": 58
+    },
+    "brainspan": {
+      "matched_by": {
+        "ensembl": 18639,
+        "entrez": 291,
+        "symbol": 50
+      },
+      "ambiguous_dropped": {
+        "ensembl": 0,
+        "entrez": 1,
+        "symbol": 0
+      },
+      "unmatched": 274
+    }
+  },
+  "sensitivity": {
+    "baseline": {
+      "UNKNOWN": 6008,
+      "MIXED": 5869,
+      "ADULT_DYNAMIC": 3200,
+      "DEVELOPMENTAL": 2290,
+      "PRENATAL_DOMINANT": 1874,
+      "ADOLESCENT": 13
+    },
+    "DETECT_RPKM=0.5": {
+      "MIXED": 6292,
+      "UNKNOWN": 4981,
+      "ADULT_DYNAMIC": 3553,
+      "DEVELOPMENTAL": 2430,
+      "PRENATAL_DOMINANT": 1974,
+      "ADOLESCENT": 24
+    },
+    "DETECT_RPKM=2.0": {
+      "UNKNOWN": 7461,
+      "MIXED": 5223,
+      "ADULT_DYNAMIC": 2794,
+      "DEVELOPMENTAL": 2075,
+      "PRENATAL_DOMINANT": 1694,
+      "ADOLESCENT": 7
+    },
+    "STRONG_LOG2=0.585 (1.5x)": {
+      "UNKNOWN": 6008,
+      "MIXED": 5869,
+      "PRENATAL_DOMINANT": 3451,
+      "ADULT_DYNAMIC": 3200,
+      "DEVELOPMENTAL": 713,
+      "ADOLESCENT": 13
+    },
+    "STRONG_LOG2=1.585 (3x)": {
+      "UNKNOWN": 6008,
+      "MIXED": 5869,
+      "DEVELOPMENTAL": 3373,
+      "ADULT_DYNAMIC": 3200,
+      "PRENATAL_DOMINANT": 791,
+      "ADOLESCENT": 13
+    },
+    "WEAK_LOG2=0.322 (1.25x)": {
+      "UNKNOWN": 6008,
+      "DEVELOPMENTAL": 4081,
+      "ADULT_DYNAMIC": 3971,
+      "MIXED": 3240,
+      "PRENATAL_DOMINANT": 1874,
+      "ADOLESCENT": 80
+    },
+    "WEAK_LOG2=1.0 (2x)": {
+      "MIXED": 8784,
+      "UNKNOWN": 6008,
+      "ADULT_DYNAMIC": 2121,
+      "PRENATAL_DOMINANT": 1874,
+      "DEVELOPMENTAL": 463,
+      "ADOLESCENT": 4
+    },
+    "TPM_EXPRESSED=0.5": {
+      "UNKNOWN": 6008,
+      "MIXED": 5869,
+      "ADULT_DYNAMIC": 3200,
+      "DEVELOPMENTAL": 2290,
+      "PRENATAL_DOMINANT": 1874,
+      "ADOLESCENT": 13
+    },
+    "TPM_EXPRESSED=5.0": {
+      "UNKNOWN": 6008,
+      "MIXED": 5869,
+      "ADULT_DYNAMIC": 3200,
+      "DEVELOPMENTAL": 2290,
+      "PRENATAL_DOMINANT": 1874,
+      "ADOLESCENT": 13
+    },
+    "ALL 26 structures (vs 16 common)": {
+      "UNKNOWN": 5974,
+      "MIXED": 5789,
+      "ADULT_DYNAMIC": 3205,
+      "DEVELOPMENTAL": 2277,
+      "PRENATAL_DOMINANT": 1996,
+      "ADOLESCENT": 13
+    }
+  }
+}

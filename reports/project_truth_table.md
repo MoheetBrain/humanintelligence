@@ -1,6 +1,6 @@
 # Project truth table
 
-**Generated 2026-09-18 by `pipelines/reports/build_truth_table.py` — do not hand-edit.** Machine-readable twin: [`project_truth_table.csv`](project_truth_table.csv).
+**Generated 2026-09-18, Sprint-3 layer applied 2026-09-22, by `pipelines/reports/build_truth_table.py` — do not hand-edit.** Machine-readable twin: [`project_truth_table.csv`](project_truth_table.csv).
 
 > One row per tracked hypothesis, stating what is established, what contradicts it, and what would kill it. The statuses are judgements made by reading the repository's records; every row names the artefacts it rests on.
 
@@ -11,11 +11,11 @@
 | status | n | meaning |
 |---|---|---|
 | `SUPPORTED` | 1 | adult human causal evidence, replicated |
-| `PROMISING_BUT_UNRESOLVED` | 2 | real evidence, decisive question still open |
+| `PROMISING_BUT_UNRESOLVED` | 3 | real evidence, decisive question still open |
 | `DOWNGRADED` | 13 | was rated higher; a specific finding lowered it |
-| `UNRESOLVED` | 11 | insufficient evidence either way |
-| `CONTRADICTED_IN_STUDIED_CONTEXT` | 4 | tested in humans and failed **in that context** |
-| `NOT_ASSESSED` | 8 | no evidence in this repository at all |
+| `UNRESOLVED` | 13 | insufficient evidence either way |
+| `CONTRADICTED_IN_STUDIED_CONTEXT` | 5 | tested in humans and failed **in that context** |
+| `NOT_ASSESSED` | 4 | no evidence in this repository at all |
 
 **The two states that are easiest to confuse** are the last two. `CONTRADICTED_IN_STUDIED_CONTEXT` means someone looked and the answer was no, in a specific population. `NOT_ASSESSED` means nobody looked. Neither is a statement that the biology is wrong, and collapsing them is this project's most persistent bug.
 
@@ -46,11 +46,34 @@
 
 **Depends on:** `evidence/claims/alphacognition/gwas_catalog_derived.yaml; opentargets_l2g_derived.yaml`
 
-## PROMISING_BUT_UNRESOLVED (2)
+## PROMISING_BUT_UNRESOLVED (3)
+
+### SYNAPTIC BIOLOGY is the dominant locus of cognition-relevant variation
+
+**Why:** SPRINT 3 RAN THE UNBIASED TEST this row asked for. MAGMA competitive gene-set analysis over 6,200 sets, conditioned on gene size, gene density, LD, annotation density and LoF constraint, GLOBAL FDR: the ONLY 6 sets surviving are synaptic (presynaptic membrane, synaptic membrane adhesion, presynaptic voltage-gated channels, synapse, process in the synapse); postsynaptic density does not survive. Reproduced in Savage 2018 (6/6, same sign; overlapping sample). NOT independently replicated: UKB-free extreme-IQ sample 6/6 same sign, 0/6 significant at 65x less power. 'Dominant' is overstated: the synaptic module holds 32% of FDR<0.01 evidence -- the largest share, not a majority -- and its boundaries are unstable. [STATUS CHANGED IN SPRINT 3: UNRESOLVED -> PROMISING_BUT_UNRESOLVED.] PREVIOUSLY: This repository CANNOT currently test this hypothesis, and that is the finding. Its evidence base was assembled by selecting synaptic targets, so the preponderance of synaptic evidence measures the selection criterion. The discovery sweep is the first unbiased look and it does not support synaptic dominance — it mostly implicates genes the atlases have never examined.
+
+**Supporting:** the overwhelming majority of this repository's targets and claims are synaptic — receptors, channels, plasticity machinery
+
+**Contradictory:** that majority is a SELECTION ARTEFACT: the seed list was supplied, and the discovery sweep found only 9 of 31 seed genes anywhere in 10,741 cognition associations, with 151 non-seed genes carrying 10 or more distinct studies
+
+| modality | state |
+|---|---|
+| human genetics | unbiased gene-set enrichment, conditioned, global FDR: synaptic sets only (6/6,200) |
+| human molecular | bulk expression only; no cell-type or QTL layer to localise anything |
+| human intervention | every registry-searched target is synaptic, which is circular |
+| animal causal | strong and synaptic — and the animal literature is itself synapse-biased |
+| comparative | not assessed |
+| adult relevance | synaptic mechanisms are the most plausibly adult-modifiable class, which is precisely why they were selected — and why their prevalence here is not evidence |
+| developmental relevance | several leading synaptic targets act developmentally |
+| replication | reproduced in an overlapping meta-analysis; independent (UKB-free) test underpowered |
+
+**Next kill test:** Test the six synaptic sets in a large cognition GWAS WITHOUT UK Biobank (or in within-sibship data, which needs an OpenGWAS registration).
+
+**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; targets/seed_registry.yaml; reports/gene_tournament/pathway_enrichment.csv; reports/gene_tournament/pathway_replication.csv; reports/gene_tournament/module_report.md`
 
 ### DEVELOPMENTAL WIRING — adult cognitive capacity is largely set during development
 
-**Why:** Uncomfortable for the project's premise and the evidence keeps pointing at it. Every time a target's causal evidence is examined closely, the perturbation turns out to have happened during development even when the read-out was adult. That does not prove adult capacity is fixed — adult-onset manipulations do work in animals — but the ASYMMETRY in evidence quality is real and systematic, and the project's ranking model already caps targets for it.
+**Why:** SPRINT 3 GENETICS DOES NOT DECIDE IT: the 375 Bonferroni cognition genes are neither enriched for prenatal/developmental expression (OR 1.16, P=0.12) nor for adult-dynamic expression (OR 1.30, P=0.06). The top two loci split: DCC prenatal-dominant, NEGR1 adult-dynamic. PREVIOUSLY: Uncomfortable for the project's premise and the evidence keeps pointing at it. Every time a target's causal evidence is examined closely, the perturbation turns out to have happened during development even when the read-out was adult. That does not prove adult capacity is fixed — adult-onset manipulations do work in animals — but the ASYMMETRY in evidence quality is real and systematic, and the project's ranking model already caps targets for it.
 
 **Supporting:** this is the repository's most persistent empirical pattern. GRIN2B: human variants act prenatally and cause neurodevelopmental disorder. RGS14: the protein is undetectable at birth and its only causal evidence is a germline knockout. OTX2 and RTN4R: critical-period mechanisms. Four red-team findings of `developmental_effect_mistaken_for_adult`
 
@@ -69,7 +92,7 @@
 
 **Next kill test:** For any leading target, an adult-onset, time-restricted perturbation with a cognitive read-out. This single design would resolve more here than any new target would.
 
-**Depends on:** `AUD:red_team:{GRIN2B,RGS14,OTX2,RTN4R}:001; CLM:alphacognition:GRIN2B:004-006`
+**Depends on:** `AUD:red_team:{GRIN2B,RGS14,OTX2,RTN4R}:001; CLM:alphacognition:GRIN2B:004-006; reports/gene_tournament/TOP50_HUMAN_COGNITION_GENES.csv; data/gene_tournament/developmental_classification.parquet`
 
 ### PDE4B inhibition enhances adult human memory
 
@@ -81,7 +104,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | positional GWAS; causal_gene_attribution level 1; three of four credible sets are educational attainment |
+| human genetics | positional GWAS; causal_gene_attribution level 1; three of four credible sets are educational attainment | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.105, rank 7,081 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only; no QTL colocalisation |
 | human intervention | measured, positive in healthy adults; 141 registry studies, 113 tested a non-cognitive endpoint |
 | animal causal | weak — no PDE4B-SELECTIVE perturbation evidence (level 1) |
@@ -96,9 +119,32 @@
 
 ## DOWNGRADED (13)
 
+### ASTROCYTE DOMINANCE — astrocytic support, notably lactate shuttling, limits cognitive performance
+
+**Why:** SPRINT 3 GENETIC TEST: GO astrocyte sets are null after conditioning (astrocyte projection P=0.85, activation P=0.98); X01 astrocyte cell-type enrichment is inconsistent (null marginally in one atlas P=0.59, null jointly in the other P=0.21, significant only in one joint model P=0.0013 -- a conditioning artefact signature). This tests astrocytic GENETIC involvement, not lactate-shuttle physiology. [STATUS CHANGED IN SPRINT 3: UNRESOLVED -> DOWNGRADED.] PREVIOUSLY: The clearest case in the repository of `duplicated_evidence`: three transporters and a pathway claim that look like four lines of support and are one. Nothing here refutes astrocytic involvement; there is simply much less independent evidence than the target count suggests.
+
+**Supporting:** the power atlas holds astrocyte-neuron lactate shuttle claims and the MCT transporter family (SLC16A1/3/7)
+
+**Contradictory:** one paper (PMID 21376239) supplies the claims for FOUR 'separate' targets, so the apparent breadth is one source counted four times; SLC16A1 carries red-team findings of both `publication_bias` and `systemic_adverse_effects`; the ANLS model is contested in its own literature
+
+| modality | state |
+|---|---|
+| human genetics | SLC16A1 has monogenic human evidence; causal-gene attribution 0 |
+| human molecular | bulk expression only |
+| human intervention | none — the power-atlas targets carry no registry search at all and their zeros come from a Sprint-1 literature route |
+| animal causal | present, and concentrated in a small shared source set |
+| comparative | not assessed |
+| adult relevance | plausible and untested |
+| developmental relevance | not the main issue |
+| replication | poor — the same few sources recur across the family |
+
+**Next kill test:** Run target-directed registry searches for the seven power-atlas targets, which have never had one; and count independent sources after applying convergence rule D002.
+
+**Depends on:** `evidence/claims/power/*.yaml; atlases/convergence/dependency_rules.yaml D002; reports/gene_tournament/pathway_hypothesis_panel.csv`
+
 ### ENERGY DOMINANCE — metabolic supply is a binding constraint on adult cognitive performance (the COGNITIVE POWER ENVELOPE)
 
-**Why:** Downgraded by the project's own theory document before any red team touched it. The recurring pattern is that metabolic interventions help where something is DEPLETED — creatine in vegetarians, in sleep deprivation, in transporter deficiency — and do little at a healthy adult baseline. A constraint that is not binding cannot be relaxed to gain anything. This is also the finding that makes the goal-gated interface hypothesis interesting: an interface limit would still bind when no capacity is exhausted.
+**Why:** SPRINT 3 GENETICS AGREES WITH THE DOWNGRADE: oxidative phosphorylation P=0.37 (conditioned); 0 of 11 mitochondrial-family sets even nominal; a mitochondrial module exists (11% of evidence) but its label is not enriched (global FDR 0.9999) -- mitochondrial genes appear at their base rate. PREVIOUSLY: Downgraded by the project's own theory document before any red team touched it. The recurring pattern is that metabolic interventions help where something is DEPLETED — creatine in vegetarians, in sleep deprivation, in transporter deficiency — and do little at a healthy adult baseline. A constraint that is not binding cannot be relaxed to gain anything. This is also the finding that makes the goal-gated interface hypothesis interesting: an interface limit would still bind when no capacity is exhausted.
 
 **Supporting:** the power atlas: 10 interventions, 7 assessments, creatine and MCT human work, a coherent theoretical model in THEORY.md §1
 
@@ -117,11 +163,11 @@
 
 **Next kill test:** A healthy, non-depleted, non-sleep-deprived adult baseline with a cognitive endpoint. Most existing evidence fails this design.
 
-**Depends on:** `THEORY.md §1.4; atlases/power/; AUD:red_team:{SLC6A8,SLC16A1}:001`
+**Depends on:** `THEORY.md §1.4; atlases/power/; AUD:red_team:{SLC6A8,SLC16A1}:001; reports/gene_tournament/pathway_hypothesis_panel.csv; reports/gene_tournament/module_report.md`
 
 ### CLASSICAL NEUROMODULATOR DOMINANCE — dopaminergic, serotonergic, cholinergic and adenosinergic tone are the main levers
 
-**Why:** The most-tested hypothesis in the repository and the one with the clearest verdict: decades of human exposure, enormous trial volume, and no replicated above-baseline cognitive gain in healthy adults. The recurring failure mode is that neuromodulator manipulations move state — arousal, motivation, mood — and state changes are read as capacity changes. Where a baseline is depleted (caffeine after withdrawal) the benefit is restoration.
+**Why:** SPRINT 3 GENETICS: neurotransmitter receptor activity P=0.12 and GPCR activity P=0.81 after conditioning; serotonin-receptor sets nominal only (5 of 28 at P<0.05 vs 1.4 expected); nothing survives correction. PREVIOUSLY: The most-tested hypothesis in the repository and the one with the clearest verdict: decades of human exposure, enormous trial volume, and no replicated above-baseline cognitive gain in healthy adults. The recurring failure mode is that neuromodulator manipulations move state — arousal, motivation, mood — and state changes are read as capacity changes. Where a baseline is depleted (caffeine after withdrawal) the benefit is restoration.
 
 **Supporting:** the largest human intervention literature in the repository by far — ADORA1 434 studies, HTR2A 316, DRD1 47, CHRM1 38 — plus the only healthy-adult human cognitive result (CHRM1)
 
@@ -140,30 +186,7 @@
 
 **Next kill test:** Nothing new. The informative work is re-reading the 40 trials with posted cognitive results already sitting in the extraction queue, 51 of which belong to this class.
 
-**Depends on:** `AUD:red_team:{ADORA1,DRD1,HTR2A,CHRM1}:001; evidence/registry_searches/{ADORA1,HTR2A,DRD1,CHRM1}.yaml`
-
-### ADGRB1 is a cognition-relevant target (nominated externally)
-
-**Why:** A gene-based test can be significant where no single variant is, so the sub-threshold variant evidence does not refute the external claim. But this repository's own variant-level evidence is WEAK and must not be described as strong until the gene-based result is delivered and verified. The branch that was to deliver it does not exist.
-
-**Supporting:** a gene-based claim attributed to an external analysis whose artefacts have never been delivered
-
-**Contradictory:** this repository's own check found ONE association, one study, p=2e-07 — BELOW the 5e-08 genome-wide threshold
-
-| modality | state |
-|---|---|
-| human genetics | one sub-threshold variant-level association; positional only |
-| human molecular | none |
-| human intervention | none |
-| animal causal | none |
-| comparative | none |
-| adult relevance | unknown |
-| developmental relevance | unknown |
-| replication | none |
-
-**Next kill test:** Obtain the gene-based statistic with its artefact and cohort; until then the claim is unverifiable rather than wrong.
-
-**Depends on:** `targets/discovered/discovered_registry.yaml; docs/integration/CODEX_BRANCH_AUDIT.md`
+**Depends on:** `AUD:red_team:{ADORA1,DRD1,HTR2A,CHRM1}:001; evidence/registry_searches/{ADORA1,HTR2A,DRD1,CHRM1}.yaml; reports/gene_tournament/pathway_hypothesis_panel.csv`
 
 ### HCN1 blockade enhances adult human cognition (dendritic brake)
 
@@ -175,7 +198,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | L2G ranks HCN1 at 2 credible sets with a COMPETING candidate gene (MRPS30) at the same loci and no QTL corroboration; causal_gene_attribution 2 / counter 2 |
+| human genetics | L2G ranks HCN1 at 2 credible sets with a COMPETING candidate gene (MRPS30) at the same loci and no QTL corroboration; causal_gene_attribution 2 / counter 2 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.36, rank 12,124 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | no colocalisation (measured and absent) |
 | human intervention | none — 1 registry study, non-cognitive endpoint; the only tool compound (ZD7288) is not a clinical agent |
 | animal causal | strong (level 3 / counter 2), including adult-inducible |
@@ -198,7 +221,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | measured and ABSENT — an explicit evidence_gap claim records that a systematic sweep across 22 cognitive traits returned no association |
+| human genetics | measured and ABSENT — an explicit evidence_gap claim records that a systematic sweep across 22 cognitive traits returned no association | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.040, rank 4,723 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | none — 1 registry study, non-cognitive endpoint; NO intervention record exists for RGS14 anywhere in the repository |
 | animal causal | germline knockout ONLY; adult_onset_perturbation level 0 |
@@ -221,7 +244,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | DOWNGRADED 3->1 by a CRITICAL red-team finding; no non-education corroboration; causal_gene_attribution 0 |
+| human genetics | DOWNGRADED 3->1 by a CRITICAL red-team finding; no non-education corroboration; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.74, rank 16,505 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | NO MATCHING TRIAL FOUND — complete screen of ClinicalTrials.gov (21 records examined, 21 total). NOT a biological null: nobody has tested it, so there is nothing to have failed |
 | animal causal | adult-inducible overexpression (level 2); transfer_breadth 0; dose_response_knowledge 0 |
@@ -244,7 +267,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | positional plus one L2G credible set on intelligence; causal_gene_attribution 2 |
+| human genetics | positional plus one L2G credible set on intelligence; causal_gene_attribution 2 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.0014, rank 1,561 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | not_measured — 33 registry studies, 29 tested a non-cognitive endpoint; human_intervention_evidence level 0 |
 | animal causal | present including adult-inducible; above_baseline_enhancement level 0 / counter 1 |
@@ -267,7 +290,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | MEASURED AND ABSENT on the cognitive panel (explicit evidence_gap claim); support is candidate-variant association only; causal_gene_attribution 0 |
+| human genetics | MEASURED AND ABSENT on the cognitive panel (explicit evidence_gap claim); support is candidate-variant association only; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: KL P=0.18, rank 8,894 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | A completed early-phase-1 study in 14 adults aged 50-80 DOES exist (NCT07285629) with five NIH Toolbox cognitive secondary outcomes — NO RESULTS POSTED. Graded 0, and the grading reasons are recorded so a later agent can disagree with them |
 | animal causal | mouse and non-human primate; above_baseline_enhancement 2 / counter 3 |
@@ -290,7 +313,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | MEASURED AND ABSENT on the cognitive panel; causal_gene_attribution 0 |
+| human genetics | MEASURED AND ABSENT on the cognitive panel; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.056, rank 5,397 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only; the largest human M1 dataset by sample size measured NO cognitive endpoint at all — a gap, not a null |
 | human intervention | MEASURED AND POSITIVE in healthy adults, level 3, but the result is a single exploratory, unreplicated, developer-affiliated secondary analysis carrying three facets |
 | animal causal | germline knockout, bidirectional |
@@ -313,7 +336,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | the only target here with resolved rare-variant human genetics — and it is developmental and deleterious; GWAS is positional, L2G sets are educational attainment and mathematical ability; causal_gene_attribution 1 |
+| human genetics | the only target here with resolved rare-variant human genetics — and it is developmental and deleterious; GWAS is positional, L2G sets are educational attainment and mathematical ability; causal_gene_attribution 1 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.068, rank 5,851 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression; the NR2B-to-NR2A developmental switch is itself evidence that adult and juvenile biology differ |
 | human intervention | not_measured for enhancement — 257 registry studies, 141 with non-cognitive endpoints, 17 completed-unreported reporting gaps, 27 with posted results awaiting extraction |
 | animal causal | strong (level 3 / counter 2) but adult_onset_perturbation only level 1 |
@@ -336,7 +359,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | level 3 association but causal_gene_attribution 1; no signal in the current Open Targets release |
+| human genetics | level 3 association but causal_gene_attribution 1; no signal in the current Open Targets release | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.13, rank 7,670 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | NO MATCHING TRIAL FOUND — complete screen (2 records examined, 2 total). Nobody has tested it |
 | animal causal | developmental |
@@ -359,7 +382,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | none; causal_gene_attribution 0 |
+| human genetics | none; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.0067, rank 2,447 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | the largest registry footprint in the repository — 434 studies, 323 with non-cognitive endpoints, 37 COMPLETED-UNREPORTED reporting gaps, 3 with posted results awaiting extraction |
 | animal causal | present |
@@ -395,11 +418,11 @@
 
 **Depends on:** `atlases/convergence/dependency_rules.yaml; reports/convergence_v0_2.md`
 
-## UNRESOLVED (11)
+## UNRESOLVED (13)
 
 ### PYRAMIDAL-CELL SPECIFICITY — cognition-associated variation acts preferentially through excitatory pyramidal neurons
 
-**Why:** Both over-readings are refused. Two nominal P-values near 0.011 are not proof that pyramidal cells are the locus; P=0.08 is not proof that they do not matter. Following X01's own methodological instruction, the discovery sweep was run CELL-CLASS-AGNOSTIC and genome-wide with no pyramidal gate — the one X01 constraint that is safe to adopt before verification, because it only widens what gets examined.
+**Why:** SPRINT 3: X01's artefacts were found (the Codex branch exists) and its GENE-LEVEL layer was independently reproduced. Its cell-type layer shows pyramidal enrichment nominal in all four atlas x model combinations (P 2e-05 to 0.019) -- but cortical interneurons are equally strong marginally (P=2.3e-05). The signal is NEURONAL rather than pyramidal-specific, and X01's own verdict is 'inconclusive' (corrected P=0.08). PREVIOUSLY: Both over-readings are refused. Two nominal P-values near 0.011 are not proof that pyramidal cells are the locus; P=0.08 is not proof that they do not matter. Following X01's own methodological instruction, the discovery sweep was run CELL-CLASS-AGNOSTIC and genome-wide with no pyramidal gate — the one X01 constraint that is safe to adopt before verification, because it only widens what gets examined.
 
 **Supporting:** X01 reports a pyramidal association (beta ~0.097, nominal P ~0.011) — INERT, unverified, cited by nothing
 
@@ -418,30 +441,7 @@
 
 **Next kill test:** An independent, verifiable cell-type enrichment with its conditioning specification and source list — enough to make cohort overlap computable.
 
-**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; V-EXT`
-
-### SYNAPTIC BIOLOGY is the dominant locus of cognition-relevant variation
-
-**Why:** This repository CANNOT currently test this hypothesis, and that is the finding. Its evidence base was assembled by selecting synaptic targets, so the preponderance of synaptic evidence measures the selection criterion. The discovery sweep is the first unbiased look and it does not support synaptic dominance — it mostly implicates genes the atlases have never examined.
-
-**Supporting:** the overwhelming majority of this repository's targets and claims are synaptic — receptors, channels, plasticity machinery
-
-**Contradictory:** that majority is a SELECTION ARTEFACT: the seed list was supplied, and the discovery sweep found only 9 of 31 seed genes anywhere in 10,741 cognition associations, with 151 non-seed genes carrying 10 or more distinct studies
-
-| modality | state |
-|---|---|
-| human genetics | positional mapping implicates many non-synaptic genes (FOXO3, EXOC4, ZNF638, MMS22L, ARHGAP15) that no atlas covers |
-| human molecular | bulk expression only; no cell-type or QTL layer to localise anything |
-| human intervention | every registry-searched target is synaptic, which is circular |
-| animal causal | strong and synaptic — and the animal literature is itself synapse-biased |
-| comparative | not assessed |
-| adult relevance | synaptic mechanisms are the most plausibly adult-modifiable class, which is precisely why they were selected — and why their prevalence here is not evidence |
-| developmental relevance | several leading synaptic targets act developmentally |
-| replication | not testable from a biased sample |
-
-**Next kill test:** Pathway-annotate the 4,459 swept genes and ask whether synaptic terms are enriched above a gene-size and gene-density matched background. This is cheap and has not been done.
-
-**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; targets/seed_registry.yaml`
+**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; V-EXT; reports/gene_tournament/pathway_hypothesis_panel.csv; analyses/external/X01_cell_type_enrichment.yaml`
 
 ### ADULT SYNAPTIC CONTROL — adult cognitive capacity can be raised by modulating synaptic parameters in the adult brain
 
@@ -466,32 +466,55 @@
 
 **Depends on:** `reports/target_ranking_v0_1.csv; reports/sprint1_summary.md; atlases/comparative_v2/orthology.yaml`
 
-### ASTROCYTE DOMINANCE — astrocytic support, notably lactate shuttling, limits cognitive performance
+### MYELIN AND NETWORK TIMING — conduction speed and temporal precision limit cognitive capacity
 
-**Why:** The clearest case in the repository of `duplicated_evidence`: three transporters and a pathway claim that look like four lines of support and are one. Nothing here refutes astrocytic involvement; there is simply much less independent evidence than the target count suggests.
+**Why:** SPRINT 3 ASSESSED IT (previously zero artefacts). GO myelination P=0.16 and oligodendrocyte differentiation P=0.43 after conditioning -- null. But X01's oligodendrocyte-lineage EXPRESSION enrichment is nominal in joint models in both atlases (P=0.012, 0.019; OPC P=4e-04 marginal in the cortex atlas). Mixed, not surviving correction. Conduction timing itself is not assessable by gene sets. [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> UNRESOLVED.] PREVIOUSLY: ZERO ARTEFACTS — no target, claim, atlas or state variable addresses white matter, conduction velocity or oligodendrocyte biology. This is a whole axis of cognitive neuroscience the project has simply not touched, and its absence is a selection artefact of the supplied seed list rather than a judgement. Notably, adult myelination is activity-dependent, which places it squarely inside the activity-gated mechanism class the theory nodes point at.
 
-**Supporting:** the power atlas holds astrocyte-neuron lactate shuttle claims and the MCT transporter family (SLC16A1/3/7)
+**Supporting:** none in this repository
 
-**Contradictory:** one paper (PMID 21376239) supplies the claims for FOUR 'separate' targets, so the apparent breadth is one source counted four times; SLC16A1 carries red-team findings of both `publication_bias` and `systemic_adverse_effects`; the ANLS model is contested in its own literature
+**Contradictory:** none in this repository
 
 | modality | state |
 |---|---|
-| human genetics | SLC16A1 has monogenic human evidence; causal-gene attribution 0 |
-| human molecular | bulk expression only |
-| human intervention | none — the power-atlas targets carry no registry search at all and their zeros come from a Sprint-1 literature route |
-| animal causal | present, and concentrated in a small shared source set |
+| human genetics | none |
+| human molecular | none |
+| human intervention | none |
+| animal causal | none |
+| comparative | none |
+| adult relevance | unknown — myelination continues into adulthood, which makes this one of the few plausibly adult-modifiable structural parameters |
+| developmental relevance | unknown |
+| replication | not applicable |
+
+**Next kill test:** Ask whether the swept cognition genes are enriched for oligodendrocyte and myelin annotations. The data are already in hand.
+
+**Depends on:** `none — this row records an absence; reports/gene_tournament/pathway_hypothesis_panel.csv`
+
+### MATHEMATICAL BIOLOGY BEYOND g — mathematical ability has biology separable from general cognitive ability
+
+**Why:** SPRINT 3 ASSESSED IT; NOT IDENTIFIABLE WITH OPEN DATA. 0 math-specific genes. The only open objective arithmetic phenotype (UKB item FI4, N~115k) has 0 genome-wide significant genes and correlates with g at rho=0.11; its top residual genes are keratins (an LD artefact). The catalog 'maths' channel is 99.8% one 23andMe paper of self-report/course-taking; the only g-orthogonal maths GWAS (2025) rests on restricted 23andMe data. [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> UNRESOLVED.] PREVIOUSLY: The repository holds maths-ability associations but has never asked whether they are separable from g, and cannot: self-reported mathematical ability inside an educational-attainment GWAS is a measure of schooling, self-concept and attainment as much as of arithmetic biology. Treating it as a distinct cognitive phenotype is exactly the endpoint substitution that produced this project's only critical audit finding.
+
+**Supporting:** 'mathematical ability' appears as a distinct trait in Open Targets L2G credible sets for CRTC1, GRIN2B and PDE4B
+
+**Contradictory:** those rows come from EDUCATIONAL-ATTAINMENT GWAS. CRTC1's entire human genetic grade rested on a single 'self-reported maths ability' association and was downgraded 3 to 1 by the cohort's only unresolved CRITICAL red-team finding
+
+| modality | state |
+|---|---|
+| human genetics | present but confounded — the trait panel marks educational attainment `use_in_ranking: proxy_only` precisely because of this |
+| human molecular | not assessed |
+| human intervention | not assessed |
+| animal causal | not applicable — there is no animal model of mathematics |
 | comparative | not assessed |
-| adult relevance | plausible and untested |
-| developmental relevance | not the main issue |
-| replication | poor — the same few sources recur across the family |
+| adult relevance | unknown |
+| developmental relevance | schooling is the obvious confound |
+| replication | no |
 
-**Next kill test:** Run target-directed registry searches for the seven power-atlas targets, which have never had one; and count independent sources after applying convergence rule D002.
+**Next kill test:** Apply for the 23andMe maths summary statistics, or find a cohort with an objective multi-item maths test and genotypes.
 
-**Depends on:** `evidence/claims/power/*.yaml; atlases/convergence/dependency_rules.yaml D002`
+**Depends on:** `AUD:red_team:CRTC1:001; atlases/alphacognition/cognitive_trait_panel.yaml; reports/gene_tournament/math_gene_rank.csv`
 
 ### 2q12.3 DUPLICATION is associated with higher cognitive performance
 
-**Why:** The rarest and most valuable KIND of evidence available (a variant associated with HIGHER performance), and currently a single unreplicated association with no effect size in hand. LOEUF was recorded for the eight genes and is the WRONG METRIC — it measures loss-of-function intolerance and the variant is a duplication; triplosensitivity is the right metric and is absent.
+**Why:** SPRINT 3 RESOLVED THE UNKNOWNS FROM THE FULL TEXT -- and found the Sprint-2 gene list was WRONG (hg38 cytoband used for an hg19 label). The duplication is chr2:109,510,927-110,376,563 (hg19), 865 kb, EDAR/SH3RF3/SEPTIN10/SOWAHC; 36 carriers of 258,292; z=0.434 (~6.5 IQ points), p=7.6e-03 (nominal; not Bonferroni across 596 duplicated genes); reciprocal deletion trends negative (p=0.058); per-copy dosage p=2.65e-03. All four genes ClinGen-uncurated. Weak convergence: SOWAHC/SEPTIN10 nominal common-variant signal (P 0.0014, 0.0022). No replication. PREVIOUSLY: The rarest and most valuable KIND of evidence available (a variant associated with HIGHER performance), and currently a single unreplicated association with no effect size in hand. LOEUF was recorded for the eight genes and is the WRONG METRIC — it measures loss-of-function intolerance and the variant is a duplication; triplosensitivity is the right metric and is absent.
 
 **Supporting:** one CNV-GWAS association, N=258,292 (Huguet 2024, PMID 39667348), verified independently via PubMed
 
@@ -510,11 +533,11 @@
 
 **Next kill test:** Obtain the supplementary CNV coordinates, carrier count and effect size; then ask whether the cohort overlaps this repository's existing cognitive-GWAS base, which would make it non-independent.
 
-**Depends on:** `atlases/positive_genetics/2q12_3_duplication.yaml; SRC:PMID:39667348`
+**Depends on:** `atlases/positive_genetics/2q12_3_duplication.yaml; SRC:PMID:39667348; atlases/positive_genetics/2q12_3_duplication.yaml; reports/gene_tournament/positive_human_perturbations.csv`
 
 ### GRM3 is a cognition-relevant target
 
-**Why:** Variant-level support is real and is the strongest of the three externally nominated genes. It is still positional: no causal gene, no direction, no adult mechanism. Entered the registry as an UNRANKED hypothesis.
+**Why:** SPRINT 3: MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository gives GRM3 P=2.2e-05, rank 543/18,418 -- NOT Bonferroni. Attribution corrected: the nomination came from a Codex screen of Savage 2018 supplementary tables (published P=4.8e-08), not from X01. PREVIOUSLY: Variant-level support is real and is the strongest of the three externally nominated genes. It is still positional: no causal gene, no direction, no adult mechanism. Entered the registry as an UNRANKED hypothesis.
 
 **Supporting:** GWAS Catalog: 4 distinct studies, 5 associations, strongest p=4e-13 — independently checked in this repository
 
@@ -533,7 +556,30 @@
 
 **Next kill test:** Fine-map the loci and test whether GRM3 rather than a neighbour carries the signal; and re-run the association count excluding educational-attainment studies.
 
-**Depends on:** `targets/discovered/discovered_registry.yaml; GWAS Catalog 2026-09-13`
+**Depends on:** `targets/discovered/discovered_registry.yaml; GWAS Catalog 2026-09-13; reports/gene_tournament/direct_cognition_rank.csv`
+
+### ADGRB1 is a cognition-relevant target (nominated externally)
+
+**Why:** SPRINT 3 REVERSES THE SPRINT-2 DOWNGRADE. MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository gives ADGRB1 P=1.6e-07, rank 238/18,418 -- PASSES Bonferroni. Sprint 2 tested single variants; a gene-based test is the appropriate one. Still no causal-gene resolution and no direction. [STATUS CHANGED IN SPRINT 3: DOWNGRADED -> UNRESOLVED.] PREVIOUSLY: A gene-based test can be significant where no single variant is, so the sub-threshold variant evidence does not refute the external claim. But this repository's own variant-level evidence is WEAK and must not be described as strong until the gene-based result is delivered and verified. The branch that was to deliver it does not exist.
+
+**Supporting:** a gene-based claim attributed to an external analysis whose artefacts have never been delivered
+
+**Contradictory:** this repository's own check found ONE association, one study, p=2e-07 — BELOW the 5e-08 genome-wide threshold
+
+| modality | state |
+|---|---|
+| human genetics | one sub-threshold variant-level association; positional only |
+| human molecular | none |
+| human intervention | none |
+| animal causal | none |
+| comparative | none |
+| adult relevance | unknown |
+| developmental relevance | unknown |
+| replication | none |
+
+**Next kill test:** Obtain the gene-based statistic with its artefact and cohort; until then the claim is unverifiable rather than wrong.
+
+**Depends on:** `targets/discovered/discovered_registry.yaml; docs/integration/CODEX_BRANCH_AUDIT.md; reports/gene_tournament/direct_cognition_rank.csv`
 
 ### EIF2B / integrated stress response modulation enhances adult memory
 
@@ -568,7 +614,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | MEASURED AND ABSENT — an explicit evidence_gap claim records a systematic sweep of GWAS Catalog across 22 cognitive traits and of Open Targets L2G returning no association |
+| human genetics | MEASURED AND ABSENT — an explicit evidence_gap claim records a systematic sweep of GWAS Catalog across 22 cognitive traits and of Open Targets L2G returning no association | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.72, rank 16,362 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | not_measured — 10 registry studies, none with a cognitive endpoint |
 | animal causal | developmental conditional knockout only; adult_onset_perturbation level 0 |
@@ -591,7 +637,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | MEASURED AND ABSENT on the cognitive panel; L2G support is educational-attainment-only; causal_gene_attribution 0 |
+| human genetics | MEASURED AND ABSENT on the cognitive panel; L2G support is educational-attainment-only; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.23, rank 9,908 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | not_measured — 159 registry studies, 117 non-cognitive endpoints. The four terminations are ADMINISTRATIVE (recruitment, staffing, mis-registration), not mechanism failures |
 | animal causal | level 2 / counter 1; above_baseline_enhancement only level 1 |
@@ -614,7 +660,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | none on the cognitive panel; causal_gene_attribution 0 |
+| human genetics | none on the cognitive panel; causal_gene_attribution 0 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.041, rank 4,762 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | NO MATCHING TRIAL FOUND — complete screen (15 records examined, 15 total) |
 | animal causal | present — and it is the ONLY evidence modality for this target |
@@ -627,9 +673,32 @@
 
 **Depends on:** `AUD:red_team:RTN4R:001; evidence/registry_searches/RTN4R.yaml`
 
+### EXTREME COGNITION provides evidence about enhancement mechanisms
+
+**Why:** SPRINT 3 ASSESSED IT. At gene level the extreme tail is the SAME architecture as population cognition (see the continuity row), so it adds power-limited information about the same genes rather than distinct mechanisms; its one reported locus (ADAM12) is nominal here and unreplicated. The rare-variant tail is untested. [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> UNRESOLVED.] PREVIOUSLY: ZERO ARTEFACTS. No claim, source, assessment or target record exists. The only trace in the repository is an outstanding deliverable attributed to a branch that the branch audit establishes DOES NOT EXIST. This is a gap, not a null, and it is the largest single hole in the evidence base.
+
+**Supporting:** none
+
+**Contradictory:** not applicable
+
+| modality | state |
+|---|---|
+| human genetics | none |
+| human molecular | none |
+| human intervention | none |
+| animal causal | none |
+| comparative | none |
+| adult relevance | not applicable |
+| developmental relevance | not applicable |
+| replication | not applicable |
+
+**Next kill test:** Obtain the source list, or build the evidence map independently.
+
+**Depends on:** `docs/integration/CODEX_BRANCH_AUDIT.md; analyses/external/X01_cell_type_enrichment.yaml; reports/gene_tournament/extreme_tail_summary.json`
+
 ### X01 — cell-type enrichment implicates specific neuronal populations
 
-**Why:** Recorded verbatim, cited by nothing, and mechanically prevented from supporting any claim, facet or assessment. Two nominal P-values near 0.011 are not proof, and P=0.08 is not a demonstration that pyramidal cells do not matter. Two of its METHODOLOGICAL instructions were adopted as safe before verification (no pyramidal-only gate; extreme cognition treated as continuous) because they only ever WIDEN what gets examined.
+**Why:** SPRINT 3: the artefacts exist (local, unpushed Codex worktree). X01's GENE-LEVEL layer was reproduced here by independent recomputation; its cell-property layer is not yet re-derived, so the record is artefacts_received_pending_check. X01 did NOT nominate GRM3/ADGRB1/GABBR1. PREVIOUSLY: Recorded verbatim, cited by nothing, and mechanically prevented from supporting any claim, facet or assessment. Two nominal P-values near 0.011 are not proof, and P=0.08 is not a demonstration that pyramidal cells do not matter. Two of its METHODOLOGICAL instructions were adopted as safe before verification (no pyramidal-only gate; extreme cognition treated as continuous) because they only ever WIDEN what gets examined.
 
 **Supporting:** an external analysis reporting a pyramidal-cell association (beta ~0.097, nominal P ~0.011) in one dataset
 
@@ -648,13 +717,13 @@
 
 **Next kill test:** Delivery of the artefacts named in the handoff contract, with the source list that would make cohort overlap resolvable.
 
-**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; V-EXT`
+**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; V-EXT; analyses/external/X01_cell_type_enrichment.yaml; data/raw/magma_x01/2026-09-22/REPLICATION_CHECK.json`
 
-## CONTRADICTED_IN_STUDIED_CONTEXT (4)
+## CONTRADICTED_IN_STUDIED_CONTEXT (5)
 
 ### A SINGLE GENIUS GENE — one gene of large effect substantially determines cognitive ability
 
-**Why:** Contradicted for common variation in studied populations, which is where the data are. Stated precisely, because the strict version is NOT refuted: rare large-effect variants exist (GRIN2B de novo variants, 86 individuals), and they act in the DELETERIOUS direction and cause neurodevelopmental disorder. Large single-gene effects on cognition are real and they break things.
+**Why:** SPRINT 3 reinforces this: the extreme-IQ sample (IQ~170) has ZERO genome-wide significant genes at gene level; 375 genes pass Bonferroni in population cognition, collapsing to 159 independent LD loci; the largest biological module holds 32% of FDR<0.01 gene-level evidence, and no gene dominates. PREVIOUSLY: Contradicted for common variation in studied populations, which is where the data are. Stated precisely, because the strict version is NOT refuted: rare large-effect variants exist (GRIN2B de novo variants, 86 individuals), and they act in the DELETERIOUS direction and cause neurodevelopmental disorder. Large single-gene effects on cognition are real and they break things.
 
 **Supporting:** none
 
@@ -673,7 +742,30 @@
 
 **Next kill test:** None needed. The row exists so the project cannot drift back toward single-gene thinking without passing it.
 
-**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; reports/sprint1_summary.md`
+**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; reports/sprint1_summary.md; reports/gene_tournament/direct_cognition_rank.csv; reports/gene_tournament/extreme_tail_summary.json`
+
+### EXTREME COGNITION IS QUALITATIVELY DISTINCT from ordinary-range cognition
+
+**Why:** SPRINT 3 ASSESSED IT. At gene level, for common variants in European-ancestry summary data, extreme cognition is CONTINUOUS with population cognition: among the 375 population-significant genes the extreme-IQ shift is 1.13x what pure power scaling predicts (observed mean Z 0.985 vs 0.910); 121/159 independent loci carry positive extreme-tail signal (P=9.2e-05); Mann-Whitney P=9e-26; size-matched permutation P<0.0005. No distinct tail gene set is seen. Context limits: common variants only; possible HRS/CHARGE sample overlap is unresolved and would bias toward this answer; rare-variant tail untested (no individual-level access). [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> CONTRADICTED_IN_STUDIED_CONTEXT.] PREVIOUSLY: ZERO ARTEFACTS. And this matters more than an empty row usually would: X01 adopted the CONTINUOUS assumption as a working constraint, taken from unverified external prose plus an unreferenced appeal to 'this repository's polygenic picture' with no claim id behind it. So the project is currently operating on an assumed answer to an unassessed question. The red team flagged this (finding f11) and it is not yet fixed.
+
+**Supporting:** none in this repository
+
+**Contradictory:** none in this repository
+
+| modality | state |
+|---|---|
+| human genetics | Zabaneh 2018 extreme IQ (1,238 cases, N_eff 4,300) vs Davies 2018 population cognition, gene level |
+| human molecular | not assessed here |
+| human intervention | not applicable |
+| animal causal | not applicable |
+| comparative | not applicable |
+| adult relevance | unknown |
+| developmental relevance | unknown |
+| replication | single extreme-tail GWAS; no second extreme-IQ sample with open data exists |
+
+**Next kill test:** Resolve HRS/CHARGE overlap; then repeat with any second extreme-tail sample, and test rare-variant burden if individual-level TIP genotypes ever become accessible.
+
+**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f11; reports/gene_tournament/extreme_tail_summary.json; reports/gene_tournament/extreme_tail_rank.csv`
 
 ### GABRA5 (alpha5-GABA-A) negative allosteric modulation enhances cognition
 
@@ -685,7 +777,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | positional; causal_gene_attribution 2 / counter 2 |
+| human genetics | positional; causal_gene_attribution 2 / counter 2 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.38, rank 12,413 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | MEASURED AND NULL, replicated. level 1 / counter 4 — the counter was raised by red-team audit |
 | animal causal | strong but contradicted (level 3 / counter 2); one rodent claim records a COST — impaired context discrimination |
@@ -708,7 +800,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | positional; causal_gene_attribution 2 / counter 2 |
+| human genetics | positional; causal_gene_attribution 2 / counter 2 | SPRINT 3 MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by independent recomputation in this repository: P=0.51, rank 14,085 of 18,418 (Bonferroni needs P<2.7e-06) |
 | human molecular | bulk expression only |
 | human intervention | MEASURED AND NULL in the studied population; level 0 / counter 3 |
 | animal causal | present and strongly contradicted by the human result |
@@ -744,76 +836,7 @@
 
 **Depends on:** `reports/sprint1_summary.md; reports/target_ranking_v0_1.csv`
 
-## NOT_ASSESSED (8)
-
-### EXTREME COGNITION IS QUALITATIVELY DISTINCT from ordinary-range cognition
-
-**Why:** ZERO ARTEFACTS. And this matters more than an empty row usually would: X01 adopted the CONTINUOUS assumption as a working constraint, taken from unverified external prose plus an unreferenced appeal to 'this repository's polygenic picture' with no claim id behind it. So the project is currently operating on an assumed answer to an unassessed question. The red team flagged this (finding f11) and it is not yet fixed.
-
-**Supporting:** none in this repository
-
-**Contradictory:** none in this repository
-
-| modality | state |
-|---|---|
-| human genetics | not assessed here |
-| human molecular | not assessed here |
-| human intervention | not applicable |
-| animal causal | not applicable |
-| comparative | not applicable |
-| adult relevance | unknown |
-| developmental relevance | unknown |
-| replication | not applicable |
-
-**Next kill test:** Assemble the extreme-cognition evidence map independently, or obtain the external source list. Until then the assumption should be moved out of `methodological_constraints_adopted`.
-
-**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f11`
-
-### MYELIN AND NETWORK TIMING — conduction speed and temporal precision limit cognitive capacity
-
-**Why:** ZERO ARTEFACTS — no target, claim, atlas or state variable addresses white matter, conduction velocity or oligodendrocyte biology. This is a whole axis of cognitive neuroscience the project has simply not touched, and its absence is a selection artefact of the supplied seed list rather than a judgement. Notably, adult myelination is activity-dependent, which places it squarely inside the activity-gated mechanism class the theory nodes point at.
-
-**Supporting:** none in this repository
-
-**Contradictory:** none in this repository
-
-| modality | state |
-|---|---|
-| human genetics | none |
-| human molecular | none |
-| human intervention | none |
-| animal causal | none |
-| comparative | none |
-| adult relevance | unknown — myelination continues into adulthood, which makes this one of the few plausibly adult-modifiable structural parameters |
-| developmental relevance | unknown |
-| replication | not applicable |
-
-**Next kill test:** Ask whether the swept cognition genes are enriched for oligodendrocyte and myelin annotations. The data are already in hand.
-
-**Depends on:** `none — this row records an absence`
-
-### MATHEMATICAL BIOLOGY BEYOND g — mathematical ability has biology separable from general cognitive ability
-
-**Why:** The repository holds maths-ability associations but has never asked whether they are separable from g, and cannot: self-reported mathematical ability inside an educational-attainment GWAS is a measure of schooling, self-concept and attainment as much as of arithmetic biology. Treating it as a distinct cognitive phenotype is exactly the endpoint substitution that produced this project's only critical audit finding.
-
-**Supporting:** 'mathematical ability' appears as a distinct trait in Open Targets L2G credible sets for CRTC1, GRIN2B and PDE4B
-
-**Contradictory:** those rows come from EDUCATIONAL-ATTAINMENT GWAS. CRTC1's entire human genetic grade rested on a single 'self-reported maths ability' association and was downgraded 3 to 1 by the cohort's only unresolved CRITICAL red-team finding
-
-| modality | state |
-|---|---|
-| human genetics | present but confounded — the trait panel marks educational attainment `use_in_ranking: proxy_only` precisely because of this |
-| human molecular | not assessed |
-| human intervention | not assessed |
-| animal causal | not applicable — there is no animal model of mathematics |
-| comparative | not assessed |
-| adult relevance | unknown |
-| developmental relevance | schooling is the obvious confound |
-| replication | no |
-
-**Next kill test:** Genetic correlation between a properly measured mathematical phenotype and g, in a cohort where both are directly assessed rather than self-reported.
-
-**Depends on:** `AUD:red_team:CRTC1:001; atlases/alphacognition/cognitive_trait_panel.yaml`
+## NOT_ASSESSED (4)
 
 ### ACTIVITY-GATED PLASTICITY — the useful mechanism class is one whose effect is gated by recent neural activity rather than set by exposure
 
@@ -906,29 +929,6 @@
 **Next kill test:** An orthology resource covering corvids and parrots. Without one, the avian arm is inoperable and no avian statement may be made in either direction.
 
 **Depends on:** `atlases/comparative_v2/species_registry.yaml; selection_signals.yaml (NOT_COMPUTED)`
-
-### EXTREME COGNITION provides evidence about enhancement mechanisms
-
-**Why:** ZERO ARTEFACTS. No claim, source, assessment or target record exists. The only trace in the repository is an outstanding deliverable attributed to a branch that the branch audit establishes DOES NOT EXIST. This is a gap, not a null, and it is the largest single hole in the evidence base.
-
-**Supporting:** none
-
-**Contradictory:** not applicable
-
-| modality | state |
-|---|---|
-| human genetics | none |
-| human molecular | none |
-| human intervention | none |
-| animal causal | none |
-| comparative | none |
-| adult relevance | not applicable |
-| developmental relevance | not applicable |
-| replication | not applicable |
-
-**Next kill test:** Obtain the source list, or build the evidence map independently.
-
-**Depends on:** `docs/integration/CODEX_BRANCH_AUDIT.md; analyses/external/X01_cell_type_enrichment.yaml`
 
 ---
 

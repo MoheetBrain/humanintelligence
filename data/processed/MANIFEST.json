@@ -6,14 +6,14 @@
       "sha256": "8fe2da573b72049b92a3d53ff40cf172d50bd4c7b79e8b3707f217ff26d7e66c"
     },
     "parquet/assessments.parquet": {
-      "bytes": 76746,
+      "bytes": 77150,
       "rows": 405,
-      "sha256": "d575d9d1a4e3643d4f033e7820cb9695761619b1d0da310faa4d7b7700aaba50"
+      "sha256": "e3662e96ce0c65ec4a98b89b3ccba9b6758c612208e4c5192fcd2c7f1f6998ff"
     },
     "parquet/audits.parquet": {
-      "bytes": 5422,
-      "rows": 30,
-      "sha256": "1aeb16f4a7a80f3816df4808152303be9ab0a01a0cce4a0142af1c8dd70a8fe4"
+      "bytes": 5502,
+      "rows": 31,
+      "sha256": "4346badcac2c94156c8b6df201a55ebb3a706c551b84f2f1cbe2a4f76a4327df"
     },
     "parquet/claims.parquet": {
       "bytes": 46002,
@@ -21,9 +21,9 @@
       "sha256": "5514f6e6f6c8c61af48e0c3adce89061df7d2f9b147a6fe6cb111a69f5d3e675"
     },
     "parquet/edges.parquet": {
-      "bytes": 32466,
-      "rows": 1703,
-      "sha256": "0479995e191c542daedc851394005aad16a7b3f091d0b91ccd489470d9032992"
+      "bytes": 30843,
+      "rows": 1641,
+      "sha256": "6cd9620d96733353be559e0c1838b183f08019aedfb8b72272a553d14b62954a"
     },
     "parquet/evidence_items.parquet": {
       "bytes": 46181,
@@ -36,19 +36,19 @@
       "sha256": "893ab8bc09757e7fad7261a3bc0aa153c4382c5c1ced2b24b70d09afe6536e69"
     },
     "parquet/nodes.parquet": {
-      "bytes": 143937,
-      "rows": 1284,
-      "sha256": "09cda84a427b41bb937018696522f561416c915779386250a2e941946fa4e758"
+      "bytes": 145051,
+      "rows": 1269,
+      "sha256": "e6165ed2f7e3855197a1470a538a642b2a1e1ffea4e61994886eb102312f53b7"
     },
     "parquet/provenance.parquet": {
-      "bytes": 14624,
+      "bytes": 14978,
       "rows": 13,
-      "sha256": "4039521a2f03b9da26442144c232d9a486a9500149788dd79904946f02732392"
+      "sha256": "e41c6b523a4cd126d2ff502e9fda37572dc459cb8632824b88d994d7fc809f94"
     },
     "parquet/sources.parquet": {
-      "bytes": 22107,
-      "rows": 182,
-      "sha256": "4b120cdf2875071baaf33223b70ad808f1320e7a1cd93e84fd03f6acb8037ada"
+      "bytes": 25668,
+      "rows": 222,
+      "sha256": "e7e7898bc6f575fc5dd32eb275cbf1033f00d7c851e3ec45251a7192f7c01c66"
     },
     "parquet/state_variables.parquet": {
       "bytes": 15189,
@@ -56,26 +56,26 @@
       "sha256": "36822714181cad0a6eba87f9af5f09a4a445f8f616a229a499e5c939a8dea922"
     },
     "parquet/targets.parquet": {
-      "bytes": 10789,
+      "bytes": 9766,
       "rows": 27,
-      "sha256": "8ec29c23f3ae74e7ec237cae2a481ca7236c09a4b7d187cfba2f7ea23724ca64"
+      "sha256": "6672b2125e27ce91485bf4b9e4ae78e1e98f7f0718430a9d6480f9d8e327de93"
     }
   },
-  "generated_at_utc": "2026-09-17T22:29:01Z",
-  "git_commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
-  "input_digest": "fbfd147495f58fc0cc037e95c8ce746648feaf1ceb5090d5be37e95a91ea3fec",
+  "generated_at_utc": "2026-09-22T15:01:27Z",
+  "git_commit": "daa7354451b008d775359bed62bef9270114d612",
+  "input_digest": "503c354395d3137f2d0f450bdaa0fdfee3a408e7db34f74002af106ab7444481",
   "note": "Every artefact here is DERIVED. data/processed/ is git-ignored and is rebuilt by `make store`; the checksums let a rebuild be compared against the build it replaced.",
   "row_counts": {
     "annotations": 43,
     "assessments": 405,
-    "audits": 30,
+    "audits": 31,
     "claims": 293,
-    "edges": 1703,
+    "edges": 1641,
     "evidence_items": 400,
     "interventions": 36,
-    "nodes": 1284,
+    "nodes": 1269,
     "provenance": 13,
-    "sources": 182,
+    "sources": 222,
     "state_variables": 101,
     "targets": 27
   },

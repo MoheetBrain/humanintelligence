@@ -1,0 +1,82 @@
+{
+  "built_at": "2026-09-22T19:56:57Z",
+  "n_input_genes": 1272,
+  "n_input_ld_blocks": 565,
+  "n_genes_annotated": 1192,
+  "n_sets_used": 2330,
+  "n_string_edges": 5704,
+  "louvain_resolution": 1.0,
+  "resolution_sweep": [
+    {
+      "resolution": 0.3,
+      "n_modules": 3,
+      "frac_assigned": 0.9677672955974843,
+      "modularity": 0.39485202429234306
+    },
+    {
+      "resolution": 0.5,
+      "n_modules": 5,
+      "frac_assigned": 0.9677672955974843,
+      "modularity": 0.5236037320063727
+    },
+    {
+      "resolution": 0.7,
+      "n_modules": 8,
+      "frac_assigned": 0.9677672955974843,
+      "modularity": 0.5779872395859302
+    },
+    {
+      "resolution": 0.9,
+      "n_modules": 10,
+      "frac_assigned": 0.9677672955974843,
+      "modularity": 0.5820546715395304
+    },
+    {
+      "resolution": 1.0,
+      "n_modules": 11,
+      "frac_assigned": 0.9724842767295597,
+      "modularity": 0.58413430397522
+    },
+    {
+      "resolution": 1.2,
+      "n_modules": 13,
+      "frac_assigned": 0.9677672955974843,
+      "modularity": 0.5841257052679281
+    },
+    {
+      "resolution": 1.5,
+      "n_modules": 18,
+      "frac_assigned": 0.9654088050314465,
+      "modularity": 0.5762635771973128
+    },
+    {
+      "resolution": 2.0,
+      "n_modules": 25,
+      "frac_assigned": 0.9724842767295597,
+      "modularity": 0.5593401575010214
+    }
+  ],
+  "n_modules": 11,
+  "n_unassigned_genes": 35,
+  "unassigned_evidence_share": 0.02548280478257814,
+  "weighted_evidence_captured": {
+    "top_5": 0.7153546816453353,
+    "top_10": 0.9672897283627988,
+    "top_20": 0.9745171952174218
+  },
+  "method_agreement_ARI": {
+    "ARI_louvain_vs_hierarchical": 0.2442336563898353,
+    "ARI_louvain_vs_NMF": 0.19493452502830796,
+    "ARI_hierarchical_vs_NMF": 0.19494103468699786
+  },
+  "leave_one_source_out_ARI": {
+    "go_bp_human": 0.6225181908555206,
+    "go_cc_human": 0.6395464182610351,
+    "go_mf_human": 0.5417221117394939,
+    "reactome_human": 0.6379515122761042,
+    "syngo": 0.7992224376293394,
+    "STRING": 0.3589171616471915
+  },
+  "stability_note": "bootstrap = mean co-clustering of member pairs over 100 x 80% gene resamples",
+  "evidence_share_definition": "share of FDR<0.01 gene-level association evidence (block lead Z^2 once per block); NOT heritability"
+}

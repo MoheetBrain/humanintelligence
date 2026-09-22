@@ -1,0 +1,181 @@
+{
+  "record_title": "Pathway / annotation acquisition for MAGMA 1.10 competitive gene-set analysis",
+  "generated_at_utc": "2026-09-22T15:46:55Z",
+  "acquisition_date": "2026-09-22",
+  "raw_directory": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22",
+  "purpose": "Supply MAGMA --set-annot gene sets keyed by NCBI Entrez Gene ID, matching the Entrez-keyed MAGMA NCBI37.3 gene location file used in the gene analysis.",
+  "hash_convention": "canonical_sha256/canonical_bytes describe the exact byte stream delivered by the server for the URL given (the upstream release file). stored_sha256/stored_bytes describe the file actually written to disk. They are identical except where filter_applied_at_download is present, i.e. gene2go.",
+  "constraints_observed": [
+    "No account was created, no login performed, no licence click-through accepted and no form submitted for any resource.",
+    "All files came from official primary sources (reactome.org, ftp.ncbi.nlm.nih.gov, purl.obolibrary.org -> current.geneontology.org, syngoportal.org, proteinatlas.org).",
+    "Computational work only; no experiments of any kind."
+  ],
+  "files": [
+    {
+      "name": "NCBI2Reactome_All_Levels.txt",
+      "source": "Reactome",
+      "url": "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt",
+      "final_url_after_redirects": "https://reactome.org/download/current/NCBI2Reactome_All_Levels.txt",
+      "downloaded_at_utc": "2026-09-22T15:21:04Z",
+      "canonical_bytes": 98024930,
+      "canonical_sha256": "53bbe42b357655e341630898547af8d23badab592e6050c34d4317fbffc04ce4",
+      "http_last_modified": "Fri, 19 Jun 2026 00:35:59 GMT",
+      "http_content_length": null,
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/NCBI2Reactome_All_Levels.txt",
+      "stored_bytes": 98024930,
+      "stored_sha256": "53bbe42b357655e341630898547af8d23badab592e6050c34d4317fbffc04ce4",
+      "release_version": "Reactome release 97 (ContentService /data/database/version, checked 2026-09-22)",
+      "licence": "CC0 1.0 Universal (Public Domain Dedication). Reactome licence page section (c) Data: 'All data in the Reactome database and files derived from that data are licensed under the Creative Commons Public Domain Dedication (CC0).' Source: https://reactome.org/license",
+      "description": "Entrez Gene ID -> Reactome pathway ID, pathway name, evidence code and species, for ALL hierarchy levels (parent and child pathways).",
+      "notes": "Stored unfiltered as downloaded; human filtering (species == 'Homo sapiens') happens at build time. 159,571 of 788,194 rows are Homo sapiens."
+    },
+    {
+      "name": "NCBI2Reactome.txt",
+      "source": "Reactome",
+      "url": "https://reactome.org/download/current/NCBI2Reactome.txt",
+      "final_url_after_redirects": "https://reactome.org/download/current/NCBI2Reactome.txt",
+      "downloaded_at_utc": "2026-09-22T15:21:07Z",
+      "canonical_bytes": 35534151,
+      "canonical_sha256": "44aec2f3d6c0d6f03268fbdc66f95a14673e86da31682b7edbd71c6c6a1ecc8d",
+      "http_last_modified": "Fri, 19 Jun 2026 00:35:17 GMT",
+      "http_content_length": null,
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/NCBI2Reactome.txt",
+      "stored_bytes": 35534151,
+      "stored_sha256": "44aec2f3d6c0d6f03268fbdc66f95a14673e86da31682b7edbd71c6c6a1ecc8d",
+      "release_version": "Reactome release 97 (ContentService /data/database/version, checked 2026-09-22)",
+      "licence": "CC0 1.0 Universal (Public Domain Dedication). Source: https://reactome.org/license",
+      "description": "Entrez Gene ID -> Reactome pathway mapping, LOWEST-LEVEL pathways only (distinct from the All_Levels file).",
+      "notes": "Downloaded for completeness; the build uses the All_Levels file by default (--reactome-file switches it)."
+    },
+    {
+      "name": "gene2go_human_9606.tsv.gz",
+      "source": "NCBI Gene",
+      "url": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2go.gz",
+      "final_url_after_redirects": "https://ftp.ncbi.nlm.nih.gov/gene/DATA/gene2go.gz",
+      "downloaded_at_utc": "2026-09-22T15:34:07Z",
+      "canonical_bytes": 1384951262,
+      "canonical_sha256": "da9986988ba7f122d0a49b6a2e4eca5bc3c581a4eb082798825604f5e3304e6a",
+      "http_last_modified": "Tue, 22 Sep 2026 06:31:14 GMT",
+      "http_content_length": "1384951262",
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/gene2go_human_9606.tsv.gz",
+      "stored_bytes": 5157520,
+      "stored_sha256": "b544bfea6f93cba1ec801aeb4c38e9e34552d5499eda23a749aac9511469bd61",
+      "release_version": "No version string is declared in the file; upstream HTTP Last-Modified is the release marker.",
+      "licence": "US Government public domain. NCBI/NLM policy: 'Information that is created by or for the US government on this site is within the public domain.' Source: https://www.ncbi.nlm.nih.gov/home/about/policies/",
+      "description": "Entrez Gene ID -> GO term with evidence code, qualifier, GO term name, PubMed ID and category (Process/Function/Component). Human subset only.",
+      "notes": "DEVIATION FROM THE ~500 MB CAP, RECORDED DELIBERATELY: the canonical upstream file gene2go.gz is ~1.38 GB, and NCBI publishes no human-scoped equivalent (checked /gene/DATA/ and /gene/DATA/GENE_INFO/Mammalia/ on 2026-09-22). The full file was therefore fetched via parallel HTTP Range requests to a TEMPORARY location outside the project, verified (reassembled length == Content-Length; gzip decompressed to completion; upstream Last-Modified/ETag re-checked afterwards to confirm the release did not change mid-download), hashed in full, filtered to tax_id 9606, and the temporary full copy then deleted. canonical_bytes and canonical_sha256 below are of the COMPLETE upstream gene2go.gz file; only the human subset was written into the project. stored_bytes/stored_sha256 describe that stored human subset, which is what the build reads. The full file was never persisted.",
+      "download_method": "HTTP Range, 8 parallel workers, 32 MiB chunks, reassembled and verified",
+      "integrity_checks": {
+        "reassembled_size_matches_content_length": true,
+        "gzip_decompressed_to_completion": true,
+        "upstream_last_modified_before": "Tue, 22 Sep 2026 06:31:14 GMT",
+        "upstream_last_modified_after": "Tue, 22 Sep 2026 06:31:14 GMT",
+        "upstream_changed_during_download": false
+      },
+      "filter_applied_at_download": {
+        "rule": "keep header lines plus rows whose tax_id column == 9606",
+        "source_lines_scanned": 125039819,
+        "lines_stored": 446675
+      }
+    },
+    {
+      "name": "go-basic.obo",
+      "source": "Gene Ontology Consortium",
+      "url": "http://purl.obolibrary.org/obo/go/go-basic.obo",
+      "final_url_after_redirects": "https://current.geneontology.org/ontology/go-basic.obo",
+      "downloaded_at_utc": "2026-09-22T15:21:09Z",
+      "canonical_bytes": 32227785,
+      "canonical_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+      "http_last_modified": null,
+      "http_content_length": "32227785",
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/go-basic.obo",
+      "stored_bytes": 32227785,
+      "stored_sha256": "b08d45b268b8c24ccb2513dbbbc7d4df9f6521c099b413f79eb31e06e0fa3bcc",
+      "release_version": "data-version: releases/2026-07-26 (from the file header)",
+      "licence": "CC BY 4.0. 'Gene Ontology Consortium data and data products are licensed under the Creative Commons Attribution 4.0 Unported License.' Source: https://geneontology.org/docs/go-citation-policy/",
+      "description": "GO ontology in OBO format; supplies authoritative GO term names and namespaces (biological_process / molecular_function / cellular_component).",
+      "notes": "Requested via http://purl.obolibrary.org/obo/go/go-basic.obo, which 302-redirects to https://current.geneontology.org/ontology/go-basic.obo (recorded as final_url). 38,092 non-obsolete terms parsed."
+    },
+    {
+      "name": "syngo1.3_complete_data.zip",
+      "source": "SynGO (Synaptic Gene Ontologies)",
+      "url": "https://syngoportal.org/data/syngo1.3_complete_data.zip",
+      "final_url_after_redirects": "https://syngoportal.org/data/syngo1.3_complete_data.zip",
+      "downloaded_at_utc": "2026-09-22T15:22:34Z",
+      "canonical_bytes": 600369,
+      "canonical_sha256": "6046a23691f6ca35ae16ccf6bb2f9c8841dd48ccd5bc08237197a425a600ddab",
+      "http_last_modified": null,
+      "http_content_length": "600369",
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/syngo1.3_complete_data.zip",
+      "stored_bytes": 600369,
+      "stored_sha256": "6046a23691f6ca35ae16ccf6bb2f9c8841dd48ccd5bc08237197a425a600ddab",
+      "release_version": "SynGO release 1.3 (SynGO-1 series); archive members dated 2025-03-29",
+      "licence": "NO EXPLICIT LICENCE STATEMENT found on the SynGO portal home, /about or /download pages as of 2026-09-22. SynGO self-describes as 'a public knowledgebase for synapse research'. Cite: Koopmans et al., 2019, Neuron. Treat licence as UNSPECIFIED rather than assuming open terms.",
+      "description": "SynGO 1.3 bulk download: ontologies.xlsx (304 synaptic terms with hierarchically rolled-up gene lists incl. Entrez IDs), genes.xlsx (1,790 genes), annotations.xlsx (5,077 expert-curated annotations).",
+      "notes": "Obtained WITHOUT registration, login or form submission: https://syngoportal.org/data/syngo1.3_complete_data.zip is a direct unauthenticated URL linked from the public /download page. No Zenodo-hosted official SynGO release exists (Zenodo API search for 'SynGO' on 2026-09-22 returned 11 records, none of them the SynGO consortium release). The build uses ontologies.xlsx because it carries the hierarchical rollup; annotations.xlsx deliberately does not."
+    },
+    {
+      "name": "syngo_background_brain.json",
+      "source": "SynGO (Synaptic Gene Ontologies)",
+      "url": "https://syngoportal.org/data/background_brain.json",
+      "final_url_after_redirects": "https://syngoportal.org/data/background_brain.json",
+      "downloaded_at_utc": "2026-09-22T15:22:34Z",
+      "canonical_bytes": 228083,
+      "canonical_sha256": "04d019f4d26dc511280791adf5fb52cf42195c5f43a84ad4dec6c84bc928d116",
+      "http_last_modified": null,
+      "http_content_length": "228083",
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/syngo_background_brain.json",
+      "stored_bytes": 228083,
+      "stored_sha256": "04d019f4d26dc511280791adf5fb52cf42195c5f43a84ad4dec6c84bc928d116",
+      "release_version": "Accompanies SynGO-1 releases; no version string declared",
+      "licence": "NO EXPLICIT LICENCE STATEMENT (see syngo1.3_complete_data.zip).",
+      "description": "Brain-expressed gene background set used by the SynGO-1 gene-set analysis webtool.",
+      "notes": "Downloaded for reference only. NOT used to build any .setannot file. MAGMA's competitive test derives its own background from the gene-level statistics, so imposing SynGO's brain-expressed background here would double-count the background assumption."
+    },
+    {
+      "name": "proteinatlas.tsv.zip",
+      "source": "Human Protein Atlas (HPA)",
+      "url": "https://www.proteinatlas.org/download/proteinatlas.tsv.zip",
+      "final_url_after_redirects": "https://www.proteinatlas.org/download/proteinatlas.tsv.zip",
+      "downloaded_at_utc": "2026-09-22T15:22:35Z",
+      "canonical_bytes": 7460135,
+      "canonical_sha256": "ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470",
+      "http_last_modified": "Wed, 03 Jun 2026 11:06:49 GMT",
+      "http_content_length": "7460135",
+      "stored_path": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/pathway_annotations/2026-09-22/proteinatlas.tsv.zip",
+      "stored_bytes": 7460135,
+      "stored_sha256": "ad401f8519ecdee5b67b0ad3bf28175d402d1ea0ad6c542b90fcab2bee39b470",
+      "release_version": "HPA version 25.1 (release date 2026-05-25; file Last-Modified 2026-06-03)",
+      "licence": "CC BY 4.0. 'The Human Protein Atlas is licensed under the Creative Commons Attribution 4.0 International License for all copyrightable parts of our database.' Source: https://www.proteinatlas.org/about/licence. CORRECTION TO BRIEF: the task brief stated HPA is CC BY-SA 3.0; the current HPA licence page states CC BY 4.0. HPA additionally warns that third-party-constrained data may be included and that users are responsible for checking such use.",
+      "description": "HPA bulk per-gene table (proteinatlas.tsv, 43.1 MB uncompressed) including brain and single-cell classification columns: RNA single nuclei brain specificity/distribution/score/nCPM, RNA brain regional specificity/distribution/score/nTPM, RNA single cell type specificity/distribution, RNA tissue specificity.",
+      "notes": "Direct unauthenticated URL from https://www.proteinatlas.org/about/download; 7.46 MB, well under the ~500 MB cap. proteinatlas.xml.gz (729.9 MB) was NOT downloaded because it exceeds the cap. NOT used to build any .setannot file: HPA is Ensembl-gene-keyed, not Entrez-keyed, so turning it into MAGMA sets would require an ID mapping step that would introduce its own losses; it is supplied as a supplementary annotation source only."
+    }
+  ],
+  "not_obtained": [
+    {
+      "resource": "MSigDB (Molecular Signatures Database), e.g. C2:CP:REACTOME, C5 GO collections, .entrez.gmt files",
+      "status": "NOT OBTAINED - deliberately",
+      "reason": "The official MSigDB download route is registration-gated. https://www.gsea-msigdb.org/gsea/downloads.jsp renders a login page: 'Click here to register to view the MSigDB gene sets and/or download the GSEA software.' Registering was prohibited by the task, so it was not done.",
+      "additional_finding_recorded_for_honesty": "A probe on 2026-09-22 found that the underlying bucket URL https://data.broadinstitute.org/gsea-msigdb/msigdb/release/2025.1.Hs/c2.cp.reactome.v2025.1.Hs.entrez.gmt returns HTTP 200 with genuine GMT content (786,337 bytes) and no authentication. That path was NOT used as a source: it circumvents the registration gate the maintainers put in front of the sanctioned download page. The probe response was discarded and is not part of this dataset.",
+      "impact": "None material. MSigDB's C2:CP:REACTOME collection is derived from Reactome, and its C5 collection is derived from GO; both upstream sources were obtained directly from their own primary sites, in Entrez-keyed form, at a known release."
+    },
+    {
+      "resource": "NCBI gene2go.gz, full multi-species file retained on disk",
+      "status": "PARTIALLY OBTAINED - human subset stored, full file not retained",
+      "reason": "The canonical file is ~1.38 GB, above the task's ~500 MB per-file cap, and NCBI publishes no human-scoped equivalent (verified against the /gene/DATA/ and /gene/DATA/GENE_INFO/Mammalia/ listings on 2026-09-22).",
+      "impact": "None for this analysis, which is human-only. Provenance is preserved: the SHA256 and byte count of the complete upstream stream were computed during download and are recorded above, so the stored subset remains traceable to an exact upstream release."
+    },
+    {
+      "resource": "Human Protein Atlas proteinatlas.xml.gz",
+      "status": "NOT OBTAINED",
+      "reason": "729,899,935 bytes, above the ~500 MB cap. The equivalent per-gene content was obtained as proteinatlas.tsv.zip (7.46 MB), which carries the brain and single-cell classification columns.",
+      "impact": "None; the TSV covers the brain/cell-type classifications requested."
+    },
+    {
+      "resource": "SynGO release hosted on Zenodo (with a DOI)",
+      "status": "NOT FOUND",
+      "reason": "A Zenodo API search for 'SynGO' on 2026-09-22 returned 11 records, none of which is an official SynGO consortium release. No SynGO DOI could therefore be recorded.",
+      "impact": "None: SynGO 1.3 was obtained directly from the SynGO portal without registration. The trade-off is that the SynGO copy carries no DOI and no explicit licence statement."
+    }
+  ]
+}

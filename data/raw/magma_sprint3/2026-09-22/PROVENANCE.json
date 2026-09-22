@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-09-22T20:08:09.088005+00:00",
+  "tool": "MAGMA v1.10 (binary in the Codex worktree; licence forbids redistribution, so it is not vendored here)",
+  "common_command": "magma --bfile reference/g1000_eur --pval <file> <N spec> --gene-settings snp-exclude=reference/position_mismatch_snps.txt --gene-annot reference/annotations/genes_10kb.genes.annot --out <out>",
+  "ld_reference": "1000 Genomes phase 3 EUR (g1000_eur)",
+  "gene_locations": "NCBI37.3, 10 kb window",
+  "runs": {
+    "davies_replication_matched.genes.out": {
+      "gwas": "Davies 2018 general cognitive function, open subset (PMID 29844566)",
+      "n": "N=282014 (uniform; no per-SNP N supplied)",
+      "input": "datashare.ed.ac.uk bitstream def9f088-4454-4cdf-8e34-f9ce978baac0 (Davies2018_OPEN_DATASET_summary_results.txt)",
+      "input_sha256": "01990c3e30661db518579d8f84dfddd7f79bc9b476e8a65b45d28c0489ca6573",
+      "purpose": "independent re-run that verified X01's gene layer",
+      "output_sha256": "4e0c3fc76d7db1bff60a920db87651a0f8fceab1dc12da65e70525abe74fcb00",
+      "bytes": 1584034
+    },
+    "savage2018_intelligence_10kb.genes.out": {
+      "gwas": "Savage 2018 intelligence meta-analysis (PMID 29942086, GCST006250)",
+      "n": "per-SNP N_analyzed (ncol=N)",
+      "input": "ftp.ebi.ac.uk .../GCST006250/SavageJansen_IntMeta_sumstats.zip",
+      "input_sha256": "77e6a8b3c03165e7bae5fee920ae8ca99a4a9c9c65179fffe66a14f7a3a9bf93",
+      "publisher_md5_verified": "fa7e947e144b33cecbd29e986a1de2dd",
+      "purpose": "overlapping-sample reproducibility (shares UKB with Davies)",
+      "output_sha256": "9691b1ea64efc7dc46923cc94ffb8fd105782e659dae8fea80c818d9c9b5df66",
+      "bytes": 1575692
+    },
+    "zabaneh_extremeIQ_10kb.genes.out": {
+      "gwas": "Zabaneh 2018 extremely high intelligence (PMID 29731509, GCST005626)",
+      "n": "N_eff=4300 (1,238 cases, 8,172 controls)",
+      "input": "ftp.ebi.ac.uk .../GCST005626/GCST005626_buildGRCh37.tsv.gz",
+      "input_sha256": "44ddca30be81de7358589ff90b79fc6d5d7fbc9a9a4d78023d507490148f5ee9",
+      "purpose": "Part C extreme-tail continuity; the only UKB-free gene-level statistic",
+      "output_sha256": "eea1cbc24a88b01edb1620a8a6c2a01df53bfd4b8005a63c671ac92c1f760e63",
+      "bytes": 1527876
+    },
+    "fi4_arithmetic_10kb.genes.out": {
+      "gwas": "UKB fluid-intelligence item FI4 positional arithmetic (PMID 34737426, GCST90042729)",
+      "n": "per-SNP N (ncol=N), mean 114,552",
+      "input": "ftp.ebi.ac.uk .../GCST90042729/GCST90042729_buildGRCh37.tsv.gz",
+      "input_sha256": "b99cec58a4a42abb3f5d6ff9ad4d47e44149d4359ab100e2a408e396cc92ed43",
+      "purpose": "Part E objective arithmetic proxy (single item; low reliability; g-saturated)",
+      "output_sha256": "4804b3792cdb7bd9c47e89c19f987c1fe783ac00bce416278a9f862333a463f0",
+      "bytes": 1579992
+    }
+  },
+  "not_committed": "the input summary statistics (126-461 MB each); their sha256 above is the check"
+}

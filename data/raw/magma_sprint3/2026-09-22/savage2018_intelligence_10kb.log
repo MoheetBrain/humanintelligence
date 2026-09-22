@@ -1,0 +1,40 @@
+Welcome to MAGMA v1.10 (custom)
+Using flags:
+	--bfile reference/g1000_eur
+	--pval /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/interim/magma_replication/savage.pval.tsv ncol=N
+	--gene-settings snp-exclude=reference/position_mismatch_snps.txt
+	--gene-annot reference/annotations/genes_10kb.genes.annot
+	--out /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/interim/magma_replication/savage2018_intelligence_10kb
+
+Start time is 16:44:00, Tuesday 22 Sep 2026
+
+Loading PLINK-format data...
+Reading file reference/g1000_eur.fam... 503 individuals read
+Reading file reference/g1000_eur.bim... 22665064 SNPs read
+Preparing file reference/g1000_eur.bed... 
+
+Reading SNP synonyms from file reference/g1000_eur.synonyms (auto-detected)
+	read 6016767 mapped synonyms from file, mapping to 3921040 SNPs in the data
+	WARNING: detected 133 synonymous SNP pairs in the data
+	         skipped all synonym entries involved, synonymous SNPs are kept in analysis
+	         writing list of detected synonyms in data to supplementary log file
+Filtering SNPs listed in file reference/position_mismatch_snps.txt (mode = exclude)
+	after filtering, 22665060 SNPs remaining in data
+Reading SNP p-values from file /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/interim/magma_replication/savage.pval.tsv... 
+	detected 3 variables in file
+	using variable: SNP (SNP id)
+	using variable: P (p-value)
+	using variable: N (sample size; discarding SNPs with N < 50)
+	read 9295119 lines from file, containing valid SNP p-values for 9006209 SNPs in data (96.89% of lines, 39.74% of SNPs in data)
+Loading gene annotation from file reference/annotations/genes_10kb.genes.annot... 
+	18564 gene definitions read from file
+	found 18321 genes containing valid SNPs in genotype data
+
+
+Starting gene analysis... 
+	using model: SNPwise-mean
+	writing gene analysis results to file /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/interim/magma_replication/savage2018_intelligence_10kb.genes.out
+	writing intermediate output to file /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/interim/magma_replication/savage2018_intelligence_10kb.genes.raw
+
+
+End time is 16:51:53, Tuesday 22 Sep 2026 (elapsed: 00:07:53)

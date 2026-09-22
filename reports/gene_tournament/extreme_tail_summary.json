@@ -1,0 +1,87 @@
+{
+  "computed_at": "2026-09-22T20:40:09Z",
+  "mode_2_individual_level": {
+    "status": "INDIVIDUAL-LEVEL COMMONALITY NOT COMPUTABLE WITH CURRENT ACCESS",
+    "cases_blocker": "Duke TIP extreme-IQ genotypes: no public deposit located (no dbGaP, no EGA). Requires direct collaboration agreement.",
+    "controls_blocker": "HRS controls: dbGaP phs000428 Authorized Access (eRA Commons + institutional Signing Official + DUC).",
+    "quantities_not_computed": [
+      "mean/median/SD/IQR/percentiles of per-gene score by group",
+      "Cohen's d",
+      "Mann-Whitney on individuals",
+      "KS distance",
+      "AUC",
+      "odds ratio",
+      "fraction above control median/75th/90th",
+      "EXTREME_COGNITION_COMMONALITY_50",
+      "EXTREME_COGNITION_COMMONALITY_90",
+      "within-family sibling-pair comparisons"
+    ],
+    "note": "Not estimated, not approximated, not imputed."
+  },
+  "mode_1_summary_statistic": {
+    "population_gwas": {
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/magma_x01/2026-09-22/davies2018_10kb.genes.out",
+      "n_genes": 18418,
+      "bonferroni": 2.714735584754045e-06,
+      "n_significant": 375
+    },
+    "extreme_gwas": {
+      "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/magma_sprint3/2026-09-22/zabaneh_extremeIQ_10kb.genes.out",
+      "n_genes": 18188,
+      "bonferroni": 2.7490653177919508e-06,
+      "n_significant": 0,
+      "study": "Zabaneh 2018 GCST005626, 1,238 cases (top ~0.03%, mean IQ ~170) vs 8,172 controls, effective N 4,300"
+    },
+    "n_genes_in_both": 18188,
+    "power_ratio_note": "Effective N 4,300 vs 282,014 -- about 65x less. Per-gene tests in the extreme sample are underpowered by construction.",
+    "continuity_tests": {
+      "spearman_Z_pop_vs_Z_ext_all_genes": {
+        "rho": 0.07310241899354439,
+        "p": 5.542210372339206e-23
+      },
+      "spearman_one_gene_per_LD_block": {
+        "rho": 0.07417927404510817,
+        "p": 1.2925671140450383e-10,
+        "n_blocks": 7491
+      },
+      "extreme_Z_shift_in_population_significant_genes": {
+        "mean_Z_ext_significant": 0.9850955632000001,
+        "mean_Z_ext_rest": 0.33334534922809184,
+        "mann_whitney_p": 9.02982897715725e-26,
+        "gene_size_matched_permutation_p": "<0.0005 (0 of 2000 draws)",
+        "n_significant": 375,
+        "n_rest": 17813
+      }
+    },
+    "amplification_model": {
+      "definition": "EXTREME_TAIL_AMPLIFICATION = observed extreme-tail gene Z minus the value predicted from population-cognition gene Z by OLS, standardised by the residual SD.",
+      "slope": 0.07395973403519265,
+      "intercept": 0.2720712375818494,
+      "r_value": 0.10021799122508211,
+      "slope_stderr": 0.005444889590120602,
+      "residual_sd": 1.0497945856796245,
+      "interpretation_limit": "The residual SD is dominated by sampling noise in the extreme-tail statistic, not by biology. A high amplification z-score is a HYPOTHESIS, and with 18,000 genes the extreme values are expected under the null."
+    },
+    "continuity_verdict": {
+      "question": "Is extreme cognition continuous with population cognition at gene level?",
+      "answer": "CONTINUOUS for common variants at gene level. No upper-tail amplification is required to explain the data.",
+      "power_scaling_test": {
+        "sqrt_effective_N_ratio": 8.098435105796101,
+        "predicted_mean_Z_ext_for_population_significant_genes": 0.9103051843545682,
+        "observed": 0.9850955632000001,
+        "observed_over_predicted_shift": 1.1296283974932795,
+        "reading": "Under pure continuity the same genes carry the same effects, detected with sqrt(N) less precision."
+      },
+      "locus_level_sign_test": {
+        "n_independent_loci": 159,
+        "n_with_positive_extreme_tail_Z": 121,
+        "background_rate": 0.6180879133217313,
+        "p": 9.239270994367684e-05
+      },
+      "n_genes_genome_wide_significant_in_extreme_sample": 0,
+      "what_would_have_indicated_amplification": "A distinct gene set at the tail: near-zero rank correlation with population cognition, no shift among population-significant genes, and tail-significant genes that are not population-associated. None of that is observed.",
+      "unresolved_threat": "Zabaneh's controls are the Health and Retirement Study. HRS is a CHARGE cohort and Davies 2018 is a CHARGE+COGENT+UKB meta-analysis, so SAMPLE OVERLAP IS POSSIBLE AND NOT RESOLVED HERE. Overlap would inflate the correlation and bias this test toward continuity.",
+      "scope_limit": "Common variants, European ancestry, gene level. Says nothing about rare variants at the tail, which Spain 2016's exome-array null addresses only weakly."
+    }
+  }
+}

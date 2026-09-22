@@ -1,0 +1,103 @@
+# Sprint 3, Part A — the phenotype channel map for the gene tournament.
+#
+# WHY THIS FILE EXISTS SEPARATELY FROM THE TRAIT PANEL
+# ----------------------------------------------------
+# `atlases/alphacognition/cognitive_trait_panel.yaml` answers "may this trait be used in
+# ranking?". This file answers a different question: "which cognitive construct does this
+# trait measure?" The two are not the same, and collapsing them caused a real error in
+# Sprint 2: mathematical ability (EFO_0004875) was filed under `fluid_reasoning`, which
+# made maths invisible as a channel and meant the discovery sweep never fetched it.
+#
+# THE RULE THAT IS NOT NEGOTIABLE
+# -------------------------------
+# `educational_attainment` is a PROXY. It is an outcome shaped by cognition, motivation,
+# family resources, school quality, health and birth cohort. It may never be counted as
+# direct cognition evidence, and no gene may enter a direct-cognition rank on EA alone.
+# Sprint 2's red team found exactly this error already committed once (CRTC1, graded 3 on
+# what turned out to be an EA study) and the truth table still carries it.
+#
+# `clinical_cognitive_composite` is also a proxy, and a different one: it measures decline
+# or impairment relative to a person's own earlier state or a clinical threshold. A gene
+# that protects against decline is not thereby a gene that raises ability.
+schema_version: 0.1.0
+built_for: sprint-3/gene-tournament
+
+evidence_classes:
+  direct_cognition:
+    description: >-
+      Performance on a cognitive test, measured in the study itself. The only class
+      admissible as direct human genetic evidence about cognitive ability.
+    channels: [general_cognition, fluid_reasoning, working_memory, memory,
+               processing_speed, executive_function, mathematical_cognition,
+               spatial_cognition]
+  proxy:
+    description: >-
+      Correlated with cognition but not a measure of it. Carried in its own columns,
+      never summed into a direct-cognition score, and always visible in any rank that
+      uses it.
+    channels: [educational_attainment, clinical_cognitive_composite]
+
+channels:
+  general_cognition:
+    traits: [EFO_0004337, EFO_0008354]
+    note: "intelligence; cognitive function measurement — the g channel"
+  fluid_reasoning:
+    traits: [EFO_0008394]
+    note: "verbal-numerical reasoning (UK Biobank VNR and equivalents)"
+  mathematical_cognition:
+    traits: [EFO_0004875]
+    note: >-
+      Mathematical ability. Split out of fluid_reasoning for Sprint 3. Part E requires
+      that objective mathematics tests be preferred over self-report and course-taking;
+      the trait label alone does not say which was used, so every study contributing to
+      this channel must be inspected before a math-specific claim is made.
+  spatial_cognition:
+    traits: [EFO_0803533]
+    note: "visuospatial function measurement"
+  processing_speed:
+    traits: [EFO_0004363, EFO_0008393, EFO_0009702]
+    note: "processing speed; reaction time; intra-individual RT variability"
+  memory:
+    traits: [EFO_0004333, EFO_0009591, EFO_0004874]
+    note: "episodic memory; verbal memory; memory performance"
+  working_memory:
+    traits: [EFO_0004335]
+    note: "short-term memory"
+  executive_function:
+    traits: [EFO_0009332, EFO_0007969, EFO_0007636]
+    note: "executive function; cognitive inhibition; attention"
+  educational_attainment:
+    traits: [EFO_0011015, EFO_0004784, EFO_0005300, EFO_0005299]
+    note: >-
+      PROXY ONLY. Educational attainment, self-reported EA, word reading, non-word
+      reading. Reading measures sit here because the panel classes them as EA; they are
+      arguably learning measures, and that disagreement is recorded rather than resolved
+      silently.
+  clinical_cognitive_composite:
+    traits: [EFO_0007710, EFO_0007998, EFO_0004785]
+    note: "PROXY ONLY. Cognitive decline, cognitive impairment, clinical neurocognition."
+
+# Channels the brief asks for that this data source cannot populate.
+channels_requested_but_not_populated:
+  learning_measures:
+    reason: >-
+      The GWAS Catalog has no EFO trait for a laboratory learning measure in the panel's
+      scope. Word/non-word reading are the nearest available and are classed as EA
+      proxies. This channel is ABSENCE OF MEASUREMENT, not a finding that no gene
+      affects learning.
+  extreme_high_cognition:
+    reason: >-
+      Extreme-tail cognition is a study design, not an EFO trait, so it cannot be
+      swept by trait id. Populated separately in Part C from named extreme-IQ studies.
+
+excluded_traits:
+  EFO_0009098:
+    label: cognitive domain measurement
+    why: >-
+      Umbrella term. Its member studies are already counted under a specific trait, so
+      including it double-counts the same analysis under two names.
+  EFO_0007046:
+    label: executive function
+    why: >-
+      Duplicate of EFO_0009332 (executive function measurement) at a different ontology
+      node; same reason.

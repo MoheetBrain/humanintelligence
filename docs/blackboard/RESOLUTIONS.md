@@ -370,3 +370,26 @@ task.
 *Also checked and found legitimate:* 5 `causal_perturbation` claims carry `unclear`,
 which is a curation gap worth a Sprint-2 pass — a perturbation study that measured an
 outcome should be able to state which way it moved.
+
+## R20 — X01's verification state advanced; the test pinned the old *label*, not the *invariant* · **TEST CORRECTED (cross-owner, recorded here)**
+
+Sprint 3 found the Codex/Astra branch the Sprint-2 audit declared nonexistent (a local,
+never-pushed linked worktree). X01's artefacts therefore now exist, and its gene-level MAGMA
+layer was independently re-derived and reproduced. The schema's own vocabulary has the right
+state for that — `verification_status: artefacts_received_pending_check`,
+`delivery.mechanism: local_clone_path` — because the **cell-type claim** is still not
+re-derived here.
+
+`tests/test_x02_ingestion.py::test_x01_is_recorded_as_unverified_and_licenses_nothing`
+asserted `verification_status == unverified_external_report`. That pinned a label. The
+invariant the test exists to protect is different and still holds: **X01 licenses nothing
+while its claim is unverified** — `provenance_class` stays `external_analysis_unverified`,
+every `reported_results[*].claim_refs` stays empty, and V-EXT still refuses any claim citing
+it. The test is corrected to assert the invariant (either pre-verification state is allowed;
+the licensing guards are unchanged).
+
+`tests/**` is owned by agent:ontology. The orchestrator made this one-assertion change
+directly, and records it here so the owner can review or revert it: no ontology agent ran in
+Sprint 3, and leaving a test asserting a now-false delivery fact would have blocked the commit
+on an obsolete label. Also: `pipelines/reports/**` was UNCLAIMED (created in Sprint 2 without
+an ownership entry) and is now claimed by the orchestrator.

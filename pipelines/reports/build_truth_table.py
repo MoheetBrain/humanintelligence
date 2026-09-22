@@ -1174,6 +1174,173 @@ ROWS: list[dict[str, str]] = [
 ]
 
 
+# ============================================================================ SPRINT 3 ==
+# Sprint-3 updates are applied as a LAYER over the Sprint-2 rows rather than by rewriting
+# them, so the earlier judgement stays readable next to the evidence that changed it. Each
+# update names its artefacts. Status changes are listed in reports/GENE_TOURNAMENT_FINAL.md.
+SPRINT3_UPDATED = "2026-09-22"
+_T = "reports/gene_tournament/"
+_MAGMA = ("MAGMA gene-level, Davies 2018 general cognitive function (N=282,014), run VERIFIED by "
+          "independent recomputation in this repository")
+SPRINT3_UPDATES: dict[str, dict[str, str]] = {
+    "A SINGLE GENIUS GENE": {
+        "why_prefix": "SPRINT 3 reinforces this: the extreme-IQ sample (IQ~170) has ZERO genome-wide "
+                      "significant genes at gene level; 375 genes pass Bonferroni in population "
+                      "cognition, collapsing to 159 independent LD loci; the largest biological module "
+                      "holds 32% of FDR<0.01 gene-level evidence, and no gene dominates.",
+        "deps": _T + "direct_cognition_rank.csv; " + _T + "extreme_tail_summary.json"},
+    "EXTREME COGNITION IS QUALITATIVELY DISTINCT": {
+        "current_status": "CONTRADICTED_IN_STUDIED_CONTEXT",
+        "why_prefix": "SPRINT 3 ASSESSED IT. At gene level, for common variants in European-ancestry "
+                      "summary data, extreme cognition is CONTINUOUS with population cognition: among the "
+                      "375 population-significant genes the extreme-IQ shift is 1.13x what pure power "
+                      "scaling predicts (observed mean Z 0.985 vs 0.910); 121/159 independent loci carry "
+                      "positive extreme-tail signal (P=9.2e-05); Mann-Whitney P=9e-26; size-matched "
+                      "permutation P<0.0005. No distinct tail gene set is seen. Context limits: common "
+                      "variants only; possible HRS/CHARGE sample overlap is unresolved and would bias "
+                      "toward this answer; rare-variant tail untested (no individual-level access).",
+        "human_genetics": "Zabaneh 2018 extreme IQ (1,238 cases, N_eff 4,300) vs Davies 2018 population cognition, gene level",
+        "replication": "single extreme-tail GWAS; no second extreme-IQ sample with open data exists",
+        "next_kill_test": "Resolve HRS/CHARGE overlap; then repeat with any second extreme-tail sample, and "
+                          "test rare-variant burden if individual-level TIP genotypes ever become accessible.",
+        "deps": _T + "extreme_tail_summary.json; " + _T + "extreme_tail_rank.csv"},
+    "PYRAMIDAL-CELL SPECIFICITY": {
+        "why_prefix": "SPRINT 3: X01's artefacts were found (the Codex branch exists) and its GENE-LEVEL layer "
+                      "was independently reproduced. Its cell-type layer shows pyramidal enrichment nominal "
+                      "in all four atlas x model combinations (P 2e-05 to 0.019) -- but cortical interneurons "
+                      "are equally strong marginally (P=2.3e-05). The signal is NEURONAL rather than "
+                      "pyramidal-specific, and X01's own verdict is 'inconclusive' (corrected P=0.08).",
+        "deps": _T + "pathway_hypothesis_panel.csv; analyses/external/X01_cell_type_enrichment.yaml"},
+    "SYNAPTIC BIOLOGY is the dominant locus": {
+        "current_status": "PROMISING_BUT_UNRESOLVED",
+        "why_prefix": "SPRINT 3 RAN THE UNBIASED TEST this row asked for. MAGMA competitive gene-set "
+                      "analysis over 6,200 sets, conditioned on gene size, gene density, LD, annotation "
+                      "density and LoF constraint, GLOBAL FDR: the ONLY 6 sets surviving are synaptic "
+                      "(presynaptic membrane, synaptic membrane adhesion, presynaptic voltage-gated channels, "
+                      "synapse, process in the synapse); postsynaptic density does not survive. Reproduced "
+                      "in Savage 2018 (6/6, same sign; overlapping sample). NOT independently replicated: "
+                      "UKB-free extreme-IQ sample 6/6 same sign, 0/6 significant at 65x less power. "
+                      "'Dominant' is overstated: the synaptic module holds 32% of FDR<0.01 evidence -- the "
+                      "largest share, not a majority -- and its boundaries are unstable.",
+        "human_genetics": "unbiased gene-set enrichment, conditioned, global FDR: synaptic sets only (6/6,200)",
+        "replication": "reproduced in an overlapping meta-analysis; independent (UKB-free) test underpowered",
+        "next_kill_test": "Test the six synaptic sets in a large cognition GWAS WITHOUT UK Biobank "
+                          "(or in within-sibship data, which needs an OpenGWAS registration).",
+        "deps": _T + "pathway_enrichment.csv; " + _T + "pathway_replication.csv; " + _T + "module_report.md"},
+    "DEVELOPMENTAL WIRING": {
+        "why_prefix": "SPRINT 3 GENETICS DOES NOT DECIDE IT: the 375 Bonferroni cognition genes are neither "
+                      "enriched for prenatal/developmental expression (OR 1.16, P=0.12) nor for adult-dynamic "
+                      "expression (OR 1.30, P=0.06). The top two loci split: DCC prenatal-dominant, NEGR1 "
+                      "adult-dynamic.",
+        "deps": _T + "TOP50_HUMAN_COGNITION_GENES.csv; data/gene_tournament/developmental_classification.parquet"},
+    "ASTROCYTE DOMINANCE": {
+        "current_status": "DOWNGRADED",
+        "why_prefix": "SPRINT 3 GENETIC TEST: GO astrocyte sets are null after conditioning (astrocyte "
+                      "projection P=0.85, activation P=0.98); X01 astrocyte cell-type enrichment is "
+                      "inconsistent (null marginally in one atlas P=0.59, null jointly in the other P=0.21, "
+                      "significant only in one joint model P=0.0013 -- a conditioning artefact signature). "
+                      "This tests astrocytic GENETIC involvement, not lactate-shuttle physiology.",
+        "deps": _T + "pathway_hypothesis_panel.csv"},
+    "ENERGY DOMINANCE": {
+        "why_prefix": "SPRINT 3 GENETICS AGREES WITH THE DOWNGRADE: oxidative phosphorylation P=0.37 "
+                      "(conditioned); 0 of 11 mitochondrial-family sets even nominal; a mitochondrial "
+                      "module exists (11% of evidence) but its label is not enriched (global FDR 0.9999) -- "
+                      "mitochondrial genes appear at their base rate.",
+        "deps": _T + "pathway_hypothesis_panel.csv; " + _T + "module_report.md"},
+    "MYELIN AND NETWORK TIMING": {
+        "current_status": "UNRESOLVED",
+        "why_prefix": "SPRINT 3 ASSESSED IT (previously zero artefacts). GO myelination P=0.16 and "
+                      "oligodendrocyte differentiation P=0.43 after conditioning -- null. But X01's "
+                      "oligodendrocyte-lineage EXPRESSION enrichment is nominal in joint models in both "
+                      "atlases (P=0.012, 0.019; OPC P=4e-04 marginal in the cortex atlas). Mixed, not "
+                      "surviving correction. Conduction timing itself is not assessable by gene sets.",
+        "deps": _T + "pathway_hypothesis_panel.csv"},
+    "CLASSICAL NEUROMODULATOR DOMINANCE": {
+        "why_prefix": "SPRINT 3 GENETICS: neurotransmitter receptor activity P=0.12 and GPCR activity "
+                      "P=0.81 after conditioning; serotonin-receptor sets nominal only (5 of 28 at P<0.05 "
+                      "vs 1.4 expected); nothing survives correction.",
+        "deps": _T + "pathway_hypothesis_panel.csv"},
+    "MATHEMATICAL BIOLOGY BEYOND g": {
+        "current_status": "UNRESOLVED",
+        "why_prefix": "SPRINT 3 ASSESSED IT; NOT IDENTIFIABLE WITH OPEN DATA. 0 math-specific genes. The "
+                      "only open objective arithmetic phenotype (UKB item FI4, N~115k) has 0 genome-wide "
+                      "significant genes and correlates with g at rho=0.11; its top residual genes are "
+                      "keratins (an LD artefact). The catalog 'maths' channel is 99.8% one 23andMe paper of "
+                      "self-report/course-taking; the only g-orthogonal maths GWAS (2025) rests on restricted "
+                      "23andMe data.",
+        "next_kill_test": "Apply for the 23andMe maths summary statistics, or find a cohort with an "
+                          "objective multi-item maths test and genotypes.",
+        "deps": _T + "math_gene_rank.csv"},
+    "2q12.3 DUPLICATION": {
+        "why_prefix": "SPRINT 3 RESOLVED THE UNKNOWNS FROM THE FULL TEXT -- and found the Sprint-2 gene "
+                      "list was WRONG (hg38 cytoband used for an hg19 label). The duplication is "
+                      "chr2:109,510,927-110,376,563 (hg19), 865 kb, EDAR/SH3RF3/SEPTIN10/SOWAHC; 36 "
+                      "carriers of 258,292; z=0.434 (~6.5 IQ points), p=7.6e-03 (nominal; not Bonferroni "
+                      "across 596 duplicated genes); reciprocal deletion trends negative (p=0.058); "
+                      "per-copy dosage p=2.65e-03. All four genes ClinGen-uncurated. Weak convergence: "
+                      "SOWAHC/SEPTIN10 nominal common-variant signal (P 0.0014, 0.0022). No replication.",
+        "deps": "atlases/positive_genetics/2q12_3_duplication.yaml; " + _T + "positive_human_perturbations.csv"},
+    "GRM3 is a cognition-relevant target": {
+        "why_prefix": "SPRINT 3: " + _MAGMA + " gives GRM3 P=2.2e-05, rank 543/18,418 -- NOT Bonferroni. "
+                      "Attribution corrected: the nomination came from a Codex screen of Savage 2018 "
+                      "supplementary tables (published P=4.8e-08), not from X01.",
+        "deps": _T + "direct_cognition_rank.csv"},
+    "ADGRB1 is a cognition-relevant target": {
+        "current_status": "UNRESOLVED",
+        "why_prefix": "SPRINT 3 REVERSES THE SPRINT-2 DOWNGRADE. " + _MAGMA + " gives ADGRB1 P=1.6e-07, "
+                      "rank 238/18,418 -- PASSES Bonferroni. Sprint 2 tested single variants; a gene-based "
+                      "test is the appropriate one. Still no causal-gene resolution and no direction.",
+        "deps": _T + "direct_cognition_rank.csv"},
+    "EXTREME COGNITION provides evidence about enhancement mechanisms": {
+        "current_status": "UNRESOLVED",
+        "why_prefix": "SPRINT 3 ASSESSED IT. At gene level the extreme tail is the SAME architecture as "
+                      "population cognition (see the continuity row), so it adds power-limited information "
+                      "about the same genes rather than distinct mechanisms; its one reported locus (ADAM12) "
+                      "is nominal here and unreplicated. The rare-variant tail is untested.",
+        "deps": _T + "extreme_tail_summary.json"},
+    "X01 — cell-type enrichment": {
+        "why_prefix": "SPRINT 3: the artefacts exist (local, unpushed Codex worktree). X01's GENE-LEVEL "
+                      "layer was reproduced here by independent recomputation; its cell-property layer is "
+                      "not yet re-derived, so the record is artefacts_received_pending_check. X01 did NOT "
+                      "nominate GRM3/ADGRB1/GABBR1.",
+        "deps": "analyses/external/X01_cell_type_enrichment.yaml; data/raw/magma_x01/2026-09-22/REPLICATION_CHECK.json"},
+}
+_SEED_MAGMA = {  # gene-level results from the verified run, appended to human_genetics
+    "PDE4B": "P=0.105, rank 7,081", "GABRA5": "P=0.38, rank 12,413", "HCN1": "P=0.36, rank 12,124",
+    "RGS14": "P=0.040, rank 4,723", "CRTC1": "P=0.74, rank 16,505", "GPR158": "P=0.0014, rank 1,561",
+    "EIF2S1": "P=0.72, rank 16,362", "Klotho": "KL P=0.18, rank 8,894", "CHRM1": "P=0.056, rank 5,397",
+    "GRIN2B": "P=0.068, rank 5,851", "HDAC2": "P=0.23, rank 9,908", "GRM5": "P=0.51, rank 14,085",
+    "OTX2": "P=0.13, rank 7,670", "RTN4R": "P=0.041, rank 4,762", "ADORA1": "P=0.0067, rank 2,447",
+}
+
+
+def apply_sprint3(rows: list[dict[str, str]]) -> None:
+    for row in rows:
+        h = row["hypothesis"]
+        for prefix, upd in SPRINT3_UPDATES.items():
+            if h.startswith(prefix):
+                old = row["current_status"]
+                if "current_status" in upd and upd["current_status"] != old:
+                    row["why"] = (f"{upd['why_prefix']} [STATUS CHANGED IN SPRINT 3: {old} -> "
+                                  f"{upd['current_status']}.] PREVIOUSLY: {row['why']}")
+                    row["current_status"] = upd["current_status"]
+                else:
+                    row["why"] = f"{upd['why_prefix']} PREVIOUSLY: {row['why']}"
+                for col in ("human_genetics", "replication", "next_kill_test"):
+                    if col in upd:
+                        row[col] = upd[col]
+                row["evidence_dependencies"] = f"{row['evidence_dependencies']}; {upd['deps']}"
+                row["last_updated"] = SPRINT3_UPDATED
+        for key, res in _SEED_MAGMA.items():
+            if h.startswith(key):
+                row["human_genetics"] = (f"{row['human_genetics']} | SPRINT 3 {_MAGMA}: {res} of 18,418 "
+                                         "(Bonferroni needs P<2.7e-06)")
+                row["last_updated"] = SPRINT3_UPDATED
+
+
+apply_sprint3(ROWS)
+
+
 def build() -> int:
     for row in ROWS:
         row.setdefault("last_updated", UPDATED)
@@ -1198,7 +1365,7 @@ def build() -> int:
 
     lines: list[str] = []
     lines.append("# Project truth table\n")
-    lines.append(f"**Generated {UPDATED} by `pipelines/reports/build_truth_table.py` — "
+    lines.append(f"**Generated {UPDATED}, Sprint-3 layer applied {SPRINT3_UPDATED}, by `pipelines/reports/build_truth_table.py` — "
                  "do not hand-edit.** Machine-readable twin: "
                  "[`project_truth_table.csv`](project_truth_table.csv).\n")
     lines.append("> One row per tracked hypothesis, stating what is established, what "

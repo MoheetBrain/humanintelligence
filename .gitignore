@@ -28,3 +28,18 @@ data/processed/**
 # OS / editor
 .DS_Store
 *.swp
+
+# Sprint 3 bulk raw downloads: each is re-fetchable and carries URL + sha256 in a
+# committed PROVENANCE.json beside it. Committing them would breach the 5 MiB/file limit.
+data/raw/opentargets_tournament/*/coloc/
+data/raw/opentargets_tournament/*/gene_cs/
+data/raw/opentargets_tournament/*/meta/
+data/raw/pathway_annotations/*/NCBI2Reactome*.txt
+data/raw/pathway_annotations/*/go-basic.obo
+data/raw/pathway_annotations/*/proteinatlas.tsv.zip
+data/raw/pathway_annotations/*/gene2go_human_9606.tsv.gz
+data/raw/pathway_annotations/*/syngo*
+data/raw/brain_expression/*/brainspan_*
+data/raw/brain_expression/*/GTEx_*
+# 178 MB fetcher output; the committed derivative is opentargets_brain_coloc_compact.csv.gz
+data/gene_tournament/opentargets_cognition_coloc.csv

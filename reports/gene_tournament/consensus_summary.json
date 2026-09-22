@@ -1,0 +1,73 @@
+{
+  "built_at": "2026-09-22T20:33:30Z",
+  "dimensions_natural": [
+    "direct",
+    "replication",
+    "finemap",
+    "coloc",
+    "positive_human",
+    "module"
+  ],
+  "dimensions_adult": [
+    "direct",
+    "replication",
+    "finemap",
+    "coloc",
+    "direction",
+    "adult_modifiability",
+    "module"
+  ],
+  "natural": {
+    "n_eligible_genes_FDR_lt_0.05": 2423,
+    "top50_overlap_rra_vs_borda": 21,
+    "top50_overlap_primary_vs_all_dimensions": 25,
+    "n_top50_rank_interval_upper_gt_200": 39,
+    "n_top50_on_pareto_front": 11,
+    "carried_by_counts": {
+      "replication": 12,
+      "module": 12,
+      "direct": 11,
+      "finemap": 8,
+      "coloc": 7
+    }
+  },
+  "adult": {
+    "n_eligible_genes_FDR_lt_0.05": 1593,
+    "top50_overlap_rra_vs_borda": 26,
+    "top50_overlap_primary_vs_all_dimensions": 30,
+    "n_top50_rank_interval_upper_gt_200": 39,
+    "n_top50_on_pareto_front": 23,
+    "carried_by_counts": {
+      "adult_modifiability": 14,
+      "module": 11,
+      "finemap": 10,
+      "direct": 6,
+      "replication": 5,
+      "coloc": 4
+    }
+  },
+  "minimal_control_set": {
+    "strongly_supported_modules": {
+      "M01": 0.3182342934279658
+    },
+    "adult_active_set": [
+      "NEGR1"
+    ],
+    "adult_active_coverage_curve": [
+      1.0
+    ],
+    "any_timing_set": [
+      "DCC"
+    ],
+    "any_timing_coverage_curve": [
+      1.0
+    ],
+    "spearman_degree_vs_annotation_count": 0.608093413078427,
+    "n_driver_nodes_bidirected": 10,
+    "n_nodes": 1144,
+    "centrality_is_not_causality": true
+  },
+  "adult_gate": "adult_expressed AND developmental_class not in {PRENATAL_DOMINANT, UNKNOWN}",
+  "within_family_dimension": "NOT_COMPUTABLE -- absent from every aggregation",
+  "n_magma_genes_without_symbol_excluded": 122
+}

@@ -1,0 +1,52 @@
+{
+  "built_at": "2026-09-22T20:07:01Z",
+  "part_b": {
+    "n_genes": 18418,
+    "n_bonferroni_davies": 375,
+    "n_ld_blocks_bonferroni": 159,
+    "replication_status": {
+      "none": 17073,
+      "catalog_only_genome_wide": 970,
+      "moderate": 175,
+      "strong": 127,
+      "single_analysis": 73
+    },
+    "n_monte_carlo_unstable": 4,
+    "window_0kb": {
+      "same_call": 280,
+      "call_changes": 91,
+      "gene_absent_at_0kb": 4
+    }
+  },
+  "part_d": {
+    "n_genes": 22093,
+    "max_distinct_unit_domains": 5,
+    "distribution": {
+      "0": 18368,
+      "1": 2904,
+      "2": 635,
+      "3": 148,
+      "4": 32,
+      "5": 6
+    }
+  },
+  "part_e": {
+    "math_class": {
+      "unresolved": 18156,
+      "shared_g_math": 93,
+      "general_only": 92
+    },
+    "n_fi4_bonferroni": 0
+  },
+  "part_f": "NOT_COMPUTABLE_WITH_CURRENT_ACCESS",
+  "column_notes": {
+    "direct_cognition_rank.effect_direction": "NOT_MEANINGFUL_AT_GENE_LEVEL: catalog betas refer to different variants and effect alleles across studies; a gene has no sign until a colocalised molecular effect gives it one.",
+    "direct_cognition_rank.cross_study_heterogeneity": "NOT_COMPUTABLE: needs independent gene-level statistics; the two open meta-analyses (Davies 2018, Savage 2018) both contain UK Biobank.",
+    "direct_cognition_rank.number_of_independent_cohorts_upper_bound": "Distinct independence units (sorted cohort list, else PubMed ID) among STRICT-tier catalog studies. An upper bound: differently labelled cohort sets can share people.",
+    "math_gene_rank.C_model": "C = FI4 Z - (0.020 + 0.099 x g Z); C never replaces A. FI4 is one timed UKB arithmetic item: objective but low-reliability and g-saturated; FI4 and the g GWAS share UKB participants, so their noise is correlated and C is conservative."
+  },
+  "part_j": {
+    "n_rows": 46,
+    "n_positive_direction": 1
+  }
+}

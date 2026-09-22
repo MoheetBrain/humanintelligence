@@ -1,0 +1,36 @@
+[
+  {
+    "window_kb": 0,
+    "annotation_sha256": "cada5cbe1361dbf594185837ccd8494f296793181bf1d5e5703e42a43b45712a",
+    "gene_count": 18500,
+    "command": [
+      "bin/magma",
+      "--annotate",
+      "window=0",
+      "--snp-loc",
+      "reference/g1000_eur.bim",
+      "--gene-loc",
+      "reference/NCBI37.3.autosomes.gene.loc",
+      "--out",
+      "reference/annotations/genes_0kb"
+    ],
+    "completed_log": "research/extreme_cognition/x01/genetics_tools/reference/annotations/genes_0kb.log"
+  },
+  {
+    "window_kb": 10,
+    "annotation_sha256": "64bbd1df95817ecd1683248f5fac0957d9bd63ea9567970f567b2c8e75195c11",
+    "gene_count": 18564,
+    "command": [
+      "bin/magma",
+      "--annotate",
+      "window=10",
+      "--snp-loc",
+      "reference/g1000_eur.bim",
+      "--gene-loc",
+      "reference/NCBI37.3.autosomes.gene.loc",
+      "--out",
+      "reference/annotations/genes_10kb"
+    ],
+    "completed_log": "research/extreme_cognition/x01/genetics_tools/reference/annotations/genes_10kb.log"
+  }
+]
