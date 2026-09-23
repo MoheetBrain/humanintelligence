@@ -1069,3 +1069,34 @@ unchanged (CLOSED). Reports, survivors, negative results and decision.json regen
 **Verification.** pytest sprint4 tests + full suite rerun (see commit message); validator; ownership.
 
 **Next.** Unlock Gate A (user action).
+
+## 2026-09-23T21:20Z — Sprint 5 protocol freeze (causal cognition gene resolution)
+
+**Branch:** `sprint-5/causal-cognition-gene-resolution` (new, from `e50eb4f`) · **Stage:** Sprint 5 start.
+
+**Objective.** Fix every Sprint-5 evidence class, independence rule, ranking stratum, convergence test and
+gate before integrating any new data stream, so labels cannot be tuned to results.
+
+**Files / systems changed.** `research/sprint5/protocol.md`, `research/sprint5/protocol_rules.json`
+(sha256 0f464218…), `pipelines/sprint5/common.py` (load_rules hash check; stdlib HTTP helper),
+`pipelines/sprint5/build_query_variants.py`, `data/sprint5/query_variants_cognition.csv` + provenance,
+`docs/OWNERSHIP.yaml` (Sprint-5 paths), status and ledger.
+
+**Completed.** Gate A re-checked: files absent and no JWT, so NOT_TESTABLE is preserved. Query list built:
+1,915 rows, 1,573 rsIDs, 1,572 mapped to GRCh38 (Ensembl REST), 1 with no primary mapping (kept, flagged).
+
+**Decisions and why.**
+- Bulk and single-cell QTLs collapse into one class if donors overlap. This avoids counting the same donors twice.
+- L2G is folded into the class of its SHAP driver. It aggregates features that are already counted.
+- FOCUS is a contradiction check only, because it uses the same eQTL cohorts.
+- The Zabaneh extreme-IQ data are sensitivity-only, because of the HRS overlap with Davies.
+
+**Tests.** None run for this commit beyond the script executing (exit 0). The protocol hash is checked by
+`load_rules` at run time.
+
+**Failures / uncertainty.** None yet. Research subagents are running (brainSCOPE, math, rare coding/CNV,
+AlphaGenome/datasets/tools).
+
+**Effect.** Sprint 5 has a pre-registered rulebook.
+
+**Next.** Open Targets current-release refresh; evidence graph; integrate subagent streams.

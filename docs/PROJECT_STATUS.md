@@ -1,8 +1,21 @@
 # Project Status
 
-*Snapshot 2026-09-23 (UTC) — **Sprint 4 (Direct-Effect Causal Synapse Gate) complete; decision RETRY;
-chemistry gate CLOSED.** Branch `sprint-4/causal-synapse-bridge` (protocol frozen at `db86aef` before any
-new data; Sprint 3.1 merged in at `a8e82d4`). Not merged to main. Sprints 1–3.1 remain complete.*
+*Snapshot 2026-09-23 (UTC) — **Sprint 5 (Human Cognition Causal Gene Resolution) IN PROGRESS: protocol
+frozen, no Sprint-5 results yet.** Branch `sprint-5/causal-cognition-gene-resolution` (from
+`sprint-4/causal-synapse-bridge` @ `e50eb4f`). Not merged to main. Sprint 4 complete (decision RETRY;
+chemistry gate CLOSED). Sprints 1–3.1 complete.*
+
+***Sprint-5 state*** (protocol: `research/sprint5/protocol.md` + `protocol_rules.json`, sha256 `0f464218…`)
+1. Rules fixed before any new stream is integrated: independence lineages (UKB lineage never replicates
+   itself; G&C and within-family are replication lineages; Zabaneh sensitivity-only), six variant-to-gene
+   independence classes (L2G/FOCUS/nearest gene are not votes), gene-class precedence, the unchanged
+   Sprint-4 direction rule, perturbation strata, Pareto research priority, convergence tests T1–T5, math
+   tests M1–M3, and the 7-criterion adult intervention gate (safety never auto-cleared).
+2. Gate A re-checked at sprint start: the Howe 2022 files are absent and `OPENGWAS_JWT` is unset → NOT_TESTABLE preserved.
+3. Query list built: 1,573 cognition variants (SuSiE credible sets on 36 loci, Open Targets credible-set
+   leads, 159 locus leads), 1,572 mapped to GRCh38 via Ensembl REST.
+4. In progress: brainSCOPE, math-53 verification, rare-coding/CNV, AlphaGenome access, new datasets,
+   tools review, Open Targets current-release refresh.
 
 ***Sprint-4 headline results*** (evidence: `reports/sprint4/CAUSAL_SYNAPSE_GATE.md`)
 1. **Gate A (within-sibship, Howe 2022) NOT_TESTABLE** — `OPENGWAS_JWT` absent; no account created. All
@@ -60,6 +73,8 @@ C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 
 ## Current Stage
 
+**Sprint 5 — in progress** (protocol frozen; analyses running). Outputs will be in `reports/sprint5/`.
+
 **Sprint 4 — complete (decision RETRY).** Outputs in `reports/sprint4/` (13 required files + summaries).
 coloc.susie complete (28/36 loci; the other 8 have no GWAS SuSiE credible set). TGFM and cTWAS blocked.
 
@@ -102,6 +117,8 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 "intelligence gene". All work is computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`).
 
 ## Current Branch
+
+`sprint-5/causal-cognition-gene-resolution` (Sprint 5, in progress; from `e50eb4f`).
 
 `sprint-4/causal-synapse-bridge` (Sprint 4 complete; contains Sprint 3.1 via merge `a8e82d4`).
 

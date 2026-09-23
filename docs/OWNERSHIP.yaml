@@ -56,6 +56,11 @@ owners:
     - "data/sprint4/**"
     - "reports/sprint3_1/**"
     - "reports/sprint4/**"
+    # Sprint 5 (causal cognition gene resolution): orchestrator-owned.
+    - "pipelines/sprint5/**"
+    - "research/sprint5/**"
+    - "data/sprint5/**"
+    - "reports/sprint5/**"
 
   # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
   # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because

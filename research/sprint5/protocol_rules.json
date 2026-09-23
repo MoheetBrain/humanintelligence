@@ -1,0 +1,94 @@
+{
+  "schema": "sprint5-protocol-rules/1.0",
+  "frozen_before": "integration of any Sprint-5 data stream (Open Targets current release, brainSCOPE, AlphaGenome, rare-coding, CNV, math-53, developmental QTL). Sprint 1-4 results were known at freeze.",
+  "questions_never_merged": {
+    "A_CAUSAL_COGNITION_GENE": "does genetic perturbation of the gene affect cognition",
+    "B_NATURAL_HIGH_COGNITION_GENE": "does natural variation in the gene/locus contribute to higher cognition",
+    "C_ADULT_MODIFIABLE_COGNITION_GENE": "is there credible evidence that changing its function in an adult brain could alter cognition beneficially",
+    "forbidden_equivalences": ["adult expression == adult modifiability", "LoF impairment == GoF enhancement", "high AlphaGenome score == beneficial effect", "NOT_TESTABLE == NO_EFFECT", "paper count == independent evidence"]
+  },
+  "association_lineages": {
+    "UKB_LINEAGE": {"members": ["Davies2018 (discovery)", "Savage2018", "Lee2018 EA/math items", "UKB-based math factor GWAS", "Hill2019", "any meta containing UK Biobank"], "counts_as_replication": false},
+    "GENC_UKB_FREE": {"members": ["NIHR BioResource Genes & Cognition, G&C-only files"], "counts_as_replication": true, "slope_from_sprint4": 0.122},
+    "ZABANEH_EXTREME": {"members": ["Zabaneh2018 Duke TIP vs controls"], "counts_as_replication": "sensitivity_only", "reason": "HRS controls are inside Davies 2018 (verified Sprint 3.1)"},
+    "WITHIN_FAMILY": {"members": ["Howe2022 ieu-b-4837/4838"], "counts_as_replication": true, "status_if_absent": "NOT_TESTABLE"},
+    "NEW_DATASETS": "a dataset found in Sprint 5 counts as an independent lineage only if its cohort list contains none of UK Biobank, HRS, 23andMe, or any Davies 2018 cohort; otherwise sensitivity only"
+  },
+  "locus_confidence": {
+    "statistic": "log10 Bayes factor of replication in each independent lineage: BF = exp(b*zs*zr - (b*zs)^2/2), zr = replication z aligned to the cognition-increasing allele, zs = Tweedie-shrunk discovery z (Sprint 4), b = lineage slope fixed from Sprint 4 (G&C 0.122) or estimated by IVW across all testable loci for a new lineage before any locus is inspected",
+    "combination": "sum of log10 BF over independent lineages only",
+    "strata": {"L1": ">= 1.0", "L2": "[0.5, 1.0)", "L3": "[0, 0.5)", "L4_DISCORDANT": "< 0", "NT": "no independent lineage testable"},
+    "rank_uncertainty": "2,000 parametric draws zr* ~ N(zr, 1); report 5th-95th percentile rank"
+  },
+  "v2g_evidence_classes": {
+    "CODING": "a credible-set variant (SuSiE PIP >= 0.1 or Open Targets credible-set PIP >= 0.1) with missense / stop / frameshift / splice-donor / splice-acceptor / start-lost consequence in the gene",
+    "RARE_CODING": "exome-wide significant rare-variant burden association of the gene with a general-cognition/executive/memory phenotype (EA-only recorded as EA_PROXY, never counted), gene within the locus window (LD block or +-500 kb of a credible variant)",
+    "QTL": "strong (PP.H4 >= 0.8) gene-level colocalisation with an adult brain QTL: bulk (eQTL Catalogue adult cohorts, Open Targets brain coloc) and single-cell (brainSCOPE) collapse into ONE class when brainSCOPE donors overlap the bulk cohorts; they count as two classes only if donor overlap is documented as zero",
+    "ENHANCER_LINK": "a credible variant (PIP >= 0.1) inside a chromatin-based enhancer-gene link (ENCODE-rE2G / ABC / Open Targets interval E2G) to the gene in a brain or neural biosample",
+    "SEQUENCE_MODEL": "AlphaGenome predicted expression change of the gene for a credible variant with |quantile score| >= 0.99 in >= 1 brain/neural RNA track; in-silico; at most one class",
+    "DOSAGE_CNV": "a single-gene or <= 3-gene CNV in which gene dosage associates with cognition in a population sample",
+    "NOT_A_CLASS": {
+      "OT_L2G": "aggregator: assigned to the class of its top SHAP driver (distance/density -> positional; VEP -> CODING; coloc -> QTL; interval -> ENHANCER_LINK); never an extra vote",
+      "FOCUS_TGFM_CTWAS": "built on the same eQTL cohorts: contradiction check only",
+      "NEAREST_GENE": "positional label only",
+      "MODULE_OR_PATHWAY_MEMBERSHIP": "context only"
+    },
+    "contested_rule": "a gene is CONTESTED when the primary FOCUS configuration gives another gene PIP >= 0.5 and this gene < 0.2, or when another gene in the locus holds strictly more classes"
+  },
+  "gene_classes_precedence": [
+    "CONTRADICTED: independent replication z aligned < -1.96 at the locus, or classes point to another gene and this gene has none",
+    "CAUSAL_GENE_HIGH: locus L1/L2 AND (RARE_CODING or CODING with PIP >= 0.5) AND >= 1 further distinct class AND not CONTESTED",
+    "CAUSAL_GENE_MODERATE: locus L1-L3 AND (>= 2 distinct classes AND no other locus gene with >= as many classes AND not CONTESTED, OR RARE_CODING alone)",
+    "LIKELY_QTL_PASSENGER: QTL class present but CONTESTED, or GTEx v10 brain median TPM < 1 with enrichment in a non-brain tissue",
+    "LOCUS_HIGH_GENE_UNRESOLVED: locus L1/L2 and no gene at MODERATE or above",
+    "CODING_CAUSAL_LOF_ONLY: RARE_CODING (LoF/damaging) but no supported common locus",
+    "DEVELOPMENTAL_CAUSAL_ONLY: flag added to any class when adult evidence is absent and expression is PRENATAL_DOMINANT (Sprint-3 BrainSpan class) or only developmental QTLs support it",
+    "POSITIONAL_ONLY: only positional evidence",
+    "NOT_TESTABLE: no data"
+  ],
+  "direction": {
+    "rule": "UNCHANGED Sprint-4 rule: >= 3 strong gene-level adult-brain QTL colocs with >= 80% polarity-adjusted sign agreement, on rows AND on independent QTL-cohort units",
+    "ADULT_DIRECTION_RESOLVED": "rule met on rows and units AND gene CAUSAL_GENE_MODERATE or HIGH",
+    "ADULT_DIRECTION_NEAR_RESOLVED": "rule met on rows and units but gene below MODERATE; OR rule met on rows only; OR >= 2 independent cohort units plus >= 1 brainSCOPE cell type all agreeing",
+    "cell_type_conflict": "opposite significant directions in two cell types are reported as CELL_TYPE_DISCORDANT and block RESOLVED",
+    "strata": {"D1": "ADULT_DIRECTION_RESOLVED", "D2": "rule met, gene unresolved", "D3": "near-resolved", "D4": "single cohort or single cell type", "D5": "none"}
+  },
+  "human_perturbation": {
+    "P1": "exome-wide rare-coding cognition association replicated or in >= 2 studies with non-overlapping cohorts",
+    "P2": "exome-wide in one study",
+    "P3": "positive-dosage CNV nominal or unreplicated",
+    "P4": "developmental-disorder / ID gene only (DISEASE_ONLY)",
+    "P5": "none"
+  },
+  "research_priority": {
+    "method": "non-dominated (Pareto) sorting over four ordinal axes: locus stratum, gene stratum, direction stratum, perturbation stratum; no weighted total score",
+    "display_order_within_layer": "count of axes at their best stratum, then locus log10 BF (disclosed as display order, not a statistic)",
+    "top20": "genes/loci from successive Pareto layers until >= 20; ties at the boundary all listed"
+  },
+  "convergence_tests": {
+    "T1_rare_in_common": "mean Davies MAGMA gene z of rare-coding cognition genes vs 10,000 gene sets matched on gene-length decile x NSNPS decile x LOEUF decile; one-sided",
+    "T2_rare_near_loci": "fraction of rare-coding genes inside the 159 LD loci vs the same matched null",
+    "T3_pathway": "for Sprint-3 FDR-significant common-variant gene sets: count of rare-coding genes that are members vs matched null",
+    "T4_timing": "Fisher test of PRENATAL_DOMINANT fraction, rare-coding vs common Bonferroni genes",
+    "T5_cell_type": "HPA brain single-cell type enrichment class distribution, rare vs common genes (Fisher/chi-square)",
+    "power_note": "with < 20 rare genes these tests have low power; a null is NOT evidence of no convergence"
+  },
+  "math_tests": {
+    "M1": "fraction of verified math SNPs inside the 159 general-cognition LD loci vs genomic-fraction null and matched-SNP null where available",
+    "M2": "sign concordance of math-increasing allele with Davies general-cognition z (binomial, palindromic excluded)",
+    "M3": "overlap of math-mapped genes (QTL/coding/E2G mapped, never nearest gene) with cognition causal-gene candidates",
+    "independence_note": "a UK-Biobank math factor shares participants with Davies 2018: overlap is cross-domain pleiotropy, never replication"
+  },
+  "alphagenome": {"strong_effect": "|quantile score| >= 0.99 in >= 1 brain/neural track", "never_rank_by_score_alone": true},
+  "opentargets_flags": {
+    "STABLE_ASSIGNMENT": "same top L2G gene in Sprint-3 (26.06) and current release",
+    "CHANGED_ASSIGNMENT": "different top gene",
+    "POSITIONAL_ONLY": "top SHAP feature is distance or gene-density",
+    "MULTI_GENE_AMBIGUITY": "top L2G < 0.5 or second gene within 0.1 of top"
+  },
+  "deep_dive_promotion": "gene reaches CAUSAL_GENE_MODERATE or higher, OR ADULT_DIRECTION_NEAR_RESOLVED or better, OR human perturbation P1/P2, OR a SUPPORTED_POSITIVE_DOSAGE CNV",
+  "adult_intervention_gate": {
+    "criteria": ["independent cognition association (locus L1/L2 or P1)", "credible causal gene (CAUSAL_GENE_MODERATE+)", "adult brain molecular evidence (QTL class in adult brain)", "beneficial molecular direction (D1)", "adult function plausibly relevant (curated)", "acceptable pleiotropy/safety (human review only; never auto-cleared)", "tractable mechanism (curated)"],
+    "outcome": "if any is missing CHEMISTRY_GATE = CLOSED; criteria 1-5 and 7 met -> label CAUSAL_TARGET_ADJUDICATION_CANDIDATE, gate still CLOSED pending human safety review"
+  }
+}
