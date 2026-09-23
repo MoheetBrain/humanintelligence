@@ -1,6 +1,23 @@
 # Project Status
 
-*Snapshot 2026-09-22 (UTC) — **Sprint 3 (Gene Tournament) complete and red-teamed.**
+*Snapshot 2026-09-23 (UTC) — **Sprint 4 (Direct-Effect Causal Synapse Gate) started: protocol
+FROZEN, no new result read yet.** Sprint 3.1 (synaptic recon/correction pass, requested mid-sprint)
+runs next on its own branch from `04c70ef`; Sprint 4 resumes on top of it.*
+
+***Sprint-4 state at this snapshot***
+* Branch `sprint-4/causal-synapse-bridge` (from Sprint-3 commit `04c70ef`). Not merged to main.
+* `research/sprint4/protocol.md` + `frozen_hypotheses.json` (sha256 `44eb2721…cbff3`) freeze the
+  six Sprint-3 synaptic sets (Entrez membership + hashes), the 159 loci with rule-chosen Davies lead
+  SNPs, every Gate A/B/C threshold, the power-calibration method, the unchanged direction rule and
+  the decision precedence — before any within-family or Genes & Cognition value was read.
+* Gate A input identity verified from public OpenGWAS metadata (ieu-b-4837 sibling N=9,997;
+  ieu-b-4838 population N=22,593; Howe 2022; GRCh37). **`OPENGWAS_JWT` absent** → Gate A download
+  blocked; no account created.
+* Gate B source verified: Zenodo 11066096 carries G&C-only files (`tm{a,n,d}_gwas_gc.txt`).
+* Tooling: conda env `hi-sprint4` (R 4.4.3, susieR 0.14.2, coloc 5.2.3, htslib/bcftools 1.24);
+  plink2 has no osx-arm64 build, so LD is computed in Python.
+
+*Previous snapshot 2026-09-22 (UTC) — **Sprint 3 (Gene Tournament) complete and red-teamed.**
 Sprints 1 and 2 remain complete. Repository validates with 0 errors / 0 warnings / 3 info;
 **879 tests pass, 0 fail**; ownership check clean (819 paths).*
 
@@ -59,7 +76,9 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 
 ## Current Branch
 
-`sprint-3/gene-tournament`, branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
+`sprint-4/causal-synapse-bridge` (Sprint 4, protocol frozen), branched from
+`sprint-3/gene-tournament` at `04c70ef`. Sprint 3.1 will use `sprint-3.1/synaptic-recon` from the
+same commit. `sprint-3/gene-tournament` was branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
 **`/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`** (remote
 `github.com/MoheetBrain/humanintelligence`). The earlier clone at `/Users/moheet/humanintelligence`
 no longer exists. A second, **Codex-owned** linked worktree exists at
@@ -234,6 +253,11 @@ All executed 2026-09-22; none projected.
 
 ## Exact Next Actions
 
+0. **Sprint 3.1 (now):** presynaptic-vs-postsynaptic joint tests, conditioning-sensitivity matrix,
+   rank-dependence audit, adult-terminology fix, NEGR1 QTL-independence audit, synaptic system map,
+   extreme-tail 1.13x reassessment → `reports/sprint3_1/`.
+0b. **Sprint 4 (then):** Gate B on G&C-only files; pre-data power calibration; Gate C on survivors +
+   NEGR1/SYT1; Gate A the moment `OPENGWAS_JWT` is set (code prepared to the download boundary).
 1. **UKB-free replication** of the six synaptic sets and of the continuity result (CHARGE/COGENT
    components by application, or within-sibship data via a free OpenGWAS registration — the user's
    call). Highest expected value: one computation tests the sprint's three central claims.

@@ -48,6 +48,14 @@ owners:
     - "data/gene_tournament/**"
     - "reports/gene_tournament/**"
     - "reports/GENE_TOURNAMENT_FINAL.md"
+    # Sprint 4 (causal synapse gate) and Sprint 3.1 (synaptic recon): orchestrator-owned.
+    - "pipelines/sprint4/**"
+    - "pipelines/sprint3_1/**"
+    - "research/sprint4/**"
+    - "data/sprint4/**"
+    - "data/sprint3_1/**"
+    - "reports/sprint4/**"
+    - "reports/sprint3_1/**"
 
   # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
   # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because

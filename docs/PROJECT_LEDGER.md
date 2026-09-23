@@ -918,3 +918,42 @@ chemistry gate remains closed for a concrete reason.
 
 UKB-free replication of the synaptic sets and the continuity result (§J of the final report), then
 re-derivation of X01's cell layer and SuSiE-coloc for the direction near-misses.
+
+## 2026-09-23T09:05Z — Sprint 4 protocol freeze (pre-registration before any new data)
+
+**Branch:** `sprint-4/causal-synapse-bridge` (from `04c70ef`) · **Stage:** Sprint 4 start.
+
+**Objective.** Freeze the primary hypothesis and every decision threshold before the within-family
+(Howe 2022) or Genes & Cognition data are read, so that no threshold can move after results are seen.
+
+**Files and systems changed.** `pipelines/sprint4/common.py` (paths, hashing, `load_frozen` that
+refuses to run on a changed JSON), `pipelines/sprint4/freeze_protocol.py`,
+`research/sprint4/frozen_hypotheses.json`, `research/sprint4/protocol.md`,
+`data/sprint4/gene_covariates.txt` (byte-identical copy of the Sprint-3 covariates, sha256
+`1335148e…`), `data/raw/sprint4/ldetect/EUR_fourier_ls-all.bed` (LDetect EUR blocks, 1,703),
+`data/raw/sprint4/opengwas_metadata/gwasinfo_headers.txt`, `docs/OWNERSHIP.yaml` (Sprint-4/3.1 paths claimed), `docs/PROJECT_STATUS.md`, this ledger.
+New conda env `hi-sprint4` outside the repo.
+
+**Completed.** Six sets frozen with Entrez membership and hashes; 159 loci frozen with rule-chosen
+lead SNPs (103 genome-wide significant; NT5DC2 locus lead rs6778735, SYT1 rs7963801, NEGR1
+rs3101338); Gate A/B/C rules, PUMAS-style LD-aware subsampling for power calibration, unchanged
+Sprint-3 direction rule, decision precedence, chemistry-gate criteria.
+
+**Decisions and why.** (1) Freeze committed to git so the pre-registration is timestamped. (2) Set
+betas are declared unsigned enrichment, with allele direction tested at loci only — MAGMA gene
+statistics come from P-values. (3) The OpenGWAS website's no-login "trial" VCF link was found but
+NOT used: the site states automated access needs a JWT and the brief forbids registration. (4)
+Sprint 3.1 (user request mid-sprint) is run on its own branch before Sprint 4 continues; it reads
+only Sprint-3 data, so it cannot contaminate the freeze.
+
+**Tests and verification executed.** `freeze_protocol.py` ran (159 loci, 6 sets; Davies input
+sha256 re-verified = `01990c3e…`); `load_frozen()` verified the recorded hash. Full test suite not
+re-run for this commit (no existing code changed; new code is exercised by the freeze run) — Sprint-4
+tests are added with the analyses.
+
+**Failures / uncertainty.** `OPENGWAS_JWT` absent (Gate A blocked). f = 0.78 shrinkage taken from
+the brief, pending verification from the Howe 2022 text (allowed only as a pre-data amendment).
+
+**Effect on project.** Sprint 4 can no longer be tuned to its results.
+
+**Next.** Sprint 3.1 correction pass; then Sprint 4 Gates B and C and the pre-data power calibration.
