@@ -1,0 +1,1132 @@
+{
+ "generated": "2026-09-23",
+ "question": "Independence of GenLang performance IQ (GCST90104472) and CHIC childhood IQ (GCST001837) from Davies et al. 2018 general cognitive function (PMID 29844566)",
+ "rule": "A dataset counts as an independent lineage only if its cohort list contains none of UK Biobank, HRS, 23andMe, or any Davies-2018 cohort.",
+ "studies": {
+  "genlang_piq": {
+   "citation": "Eising E et al. PNAS 2022;119:e2202764119; PMID 35998220; PMC9436320",
+   "gwas_catalog": "GCST90104472",
+   "n": 18722,
+   "n_cohorts": 15,
+   "cohorts": [
+    {
+     "cohort": "ALSPAC",
+     "sampling": "Population-based birth cohort",
+     "country": "UK",
+     "age_range_years": "7, 8 or 13 (test-specific)",
+     "piq_test": "WISC",
+     "n_piq": 5448,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "ASTON",
+     "sampling": "Case/control (dyslexia)",
+     "country": "UK",
+     "age_range_years": "5-18",
+     "piq_test": "BAS",
+     "n_piq": 170,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "BATS",
+     "sampling": "Family-based (Brisbane Adolescent Twin Study, QIMR)",
+     "country": "Australia",
+     "age_range_years": "11-26",
+     "piq_test": "MAB",
+     "n_piq": 1414,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "BCBL",
+     "sampling": "Population-based",
+     "country": "Spain",
+     "age_range_years": "6-16",
+     "piq_test": "Kaufman Brief Intelligence Test",
+     "n_piq": 1236,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "CLDRC",
+     "sampling": "Case/control (Colorado Learning Disabilities Research Center; school-ascertained RD/ADHD twins)",
+     "country": "USA",
+     "age_range_years": "8-18",
+     "piq_test": "WISC",
+     "n_piq": 717,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "ELVS",
+     "sampling": "Population-based (Early Language in Victoria Study)",
+     "country": "Australia",
+     "age_range_years": "5, 7 or 11 (test-specific)",
+     "piq_test": "WAIS [as printed]",
+     "n_piq": 480,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "Iowa",
+     "sampling": "Population-based",
+     "country": "USA",
+     "age_range_years": "6-10",
+     "piq_test": "WISC",
+     "n_piq": 408,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "NTR",
+     "sampling": "Family-based (Netherlands Twin Register)",
+     "country": "Netherlands",
+     "age_range_years": "9",
+     "piq_test": "WISC and WAIS",
+     "n_piq": 1086,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "Raine Study",
+     "sampling": "Population-based",
+     "country": "Australia",
+     "age_range_years": "9-12",
+     "piq_test": "Raven Coloured Progressive Matrices",
+     "n_piq": 1189,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "SLIC",
+     "sampling": "Case/control (Specific Language Impairment Consortium)",
+     "country": "UK",
+     "age_range_years": "8-16",
+     "piq_test": "WISC",
+     "n_piq": 480,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "SYS",
+     "sampling": "Family-based (Saguenay Youth Study)",
+     "country": "Canada",
+     "age_range_years": "11-18",
+     "piq_test": "WISC III",
+     "n_piq": 1011,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "TEDS",
+     "sampling": "Family-based (Twins Early Development Study)",
+     "country": "UK",
+     "age_range_years": "7 or 12 (test-specific)",
+     "piq_test": "WISC",
+     "n_piq": 3492,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "Toronto",
+     "sampling": "Family-based",
+     "country": "Canada",
+     "age_range_years": "6-16",
+     "piq_test": "WISC III and WISC IV",
+     "n_piq": 614,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "UK Dyslexia",
+     "sampling": "Case/control",
+     "country": "UK",
+     "age_range_years": "6-18",
+     "piq_test": "BAS",
+     "n_piq": 874,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    },
+    {
+     "cohort": "York",
+     "sampling": "Family-based",
+     "country": "UK",
+     "age_range_years": "7-10",
+     "piq_test": "other",
+     "n_piq": 103,
+     "source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns"
+    }
+   ],
+   "ancestry": "European only (Dataset S1: PIQ meta-analysis total = European-only = 18,722; GWAS Catalog initialSampleSize \"18,722 European ancestry individuals\")",
+   "countries_of_recruitment": [
+    "UK",
+    "USA",
+    "Canada",
+    "Netherlands",
+    "Australia",
+    "Spain"
+   ],
+   "age_range_years": "5-26 (Dataset S1 meta-analysis row; per-cohort ranges above)",
+   "iq_measure": "Performance (nonverbal) IQ from nonverbal subtests of general intelligence tests (main text: \"Only nonverbal subtests of general intelligence tests were used\"); test differs by cohort (WISC variants, BAS, MAB, KBIT, Raven CPM, WAIS); z-scored per cohort; linear model adjusting for family structure, age, age^2, sex, PCs; fixed-effects METAL meta-analysis with genomic control",
+   "ascertainment_note": "4 of 15 PIQ cohorts are case/control for dyslexia/language impairment/learning disability (ASTON, CLDRC, SLIC, UK Dyslexia): N=2,241 (12.0%); York (N=103) is a family-risk-of-dyslexia design",
+   "not_in_piq_note": "PNC, ABCD, PING, GRaD, Neurodys, Fiola, Generation R contribute to other GenLang traits but NOT to performance IQ (Dataset S1 and Dataset S3 PIQ column)"
+  },
+  "davies2018": {
+   "citation": "Davies G et al. Nat Commun 2018;9:2098; PMID 29844566; PMC5974083",
+   "n": 300486,
+   "n_cohort_rows": 66,
+   "sum_of_rows": 300485,
+   "cohorts": [
+    {
+     "cohort": "3CDIJON",
+     "n": 3652,
+     "min_age": "65.16",
+     "max_age": "95.02",
+     "mean_age": 74.21,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ACPRC",
+     "n": 1465,
+     "min_age": "43",
+     "max_age": "86",
+     "mean_age": 64.67,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "AgeCoDe_Basel",
+     "n": 358,
+     "min_age": "79",
+     "max_age": "95",
+     "mean_age": 83.28,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "AgeCoDe_DietBB",
+     "n": 180,
+     "min_age": "79",
+     "max_age": "91",
+     "mean_age": 84.12,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "AGES",
+     "n": 2856,
+     "min_age": "66",
+     "max_age": "93",
+     "mean_age": 76.2,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Airwave",
+     "n": 9072,
+     "min_age": "19",
+     "max_age": "69.900000000000006",
+     "mean_age": 41.3,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ADNI",
+     "n": 242,
+     "min_age": "62",
+     "max_age": "90",
+     "mean_age": 75.44,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ARIC",
+     "n": 8975,
+     "min_age": "47",
+     "max_age": "69",
+     "mean_age": 57.18,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ASPS",
+     "n": 748,
+     "min_age": "46",
+     "max_age": "84",
+     "mean_age": 64.87,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ASPS-Fam",
+     "n": 311,
+     "min_age": "38",
+     "max_age": "84",
+     "mean_age": 63.93,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ASPIS",
+     "n": 897,
+     "min_age": "18",
+     "max_age": "25",
+     "mean_age": 20.74,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "BASE II",
+     "n": 1279,
+     "min_age": "59.1",
+     "max_age": "71.3",
+     "mean_age": 65.3,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "BATS",
+     "n": 2253,
+     "min_age": "16",
+     "max_age": "22.3",
+     "mean_age": 16.4,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Betula",
+     "n": 359,
+     "min_age": "25",
+     "max_age": "80",
+     "mean_age": 62.28,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "CAMH",
+     "n": 80,
+     "min_age": "18",
+     "max_age": "86",
+     "mean_age": 48.64,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "CHS",
+     "n": 1517,
+     "min_age": "74",
+     "max_age": "97",
+     "mean_age": 80.35,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "CROATIA_Korcula",
+     "n": 1790,
+     "min_age": "18",
+     "max_age": "90",
+     "mean_age": 54.9,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "DCC",
+     "n": 1221,
+     "min_age": "18",
+     "max_age": "91",
+     "mean_age": 28.28,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "DNS",
+     "n": 419,
+     "min_age": "18",
+     "max_age": "22",
+     "mean_age": 19.75,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ELSA",
+     "n": 6909,
+     "min_age": "31",
+     "max_age": "99",
+     "mean_age": 62.46,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "EPOZ",
+     "n": 378,
+     "min_age": "60.44",
+     "max_age": "90.16",
+     "mean_age": 70.29,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ERF",
+     "n": 2566,
+     "min_age": "16.649999999999999",
+     "max_age": "86.5",
+     "mean_age": 48.04,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "FHS",
+     "n": 4349,
+     "min_age": "26",
+     "max_age": "96",
+     "mean_age": 56.46,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "FinnTwin",
+     "n": 1133,
+     "min_age": "21",
+     "max_age": "30",
+     "mean_age": 23.49,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "DUBLIN",
+     "n": 92,
+     "min_age": "18",
+     "max_age": "60",
+     "mean_age": 36.25,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Generation Scotland",
+     "n": 18830,
+     "min_age": "18",
+     "max_age": "94",
+     "mean_age": 47.1,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "GENOA",
+     "n": 775,
+     "min_age": "45",
+     "max_age": "84",
+     "mean_age": 61.2,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "GENADA",
+     "n": 782,
+     "min_age": "48",
+     "max_age": "94",
+     "mean_age": 73.39,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "HARMONY",
+     "n": 448,
+     "min_age": "65.19",
+     "max_age": "95.66",
+     "mean_age": 77.84,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "HCS",
+     "n": 1926,
+     "min_age": "55",
+     "max_age": "86",
+     "mean_age": 66.0,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "HBCS",
+     "n": 304,
+     "min_age": "65",
+     "max_age": "75",
+     "mean_age": 67.66,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "HRS",
+     "n": 7396,
+     "min_age": "31",
+     "max_age": "98",
+     "mean_age": 67.89,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "IBG",
+     "n": 299,
+     "min_age": "12",
+     "max_age": "19",
+     "mean_age": 15.92,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LOAD",
+     "n": 1029,
+     "min_age": "53",
+     "max_age": "95",
+     "mean_age": 75.14,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LBC1921",
+     "n": 459,
+     "min_age": "78",
+     "max_age": "81",
+     "mean_age": 79.0,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LBC1936",
+     "n": 934,
+     "min_age": "68",
+     "max_age": "71",
+     "mean_age": 69.5,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LOGOS",
+     "n": 734,
+     "min_age": "18",
+     "max_age": "35",
+     "mean_age": 22.24,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LIFE-Adult",
+     "n": 2224,
+     "min_age": "20.2",
+     "max_age": "82.3",
+     "mean_age": 65.7,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "LLFS",
+     "n": 4081,
+     "min_age": "24",
+     "max_age": "90",
+     "mean_age": 68.14,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "MCTFR",
+     "n": 5446,
+     "min_age": "17",
+     "max_age": "65",
+     "mean_age": 32.52,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Munich",
+     "n": 1095,
+     "min_age": "19",
+     "max_age": "79",
+     "mean_age": 47.92,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "GCAP",
+     "n": 962,
+     "min_age": "18",
+     "max_age": "61",
+     "mean_age": 33.01,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "NCNG",
+     "n": 625,
+     "min_age": "18",
+     "max_age": "77",
+     "mean_age": 48.07,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "OATS",
+     "n": 437,
+     "min_age": "65",
+     "max_age": "89",
+     "mean_age": 70.5,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ORCADES",
+     "n": 1554,
+     "min_age": "18.11",
+     "max_age": "87.56",
+     "mean_age": 54.32,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "PNC",
+     "n": 4470,
+     "min_age": "8",
+     "max_age": "21",
+     "mean_age": 13.83,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "PROSPER IE",
+     "n": 1538,
+     "min_age": "69.400000000000006",
+     "max_age": "83.3",
+     "mean_age": 75.3,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "PROSPER NL",
+     "n": 739,
+     "min_age": "70.2",
+     "max_age": "83.1",
+     "mean_age": 74.9,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "PROSPER SC",
+     "n": 1803,
+     "min_age": "70.2",
+     "max_age": "83.4",
+     "mean_age": 75.2,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ROSMAP 1",
+     "n": 1191,
+     "min_age": "55.42",
+     "max_age": "102.15",
+     "mean_age": 77.49,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ROSMAP 2",
+     "n": 199,
+     "min_age": "59.95",
+     "max_age": "96.45",
+     "mean_age": 79.23,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "RSI",
+     "n": 1779,
+     "min_age": "65.08",
+     "max_age": "94.97",
+     "mean_age": 74.1,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "RSII",
+     "n": 1260,
+     "min_age": "57.99",
+     "max_age": "97.92",
+     "mean_age": 66.9,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "RSIII",
+     "n": 2579,
+     "min_age": "45.46",
+     "max_age": "89.37",
+     "mean_age": 56.62,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "SATSA and GENDER",
+     "n": 703,
+     "min_age": "50.67",
+     "max_age": "93.55",
+     "mean_age": 70.84,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Sydney MAS",
+     "n": 727,
+     "min_age": "70.3",
+     "max_age": "90.8",
+     "mean_age": 78.4,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "YFS",
+     "n": 1725,
+     "min_age": "34",
+     "max_age": "49",
+     "mean_age": 41.9,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "TOP",
+     "n": 633,
+     "min_age": "15",
+     "max_age": "55",
+     "mean_age": 32.37,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "UCLA",
+     "n": 628,
+     "min_age": "21",
+     "max_age": "50",
+     "mean_age": 31.1,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "Understanding Society",
+     "n": 7999,
+     "min_age": "16",
+     "max_age": "97",
+     "mean_age": 52.3,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "VETSA",
+     "n": 862,
+     "min_age": "51.08",
+     "max_age": "66.92",
+     "mean_age": 56.77,
+     "consortium": "CHARGE",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "ZHH",
+     "n": 176,
+     "min_age": "8",
+     "max_age": "78",
+     "mean_age": 34.44,
+     "consortium": "COGENT",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "UKBiobank Assessment Centre",
+     "n": 107586,
+     "min_age": "40",
+     "max_age": "70",
+     "mean_age": 57.19,
+     "consortium": "UK Biobank",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "UKBiobank T2",
+     "n": 11123,
+     "min_age": "44",
+     "max_age": "73",
+     "mean_age": 61.53,
+     "consortium": "UK Biobank",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "UKBiobank MRI",
+     "n": 3002,
+     "min_age": "46",
+     "max_age": "73",
+     "mean_age": 61.2,
+     "consortium": "UK Biobank",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    },
+    {
+     "cohort": "UKBiobank Web-Based",
+     "n": 46322,
+     "min_age": "45.5",
+     "max_age": "78.7",
+     "mean_age": 62.81,
+     "consortium": "UK Biobank",
+     "source": "Davies 2018 Supplementary Data 18 (MOESM21_ESM.xlsx); consortium from section placement in Supplementary Note 1 (CHARGE Cohorts vs COGENT Cohorts)"
+    }
+   ],
+   "childhood_or_adolescent_cohorts": [
+    {
+     "cohort": "BATS",
+     "ages": "16-22.3",
+     "n": 2253,
+     "consortium": "CHARGE"
+    },
+    {
+     "cohort": "IBG (Colorado LTS + CTS)",
+     "ages": "12-19",
+     "n": 299,
+     "consortium": "COGENT"
+    },
+    {
+     "cohort": "PNC",
+     "ages": "8-21",
+     "n": 4470,
+     "consortium": "COGENT"
+    },
+    {
+     "cohort": "ZHH",
+     "ages": "8-78",
+     "n": 176,
+     "consortium": "COGENT"
+    },
+    {
+     "cohort": "MCTFR",
+     "ages": "17-65",
+     "n": 5446,
+     "consortium": "COGENT"
+    }
+   ],
+   "absent_childhood_cohorts": [
+    "ALSPAC",
+    "TEDS",
+    "NTR / Netherlands Twin Register",
+    "Raine",
+    "Generation R",
+    "Saguenay Youth Study",
+    "Toronto",
+    "Iowa",
+    "CLDRC (by name)",
+    "ELVS",
+    "BCBL"
+   ],
+   "note": "Supplementary Data 18 rows sum to 300,485 (paper total 300,486); the list is treated as complete."
+  },
+  "chic2014": {
+   "citation": "Benyamin B et al. Mol Psychiatry 2014;19:253-258; PMID 23358156; PMC3935975",
+   "gwas_catalog": "GCST001837",
+   "n_discovery": 12441,
+   "n_replication": 5548,
+   "discovery": [
+    {
+     "cohort": "ALSPAC",
+     "country": "UK",
+     "n": 5517,
+     "iq_measure": "WISC-III",
+     "mean_age": 9,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "LBC1921",
+     "country": "UK",
+     "n": 464,
+     "iq_measure": "Moray House Test No. 12",
+     "mean_age": 11,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "LBC1936",
+     "country": "UK",
+     "n": 947,
+     "iq_measure": "Moray House Test No. 12",
+     "mean_age": 11,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "QIMR (Brisbane Adolescent Twin Study)",
+     "country": "Australia",
+     "n": 1752,
+     "iq_measure": "MAB full-scale IQ",
+     "mean_age": 16,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "Raine",
+     "country": "Australia",
+     "n": 936,
+     "iq_measure": "g score",
+     "mean_age": 10,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "TEDS",
+     "country": "UK",
+     "n": 2825,
+     "iq_measure": "g score",
+     "mean_age": 12,
+     "stage": "discovery (in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    }
+   ],
+   "replication": [
+    {
+     "cohort": "Generation R",
+     "country": "Netherlands",
+     "n": 1442,
+     "iq_measure": "SON-R 2.5-7",
+     "mean_age": 6,
+     "stage": "replication (NOT in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "NTR",
+     "country": "Netherlands",
+     "n": 739,
+     "iq_measure": "RAKIT, WISC-R, WISC-R-III, WAIS-III",
+     "mean_age": 13,
+     "stage": "replication (NOT in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    },
+    {
+     "cohort": "UMN (University of Minnesota)",
+     "country": "USA",
+     "n": 3367,
+     "iq_measure": "WISC-R, WAIS-R",
+     "mean_age": 14,
+     "stage": "replication (NOT in GCST001837 sumstats)",
+     "source": "Benyamin 2014 main text Methods \"Participants\" and Table 1 (PMC3935975)"
+    }
+   ],
+   "ancestry": "European (children); age range 6-18 (Methods)",
+   "iq_measure": "Best available g or IQ per cohort (Table 1): WISC-III, Moray House Test No.12, MAB FSIQ, g factor scores",
+   "sumstats_contents": "GWAS Catalog GCST001837 initialSampleSize = 12,441 (discovery only); file CHIC_Summary_Benyamin2014 2.txt has 1,380,158 SNP rows (neither the 2,611,179 SNPs of the paper nor the catalog snpCount 138,093)"
+  }
+ },
+ "intersections": {
+  "genlang_piq_vs_davies2018": [
+   {
+    "cohort": "BATS (Brisbane Adolescent Twin Study, QIMR Berghofer)",
+    "status": "CONFIRMED",
+    "genlang_n_piq": 1414,
+    "davies_n": 2253,
+    "genlang_source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns row BATS (family-based, Australia, ages 11-26, MAB)",
+    "davies_source": "Supplementary Data 18 row BATS (ages 16-22.3); Supplementary Note 1 CHARGE section \"BATS.\"; Supplementary Note 2 cohort description \"Brisbane Adolescent Twins Study (BATS)\" (SI PDF p.40)",
+    "note": "Same QIMR twin cohort; both use the Multidimensional Aptitude Battery; individual-level overlap is highly likely though not verifiable from public data. 7.6% of GenLang PIQ N."
+   },
+   {
+    "cohort": "CLDRC (GenLang) vs IBG (Davies)",
+    "status": "AMBIGUOUS",
+    "genlang_n_piq": 717,
+    "davies_n": 299,
+    "genlang_source": "Eising 2022 Dataset S1 (pnas.2202764119.sd01.xlsx), Performance IQ columns row CLDRC; Gialluisi 2014 (PMC4165772): twins recruited via 27 Colorado school districts on school report of RD/ADHD, Illumina OmniExpress",
+    "davies_source": "Supplementary Note 2 \"Institute for Behavioral Genetics (IBG)\": Colorado Longitudinal Twin Sample and Colorado Twin Sample, population twin registries, Affymetrix 6.0; SD18 IBG ages 12-19",
+    "note": "Both are Colorado twin samples run from the Institute for Behavioral Genetics. The recruitment frames (schools vs birth-record twin registries) and genotyping arrays differ, so they are most likely different people, but overlap cannot be ruled out. At most 299 people could be shared."
+   },
+   {
+    "cohort": "PNC",
+    "status": "NOT_IN_PIQ",
+    "note": "PNC is in Davies (COGENT, N=4470) and in GenLang word reading, but has no PIQ data in GenLang (Dataset S1 and S3)"
+   }
+  ],
+  "chic_vs_davies2018": [
+   {
+    "cohort": "LBC1921",
+    "status": "CONFIRMED",
+    "chic_n": 464,
+    "chic_stage": "discovery",
+    "davies_n": 459,
+    "source": "CHIC Table 1 \"LBC21-Lothians\"; Davies SD18 row LBC1921 (CHARGE)",
+    "note": "CHIC uses Moray House Test score at age 11 from the same individuals whose old-age cognition is in Davies"
+   },
+   {
+    "cohort": "LBC1936",
+    "status": "CONFIRMED",
+    "chic_n": 947,
+    "chic_stage": "discovery",
+    "davies_n": 934,
+    "source": "CHIC Table 1 \"LBC36-Lothians\"; Davies SD18 row LBC1936 (CHARGE)"
+   },
+   {
+    "cohort": "QIMR / BATS",
+    "status": "CONFIRMED",
+    "chic_n": 1752,
+    "chic_stage": "discovery",
+    "davies_n": 2253,
+    "source": "CHIC Methods: \"the Brisbane Adolescent Twin Study, Queensland Institute of Medical Research (QIMR; N = 1752)\"; Davies SD18 row BATS"
+   },
+   {
+    "cohort": "UMN (CHIC) vs MCTFR (Davies)",
+    "status": "PROBABLE",
+    "chic_n": 3367,
+    "chic_stage": "replication (not in sumstats)",
+    "davies_n": 5446,
+    "source": "CHIC Table 1 \"UMN-Minnesota, Illumina Human660W-Quad, WISC-R/WAIS-R\"; Davies SI MCTFR: University of Minnesota twin/adoption families, abbreviated WISC-R/WAIS-R FSIQ",
+    "note": "The names differ, but the institution, IQ instrument and age band are the same. Probably the same resource. It does not affect the CHIC summary statistics, which are discovery-only."
+   }
+  ],
+  "genlang_piq_vs_chic": [
+   {
+    "cohort": "ALSPAC",
+    "status": "CONFIRMED",
+    "genlang_n": 5448,
+    "chic_n": 5517,
+    "chic_stage": "discovery"
+   },
+   {
+    "cohort": "TEDS",
+    "status": "CONFIRMED",
+    "genlang_n": 3492,
+    "chic_n": 2825,
+    "chic_stage": "discovery"
+   },
+   {
+    "cohort": "BATS / QIMR",
+    "status": "CONFIRMED",
+    "genlang_n": 1414,
+    "chic_n": 1752,
+    "chic_stage": "discovery"
+   },
+   {
+    "cohort": "Raine",
+    "status": "CONFIRMED",
+    "genlang_n": 1189,
+    "chic_n": 936,
+    "chic_stage": "discovery"
+   },
+   {
+    "cohort": "NTR (Netherlands Twin Register / Registry)",
+    "status": "CONFIRMED_NAME",
+    "genlang_n": 1086,
+    "chic_n": 739,
+    "chic_stage": "replication (not in sumstats)",
+    "note": "CHIC text writes both \"Netherlands Twin Registry\" and \"Netherlands Twin Register\"; same resource as GenLang NTR"
+   }
+  ],
+  "genlang_piq_vs_chic_summary": "The 4 shared discovery cohorts make up 11,543/18,722 (61.7%) of GenLang PIQ and 11,030/12,441 (88.7%) of the CHIC discovery sample. Individuals overlap substantially, though not necessarily completely (different waves and QC)."
+ },
+ "exclusion_list_check": {
+  "genlang_piq": {
+   "ukb": false,
+   "hrs": false,
+   "x23andme": false,
+   "davies_cohorts": [
+    "BATS"
+   ]
+  },
+  "chic_discovery": {
+   "ukb": false,
+   "hrs": false,
+   "x23andme": false,
+   "davies_cohorts": [
+    "LBC1921",
+    "LBC1936",
+    "QIMR/BATS"
+   ]
+  }
+ },
+ "verdicts": {
+  "genlang_piq_vs_davies2018": {
+   "verdict": "PARTIAL_OVERLAP",
+   "overlap_cohorts": [
+    "BATS"
+   ],
+   "ambiguous": [
+    "CLDRC vs IBG"
+   ],
+   "overlap_n_fraction_of_genlang": "1414/18722 = 7.6% (up to 2131/18722 = 11.4% if all of CLDRC were counted)",
+   "independent_lineage_under_rule": false
+  },
+  "chic_vs_davies2018": {
+   "verdict": "PARTIAL_OVERLAP",
+   "overlap_cohorts": [
+    "LBC1921",
+    "LBC1936",
+    "QIMR/BATS"
+   ],
+   "probable_replication_overlap": [
+    "UMN~MCTFR"
+   ],
+   "overlap_n_fraction_of_chic_discovery": "3163/12441 = 25.4%",
+   "independent_lineage_under_rule": false
+  },
+  "genlang_piq_vs_chic": {
+   "verdict": "OVERLAPPING",
+   "overlap_cohorts": [
+    "ALSPAC",
+    "TEDS",
+    "BATS/QIMR",
+    "Raine"
+   ],
+   "plus_replication_only": [
+    "NTR"
+   ]
+  }
+ },
+ "sumstats": {
+  "genlang_piq": {
+   "file": "GCST90104472_buildGRCh37.tsv",
+   "md5": "d59615f32e99632c7316b15a87edd574",
+   "format": "pre-GWAS-SSF, tab-separated",
+   "columns": [
+    "variant_id",
+    "p_value",
+    "chromosome",
+    "base_pair_location",
+    "effect_allele",
+    "other_allele",
+    "effect_allele_frequency",
+    "beta",
+    "standard_error",
+    "N"
+   ],
+   "build": "GRCh37 (metadata genome_assembly; confirmed: rs2326918 6:130840091, rs66941928 3:176666749, rs7190157 16:8600861, rs12364336 11:100009976 match Ensembl GRCh37 exactly)",
+   "harmonised": "harmonised/GCST90104472.h.tsv.gz (GRCh38, 1-based, Ensembl release 95 reference; 99.81% of 7,870,675 mapped sites harmonised; 2024-09-15)",
+   "n_snps": 7872714,
+   "sign_convention": "beta is per copy of effect_allele on per-cohort z-scored performance IQ; positive beta means higher PIQ. The paper states no reversal. Empirical check: the 145 1-Mb-clumped Davies-2018 genome-wide-significant lead SNPs (Supplementary Data 1) were aligned to Allele1 on the Davies Z. Of 121 matched non-palindromic SNPs, 95 were sign-concordant (78.5%; one-sided binomial P=1.0e-10). Of the 26 with GenLang P<0.05, 25 were concordant. BATS overlap contributes a little to this concordance."
+  },
+  "chic": {
+   "file": "CHIC_Summary_Benyamin2014 2.txt",
+   "md5_catalog": "39cacfa4242fabfba77f02eaf4b13fe8",
+   "format": "space-separated",
+   "columns": [
+    "SNP",
+    "CHR",
+    "BP",
+    "A1",
+    "A2",
+    "FREQ_A1",
+    "EFFECT_A1",
+    "SE",
+    "P"
+   ],
+   "n_rows": 1380158,
+   "build": "NOT GRCh37. BP coordinates match NCBI35/hg17: 7/7 tested rsIDs match UCSC hg17 snp125 exactly, 1/7 hg18 (chr16, where hg17=hg18), 0/7 GRCh37. Paper Methods say imputation used HapMap II r22 NCBI Build36. The deposited positions are hg17, so join on rsID or liftover from hg17. GWAS Catalog metadata genome_assembly is empty.",
+   "sign_convention": "EFFECT_A1 is per copy of A1 on standardised childhood IQ/g; positive means higher IQ. Empirical check with Davies leads: 31/34 concordant (91.2%; binomial P=3.8e-7), and 7/7 with P<0.05. This is inflated by LBC/BATS overlap."
+  }
+ },
+ "sources": {
+  "eising_pmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9436320/fullTextXML",
+  "eising_supp": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9436320/supplementaryFiles",
+  "davies_pmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5974083/fullTextXML",
+  "davies_supp": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5974083/supplementaryFiles",
+  "chic_pmc": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=3935975&rettype=xml",
+  "gialluisi_pmc": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC4165772/fullTextXML",
+  "gcst_genlang_api": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90104472",
+  "gcst_genlang_ftp": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST90104001-GCST90105000/GCST90104472/",
+  "gcst_chic_api": "https://www.ebi.ac.uk/gwas/rest/api/studies/GCST001837",
+  "gcst_chic_ftp": "http://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST001001-GCST002000/GCST001837/"
+ },
+ "verification": [
+  "EuropePMC full text + supplementary zip downloaded for PMC9436320 and PMC5974083; Dataset S1/S3 and Supplementary Data 18 parsed with pipelines/sprint5/xlsx_minimal.py; Davies Supplementary Information PDF parsed with pdftotext",
+  "Benyamin 2014 full text via NCBI efetch db=pmc id=3935975 (EuropePMC full text returned HTTP 500; supplement not open access)",
+  "GWAS Catalog REST API and FTP folder listing/README/meta.yaml/harmonised meta + running.log fetched 2026-09-23",
+  "Build checks via grch37.rest.ensembl.org and api.genome.ucsc.edu (hg17 snp125, hg18 snp130, hg19 snp151)",
+  "Sign checks by streaming full sumstats files from the EBI FTP and joining on rsID to Davies Supplementary Data 1 (1-Mb clumped leads)"
+ ],
+ "limitations": [
+  "Individual-level overlap cannot be measured without genotypes; cohort-name membership is used as the criterion",
+  "CLDRC vs IBG relationship not resolvable from public text",
+  "CHIC Supplementary Note (cohort details) not retrievable (not open access); Table 1 and Methods used",
+  "Supplementary Data 18 rows sum to 300,485, one fewer than the paper total of 300,486"
+ ]
+}

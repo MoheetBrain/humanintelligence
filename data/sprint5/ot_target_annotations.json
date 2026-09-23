@@ -1,0 +1,5538 @@
+{
+ "retrieved_utc": "2026-09-23T22:39:32Z",
+ "release": "26.06",
+ "targets": {
+  "ANKRD12": {
+   "id": "ENSG00000101745",
+   "approvedSymbol": "ANKRD12",
+   "approvedName": "ankyrin repeat domain 12",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "May recruit HDACs to the p160 coactivators/nuclear receptor complex to inhibit ligand-dependent transactivation."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Nucleus",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.1180000305175781,
+     "oeUpper": 1.1829999685287476,
+     "score": -1.7899999618530273
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.0084999799728394,
+     "oeUpper": 1.0440000295639038,
+     "score": -0.14882999658584595
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.483599990606308,
+     "oeUpper": 0.5830000042915344,
+     "score": 1.019400031054829e-07
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "CACNA1A": {
+   "id": "ENSG00000141837",
+   "approvedSymbol": "CACNA1A",
+   "approvedName": "calcium voltage-gated channel subunit alpha1 A",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Voltage-sensitive calcium channels (VSCC) mediate the entry of calcium ions into excitable cells and are also involved in a variety of calcium-dependent processes, including muscle contraction, hormone or neurotransmitter release, gene expression, cell motility, cell division and cell death. The isoform alpha-1A gives rise to P and/or Q- type calcium currents. P/Q-type calcium channels belong to the 'high- voltage activated' (HVA) group and are specifically blocked by the spider omega-agatoxin-IVA (AC P54282) (By similarity). They are however insensitive to dihydropyridines (DHP). {ECO:0000250|UniProtKB:P54282, ECO:0000269|PubMed:10049321, ECO:0000269|PubMed:10753886, ECO:0000269|PubMed:11723274, ECO:0000269|PubMed:15293273, ECO:0000269|PubMed:19232643, ECO:0000269|PubMed:24836863, ECO:0000269|PubMed:26716990}."
+   ],
+   "targetClass": [
+    {
+     "label": "Voltage-gated calcium channel",
+     "level": "l3"
+    },
+    {
+     "label": "Ion channel",
+     "level": "l1"
+    },
+    {
+     "label": "Voltage-gated ion channel",
+     "level": "l2"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cell membrane ; Multi-pass membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Endoplasmic reticulum",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.125599980354309,
+     "oeUpper": 1.1779999732971191,
+     "score": -2.3545000553131104
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8010299801826477,
+     "oeUpper": 0.8289999961853027,
+     "score": 3.9532999992370605
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.25971001386642456,
+     "oeUpper": 0.3310000002384186,
+     "score": 1
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 11
+   }
+  },
+  "CRB1": {
+   "id": "ENSG00000134376",
+   "approvedSymbol": "CRB1",
+   "approvedName": "crumbs cell polarity complex component 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Plays a role in photoreceptor morphogenesis in the retina (By similarity). May maintain cell polarization and adhesion (By similarity). ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Apical cell membrane ; Single-pass type I membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Secreted",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cell projection, cilium, photoreceptor outer segment",
+     "source": "uniprot"
+    },
+    {
+     "location": "Photoreceptor inner segment",
+     "source": "uniprot"
+    },
+    {
+     "location": "Secreted",
+     "source": "uniprot"
+    },
+    {
+     "location": "Vesicles",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Predicted to be secreted",
+     "source": "HPA_extracellular_location"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9579200148582458,
+     "oeUpper": 1.0240000486373901,
+     "score": 0.5787000060081482
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9582700133323669,
+     "oeUpper": 0.9980000257492065,
+     "score": 0.6362599730491638
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.6445599794387817,
+     "oeUpper": 0.7760000228881836,
+     "score": 9.361899809210629e-17
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "CYP2D6": {
+   "id": "ENSG00000100197",
+   "approvedSymbol": "CYP2D6",
+   "approvedName": "cytochrome P450 family 2 subfamily D member 6 (gene/pseudogene)",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "A cytochrome P450 monooxygenase involved in the metabolism of fatty acids, steroids and retinoids (PubMed:18698000, PubMed:19965576, PubMed:20972997, PubMed:21289075, PubMed:21576599). Mechanistically, uses molecular oxygen inserting one oxygen atom into a substrate, and reducing the second into a water molecule, with two electrons provided by NADPH via cytochrome P450 reductase (NADPH--hemoprotein reductase) (PubMed:18698000, PubMed:19965576, PubMed:20972997, PubMed:21289075, PubMed:21576599). Catalyzes the epoxidation of double bonds of polyunsaturated fatty acids (PUFA) (PubMed:19965576, PubMed:20972997). Metabolizes endocannabinoid arachidonoylethanolamide (anandamide) to 20-hydroxyeicosatetraenoic acid ethanolamide (20-HETE-EA) and 8,9-, 11,12-, and 14,15-epoxyeicosatrienoic acid ethanolamides (EpETrE-EAs), potentially modulating endocannabinoid system signaling (PubMed:18698000, PubMed:21289075). Catalyzes the hydroxylation of carbon-hydrogen bonds. Metabolizes cholesterol toward 25- hydroxycholesterol, a physiological regulator of cellular cholesterol homeostasis (PubMed:21576599). Catalyzes the oxidative transformations of all-trans retinol to all-trans retinal, a precursor for the active form all-trans-retinoic acid (PubMed:10681376). Also involved in the oxidative metabolism of drugs such as antiarrhythmics, adrenoceptor antagonists, and tricyclic antidepressants. {ECO:0000269|PubMed:10681376, ECO:0000269|PubMed:16352597, ECO:0000269|PubMed:18698000, ECO:0000269|PubMed:19965576, ECO:0000269|PubMed:20972997, ECO:0000269|PubMed:21289075, ECO:0000269|PubMed:21576599}."
+   ],
+   "targetClass": [
+    {
+     "label": "Cytochrome P450 family 2",
+     "level": "l3"
+    },
+    {
+     "label": "Enzyme",
+     "level": "l1"
+    },
+    {
+     "label": "Cytochrome P450 2D6",
+     "level": "l5"
+    },
+    {
+     "label": "Cytochrome P450 family 2D",
+     "level": "l4"
+    },
+    {
+     "label": "Cytochrome P450",
+     "level": "l2"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [
+    {
+     "id": "quinidine",
+     "isHighQuality": false,
+     "mechanismOfAction": []
+    }
+   ],
+   "safetyLiabilities": [
+    {
+     "event": "gastrointestinal bleeding",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "side effects",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "QTc interval",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "dose of drug",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "treatment side effects",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "drug toxicity",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "weight gain",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "opioid dependence",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "regulation of catalytic activity",
+     "datasource": "ToxCast"
+    },
+    {
+     "event": "tardive dyskinesia",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "adverse events",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "sedation",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "antipsychotic-induced extrapyramidal symptoms",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "dose of drug required",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "tardive dyskinesia or parkinsonism",
+     "datasource": "ClinPGx"
+    },
+    {
+     "event": "bradycardia",
+     "datasource": "ClinPGx"
+    }
+   ],
+   "subcellularLocations": [
+    {
+     "location": "Endoplasmic reticulum membrane; Peripheral membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Microsome membrane ; Peripheral membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Golgi apparatus",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.3234000205993652,
+     "oeUpper": 1.4470000267028809,
+     "score": -2.849900007247925
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.1467000246047974,
+     "oeUpper": 1.2209999561309814,
+     "score": -1.3216999769210815
+    },
+    {
+     "constraintType": "lof",
+     "oe": 1.3567999601364136,
+     "oeUpper": 1.7059999704360962,
+     "score": 8.048200030957398e-23
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "DCC": {
+   "id": "ENSG00000187323",
+   "approvedSymbol": "DCC",
+   "approvedName": "DCC netrin 1 receptor",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Receptor for netrin required for axon guidance. Mediates axon attraction of neuronal growth cones in the developing nervous system upon ligand binding. Its association with UNC5 proteins may trigger signaling for axon repulsion. It also acts as a dependence receptor required for apoptosis induction when not associated with netrin ligand. Implicated as a tumor suppressor gene. ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Membrane; Single-pass type I membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Golgi apparatus",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Basal body",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Centriolar satellite",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Centrosome",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.0503000020980835,
+     "oeUpper": 1.121999979019165,
+     "score": -0.6721699833869934
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9340800046920776,
+     "oeUpper": 0.9739999771118164,
+     "score": 0.9755600094795227
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.32297998666763306,
+     "oeUpper": 0.414000004529953,
+     "score": 1
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "DHRS11": {
+   "id": "ENSG00000278535",
+   "approvedSymbol": "DHRS11",
+   "approvedName": "dehydrogenase/reductase 11",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Catalyzes the conversion of the 17-keto group of estrone, 4- and 5-androstenes and 5-alpha-androstanes into their 17-beta- hydroxyl metabolites and the conversion of the 3-keto group of 3-, 3,17- and 3,20- diketosteroids into their 3beta-hydroxyl metabolites. Exhibits reductive 3-beta-hydroxysteroid dehydrogenase activity toward 5-beta-androstanes, 5-beta-pregnanes, 4-pregnenes and bile acids (PubMed:26920053). May contribute to the metabolism of adrenal-derived androgen precursors. Reduces 11-keto-4-androstene-3,17-dione (11KA4) and 11-keto-5alpha-androstane-3,17-dione (11K-Adione) into potent androgens 11-ketotestosterone (11KT) and 11-ketodihydrotestosterone (11KDHT), respectively (PubMed:31926269). May also reduce endogenous and exogenous alpha-dicarbonyl compounds and xenobiotic alicyclic ketones (PubMed:26920053). {ECO:0000269|PubMed:26920053, ECO:0000269|PubMed:31926269}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Secreted",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Golgi apparatus",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Predicted to be secreted",
+     "source": "HPA_extracellular_location"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.956279993057251,
+     "oeUpper": 1.1109999418258667,
+     "score": 0.27024999260902405
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9267500042915344,
+     "oeUpper": 1.0199999809265137,
+     "score": 0.48131000995635986
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.6117500066757202,
+     "oeUpper": 0.9070000052452087,
+     "score": 0.0002989000058732927
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "DNPH1": {
+   "id": "ENSG00000112667",
+   "approvedSymbol": "DNPH1",
+   "approvedName": "2'-deoxynucleoside 5'-phosphate N-hydrolase 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Part of a nucleotide salvage pathway that eliminates epigenetically modified 5-hydroxymethyl-dCMP (hmdCMP) in a two-step process entailing deamination to cytotoxic 5-hydroxymethyl-dUMP (hmdUMP), followed by its hydrolysis into 5-hydroxymethyluracil (hmU) and 2-deoxy-D-ribose 5-phosphate (deoxyribosephosphate) (PubMed:33833118). Catalyzes the second step in that pathway, the hydrolysis of the N-glycosidic bond in hmdUMP, degrading this cytotoxic nucleotide to avoid its genomic integration (PubMed:33833118). ."
+   ],
+   "targetClass": [
+    {
+     "label": "Enzyme",
+     "level": "l1"
+    },
+    {
+     "label": "Hydrolase",
+     "level": "l2"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleus",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.2453999519348145,
+     "oeUpper": 1.4550000429153442,
+     "score": -1.2796000242233276
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.2213000059127808,
+     "oeUpper": 1.3530000448226929,
+     "score": -1.1836999654769897
+    },
+    {
+     "constraintType": "lof",
+     "oe": 1.476699948310852,
+     "oeUpper": 1.9140000343322754,
+     "score": 1.1584999626279568e-08
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "EDAR": {
+   "id": "ENSG00000135960",
+   "approvedSymbol": "EDAR",
+   "approvedName": "ectodysplasin A receptor",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Receptor for EDA isoform A1, but not for EDA isoform A2. Mediates the activation of NF-kappa-B and JNK. May promote caspase- independent cell death."
+   ],
+   "targetClass": [
+    {
+     "label": "Membrane receptor",
+     "level": "l1"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Membrane ; Single-pass type I membrane protein",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9114599823951721,
+     "oeUpper": 1.0169999599456787,
+     "score": 0.7615799903869629
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8570799827575684,
+     "oeUpper": 0.9210000038146973,
+     "score": 1.2955000400543213
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.7068600058555603,
+     "oeUpper": 0.9269999861717224,
+     "score": 1.2430000362328997e-09
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "EIF3C": {
+   "id": "ENSG00000184110",
+   "approvedSymbol": "EIF3C",
+   "approvedName": "eukaryotic translation initiation factor 3 subunit C",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Component of the eukaryotic translation initiation factor 3 (eIF-3) complex, which is required for several steps in the initiation of protein synthesis (PubMed:17581632, PubMed:25849773, PubMed:27462815). The eIF-3 complex associates with the 40S ribosome and facilitates the recruitment of eIF-1, eIF-1A, eIF-2:GTP:methionyl- tRNAi and eIF-5 to form the 43S pre-initiation complex (43S PIC). The eIF-3 complex stimulates mRNA recruitment to the 43S PIC and scanning of the mRNA for AUG recognition. The eIF-3 complex is also required for disassembly and recycling of post-termination ribosomal complexes and subsequently prevents premature joining of the 40S and 60S ribosomal subunits prior to initiation (PubMed:17581632). The eIF-3 complex specifically targets and initiates translation of a subset of mRNAs involved in cell proliferation, including cell cycling, differentiation and apoptosis, and uses different modes of RNA stem-loop binding to exert either translational activation or repression (PubMed:25849773). {ECO:0000255|HAMAP-Rule:MF_03002, ECO:0000269|PubMed:17581632, ECO:0000269|PubMed:25849773, ECO:0000269|PubMed:27462815}."
+   ],
+   "targetClass": [
+    {
+     "label": "Unclassified protein",
+     "level": "l1"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.08547399938106537,
+     "oeUpper": 0.26899999380111694,
+     "score": 2.4112000465393066
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.20250000059604645,
+     "oeUpper": 0.30799999833106995,
+     "score": 2.5887999534606934
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.2368600070476532,
+     "oeUpper": 0.7459999918937683,
+     "score": 0.7363399863243103
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "GOSR1": {
+   "id": "ENSG00000108587",
+   "approvedSymbol": "GOSR1",
+   "approvedName": "golgi SNAP receptor complex member 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Involved in transport from the ER to the Golgi apparatus as well as in intra-Golgi transport. It belongs to a super-family of proteins called t-SNAREs or soluble NSF (N-ethylmaleimide-sensitive factor) attachment protein receptor. May play a protective role against hydrogen peroxide induced cytotoxicity under glutathione depleted conditions in neuronal cells by regulating the intracellular ROS levels via inhibition of p38 MAPK (MAPK11, MAPK12, MAPK13 and MAPK14). Participates in docking and fusion stage of ER to cis-Golgi transport. Plays an important physiological role in VLDL-transport vesicle-Golgi fusion and thus in VLDL delivery to the hepatic cis-Golgi. ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Golgi apparatus membrane ; Single-pass type IV membrane protein",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.6512999534606934,
+     "oeUpper": 1.9390000104904175,
+     "score": -0.5525000095367432
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.4635000228881836,
+     "oeUpper": 1.9179999828338623,
+     "score": -0.5235400199890137
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.5099200010299683,
+     "oeUpper": 1.753000020980835,
+     "score": 0.24442000687122345
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "KDM5B": {
+   "id": "ENSG00000117139",
+   "approvedSymbol": "KDM5B",
+   "approvedName": "lysine demethylase 5B",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Histone demethylase that demethylates 'Lys-4' of histone H3, thereby playing a central role in histone code (PubMed:24952722, PubMed:27214403, PubMed:28262558). Does not demethylate histone H3 'Lys-9' or H3 'Lys-27'. Demethylates trimethylated, dimethylated and monomethylated H3 'Lys-4'. Acts as a transcriptional corepressor for FOXG1B and PAX9. Favors the proliferation of breast cancer cells by repressing tumor suppressor genes such as BRCA1 and HOXA5 (PubMed:24952722). In contrast, may act as a tumor suppressor for melanoma. Represses the CLOCK-BMAL1 heterodimer-mediated transcriptional activation of the core clock component PER2 (By similarity). {ECO:0000250|UniProtKB:Q80Y84, ECO:0000269|PubMed:12657635, ECO:0000269|PubMed:16645588, ECO:0000269|PubMed:17320161, ECO:0000269|PubMed:17363312, ECO:0000269|PubMed:24952722, ECO:0000269|PubMed:26645689, ECO:0000269|PubMed:26741168, ECO:0000269|PubMed:27214403, ECO:0000269|PubMed:28262558}."
+   ],
+   "targetClass": [
+    {
+     "label": "Epigenetic regulator",
+     "level": "l1"
+    },
+    {
+     "label": "Jumonji domain-containing",
+     "level": "l4"
+    },
+    {
+     "label": "Eraser",
+     "level": "l2"
+    },
+    {
+     "label": "Lysine demethylase",
+     "level": "l3"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [
+    {
+     "id": "GSK-J1",
+     "isHighQuality": false,
+     "mechanismOfAction": [
+      "inhibitor"
+     ]
+    },
+    {
+     "id": "GSK-J4",
+     "isHighQuality": true,
+     "mechanismOfAction": [
+      "inhibitor"
+     ]
+    }
+   ],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Nucleus",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9209399819374084,
+     "oeUpper": 0.9860000014305115,
+     "score": 1.0888999700546265
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9333299994468689,
+     "oeUpper": 0.972000002861023,
+     "score": 1.0125000476837158
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.7369499802589417,
+     "oeUpper": 0.8579999804496765,
+     "score": 1.1176999767618493e-29
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "KIFC2": {
+   "id": "ENSG00000167702",
+   "approvedSymbol": "KIFC2",
+   "approvedName": "kinesin family member C2",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "May play a role in microtubule-dependent retrograde axonal transport. May function as the motor for the transport of multivesicular body (MVB)-like organelles in dendrites (By similarity). ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm, cytoskeleton",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.554900050163269,
+     "oeUpper": 1.656000018119812,
+     "score": -6.380300045013428
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.3026000261306763,
+     "oeUpper": 1.3639999628067017,
+     "score": -3.4605000019073486
+    },
+    {
+     "constraintType": "lof",
+     "oe": 1.0640000104904175,
+     "oeUpper": 1.2669999599456787,
+     "score": 3.040399975354523e-33
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "NAGA": {
+   "id": "ENSG00000198951",
+   "approvedSymbol": "NAGA",
+   "approvedName": "alpha-N-acetylgalactosaminidase",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Removes terminal alpha-N-acetylgalactosamine residues from glycolipids and glycopeptides. Required for the breakdown of glycolipids. ."
+   ],
+   "targetClass": [
+    {
+     "label": "Enzyme",
+     "level": "l1"
+    },
+    {
+     "label": "Hydrolase",
+     "level": "l2"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Lysosome",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.8378999829292297,
+     "oeUpper": 0.9490000009536743,
+     "score": 1.280500054359436
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8768600225448608,
+     "oeUpper": 0.9449999928474426,
+     "score": 1.0663000345230103
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.8739500045776367,
+     "oeUpper": 1.121000051498413,
+     "score": 5.257100161551627e-14
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "NEGR1": {
+   "id": "ENSG00000172260",
+   "approvedSymbol": "NEGR1",
+   "approvedName": "neuronal growth regulator 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "May be involved in cell-adhesion. May function as a trans- neural growth-promoting factor in regenerative axon sprouting in the mammalian brain (By similarity). ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cell membrane ; Lipid-anchor, GPI- anchor",
+     "source": "uniprot"
+    },
+    {
+     "location": "Actin filaments",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Vesicles",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.094499945640564,
+     "oeUpper": 1.2710000276565552,
+     "score": -0.5483300089836121
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.7615200281143188,
+     "oeUpper": 0.8519999980926514,
+     "score": 1.4736000299453735
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.20385000109672546,
+     "oeUpper": 0.42899999022483826,
+     "score": 0.9955700039863586
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "RC3H2": {
+   "id": "ENSG00000056586",
+   "approvedSymbol": "RC3H2",
+   "approvedName": "ring finger and CCCH-type domains 2",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Post-transcriptional repressor of mRNAs containing a conserved stem loop motif, called constitutive decay element (CDE), which is often located in the 3'-UTR, as in HMGXB3, ICOS, IER3, NFKBID, NFKBIZ, PPP1R10, TNF and in many more mRNAs. Binds to CDE and promotes mRNA deadenylation and degradation. This process does not involve miRNAs. In follicular helper T (Tfh) cells, represses of ICOS and TNFRSF4 expression, thus preventing spontaneous Tfh cell differentiation, germinal center B-cell differentiation in the absence of immunization and autoimmunity. In resting or LPS-stimulated macrophages, controls inflammation by suppressing TNF expression. Also recognizes CDE in its own mRNA and in that of paralogous RC3H1, possibly leading to feedback loop regulation (By similarity). miRNA- binding protein that regulates microRNA homeostasis. Enhances DICER- mediated processing of pre-MIR146a but reduces mature MIR146a levels through an increase of 3' end uridylation. Both inhibits ICOS mRNA expression and they may act together to exert the suppression (PubMed:25697406). Acts as a ubiquitin E3 ligase. Pairs with E2 enzymes UBE2B, UBE2D2, UBE2E2, UBE2E3, UBE2G2, UBE2K and UBE2Q2 and produces polyubiquitin chains (PubMed:26489670). Shows the strongest activity when paired with UBE2N:UBE2V1 or UBE2N:UBE2V2 E2 complexes and generate both short and long polyubiquitin chains (PubMed:26489670). Involved in the ubiquitination of MAP3K5 (PubMed:24448648, PubMed:26489670, PubMed:29186683). Able to interact with double-stranded RNA (dsRNA) (PubMed:26489670). {ECO:0000250|UniProtKB:P0C090, ECO:0000269|PubMed:24448648, ECO:0000269|PubMed:26489670, ECO:0000269|PubMed:29186683}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm, P-body",
+     "source": "uniprot"
+    },
+    {
+     "location": "Vesicles",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9899399876594543,
+     "oeUpper": 1.065999984741211,
+     "score": 0.12381000071763992
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.7820000052452087,
+     "oeUpper": 0.8209999799728394,
+     "score": 3.0357000827789307
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.2240000069141388,
+     "oeUpper": 0.3089999854564667,
+     "score": 1
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "RHEBL1": {
+   "id": "ENSG00000167550",
+   "approvedSymbol": "RHEBL1",
+   "approvedName": "RHEB like 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Binds GTP and exhibits intrinsic GTPase activity (By similarity). May activate NF-kappa-B-mediated gene transcription (PubMed:16328882). Promotes signal transduction through MTOR, activates RPS6KB1, and is a downstream target of the small GTPase-activating proteins TSC1 and TSC2. {ECO:0000250|UniProtKB:Q15382, ECO:0000269|PubMed:12869548, ECO:0000269|PubMed:16098514, ECO:0000269|PubMed:16328882, ECO:0000269|PubMed:17162089}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Endomembrane system ; Lipid-anchor ; Cytoplasmic side",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Centrosome",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Nucleoli",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.988789975643158,
+     "oeUpper": 1.184000015258789,
+     "score": 0.056662000715732574
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.7782400250434875,
+     "oeUpper": 0.8790000081062317,
+     "score": 1.2487000226974487
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.7707899808883667,
+     "oeUpper": 1.0920000076293945,
+     "score": 7.271900130945141e-07
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "RIMS1": {
+   "id": "ENSG00000079841",
+   "approvedSymbol": "RIMS1",
+   "approvedName": "regulating synaptic membrane exocytosis 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Rab effector involved in exocytosis (By similarity). May act as scaffold protein that regulates neurotransmitter release at the active zone. Essential for maintaining normal probability of neurotransmitter release and for regulating release during short-term synaptic plasticity (By similarity). Plays a role in dendrite formation by melanocytes (PubMed:23999003). {ECO:0000250|UniProtKB:Q99NE5, ECO:0000269|PubMed:23999003}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cell membrane ; Peripheral membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Synapse",
+     "source": "uniprot"
+    },
+    {
+     "location": "Presynaptic cell membrane ; Peripheral membrane protein",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.1058000326156616,
+     "oeUpper": 1.1820000410079956,
+     "score": -1.3553999662399292
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.0003000497817993,
+     "oeUpper": 1.0440000295639038,
+     "score": -0.004554800223559141
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.3772999942302704,
+     "oeUpper": 0.4959999918937683,
+     "score": 0.945330023765564
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "RPS26": {
+   "id": "ENSG00000197728",
+   "approvedSymbol": "RPS26",
+   "approvedName": "ribosomal protein S26",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Component of the small ribosomal subunit (PubMed:23636399, PubMed:25901680, PubMed:25957688). The ribosome is a large ribonucleoprotein complex responsible for the synthesis of proteins in the cell (PubMed:23636399, PubMed:25901680, PubMed:25957688). {ECO:0000269|PubMed:23636399, ECO:0000269|PubMed:25901680, ECO:0000269|PubMed:25957688}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": true
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm, cytosol",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Rough endoplasmic reticulum",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Endoplasmic reticulum",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Nucleoli",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.090499997138977,
+     "oeUpper": 1.3539999723434448,
+     "score": -0.36270999908447266
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.4012500047683716,
+     "oeUpper": 0.4950000047683716,
+     "score": 2.7399001121520996
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.06735099852085114,
+     "oeUpper": 0.3199999928474426,
+     "score": 0.9958800077438354
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 5
+   }
+  },
+  "SEPTIN10": {
+   "id": "ENSG00000186522",
+   "approvedSymbol": "SEPTIN10",
+   "approvedName": "septin 10",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Filament-forming cytoskeletal GTPase. May play a role in cytokinesis (Potential). ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytoplasm, cytoskeleton",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cell projection, cilium, flagellum",
+     "source": "uniprot"
+    },
+    {
+     "location": "Actin filaments",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Annulus",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Microtubules",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9489700198173523,
+     "oeUpper": 1.0889999866485596,
+     "score": 0.34498000144958496
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.1751999855041504,
+     "oeUpper": 1.2599999904632568,
+     "score": -1.3955999612808228
+    },
+    {
+     "constraintType": "lof",
+     "oe": 1.1243000030517578,
+     "oeUpper": 1.434000015258789,
+     "score": 3.1573000080490723e-18
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "SH2B1": {
+   "id": "ENSG00000178188",
+   "approvedSymbol": "SH2B1",
+   "approvedName": "SH2B adaptor protein 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Adapter protein for several members of the tyrosine kinase receptor family. Involved in multiple signaling pathways mediated by Janus kinase (JAK) and receptor tyrosine kinases, including the receptors of insulin (INS), insulin-like growth factor 1 (IGF1), nerve growth factor (NGF), brain-derived neurotrophic factor (BDNF), glial cell line-derived neurotrophic factor (GDNF), platelet-derived growth factor (PDGF) and fibroblast growth factors (FGFs). In growth hormone (GH) signaling, autophosphorylated ('Tyr-813') JAK2 recruits SH2B1, which in turn is phosphorylated by JAK2 on tyrosine residues. These phosphotyrosines form potential binding sites for other signaling proteins. GH also promotes serine/threonine phosphorylation of SH2B1 and these phosphorylated residues may serve to recruit other proteins to the GHR-JAK2-SH2B1 complexes, such as RAC1. In leptin (LEP) signaling, binds to and potentiates the activation of JAK2 by globally enhancing downstream pathways. In response to leptin, binds simultaneously to both, JAK2 and IRS1 or IRS2, thus mediating formation of a complex of JAK2, SH2B1 and IRS1 or IRS2. Mediates tyrosine phosphorylation of IRS1 and IRS2, resulting in activation of the PI 3- kinase pathway. Acts as a positive regulator of NGF-mediated activation of the Akt/Forkhead pathway; prolongs NGF-induced phosphorylation of AKT1 on 'Ser-473' and AKT1 enzymatic activity. Enhances the kinase activity of the cytokine receptor-associated tyrosine kinase JAK2 and of other receptor tyrosine kinases, such as FGFR3 and NTRK1. For JAK2, the mechanism seems to involve dimerization of both, SH2B1 and JAK2. Enhances RET phosphorylation and kinase activity. Isoforms seem to be differentially involved in IGF1 and PDGF-induced mitogenesis (By similarity). {ECO:0000250|UniProtKB:Q91ZM2, ECO:0000269|PubMed:11827956, ECO:0000269|PubMed:14565960, ECO:0000269|PubMed:15767667, ECO:0000269|PubMed:16569669, ECO:0000269|PubMed:17471236, ECO:0000269|PubMed:9694882, ECO:0000269|PubMed:9742218}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Membrane",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleus",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    },
+    {
+     "location": "Centriolar satellite",
+     "source": "HPA_additional"
+    },
+    {
+     "location": "Cytosol",
+     "source": "HPA_additional"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.0154999494552612,
+     "oeUpper": 1.100000023841858,
+     "score": -0.17440000176429749
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9299700260162354,
+     "oeUpper": 0.9819999933242798,
+     "score": 0.8018199801445007
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.23907999694347382,
+     "oeUpper": 0.37400001287460327,
+     "score": 0.9999899864196777
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "SH3RF3": {
+   "id": "ENSG00000172985",
+   "approvedSymbol": "SH3RF3",
+   "approvedName": "SH3 domain containing ring finger 3",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Has E3 ubiquitin-protein ligase activity. ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.1510000228881836,
+     "oeUpper": 1.2359999418258667,
+     "score": -1.7891000509262085
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.0810999870300293,
+     "oeUpper": 1.1349999904632568,
+     "score": -0.9660300016403198
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.5035899877548218,
+     "oeUpper": 0.6940000057220459,
+     "score": 0.0008565100142732263
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "SLC39A8": {
+   "id": "ENSG00000138821",
+   "approvedSymbol": "SLC39A8",
+   "approvedName": "solute carrier family 39 member 8",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Electroneutral divalent metal cation:bicarbonate symporter of the plasma membrane mediating the cellular uptake of zinc and manganese, two divalent metal cations important for development, tissue homeostasis and immunity (PubMed:12504855, PubMed:22898811, PubMed:23403290, PubMed:26637978, PubMed:29337306, PubMed:29453449). Transports an electroneutral complex composed of a divalent metal cation and two bicarbonate anions or alternatively a bicarbonate and a selenite anion (PubMed:27166256, PubMed:31699897). Thereby, it also contributes to the cellular uptake of selenium, an essential trace metal and micronutrient (PubMed:27166256). Also imports cadmium a non- essential metal which is cytotoxic and carcinogenic (PubMed:27466201). May also transport iron and cobalt through membranes (PubMed:22898811). Through zinc import, indirectly regulates the metal-dependent transcription factor MTF1 and the expression of some metalloproteases involved in cartilage catabolism and also probably heart development (PubMed:29337306). Also indirectly regulates the expression of proteins involved in cell morphology and cytoskeleton organization (PubMed:29927450). Indirectly controls innate immune function and inflammatory response by regulating zinc cellular uptake which in turn modulates the expression of genes specific of these processes (PubMed:23403290, PubMed:28056086). Protects, for instance, cells from injury and death at the onset of inflammation (PubMed:18390834). By regulating zinc influx into monocytes also directly modulates their adhesion to endothelial cells and arteries (By similarity). Reclaims manganese from the bile at the apical membrane of hepatocytes, thereby regulating the activity of the manganese-dependent enzymes through the systemic levels of the nutrient (PubMed:28481222). Also participates in manganese reabsorption in the proximal tubule of the kidney (PubMed:26637978). By mediating the extracellular uptake of manganese by cells of the blood-brain barrier, may also play a role in the transport of the micronutrient to the brain (PubMed:26637978, PubMed:31699897). With manganese cellular uptake also participates in mitochondrial proper function (PubMed:29453449). Finally, also probably functions intracellularly, translocating zinc from lysosome to cytosol to indirectly enhance the expression of specific genes during TCR- mediated T cell activation (PubMed:19401385). {ECO:0000250|UniProtKB:Q91W10, ECO:0000269|PubMed:12504855, ECO:0000269|PubMed:18390834, ECO:0000269|PubMed:19401385, ECO:0000269|PubMed:22898811, ECO:0000269|PubMed:23403290, ECO:0000269|PubMed:26637978, ECO:0000269|PubMed:27166256, ECO:0000269|PubMed:27466201, ECO:0000269|PubMed:28056086, ECO:0000269|PubMed:28481222, ECO:0000269|PubMed:29337306, ECO:0000269|PubMed:29453449, ECO:0000269|PubMed:29927450, ECO:0000269|PubMed:31699897}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": true
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [
+    {
+     "event": "alcoholism",
+     "datasource": "ClinPGx"
+    }
+   ],
+   "subcellularLocations": [
+    {
+     "location": "Cell membrane ; Multi-pass membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Lysosome membrane ; Multi-pass membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Apical cell membrane ; Multi-pass membrane protein",
+     "source": "uniprot"
+    },
+    {
+     "location": "Basolateral cell membrane ; Multi-pass membrane protein",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.0427000522613525,
+     "oeUpper": 1.1690000295639038,
+     "score": -0.33103999495506287
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8576899766921997,
+     "oeUpper": 0.9279999732971191,
+     "score": 1.1837999820709229
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.37860000133514404,
+     "oeUpper": 0.6019999980926514,
+     "score": 0.621150016784668
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "SOWAHC": {
+   "id": "ENSG00000198142",
+   "approvedSymbol": "SOWAHC",
+   "approvedName": "sosondowah ankyrin repeat domain family member C",
+   "biotype": "protein_coding",
+   "functionDescriptions": [],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.2965999841690063,
+     "oeUpper": 1.4129999876022339,
+     "score": -2.7348999977111816
+    },
+    {
+     "constraintType": "mis",
+     "oe": 1.1469000577926636,
+     "oeUpper": 1.2200000286102295,
+     "score": -1.336400032043457
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.8516200184822083,
+     "oeUpper": 1.378000020980835,
+     "score": 0.0001799099991330877
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "SUOX": {
+   "id": "ENSG00000139531",
+   "approvedSymbol": "SUOX",
+   "approvedName": "sulfite oxidase",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "Catalyzes the oxidation of sulfite to sulfate, the terminal reaction in the oxidative degradation of sulfur-containing amino acids (By similarity). Can run in reverse direction and reduce nitrite to nitric oxide under physiologically relevant conditions, such as hypoxia (PubMed:41337830). {ECO:0000250|UniProtKB:P07850, ECO:0000269|PubMed:41337830}."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Mitochondrion intermembrane space",
+     "source": "uniprot"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.7756900191307068,
+     "oeUpper": 0.8669999837875366,
+     "score": 2.059000015258789
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8710200190544128,
+     "oeUpper": 0.9300000071525574,
+     "score": 1.2697999477386475
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.8635200262069702,
+     "oeUpper": 1.128000020980835,
+     "score": 3.7605999043954785e-12
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "TUFM": {
+   "id": "ENSG00000178952",
+   "approvedSymbol": "TUFM",
+   "approvedName": "Tu translation elongation factor, mitochondrial",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "GTP hydrolase that promotes the GTP-dependent binding of aminoacyl-tRNA to the A-site of ribosomes during protein biosynthesis. Participates in mitochondrial translation (By similarity). Also plays a role in the regulation of autophagy and innate immunity (PubMed:22749352, PubMed:28407488). Recruits ATG5-ATG12 and NLRX1 at mitochondria and serves as a checkpoint of the RIGI-MAVS pathway (PubMed:28407488). In turn, inhibits RLR-mediated type I interferon while promoting autophagy (PubMed:22749352). {ECO:0000250|UniProtKB:P49410, ECO:0000269|PubMed:22749352, ECO:0000269|PubMed:28407488}."
+   ],
+   "targetClass": [
+    {
+     "label": "Unclassified protein",
+     "level": "l1"
+    }
+   ],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": true
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Mitochondrion matrix",
+     "source": "uniprot"
+    },
+    {
+     "location": "Mitochondria",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.9205999970436096,
+     "oeUpper": 1.0240000486373901,
+     "score": 0.7031099796295166
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.7690500020980835,
+     "oeUpper": 0.8289999961853027,
+     "score": 2.128999948501587
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.4959399998188019,
+     "oeUpper": 0.703000009059906,
+     "score": 0.0031196000054478645
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "WBP2NL": {
+   "id": "ENSG00000183066",
+   "approvedSymbol": "WBP2NL",
+   "approvedName": "WBP2 N-terminal like",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "May play a role in meiotic resumption and pronuclear formation, mediated by a WW domain-signaling pathway during fertilization. ."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [
+    {
+     "event": "adverse events",
+     "datasource": "ClinPGx"
+    }
+   ],
+   "subcellularLocations": [
+    {
+     "location": "Cytosol",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.984749972820282,
+     "oeUpper": 1.1269999742507935,
+     "score": 0.10293000191450119
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.9058300256729126,
+     "oeUpper": 0.9869999885559082,
+     "score": 0.6950399875640869
+    },
+    {
+     "constraintType": "lof",
+     "oe": 1.06850004196167,
+     "oeUpper": 1.4730000495910645,
+     "score": 2.1279999984358255e-10
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "ZFTRAF1": {
+   "id": "ENSG00000187954",
+   "approvedSymbol": "ZFTRAF1",
+   "approvedName": "zinc finger TRAF-type and ring finger containing 1",
+   "biotype": "protein_coding",
+   "functionDescriptions": [],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Cytoplasm",
+     "source": "uniprot"
+    },
+    {
+     "location": "Cytoplasm, perinuclear region",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 1.2581000328063965,
+     "oeUpper": 1.4880000352859497,
+     "score": -1.2415000200271606
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.5799199938774109,
+     "oeUpper": 0.6759999990463257,
+     "score": 2.1882998943328857
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.6667500138282776,
+     "oeUpper": 1.1629999876022339,
+     "score": 0.006033699959516525
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  },
+  "ZNF92": {
+   "id": "ENSG00000146757",
+   "approvedSymbol": "ZNF92",
+   "approvedName": "zinc finger protein 92",
+   "biotype": "protein_coding",
+   "functionDescriptions": [
+    "May be involved in transcriptional regulation."
+   ],
+   "targetClass": [],
+   "tractability": [
+    {
+     "label": "Approved Drug",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Structure with Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Ligand",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "High-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Med-Quality Pocket",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Druggable Family",
+     "modality": "SM",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC high conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt loc med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "UniProt SigP or TMHMM",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "GO CC med conf",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Human Protein Atlas loc",
+     "modality": "AB",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Literature",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "UniProt Ubiquitination",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Database Ubiquitination",
+     "modality": "PR",
+     "value": true
+    },
+    {
+     "label": "Half-life Data",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Small Molecule Binder",
+     "modality": "PR",
+     "value": false
+    },
+    {
+     "label": "Approved Drug",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Advanced Clinical",
+     "modality": "OC",
+     "value": false
+    },
+    {
+     "label": "Phase 1 Clinical",
+     "modality": "OC",
+     "value": false
+    }
+   ],
+   "chemicalProbes": [],
+   "safetyLiabilities": [],
+   "subcellularLocations": [
+    {
+     "location": "Nucleus",
+     "source": "uniprot"
+    },
+    {
+     "location": "Nucleoplasm",
+     "source": "HPA_main"
+    }
+   ],
+   "geneticConstraint": [
+    {
+     "constraintType": "syn",
+     "oe": 0.8929499983787537,
+     "oeUpper": 1.0019999742507935,
+     "score": 0.8861899971961975
+    },
+    {
+     "constraintType": "mis",
+     "oe": 0.8999900221824646,
+     "oeUpper": 0.9620000123977661,
+     "score": 0.960129976272583
+    },
+    {
+     "constraintType": "lof",
+     "oe": 0.9868699908256531,
+     "oeUpper": 1.5829999446868896,
+     "score": 5.895900176255964e-05
+    }
+   ],
+   "drugAndClinicalCandidates": {
+    "count": 0
+   }
+  }
+ }
+}

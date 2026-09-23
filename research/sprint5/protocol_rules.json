@@ -5,19 +5,59 @@
     "A_CAUSAL_COGNITION_GENE": "does genetic perturbation of the gene affect cognition",
     "B_NATURAL_HIGH_COGNITION_GENE": "does natural variation in the gene/locus contribute to higher cognition",
     "C_ADULT_MODIFIABLE_COGNITION_GENE": "is there credible evidence that changing its function in an adult brain could alter cognition beneficially",
-    "forbidden_equivalences": ["adult expression == adult modifiability", "LoF impairment == GoF enhancement", "high AlphaGenome score == beneficial effect", "NOT_TESTABLE == NO_EFFECT", "paper count == independent evidence"]
+    "forbidden_equivalences": [
+      "adult expression == adult modifiability",
+      "LoF impairment == GoF enhancement",
+      "high AlphaGenome score == beneficial effect",
+      "NOT_TESTABLE == NO_EFFECT",
+      "paper count == independent evidence"
+    ]
   },
   "association_lineages": {
-    "UKB_LINEAGE": {"members": ["Davies2018 (discovery)", "Savage2018", "Lee2018 EA/math items", "UKB-based math factor GWAS", "Hill2019", "any meta containing UK Biobank"], "counts_as_replication": false},
-    "GENC_UKB_FREE": {"members": ["NIHR BioResource Genes & Cognition, G&C-only files"], "counts_as_replication": true, "slope_from_sprint4": 0.122},
-    "ZABANEH_EXTREME": {"members": ["Zabaneh2018 Duke TIP vs controls"], "counts_as_replication": "sensitivity_only", "reason": "HRS controls are inside Davies 2018 (verified Sprint 3.1)"},
-    "WITHIN_FAMILY": {"members": ["Howe2022 ieu-b-4837/4838"], "counts_as_replication": true, "status_if_absent": "NOT_TESTABLE"},
+    "UKB_LINEAGE": {
+      "members": [
+        "Davies2018 (discovery)",
+        "Savage2018",
+        "Lee2018 EA/math items",
+        "UKB-based math factor GWAS",
+        "Hill2019",
+        "any meta containing UK Biobank"
+      ],
+      "counts_as_replication": false
+    },
+    "GENC_UKB_FREE": {
+      "members": [
+        "NIHR BioResource Genes & Cognition, G&C-only files"
+      ],
+      "counts_as_replication": true,
+      "slope_from_sprint4": 0.122
+    },
+    "ZABANEH_EXTREME": {
+      "members": [
+        "Zabaneh2018 Duke TIP vs controls"
+      ],
+      "counts_as_replication": "sensitivity_only",
+      "reason": "HRS controls are inside Davies 2018 (verified Sprint 3.1)"
+    },
+    "WITHIN_FAMILY": {
+      "members": [
+        "Howe2022 ieu-b-4837/4838"
+      ],
+      "counts_as_replication": true,
+      "status_if_absent": "NOT_TESTABLE"
+    },
     "NEW_DATASETS": "a dataset found in Sprint 5 counts as an independent lineage only if its cohort list contains none of UK Biobank, HRS, 23andMe, or any Davies 2018 cohort; otherwise sensitivity only"
   },
   "locus_confidence": {
     "statistic": "log10 Bayes factor of replication in each independent lineage: BF = exp(b*zs*zr - (b*zs)^2/2), zr = replication z aligned to the cognition-increasing allele, zs = Tweedie-shrunk discovery z (Sprint 4), b = lineage slope fixed from Sprint 4 (G&C 0.122) or estimated by IVW across all testable loci for a new lineage before any locus is inspected",
     "combination": "sum of log10 BF over independent lineages only",
-    "strata": {"L1": ">= 1.0", "L2": "[0.5, 1.0)", "L3": "[0, 0.5)", "L4_DISCORDANT": "< 0", "NT": "no independent lineage testable"},
+    "strata": {
+      "L1": ">= 1.0",
+      "L2": "[0.5, 1.0)",
+      "L3": "[0, 0.5)",
+      "L4_DISCORDANT": "< 0",
+      "NT": "no independent lineage testable"
+    },
     "rank_uncertainty": "2,000 parametric draws zr* ~ N(zr, 1); report 5th-95th percentile rank"
   },
   "v2g_evidence_classes": {
@@ -51,7 +91,13 @@
     "ADULT_DIRECTION_RESOLVED": "rule met on rows and units AND gene CAUSAL_GENE_MODERATE or HIGH",
     "ADULT_DIRECTION_NEAR_RESOLVED": "rule met on rows and units but gene below MODERATE; OR rule met on rows only; OR >= 2 independent cohort units plus >= 1 brainSCOPE cell type all agreeing",
     "cell_type_conflict": "opposite significant directions in two cell types are reported as CELL_TYPE_DISCORDANT and block RESOLVED",
-    "strata": {"D1": "ADULT_DIRECTION_RESOLVED", "D2": "rule met, gene unresolved", "D3": "near-resolved", "D4": "single cohort or single cell type", "D5": "none"}
+    "strata": {
+      "D1": "ADULT_DIRECTION_RESOLVED",
+      "D2": "rule met, gene unresolved",
+      "D3": "near-resolved",
+      "D4": "single cohort or single cell type",
+      "D5": "none"
+    }
   },
   "human_perturbation": {
     "P1": "exome-wide rare-coding cognition association replicated or in >= 2 studies with non-overlapping cohorts",
@@ -79,7 +125,10 @@
     "M3": "overlap of math-mapped genes (QTL/coding/E2G mapped, never nearest gene) with cognition causal-gene candidates",
     "independence_note": "a UK-Biobank math factor shares participants with Davies 2018: overlap is cross-domain pleiotropy, never replication"
   },
-  "alphagenome": {"strong_effect": "|quantile score| >= 0.99 in >= 1 brain/neural track", "never_rank_by_score_alone": true},
+  "alphagenome": {
+    "strong_effect": "|quantile score| >= 0.99 in >= 1 brain/neural track",
+    "never_rank_by_score_alone": true
+  },
   "opentargets_flags": {
     "STABLE_ASSIGNMENT": "same top L2G gene in Sprint-3 (26.06) and current release",
     "CHANGED_ASSIGNMENT": "different top gene",
@@ -88,7 +137,39 @@
   },
   "deep_dive_promotion": "gene reaches CAUSAL_GENE_MODERATE or higher, OR ADULT_DIRECTION_NEAR_RESOLVED or better, OR human perturbation P1/P2, OR a SUPPORTED_POSITIVE_DOSAGE CNV",
   "adult_intervention_gate": {
-    "criteria": ["independent cognition association (locus L1/L2 or P1)", "credible causal gene (CAUSAL_GENE_MODERATE+)", "adult brain molecular evidence (QTL class in adult brain)", "beneficial molecular direction (D1)", "adult function plausibly relevant (curated)", "acceptable pleiotropy/safety (human review only; never auto-cleared)", "tractable mechanism (curated)"],
+    "criteria": [
+      "independent cognition association (locus L1/L2 or P1)",
+      "credible causal gene (CAUSAL_GENE_MODERATE+)",
+      "adult brain molecular evidence (QTL class in adult brain)",
+      "beneficial molecular direction (D1)",
+      "adult function plausibly relevant (curated)",
+      "acceptable pleiotropy/safety (human review only; never auto-cleared)",
+      "tractable mechanism (curated)"
+    ],
     "outcome": "if any is missing CHEMISTRY_GATE = CLOSED; criteria 1-5 and 7 met -> label CAUSAL_TARGET_ADJUDICATION_CANDIDATE, gate still CLOSED pending human safety review"
-  }
+  },
+  "amendments": [
+    {
+      "id": "A1",
+      "utc": "2026-09-23T21:30Z (approx.)",
+      "made_before": "the gene classifier was first run (no gene class had been computed)",
+      "reason": "implementation found candidates that fit none of the frozen classes; residual labels are added BELOW every frozen class in precedence, so no frozen class changes",
+      "residual_labels": {
+        "V2G_SUPPORTED_WEAK_LOCUS": "gene holds >=1 V2G class at a locus in stratum L3/L4/NT and does not meet any frozen class (locus association not independently strong)",
+        "RARE_CODING_EA_PROXY_ONLY": "exome-wide rare-coding association with educational attainment only (never counted as cognition)",
+        "RARE_CODING_SUGGESTIVE_ONLY": "FDR-only / single-cohort rare-coding hit below exome-wide significance for a cognition phenotype",
+        "POSITIVE_DOSAGE_NOMINAL_ONLY": "member of a CNV whose dosage nominally associates with higher cognition, unreplicated",
+        "PANEL_ONLY_NO_LOCUS_DATA": "entered via Panel C/D with no evidence unit at any tested locus"
+      },
+      "also": "EA-proxy rare genes get perturbation stratum P5 with a flag (not P2), because EA is proxy-only"
+    },
+    {
+      "id": "A2",
+      "utc": "2026-09-23T21:36Z (approx.)",
+      "change": "winner's-curse shrinkage zs: Gaussian-KDE Tweedie replaced by an empirical-Bayes normal scale mixture (ash-style, fixed grid, EM on every 50th genome-wide Davies SNP); same estimand E[mu|z]",
+      "reason": "demonstrable numerical defect: the KDE gradient is unstable in the sparse tail (z=8.33 -> -1.99; z=6.23 -> 8.88; z=6.69 -> 0.26), i.e. non-monotone and sign-flipping",
+      "disclosure": "the locus ranks computed with the defective estimator HAD been viewed (research_log R05) before this amendment; the change is forced by the defect, not chosen for its effect; both versions are reported",
+      "also_affects": "Sprint-4 expected concordance fraction and Gate-A locus sign-test power used the same function -> dated correction block"
+    }
+  ]
 }

@@ -1,0 +1,466 @@
+{
+  "created_utc": "2026-09-23T21:26:00Z",
+  "agent": "sprint5 rare-coding / positive-dosage research subagent",
+  "retrieved_utc_note": "retrieved_utc = file modification time (UTC) at download; all downloads made 2026-09-23 via curl (no login, no terms clicked).",
+  "size_policy": "< 5 MiB under data/raw/sprint5/rare_coding; larger (supplement zips, Genebass JSON/phenotype list, extracted supplements) under data/interim/sprint5/rare_coding",
+  "licences_and_terms": {
+    "genebass": "Genebass terms page: 'All data here are released openly and publicly'; association results CC BY 4.0; users bound not to attempt re-identification. No account/login used.",
+    "europepmc": "Open-access full text and supplementary files via Europe PMC REST API.",
+    "gene2phenotype": "EMBL-EBI public download endpoint; no login.",
+    "zenodo_collins2022": "Zenodo record 6347673 (public).",
+    "azphewas_NOT_USED": "AstraZeneca PheWAS portal requires agreement to terms of use; not accessed (blocker recorded)."
+  },
+  "also_used_not_downloaded": [
+    "Ensembl REST lookup/map/sequence for RIMS1 and ZNF92 coordinates",
+    "NCBI E-utilities esearch/esummary/efetch (abstract text, not stored)",
+    "UK Biobank showcase data-coding 18 page (prospective memory coding)",
+    "EuropePMC citations endpoint for PMID 39667348 and 17237123",
+    "local ClinGen files data/raw/clingen/2026-09-22/*.tsv (pre-existing)",
+    "local data/raw/europepmc_fulltext/2026-09-22/PMC11701252.xml (pre-existing)"
+  ],
+  "files": [
+    {
+      "path": "data/interim/sprint5/rare_coding/PMC10260403_supp.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10260403/supplementaryFiles",
+      "retrieved_utc": "2026-09-23T21:05:44Z",
+      "bytes": 30326014,
+      "sha256": "5c8e31c69f6f55f15a896a1a5ee85d1792ff384f6ab699a6ca5b690696033e50"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/PMC11701252_supp.zip",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11701252/supplementaryFiles",
+      "retrieved_utc": "2026-09-23T21:13:10Z",
+      "bytes": 20481388,
+      "sha256": "0aa78bda85ddcde51f7d129cea61dee49c25d69fcefad92c804c28d76021fbea"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/chen2023_supp/41588_2023_1398_MOESM1_ESM.pdf",
+      "url": "extracted from PMC10260403_supp.zip",
+      "retrieved_utc": "2026-09-23T21:05:42Z",
+      "bytes": 4413344,
+      "sha256": "17de4c4476ac2881b94a9853c26aca48f124c33f56ce1eb5a12421ef0f8c1147"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/chen2023_supp/41588_2023_1398_MOESM2_ESM.pdf",
+      "url": "extracted from PMC10260403_supp.zip",
+      "retrieved_utc": "2026-09-23T21:05:40Z",
+      "bytes": 3427519,
+      "sha256": "782ce65cda7a841b7b23f12aea6e03ebd1eab496a39d9f92133c1cda40157bfd"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/chen2023_supp/41588_2023_1398_MOESM3_ESM.xlsx",
+      "url": "extracted from PMC10260403_supp.zip",
+      "retrieved_utc": "2026-09-23T21:05:38Z",
+      "bytes": 15692170,
+      "sha256": "aba6dee7e35677bf29cbe32e85ef74425810dbd2595fdaace5acfb7331d4e570"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/chen2023_supp/41588_2023_1398_MOESM4_ESM.xlsx",
+      "url": "extracted from PMC10260403_supp.zip",
+      "retrieved_utc": "2026-09-23T21:05:42Z",
+      "bytes": 8698999,
+      "sha256": "0ca12ed0ec7d416b0bb9a83e26b307e0f7658ff06d12df189c197ee82c80aa6c"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/RIMS1_variants__continuous-20016-both_sexes--irnt.json",
+      "url": "https://main.genebass.org/api/gene/ENSG00000079841/variant-associations/continuous-20016-both_sexes--irnt",
+      "retrieved_utc": "2026-09-23T21:17:21Z",
+      "bytes": 4015,
+      "sha256": "bb8f89ba1beabc2867c79570a5af686b519b15bdff62404b2649f9c7a2aa1fe7"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/RIMS1_variants__continuous-20018-both_sexes--.json",
+      "url": "https://main.genebass.org/api/gene/ENSG00000079841/variant-associations/continuous-20018-both_sexes--",
+      "retrieved_utc": "2026-09-23T21:17:54Z",
+      "bytes": 4015,
+      "sha256": "a7f5ec9e275e5391cf70fbca13e977b45dfde4f8db6dcbbcadcac5802b1a0d5a"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/RIMS1_variants__continuous-20023-both_sexes--irnt.json",
+      "url": "https://main.genebass.org/api/gene/ENSG00000079841/variant-associations/continuous-20023-both_sexes--irnt",
+      "retrieved_utc": "2026-09-23T21:17:32Z",
+      "bytes": 8755,
+      "sha256": "4aab35219b3070e1b707c0114962b26b4e0959ad595bbee1bc5f7e42af745665"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/RIMS1_variants__continuous-20191-both_sexes--irnt.json",
+      "url": "https://main.genebass.org/api/gene/ENSG00000079841/variant-associations/continuous-20191-both_sexes--irnt",
+      "retrieved_utc": "2026-09-23T21:17:53Z",
+      "bytes": 4138,
+      "sha256": "eb57843c186b44a5ee823dfd56e2ef29002cbef19697cacef60e8937fb95484d"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20016-both_sexes--irnt__missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20016-both_sexes--irnt/gene-manhattan?burdenSet=missense|LC",
+      "retrieved_utc": "2026-09-23T21:10:52Z",
+      "bytes": 4331230,
+      "sha256": "3234d36850834f3414b190b03a5cbc21e7257fdc8cfac21ad24cb156623258e7"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20016-both_sexes--irnt__pLoF.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20016-both_sexes--irnt/gene-manhattan?burdenSet=pLoF",
+      "retrieved_utc": "2026-09-23T21:10:47Z",
+      "bytes": 3926791,
+      "sha256": "0a34e67a2dd78783d0d3d8942c74ee36890249dd5441f762ce9f53211ff2b407"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20016-both_sexes--irnt__pLoF_missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20016-both_sexes--irnt/gene-manhattan?burdenSet=pLoF|missense|LC",
+      "retrieved_utc": "2026-09-23T21:10:53Z",
+      "bytes": 4158295,
+      "sha256": "826816fa2fa0aaa07ab0ffc05bb658193c30ce854c42002fbd34ccae906fcf82"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20018-both_sexes--__missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20018-both_sexes--/gene-manhattan?burdenSet=missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:06Z",
+      "bytes": 4326449,
+      "sha256": "54a0ec2e62f7346bd4007a23eaf9384b3c04d08ffb1b7c67552be1888d55f990"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20018-both_sexes--__pLoF.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20018-both_sexes--/gene-manhattan?burdenSet=pLoF",
+      "retrieved_utc": "2026-09-23T21:11:05Z",
+      "bytes": 3937844,
+      "sha256": "c0b7366f6a70ca2cce68c6921d3dda6d7645d0e5db50d8fa9ce9b13e8a3b64bb"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20018-both_sexes--__pLoF_missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20018-both_sexes--/gene-manhattan?burdenSet=pLoF|missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:07Z",
+      "bytes": 4153988,
+      "sha256": "3263c76d177051f1a1512994c3b8772180583844757aac93c78a0e4bd2425dec"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20023-both_sexes--irnt__missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20023-both_sexes--irnt/gene-manhattan?burdenSet=missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:03Z",
+      "bytes": 4310535,
+      "sha256": "6bd063e0d0e929021b81b2116181e020e6740a8a11d42ff1169a51394554dca9"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20023-both_sexes--irnt__pLoF.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20023-both_sexes--irnt/gene-manhattan?burdenSet=pLoF",
+      "retrieved_utc": "2026-09-23T21:11:02Z",
+      "bytes": 4040424,
+      "sha256": "16e09f1ae3f3e2b584b7c3120851fbe28138ae34611b2abcf75de69a3c703bdd"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20023-both_sexes--irnt__pLoF_missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20023-both_sexes--irnt/gene-manhattan?burdenSet=pLoF|missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:04Z",
+      "bytes": 4139736,
+      "sha256": "31f7aa5db214cecf99a2b9fe5c9778c994bb44dae4a4b63af8bd429bd4689aa7"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20191-both_sexes--irnt__missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20191-both_sexes--irnt/gene-manhattan?burdenSet=missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:00Z",
+      "bytes": 4327751,
+      "sha256": "d24a0892fd1adcd666ebe18754ea43f099d114cab75457bf868069470aed5698"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20191-both_sexes--irnt__pLoF.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20191-both_sexes--irnt/gene-manhattan?burdenSet=pLoF",
+      "retrieved_utc": "2026-09-23T21:10:54Z",
+      "bytes": 3861307,
+      "sha256": "baa4a81097d330d2ceaedb053ba93ab24754676b3756633626be01d8729cee32"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass/continuous-20191-both_sexes--irnt__pLoF_missense_LC.json",
+      "url": "https://main.genebass.org/api/analysis/continuous-20191-both_sexes--irnt/gene-manhattan?burdenSet=pLoF|missense|LC",
+      "retrieved_utc": "2026-09-23T21:11:02Z",
+      "bytes": 4155506,
+      "sha256": "0f9928b107600cf3dc99f59eb58066841767b12bf331eaf40c50d27fa00d496a"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/genebass_phenotypes.json",
+      "url": "https://main.genebass.org/api/phenotypes (gzip-decoded)",
+      "retrieved_utc": "2026-09-23T21:10:17Z",
+      "bytes": 4316768,
+      "sha256": "2068770e07db3061ec01c4d79aa6fd359bedc97756e5d370cf37f9404323af1e"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc1.pdf",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 5918120,
+      "sha256": "b4205d937b707b297b1dc069ef3a9c20116406a0ccfb8ed9103120d001489bab"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc2.xlsx",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 63867,
+      "sha256": "340414e1fd26226c40b46c3dfa08dba7e33ca9f47d5b9f3be8b6dd38baf5c1b7"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc3.xlsx",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:08Z",
+      "bytes": 7603,
+      "sha256": "abacaec327a5b2d36191d5ee806133dc2933b4d81f7dde12e6f7fa005120f4a7"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc4.xlsx",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 66558,
+      "sha256": "7b499c7e00dfe06e1caab27ad23228afa388eb6151b711bbb5f418201b15db43"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc5.xlsx",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 51016,
+      "sha256": "b2879993257f69572b734bfb3aa001e6e6b143a975f0b2b9d4c4e299c405be91"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc6.xlsx",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 62508,
+      "sha256": "ab345a05a734ad711dc8623a4e196886274b118fcde4cb85937000885f404064"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc7.pdf",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:04Z",
+      "bytes": 470774,
+      "sha256": "282314271419fea96913bf27e6b1f29991c2825613ad960ecb09f0a776624a5e"
+    },
+    {
+      "path": "data/interim/sprint5/rare_coding/huguet2024_supp/mmc8.pdf",
+      "url": "extracted from PMC11701252_supp.zip",
+      "retrieved_utc": "2026-09-23T21:13:06Z",
+      "bytes": 13287812,
+      "sha256": "02ace633f69f042bbce502707cd59610712c71896b2643dceddb573fc704bcfd"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/Collins_rCNV_2022.dosage_sensitivity_scores.tsv.gz",
+      "url": "https://zenodo.org/api/records/6347673/files/Collins_rCNV_2022.dosage_sensitivity_scores.tsv.gz/content",
+      "retrieved_utc": "2026-09-23T21:13:54Z",
+      "bytes": 386018,
+      "sha256": "7ebdb970a4c9dc062352f9ee2771100c07ce579a3ac7eda6042569e0b9b91981"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/DDG2P_panel_DD_download.csv",
+      "url": "https://www.ebi.ac.uk/gene2phenotype/api/panel/DD/download/",
+      "retrieved_utc": "2026-09-23T21:19:28Z",
+      "bytes": 1921034,
+      "sha256": "4a7f9bdcee7a6310c363b6bb9e8abe538f13e4782d9134f58906dc52b8c9b8b4"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/DDG2P_panel_DD_download.csv.gz",
+      "url": "gzip -9 of DDG2P_panel_DD_download.csv (local derivative)",
+      "retrieved_utc": "2026-09-23T21:19:28Z",
+      "bytes": 626551,
+      "sha256": "e8fc17a120ead11e125506c4af8dfe65d53c4893f7e3197e1d88090930379ac2"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC10248556.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10248556/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:09:03Z",
+      "bytes": 254714,
+      "sha256": "c4d05672d1e57cdbf2375eb86b760f04cfbedc4a9d3328db78f407d1489c2602"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC10260403.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10260403/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:05:38Z",
+      "bytes": 244424,
+      "sha256": "86f566f39a7e7bc32fca3b9f1daf9ecd6f409f0bb857ad054be78fcce92c6131"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC11096126.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11096126/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:09:03Z",
+      "bytes": 93938,
+      "sha256": "042dec05efe5acce4714f5511123ce618247b8652de07dad30479da4a3d1f139"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC11275656.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11275656/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:12Z",
+      "bytes": 76513,
+      "sha256": "dd40de7ae51366bf7055b622d4b4b5ad5d948d5d854e71fa17a3a3022e7d2fbc"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC11745334.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11745334/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:09:03Z",
+      "bytes": 179671,
+      "sha256": "3e28463c6490a3d772d238cd184a326479b40086aaa27f4c4bfa6e0308467398"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC12501278.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12501278/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:14:33Z",
+      "bytes": 175337,
+      "sha256": "e05a32d52c018a0c8e65d44732da660e9061cac5d0730d3f5705c05246b92d0d"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC13083251.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13083251/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:55Z",
+      "bytes": 243083,
+      "sha256": "2fee2d2f8def12e9ec44bf39cee019ea7e2351e4dea6a76a883ec7dfd1ed7071"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC13575219.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13575219/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:14:32Z",
+      "bytes": 209936,
+      "sha256": "0a732cdc129836b03059b54c35add96fd301015b1fc69f828c39108c440ab8ca"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC13590407.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13590407/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:09:03Z",
+      "bytes": 229444,
+      "sha256": "849b423761757f85358f09a97875f599f7dae4cc26d9ccd3ae7b4850b24af3f7"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC6520248.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6520248/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:12Z",
+      "bytes": 79959,
+      "sha256": "b2921560686bac2690a0895ab3a7fbcccc263e7bfceb574cb1efb89cd818a560"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC8589645.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8589645/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:12Z",
+      "bytes": 137421,
+      "sha256": "ac14b0f9899793acd0787f0f44034de75afb6fb9ab09721f90c796ab1c9aff72"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC9069145.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9069145/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:55Z",
+      "bytes": 286228,
+      "sha256": "9a8a3785afa1b5d4403c9a8dd38d34cf08a1344d0a85ca6bf80f284668412c52"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC9903662.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9903662/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:11:40Z",
+      "bytes": 195597,
+      "sha256": "39e819c67d89ae3d57bbee80a635ee34d5f271550866a981d2043d8216cd0333"
+    },
+    {
+      "path": "data/raw/sprint5/rare_coding/PMC9943723.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9943723/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:15:55Z",
+      "bytes": 137186,
+      "sha256": "42832e675016f61d210fe93510decef8ce2fb7847e7af955858ab83007da6cee"
+    }
+  ],
+  "local_only_not_committed": {
+    "reason": "full-text articles, supplementary files, author code and licensed database dumps are kept out of git (copyright/licence); URLs above allow re-download; sha256 recorded here",
+    "files": [
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC9069145.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC9069145.xml",
+        "sha256": "9a8a3785afa1b5d4403c9a8dd38d34cf08a1344d0a85ca6bf80f284668412c52",
+        "bytes": 286228
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC13083251.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC13083251.xml",
+        "sha256": "2fee2d2f8def12e9ec44bf39cee019ea7e2351e4dea6a76a883ec7dfd1ed7071",
+        "bytes": 243083
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC10248556.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC10248556.xml",
+        "sha256": "c4d05672d1e57cdbf2375eb86b760f04cfbedc4a9d3328db78f407d1489c2602",
+        "bytes": 254714
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC13575219.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC13575219.xml",
+        "sha256": "0a732cdc129836b03059b54c35add96fd301015b1fc69f828c39108c440ab8ca",
+        "bytes": 209936
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC11745334.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC11745334.xml",
+        "sha256": "3e28463c6490a3d772d238cd184a326479b40086aaa27f4c4bfa6e0308467398",
+        "bytes": 179671
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC8589645.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC8589645.xml",
+        "sha256": "ac14b0f9899793acd0787f0f44034de75afb6fb9ab09721f90c796ab1c9aff72",
+        "bytes": 137421
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC11096126.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC11096126.xml",
+        "sha256": "042dec05efe5acce4714f5511123ce618247b8652de07dad30479da4a3d1f139",
+        "bytes": 93938
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC12501278.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC12501278.xml",
+        "sha256": "e05a32d52c018a0c8e65d44732da660e9061cac5d0730d3f5705c05246b92d0d",
+        "bytes": 175337
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC9903662.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC9903662.xml",
+        "sha256": "39e819c67d89ae3d57bbee80a635ee34d5f271550866a981d2043d8216cd0333",
+        "bytes": 195597
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC6520248.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC6520248.xml",
+        "sha256": "b2921560686bac2690a0895ab3a7fbcccc263e7bfceb574cb1efb89cd818a560",
+        "bytes": 79959
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC9943723.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC9943723.xml",
+        "sha256": "42832e675016f61d210fe93510decef8ce2fb7847e7af955858ab83007da6cee",
+        "bytes": 137186
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC13590407.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC13590407.xml",
+        "sha256": "849b423761757f85358f09a97875f599f7dae4cc26d9ccd3ae7b4850b24af3f7",
+        "bytes": 229444
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC10260403.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC10260403.xml",
+        "sha256": "86f566f39a7e7bc32fca3b9f1daf9ecd6f409f0bb857ad054be78fcce92c6131",
+        "bytes": 244424
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/PMC11275656.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__PMC11275656.xml",
+        "sha256": "dd40de7ae51366bf7055b622d4b4b5ad5d948d5d854e71fa17a3a3022e7d2fbc",
+        "bytes": 76513
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/DDG2P_panel_DD_download.csv.gz",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__DDG2P_panel_DD_download.csv.gz",
+        "sha256": "e8fc17a120ead11e125506c4af8dfe65d53c4893f7e3197e1d88090930379ac2",
+        "bytes": 626551
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/DDG2P_panel_DD_download.csv",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__DDG2P_panel_DD_download.csv",
+        "sha256": "4a7f9bdcee7a6310c363b6bb9e8abe538f13e4782d9134f58906dc52b8c9b8b4",
+        "bytes": 1921034
+      },
+      {
+        "original_path": "data/raw/sprint5/rare_coding/Collins_rCNV_2022.dosage_sensitivity_scores.tsv.gz",
+        "local_path": "data/interim/sprint5/literature_local_only/rare_coding__Collins_rCNV_2022.dosage_sensitivity_scores.tsv.gz",
+        "sha256": "7ebdb970a4c9dc062352f9ee2771100c07ce579a3ac7eda6042569e0b9b91981",
+        "bytes": 386018
+      }
+    ]
+  }
+}

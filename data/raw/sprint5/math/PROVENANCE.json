@@ -1,0 +1,127 @@
+{
+  "created_utc": "2026-09-23T21:14:26Z",
+  "purpose": "Sprint 5 math-53 verification (Giannelis, Willoughby, Edwards, McGue & Lee 2025, Mol Psychiatry 30:5701-5709, doi:10.1038/s41380-025-03237-0, PMID 40975749, PMC12602337)",
+  "access": "All open access (CC BY 4.0 article; public OSF project txyqr). No login, account or terms acceptance used.",
+  "not_available": {
+    "quantitative_factor_summary_statistics": "NOT public. Paper Data availability: key 23andMe GWAS (self-rated math ability, highest math class taken) must be requested from 23andMe; OSF project txyqr holds only code + supplementary tables (listed 2026-09-23); GWAS Catalog REST findByPublicationIdPubmedId?pubmedId=40975749 returned 0 studies (2026-09-23)."
+  },
+  "files": [
+    {
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12602337/supplementaryFiles",
+      "retrieved_utc": "2026-09-23T21:08:15Z",
+      "bytes": 4468534,
+      "sha256": "49690668a37a74ccac755ee78214b47f3e1ea67c3b87373bfe688de3c428a1e0",
+      "stored": false,
+      "note": "EuropePMC supplementary-files ZIP (figures + MOESM1 PDF + MOESM2 XLSX). Not retained (duplicate content); its two data members are retained below."
+    },
+    {
+      "path": "data/raw/sprint5/math/giannelis2025_MOESM1_ESM_SupplementaryInformation.pdf",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12602337/supplementaryFiles",
+      "zip_member": "41380_2025_3237_MOESM1_ESM.pdf",
+      "retrieved_utc": "2026-09-23T21:08:15Z",
+      "bytes": 386164,
+      "sha256": "44f40f519ebe0634238c85ce45c2f33efa69a8a5cff23155338e62bd59ab55b2",
+      "stored": true
+    },
+    {
+      "path": "data/raw/sprint5/math/giannelis2025_MOESM2_ESM_SupplementaryTables_S1-S12.xlsx",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12602337/supplementaryFiles",
+      "zip_member": "41380_2025_3237_MOESM2_ESM.xlsx",
+      "retrieved_utc": "2026-09-23T21:08:15Z",
+      "bytes": 3686545,
+      "sha256": "ade0be6901c6dbbbff94073091716ebea66aab5248484d03d7f3e497f62ce641",
+      "stored": true
+    },
+    {
+      "path": "data/raw/sprint5/math/giannelis2025_PMC12602337_fullText.xml",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12602337/fullTextXML",
+      "retrieved_utc": "2026-09-23T21:08:15Z",
+      "bytes": 161420,
+      "sha256": "c8c5f8c6ecbe716afc8dc4d2162d4c361a1ac4673d1441214b42649957c9c5ef",
+      "stored": true
+    },
+    {
+      "path": "data/raw/sprint5/math/giannelis2025_osf_txyqr_README_for_OSF.txt",
+      "url": "https://osf.io/download/fhqmd/",
+      "retrieved_utc": "2026-09-23T21:08:20Z",
+      "bytes": 1238,
+      "sha256": "82c399ff59325643ae531ec866744f39d7c489940d62b754e2e65f10df1545c4",
+      "stored": true
+    },
+    {
+      "path": "data/raw/sprint5/math/giannelis2025_osf_txyqr_MATH_Syntax.txt",
+      "url": "https://osf.io/download/8v5wf/",
+      "retrieved_utc": "2026-09-23T21:08:26Z",
+      "bytes": 128740,
+      "sha256": "109d429773bcefcca5ef5f7376f7a3eb31cc0ec5cfd225627804b046c97e33ae",
+      "stored": true
+    },
+    {
+      "url": "https://osf.io/download/qh79z/",
+      "retrieved_utc": "2026-09-23T21:08:19Z",
+      "bytes": 3686545,
+      "sha256": "ade0be6901c6dbbbff94073091716ebea66aab5248484d03d7f3e497f62ce641",
+      "stored": false,
+      "note": "OSF project txyqr 'Supplementary Material/math_GWAS_supplementary_tables.xlsx'; byte-identical (same sha256) to MOESM2 XLSX, so not retained twice."
+    },
+    {
+      "url": "https://rest.ensembl.org/variation/homo_sapiens",
+      "method": "POST",
+      "request_body": {
+        "ids": "53 rsIDs from Supp Table S2"
+      },
+      "path": "data/raw/sprint5/math/ensembl_variation_grch38_math53.json",
+      "retrieved_utc": "2026-09-23T21:11:01Z",
+      "bytes": 29872,
+      "sha256": "42ca6a80dc1981fcfeaf2442d18e333a5314fe33ec917d1501acb98fa9eef6a2",
+      "stored": true
+    },
+    {
+      "url": "https://grch37.rest.ensembl.org/variation/homo_sapiens",
+      "method": "POST",
+      "request_body": {
+        "ids": "53 rsIDs from Supp Table S2"
+      },
+      "path": "data/raw/sprint5/math/ensembl_variation_grch37_math53.json",
+      "retrieved_utc": "2026-09-23T21:11:01Z",
+      "bytes": 29602,
+      "sha256": "9aa6bcd6c3a8ddd482a1c490242d21c2da0486b139c89d2328f68e67d58f8885",
+      "stored": true
+    }
+  ],
+  "local_only_not_committed": {
+    "reason": "full-text articles, supplementary files, author code and licensed database dumps are kept out of git (copyright/licence); URLs above allow re-download; sha256 recorded here",
+    "files": [
+      {
+        "original_path": "data/raw/sprint5/math/giannelis2025_PMC12602337_fullText.xml",
+        "local_path": "data/interim/sprint5/literature_local_only/math__giannelis2025_PMC12602337_fullText.xml",
+        "sha256": "c8c5f8c6ecbe716afc8dc4d2162d4c361a1ac4673d1441214b42649957c9c5ef",
+        "bytes": 161420
+      },
+      {
+        "original_path": "data/raw/sprint5/math/giannelis2025_MOESM1_ESM_SupplementaryInformation.pdf",
+        "local_path": "data/interim/sprint5/literature_local_only/math__giannelis2025_MOESM1_ESM_SupplementaryInformation.pdf",
+        "sha256": "44f40f519ebe0634238c85ce45c2f33efa69a8a5cff23155338e62bd59ab55b2",
+        "bytes": 386164
+      },
+      {
+        "original_path": "data/raw/sprint5/math/giannelis2025_MOESM2_ESM_SupplementaryTables_S1-S12.xlsx",
+        "local_path": "data/interim/sprint5/literature_local_only/math__giannelis2025_MOESM2_ESM_SupplementaryTables_S1-S12.xlsx",
+        "sha256": "ade0be6901c6dbbbff94073091716ebea66aab5248484d03d7f3e497f62ce641",
+        "bytes": 3686545
+      },
+      {
+        "original_path": "data/raw/sprint5/math/giannelis2025_osf_txyqr_README_for_OSF.txt",
+        "local_path": "data/interim/sprint5/literature_local_only/math__giannelis2025_osf_txyqr_README_for_OSF.txt",
+        "sha256": "82c399ff59325643ae531ec866744f39d7c489940d62b754e2e65f10df1545c4",
+        "bytes": 1238
+      },
+      {
+        "original_path": "data/raw/sprint5/math/giannelis2025_osf_txyqr_MATH_Syntax.txt",
+        "local_path": "data/interim/sprint5/literature_local_only/math__giannelis2025_osf_txyqr_MATH_Syntax.txt",
+        "sha256": "109d429773bcefcca5ef5f7376f7a3eb31cc0ec5cfd225627804b046c97e33ae",
+        "bytes": 128740
+      }
+    ]
+  }
+}

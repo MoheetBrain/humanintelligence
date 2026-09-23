@@ -1,21 +1,38 @@
 # Project Status
 
-*Snapshot 2026-09-23 (UTC) — **Sprint 5 (Human Cognition Causal Gene Resolution) IN PROGRESS: protocol
-frozen, no Sprint-5 results yet.** Branch `sprint-5/causal-cognition-gene-resolution` (from
-`sprint-4/causal-synapse-bridge` @ `e50eb4f`). Not merged to main. Sprint 4 complete (decision RETRY;
-chemistry gate CLOSED). Sprints 1–3.1 complete.*
+*Snapshot 2026-09-23 (UTC) — **Sprint 5 (Human Cognition Causal Gene Resolution) COMPLETE. Loci are
+real; the causal gene is unresolved at every strong locus. No adult direction is resolved for a credible
+gene. Chemistry / intervention gate CLOSED.** Branch `sprint-5/causal-cognition-gene-resolution` (from
+`sprint-4/causal-synapse-bridge` @ `e50eb4f`; protocol freeze `1a08f10`). Not merged to main.
+Sprints 1–4 complete.*
 
-***Sprint-5 state*** (protocol: `research/sprint5/protocol.md` + `protocol_rules.json`, sha256 `0f464218…`)
-1. Rules fixed before any new stream is integrated: independence lineages (UKB lineage never replicates
-   itself; G&C and within-family are replication lineages; Zabaneh sensitivity-only), six variant-to-gene
-   independence classes (L2G/FOCUS/nearest gene are not votes), gene-class precedence, the unchanged
-   Sprint-4 direction rule, perturbation strata, Pareto research priority, convergence tests T1–T5, math
-   tests M1–M3, and the 7-criterion adult intervention gate (safety never auto-cleared).
-2. Gate A re-checked at sprint start: the Howe 2022 files are absent and `OPENGWAS_JWT` is unset → NOT_TESTABLE preserved.
-3. Query list built: 1,573 cognition variants (SuSiE credible sets on 36 loci, Open Targets credible-set
-   leads, 159 locus leads), 1,572 mapped to GRCh38 via Ensembl REST.
-4. In progress: brainSCOPE, math-53 verification, rare-coding/CNV, AlphaGenome access, new datasets,
-   tools review, Open Targets current-release refresh.
+***Sprint-5 headline results*** (evidence: `reports/sprint5/SPRINT5_FINAL.md`)
+
+1. **Locus confidence (frozen Bayes factor; G&C is the only counted UKB-free lineage).** 152 signals.
+   - **L1 (strong):** ATXN2L (16p11.2) and AKAP6 (14q12).
+   - **L2 (moderate):** 14 signals — NT5DC2, SFMBT1, DPP4, BTN2A1, EXT1, EXOC4, DCC, KCNJ3, SLC39A8, DDN, NKIRAS1, FOXO6, UBE2E1, ZSCAN31.
+   - **Other strata:** L3 75; discordant 49; not testable 12.
+   - Rank intervals are wide.
+   - **GenLang performance IQ** (N 18.7k) replicates the locus set (106/141, slope 0.17). It shares the BATS cohort with Davies, so it is sensitivity only.
+2. **Gene assignment.** No CAUSAL_GENE_HIGH gene.
+   - **CAUSAL_GENE_MODERATE:** KIFC2 and DNPH1, both at weak (L3) loci, via brain enhancer–gene links plus adult eQTL colocalisation.
+   - **At the L1 loci the gene is unresolved:** TUFM/EIF3C/SH2B1 at 16p11.2; AKAP6/NPAS3 at 14q12.
+   - **Open Targets 26.06** (still the current release): 117 of 130 L2G calls are positional.
+   - **Strongest single arrow:** SLC39A8 A391T (missense, PIP ≈ 1). GenLang is sign-discordant there, and the knock-in mouse is null.
+3. **Direction.** No gene reaches D1.
+   - RPS26 ↑, RHEBL1 ↑ and WBP2NL ↓ meet the unchanged rule, but each fails gene credibility or locus replication.
+   - **brainSCOPE** (17 DLPFC cell types): colocalisation NOT_TESTABLE (public data are significant-only). Tagging: RPS26 ↑ and WBP2NL ↓ (10 cell types each), CYP2D6 ↑ (6), DHRS11 ↓ (4). No cell-type discordance.
+   - **GRN sensitivity:** RHEBL1 would reach D1 only via a GRN element that links 9 genes. Not counted.
+4. **Developmental eQTL.** NT5DC2 ↓ (fetal 0.95), DNPH1 ↓ (3 datasets), RHEBL1 ↑, CLCN2 ↑.
+5. **Rare coding.** KDM5B, ANKRD12, RC3H2 and CACNA1A: UK Biobank only, loss of function only. No common–rare convergence (T1–T5 null, underpowered). No positive-dosage evidence replicates: 2q12.3 is nominal.
+6. **Math-53** (Giannelis 2025; verified). A self-report factor, orthogonal to g by construction; mostly inverted against g. The only gene overlap is SLC39A8, via the same variant.
+7. **Access-blocked, all NOT_TESTABLE:**
+   - AlphaGenome (API key);
+   - Gate A (JWT);
+   - brainSCOPE colocalisation (Synapse);
+   - TGFM (dbGaP);
+   - 23andMe math summary statistics.
+8. **Defect fixed.** The Sprint-4 KDE-Tweedie shrinkage was unstable in the tail and was replaced by empirical-Bayes shrinkage (amendment A2). A Sprint-4 correction block was added; no decision changed.
 
 ***Sprint-4 headline results*** (evidence: `reports/sprint4/CAUSAL_SYNAPSE_GATE.md`)
 1. **Gate A (within-sibship, Howe 2022) NOT_TESTABLE** — `OPENGWAS_JWT` absent; no account created. All
@@ -73,7 +90,7 @@ C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 
 ## Current Stage
 
-**Sprint 5 — in progress** (protocol frozen; analyses running). Outputs will be in `reports/sprint5/`.
+**Sprint 5 — complete.** Outputs are in `reports/sprint5/`: 27 required files plus 20 gene dossiers. The research log is `research/sprint5/research_log.md`.
 
 **Sprint 4 — complete (decision RETRY).** Outputs in `reports/sprint4/` (13 required files + summaries).
 coloc.susie complete (28/36 loci; the other 8 have no GWAS SuSiE credible set). TGFM and cTWAS blocked.
@@ -118,7 +135,7 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 
 ## Current Branch
 
-`sprint-5/causal-cognition-gene-resolution` (Sprint 5, in progress; from `e50eb4f`).
+`sprint-5/causal-cognition-gene-resolution` (Sprint 5 complete; from `e50eb4f`; protocol freeze `1a08f10`).
 
 `sprint-4/causal-synapse-bridge` (Sprint 4 complete; contains Sprint 3.1 via merge `a8e82d4`).
 
@@ -247,6 +264,19 @@ committed `PROVENANCE.json`.
 
 ## Verification and Test Results
 
+**Sprint 5** (executed 2026-09-23; commands and results):
+
+| Check | Command | Result |
+|---|---|---|
+| Full suite | `PYTHONPATH=src .venv/bin/python -m pytest -q -m "not network"` | **947 passed**, 0 failed (≈84 s) |
+| Sprint-5 guards | `pytest pipelines/sprint5/test_sprint5.py` | 12 passed. They cover: the rules hash; empirical-Bayes shrinkage is monotone; class invariants; EA proxies never counted; NOT_TESTABLE never recorded as negative; dependency-graph integrity; Top-10/Top-20 columns; the 53 math SNPs; chemistry gate closed; GenLang not counted. |
+| Sprint 4 + Sprint 5 guards in both orders | `pytest test_sprint4.py test_sprint5.py` (and reversed) | 33 passed in each order (the module-name collision is fixed) |
+| Validator | `graph/validate_graph.py --strict` | **PASS**: 0 errors, 0 warnings, 3 info |
+| Ownership | `scripts/check_ownership.py` | all paths owned as expected |
+| Pipeline chain | locus_confidence → evidence graph → math V2G → classify → modifiability → AlphaGenome status/convergence → tables → decide | every step exit 0 |
+| Reproduction | math53_analysis.py, build_rare_coding_tables.py rerun from the repo | outputs byte-identical |
+| GenLang download | md5 against the GWAS Catalog md5sum.txt | match (d59615f3…) |
+
 All executed 2026-09-22; none projected.
 
 | Check | Command | Result |
@@ -264,6 +294,22 @@ All executed 2026-09-22; none projected.
 | Offline identifier rebuild | `scripts/fetch_gene_identifiers.py --offline` | 31/31 resolved (fixed 2 graph-test failures on fresh clone) |
 
 ## Known Failures and Limitations
+
+**Sprint 5**
+
+- **Not testable (access):**
+  - AlphaGenome (API key);
+  - brainSCOPE colocalisation (only significant pairs are public; genotypes on Synapse);
+  - Gate A (JWT);
+  - TGFM (dbGaP);
+  - 23andMe math summary statistics.
+- **Only one counted UKB-free replication lineage (G&C, N 9.9k, trail making).** GenLang, CHIC and Zabaneh all overlap Davies.
+- **Rare-coding evidence is UK Biobank only.** The 4–8 gene convergence tests are underpowered.
+- **brainSCOPE shares donors** with CommonMind and ROSMAP, so it is not an independent QTL cohort.
+- **Amendment A2 was made after the first locus ranks were viewed** (a numerical defect). Both versions are kept.
+- **The 22q13.2 CYP2D6 calls are not adjusted for CYP2D6/CYP2D7 haplotypes or copy number.**
+- **GRN element→gene links are excluded from ENHANCER_LINK.** Including them would move RHEBL1 to MODERATE/D1, via one element linked to 9 genes.
+- **Literature files are kept local-only for copyright reasons:** full-text XML, supplementary PDF/XLSX, the DDG2P dump. Re-download URLs and sha256 are in PROVENANCE.
 
 * **Within-family evidence absent** (Part F not computable).
 * **Individual-level extreme-IQ analysis absent** (Mode 2 not computable).
@@ -292,6 +338,8 @@ All executed 2026-09-22; none projected.
 
 ## Current Blockers
 
+- **Sprint 5:** OPENGWAS_JWT (Gate A); AlphaGenome API key; Synapse controlled access (brainSCOPE genotypes); dbGaP (TGFM); a 23andMe application (math summary statistics); SSGAC registration (Tan 2025 family GWAS). Nothing was requested and no account was created.
+
 * **No UKB-free, adequately powered cognition GWAS in open access** — blocks independent replication
   of the synaptic finding, continuity, and every top gene.
 * **Within-family data require an OpenGWAS registration**, which this project does not make on its
@@ -300,6 +348,14 @@ All executed 2026-09-22; none projected.
 * No directed causal gene graph exists, so controllability analysis is not meaningful.
 
 ## Exact Next Actions
+
+**After Sprint 5 (now):**
+
+1. **User action: unlock Gate A.** Set `OPENGWAS_JWT`, or download the ieu-b-4837 and ieu-b-4838 VCFs into `data/interim/sprint4/opengwas/`. Then run `python pipelines/sprint4/gate_a_within_family.py analyse`. This is the highest-information missing dataset: direct effects at the locus level.
+2. **Computational next step:** coloc.susie of the 16 L1/L2 loci against the open Bryois 2022 single-cell brain eQTLs (Zenodo). This resolves 16p11.2 (TUFM/SH2B1/EIF3C) and 14q12 (AKAP6/NPAS3).
+3. **Optional user action: AlphaGenome API key.** Then run `ALPHAGENOME_API_KEY=... python pipelines/sprint5/alphagenome_query.py --variants data/sprint5/query_variants_cognition.csv`.
+4. **Re-fine-map the L1/L2 loci** with UK Biobank LD (PolyFun public LD), and adjust CYP2D6/CYP2D7 for haplotype and copy number before any 22q13.2 gene call.
+
 
 **After Sprint 4 (now):**
 1. **User action to unlock Gate A**: set `OPENGWAS_JWT` (or download the two VCFs from the OpenGWAS website

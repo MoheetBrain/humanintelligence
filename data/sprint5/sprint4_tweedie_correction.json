@@ -1,0 +1,39 @@
+{
+  "created_utc": "2026-09-23T21:38:22Z",
+  "sprint4_kde_tweedie": {
+    "gate_b_expected_concordance": {
+      "f=1.0": 0.7995561296039857,
+      "f=0.752": 0.7420039778949712
+    },
+    "gate_a_locus_sign_test": {
+      "n4999": {
+        "expected_concordance": 0.6892297940146779,
+        "power": 0.99925
+      },
+      "n9997": {
+        "expected_concordance": 0.7520724678125148,
+        "power": 1.0
+      }
+    },
+    "n_negative_or_nonmonotone_mu": 2
+  },
+  "eb_scale_mixture": {
+    "gate_b_expected_concordance": {
+      "f=1.0": 0.8164287352144914,
+      "f=0.752": 0.7532581539513438
+    },
+    "gate_a_locus_sign_test": {
+      "n4999": {
+        "expected_concordance": 0.6949077573108992,
+        "power": 0.9995
+      },
+      "n9997": {
+        "expected_concordance": 0.762931745174081,
+        "power": 1.0
+      }
+    },
+    "n_negative_or_nonmonotone_mu": 0
+  },
+  "observed_gate_b_concordance": 0.7517241379310344,
+  "decision_impact": "none: both quantities are descriptive expectations; Sprint-4 gates used the observed binomial concordance test and frozen set-level rules, not these expectations"
+}

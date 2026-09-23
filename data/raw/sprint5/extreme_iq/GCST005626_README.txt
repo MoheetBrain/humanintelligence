@@ -1,0 +1,1 @@
+1. Zabaneh, Delilah, Eva Krapohl, H. A. Gaspar, Charles Curtis, S. Hong Lee, Hamel Patel, Stephen Newhouse et al. "A genome-wide association study for extremely high intelligence." Molecular psychiatry 23, no. 5 (2018): 1226-1232.

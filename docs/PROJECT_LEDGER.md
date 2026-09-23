@@ -1100,3 +1100,69 @@ AlphaGenome/datasets/tools).
 **Effect.** Sprint 5 has a pre-registered rulebook.
 
 **Next.** Open Targets current-release refresh; evidence graph; integrate subagent streams.
+
+## 2026-09-23T~22:55Z — Sprint 5 complete: causal cognition gene resolution
+
+**Branch:** `sprint-5/causal-cognition-gene-resolution` · **Stage:** Sprint 5 complete.
+
+*Correction to the previous entry:* its heading time ("21:20Z") was approximate. The protocol-freeze commit `1a08f10` was made at about 21:10Z.
+
+**Objective.** Resolve variant → gene → cell → timing → direction for the replicated cognition loci under a pre-registered rulebook, and rank genes and loci without double-counting dependent evidence.
+
+**Files / systems.**
+
+- `pipelines/sprint5/*`: 27 scripts, plus the tests.
+- `reports/sprint5/*`: 27 required outputs plus 20 dossiers.
+- `data/sprint5/*`
+- `research/sprint5/*`: protocol, amendments A1–A2, research log R01–R17, subagent logs.
+- `data/raw/sprint5/*` (provenance).
+- A Sprint-4 correction block in `CAUSAL_SYNAPSE_GATE.md`.
+- `docs/PROJECT_STATUS.md`.
+
+**Completed.**
+
+- **Open Targets 26.06 variant layer.** 117 of 130 L2G calls are positional; 22,856 E2G links.
+- **Locus Bayes factors on G&C.** L1: ATXN2L and AKAP6. L2: 14 signals.
+- **GenLang sensitivity lineage.** 106 of 141 concordant; it overlaps Davies through BATS.
+- **brainSCOPE lookup.** 17 cell types; colocalisation NOT_TESTABLE; RPS26 ↑ and WBP2NL ↓ in 10 cell types each.
+- **Developmental colocalisation.** 20 strong of 969 tests; NT5DC2 ↓ fetal.
+- **Rare coding.** KDM5B, ANKRD12, RC3H2 and CACNA1A; UKB only; loss of function.
+- **CNV re-audit.** 2q12.3 is nominal.
+- **Math-53 verified** (Giannelis 2025). Inverted against g; SLC39A8 is the only shared gene.
+- **Convergence tests T1–T5:** null.
+- **Evidence graph:** 1,460 units, 2,146 edges.
+- **Gene classes:** 2 CAUSAL_GENE_MODERATE (KIFC2, DNPH1); none HIGH; no gene at D1.
+- **Modifiability map; decision.json** (chemistry gate CLOSED).
+- **20 red-team dossiers.**
+
+**Decisions and why.**
+
+- **Amendment A1:** residual labels for candidates that fit no frozen class.
+- **Amendment A2:** the KDE-Tweedie estimate is unstable in the tail (it mapped 8.33 to −1.99), so it was replaced by empirical-Bayes shrinkage. Disclosed as post-view. The effect on Sprint 4 is descriptive only.
+- **Interpretation A3:** causal-gene rank only for genes with gene-level evidence.
+- **GRN links not counted** as ENHANCER_LINK. The sensitivity result is disclosed.
+- **Literature files kept local-only** (copyright).
+- **The Bryois 2022 single-cell colocalisation was deferred** (tens of GB of downloads; ROSMAP donor overlap). It is the recorded next computation.
+
+**Tests executed.**
+
+- Full suite: 947 passed.
+- `test_sprint5.py`: 12 passed.
+- Sprint 4 and Sprint 5 guards in both orders: 33 passed each.
+- Validator --strict: PASS.
+- Ownership: OK.
+
+**Failures / uncertainty.**
+
+- **Crashes, fixed and rerun:**
+  - the developmental colocalisation crashed once on an empty harmonisation;
+  - the full pytest run failed until a Sprint-4/5 `common` module collision was isolated;
+  - a duplicate evidence-unit ID was found.
+- **Earlier mistakes, corrected before commit:**
+  - the amendment timestamps were first written with incorrect clock times;
+  - the ledger first marked GenLang as independent.
+- **Access blocks:** Gate A, AlphaGenome and brainSCOPE colocalisation.
+
+**Effect.** The project now knows its loci replicate but its genes do not resolve. The next information has to come from within-family data and from cell-type colocalisation.
+
+**Next.** Gate A user action; coloc.susie against Bryois 2022 at the 16 L1/L2 loci.

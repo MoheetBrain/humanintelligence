@@ -237,3 +237,32 @@ So Gate A can tell whether the 159 loci act *directly* (within families) or thro
 - analysis excluded by rule: 1
 
 *Generated 2026-09-23T17:54Z by `pipelines/sprint4/write_sprint4_report.py`.*
+
+---
+
+## Correction block C-S5-1 (2026-09-23, added during Sprint 5; the original text above is unchanged)
+
+**What was wrong.** The winner's-curse shrinkage `loci_tools.tweedie` estimated the log-density gradient from a Gaussian KDE of every 50th genome-wide Davies z. That gradient is numerically unstable in the sparse tail, so the shrunk values are non-monotone and can flip sign:
+
+| Davies z | Shrunk value from the defective estimator |
+|---|---|
+| 8.33 | −1.99 |
+| 6.23 | +8.88 |
+| 6.69 | +0.26 |
+
+**Where it was used in Sprint 4.**
+
+- The expected G&C concordance band quoted in answer 4 ("Continuity expects 74%–80%").
+- The Gate-A locus sign-test power in `decision.json` → `power_findings`.
+
+**Re-computed with a stable empirical-Bayes normal scale mixture** (same estimand, E[μ|z]; `pipelines/sprint5/eb_shrink.py`; numbers in `data/sprint5/sprint4_tweedie_correction.json`):
+
+| Quantity | As reported | Corrected |
+|---|---|---|
+| Expected concordance, f = 1.0 | 80.0% | **81.6%** |
+| Expected concordance, f = 0.752 | 74.2% | **75.3%** |
+| Observed concordance | 75.2% | unchanged, and still inside the band |
+| Gate-A sign-test power, n = 4,999 | ≈99.9% | ≈99.95% |
+| Gate-A sign-test power, n = 9,997 | 100% | 100% |
+
+**Decision impact: none.** These values are descriptive expectations. No Sprint-4 gate, class or decision used them.

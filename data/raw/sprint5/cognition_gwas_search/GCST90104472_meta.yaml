@@ -1,0 +1,34 @@
+# Study meta-data
+gwas_id: GCST90104472
+author_notes: Performance IQ scores were normalized to z-scores per cohort and used
+  in a linear association analysis, correcting for family structure, age, age^2, sex
+  and cohort-specific PCs as required. Results were combined in a fixed effects meta-analysis
+  with METAL. Genomic control correction was performed.
+gwas_catalog_api: https://www.ebi.ac.uk/gwas/rest/api/studies/GCST90104472
+date_metadata_last_modified: 2025-01-13
+
+# Trait Information
+trait_description:
+  - Performance intelligence quotient
+ontology_mapping:
+  - EFO_0004337
+
+# Genotyping Information
+genome_assembly: GRCh37
+genotyping_technology:
+  - Genome-wide genotyping array
+
+# Sample Information
+samples:
+  - sample_ancestry_category:
+      - European
+    sample_size: 18722
+
+# Summary Statistic information
+data_file_name: GCST90104472_buildGRCh37.tsv
+file_type: pre-GWAS-SSF
+data_file_md5sum: d59615f32e99632c7316b15a87edd574
+
+# Harmonization status
+is_harmonised: false
+is_sorted: false

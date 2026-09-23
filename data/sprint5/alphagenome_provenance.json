@@ -1,0 +1,119 @@
+{
+  "record": "AlphaGenome / AlphaGenome Atlas access audit for Sprint 5",
+  "checked_utc": "2026-09-23T21:15:00Z",
+  "checked_by": "research subagent (web + source-code inspection; no account, no key, no terms accepted)",
+  "access_status": "BLOCKED_API_KEY",
+  "blocker": "Track/tissue-level AlphaGenome Atlas scores ('Raw Atlas Features') are API-only; the API requires an API key (gRPC header x-goog-api-key to dns:///gdmscience.googleapis.com:443). The web portal requires Google sign-in. Official static downloads (AVI, merged splicing, AVI SHAP) returned HTTP 500 to unauthenticated requests and a third-party mirror states the source is behind a sign-in.",
+  "user_action_one_line": "Sign in at https://deepmind.google.com/science/alphagenome/api, accept the AlphaGenome Terms (non-commercial), create a free API key, then run: ALPHAGENOME_API_KEY=<key> python pipelines/sprint5/alphagenome_query.py --variants data/sprint5/query_variants_cognition.csv (needs pip install 'alphagenome>=0.9.0').",
+  "precomputed_scores_public_without_login": {
+    "track_level_atlas_scores": "NO - API only (Data Availability table of the Atlas paper: 'Raw Atlas Features: API only', Non-Commercial).",
+    "official_static_downloads": {
+      "page": "https://deepmind.google.com/science/alphagenome/downloads (alias https://alphagenome.google/downloads)",
+      "items": [
+        {"name": "AVI SNV scores", "url": "https://deepmind.google.com/science/alphagenome/_/download/atlas/avi_scores_snvs_tabix.zip", "size_listed": "88.5 GB", "licence_class": "Permissive Use Downloadable Artifact (commercial and non-commercial)", "content": "AVI raw + PHRED per SNV, Tabix"},
+        {"name": "AlphaGenome SNV merged splicing scores", "url": "https://deepmind.google.com/science/alphagenome/_/download/atlas/combined_splicing_snvs_tabix.zip", "size_listed": "20.6 GB", "licence_class": "non-commercial only"},
+        {"name": "AVI SNV feature importance scores (SHAP)", "url": "https://deepmind.google.com/science/alphagenome/_/download/atlas/avi_feature_importances_snvs_tabix.zip", "size_listed": "283.9 GB", "licence_class": "non-commercial only"}
+      ],
+      "unauthenticated_test": "curl GET/HEAD and in-browser fetch (not signed in) at 2026-09-23T21:07-21:10Z -> HTTP 500 'Internal Server Error' (server: UploadServer) for avi_scores_snvs_tabix.zip; interpreted as sign-in required (consistent with 'Sign in' link on page and the just-dna-seq mirror README), not independently confirmed.",
+      "motif_datasets": "listed as 'will be made available soon'"
+    },
+    "third_party_mirrors_of_AVI_only": [
+      {"repo": "https://huggingface.co/datasets/just-dna-seq/alphagenome_avi", "gated": false, "format": "per-chromosome parquet (chrom,pos,ref,alt,raw_score_e5) + PHRED knot curve", "total_bytes": 29781253321, "rows": 8812917339, "source_sha256_declared": "46434eab0ddc73ef9c8020df56b9ae2e43d815ce7ce7faa47eab988f25084336 (alphagenome_variant_impact_score_snvs.tsv.gz)", "note": "README: 'By using this data you agree to the AlphaGenome Output Terms of Use'."},
+      {"repo": "https://huggingface.co/datasets/luoyiming1991/alphagenome-avi-grch38", "gated": false, "format": "BGZF VCF + tabix index (remote region queries possible)", "vcf_bytes": 75764802676, "declared_source_archive_sha256": "a237c198bc1c033da127fe0257129fdf246e7aa311f8fb584bb053ffa0c7966b", "release": "atlas-2026-09-08-vcf-v1"}
+    ],
+    "mirror_decision": "NOT USED. Using them would mean accepting the AlphaGenome Output Terms (forbidden for this agent), they are unofficial (checksums not verifiable against the official file without sign-in), and they contain only AVI (a rarity-trained genome-wide score), not brain-track scores. User decision required."
+  },
+  "api_client": {
+    "package": "alphagenome (PyPI)",
+    "latest_version": "0.9.0",
+    "latest_release_date": "2026-09-08",
+    "version_history": {"0.0.1": "2025-06-25", "0.1.0": "2025-07-21", "0.5.0": "2025-11-11", "0.6.0": "2026-02-17", "0.7.0": "2026-06-26", "0.8.0": "2026-08-17", "0.9.0": "2026-09-08"},
+    "changelog_0_9_0": "Add AlphaGenome Atlas API for programmatic access to Atlas scores (module alphagenome.atlas.atlas: create(api_key), AtlasClient.query_variant/query_variants/query_interval/scorer_metadata).",
+    "client_licence": "Apache-2.0 (code); docs CC-BY-4.0",
+    "requires_python": ">=3.10",
+    "repo": "https://github.com/google-deepmind/alphagenome",
+    "repo_commit_inspected": "b9fb2a179efb8ed7013d4ffc6d00d26a9ed444e4 (2026-09-18)",
+    "pypi_json": "https://pypi.org/pypi/alphagenome/json",
+    "docs": "https://www.alphagenomedocs.com/",
+    "installed_in_project_venv": false,
+    "tested_in": "scratch venv (alphagenome 0.9.0 via uv) with an offline mock gRPC stub only"
+  },
+  "authentication": "API key required for both live model (dna_client.create(api_key)) and Atlas (atlas.create(api_key)); key obtained at https://deepmind.google.com/science/alphagenome/api after Google sign-in. Web portal: 'Sign in and explore'.",
+  "usage_limits": "Free for non-commercial use; 'Query rates vary based on demand'; live predictions suited to 1000s of predictions, 'likely not suitable for large scale analyses requiring more than 1 million predictions'; Atlas precomputed queries 'will typically have a larger query rate'. No numeric quota published.",
+  "terms": {
+    "url": "https://deepmind.google.com/science/alphagenome/terms (output terms: http://deepmind.google.com/science/alphagenome/output-terms)",
+    "summary": "Outputs and Atlas information are non-commercial only (except Permissive Use Downloadable Artifacts, i.e. the AVI SNV score download); must not be used to train variant-effect ML models; research only, not for clinical decisions; redistribution must carry the Output Terms notice. Commercial access via Google Cloud Model Garden.",
+    "model_weights": "https://github.com/google-deepmind/alphagenome_research ; weights on Kaggle (https://www.kaggle.com/models/google/alphagenome) and Hugging Face (google/alphagenome-all-folds: gated='auto', i.e. login + terms acceptance) under separate model terms https://deepmind.google.com/science/alphagenome/model-terms"
+  },
+  "genome_build": "GRCh38/hg38 (GRCh38.p13) with GENCODE v46 annotations for the Atlas; mouse mm10. hg19 not supported (liftover required).",
+  "variant_input_schema": {
+    "class": "alphagenome.data.genome.Variant(chromosome='chr16', position=<1-based>, reference_bases='T', alternate_bases='C')",
+    "atlas_key": "chr:pos:ref>alt with REF implicit from GRCh38; swapping REF/ALT (e.g. by minor allele) gives a lookup miss; no non-ref-to-non-ref substitutions; N bases unscored.",
+    "atlas_coverage": "all ~9 billion possible SNVs on hg38 (8,812,917,339 scored per mirror manifests); indels observed in gnomAD/UKB/All of Us (>100M) scored in the research release but the Data Availability section says downloads are 'currently limited to all valid genome-wide SNVs'.",
+    "live_model_interval": "sequence lengths 16 kb, 100 kb (131,072), 500 kb (524,288), 1 Mb (1,048,576)"
+  },
+  "output_modalities": ["RNA_SEQ", "CAGE", "PROCAP", "DNASE", "ATAC", "CHIP_HISTONE", "CHIP_TF", "SPLICE_SITES", "SPLICE_SITE_USAGE", "SPLICE_JUNCTIONS", "CONTACT_MAPS", "POLYADENYLATION (scorer on RNA-seq)"],
+  "recommended_variant_scorers": {
+    "source": "alphagenome.models.variant_scorers.RECOMMENDED_VARIANT_SCORERS; docs/source/variant_scoring.md",
+    "RNA_SEQ": "gene exon mask; log(mean(ALT)+0.001) - log(mean(REF)+0.001) per gene x track (signed)",
+    "POLYADENYLATION": "400-bp windows at PAS; max |log fold change| of distal/proximal isoform ratio (unsigned)",
+    "CAGE/PROCAP/DNASE/ATAC/CHIP_TF": "501-bp centre mask; log2((sum ALT + 1)/(sum REF + 1)) (signed)",
+    "CHIP_HISTONE": "2001-bp centre mask; log2((sum ALT + 1)/(sum REF + 1)) (signed)",
+    "SPLICE_SITES / SPLICE_SITE_USAGE": "gene body; max |ALT - REF| (unsigned)",
+    "SPLICE_JUNCTIONS": "top-k splice sites of gene; max |log(ALT) - log(REF)| of junction counts (unsigned)",
+    "CONTACT_MAPS": "1 Mb window; mean |ALT - REF| contact frequency for the variant bin (unsigned)",
+    "ACTIVE_ALLELE": "max(agg(ALT), agg(REF)) for RNA_SEQ, CAGE, PROCAP, DNASE, ATAC, CHIP_TF, CHIP_HISTONE",
+    "quantile_score": "rank of raw score within a per-scorer x per-track background of ~300k common variants (MAF>0.01 in any gnomAD v3 population); signed scorers mapped to [-1,1]; capped at +/-0.99999; only for recommended scorers. Docs: use quantile to flag 'unusually large', raw score for magnitude."
+  },
+  "AVI_definition": {
+    "name": "AlphaGenome Variant Impact (AVI) score",
+    "definition": "Neural network (encoder + hypernetwork producing non-negative per-feature weights + linear component) over 18 features: 10 AlphaGenome modality features (DNase, ATAC, ChIP-TF, ChIP-histone, CAGE, PRO-cap, RNA-seq, polyadenylation, splicing, contact maps), each the per-variant MAXIMUM predicted effect across tissues/tracks; 4 coding features (AlphaMissense; VEP stop_gained-or-frameshift, start_lost, stop_lost); 2 conservation features (PhastCons 470-way, Zoonomia Cactus 241-way); 2 indel indicators. Trained on gnomAD v4.1 genomes to discriminate proxy-impactful (FAF95_GRPMAX < 0.001) from proxy-neutral (0.001 <= FAF95_GRPMAX < 0.999) variants, trinucleotide-context balanced, 10 resampled training sets. Output: raw logit and PHRED = genome-wide rank of raw score among all hg38 SNVs (PHRED 10 = top 10%, 20 = top 1%); indel PHRED via the SNV quantile curve. Feature attributions: expected-gradients SHAP per feature; the 18 SHAP values sum to the raw AVI score (reference = all-zero input).",
+    "source": "Cheng et al. 2026, AlphaGenome Atlas preprint PDF, Fig. 1 legend and Methods ('AlphaGenome Variant Impact Scores'); https://storage.googleapis.com/deepmind-media/DeepMind.com/Blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/alphagenome-atlas.pdf (sha256 07011853872613cb7bd3ce8ca62cd2621ad50b0a16e6f5dec3e480b3d190af2c, 14,647,436 bytes, last-modified 2026-09-08)",
+    "caveat_for_this_project": "AVI is trained to separate rare from common variants and takes the max across ALL tissues; common GWAS credible-set SNPs (MAF ~0.05-0.5) are expected to sit in low AVI ranges by construction and AVI carries no tissue or direction information. Brain-track raw/quantile scores, not AVI, are the relevant quantity for cognition loci. AVI model code/weights 'will be provided upon final publication'."
+  },
+  "feature_attribution_and_ISM": "Live API: DnaClient.score_ism_variants(interval, ism_interval, variant_scorers) and alphagenome.interpretation.ism (ISM matrices; ALT-allele ISM since 0.5.0). Atlas: precomputed ISM-derived motif maps (>2,500 motifs) and 'Active ISM' contributions shown in the portal; motif bulk download 'soon'. AVI SHAP attributions downloadable (non-commercial, 283.9 GB) or via API.",
+  "brain_neural_coverage": {
+    "source": "https://github.com/google-deepmind/alphagenome_research/blob/0db53bd4352c66d1e00a049a81da373a066e6670/src/alphagenome_research/model/metadata/OutputMetadataResponse_ORGANISM_HOMO_SAPIENS.textproto",
+    "local_copy": "data/raw/sprint5/alphagenome/OutputMetadataResponse_ORGANISM_HOMO_SAPIENS.textproto",
+    "local_copy_sha256": "413b4063096bbf7a75a7fdf5560030f8e3866c6af2455fb313e58686ae3d49e8",
+    "local_copy_bytes": 2637391,
+    "downloaded_utc": "2026-09-23T21:14:24Z",
+    "derived_table": "data/raw/sprint5/alphagenome/alphagenome_brain_tracks_human.csv (sha256 a66b6b710de2813e811f7096954c82befb91192b5dfa0ac102fa353a0726209d)",
+    "n_human_tracks_nonpadding": 5196,
+    "n_brain_neural_tracks": 381,
+    "by_tier_and_modality": {
+      "CORTEX": {"RNA_SEQ": 11, "SPLICE_SITE_USAGE": 14, "CAGE": 8, "DNASE": 3, "CHIP_HISTONE": 11, "CHIP_TF": 6, "ATAC": 0},
+      "BRAIN": {"RNA_SEQ": 17, "SPLICE_SITE_USAGE": 26, "CAGE": 26, "DNASE": 12, "CHIP_HISTONE": 40, "CHIP_TF": 4, "ATAC": 0},
+      "NEURAL_DEV_OR_LINE": {"RNA_SEQ": 16, "SPLICE_SITE_USAGE": 16, "CAGE": 4, "DNASE": 9, "CHIP_HISTONE": 55, "CHIP_TF": 43, "ATAC": 0},
+      "SPINAL_PERIPHERAL": {"RNA_SEQ": 13, "SPLICE_SITE_USAGE": 16, "CAGE": 6, "DNASE": 4, "CHIP_HISTONE": 15, "CHIP_TF": 4, "ATAC": 2}
+    },
+    "key_terms": {
+      "UBERON:0000955": "brain (ENCODE RNA-seq, CAGE, histone, DNase, CTCF)",
+      "UBERON:0009834": "dorsolateral prefrontal cortex (ENCODE total RNA-seq, GTEx Brain_Frontal_Cortex_BA9, histone, DNase)",
+      "UBERON:0001870": "frontal cortex (ENCODE total RNA-seq, GTEx Brain_Cortex, FANTOM CAGE, DNase)",
+      "UBERON:0001871": "temporal lobe", "UBERON:0009835": "anterior cingulate cortex (GTEx BA24)",
+      "UBERON:0001954": "Ammon's horn (GTEx Brain_Hippocampus)",
+      "UBERON:0001873/0001874/0001876/0001882/0001898/0002037/0002038/0002245": "GTEx caudate, putamen, amygdala, nucleus accumbens, hypothalamus, cerebellum, substantia nigra, cerebellar hemisphere",
+      "CL:0000679": "glutamatergic neuron (in-vitro differentiated; RNA-seq, DNase, ChIP-TF)",
+      "CL:0000540": "neuron (CAGE, histone)", "CL:0000127": "astrocyte (RNA-seq, histone, DNase, ChIP-TF)",
+      "CL:0002605": "astrocyte of the cerebral cortex (CAGE)", "CL:0002453": "oligodendrocyte precursor cell (CAGE)",
+      "CL:0011020": "neural progenitor cell", "EFO:0003072": "SK-N-SH (31 ChIP-TF tracks)"
+    },
+    "absent": "No brain ATAC (ATAC is mostly cell-type/immune), no brain PRO-cap (12 cell-line tracks), no brain contact maps (28 cell-line maps), no single-cell brain types beyond those listed (no microglia, no GABAergic interneuron term).",
+    "uncertainty": "This is the live-model track list. The Atlas scorer/track list (ListVariantScoresMetadata) needs an API key and could not be inspected; the paper says Atlas scores come from the distilled model with the default scorers, so the same biosamples are expected but not verified."
+  },
+  "papers": {
+    "model": "Avsec Z. et al. Advancing regulatory variant effect prediction with AlphaGenome. Nature 649(8099):1206-1218 (2026). doi:10.1038/s41586-025-10014-0 (preprint doi:10.1101/2025.06.25.661532)",
+    "atlas": "Cheng J., Taylor K.R., ... Avsec Z. AlphaGenome Atlas: in silico mutagenesis of the entire human genome improves prioritization and interpretation of non-coding variants (2026, preprint PDF, released 2026-09-08)",
+    "blog": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/"
+  },
+  "script": {
+    "path": "pipelines/sprint5/alphagenome_query.py",
+    "status": "WRITTEN_TO_AUTH_BOUNDARY",
+    "tests_run": [
+      "env -u ALPHAGENOME_API_KEY .venv/bin/python pipelines/sprint5/alphagenome_query.py --variants data/sprint5/query_variants_cognition.csv --limit 3 -> exit 3, 'NOT_TESTABLE', 4 variant alleles parsed (rs113029997 T>C; rs11860513 C>G and C>T; rs2008514 G>A), status JSON data/interim/sprint5/alphagenome/alphagenome_scores.status.json",
+      "offline mock of the Atlas gRPC stub with real alphagenome 0.9.0 protobufs (scratch venv): run_atlas + finalise produced the expected long table, brain filter, signed direction and cognition-allele re-orientation; parquet round-trip OK. Mock values are synthetic and not results."
+    ],
+    "not_tested": "Any real AlphaGenome API call (no key). Atlas scorer names (e.g. whether AVI is exposed as a scorer) are read from ListVariantScoresMetadata at run time and are unverified."
+  }
+}

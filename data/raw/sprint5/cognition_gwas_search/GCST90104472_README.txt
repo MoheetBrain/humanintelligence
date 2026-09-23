@@ -1,0 +1,1 @@
+Performance IQ scores were normalized to z-scores per cohort and used in a linear association analysis, correcting for family structure, age, age^2, sex and cohort-specific PCs as required. Results were combined in a fixed effects meta-analysis with METAL. Genomic control correction was performed.

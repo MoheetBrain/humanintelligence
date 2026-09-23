@@ -1,0 +1,2467 @@
+{
+  "created_utc": "2026-09-23T21:55:26Z",
+  "script": "pipelines/sprint5/brainscope_provenance.py",
+  "download_dir": "data/interim/sprint5/brainscope (gitignored)",
+  "downloads": [
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs.zip",
+      "file": "sig_QTLs.zip",
+      "utc": "2026-09-23T21:08:52Z",
+      "status": "OK",
+      "bytes": 28148951,
+      "sha256": "8a42f0b450e7ada70accb060b97fb3bed54f393f0b933840c64807cce171ce70",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_eGenes.zip",
+      "file": "sig_eGenes.zip",
+      "utc": "2026-09-23T21:10:08Z",
+      "status": "OK",
+      "bytes": 45248,
+      "sha256": "1c43ef3c117f5b97aeb928037eb79b11e3eecf9a4d0012516afd13f04f5aecb4",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sample_metadata/PEC2_sample_metadata.txt",
+      "file": "PEC2_sample_metadata.txt",
+      "utc": "2026-09-23T21:10:08Z",
+      "status": "OK",
+      "bytes": 25378,
+      "sha256": "507e51f60c6453c55a2ddcb213194ae6c703462d68e21e458492fca2bad14c14",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sample_metadata/PEC2_sample_mapping.xlsx",
+      "file": "PEC2_sample_mapping.xlsx",
+      "utc": "2026-09-23T21:10:08Z",
+      "status": "OK",
+      "bytes": 18817,
+      "sha256": "0ef19756bce32b6671bc3533a76934e82da85ba01fe642a43a32889c5690a707",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/code/core_scqtl_processing_code.tar.gz",
+      "file": "code/core_scqtl_processing_code.tar.gz",
+      "utc": "2026-09-23T21:10:09Z",
+      "status": "OK",
+      "bytes": 7858,
+      "sha256": "f13a88d5239b43ff6abde4d3aeef6bcd8c49db24d7275aa966cbceba7cab37ff",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/bayesian_qtl/bayesian_scQTLs.dat",
+      "file": "bayesian_scQTLs.dat",
+      "utc": "2026-09-23T21:10:09Z",
+      "status": "OK",
+      "bytes": 6311245,
+      "sha256": "ff3aa1908a8b03ddbc95bb882be3ed940bce7efcce34575b502fd6ad6f1b286e",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_enrich/scQTL_disease_overlap.txt",
+      "file": "scQTL_disease_overlap.txt",
+      "utc": "2026-09-23T21:10:22Z",
+      "status": "OK",
+      "bytes": 4707,
+      "sha256": "78f52facc1a4a3d7a0fcc71137ca85663023551626802f18e75d5f73163aceb5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/atac_peaks/scCRE.PeakCalls.zip",
+      "file": "scCRE.PeakCalls.zip",
+      "utc": "2026-09-23T21:10:22Z",
+      "status": "OK",
+      "bytes": 14777042,
+      "sha256": "80c743e9058cc863a2a591377909b55610f7409a23e70bb64d7225d3eeefe304",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/validation/starrseq_enhancers_merged_sig_qtls_fdr_0.05.bed",
+      "file": "starrseq_enhancers_merged_sig_qtls_fdr_0.05.bed",
+      "utc": "2026-09-23T21:10:59Z",
+      "status": "OK",
+      "bytes": 858530,
+      "sha256": "5dee706832dd567c2471ca16ad3055c5a8a68489d7aa1b7fb6bc5ab86b01938c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Chandelier__Pvalb.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Chandelier__Pvalb.txt",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 158694,
+      "sha256": "6105c41612c282521b09c9f1c320649a192c0c80927c599e4bff2f3101b8919f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Astro.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Astro.txt",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 96043,
+      "sha256": "fba4fcddb36148d4b2d9a903e66c65b9bf0eb8bbb41f0c4ee6c93dd61c2a4139",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Astro_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Astro_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 357651,
+      "sha256": "dc7569e3e98edd678d5726a2c79fb7bd412f59edc17cf85af48979cf539b6c6c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Chandelier__Pvalb_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Chandelier__Pvalb_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 610258,
+      "sha256": "a985fcd663a27948281d9d3e018f7fa45bc2da14024fa2b4612920fdb5a4050a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L5.6.NP.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L5.6.NP.txt",
+      "utc": "2026-09-23T21:12:17Z",
+      "status": "OK",
+      "bytes": 1770,
+      "sha256": "9fd53cfeeeea3c230e73796efb92f5b6e40b39cbd8dc685d3f962be119e1d7fb",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L2.3.IT.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L2.3.IT.txt",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 551194,
+      "sha256": "6b028af12d91cf1d832d2c34f0eec02f5320372da6480b525993a83a9c9b1075",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L4.IT.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L4.IT.txt",
+      "utc": "2026-09-23T21:12:17Z",
+      "status": "OK",
+      "bytes": 208197,
+      "sha256": "63a04e7319129931c419be626cdf732a4354a6c48f9040dc5379d145efca2e62",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L5.6.NP_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L5.6.NP_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 4446,
+      "sha256": "1a00a8f1a6be136eeab929c35bfcdf969c27e9dd45ae29c044710675d849412f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L6.CT.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L6.CT.txt",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 24873,
+      "sha256": "6237e00e548897b0ab6e99ba8eb7e56b74eecf7ffed31671aff7012241f767c3",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L5.IT.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L5.IT.txt",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 287192,
+      "sha256": "ab47f3bee1bdd3f5fb36a1ec2dd708d897e96ba12ddd001208275ceb9b8a0908",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L6.CT_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L6.CT_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 81088,
+      "sha256": "abce0fbe3f6fcba19a3a9e86f3c592aff659eebab46403386afbd1e64fa1d95d",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L6.IT.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L6.IT.txt",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 245182,
+      "sha256": "5ef3826fb20d3d9db09677c682fdd3d380b3ea4f22599675eb3809d13b7ba85c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L4.IT_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L4.IT_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:17Z",
+      "status": "OK",
+      "bytes": 756559,
+      "sha256": "49ccafac6c8fd6e4f6c6c974b4f556549f4cb729bad9ddd8185d49cc9e0dc89f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_L6b.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_L6b.txt",
+      "utc": "2026-09-23T21:12:19Z",
+      "status": "OK",
+      "bytes": 9497,
+      "sha256": "f06db7c15a9b85810d8ea225933b28a9a40f07adf3d2b2a50b7cca2038699e0c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Lamp5.Lhx6.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Lamp5.Lhx6.txt",
+      "utc": "2026-09-23T21:12:19Z",
+      "status": "OK",
+      "bytes": 995,
+      "sha256": "f2e82d718f34d4822e17091b1c1e9d4aed07915e6a01d32d189b8a02024cec93",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L6b_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L6b_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:19Z",
+      "status": "OK",
+      "bytes": 18885,
+      "sha256": "2a5b4f70d70f344236d51615024ab990cf6a3cfd385fa8317cc404eb96eebd4e",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L5.IT_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L5.IT_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:18Z",
+      "status": "OK",
+      "bytes": 1086133,
+      "sha256": "658a83de9aa78626826280c7f799d5f5d816bd3ef2cb24bae3be561619126224",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Lamp5.Lhx6_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Lamp5.Lhx6_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 819,
+      "sha256": "3296243d788d0783ccb210e8680d1509fe02066adb3952a9a924d30f87fc3c55",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Lamp5.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Lamp5.txt",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 40153,
+      "sha256": "014548ecc55dfc9c5be9cdaf31ef754b39dc4d12b3ba2177b2c66c42570d141b",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Micro.PVM.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Micro.PVM.txt",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 6976,
+      "sha256": "54c75d64c71a5424053b1b19b5bd1fb35e1ebbe970b47e4b2365b7e0341053a0",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L6.IT_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L6.IT_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:19Z",
+      "status": "OK",
+      "bytes": 926556,
+      "sha256": "8c1fe99c81fd243ddacce0ae2d0b83dd5282775b86b3e41df76b734f96e052a5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Micro.PVM_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Micro.PVM_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 27661,
+      "sha256": "2cb73c5bc7377375a8406c8e42f7f408ea0b6b59ea97cd820896558f8b06f477",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/OPC_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/OPC_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 208990,
+      "sha256": "a70116a01820dbc9c7f56acb0d038833613970e1e180181610a3f1bfe666cb69",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Lamp5_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Lamp5_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 124885,
+      "sha256": "6d3b65f686fc8b6ff267d75ac3e9c172da30186f940cda67b2904632e264e30a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_OPC.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_OPC.txt",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 45039,
+      "sha256": "bf4fa3c4bd9db45e1883eddada782c35e03413ba9a9f461136bfc54b74823b2b",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_PC.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_PC.txt",
+      "utc": "2026-09-23T21:12:21Z",
+      "status": "OK",
+      "bytes": 682,
+      "sha256": "86eaa403f9c45cb80af65f621c471731801a0c127275684191248a7d97ed9a66",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/PC_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/PC_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:21Z",
+      "status": "OK",
+      "bytes": 2005,
+      "sha256": "4931726cbe56cbdd429c509bf767cbe19e87a6efd1558191a70bcf87daf19493",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Oligo.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Oligo.txt",
+      "utc": "2026-09-23T21:12:20Z",
+      "status": "OK",
+      "bytes": 157657,
+      "sha256": "da7eac35db2570df9627e6b1cc701071c50c654ef9943a488f1f7f33aaab3010",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Sst__Sst.Chodl.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Sst__Sst.Chodl.txt",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 37006,
+      "sha256": "3858ceac8e0481bb88aa8674a8d41c3542ff04a7758f7ccae70aab72ac012b35",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Oligo_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Oligo_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:21Z",
+      "status": "OK",
+      "bytes": 578955,
+      "sha256": "8e4ddf06bb41a958ff863f6fe02de3b063f2c686a392aa34ec004c9ef49bf6b1",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls_top_hits/conditional_top_variants_per_signal_Vip.txt",
+      "file": "conditional_top_hits/conditional_top_variants_per_signal_Vip.txt",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 64196,
+      "sha256": "17ccd3132ea5c3cadb318b538c019f626a0fe845d0bca4a95299531a3b5b539d",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/L2.3.IT_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/L2.3.IT_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:17Z",
+      "status": "OK",
+      "bytes": 2198260,
+      "sha256": "530877fb7b1f425275543b72c874ad7516d69e38c34e3d04dc7b01a27996d362",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Sst__Sst.Chodl_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Sst__Sst.Chodl_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 208097,
+      "sha256": "f5053c73858443ae9df38361dbc9300bcf561edbf3e1a8ddfff5738da47395fb",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Astro.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Astro.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 590391,
+      "sha256": "51c0a761efd51a8433c4fd4d596304ae059679a11a4367ec6dcfd1c18482d46f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Chandelier__Pvalb.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Chandelier__Pvalb.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:23Z",
+      "status": "OK",
+      "bytes": 588853,
+      "sha256": "b7e605692d2546f381e688c68efdf42e07093773782f923051f04c111dc738f5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/sig_QTLs_LD_pruned/Vip_sig_QTLs.dat",
+      "file": "sig_QTLs_LD_pruned/Vip_sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 357432,
+      "sha256": "b2cfdee3f3d187e7e983e95910de51d5dc61b71183834886673f19f2f54a19f1",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L2.3.IT.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L2.3.IT.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:24Z",
+      "status": "OK",
+      "bytes": 651061,
+      "sha256": "0f587d0aa5351037ea57477e0909668def17c40b33e52b790a39b1dc2091e555",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L4.IT.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L4.IT.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:27Z",
+      "status": "OK",
+      "bytes": 600095,
+      "sha256": "71e85bebe59089cf26661333bf760240e815d54e9d101c3a54adaa7e989ee077",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L4.IT.SNPs.dat.gz",
+      "file": "candidate_SNPs/L4.IT.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:24Z",
+      "status": "OK",
+      "bytes": 8754019,
+      "sha256": "69b360e3e90e86856302080ac8e3eaa9a3180e7a922b82d8a12e363466e50ef0",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L5.6.NP.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L5.6.NP.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:49Z",
+      "status": "OK",
+      "bytes": 301245,
+      "sha256": "8652bfe4aec5cb1768b4f78f568e64a9b6bd340cd4f09093c8156cf20341e394",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L2.3.IT.SNPs.dat.gz",
+      "file": "candidate_SNPs/L2.3.IT.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:23Z",
+      "status": "OK",
+      "bytes": 8753992,
+      "sha256": "60df93c3cdbf55af74d465928a638201bb0fca596e2435da4030e49305e7b123",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Astro.SNPs.dat.gz",
+      "file": "candidate_SNPs/Astro.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:22Z",
+      "status": "OK",
+      "bytes": 8753987,
+      "sha256": "271764d265cb93c3781d86f70797107bcd0b0963528526f3f622f096249e1ff9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L5.IT.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L5.IT.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:51Z",
+      "status": "OK",
+      "bytes": 626636,
+      "sha256": "055f9c2ffcf443bbf394adc30526b67adac84cc90b8ed03222514b503ce21d16",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L6.CT.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L6.CT.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:12:52Z",
+      "status": "OK",
+      "bytes": 379178,
+      "sha256": "81a0537bf7ab6142aad2192aebea057aa62f2af4db98e03ed358df666bf7020c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Chandelier__Pvalb.SNPs.dat.gz",
+      "file": "candidate_SNPs/Chandelier__Pvalb.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:23Z",
+      "status": "OK",
+      "bytes": 8753891,
+      "sha256": "60bfadd028fd791531e1cdb1f8f41bf3c361a57510137bce26906f81587a7daf",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L6.IT.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L6.IT.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:02Z",
+      "status": "OK",
+      "bytes": 617009,
+      "sha256": "db1bc64f2a1d2fc590e3b1e3eaccbdc8549424099806981cc79712c01b3149fc",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L5.6.NP.SNPs.dat.gz",
+      "file": "candidate_SNPs/L5.6.NP.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:30Z",
+      "status": "OK",
+      "bytes": 8746341,
+      "sha256": "5d588b508de587e65bd54c61670e9759cc148cbdd0105d08decfb3de858f600f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L6b.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L6b.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:09Z",
+      "status": "OK",
+      "bytes": 322199,
+      "sha256": "645f32c05032afb68ea3b8bd9229cb7aadfb800d4ccd3e340500409e10a0e7dc",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L6b.SNPs.dat.gz",
+      "file": "candidate_SNPs/L6b.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:03Z",
+      "status": "OK",
+      "bytes": 8748601,
+      "sha256": "217a2b155d4796ab9c108f1318a2f3838471a40ebf3fa27a0e29c6f4ec300614",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Lamp5.Lhx6.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Lamp5.Lhx6.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:17Z",
+      "status": "OK",
+      "bytes": 306731,
+      "sha256": "68699d752cb5feb4308dd1291c9d6681e21f215fd1e79150f7afa42e5aa43e56",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L6.CT.SNPs.dat.gz",
+      "file": "candidate_SNPs/L6.CT.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:52Z",
+      "status": "OK",
+      "bytes": 8750114,
+      "sha256": "d4fb4d73eb91533e5c71b9a611ade178f62204a698a2dcca1938002aaa23c08d",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Lamp5.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Lamp5.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:24Z",
+      "status": "OK",
+      "bytes": 419279,
+      "sha256": "ed928e64d978b98a2776084db9d10b5e6eba09ac0909b9b5717c8055d45797f4",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L6.IT.SNPs.dat.gz",
+      "file": "candidate_SNPs/L6.IT.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:52Z",
+      "status": "OK",
+      "bytes": 8753723,
+      "sha256": "80b43dcfba050afa7da0172c8ce1eef979a25b525e62e39195addb308b5943c2",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Micro.PVM.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Micro.PVM.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:25Z",
+      "status": "OK",
+      "bytes": 387192,
+      "sha256": "f702a5ede1e9e5732946c19b2cca1f5f1215bcb7b6d4af0a5655c43991d28cd9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L5.IT.SNPs.dat.gz",
+      "file": "candidate_SNPs/L5.IT.SNPs.dat.gz",
+      "utc": "2026-09-23T21:12:50Z",
+      "status": "OK",
+      "bytes": 8753694,
+      "sha256": "cdb8cfc657445cbb3aa80998707dda7cdec4d8accac5356e965691197d6afcc0",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/OPC.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/OPC.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:27Z",
+      "status": "OK",
+      "bytes": 553468,
+      "sha256": "dddf479c8f96a610756fed906fd3a0277f10b5722f1e3435722b1abfadd6c307",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Lamp5.Lhx6.SNPs.dat.gz",
+      "file": "candidate_SNPs/Lamp5.Lhx6.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:10Z",
+      "status": "OK",
+      "bytes": 8747074,
+      "sha256": "4dced53c80a45714120199e9a6a54304aa1c4c45e73810abc0998f859569c79f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Oligo.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Oligo.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:35Z",
+      "status": "OK",
+      "bytes": 635756,
+      "sha256": "8f9a421ae63e81cca77c8123ed61ac2cbcde7364e2120171ab655844bb3299a9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/OPC.SNPs.dat.gz",
+      "file": "candidate_SNPs/OPC.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:26Z",
+      "status": "OK",
+      "bytes": 8753443,
+      "sha256": "0f203adffd2a2410877463e059c02d6378f495fb263b62440c093d3dbce6a6a6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/PC.cov.20_expr_PCs.bed",
+      "file": "qtl_covariates/PC.cov.20_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:42Z",
+      "status": "OK",
+      "bytes": 45378,
+      "sha256": "e6389db730b85d48d27ec851cc2f0caac68214ef474b3a78b8e239285f559ce6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Micro.PVM.SNPs.dat.gz",
+      "file": "candidate_SNPs/Micro.PVM.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:25Z",
+      "status": "OK",
+      "bytes": 8752474,
+      "sha256": "4d66eabb3b775b869089f5128c4e27db38ec677e27b38bf3413d28a7b2256174",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Lamp5.SNPs.dat.gz",
+      "file": "candidate_SNPs/Lamp5.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:19Z",
+      "status": "OK",
+      "bytes": 8751996,
+      "sha256": "4346afd89b66714dd156d948ffa12a72b9067ac1dd457c2118cea12f5d5b1192",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Sst__Sst.Chodl.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Sst__Sst.Chodl.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:49Z",
+      "status": "OK",
+      "bytes": 522336,
+      "sha256": "6d2e13e34075c3c87bce5974f441e032dcdb7700a7ab990ab45d862636fda8d6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Vip.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Vip.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:51Z",
+      "status": "OK",
+      "bytes": 552958,
+      "sha256": "e70f64013cf699e90ba3b1a321ba00d0e81c6f3f882e2644bf52f12bb83ee4ac",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/aggregated_qtl/non_neuronal__sig_QTLs.dat",
+      "file": "aggregated_qtl/non_neuronal__sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 29180905,
+      "sha256": "61f00dad7866d14abc20151caed0ba1c1fed2ca1f18e5dfade174da9854963f5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Endo__VLMC.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Endo__VLMC.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:13:59Z",
+      "status": "OK",
+      "bytes": 240554,
+      "sha256": "74a663cb6a8990b6bbbc83830b822f1b5f1877241ad27e04e6dc75cd5841e810",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Oligo.SNPs.dat.gz",
+      "file": "candidate_SNPs/Oligo.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:29Z",
+      "status": "OK",
+      "bytes": 8754108,
+      "sha256": "e2df0f8ac0110d7726f65dd87d3902ad40b15670ea974c9d00f93f9a1b8cceb8",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Immune.cov.20_expr_PCs.bed",
+      "file": "qtl_covariates/Immune.cov.20_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:06Z",
+      "status": "OK",
+      "bytes": 17268,
+      "sha256": "4fa14b0d0d1a3dad44b6579b114b20d60dbee09d2a846fd460b7b64fde8b03e9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Sst__Sst.Chodl.SNPs.dat.gz",
+      "file": "candidate_SNPs/Sst__Sst.Chodl.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:43Z",
+      "status": "OK",
+      "bytes": 8753960,
+      "sha256": "c7925fbb721024d5f822dd50c0996bf30ecf69653a157bfc57094acfc77f0d49",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L5.ET.cov.20_expr_PCs.bed",
+      "file": "qtl_covariates/L5.ET.cov.20_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:12Z",
+      "status": "OK",
+      "bytes": 13561,
+      "sha256": "8f37454be98b7263a22b2b8fa2136c07656519f6384f7958a0aa3c1634006acc",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/PC.SNPs.dat.gz",
+      "file": "candidate_SNPs/PC.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:36Z",
+      "status": "OK",
+      "bytes": 8748608,
+      "sha256": "996faaf01c271f3a733ae24e04b3ffa0649fafc08c9ab163ffca70a224dfa7a6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/L6.IT.Car3.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/L6.IT.Car3.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:13Z",
+      "status": "OK",
+      "bytes": 232275,
+      "sha256": "27d1575a71b4cd3e8fb01455161e0a684c54aaea9ee3a235ff091c82c308ee09",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Endo__VLMC.SNPs.dat.gz",
+      "file": "candidate_SNPs/Endo__VLMC.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:52Z",
+      "status": "OK",
+      "bytes": 8750571,
+      "sha256": "2ee2713e5d4e6a4c733381e1746a9854b363586a88bc374984d344826115f34e",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Pax6.cov.20_expr_PCs.bed",
+      "file": "qtl_covariates/Pax6.cov.20_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:30Z",
+      "status": "OK",
+      "bytes": 17338,
+      "sha256": "8c0017b53567a56ba86c7c123e60b8b73df6e81010acd63abffdb6868c031ca2",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Immune.SNPs.dat.gz",
+      "file": "candidate_SNPs/Immune.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:00Z",
+      "status": "OK",
+      "bytes": 8709993,
+      "sha256": "5d10b862be1caf894793ed4cfb21d0ec877507a377e2a34e11d92f773c2bedb4",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Vip.SNPs.dat.gz",
+      "file": "candidate_SNPs/Vip.SNPs.dat.gz",
+      "utc": "2026-09-23T21:13:51Z",
+      "status": "OK",
+      "bytes": 8753871,
+      "sha256": "e81489d10914c02d7fcfa8a83884de8bcb4d2df2d5b98a0ef42f5742a612dc7e",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/SMC.cov.20_expr_PCs.bed",
+      "file": "qtl_covariates/SMC.cov.20_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:31Z",
+      "status": "OK",
+      "bytes": 11313,
+      "sha256": "6622e05fe35f3a6910ecfb2d8f3eea8c2709f7d576cd065341c22ff5b84eeea3",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/qtl_covariates/Sncg.cov.100_expr_PCs.bed",
+      "file": "qtl_covariates/Sncg.cov.100_expr_PCs.bed",
+      "utc": "2026-09-23T21:14:31Z",
+      "status": "OK",
+      "bytes": 272824,
+      "sha256": "9dd32a23a91adabd1d3657fd3731352e43822ba29e02710115c911c989fb3497",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Ast.eqtl_edge.txt",
+      "file": "eQTL_edge/Ast.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:32Z",
+      "status": "OK",
+      "bytes": 22336,
+      "sha256": "163fd9c913c968224e01ae9bb5db6818cb948446d2aaa078c47971e9d1743c03",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Chandelier.eqtl_edge.txt",
+      "file": "eQTL_edge/Chandelier.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:33Z",
+      "status": "OK",
+      "bytes": 13144,
+      "sha256": "766e84334109d711093e0ef4bbc1043b653057de49221ec10d930d39a5d23fcb",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/aggregated_qtl/inhibatory__sig_QTLs.dat",
+      "file": "aggregated_qtl/inhibatory__sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 34501888,
+      "sha256": "2aad5d57a80b8b6baed631ae8186adf273542e72eade959fb03e8b8ba3bea88c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/End.eqtl_edge.txt",
+      "file": "eQTL_edge/End.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:33Z",
+      "status": "OK",
+      "bytes": 660,
+      "sha256": "e72b2d9b877805b0a17502db56f4f029dc8e8db97a1d7a98d296f7cffbef1e81",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Immune.eqtl_edge.txt",
+      "file": "eQTL_edge/Immune.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:33Z",
+      "status": "OK",
+      "bytes": 5032,
+      "sha256": "f0449fc822087b1c8d5a1dde45212682680840e0966cc5d903e19e5e2f0e2a81",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L4.IT.eqtl_edge.txt",
+      "file": "eQTL_edge/L4.IT.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:34Z",
+      "status": "OK",
+      "bytes": 100965,
+      "sha256": "8feb0a03496be2a3bfe298a74834f932280dcc69dab7e47bf52e5d8798c7df12",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L5.6.NP.eqtl_edge.txt",
+      "file": "eQTL_edge/L5.6.NP.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:34Z",
+      "status": "OK",
+      "bytes": 16550,
+      "sha256": "f76af404cfdc35c8e73da6d0fcc2c5775369d49be01bd6fcb426f77557622e3c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L5.ET.eqtl_edge.txt",
+      "file": "eQTL_edge/L5.ET.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:35Z",
+      "status": "OK",
+      "bytes": 106529,
+      "sha256": "4a8a79615d08cf44747b1490c5697e6bedfa78e310c6de23793e1b33782ad161",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L2.3.IT.eqtl_edge.txt",
+      "file": "eQTL_edge/L2.3.IT.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:34Z",
+      "status": "OK",
+      "bytes": 259777,
+      "sha256": "76199b0287210aef3bb0f8fafdbb4883912b8772e5084c948ad56620be1e658a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L6.CT.eqtl_edge.txt",
+      "file": "eQTL_edge/L6.CT.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:35Z",
+      "status": "OK",
+      "bytes": 11933,
+      "sha256": "6ab9a92ed2899f9b4c486b9efeeae3ba098cf5cb88b86e3290771d70b02fb27c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L5.IT.eqtl_edge.txt",
+      "file": "eQTL_edge/L5.IT.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:35Z",
+      "status": "OK",
+      "bytes": 103963,
+      "sha256": "0d18540f831a1fbd0b81a2ccc4d8cba2f9133517b88c61876bf43bdc13c899c6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L6.IT.Car3.eqtl_edge.txt",
+      "file": "eQTL_edge/L6.IT.Car3.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:35Z",
+      "status": "OK",
+      "bytes": 6232,
+      "sha256": "df02f9a7e1dc0c85e2c66d04d054ab4dcbd2510ff8e5c344affce4383db6338f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L6.IT.eqtl_edge.txt",
+      "file": "eQTL_edge/L6.IT.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:36Z",
+      "status": "OK",
+      "bytes": 89234,
+      "sha256": "07cbff0b05334f2f5fc29ebc7699a12d451c3c840cb48571136086d7c14f4b6b",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/L6b.eqtl_edge.txt",
+      "file": "eQTL_edge/L6b.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:36Z",
+      "status": "OK",
+      "bytes": 26036,
+      "sha256": "8efadde9cbfeccbc010c0f961423d0bdeccfd3b7617700e5b2549436d74176c0",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Lamp5.Lhx6.eqtl_edge.txt",
+      "file": "eQTL_edge/Lamp5.Lhx6.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:36Z",
+      "status": "OK",
+      "bytes": 2610,
+      "sha256": "a76f3272f2cf9f5e7eda0f2b03d14e955e0d0979bc2a7b2a0e5937cf7ae4befe",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Lamp5.eqtl_edge.txt",
+      "file": "eQTL_edge/Lamp5.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:36Z",
+      "status": "OK",
+      "bytes": 7127,
+      "sha256": "6dbdd891db6ac22f92eb7f80cec01da6bbc7bcad4caa98b777552d2e166bd5f5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Mic.eqtl_edge.txt",
+      "file": "eQTL_edge/Mic.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:36Z",
+      "status": "OK",
+      "bytes": 5375,
+      "sha256": "9292b60428c7975f2b30c3888166b6de759c8234a7e147ed9583389fc8448ea9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/OPC.eqtl_edge.txt",
+      "file": "eQTL_edge/OPC.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:37Z",
+      "status": "OK",
+      "bytes": 7352,
+      "sha256": "e9a52fe313b908164c7e91ed53707fef963ed3e9b6201bb65371785534bc74e5",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Pax6.eqtl_edge.txt",
+      "file": "eQTL_edge/Pax6.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:37Z",
+      "status": "OK",
+      "bytes": 5720,
+      "sha256": "0ed8919c464f0de4b3077d8f19af10927f91bb8cd2c155e50dd2b1bb7424cf70",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Oli.eqtl_edge.txt",
+      "file": "eQTL_edge/Oli.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:37Z",
+      "status": "OK",
+      "bytes": 151900,
+      "sha256": "7110dee37d583e0f05cb3bb8198d072dc15255eb44de5ee6e9e6dade912d0ecd",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Pvalb.eqtl_edge.txt",
+      "file": "eQTL_edge/Pvalb.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:37Z",
+      "status": "OK",
+      "bytes": 16301,
+      "sha256": "bffd6991f2b410f21049ad63053812445cda50c525662a38359ffa06ec6e77d8",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Sncg.eqtl_edge.txt",
+      "file": "eQTL_edge/Sncg.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:37Z",
+      "status": "OK",
+      "bytes": 3361,
+      "sha256": "58e7909f0da28f3962bc36db3049b569257c350bea1b80080016a4b12e4da3e7",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Sst.eqtl_edge.txt",
+      "file": "eQTL_edge/Sst.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:38Z",
+      "status": "OK",
+      "bytes": 6639,
+      "sha256": "b7507b8f814334ac38bc84f28cf88c05ec49b0d237a54d197935de16d91146b2",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/VLMC.eqtl_edge.txt",
+      "file": "eQTL_edge/VLMC.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:38Z",
+      "status": "OK",
+      "bytes": 331,
+      "sha256": "196a98141f8e48f515a9f56d162e32943e9f6881f6db2dc260b5d86b857f59e9",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/eQTL_edge/Vip.eqtl_edge.txt",
+      "file": "eQTL_edge/Vip.eqtl_edge.txt",
+      "utc": "2026-09-23T21:14:38Z",
+      "status": "OK",
+      "bytes": 17688,
+      "sha256": "1d60649deacae5de03d2696692c2f11c3a8209003336d26a6ab049f232d90b27",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Chandelier_Pvalb_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Chandelier_Pvalb_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:39Z",
+      "status": "OK",
+      "bytes": 422365,
+      "sha256": "25eb07e1bedb725ec60573069ac5d03d85a41bf0eda7ed68d67e2e0a17273def",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Astro_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Astro_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:38Z",
+      "status": "OK",
+      "bytes": 1306565,
+      "sha256": "ae6585124abf7a846a3b95f63010d7ef057d6f696f86381fa931c89e02cdc681",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L5.ET.SNPs.dat.gz",
+      "file": "candidate_SNPs/L5.ET.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:06Z",
+      "status": "OK",
+      "bytes": 8689643,
+      "sha256": "e029ab77a01d8bfd89a7cf0bbfe2ab419a4e7bb91cd8f6dd47f65498960c85eb",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Endo_VLMC_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Endo_VLMC_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:40Z",
+      "status": "OK",
+      "bytes": 1790731,
+      "sha256": "a93232a415801d6765b39e148d224cf1ea7e139d4cc0b8067eaf9353d8796f58",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L4_IT_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L4_IT_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:45Z",
+      "status": "OK",
+      "bytes": 176849,
+      "sha256": "9fb755ae022301b1f7351c4a2d1a62f2d162ac421fd398df293cc6b860d63d41",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L2_3_IT_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L2_3_IT_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:44Z",
+      "status": "OK",
+      "bytes": 1866399,
+      "sha256": "c25a31268abb2df7abca4e979d1db1b0c3b1b6cd97609b92d6377ee616ed641f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L5_6_NP_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L5_6_NP_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:45Z",
+      "status": "OK",
+      "bytes": 843981,
+      "sha256": "f8ab9ee1db42486a3fff4e25cd48b99a310c8f4e50d9e7ea55cb11392fe11fb3",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L5_IT_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L5_IT_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:48Z",
+      "status": "OK",
+      "bytes": 987754,
+      "sha256": "05c618a14161a9a7275feb99574733dfc4e6f52dba90bbeb1c5c2554f2e11e8a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L6_CT_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L6_CT_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:50Z",
+      "status": "OK",
+      "bytes": 2438770,
+      "sha256": "c2342c5a4d08175df8e225372754e11fb2c3403a828e837031048c02ae58f4da",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Pax6.SNPs.dat.gz",
+      "file": "candidate_SNPs/Pax6.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:14Z",
+      "status": "OK",
+      "bytes": 8714033,
+      "sha256": "008b4e851b53316ff5a92f97c6c3f3e2345303e40992ad88eef3a5287ff8f35c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L6_IT_Car3_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L6_IT_Car3_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:52Z",
+      "status": "OK",
+      "bytes": 1960626,
+      "sha256": "b7f8bec3a14007da304076c5017700f825668c19728511d61a48ce37ef8f5752",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L6_IT_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L6_IT_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:52Z",
+      "status": "OK",
+      "bytes": 1257153,
+      "sha256": "893a244731c1f8b22e27d33af6115cae341970e53b60488e5fcab14ab7c18f3b",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Lamp5_Lhx6_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Lamp5_Lhx6_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:55Z",
+      "status": "OK",
+      "bytes": 160244,
+      "sha256": "5510f746f83becccd009321456fd38330aa874d83f77a97f4a30a7e512878b9d",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/L6.IT.Car3.SNPs.dat.gz",
+      "file": "candidate_SNPs/L6.IT.Car3.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:13Z",
+      "status": "OK",
+      "bytes": 8739094,
+      "sha256": "bb2252804b3def3f8fb069ba223cc2a66648583bc20289ff9a3cdd99b4be5f0a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Immune_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Immune_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:42Z",
+      "status": "OK",
+      "bytes": 3214241,
+      "sha256": "c09fb7ce2f1b493b630082fcd99a01073d2b3f68a8f32b9b99e6a768fc0a2a0f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L5_ET_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L5_ET_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:46Z",
+      "status": "OK",
+      "bytes": 2840858,
+      "sha256": "46390dfbd7ea842703828d2d8bba64922d4ec1ef13ce11fe4479602ca4ee7c5a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Micro_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Micro_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:59Z",
+      "status": "OK",
+      "bytes": 1362345,
+      "sha256": "0ca0bde1d6b01322ffe135cf3f7354c387076e058a5ee432d6a72c378562131a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Oligo_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Oligo_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:15:00Z",
+      "status": "OK",
+      "bytes": 145868,
+      "sha256": "d93ab4f334901c4d2487bf602909dd8b7d9dc76aeb164c0eb29ff7a45d24c8e6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/L6b_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/L6b_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:55Z",
+      "status": "OK",
+      "bytes": 1355060,
+      "sha256": "63f7136a047775d47217947ccd2de67633cfb05f74f74eab92c83c9f1ddc7241",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Lamp5_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Lamp5_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:56Z",
+      "status": "OK",
+      "bytes": 1268598,
+      "sha256": "42158338df0a43905eb54f3cafedfb89df4b2bc877afe9f8772d749620751dbe",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/PC_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/PC_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:15:01Z",
+      "status": "OK",
+      "bytes": 1877025,
+      "sha256": "5688225d5ceefd9da5ebe47160c79fe25f7d2cb0e8678aa0872b9b3abe6dfff3",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/SMC_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/SMC_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:15:01Z",
+      "status": "OK",
+      "bytes": 1574647,
+      "sha256": "02f9ad3f19efe12b4e5c3890288d36702c4522a4b8e2994b5e5ddd0c35d10e07",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/SMC.SNPs.dat.gz",
+      "file": "candidate_SNPs/SMC.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:30Z",
+      "status": "OK",
+      "bytes": 8634995,
+      "sha256": "af172017196048877587832109e10dd547f5ef58df7bc8a45929897dc8606051",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/OPC_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/OPC_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:14:59Z",
+      "status": "OK",
+      "bytes": 1108401,
+      "sha256": "b8477c00462e66711b9200e443302ce38aa67b91f63af85074bb451f92fc0884",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Pax6_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Pax6_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:15:01Z",
+      "status": "OK",
+      "bytes": 2029075,
+      "sha256": "24b8c9abd9604b5ff89de95398390ed11ab99c16bfcbd3deed7d189dc597036b",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/candidate_SNPs_for_QTL_calls/Sncg.SNPs.dat.gz",
+      "file": "candidate_SNPs/Sncg.SNPs.dat.gz",
+      "utc": "2026-09-23T21:14:31Z",
+      "status": "OK",
+      "bytes": 8749975,
+      "sha256": "ad6570e88ca116246ab835d417466186538b6a54d212e0958f57439da6335d90",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/isoqtls_permuted/Sncg_significant_sCQTLs_p0.05.txt",
+      "file": "isoqtls/Sncg_significant_sCQTLs_p0.05.txt",
+      "utc": "2026-09-23T21:15:02Z",
+      "status": "OK",
+      "bytes": 2041159,
+      "sha256": "02ed795382b59bfc8509cd3da0825063cce1f78aaad115d1c5ba952d9811e4b1",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L5.6.NP.expr.bed.gz",
+      "file": "pseudobulk_genes/L5.6.NP.genes.tsv",
+      "utc": "2026-09-23T21:15:07Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 22047846,
+      "source_sha256": "e28c9babb5ae39b8762bb5f4378d876571b0ef81b0ae37eefa8be234957145e6",
+      "bytes": 965184,
+      "sha256": "7ffd18c1fe4b7419ceab975fc18ebc9cd90c7ba61e4d996e0a614eda2ef3ce4c",
+      "n_samples_in_matrix": 160,
+      "n_genes": 24258
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L6.CT.expr.bed.gz",
+      "file": "pseudobulk_genes/L6.CT.genes.tsv",
+      "utc": "2026-09-23T21:15:11Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 28534097,
+      "source_sha256": "e3bd97e194fd816c506aacba6621dc9d57ab72157f630d9b497e07b506274f46",
+      "bytes": 977501,
+      "sha256": "fdddf8eda15a2ccb6aa95fe0936015ea144fd3e8e237b61d5c802200423267f4",
+      "n_samples_in_matrix": 202,
+      "n_genes": 24549
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Astro.expr.bed.gz",
+      "file": "pseudobulk_genes/Astro.genes.tsv",
+      "utc": "2026-09-23T21:15:02Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 46079439,
+      "source_sha256": "3c0efdfbd004da266579397d233584496fafd716af5156a83dcacb980e431715",
+      "bytes": 1010908,
+      "sha256": "1a5bf976fec61b6afbbd97576ba4ea26b60003364d40dd60cdc1b269f466175c",
+      "n_samples_in_matrix": 315,
+      "n_genes": 25391
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L6b.expr.bed.gz",
+      "file": "pseudobulk_genes/L6b.genes.tsv",
+      "utc": "2026-09-23T21:17:11Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 27825361,
+      "source_sha256": "29e9eb3aa6024bd1216e918aaae135658f5065385d82f42b7b54491a0cfa8b04",
+      "bytes": 1061840,
+      "sha256": "50fa3d8a2d8a399224a07c92441c345a3c46eff99d1e6e1c08a5bb054ff8ba0a",
+      "n_samples_in_matrix": 171,
+      "n_genes": 26624
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Chandelier__Pvalb.expr.bed.gz",
+      "file": "pseudobulk_genes/Chandelier__Pvalb.genes.tsv",
+      "utc": "2026-09-23T21:15:04Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 50941562,
+      "source_sha256": "04b9101669a6d60c2e47d9f70443b820219a629bd7ed9df23ba4a5e8ab0e5c9f",
+      "bytes": 1050269,
+      "sha256": "61be7b100ea0028713bfc34851cb567bacca9c2737e23caf6efef776193e0fd7",
+      "n_samples_in_matrix": 313,
+      "n_genes": 26342
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Lamp5.Lhx6.expr.bed.gz",
+      "file": "pseudobulk_genes/Lamp5.Lhx6.genes.tsv",
+      "utc": "2026-09-23T21:17:59Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 19598701,
+      "source_sha256": "62faf5fbda283651d1c482d43ebe0a416c172735acd6e411200d660f696296fc",
+      "bytes": 866336,
+      "sha256": "9ba7944eecb1e613bb9e0bdc526fd313374b9ab92cedff33cad060619254465a",
+      "n_samples_in_matrix": 163,
+      "n_genes": 21830
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L4.IT.expr.bed.gz",
+      "file": "pseudobulk_genes/L4.IT.genes.tsv",
+      "utc": "2026-09-23T21:15:05Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 54703642,
+      "source_sha256": "a3719592df6f592662c324df0581a79acd83bd587e5ba2daa8aaac6ad6a202e7",
+      "bytes": 1079518,
+      "sha256": "6dbc7a221223b7775be14e0f26ff69461fdb2eede27ae1a58781ad931c8b3683",
+      "n_samples_in_matrix": 319,
+      "n_genes": 27060
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/aggregated_qtl/excitatory__sig_QTLs.dat",
+      "file": "aggregated_qtl/excitatory__sig_QTLs.dat",
+      "utc": "2026-09-23T21:12:16Z",
+      "status": "OK",
+      "bytes": 112299246,
+      "sha256": "1c12db77f01b5d5b5b20c0c97d80af0ca54943255c73f79b50a73ea949e1e50a",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Ast_GRN.txt",
+      "file": "GRNs/Ast_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 10167596,
+      "sha256": "d065695816277ec8dba074fdd9266feb1ad552d412de32e14a1f2d457e91fdf0",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L2.3.IT.expr.bed.gz",
+      "file": "pseudobulk_genes/L2.3.IT.genes.tsv",
+      "utc": "2026-09-23T21:15:05Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 72573832,
+      "source_sha256": "1fdbf7dcfed75f5209067985824c265809a7bdd1defed2c479c8e1b5d33998f4",
+      "bytes": 1184068,
+      "sha256": "0ff726d40609afa158bcc4a0bc9a2cccbc25e4db29e908cece6dbd450b91cfbf",
+      "n_samples_in_matrix": 346,
+      "n_genes": 29629
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Chandelier_GRN.txt",
+      "file": "GRNs/Chandelier_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 10621216,
+      "sha256": "01fa64b1592876ecf60247daf5069ebeb370bbcb39e64989ca6990213ad32799",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/End_GRN.txt",
+      "file": "GRNs/End_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 11474071,
+      "sha256": "7803d9dbc838c85c236d4d472cec412f0509c443d55a4046f87604a0054d2360",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/PC.expr.bed.gz",
+      "file": "pseudobulk_genes/PC.genes.tsv",
+      "utc": "2026-09-23T21:20:22Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 11273859,
+      "source_sha256": "bf60eba046d554abf93d01c3bc078b1ef66471d264128833fcc308c3aa242d2b",
+      "bytes": 922101,
+      "sha256": "3da417366f1c1ae459e4737b3a3e5fac451b1b13e1f5b045c2f037f058c0eaf2",
+      "n_samples_in_matrix": 97,
+      "n_genes": 23240
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L5.IT.expr.bed.gz",
+      "file": "pseudobulk_genes/L5.IT.genes.tsv",
+      "utc": "2026-09-23T21:15:08Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 62234459,
+      "source_sha256": "50e04f2fd41790593e08a601227db2f7c0056cf406efb26a1355c1ca2b841066",
+      "bytes": 1136742,
+      "sha256": "86b96db449bc78dc2a8ef5ad416bc6030bc5aeebe02965dcdd46484854754c0f",
+      "n_samples_in_matrix": 333,
+      "n_genes": 28464
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Micro.PVM.expr.bed.gz",
+      "file": "pseudobulk_genes/Micro.PVM.genes.tsv",
+      "utc": "2026-09-23T21:19:08Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 22498948,
+      "source_sha256": "4a9d8108c278304000e6e6fc1c6a8def7b36b9d8ab86b450955af6d4dcb7b5dc",
+      "bytes": 863435,
+      "sha256": "6a30b469afb4bba9a365e69fbd271701cac6326f9bd83bbb016bb06b90544aa6",
+      "n_samples_in_matrix": 207,
+      "n_genes": 21801
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Immune.expr.bed.gz",
+      "file": "pseudobulk_genes/Immune.genes.tsv",
+      "utc": "2026-09-23T21:21:22Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 2614129,
+      "source_sha256": "0a92b80d9ff2c669be9ac9bd4d46e1ea111135bce9cdbc32f7b90355772d4775",
+      "bytes": 758887,
+      "sha256": "fc0db2cadb3f1f201d6e65abd5cf76a124b8c974fd9d666b218f2ee706614bc5",
+      "n_samples_in_matrix": 36,
+      "n_genes": 19256
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L5.ET.expr.bed.gz",
+      "file": "pseudobulk_genes/L5.ET.genes.tsv",
+      "utc": "2026-09-23T21:21:25Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 3953378,
+      "source_sha256": "1377c04a0ed68c5b2dba4c0fbd19c6e6c18f3d441b8b9439cfd4b7ddb0c7b671",
+      "bytes": 1051890,
+      "sha256": "a3b880c11faa5f9f5c547566e3e7cd70bf0f520f8958596973bf28f8c49a7643",
+      "n_samples_in_matrix": 28,
+      "n_genes": 26382
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L6.IT.expr.bed.gz",
+      "file": "pseudobulk_genes/L6.IT.genes.tsv",
+      "utc": "2026-09-23T21:16:32Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 58899022,
+      "source_sha256": "a67d18aeb8fd12f64eebe46ec194b916ca45d50d8ed0f1a336982e9b9b851158",
+      "bytes": 1108291,
+      "sha256": "01a4a786ce941492a70533dfcd0c6ed4e28897eff4b8e39b9b328f645843dd62",
+      "n_samples_in_matrix": 328,
+      "n_genes": 27766
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/OPC.expr.bed.gz",
+      "file": "pseudobulk_genes/OPC.genes.tsv",
+      "utc": "2026-09-23T21:19:20Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 39142182,
+      "source_sha256": "46ad4e3a086c44997f6bddb12e269774a5c0ef6786fe793b16f43318bcbdaf52",
+      "bytes": 932071,
+      "sha256": "d0e0a755bb406e1aa9e2806e836d85d66e376751783dd5f55352bf485faaec11",
+      "n_samples_in_matrix": 295,
+      "n_genes": 23440
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Lamp5.expr.bed.gz",
+      "file": "pseudobulk_genes/Lamp5.genes.tsv",
+      "utc": "2026-09-23T21:19:03Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 31057708,
+      "source_sha256": "64277be1d0ae2a4f3309884dad6a20970e23382235835955a5cc14fe8c0bea85",
+      "bytes": 939897,
+      "sha256": "768ff671500fde90a2d7c53f799a6e422307ea26d134130d8424dea27c539859",
+      "n_samples_in_matrix": 223,
+      "n_genes": 23633
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/SMC.expr.bed.gz",
+      "file": "pseudobulk_genes/SMC.genes.tsv",
+      "utc": "2026-09-23T21:22:05Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 2255245,
+      "source_sha256": "ad4e446951a26ce8583a0824e1460f8d9b335aa6cc453e7b2c81c818afcc0a8d",
+      "bytes": 873691,
+      "sha256": "a52f7f95dcc13144d0a6acd459c3531ee1ecef284192dd17df4b6afc3d8a3558",
+      "n_samples_in_matrix": 23,
+      "n_genes": 22065
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Pax6.expr.bed.gz",
+      "file": "pseudobulk_genes/Pax6.genes.tsv",
+      "utc": "2026-09-23T21:21:55Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 3944071,
+      "source_sha256": "e1cae482e2f6ae8d9871d7400986ae0226103f533f05ccb27adbd4aa678f798d",
+      "bytes": 900548,
+      "sha256": "b033d0eab22ce0cd097866b9f542b0bcb5c60d6f2a310d806a6cc9a164622b2b",
+      "n_samples_in_matrix": 36,
+      "n_genes": 22672
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Oligo.expr.bed.gz",
+      "file": "pseudobulk_genes/Oligo.genes.tsv",
+      "utc": "2026-09-23T21:19:34Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 46334495,
+      "source_sha256": "c0f0bde902dccc9fc62af1015df4946eee74aed8b380a0fe26dfa98d12667855",
+      "bytes": 985760,
+      "sha256": "23463d1488befe36cdc118b6cc7688cba27d127100a7208680e5a38ea0626726",
+      "n_samples_in_matrix": 339,
+      "n_genes": 24777
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/L6.IT.Car3.expr.bed.gz",
+      "file": "pseudobulk_genes/L6.IT.Car3.genes.tsv",
+      "utc": "2026-09-23T21:21:39Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 17591836,
+      "source_sha256": "b0956e53f5adb75a6ef2973c776b7c34e249c62f2b82ceca4f94ab763b88d7f7",
+      "bytes": 989822,
+      "sha256": "bf2c29f500e4cde943183923562c5dec073e88b9bc404119e253474fa910050d",
+      "n_samples_in_matrix": 123,
+      "n_genes": 24860
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Endo__VLMC.expr.bed.gz",
+      "file": "pseudobulk_genes/Endo__VLMC.genes.tsv",
+      "utc": "2026-09-23T21:21:17Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 15313303,
+      "source_sha256": "358006f927be1918d9f8baeca320a6136aa8fc505b9f747103ebc48e9098d217",
+      "bytes": 928972,
+      "sha256": "939e4095b122afd67442c9daf1e250a75e359fd3e59356d8dfbdc81656d08f54",
+      "n_samples_in_matrix": 128,
+      "n_genes": 23410
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Sncg.expr.bed.gz",
+      "file": "pseudobulk_genes/Sncg.genes.tsv",
+      "utc": "2026-09-23T21:22:06Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 17823392,
+      "source_sha256": "8c022c798d502c268994dffbcb34b0ac81881f823969bb38e3ef11ce26774ead",
+      "bytes": 888657,
+      "sha256": "70df9d20728f950c5e1d8867ad014ee6354be851630e953242379bbe4eeed3fc",
+      "n_samples_in_matrix": 145,
+      "n_genes": 22377
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Immune_GRN.txt",
+      "file": "GRNs/Immune_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 30909389,
+      "sha256": "af5cce34de493466873c11557df7c31af678c320a563049b3180c8200bd02fa6",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Sst__Sst.Chodl.expr.bed.gz",
+      "file": "pseudobulk_genes/Sst__Sst.Chodl.genes.tsv",
+      "utc": "2026-09-23T21:20:25Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 40465673,
+      "source_sha256": "e4c8d41bffcb054fc19764769aee3449476ca417b24d82a96d2800b7111ab7ee",
+      "bytes": 1000256,
+      "sha256": "f1a81f296eb1cc8743ae4f9a9013f7e24e93f3670ae15c721fee60a986352340",
+      "n_samples_in_matrix": 278,
+      "n_genes": 25116
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/pseudobulk_expr/Vip.expr.bed.gz",
+      "file": "pseudobulk_genes/Vip.genes.tsv",
+      "utc": "2026-09-23T21:21:11Z",
+      "status": "OK",
+      "stored": "REDUCED (gene coordinate columns only; expression values discarded)",
+      "source_bytes": 45962546,
+      "source_sha256": "e7dc78c6250939b42bacf41c7721941cf1ea7a9b9874a20b9e94c4b669efb8e4",
+      "bytes": 1025740,
+      "sha256": "89178315525b8e4bd4c581697704105a3c50d2b59f243acf3d3e03902518a39c",
+      "n_samples_in_matrix": 294,
+      "n_genes": 25739
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L5.IT_GRN.txt",
+      "file": "GRNs/L5.IT_GRN.txt",
+      "utc": "2026-09-23T21:20:46Z",
+      "status": "OK",
+      "bytes": 91416944,
+      "sha256": "3d523e3300bb2b96ff0f2375341e397887a47a602d72bfc6d9ba0c5e59d8fc20",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L5.ET_GRN.txt",
+      "file": "GRNs/L5.ET_GRN.txt",
+      "utc": "2026-09-23T21:20:41Z",
+      "status": "OK",
+      "bytes": 92134774,
+      "sha256": "9e3e1772102f6c8b0f67e0e3e699674a6ab40628961427c3cfe12b57d878290f",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L5.6.NP_GRN.txt",
+      "file": "GRNs/L5.6.NP_GRN.txt",
+      "utc": "2026-09-23T21:20:25Z",
+      "status": "OK",
+      "bytes": 93893001,
+      "sha256": "49d1990357c505989da9581b249a92ad0a179a76c48f40dba1311f9b31987a41",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L4.IT_GRN.txt",
+      "file": "GRNs/L4.IT_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 91304745,
+      "sha256": "6f1c54bb37616114946daa4436c59cb83bd9c25a04570c2e0d9dd32133b35ddb",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Lamp5_GRN.txt",
+      "file": "GRNs/Lamp5_GRN.txt",
+      "utc": "2026-09-23T21:26:41Z",
+      "status": "OK",
+      "bytes": 10377377,
+      "sha256": "8d8ee9c3419245917b22836cdb50ec4ecc8eff9fb43bbd052dcc8a36726b0a40",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L2.3.IT_GRN.txt",
+      "file": "GRNs/L2.3.IT_GRN.txt",
+      "utc": "2026-09-23T21:19:47Z",
+      "status": "OK",
+      "bytes": 93844103,
+      "sha256": "541f6d58f3d62915b47bb6044747225fcbe7bfcd105ea8e8b6b50ae65926b4ba",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/OPC_GRN.txt",
+      "file": "GRNs/OPC_GRN.txt",
+      "utc": "2026-09-23T21:27:18Z",
+      "status": "OK",
+      "bytes": 7090905,
+      "sha256": "bd4483612cfc11d077fc10ad4b40b508172d06c68d9ed19878a8d71c8df171ac",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L6.CT_GRN.txt",
+      "file": "GRNs/L6.CT_GRN.txt",
+      "utc": "2026-09-23T21:22:59Z",
+      "status": "OK",
+      "bytes": 91987391,
+      "sha256": "04fe7bd8109f6db9df70b64217dade26c1ab643d8cdce64ccbccce0c938d372d",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Mic_GRN.txt",
+      "file": "GRNs/Mic_GRN.txt",
+      "utc": "2026-09-23T21:27:09Z",
+      "status": "OK",
+      "bytes": 29463266,
+      "sha256": "7ed9fec38f16e9dfe00145b069c556ed57698aeadb8b4e717db27746f94f5fe3",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Pax6_GRN.txt",
+      "file": "GRNs/Pax6_GRN.txt",
+      "utc": "2026-09-23T21:29:11Z",
+      "status": "OK",
+      "bytes": 10431360,
+      "sha256": "b7d580ea0945a74dab5e396cbd05b6403ffd8953026c56f9f8c55bb784673924",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Pvalb_GRN.txt",
+      "file": "GRNs/Pvalb_GRN.txt",
+      "utc": "2026-09-23T21:29:15Z",
+      "status": "OK",
+      "bytes": 10430956,
+      "sha256": "a77148f29376a4c31b826c83db78cade8febd8cc63a65c3f92d6edcf46226329",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Oli_GRN.txt",
+      "file": "GRNs/Oli_GRN.txt",
+      "utc": "2026-09-23T21:27:47Z",
+      "status": "OK",
+      "bytes": 31752688,
+      "sha256": "669f499458bf25c138a5511eb9f2a37933d5431ba781caa9ddec138146a6d7c2",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Sncg_GRN.txt",
+      "file": "GRNs/Sncg_GRN.txt",
+      "utc": "2026-09-23T21:29:50Z",
+      "status": "OK",
+      "bytes": 10320486,
+      "sha256": "a7d692951d72bb332247b9d5f5c3e726e2bbe8771c04f5c75b530fee7851b51c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Sst_GRN.txt",
+      "file": "GRNs/Sst_GRN.txt",
+      "utc": "2026-09-23T21:29:53Z",
+      "status": "OK",
+      "bytes": 10313395,
+      "sha256": "cb6d397bf9804026cd977f50d380925d3c7f3ae7843bd4bdf50f4213b778cc1c",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/VLMC_GRN.txt",
+      "file": "GRNs/VLMC_GRN.txt",
+      "utc": "2026-09-23T21:30:05Z",
+      "status": "OK",
+      "bytes": 11546374,
+      "sha256": "a655f08206b28d6eb12c032de602012936363dd7ce278846d1bfbe56b0509fdd",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/Vip_GRN.txt",
+      "file": "GRNs/Vip_GRN.txt",
+      "utc": "2026-09-23T21:30:14Z",
+      "status": "OK",
+      "bytes": 10145653,
+      "sha256": "f926784a18aaacd4c7ea880be4340939615739e94da2644122a2a2aa39be796e",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L6b_GRN.txt",
+      "file": "GRNs/L6b_GRN.txt",
+      "utc": "2026-09-23T21:26:31Z",
+      "status": "OK",
+      "bytes": 89875905,
+      "sha256": "f7e1c3c8f2d78fc67261ba52dd40e171506f5bab4e82c2730c7c858445081103",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L6.IT_GRN.txt",
+      "file": "GRNs/L6.IT_GRN.txt",
+      "utc": "2026-09-23T21:26:29Z",
+      "status": "OK",
+      "bytes": 91958291,
+      "sha256": "17c9eedc61a87df79a506c4d9c8496c80c3cbaff50c4f038d1617020d2127857",
+      "stored": "full file"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/GRNs/L6.IT.Car3_GRN.txt",
+      "file": "GRNs/L6.IT.Car3_GRN.txt",
+      "utc": "2026-09-23T21:26:23Z",
+      "status": "OK",
+      "bytes": 97944193,
+      "sha256": "67dd24a6fe9c9ba8b8e8cb35a501959eea58dbaffc8b0967739f63ae73f1b520",
+      "stored": "full file"
+    }
+  ],
+  "n_downloads_ok": 187,
+  "total_bytes_stored": 1550262911,
+  "total_source_bytes_streamed_not_stored": 743668726,
+  "documents_fetched_for_verification": [
+    {
+      "url": "https://www.biorxiv.org/content/biorxiv/early/2024/03/19/2024.03.18.585576/DC1/embed/media-1.pdf",
+      "file": "emani_biorxiv_supp_media1.pdf",
+      "sha256": "8b0ca9be04ce210423b63b27a16f1cf3afdf164efc63b8dfeb1f7b9ead4858b3"
+    },
+    {
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC11365579&rettype=xml",
+      "file": "PMC11365579.xml",
+      "sha256": "f9c702bb7d19c050d930d19f9d42543b85442692c0a42dfc0f28749be413318a"
+    }
+  ],
+  "verified_facts": {
+    "study": "brainSCOPE (PsychENCODE Consortium phase II integrative analysis)",
+    "citation": "Emani PS, Liu JJ, Clarke D, et al. Single-cell genomics and regulatory networks for 388 human brains. Science 384, eadi5199 (2024). doi:10.1126/science.adi5199",
+    "tissue": "adult dorsolateral prefrontal cortex (DLPFC), post-mortem; all samples >= 13 years (supp. \u00a71)",
+    "n_individuals_resource": 388,
+    "n_individuals_genotyped": 383,
+    "n_individuals_in_any_core_scQTL_celltype": 352,
+    "core_scQTL_union_by_cohort_indicator": {
+      "Urban": 20,
+      "UCLA-ASD": 40,
+      "Kreigstein": 19,
+      "IsoHuB": 3,
+      "SZBD": 71,
+      "LIBD": 10,
+      "CMC": 94,
+      "Ma_Sestan": 2,
+      "DevBrain": 15,
+      "ROSMAP": 43,
+      "Girgenti": 16,
+      "PTSDBrainomics": 19
+    },
+    "diagnoses": "182 controls + schizophrenia, bipolar disorder, ASD, Alzheimer's disease, PTSD and others (diagnosis is a QTL covariate)",
+    "cohorts_12": {
+      "PsychENCODE (8)": [
+        "CMC",
+        "UCLA-ASD",
+        "SZBDMulti-Seq",
+        "MultiomeBrain",
+        "DevBrain",
+        "IsoHuB",
+        "PTSDBrainomics",
+        "LIBD"
+      ],
+      "external (4)": [
+        "ROSMAP (AMP-AD)",
+        "Ma-Sestan",
+        "Velmeshev",
+        "Girgenti-snMultiome"
+      ]
+    },
+    "sample_metadata_cohort_counts": {
+      "CMC": 100,
+      "SZBDMulti-Seq": 72,
+      "UCLA-ASD": 52,
+      "ROSMAP": 46,
+      "Velmeshev_et_al": 27,
+      "MultiomeBrain": 21,
+      "Girgenti-snMultiome": 19,
+      "PTSDBrainomics": 19,
+      "DevBrain": 16,
+      "LIBD": 10,
+      "IsoHuB": 4,
+      "Ma_et_al": 2
+    },
+    "sample_metadata_ancestry_counts": {
+      "EUR": 316,
+      "AFR": 47,
+      "AMR": 15,
+      "EAS": 8,
+      "SAS": 1,
+      "UNKNOWN": 1
+    },
+    "sample_metadata_cmc_id_prefix": "all 100 CMC individuals carry CMC_MSSM_* IDs (Mount Sinai brain bank)",
+    "genome_build": "GRCh38/hg38 (genotypes lifted to hg38, REF fixed to hg38 with plink2; supp. \u00a71). Verified empirically: 108,485 brainSCOPE core pairs match eQTL Catalogue GRCh38 chr:pos:REF:ALT with 99.99% sign concordance (data/sprint5/brainscope_allele_check.json)",
+    "genotypes": "SNP array / WES / WGS / snRNA-derived calls, merged, TOPMed imputation server (Minimac4, Eagle 2.4, R2>0.3); post-imputation MAF>=0.05 and present in all samples: 1.95M SNPs, 383 samples (supp. \u00a71). Public candidate SNP lists contain 1,953,861 IDs per cell type (L6b).",
+    "gene_annotation": "NOT STATED for the scQTL gene coordinates. Genes are identified by SYMBOL only; TSS from a 'genes.gtf' (build_gene_info_file.py). snRNA counts from CellRanger v6.0 (supp. \u00a72); the 10x reference/GENCODE release used is not given in the supplement text searched. GENCODE 43 is cited only for conservation annotations. Treat symbol matching as approximate.",
+    "expression_unit": "pseudobulk mean UMI per individual & cell type (>50 nuclei of that type, >300 nuclei total), log2(CPM+1), genes with >10% non-zero samples; QTLtools --normal (rank-normal) phenotype",
+    "scQTL_method": "QTLtools cis, 1 Mb up/downstream of TSS; covariates sex, age, diagnosis, cohort, 5 genotype PCs, 100 expression PCs (20 for small cell types); 10,000 permutations; beta-approximated gene p; Storey q<=0.05 per cell type; per-gene nominal threshold F^-1(pt) (GTEx scheme).",
+    "significance_scope": "SIGNIFICANT PAIRS ONLY are public (eGene q<=0.05 and pair nominal p <= gene threshold). No full nominal (all tested pairs) summary statistics are published on the portal; the supplement and portal list none. Tested SNP lists and pseudobulk matrices ARE public, so 'tested' status is known; genotypes are controlled-access, so full statistics cannot be regenerated.",
+    "effect_allele": "slope per copy of the ALT allele of variant ID chr:pos:REF:ALT (hg38). Basis: QTLtools uses VCF ALT dosage; empirically 99.99% sign concordance with eQTL Catalogue (ALT-coded) bulk brain eQTLs for 5,602 unique gene-variant pairs.",
+    "cell_types": {
+      "core_callsets_17": [
+        "Astro",
+        "Chandelier__Pvalb",
+        "L2.3.IT",
+        "L4.IT",
+        "L5.6.NP",
+        "L5.IT",
+        "L6.CT",
+        "L6.IT",
+        "L6b",
+        "Lamp5.Lhx6",
+        "Lamp5",
+        "Micro.PVM",
+        "OPC",
+        "Oligo",
+        "PC",
+        "Sst__Sst.Chodl",
+        "Vip"
+      ],
+      "no_published_core_callset_7": [
+        "Endo__VLMC",
+        "Immune",
+        "L5.ET",
+        "L6.IT.Car3",
+        "Pax6",
+        "SMC",
+        "Sncg"
+      ],
+      "why_7_missing": "covariate files show residual df <= 21 (Endo__VLMC 3, Sncg 21) or negative (Immune, L5.ET, L6.IT.Car3, Pax6, SMC); the paper reports core scQTLs for 17 cell types. These are NOT 'tested, no eQTL'.",
+      "aggregated_classes": [
+        "excitatory",
+        "inhibitory",
+        "non_neuronal"
+      ]
+    },
+    "per_celltype_n": {
+      "Astro": {
+        "n_individuals": 315,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 188,
+        "cohort_counts": {
+          "CMC": 77,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 18,
+          "ROSMAP": 30,
+          "SZBD": 69,
+          "UCLA-ASD": 38,
+          "Urban": 20,
+          "Girgenti": 15,
+          "LIBD": 10,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 18
+        },
+        "n_genes_tested": 25391,
+        "n_samples_in_pseudobulk_matrix": 315,
+        "n_eGenes": 581
+      },
+      "Chandelier__Pvalb": {
+        "n_individuals": 313,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 186,
+        "cohort_counts": {
+          "CMC": 86,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 17,
+          "ROSMAP": 26,
+          "SZBD": 69,
+          "UCLA-ASD": 35,
+          "Urban": 19,
+          "Girgenti": 15,
+          "LIBD": 7,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 26342,
+        "n_samples_in_pseudobulk_matrix": 313,
+        "n_eGenes": 943
+      },
+      "L2.3.IT": {
+        "n_individuals": 346,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 219,
+        "cohort_counts": {
+          "CMC": 93,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 19,
+          "ROSMAP": 43,
+          "SZBD": 71,
+          "UCLA-ASD": 37,
+          "Urban": 19,
+          "Girgenti": 16,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 29629,
+        "n_samples_in_pseudobulk_matrix": 346,
+        "n_eGenes": 3048
+      },
+      "L4.IT": {
+        "n_individuals": 319,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 192,
+        "cohort_counts": {
+          "CMC": 88,
+          "DevBrain": 14,
+          "IsoHuB": 3,
+          "Kreigstein": 18,
+          "ROSMAP": 29,
+          "SZBD": 70,
+          "UCLA-ASD": 34,
+          "Urban": 19,
+          "Girgenti": 16,
+          "LIBD": 7,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 27060,
+        "n_samples_in_pseudobulk_matrix": 319,
+        "n_eGenes": 1219
+      },
+      "L5.6.NP": {
+        "n_individuals": 160,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 37,
+        "cohort_counts": {
+          "CMC": 45,
+          "DevBrain": 6,
+          "SZBD": 56,
+          "UCLA-ASD": 14,
+          "Urban": 7,
+          "Girgenti": 10,
+          "LIBD": 4,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 16
+        },
+        "n_genes_tested": 24258,
+        "n_samples_in_pseudobulk_matrix": 160,
+        "n_eGenes": 10
+      },
+      "L5.IT": {
+        "n_individuals": 333,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 206,
+        "cohort_counts": {
+          "CMC": 88,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 17,
+          "ROSMAP": 38,
+          "SZBD": 71,
+          "UCLA-ASD": 35,
+          "Urban": 20,
+          "Girgenti": 16,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 28464,
+        "n_samples_in_pseudobulk_matrix": 333,
+        "n_eGenes": 1671
+      },
+      "L6.CT": {
+        "n_individuals": 202,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 76,
+        "cohort_counts": {
+          "CMC": 44,
+          "DevBrain": 11,
+          "IsoHuB": 1,
+          "Kreigstein": 7,
+          "ROSMAP": 1,
+          "SZBD": 62,
+          "UCLA-ASD": 27,
+          "Urban": 15,
+          "Girgenti": 11,
+          "LIBD": 7,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 14
+        },
+        "n_genes_tested": 24549,
+        "n_samples_in_pseudobulk_matrix": 202,
+        "n_eGenes": 157
+      },
+      "L6.IT": {
+        "n_individuals": 328,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 201,
+        "cohort_counts": {
+          "CMC": 85,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 13,
+          "ROSMAP": 38,
+          "SZBD": 71,
+          "UCLA-ASD": 37,
+          "Urban": 20,
+          "Girgenti": 16,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 27766,
+        "n_samples_in_pseudobulk_matrix": 328,
+        "n_eGenes": 1446
+      },
+      "L6b": {
+        "n_individuals": 171,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 46,
+        "cohort_counts": {
+          "CMC": 43,
+          "DevBrain": 4,
+          "Kreigstein": 1,
+          "ROSMAP": 2,
+          "SZBD": 62,
+          "UCLA-ASD": 17,
+          "Urban": 10,
+          "Girgenti": 14,
+          "LIBD": 6,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 10
+        },
+        "n_genes_tested": 26624,
+        "n_samples_in_pseudobulk_matrix": 171,
+        "n_eGenes": 59
+      },
+      "Lamp5.Lhx6": {
+        "n_individuals": 163,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 40,
+        "cohort_counts": {
+          "CMC": 50,
+          "DevBrain": 7,
+          "SZBD": 54,
+          "UCLA-ASD": 15,
+          "Urban": 5,
+          "Girgenti": 13,
+          "LIBD": 1,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 16
+        },
+        "n_genes_tested": 21830,
+        "n_samples_in_pseudobulk_matrix": 163,
+        "n_eGenes": 5
+      },
+      "Lamp5": {
+        "n_individuals": 223,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 97,
+        "cohort_counts": {
+          "CMC": 65,
+          "DevBrain": 10,
+          "IsoHuB": 2,
+          "Kreigstein": 3,
+          "ROSMAP": 3,
+          "SZBD": 62,
+          "UCLA-ASD": 25,
+          "Urban": 14,
+          "Girgenti": 14,
+          "LIBD": 4,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 23633,
+        "n_samples_in_pseudobulk_matrix": 223,
+        "n_eGenes": 251
+      },
+      "Micro.PVM": {
+        "n_individuals": 207,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 80,
+        "cohort_counts": {
+          "CMC": 25,
+          "DevBrain": 11,
+          "IsoHuB": 3,
+          "Kreigstein": 13,
+          "ROSMAP": 7,
+          "SZBD": 56,
+          "UCLA-ASD": 32,
+          "Urban": 18,
+          "Girgenti": 13,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 18
+        },
+        "n_genes_tested": 21801,
+        "n_samples_in_pseudobulk_matrix": 207,
+        "n_eGenes": 43
+      },
+      "OPC": {
+        "n_individuals": 295,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 168,
+        "cohort_counts": {
+          "CMC": 67,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 19,
+          "ROSMAP": 23,
+          "SZBD": 66,
+          "UCLA-ASD": 37,
+          "Urban": 19,
+          "Girgenti": 15,
+          "LIBD": 10,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 23440,
+        "n_samples_in_pseudobulk_matrix": 295,
+        "n_eGenes": 350
+      },
+      "Oligo": {
+        "n_individuals": 339,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 212,
+        "cohort_counts": {
+          "CMC": 86,
+          "DevBrain": 15,
+          "IsoHuB": 3,
+          "Kreigstein": 19,
+          "ROSMAP": 42,
+          "SZBD": 71,
+          "UCLA-ASD": 37,
+          "Urban": 20,
+          "Girgenti": 15,
+          "LIBD": 10,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 24777,
+        "n_samples_in_pseudobulk_matrix": 339,
+        "n_eGenes": 934
+      },
+      "PC": {
+        "n_individuals": 97,
+        "n_expr_pcs": 20,
+        "residual_df_used_for_SE": 52,
+        "cohort_counts": {
+          "CMC": 16,
+          "DevBrain": 11,
+          "IsoHuB": 1,
+          "Kreigstein": 2,
+          "SZBD": 1,
+          "UCLA-ASD": 14,
+          "Urban": 18,
+          "Girgenti": 14,
+          "LIBD": 7,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 11
+        },
+        "n_genes_tested": 23240,
+        "n_samples_in_pseudobulk_matrix": 97,
+        "n_eGenes": 4
+      },
+      "Sst__Sst.Chodl": {
+        "n_individuals": 278,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 151,
+        "cohort_counts": {
+          "CMC": 69,
+          "DevBrain": 14,
+          "IsoHuB": 3,
+          "Kreigstein": 19,
+          "ROSMAP": 9,
+          "SZBD": 67,
+          "UCLA-ASD": 34,
+          "Urban": 19,
+          "Girgenti": 14,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 25116,
+        "n_samples_in_pseudobulk_matrix": 278,
+        "n_eGenes": 350
+      },
+      "Vip": {
+        "n_individuals": 294,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 167,
+        "cohort_counts": {
+          "CMC": 79,
+          "DevBrain": 13,
+          "IsoHuB": 3,
+          "Kreigstein": 18,
+          "ROSMAP": 16,
+          "SZBD": 69,
+          "UCLA-ASD": 33,
+          "Urban": 18,
+          "Girgenti": 15,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 19
+        },
+        "n_genes_tested": 25739,
+        "n_samples_in_pseudobulk_matrix": 294,
+        "n_eGenes": 590
+      },
+      "Endo__VLMC": {
+        "n_individuals": 128,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 3,
+        "cohort_counts": {
+          "CMC": 22,
+          "DevBrain": 14,
+          "IsoHuB": 2,
+          "Kreigstein": 3,
+          "SZBD": 3,
+          "UCLA-ASD": 28,
+          "Urban": 20,
+          "Girgenti": 15,
+          "LIBD": 9,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 10
+        },
+        "n_genes_tested": 23410,
+        "n_samples_in_pseudobulk_matrix": 128,
+        "n_eGenes": null
+      },
+      "Immune": {
+        "n_individuals": 36,
+        "n_expr_pcs": 20,
+        "residual_df_used_for_SE": -3,
+        "cohort_counts": {
+          "CMC": 10,
+          "DevBrain": 3,
+          "ROSMAP": 1,
+          "SZBD": 6,
+          "UCLA-ASD": 5,
+          "Girgenti": 9,
+          "Ma_Sestan": 2
+        },
+        "n_genes_tested": 19256,
+        "n_samples_in_pseudobulk_matrix": 36,
+        "n_eGenes": null
+      },
+      "L5.ET": {
+        "n_individuals": 28,
+        "n_expr_pcs": 20,
+        "residual_df_used_for_SE": -12,
+        "cohort_counts": {
+          "SZBD": 14,
+          "UCLA-ASD": 5,
+          "Girgenti": 3,
+          "LIBD": 1,
+          "Ma_Sestan": 1,
+          "PTSDBrainomics": 4
+        },
+        "n_genes_tested": 26382,
+        "n_samples_in_pseudobulk_matrix": 28,
+        "n_eGenes": null
+      },
+      "L6.IT.Car3": {
+        "n_individuals": 123,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": -2,
+        "cohort_counts": {
+          "CMC": 19,
+          "DevBrain": 6,
+          "Kreigstein": 1,
+          "ROSMAP": 1,
+          "SZBD": 54,
+          "UCLA-ASD": 10,
+          "Urban": 7,
+          "Girgenti": 9,
+          "LIBD": 3,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 11
+        },
+        "n_genes_tested": 24860,
+        "n_samples_in_pseudobulk_matrix": 123,
+        "n_eGenes": null
+      },
+      "Pax6": {
+        "n_individuals": 36,
+        "n_expr_pcs": 20,
+        "residual_df_used_for_SE": -5,
+        "cohort_counts": {
+          "CMC": 8,
+          "DevBrain": 1,
+          "IsoHuB": 1,
+          "SZBD": 11,
+          "UCLA-ASD": 3,
+          "Girgenti": 4,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 6
+        },
+        "n_genes_tested": 22672,
+        "n_samples_in_pseudobulk_matrix": 36,
+        "n_eGenes": null
+      },
+      "SMC": {
+        "n_individuals": 23,
+        "n_expr_pcs": 20,
+        "residual_df_used_for_SE": -14,
+        "cohort_counts": {
+          "DevBrain": 7,
+          "SZBD": 3,
+          "UCLA-ASD": 4,
+          "Girgenti": 7,
+          "Ma_Sestan": 2
+        },
+        "n_genes_tested": 22065,
+        "n_samples_in_pseudobulk_matrix": 23,
+        "n_eGenes": null
+      },
+      "Sncg": {
+        "n_individuals": 145,
+        "n_expr_pcs": 100,
+        "residual_df_used_for_SE": 21,
+        "cohort_counts": {
+          "CMC": 44,
+          "DevBrain": 8,
+          "IsoHuB": 2,
+          "Kreigstein": 2,
+          "SZBD": 38,
+          "UCLA-ASD": 17,
+          "Urban": 6,
+          "Girgenti": 13,
+          "Ma_Sestan": 2,
+          "PTSDBrainomics": 13
+        },
+        "n_genes_tested": 22377,
+        "n_samples_in_pseudobulk_matrix": 145,
+        "n_eGenes": null
+      }
+    },
+    "qtl_types_public": {
+      "cell-type eQTL (core, QTLtools)": "17 cell types, significant pairs",
+      "cell-type eQTL (LD-pruned genotypes)": "17 cell types, significant pairs",
+      "cell-class eQTL (aggregated excitatory/inhibitory/non-neuronal)": "VERIFIED NOT A SEPARATE ANALYSIS: sorted contents are byte-identical to concatenations of the per-cell-type core files (excitatory = 7 excitatory types; inhibitory = 5 inhibitory types; non_neuronal = Astro+OPC+Oligo+Micro.PVM); excluded from the lookup",
+      "conditional eQTL": "top variant per independent signal, 17 cell types",
+      "Bayesian LMM scQTL": "24 cell types; posterior mean + SD; significant only",
+      "dynamic eQTL (pseudotime, excitatory)": "not used here",
+      "isoform-usage QTL (sQTLseekeR2)": "22 cell types; isoGenes with beta p<0.05 (unfiltered for FDR; only 21 isoGenes at FDR<0.05 per paper); unsigned; TSS +/-5 kb window",
+      "caQTL": "NONE published (no chromatin-accessibility QTLs in brainSCOPE)",
+      "sQTL (leafcutter-style splicing)": "NONE published; isoform-usage QTLs are the closest analogue"
+    },
+    "regulatory_annotations_public": {
+      "scCRE peaks": "snATAC/snMultiome peak calls for 7 classes (Astro, Endo, Exc, Inh, Micro, OPC, Oligo) + union; hg38 BED",
+      "GRNs": "23 cell-type TF-enhancer-promoter-target gene networks (SCENIC + scGRNom + snATAC links); enhancer->target gene links used as enhancer-gene links",
+      "eQTL_edge": "scQTLs overlapping GRN enhancer/promoter elements, 24 GRN cell types"
+    },
+    "licence_terms": "Portal states output files are 'fully open source'; files are served without login or click-through. No explicit data licence found. Code: MIT License for Academic Use (commercial use: contact M. Gerstein).",
+    "overlap_with_project_bulk_eqtl": {
+      "CommonMind (eQTL Catalogue QTD000075, n=586 DLPFC)": "LIKELY OVERLAP: brainSCOPE CMC cohort = 100 CMC_MSSM_* donors (the core scQTL covariates flag 25-93 CMC samples per cell type); CommonMind bulk DLPFC eQTLs include MSSM donors. Individual-level overlap cannot be confirmed without controlled IDs.",
+      "ROSMAP (eQTL Catalogue ROSMAP brain_naive)": "LIKELY OVERLAP: brainSCOPE includes 46 ROSMAP individuals (ROS*/MAP* IDs; 1-43 per cell type in QTL covariates).",
+      "GTEx": "NO OVERLAP expected: no GTEx cohort in brainSCOPE.",
+      "SZBDMulti-Seq": "72 donors (24 control / 24 schizophrenia / 24 bipolar; 'SZBD-Kellis', supp. \u00a74.3). Brain bank not stated in the supplement; the design resembles the McLean (HBTRC) cohort of Ruzicka et al. 2024 (PMID 38781388), so overlap with CommonMind MSSM donors is judged unlikely but is UNVERIFIED.",
+      "LIBD": "10 LIBD donors (Br* IDs) - LIBD/BrainSeq bulk data are not among the project's bulk eQTL sources (BrainSeq is NON_ADULT-labelled in the Sprint-4 eQTL Catalogue table).",
+      "consequence": "agreement between brainSCOPE and CommonMind/ROSMAP bulk directions is not independent replication."
+    },
+    "sources": {
+      "paper": "https://doi.org/10.1126/science.adi5199 (Emani PS et al., Science 384:eadi5199, 2024; PMID 38781369; PMC11365579 full text read via NCBI efetch)",
+      "preprint": "https://doi.org/10.1101/2024.03.18.585576 (PMC10983939)",
+      "supplement": "https://www.biorxiv.org/content/biorxiv/early/2024/03/19/2024.03.18.585576/DC1/embed/media-1.pdf (bioRxiv v1 supplementary materials; sections 1 'Genotype QC and imputation', 4.1 'scQTLs', 4.5 isoQTLs, 5 GRNs)",
+      "portal_outputs": "https://brainscope.gersteinlab.org/integrative_files.html",
+      "portal_sigqtl": "https://brainscope.gersteinlab.org/output-sig-eQTL.html",
+      "portal_raw": "https://brainscope.gersteinlab.org/raw_data_files.html",
+      "code_scqtl": "https://brainscope.gersteinlab.org/code/core_scqtl_processing_code.tar.gz",
+      "github": "https://github.com/gersteinlab/PsychENCODE_SingleCell_Integrative (scQTL Pipeline/README.md; LICENSE = 'MIT License for Academic Use')",
+      "sample_metadata": "https://brainscope.gersteinlab.org/data/sample_metadata/PEC2_sample_metadata.txt",
+      "covariates": "https://brainscope.gersteinlab.org/data/qtl_covariates/"
+    }
+  },
+  "access_blockers": [
+    {
+      "item": "individual imputed genotypes (VCF) for PsychENCODE cohorts",
+      "url": "https://www.synapse.org/#!Synapse:syn51111084 (PEC Capstone II; doi:10.7303/SYN51111084.1)",
+      "needs": "Synapse account + PsychENCODE controlled-access approval (data use certificate)",
+      "impact": "full per-variant scQTL statistics (needed for coloc.abf / coloc.susie) cannot be regenerated"
+    },
+    {
+      "item": "ROSMAP raw data, genotypes and single-cell matrices",
+      "url": "https://adknowledgeportal.synapse.org (syn53479857; doi:10.7303/SYN53479857.1)",
+      "needs": "Synapse account + AD Knowledge Portal data use agreement",
+      "impact": "as above"
+    },
+    {
+      "item": "raw FASTQ (snRNA-seq, snATAC-seq, snMultiome)",
+      "url": "https://brainscope.gersteinlab.org/raw_data_files.html",
+      "needs": "Synapse controlled access",
+      "impact": "not needed for this analysis"
+    },
+    {
+      "item": "full nominal scQTL summary statistics (all tested pairs)",
+      "url": "not published on brainscope.gersteinlab.org; no public location found (portal, supplement, GitHub)",
+      "needs": "would require request to authors or re-analysis with controlled genotypes",
+      "impact": "colocalisation NOT_TESTABLE; only lead-variant lookup + LD proxies possible"
+    }
+  ]
+}

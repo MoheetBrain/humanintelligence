@@ -79,3 +79,36 @@ Any change after freeze is appended here with a date, the reason, and a new hash
 hash line is authoritative. `pipelines/sprint5/common.py:load_rules` refuses to run on a mismatch.
 
 RULES_JSON_SHA256: 0f4642189e623a07736c484909c3527606286616bacc3e9a909059d2ead3d0eb
+
+### Amendment A1 — 2026-09-23T21:30Z approx. (before the first run of the gene classifier)
+
+Residual labels were added below every frozen class, for candidates that fit none of the frozen classes:
+
+- V2G_SUPPORTED_WEAK_LOCUS
+- RARE_CODING_EA_PROXY_ONLY
+- RARE_CODING_SUGGESTIVE_ONLY
+- POSITIVE_DOSAGE_NOMINAL_ONLY
+- PANEL_ONLY_NO_LOCUS_DATA
+
+No frozen class, threshold or precedence changed. EA-proxy rare genes get perturbation stratum P5 with a flag.
+
+RULES_JSON_SHA256: 9a83c9daf2b74cb7db62333632b2302ed4e94cc91470df1656c68f8d79ddfca4
+
+### Amendment A2 — 2026-09-23T21:36Z approx. (numerical defect; disclosed as post-view)
+
+**Change.** The Gaussian-KDE Tweedie shrinkage of the discovery z was replaced by an empirical-Bayes normal scale mixture (`pipelines/sprint5/eb_shrink.py`, ash-style). The estimand, E[μ|z], is unchanged.
+
+**Reason.** The KDE gradient is unstable in the sparse tail. It is non-monotone and flips signs:
+
+| z | KDE-Tweedie estimate |
+|---|---|
+| 8.33 | −1.99 |
+| 6.23 | +8.88 |
+
+**Disclosure.** The locus ranks from the defective estimator had already been viewed (research log R05). Both versions are kept.
+
+**Wider impact.** Sprint 4's expected-concordance and Gate-A power figures used the same function. They receive a dated correction block.
+
+RULES_JSON_SHA256: f8ad4b0a631264aea8d1a93b53373b95a5b09bd5e9ef310f79cea5ec8784b04c
+
+*Timestamp note: A1/A2 were first written with incorrect clock times (22:45Z / 23:05Z); corrected before commit to the system-clock times above. The A1 hash line refers to the A1-only JSON as first written.*
