@@ -1,0 +1,433 @@
+{
+ "n_genes_universe": 18418,
+ "log_LOEUF_missing_imputed_median": 1017,
+ "neuron_expr_missing_imputed_median": 474,
+ "neuron_specificity_missing_imputed_median": 474,
+ "brain_expr_gtex_missing_imputed_median": 623,
+ "covariate_correlations_spearman": {
+  "log_annotation_density": {
+   "log_annotation_density": 1.0,
+   "log_LOEUF": -0.352,
+   "neuron_expr": 0.176,
+   "neuron_specificity": -0.063,
+   "brain_expr_gtex": 0.215
+  },
+  "log_LOEUF": {
+   "log_annotation_density": -0.352,
+   "log_LOEUF": 1.0,
+   "neuron_expr": -0.494,
+   "neuron_specificity": 0.005,
+   "brain_expr_gtex": -0.371
+  },
+  "neuron_expr": {
+   "log_annotation_density": 0.176,
+   "log_LOEUF": -0.494,
+   "neuron_expr": 1.0,
+   "neuron_specificity": 0.211,
+   "brain_expr_gtex": 0.634
+  },
+  "neuron_specificity": {
+   "log_annotation_density": -0.063,
+   "log_LOEUF": 0.005,
+   "neuron_expr": 0.211,
+   "neuron_specificity": 1.0,
+   "brain_expr_gtex": -0.041
+  },
+  "brain_expr_gtex": {
+   "log_annotation_density": 0.215,
+   "log_LOEUF": -0.371,
+   "neuron_expr": 0.634,
+   "neuron_specificity": -0.041,
+   "brain_expr_gtex": 1.0
+  }
+ },
+ "go_propagation": {
+  "bp": {
+   "n_terms_direct": 11156,
+   "n_terms_propagated": 13784
+  },
+  "mf": {
+   "n_terms_direct": 4842,
+   "n_terms_propagated": 5174
+  },
+  "cc": {
+   "n_terms_direct": 1945,
+   "n_terms_propagated": 2107
+  }
+ },
+ "go_bp_prop_sets_written": 5618,
+ "go_cc_prop_sets_written": 858,
+ "go_mf_prop_sets_written": 1315,
+ "recon_set_sizes": {
+  "PRE": 810,
+  "POST": 1031,
+  "SYNAPSE": 1602,
+  "PRE_ONLY": 360,
+  "POST_ONLY": 581,
+  "PRE_AND_POST": 450,
+  "PRE_OR_POST": 1391,
+  "PREMEMB": 165,
+  "POSTMEMB": 154,
+  "PREMEMB_ONLY": 92,
+  "POSTMEMB_ONLY": 81,
+  "PREPOSTMEMB_BOTH": 73,
+  "PREPOSTMEMB_UNION": 246,
+  "PSD": 343,
+  "PRE_PROCESS": 308,
+  "POST_PROCESS": 273,
+  "PREPROC_ONLY": 262,
+  "POSTPROC_ONLY": 227,
+  "PREPOSTPROC_BOTH": 46,
+  "PREPOSTPROC_UNION": 535,
+  "GOCC_PRESYNAPSE_PROP": 642,
+  "GOCC_POSTSYNAPSE_PROP": 738,
+  "GOCC_SYNAPSE_PROP": 1598,
+  "NEURON_SPECIFIC_TOP20": 3684,
+  "BRAIN_EXPRESSED_TOP50": 9521,
+  "THEME_synapse": 1602,
+  "THEME_presynapse": 810,
+  "THEME_postsynapse": 1031,
+  "THEME_postsynaptic_density": 343,
+  "THEME_dendrite": 590,
+  "THEME_neurogenesis": 1010,
+  "THEME_axon_guidance": 169,
+  "THEME_chromatin": 738,
+  "THEME_translation": 359,
+  "THEME_mitochondria": 1646,
+  "THEME_oxidative_phosphorylation": 89,
+  "THEME_myelin": 84,
+  "THEME_neuron_projection": 1239,
+  "THEME_axon": 628,
+  "CAT_synapse_formation_adhesion": 189,
+  "CAT_active_zone_organisation": 117,
+  "CAT_vesicle_cycle_trafficking": 282,
+  "CAT_vesicle_docking_priming": 18,
+  "CAT_ca_triggered_release": 79,
+  "CAT_snare_cycle": 51,
+  "CAT_receptor_trafficking": 178,
+  "CAT_postsynaptic_plasticity_structure": 279,
+  "CAT_activity_dependent_remodelling": 130,
+  "CAT_generic_neuronal_projection": 1239,
+  "RELEASE_MACHINERY": 392,
+  "ORGANISATION_TRAFFICKING": 581,
+  "RELEASE_ONLY": 294,
+  "ORGANISATION_ONLY": 483,
+  "RELEASE_AND_ORG": 98,
+  "RELEASE_OR_ORG": 875
+ },
+ "theme_anchor_sizes_direct_vs_propagated": {
+  "synapse": {
+   "propagated_or_syngo": 1678,
+   "sprint3_direct": null
+  },
+  "presynapse": {
+   "propagated_or_syngo": 846,
+   "sprint3_direct": null
+  },
+  "postsynapse": {
+   "propagated_or_syngo": 1084,
+   "sprint3_direct": null
+  },
+  "postsynaptic_density": {
+   "propagated_or_syngo": 362,
+   "sprint3_direct": null
+  },
+  "dendrite": {
+   "propagated_or_syngo": 590,
+   "sprint3_direct": 484
+  },
+  "neurogenesis": {
+   "propagated_or_syngo": 1010,
+   "sprint3_direct": 79
+  },
+  "axon_guidance": {
+   "propagated_or_syngo": 169,
+   "sprint3_direct": 149
+  },
+  "chromatin": {
+   "propagated_or_syngo": 738,
+   "sprint3_direct": 203
+  },
+  "translation": {
+   "propagated_or_syngo": 359,
+   "sprint3_direct": 201
+  },
+  "mitochondria": {
+   "propagated_or_syngo": 1646,
+   "sprint3_direct": 1596
+  },
+  "oxidative_phosphorylation": {
+   "propagated_or_syngo": 89,
+   "sprint3_direct": 24
+  },
+  "myelin": {
+   "propagated_or_syngo": 84,
+   "sprint3_direct": 45
+  },
+  "neuron_projection": {
+   "propagated_or_syngo": 1239,
+   "sprint3_direct": 285
+  },
+  "axon": {
+   "propagated_or_syngo": 628,
+   "sprint3_direct": 430
+  }
+ },
+ "plan": {
+  "theme_anchors": {
+   "synapse": [
+    "syngo",
+    "GO_0045202"
+   ],
+   "presynapse": [
+    "syngo",
+    "GO_0098793"
+   ],
+   "postsynapse": [
+    "syngo",
+    "GO_0098794"
+   ],
+   "postsynaptic_density": [
+    "syngo",
+    "GO_0014069"
+   ],
+   "dendrite": [
+    "go_cc_prop",
+    "GO_0030425"
+   ],
+   "neurogenesis": [
+    "go_bp_prop",
+    "GO_0022008"
+   ],
+   "axon_guidance": [
+    "go_bp_prop",
+    "GO_0007411"
+   ],
+   "chromatin": [
+    "go_bp_prop",
+    "GO_0006325"
+   ],
+   "translation": [
+    "go_bp_prop",
+    "GO_0006412"
+   ],
+   "mitochondria": [
+    "go_cc_prop",
+    "GO_0005739"
+   ],
+   "oxidative_phosphorylation": [
+    "go_bp_prop",
+    "GO_0006119"
+   ],
+   "myelin": [
+    "go_bp_prop",
+    "GO_0042552"
+   ],
+   "neuron_projection": [
+    "go_cc_prop",
+    "GO_0043005"
+   ],
+   "axon": [
+    "go_cc_prop",
+    "GO_0030424"
+   ]
+  },
+  "theme_regex": {
+   "synapse": "synap",
+   "presynapse": "presynap|synaptic vesicle|active zone|neurotransmitter secretion|exocytosis",
+   "postsynapse": "postsynap|dendritic spine|neurotransmitter receptor",
+   "dendrite": "dendrit",
+   "neurogenesis": "neurogenesis|neuron differentiation|neural precursor|neuroblast",
+   "axon_guidance": "axon guidance|axonogenesis|axon extension|neuron projection guidance",
+   "chromatin": "chromatin|histone|nucleosome",
+   "translation": "translation|ribosom",
+   "mitochondria": "mitochondri|oxidative phosphorylation|respiratory chain|electron transport",
+   "myelin": "myelin|oligodendrocyte"
+  },
+  "machinery": {
+   "synapse_formation_adhesion": [
+    [
+     "syngo",
+     "GO_0007416"
+    ],
+    [
+     "syngo",
+     "GO_0099560"
+    ],
+    [
+     "syngo",
+     "GO_0051963"
+    ]
+   ],
+   "active_zone_organisation": [
+    [
+     "syngo",
+     "GO_0048786"
+    ],
+    [
+     "syngo",
+     "GO_0099054"
+    ],
+    [
+     "syngo",
+     "GO_0098831"
+    ]
+   ],
+   "vesicle_cycle_trafficking": [
+    [
+     "syngo",
+     "GO_0099504"
+    ],
+    [
+     "syngo",
+     "GO_0008021"
+    ],
+    [
+     "syngo",
+     "GO_0048488"
+    ]
+   ],
+   "vesicle_docking_priming": [
+    [
+     "syngo",
+     "GO_0016082"
+    ],
+    [
+     "go_bp_prop",
+     "GO_0016081"
+    ]
+   ],
+   "ca_triggered_release": [
+    [
+     "syngo",
+     "GO_0016079"
+    ],
+    [
+     "syngo",
+     "GO_0099502"
+    ],
+    [
+     "syngo",
+     "GO_2000300"
+    ]
+   ],
+   "snare_cycle": [
+    [
+     "go_bp_prop",
+     "GO_0035493"
+    ],
+    [
+     "go_bp_prop",
+     "GO_0035494"
+    ],
+    [
+     "go_cc_prop",
+     "GO_0031201"
+    ]
+   ],
+   "receptor_trafficking": [
+    [
+     "syngo",
+     "GO_0099072"
+    ],
+    [
+     "syngo",
+     "GO_0099645"
+    ],
+    [
+     "syngo",
+     "GO_0098884"
+    ],
+    [
+     "syngo",
+     "GO_0099637"
+    ]
+   ],
+   "postsynaptic_plasticity_structure": [
+    [
+     "syngo",
+     "GO_0099173"
+    ],
+    [
+     "syngo",
+     "GO_0099010"
+    ],
+    [
+     "go_bp_prop",
+     "GO_0048167"
+    ]
+   ],
+   "activity_dependent_remodelling": [
+    [
+     "syngo",
+     "GO_0099563"
+    ],
+    [
+     "go_bp_prop",
+     "GO_0060291"
+    ],
+    [
+     "go_bp_prop",
+     "GO_0048168"
+    ]
+   ],
+   "generic_neuronal_projection": [
+    [
+     "go_cc_prop",
+     "GO_0043005"
+    ],
+    [
+     "go_cc_prop",
+     "GO_0030424"
+    ]
+   ]
+  },
+  "release_categories": [
+   "active_zone_organisation",
+   "vesicle_cycle_trafficking",
+   "vesicle_docking_priming",
+   "ca_triggered_release",
+   "snare_cycle"
+  ],
+  "organisation_categories": [
+   "synapse_formation_adhesion",
+   "receptor_trafficking",
+   "postsynaptic_plasticity_structure",
+   "activity_dependent_remodelling"
+  ],
+  "neuronal_superclusters": [
+   "Amygdala excitatory",
+   "CGE interneuron",
+   "Cerebellar inhibitory",
+   "Deep-layer corticothalamic and 6b",
+   "Deep-layer intratelencephalic",
+   "Deep-layer near-projecting",
+   "Eccentric medium spiny neuron",
+   "Hippocampal CA1-3",
+   "Hippocampal CA4",
+   "Hippocampal dentate gyrus",
+   "LAMP5-LHX6 and Chandelier",
+   "Lower rhombic lip",
+   "MGE interneuron",
+   "Mammillary body",
+   "Medium spiny neuron",
+   "Midbrain-derived inhibitory",
+   "Thalamic excitatory",
+   "Upper rhombic lip",
+   "Upper-layer intratelencephalic"
+  ],
+  "non_neuronal_superclusters": [
+   "Astrocyte",
+   "Bergmann glia",
+   "Choroid plexus",
+   "Committed oligodendrocyte precursor",
+   "Ependymal",
+   "Fibroblast",
+   "Microglia",
+   "Oligodendrocyte",
+   "Oligodendrocyte precursor",
+   "Vascular"
+  ],
+  "siletti_source": "/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/atlas_a/gene_expression_supercluster.parquet"
+ }
+}

@@ -1,0 +1,5355 @@
+{
+  "built_at": "2026-09-23T09:10:05Z",
+  "script": "pipelines/sprint3_1/rank_dependency_audit.py",
+  "status_of_ranks": "TRIAGE, not truth. No evidence was added, no dimension added, no weighted score built.",
+  "rank_conventions": "rank = RRA consensus rank among ALL eligible genes (method=min), as consensus_rank in the committed Top-50 CSVs; delta = scheme rank - ORIGINAL rank (positive = fell); in_top50 = in the scheme's top-600 -> one-gene-per-LD-block -> head(50) list; None = no evidence under that scheme (no rank).",
+  "inputs_sha256": {
+    "reports/gene_tournament/direct_cognition_rank.csv": "6bdeff6e1b306f22b408a2bfa6dbbcb20ada1cf56280826e663a8a357b6046e0",
+    "reports/gene_tournament/fine_mapping_support.csv": "ba198dcd412a48443b027a1cf0dd3ddb0f2799d72cc876a23cdb635aa7d38000",
+    "reports/gene_tournament/TOP50_HUMAN_COGNITION_GENES.csv": "357a2fb7d1e6607286b79f6bb5436edfd14b8ce4984d41563faf33cab918df8f",
+    "reports/gene_tournament/TOP50_ADULT_MODIFIABLE_GENES.csv": "08a6219b707020dd7b23eb4e0f8cd4fc552ce53c90a059499d5e012a532f41c3",
+    "reports/gene_tournament/biological_modules.csv": "eeee50b935b4645083cda16ff6189bf12fd10890a506ddfc47779e5bda081479",
+    "reports/gene_tournament/positive_human_perturbations.csv": "0f75a789d20e5748e5fd051881f333dffc71c71f5e1671014f0f4c0ace9362f8",
+    "data/gene_tournament/gwas_credible_sets_l2g.csv": "0ec2df175fb3057d25d716ba57185c42da16819a6849ac280eddec3e1395b6c9",
+    "data/gene_tournament/opentargets_brain_coloc_compact.csv.gz": "21a581dea846472f22a8db23ef5a32a724e645dd249898aef6134c22a92eab9d",
+    "data/gene_tournament/study_classification.csv": "a0ba8029d07316c0e5b3c5cea7bddf4516eff892f1a0c1dcf946308142574535",
+    "data/gene_tournament/study_metadata.jsonl": "c895a271ac31ad52091af3fbdc4bce50f4f883c37eea84b72fa80a4b1ce3b47c",
+    "data/gene_tournament/master_gene_universe.parquet": "eba0ee6ba76187a4881affaa0f73f2165476fe03f243f1e31e550bc3edefafee",
+    "data/gene_tournament/module_membership.csv": "104c50200e6f3abf4cd03c297fd584a69fd011122faf1ecf4e947291dc722849",
+    "data/gene_tournament/developmental_classification.parquet": "dcba8385deae51c664083f43c3114e442f31476b2c9215e477ef58184eec4dde"
+  },
+  "reproduction": {
+    "natural": {
+      "reproduced_exactly": true,
+      "n_reproduced": 50,
+      "n_committed": 50,
+      "same_gene_set": true,
+      "n_position_mismatches": 0,
+      "mismatches": []
+    },
+    "adult": {
+      "reproduced_exactly": true,
+      "n_reproduced": 50,
+      "n_committed": 50,
+      "same_gene_set": true,
+      "n_position_mismatches": 0,
+      "mismatches": []
+    },
+    "part_g_h_directionality_shape_matches_committed": true,
+    "ORIGINAL_reproduces_committed_top50": true,
+    "discrepancy_flag": false
+  },
+  "sanity_checks": {
+    "per_gate_dimension_presence_matches_original_n_dimensions_present": {
+      "natural": true,
+      "adult": true
+    },
+    "catalog_unit_recount_matches_pipeline_all_scope_genes": true,
+    "finemap_score_recomputed_matches_all_scope_genes": true,
+    "scope_genes_not_eligible": []
+  },
+  "gene_scope": {
+    "n_genes": 79,
+    "named_genes": [
+      "NEGR1",
+      "DCC",
+      "EXOC4",
+      "NT5DC2",
+      "BSN",
+      "SYT1",
+      "NSF",
+      "ERBB3",
+      "GRIA4",
+      "KCNJ3",
+      "RIMS2",
+      "CADM2",
+      "PTPRT",
+      "MEF2C"
+    ],
+    "n_in_natural_top50": 50,
+    "n_in_adult_top50": 50
+  },
+  "lineage_vocabulary": [
+    "SAME_GWAS_SIGNAL_UKB",
+    "OVERLAPPING_SAMPLE_REPLICATION",
+    "INDEPENDENT_COHORT",
+    "INDEPENDENT_MOLECULAR_DATASET",
+    "INDEPENDENT_PERTURBATION",
+    "DERIVED_FROM_SELECTION",
+    "EXPRESSION_ANNOTATION",
+    "ABSENT"
+  ],
+  "extra_value_allowed": "UNDETERMINED",
+  "dimension_level_lineage": {
+    "direct": {
+      "class": "SAME_GWAS_SIGNAL_UKB",
+      "basis": "MAGMA on Davies 2018 (CHARGE+COGENT+UKB); also the ELIGIBILITY FLOOR of every scheme (MAGMA FDR<0.05)"
+    },
+    "replication": {
+      "class": "OVERLAPPING_SAMPLE_REPLICATION",
+      "basis": "strict catalog units (count includes Davies' own PMID unit and UKB-listed units) + Savage 2018 Z/100 (shares UKB)"
+    },
+    "finemap": {
+      "class": "SAME_GWAS_SIGNAL_UKB",
+      "basis": "Open Targets GWAS credible sets + L2G of the strict-tier studies (UKB-heavy); per-gene reachability from UKB-free studies evaluated"
+    },
+    "coloc": {
+      "class": "SAME_GWAS_SIGNAL_UKB",
+      "gwas_half": "SAME_GWAS_SIGNAL_UKB",
+      "qtl_half": "INDEPENDENT_MOLECULAR_DATASET",
+      "basis": "brain QTL (GTEx, ROSMAP, BrainSeq, CommonMind, ...) x direct-cognition GWAS; queried only for the 400 Davies-top genes"
+    },
+    "direction": {
+      "class": "SAME_GWAS_SIGNAL_UKB",
+      "basis": "sign agreement over the same colocalisation records"
+    },
+    "positive_human": {
+      "class": "INDEPENDENT_PERTURBATION",
+      "basis": "2q12.3 duplication CNV-GWAS (PMID 39667348); UKB share undetermined; present for 2 eligible genes (SOWAHC, SEPTIN10)"
+    },
+    "adult_modifiability": {
+      "class": "EXPRESSION_ANNOTATION",
+      "basis": "GTEx v10 + BrainSpan; not association evidence"
+    },
+    "module": {
+      "class": "DERIVED_FROM_SELECTION",
+      "basis": "modules built on Davies FDR<0.01 genes; module rank uses Davies evidence share"
+    },
+    "extreme": {
+      "class": "OVERLAPPING_SAMPLE_REPLICATION",
+      "basis": "sensitivity-only; Zabaneh controls (HRS) are a CHARGE cohort"
+    },
+    "math": {
+      "class": "SAME_GWAS_SIGNAL_UKB",
+      "basis": "sensitivity-only; UKB FI4 item"
+    }
+  },
+  "study_registry": {
+    "documented_determinations_verified": {
+      "29844566": "Davies 2018: pipelines/gene_tournament/analyse_extreme_tail.py states 'Davies 2018 is a CHARGE+COGENT+UKB'",
+      "29942086": "Savage 2018: pipelines/gene_tournament/build_gene_ranks.py states 'both contain UK Biobank'",
+      "GCST005626": "Zabaneh 2018 extreme IQ: pipelines/gene_tournament/analyse_extreme_tail.py states 'HRS is a CHARGE cohort'"
+    },
+    "documented_determinations_dropped": [],
+    "n_studies": 473,
+    "audit_status_counts": {
+      "UKB_UNKNOWN": 215,
+      "UKB_FREE_VERIFIED": 169,
+      "UKB_CONFIRMED": 88,
+      "UKB_FREE_OVERLAP_POSSIBLE": 1
+    },
+    "direct_strict_audit_status_counts": {
+      "UKB_UNKNOWN": 79,
+      "UKB_CONFIRMED": 23,
+      "UKB_FREE_VERIFIED": 18
+    },
+    "pipeline_not_listed_but_audit_not_ukb_free": [
+      {
+        "accession_id": "GCST90162631",
+        "pubmed_id": "35974141",
+        "first_author": "Lahti J",
+        "trait": "Verbal short term memory",
+        "cohort_raw": "multiple",
+        "audit_status": "UKB_UNKNOWN",
+        "audit_basis": "cohort field is only a placeholder ['multiple']"
+      },
+      {
+        "accession_id": "GCST90162632",
+        "pubmed_id": "35974141",
+        "first_author": "Lahti J",
+        "trait": "Verbal learning",
+        "cohort_raw": "multiple",
+        "audit_status": "UKB_UNKNOWN",
+        "audit_basis": "cohort field is only a placeholder ['multiple']"
+      },
+      {
+        "accession_id": "GCST90162633",
+        "pubmed_id": "35974141",
+        "first_author": "Lahti J",
+        "trait": "Verbal short term memory (paragraph recall test)",
+        "cohort_raw": "multiple",
+        "audit_status": "UKB_UNKNOWN",
+        "audit_basis": "cohort field is only a placeholder ['multiple']"
+      },
+      {
+        "accession_id": "GCST90162635",
+        "pubmed_id": "35974141",
+        "first_author": "Lahti J",
+        "trait": "Verbal learning (oral presentation)",
+        "cohort_raw": "multiple",
+        "audit_status": "UKB_UNKNOWN",
+        "audit_basis": "cohort field is only a placeholder ['multiple']"
+      },
+      {
+        "accession_id": "GCST90162636",
+        "pubmed_id": "35974141",
+        "first_author": "Lahti J",
+        "trait": "Verbal learning (visual presentation)",
+        "cohort_raw": "multiple",
+        "audit_status": "UKB_UNKNOWN",
+        "audit_basis": "cohort field is only a placeholder ['multiple']"
+      },
+      {
+        "accession_id": "GCST90503115",
+        "pubmed_id": "39891803",
+        "first_author": "Perry LC",
+        "trait": "Common executive function",
+        "cohort_raw": "UKB | CHARGE | ALSPAC | NIHR BIORESOURCE",
+        "audit_status": "UKB_CONFIRMED",
+        "audit_basis": "GWAS Catalog cohort field lists UKB: ['UKB ', ' CHARGE ', ' ALSPAC ', ' NIHR BIORESOURCE']"
+      },
+      {
+        "accession_id": "GCST90503116",
+        "pubmed_id": "39891803",
+        "first_author": "Perry LC",
+        "trait": "Working memory",
+        "cohort_raw": "UKB | CHARGE | ALSPAC | NIHR BIORESOURCE",
+        "audit_status": "UKB_CONFIRMED",
+        "audit_basis": "GWAS Catalog cohort field lists UKB: ['UKB ', ' CHARGE ', ' ALSPAC ', ' NIHR BIORESOURCE']"
+      }
+    ]
+  },
+  "independent_units_top50": {
+    "natural": {
+      "n_genes": 50,
+      "n_with_ge1_independent_unit_task_definition": 11,
+      "n_with_ge1_unit_excluding_qtl_datasets": 3,
+      "n_with_ge1_unit_excluding_qtl_and_clingen": 1,
+      "n_with_ge1_verified_ukb_free_cohort_unit": 1,
+      "n_with_ge1_strong_coloc_qtl_dataset": 9,
+      "n_with_ge1_perturbation_unit": 2,
+      "n_pipeline_ukb_free_units_ge1": 12,
+      "n_where_pipeline_ukb_free_count_exceeds_audit": 11,
+      "median_dims_present_same_lineage": 3.0,
+      "genes_with_ge1_verified_ukb_free_cohort_unit": [
+        "MACROD2"
+      ]
+    },
+    "adult": {
+      "n_genes": 50,
+      "n_with_ge1_independent_unit_task_definition": 9,
+      "n_with_ge1_unit_excluding_qtl_datasets": 3,
+      "n_with_ge1_unit_excluding_qtl_and_clingen": 0,
+      "n_with_ge1_verified_ukb_free_cohort_unit": 0,
+      "n_with_ge1_strong_coloc_qtl_dataset": 6,
+      "n_with_ge1_perturbation_unit": 3,
+      "n_pipeline_ukb_free_units_ge1": 8,
+      "n_where_pipeline_ukb_free_count_exceeds_audit": 8,
+      "median_dims_present_same_lineage": 3.0,
+      "genes_with_ge1_verified_ukb_free_cohort_unit": []
+    },
+    "union": {
+      "n_genes": 79,
+      "n_with_ge1_independent_unit_task_definition": 14,
+      "n_with_ge1_unit_excluding_qtl_datasets": 5,
+      "n_with_ge1_unit_excluding_qtl_and_clingen": 1,
+      "n_with_ge1_verified_ukb_free_cohort_unit": 1,
+      "n_with_ge1_strong_coloc_qtl_dataset": 10,
+      "n_with_ge1_perturbation_unit": 4,
+      "n_pipeline_ukb_free_units_ge1": 15,
+      "n_where_pipeline_ukb_free_count_exceeds_audit": 14,
+      "median_dims_present_same_lineage": 3.0,
+      "genes_with_ge1_verified_ukb_free_cohort_unit": [
+        "MACROD2"
+      ]
+    }
+  },
+  "sensitivity_natural": {
+    "dimensions": [
+      "direct",
+      "replication",
+      "finemap",
+      "coloc",
+      "positive_human",
+      "module"
+    ],
+    "schemes": {
+      "ORIGINAL": {
+        "description": "reproduction of build_consensus.consensus()",
+        "lists": [
+          [
+            "direct"
+          ],
+          [
+            "replication"
+          ],
+          [
+            "finemap"
+          ],
+          [
+            "coloc"
+          ],
+          [
+            "positive_human"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2423,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 50,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 51,
+          "n_leads_at_cutoff_rank": 18,
+          "n_leads_at_cutoff_included": 13,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          37,
+          50
+        ],
+        "original_top50_dropped": [],
+        "top50_genes_in_order": [
+          "DCC",
+          "NEGR1",
+          "EXOC4",
+          "NT5DC2",
+          "OGA",
+          "ERBB3",
+          "ATXN2L",
+          "CSE1L",
+          "LRRC37A",
+          "BSN",
+          "PDE1C",
+          "PEF1",
+          "SEMA3F",
+          "SYT1",
+          "ALMS1",
+          "MEF2C",
+          "DBN1",
+          "TET2",
+          "NKAIN2",
+          "CTNNA2",
+          "DDN",
+          "FOXO3",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "EEA1",
+          "KANSL1",
+          "APOE",
+          "FOXO6",
+          "SEPTIN3",
+          "LMF1",
+          "KCNJ3",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "PKD1L3",
+          "CACNA1E",
+          "PPM1E",
+          "GBF1",
+          "PTPRF",
+          "ARHGAP15",
+          "CDH9",
+          "CADM2",
+          "MACROD2",
+          "MTMR4",
+          "PTPRT",
+          "NCAM1",
+          "HBEGF"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "DCC",
+            "original_rank": 1,
+            "scheme_rank": 1,
+            "delta": 0
+          },
+          {
+            "gene": "PTPRF",
+            "original_rank": 51,
+            "scheme_rank": 51,
+            "delta": 0
+          },
+          {
+            "gene": "MYBPHL",
+            "original_rank": 31,
+            "scheme_rank": 31,
+            "delta": 0
+          },
+          {
+            "gene": "LRRC37A",
+            "original_rank": 10,
+            "scheme_rank": 10,
+            "delta": 0
+          },
+          {
+            "gene": "HBEGF",
+            "original_rank": 51,
+            "scheme_rank": 51,
+            "delta": 0
+          },
+          {
+            "gene": "SEMA3F",
+            "original_rank": 14,
+            "scheme_rank": 14,
+            "delta": 0
+          },
+          {
+            "gene": "ALMS1",
+            "original_rank": 18,
+            "scheme_rank": 18,
+            "delta": 0
+          },
+          {
+            "gene": "MTMR4",
+            "original_rank": 51,
+            "scheme_rank": 51,
+            "delta": 0
+          },
+          {
+            "gene": "PTPRT",
+            "original_rank": 51,
+            "scheme_rank": 51,
+            "delta": 0
+          },
+          {
+            "gene": "CDH9",
+            "original_rank": 51,
+            "scheme_rank": 51,
+            "delta": 0
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "DCC",
+            "original_rank": 1,
+            "scheme_rank": 1,
+            "delta": 0
+          },
+          {
+            "gene": "LRRN1",
+            "original_rank": 1352,
+            "scheme_rank": 1352,
+            "delta": 0
+          },
+          {
+            "gene": "MYB",
+            "original_rank": 2263,
+            "scheme_rank": 2263,
+            "delta": 0
+          },
+          {
+            "gene": "RNF216",
+            "original_rank": 1000,
+            "scheme_rank": 1000,
+            "delta": 0
+          },
+          {
+            "gene": "SELENOP",
+            "original_rank": 1764,
+            "scheme_rank": 1764,
+            "delta": 0
+          },
+          {
+            "gene": "PIK3R1",
+            "original_rank": 1161,
+            "scheme_rank": 1161,
+            "delta": 0
+          },
+          {
+            "gene": "PURA",
+            "original_rank": 1500,
+            "scheme_rank": 1500,
+            "delta": 0
+          },
+          {
+            "gene": "GPR149",
+            "original_rank": 2122,
+            "scheme_rank": 2122,
+            "delta": 0
+          },
+          {
+            "gene": "MGA",
+            "original_rank": 1007,
+            "scheme_rank": 1007,
+            "delta": 0
+          },
+          {
+            "gene": "MAPKAPK5",
+            "original_rank": 1388,
+            "scheme_rank": 1388,
+            "delta": 0
+          }
+        ],
+        "new_entrants_to_top50": []
+      },
+      "LINEAGE_COLLAPSED_BEST": {
+        "description": "direct+replication+finemap+coloc -> ONE list (best normalised rank, re-ranked); kept separate: positive_human, module",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc"
+          ],
+          [
+            "positive_human"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2423,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 2,
+        "top50_size": 50,
+        "top50_overlap_with_original": 24,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 23,
+          "n_leads_at_cutoff_rank": 54,
+          "n_leads_at_cutoff_included": 31,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          13,
+          29
+        ],
+        "original_top50_dropped": [
+          "OGA",
+          "ERBB3",
+          "BSN",
+          "PEF1",
+          "SEMA3F",
+          "ALMS1",
+          "DBN1",
+          "NKAIN2",
+          "CTNNA2",
+          "DDN",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "KANSL1",
+          "FOXO6",
+          "SEPTIN3",
+          "LMF1",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "CACNA1E",
+          "CDH9",
+          "MTMR4",
+          "PTPRT"
+        ],
+        "top50_genes_in_order": [
+          "EXOC4",
+          "DCC",
+          "FOXO3",
+          "NEGR1",
+          "APOE",
+          "MEF2C",
+          "TET2",
+          "INKA1",
+          "NT5DC2",
+          "LRRC37A",
+          "PLCL2",
+          "ATXN2L",
+          "ZNF638",
+          "IGDCC4",
+          "CSE1L",
+          "ARHGAP15",
+          "FADS2",
+          "CADM2",
+          "HEXIM1",
+          "MYH15",
+          "GRIN2A",
+          "GRID2",
+          "PPM1E",
+          "SYT1",
+          "PREX1",
+          "HBEGF",
+          "PTPRF",
+          "PDE1C",
+          "PCDH17",
+          "SYPL2",
+          "KIFC2",
+          "AKAP6",
+          "TSNARE1",
+          "KCNJ3",
+          "GCC1",
+          "CACNA1I",
+          "CRHR1",
+          "GBF1",
+          "PLCL1",
+          "FAM43B",
+          "TENM4",
+          "PTPRD",
+          "MACROD2",
+          "EEA1",
+          "NCAM1",
+          "PKD1L3",
+          "KCNIP2",
+          "SORCS3",
+          "SHISA9",
+          "CDH8"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "MYBPHL",
+            "original_rank": 31,
+            "scheme_rank": 549,
+            "delta": 518
+          },
+          {
+            "gene": "DHRS11",
+            "original_rank": 31,
+            "scheme_rank": 376,
+            "delta": 345
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 41,
+            "scheme_rank": 370,
+            "delta": 329
+          },
+          {
+            "gene": "SNX29",
+            "original_rank": 50,
+            "scheme_rank": 364,
+            "delta": 314
+          },
+          {
+            "gene": "OGA",
+            "original_rank": 5,
+            "scheme_rank": 225,
+            "delta": 220
+          },
+          {
+            "gene": "KANSL1",
+            "original_rank": 37,
+            "scheme_rank": 254,
+            "delta": 217
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 31,
+            "scheme_rank": 246,
+            "delta": 215
+          },
+          {
+            "gene": "SND1",
+            "original_rank": 49,
+            "scheme_rank": 254,
+            "delta": 205
+          },
+          {
+            "gene": "PBRM1",
+            "original_rank": 35,
+            "scheme_rank": 238,
+            "delta": 203
+          },
+          {
+            "gene": "COL16A1",
+            "original_rank": 31,
+            "scheme_rank": 225,
+            "delta": 194
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "VARS1",
+            "original_rank": 1801,
+            "scheme_rank": 875,
+            "delta": -926
+          },
+          {
+            "gene": "IQCK",
+            "original_rank": 1801,
+            "scheme_rank": 875,
+            "delta": -926
+          },
+          {
+            "gene": "C6orf62",
+            "original_rank": 1801,
+            "scheme_rank": 875,
+            "delta": -926
+          },
+          {
+            "gene": "DARS2",
+            "original_rank": 1801,
+            "scheme_rank": 875,
+            "delta": -926
+          },
+          {
+            "gene": "TRIR",
+            "original_rank": 1772,
+            "scheme_rank": 875,
+            "delta": -897
+          },
+          {
+            "gene": "PTRH1",
+            "original_rank": 1730,
+            "scheme_rank": 875,
+            "delta": -855
+          },
+          {
+            "gene": "DPY19L1",
+            "original_rank": 1801,
+            "scheme_rank": 986,
+            "delta": -815
+          },
+          {
+            "gene": "MDH1B",
+            "original_rank": 2254,
+            "scheme_rank": 1476,
+            "delta": -778
+          },
+          {
+            "gene": "C1orf122",
+            "original_rank": 2254,
+            "scheme_rank": 1476,
+            "delta": -778
+          },
+          {
+            "gene": "CNRIP1",
+            "original_rank": 2254,
+            "scheme_rank": 1476,
+            "delta": -778
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "INKA1",
+            "original_rank": 48,
+            "scheme_rank": 8
+          },
+          {
+            "gene": "PLCL2",
+            "original_rank": 121,
+            "scheme_rank": 12
+          },
+          {
+            "gene": "ZNF638",
+            "original_rank": 110,
+            "scheme_rank": 13
+          },
+          {
+            "gene": "IGDCC4",
+            "original_rank": 134,
+            "scheme_rank": 15
+          },
+          {
+            "gene": "FADS2",
+            "original_rank": 153,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "HEXIM1",
+            "original_rank": 133,
+            "scheme_rank": 22
+          },
+          {
+            "gene": "CRHR1",
+            "original_rank": 461,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "MYH15",
+            "original_rank": 254,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "PCDH17",
+            "original_rank": 316,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "PREX1",
+            "original_rank": 296,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "GRIN2A",
+            "original_rank": 295,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "GRID2",
+            "original_rank": 280,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "TENM4",
+            "original_rank": 102,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "SORCS3",
+            "original_rank": 170,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "GCC1",
+            "original_rank": 146,
+            "scheme_rank": 23
+          }
+        ]
+      },
+      "LINEAGE_COLLAPSED_MEAN": {
+        "description": "direct+replication+finemap+coloc -> ONE list (mean normalised rank, re-ranked); kept separate: positive_human, module",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc"
+          ],
+          [
+            "positive_human"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2423,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 17,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 21,
+          "n_leads_at_cutoff_rank": 67,
+          "n_leads_at_cutoff_included": 36,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          4,
+          27
+        ],
+        "original_top50_dropped": [
+          "DCC",
+          "NEGR1",
+          "EXOC4",
+          "NT5DC2",
+          "ATXN2L",
+          "CSE1L",
+          "BSN",
+          "PEF1",
+          "SEMA3F",
+          "ALMS1",
+          "MEF2C",
+          "DBN1",
+          "TET2",
+          "CTNNA2",
+          "DDN",
+          "FOXO3",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "KANSL1",
+          "APOE",
+          "FOXO6",
+          "SEPTIN3",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "CACNA1E",
+          "CDH9",
+          "CADM2",
+          "MTMR4",
+          "PTPRT"
+        ],
+        "top50_genes_in_order": [
+          "OGA",
+          "SGF29",
+          "HMGN4",
+          "IP6K1",
+          "BTN3A2",
+          "CYB561D1",
+          "ERBB3",
+          "TCF20",
+          "THRB",
+          "LMF1",
+          "HSF5",
+          "TINAGL1",
+          "LRRC37A",
+          "MPHOSPH10P1",
+          "HBEGF",
+          "TSNARE1",
+          "CACNA1I",
+          "NCAM1",
+          "KIAA0319",
+          "PPM1E",
+          "GCC1",
+          "ARHGAP15",
+          "RCBTB1",
+          "MACROD2",
+          "KCNJ3",
+          "RIMS2",
+          "NKAIN2",
+          "FAM43B",
+          "AGAP1",
+          "PDE1C",
+          "PALM",
+          "SYT1",
+          "PTPRF",
+          "SORT1",
+          "RTN1",
+          "AKAP6",
+          "RALA",
+          "TENM4",
+          "PLEKHA1",
+          "PKD1L3",
+          "DTNBP1",
+          "GOSR1",
+          "EEA1",
+          "SHANK3",
+          "ARFGEF2",
+          "PDE4D",
+          "GRIA4",
+          "GBF1",
+          "PHACTR3",
+          "SEMA3E"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "CSE1L",
+            "original_rank": 9,
+            "scheme_rank": 1064,
+            "delta": 1055
+          },
+          {
+            "gene": "MEF2C",
+            "original_rank": 21,
+            "scheme_rank": 1070,
+            "delta": 1049
+          },
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": 936,
+            "delta": 898
+          },
+          {
+            "gene": "PBRM1",
+            "original_rank": 35,
+            "scheme_rank": 558,
+            "delta": 523
+          },
+          {
+            "gene": "PEF1",
+            "original_rank": 13,
+            "scheme_rank": 500,
+            "delta": 487
+          },
+          {
+            "gene": "ATXN2L",
+            "original_rank": 8,
+            "scheme_rank": 440,
+            "delta": 432
+          },
+          {
+            "gene": "SND1",
+            "original_rank": 49,
+            "scheme_rank": 440,
+            "delta": 391
+          },
+          {
+            "gene": "FOXO3",
+            "original_rank": 30,
+            "scheme_rank": 258,
+            "delta": 228
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 41,
+            "scheme_rank": 260,
+            "delta": 219
+          },
+          {
+            "gene": "SNX29",
+            "original_rank": 50,
+            "scheme_rank": 266,
+            "delta": 216
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "NEDD8-MDP1",
+            "original_rank": 1607,
+            "scheme_rank": 819,
+            "delta": -788
+          },
+          {
+            "gene": "VARS1",
+            "original_rank": 1801,
+            "scheme_rank": 1081,
+            "delta": -720
+          },
+          {
+            "gene": "TRIR",
+            "original_rank": 1772,
+            "scheme_rank": 1053,
+            "delta": -719
+          },
+          {
+            "gene": "H2BC3",
+            "original_rank": 1237,
+            "scheme_rank": 558,
+            "delta": -679
+          },
+          {
+            "gene": "MDP1",
+            "original_rank": 1611,
+            "scheme_rank": 944,
+            "delta": -667
+          },
+          {
+            "gene": "MCRS1",
+            "original_rank": 1203,
+            "scheme_rank": 558,
+            "delta": -645
+          },
+          {
+            "gene": "C6orf62",
+            "original_rank": 1801,
+            "scheme_rank": 1157,
+            "delta": -644
+          },
+          {
+            "gene": "PTRH1",
+            "original_rank": 1730,
+            "scheme_rank": 1096,
+            "delta": -634
+          },
+          {
+            "gene": "COQ10B",
+            "original_rank": 1799,
+            "scheme_rank": 1177,
+            "delta": -622
+          },
+          {
+            "gene": "MMRN2",
+            "original_rank": 2220,
+            "scheme_rank": 1608,
+            "delta": -612
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "SGF29",
+            "original_rank": 85,
+            "scheme_rank": 2
+          },
+          {
+            "gene": "HMGN4",
+            "original_rank": 119,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "IP6K1",
+            "original_rank": 20,
+            "scheme_rank": 4
+          },
+          {
+            "gene": "BTN3A2",
+            "original_rank": 147,
+            "scheme_rank": 5
+          },
+          {
+            "gene": "CYB561D1",
+            "original_rank": 92,
+            "scheme_rank": 6
+          },
+          {
+            "gene": "TCF20",
+            "original_rank": 175,
+            "scheme_rank": 9
+          },
+          {
+            "gene": "THRB",
+            "original_rank": 129,
+            "scheme_rank": 10
+          },
+          {
+            "gene": "HSF5",
+            "original_rank": 157,
+            "scheme_rank": 13
+          },
+          {
+            "gene": "TINAGL1",
+            "original_rank": 242,
+            "scheme_rank": 17
+          },
+          {
+            "gene": "MPHOSPH10P1",
+            "original_rank": 239,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "KIAA0319",
+            "original_rank": 201,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "RCBTB1",
+            "original_rank": 152,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "SEMA3E",
+            "original_rank": 163,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "RIMS2",
+            "original_rank": 88,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "GCC1",
+            "original_rank": 146,
+            "scheme_rank": 21
+          }
+        ]
+      },
+      "INDEPENDENT_ONLY": {
+        "description": "only dimensions whose dimension-level class is INDEPENDENT_COHORT or INDEPENDENT_PERTURBATION: ['positive_human']",
+        "lists": [
+          [
+            "positive_human"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2,
+        "n_genes_with_no_evidence_in_scheme": 2421,
+        "n_genes_tied_at_rank_1": 2,
+        "top50_size": 2,
+        "top50_overlap_with_original": 0,
+        "top50_cutoff_ties": {
+          "cutoff_rank": null,
+          "n_leads_at_cutoff_rank": 0,
+          "n_leads_at_cutoff_included": 0,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          0,
+          0
+        ],
+        "original_top50_dropped": [
+          "DCC",
+          "NEGR1",
+          "EXOC4",
+          "NT5DC2",
+          "OGA",
+          "ERBB3",
+          "ATXN2L",
+          "CSE1L",
+          "LRRC37A",
+          "BSN",
+          "PDE1C",
+          "PEF1",
+          "SEMA3F",
+          "SYT1",
+          "ALMS1",
+          "MEF2C",
+          "DBN1",
+          "TET2",
+          "NKAIN2",
+          "CTNNA2",
+          "DDN",
+          "FOXO3",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "EEA1",
+          "KANSL1",
+          "APOE",
+          "FOXO6",
+          "SEPTIN3",
+          "LMF1",
+          "KCNJ3",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "PKD1L3",
+          "CACNA1E",
+          "PPM1E",
+          "GBF1",
+          "PTPRF",
+          "ARHGAP15",
+          "CDH9",
+          "CADM2",
+          "MACROD2",
+          "MTMR4",
+          "PTPRT",
+          "NCAM1",
+          "HBEGF"
+        ],
+        "top50_genes_in_order": [
+          "SOWAHC",
+          "SEPTIN10"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "DCC",
+            "original_rank": 1,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "NEGR1",
+            "original_rank": 2,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "TET2",
+            "original_rank": 23,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "EXOC4",
+            "original_rank": 3,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "ATXN2L",
+            "original_rank": 8,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "NT5DC2",
+            "original_rank": 4,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "PEF1",
+            "original_rank": 13,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "CSE1L",
+            "original_rank": 9,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "BSN",
+            "original_rank": 11,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "PPM1E",
+            "original_rank": 51,
+            "scheme_rank": null,
+            "delta": null
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "SOWAHC",
+            "original_rank": 1290,
+            "scheme_rank": 1,
+            "delta": -1289
+          },
+          {
+            "gene": "SEPTIN10",
+            "original_rank": 1290,
+            "scheme_rank": 1,
+            "delta": -1289
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "SOWAHC",
+            "original_rank": 1290,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "SEPTIN10",
+            "original_rank": 1290,
+            "scheme_rank": 1
+          }
+        ]
+      },
+      "LEAVE_LINEAGE_OUT": {
+        "description": "drop direct+replication+finemap+coloc; keep positive_human, module",
+        "lists": [
+          [
+            "positive_human"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 1239,
+        "n_genes_with_no_evidence_in_scheme": 1184,
+        "n_genes_tied_at_rank_1": 310,
+        "top50_size": 50,
+        "top50_overlap_with_original": 5,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 1,
+          "n_leads_at_cutoff_rank": 240,
+          "n_leads_at_cutoff_included": 50,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          0,
+          23
+        ],
+        "original_top50_dropped": [
+          "DCC",
+          "EXOC4",
+          "NT5DC2",
+          "OGA",
+          "ERBB3",
+          "ATXN2L",
+          "CSE1L",
+          "LRRC37A",
+          "BSN",
+          "PDE1C",
+          "PEF1",
+          "SEMA3F",
+          "SYT1",
+          "ALMS1",
+          "MEF2C",
+          "DBN1",
+          "TET2",
+          "NKAIN2",
+          "CTNNA2",
+          "DDN",
+          "FOXO3",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "KANSL1",
+          "APOE",
+          "FOXO6",
+          "SEPTIN3",
+          "LMF1",
+          "KCNJ3",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "PKD1L3",
+          "CACNA1E",
+          "PPM1E",
+          "PTPRF",
+          "ARHGAP15",
+          "CDH9",
+          "MACROD2",
+          "MTMR4",
+          "NCAM1",
+          "HBEGF"
+        ],
+        "top50_genes_in_order": [
+          "ANK2",
+          "OLFM4",
+          "MAPT",
+          "C1QL1",
+          "TRIOBP",
+          "PTPRT",
+          "SLITRK3",
+          "NEGR1",
+          "SSTR4",
+          "FLII",
+          "SORCS3",
+          "IGSF9B",
+          "AVL9",
+          "EXOC6B",
+          "PLCB1",
+          "RNF43",
+          "ADGRL2",
+          "RAB3B",
+          "KLC1",
+          "TMEFF2",
+          "FLRT1",
+          "CADM2",
+          "AMIGO3",
+          "CPNE1",
+          "ANKS1B",
+          "GRM3",
+          "TSNARE1",
+          "VPS41",
+          "KCNH5",
+          "PCDH17",
+          "AP4E1",
+          "DNMBP",
+          "AP3B2",
+          "COPZ2",
+          "RAB13",
+          "PDLIM7",
+          "TGOLN2",
+          "TENM4",
+          "AXIN1",
+          "EEA1",
+          "CABP1",
+          "CHRD",
+          "GBF1",
+          "MTMR2",
+          "CACNA1I",
+          "PLCB3",
+          "MYLK",
+          "SYT7",
+          "SIRPB2",
+          "COG5"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "OGA",
+            "original_rank": 5,
+            "scheme_rank": 822,
+            "delta": 817
+          },
+          {
+            "gene": "CSE1L",
+            "original_rank": 9,
+            "scheme_rank": 822,
+            "delta": 813
+          },
+          {
+            "gene": "PEF1",
+            "original_rank": 13,
+            "scheme_rank": 822,
+            "delta": 809
+          },
+          {
+            "gene": "ALMS1",
+            "original_rank": 18,
+            "scheme_rank": 822,
+            "delta": 804
+          },
+          {
+            "gene": "MEF2C",
+            "original_rank": 21,
+            "scheme_rank": 822,
+            "delta": 801
+          },
+          {
+            "gene": "COL16A1",
+            "original_rank": 31,
+            "scheme_rank": 822,
+            "delta": 791
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 31,
+            "scheme_rank": 822,
+            "delta": 791
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 41,
+            "scheme_rank": 822,
+            "delta": 781
+          },
+          {
+            "gene": "SNX29",
+            "original_rank": 50,
+            "scheme_rank": 822,
+            "delta": 772
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "MMRN2",
+            "original_rank": 2220,
+            "scheme_rank": 822,
+            "delta": -1398
+          },
+          {
+            "gene": "CLEC12B",
+            "original_rank": 2200,
+            "scheme_rank": 822,
+            "delta": -1378
+          },
+          {
+            "gene": "SNCG",
+            "original_rank": 2185,
+            "scheme_rank": 822,
+            "delta": -1363
+          },
+          {
+            "gene": "ASPRV1",
+            "original_rank": 2159,
+            "scheme_rank": 822,
+            "delta": -1337
+          },
+          {
+            "gene": "CFAP157",
+            "original_rank": 2140,
+            "scheme_rank": 822,
+            "delta": -1318
+          },
+          {
+            "gene": "HSPA1B",
+            "original_rank": 2125,
+            "scheme_rank": 822,
+            "delta": -1303
+          },
+          {
+            "gene": "MIEF2",
+            "original_rank": 2103,
+            "scheme_rank": 822,
+            "delta": -1281
+          },
+          {
+            "gene": "CLEC1B",
+            "original_rank": 2093,
+            "scheme_rank": 822,
+            "delta": -1271
+          },
+          {
+            "gene": "PLAUR",
+            "original_rank": 2092,
+            "scheme_rank": 822,
+            "delta": -1270
+          },
+          {
+            "gene": "TSBP1",
+            "original_rank": 2088,
+            "scheme_rank": 822,
+            "delta": -1266
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "AMIGO3",
+            "original_rank": 154,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "PLCB1",
+            "original_rank": 336,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "IGSF9B",
+            "original_rank": 336,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "SLITRK3",
+            "original_rank": 878,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "OLFM4",
+            "original_rank": 336,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "PDLIM7",
+            "original_rank": 336,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "KCNH5",
+            "original_rank": 494,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "EXOC6B",
+            "original_rank": 931,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "COPZ2",
+            "original_rank": 336,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "FLII",
+            "original_rank": 1012,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "DNMBP",
+            "original_rank": 1025,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "CABP1",
+            "original_rank": 470,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "PLCB3",
+            "original_rank": 899,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "RAB3B",
+            "original_rank": 1080,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "SIRPB2",
+            "original_rank": 1080,
+            "scheme_rank": 1
+          }
+        ]
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "description": "direct+replication+finemap+coloc+module -> ONE list (best); kept: positive_human",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "module"
+          ],
+          [
+            "positive_human"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2423,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 2,
+        "top50_size": 50,
+        "top50_overlap_with_original": 21,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 69,
+          "n_leads_at_cutoff_rank": 1,
+          "n_leads_at_cutoff_included": 1,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          21,
+          21
+        ],
+        "original_top50_dropped": [
+          "OGA",
+          "ERBB3",
+          "SEMA3F",
+          "SYT1",
+          "DBN1",
+          "NKAIN2",
+          "CTNNA2",
+          "DDN",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "EEA1",
+          "KANSL1",
+          "SEPTIN3",
+          "KCNJ3",
+          "CDH2",
+          "SND1",
+          "SNX29",
+          "PKD1L3",
+          "CACNA1E",
+          "PTPRF",
+          "CDH9",
+          "MACROD2",
+          "MTMR4",
+          "PTPRT",
+          "NCAM1",
+          "HBEGF"
+        ],
+        "top50_genes_in_order": [
+          "DCC",
+          "EXOC4",
+          "FOXO3",
+          "NEGR1",
+          "MEF2C",
+          "TET2",
+          "APOE",
+          "INKA1",
+          "NT5DC2",
+          "LRRC37A",
+          "ATXN2L",
+          "ZNF638",
+          "CSE1L",
+          "ARHGAP15",
+          "CADM2",
+          "HEXIM1",
+          "NR1D2",
+          "PEF1",
+          "AKAP6",
+          "PLCL2",
+          "IGDCC4",
+          "PDE1C",
+          "BTN2A1",
+          "CALN1",
+          "FADS2",
+          "GATB",
+          "DPP4",
+          "BSN",
+          "LMF1",
+          "EFL1",
+          "FOXO6",
+          "PPM1E",
+          "SEPTIN4",
+          "RBFOX1",
+          "PTPRO",
+          "FGF8",
+          "BCL11A",
+          "TSNARE1",
+          "GBF1",
+          "ALMS1",
+          "JMJD1C",
+          "GPD2",
+          "AFF3",
+          "SFMBT1",
+          "BRD3",
+          "SORCS3",
+          "PDE4D",
+          "TCF20",
+          "DISP2",
+          "MAPT"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "CTNNA2",
+            "original_rank": 27,
+            "scheme_rank": 470,
+            "delta": 443
+          },
+          {
+            "gene": "NKAIN2",
+            "original_rank": 24,
+            "scheme_rank": 335,
+            "delta": 311
+          },
+          {
+            "gene": "CDH2",
+            "original_rank": 47,
+            "scheme_rank": 347,
+            "delta": 300
+          },
+          {
+            "gene": "PTPRT",
+            "original_rank": 51,
+            "scheme_rank": 318,
+            "delta": 267
+          },
+          {
+            "gene": "MTMR4",
+            "original_rank": 51,
+            "scheme_rank": 312,
+            "delta": 261
+          },
+          {
+            "gene": "EEA1",
+            "original_rank": 36,
+            "scheme_rank": 283,
+            "delta": 247
+          },
+          {
+            "gene": "DBN1",
+            "original_rank": 22,
+            "scheme_rank": 262,
+            "delta": 240
+          },
+          {
+            "gene": "SYT1",
+            "original_rank": 14,
+            "scheme_rank": 231,
+            "delta": 217
+          },
+          {
+            "gene": "MYBPHL",
+            "original_rank": 31,
+            "scheme_rank": 244,
+            "delta": 213
+          },
+          {
+            "gene": "HBEGF",
+            "original_rank": 51,
+            "scheme_rank": 248,
+            "delta": 197
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "SLC39A13",
+            "original_rank": 1246,
+            "scheme_rank": 452,
+            "delta": -794
+          },
+          {
+            "gene": "CLIC1",
+            "original_rank": 1813,
+            "scheme_rank": 1041,
+            "delta": -772
+          },
+          {
+            "gene": "CCT7",
+            "original_rank": 1153,
+            "scheme_rank": 383,
+            "delta": -770
+          },
+          {
+            "gene": "NDRG3",
+            "original_rank": 1744,
+            "scheme_rank": 991,
+            "delta": -753
+          },
+          {
+            "gene": "NEDD8",
+            "original_rank": 1729,
+            "scheme_rank": 978,
+            "delta": -751
+          },
+          {
+            "gene": "PDIA6",
+            "original_rank": 1118,
+            "scheme_rank": 383,
+            "delta": -735
+          },
+          {
+            "gene": "SPAG4",
+            "original_rank": 1112,
+            "scheme_rank": 379,
+            "delta": -733
+          },
+          {
+            "gene": "GALNT16",
+            "original_rank": 1118,
+            "scheme_rank": 390,
+            "delta": -728
+          },
+          {
+            "gene": "RERG",
+            "original_rank": 1118,
+            "scheme_rank": 392,
+            "delta": -726
+          },
+          {
+            "gene": "C3orf62",
+            "original_rank": 1069,
+            "scheme_rank": 368,
+            "delta": -701
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "INKA1",
+            "original_rank": 48,
+            "scheme_rank": 8
+          },
+          {
+            "gene": "ZNF638",
+            "original_rank": 110,
+            "scheme_rank": 12
+          },
+          {
+            "gene": "HEXIM1",
+            "original_rank": 133,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "NR1D2",
+            "original_rank": 140,
+            "scheme_rank": 20
+          },
+          {
+            "gene": "AKAP6",
+            "original_rank": 80,
+            "scheme_rank": 22
+          },
+          {
+            "gene": "PLCL2",
+            "original_rank": 121,
+            "scheme_rank": 24
+          },
+          {
+            "gene": "IGDCC4",
+            "original_rank": 134,
+            "scheme_rank": 26
+          },
+          {
+            "gene": "BTN2A1",
+            "original_rank": 135,
+            "scheme_rank": 27
+          },
+          {
+            "gene": "CALN1",
+            "original_rank": 164,
+            "scheme_rank": 29
+          },
+          {
+            "gene": "FADS2",
+            "original_rank": 153,
+            "scheme_rank": 33
+          },
+          {
+            "gene": "GATB",
+            "original_rank": 98,
+            "scheme_rank": 34
+          },
+          {
+            "gene": "DPP4",
+            "original_rank": 51,
+            "scheme_rank": 36
+          },
+          {
+            "gene": "EFL1",
+            "original_rank": 150,
+            "scheme_rank": 40
+          },
+          {
+            "gene": "SEPTIN4",
+            "original_rank": 264,
+            "scheme_rank": 44
+          },
+          {
+            "gene": "RBFOX1",
+            "original_rank": 231,
+            "scheme_rank": 44
+          }
+        ]
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "description": "direct+replication+finemap+coloc+module -> ONE list (mean); kept: positive_human",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "module"
+          ],
+          [
+            "positive_human"
+          ]
+        ],
+        "n_eligible_genes": 2423,
+        "n_genes_with_any_evidence_in_scheme": 2423,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 21,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 62,
+          "n_leads_at_cutoff_rank": 1,
+          "n_leads_at_cutoff_included": 1,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          21,
+          21
+        ],
+        "original_top50_dropped": [
+          "DCC",
+          "EXOC4",
+          "NT5DC2",
+          "OGA",
+          "ATXN2L",
+          "CSE1L",
+          "PEF1",
+          "SEMA3F",
+          "ALMS1",
+          "MEF2C",
+          "TET2",
+          "DDN",
+          "FOXO3",
+          "MYBPHL",
+          "DHRS11",
+          "COL16A1",
+          "MGAT3",
+          "PBRM1",
+          "KANSL1",
+          "APOE",
+          "FOXO6",
+          "SEPTIN3",
+          "LMF1",
+          "SND1",
+          "SNX29",
+          "CACNA1E",
+          "MTMR4",
+          "PTPRT",
+          "NCAM1"
+        ],
+        "top50_genes_in_order": [
+          "IP6K1",
+          "ERBB3",
+          "LRRC37A",
+          "PDE1C",
+          "NKAIN2",
+          "EEA1",
+          "TRIOBP",
+          "TENM4",
+          "CDH2",
+          "MPHOSPH10P1",
+          "CTNNA2",
+          "RTN1",
+          "NEGR1",
+          "TCF20",
+          "THRB",
+          "HPS6",
+          "GRIA4",
+          "DENND4A",
+          "HSF5",
+          "RIMS2",
+          "ZNF322",
+          "CLN3",
+          "GOSR1",
+          "BSN",
+          "HCRTR1",
+          "CDH4",
+          "RALA",
+          "DPP4",
+          "RAPSN",
+          "KCNJ3",
+          "SYT1",
+          "PLEKHA1",
+          "PPM1E",
+          "GBF1",
+          "PTPRO",
+          "EHBP1",
+          "ARHGAP15",
+          "CADM2",
+          "CORO1C",
+          "DBN1",
+          "DISP2",
+          "PKD1L3",
+          "FLRT1",
+          "MACROD2",
+          "PTPRF",
+          "CDH9",
+          "HBEGF",
+          "SSTR4",
+          "AKAP6",
+          "COG5"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "CSE1L",
+            "original_rank": 9,
+            "scheme_rank": 816,
+            "delta": 807
+          },
+          {
+            "gene": "MEF2C",
+            "original_rank": 21,
+            "scheme_rank": 820,
+            "delta": 799
+          },
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": 650,
+            "delta": 612
+          },
+          {
+            "gene": "PEF1",
+            "original_rank": 13,
+            "scheme_rank": 465,
+            "delta": 452
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 41,
+            "scheme_rank": 479,
+            "delta": 438
+          },
+          {
+            "gene": "SNX29",
+            "original_rank": 50,
+            "scheme_rank": 485,
+            "delta": 435
+          },
+          {
+            "gene": "PBRM1",
+            "original_rank": 35,
+            "scheme_rank": 402,
+            "delta": 367
+          },
+          {
+            "gene": "COL16A1",
+            "original_rank": 31,
+            "scheme_rank": 320,
+            "delta": 289
+          },
+          {
+            "gene": "EXOC4",
+            "original_rank": 3,
+            "scheme_rank": 281,
+            "delta": 278
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 31,
+            "scheme_rank": 304,
+            "delta": 273
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "PCDHA3",
+            "original_rank": 886,
+            "scheme_rank": 395,
+            "delta": -491
+          },
+          {
+            "gene": "ALDH2",
+            "original_rank": 1068,
+            "scheme_rank": 587,
+            "delta": -481
+          },
+          {
+            "gene": "ZSCAN23",
+            "original_rank": 1061,
+            "scheme_rank": 585,
+            "delta": -476
+          },
+          {
+            "gene": "PRDM14",
+            "original_rank": 954,
+            "scheme_rank": 491,
+            "delta": -463
+          },
+          {
+            "gene": "TBC1D29P",
+            "original_rank": 1017,
+            "scheme_rank": 555,
+            "delta": -462
+          },
+          {
+            "gene": "KLHL29",
+            "original_rank": 936,
+            "scheme_rank": 476,
+            "delta": -460
+          },
+          {
+            "gene": "IFT81",
+            "original_rank": 1045,
+            "scheme_rank": 586,
+            "delta": -459
+          },
+          {
+            "gene": "LPP",
+            "original_rank": 1174,
+            "scheme_rank": 731,
+            "delta": -443
+          },
+          {
+            "gene": "HOOK2",
+            "original_rank": 1167,
+            "scheme_rank": 726,
+            "delta": -441
+          },
+          {
+            "gene": "PCDHA2",
+            "original_rank": 898,
+            "scheme_rank": 466,
+            "delta": -432
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "IP6K1",
+            "original_rank": 20,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "TRIOBP",
+            "original_rank": 79,
+            "scheme_rank": 8
+          },
+          {
+            "gene": "TENM4",
+            "original_rank": 102,
+            "scheme_rank": 9
+          },
+          {
+            "gene": "MPHOSPH10P1",
+            "original_rank": 239,
+            "scheme_rank": 11
+          },
+          {
+            "gene": "RTN1",
+            "original_rank": 86,
+            "scheme_rank": 13
+          },
+          {
+            "gene": "TCF20",
+            "original_rank": 175,
+            "scheme_rank": 15
+          },
+          {
+            "gene": "THRB",
+            "original_rank": 129,
+            "scheme_rank": 16
+          },
+          {
+            "gene": "HPS6",
+            "original_rank": 89,
+            "scheme_rank": 18
+          },
+          {
+            "gene": "GRIA4",
+            "original_rank": 82,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "DENND4A",
+            "original_rank": 115,
+            "scheme_rank": 20
+          },
+          {
+            "gene": "HSF5",
+            "original_rank": 157,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "RIMS2",
+            "original_rank": 88,
+            "scheme_rank": 22
+          },
+          {
+            "gene": "ZNF322",
+            "original_rank": 165,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "CLN3",
+            "original_rank": 51,
+            "scheme_rank": 24
+          },
+          {
+            "gene": "GOSR1",
+            "original_rank": 91,
+            "scheme_rank": 25
+          }
+        ]
+      }
+    },
+    "spearman_between_schemes": {
+      "ORIGINAL__vs__LINEAGE_COLLAPSED_BEST": {
+        "rho": 0.9135,
+        "n": 2423
+      },
+      "ORIGINAL__vs__LINEAGE_COLLAPSED_MEAN": {
+        "rho": 0.9545,
+        "n": 2423
+      },
+      "ORIGINAL__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "ORIGINAL__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.577,
+        "n": 1239
+      },
+      "ORIGINAL__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.8869,
+        "n": 2423
+      },
+      "ORIGINAL__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9647,
+        "n": 2423
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__LINEAGE_COLLAPSED_MEAN": {
+        "rho": 0.9409,
+        "n": 2423
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.7063,
+        "n": 1239
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.9494,
+        "n": 2423
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9429,
+        "n": 2423
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.706,
+        "n": 1239
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.9035,
+        "n": 2423
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9809,
+        "n": 2423
+      },
+      "INDEPENDENT_ONLY__vs__LEAVE_LINEAGE_OUT": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "INDEPENDENT_ONLY__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "INDEPENDENT_ONLY__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": null,
+        "n": 2,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LEAVE_LINEAGE_OUT__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.3714,
+        "n": 1239
+      },
+      "LEAVE_LINEAGE_OUT__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.6936,
+        "n": 1239
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.925,
+        "n": 2423
+      }
+    }
+  },
+  "sensitivity_adult": {
+    "dimensions": [
+      "direct",
+      "replication",
+      "finemap",
+      "coloc",
+      "direction",
+      "adult_modifiability",
+      "module"
+    ],
+    "schemes": {
+      "ORIGINAL": {
+        "description": "reproduction of build_consensus.consensus()",
+        "lists": [
+          [
+            "direct"
+          ],
+          [
+            "replication"
+          ],
+          [
+            "finemap"
+          ],
+          [
+            "coloc"
+          ],
+          [
+            "direction"
+          ],
+          [
+            "adult_modifiability"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 50,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 50,
+          "n_leads_at_cutoff_rank": 10,
+          "n_leads_at_cutoff_included": 4,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          46,
+          50
+        ],
+        "original_top50_dropped": [],
+        "top50_genes_in_order": [
+          "ERBB3",
+          "NEGR1",
+          "DDN",
+          "OGA",
+          "STAB1",
+          "SYT1",
+          "NSF",
+          "PDE1C",
+          "ATXN2L",
+          "BSN",
+          "GRIA4",
+          "COL16A1",
+          "PEF1",
+          "SHANK3",
+          "KCNJ3",
+          "GFAP",
+          "RIMS2",
+          "TRIM37",
+          "CADM2",
+          "CPD",
+          "PITPNM2",
+          "FOXO3",
+          "SEPTIN4",
+          "BAIAP2",
+          "SYT7",
+          "PLEKHA1",
+          "DTNBP1",
+          "MEF2C",
+          "EEA1",
+          "ANKS1B",
+          "SPARCL1",
+          "FAM43B",
+          "SCN2A",
+          "UBA7",
+          "CKB",
+          "RTN1",
+          "APOE",
+          "CACNA1I",
+          "SORT1",
+          "MGAT3",
+          "DHRS11",
+          "AKAP6",
+          "PTPRT",
+          "SNCB",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "NEGR1",
+            "original_rank": 2,
+            "scheme_rank": 2,
+            "delta": 0
+          },
+          {
+            "gene": "BAIAP2",
+            "original_rank": 24,
+            "scheme_rank": 24,
+            "delta": 0
+          },
+          {
+            "gene": "NOVA1",
+            "original_rank": 50,
+            "scheme_rank": 50,
+            "delta": 0
+          },
+          {
+            "gene": "SYT1",
+            "original_rank": 6,
+            "scheme_rank": 6,
+            "delta": 0
+          },
+          {
+            "gene": "ANKS1B",
+            "original_rank": 30,
+            "scheme_rank": 30,
+            "delta": 0
+          },
+          {
+            "gene": "AKAP6",
+            "original_rank": 43,
+            "scheme_rank": 43,
+            "delta": 0
+          },
+          {
+            "gene": "SHANK3",
+            "original_rank": 14,
+            "scheme_rank": 14,
+            "delta": 0
+          },
+          {
+            "gene": "NKAIN2",
+            "original_rank": 48,
+            "scheme_rank": 48,
+            "delta": 0
+          },
+          {
+            "gene": "SCN2A",
+            "original_rank": 34,
+            "scheme_rank": 34,
+            "delta": 0
+          },
+          {
+            "gene": "CKB",
+            "original_rank": 35,
+            "scheme_rank": 35,
+            "delta": 0
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "NEGR1",
+            "original_rank": 2,
+            "scheme_rank": 2,
+            "delta": 0
+          },
+          {
+            "gene": "LRRN1",
+            "original_rank": 932,
+            "scheme_rank": 932,
+            "delta": 0
+          },
+          {
+            "gene": "MACIR",
+            "original_rank": 599,
+            "scheme_rank": 599,
+            "delta": 0
+          },
+          {
+            "gene": "ZFYVE21",
+            "original_rank": 697,
+            "scheme_rank": 697,
+            "delta": 0
+          },
+          {
+            "gene": "ATG13",
+            "original_rank": 561,
+            "scheme_rank": 561,
+            "delta": 0
+          },
+          {
+            "gene": "ACP2",
+            "original_rank": 625,
+            "scheme_rank": 625,
+            "delta": 0
+          },
+          {
+            "gene": "B3GALNT2",
+            "original_rank": 1003,
+            "scheme_rank": 1003,
+            "delta": 0
+          },
+          {
+            "gene": "TADA2A",
+            "original_rank": 811,
+            "scheme_rank": 811,
+            "delta": 0
+          },
+          {
+            "gene": "TAOK1",
+            "original_rank": 808,
+            "scheme_rank": 808,
+            "delta": 0
+          },
+          {
+            "gene": "SEZ6L",
+            "original_rank": 1251,
+            "scheme_rank": 1251,
+            "delta": 0
+          }
+        ],
+        "new_entrants_to_top50": []
+      },
+      "LINEAGE_COLLAPSED_BEST": {
+        "description": "direct+replication+finemap+coloc+direction -> ONE list (best normalised rank, re-ranked); kept separate: adult_modifiability, module",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "direction"
+          ],
+          [
+            "adult_modifiability"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 32,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 56,
+          "n_leads_at_cutoff_rank": 1,
+          "n_leads_at_cutoff_included": 1,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          32,
+          32
+        ],
+        "original_top50_dropped": [
+          "OGA",
+          "STAB1",
+          "COL16A1",
+          "PEF1",
+          "CPD",
+          "SYT7",
+          "DTNBP1",
+          "EEA1",
+          "FAM43B",
+          "RTN1",
+          "MGAT3",
+          "DHRS11",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [
+          "SEPTIN4",
+          "GFAP",
+          "CRHR1",
+          "BAIAP2",
+          "NSF",
+          "KIFC2",
+          "KCNJ3",
+          "SORT1",
+          "SHISA4",
+          "SYT1",
+          "SHANK3",
+          "BSN",
+          "CAMK2N1",
+          "KCNIP2",
+          "ERBB3",
+          "FOXO3",
+          "NEGR1",
+          "CNTNAP4",
+          "PTPRN2",
+          "CKB",
+          "SPARCL1",
+          "DDN",
+          "CADM2",
+          "PLCL1",
+          "PLEKHA1",
+          "RAB11FIP5",
+          "SNCB",
+          "AMIGO1",
+          "UBA7",
+          "MEF2C",
+          "GRIA4",
+          "COX6A1",
+          "APOE",
+          "ANKS1B",
+          "IGIP",
+          "CACNA1I",
+          "ATXN2L",
+          "RIMS2",
+          "AKAP6",
+          "CA11",
+          "PITPNM2",
+          "GRIN2A",
+          "PTPRT",
+          "PLCB1",
+          "ARFGEF2",
+          "SCN2A",
+          "PDIA2",
+          "TRIM37",
+          "PDE1C",
+          "MOG"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 47,
+            "scheme_rank": 451,
+            "delta": 404
+          },
+          {
+            "gene": "OGA",
+            "original_rank": 4,
+            "scheme_rank": 346,
+            "delta": 342
+          },
+          {
+            "gene": "ATXN7L2",
+            "original_rank": 50,
+            "scheme_rank": 374,
+            "delta": 324
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 41,
+            "scheme_rank": 362,
+            "delta": 321
+          },
+          {
+            "gene": "GRM3",
+            "original_rank": 50,
+            "scheme_rank": 314,
+            "delta": 264
+          },
+          {
+            "gene": "DHRS11",
+            "original_rank": 41,
+            "scheme_rank": 302,
+            "delta": 261
+          },
+          {
+            "gene": "STAB1",
+            "original_rank": 5,
+            "scheme_rank": 242,
+            "delta": 237
+          },
+          {
+            "gene": "NOVA1",
+            "original_rank": 50,
+            "scheme_rank": 265,
+            "delta": 215
+          },
+          {
+            "gene": "ADGRB1",
+            "original_rank": 50,
+            "scheme_rank": 239,
+            "delta": 189
+          },
+          {
+            "gene": "NKAIN2",
+            "original_rank": 48,
+            "scheme_rank": 215,
+            "delta": 167
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "ATP23",
+            "original_rank": 836,
+            "scheme_rank": 282,
+            "delta": -554
+          },
+          {
+            "gene": "MDP1",
+            "original_rank": 1052,
+            "scheme_rank": 508,
+            "delta": -544
+          },
+          {
+            "gene": "ETF1",
+            "original_rank": 1052,
+            "scheme_rank": 508,
+            "delta": -544
+          },
+          {
+            "gene": "C6orf62",
+            "original_rank": 1052,
+            "scheme_rank": 508,
+            "delta": -544
+          },
+          {
+            "gene": "MAGOH",
+            "original_rank": 997,
+            "scheme_rank": 465,
+            "delta": -532
+          },
+          {
+            "gene": "RRP8",
+            "original_rank": 1408,
+            "scheme_rank": 876,
+            "delta": -532
+          },
+          {
+            "gene": "DRC4",
+            "original_rank": 1319,
+            "scheme_rank": 804,
+            "delta": -515
+          },
+          {
+            "gene": "RCHY1",
+            "original_rank": 1288,
+            "scheme_rank": 774,
+            "delta": -514
+          },
+          {
+            "gene": "POM121",
+            "original_rank": 1312,
+            "scheme_rank": 800,
+            "delta": -512
+          },
+          {
+            "gene": "JAM2",
+            "original_rank": 1365,
+            "scheme_rank": 864,
+            "delta": -501
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "CRHR1",
+            "original_rank": 264,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "KCNIP2",
+            "original_rank": 50,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "SHISA4",
+            "original_rank": 142,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "KIFC2",
+            "original_rank": 50,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "CAMK2N1",
+            "original_rank": 50,
+            "scheme_rank": 3
+          },
+          {
+            "gene": "CNTNAP4",
+            "original_rank": 73,
+            "scheme_rank": 18
+          },
+          {
+            "gene": "PTPRN2",
+            "original_rank": 109,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "PLCL1",
+            "original_rank": 87,
+            "scheme_rank": 25
+          },
+          {
+            "gene": "RAB11FIP5",
+            "original_rank": 166,
+            "scheme_rank": 27
+          },
+          {
+            "gene": "AMIGO1",
+            "original_rank": 135,
+            "scheme_rank": 30
+          },
+          {
+            "gene": "COX6A1",
+            "original_rank": 64,
+            "scheme_rank": 36
+          },
+          {
+            "gene": "IGIP",
+            "original_rank": 163,
+            "scheme_rank": 40
+          },
+          {
+            "gene": "CA11",
+            "original_rank": 83,
+            "scheme_rank": 45
+          },
+          {
+            "gene": "GRIN2A",
+            "original_rank": 103,
+            "scheme_rank": 46
+          },
+          {
+            "gene": "PLCB1",
+            "original_rank": 158,
+            "scheme_rank": 49
+          }
+        ]
+      },
+      "LINEAGE_COLLAPSED_MEAN": {
+        "description": "direct+replication+finemap+coloc+direction -> ONE list (mean normalised rank, re-ranked); kept separate: adult_modifiability, module",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "direction"
+          ],
+          [
+            "adult_modifiability"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 29,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 51,
+          "n_leads_at_cutoff_rank": 1,
+          "n_leads_at_cutoff_included": 1,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          29,
+          29
+        ],
+        "original_top50_dropped": [
+          "STAB1",
+          "PDE1C",
+          "ATXN2L",
+          "COL16A1",
+          "PEF1",
+          "TRIM37",
+          "FOXO3",
+          "SEPTIN4",
+          "MEF2C",
+          "EEA1",
+          "UBA7",
+          "RTN1",
+          "APOE",
+          "MGAT3",
+          "DHRS11",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [
+          "HLA-B",
+          "GFAP",
+          "OGA",
+          "DDN",
+          "SYT1",
+          "SYT7",
+          "GRIA4",
+          "SORT1",
+          "NSF",
+          "CNTNAP4",
+          "SHANK3",
+          "BAIAP2",
+          "BSN",
+          "KCNJ3",
+          "ERBB3",
+          "DTNBP1",
+          "IP6K1",
+          "CKB",
+          "SPARCL1",
+          "CADM2",
+          "PITPNM2",
+          "NET1",
+          "PLEKHA1",
+          "SYNGR1",
+          "CPD",
+          "ARHGEF3",
+          "BTN3A2",
+          "ANKS1B",
+          "LRP4",
+          "SNCB",
+          "RFTN2",
+          "NEGR1",
+          "KCNC2",
+          "FAM43B",
+          "MYLK",
+          "COX6A1",
+          "CYB561D1",
+          "SCN2A",
+          "CACNA1I",
+          "RIMS2",
+          "AKAP6",
+          "NCAM2",
+          "CA11",
+          "GRIN2A",
+          "PTPRN2",
+          "PTPRT",
+          "PLCB1",
+          "ARFGEF2",
+          "BTN2A1",
+          "PDIA2"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "MEF2C",
+            "original_rank": 28,
+            "scheme_rank": 1191,
+            "delta": 1163
+          },
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": 1107,
+            "delta": 1069
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 41,
+            "scheme_rank": 479,
+            "delta": 438
+          },
+          {
+            "gene": "UBA7",
+            "original_rank": 35,
+            "scheme_rank": 385,
+            "delta": 350
+          },
+          {
+            "gene": "ATXN7L2",
+            "original_rank": 50,
+            "scheme_rank": 378,
+            "delta": 328
+          },
+          {
+            "gene": "STAB1",
+            "original_rank": 5,
+            "scheme_rank": 293,
+            "delta": 288
+          },
+          {
+            "gene": "GRM3",
+            "original_rank": 50,
+            "scheme_rank": 316,
+            "delta": 266
+          },
+          {
+            "gene": "DHRS11",
+            "original_rank": 41,
+            "scheme_rank": 305,
+            "delta": 264
+          },
+          {
+            "gene": "ATXN2L",
+            "original_rank": 9,
+            "scheme_rank": 255,
+            "delta": 246
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 47,
+            "scheme_rank": 289,
+            "delta": 242
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "MDP1",
+            "original_rank": 1052,
+            "scheme_rank": 511,
+            "delta": -541
+          },
+          {
+            "gene": "ETF1",
+            "original_rank": 1052,
+            "scheme_rank": 511,
+            "delta": -541
+          },
+          {
+            "gene": "ZNFX1",
+            "original_rank": 671,
+            "scheme_rank": 152,
+            "delta": -519
+          },
+          {
+            "gene": "PCK2",
+            "original_rank": 786,
+            "scheme_rank": 268,
+            "delta": -518
+          },
+          {
+            "gene": "ZFYVE9",
+            "original_rank": 812,
+            "scheme_rank": 310,
+            "delta": -502
+          },
+          {
+            "gene": "SPPL2A",
+            "original_rank": 715,
+            "scheme_rank": 224,
+            "delta": -491
+          },
+          {
+            "gene": "RAB29",
+            "original_rank": 1350,
+            "scheme_rank": 911,
+            "delta": -439
+          },
+          {
+            "gene": "MCRS1",
+            "original_rank": 748,
+            "scheme_rank": 319,
+            "delta": -429
+          },
+          {
+            "gene": "DDB2",
+            "original_rank": 1354,
+            "scheme_rank": 929,
+            "delta": -425
+          },
+          {
+            "gene": "LARGE1",
+            "original_rank": 799,
+            "scheme_rank": 376,
+            "delta": -423
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "HLA-B",
+            "original_rank": 141,
+            "scheme_rank": 1
+          },
+          {
+            "gene": "CNTNAP4",
+            "original_rank": 73,
+            "scheme_rank": 5
+          },
+          {
+            "gene": "IP6K1",
+            "original_rank": 48,
+            "scheme_rank": 17
+          },
+          {
+            "gene": "NET1",
+            "original_rank": 76,
+            "scheme_rank": 22
+          },
+          {
+            "gene": "SYNGR1",
+            "original_rank": 44,
+            "scheme_rank": 24
+          },
+          {
+            "gene": "ARHGEF3",
+            "original_rank": 108,
+            "scheme_rank": 26
+          },
+          {
+            "gene": "BTN3A2",
+            "original_rank": 225,
+            "scheme_rank": 27
+          },
+          {
+            "gene": "LRP4",
+            "original_rank": 102,
+            "scheme_rank": 29
+          },
+          {
+            "gene": "RFTN2",
+            "original_rank": 177,
+            "scheme_rank": 31
+          },
+          {
+            "gene": "KCNC2",
+            "original_rank": 101,
+            "scheme_rank": 32
+          },
+          {
+            "gene": "MYLK",
+            "original_rank": 139,
+            "scheme_rank": 35
+          },
+          {
+            "gene": "COX6A1",
+            "original_rank": 64,
+            "scheme_rank": 36
+          },
+          {
+            "gene": "CYB561D1",
+            "original_rank": 120,
+            "scheme_rank": 36
+          },
+          {
+            "gene": "NCAM2",
+            "original_rank": 148,
+            "scheme_rank": 42
+          },
+          {
+            "gene": "CA11",
+            "original_rank": 83,
+            "scheme_rank": 44
+          }
+        ]
+      },
+      "INDEPENDENT_ONLY": {
+        "description": "only dimensions whose dimension-level class is INDEPENDENT_COHORT or INDEPENDENT_PERTURBATION: NONE",
+        "lists": [],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 0,
+        "n_genes_with_no_evidence_in_scheme": 1593,
+        "n_genes_tied_at_rank_1": 0,
+        "top50_size": 0,
+        "top50_overlap_with_original": 0,
+        "top50_cutoff_ties": {
+          "cutoff_rank": null,
+          "n_leads_at_cutoff_rank": 0,
+          "n_leads_at_cutoff_included": 0,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          0,
+          0
+        ],
+        "original_top50_dropped": [
+          "ERBB3",
+          "NEGR1",
+          "DDN",
+          "OGA",
+          "STAB1",
+          "SYT1",
+          "NSF",
+          "PDE1C",
+          "ATXN2L",
+          "BSN",
+          "GRIA4",
+          "COL16A1",
+          "PEF1",
+          "SHANK3",
+          "KCNJ3",
+          "GFAP",
+          "RIMS2",
+          "TRIM37",
+          "CADM2",
+          "CPD",
+          "PITPNM2",
+          "FOXO3",
+          "SEPTIN4",
+          "BAIAP2",
+          "SYT7",
+          "PLEKHA1",
+          "DTNBP1",
+          "MEF2C",
+          "EEA1",
+          "ANKS1B",
+          "SPARCL1",
+          "FAM43B",
+          "SCN2A",
+          "UBA7",
+          "CKB",
+          "RTN1",
+          "APOE",
+          "CACNA1I",
+          "SORT1",
+          "MGAT3",
+          "DHRS11",
+          "AKAP6",
+          "PTPRT",
+          "SNCB",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "NEGR1",
+            "original_rank": 2,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "UBA7",
+            "original_rank": 35,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "ATXN2L",
+            "original_rank": 9,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "PEF1",
+            "original_rank": 13,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "BSN",
+            "original_rank": 10,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "SEPTIN4",
+            "original_rank": 23,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "STAB1",
+            "original_rank": 5,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "TRIM37",
+            "original_rank": 18,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "MEF2C",
+            "original_rank": 28,
+            "scheme_rank": null,
+            "delta": null
+          },
+          {
+            "gene": "COL16A1",
+            "original_rank": 12,
+            "scheme_rank": null,
+            "delta": null
+          }
+        ],
+        "biggest_risers_all_eligible": [],
+        "new_entrants_to_top50": []
+      },
+      "LEAVE_LINEAGE_OUT": {
+        "description": "drop direct+replication+finemap+coloc+direction; keep adult_modifiability, module",
+        "lists": [
+          [
+            "adult_modifiability"
+          ],
+          [
+            "module"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 14,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 22,
+          "n_leads_at_cutoff_rank": 41,
+          "n_leads_at_cutoff_included": 31,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          4,
+          15
+        ],
+        "original_top50_dropped": [
+          "NEGR1",
+          "DDN",
+          "OGA",
+          "STAB1",
+          "PDE1C",
+          "ATXN2L",
+          "COL16A1",
+          "PEF1",
+          "RIMS2",
+          "TRIM37",
+          "CADM2",
+          "CPD",
+          "PITPNM2",
+          "FOXO3",
+          "SEPTIN4",
+          "PLEKHA1",
+          "DTNBP1",
+          "MEF2C",
+          "EEA1",
+          "ANKS1B",
+          "FAM43B",
+          "SCN2A",
+          "UBA7",
+          "RTN1",
+          "APOE",
+          "CACNA1I",
+          "MGAT3",
+          "DHRS11",
+          "AKAP6",
+          "PTPRT",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [
+          "GFAP",
+          "SPARCL1",
+          "CKB",
+          "SNCB",
+          "COX6A1",
+          "CA11",
+          "PDIA2",
+          "SLC22A17",
+          "CAMK2N1",
+          "LENG8",
+          "MOG",
+          "SYNDIG1L",
+          "WBP2",
+          "SLC17A7",
+          "RAB3A",
+          "MAP4",
+          "PMP2",
+          "ENPP2",
+          "VAMP2",
+          "BSN",
+          "CABP1",
+          "SYNPR",
+          "CHRD",
+          "KCNJ3",
+          "NSF",
+          "CPNE6",
+          "SYT7",
+          "BAIAP2",
+          "NRXN3",
+          "KCNH3",
+          "GRIA4",
+          "MADD",
+          "SV2B",
+          "GPR37L1",
+          "DENND4B",
+          "SYT1",
+          "TSPOAP1",
+          "TGOLN2",
+          "CRHR1",
+          "SORT1",
+          "KIFC2",
+          "SHANK3",
+          "CNTNAP4",
+          "ERBB3",
+          "NRSN1",
+          "SHISA4",
+          "PTPA",
+          "PTPRN2",
+          "SYNGR1",
+          "AMIGO1"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "STAB1",
+            "original_rank": 5,
+            "scheme_rank": 1490,
+            "delta": 1485
+          },
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": 1398,
+            "delta": 1360
+          },
+          {
+            "gene": "MEF2C",
+            "original_rank": 28,
+            "scheme_rank": 1168,
+            "delta": 1140
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 47,
+            "scheme_rank": 1168,
+            "delta": 1121
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 41,
+            "scheme_rank": 1034,
+            "delta": 993
+          },
+          {
+            "gene": "OGA",
+            "original_rank": 4,
+            "scheme_rank": 943,
+            "delta": 939
+          },
+          {
+            "gene": "UBA7",
+            "original_rank": 35,
+            "scheme_rank": 793,
+            "delta": 758
+          },
+          {
+            "gene": "DHRS11",
+            "original_rank": 41,
+            "scheme_rank": 643,
+            "delta": 602
+          },
+          {
+            "gene": "NKAIN2",
+            "original_rank": 48,
+            "scheme_rank": 471,
+            "delta": 423
+          },
+          {
+            "gene": "ATXN7L2",
+            "original_rank": 50,
+            "scheme_rank": 460,
+            "delta": 410
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "RAB29",
+            "original_rank": 1350,
+            "scheme_rank": 435,
+            "delta": -915
+          },
+          {
+            "gene": "MDH1B",
+            "original_rank": 1413,
+            "scheme_rank": 583,
+            "delta": -830
+          },
+          {
+            "gene": "ABCG1",
+            "original_rank": 1271,
+            "scheme_rank": 452,
+            "delta": -819
+          },
+          {
+            "gene": "PREX2",
+            "original_rank": 1280,
+            "scheme_rank": 461,
+            "delta": -819
+          },
+          {
+            "gene": "NFAT5",
+            "original_rank": 1275,
+            "scheme_rank": 457,
+            "delta": -818
+          },
+          {
+            "gene": "ACOT13",
+            "original_rank": 1265,
+            "scheme_rank": 449,
+            "delta": -816
+          },
+          {
+            "gene": "PPFIBP1",
+            "original_rank": 1250,
+            "scheme_rank": 436,
+            "delta": -814
+          },
+          {
+            "gene": "ABCB1",
+            "original_rank": 1244,
+            "scheme_rank": 431,
+            "delta": -813
+          },
+          {
+            "gene": "GCC2",
+            "original_rank": 1255,
+            "scheme_rank": 442,
+            "delta": -813
+          },
+          {
+            "gene": "RASSF8",
+            "original_rank": 1237,
+            "scheme_rank": 427,
+            "delta": -810
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "COX6A1",
+            "original_rank": 64,
+            "scheme_rank": 5
+          },
+          {
+            "gene": "CA11",
+            "original_rank": 83,
+            "scheme_rank": 6
+          },
+          {
+            "gene": "PDIA2",
+            "original_rank": 89,
+            "scheme_rank": 7
+          },
+          {
+            "gene": "SLC22A17",
+            "original_rank": 106,
+            "scheme_rank": 8
+          },
+          {
+            "gene": "CAMK2N1",
+            "original_rank": 50,
+            "scheme_rank": 9
+          },
+          {
+            "gene": "LENG8",
+            "original_rank": 137,
+            "scheme_rank": 10
+          },
+          {
+            "gene": "MOG",
+            "original_rank": 91,
+            "scheme_rank": 11
+          },
+          {
+            "gene": "SYNDIG1L",
+            "original_rank": 157,
+            "scheme_rank": 12
+          },
+          {
+            "gene": "WBP2",
+            "original_rank": 171,
+            "scheme_rank": 13
+          },
+          {
+            "gene": "SLC17A7",
+            "original_rank": 140,
+            "scheme_rank": 14
+          },
+          {
+            "gene": "RAB3A",
+            "original_rank": 151,
+            "scheme_rank": 16
+          },
+          {
+            "gene": "MAP4",
+            "original_rank": 282,
+            "scheme_rank": 18
+          },
+          {
+            "gene": "PMP2",
+            "original_rank": 168,
+            "scheme_rank": 19
+          },
+          {
+            "gene": "ENPP2",
+            "original_rank": 271,
+            "scheme_rank": 20
+          },
+          {
+            "gene": "VAMP2",
+            "original_rank": 222,
+            "scheme_rank": 21
+          }
+        ]
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "description": "direct+replication+finemap+coloc+direction+module -> ONE list (best); kept: adult_modifiability",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "direction",
+            "module"
+          ],
+          [
+            "adult_modifiability"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 24,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 57,
+          "n_leads_at_cutoff_rank": 2,
+          "n_leads_at_cutoff_included": 2,
+          "membership_at_cutoff_decided_by_tie_break": false
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          23,
+          24
+        ],
+        "original_top50_dropped": [
+          "OGA",
+          "STAB1",
+          "PDE1C",
+          "GRIA4",
+          "RIMS2",
+          "CPD",
+          "PITPNM2",
+          "BAIAP2",
+          "SYT7",
+          "PLEKHA1",
+          "DTNBP1",
+          "EEA1",
+          "ANKS1B",
+          "FAM43B",
+          "SCN2A",
+          "RTN1",
+          "CACNA1I",
+          "MGAT3",
+          "DHRS11",
+          "PTPRT",
+          "SEPTIN3",
+          "NKAIN2",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [
+          "SEPTIN4",
+          "GFAP",
+          "DDN",
+          "NEGR1",
+          "FOXO3",
+          "KCNIP2",
+          "CKB",
+          "SPARCL1",
+          "TRIM37",
+          "SORT1",
+          "MEF2C",
+          "UBA7",
+          "KCNJ3",
+          "COX6A1",
+          "MAST3",
+          "ATXN2L",
+          "SNCB",
+          "PEF1",
+          "COL16A1",
+          "CAMK2N1",
+          "APOE",
+          "NR1D2",
+          "MOG",
+          "IGIP",
+          "ZNF638",
+          "BSN",
+          "KIFC2",
+          "SYT1",
+          "CA11",
+          "PDIA2",
+          "CRHR1",
+          "CADM2",
+          "SLC17A7",
+          "LONRF2",
+          "NSF",
+          "AKTIP",
+          "SLC22A17",
+          "CYSTM1",
+          "ERBB3",
+          "RAB3A",
+          "GATB",
+          "HABP4",
+          "HEXIM1",
+          "LENG8",
+          "SHISA4",
+          "PMP2",
+          "SREBF1",
+          "SHANK3",
+          "BTN2A1",
+          "AKAP6"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "NKAIN2",
+            "original_rank": 48,
+            "scheme_rank": 623,
+            "delta": 575
+          },
+          {
+            "gene": "GRM3",
+            "original_rank": 50,
+            "scheme_rank": 526,
+            "delta": 476
+          },
+          {
+            "gene": "ADGRB1",
+            "original_rank": 50,
+            "scheme_rank": 402,
+            "delta": 352
+          },
+          {
+            "gene": "ATXN7L2",
+            "original_rank": 50,
+            "scheme_rank": 384,
+            "delta": 334
+          },
+          {
+            "gene": "NOVA1",
+            "original_rank": 50,
+            "scheme_rank": 353,
+            "delta": 303
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 47,
+            "scheme_rank": 322,
+            "delta": 275
+          },
+          {
+            "gene": "OGA",
+            "original_rank": 4,
+            "scheme_rank": 236,
+            "delta": 232
+          },
+          {
+            "gene": "RTN1",
+            "original_rank": 37,
+            "scheme_rank": 257,
+            "delta": 220
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 41,
+            "scheme_rank": 251,
+            "delta": 210
+          },
+          {
+            "gene": "CPD",
+            "original_rank": 20,
+            "scheme_rank": 178,
+            "delta": 158
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "NEDD8",
+            "original_rank": 1136,
+            "scheme_rank": 427,
+            "delta": -709
+          },
+          {
+            "gene": "DCAF11",
+            "original_rank": 1144,
+            "scheme_rank": 468,
+            "delta": -676
+          },
+          {
+            "gene": "IL11RA",
+            "original_rank": 1213,
+            "scheme_rank": 549,
+            "delta": -664
+          },
+          {
+            "gene": "AHCTF1",
+            "original_rank": 1482,
+            "scheme_rank": 848,
+            "delta": -634
+          },
+          {
+            "gene": "VCP",
+            "original_rank": 1046,
+            "scheme_rank": 437,
+            "delta": -609
+          },
+          {
+            "gene": "CHMP4A",
+            "original_rank": 1144,
+            "scheme_rank": 540,
+            "delta": -604
+          },
+          {
+            "gene": "BTN3A3",
+            "original_rank": 776,
+            "scheme_rank": 175,
+            "delta": -601
+          },
+          {
+            "gene": "ATP23",
+            "original_rank": 836,
+            "scheme_rank": 246,
+            "delta": -590
+          },
+          {
+            "gene": "FBXO41",
+            "original_rank": 688,
+            "scheme_rank": 114,
+            "delta": -574
+          },
+          {
+            "gene": "JAK1",
+            "original_rank": 1120,
+            "scheme_rank": 572,
+            "delta": -548
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "KCNIP2",
+            "original_rank": 50,
+            "scheme_rank": 6
+          },
+          {
+            "gene": "COX6A1",
+            "original_rank": 64,
+            "scheme_rank": 14
+          },
+          {
+            "gene": "MAST3",
+            "original_rank": 233,
+            "scheme_rank": 16
+          },
+          {
+            "gene": "CAMK2N1",
+            "original_rank": 50,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "NR1D2",
+            "original_rank": 95,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "MOG",
+            "original_rank": 91,
+            "scheme_rank": 24
+          },
+          {
+            "gene": "IGIP",
+            "original_rank": 163,
+            "scheme_rank": 25
+          },
+          {
+            "gene": "ZNF638",
+            "original_rank": 50,
+            "scheme_rank": 26
+          },
+          {
+            "gene": "KIFC2",
+            "original_rank": 50,
+            "scheme_rank": 29
+          },
+          {
+            "gene": "CA11",
+            "original_rank": 83,
+            "scheme_rank": 31
+          },
+          {
+            "gene": "PDIA2",
+            "original_rank": 89,
+            "scheme_rank": 33
+          },
+          {
+            "gene": "CRHR1",
+            "original_rank": 264,
+            "scheme_rank": 34
+          },
+          {
+            "gene": "SLC17A7",
+            "original_rank": 140,
+            "scheme_rank": 37
+          },
+          {
+            "gene": "LONRF2",
+            "original_rank": 170,
+            "scheme_rank": 38
+          },
+          {
+            "gene": "AKTIP",
+            "original_rank": 172,
+            "scheme_rank": 40
+          }
+        ]
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "description": "direct+replication+finemap+coloc+direction+module -> ONE list (mean); kept: adult_modifiability",
+        "lists": [
+          [
+            "direct",
+            "replication",
+            "finemap",
+            "coloc",
+            "direction",
+            "module"
+          ],
+          [
+            "adult_modifiability"
+          ]
+        ],
+        "n_eligible_genes": 1593,
+        "n_genes_with_any_evidence_in_scheme": 1593,
+        "n_genes_with_no_evidence_in_scheme": 0,
+        "n_genes_tied_at_rank_1": 1,
+        "top50_size": 50,
+        "top50_overlap_with_original": 20,
+        "top50_cutoff_ties": {
+          "cutoff_rank": 52,
+          "n_leads_at_cutoff_rank": 2,
+          "n_leads_at_cutoff_included": 1,
+          "membership_at_cutoff_decided_by_tie_break": true
+        },
+        "top50_overlap_with_original_tie_robust_range": [
+          20,
+          21
+        ],
+        "original_top50_dropped": [
+          "NEGR1",
+          "OGA",
+          "STAB1",
+          "ATXN2L",
+          "COL16A1",
+          "PEF1",
+          "TRIM37",
+          "CADM2",
+          "CPD",
+          "PITPNM2",
+          "FOXO3",
+          "SEPTIN4",
+          "BAIAP2",
+          "PLEKHA1",
+          "DTNBP1",
+          "MEF2C",
+          "ANKS1B",
+          "FAM43B",
+          "UBA7",
+          "APOE",
+          "CACNA1I",
+          "MGAT3",
+          "DHRS11",
+          "AKAP6",
+          "PTPRT",
+          "SEPTIN3",
+          "GRM3",
+          "ADGRB1",
+          "NOVA1",
+          "ATXN7L2"
+        ],
+        "top50_genes_in_order": [
+          "DDN",
+          "ERBB3",
+          "GFAP",
+          "SORT1",
+          "NSF",
+          "SHANK3",
+          "SYT1",
+          "CKB",
+          "IP6K1",
+          "CNTNAP4",
+          "PDE1C",
+          "SPARCL1",
+          "SYT7",
+          "KCNJ3",
+          "COX6A1",
+          "NKAIN2",
+          "SYNGR1",
+          "EEA1",
+          "SNCB",
+          "NRXN3",
+          "CTNNA2",
+          "CAMK2N1",
+          "NR1D2",
+          "PTPRN2",
+          "MAST3",
+          "RTN1",
+          "MOG",
+          "SCN2A",
+          "BSN",
+          "CA11",
+          "THRB",
+          "MADD",
+          "PDIA2",
+          "GRIA4",
+          "HPS6",
+          "SLC17A7",
+          "VAMP2",
+          "DENND4A",
+          "SLC22A17",
+          "NFIC",
+          "KIFC2",
+          "NRSN1",
+          "RIMS2",
+          "RAB3A",
+          "DGKZ",
+          "LENG8",
+          "PMP2",
+          "HCRTR1",
+          "PTPA",
+          "DENND4B"
+        ],
+        "original_top50_biggest_fallers": [
+          {
+            "gene": "MEF2C",
+            "original_rank": 28,
+            "scheme_rank": 1217,
+            "delta": 1189
+          },
+          {
+            "gene": "APOE",
+            "original_rank": 38,
+            "scheme_rank": 965,
+            "delta": 927
+          },
+          {
+            "gene": "SEPTIN3",
+            "original_rank": 47,
+            "scheme_rank": 759,
+            "delta": 712
+          },
+          {
+            "gene": "ATXN7L2",
+            "original_rank": 50,
+            "scheme_rank": 568,
+            "delta": 518
+          },
+          {
+            "gene": "STAB1",
+            "original_rank": 5,
+            "scheme_rank": 520,
+            "delta": 515
+          },
+          {
+            "gene": "GRM3",
+            "original_rank": 50,
+            "scheme_rank": 519,
+            "delta": 469
+          },
+          {
+            "gene": "NOVA1",
+            "original_rank": 50,
+            "scheme_rank": 434,
+            "delta": 384
+          },
+          {
+            "gene": "ADGRB1",
+            "original_rank": 50,
+            "scheme_rank": 397,
+            "delta": 347
+          },
+          {
+            "gene": "MGAT3",
+            "original_rank": 41,
+            "scheme_rank": 354,
+            "delta": 313
+          },
+          {
+            "gene": "UBA7",
+            "original_rank": 35,
+            "scheme_rank": 320,
+            "delta": 285
+          }
+        ],
+        "biggest_risers_all_eligible": [
+          {
+            "gene": "RRAS",
+            "original_rank": 1091,
+            "scheme_rank": 618,
+            "delta": -473
+          },
+          {
+            "gene": "HECTD4",
+            "original_rank": 832,
+            "scheme_rank": 360,
+            "delta": -472
+          },
+          {
+            "gene": "SLC5A11",
+            "original_rank": 823,
+            "scheme_rank": 357,
+            "delta": -466
+          },
+          {
+            "gene": "HSPB6",
+            "original_rank": 1131,
+            "scheme_rank": 667,
+            "delta": -464
+          },
+          {
+            "gene": "ETF1",
+            "original_rank": 1052,
+            "scheme_rank": 602,
+            "delta": -450
+          },
+          {
+            "gene": "SLC4A4",
+            "original_rank": 1124,
+            "scheme_rank": 679,
+            "delta": -445
+          },
+          {
+            "gene": "CD59",
+            "original_rank": 958,
+            "scheme_rank": 520,
+            "delta": -438
+          },
+          {
+            "gene": "RAB29",
+            "original_rank": 1350,
+            "scheme_rank": 915,
+            "delta": -435
+          },
+          {
+            "gene": "CTSA",
+            "original_rank": 929,
+            "scheme_rank": 496,
+            "delta": -433
+          },
+          {
+            "gene": "NEU1",
+            "original_rank": 1144,
+            "scheme_rank": 723,
+            "delta": -421
+          }
+        ],
+        "new_entrants_to_top50": [
+          {
+            "gene": "IP6K1",
+            "original_rank": 48,
+            "scheme_rank": 8
+          },
+          {
+            "gene": "CNTNAP4",
+            "original_rank": 73,
+            "scheme_rank": 10
+          },
+          {
+            "gene": "COX6A1",
+            "original_rank": 64,
+            "scheme_rank": 15
+          },
+          {
+            "gene": "SYNGR1",
+            "original_rank": 44,
+            "scheme_rank": 17
+          },
+          {
+            "gene": "NRXN3",
+            "original_rank": 136,
+            "scheme_rank": 20
+          },
+          {
+            "gene": "CAMK2N1",
+            "original_rank": 50,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "CTNNA2",
+            "original_rank": 66,
+            "scheme_rank": 21
+          },
+          {
+            "gene": "NR1D2",
+            "original_rank": 95,
+            "scheme_rank": 23
+          },
+          {
+            "gene": "PTPRN2",
+            "original_rank": 109,
+            "scheme_rank": 24
+          },
+          {
+            "gene": "MAST3",
+            "original_rank": 233,
+            "scheme_rank": 25
+          },
+          {
+            "gene": "MOG",
+            "original_rank": 91,
+            "scheme_rank": 26
+          },
+          {
+            "gene": "CA11",
+            "original_rank": 83,
+            "scheme_rank": 30
+          },
+          {
+            "gene": "THRB",
+            "original_rank": 67,
+            "scheme_rank": 30
+          },
+          {
+            "gene": "MADD",
+            "original_rank": 105,
+            "scheme_rank": 32
+          },
+          {
+            "gene": "PDIA2",
+            "original_rank": 89,
+            "scheme_rank": 34
+          }
+        ]
+      }
+    },
+    "spearman_between_schemes": {
+      "ORIGINAL__vs__LINEAGE_COLLAPSED_BEST": {
+        "rho": 0.8977,
+        "n": 1593
+      },
+      "ORIGINAL__vs__LINEAGE_COLLAPSED_MEAN": {
+        "rho": 0.9083,
+        "n": 1593
+      },
+      "ORIGINAL__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "ORIGINAL__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.6489,
+        "n": 1593
+      },
+      "ORIGINAL__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.857,
+        "n": 1593
+      },
+      "ORIGINAL__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.8955,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__LINEAGE_COLLAPSED_MEAN": {
+        "rho": 0.93,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.7953,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.9391,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9219,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__INDEPENDENT_ONLY": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__LEAVE_LINEAGE_OUT": {
+        "rho": 0.8009,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.8755,
+        "n": 1593
+      },
+      "LINEAGE_COLLAPSED_MEAN__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9536,
+        "n": 1593
+      },
+      "INDEPENDENT_ONLY__vs__LEAVE_LINEAGE_OUT": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "INDEPENDENT_ONLY__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "INDEPENDENT_ONLY__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": null,
+        "n": 0,
+        "note": "undefined: fewer than 3 shared genes or a constant ranking"
+      },
+      "LEAVE_LINEAGE_OUT__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": {
+        "rho": 0.7333,
+        "n": 1593
+      },
+      "LEAVE_LINEAGE_OUT__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.8019,
+        "n": 1593
+      },
+      "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST__vs__SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": {
+        "rho": 0.9133,
+        "n": 1593
+      }
+    }
+  },
+  "named_gene_verdicts": {
+    "NEGR1": {
+      "original_rank_natural": 2,
+      "in_top50_natural": true,
+      "original_rank_adult": 2,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "SAME_GWAS_SIGNAL_UKB",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc",
+        "direction"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 1,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "rosmap",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 2,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 3,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 14
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 2,
+        "LINEAGE_COLLAPSED_BEST": 16,
+        "LINEAGE_COLLAPSED_MEAN": 32,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 106,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 4,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 111
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 5 from the UKB GWAS lineage (direct,replication,finemap,coloc,direction), 1 derived from Davies selection. Independent: 1 QTL dataset(s) with strong coloc (rosmap; GWAS half is still the UKB lineage)"
+    },
+    "DCC": {
+      "original_rank_natural": 1,
+      "in_top50_natural": true,
+      "original_rank_adult": null,
+      "in_top50_adult": false,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "DERIVED_FROM_SELECTION",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc"
+      ],
+      "dims_derived_from_selection": [
+        "direction",
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 1,
+        "LINEAGE_COLLAPSED_BEST": 1,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 77
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": null,
+        "LINEAGE_COLLAPSED_BEST": null,
+        "LINEAGE_COLLAPSED_MEAN": null,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": null
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 2 derived from Davies selection. Independent: NONE"
+    },
+    "EXOC4": {
+      "original_rank_natural": 3,
+      "in_top50_natural": true,
+      "original_rank_adult": null,
+      "in_top50_adult": false,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "DERIVED_FROM_SELECTION",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc"
+      ],
+      "dims_derived_from_selection": [
+        "direction",
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        1,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 3,
+        "LINEAGE_COLLAPSED_BEST": 1,
+        "LINEAGE_COLLAPSED_MEAN": 216,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 281
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": null,
+        "LINEAGE_COLLAPSED_BEST": null,
+        "LINEAGE_COLLAPSED_MEAN": null,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": null
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 2 derived from Davies selection. Independent: NONE. Pipeline n_strict_ukb_free_units=1 but audit verifies 0 (Perry 2025 cohort string lists 'UKB ' with a trailing space; Lahti 2022 cohort is only 'multiple')"
+    },
+    "NT5DC2": {
+      "original_rank_natural": 4,
+      "in_top50_natural": true,
+      "original_rank_adult": null,
+      "in_top50_adult": false,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "DERIVED_FROM_SELECTION",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc"
+      ],
+      "dims_derived_from_selection": [
+        "direction",
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        2,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 4,
+        "LINEAGE_COLLAPSED_BEST": 10,
+        "LINEAGE_COLLAPSED_MEAN": 109,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 607,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 10,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 69
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": null,
+        "LINEAGE_COLLAPSED_BEST": null,
+        "LINEAGE_COLLAPSED_MEAN": null,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": null,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": null
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 2 derived from Davies selection. Independent: NONE. Pipeline n_strict_ukb_free_units=2 but audit verifies 0 (Perry 2025 cohort string lists 'UKB ' with a trailing space; Lahti 2022 cohort is only 'multiple')"
+    },
+    "BSN": {
+      "original_rank_natural": 11,
+      "in_top50_natural": true,
+      "original_rank_adult": 10,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 11,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 38,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 26
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 10,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 28,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 29
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 4 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection; adult: 5 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection. Independent: NONE"
+    },
+    "SYT1": {
+      "original_rank_natural": 14,
+      "in_top50_natural": true,
+      "original_rank_adult": 6,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "SAME_GWAS_SIGNAL_UKB",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc",
+        "direction"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 4,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "commonmind|gtex|rosmap|walker",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 14,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 231,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 35
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 6,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 30,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 6
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 5 from the UKB GWAS lineage (direct,replication,finemap,coloc,direction), 1 derived from Davies selection. Independent: 4 QTL dataset(s) with strong coloc (commonmind|gtex|rosmap|walker; GWAS half is still the UKB lineage)"
+    },
+    "NSF": {
+      "original_rank_natural": 14,
+      "in_top50_natural": false,
+      "original_rank_adult": 6,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "SAME_GWAS_SIGNAL_UKB",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc",
+        "direction"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 1,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "walker",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 14,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 292,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 36
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 6,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 38,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 5
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 5 from the UKB GWAS lineage (direct,replication,finemap,coloc,direction), 1 derived from Davies selection. Independent: 1 QTL dataset(s) with strong coloc (walker; GWAS half is still the UKB lineage)"
+    },
+    "ERBB3": {
+      "original_rank_natural": 7,
+      "in_top50_natural": true,
+      "original_rank_adult": 1,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 7,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 8,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 141,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 2
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 1,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 43,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 2
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 4 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection; adult: 5 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection. Independent: NONE"
+    },
+    "GRIA4": {
+      "original_rank_natural": 82,
+      "in_top50_natural": false,
+      "original_rank_adult": 11,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "ABSENT",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 82,
+        "LINEAGE_COLLAPSED_BEST": 148,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 455,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 19
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 11,
+        "LINEAGE_COLLAPSED_BEST": 33,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 106,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 34
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 3 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection; adult: 4 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection. Independent: NONE"
+    },
+    "KCNJ3": {
+      "original_rank_natural": 46,
+      "in_top50_natural": true,
+      "original_rank_adult": 14,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 46,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 97,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 33
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 14,
+        "LINEAGE_COLLAPSED_BEST": 3,
+        "LINEAGE_COLLAPSED_MEAN": 5,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 22,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 13,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 14
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 4 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection; adult: 5 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection. Independent: NONE"
+    },
+    "RIMS2": {
+      "original_rank_natural": 88,
+      "in_top50_natural": false,
+      "original_rank_adult": 17,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "ABSENT",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 88,
+        "LINEAGE_COLLAPSED_BEST": 155,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 470,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 22
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": false,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 17,
+        "LINEAGE_COLLAPSED_BEST": 43,
+        "LINEAGE_COLLAPSED_MEAN": 41,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 122,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 131,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 44
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "dependence_note": "natural: 3 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection; adult: 4 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection. Independent: NONE"
+    },
+    "CADM2": {
+      "original_rank_natural": 51,
+      "in_top50_natural": true,
+      "original_rank_adult": 19,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 51,
+        "LINEAGE_COLLAPSED_BEST": 20,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 17,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 46
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": true
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 19,
+        "LINEAGE_COLLAPSED_BEST": 23,
+        "LINEAGE_COLLAPSED_MEAN": 20,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 75,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 35,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 73
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 4 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection; adult: 5 dims present, 3 from the UKB GWAS lineage (direct,replication,finemap), 1 derived from Davies selection. Independent: NONE"
+    },
+    "PTPRT": {
+      "original_rank_natural": 51,
+      "in_top50_natural": true,
+      "original_rank_adult": 45,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "UNDETERMINED",
+        "coloc": "ABSENT",
+        "positive_human": "ABSENT",
+        "direction": "ABSENT",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication"
+      ],
+      "dims_derived_from_selection": [
+        "module"
+      ],
+      "n_independent_units": 0,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        0,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 51,
+        "LINEAGE_COLLAPSED_BEST": 107,
+        "LINEAGE_COLLAPSED_MEAN": 21,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 318,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 81
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": false,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 45,
+        "LINEAGE_COLLAPSED_BEST": 48,
+        "LINEAGE_COLLAPSED_MEAN": 47,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 127,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 137,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 147
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": true,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 4 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection, 1 lineage undetermined; adult: 5 dims present, 2 from the UKB GWAS lineage (direct,replication), 1 derived from Davies selection, 1 lineage undetermined. Independent: NONE"
+    },
+    "MEF2C": {
+      "original_rank_natural": 21,
+      "in_top50_natural": true,
+      "original_rank_adult": 28,
+      "in_top50_adult": true,
+      "dimension_classes": {
+        "direct": "SAME_GWAS_SIGNAL_UKB",
+        "replication": "OVERLAPPING_SAMPLE_REPLICATION",
+        "finemap": "SAME_GWAS_SIGNAL_UKB",
+        "coloc": "SAME_GWAS_SIGNAL_UKB",
+        "positive_human": "ABSENT",
+        "direction": "DERIVED_FROM_SELECTION",
+        "adult_modifiability": "EXPRESSION_ANNOTATION",
+        "module": "DERIVED_FROM_SELECTION"
+      },
+      "dims_sharing_ukb_gwas_lineage": [
+        "direct",
+        "replication",
+        "finemap",
+        "coloc"
+      ],
+      "dims_derived_from_selection": [
+        "direction",
+        "module"
+      ],
+      "n_independent_units": 1,
+      "independent_cohort_units": "",
+      "independent_qtl_datasets_strong": "",
+      "independent_perturbation_units": "ClinGen HI=3 (MONDO:0013266; loss-of-function -> disorder; phenotype name not in repo)",
+      "pipeline_vs_audit_ukb_free_catalog_units": [
+        1,
+        0
+      ],
+      "scheme_ranks_natural": {
+        "ORIGINAL": 21,
+        "LINEAGE_COLLAPSED_BEST": 6,
+        "LINEAGE_COLLAPSED_MEAN": 1070,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 822,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 5,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 820
+      },
+      "scheme_in_top50_natural": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "scheme_ranks_adult": {
+        "ORIGINAL": 28,
+        "LINEAGE_COLLAPSED_BEST": 31,
+        "LINEAGE_COLLAPSED_MEAN": 1191,
+        "INDEPENDENT_ONLY": null,
+        "LEAVE_LINEAGE_OUT": 1168,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": 11,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": 1217
+      },
+      "scheme_in_top50_adult": {
+        "ORIGINAL": true,
+        "LINEAGE_COLLAPSED_BEST": true,
+        "LINEAGE_COLLAPSED_MEAN": false,
+        "INDEPENDENT_ONLY": false,
+        "LEAVE_LINEAGE_OUT": false,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_BEST": true,
+        "SUPP_LINEAGE_PLUS_MODULE_COLLAPSED_MEAN": false
+      },
+      "dependence_note": "natural: 5 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 1 derived from Davies selection; adult: 7 dims present, 4 from the UKB GWAS lineage (direct,replication,finemap,coloc), 2 derived from Davies selection. Independent: perturbation: ClinGen HI=3 (MONDO:0013266; loss-of-function -> disorder; phenotype name not in repo). Pipeline n_strict_ukb_free_units=1 but audit verifies 0 (Perry 2025 cohort string lists 'UKB ' with a trailing space; Lahti 2022 cohort is only 'multiple')"
+    }
+  },
+  "caveats": [
+    "Every scheme keeps the ORIGINAL eligibility floor (Davies MAGMA FDR<0.05), so even INDEPENDENT_ONLY and LEAVE_LINEAGE_OUT rank only genes the UKB-containing GWAS already selected.",
+    "UKB-free is not Davies-free: Davies 2018 includes CHARGE and COGENT cohorts, and cohort membership of the 'verified UKB-free' catalog cohorts in CHARGE/COGENT is not recorded in the repository.",
+    "Studies with no cohort record (e.g. Lee 2018 cognitive performance, Lam 2017, Sniekers 2017, Coleman 2019) are UKB_UNKNOWN -> UNDETERMINED, never independent (dependency rule D005).",
+    "The pipeline's n_strict_ukb_free_units counts Perry 2025 (PMID 39891803) as UKB-free because its cohort list element is 'UKB ' with a trailing space; the cohort string names UKB. Lahti 2022 ('multiple') is unverifiable. Both are re-classified here.",
+    "Strong-coloc QTL datasets are counted as independent units per the brief, but the GWAS half of every colocalisation is the same UKB-heavy lineage; ROSMAP/CommonMind/BrainSeq/GTEx donor overlap is not resolved in the repository. The QTL half is not a separate consensus dimension, so no scheme can rank on it without adding a dimension (forbidden).",
+    "ClinGen HI=3/TS=3 is counted as a perturbation unit per the brief; the repository holds only the MONDO ID, so relevance to cognition (vs e.g. cardiac or cancer phenotypes) is not verified here, and HI=3 is loss-of-function harm, never evidence that raising the gene raises cognition.",
+    "The module dimension gives all 310 M01 genes rank 1, so LEAVE_LINEAGE_OUT (natural) is essentially module membership with massive ties; its top 50 is decided by tie-breaking, not evidence. The same M01 floor creates rank plateaus in other schemes (e.g. many genes tie at one rank under LINEAGE_COLLAPSED_MEAN, natural): a gene AT the cutoff rank may be in or out of a top 50 by sort order alone -- see top50_cutoff_ties and top50_membership_tie_decided_* (true also for ORIGINAL).",
+    "A gene outside a scheme's top 50 is not 'refuted': in_top50 is a triage flag.",
+    "Collapsed lineage lists are re-ranked before RRA; using the raw minimum would reward genes measured on more lineage dimensions, which is the multiple counting being removed."
+  ]
+}

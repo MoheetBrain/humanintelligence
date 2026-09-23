@@ -1341,6 +1341,89 @@ def apply_sprint3(rows: list[dict[str, str]]) -> None:
 apply_sprint3(ROWS)
 
 
+# ---------------------------------------------------------------------------------------------
+# Sprint 3.1 layer (2026-09-23): synaptic recon / correction pass. Applied AFTER Sprint 3 so both
+# judgements stay readable. Evidence: reports/sprint3_1/.
+# ---------------------------------------------------------------------------------------------
+SPRINT31_UPDATED = "2026-09-23"
+_R31 = "reports/sprint3_1/"
+SPRINT31_UPDATES: dict[str, dict[str, str]] = {
+    "SYNAPTIC BIOLOGY is the dominant locus": {
+        "why_prefix": "SPRINT 3.1 CORRECTS THE SHAPE OF THE SIGNAL. Direct pre-vs-post tests (MAGMA joint and "
+                      "contrast models) find NO presynaptic skew: postsynapse >= presynapse in every "
+                      "specification, pre-only minus post-only contrast null. What survives every covariate "
+                      "specification (incl. generic neuronal expression) and leave-one-locus-out is the "
+                      "synaptic-MEMBRANE / trans-synaptic ADHESION core (CDH9, PTPRF, CADM2, NCAM1, PTPRD, "
+                      "LRRC4; channels KCNJ3, SCN2A). Release machinery (active zone, vesicle cycle, priming, "
+                      "Ca-triggered release, SNARE) is NOT enriched. Generic neuronal expression absorbs ~55% of "
+                      "the broad synapse effect. Sprint 3's GO sets were unpropagated; with propagated GO, CNS "
+                      "neuron differentiation and neuron migration ALSO survive global FDR in every "
+                      "specification, so 'synaptic biology is the only survivor' is withdrawn.",
+        "human_genetics": "broad synaptic enrichment concentrated in synaptic-membrane/adhesion genes; no "
+                          "presynaptic skew; neurodevelopmental sets also robust (single UKB-containing lineage)",
+        "deps": _R31 + "pre_vs_post_joint_tests.csv; " + _R31 + "pathway_conditioning_sensitivity.csv; "
+                + _R31 + "leave_one_locus_out.csv"},
+    "EXTREME COGNITION IS QUALITATIVELY DISTINCT": {
+        "why_prefix": "SPRINT 3.1 REPLACES THE EVIDENCE, NOT THE VERDICT. The '1.13x power-scaling' ratio is "
+                      "withdrawn as proof: under plausible ascertainment and winner's-curse assumptions it spans "
+                      "0.61-1.25. The '121/159 loci same sign' was an UNSIGNED gene-level statistic. A genuine "
+                      "allele-direction test: 112/136 testable Sprint-3 lead SNPs have the cognition-increasing "
+                      "allele also raising extreme-IQ odds (binomial P=4e-15), inside the 72-84% continuity "
+                      "predicts. Wording now: no strong evidence for a distinct common-variant architecture; "
+                      "magnitudes not identified; HRS overlap still unresolved and biases toward this answer.",
+        "deps": _R31 + "extreme_tail_reassessment.md; " + _R31 + "extreme_tail_locus_direction.csv"},
+    "DEVELOPMENTAL WIRING": {
+        "why_prefix": "SPRINT 3.1: with GO propagated on the ontology (Sprint 3 used direct annotations: "
+                      "'neurogenesis' had 79 genes vs 1,010 propagated), CNS neuron differentiation and neuron "
+                      "migration survive global FDR in all six covariate specifications. Pathway-level genetic "
+                      "support for neurodevelopmental processes -- which does not say WHEN they act.",
+        "deps": _R31 + "pathway_conditioning_sensitivity.csv"},
+    "ADULT SYNAPTIC CONTROL": {
+        "why_prefix": "SPRINT 3.1: the surviving synaptic signal is structural (membrane/adhesion), not release "
+                      "machinery, and 'adult-modifiable' is relabelled ADULT-EXPRESSION-COMPATIBLE (expression "
+                      "is not modifiability). No gene has ADULT_CAUSAL_EVIDENCE. On independent adult-brain QTL "
+                      "units, only RPS26 (12q13.2) meets the unchanged direction threshold -- a ubiquitous "
+                      "ribosomal eQTL at a pleiotropic locus, a Sprint-4 Gate-C test case, not a control parameter.",
+        "deps": _R31 + "adult_evidence_hierarchy.csv; " + _R31 + "direction_rule_recount_all_genes.csv"},
+    "CONVERGENCE": {
+        "why_prefix": "SPRINT 3.1 DEPENDENCE AUDIT: in the Top-50 lists direct association, replication, "
+                      "fine-mapping, the GWAS half of colocalisation and direction all descend from one "
+                      "UKB-containing GWAS lineage; leaving it out keeps 5/50 (natural) and 14/50 (adult); only "
+                      "MACROD2 has a verified UKB-free cohort unit. A pipeline defect ('UKB ' with a trailing "
+                      "space) had counted Perry 2025 as UKB-free for 11 natural Top-50 genes.",
+        "deps": _R31 + "rank_dependency_audit.csv; " + _R31 + "rank_dependency_audit_summary.json"},
+    "ENERGY DOMINANCE": {
+        "why_prefix": "SPRINT 3.1: re-tested with propagated GO under six covariate specifications -- "
+                      "mitochondrion and oxidative phosphorylation null in all (absence of common-variant "
+                      "enrichment, not proof of irrelevance).",
+        "deps": _R31 + "pathway_conditioning_sensitivity.csv"},
+    "MYELIN AND NETWORK TIMING": {
+        "why_prefix": "SPRINT 3.1: propagated myelination (84 genes) null in all six specifications.",
+        "deps": _R31 + "pathway_conditioning_sensitivity.csv"},
+}
+
+
+def apply_sprint31(rows: list[dict[str, str]]) -> None:
+    for row in rows:
+        for prefix, upd in SPRINT31_UPDATES.items():
+            if row["hypothesis"].startswith(prefix):
+                old = row["current_status"]
+                if "current_status" in upd and upd["current_status"] != old:
+                    row["why"] = (f"{upd['why_prefix']} [STATUS CHANGED IN SPRINT 3.1: {old} -> "
+                                  f"{upd['current_status']}.] PREVIOUSLY: {row['why']}")
+                    row["current_status"] = upd["current_status"]
+                else:
+                    row["why"] = f"{upd['why_prefix']} PREVIOUSLY: {row['why']}"
+                for col in ("human_genetics", "replication", "next_kill_test"):
+                    if col in upd:
+                        row[col] = upd[col]
+                row["evidence_dependencies"] = f"{row['evidence_dependencies']}; {upd['deps']}"
+                row["last_updated"] = SPRINT31_UPDATED
+
+
+apply_sprint31(ROWS)
+
+
 def build() -> int:
     for row in ROWS:
         row.setdefault("last_updated", UPDATED)

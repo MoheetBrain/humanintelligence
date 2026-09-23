@@ -50,7 +50,7 @@
 
 ### SYNAPTIC BIOLOGY is the dominant locus of cognition-relevant variation
 
-**Why:** SPRINT 3 RAN THE UNBIASED TEST this row asked for. MAGMA competitive gene-set analysis over 6,200 sets, conditioned on gene size, gene density, LD, annotation density and LoF constraint, GLOBAL FDR: the ONLY 6 sets surviving are synaptic (presynaptic membrane, synaptic membrane adhesion, presynaptic voltage-gated channels, synapse, process in the synapse); postsynaptic density does not survive. Reproduced in Savage 2018 (6/6, same sign; overlapping sample). NOT independently replicated: UKB-free extreme-IQ sample 6/6 same sign, 0/6 significant at 65x less power. 'Dominant' is overstated: the synaptic module holds 32% of FDR<0.01 evidence -- the largest share, not a majority -- and its boundaries are unstable. [STATUS CHANGED IN SPRINT 3: UNRESOLVED -> PROMISING_BUT_UNRESOLVED.] PREVIOUSLY: This repository CANNOT currently test this hypothesis, and that is the finding. Its evidence base was assembled by selecting synaptic targets, so the preponderance of synaptic evidence measures the selection criterion. The discovery sweep is the first unbiased look and it does not support synaptic dominance — it mostly implicates genes the atlases have never examined.
+**Why:** SPRINT 3.1 CORRECTS THE SHAPE OF THE SIGNAL. Direct pre-vs-post tests (MAGMA joint and contrast models) find NO presynaptic skew: postsynapse >= presynapse in every specification, pre-only minus post-only contrast null. What survives every covariate specification (incl. generic neuronal expression) and leave-one-locus-out is the synaptic-MEMBRANE / trans-synaptic ADHESION core (CDH9, PTPRF, CADM2, NCAM1, PTPRD, LRRC4; channels KCNJ3, SCN2A). Release machinery (active zone, vesicle cycle, priming, Ca-triggered release, SNARE) is NOT enriched. Generic neuronal expression absorbs ~55% of the broad synapse effect. Sprint 3's GO sets were unpropagated; with propagated GO, CNS neuron differentiation and neuron migration ALSO survive global FDR in every specification, so 'synaptic biology is the only survivor' is withdrawn. PREVIOUSLY: SPRINT 3 RAN THE UNBIASED TEST this row asked for. MAGMA competitive gene-set analysis over 6,200 sets, conditioned on gene size, gene density, LD, annotation density and LoF constraint, GLOBAL FDR: the ONLY 6 sets surviving are synaptic (presynaptic membrane, synaptic membrane adhesion, presynaptic voltage-gated channels, synapse, process in the synapse); postsynaptic density does not survive. Reproduced in Savage 2018 (6/6, same sign; overlapping sample). NOT independently replicated: UKB-free extreme-IQ sample 6/6 same sign, 0/6 significant at 65x less power. 'Dominant' is overstated: the synaptic module holds 32% of FDR<0.01 evidence -- the largest share, not a majority -- and its boundaries are unstable. [STATUS CHANGED IN SPRINT 3: UNRESOLVED -> PROMISING_BUT_UNRESOLVED.] PREVIOUSLY: This repository CANNOT currently test this hypothesis, and that is the finding. Its evidence base was assembled by selecting synaptic targets, so the preponderance of synaptic evidence measures the selection criterion. The discovery sweep is the first unbiased look and it does not support synaptic dominance — it mostly implicates genes the atlases have never examined.
 
 **Supporting:** the overwhelming majority of this repository's targets and claims are synaptic — receptors, channels, plasticity machinery
 
@@ -58,7 +58,7 @@
 
 | modality | state |
 |---|---|
-| human genetics | unbiased gene-set enrichment, conditioned, global FDR: synaptic sets only (6/6,200) |
+| human genetics | broad synaptic enrichment concentrated in synaptic-membrane/adhesion genes; no presynaptic skew; neurodevelopmental sets also robust (single UKB-containing lineage) |
 | human molecular | bulk expression only; no cell-type or QTL layer to localise anything |
 | human intervention | every registry-searched target is synaptic, which is circular |
 | animal causal | strong and synaptic — and the animal literature is itself synapse-biased |
@@ -69,11 +69,11 @@
 
 **Next kill test:** Test the six synaptic sets in a large cognition GWAS WITHOUT UK Biobank (or in within-sibship data, which needs an OpenGWAS registration).
 
-**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; targets/seed_registry.yaml; reports/gene_tournament/pathway_enrichment.csv; reports/gene_tournament/pathway_replication.csv; reports/gene_tournament/module_report.md`
+**Depends on:** `pipelines/discovery/sweep_cognition_genes.py; targets/discovered/discovered_registry.yaml; targets/seed_registry.yaml; reports/gene_tournament/pathway_enrichment.csv; reports/gene_tournament/pathway_replication.csv; reports/gene_tournament/module_report.md; reports/sprint3_1/pre_vs_post_joint_tests.csv; reports/sprint3_1/pathway_conditioning_sensitivity.csv; reports/sprint3_1/leave_one_locus_out.csv`
 
 ### DEVELOPMENTAL WIRING — adult cognitive capacity is largely set during development
 
-**Why:** SPRINT 3 GENETICS DOES NOT DECIDE IT: the 375 Bonferroni cognition genes are neither enriched for prenatal/developmental expression (OR 1.16, P=0.12) nor for adult-dynamic expression (OR 1.30, P=0.06). The top two loci split: DCC prenatal-dominant, NEGR1 adult-dynamic. PREVIOUSLY: Uncomfortable for the project's premise and the evidence keeps pointing at it. Every time a target's causal evidence is examined closely, the perturbation turns out to have happened during development even when the read-out was adult. That does not prove adult capacity is fixed — adult-onset manipulations do work in animals — but the ASYMMETRY in evidence quality is real and systematic, and the project's ranking model already caps targets for it.
+**Why:** SPRINT 3.1: with GO propagated on the ontology (Sprint 3 used direct annotations: 'neurogenesis' had 79 genes vs 1,010 propagated), CNS neuron differentiation and neuron migration survive global FDR in all six covariate specifications. Pathway-level genetic support for neurodevelopmental processes -- which does not say WHEN they act. PREVIOUSLY: SPRINT 3 GENETICS DOES NOT DECIDE IT: the 375 Bonferroni cognition genes are neither enriched for prenatal/developmental expression (OR 1.16, P=0.12) nor for adult-dynamic expression (OR 1.30, P=0.06). The top two loci split: DCC prenatal-dominant, NEGR1 adult-dynamic. PREVIOUSLY: Uncomfortable for the project's premise and the evidence keeps pointing at it. Every time a target's causal evidence is examined closely, the perturbation turns out to have happened during development even when the read-out was adult. That does not prove adult capacity is fixed — adult-onset manipulations do work in animals — but the ASYMMETRY in evidence quality is real and systematic, and the project's ranking model already caps targets for it.
 
 **Supporting:** this is the repository's most persistent empirical pattern. GRIN2B: human variants act prenatally and cause neurodevelopmental disorder. RGS14: the protein is undetectable at birth and its only causal evidence is a germline knockout. OTX2 and RTN4R: critical-period mechanisms. Four red-team findings of `developmental_effect_mistaken_for_adult`
 
@@ -92,7 +92,7 @@
 
 **Next kill test:** For any leading target, an adult-onset, time-restricted perturbation with a cognitive read-out. This single design would resolve more here than any new target would.
 
-**Depends on:** `AUD:red_team:{GRIN2B,RGS14,OTX2,RTN4R}:001; CLM:alphacognition:GRIN2B:004-006; reports/gene_tournament/TOP50_HUMAN_COGNITION_GENES.csv; data/gene_tournament/developmental_classification.parquet`
+**Depends on:** `AUD:red_team:{GRIN2B,RGS14,OTX2,RTN4R}:001; CLM:alphacognition:GRIN2B:004-006; reports/gene_tournament/TOP50_HUMAN_COGNITION_GENES.csv; data/gene_tournament/developmental_classification.parquet; reports/sprint3_1/pathway_conditioning_sensitivity.csv`
 
 ### PDE4B inhibition enhances adult human memory
 
@@ -144,7 +144,7 @@
 
 ### ENERGY DOMINANCE — metabolic supply is a binding constraint on adult cognitive performance (the COGNITIVE POWER ENVELOPE)
 
-**Why:** SPRINT 3 GENETICS AGREES WITH THE DOWNGRADE: oxidative phosphorylation P=0.37 (conditioned); 0 of 11 mitochondrial-family sets even nominal; a mitochondrial module exists (11% of evidence) but its label is not enriched (global FDR 0.9999) -- mitochondrial genes appear at their base rate. PREVIOUSLY: Downgraded by the project's own theory document before any red team touched it. The recurring pattern is that metabolic interventions help where something is DEPLETED — creatine in vegetarians, in sleep deprivation, in transporter deficiency — and do little at a healthy adult baseline. A constraint that is not binding cannot be relaxed to gain anything. This is also the finding that makes the goal-gated interface hypothesis interesting: an interface limit would still bind when no capacity is exhausted.
+**Why:** SPRINT 3.1: re-tested with propagated GO under six covariate specifications -- mitochondrion and oxidative phosphorylation null in all (absence of common-variant enrichment, not proof of irrelevance). PREVIOUSLY: SPRINT 3 GENETICS AGREES WITH THE DOWNGRADE: oxidative phosphorylation P=0.37 (conditioned); 0 of 11 mitochondrial-family sets even nominal; a mitochondrial module exists (11% of evidence) but its label is not enriched (global FDR 0.9999) -- mitochondrial genes appear at their base rate. PREVIOUSLY: Downgraded by the project's own theory document before any red team touched it. The recurring pattern is that metabolic interventions help where something is DEPLETED — creatine in vegetarians, in sleep deprivation, in transporter deficiency — and do little at a healthy adult baseline. A constraint that is not binding cannot be relaxed to gain anything. This is also the finding that makes the goal-gated interface hypothesis interesting: an interface limit would still bind when no capacity is exhausted.
 
 **Supporting:** the power atlas: 10 interventions, 7 assessments, creatine and MCT human work, a coherent theoretical model in THEORY.md §1
 
@@ -163,7 +163,7 @@
 
 **Next kill test:** A healthy, non-depleted, non-sleep-deprived adult baseline with a cognitive endpoint. Most existing evidence fails this design.
 
-**Depends on:** `THEORY.md §1.4; atlases/power/; AUD:red_team:{SLC6A8,SLC16A1}:001; reports/gene_tournament/pathway_hypothesis_panel.csv; reports/gene_tournament/module_report.md`
+**Depends on:** `THEORY.md §1.4; atlases/power/; AUD:red_team:{SLC6A8,SLC16A1}:001; reports/gene_tournament/pathway_hypothesis_panel.csv; reports/gene_tournament/module_report.md; reports/sprint3_1/pathway_conditioning_sensitivity.csv`
 
 ### CLASSICAL NEUROMODULATOR DOMINANCE — dopaminergic, serotonergic, cholinergic and adenosinergic tone are the main levers
 
@@ -397,7 +397,7 @@
 
 ### CONVERGENCE — the repository's targets are supported by multiple independent evidence modalities
 
-**Why:** The apparent breadth was an artefact of filing one observation in two places: atlas facet grades counted beside the claims they are computed FROM, one expression dataset counted per target, GWAS Catalog and Open Targets L2G counted as two observations of the same summary statistics, and null trials counted as a separate modality. The correction removes a modality precisely from the best-evidenced targets.
+**Why:** SPRINT 3.1 DEPENDENCE AUDIT: in the Top-50 lists direct association, replication, fine-mapping, the GWAS half of colocalisation and direction all descend from one UKB-containing GWAS lineage; leaving it out keeps 5/50 (natural) and 14/50 (adult); only MACROD2 has a verified UKB-free cohort unit. A pipeline defect ('UKB ' with a trailing space) had counted Perry 2025 as UKB-free for 11 natural Top-50 genes. PREVIOUSLY: The apparent breadth was an artefact of filing one observation in two places: atlas facet grades counted beside the claims they are computed FROM, one expression dataset counted per target, GWAS Catalog and Open Targets L2G counted as two observations of the same summary statistics, and null trials counted as a separate modality. The correction removes a modality precisely from the best-evidenced targets.
 
 **Supporting:** before correction, all 27 targets appeared in two or more modalities and several in five
 
@@ -416,7 +416,7 @@
 
 **Next kill test:** Build the convergence scorer and the validator rule. The rules are encoded but NOT enforced, so the double-counts can be reintroduced with nothing firing.
 
-**Depends on:** `atlases/convergence/dependency_rules.yaml; reports/convergence_v0_2.md`
+**Depends on:** `atlases/convergence/dependency_rules.yaml; reports/convergence_v0_2.md; reports/sprint3_1/rank_dependency_audit.csv; reports/sprint3_1/rank_dependency_audit_summary.json`
 
 ## UNRESOLVED (13)
 
@@ -445,7 +445,7 @@
 
 ### ADULT SYNAPTIC CONTROL — adult cognitive capacity can be raised by modulating synaptic parameters in the adult brain
 
-**Why:** THE PROJECT'S CENTRAL HYPOTHESIS, and after two sprints it is neither supported nor refuted. The honest summary: the adult brain is demonstrably modifiable in animals, and no one has yet shown a durable above-baseline gain in healthy adult humans from any target here. The orthology audit sharpens the diagnosis — the genes are present one-to-one in the model species, so the failure is not a missing gene but a different physiology, which is a more tractable problem.
+**Why:** SPRINT 3.1: the surviving synaptic signal is structural (membrane/adhesion), not release machinery, and 'adult-modifiable' is relabelled ADULT-EXPRESSION-COMPATIBLE (expression is not modifiability). No gene has ADULT_CAUSAL_EVIDENCE. On independent adult-brain QTL units, only RPS26 (12q13.2) meets the unchanged direction threshold -- a ubiquitous ribosomal eQTL at a pleiotropic locus, a Sprint-4 Gate-C test case, not a control parameter. PREVIOUSLY: THE PROJECT'S CENTRAL HYPOTHESIS, and after two sprints it is neither supported nor refuted. The honest summary: the adult brain is demonstrably modifiable in animals, and no one has yet shown a durable above-baseline gain in healthy adult humans from any target here. The orthology audit sharpens the diagnosis — the genes are present one-to-one in the model species, so the failure is not a missing gene but a different physiology, which is a more tractable problem.
 
 **Supporting:** adult-inducible and adult-pharmacological animal perturbations exist for CRTC1, GPR158, HCN1, EIF2B and KL; PDE4B and CHRM1 have human cognitive results in adults
 
@@ -464,11 +464,11 @@
 
 **Next kill test:** Raise any single target to causal-gene level 3 with adult human evidence. Everything downstream, including chemistry, waits on this.
 
-**Depends on:** `reports/target_ranking_v0_1.csv; reports/sprint1_summary.md; atlases/comparative_v2/orthology.yaml`
+**Depends on:** `reports/target_ranking_v0_1.csv; reports/sprint1_summary.md; atlases/comparative_v2/orthology.yaml; reports/sprint3_1/adult_evidence_hierarchy.csv; reports/sprint3_1/direction_rule_recount_all_genes.csv`
 
 ### MYELIN AND NETWORK TIMING — conduction speed and temporal precision limit cognitive capacity
 
-**Why:** SPRINT 3 ASSESSED IT (previously zero artefacts). GO myelination P=0.16 and oligodendrocyte differentiation P=0.43 after conditioning -- null. But X01's oligodendrocyte-lineage EXPRESSION enrichment is nominal in joint models in both atlases (P=0.012, 0.019; OPC P=4e-04 marginal in the cortex atlas). Mixed, not surviving correction. Conduction timing itself is not assessable by gene sets. [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> UNRESOLVED.] PREVIOUSLY: ZERO ARTEFACTS — no target, claim, atlas or state variable addresses white matter, conduction velocity or oligodendrocyte biology. This is a whole axis of cognitive neuroscience the project has simply not touched, and its absence is a selection artefact of the supplied seed list rather than a judgement. Notably, adult myelination is activity-dependent, which places it squarely inside the activity-gated mechanism class the theory nodes point at.
+**Why:** SPRINT 3.1: propagated myelination (84 genes) null in all six specifications. PREVIOUSLY: SPRINT 3 ASSESSED IT (previously zero artefacts). GO myelination P=0.16 and oligodendrocyte differentiation P=0.43 after conditioning -- null. But X01's oligodendrocyte-lineage EXPRESSION enrichment is nominal in joint models in both atlases (P=0.012, 0.019; OPC P=4e-04 marginal in the cortex atlas). Mixed, not surviving correction. Conduction timing itself is not assessable by gene sets. [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> UNRESOLVED.] PREVIOUSLY: ZERO ARTEFACTS — no target, claim, atlas or state variable addresses white matter, conduction velocity or oligodendrocyte biology. This is a whole axis of cognitive neuroscience the project has simply not touched, and its absence is a selection artefact of the supplied seed list rather than a judgement. Notably, adult myelination is activity-dependent, which places it squarely inside the activity-gated mechanism class the theory nodes point at.
 
 **Supporting:** none in this repository
 
@@ -487,7 +487,7 @@
 
 **Next kill test:** Ask whether the swept cognition genes are enriched for oligodendrocyte and myelin annotations. The data are already in hand.
 
-**Depends on:** `none — this row records an absence; reports/gene_tournament/pathway_hypothesis_panel.csv`
+**Depends on:** `none — this row records an absence; reports/gene_tournament/pathway_hypothesis_panel.csv; reports/sprint3_1/pathway_conditioning_sensitivity.csv`
 
 ### MATHEMATICAL BIOLOGY BEYOND g — mathematical ability has biology separable from general cognitive ability
 
@@ -746,7 +746,7 @@
 
 ### EXTREME COGNITION IS QUALITATIVELY DISTINCT from ordinary-range cognition
 
-**Why:** SPRINT 3 ASSESSED IT. At gene level, for common variants in European-ancestry summary data, extreme cognition is CONTINUOUS with population cognition: among the 375 population-significant genes the extreme-IQ shift is 1.13x what pure power scaling predicts (observed mean Z 0.985 vs 0.910); 121/159 independent loci carry positive extreme-tail signal (P=9.2e-05); Mann-Whitney P=9e-26; size-matched permutation P<0.0005. No distinct tail gene set is seen. Context limits: common variants only; possible HRS/CHARGE sample overlap is unresolved and would bias toward this answer; rare-variant tail untested (no individual-level access). [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> CONTRADICTED_IN_STUDIED_CONTEXT.] PREVIOUSLY: ZERO ARTEFACTS. And this matters more than an empty row usually would: X01 adopted the CONTINUOUS assumption as a working constraint, taken from unverified external prose plus an unreferenced appeal to 'this repository's polygenic picture' with no claim id behind it. So the project is currently operating on an assumed answer to an unassessed question. The red team flagged this (finding f11) and it is not yet fixed.
+**Why:** SPRINT 3.1 REPLACES THE EVIDENCE, NOT THE VERDICT. The '1.13x power-scaling' ratio is withdrawn as proof: under plausible ascertainment and winner's-curse assumptions it spans 0.61-1.25. The '121/159 loci same sign' was an UNSIGNED gene-level statistic. A genuine allele-direction test: 112/136 testable Sprint-3 lead SNPs have the cognition-increasing allele also raising extreme-IQ odds (binomial P=4e-15), inside the 72-84% continuity predicts. Wording now: no strong evidence for a distinct common-variant architecture; magnitudes not identified; HRS overlap still unresolved and biases toward this answer. PREVIOUSLY: SPRINT 3 ASSESSED IT. At gene level, for common variants in European-ancestry summary data, extreme cognition is CONTINUOUS with population cognition: among the 375 population-significant genes the extreme-IQ shift is 1.13x what pure power scaling predicts (observed mean Z 0.985 vs 0.910); 121/159 independent loci carry positive extreme-tail signal (P=9.2e-05); Mann-Whitney P=9e-26; size-matched permutation P<0.0005. No distinct tail gene set is seen. Context limits: common variants only; possible HRS/CHARGE sample overlap is unresolved and would bias toward this answer; rare-variant tail untested (no individual-level access). [STATUS CHANGED IN SPRINT 3: NOT_ASSESSED -> CONTRADICTED_IN_STUDIED_CONTEXT.] PREVIOUSLY: ZERO ARTEFACTS. And this matters more than an empty row usually would: X01 adopted the CONTINUOUS assumption as a working constraint, taken from unverified external prose plus an unreferenced appeal to 'this repository's polygenic picture' with no claim id behind it. So the project is currently operating on an assumed answer to an unassessed question. The red team flagged this (finding f11) and it is not yet fixed.
 
 **Supporting:** none in this repository
 
@@ -765,7 +765,7 @@
 
 **Next kill test:** Resolve HRS/CHARGE overlap; then repeat with any second extreme-tail sample, and test rare-variant burden if individual-level TIP genotypes ever become accessible.
 
-**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f11; reports/gene_tournament/extreme_tail_summary.json; reports/gene_tournament/extreme_tail_rank.csv`
+**Depends on:** `analyses/external/X01_cell_type_enrichment.yaml; evidence/audits/red_team/SPRINT2_ARTEFACTS.yaml#f11; reports/gene_tournament/extreme_tail_summary.json; reports/gene_tournament/extreme_tail_rank.csv; reports/sprint3_1/extreme_tail_reassessment.md; reports/sprint3_1/extreme_tail_locus_direction.csv`
 
 ### GABRA5 (alpha5-GABA-A) negative allosteric modulation enhances cognition
 

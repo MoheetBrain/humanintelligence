@@ -918,3 +918,52 @@ chemistry gate remains closed for a concrete reason.
 
 UKB-free replication of the synaptic sets and the continuity result (§J of the final report), then
 re-derivation of X01's cell layer and SuSiE-coloc for the direction near-misses.
+
+## 2026-09-23T10:25Z — Sprint 3.1: synaptic recon / correction pass
+
+**Branch:** `sprint-3.1/synaptic-recon` (from `04c70ef`) · **Stage:** Sprint 3.1 (user request received
+mid-Sprint-4; Sprint 4's protocol had already been frozen and pushed on its own branch, `db86aef`).
+
+**Objective.** Audit the strongest Sprint-3 result ("synaptic biology survives, with a possible presynaptic
+skew") until it can serve as a foundation: direct pre-vs-post tests, conditioning sensitivity, dependence in
+the Top-50 ranking, adult terminology, NEGR1 direction independence, a synaptic system map, and the extreme-
+tail 1.13x derivation. No new discovery sprint, no new tournament, no chemistry.
+
+**Files and systems changed.** New: `pipelines/sprint3_1/` (build_inputs, run_recon_magma, analyse_recon,
+leave_one_locus_out, qtl_independence_audit, extreme_tail_reassessment, build_system_map,
+rank_dependency_audit [subagent], correction_blocks, write_recon_report, two test files);
+`data/sprint3_1/` (full-universe covariates incl. Siletti neuronal expression, propagated GO BP/CC/MF,
+recon sets, literature_curation.json [subagent]); `reports/sprint3_1/` (SYNAPTIC_RECON_REPORT.md,
+pre_vs_post_joint_tests.csv, pathway_conditioning_sensitivity.csv, rank_dependency_audit.csv,
+negr1_qtl_independence_audit.csv, synaptic_system_map.csv, extreme_tail_reassessment.md + supporting
+tables). Modified: `write_final_report.py` and `build_red_team_and_cards.py` (re-insert dated correction
+blocks on regeneration), `reports/GENE_TOURNAMENT_FINAL.md` (11 correction blocks; no text removed),
+`GENE_CARDS_TOP50_ADULT.md` (relabel block), `build_truth_table.py` (Sprint-3.1 layer on 7 rows; no status
+changes), truth table md/csv, OWNERSHIP, this ledger, PROJECT_STATUS.
+
+**Completed / results.** See PROJECT_STATUS headline. Key numbers: pre-only minus post-only contrast
+β −0.056 (P=0.43, spec D); synapse β 0.155 → 0.070 with neuronal conditioning; four membrane/adhesion
+sets P<1e-4 in every spec, worst leave-one-locus-out P 1.9e-4; release-machinery union P=0.10; propagated
+neurodevelopmental sets q<0.05 in all specs; NEGR1 1 independent unit; RPS26 resolved on units; extreme
+tail ratio 0.61–1.25, signed test 112/136 (P=4e-15).
+
+**Decisions and why.** (1) Full 18,418-gene universe for every spec, Sprint-3 run reproduced exactly as
+`D_S3`. (2) GO propagated before comparing themes with SynGO. (3) Contrasts by reparametrised MAGMA joint
+models; joint models matched by variable set because MAGMA renumbers them. (4) Direction threshold kept
+frozen; only the counting unit (independent GWAS signal × QTL cohort) and gene-level eligibility (the
+rule's own text; also frozen in the Sprint-4 protocol before this audit) changed. (5) Corrections as dated
+blocks re-inserted by the report writers, so regeneration cannot lose them.
+
+**Tests and verification executed.** `pytest pipelines/sprint3_1/` → 20 passed; D_S3 reproduction 6/6
+identical; `write_final_report.py` regeneration reproduces the corrected report byte-for-byte apart from
+the timestamp line. Full suite, validator and ownership check: see commit message (run before commit).
+
+**Failures / uncertainty.** All inferences still rest on UK-Biobank-containing European GWAS; neuronal
+covariate from one atlas; theme regex families coarse; HRS overlap bias argued small (shared individuals are
+Zabaneh controls with constant phenotype) but not estimated. Subagents used: 2 (limit 2).
+
+**Effect on project.** The foundation for causal work is narrower and firmer: synaptic-membrane /
+adhesion enrichment (not presynaptic release), plus neurodevelopmental enrichment, and one direction-
+resolved-on-units gene (RPS26) whose biology argues caution.
+
+**Next.** Merge into Sprint 4; run the frozen power calibration and Gates B/C.

@@ -8,6 +8,8 @@ change regenerates the report consistently.
 
 from __future__ import annotations
 
+import sys
+
 import json
 from pathlib import Path
 
@@ -441,7 +443,13 @@ def main() -> int:
     A("## Chemistry gate\n")
     A("**Closed.** Zero genes have a resolved direction of effect, so no molecule could even be chosen in "
       "principle — the question of which way to push has no answer yet.\n")
-    (ROOT / "reports" / "GENE_TOURNAMENT_FINAL.md").write_text("\n".join(L) + "\n", encoding="utf-8")
+    text = "\n".join(L) + "\n"
+    # Sprint 3.1 (2026-09-23): dated correction blocks are re-inserted on every regeneration so the
+    # corrections cannot be lost; the original sentences are never edited.
+    sys.path.insert(0, str(ROOT / "pipelines" / "sprint3_1"))
+    import correction_blocks  # noqa: E402
+    text = correction_blocks.apply(text)
+    (ROOT / "reports" / "GENE_TOURNAMENT_FINAL.md").write_text(text, encoding="utf-8")
     print(f"wrote reports/GENE_TOURNAMENT_FINAL.md ({len(L)} lines)")
     return 0
 
