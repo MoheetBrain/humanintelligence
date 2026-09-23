@@ -15,9 +15,9 @@ new data; Sprint 3.1 merged in at `a8e82d4`). Not merged to main. Sprints 1–3.
    0.014)**; 33 loci G&C_SUPPORTED (~14.5 expected by chance; 4 at FDR<0.05); frozen sets: 1/6 nominal
    (process in the synapse, P=0.031), 4 concordant-underpowered, adhesion sign-discordant within noise.
 4. **Gate C**: SuSiE on 36 loci; 648 adult-brain QTL files (GTEx, CommonMind, ROSMAP, Braineac2, Young
-   2019; BrainSeq/fetal/iPSC excluded); 4,780 coloc.abf + 249 coloc.susie tests; 68 strong. Direction
-   resolved under the unchanged rule on independent cohorts: **RPS26** and **RHEBL1** (cognition allele →
-   higher expression). RPS26 lacks independent cognition support; RHEBL1's gene attribution is unstable in
+   2019; BrainSeq/fetal/iPSC excluded); 4,531 coloc.abf + 590 coloc.susie tests (28 loci); 87 strong. Direction
+   resolved under the unchanged rule on independent cohorts: **RPS26**, **RHEBL1** (cognition allele →
+   higher expression) and **WBP2NL** (→ lower; likely passenger, FOCUS favours CYP2D6). RPS26 lacks independent cognition support; RHEBL1's gene attribution is unstable in
    FOCUS (primary favours PFKM). NEGR1's best FOCUS model is a pseudogene; SYT1 has no strong gene-level coloc.
 5. **Decision RETRY** (frozen precedence: Gate A untestable). Chemistry gate CLOSED.
 
@@ -61,8 +61,7 @@ C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 ## Current Stage
 
 **Sprint 4 — complete (decision RETRY).** Outputs in `reports/sprint4/` (13 required files + summaries).
-Remaining incompleteness: coloc.susie covers 25/36 loci (eQTL Catalogue lbf streaming hit network
-timeouts; a retry is running and will be folded in by a follow-up commit); TGFM and cTWAS blocked.
+coloc.susie complete (28/36 loci; the other 8 have no GWAS SuSiE credible set). TGFM and cTWAS blocked.
 
 **Sprint 3.1 — synaptic recon / correction pass: complete** (`reports/sprint3_1/`, 7 required outputs
 + supporting tables; 13 dated correction blocks written into Sprint-3 reports without deleting text).
@@ -289,8 +288,6 @@ All executed 2026-09-22; none projected.
 1. **User action to unlock Gate A**: set `OPENGWAS_JWT` (or download the two VCFs from the OpenGWAS website
    into `data/interim/sprint4/opengwas/`), then `python pipelines/sprint4/gate_a_within_family.py analyse`.
    This decides whether the 159 loci act directly within families (well powered at locus level).
-2. Fold in the remaining coloc.susie results when the lbf retry completes (`gate_c_coloc.py --susie-only`,
-   `gate_c_direction.py`, `decide.py`, `write_sprint4_report.py`).
 3. RHEBL1 / 12q13.12: resolve the gene with a multi-tissue joint fine-mapper that is not dominated by
    single strong eQTL models (TGFM needs dbGaP GTEx access — a user decision).
 4. For set-level synaptic tests out of UK Biobank, only a much larger UKB-free general-cognition GWAS would

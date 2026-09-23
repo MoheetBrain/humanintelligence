@@ -1052,3 +1052,20 @@ were displayed after the freeze while checking the format.
 untestable at current open sample sizes; no gene has a clean causal chain, so the chemistry gate stays shut.
 
 **Next.** Unlock Gate A (one user action); fold in remaining coloc.susie.
+
+## 2026-09-23T19:30Z — Sprint 4 follow-up: complete coloc.susie folded in
+
+**Branch:** `sprint-4/causal-synapse-bridge` · **Stage:** Sprint 4 complete.
+
+**Objective.** Fold in the eQTL Catalogue SuSiE lbf retry (1,296/1,296 records OK) so multi-signal
+colocalisation covers every locus that has a GWAS credible set.
+
+**Changes / results.** coloc.susie now 590 pairs on 28 loci (was 249 on 25); strong colocs 87 (was 68).
+Direction re-resolved under the unchanged rule: RPS26, RHEBL1 and now WBP2NL (22q13.2; cognition allele ->
+LOWER expression, 3 independent adult cohorts). WBP2NL fails the credible locus-to-gene criterion (FOCUS
+primary favours CYP2D6) and is testis-enriched: likely passenger. Decision unchanged (RETRY); chemistry gate
+unchanged (CLOSED). Reports, survivors, negative results and decision.json regenerated.
+
+**Verification.** pytest sprint4 tests + full suite rerun (see commit message); validator; ownership.
+
+**Next.** Unlock Gate A (user action).

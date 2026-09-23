@@ -1,6 +1,6 @@
 {
- "decided_at": "2026-09-23T15:39:21Z",
- "code_commit": "a8e82d4d06f85af48455d96fef41c8c9f5e72868",
+ "decided_at": "2026-09-23T17:52:26Z",
+ "code_commit": "27dcd2da941436ebe6d670950cfda5c03bec842c",
  "primary_decision": "RETRY",
  "precedence_applied": [
   "STOP_CURRENT_HYPOTHESIS",
@@ -133,9 +133,20 @@
     "consistent_direction": true,
     "safety_pleiotropy_cleared": false,
     "safety_note": "not cleared computationally; any candidate needs a manual pleiotropy/safety review"
+   },
+   {
+    "gene": "WBP2NL",
+    "locus": "L1565",
+    "independent_support": true,
+    "credible_locus_to_gene": false,
+    "credible_l2g_basis": "",
+    "adult_brain_molecular": true,
+    "consistent_direction": true,
+    "safety_pleiotropy_cleared": false,
+    "safety_note": "not cleared computationally; any candidate needs a manual pleiotropy/safety review"
    }
   ],
-  "genes_meeting_four_of_five": [],
+  "genes_meeting_all_criteria_except_safety": [],
   "label_if_all_five_met": "CAUSAL_TARGET_ADJUDICATION_CANDIDATE",
   "reason": "No gene meets all five frozen criteria (independent support, credible locus-to-gene evidence, adult-brain molecular evidence, consistent direction, no disqualifying safety/pleiotropy signal); safety/pleiotropy is never cleared automatically."
  },

@@ -186,7 +186,10 @@ def main() -> int:
         w(f"- {len(ad)} adult gene-level brain QTL datasets from the eQTL Catalogue: "
           f"{', '.join(sorted(ad.study_label.unique()))}.")
         w("- BrainSeq, Walker 2019, Aygün 2021, Jerber 2021 and Schwartzentruber 2018 were excluded as non-adult.")
-        w(f"- {len(coloc)} locus × gene × dataset pairs were tested with coloc.abf.")
+        na = int(coloc.method.str.startswith("coloc.abf").sum())
+        ns = coloc[coloc.method.str.startswith("coloc.susie")]
+        w(f"- {na} locus × gene × dataset pairs were tested with coloc.abf, and {len(ns)} credible-set pairs with "
+          f"coloc.susie on {ns.locus_id.nunique()} loci (the others have no GWAS SuSiE credible set).")
         w(f"- **{len(strong)} pairs are strong (PP.H4 ≥ 0.8)**, covering "
           f"{strong.gene_id.map(sym).nunique() if len(strong) else 0} genes: "
           f"{', '.join(sorted(strong.gene_id.map(sym).dropna().unique())[:25]) if len(strong) else 'none'}.")
@@ -265,6 +268,9 @@ def main() -> int:
       "support (G&C aligned z −0.83).")
     w("  - RHEBL1 is direction-resolved and nominally G&C-supported, but its locus-to-gene attribution is "
       "unstable (FOCUS primary PFKM).")
+    w("  - WBP2NL (22q13.2) is direction-resolved (cognition allele -> LOWER expression) and G&C-supported "
+      "only through TMN/TMD (TMA P=0.08). FOCUS's primary configuration favours CYP2D6 (0.81), and WBP2NL is a "
+      "testis-enriched gene: a likely eQTL passenger.")
     w("  - NEGR1's best expression model is a pseudogene's.")
     w("  - SYT1 has no strong gene-level colocalisation.")
     w("")

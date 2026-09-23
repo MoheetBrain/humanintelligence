@@ -99,14 +99,15 @@ Replicates completed per scenario: n22593_f0: 40, n22593_f0.78: 40, n22593_f1: 4
 
 - 19 adult gene-level brain QTL datasets from the eQTL Catalogue: Braineac2, CommonMind, GTEx, ROSMAP, Young_2019.
 - BrainSeq, Walker 2019, Aygün 2021, Jerber 2021 and Schwartzentruber 2018 were excluded as non-adult.
-- 4780 locus × gene × dataset pairs were tested with coloc.abf.
-- **68 pairs are strong (PP.H4 ≥ 0.8)**, covering 20 genes: CLCN2, CYP2D6, DCC, DHRS11, DNPH1, EIF3C, FHIP1A, GGNBP2, GOSR1, KIFC2, MYO19, NAGA, NEGR1, NPIPB9, RECQL4, RHEBL1, SUOX, TUFM, WBP2NL, ZFTRAF1.
+- 4531 locus × gene × dataset pairs were tested with coloc.abf, and 590 credible-set pairs with coloc.susie on 28 loci (the others have no GWAS SuSiE credible set).
+- **87 pairs are strong (PP.H4 ≥ 0.8)**, covering 21 genes: CLCN2, CYP2D6, DCC, DHRS11, DNPH1, EIF3C, FHIP1A, GGNBP2, GOSR1, KIFC2, MYO19, NAGA, NEGR1, NPIPB9, PHETA2, RECQL4, RHEBL1, SUOX, TUFM, WBP2NL, ZFTRAF1.
 
 **10. Directionally resolved genes** (unchanged rule: ≥3 strong gene-level adult-brain colocs, ≥80% agreement, confirmed on independent QTL cohorts):
 
 - **RPS26** (L319): cognition-increasing allele -> HIGHER expression in adult brain (commonmind, gtex, rosmap). 30 rows, 100% agreement; 3 cohorts, 100% agreement.
-- **RHEBL1** (L7009): cognition-increasing allele -> HIGHER expression in adult brain (commonmind, gtex, rosmap). 4 rows, 100% agreement; 3 cohorts, 100% agreement.
-- Resolved on rows only, not robust across cohorts: DHRS11, CYP2D6, GOSR1, NAGA, NEGR1, TUFM, ZFTRAF1, SUOX, DCC.
+- **RHEBL1** (L7009): cognition-increasing allele -> HIGHER expression in adult brain (commonmind, gtex, rosmap). 7 rows, 100% agreement; 3 cohorts, 100% agreement.
+- **WBP2NL** (L1565): cognition-increasing allele -> LOWER expression in adult brain (commonmind, gtex, rosmap). 6 rows, 100% agreement; 3 cohorts, 100% agreement.
+- Resolved on rows only, not robust across cohorts: DHRS11, CYP2D6, GOSR1, NAGA, TUFM, NEGR1, ZFTRAF1, SUOX, DCC.
 - NEGR1: RESOLVED_ON_ROWS_ONLY_NOT_ROBUST (5 rows; 1 cohort units).
 - SYT1: UNRESOLVED_NO_STRONG_COLOC (0 rows; 0 cohort units).
 - RPS26: DIRECTION_RESOLVED (30 rows; 3 cohort units).
@@ -184,6 +185,7 @@ Reading:
 - **No gene clears the causal chain:**
   - RPS26 is direction-resolved with credible locus-to-gene evidence, but it lacks independent cognition support (G&C aligned z −0.83).
   - RHEBL1 is direction-resolved and nominally G&C-supported, but its locus-to-gene attribution is unstable (FOCUS primary PFKM).
+  - WBP2NL (22q13.2) is direction-resolved (cognition allele -> LOWER expression) and G&C-supported only through TMN/TMD (TMA P=0.08). FOCUS's primary configuration favours CYP2D6 (0.81), and WBP2NL is a testis-enriched gene: a likely eQTL passenger.
   - NEGR1's best expression model is a pseudogene's.
   - SYT1 has no strong gene-level colocalisation.
 
@@ -220,9 +222,9 @@ So Gate A can tell whether the 159 loci act *directly* (within families) or thro
 
 `negative_results.csv`, counts by category:
 
-- GWAS/QTL pair with distinct causal variants (PP.H3>=0.8): 559
+- GWAS/QTL pair with distinct causal variants (PP.H3>=0.8): 844
 - locus — no independent G&C support: 112
-- credible signal without adult-brain QTL colocalisation: 16
+- credible signal without adult-brain QTL colocalisation: 15
 - locus — G&C lookup not testable: 14
 - unresolved allele harmonisation: 10
 - development-dominant expression (survivor/stress/control): 10
@@ -234,4 +236,4 @@ So Gate A can tell whether the 159 loci act *directly* (within families) or thro
 - locus — direct-effect (within-family) support: 1
 - analysis excluded by rule: 1
 
-*Generated 2026-09-23T15:40Z by `pipelines/sprint4/write_sprint4_report.py`.*
+*Generated 2026-09-23T17:54Z by `pipelines/sprint4/write_sprint4_report.py`.*

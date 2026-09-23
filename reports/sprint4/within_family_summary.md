@@ -2,7 +2,7 @@
 
 **Status: NOT_TESTABLE — blocked at the access boundary; not evidence of absence.**
 
-- Checked: `OPENGWAS_JWT` present = False (2026-09-23T15:39:20Z).
+- Checked: `OPENGWAS_JWT` present = False (2026-09-23T17:52:25Z).
 - Blocker: OPENGWAS_JWT absent; OpenGWAS automated download requires a JWT and this project does not create accounts or automate website downloads.
 - Minimal user action: Set OPENGWAS_JWT (a token from https://api.opengwas.io/profile/ after signing in) in the shell environment, then run: python pipelines/sprint4/gate_a_within_family.py fetch && python pipelines/sprint4/gate_a_within_family.py analyse
 - Alternative: Or, without any token: open https://gwas.mrcieu.ac.uk/datasets/ieu-b-4837/ and https://gwas.mrcieu.ac.uk/datasets/ieu-b-4838/, click 'VCF Files', and save both .vcf.gz files into data/interim/sprint4/opengwas/ (the website allows 20 datasets/day), then run the analyse command.
