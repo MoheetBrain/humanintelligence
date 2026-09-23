@@ -1,5 +1,7 @@
 # Gene cards — Top 50 adult-modifiable candidates
 
+> **CORRECTED 2026-09-23 (Sprint 3.1, C9).** "Adult-modifiable" in this file's title and in `TOP50_ADULT_MODIFIABLE_GENES.csv` / `red_team_top50_adult.csv` means only **ADULT-EXPRESSION-COMPATIBLE** (adult-brain expressed; not prenatal-dominant in BrainSpan). Expression is not modifiability. Tiered evidence: `reports/sprint3_1/adult_evidence_hierarchy.csv` (ADULT_EXPRESSED / ADULT_EXPRESSION_DYNAMIC / ADULT_FUNCTIONAL_EVIDENCE / ADULT_CAUSAL_EVIDENCE / ADULT_INTERVENTION_READY; no gene reaches ADULT_CAUSAL_EVIDENCE). File names are kept for provenance.
+
 Generated 2026-09-22T20:33:31Z by `pipelines/gene_tournament/build_red_team_and_cards.py`. Every answer is drawn from a Sprint-3 artefact; an unanswerable field says so. Nothing here is a target nomination, a direction of benefit, or a reason to intervene. The chemistry gate is closed.
 
 ## 1. ERBB3  ·  rank interval 1-55  ·  red team: **DOWNGRADED**

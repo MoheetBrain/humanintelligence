@@ -1,45 +1,53 @@
 # Project Status
 
-*Snapshot 2026-09-23 (UTC) — **Sprint 4 (Direct-Effect Causal Synapse Gate) started: protocol
-FROZEN, no new result read yet.** Sprint 3.1 (synaptic recon/correction pass, requested mid-sprint)
-runs next on its own branch from `04c70ef`; Sprint 4 resumes on top of it.*
+*Snapshot 2026-09-23 (UTC) — **Sprint 3.1 (synaptic recon / correction pass) complete** on
+`sprint-3.1/synaptic-recon`. **Sprint 4 (Direct-Effect Causal Synapse Gate) protocol FROZEN** on
+`sprint-4/causal-synapse-bridge` (`db86aef`, pushed) before any within-family or Genes & Cognition
+value was read; Sprint 4 resumes on top of Sprint 3.1. Sprints 1–3 remain complete.*
 
-***Sprint-4 state at this snapshot***
-* Branch `sprint-4/causal-synapse-bridge` (from Sprint-3 commit `04c70ef`). Not merged to main.
-* `research/sprint4/protocol.md` + `frozen_hypotheses.json` (sha256 `44eb2721…cbff3`) freeze the
-  six Sprint-3 synaptic sets (Entrez membership + hashes), the 159 loci with rule-chosen Davies lead
-  SNPs, every Gate A/B/C threshold, the power-calibration method, the unchanged direction rule and
-  the decision precedence — before any within-family or Genes & Cognition value was read.
-* Gate A input identity verified from public OpenGWAS metadata (ieu-b-4837 sibling N=9,997;
-  ieu-b-4838 population N=22,593; Howe 2022; GRCh37). **`OPENGWAS_JWT` absent** → Gate A download
-  blocked; no account created.
-* Gate B source verified: Zenodo 11066096 carries G&C-only files (`tm{a,n,d}_gwas_gc.txt`).
-* Tooling: conda env `hi-sprint4` (R 4.4.3, susieR 0.14.2, coloc 5.2.3, htslib/bcftools 1.24);
-  plink2 has no osx-arm64 build, so LD is computed in Python.
+***Sprint-3.1 headline results*** (evidence: `reports/sprint3_1/SYNAPTIC_RECON_REPORT.md`)
+1. **Broad synaptic enrichment survives every covariate specification**, but ~55% of its effect is
+   absorbed by generic neuronal expression, and it is **not presynaptic**: direct joint/contrast tests
+   show postsynapse ≥ presynapse; release machinery (active zone, vesicle cycle, priming, Ca²⁺-release,
+   SNARE) is not enriched. The robust core is **synaptic-membrane / trans-synaptic adhesion** (CDH9,
+   PTPRF, CADM2, NCAM1, PTPRD, LRRC4; channels KCNJ3, SCN2A) — nominal after neuronal conditioning and
+   leave-one-locus-out.
+2. **Two Sprint-3 method defects corrected**: conditioned runs silently dropped 1,349 unannotated genes
+   (17,069-gene universe); GO sets were unpropagated. With propagated GO, **neurodevelopmental sets (CNS
+   neuron differentiation, neuron migration) also survive global FDR in every specification** — synaptic
+   biology is not the only survivor.
+3. **Top-50 ranks count one UK-Biobank GWAS lineage several times** (leave-lineage-out keeps 5/50
+   natural, 14/50 adult; only MACROD2 has a verified UKB-free cohort unit); a trailing-space bug had
+   counted a UKB study as UKB-free.
+4. **NEGR1's "3/4" direction evidence is 1 independent unit**; SYT1's 15 colocs are transcript-level
+   (0 gene-level). Under strict gene-level eligibility on independent cohorts **RPS26** meets the
+   unchanged direction rule (4 adult cohorts; ubiquitous ribosomal eQTL at pleiotropic 12q13.2) — a
+   Sprint-4 Gate-C test case, not a target.
+5. **"1.13x" continuity withdrawn** (ratio spans 0.61–1.25); "121/159 same sign" was unsigned. A genuine
+   allele-direction test: **112/136 concordant (P=4e-15)**, within continuity expectations → "no strong
+   evidence for a distinct common-variant architecture". HRS verified inside Davies 2018.
+6. **"Adult-modifiable" relabelled ADULT-EXPRESSION-COMPATIBLE**; five-tier adult hierarchy; DCC has
+   rodent adult functional evidence despite prenatal-dominant expression; no gene has adult causal evidence.
+7. Chemistry gate CLOSED.
 
-*Previous snapshot 2026-09-22 (UTC) — **Sprint 3 (Gene Tournament) complete and red-teamed.**
-Sprints 1 and 2 remain complete. Repository validates with 0 errors / 0 warnings / 3 info;
-**879 tests pass, 0 fail**; ownership check clean (819 paths).*
+*Previous snapshot 2026-09-22 — Sprint 3 complete (below, kept for history; see correction blocks
+C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 
-***Sprint-3 headline results***
-1. **The cognition gene universe can be ranked, but only coarsely.** A verified gene-level
-   analysis of general cognition (MAGMA, Davies 2018, N=282,014) finds 375 Bonferroni genes =
-   **159 independent LD loci**. Beyond the top ~20 the consensus ranking is unstable (39 of the
-   top 50 have rank intervals reaching past 200; ranks 51+ tie).
-2. **Extreme cognition is continuous with ordinary cognition at gene level** — the extreme-IQ
-   sample (IQ~170) shows 1.13x the shift pure power-scaling predicts; 121/159 loci agree in sign
-   (P=9e-05); 0 genes are significant in the tail. Individual-level commonality is **not
-   computable with current access**.
-3. **Synaptic biology is the only pathway signal surviving an unbiased, fully conditioned test**
-   (6 of 6,200 sets at global FDR, presynaptic/adhesion rather than postsynaptic). Reproduced in an
-   overlapping meta-analysis; untested (not refuted) in the only UK-Biobank-free sample. Myelin,
-   energy, astrocytes, ion channels, GPCRs, neuromodulators, translation, chromatin: do not survive.
-4. **No gene has a directionally resolved adult-brain effect**, and 91% of locus-to-gene calls are
-   driven by distance or gene density. The chemistry gate stays closed because there is no
-   direction to push in.
+***Sprint-3 headline results (2026-09-22; items 2 and 3 CORRECTED by Sprint 3.1)***
+1. **The cognition gene universe can be ranked, but only coarsely.** 375 Bonferroni genes = 159 LD loci;
+   beyond the top ~20 the consensus is unstable.
+2. ~~1.13x continuity; 121/159 same sign~~ → see Sprint 3.1 item 5.
+3. ~~Synaptic biology the only surviving pathway; presynaptic not postsynaptic~~ → see Sprint 3.1 items 1–2.
+4. **No gene has a directionally resolved adult-brain effect** at the Sprint-3 rule; 91% of locus-to-gene
+   calls positional.
 5. **The hand-picked seed list fails the genome test**: 1 of 25 seeds passes Bonferroni (CKB).
 
 ## Current Stage
+
+**Sprint 3.1 — synaptic recon / correction pass: complete** (`reports/sprint3_1/`, 7 required outputs
++ supporting tables; 13 dated correction blocks written into Sprint-3 reports without deleting text).
+**Sprint 4 — protocol frozen; analyses pending** (Gate A blocked: `OPENGWAS_JWT` absent; Gate B inputs
+downloaded, md5-verified; pre-data power calibration script prepared).
 
 **Sprint 3 — Human intelligence gene tournament + biological compression. All parts A–S
 delivered**, with explicit NOT_COMPUTABLE records where access blocks a part:
@@ -76,9 +84,11 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 
 ## Current Branch
 
-`sprint-4/causal-synapse-bridge` (Sprint 4, protocol frozen), branched from
-`sprint-3/gene-tournament` at `04c70ef`. Sprint 3.1 will use `sprint-3.1/synaptic-recon` from the
-same commit. `sprint-3/gene-tournament` was branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
+`sprint-3.1/synaptic-recon` (Sprint 3.1), branched from `sprint-3/gene-tournament` at `04c70ef`.
+`sprint-4/causal-synapse-bridge` (`db86aef`, protocol freeze) also branches from `04c70ef` and will
+merge Sprint 3.1 before its analyses. Neither is merged to main.
+
+Previously: `sprint-3/gene-tournament`, branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
 **`/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`** (remote
 `github.com/MoheetBrain/humanintelligence`). The earlier clone at `/Users/moheet/humanintelligence`
 no longer exists. A second, **Codex-owned** linked worktree exists at
@@ -253,11 +263,12 @@ All executed 2026-09-22; none projected.
 
 ## Exact Next Actions
 
-0. **Sprint 3.1 (now):** presynaptic-vs-postsynaptic joint tests, conditioning-sensitivity matrix,
-   rank-dependence audit, adult-terminology fix, NEGR1 QTL-independence audit, synaptic system map,
-   extreme-tail 1.13x reassessment → `reports/sprint3_1/`.
-0b. **Sprint 4 (then):** Gate B on G&C-only files; pre-data power calibration; Gate C on survivors +
-   NEGR1/SYT1; Gate A the moment `OPENGWAS_JWT` is set (code prepared to the download boundary).
+**After Sprint 3.1 (now):** merge `sprint-3.1/synaptic-recon` into `sprint-4/causal-synapse-bridge`;
+run the frozen Sprint-4 pre-data power calibration; Gate B on the G&C-only files; Gate C on survivors +
+NEGR1/SYT1 stress tests + RPS26 (12q13.2); Gate A the moment `OPENGWAS_JWT` is set.
+
+Sprint-3 list (kept for history):
+
 1. **UKB-free replication** of the six synaptic sets and of the continuity result (CHARGE/COGENT
    components by application, or within-sibship data via a free OpenGWAS registration — the user's
    call). Highest expected value: one computation tests the sprint's three central claims.

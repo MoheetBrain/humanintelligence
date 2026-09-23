@@ -1,0 +1,110 @@
+{
+ "NEGR1": {
+  "gene": "NEGR1",
+  "sprint3_rows_counted_strict_gene_level": 4,
+  "sprint3_rows_transcript_or_splice_level": 0,
+  "units_counted_from": "strict gene-level rule-eligible rows",
+  "sprint3_rows_counted": 4,
+  "sprint3_row_agreement": 0.75,
+  "n_direct_cognition_brain_colocs_all_strengths": 19,
+  "n_gwas_signal_groups_all_rows": 3,
+  "gwas_leads": [
+   "rs12128707",
+   "rs3101336",
+   "rs66495454"
+  ],
+  "leads_absent_from_1000G": [
+   "rs66495454"
+  ],
+  "lead_ld_r2": {
+   "rs12128707": {
+    "rs12128707": 1.0,
+    "rs3101336": 0.149
+   },
+   "rs3101336": {
+    "rs12128707": 0.149,
+    "rs3101336": 1.0
+   }
+  },
+  "qtl_cohorts_all_rows": [
+   "rosmap"
+  ],
+  "independent_units": [
+   {
+    "unit": "rs66495454 x rosmap",
+    "n_rows": 4,
+    "n_positive": 3,
+    "n_negative": 1,
+    "unit_direction": 1,
+    "internally_consistent": false,
+    "gwas_studies": [
+     "GCST004364",
+     "GCST90310159",
+     "GCST90565842",
+     "GCST90692909"
+    ],
+    "qtl_datasets": [
+     "rosmap_ge_brain_naive_ensg00000172260"
+    ]
+   }
+  ],
+  "n_independent_units": 1,
+  "n_units_directionally_concordant": 1,
+  "unit_agreement": 1.0,
+  "direction_resolved_under_frozen_rule_on_units": false,
+  "near_resolution": false,
+  "frozen_rule": ">= 3 strong gene-level brain eQTL/pQTL colocalisations, >= 80% polarity-adjusted agreement (unchanged; applied to independent units)",
+  "ukb_note": "all cognition GWAS in this table contain UK Biobank participants (Sniekers 2017, Savage 2018, Davies 2018, Hatoum 2022/2023 and the UKB field-20016 fluid-intelligence analyses)"
+ },
+ "SYT1": {
+  "gene": "SYT1",
+  "sprint3_rows_counted_strict_gene_level": 0,
+  "sprint3_rows_transcript_or_splice_level": 15,
+  "units_counted_from": "strict gene-level rule-eligible rows",
+  "sprint3_rows_counted": 15,
+  "sprint3_row_agreement": 0.6,
+  "n_direct_cognition_brain_colocs_all_strengths": 146,
+  "n_gwas_signal_groups_all_rows": 2,
+  "gwas_leads": [
+   "rs10861798",
+   "rs62741560",
+   "rs6539284",
+   "rs7963801"
+  ],
+  "leads_absent_from_1000G": [
+   "rs62741560"
+  ],
+  "lead_ld_r2": {
+   "rs6539284": {
+    "rs6539284": 1.0,
+    "rs7963801": 0.953,
+    "rs10861798": 0.97
+   },
+   "rs7963801": {
+    "rs6539284": 0.953,
+    "rs7963801": 1.0,
+    "rs10861798": 0.966
+   },
+   "rs10861798": {
+    "rs6539284": 0.97,
+    "rs7963801": 0.966,
+    "rs10861798": 1.0
+   }
+  },
+  "qtl_cohorts_all_rows": [
+   "brainseq",
+   "commonmind",
+   "gtex",
+   "rosmap",
+   "walker"
+  ],
+  "independent_units": [],
+  "n_independent_units": 0,
+  "n_units_directionally_concordant": 0,
+  "unit_agreement": null,
+  "direction_resolved_under_frozen_rule_on_units": false,
+  "near_resolution": false,
+  "frozen_rule": ">= 3 strong gene-level brain eQTL/pQTL colocalisations, >= 80% polarity-adjusted agreement (unchanged; applied to independent units)",
+  "ukb_note": "all cognition GWAS in this table contain UK Biobank participants (Sniekers 2017, Savage 2018, Davies 2018, Hatoum 2022/2023 and the UKB field-20016 fluid-intelligence analyses)"
+ }
+}

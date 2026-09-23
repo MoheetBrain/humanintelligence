@@ -1,0 +1,1601 @@
+{
+  "curated_at": "2026-09-23T09:09:22Z",
+  "curation_meta": {
+    "curator": "literature-curation subagent, Sprint 3.1",
+    "verification_protocol": "Every PMID was resolved with a PubMed metadata lookup and the returned title checked against the cited paper. Full text (PMC / Europe PMC) was read wherever a number, cohort list or direction-of-effect is reported. Unverifiable claims are marked UNVERIFIED.",
+    "quote_policy": "All findings paraphrased; no quotation exceeds 15 words.",
+    "sources_used": [
+      "PubMed E-utilities via bio-research PubMed MCP",
+      "PMC full text via get_full_text_article",
+      "Europe PMC REST fullTextXML and search",
+      "Nature Communications supplementary PDF for Davies et al. 2018"
+    ],
+    "corrections_to_brief": [
+      "Glasgow et al. 2018 is Cell Reports, not eLife (PMID 30282026).",
+      "Wong et al. 2019 (Learn Mem, PMID 30770464) deletes netrin-1, the ligand, not DCC.",
+      "Zabaneh et al.: PubMed electronic publication year 2017, print issue Mol Psychiatry 2018;23(5):1226-1232. PMID 29731509 confirmed.",
+      "Zabaneh et al. state 8172 controls in the abstract but 8185 post-QC controls in Methods; the paper does not reconcile the difference."
+    ],
+    "pmid_verification": {
+      "n_unique_pmids": 99,
+      "method": "All PMIDs appearing anywhere in this file were re-extracted and re-checked in one NCBI esummary call; every one resolved and every returned title matched the title recorded here.",
+      "n_unresolved": 0,
+      "year_field_semantics": "The 'year' fields record the PubMed publication_date year, which is usually the electronic publication year. For some records this differs by one year from PubMed's indexed/print year (examples: PMID 27773352 epub 2016 / print 2017; PMID 28720317 epub 2017 / print 2018; PMID 31659271 epub 2019 / print 2020; PMID 41362369 epub 2025 / print 2026). Journal and title are the authoritative identifiers, not the year."
+    },
+    "unverified_items_index": [
+      "system_map: NSF - whether NSF falls inside the 17q21.31 inversion interval was not confirmed; flagged UNVERIFIED in the NSF critical_note.",
+      "dcc_adult_function: PMID 38377003 - animal ages and Cre onset not confirmed from full text.",
+      "negr1: 'higher NEGR1 expression in brain' as asserted by the Loos and Yeo 2022 review - the cited primary source (Wheeler 2013) reports lymphoblastoid cell lines, so the brain attribution is UNVERIFIED at primary-source level.",
+      "negr1: direction of the hypothalamic NEGR1 TWAS association in Levey 2021 - UNVERIFIED.",
+      "negr1: direction of the NEGR1 colocalisation in Deng 2022 - UNVERIFIED.",
+      "negr1: whether the NEGR1 upstream deletion CNV haplotype is the same haplotype as the cognition/depression GWAS signals - UNVERIFIED, no LD or colocalisation evidence found.",
+      "extreme_iq: Zabaneh control N is reported as both 8172 (abstract) and 8185 (Methods); the paper does not reconcile these."
+    ]
+  },
+  "dcc_adult_function": {
+    "question": "Is there evidence for adult functions of DCC / netrin-1 signalling, and at what tier?",
+    "tier_vocabulary": {
+      "ADULT_EXPRESSED": "Protein or mRNA demonstrated in adult tissue.",
+      "ADULT_EXPRESSION_DYNAMIC": "Adult expression changes with state (drug, stress, disease).",
+      "ADULT_FUNCTIONAL_EVIDENCE": "Loss or gain of function tested in adult animals or adult tissue.",
+      "ADULT_CAUSAL_EVIDENCE": "Human genetic or causal evidence acting in adults; applied strictly. Germline variants present from conception do not qualify.",
+      "ADULT_INTERVENTION_READY": "Adult-deliverable intervention validated in humans. None found."
+    },
+    "items": [
+      {
+        "pmid": "23291093",
+        "first_author": "Horn",
+        "year": 2013,
+        "journal": "Cell Rep",
+        "title": "DCC expression by neurons regulates synaptic plasticity in the adult brain.",
+        "species_system": "mouse in vivo and acute hippocampal slice; conditional forebrain neuronal Dcc deletion",
+        "age_window": "adult (animals tested as adults; Cre driver is postnatal-onset, not adult-inducible)",
+        "finding": "DCC is enriched in dendritic spines; forebrain neuronal deletion abolishes LTP, spares LTD, shortens spines, impairs spatial and recognition memory via Src-NMDAR.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Postnatal-onset Cre cannot separate adult maintenance from late synaptic maturation."
+      },
+      {
+        "pmid": "30282026",
+        "first_author": "Glasgow",
+        "year": 2018,
+        "journal": "Cell Rep",
+        "title": "Activity-Dependent Netrin-1 Secretion Drives Synaptic Insertion of GluA1-Containing AMPA Receptors in the Hippocampus.",
+        "species_system": "rodent acute hippocampal slice; mouse conditional netrin-1 deletion in excitatory neurons",
+        "age_window": "adult",
+        "finding": "Depolarisation and NMDAR activity release dendritic netrin-1; neuronal netrin-1 is required for adult CA1 LTP and potentiates transmission by recruiting GluA1 AMPARs.",
+        "evidence_tier": [
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Ligand-level manipulation; receptor identity for the GluA1 step not isolated here. Journal is Cell Reports, not eLife."
+      },
+      {
+        "pmid": "30770464",
+        "first_author": "Wong",
+        "year": 2019,
+        "journal": "Learn Mem",
+        "title": "Spatial memory formation requires netrin-1 expression by neurons in the adult mammalian brain.",
+        "species_system": "mouse in vivo; conditional netrin-1 deletion in hippocampal and neocortical glutamatergic neurons",
+        "age_window": "adult",
+        "finding": "Adult mice lacking neuronal netrin-1 show impaired spatial memory, no anxiety-like phenotype and reduced self-grooming.",
+        "evidence_tier": [
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Ligand, not receptor."
+      },
+      {
+        "pmid": "32264905",
+        "first_author": "Glasgow",
+        "year": 2020,
+        "journal": "Mol Brain",
+        "title": "Pre- and post-synaptic roles for DCC in memory consolidation in the adult mouse hippocampus.",
+        "species_system": "mouse in vivo and acute slice; CA1-specific R4ag11-CaMKIIa-Cre and CA3-specific Grik4-Cre Dcc deletion",
+        "age_window": "adult (behaviour from 6 months, slices 8-10 months; Cre first detectable P14-P17, after axon guidance is complete)",
+        "finding": "CA1 DCC loss impairs spatial memory, alters spine morphology and weakens spontaneous EPSCs but spares LTP; CA3 DCC loss impairs Schaffer-collateral LTP and object-place memory.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Strongest cell-type-resolved adult DCC evidence, but deletion still begins in the third postnatal week."
+      },
+      {
+        "pmid": "38377003",
+        "first_author": "Glasgow",
+        "year": 2024,
+        "journal": "Cell Rep",
+        "title": "Acetylcholine synergizes with netrin-1 to drive persistent firing in the entorhinal cortex.",
+        "species_system": "mouse in vivo and entorhinal cortical slice; conditional netrin-1 or DCC deletion in forebrain excitatory neurons",
+        "age_window": "adult (as framed by the authors; exact ages not verified)",
+        "finding": "Deleting netrin-1 or DCC impairs short-term spatial memory and cholinergic persistent firing; muscarinic activation recruits DCC to the plasma membrane.",
+        "evidence_tier": [
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Age range and Cre onset not confirmed from full text in this pass."
+      },
+      {
+        "pmid": "41362369",
+        "first_author": "Mahmud",
+        "year": 2025,
+        "journal": "Biol Psychiatry Glob Open Sci",
+        "title": "Stress-Induced Dysregulation of the Guidance Cue Receptor DCC Alters Corticolimbic Circuit Architecture.",
+        "species_system": "adult male mouse in vivo; AAV-CaMKII-Cre knockout of floxed Dcc in prefrontal pyramidal neurons, n = 90",
+        "age_window": "adult (viral knockout performed in adults, the cleanest adult-onset manipulation found)",
+        "finding": "Chronic social defeat cuts apical, not basal, spine density in prefrontal pyramidal neurons; adult DCC knockout prevents both spine loss and depression-like behaviour.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_EXPRESSION_DYNAMIC",
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Male mice only; no female replication yet."
+      },
+      {
+        "pmid": "27773352",
+        "first_author": "Torres-Berrio",
+        "year": 2016,
+        "journal": "Biol Psychiatry",
+        "title": "DCC Confers Susceptibility to Depression-like Behaviors in Humans and Mice and Is Regulated by miR-218.",
+        "species_system": "human adult post-mortem prefrontal cortex; adult mouse defeat-stress models; cell culture",
+        "age_window": "adult",
+        "finding": "DCC is raised and miR-218 lowered in the prefrontal cortex of stress-susceptible mice and of people with major depression; Dcc upregulation in adult mice causes vulnerability.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_EXPRESSION_DYNAMIC",
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "The human arm is post-mortem expression, which is correlational and not causal."
+      },
+      {
+        "pmid": "20345916",
+        "first_author": "Yetnikoff",
+        "year": 2010,
+        "journal": "Eur J Neurosci",
+        "title": "Netrin-1 receptor in the ventral tegmental area is required for sensitization to amphetamine.",
+        "species_system": "adult mouse and adult rat in vivo (VTA, pharmacological DCC blockade at pretreatment)",
+        "age_window": "adult",
+        "finding": "Repeated amphetamine raises VTA DCC in adults; DCC activation in the VTA at pretreatment is required for behavioural sensitisation and spinophilin increases.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_EXPRESSION_DYNAMIC",
+          "ADULT_FUNCTIONAL_EVIDENCE"
+        ],
+        "caveat": "Dopaminergic plasticity, not cognition."
+      },
+      {
+        "pmid": "15730872",
+        "first_author": "Osborne",
+        "year": 2005,
+        "journal": "Neuroscience",
+        "title": "Localization of immunoreactivity for deleted in colorectal cancer (DCC), the receptor for the guidance factor netrin-1, in ventral tier dopamine projection pathways in adult rodents.",
+        "species_system": "adult rat and mouse tissue immunohistochemistry",
+        "age_window": "adult",
+        "finding": "DCC protein is present in adult ventral midbrain dopamine neurons and their terminal fields including prefrontal cortex, striatum and accumbens shell.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED"
+        ],
+        "caveat": "Anatomical only."
+      },
+      {
+        "pmid": "23572211",
+        "first_author": "Yetnikoff",
+        "year": 2013,
+        "journal": "Psychopharmacology (Berl)",
+        "title": "Adolescence: a time of transition for the phenotype of dcc heterozygous mice.",
+        "species_system": "mouse and rat in vivo",
+        "age_window": "adolescent vs adult comparison",
+        "finding": "Amphetamine downregulates VTA DCC in juveniles but upregulates it in adults; the protective adult dcc-heterozygote phenotype only emerges after adolescence.",
+        "evidence_tier": [
+          "ADULT_EXPRESSION_DYNAMIC"
+        ],
+        "caveat": "Direction of the adult expression change is opposite to the juvenile one, so timing matters mechanistically."
+      },
+      {
+        "pmid": "24861518",
+        "first_author": "Grant",
+        "year": 2014,
+        "journal": "Neurosci Lett",
+        "title": "Haloperidol treatment downregulates DCC expression in the ventral tegmental area.",
+        "species_system": "adult mouse in vivo, 4-week oral antipsychotic dosing",
+        "age_window": "adult",
+        "finding": "Haloperidol roughly halves VTA DCC in adults without changing UNC5 homologues; clozapine and risperidone do not.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED",
+          "ADULT_EXPRESSION_DYNAMIC"
+        ],
+        "caveat": "Shows an adult drug can move DCC, but in rodents and without a cognitive readout."
+      },
+      {
+        "pmid": "28720317",
+        "first_author": "Reynolds",
+        "year": 2017,
+        "journal": "Biol Psychiatry",
+        "title": "DCC Receptors Drive Prefrontal Cortex Maturation by Determining Dopamine Axon Targeting in Adolescence.",
+        "species_system": "mouse in vivo, axon-initiated recombination plus cell-specific DCC knockdown",
+        "age_window": "adolescent (phenotype read out in adulthood)",
+        "finding": "Dopamine axons keep growing to the prefrontal cortex through adolescence; DCC sets where they stop, and disrupting this changes adult cortical structure and cognition.",
+        "evidence_tier": [],
+        "caveat": "Adolescent-window causal evidence with adult consequences; not adult-onset function."
+      },
+      {
+        "pmid": "24346136",
+        "first_author": "Manitt",
+        "year": 2013,
+        "journal": "Transl Psychiatry",
+        "title": "dcc orchestrates the development of the prefrontal cortex during adolescence and is altered in psychiatric patients.",
+        "species_system": "mouse in vivo (Cre-lox and viral Cre) plus human post-mortem brain",
+        "age_window": "adolescent (phenotypes emerge in adulthood)",
+        "finding": "Reducing Dcc in dopamine neurons during adolescence raises prefrontal dopamine innervation and cognitive flexibility in adults; DCC is elevated in antidepressant-free suicide brains.",
+        "evidence_tier": [
+          "ADULT_EXPRESSION_DYNAMIC"
+        ],
+        "caveat": "The human component is post-mortem expression, and the causal manipulation is adolescent."
+      },
+      {
+        "pmid": "21653843",
+        "first_author": "Manitt",
+        "year": 2011,
+        "journal": "J Neurosci",
+        "title": "The netrin receptor DCC is required in the pubertal organization of mesocortical dopamine circuitry.",
+        "species_system": "mouse in vivo, dcc heterozygotes, pre- and post-pubertal comparison",
+        "age_window": "adolescent / pubertal",
+        "finding": "dcc heterozygotes show altered prefrontal dopamine varicosities and layer-V dendritic arbors only after puberty, not in juveniles.",
+        "evidence_tier": [],
+        "caveat": "Timing-of-emergence evidence; not adult manipulation."
+      },
+      {
+        "pmid": "29712788",
+        "first_author": "Vosberg",
+        "year": 2018,
+        "journal": "J Neurosci",
+        "title": "Mesocorticolimbic Connectivity and Volumetric Alterations in DCC Mutation Carriers.",
+        "species_system": "human genetics plus neuroimaging (20 DCC mutation carriers, 16 non-carrier relatives, 20 unrelated controls) with mouse replication",
+        "age_window": "adult humans carrying a germline variant",
+        "finding": "Human DCC mutation carriers have weaker substantia nigra/VTA to ventral striatum and ventromedial prefrontal connectivity, lower striatal volume and lower novelty seeking.",
+        "evidence_tier": [
+          "ADULT_EXPRESSED"
+        ],
+        "caveat": "Deliberately NOT tiered ADULT_CAUSAL_EVIDENCE: the variant is germline and acts from development onward, so the adult phenotype cannot be attributed to adult DCC function. Small n."
+      },
+      {
+        "pmid": "31835028",
+        "first_author": "Cross-Disorder Group of the Psychiatric Genomics Consortium",
+        "year": 2019,
+        "journal": "Cell",
+        "title": "Genomic Relationships, Novel Loci, and Pleiotropic Mechanisms across Eight Psychiatric Disorders.",
+        "species_system": "human genetics, 232,964 cases and 494,162 controls",
+        "age_window": "adult and childhood-onset disorders (common germline variation)",
+        "finding": "The 18q21.2 region around rs8084351 at DCC is the most pleiotropic locus found, associated with all eight disorders and colocalising with brain DCC eQTLs.",
+        "evidence_tier": [],
+        "caveat": "Common germline variation; the same paper notes DCC expression peaks in early prenatal development, so the association does not license an adult-mechanism claim."
+      },
+      {
+        "pmid": "29187730",
+        "first_author": "Ward",
+        "year": 2017,
+        "journal": "Transl Psychiatry",
+        "title": "Genome-wide analysis in UK Biobank identifies four loci associated with mood instability and genetic correlation with major depressive disorder, anxiety disorder and schizophrenia.",
+        "species_system": "human genetics, 53,525 cases and 60,443 controls, adults",
+        "age_window": "adults (UK Biobank, germline variants)",
+        "finding": "Mood instability in adults associates with four loci, one of which implicates DCC; SNP heritability about 8 percent.",
+        "evidence_tier": [],
+        "caveat": "Single-item phenotype; germline variation, not an adult-acting perturbation."
+      },
+      {
+        "pmid": "32593422",
+        "first_author": "Torres-Berrio",
+        "year": 2020,
+        "journal": "Biol Psychiatry",
+        "title": "The Netrin-1/DCC Guidance Cue Pathway as a Molecular Target in Depression: Translational Evidence.",
+        "species_system": "review of rodent, human post-mortem and GWAS evidence",
+        "age_window": "adolescent and adult",
+        "finding": "Review proposing that miR-218-mediated dysregulation of netrin-1/DCC links adolescent prefrontal wiring to adult depression, and proposing circulating miR-218 as a biomarker.",
+        "evidence_tier": [],
+        "caveat": "Review, not primary data; no intervention has been tested in humans."
+      },
+      {
+        "pmid": "31659271",
+        "first_author": "Vosberg",
+        "year": 2019,
+        "journal": "Mol Psychiatry",
+        "title": "The Netrin-1/DCC guidance system: dopamine pathway maturation and psychiatric disorders emerging in adolescence.",
+        "species_system": "review of rodent and human evidence",
+        "age_window": "adolescent-weighted",
+        "finding": "Review arguing netrin-1 and DCC shape the adolescent expansion of mesocorticolimbic pathways and that variants associate with depression, schizophrenia and substance use.",
+        "evidence_tier": [],
+        "caveat": "Review."
+      }
+    ],
+    "adult_causal_evidence_verdict": {
+      "any_ADULT_CAUSAL_EVIDENCE": false,
+      "reasoning": "No human study was found in which DCC or netrin-1 was perturbed in adulthood, or in which a variant can be shown to act in adulthood rather than from development. All human DCC genetics located here (congenital mirror movements, isolated agenesis of the corpus callosum, developmental split-brain syndrome, mood instability, cross-disorder pleiotropy, mutation-carrier imaging) involve germline variation present from conception. The strictest reading of the tier therefore returns nothing.",
+      "closest_candidates": [
+        "PMID 29712788 (Vosberg 2018) - adult human carriers phenotyped, but germline variant.",
+        "PMID 27773352 (Torres-Berrio 2016) - human adult post-mortem DCC elevation in depression, correlational; causality supplied only by the mouse arm."
+      ]
+    },
+    "adult_intervention_ready_verdict": {
+      "any_ADULT_INTERVENTION_READY": false,
+      "reasoning": "No human-validated, adult-deliverable intervention on DCC or netrin-1 was found. The only adult pharmacological modulation identified is haloperidol lowering VTA DCC in mice (PMID 24861518), which is a rodent side observation, not an intervention.",
+      "nearest_translational_asset": "Circulating miR-218 proposed as a biomarker of stress vulnerability in PMID 32593422 (review, unvalidated)."
+    },
+    "developmental_function_evidence": [
+      {
+        "pmid": "8861902",
+        "first_author": "Keino-Masu",
+        "year": 1996,
+        "journal": "Cell",
+        "title": "Deleted in Colorectal Cancer (DCC) encodes a netrin receptor.",
+        "species_system": "rodent embryonic spinal cord, in vitro explants",
+        "finding": "DCC is expressed on spinal commissural axons, binds netrin-1, and anti-DCC blocks netrin-1-dependent commissural outgrowth."
+      },
+      {
+        "pmid": "8978605",
+        "first_author": "Serafini",
+        "year": 1996,
+        "journal": "Cell",
+        "title": "Netrin-1 is required for commissural axon guidance in the developing vertebrate nervous system.",
+        "species_system": "netrin-1-deficient mouse embryos",
+        "finding": "Netrin-1 loss disrupts spinal commissural projections and several forebrain commissures in vivo."
+      },
+      {
+        "pmid": "9126737",
+        "first_author": "Fazeli",
+        "year": 1997,
+        "journal": "Nature",
+        "title": "Phenotype of mice lacking functional Deleted in colorectal cancer (Dcc) gene.",
+        "species_system": "Dcc-null mouse embryos and pups",
+        "finding": "Dcc inactivation reproduces netrin-1-null axonal defects; mice die perinatally, which blocks conventional adult loss-of-function study."
+      },
+      {
+        "pmid": "20431009",
+        "first_author": "Srour",
+        "year": 2010,
+        "journal": "Science",
+        "title": "Mutations in DCC cause congenital mirror movements.",
+        "species_system": "human genetics, two large pedigrees (French Canadian, Iranian)",
+        "finding": "Autosomal-dominant protein-truncating DCC variants cause isolated congenital mirror movements; the mutant protein shows defective netrin-1 binding."
+      },
+      {
+        "pmid": "28250454",
+        "first_author": "Marsh",
+        "year": 2017,
+        "journal": "Nat Genet",
+        "title": "Mutations in DCC cause isolated agenesis of the corpus callosum with incomplete penetrance.",
+        "species_system": "human genetics, four families and five sporadic cases",
+        "finding": "Heterozygous DCC variants cause isolated agenesis of the corpus callosum without intellectual disability, with reduced penetrance."
+      },
+      {
+        "pmid": "28250456",
+        "first_author": "Jamuar",
+        "year": 2017,
+        "journal": "Nat Genet",
+        "title": "Biallelic mutations in human DCC cause developmental split-brain syndrome.",
+        "species_system": "human genetics plus structural MRI and tractography",
+        "finding": "Biallelic DCC loss of function causes horizontal gaze palsy, scoliosis, intellectual disability and loss of commissural tracts throughout the neuraxis."
+      },
+      {
+        "pmid": "29068161",
+        "first_author": "Marsh",
+        "year": 2017,
+        "journal": "Hum Mutat",
+        "title": "DCC mutation update: Congenital mirror movements, isolated agenesis of the corpus callosum, and developmental split brain syndrome.",
+        "species_system": "human genetics, review of 26 reported DCC variants",
+        "finding": "Monoallelic DCC variants give mirror movements and/or callosal agenesis; biallelic loss of function gives developmental split-brain syndrome."
+      },
+      {
+        "pmid": "31697046",
+        "first_author": "Sagi-Dain",
+        "year": 2019,
+        "journal": "Am J Med Genet A",
+        "title": "A novel heterozygous loss-of-function DCC Netrin 1 receptor variant in prenatal agenesis of corpus callosum and review of the literature.",
+        "species_system": "human genetics, family study plus literature review of 61 loss-of-function carriers",
+        "finding": "Across 61 published heterozygous loss-of-function carriers, penetrance is about 64 percent for mirror movements and about 10 percent for callosal agenesis, with no significant neurodevelopmental abnormality reported in the seven agenesis cases."
+      },
+      {
+        "pmid": "38314870",
+        "first_author": "Collins Hutchinson",
+        "year": 2024,
+        "journal": "Mov Disord",
+        "title": "Defining the Genetic Landscape of Congenital Mirror Movements in 80 Affected Individuals.",
+        "species_system": "human genetics, 80 affected individuals from 43 families, plus in vitro binding assays",
+        "finding": "DCC explains 28 percent of congenital mirror movement probands and 80 percent of solved cases; penetrance 68 percent overall, higher in males."
+      },
+      {
+        "pmid": "24174661",
+        "first_author": "Goldman",
+        "year": 2013,
+        "journal": "J Neurosci",
+        "title": "Netrin-1 promotes excitatory synaptogenesis between cortical neurons by initiating synapse assembly.",
+        "species_system": "rat and mouse cultured cortical neurons",
+        "finding": "Netrin-1 and DCC are enriched at developing synapses; netrin-1 increases excitatory synapse number and strength via Src-family and mTOR-dependent mechanisms."
+      }
+    ],
+    "timing_dimensions": {
+      "expression_timing": "Prenatal-dominant. DCC expression peaks in early prenatal development (stated in the cross-disorder GWAS, PMID 31835028) and is classically described as downregulated during maturation (PMID 15730872). It is nevertheless demonstrably present in the adult brain: in dendritic spines of adult pyramidal neurons (PMID 23291093), throughout the adult hippocampus (PMID 32264905) and in adult ventral midbrain dopamine neurons and their terminal fields (PMID 15730872). Adult levels are also dynamic, moving with amphetamine (PMID 20345916), haloperidol (PMID 24861518), chronic social defeat (PMIDs 27773352, 41362369) and miR-218 (PMID 27773352).",
+      "functional_timing": "Adult-functional in rodents, developmental in humans. In adult rodents DCC and netrin-1 are required for hippocampal LTP, spine morphology, AMPAR insertion, spatial and recognition memory, entorhinal persistent firing, VTA drug plasticity and stress-induced prefrontal spine remodelling (PMIDs 23291093, 30282026, 30770464, 32264905, 38377003, 20345916, 41362369). In humans, every established DCC phenotype is developmental and structural (mirror movements, callosal agenesis, split-brain syndrome). No human study demonstrates an adult-acting DCC function.",
+      "why_kept_separate": "Low adult expression is not evidence of no adult function, and adult function in rodents is not evidence of an adult-modifiable human target. Collapsing the two axes would either wrongly discard DCC as purely prenatal, or wrongly promote rodent adult plasticity into a human adult-causal claim.",
+      "decision_implication": "DCC qualifies as adult-expressed, adult-expression-dynamic and adult-functional in rodents, but the human evidence base is entirely developmental. Any pipeline rule that requires adult human causal evidence should score DCC as failing that criterion while still recognising its rodent adult synaptic role."
+    }
+  },
+  "system_map_meta": {
+    "category_vocabulary": [
+      "synapse_formation_adhesion",
+      "active_zone_organisation",
+      "vesicle_trafficking",
+      "vesicle_docking_priming",
+      "ca_triggered_release",
+      "snare_recycling",
+      "receptor_trafficking",
+      "dendritic_postsynaptic_plasticity",
+      "activity_dependent_remodelling",
+      "non_synaptic_or_other",
+      "unknown"
+    ],
+    "strength_vocabulary": [
+      "direct experimental in neurons",
+      "indirect",
+      "annotation-only"
+    ],
+    "note": "Gene symbols are human; most mechanistic evidence is rodent or invertebrate and the species is stated per item. Where the canonical evidence concerns a paralogue or a different subunit of the same complex, this is flagged in the caveat rather than silently credited to the human gene."
+  },
+  "system_map": [
+    {
+      "gene": "NEGR1",
+      "primary_compartment": "both (GPI-anchored surface adhesion molecule; shifts from axonal/presynaptic to dendritic/postsynaptic across neuronal maturation)",
+      "canonical_function": "GPI-anchored IgLON family cell adhesion molecule that regulates neurite outgrowth, synapse number and dendritic spine architecture.",
+      "categories": [
+        {
+          "category": "synapse_formation_adhesion",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "18602091",
+              "first_author": "Hashimoto",
+              "year": 2008,
+              "species_system": "rat cultured hippocampal neurons",
+              "evidence_type": "overexpression plus localisation timecourse",
+              "finding": "Kilon (NEGR1) moves from axons and presynaptic terminals to dendritic spines as cultures mature; overexpression lowers synapse number early and raises it late."
+            },
+            {
+              "pmid": "25538237",
+              "first_author": "Sanz",
+              "year": 2015,
+              "species_system": "mouse/rat cortical neurons, cell culture",
+              "evidence_type": "metalloproteinase shedding, outgrowth assays",
+              "finding": "IgLONs including NEGR1 are shed from the surface of mature cortical neurons by metalloproteinases, and NEGR1 promotes neurite extension."
+            }
+          ]
+        },
+        {
+          "category": "dendritic_postsynaptic_plasticity",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "30651602",
+              "first_author": "Noh",
+              "year": 2019,
+              "species_system": "Negr1-knockout mouse in vivo and slice",
+              "evidence_type": "knockout electrophysiology",
+              "finding": "Negr1 knockouts show compromised dentate gyrus LTP and mEPSCs plus reduced adult hippocampal neurogenesis, rescued by hippocampal lipocalin-2."
+            },
+            {
+              "pmid": "40382479",
+              "first_author": "Zhang",
+              "year": 2025,
+              "species_system": "mouse in vivo, AAV NEGR1 overexpression in mPFC and ventral hippocampus",
+              "evidence_type": "gain of function, spine imaging, electron microscopy, IP-MS",
+              "finding": "Elevated NEGR1 causes dendritic spine loss and abnormal synaptic ultrastructure; its interactome is enriched for neurotransmitter exocytosis and synaptic vesicle endocytosis proteins."
+            }
+          ]
+        },
+        {
+          "category": "activity_dependent_remodelling",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "30059965",
+              "first_author": "Szczurkowska",
+              "year": 2018,
+              "species_system": "mouse in utero knockdown and Negr1-knockout in vivo",
+              "evidence_type": "knockdown plus rescue",
+              "finding": "NEGR1 knockdown alters neuronal migration and spine density; NEGR1 binds FGFR2 and modulates ERK/AKT signalling, and FGFR2 overexpression rescues the defects."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Cortical layering and brain structure; inhibitory interneuron number; also a documented peripheral metabolic role (lipid handling in adipose and liver).",
+          "evidence": [
+            {
+              "pmid": "30932003",
+              "first_author": "Singh",
+              "year": 2019,
+              "species_system": "Negr1-knockout mouse in vivo",
+              "evidence_type": "knockout neuroanatomy and behaviour",
+              "finding": "Negr1 loss shrinks whole brain, corpus callosum, globus pallidus and hippocampus, enlarges ventricles and lowers parvalbumin interneuron number."
+            },
+            {
+              "pmid": "31086253",
+              "first_author": "Joo",
+              "year": 2019,
+              "species_system": "Negr1-knockout mouse, peripheral tissues",
+              "evidence_type": "knockout metabolic phenotyping",
+              "finding": "Negr1 knockouts gain fat mass and hepatic lipid and lose muscle mass, indicating a non-neural peripheral function."
+            }
+          ]
+        },
+        {
+          "category": "receptor_trafficking",
+          "strength": "indirect",
+          "evidence": [
+            {
+              "pmid": "39676071",
+              "first_author": "Su",
+              "year": 2025,
+              "species_system": "neuronal culture",
+              "evidence_type": "targeting assay",
+              "finding": "NEGR1 promotes synaptic targeting of the GABA-synthetic enzyme GAD65, implicating it in presynaptic inhibitory terminal composition rather than glutamate receptor trafficking."
+            }
+          ]
+        }
+      ],
+      "critical_note": "NEGR1 is an adhesion molecule, not a release-machinery protein. Its links to vesicle biology are interactome-level (PMID 40382479) and have not been shown to alter release itself. Direction of effect is bidirectional in the literature: both knockout (PMID 30651602) and overexpression (PMID 40382479) impair synaptic function, so a simple more-is-better or less-is-better model is not supported."
+    },
+    {
+      "gene": "EXOC4",
+      "primary_compartment": "both, but not synapse-specific (exocyst subunit Sec8; general polarised membrane delivery)",
+      "canonical_function": "Subunit of the octameric exocyst complex that tethers secretory vesicles to specific plasma-membrane sites before SNARE-mediated fusion.",
+      "categories": [
+        {
+          "category": "vesicle_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "8982167",
+              "first_author": "Hsu",
+              "year": 1996,
+              "species_system": "rat brain biochemistry and cultured neurons",
+              "evidence_type": "purification and localisation",
+              "finding": "The mammalian rsec6/8 (exocyst) complex is broadly expressed in brain, sits at the nerve-terminal plasma membrane and co-precipitates with syntaxin."
+            }
+          ]
+        },
+        {
+          "category": "receptor_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "12738960",
+              "first_author": "Sans",
+              "year": 2003,
+              "species_system": "rat neurons and heterologous cells",
+              "evidence_type": "interaction plus trafficking assay",
+              "finding": "Sec8 (EXOC4) binds the PDZ protein SAP102 and this interaction delivers NMDA receptors to the neuronal surface."
+            },
+            {
+              "pmid": "16601687",
+              "first_author": "Gerges",
+              "year": 2006,
+              "species_system": "rat hippocampal slice and culture",
+              "evidence_type": "dominant-negative interference plus electron microscopy",
+              "finding": "Sec8 controls directional movement of AMPA receptors toward synapses while Exo70 mediates insertion within the postsynaptic density."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Bulk membrane addition for neurite and terminal growth, dissociable from transmitter release.",
+          "evidence": [
+            {
+              "pmid": "12575951",
+              "first_author": "Murthy",
+              "year": 2003,
+              "species_system": "Drosophila sec5 null mutants in vivo",
+              "evidence_type": "genetic null, trafficking and release assays",
+              "finding": "Exocyst loss blocks membrane addition for neurite and junction growth while synaptic vesicle fusion still proceeds."
+            }
+          ]
+        }
+      ],
+      "critical_note": "EXOC4 is the weakest synapse-specific gene in this set. The exocyst is a general polarised-trafficking machine, and the cleanest genetic test (Drosophila sec5, PMID 12575951) explicitly dissociates exocyst function from neurotransmitter release. Its neuronal specificity, where it exists, is postsynaptic receptor delivery (PMIDs 12738960, 16601687), not presynaptic release. Most evidence is for Sec8 and Sec5 rather than for human EXOC4 by name."
+    },
+    {
+      "gene": "BSN",
+      "primary_compartment": "presynaptic",
+      "canonical_function": "Very large active-zone cytomatrix scaffold that organises the release site and sets the speed of vesicle resupply.",
+      "categories": [
+        {
+          "category": "active_zone_organisation",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "9679147",
+              "first_author": "tom Dieck",
+              "year": 1998,
+              "species_system": "rat/mouse brain and cultured hippocampal neurons",
+              "evidence_type": "cloning, immuno-electron microscopy",
+              "finding": "Bassoon is a >400 kDa protein concentrated at the presynaptic active zone and tightly associated with the cytoskeleton."
+            },
+            {
+              "pmid": "24698275",
+              "first_author": "Davydova",
+              "year": 2014,
+              "species_system": "mouse knockout and acute interference in neurons",
+              "evidence_type": "genetic deletion plus interaction block",
+              "finding": "Bassoon localises CaV2.1 P/Q-type calcium channels to active zones through RIM-binding protein; its loss shifts release toward CaV2.2."
+            }
+          ]
+        },
+        {
+          "category": "vesicle_docking_priming",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "12628169",
+              "first_author": "Altrock",
+              "year": 2003,
+              "species_system": "Bassoon mutant mice, hippocampal recordings",
+              "evidence_type": "genetic loss of function",
+              "finding": "Without Bassoon a fraction of glutamatergic synapses become silent: vesicles cluster and dock normally but cannot fuse, and mice have spontaneous seizures."
+            },
+            {
+              "pmid": "21092860",
+              "first_author": "Hallermann",
+              "year": 2010,
+              "species_system": "mouse cerebellar mossy fibre to granule cell synapse",
+              "evidence_type": "knockout plus quantal and model analysis",
+              "finding": "Bassoon knockouts reload vesicles at about half the normal rate, deepening depression during sustained high-frequency trains while basal transmission is normal."
+            }
+          ]
+        },
+        {
+          "category": "ca_triggered_release",
+          "strength": "indirect",
+          "evidence": [
+            {
+              "pmid": "24698275",
+              "first_author": "Davydova",
+              "year": 2014,
+              "species_system": "mouse",
+              "evidence_type": "channel-localisation mechanism",
+              "finding": "Loss of Bassoon weakens P/Q-type current-driven transmission, so its effect on calcium-triggered release is via channel positioning rather than sensing."
+            }
+          ]
+        }
+      ],
+      "critical_note": "Bassoon is a scaffold, not a fusion protein. Its phenotype is bandwidth and reliability of release, not release competence per se."
+    },
+    {
+      "gene": "SYT1",
+      "primary_compartment": "presynaptic (synaptic vesicle membrane protein)",
+      "canonical_function": "Vesicular calcium sensor that triggers fast synchronous neurotransmitter release and also participates in compensatory vesicle endocytosis.",
+      "categories": [
+        {
+          "category": "ca_triggered_release",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "7954835",
+              "first_author": "Geppert",
+              "year": 1994,
+              "species_system": "synaptotagmin I mutant mouse, cultured hippocampal neurons",
+              "evidence_type": "germline knockout electrophysiology",
+              "finding": "Loss of synaptotagmin I removes the fast synchronous component of calcium-dependent release while asynchronous and spontaneous release persist."
+            },
+            {
+              "pmid": "11242035",
+              "first_author": "Fernandez-Chacon",
+              "year": 2001,
+              "species_system": "knock-in point-mutant mouse neurons",
+              "evidence_type": "knock-in altering calcium affinity",
+              "finding": "A point mutation lowering synaptotagmin I calcium affinity twofold lowers the calcium sensitivity of release twofold, without changing the readily releasable pool."
+            }
+          ]
+        },
+        {
+          "category": "vesicle_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "14634669",
+              "first_author": "Poskanzer",
+              "year": 2003,
+              "species_system": "Drosophila neuromuscular junction in vivo, synapto-pHluorin imaging",
+              "evidence_type": "null mutant plus acute photoinactivation",
+              "finding": "Inactivating synaptotagmin I only after exocytosis slows compensatory vesicle endocytosis, separating its endocytic from its exocytic role."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Human de novo missense variants cause a defined neurodevelopmental disorder, giving human causal anchoring for this pathway.",
+          "evidence": [
+            {
+              "pmid": "30107533",
+              "first_author": "Baker",
+              "year": 2018,
+              "species_system": "human genetics, 11 patients, plus rat SYT1 expressed in mouse hippocampal culture",
+              "evidence_type": "de novo variants plus functional modelling",
+              "finding": "De novo C2B-domain SYT1 variants cause hypotonia, movement disorder and developmental delay; several variants mislocalise or fail to relocalise at terminals."
+            }
+          ]
+        }
+      ],
+      "critical_note": "SYT1 is the most mechanistically specific presynaptic gene here: a calcium sensor with human loss-of-function phenotypes. Its disorder is severe neurodevelopmental, which matters when interpreting common-variant cognition signals at the same locus."
+    },
+    {
+      "gene": "NSF",
+      "primary_compartment": "both (cytosolic ATPase acting presynaptically on SNAREs and postsynaptically on AMPA receptors)",
+      "canonical_function": "ATPase that disassembles cis-SNARE complexes to recycle fusion machinery, and separately binds GluA2 to sustain synaptic AMPA receptors.",
+      "categories": [
+        {
+          "category": "snare_recycling",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "8455717",
+              "first_author": "Sollner",
+              "year": 1993,
+              "species_system": "bovine brain biochemistry",
+              "evidence_type": "affinity purification",
+              "finding": "NSF and SNAPs bind synaptic SNARE proteins, defining the vesicle docking and fusion apparatus."
+            }
+          ]
+        },
+        {
+          "category": "receptor_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "9697854",
+              "first_author": "Nishimune",
+              "year": 1998,
+              "species_system": "rat hippocampal CA1 pyramidal neurons",
+              "evidence_type": "peptide and antibody interference",
+              "finding": "NSF binds the GluA2 C-terminus; blocking this interaction in CA1 neurons progressively reduces AMPA receptor-mediated transmission."
+            },
+            {
+              "pmid": "9728920",
+              "first_author": "Song",
+              "year": 1998,
+              "species_system": "rat neurons, in vitro and in vivo binding",
+              "evidence_type": "interaction mapping plus perfusion",
+              "finding": "NSF interacts with GluA2 and GluA4c; a competing peptide rapidly reduces miniature EPSC amplitude."
+            }
+          ]
+        },
+        {
+          "category": "dendritic_postsynaptic_plasticity",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "10595516",
+              "first_author": "Luscher",
+              "year": 1999,
+              "species_system": "rat hippocampal CA1 slice",
+              "evidence_type": "intracellular perturbation of exo/endocytosis",
+              "finding": "Disrupting the GluA2-NSF interaction or exocytosis reduces AMPA EPSCs and prevents subsequent LTD induction, while NMDA currents are unaffected."
+            }
+          ]
+        }
+      ],
+      "critical_note": "NSF is genuinely dual-compartment, which makes locus-level inference ambiguous: a cognition association at NSF could act through presynaptic SNARE recycling or through postsynaptic AMPA receptor maintenance. NSF also lies on chromosome 17q21.31, next to the MAPT/KANSL1 inversion polymorphism (PMID 22751100 characterises that inversion), but whether NSF itself falls inside the inverted interval was NOT confirmed from the sources read here: UNVERIFIED, and it should be checked against coordinates before any LD-based claim is made."
+    },
+    {
+      "gene": "DCC",
+      "primary_compartment": "both (axonal growth cone and presynaptic terminal during development; dendritic spines and postsynaptic density in the mature brain)",
+      "canonical_function": "Netrin-1 receptor that guides commissural axons during development and, in mature neurons, supports spine structure, AMPA receptor recruitment and LTP.",
+      "categories": [
+        {
+          "category": "synapse_formation_adhesion",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "24174661",
+              "first_author": "Goldman",
+              "year": 2013,
+              "species_system": "rat and mouse cortical neuron culture",
+              "evidence_type": "gain and loss of function plus patch clamp",
+              "finding": "Netrin-1 and DCC are enriched at synapses and netrin-1 increases excitatory synapse number and strength by promoting adhesion and local actin reorganisation."
+            },
+            {
+              "pmid": "8861902",
+              "first_author": "Keino-Masu",
+              "year": 1996,
+              "species_system": "rodent embryonic spinal cord explants",
+              "evidence_type": "binding plus function-blocking antibody",
+              "finding": "DCC binds netrin-1 on commissural axons and is required for netrin-1-dependent outgrowth."
+            }
+          ]
+        },
+        {
+          "category": "dendritic_postsynaptic_plasticity",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "23291093",
+              "first_author": "Horn",
+              "year": 2013,
+              "species_system": "mouse forebrain neuronal Dcc deletion, hippocampal slice",
+              "evidence_type": "conditional knockout electrophysiology",
+              "finding": "DCC sits in dendritic spines and is required for NMDAR-dependent LTP through Src activation; its loss shortens spines and impairs memory."
+            },
+            {
+              "pmid": "32264905",
+              "first_author": "Glasgow",
+              "year": 2020,
+              "species_system": "mouse CA1- and CA3-specific Dcc deletion",
+              "evidence_type": "subregion-specific knockout",
+              "finding": "Postsynaptic CA1 DCC loss changes spine morphology and postsynaptic scaffold levels; presynaptic CA3 DCC loss impairs transmission and LTP."
+            }
+          ]
+        },
+        {
+          "category": "receptor_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "30282026",
+              "first_author": "Glasgow",
+              "year": 2018,
+              "species_system": "mouse hippocampal slice, conditional netrin-1 deletion",
+              "evidence_type": "ligand deletion plus exogenous application",
+              "finding": "Activity-released netrin-1 recruits GluA1-containing AMPA receptors to synapses in a calcium-dependent manner."
+            }
+          ]
+        },
+        {
+          "category": "activity_dependent_remodelling",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "41362369",
+              "first_author": "Mahmud",
+              "year": 2025,
+              "species_system": "adult male mouse, prefrontal AAV-Cre Dcc knockout",
+              "evidence_type": "adult-onset conditional knockout plus spine quantification",
+              "finding": "DCC is required for chronic-stress-induced loss of apical spines in prefrontal pyramidal neurons projecting to nucleus accumbens shell."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Long-range axon guidance and midline crossing; this remains the dominant and only human-validated function.",
+          "evidence": [
+            {
+              "pmid": "28250456",
+              "first_author": "Jamuar",
+              "year": 2017,
+              "species_system": "human genetics plus tractography",
+              "evidence_type": "biallelic loss of function",
+              "finding": "Human biallelic DCC loss disorganises white matter and removes commissural tracts throughout the neuraxis."
+            }
+          ]
+        }
+      ],
+      "critical_note": "DCC's synaptic role is real but secondary to its guidance role, and the guidance role is the one anchored in human genetics. See dcc_adult_function for the full timing analysis."
+    },
+    {
+      "gene": "RIMS2",
+      "primary_compartment": "presynaptic (active zone)",
+      "canonical_function": "Active-zone scaffold protein that primes synaptic vesicles by activating Munc13 and tethers presynaptic calcium channels close to release sites.",
+      "categories": [
+        {
+          "category": "active_zone_organisation",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "21241895",
+              "first_author": "Kaeser",
+              "year": 2011,
+              "species_system": "conditional RIM knockout mouse neurons",
+              "evidence_type": "conditional knockout plus structure-function rescue",
+              "finding": "The RIM PDZ domain binds N- and P/Q-type calcium channel C-termini and is required to keep those channels at active zones."
+            }
+          ]
+        },
+        {
+          "category": "vesicle_docking_priming",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "21262469",
+              "first_author": "Deng",
+              "year": 2011,
+              "species_system": "RIM-deficient mouse neurons",
+              "evidence_type": "domain rescue experiments",
+              "finding": "The RIM zinc-finger domain primes vesicles by breaking autoinhibitory Munc13 homodimers; monomeric Munc13 mutants rescue priming in RIM-deficient synapses."
+            }
+          ]
+        },
+        {
+          "category": "ca_triggered_release",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "17124501",
+              "first_author": "Schoch",
+              "year": 2006,
+              "species_system": "RIM1alpha and RIM2alpha single and double knockout mice",
+              "evidence_type": "genetic deletion",
+              "finding": "Losing both alpha-RIMs is postnatally lethal and abolishes normal calcium-triggered release while synapse structure and some release remain."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Photoreceptor ribbon synapse function and pancreatic insulin secretion.",
+          "evidence": [
+            {
+              "pmid": "32470375",
+              "first_author": "Mechaussier",
+              "year": 2020,
+              "species_system": "human genetics, seven affected individuals from four families, plus mammalian cell assays",
+              "evidence_type": "biallelic loss of function",
+              "finding": "Biallelic RIMS2 loss causes congenital cone-rod synaptic disease with neurodevelopmental involvement and abnormal glucose homeostasis; nonsense variants reduce insulin secretion."
+            }
+          ]
+        }
+      ],
+      "critical_note": "Most mouse mechanism comes from combined alpha-RIM deletion or pan-RIM conditional knockouts, so RIM1 and RIM2 functions are partly redundant and not cleanly separable. The human phenotype for RIMS2 specifically is retinal and pancreatic as well as neurodevelopmental."
+    },
+    {
+      "gene": "CADM2",
+      "primary_compartment": "both (transsynaptic adhesion molecule, SynCAM2)",
+      "canonical_function": "Immunoglobulin-superfamily synaptic adhesion molecule (SynCAM2) that forms specific heterophilic transsynaptic complexes and promotes functional synapses.",
+      "categories": [
+        {
+          "category": "synapse_formation_adhesion",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "18003830",
+              "first_author": "Fogel",
+              "year": 2007,
+              "species_system": "rat and mouse cultured neurons, heterologous coculture",
+              "evidence_type": "adhesion and synapse assays",
+              "finding": "SynCAM 1 and SynCAM 2 (CADM2) localise to excitatory and inhibitory synapses, assemble a specific transsynaptic complex and increase active terminals and excitatory transmission."
+            },
+            {
+              "pmid": "12202822",
+              "first_author": "Biederer",
+              "year": 2002,
+              "species_system": "rat neurons plus non-neuronal coculture",
+              "evidence_type": "gain and loss of function",
+              "finding": "SynCAM drives synapse assembly: expressing it in non-neuronal cells induces functional presynaptic terminals from cocultured neurons.",
+              "caveat": "This paper characterises SynCAM1 (CADM1), the paralogue, so it supports the family mechanism rather than CADM2 specifically."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "indirect",
+          "what": "Human common-variant pleiotropy across cognitive, behavioural and metabolic traits with tissue-specific expression effects.",
+          "evidence": [
+            {
+              "pmid": "31089183",
+              "first_author": "Morris",
+              "year": 2019,
+              "species_system": "human genetics, UK Biobank plus three cohorts",
+              "evidence_type": "GWAS meta-analysis and eQTL lookup",
+              "finding": "CADM2 variants associate with BMI, blood pressure, neuroticism, mood instability and risk taking, with genotype-specific CADM2 expression in adult brain and adipose tissue."
+            }
+          ]
+        }
+      ],
+      "critical_note": "CADM2's human signal is broad and behavioural rather than cognition-specific, and the strongest synaptogenic mechanism in the family was demonstrated for SynCAM1. Do not treat CADM1 evidence as CADM2 evidence."
+    },
+    {
+      "gene": "PTPRT",
+      "primary_compartment": "both (receptor tyrosine phosphatase acting transsynaptically)",
+      "canonical_function": "Brain-specific receptor protein tyrosine phosphatase that regulates synapse formation through extracellular interactions with adhesion molecules and Fyn-dependent control of its own activity.",
+      "categories": [
+        {
+          "category": "synapse_formation_adhesion",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "19816407",
+              "first_author": "Lim",
+              "year": 2009,
+              "species_system": "rat cultured neurons",
+              "evidence_type": "overexpression, knockdown, ectodomain competition",
+              "finding": "PTPRT overexpression increases excitatory and inhibitory synapse number by recruiting neuroligins; knockdown reduces synapses and shrinks dendrites, and Fyn phosphorylation of Tyr912 blocks the interaction."
+            }
+          ]
+        },
+        {
+          "category": "dendritic_postsynaptic_plasticity",
+          "strength": "indirect",
+          "evidence": [
+            {
+              "pmid": "19816407",
+              "first_author": "Lim",
+              "year": 2009,
+              "species_system": "rat cultured neurons",
+              "evidence_type": "knockdown morphology",
+              "finding": "PTPRT knockdown withers dendrites, implying a structural postsynaptic role, but plasticity itself was not measured."
+            }
+          ]
+        }
+      ],
+      "critical_note": "The mechanism rests largely on one culture study; there is no in vivo conditional knockout evidence in this curation, and PTPRT is also a well-known tumour suppressor, so its phosphatase substrates are not synapse-exclusive."
+    },
+    {
+      "gene": "GRIA4",
+      "primary_compartment": "postsynaptic",
+      "canonical_function": "AMPA-type glutamate receptor subunit GluA4, which mediates fast excitatory transmission and, at some synapses, activity-driven receptor delivery.",
+      "categories": [
+        {
+          "category": "receptor_trafficking",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "11036266",
+              "first_author": "Zhu",
+              "year": 2000,
+              "species_system": "early postnatal rat hippocampal slice",
+              "evidence_type": "subunit-specific delivery assay",
+              "finding": "Spontaneous activity drives GluA4-containing AMPA receptors into synapses in an NMDAR-dependent, CaMKII-independent way; these are later exchanged for GluA2-containing receptors."
+            }
+          ]
+        },
+        {
+          "category": "dendritic_postsynaptic_plasticity",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "18316356",
+              "first_author": "Beyer",
+              "year": 2008,
+              "species_system": "Gria4 hypomorphic and knockout mice, thalamic recordings",
+              "evidence_type": "genetic loss of function plus EEG",
+              "finding": "Gria4 mutation causes absence seizures and prolongs excitatory synaptic responses in reticular thalamic neurons, consistent with loss of a kinetically fast AMPA subunit."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Human de novo variants give an intellectual disability syndrome, giving direct human causal anchoring for AMPA receptor dosage and cognition.",
+          "evidence": [
+            {
+              "pmid": "29220673",
+              "first_author": "Martin",
+              "year": 2017,
+              "species_system": "human genetics, five unrelated individuals, trio exome sequencing",
+              "evidence_type": "de novo variants plus structural modelling",
+              "finding": "De novo GRIA4 variants, mostly in the SYTANLAAF gating motif, cause intellectual disability with or without seizures and gait abnormalities."
+            }
+          ]
+        }
+      ],
+      "critical_note": "GRIA4 is the receptor itself, not machinery that moves or releases transmitter. If a synaptic-machinery hypothesis is meant to be about release or trafficking rather than receptor composition, GRIA4 should be scored in its own category and not counted as evidence for presynaptic mechanisms."
+    },
+    {
+      "gene": "KCNJ3",
+      "primary_compartment": "postsynaptic and extrasynaptic",
+      "canonical_function": "GIRK1 (Kir3.1) subunit of G-protein-gated inwardly rectifying potassium channels that mediate slow postsynaptic inhibition downstream of GABA-B and other Gi/o-coupled receptors.",
+      "categories": [
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Postsynaptic and extrasynaptic membrane excitability control rather than synaptic vesicle or receptor machinery.",
+          "evidence": [
+            {
+              "pmid": "16339040",
+              "first_author": "Koyrakh",
+              "year": 2005,
+              "species_system": "mouse knockout, substantia nigra and hippocampal recordings",
+              "evidence_type": "subunit-specific knockouts",
+              "finding": "In CA1 neurons, losing GIRK1 or GIRK2 each causes a comparable large reduction in baclofen-evoked current, showing that KCNJ3 is required for postsynaptic GABA-B inhibition."
+            },
+            {
+              "pmid": "9331358",
+              "first_author": "Luscher",
+              "year": 1997,
+              "species_system": "GIRK2 knockout mouse hippocampal slice",
+              "evidence_type": "knockout pharmacology",
+              "finding": "GIRK channels carry postsynaptic GABA-B, 5-HT1A and adenosine A1 responses but not presynaptic inhibition, which persists unchanged.",
+              "caveat": "This experiment deleted GIRK2 (KCNJ6), not KCNJ3; it establishes the compartment logic for the channel family."
+            },
+            {
+              "pmid": "16624949",
+              "first_author": "Kulik",
+              "year": 2006,
+              "species_system": "rat and mouse hippocampus, freeze-fracture immunolabelling",
+              "evidence_type": "high-resolution localisation",
+              "finding": "Kir3.2-containing channels sit in extrasynaptic membrane of dendritic shafts and spines, clustered with GABA-B receptors around excitatory synapses.",
+              "caveat": "Kir3.2 (KCNJ6) rather than KCNJ3."
+            }
+          ]
+        },
+        {
+          "category": "activity_dependent_remodelling",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "19118198",
+              "first_author": "Chung",
+              "year": 2008,
+              "species_system": "rat cultured hippocampal neurons",
+              "evidence_type": "NMDAR stimulation plus surface biotinylation",
+              "finding": "NMDA receptor activation raises GIRK1 and GIRK2 surface expression in soma, dendrites and spines within 15 minutes via phosphatase-dependent recycling."
+            }
+          ]
+        }
+      ],
+      "critical_note": "KCNJ3 is an inhibitory effector channel, not synaptic machinery. Much of the classical electrophysiology was done on GIRK2 (KCNJ6) knockouts; the cleanest KCNJ3-specific in vivo statement here is PMID 16339040. Categorising KCNJ3 under any vesicle or adhesion category would be an error; non_synaptic_or_other plus activity_dependent_remodelling is the honest assignment."
+    },
+    {
+      "gene": "ERBB3",
+      "brief": true,
+      "primary_compartment": "non-neuronal (glial receptor tyrosine kinase; Schwann cells and oligodendrocytes)",
+      "canonical_function": "Neuregulin-1 receptor tyrosine kinase required for Schwann cell development and for experience-dependent oligodendrocyte maturation.",
+      "categories": [
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Glial development and myelination, which then constrains cortical function; not a synaptic protein.",
+          "evidence": [
+            {
+              "pmid": "9338783",
+              "first_author": "Riethmacher",
+              "year": 1997,
+              "species_system": "ErbB3 knockout mouse embryos",
+              "evidence_type": "germline knockout",
+              "finding": "ErbB3 loss removes Schwann cell precursors and causes severe secondary loss of motor and sensory neurons."
+            },
+            {
+              "pmid": "22984073",
+              "first_author": "Makinodan",
+              "year": 2012,
+              "species_system": "mouse in vivo, oligodendrocyte-specific ErbB3 deletion plus social isolation",
+              "evidence_type": "conditional knockout plus critical-period manipulation",
+              "finding": "Losing oligodendrocyte ErbB3 phenocopies early social isolation, producing lasting prefrontal myelination and cognitive deficits."
+            }
+          ]
+        }
+      ],
+      "critical_note": "ERBB3 belongs in a myelination or glial axis, not a synaptic-machinery axis. Including it in a synaptic gene set would inflate an apparent synaptic signal."
+    },
+    {
+      "gene": "MEF2C",
+      "brief": true,
+      "primary_compartment": "nuclear (activity-regulated transcription factor)",
+      "canonical_function": "Calcium- and calcineurin-regulated transcription factor that acts as a brake on excitatory synapse number during activity-dependent refinement.",
+      "categories": [
+        {
+          "category": "activity_dependent_remodelling",
+          "strength": "direct experimental in neurons",
+          "evidence": [
+            {
+              "pmid": "16484497",
+              "first_author": "Flavell",
+              "year": 2006,
+              "species_system": "rat/mouse hippocampal neurons",
+              "evidence_type": "activity manipulation plus transcriptional analysis",
+              "finding": "Calcium influx activates MEF2 via calcineurin, and MEF2 then restricts excitatory synapse number through targets including Arc and SynGAP."
+            },
+            {
+              "pmid": "18599438",
+              "first_author": "Barbosa",
+              "year": 2008,
+              "species_system": "MEF2C conditional knockout mouse",
+              "evidence_type": "conditional deletion plus behaviour",
+              "finding": "CNS Mef2c deletion impairs hippocampal learning and memory while increasing excitatory synapse number and potentiating transmission."
+            },
+            {
+              "pmid": "27779093",
+              "first_author": "Harrington",
+              "year": 2016,
+              "species_system": "mouse cortical excitatory neuron conditional knockout",
+              "evidence_type": "conditional deletion, in vivo recording",
+              "finding": "Embryonic Mef2c deletion in excitatory neurons reduces cortical network activity by raising inhibitory and lowering excitatory transmission, with autism- and ID-like behaviours."
+            }
+          ]
+        },
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Human haploinsufficiency syndrome.",
+          "evidence": [
+            {
+              "pmid": "19592390",
+              "first_author": "Le Meur",
+              "year": 2009,
+              "species_system": "human genetics, array-CGH and sequencing",
+              "evidence_type": "microdeletion and nonsense variant",
+              "finding": "MEF2C haploinsufficiency causes severe intellectual disability with absent speech, hypotonia, stereotypies and epilepsy."
+            }
+          ]
+        }
+      ],
+      "critical_note": "MEF2C is a nuclear transcription factor. It reaches synapses only through its target genes, so it should not be scored as synaptic machinery; it is an upstream regulator of synapse number."
+    },
+    {
+      "gene": "NT5DC2",
+      "brief": true,
+      "primary_compartment": "non-synaptic, cytoplasmic (haloacid dehalogenase-family protein, putative phosphatase)",
+      "canonical_function": "Poorly characterised cytosolic protein that binds tyrosine hydroxylase and reduces its phosphorylation, lowering DOPA and catecholamine synthesis.",
+      "categories": [
+        {
+          "category": "non_synaptic_or_other",
+          "strength": "direct experimental in neurons",
+          "what": "Regulation of dopamine synthesis via tyrosine hydroxylase phosphorylation, in a neuronal-like cell line rather than at the synapse.",
+          "evidence": [
+            {
+              "pmid": "31279527",
+              "first_author": "Nakashima",
+              "year": 2019,
+              "species_system": "PC12D cells (rat pheochromocytoma line)",
+              "evidence_type": "proteomic identification plus siRNA knockdown",
+              "finding": "NT5DC2 binds tyrosine hydroxylase, and knocking it down raises dopamine, noradrenaline and adrenaline synthesis without changing tyrosine hydroxylase protein levels."
+            },
+            {
+              "pmid": "32778969",
+              "first_author": "Nakashima",
+              "year": 2020,
+              "species_system": "PC12D cells",
+              "evidence_type": "siRNA plus phospho-specific immunoblotting",
+              "finding": "NT5DC2 knockdown increases DOPA synthesis and tyrosine hydroxylase Ser40 phosphorylation, suggesting NT5DC2 acts like a phosphatase on the enzyme."
+            },
+            {
+              "pmid": "38382359",
+              "first_author": "Yamaguchi",
+              "year": 2024,
+              "species_system": "PC12D cells, recombinant human tyrosine hydroxylase",
+              "evidence_type": "overexpression plus mass spectrometry interactome",
+              "finding": "NT5DC2 binds phosphorylated tyrosine hydroxylase and 41 other phosphoproteins, and its overexpression lowers DOPA output."
+            }
+          ]
+        },
+        {
+          "category": "unknown",
+          "strength": "indirect",
+          "evidence": [
+            {
+              "pmid": "33462198",
+              "first_author": "Singgih",
+              "year": 2021,
+              "species_system": "Drosophila melanogaster, pan-neuronal knockdown",
+              "evidence_type": "orthologue knockdown plus behaviour",
+              "finding": "Knocking down cytosolic 5'-nucleotidase II orthologues impairs habituation learning and reduces activity, without changes in neuromuscular synapse morphology."
+            },
+            {
+              "pmid": "27890468",
+              "first_author": "van Hulzen",
+              "year": 2017,
+              "species_system": "human genetics, ADHD and bipolar cross-disorder meta-analysis",
+              "evidence_type": "GWAS plus eQTL annotation",
+              "finding": "Nominally significant cross-disorder regions contain expression QTLs with predicted consequences for NT5DC1 and NT5DC2 expression."
+            }
+          ]
+        }
+      ],
+      "critical_note": "NT5DC2 is not a synaptic protein by any direct evidence. It sits in a dopamine-synthesis regulatory role in a cell line, and the fly data explicitly report no change in synapse morphology. Its presence in a synaptic gene list should be treated as a locus-level artefact until direct neuronal evidence exists."
+    }
+  ],
+  "extreme_iq": {
+    "primary_study": {
+      "pmid": "29731509",
+      "pmid_verified": true,
+      "verification_note": "PMID 29731509 resolves to the expected title and journal, confirming the brief's guess.",
+      "first_author": "Zabaneh",
+      "all_authors_note": "Zabaneh D, Krapohl E, Gaspar HA, et al.",
+      "title": "A genome-wide association study for extremely high intelligence.",
+      "journal": "Mol Psychiatry",
+      "publication_year_electronic": 2017,
+      "citation": "Mol Psychiatry 2018;23(5):1226-1232",
+      "doi": "10.1038/mp.2017.121",
+      "pmc": "PMC5987166",
+      "species_system": "human genetics (case-control GWAS, European-ancestry)"
+    },
+    "case_source": {
+      "cohort": "Duke University Talent Identification Program (TIP)",
+      "country": "United States",
+      "ascertainment": "Selected at about age 12 on SAT or ACT performance; TIP recruits from roughly the top 3 percent of the intelligence distribution, and the study took the top 1 percent of TIP, about the top 0.03 percent of the distribution.",
+      "n_genotyped": 1409,
+      "n_post_qc": 1238,
+      "sex_ratio_post_qc": "62 percent male",
+      "array": "Illumina Infinium OmniExpress",
+      "stated_mean_iq": "about 170 (abstract describes the top 0.0003 of the distribution)",
+      "prior_use": "The same case cohort was used in an earlier exome-chip analysis, Spain et al. 2015 (PMID 26239293)."
+    },
+    "control_source": {
+      "cohort": "University of Michigan Health and Retirement Study (HRS)",
+      "cohort_confirmed": true,
+      "not_used": "ALSPAC was NOT a control source for this study.",
+      "description": "Longitudinal panel of a representative US sample aged over 50, surveyed every two years; saliva-derived DNA.",
+      "n_genotyped_in_hrs": 12507,
+      "n_post_qc_used": "8172 in the abstract; 8185 in the Methods text after matching to TIP and QC",
+      "n_discrepancy_flag": "The paper reports both 8172 and 8185 and does not reconcile them. Downstream code should record the abstract figure, 8172, and note the ambiguity.",
+      "array": "Illumina Human Omni-2.5 Quad, genotyped by NIH CIDR",
+      "data_access": "dbGaP",
+      "design_caveat": "Cases and controls were collected, ascertained and genotyped separately and on different arrays. The authors acknowledge this and applied stringent QC and conservative MAF and imputation-info thresholds in response."
+    },
+    "extension_sample": {
+      "cohort": "Twins Early Development Study (TEDS), UK",
+      "role": "Polygenic score validation only, not part of the GWAS.",
+      "n_g4": 3414,
+      "n_g16": 4731,
+      "n_gcse": 3584
+    },
+    "genetic_correlations_snp_based": {
+      "method": "LD Score regression (bivariate), summary statistics from publicly available GWAS",
+      "note_on_abstract_vs_table": "The abstract quotes 0.78 with educational attainment and 0.86 with population IQ. Table 2 lists 0.79 for both educational attainment measures. The 0.78 figure does not appear in Table 2; treat Table 2 as authoritative.",
+      "table_2_rows": [
+        {
+          "trait": "Childhood IQ",
+          "rg": 0.75,
+          "se": 0.13,
+          "p": "1.6e-9",
+          "reference_gwas": "Benyamin et al. 2014, Childhood Intelligence Consortium (CHIC)",
+          "reference_pmid": "23358156"
+        },
+        {
+          "trait": "Cognitive performance",
+          "rg": 0.8,
+          "se": 0.08,
+          "p": "3.1e-26",
+          "reference_gwas": "Davies et al. 2015, CHARGE consortium, N=53,949",
+          "reference_pmid": "25644384"
+        },
+        {
+          "trait": "College completion",
+          "rg": 0.79,
+          "se": 0.08,
+          "p": "2.0e-23",
+          "reference_gwas": "Okbay et al. 2016 educational attainment",
+          "reference_pmid": "27225129"
+        },
+        {
+          "trait": "Years of education",
+          "rg": 0.79,
+          "se": 0.07,
+          "p": "1.9e-26",
+          "reference_gwas": "Okbay et al. 2016 educational attainment",
+          "reference_pmid": "27225129"
+        },
+        {
+          "trait": "Verbal-numerical reasoning (VNR-UKB)",
+          "rg": 0.86,
+          "se": 0.1,
+          "p": "1.6e-16",
+          "reference_gwas": "Davies et al. 2016, UK Biobank N=112,151",
+          "reference_pmid": "27046643"
+        }
+      ],
+      "headline_normal_range_comparison": "The value the brief asks for, extreme high intelligence versus normal-range intelligence, is best represented by rg = 0.80 (SE 0.08) against the CHARGE general cognitive function GWAS, or rg = 0.86 (SE 0.10) against UK Biobank verbal-numerical reasoning. Both by LD Score regression."
+    },
+    "snp_heritability": {
+      "gcta_liability_scale": {
+        "h2": 0.33,
+        "se": 0.02,
+        "assumed_prevalence": 0.0003,
+        "covariates": "sex and first 10 principal components, genotyped SNPs with MAF >= 0.01"
+      },
+      "ldsc_unconstrained_intercept": {
+        "h2": 0.42,
+        "se": 0.06,
+        "note": "From imputed SNPs with HapMap 3 LD scores; the authors present 0.33 as the headline."
+      },
+      "authors_claim": "Described as the highest SNP heritability reported to that date for a cognitive phenotype.",
+      "stratification_checks": {
+        "genomic_inflation_lambda": 1.096,
+        "ldsc_intercept": 1.02,
+        "interpretation": "Inflation attributed mainly to polygenic signal rather than population stratification."
+      },
+      "partitioned_heritability": "Central nervous system annotation accounts for 68.8 percent of SNP heritability from 14.8 percent of SNPs."
+    },
+    "same_architecture_statements": {
+      "verdict_of_authors": "Extremely high intelligence is genetically continuous with normal-range intelligence.",
+      "supporting_evidence_cited_by_authors": [
+        "High and significant genetic correlations with normal-range cognitive phenotypes (0.75 to 0.86).",
+        "A polygenic score built from the extreme-high-IQ GWAS predicts normal-range intelligence in an independent unselected sample.",
+        "High SNP heritability consistent with a highly polygenic architecture.",
+        "The authors characterise the difference as quantitative rather than qualitative."
+      ],
+      "asymmetry_argument": "The authors deliberately used unselected controls rather than low-IQ controls, because extremely low IQ may be driven by rare mutations and copy number variants and may not be the mirror image of the high extreme. Supporting citations: Shakeshaft et al. 2015 (PMID 25593376) for high intelligence being caused by the same factors as the normal range, and Reichenberg et al. 2016 for discontinuity at the low end.",
+      "supporting_pmids": {
+        "shakeshaft_2015_high_iq_familial": "25593376",
+        "spain_2015_exome_same_cohort": "26239293"
+      }
+    },
+    "single_variant_and_pathway_results": {
+      "genome_wide_significant_snps": [
+        {
+          "rsid": "rs4962322",
+          "chr": 10,
+          "bp": 127932765,
+          "or": 1.489,
+          "se": 0.07,
+          "p": "8.05e-9",
+          "a1": "A",
+          "a2": "C",
+          "maf": 0.089,
+          "gene": "ADAM12",
+          "note": "sentinel SNP after clumping"
+        },
+        {
+          "rsid": "rs4962520",
+          "chr": 10,
+          "bp": 127917302,
+          "or": 1.469,
+          "se": 0.07,
+          "p": "1.18e-8",
+          "a1": "C",
+          "a2": "T",
+          "maf": 0.091,
+          "gene": "ADAM12"
+        },
+        {
+          "rsid": "rs10794073",
+          "chr": 10,
+          "bp": 127945261,
+          "or": 0.672,
+          "se": 0.07,
+          "p": "2.02e-8",
+          "a1": "C",
+          "a2": "A",
+          "maf": 0.085,
+          "gene": "ADAM12"
+        }
+      ],
+      "replication": "None of the three ADAM12 SNPs replicated in published normal-range GWAS (CHIC, CHARGE, educational attainment, UK Biobank VNR). Direction of effect was concordant in two studies for two of the SNPs. Conversely, of 95 published genome-wide significant SNPs from those four studies, 63 had comparable data in TIP; 94 percent were sign-concordant but none reached genome-wide significance.",
+      "pathway": "The plexin gene family was significantly enriched for association with high IQ.",
+      "polygenic_prediction_in_teds": {
+        "g_4_test": "1.6 percent of variance",
+        "g_16_test": "2.4 percent",
+        "gcse_educational_achievement": "2.1 percent",
+        "internal_inconsistency_flag": "The Methods state the g composites were measured at age 12 and GCSE at 16; the Discussion once describes the 4-test g prediction as at age 16. Treat the Methods as authoritative."
+      }
+    },
+    "hrs_in_davies_2018": {
+      "question": "Is the Health and Retirement Study a contributing cohort in Davies et al. 2018, PMID 29844566?",
+      "answer": "Yes, verified.",
+      "verification_method": "Read the paper's supplementary PDF (Nature Communications 41467_2018_4362_MOESM1_ESM.pdf). Supplementary Note 2, 'Cohort Descriptions', contains a section headed 'Health and Retirement Study (HRS)' describing the longitudinal US sample over age 50. Supplementary Note 1 gives the HRS cognitive phenotype construction, listwise N = 7,396, with a first unrotated principal component accounting for 37.8 percent of test variance across five tests (animal fluency, number series, delayed recall, serial 7s, backward counting). HRS is also acknowledged separately (NIA U01AG009740).",
+      "davies_2018_structure": "300,486 individuals aged 16 to 102 from 57 population-based cohorts, pooled from CHARGE, COGENT and UK Biobank.",
+      "davies_2018_pmid_verified": true,
+      "davies_2018_title": "Study of 300,486 individuals identifies 148 independent genetic loci influencing general cognitive function."
+    },
+    "hrs_in_davies_2015_charge": {
+      "answer": "Yes, verified.",
+      "pmid": "25644384",
+      "evidence": "Davies et al. 2015 (CHARGE, N=53,949) used HRS as one of its two largest cohorts for GCTA SNP-heritability estimation, N = 5,976, h2 = 0.28 (SE 0.07); the other was ARIC, N = 6,617, h2 = 0.29 (SE 0.05).",
+      "why_this_matters": "Davies 2015 is the 'cognitive performance' GWAS against which Zabaneh's rg = 0.80 (SE 0.08) was computed. So HRS individuals sit on both sides of that correlation."
+    },
+    "documented_sample_overlap": {
+      "statement": "Yes. Zabaneh et al. 2018 drew its 8,172 (or 8,185) controls from HRS; HRS is a contributing cohort in both Davies et al. 2018 (PMID 29844566) and Davies et al. 2015 CHARGE (PMID 25644384). This is a documented overlap between the extreme-high-intelligence control set and the normal-range cognition GWAS it is compared with.",
+      "quantification": "Zabaneh used 8,172 HRS controls; Davies 2018 lists HRS with a cognitive-phenotype listwise N of 7,396; Davies 2015 used 5,976 unrelated HRS individuals for GCTA. The exact overlapping individuals are not enumerated in any of the papers.",
+      "statistical_consequence": {
+        "on_the_reported_rg": "Limited. Cross-trait LD Score regression was explicitly designed to be unbiased by sample overlap (Bulik-Sullivan et al. 2015, PMID 26414676); overlap shifts the intercept, not the slope. So rg = 0.80 is not invalidated by this overlap.",
+        "on_meta_analysis_or_pruning": "Material. Any pipeline that meta-analyses, or that treats Zabaneh and Davies 2018 as independent evidence for the same locus, double-counts thousands of HRS participants. Treat them as non-independent.",
+        "on_polygenic_scoring": "Material. Building a score from one and testing in the other is contaminated through HRS; Zabaneh avoided this by validating in TEDS instead."
+      }
+    },
+    "overlap_with_savage_2018": {
+      "question": "Do Zabaneh cases or controls overlap Savage et al. 2018?",
+      "answer": "Yes, both, and directly.",
+      "savage_pmid": "29942086",
+      "savage_title": "Genome-wide association meta-analysis in 269,867 individuals identifies new genetic and functional links to intelligence.",
+      "evidence": "Savage et al. list 14 contributing cohorts, one of which is named 'High-IQ/Health and Retirement Study (HiQ/HRS)'. They state that for HiQ/HRS alone a logistic-regression GWAS was run with case status reflecting an extreme-sampled very-high-intelligence population, the upper about 0.03 percent of the distribution, against unselected population controls. That is the Zabaneh design, cases and controls together.",
+      "meta_analysis_handling": "Savage et al. meta-analysed in two phases: all quantitative-phenotype cohorts first with sample-size weighting, then added HiQ/HRS weighted by non-centrality parameter to account for the extreme case-control design.",
+      "additional_overlap": "TEDS, Zabaneh's polygenic validation sample, is also a contributing cohort in Savage et al. 2018.",
+      "consequence": "Zabaneh et al. 2018 must be treated as a subset of Savage et al. 2018, not as independent replication. Any convergence between the two is expected by construction. Savage et al. also excluded HiQ/HRS (along with COGENT and Genes for Good) from their age-stratified analyses because its sample spans age groups."
+    },
+    "decision_relevant_summary": [
+      "Extreme high IQ and normal-range IQ share most of their common-variant architecture: rg 0.80 (SE 0.08) against CHARGE cognitive performance and 0.86 (SE 0.10) against UK Biobank verbal-numerical reasoning, by LD Score regression.",
+      "Liability-scale SNP heritability 0.33 (SE 0.02) by GCTA at assumed prevalence 0.0003; 0.42 (SE 0.06) by LD Score regression.",
+      "The only genome-wide significant locus, ADAM12, did not replicate in normal-range GWAS and may be specific to the extreme or be a false positive from the separately-genotyped case-control design.",
+      "Zabaneh controls are HRS, which is inside Davies 2018 and Davies 2015; Zabaneh cases and controls are both inside Savage 2018. Neither pair is independent."
+    ]
+  },
+  "negr1_expression_direction_literature": {
+    "scope": "Published eQTL, CNV and colocalisation reports bearing on the direction of NEGR1 expression at the 1p31.1 cognition/obesity locus.",
+    "structural_variants": [
+      {
+        "pmid": "19079261",
+        "first_author": "Willer",
+        "year": 2009,
+        "journal": "Nat Genet",
+        "species_system": "human genetics, GIANT BMI meta-analysis (stage 1 n>32,000; follow-up n>59,000), plus HapMap CNV typing and human tissue expression panel",
+        "finding": "rs2815752 near NEGR1 is a BMI locus. Two distinct upstream deletions segregate on different haplotypes, one 10 kb and one 45 kb; the two most BMI-associated SNPs flank the 45-kb deletion and are in perfect LD with it (r2 = 1.0) in every HapMap panel, making the deletion the candidate causal variant.",
+        "direction_claim": "None. The deletion is non-coding but removes conserved elements upstream of NEGR1. The paper's eQTL lookups yielded no NEGR1 expression signal; informative eQTLs were found only at other loci.",
+        "tissue": "Lymphocyte and brain public eQTL datasets, plus a human multi-tissue qPCR panel showing NEGR1 is highly expressed in brain and hypothalamus."
+      },
+      {
+        "pmid": "23563609",
+        "first_author": "Wheeler",
+        "year": 2013,
+        "journal": "Nat Genet",
+        "species_system": "human genetics, 1,509 severely obese children (SCOOP-UK) plus 5,380 controls, validation 971 vs 1,990; EMSA in HEK293 lysates",
+        "finding": "The reported 43-kb deletion association was entirely driven by a flanking, non-overlapping 8-kb deletion. Absence of the 8-kb deletion increases obesity risk (p = 6.1e-5); conditioned on the larger allele the 8-kb deletion remains protective, OR 0.70 (95 percent CI 0.60 to 0.82).",
+        "direction_claim": "The 8-kb deletion removes a single conserved NKX6.1 binding site, confirmed by EMSA. NKX6.1 is a repressor, so losing the site predicts higher NEGR1 expression, and in existing eQTL data the small deletion appeared associated with increased NEGR1 expression.",
+        "tissue": "Lymphoblastoid cell lines, NOT brain.",
+        "strength_caveat": "The expression association is marginal (p = 0.0427), from public LCL eQTL data rather than a purpose-built experiment, and the authors themselves say further work is needed to establish whether NKX6.1 regulates NEGR1 in relevant human tissues."
+      }
+    ],
+    "review_level_direction_claim": {
+      "pmid": "34556834",
+      "first_author": "Loos",
+      "year": 2022,
+      "journal": "Nat Rev Genet",
+      "title": "The genetics of obesity: from discovery to biology.",
+      "species_system": "review of human genetics and mouse functional work",
+      "claim": "States that BMI-increasing alleles at this locus, that is the deletions, are associated with higher NEGR1 expression in the brain, attributing the mechanism to loss of NKX6.1 repressor binding.",
+      "critical_flag": "PARTIALLY UNSUPPORTED BY THE PRIMARY SOURCE. The review cites Wheeler et al. 2013 for the expression direction, but Wheeler's expression data are from lymphoblastoid cell lines, not brain. The direction of effect (deletion means higher NEGR1) is supported; the tissue attribution to brain is not, in the primary sources read here. Treat 'higher NEGR1 in brain' as UNVERIFIED at the primary-source level.",
+      "mouse_direction_inconsistency_noted_by_review": "The review also notes that mouse and rat functional studies disagree: NEGR1 deficiency has been reported to lower body weight in one model and to raise body weight and food intake in others."
+    },
+    "brain_eqtl_at_the_psychiatric_variant": [
+      {
+        "pmid": "40382479",
+        "first_author": "Zhang",
+        "year": 2025,
+        "journal": "Mol Psychiatry",
+        "species_system": "human brain eQTL (GTEx v8, ROSMAP dorsolateral prefrontal cortex) plus reporter assay, EMSA, base editing; mouse AAV overexpression in vivo",
+        "variant": "rs3101339, 447 bp upstream of the NEGR1 transcription start site",
+        "direction_claim": "The depression risk allele C is associated with HIGHER NEGR1 expression in brain. Significant in caudate, nucleus accumbens and putamen (GTEx) and in aged dorsolateral prefrontal cortex (ROSMAP). The C allele binds nuclear proteins more strongly and raises promoter activity in reporter assays.",
+        "functional_consequence": "Overexpressing NEGR1 in mouse ventral hippocampus causes working-memory impairment plus anxiety- and depression-like behaviour, dendritic spine loss and abnormal synaptic ultrastructure.",
+        "tissue": "human brain (striatal regions and DLPFC), then mouse brain for the functional arm"
+      },
+      {
+        "pmid": "32214206",
+        "first_author": "Li",
+        "year": 2020,
+        "journal": "Mol Psychiatry",
+        "species_system": "human functional genomics: brain ChIP-seq plus position weight matrices, reporter assays, allele-specific expression, CRISPR-Cas9 editing, eQTL",
+        "finding": "rs3101339 is one of 34 depression risk SNPs that disrupt transcription factor binding; NEGR1 is dysregulated in brains of people with major depression, implying rs3101339 confers risk through NEGR1 expression.",
+        "direction_claim": "Consistent with the risk allele raising NEGR1; this is the study that first nominated rs3101339 as the functional variant."
+      },
+      {
+        "pmid": "32090785",
+        "first_author": "Wang",
+        "year": 2019,
+        "journal": "J Affect Disord",
+        "species_system": "human genetics, summary-data-based Mendelian randomisation using PGC depression GWAS and brain eQTL data",
+        "variant": "rs10789336, within NEGR1",
+        "finding": "rs10789336 affects brain expression of the pseudogene RPL31P12 and contributes to depression risk (p = 1.96e-?), and is associated with methylation at three nearby sites including one in NEGR1.",
+        "cognition_link": "The same SNP is reported as associated with cognitive performance, educational attainment, general cognitive function and verbal-numerical reasoning. This is the clearest published statement placing a NEGR1-locus variant on cognition traits.",
+        "direction_claim": "NEGR1 itself was reported as UPREGULATED in prefrontal cortex in depression by differential expression analysis.",
+        "caveat": "The SMR eQTL target was a pseudogene rather than NEGR1, which weakens the causal chain to NEGR1 expression specifically."
+      },
+      {
+        "pmid": "34045744",
+        "first_author": "Levey",
+        "year": 2021,
+        "journal": "Nat Neurosci",
+        "species_system": "human genetics, Million Veteran Program plus 23andMe, UK Biobank and FinnGen; transcriptome-wide association study",
+        "finding": "Transcriptome-wide association identified significant association with NEGR1 expression in the hypothalamus.",
+        "direction_claim": "Direction of the hypothalamic NEGR1 association is not stated in the abstract: UNVERIFIED here."
+      },
+      {
+        "pmid": "35296807",
+        "first_author": "Deng",
+        "year": 2022,
+        "journal": "Mol Psychiatry",
+        "species_system": "human genetics, Mendelian randomisation plus Bayesian colocalisation and Steiger filtering, brain and blood pQTL and eQTL",
+        "finding": "NEGR1 is one of two genes supported at both protein and transcript level in blood with consistent, colocalised evidence for a causal effect on depression.",
+        "direction_claim": "Direction not captured from the abstract: UNVERIFIED here.",
+        "note": "This is the clearest formal colocalisation result for NEGR1 in the set, but it is blood rather than brain."
+      }
+    ],
+    "haplotype_question": {
+      "question": "Is the obesity CNV region (rs2815752, the 45-kb and 8-kb upstream deletions) the same haplotype as the cognition and depression GWAS signals at NEGR1?",
+      "answer": "UNVERIFIED. No paper read here reports LD, conditional analysis or colocalisation linking rs2815752 or the upstream deletions to rs3101339 or rs10789336, and none reports a colocalisation between the BMI signal and a cognition signal at this locus.",
+      "what_would_settle_it": "Pairwise LD (r2 and D') between rs2815752, rs3101339 and rs10789336 in a European reference panel, plus formal colocalisation of the BMI, depression and cognition signals against a single brain eQTL for NEGR1.",
+      "risk_if_assumed": "Assuming one shared haplotype would let an obesity-derived direction of effect (deletion means higher NEGR1) be imported into a cognition interpretation without evidence."
+    },
+    "direction_synthesis": {
+      "converging_claim": "Two independent lines point the same way: the obesity-risk upstream deletion removes a repressor site and is associated with higher NEGR1 (Wheeler, LCL), and the depression-risk promoter allele rs3101339-C is associated with higher NEGR1 in brain (Zhang, GTEx and ROSMAP). Post-mortem prefrontal cortex in depression also shows NEGR1 upregulation (Wang).",
+      "counterweight": "Direction of functional consequence is not monotonic. Negr1 knockout mice show impaired dentate LTP and mEPSCs (PMID 30651602) while NEGR1 overexpression causes spine loss and cognitive impairment (PMID 40382479). Body-weight direction is also contradictory across models: reduced body mass in one knockout (PMID 22844493), increased adiposity with reduced muscle in another (PMID 31086253), and increased body weight after hypothalamic knockdown in rat (PMID 25077509).",
+      "implication_for_the_pipeline": "For NEGR1, 'which direction is protective' is not resolvable from current literature. Any direction-resolved scoring of NEGR1 should be recorded as indeterminate rather than assigned, and the obesity and cognition signals should not be assumed to share a haplotype."
+    }
+  }
+}

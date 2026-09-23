@@ -1,0 +1,110 @@
+{
+ "n_population_bonferroni_genes": 375,
+ "observed_mean_Z_ext_significant": 0.9850955632000001,
+ "observed_mean_Z_ext_rest": 0.33334534922809184,
+ "sensitivity": [
+  {
+   "population_z_source": "Davies Z (selection sample; Sprint 3)",
+   "scenario": "Sprint-3 assumption: N_eff = 4,300",
+   "equivalent_N": 4300,
+   "mean_liability_i": NaN,
+   "predicted_shift": 0.5769598351264764,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 1.1296283974932795
+  },
+  {
+   "population_z_source": "Davies Z (selection sample; Sprint 3)",
+   "scenario": "ascertainment-equivalent N, cases = top 0.03% (i = 3.69)",
+   "equivalent_N": 14613,
+   "mean_liability_i": 3.6869547359892723,
+   "predicted_shift": 1.063612398297576,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 0.6127704180725076
+  },
+  {
+   "population_z_source": "Davies Z (selection sample; Sprint 3)",
+   "scenario": "ascertainment-equivalent N, cases = top 0.3% (i = 3.05)",
+   "equivalent_N": 9998,
+   "mean_liability_i": 3.0497303778607456,
+   "predicted_shift": 0.8797859679953712,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 0.7408054205012478
+  },
+  {
+   "population_z_source": "Davies Z (selection sample; Sprint 3)",
+   "scenario": "ascertainment-equivalent N, cases = top 3% (i = 2.27)",
+   "equivalent_N": 5530,
+   "mean_liability_i": 2.268065047214737,
+   "predicted_shift": 0.6542912178485694,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 0.9961164022879347
+  },
+  {
+   "population_z_source": "Savage Z for the same genes (winner's-curse sensitivity; overlaps UKB)",
+   "scenario": "Sprint-3 assumption: N_eff = 4,300",
+   "equivalent_N": 4300,
+   "mean_liability_i": NaN,
+   "predicted_shift": 0.5216318279190385,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 1.2494448748880123
+  },
+  {
+   "population_z_source": "Savage Z for the same genes (winner's-curse sensitivity; overlaps UKB)",
+   "scenario": "ascertainment-equivalent N, cases = top 0.03% (i = 3.69)",
+   "equivalent_N": 14613,
+   "mean_liability_i": 3.6869547359892723,
+   "predicted_shift": 0.9616164691944201,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 0.6777652368182736
+  },
+  {
+   "population_z_source": "Savage Z for the same genes (winner's-curse sensitivity; overlaps UKB)",
+   "scenario": "ascertainment-equivalent N, cases = top 0.3% (i = 3.05)",
+   "equivalent_N": 9998,
+   "mean_liability_i": 3.0497303778607456,
+   "predicted_shift": 0.7954182158318603,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 0.8193805484958602
+  },
+  {
+   "population_z_source": "Savage Z for the same genes (winner's-curse sensitivity; overlaps UKB)",
+   "scenario": "ascertainment-equivalent N, cases = top 3% (i = 2.27)",
+   "equivalent_N": 5530,
+   "mean_liability_i": 2.268065047214737,
+   "predicted_shift": 0.5915474582089518,
+   "observed_shift": 0.6517502139719082,
+   "observed_over_predicted": 1.1017716413577945
+  }
+ ],
+ "ratio_range": [
+  0.6127704180725076,
+  1.2494448748880123
+ ],
+ "note": "Ratios span both sides of 1 depending on assumptions no one can pin down from summary statistics (effective selection intensity, winner's curse, probit non-linearity). The ratio therefore cannot prove continuity OR amplification.",
+ "locus_direction_test": {
+  "n_loci": 159,
+  "n_testable": 136,
+  "n_absent": 3,
+  "n_palindromic_excluded": 20,
+  "n_allele_mismatch": 0,
+  "n_concordant": 112,
+  "fraction_concordant": 0.8235294117647058,
+  "binomial_P_vs_half_one_sided": 4.338013337116421e-15,
+  "expected_under_continuity": {
+   "N_eff 4,300": {
+    "expected_concordant": 97.54752267173035,
+    "expected_fraction": 0.7172611961156643
+   },
+   "equivalent N, top 0.03%": {
+    "expected_concordant": 114.22544375602925,
+    "expected_fraction": 0.8398929687943327
+   },
+   "equivalent N, top 3%": {
+    "expected_concordant": 100.76186404043017,
+    "expected_fraction": 0.74089605912081
+   }
+  },
+  "mean_aligned_z": 1.0862825288387408,
+  "note": "signed allele-direction test; the Sprint-3 121/159 statistic was unsigned gene-level Z"
+ }
+}

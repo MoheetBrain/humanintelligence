@@ -1,0 +1,260 @@
+{
+ "s3_reproduction": {
+  "GO_0042734": {
+   "sprint3_P": 1.4813e-06,
+   "rerun_P": 1.4813e-06,
+   "sprint3_beta": 0.40879,
+   "rerun_beta": 0.40879,
+   "identical": true
+  },
+  "GO_0099560": {
+   "sprint3_P": 1.9996e-06,
+   "rerun_P": 1.9996e-06,
+   "sprint3_beta": 0.78293,
+   "rerun_beta": 0.78293,
+   "identical": true
+  },
+  "GO_0099056": {
+   "sprint3_P": 2.3738e-06,
+   "rerun_P": 2.3738e-06,
+   "sprint3_beta": 0.44185,
+   "rerun_beta": 0.44185,
+   "identical": true
+  },
+  "GO_0099508": {
+   "sprint3_P": 5.0082e-06,
+   "rerun_P": 5.0082e-06,
+   "sprint3_beta": 1.2081,
+   "rerun_beta": 1.2081,
+   "identical": true
+  },
+  "GO_0045202": {
+   "sprint3_P": 3.0538e-05,
+   "rerun_P": 3.0538e-05,
+   "sprint3_beta": 0.12086,
+   "rerun_beta": 0.12086,
+   "identical": true
+  },
+  "SYNGO_synprocess": {
+   "sprint3_P": 3.3265e-05,
+   "rerun_P": 3.3265e-05,
+   "sprint3_beta": 0.13528,
+   "rerun_beta": 0.13528,
+   "identical": true
+  }
+ },
+ "landscape": {
+  "A": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 69,
+   "top15": [
+    "syngo:GO_0045202 synapse P=1.03e-08 q=0.000",
+    "syngo:SYNGO_synprocess process in the synapse P=1.04e-08 q=0.000",
+    "go_cc_prop:GO_0097060 synaptic membrane P=2.02e-08 q=0.000",
+    "syngo:GO_0098794 postsynapse P=1.08e-07 q=0.000",
+    "syngo:GO_0042734 presynaptic membrane P=1.79e-07 q=0.000",
+    "go_cc_prop:GO_0045202 synapse P=2.10e-07 q=0.000",
+    "syngo:GO_0099560 synaptic membrane adhesion P=2.13e-07 q=0.000",
+    "syngo:GO_0050808 synapse organization P=4.68e-07 q=0.001",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=4.83e-07 q=0.001",
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=7.06e-07 q=0.001",
+    "go_bp_prop:GO_0007399 nervous system development P=7.73e-07 q=0.001",
+    "go_cc_prop:GO_0044309 neuron spine P=8.74e-07 q=0.001",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=1.32e-06 q=0.001",
+    "go_bp_prop:GO_0001764 neuron migration P=1.40e-06 q=0.001",
+    "go_cc_prop:GO_0098794 postsynapse P=1.92e-06 q=0.001"
+   ]
+  },
+  "B": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 54,
+   "top15": [
+    "go_cc_prop:GO_0097060 synaptic membrane P=1.63e-07 q=0.001",
+    "syngo:GO_0099560 synaptic membrane adhesion P=3.89e-07 q=0.001",
+    "syngo:SYNGO_synprocess process in the synapse P=4.28e-07 q=0.001",
+    "syngo:GO_0045202 synapse P=4.47e-07 q=0.001",
+    "syngo:GO_0042734 presynaptic membrane P=7.16e-07 q=0.001",
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=1.58e-06 q=0.002",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=1.75e-06 q=0.002",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=1.86e-06 q=0.002",
+    "syngo:GO_0098794 postsynapse P=2.99e-06 q=0.003",
+    "go_bp_prop:GO_0001764 neuron migration P=3.20e-06 q=0.003",
+    "go_cc_prop:GO_0044309 neuron spine P=3.67e-06 q=0.003",
+    "syngo:GO_0050808 synapse organization P=4.08e-06 q=0.003",
+    "go_cc_prop:GO_0045202 synapse P=5.87e-06 q=0.004",
+    "go_bp_prop:GO_0007399 nervous system development P=8.66e-06 q=0.006",
+    "go_cc_prop:GO_0043197 dendritic spine P=9.48e-06 q=0.006"
+   ]
+  },
+  "C": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 13,
+   "top15": [
+    "go_cc_prop:GO_0097060 synaptic membrane P=1.52e-06 q=0.008",
+    "syngo:GO_0099560 synaptic membrane adhesion P=2.85e-06 q=0.008",
+    "syngo:GO_0042734 presynaptic membrane P=2.86e-06 q=0.008",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=3.29e-06 q=0.008",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=4.89e-06 q=0.009",
+    "go_bp_prop:GO_0001764 neuron migration P=8.87e-06 q=0.014",
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=1.06e-05 q=0.015",
+    "go_bp_prop:GO_0110156 mRNA methylguanosine-cap decapping P=1.27e-05 q=0.015",
+    "go_cc_prop:GO_0044309 neuron spine P=1.45e-05 q=0.016",
+    "go_cc_prop:GO_0043197 dendritic spine P=3.47e-05 q=0.034",
+    "go_cc_prop:GO_0032590 dendrite membrane P=5.26e-05 q=0.044",
+    "go_cc_prop:GO_0045211 postsynaptic membrane P=5.46e-05 q=0.044",
+    "go_bp_prop:GO_0060998 regulation of dendritic spine development P=5.87e-05 q=0.044",
+    "syngo:SYNGO_synprocess process in the synapse P=8.35e-05 q=0.058",
+    "go_bp_prop:GO_0097154 GABAergic neuron differentiation P=9.10e-05 q=0.059"
+   ]
+  },
+  "D": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 15,
+   "top15": [
+    "go_cc_prop:GO_0097060 synaptic membrane P=1.04e-06 q=0.008",
+    "syngo:GO_0042734 presynaptic membrane P=2.35e-06 q=0.008",
+    "syngo:GO_0099560 synaptic membrane adhesion P=2.75e-06 q=0.008",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=3.20e-06 q=0.008",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=4.07e-06 q=0.008",
+    "go_bp_prop:GO_0001764 neuron migration P=8.11e-06 q=0.013",
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=9.98e-06 q=0.013",
+    "go_cc_prop:GO_0044309 neuron spine P=1.18e-05 q=0.013",
+    "go_bp_prop:GO_0110156 mRNA methylguanosine-cap decapping P=1.25e-05 q=0.013",
+    "go_cc_prop:GO_0043197 dendritic spine P=2.87e-05 q=0.026",
+    "syngo:SYNGO_synprocess process in the synapse P=2.95e-05 q=0.026",
+    "go_cc_prop:GO_0045211 postsynaptic membrane P=4.43e-05 q=0.034",
+    "syngo:GO_0045202 synapse P=4.58e-05 q=0.034",
+    "go_cc_prop:GO_0032590 dendrite membrane P=4.96e-05 q=0.034",
+    "go_bp_prop:GO_0060998 regulation of dendritic spine development P=5.48e-05 q=0.035"
+   ]
+  },
+  "E": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 5,
+   "top15": [
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=8.59e-06 q=0.033",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=1.06e-05 q=0.033",
+    "go_bp_prop:GO_0110156 mRNA methylguanosine-cap decapping P=1.29e-05 q=0.033",
+    "go_bp_prop:GO_0001764 neuron migration P=1.37e-05 q=0.033",
+    "syngo:GO_0099560 synaptic membrane adhesion P=2.01e-05 q=0.039",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=3.35e-05 q=0.054",
+    "syngo:GO_0042734 presynaptic membrane P=3.89e-05 q=0.054",
+    "go_cc_prop:GO_0005694 chromosome P=7.03e-05 q=0.085",
+    "go_bp_prop:GO_0097154 GABAergic neuron differentiation P=8.06e-05 q=0.087",
+    "go_cc_prop:GO_0097060 synaptic membrane P=9.46e-05 q=0.092",
+    "go_bp_prop:GO_0060998 regulation of dendritic spine development P=1.16e-04 q=0.092",
+    "go_bp_prop:GO_0110154 RNA decapping P=1.17e-04 q=0.092",
+    "go_bp_prop:GO_0007420 brain development P=1.24e-04 q=0.092",
+    "go_bp_prop:GO_0021879 forebrain neuron differentiation P=1.67e-04 q=0.107",
+    "go_bp_prop:GO_0021756 striatum development P=1.94e-04 q=0.107"
+   ]
+  },
+  "E2": {
+   "n_sets": 9714,
+   "n_q_lt_0.05": 7,
+   "top15": [
+    "go_bp_prop:GO_0021953 central nervous system neuron differentiation P=6.65e-06 q=0.034",
+    "syngo:GO_0099508 voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential P=1.06e-05 q=0.034",
+    "go_bp_prop:GO_0110156 mRNA methylguanosine-cap decapping P=1.26e-05 q=0.034",
+    "go_bp_prop:GO_0001764 neuron migration P=1.43e-05 q=0.034",
+    "syngo:GO_0099560 synaptic membrane adhesion P=1.73e-05 q=0.034",
+    "go_cc_prop:GO_0005694 chromosome P=2.86e-05 q=0.044",
+    "syngo:GO_0099056 integral component of presynaptic membrane (GO:0099056) P=3.19e-05 q=0.044",
+    "syngo:GO_0042734 presynaptic membrane P=4.18e-05 q=0.051",
+    "go_bp_prop:GO_0097154 GABAergic neuron differentiation P=8.74e-05 q=0.094",
+    "go_cc_prop:GO_0097060 synaptic membrane P=1.06e-04 q=0.100",
+    "go_bp_prop:GO_0110154 RNA decapping P=1.21e-04 q=0.100",
+    "go_bp_prop:GO_0060998 regulation of dendritic spine development P=1.24e-04 q=0.100",
+    "go_bp_prop:GO_0007420 brain development P=1.39e-04 q=0.100",
+    "go_bp_prop:GO_0021879 forebrain neuron differentiation P=1.46e-04 q=0.100",
+    "go_bp_prop:GO_0021544 subpallium development P=1.64e-04 q=0.100"
+   ]
+  }
+ },
+ "naive_marginal_differences": {
+  "A": {
+   "PRE_minus_POST": {
+    "diff": -0.052779999999999994,
+    "se_naive": 0.051151522411361325,
+    "P_naive_two_sided": 0.3021487892143776
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.06656000000000001,
+    "se_naive": 0.12421729836459976,
+    "P_naive_two_sided": 0.5920724574127177
+   }
+  },
+  "B": {
+   "PRE_minus_POST": {
+    "diff": -0.05947999999999999,
+    "se_naive": 0.0532976268233399,
+    "P_naive_two_sided": 0.2644233516272161
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.06903000000000004,
+    "se_naive": 0.12488825759453928,
+    "P_naive_two_sided": 0.5804454922642043
+   }
+  },
+  "C": {
+   "PRE_minus_POST": {
+    "diff": -0.03843400000000001,
+    "se_naive": 0.05182139210789305,
+    "P_naive_two_sided": 0.4582916495038103
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.07282000000000005,
+    "se_naive": 0.12415965812211308,
+    "P_naive_two_sided": 0.5575376108590596
+   }
+  },
+  "D": {
+   "PRE_minus_POST": {
+    "diff": -0.04171699999999999,
+    "se_naive": 0.05339392591859115,
+    "P_naive_two_sided": 0.4346224835152066
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.07304000000000005,
+    "se_naive": 0.12465288575881427,
+    "P_naive_two_sided": 0.5579110478420697
+   }
+  },
+  "E": {
+   "PRE_minus_POST": {
+    "diff": -0.04677,
+    "se_naive": 0.0540037407685801,
+    "P_naive_two_sided": 0.386462130529608
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.0771,
+    "se_naive": 0.12510362789303914,
+    "P_naive_two_sided": 0.5377037433520033
+   }
+  },
+  "E2": {
+   "PRE_minus_POST": {
+    "diff": -0.05060100000000001,
+    "se_naive": 0.05445278924903664,
+    "P_naive_two_sided": 0.35275244643197723
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.07656999999999997,
+    "se_naive": 0.1250823945565482,
+    "P_naive_two_sided": 0.5404342235007745
+   }
+  },
+  "D_S3": {
+   "PRE_minus_POST": {
+    "diff": -0.048335,
+    "se_naive": 0.054311001629504134,
+    "P_naive_two_sided": 0.3734835978070036
+   },
+   "PREMEMB_minus_POSTMEMB": {
+    "diff": 0.06971,
+    "se_naive": 0.12598871837192407,
+    "P_naive_two_sided": 0.5800555984907463
+   }
+  }
+ }
+}

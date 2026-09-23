@@ -211,8 +211,11 @@ def main() -> int:
     mk.to_csv(OUT / "red_team_modules.csv", index=False)
     (OUT / "GENE_CARDS_TOP50_HUMAN.md").write_text(cards(nat, red_nat, b, ext, h, dev,
                                                          "Gene cards — Top 50 human cognition genes"))
-    (OUT / "GENE_CARDS_TOP50_ADULT.md").write_text(cards(ad, red_ad, b, ext, h, dev,
-                                                         "Gene cards — Top 50 adult-modifiable candidates"))
+    # Sprint 3.1 (2026-09-23): the C9 relabel block is re-inserted on every regeneration.
+    sys.path.insert(0, str(REPO_ROOT / "pipelines" / "sprint3_1"))
+    import correction_blocks  # noqa: E402
+    (OUT / "GENE_CARDS_TOP50_ADULT.md").write_text(correction_blocks.apply_cards(
+        cards(ad, red_ad, b, ext, h, dev, "Gene cards — Top 50 adult-modifiable candidates")))
     s = {"built_at": utc_now(),
          "human": red_nat.red_team_verdict.value_counts().to_dict(),
          "adult": red_ad.red_team_verdict.value_counts().to_dict(),
