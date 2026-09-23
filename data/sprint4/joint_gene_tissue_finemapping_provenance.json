@@ -1,0 +1,1723 @@
+{
+  "started_utc": "2026-09-23T14:50:19Z",
+  "inputs": {
+    "davies_sha256_observed": "01990c3e30661db518579d8f84dfddd7f79bc9b476e8a65b45d28c0489ca6573",
+    "davies_rows_total": 12871897,
+    "davies_rows_in_blocks": 51881,
+    "munged_sumstats": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz",
+    "munged_sumstats_sha256": "1528dee0f59bb874e70fc688b174e2a3c7df8f7cbcd3c81bc4263fe09d7e30a2",
+    "gene_prior_tsv": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+    "gene_prior_rows": 51563,
+    "focus_gencode38_gene_ids": 53288,
+    "gencode_lift37_gtf": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/gencode.v38lift37.annotation.gtf.gz",
+    "gencode_lift37_gtf_sha256": "c0bc102ae79ebcf1144097d419d7dfa6672475c9a65a5e5b21a00d6212e74455",
+    "gene_loc_ncbi37_sha256": "bfcb5273801cc3e37dcb98f5465f4498daa8c0cfcda2f4f3fbc51abe02000e7e"
+  },
+  "weights": {
+    "focus_db_path": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db",
+    "focus_db_sha256": "492a8a21ffdc0a1e05c1d15261d808f6f813ef0b4302072869bcf35760b0170f",
+    "focus_db_bytes": 497758208,
+    "brain_db_path": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db",
+    "brain_db_sha256": "5ac223a453d436f765e74e546e5157e3d22205a78a28617f00bcfce96ae822bf",
+    "brain_db_models_per_panel": {
+      "gtex:brain_amygdala": 2362,
+      "gtex:brain_anterior_cingulate_cortex_ba24": 3303,
+      "gtex:brain_caudate_basal_ganglia": 4182,
+      "gtex:brain_cerebellar_hemisphere": 4758,
+      "gtex:brain_cerebellum": 6093,
+      "gtex:brain_cortex": 4329,
+      "gtex:brain_frontal_cortex_ba9": 3604,
+      "gtex:brain_hippocampus": 2816,
+      "gtex:brain_hypothalamus": 2835,
+      "gtex:brain_nucleus_accumbens_basal_ganglia": 3631,
+      "gtex:brain_putamen_basal_ganglia": 3176,
+      "gtex:brain_substantia_nigra": 2041,
+      "cmc:brain_dorsolateral_prefrontal_cortex": 5419
+    },
+    "brain_db_build_seconds": 4.9,
+    "gtexv8_cortex_archive": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/gtexv8/GTExv8.EUR.Brain_Cortex.tar.gz",
+    "gtexv8_cortex_archive_sha256": "3f37aadc19f96ebae32be0c4a304e2d7ccf62911a38e75f13f438b2524adccb2",
+    "gtexv8_cortex_archive_bytes": 220442096,
+    "gtexv8_cortex_genes_imported": 132,
+    "gtexv8_cortex_db_path": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db",
+    "gtexv8_cortex_db_sha256": "651bcbbf6b4f2ef519930d2fd6b08d4c751ee7ab5a8c8461d20edc73b9c76d89"
+  },
+  "commands": [
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus munge /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.raw.txt --N 282014 --output /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/munge.log",
+      "exit_code": 0,
+      "seconds": 2.7,
+      "finished_utc": "2026-09-23T14:50:32Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 12 --from-bp 55665837 --to-bp 57548860 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L319.log",
+      "exit_code": 0,
+      "seconds": 2.8,
+      "finished_utc": "2026-09-23T14:50:34Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 3 --from-bp 51832015 --to-bp 54081390 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L91869.log",
+      "exit_code": 0,
+      "seconds": 2.6,
+      "finished_utc": "2026-09-23T14:50:37Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 1 --from-bp 71684405 --to-bp 74326907 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L257194.log",
+      "exit_code": 0,
+      "seconds": 2.7,
+      "finished_utc": "2026-09-23T14:50:40Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 12 --from-bp 49001866 --to-bp 51776494 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L7009.log",
+      "exit_code": 0,
+      "seconds": 2.6,
+      "finished_utc": "2026-09-23T14:50:42Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 17 --from-bp 34469036 --to-bp 36809344 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L79922.log",
+      "exit_code": 0,
+      "seconds": 2.5,
+      "finished_utc": "2026-09-23T14:50:45Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/plink --bfile /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur --chr 22 --from-bp 40545797 --to-bp 42690818 --make-bed --threads 3 --memory 4000 --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/plink_L1565.log",
+      "exit_code": 0,
+      "seconds": 2.5,
+      "finished_utc": "2026-09-23T14:50:47Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus import /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gtexv8/GTExv8.EUR.Brain_Cortex.3blocks.pos fusion --tissue brain_cortex --name gtexv8_eur --assay rnaseq --use-ens-id --from-gencode --output /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/import_gtexv8_cortex.log",
+      "exit_code": 0,
+      "seconds": 12.6,
+      "finished_utc": "2026-09-23T14:51:21Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 18.9,
+      "finished_utc": "2026-09-23T14:51:40Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 7.1,
+      "finished_utc": "2026-09-23T14:51:47Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 7.5,
+      "finished_utc": "2026-09-23T14:51:54Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 23.3,
+      "finished_utc": "2026-09-23T14:52:18Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 19.2,
+      "finished_utc": "2026-09-23T14:52:37Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 7.3,
+      "finished_utc": "2026-09-23T14:52:44Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 2.8,
+      "finished_utc": "2026-09-23T14:52:47Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 12 --start 56403577 --stop 56403578 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 2.8,
+      "finished_utc": "2026-09-23T14:52:50Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 19.7,
+      "finished_utc": "2026-09-23T14:53:10Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 7.2,
+      "finished_utc": "2026-09-23T14:53:17Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 7.1,
+      "finished_utc": "2026-09-23T14:53:24Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 20.1,
+      "finished_utc": "2026-09-23T14:53:44Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 20.9,
+      "finished_utc": "2026-09-23T14:54:05Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 7.6,
+      "finished_utc": "2026-09-23T14:54:12Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 3.0,
+      "finished_utc": "2026-09-23T14:54:15Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 3 --start 52565100 --stop 52565101 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 3.0,
+      "finished_utc": "2026-09-23T14:54:18Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 8.4,
+      "finished_utc": "2026-09-23T14:54:27Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 7.5,
+      "finished_utc": "2026-09-23T14:54:34Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 7.4,
+      "finished_utc": "2026-09-23T14:54:42Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 23.5,
+      "finished_utc": "2026-09-23T14:55:05Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 8.9,
+      "finished_utc": "2026-09-23T14:55:14Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 8.0,
+      "finished_utc": "2026-09-23T14:55:22Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 3.3,
+      "finished_utc": "2026-09-23T14:55:25Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 1 --start 72750353 --stop 72750354 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 2.9,
+      "finished_utc": "2026-09-23T14:55:28Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 43.5,
+      "finished_utc": "2026-09-23T14:56:12Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 9.1,
+      "finished_utc": "2026-09-23T14:56:21Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 8.8,
+      "finished_utc": "2026-09-23T14:56:30Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 30.8,
+      "finished_utc": "2026-09-23T14:57:01Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 39.2,
+      "finished_utc": "2026-09-23T14:57:40Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 9.3,
+      "finished_utc": "2026-09-23T14:57:49Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 3.4,
+      "finished_utc": "2026-09-23T14:57:52Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 12 --start 49422094 --stop 49422095 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 3.2,
+      "finished_utc": "2026-09-23T14:57:56Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 13.1,
+      "finished_utc": "2026-09-23T14:58:09Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 6.7,
+      "finished_utc": "2026-09-23T14:58:15Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 6.5,
+      "finished_utc": "2026-09-23T14:58:22Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 26.1,
+      "finished_utc": "2026-09-23T14:58:48Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 13.7,
+      "finished_utc": "2026-09-23T14:59:02Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 6.3,
+      "finished_utc": "2026-09-23T14:59:08Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 2.7,
+      "finished_utc": "2026-09-23T14:59:11Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 17 --start 34949598 --stop 34949599 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 2.7,
+      "finished_utc": "2026-09-23T14:59:13Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.joint_brain_gene_x_tissue_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.joint_brain_gene_x_tissue_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 46.8,
+      "finished_utc": "2026-09-23T15:00:00Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_prior_1_over_ngenes_grch37 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "exit_code": 0,
+      "seconds": 7.4,
+      "finished_utc": "2026-09-23T15:00:08Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 7.6,
+      "finished_utc": "2026-09-23T15:00:15Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/weights/focus.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_proxy_tissue_fallback_p1e-3 --tissue brain",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 20.3,
+      "finished_utc": "2026-09-23T15:00:35Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.joint_brain_gene_x_tissue_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 47.1,
+      "finished_utc": "2026-09-23T15:01:23Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_brain_adult.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_p1e-3_intercept --tissue brain --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 6.8,
+      "finished_utc": "2026-09-23T15:01:29Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.gtexv8_eur_brain_cortex_only_p1e-3",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "exit_code": 0,
+      "seconds": 2.7,
+      "finished_utc": "2026-09-23T15:01:32Z"
+    },
+    {
+      "cmd": "/opt/homebrew/Caskroom/miniforge/base/envs/hi-focus/bin/focus finemap /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/davies2018_focus_blocks.sumstats.gz /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_gtexv8_eur_brain_cortex.db --locations 37:EUR --chr 22 --start 42531210 --stop 42531211 --prior-prob 0.001 --max-genes 3 --credible-level 0.9 --trait davies2018_cognition --verbose --out /private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.gtexv8_eur_brain_cortex_only_p1e-3_intercept --intercept",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "exit_code": 0,
+      "seconds": 2.6,
+      "finished_utc": "2026-09-23T15:01:35Z"
+    }
+  ],
+  "loci": [
+    {
+      "locus_id": "L319",
+      "band": "12q13.2",
+      "chr": "12",
+      "lead_snp": "rs772921",
+      "lead_pos": 56403577,
+      "lead_effect_allele": "T",
+      "lead_davies_z": 6.46,
+      "block_start": 55665837,
+      "block_stop": 57548860,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L319_g1000_eur",
+      "ld_n_snps": 13508,
+      "gencode38_lift37_genes_in_block": 117,
+      "ncbi37_3_genes_in_block": 70
+    },
+    {
+      "locus_id": "L91869",
+      "band": "3p21.1",
+      "chr": "3",
+      "lead_snp": "rs6778735",
+      "lead_pos": 52565100,
+      "lead_effect_allele": "T",
+      "lead_davies_z": -7.717,
+      "block_start": 51832015,
+      "block_stop": 54081390,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L91869_g1000_eur",
+      "ld_n_snps": 16202,
+      "gencode38_lift37_genes_in_block": 78,
+      "ncbi37_3_genes_in_block": 50
+    },
+    {
+      "locus_id": "L257194",
+      "band": "1p31.1",
+      "chr": "1",
+      "lead_snp": "rs3101338",
+      "lead_pos": 72750353,
+      "lead_effect_allele": "A",
+      "lead_davies_z": 7.246,
+      "block_start": 71684405,
+      "block_stop": 74326907,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L257194_g1000_eur",
+      "ld_n_snps": 18432,
+      "gencode38_lift37_genes_in_block": 17,
+      "ncbi37_3_genes_in_block": 1
+    },
+    {
+      "locus_id": "L7009",
+      "band": "12q13.12",
+      "chr": "12",
+      "lead_snp": "rs10875914",
+      "lead_pos": 49422094,
+      "lead_effect_allele": "A",
+      "lead_davies_z": -6.443,
+      "block_start": 49001866,
+      "block_stop": 51776494,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L7009_g1000_eur",
+      "ld_n_snps": 18683,
+      "gencode38_lift37_genes_in_block": 119,
+      "ncbi37_3_genes_in_block": 61
+    },
+    {
+      "locus_id": "L79922",
+      "band": "17q12",
+      "chr": "17",
+      "lead_snp": "rs1005552",
+      "lead_pos": 34949598,
+      "lead_effect_allele": "T",
+      "lead_davies_z": -5.532,
+      "block_start": 34469036,
+      "block_stop": 36809344,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L79922_g1000_eur",
+      "ld_n_snps": 14821,
+      "gencode38_lift37_genes_in_block": 60,
+      "ncbi37_3_genes_in_block": 29
+    },
+    {
+      "locus_id": "L1565",
+      "band": "22q13.2",
+      "chr": "22",
+      "lead_snp": "rs28670611",
+      "lead_pos": 42531210,
+      "lead_effect_allele": "T",
+      "lead_davies_z": -6.635,
+      "block_start": 40545797,
+      "block_stop": 42690818,
+      "ld_prefix": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/ld/L1565_g1000_eur",
+      "ld_n_snps": 15651,
+      "gencode38_lift37_genes_in_block": 79,
+      "ncbi37_3_genes_in_block": 41
+    }
+  ],
+  "stage_seconds": {
+    "prepare": 37.3,
+    "import_v8": 23.4,
+    "run": 613.8,
+    "collect": 7.2
+  },
+  "runs": [
+    {
+      "locus_id": "L319",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 18.9,
+      "output_sha256": "919f32a80b858c1134985a92d6027f907e43bc4e5a5b95398a484b801a61f4b7",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 135,
+      "null_pip": 7.88e-06,
+      "credible_set": [
+        "RPS26|brain_substantia_nigra",
+        "RPS26|brain_amygdala",
+        "RPS26|brain_anterior_cingulate_cortex_ba24",
+        "RPS26|brain_hippocampus",
+        "RPS26|brain_hypothalamus",
+        "RPS26|brain_putamen_basal_ganglia",
+        "RPS26|brain_cerebellum",
+        "RPS26|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 7.1,
+      "output_sha256": "b5dcffc07fdb431be7300a219e8a8cb9c19330ae48738e7fe3609a99d6a3cf7a",
+      "warnings": [],
+      "prior_used": "0.008547008547008548.",
+      "n_models": 53,
+      "null_pip": 0.000116,
+      "credible_set": [
+        "RPS26|brain_nucleus_accumbens_basal_ganglia",
+        "SUOX|brain_cerebellum",
+        "RP11-571M6.17|brain_putamen_basal_ganglia",
+        "ARHGAP9|brain_cerebellum",
+        "NXPH4|brain_cerebellum",
+        "SLC26A10|brain_putamen_basal_ganglia"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_p1e-3.log",
+      "seconds": 7.5,
+      "output_sha256": "4c3f39ab0faa5d6928a7713cb329b43691a65ef7d97ab57c6bdf70c35042b57a",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 53,
+      "null_pip": 0.00126,
+      "credible_set": [
+        "RPS26|brain_nucleus_accumbens_basal_ganglia",
+        "SUOX|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 23.3,
+      "output_sha256": "d8075bc6698fcac1c2b79b9339927d7fa657188ebc9cb38627595c9ee3c5ef9f",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 111,
+      "null_pip": 0.000533,
+      "credible_set": [
+        "RAB5B|muscle_skeletal",
+        "RPS26|brain_nucleus_accumbens_basal_ganglia",
+        "SUOX|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 19.2,
+      "output_sha256": "ff813292021cad90474b3383217972e37f1a809d64f215d1070ef62b571ca977",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 135,
+      "null_pip": 1.28e-05,
+      "credible_set": [
+        "RPS26|brain_substantia_nigra",
+        "RPS26|brain_amygdala",
+        "RPS26|brain_anterior_cingulate_cortex_ba24",
+        "RPS26|brain_hippocampus",
+        "RPS26|brain_hypothalamus",
+        "RPS26|brain_putamen_basal_ganglia",
+        "RPS26|brain_cerebellum",
+        "RPS26|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 7.3,
+      "output_sha256": "f77f8fa6ac93e0c1f1097bcfc4510b9a22254783d2f0acfaa5eb926c3b6ebdb5",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 53,
+      "null_pip": 0.00093,
+      "credible_set": [
+        "RPS26|brain_nucleus_accumbens_basal_ganglia",
+        "SUOX|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 2.8,
+      "output_sha256": "ff24aa68a36887a2571b8ae648927a9d15ac5fe1963e3d36e3b5746c64167938",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 10,
+      "null_pip": 0.000274,
+      "credible_set": [
+        "RPS26|brain_cortex",
+        "SUOX|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L319",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L319.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L319.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 2.8,
+      "output_sha256": "093a99673ae121fe9f83cb6434995897623cea9434265cc6e4f3a8dadacde707",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 10,
+      "null_pip": 0.416,
+      "credible_set": [
+        "SUOX|brain_cortex",
+        "RPS26|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 19.7,
+      "output_sha256": "233bda4f684375a28c3778adaf91b6eb7676ab6bca5f2928dca0f74a781737b1",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 141,
+      "null_pip": 2.01e-09,
+      "credible_set": [
+        "GNL3|brain_cerebellar_hemisphere"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 7.2,
+      "output_sha256": "5fc1e8b46e92124298ca2afe81bb31230753b0606d4569ac66f33ca48e9e2345",
+      "warnings": [],
+      "prior_used": "0.01282051282051282.",
+      "n_models": 45,
+      "null_pip": 6.24e-09,
+      "credible_set": [
+        "NEK4|brain_dorsolateral_prefrontal_cortex",
+        "NISCH|brain_dorsolateral_prefrontal_cortex",
+        "TLR9|brain_cerebellum",
+        "SPCS1|brain_cortex",
+        "RFT1|brain_cerebellum",
+        "DUSP7|brain_hypothalamus",
+        "SFMBT1|brain_substantia_nigra",
+        "GNL3|brain_cerebellum",
+        "TMEM110|brain_dorsolateral_prefrontal_cortex",
+        "BAP1|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_p1e-3.log",
+      "seconds": 7.1,
+      "output_sha256": "68713900128d52690657b989ee8ac4a3238511e9ef6c3df643fb7aa4ad8d3777",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 45,
+      "null_pip": 1.77e-07,
+      "credible_set": [
+        "NEK4|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 20.1,
+      "output_sha256": "c08b1a8b24613ec428d25c2ed15b3b719eb7d14abe6fb2601500122e7498c79c",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 64,
+      "null_pip": 1.19e-07,
+      "credible_set": [
+        "NEK4|brain_dorsolateral_prefrontal_cortex",
+        "ITIH3|muscle_skeletal",
+        "NISCH|brain_dorsolateral_prefrontal_cortex",
+        "GNL3|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 20.9,
+      "output_sha256": "9b19138be1d9f65b5c75e675d877d6f004ff69b542a25de88bb8c7a4dc2e6201",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 141,
+      "null_pip": 0.0618,
+      "credible_set": [
+        "PPM1M|brain_anterior_cingulate_cortex_ba24",
+        "PPM1M|brain_cortex",
+        "PPM1M|brain_dorsolateral_prefrontal_cortex",
+        "PPM1M|brain_substantia_nigra",
+        "PPM1M|brain_nucleus_accumbens_basal_ganglia",
+        "PPM1M|brain_frontal_cortex_ba9",
+        "DNAH1|brain_nucleus_accumbens_basal_ganglia",
+        "PPM1M|brain_caudate_basal_ganglia",
+        "GNL3|brain_cerebellar_hemisphere",
+        "ACTR8|brain_amygdala",
+        "ITIH4|brain_cortex",
+        "ITIH4|brain_putamen_basal_ganglia"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 7.6,
+      "output_sha256": "841a5fefe66b935ae3c41f93723f79e57ba8126580370c3e3c88b8224a11198f",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 45,
+      "null_pip": 0.745,
+      "credible_set": [
+        "DNAH1|brain_cerebellum",
+        "ITIH4|brain_hippocampus",
+        "GNL3|brain_cerebellum",
+        "TMEM110|brain_dorsolateral_prefrontal_cortex",
+        "MANF|brain_nucleus_accumbens_basal_ganglia"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 3.0,
+      "output_sha256": "682162f0fef809c7890d9a9cc0e6405c84b1ef1b2dca8c6052c2e06a08a6e1d8",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 16,
+      "null_pip": 6.96e-07,
+      "credible_set": [
+        "SPCS1|brain_cortex",
+        "PPP2R5CP|brain_cortex",
+        "ENSG00000275956.1|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L91869",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L91869.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L91869.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 3.0,
+      "output_sha256": "e5ad4c7ebf616f677e82a0087e118815d5d8ba02dd97d62436b359412df8d0d6",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 16,
+      "null_pip": 0.782,
+      "credible_set": [
+        "PPM1M|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 8.4,
+      "output_sha256": "4387ec88c725b5fed474c2ce33c7b8be9fa0c616aef2eb4d2a718e577a4b1f4a",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 53,
+      "null_pip": 1.04e-06,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "RPL31P12|brain_cerebellar_hemisphere",
+        "NEGR1|brain_hippocampus"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 7.5,
+      "output_sha256": "4b22a6d46e575d342c8a5847287911e2d9b631d00df8f4fae13bc2f821de3b7e",
+      "warnings": [],
+      "prior_used": "0.058823529411764705.",
+      "n_models": 14,
+      "null_pip": 1.8e-09,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "NEGR1|brain_hippocampus",
+        "FPGT|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_p1e-3.log",
+      "seconds": 7.4,
+      "output_sha256": "3f132cb0911efafe1ba93f0cc3ab917bacdfbb9777b4b1fdc97067972879f730",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 14,
+      "null_pip": 1.13e-06,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "NEGR1|brain_hippocampus"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 23.5,
+      "output_sha256": "d58a6598acaa9a1ca1449fb98dbe6471c59166bce8a73b5a5d5b3a0540f0e9e9",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 19,
+      "null_pip": 1.17e-06,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "NEGR1|brain_hippocampus"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 8.9,
+      "output_sha256": "9003dc69bc47e9f3dd3db2094afbc38baf190602c8cb1fbb6c8c21e07ccc0603",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 53,
+      "null_pip": 0.021,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "RPL31P12|brain_cerebellar_hemisphere",
+        "LRRIQ3|brain_amygdala",
+        "NEGR1|brain_hippocampus"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 8.0,
+      "output_sha256": "101ead60062a22afff63b913b6ce301fe3fb08f792ca283a2924eb1c812986b6",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 14,
+      "null_pip": 0.00863,
+      "credible_set": [
+        "RPL31P12|brain_cerebellum",
+        "NEGR1|brain_hippocampus"
+      ]
+    },
+    {
+      "locus_id": "L257194",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 3.3,
+      "output_sha256": "e9727c780a0919278ebe8b3642ceec89395d2863c836db71eabb5d094b094b6e",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 5,
+      "null_pip": 0.996,
+      "credible_set": []
+    },
+    {
+      "locus_id": "L257194",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L257194.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L257194.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 2.9,
+      "output_sha256": "6a550468027d5ea6ea49a333916d96e7a66f54257ef4cd203af72b25ea2e318f",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 5,
+      "null_pip": 0.997,
+      "credible_set": []
+    },
+    {
+      "locus_id": "L7009",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 43.5,
+      "output_sha256": "bcff36ad6809b53bfbf461a968ca8a196a1e2687639a4446d8f23a573457ddbf",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 196,
+      "null_pip": 0.000632,
+      "credible_set": [
+        "PFKM|brain_cerebellum",
+        "FMNL3|brain_cerebellum",
+        "RHEBL1|brain_frontal_cortex_ba9",
+        "FMNL3|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 9.1,
+      "output_sha256": "87b82f7e55282e5470c6c67d69d9320e3571c1f26f2d094f721e5bdd058b1df1",
+      "warnings": [],
+      "prior_used": "0.008403361344537815.",
+      "n_models": 68,
+      "null_pip": 0.00114,
+      "credible_set": [
+        "RP1-228P16.1|brain_cerebellum",
+        "FMNL3|brain_cerebellum",
+        "ASB8|brain_caudate_basal_ganglia",
+        "GRASP|brain_anterior_cingulate_cortex_ba24"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_p1e-3.log",
+      "seconds": 8.8,
+      "output_sha256": "9bbf9d597a2c6b58f9b8748acfdee38b8f98166fe6672d9a6b1fcd6b8b9e0fc7",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 68,
+      "null_pip": 0.0538,
+      "credible_set": [
+        "RP1-228P16.1|brain_cerebellum",
+        "FMNL3|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 30.8,
+      "output_sha256": "7689d745b2afb8ead3806580302d118602c6fc7bba799a15c48d5b75ec08b84e",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 122,
+      "null_pip": 2.3e-05,
+      "credible_set": [
+        "DDN|muscle_skeletal",
+        "FMNL3|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 39.2,
+      "output_sha256": "f74cd48e9f1874aed5f5cd99143e0d79b63b00b4e1670796149e1127f3406237",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 196,
+      "null_pip": 0.0112,
+      "credible_set": [
+        "PFKM|brain_cerebellum",
+        "RHEBL1|brain_frontal_cortex_ba9",
+        "RP11-161H23.8|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 9.3,
+      "output_sha256": "2163e2622bc50ac8c10fbf44a52954062375214950683780e97dcd0472b18872",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 68,
+      "null_pip": 0.169,
+      "credible_set": [
+        "RP1-228P16.1|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 3.4,
+      "output_sha256": "707adaa205d8cb13d77e200eefde243091a6200dd9048bf84f3bd49e2049a441",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 20,
+      "null_pip": 0.00136,
+      "credible_set": [
+        "RHEBL1|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L7009",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L7009.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L7009.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 3.2,
+      "output_sha256": "ca3846b8e49cc837efe65745ed5f91de55d179a2db439f0848d1380a6bc7984e",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 20,
+      "null_pip": 0.0256,
+      "credible_set": [
+        "RHEBL1|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 13.1,
+      "output_sha256": "a1784f0a185b92b2508bdc68506a9f1a257954934acadeedd47ee826d88dea27",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 115,
+      "null_pip": 0.000676,
+      "credible_set": [
+        "DHRS11|brain_cerebellar_hemisphere",
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "DHRS11|brain_cortex",
+        "TADA2A|brain_cerebellar_hemisphere",
+        "DHRS11|brain_anterior_cingulate_cortex_ba24",
+        "TADA2A|brain_frontal_cortex_ba9",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex",
+        "ACACA|brain_dorsolateral_prefrontal_cortex",
+        "DHRS11|brain_frontal_cortex_ba9",
+        "DHRS11|brain_cerebellum",
+        "DHRS11|brain_caudate_basal_ganglia"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 6.7,
+      "output_sha256": "49a5369f4b3135aca01afe0dddc4c939855e1065cf6d954d7dc69a9d096cfcb3",
+      "warnings": [],
+      "prior_used": "0.016666666666666666.",
+      "n_models": 44,
+      "null_pip": 1.74e-05,
+      "credible_set": [
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex",
+        "ACACA|brain_dorsolateral_prefrontal_cortex",
+        "DUSP14|brain_anterior_cingulate_cortex_ba24",
+        "C17orf50|brain_cerebellum",
+        "MYO19|brain_dorsolateral_prefrontal_cortex",
+        "PLXDC1|brain_amygdala"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_p1e-3.log",
+      "seconds": 6.5,
+      "output_sha256": "441684b56c581b9ba14a54886f481a38a3ef6bd256c200ca111a54d48e97a3c3",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 44,
+      "null_pip": 0.00181,
+      "credible_set": [
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex",
+        "ACACA|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 26.1,
+      "output_sha256": "bb85c085b56576d6adf4e5df7b151beb5b9cd205fe967b9bc288eef0146a5ba1",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 119,
+      "null_pip": 0.00134,
+      "credible_set": [
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "DUSP14|blood",
+        "GGNBP2|adipose",
+        "LRRC37A9P|cells_ebv-transformed_lymphocytes",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 13.7,
+      "output_sha256": "802558702e991d3f5891dc14d303963a66fa99865f51e6f9e2f9ef7f4d58ede1",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 115,
+      "null_pip": 0.000618,
+      "credible_set": [
+        "DHRS11|brain_cerebellar_hemisphere",
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "TADA2A|brain_cerebellar_hemisphere",
+        "DHRS11|brain_cortex",
+        "DHRS11|brain_anterior_cingulate_cortex_ba24",
+        "TADA2A|brain_frontal_cortex_ba9",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex",
+        "ACACA|brain_dorsolateral_prefrontal_cortex",
+        "DHRS11|brain_frontal_cortex_ba9",
+        "DHRS11|brain_cerebellum",
+        "TADA2A|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 6.3,
+      "output_sha256": "29b2d68038e9419a3aa1f5a6cfcac2b6c77d159a934e667941c4f4d991fd1bc1",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 44,
+      "null_pip": 0.00226,
+      "credible_set": [
+        "ZNHIT3|brain_anterior_cingulate_cortex_ba24",
+        "DHRS11|brain_dorsolateral_prefrontal_cortex",
+        "SYNRG|brain_dorsolateral_prefrontal_cortex",
+        "MYO19|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 2.7,
+      "output_sha256": "e3d6b8d7be21c7101be0f509bdb1c958b80e3ddaf7352e2b04a59d4ad411f0d9",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 10,
+      "null_pip": 0.00169,
+      "credible_set": [
+        "GGNBP2|brain_cortex",
+        "DHRS11|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L79922",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L79922.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L79922.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 2.7,
+      "output_sha256": "b97a535c413a669f98e18ba241ddefb65ea25c9adfc847675b4e9c7619c74c67",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 10,
+      "null_pip": 0.000902,
+      "credible_set": [
+        "GGNBP2|brain_cortex",
+        "DHRS11|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.joint_brain_gene_x_tissue_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.joint_brain_gene_x_tissue_p1e-3.log",
+      "seconds": 46.8,
+      "output_sha256": "38a3f789b2f30004077755a5ed77cd522e669a9d06f23b002751f3f7771d9241",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 212,
+      "null_pip": 9.36e-07,
+      "credible_set": [
+        "CYP2D6|brain_nucleus_accumbens_basal_ganglia",
+        "CYP2D6|brain_caudate_basal_ganglia",
+        "CYP2D6|brain_amygdala",
+        "CYP2D6|brain_hypothalamus",
+        "CYP2D6|brain_putamen_basal_ganglia",
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "NAGA|brain_frontal_cortex_ba9",
+        "OLA1P1|brain_caudate_basal_ganglia",
+        "L3MBTL2|brain_cerebellum",
+        "CHADL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_cortex",
+        "RP4-669P10.19|brain_putamen_basal_ganglia"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "prior_arg": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/gencode_v38lift37_focus_gene_set_grch37.tsv",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_prior_1_over_ngenes_grch37.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_prior_1_over_ngenes_grch37.log",
+      "seconds": 7.4,
+      "output_sha256": "c9fb92c10c2ab272d93c56deec22e5b9d1049683f3152f90685c6bbca90cc9c4",
+      "warnings": [],
+      "prior_used": "0.012658227848101266.",
+      "n_models": 61,
+      "null_pip": 4.7e-07,
+      "credible_set": [
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_cortex",
+        "SGSM3|brain_anterior_cingulate_cortex_ba24",
+        "NAGA|brain_cerebellar_hemisphere",
+        "CENPM|brain_cerebellar_hemisphere",
+        "LINC00634|brain_frontal_cortex_ba9",
+        "EP300|brain_dorsolateral_prefrontal_cortex",
+        "TOB2|brain_dorsolateral_prefrontal_cortex",
+        "ADSL|brain_dorsolateral_prefrontal_cortex",
+        "L3MBTL2|brain_frontal_cortex_ba9",
+        "UQCRFS1P1|brain_caudate_basal_ganglia",
+        "RPL4P6|brain_hippocampus",
+        "RP4-669P10.19|brain_cerebellar_hemisphere",
+        "RRP7B|brain_cerebellum",
+        "TTLL1|brain_frontal_cortex_ba9",
+        "SLC25A17|brain_anterior_cingulate_cortex_ba24",
+        "SMDT1|brain_cerebellar_hemisphere",
+        "TEF|brain_caudate_basal_ganglia",
+        "RRP7B|brain_dorsolateral_prefrontal_cortex",
+        "RNU12|brain_cerebellum"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_p1e-3.log",
+      "seconds": 7.6,
+      "output_sha256": "ff2152f7a4a7ebfb5cc9bff675f38bad5c398a92ac08b6c936652d3e62c8691f",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 61,
+      "null_pip": 9.34e-06,
+      "credible_set": [
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_proxy_tissue_fallback_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_proxy_tissue_fallback_p1e-3.log",
+      "seconds": 20.3,
+      "output_sha256": "1e4b7170c9c7eda05b2b302b7f545d131ae3218e5975e97c69eae48eb054b76b",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 88,
+      "null_pip": 9.59e-06,
+      "credible_set": [
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_cortex",
+        "NAGA|brain_cerebellar_hemisphere"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.joint_brain_gene_x_tissue_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.joint_brain_gene_x_tissue_p1e-3_intercept.log",
+      "seconds": 47.1,
+      "output_sha256": "676ccc6151e43cfdfe743f78517dd3e4bcb981e4d7d846b19a71a1110c000151",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 212,
+      "null_pip": 1.03e-05,
+      "credible_set": [
+        "CYP2D6|brain_nucleus_accumbens_basal_ganglia",
+        "CYP2D6|brain_caudate_basal_ganglia",
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_amygdala",
+        "NAGA|brain_frontal_cortex_ba9",
+        "CYP2D6|brain_hypothalamus",
+        "CYP2D6|brain_putamen_basal_ganglia",
+        "TOB2|brain_dorsolateral_prefrontal_cortex",
+        "L3MBTL2|brain_cerebellum",
+        "CYP2D6|brain_cortex",
+        "OLA1P1|brain_caudate_basal_ganglia",
+        "CHADL|brain_dorsolateral_prefrontal_cortex",
+        "L3MBTL2|brain_anterior_cingulate_cortex_ba24",
+        "RP4-669P10.19|brain_putamen_basal_ganglia",
+        "CYP2D6|brain_hippocampus",
+        "L3MBTL2|brain_caudate_basal_ganglia",
+        "MEI1|brain_dorsolateral_prefrontal_cortex",
+        "RP4-669P10.19|brain_nucleus_accumbens_basal_ganglia",
+        "SGSM3|brain_anterior_cingulate_cortex_ba24",
+        "NAGA|brain_cerebellar_hemisphere",
+        "CYP2D6|brain_anterior_cingulate_cortex_ba24",
+        "WBP2NL|brain_anterior_cingulate_cortex_ba24"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.brain_prioritized_gene_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.brain_prioritized_gene_p1e-3_intercept.log",
+      "seconds": 6.8,
+      "output_sha256": "9d4d1efe38daa273bceabe9fba7f2176b5010c0cbe6f1af594829b7e38eb317e",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 61,
+      "null_pip": 9.32e-05,
+      "credible_set": [
+        "WBP2NL|brain_dorsolateral_prefrontal_cortex",
+        "CYP2D6|brain_cortex",
+        "TOB2|brain_dorsolateral_prefrontal_cortex"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.gtexv8_eur_brain_cortex_only_p1e-3.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.gtexv8_eur_brain_cortex_only_p1e-3.log",
+      "seconds": 2.7,
+      "output_sha256": "3845b52d1759798f8a7c742c90e71b4a66e22222f4ba69ad8e07f521c16fc4c4",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 25,
+      "null_pip": 2.08e-06,
+      "credible_set": [
+        "ENSG00000232710.1|brain_cortex",
+        "ENSG00000270083.1|brain_cortex",
+        "CYP2D6|brain_cortex"
+      ]
+    },
+    {
+      "locus_id": "L1565",
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "prior_arg": "0.001",
+      "output": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/focus_out/L1565.gtexv8_eur_brain_cortex_only_p1e-3_intercept.focus.tsv",
+      "log": "/private/tmp/claude-501/-Users-moheet-Documents-ChatGPT-HUMAN-INTELLIGENCE---/224f2c4f-7825-4f2f-9903-e47dd7525078/scratchpad/jgt/work/logs/focus_L1565.gtexv8_eur_brain_cortex_only_p1e-3_intercept.log",
+      "seconds": 2.6,
+      "output_sha256": "d674b1f2eb4ce0cc82cf934090f70ba03ff84f0c45300a201da1ac17c3e527f7",
+      "warnings": [],
+      "prior_used": "0.001.",
+      "n_models": 25,
+      "null_pip": 7.82e-05,
+      "credible_set": [
+        "ENSG00000232710.1|brain_cortex",
+        "ENSG00000270083.1|brain_cortex",
+        "CYP2D6|brain_cortex",
+        "RRP7A|brain_cortex"
+      ]
+    }
+  ],
+  "outputs": {
+    "csv": "reports/sprint4/joint_gene_tissue_finemapping.csv",
+    "csv_rows": 3314,
+    "csv_sha256": "698fce7db779119b606d576840824b0ed4815498cd5424e2fbe9d009f8e18e5a"
+  },
+  "finished_utc": "2026-09-23T15:01:42Z",
+  "environment": {
+    "python": "3.10.21",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "numpy": "1.23.5",
+    "pandas": "1.5.3",
+    "scipy": "1.15.2",
+    "sqlalchemy": "1.3.24",
+    "pandas_plink": "2.3.1",
+    "pyfocus": "0.803",
+    "dask": "2024.2.1",
+    "plink": "PLINK v1.9.0-b.8 64-bit (22 Oct 2024)"
+  },
+  "thread_env": {
+    "OMP_NUM_THREADS": "3",
+    "OPENBLAS_NUM_THREADS": "3",
+    "MKL_NUM_THREADS": "3",
+    "VECLIB_MAXIMUM_THREADS": "3",
+    "NUMEXPR_NUM_THREADS": "3",
+    "DASK_SCHEDULER": "synchronous"
+  },
+  "configs": [
+    {
+      "config": "joint_brain_gene_x_tissue_p1e-3",
+      "db": "brain",
+      "tissue": null,
+      "prior": "0.001",
+      "max_genes": 3,
+      "description": "Every adult-brain gene-tissue model enters jointly (a gene measured in k brain regions contributes k correlated models); prior 1e-3 per model (FOCUS paper default)."
+    },
+    {
+      "config": "brain_prioritized_gene_prior_1_over_ngenes_grch37",
+      "db": "brain",
+      "tissue": "brain",
+      "prior": "GENE_PRIOR_TSV",
+      "max_genes": 3,
+      "description": "One model per gene: best cv.R2 across the 13 adult-brain weight sets; prior 1/(number of genes overlapping the LD block) = maintained FOCUS default gene set (bundled gencode_map_v38) placed on GRCh37 coordinates from GENCODE v38lift37 (the bundled gencode files are GRCh38 while our blocks are GRCh37)."
+    },
+    {
+      "config": "brain_prioritized_gene_p1e-3",
+      "db": "brain",
+      "tissue": "brain",
+      "prior": "0.001",
+      "max_genes": 3,
+      "description": "As above but prior 1e-3 per gene (prior-sensitivity check)."
+    },
+    {
+      "config": "brain_prioritized_proxy_tissue_fallback_p1e-3",
+      "db": "all",
+      "tissue": "brain",
+      "prior": "0.001",
+      "max_genes": 3,
+      "description": "One model per gene: adult-brain model if one exists, otherwise the best cv.R2 model from any of the other 39 weight sets (non-brain proxy tissue); prior 1e-3."
+    },
+    {
+      "config": "joint_brain_gene_x_tissue_p1e-3_intercept",
+      "db": "brain",
+      "tissue": null,
+      "prior": "0.001",
+      "max_genes": 3,
+      "intercept": true,
+      "description": "As joint_brain_gene_x_tissue_p1e-3 but with FOCUS --intercept, which regresses the average LD-tagged (non-mediated/pleiotropic) SNP signal out of the TWAS z-scores before fine-mapping."
+    },
+    {
+      "config": "brain_prioritized_gene_p1e-3_intercept",
+      "db": "brain",
+      "tissue": "brain",
+      "prior": "0.001",
+      "max_genes": 3,
+      "intercept": true,
+      "description": "As brain_prioritized_gene_p1e-3 but with FOCUS --intercept (see above)."
+    },
+    {
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3",
+      "db": "gtexv8_cortex",
+      "tissue": null,
+      "prior": "0.001",
+      "max_genes": 3,
+      "description": "Independent weight build: GTEx v8 EUR Brain_Cortex FUSION weights (gusevlab; heritable genes only, best-cv.R2 model per gene chosen by focus import); single tissue so one model per gene; prior 1e-3. Only this one v8 brain tissue was downloadable in the time budget."
+    },
+    {
+      "config": "gtexv8_eur_brain_cortex_only_p1e-3_intercept",
+      "db": "gtexv8_cortex",
+      "tissue": null,
+      "prior": "0.001",
+      "max_genes": 3,
+      "intercept": true,
+      "description": "As gtexv8_eur_brain_cortex_only_p1e-3 but with FOCUS --intercept."
+    }
+  ],
+  "blocked_methods": [
+    {
+      "method": "TGFM",
+      "method_version": "BennyStrobes/TGFM v1.0 (Zenodo 10.5281/zenodo.13823621)",
+      "weights_source": "none distributed (gene-tissue SuSiE eQTL models must be fit by the user)",
+      "weights_build": "n/a (would be GTEx v8 GRCh38 in the published analysis)",
+      "blocker": "TGFM ships no pre-fit gene-tissue models (Zenodo record contains only a 128 kB code zip). Step 1 (susie_eqtl_fine_mapping_for_tgfm.py) needs either individual-level eQTL genotypes + expression, or full eQTL summary statistics PLUS in-sample eQTL genotypes; for GTEx brain tissues both require dbGaP phs000424 controlled access (registration/approval not allowed here). Step 2 requires GWAS in-sample LD (the published analysis used UK Biobank genotypes; Davies 2018 has no in-sample LD, only 1000G EUR n=503), and Step 4 learns tissue priors genome-wide across all loci.",
+      "notes": "Not substituted with any weaker method."
+    },
+    {
+      "method": "cTWAS",
+      "method_version": "xinhe-lab/ctwas (not installed)",
+      "weights_source": "would be PredictDB GTEx v7 brain elastic-net (GRCh37 rsIDs) or GTEx v8 mashr (GRCh38)",
+      "weights_build": "n/a",
+      "blocker": "Scope/time blocker, not an access blocker: cTWAS separates mediated from non-mediated (SNP) effects only after genome-wide estimation of gene and SNP prior inclusion probabilities and effect variances over all ~1,700 LD blocks, which needs genome-wide region/SNP maps and LD for every block plus multi-tissue weights; this did not fit the ~90 min / 3-thread budget alongside the running MAGMA job. A locus-only run with fixed priors would not be cTWAS as published.",
+      "notes": "Recommended next method: it is the one maintained tool that explicitly models non-mediated SNP effects rather than folding them into a NULL model."
+    }
+  ],
+  "focus_source": {
+    "repo": "https://github.com/mancusolab/ma-focus",
+    "commit": "f3a38fd70e7fa3f3c43a05c641201fdc45f1ab46",
+    "db_url": "https://www.dropbox.com/s/ep3dzlqnp7p8e5j/focus.db?dl=1",
+    "db_linked_from": "https://github.com/mancusolab/ma-focus/wiki (Home + Creating-a-weight-database)"
+  },
+  "extra": {
+    "session_date": "2026-09-23",
+    "wall_clock_note": "Work started ~09:30 UTC; FOCUS runs themselves take ~5-25 s per locus x configuration; the GTEx v8 cortex download (589 s) dominated.",
+    "downloads": [
+      {
+        "file": "focus.db",
+        "url": "https://www.dropbox.com/s/ep3dzlqnp7p8e5j/focus.db?dl=1",
+        "source_authority": "Link published by the FOCUS authors on the maintained repository wiki (https://github.com/mancusolab/ma-focus/wiki, Home and Creating-a-weight-database pages); hosted on Dropbox by the authors.",
+        "bytes": 497758208,
+        "sha256": "492a8a21ffdc0a1e05c1d15261d808f6f813ef0b4302072869bcf35760b0170f",
+        "download_utc": [
+          "2026-09-23T09:36:49Z",
+          "2026-09-23T09:37:19Z"
+        ],
+        "content": "52 weight sets: GTEx v7 PrediXcan ElasticNet (48 tissues incl. 13 brain) + FUSION CMC DLPFC, METSIM adipose, NTR blood, YFS blood. SNP IDs rsIDs; SNP and gene positions GRCh37 (verified: rs772921 stored at 12:56403577)."
+      },
+      {
+        "file": "gencode.v38lift37.annotation.gtf.gz",
+        "url": "https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_38/GRCh37_mapping/gencode.v38lift37.annotation.gtf.gz",
+        "bytes": 61226201,
+        "md5_official_MD5SUMS": "bacc3ea0adb725b6ad90bb62e040845f",
+        "md5_observed": "bacc3ea0adb725b6ad90bb62e040845f",
+        "sha256": "c0bc102ae79ebcf1144097d419d7dfa6672475c9a65a5e5b21a00d6212e74455",
+        "purpose": "GRCh37 coordinates for the gene set of FOCUS's bundled gencode_map_v38.tsv (used only for the 1/n_genes prior)."
+      },
+      {
+        "file": "GTExv8.EUR.Brain_Cortex.tar.gz",
+        "url": "https://s3.us-west-1.amazonaws.com/gtex.v8.fusion/EUR/GTExv8.EUR.Brain_Cortex.tar.gz",
+        "linked_from": "http://gusevlab.org/projects/fusion/ (GTEx v8 multi-tissue expression)",
+        "bytes": 220442096,
+        "sha256": "3f37aadc19f96ebae32be0c4a304e2d7ccf62911a38e75f13f438b2524adccb2",
+        "download_seconds": 589,
+        "observed_rate_kB_per_s": 374,
+        "content_check": "RDat 'snps' use rsIDs with GRCh38 positions (rs12368145 at 12:55580188); pos-file P0/P1 are GRCh38 TSS; filtered pos = heritable genes (5,695)."
+      }
+    ],
+    "source_code": [
+      {
+        "repo": "https://github.com/mancusolab/ma-focus",
+        "commit": "f3a38fd70e7fa3f3c43a05c641201fdc45f1ab46",
+        "package": "pyfocus 0.803",
+        "licence": "GPL-3.0",
+        "note": "bogdanlab/focus README marks itself DEPRECATED and points here; PyPI has only pyfocus 0.802 (2022)."
+      },
+      {
+        "repo": "https://github.com/BennyStrobes/TGFM",
+        "inspected": "README + wiki (git clone of TGFM.wiki.git), Zenodo 10.5281/zenodo.13823621",
+        "licence": "none declared on GitHub",
+        "installed": false
+      },
+      {
+        "repo": "https://github.com/xinhe-lab/ctwas",
+        "inspected": "GitHub metadata only (MIT, last push 2026-09-02)",
+        "installed": false
+      }
+    ],
+    "environment_recipe": [
+      "mamba create -n hi-focus python=3.8 ... -> FAILED: pandas-plink has no py3.8 osx-arm64 build (solver error)",
+      "mamba create -y -n hi-focus -c conda-forge -c bioconda python=3.10 'numpy<1.24' 'pandas<2' scipy 'sqlalchemy<1.4' 'matplotlib>=3.1' seaborn pandas-plink py-opencv plink 'setuptools<70' pip",
+      "git clone https://github.com/mancusolab/ma-focus.git && (commit f3a38fd) && mamba run -n hi-focus pip install --no-deps --no-build-isolation .",
+      "first FOCUS run FAILED: \"module 'pandera' has no attribute 'DataFrameSchema'\" (pandera 0.32.1 needs pandas>=2.1) -> mamba install -n hi-focus -c conda-forge 'pandera<0.20' 'pandera-core<0.20' (0.19.3)",
+      "mamba install -n hi-focus -c conda-forge rpy2 mygene -> FAILED (mygene not on conda-forge); re-run with -c bioconda -> OK (rpy2 3.6.7, R 4.5.3, mygene 3.2.2)"
+    ],
+    "method_assessment": {
+      "FOCUS": "RUN. Joint model over all gene(-tissue) expression models in an LD block plus an explicit NULL model; accepts GRCh37 1000G LD and rsID-keyed weights; no genome-wide step; seconds per locus.",
+      "MA-FOCUS": "Same code base as FOCUS (the maintained repository); its multi-ancestry mode needs GWAS + LD + weights from >=2 ancestries. Davies 2018 is European-only, so only the single-ancestry FOCUS mode applies.",
+      "TGFM": "BLOCKED - see CSV blocker text (no distributed gene-tissue models; individual-level GTEx genotypes needed to build them are dbGaP controlled access; needs in-sample GWAS LD; genome-wide prior learning).",
+      "cTWAS": "BLOCKED (scope/time, not access) - see CSV blocker text.",
+      "GTEx_v8_other_11_brain_tissues": "NOT DOWNLOADED: 11 further EUR brain archives of 198-231 MB each (~2.3 GB) at the observed ~375 kB/s would take ~1.7 h, beyond the budget.",
+      "PsychENCODE_DLPFC_FUSION_weights": "NOT DOWNLOADED: http://resource.psychencode.org/Datasets/Derived/PEC_TWAS_weights.tar.gz is 939,113,351 bytes; not attempted within the budget."
+    },
+    "not_modified": [
+      "Davies 2018 GWAS file and 1000G EUR PLINK files were only read (PLINK subsets written to scratch).",
+      "No tracked repository file was modified; no commit or push was made."
+    ]
+  }
+}

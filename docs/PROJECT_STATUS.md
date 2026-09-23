@@ -1,9 +1,25 @@
 # Project Status
 
-*Snapshot 2026-09-23 (UTC) — **Sprint 3.1 (synaptic recon / correction pass) complete** on
-`sprint-3.1/synaptic-recon`. **Sprint 4 (Direct-Effect Causal Synapse Gate) protocol FROZEN** on
-`sprint-4/causal-synapse-bridge` (`db86aef`, pushed) before any within-family or Genes & Cognition
-value was read; Sprint 4 resumes on top of Sprint 3.1. Sprints 1–3 remain complete.*
+*Snapshot 2026-09-23 (UTC) — **Sprint 4 (Direct-Effect Causal Synapse Gate) complete; decision RETRY;
+chemistry gate CLOSED.** Branch `sprint-4/causal-synapse-bridge` (protocol frozen at `db86aef` before any
+new data; Sprint 3.1 merged in at `a8e82d4`). Not merged to main. Sprints 1–3.1 remain complete.*
+
+***Sprint-4 headline results*** (evidence: `reports/sprint4/CAUSAL_SYNAPSE_GATE.md`)
+1. **Gate A (within-sibship, Howe 2022) NOT_TESTABLE** — `OPENGWAS_JWT` absent; no account created. All
+   code to the download boundary is written and tested; one user action unlocks it.
+2. **Frozen pre-data power calibration (320 LD-aware subsampled GWAS, 40 per scenario)**: set-level
+   enrichment power at N 5–10k is 2–12.5% even for a fully direct effect — indistinguishable from the null.
+   The locus-level sign test is ~100% powered. So Gate A will decide the loci, not the sets.
+3. **Gate B (independent UKB-free Genes & Cognition, N=9,932, executive function)**: pipeline positive
+   control NT5DC2 rs7639267 PASS; **109/145 Sprint-3 lead alleles concordant (P=5e-10; slope 0.122, SE
+   0.014)**; 33 loci G&C_SUPPORTED (~14.5 expected by chance; 4 at FDR<0.05); frozen sets: 1/6 nominal
+   (process in the synapse, P=0.031), 4 concordant-underpowered, adhesion sign-discordant within noise.
+4. **Gate C**: SuSiE on 36 loci; 648 adult-brain QTL files (GTEx, CommonMind, ROSMAP, Braineac2, Young
+   2019; BrainSeq/fetal/iPSC excluded); 4,780 coloc.abf + 249 coloc.susie tests; 68 strong. Direction
+   resolved under the unchanged rule on independent cohorts: **RPS26** and **RHEBL1** (cognition allele →
+   higher expression). RPS26 lacks independent cognition support; RHEBL1's gene attribution is unstable in
+   FOCUS (primary favours PFKM). NEGR1's best FOCUS model is a pseudogene; SYT1 has no strong gene-level coloc.
+5. **Decision RETRY** (frozen precedence: Gate A untestable). Chemistry gate CLOSED.
 
 ***Sprint-3.1 headline results*** (evidence: `reports/sprint3_1/SYNAPTIC_RECON_REPORT.md`)
 1. **Broad synaptic enrichment survives every covariate specification**, but ~55% of its effect is
@@ -44,6 +60,10 @@ C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 
 ## Current Stage
 
+**Sprint 4 — complete (decision RETRY).** Outputs in `reports/sprint4/` (13 required files + summaries).
+Remaining incompleteness: coloc.susie covers 25/36 loci (eQTL Catalogue lbf streaming hit network
+timeouts; a retry is running and will be folded in by a follow-up commit); TGFM and cTWAS blocked.
+
 **Sprint 3.1 — synaptic recon / correction pass: complete** (`reports/sprint3_1/`, 7 required outputs
 + supporting tables; 13 dated correction blocks written into Sprint-3 reports without deleting text).
 **Sprint 4 — protocol frozen; analyses pending** (Gate A blocked: `OPENGWAS_JWT` absent; Gate B inputs
@@ -83,6 +103,8 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 "intelligence gene". All work is computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`).
 
 ## Current Branch
+
+`sprint-4/causal-synapse-bridge` (Sprint 4 complete; contains Sprint 3.1 via merge `a8e82d4`).
 
 `sprint-3.1/synaptic-recon` (Sprint 3.1), branched from `sprint-3/gene-tournament` at `04c70ef`.
 `sprint-4/causal-synapse-bridge` (`db86aef`, protocol freeze) also branches from `04c70ef` and will
@@ -262,6 +284,17 @@ All executed 2026-09-22; none projected.
 * No directed causal gene graph exists, so controllability analysis is not meaningful.
 
 ## Exact Next Actions
+
+**After Sprint 4 (now):**
+1. **User action to unlock Gate A**: set `OPENGWAS_JWT` (or download the two VCFs from the OpenGWAS website
+   into `data/interim/sprint4/opengwas/`), then `python pipelines/sprint4/gate_a_within_family.py analyse`.
+   This decides whether the 159 loci act directly within families (well powered at locus level).
+2. Fold in the remaining coloc.susie results when the lbf retry completes (`gate_c_coloc.py --susie-only`,
+   `gate_c_direction.py`, `decide.py`, `write_sprint4_report.py`).
+3. RHEBL1 / 12q13.12: resolve the gene with a multi-tissue joint fine-mapper that is not dominated by
+   single strong eQTL models (TGFM needs dbGaP GTEx access — a user decision).
+4. For set-level synaptic tests out of UK Biobank, only a much larger UKB-free general-cognition GWAS would
+   have power; none is openly available.
 
 **After Sprint 3.1 (now):** merge `sprint-3.1/synaptic-recon` into `sprint-4/causal-synapse-bridge`;
 run the frozen Sprint-4 pre-data power calibration; Gate B on the G&C-only files; Gate C on survivors +

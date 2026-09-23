@@ -1,0 +1,84 @@
+{
+ "computed_at": "2026-09-23T09:44:50Z",
+ "code_commit": "a8e82d4d06f85af48455d96fef41c8c9f5e72868",
+ "files": {
+  "TMA": {
+   "file": "tma_gwas_gc.txt",
+   "md5": "md5:22d0c69c32bd4f330436727a408bcced",
+   "expected": "md5:22d0c69c32bd4f330436727a408bcced",
+   "status": "OK",
+   "bytes": 461859569,
+   "sha256": "5b131e693c816465663c84bff7dcaf811096c0bcebe99e57d80ff5025e7a48d3"
+  },
+  "TMN": {
+   "file": "tmn_gwas_gc.txt",
+   "md5": "md5:a26d41df1878f2852a2f36082bb364d7",
+   "expected": "md5:a26d41df1878f2852a2f36082bb364d7",
+   "status": "OK",
+   "bytes": 461968430,
+   "sha256": "840bb5819c9edce5d3fb8368dc211b63aeb08f747318b5650b6e19fd81ff6120"
+  },
+  "TMD": {
+   "file": "tmd_gwas_gc.txt",
+   "md5": "md5:cde0c49276bf6018586e7127bb0ebb93",
+   "expected": "md5:cde0c49276bf6018586e7127bb0ebb93",
+   "status": "OK",
+   "bytes": 440127225,
+   "sha256": "307af44d329689955ea800291f5be9e32ed17f166c25fe69934b90a444c0579d"
+  }
+ },
+ "primary_phenotype": "TMA",
+ "direction_rule": "higher TM = slower; aligned z = -BETA/SE for the cognition-increasing allele",
+ "loci": {
+  "n": 159,
+  "n_testable_primary": 145,
+  "status_counts_primary": {
+   "TESTABLE": 145,
+   "UNRESOLVED_HARMONISATION": 10,
+   "NOT_TESTABLE_ABSENT_NO_PROXY": 4
+  },
+  "n_concordant_primary": 109,
+  "binomial_P_one_sided": 4.953377367132351e-10,
+  "expected_concordance_fraction": {
+   "f=1.0": 0.7995561296039857,
+   "f=0.752": 0.7420039778949712
+  },
+  "n_GC_SUPPORTED": 33,
+  "n_GC_SUPPORTED_expected_under_null": 14.5,
+  "slope_aligned_z_on_davies_z": {
+   "slope": 0.12204892615771973,
+   "se": 0.01372531572750135,
+   "z": 8.892249080519939,
+   "P_two_sided": 5.988427105551119e-19,
+   "n": 145,
+   "expected_if_f1": 0.18766488680419896,
+   "expected_if_f_lower": 0.1411239948767576,
+   "note": "expectations ignore winner's curse, so they are upper bounds"
+  },
+  "spearman_abs_davies_z_vs_aligned_z": 0.27759511646435375
+ },
+ "positive_control": {
+  "status": "PASS",
+  "published": {
+   "snp": "rs7639267",
+   "phenotype": "TMA",
+   "effect_allele": "G",
+   "other_allele": "T",
+   "beta": 0.0062,
+   "se": 0.002,
+   "P": 0.0018,
+   "source": "Rahman et al. 2026 Nat Commun Table 5 (G&C column)"
+  },
+  "ours": {
+   "effect_allele": "G",
+   "beta": 0.00615599,
+   "se": 0.00197603,
+   "P": 0.0018,
+   "file_A1": "G",
+   "file_A2": "T",
+   "A1FREQ": 0.445226,
+   "harmonisation": "OK"
+  },
+  "rule": "same sign, |dbeta| <= 0.1|beta_pub| + 0.001, P within x2 (frozen)"
+ }
+}

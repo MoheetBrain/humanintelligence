@@ -1,0 +1,452 @@
+{
+ "computed_at": "2026-09-23T15:39:20Z",
+ "method": "LD-aware summary-statistic subsampling (PUMAS-style; Zhao et al. 2021 Nat Commun): z_sim = f*sqrt(n/N)*z_obs + sqrt(1 - f^2*n/N)*e, e ~ N(0, R_block) generated as X_block' u / sqrt(503) from standardised g1000_eur genotypes with independent u ~ N(0, I) per LDetect EUR block (Berisa & Pickrell 2016), e aligned to the summary-statistic effect allele. Same noise draws reused across scenarios (common random numbers). Each replicate goes through the identical MAGMA gene and gene-set pipeline.",
+ "source": "Davies 2018 (pre-data); post-data Howe-population calibration pending Gate A data",
+ "replicates_completed": {
+  "n4999_f0.78": 40,
+  "n4999_f1": 40,
+  "n9997_f0.752": 40,
+  "n9997_f0.78": 40,
+  "n9997_f1": 40,
+  "n22593_f0": 40,
+  "n22593_f0.78": 40,
+  "n22593_f1": 40
+ },
+ "replicates_frozen": 40,
+ "per_set": {
+  "GO_0042734": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": 0.003259515,
+    "q_low": -0.108231,
+    "q_high": 0.13556374999999998,
+    "power": 0.1,
+    "power_bonferroni6": 0.0
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": 0.011223450000000001,
+    "q_low": -0.10204150000000001,
+    "q_high": 0.13766424999999996,
+    "power": 0.1,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": 0.014179500000000001,
+    "q_low": -0.0999482,
+    "q_high": 0.13836474999999998,
+    "power": 0.1,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": 0.0160725,
+    "q_low": -0.09859475,
+    "q_high": 0.13883224999999996,
+    "power": 0.1,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": 0.029848,
+    "q_low": -0.08601382499999999,
+    "q_high": 0.14328874999999996,
+    "power": 0.125,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": 0.0042512999999999995,
+    "q_low": -0.12041325,
+    "q_high": 0.13037025,
+    "power": 0.1,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.041502,
+    "q_low": -0.072300375,
+    "q_high": 0.14791975,
+    "power": 0.15,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.06400349999999999,
+    "q_low": -0.04783715,
+    "q_high": 0.15978674999999998,
+    "power": 0.275,
+    "power_bonferroni6": 0.025
+   }
+  },
+  "GO_0045202": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": -0.001264435,
+    "q_low": -0.04033545,
+    "q_high": 0.036125399999999995,
+    "power": 0.0,
+    "power_bonferroni6": 0.0
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": 0.0008139649999999999,
+    "q_low": -0.039373475,
+    "q_high": 0.03503742499999999,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": 0.001568935,
+    "q_low": -0.038929000000000005,
+    "q_high": 0.03477309999999999,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": 0.0020462,
+    "q_low": -0.038628,
+    "q_high": 0.03462842499999999,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": 0.00444665,
+    "q_low": -0.035650375,
+    "q_high": 0.03372364999999998,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": 0.0007033650000000001,
+    "q_low": -0.040638025,
+    "q_high": 0.02785427499999998,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.00703355,
+    "q_low": -0.03269835,
+    "q_high": 0.03361867499999997,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.0122325,
+    "q_low": -0.025660600000000002,
+    "q_high": 0.04021012499999997,
+    "power": 0.025,
+    "power_bonferroni6": 0.025
+   }
+  },
+  "GO_0099056": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": -0.005616985,
+    "q_low": -0.1254075,
+    "q_high": 0.20461525,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": 0.0016924149999999998,
+    "q_low": -0.11862075,
+    "q_high": 0.20226524999999998,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": 0.00394499,
+    "q_low": -0.11613124999999999,
+    "q_high": 0.20172249999999997,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": 0.00538251,
+    "q_low": -0.11457225,
+    "q_high": 0.20141549999999997,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": 0.0092802,
+    "q_low": -0.10214899999999999,
+    "q_high": 0.20030925,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": -0.004486,
+    "q_low": -0.14086525,
+    "q_high": 0.20289675,
+    "power": 0.1,
+    "power_bonferroni6": 0.05
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.014894000000000001,
+    "q_low": -0.089380075,
+    "q_high": 0.200976,
+    "power": 0.15,
+    "power_bonferroni6": 0.05
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.0397065,
+    "q_low": -0.064930875,
+    "q_high": 0.20576449999999996,
+    "power": 0.175,
+    "power_bonferroni6": 0.075
+   }
+  },
+  "GO_0099508": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": -0.022465099999999998,
+    "q_low": -0.4088485,
+    "q_high": 0.4555267499999998,
+    "power": 0.075,
+    "power_bonferroni6": 0.025
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": -0.0121946,
+    "q_low": -0.38334575,
+    "q_high": 0.43861149999999977,
+    "power": 0.075,
+    "power_bonferroni6": 0.025
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": -0.0096381,
+    "q_low": -0.38898475,
+    "q_high": 0.43403649999999977,
+    "power": 0.1,
+    "power_bonferroni6": 0.025
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": -0.00781215,
+    "q_low": -0.39244875,
+    "q_high": 0.4393629999999998,
+    "power": 0.1,
+    "power_bonferroni6": 0.025
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": 0.025245149999999997,
+    "q_low": -0.39142950000000004,
+    "q_high": 0.4930837499999998,
+    "power": 0.125,
+    "power_bonferroni6": 0.025
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": -0.025899,
+    "q_low": -0.39283599999999996,
+    "q_high": 0.5289104999999998,
+    "power": 0.05,
+    "power_bonferroni6": 0.05
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.06702749999999999,
+    "q_low": -0.37558474999999997,
+    "q_high": 0.5365224999999999,
+    "power": 0.15,
+    "power_bonferroni6": 0.05
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.14493,
+    "q_low": -0.3273525,
+    "q_high": 0.5996504999999999,
+    "power": 0.3,
+    "power_bonferroni6": 0.1
+   }
+  },
+  "GO_0099560": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": 0.0225385,
+    "q_low": -0.156887,
+    "q_high": 0.21249274999999992,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": 0.032996,
+    "q_low": -0.14658775000000002,
+    "q_high": 0.22391349999999996,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": 0.036613999999999994,
+    "q_low": -0.14650825,
+    "q_high": 0.22756149999999994,
+    "power": 0.05,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": 0.0389625,
+    "q_low": -0.1462775,
+    "q_high": 0.22991324999999996,
+    "power": 0.05,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": 0.059016,
+    "q_low": -0.136237,
+    "q_high": 0.2504935,
+    "power": 0.05,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": -0.0063417000000000005,
+    "q_low": -0.16509,
+    "q_high": 0.18874324999999986,
+    "power": 0.025,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.07729050000000001,
+    "q_low": -0.11017,
+    "q_high": 0.26870074999999993,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.12012500000000001,
+    "q_low": -0.083841475,
+    "q_high": 0.30793224999999996,
+    "power": 0.175,
+    "power_bonferroni6": 0.025
+   }
+  },
+  "SYNGO_synprocess": {
+   "n4999_f0.78": {
+    "n_reps": 40,
+    "median": -0.0023609499999999997,
+    "q_low": -0.042441675,
+    "q_high": 0.050190224999999984,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n4999_f1": {
+    "n_reps": 40,
+    "median": -0.00398585,
+    "q_low": -0.039046624999999995,
+    "q_high": 0.05153562499999999,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.752": {
+    "n_reps": 40,
+    "median": -0.00397055,
+    "q_low": -0.037957149999999995,
+    "q_high": 0.05189999999999999,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f0.78": {
+    "n_reps": 40,
+    "median": -0.00398195,
+    "q_low": -0.03728835,
+    "q_high": 0.05213392499999999,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n9997_f1": {
+    "n_reps": 40,
+    "median": -0.00164583,
+    "q_low": -0.0319598,
+    "q_high": 0.0584111,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0": {
+    "n_reps": 40,
+    "median": -0.0055955499999999995,
+    "q_low": -0.05121865,
+    "q_high": 0.046151224999999976,
+    "power": 0.05,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f0.78": {
+    "n_reps": 40,
+    "median": 0.0014245,
+    "q_low": -0.027458899999999998,
+    "q_high": 0.05783672499999999,
+    "power": 0.075,
+    "power_bonferroni6": 0.0
+   },
+   "n22593_f1": {
+    "n_reps": 40,
+    "median": 0.0075549499999999995,
+    "q_low": -0.0191052,
+    "q_high": 0.059586349999999975,
+    "power": 0.075,
+    "power_bonferroni6": 0.025
+   }
+  }
+ },
+ "per_set_compact": {
+  "GO_0042734": {
+   "f1": 0.011223450000000001,
+   "f078": 0.003259515,
+   "power_f078": 0.1,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  },
+  "GO_0045202": {
+   "f1": 0.0008139649999999999,
+   "f078": -0.001264435,
+   "power_f078": 0.0,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  },
+  "GO_0099056": {
+   "f1": 0.0016924149999999998,
+   "f078": -0.005616985,
+   "power_f078": 0.1,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  },
+  "GO_0099508": {
+   "f1": -0.0121946,
+   "f078": -0.022465099999999998,
+   "power_f078": 0.075,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  },
+  "GO_0099560": {
+   "f1": 0.032996,
+   "f078": 0.0225385,
+   "power_f078": 0.025,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  },
+  "SYNGO_synprocess": {
+   "f1": -0.00398585,
+   "f078": -0.0023609499999999997,
+   "power_f078": 0.075,
+   "note": "pre-data Davies-subsampled expectation at N_eff 4,999 (sibling pairs)"
+  }
+ }
+}

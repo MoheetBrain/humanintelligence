@@ -1424,6 +1424,65 @@ def apply_sprint31(rows: list[dict[str, str]]) -> None:
 apply_sprint31(ROWS)
 
 
+# ---------------------------------------------------------------------------------------------
+# Sprint 4 layer (2026-09-23): direct-effect causal synapse gate. Numbers are read from the
+# committed Sprint-4 outputs so the table can never disagree with them.
+# ---------------------------------------------------------------------------------------------
+SPRINT4_UPDATED = "2026-09-23"
+_R4 = "reports/sprint4/"
+
+
+def _sprint4_updates() -> dict[str, dict[str, str]]:
+    import json as _json
+    root = Path(__file__).resolve().parents[2]
+    gb_p, dec_p = root / "data/sprint4/gate_b_summary.json", root / _R4 / "decision.json"
+    if not (gb_p.exists() and dec_p.exists()):
+        return {}
+    gb, dec = _json.loads(gb_p.read_text()), _json.loads(dec_p.read_text())
+    lo = gb["loci"]
+    sets = {s["set"]: s for s in dec["gate_b"]["set_classes_primary"]}
+    n_sup = sum(1 for s in sets.values() if s["classification"] == "INDEPENDENT_SUPPORT")
+    return {
+        "SYNAPTIC BIOLOGY is the dominant locus": {
+            "why_prefix": (f"SPRINT 4 (frozen protocol): direct-effect (within-sibship) test NOT_TESTABLE — OpenGWAS "
+                           f"JWT absent. Independent UKB-free test (Genes & Cognition, N=9,932, trail making = "
+                           f"EXECUTIVE FUNCTION): {n_sup} of 6 frozen synaptic sets nominal (none Bonferroni), "
+                           f"at low calibrated power; the Sprint-3 LOCI replicate strongly in direction "
+                           f"({lo['n_concordant_primary']}/{lo['n_testable_primary']} concordant, "
+                           f"P={lo['binomial_P_one_sided']:.1e}). Set-level synaptic enrichment is therefore "
+                           f"CONCORDANT_BUT_UNDERPOWERED out of UK Biobank, not replicated and not refuted. "
+                           f"Decision: {dec['primary_decision']}."),
+            "replication": "loci replicate in a UKB-free executive-function cohort; set-level enrichment underpowered",
+            "next_kill_test": "Gate A: within-sibship Howe 2022 VCFs (one user action: OPENGWAS_JWT); a larger "
+                              "UKB-free general-cognition GWAS for set-level power.",
+            "deps": _R4 + "CAUSAL_SYNAPSE_GATE.md; " + _R4 + "genc_independent_synaptic_sets.csv; "
+                    + _R4 + "decision.json"},
+        "EXTREME COGNITION IS QUALITATIVELY DISTINCT": {
+            "why_prefix": (f"SPRINT 4 adds an independent check of the same loci: in the UKB-free G&C cohort "
+                           f"{lo['n_concordant_primary']}/{lo['n_testable_primary']} Sprint-3 lead alleles act in "
+                           f"the cognition-consistent direction on executive function."),
+            "deps": _R4 + "genc_independent_loci.csv"},
+        "Any current target is ready for chemistry": {
+            "why_prefix": f"SPRINT 4: chemistry gate {dec['chemistry_gate']['status']} — {dec['chemistry_gate']['reason']}",
+            "deps": _R4 + "decision.json"},
+    }
+
+
+def apply_sprint4(rows: list[dict[str, str]]) -> None:
+    for row in rows:
+        for prefix, upd in _sprint4_updates().items():
+            if row["hypothesis"].startswith(prefix):
+                row["why"] = f"{upd['why_prefix']} PREVIOUSLY: {row['why']}"
+                for col in ("human_genetics", "replication", "next_kill_test"):
+                    if col in upd:
+                        row[col] = upd[col]
+                row["evidence_dependencies"] = f"{row['evidence_dependencies']}; {upd['deps']}"
+                row["last_updated"] = SPRINT4_UPDATED
+
+
+apply_sprint4(ROWS)
+
+
 def build() -> int:
     for row in ROWS:
         row.setdefault("last_updated", UPDATED)

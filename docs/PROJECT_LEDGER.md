@@ -1006,3 +1006,49 @@ adhesion enrichment (not presynaptic release), plus neurodevelopmental enrichmen
 resolved-on-units gene (RPS26) whose biology argues caution.
 
 **Next.** Merge into Sprint 4; run the frozen power calibration and Gates B/C.
+
+## 2026-09-23T17:00Z — Sprint 4: direct-effect causal synapse gate (decision RETRY; chemistry CLOSED)
+
+**Branch:** `sprint-4/causal-synapse-bridge` · **Stage:** Sprint 4 complete.
+
+**Objective.** Test, under a protocol frozen before any new data, whether the Sprint-3 synaptic signal is a
+direct inherited cognition effect (Gate A, within-sibship), whether it holds outside UK Biobank (Gate B,
+Genes & Cognition), and whether any survivor locus yields a variant → adult-brain gene → direction chain
+(Gate C).
+
+**Files and systems changed.** `pipelines/sprint4/` (power_calibration, gate_a_within_family, gate_b_genc,
+loci_tools, classify, gate_c_finemap, gate_c_coloc, gate_c_direction, decide, write_sprint4_report,
+fetch_eqtl_catalogue [subagent], joint_gene_tissue/ [subagent; FOCUS], tests); `research/sprint4/
+literature_facts.md`; `data/sprint4/` (calibration replicates and summary, Gate B summary, locus/gene
+query lists, eQTL dataset table, diagnostics, provenance); `data/raw/sprint4/` (G&C MAGMA gene results,
+eQTL Catalogue provenance + metadata, OpenGWAS metadata extract); `reports/sprint4/` (all 13 required
+outputs + within_family_summary.md, genc_summary.md); truth-table Sprint-4 layer (3 rows, no status
+change); PROJECT_STATUS; this ledger. External envs (outside repo): `hi-sprint4` (R, susieR, coloc),
+`hi-focus` (pyfocus 0.803).
+
+**Completed / results.** See PROJECT_STATUS headline: Gate A NOT_TESTABLE; calibration 320/320; G&C
+positive control PASS, 109/145 loci concordant (P=5e-10), sets 1/6 nominal at 2–12.5% power; SuSiE 36 loci;
+68 strong adult-brain colocs; RPS26 and RHEBL1 direction-resolved on independent cohorts, neither clearing
+the chemistry criteria; decision RETRY.
+
+**Decisions and why.** (1) Protocol frozen and pushed before data. (2) Frozen f=0.78 kept (matches Howe
+21.6%); f_gc_lower = verified rg 0.752 per the frozen rule. (3) Calibration re-ordered by decision priority
+after a filename bug (Path.with_suffix on tags like `f0.78`) had marked every fractional-f run FAILED; the
+MAGMA gene results were intact and were salvaged — no result changed, only the bookkeeping. (4) BrainSeq
+excluded as non-adult per eQTL Catalogue metadata. (5) Direction counted on rows AND independent cohorts;
+DIRECTION_RESOLVED needs both (stricter, not a relaxation). (6) FOCUS extended post hoc to three multi-gene
+loci carrying the strongest coloc direction evidence — disclosed in the report.
+
+**Tests and verification executed.** `pytest -m "not network"` → 935 passed; `pipelines/sprint4/
+test_sprint4.py` 21 passed; validator --strict PASS; ownership 54/54. G&C md5 = Zenodo listing (3/3).
+
+**Failures / uncertainty.** Gate A blocked (access). coloc.susie 25/36 loci (lbf network timeouts; retry
+running). TGFM/cTWAS blocked (dbGaP / genome-wide scope). Two subagents stopped early on a usage limit;
+their deliverables (fetcher, FOCUS CSV/provenance) were complete and were verified and extended by the
+orchestrator. G&C–UKB non-overlap is by design, not explicitly stated in the source. Two arbitrary G&C rows
+were displayed after the freeze while checking the format.
+
+**Effect on project.** The Sprint-3 LOCI now replicate outside UK Biobank; the SET-level synaptic claim is
+untestable at current open sample sizes; no gene has a clean causal chain, so the chemistry gate stays shut.
+
+**Next.** Unlock Gate A (one user action); fold in remaining coloc.susie.

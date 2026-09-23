@@ -1,0 +1,9 @@
+{
+ "checked_at": "2026-09-23T15:39:20Z",
+ "env_var": "OPENGWAS_JWT",
+ "present": false,
+ "status": "BLOCKED",
+ "blocker": "OPENGWAS_JWT absent; OpenGWAS automated download requires a JWT and this project does not create accounts or automate website downloads.",
+ "minimal_user_action": "Set OPENGWAS_JWT (a token from https://api.opengwas.io/profile/ after signing in) in the shell environment, then run: python pipelines/sprint4/gate_a_within_family.py fetch && python pipelines/sprint4/gate_a_within_family.py analyse",
+ "alternative_user_action": "Or, without any token: open https://gwas.mrcieu.ac.uk/datasets/ieu-b-4837/ and https://gwas.mrcieu.ac.uk/datasets/ieu-b-4838/, click 'VCF Files', and save both .vcf.gz files into data/interim/sprint4/opengwas/ (the website allows 20 datasets/day), then run the analyse command."
+}
