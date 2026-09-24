@@ -1,9 +1,63 @@
 {
- "checked_at": "2026-09-23T17:52:25Z",
+ "checked_at": "2026-09-24T08:39:47Z",
  "env_var": "OPENGWAS_JWT",
- "present": false,
- "status": "BLOCKED",
- "blocker": "OPENGWAS_JWT absent; OpenGWAS automated download requires a JWT and this project does not create accounts or automate website downloads.",
- "minimal_user_action": "Set OPENGWAS_JWT (a token from https://api.opengwas.io/profile/ after signing in) in the shell environment, then run: python pipelines/sprint4/gate_a_within_family.py fetch && python pipelines/sprint4/gate_a_within_family.py analyse",
- "alternative_user_action": "Or, without any token: open https://gwas.mrcieu.ac.uk/datasets/ieu-b-4837/ and https://gwas.mrcieu.ac.uk/datasets/ieu-b-4838/, click 'VCF Files', and save both .vcf.gz files into data/interim/sprint4/opengwas/ (the website allows 20 datasets/day), then run the analyse command."
+ "present": true,
+ "status": "FETCHED",
+ "datasets": {
+  "within_family": {
+   "id": "ieu-b-4837",
+   "metadata": [
+    {
+     "id": "ieu-b-4837",
+     "trait": "Cognitive function",
+     "build": "HG19/GRCh37",
+     "group_name": "public",
+     "category": "NA",
+     "subcategory": "NA",
+     "population": "European",
+     "sex": "Males and Females",
+     "author": "Howe LJ",
+     "sample_size": 9997,
+     "year": 2022,
+     "ontology": "EFO:0008354",
+     "unit": "NA",
+     "consortium": "Within family GWAS consortium",
+     "mr": 1,
+     "priority": 0,
+     "note": "Sibling estimate"
+    }
+   ],
+   "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/sprint4/opengwas/ieu-b-4837.vcf.gz",
+   "sha256": "9e766b70ad9778a46ebed0ac2e9dadce8d98a40d89bf71ed214cd409db8eaed6",
+   "bytes": 140445173
+  },
+  "population": {
+   "id": "ieu-b-4838",
+   "metadata": [
+    {
+     "id": "ieu-b-4838",
+     "trait": "Cognitive function",
+     "build": "HG19/GRCh37",
+     "group_name": "public",
+     "category": "NA",
+     "subcategory": "NA",
+     "population": "European",
+     "sex": "Males and Females",
+     "author": "Howe LJ",
+     "nsnp": 6719661,
+     "sample_size": 22593,
+     "year": 2022,
+     "ontology": "EFO:0008354",
+     "unit": "NA",
+     "consortium": "Within family GWAS consortium",
+     "mr": 1,
+     "priority": 0,
+     "note": "Population estimate"
+    }
+   ],
+   "file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/interim/sprint4/opengwas/ieu-b-4838.vcf.gz",
+   "sha256": "d28d9f78bd4075411cf6d8ab330e6ded905c407015bca3207c66b8064f1205a5",
+   "bytes": 139628261
+  }
+ }
 }

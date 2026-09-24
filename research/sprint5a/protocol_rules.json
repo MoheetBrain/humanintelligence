@@ -1,0 +1,33 @@
+{
+  "schema": "sprint5a-protocol-rules/1.0",
+  "frozen_before": "any Sprint-5A agent output (brainSCOPE typed evidence, sc-eQTL coloc, multi-trait coloc, PolyFun, PoPS, PsychENCODE developmental, GTEx V11) or any Gate-A within-family association value was viewed",
+  "inherits": "research/sprint5/protocol_rules.json (sha256 f8ad4b0a...; amendments A1, A2) - all Sprint-5 gene classes, strata and precedence apply unchanged",
+  "gate_a": "run exactly as frozen in research/sprint4/frozen_hypotheses.json (implementation note 2026-09-24: AF from 1000G EUR reference; Tweedie primary, EB sensitivity). Its locus results enter Sprint-5 locus confidence as the WITHIN_FAMILY lineage (Sprint-5 rule: counts_as_replication true), slope estimated by IVW over all testable loci before any locus is inspected; overlap caveat: Howe sibling sample includes UKB (8,061) and Generation Scotland",
+  "new_evidence_mapping": {
+    "sc_eqtl_coloc_PPH4_ge_0.8": "QTL class; collapses with bulk QTL (one class) because the single-cell cohorts overlap ROSMAP/CommonMind donors or the same GWAS signal; adds cell-type and direction information",
+    "brainscope_DIRECT_VARIANT_GENE_OVERLAP_or_CELL_SPECIFIC_QTL_SUPPORT": "cell-type direction layer only (not a QTL vote: no coloc possible)",
+    "brainscope_REGULATORY_ELEMENT_SUPPORT": "ENHANCER_LINK only if the element-gene link is chromatin/activity-based (e.g. bcCRE linked by an ABC/rE2G-type model); a peak overlap without a gene link is annotation only",
+    "brainscope_GRN_SUPPORT": "never a vote (as Sprint 5)",
+    "developmental_QTL": "timing flag only (as Sprint 5)",
+    "polyfun_susie": "sensitivity fine-mapping: CODING class still requires plain SuSiE or Open Targets PIP >= 0.1 (>= 0.5 for the HIGH criterion); variants that pass only under PolyFun priors are flagged FUNCTIONAL_PRIOR_ONLY, never counted",
+    "pops": "orthogonal polygenic prioritisation; never a V2G vote; reported and shown beside gene classes",
+    "multitrait_coloc_hyprcoloc": "descriptive cross-phenotype sharing; overlapping samples (UKB, HRS, BATS) mean clusters are not independent replications",
+    "local_genetic_correlation": "descriptive; reported with overlap-adjusted caveats",
+    "alphagenome": "NOT_TESTABLE while no key; if later available it is SEQUENCE_MODEL class and needs observed human QTL agreement for weight",
+    "gtex_v11": "if V11 QTLs are open they join the bulk QTL class (same GTEx donors -> no new independence unit)"
+  },
+  "likelihood_components": {
+    "locus": "summed log10 Bayes factor over counted independent lineages (G&C + within-family if testable)",
+    "variant": "max PIP of the lead credible set (plain SuSiE primary; PolyFun sensitivity)",
+    "gene": "Sprint-5 gene class and number of distinct V2G classes (no calibrated probability)",
+    "adult_activity": "ordinal: adult sc-eQTL coloc > adult bulk coloc > brainSCOPE cell-type QTL lookup > adult expression only > none",
+    "direction": "Sprint-5 D1-D5 strata",
+    "calibration_statement": "none of these are calibrated probabilities; they are reported as Bayes factors, strata and likelihood components with uncertainty"
+  },
+  "shortlists": {
+    "A_causal_cognition_genes": "genes ordered by Sprint-5 gene class then n classes then locus log10BF; only genes with gene-level evidence",
+    "B_exceptional_or_quantitative": "genes/loci whose support includes the extreme-IQ or math stream with the dependence of that stream stated; empty is allowed",
+    "C_adult_modifiable_research": "genes meeting the adult intervention gate criteria 1-4 at least at 'near' level; empty is allowed and must not be forced"
+  },
+  "dossier_cap": 10
+}

@@ -61,6 +61,11 @@ owners:
     - "research/sprint5/**"
     - "data/sprint5/**"
     - "reports/sprint5/**"
+    # Sprint 5A (open-data exhaustion): orchestrator-owned.
+    - "pipelines/sprint5a/**"
+    - "research/sprint5a/**"
+    - "data/sprint5a/**"
+    - "reports/sprint5a/**"
 
   # NOTE: tests/** belongs to agent:ontology, but an agent may carry a guardrail test
   # beside the pipeline it guards (pipelines/{agent}/test_*.py). Those run because

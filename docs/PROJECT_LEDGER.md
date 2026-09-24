@@ -1166,3 +1166,41 @@ AlphaGenome/datasets/tools).
 **Effect.** The project now knows its loci replicate but its genes do not resolve. The next information has to come from within-family data and from cell-type colocalisation.
 
 **Next.** Gate A user action; coloc.susie against Bryois 2022 at the 16 L1/L2 loci.
+
+## 2026-09-24T~09:05Z — Sprint 5A start: protocol freeze, Gate A data fetched, historical foundations
+
+**Branch:** `sprint-5a/open-data-exhaustion` (new, from `e88c2fb`) · **Stage:** Sprint 5A start.
+
+**Objective.** Freeze the Sprint-5A integration rules before any new results, and unlock Gate A with the user's OpenGWAS token.
+
+**Files / systems.**
+
+- `research/sprint5a/protocol.md` and `protocol_rules.json` (sha256 1c1aa071…).
+- `research/sprint5a/historical_foundations.md`.
+- `pipelines/sprint5a/g1000_freq.py`.
+- `pipelines/sprint4/gate_a_within_family.py`: OpenGWAS v4 POST gwasinfo; `.syngo` gsa path fix; AF from the reference; EB sensitivity column.
+- `research/sprint4/protocol.md`: implementation note, not a rule change.
+- `data/sprint4/gate_a_access.json`: status FETCHED; contains no token or URLs.
+- `docs/OWNERSHIP.yaml`, status and ledger.
+
+**Completed.**
+
+- Both Howe VCFs fetched and identity-checked: 6,719,302 variants each.
+- The 1000G EUR A1 frequencies were computed for 22.7M SNPs. They match the Sprint-4 MAFs to within 1e-8.
+- brainSCOPE provenance audit: first analytic use was Sprint 5.
+
+**Decisions and why.**
+
+- The VCFs have no AF, so AF is taken from the project LD reference. This is needed for the frozen effective-N filter and the palindromic-SNP rule.
+- The frozen KDE-Tweedie estimate is kept as the primary Gate-A expectation, with EB as a disclosed sensitivity, because the rules were frozen.
+- The token is passed only through the environment and never written to disk.
+
+**Tests.** `pytest pipelines/sprint4/test_sprint4.py`: 21 passed after the patch.
+
+**Failures / uncertainty.**
+
+- The first Gate-A fetch failed with a 404; the endpoint changed in API v4.
+- The first analyse run crashed on the `.syngo` path bug before any result was produced.
+- The parse check displayed 3 arbitrary chromosome-1 rows of each VCF; this is disclosed.
+
+**Next.** Gate-A results; integrate the agent streams.

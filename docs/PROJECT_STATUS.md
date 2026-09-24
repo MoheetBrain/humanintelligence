@@ -1,5 +1,19 @@
 # Project Status
 
+*Snapshot 2026-09-24 (UTC) — **Sprint 5A (open-data exhaustion + causal integration) IN PROGRESS.***
+
+- **Branch.** `sprint-5a/open-data-exhaustion`, from `e88c2fb`.
+- **Protocol.** Frozen before any Sprint-5A result: `research/sprint5a/protocol.md`, sha256 1c1aa071….
+- **Gate A unlocked.** The user supplied an OpenGWAS token. Both Howe 2022 VCFs were fetched (ieu-b-4837 and ieu-b-4838, 140 MB each). The token is not stored anywhere in the repo.
+  - The frozen Sprint-4 analysis is running.
+  - An implementation note was recorded before any within-family value was read: AF comes from the 1000G EUR reference, because the VCFs have no AF field.
+  - Two plumbing fixes were made: the OpenGWAS v4 metadata call and the `.syngo` path bug.
+- **brainSCOPE audit.** It was used analytically for the first time in Sprint 5, as a lead-variant lookup. Before that it was only a cited resource in the Codex atlas.
+- **Historical foundations** (SMPY 2006; Ciba 1993) are written up in `research/sprint5a/historical_foundations.md`.
+- **Research agents running:** brainSCOPE typed evidence and PsychENCODE developmental data plus a GTEx V11 audit; single-cell eQTL and multi-trait colocalisation; PolyFun and PoPS.
+
+*Previous snapshot below (Sprint 5 complete).*
+
 *Snapshot 2026-09-23 (UTC) — **Sprint 5 (Human Cognition Causal Gene Resolution) COMPLETE. Loci are
 real; the causal gene is unresolved at every strong locus. No adult direction is resolved for a credible
 gene. Chemistry / intervention gate CLOSED.** Branch `sprint-5/causal-cognition-gene-resolution` (from

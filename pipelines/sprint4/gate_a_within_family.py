@@ -74,7 +74,12 @@ def fetch() -> dict:
     got = {}
     for role, gid in IDS.items():
         try:
-            info = _api(f"gwasinfo/{gid}", token)
+            # OpenGWAS API v4 (build 20260910) returns 404 for GET gwasinfo/{id}; POST gwasinfo is the current
+            # metadata call. Access-boundary plumbing only (Sprint 5A, 2026-09-24): no frozen rule touched.
+            try:
+                info = _api("gwasinfo", token, {"id": [gid]})
+            except urllib.error.HTTPError:
+                info = _api(f"gwasinfo/{gid}", token)
             urls = _api("gwasinfo/files", token, {"id": [gid]})
             vcf = [u for u in (urls if isinstance(urls, list) else urls.get(gid, [])) if ".vcf.gz" in u
                    and not u.endswith(".tbi")]
@@ -116,6 +121,21 @@ def parse_gwas_vcf(path: Path) -> tuple[pd.DataFrame, dict]:
                          "EAF": float(val["AF"]) if val.get("AF", ".") not in (".", "") else np.nan,
                          "N": float(val["SS"]) if val.get("SS", ".") not in (".", "") else np.nan})
     return pd.DataFrame(rows), header
+
+
+def fill_af_from_reference(df: pd.DataFrame) -> pd.DataFrame:
+    """ALT (EA) frequency from data/interim/sprint5a/g1000_eur_a1freq.parquet; NaN when alleles do not match."""
+    ref = pd.read_parquet(C.REPO_ROOT / "data/interim/sprint5a/g1000_eur_a1freq.parquet").drop_duplicates("snp", keep=False)
+    m = df.merge(ref, left_on="SNP", right_on="snp", how="left")
+    ea, oa = m.EA.str.upper(), m.OA.str.upper()
+    af = np.where((m.a1 == ea) & (m.a2 == oa), m.a1_freq, np.where((m.a1 == oa) & (m.a2 == ea), 1 - m.a1_freq, np.nan))
+    out = df.copy()
+    out["EAF"] = af
+    # a palindromic SNP with no reference frequency cannot be harmonised safely: force UNRESOLVED (align_sign
+    # treats 0.40-0.60 as unresolved), as recorded in the implementation note
+    pal = [frozenset({a, b}) in ({frozenset("AT"), frozenset("CG")}) for a, b in zip(ea, oa)]
+    out.loc[np.array(pal) & np.isnan(af), "EAF"] = 0.5
+    return out
 
 
 def identity_check(header: dict, expected_id: str) -> bool:
@@ -176,6 +196,11 @@ def main(argv: list[str] | None = None) -> int:
             not_testable_outputs(frozen, {"blocker": f"identity check failed for {role}"}, calib)
             return 0
     pop, wf = parsed["population"][0], parsed["within_family"][0]
+    if pop.EAF.isna().all() or wf.EAF.isna().all():
+        # Implementation note 2026-09-24 (research/sprint4/protocol.md): the Howe VCFs have no AF field; AF is taken
+        # from the project's 1000G EUR reference, matched to the VCF ALT allele. Not a rule change.
+        pop, wf = fill_af_from_reference(pop), fill_af_from_reference(wf)
+        access["af_source"] = "1000G EUR reference (g1000_eur, 503 individuals) matched to VCF ALT; VCF has no AF"
     analyse_present(frozen, pop, wf, access, work=C.WORK / "gate_a", out=C.OUT, reps=None)
     return 0
 
@@ -194,12 +219,12 @@ def _magma(df: pd.DataFrame, tag: str, n_default: int, work: Path) -> pd.DataFra
                         "--out", str(out)], capture_output=True, text=True, timeout=14400, check=False)
         pfile.unlink(missing_ok=True)
     so = Path(str(out) + ".syngo")
-    if not so.with_suffix(".gsa.out").exists():
+    if not Path(str(so) + ".gsa.out").exists():
         subprocess.run([str(C.MAGMA_BIN), "--gene-results", str(out.with_suffix(".genes.raw")), "--set-annot",
                         str(C.SETS_FILE), "--gene-covar", str(C.COVARIATES), "--model", "analyse=sets",
                         "condition-hide=log_annotation_density,log_LOEUF", "--out", str(so)],
                        capture_output=True, text=True, timeout=3600, check=False)
-    t = pd.read_csv(so.with_suffix(".gsa.out"), sep=r"\s+", comment="#")
+    t = pd.read_csv(Path(str(so) + ".gsa.out"), sep=r"\s+", comment="#")  # with_suffix would drop ".syngo"
     return t[t.VARIABLE.isin(C.FROZEN_SETS)].set_index("VARIABLE")
 
 
@@ -259,6 +284,12 @@ def analyse_present(frozen: dict, pop: pd.DataFrame, wf: pd.DataFrame, access: d
     lw = LT.lookup_loci(loci, wf, higher_is_better=True, label="wf")
     davies_all = pd.read_csv(C.DAVIES_INPUT, sep=r"\s+", usecols=["Zscore"]).Zscore.to_numpy()[::50]
     mu = LT.tweedie(davies_all, np.abs(loci.lead_davies_z.to_numpy()))
+    try:  # disclosed sensitivity only (Sprint 5 amendment A2); primary classes use the frozen Tweedie above
+        sys.path.insert(0, str(C.REPO_ROOT / "pipelines" / "sprint5"))
+        import eb_shrink as _EB
+        mu_eb = _EB.shrink(davies_all, np.abs(loci.lead_davies_z.to_numpy()))
+    except Exception:  # noqa: BLE001
+        mu_eb = np.full(len(loci), np.nan)
     lrows = []
     for i, l in loci.iterrows():
         a, b = lp.loc[l.locus_id], lw.loc[l.locus_id]
@@ -268,7 +299,10 @@ def analyse_present(frozen: dict, pop: pd.DataFrame, wf: pd.DataFrame, access: d
                       "pop_aligned_z": a.aligned_z, "wf_aligned_z": b.aligned_z,
                       "pop_aligned_beta": a.get("aligned_beta"), "wf_aligned_beta": b.get("aligned_beta"),
                       "wf_se": b.get("se"), "expected_wf_z_f078": expz,
-                      "classification": K.classify_locus_wf(b.aligned_z, expz, b.status), "status": b.status})
+                      "classification": K.classify_locus_wf(b.aligned_z, expz, b.status), "status": b.status,
+                      "expected_wf_z_f078_EB_sensitivity": f_h * max(mu_eb[i], 0) * np.sqrt(n_eff / C.DAVIES_N),
+                      "classification_EB_sensitivity": K.classify_locus_wf(
+                          b.aligned_z, f_h * max(mu_eb[i], 0) * np.sqrt(n_eff / C.DAVIES_N), b.status)})
     lt = pd.DataFrame(lrows)
     lt.to_csv(out / "within_family_locus_concordance.csv", index=False, float_format="%.5g")
     tl = lt[lt.status == "TESTABLE"]

@@ -200,3 +200,29 @@ None at freeze time. Any amendment is appended here with:
 - the reason;
 - whether any new result had been read;
 - a new `FROZEN_JSON_SHA256:` line for the amended JSON. The last such line is authoritative; the original line above is never edited.
+
+### Implementation note — 2026-09-24T08:48Z approx. (Sprint 5A; NOT a rule change; written before any within-family association value was analysed)
+
+The token was supplied by the user, and the data were fetched on 2026-09-24. At that point these facts were known:
+
+- The Howe 2022 GWAS-VCFs carry **no AF field**.
+- The frozen rules use ALT frequency in two places:
+  - the effective-N filter, 0.05 ≤ AF ≤ 0.95;
+  - the palindromic-SNP rule, where ALT frequency in [0.40, 0.60] means UNRESOLVED_HARMONISATION.
+
+**Implementation.** AF is taken from the project's own LD reference: 1000G EUR, 503 individuals (`pipelines/sprint5a/g1000_freq.py`).
+
+- The reference frequency is matched to each VCF's ALT allele by rsID and allele.
+- It is inverted when the reference A1 is the VCF REF.
+- It is set to NaN when the alleles do not match.
+- NaN AF excludes a SNP from the effective-N median.
+- A palindromic lead with NaN AF is UNRESOLVED_HARMONISATION (conservative).
+
+**Winner's-curse expectation.** The frozen KDE-Tweedie estimator is used exactly as prespecified for the primary locus classes. Sprint 5 amendment A2 found it numerically unstable in the tail, so the same classes computed with the stable EB estimator are reported alongside as a disclosed sensitivity. They never replace the primary classes.
+
+**Code fixes** (plumbing only):
+
+- OpenGWAS API v4: POST `gwasinfo` replaces the GET `gwasinfo/{id}` metadata call.
+- `Path.with_suffix` bug: the gene-set output path dropped ".syngo".
+
+**Disclosure.** While checking VCF parsing, the first 3 rows of each file were printed (chromosome 1, positions 49,298–86,028). None is a cognition locus lead SNP. No thresholds, sets, loci or classes changed.
