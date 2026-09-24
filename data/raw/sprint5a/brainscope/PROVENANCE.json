@@ -1,0 +1,256 @@
+{
+  "created_utc": "2026-09-24T10:28:54Z",
+  "scripts": [
+    "pipelines/sprint5a/brainscope_gapfill_fetch.py",
+    "pipelines/sprint5a/brainscope_typed_evidence.py"
+  ],
+  "source": "PsychENCODE brainSCOPE portal https://brainscope.gersteinlab.org/data/ (Emani et al., Science 2024; PMID 38781369). Open Apache directory listing, no login / terms click-through.",
+  "download_dir": "data/interim/sprint5a/brainscope (gitignored)",
+  "availability_recheck_utc": "2026-09-24T08:36Z (directory listings of /data/ and sub-directories)",
+  "requested_items": {
+    "PEC2_sample_metadata.txt": "PUBLIC - already downloaded in Sprint 5 (sha256 re-verified MATCH)",
+    "[ct]_sig_QTLs.dat": "PUBLIC - Sprint 5 (sig_QTLs.zip, 17 cell types; re-verified)",
+    "[ct]_sig_eGenes.dat": "PUBLIC - Sprint 5 (sig_eGenes.zip; re-verified)",
+    "[ct].SNPs.dat.gz": "PUBLIC - Sprint 5 (candidate_SNPs_for_QTL_calls, 24 cell types; re-verified)",
+    "conditional.[ct].txt": "PUBLIC - NEWLY downloaded here (17 cell types, 230 MB)",
+    "conditional_top_variants_per_signal_[ct].txt": "PUBLIC - Sprint 5 (re-verified)",
+    "bayesian_scQTLs.dat": "PUBLIC - Sprint 5 (re-verified)",
+    "metaQTLs.txt": "PUBLIC - NEWLY downloaded here (/data/meta_qtls/, 208 MB)",
+    "adult_bcCREs.bed": "PUBLIC - NEWLY downloaded here (/data/bcCRE/, 253,638 b-cCREs, hg38)",
+    "cell-type scCRE peak calls": "PUBLIC - Sprint 5 (scCRE.PeakCalls.zip = the 8 /data/atac_peaks/*.bed files; re-verified)",
+    "[ct]_GRN.txt": "PUBLIC - Sprint 5 (/data/GRNs/, 23 cell types; re-verified)",
+    "[ct].eqtl_edge.txt": "PUBLIC - Sprint 5 (/data/eQTL_edge/, 24 cell types; re-verified)",
+    "crispr_validation_results.xlsx": "PUBLIC - NEWLY downloaded here (/data/validation/; 4 enhancer KOs: NGEF, RORB, PLEKHO1, TOM1L2; enhancers given as ENCODE EH37E IDs without coordinates)",
+    "starrseq_enhancers_merged.bed": "PUBLIC - NEWLY downloaded here (supplementary annotation)",
+    "snrna_expr_matrices.zip (7.8 GB)": "PUBLIC but deliberately NOT downloaded (instruction)"
+  },
+  "sprint5_file_reverification": {
+    "counts": {
+      "MATCH": 163,
+      "REDUCED_FILE_SKIPPED": 24
+    },
+    "utc": "2026-09-24T10:28:43Z",
+    "note": "REDUCED_FILE_SKIPPED = pseudobulk gene lists stored in reduced form in Sprint 5"
+  },
+  "downloads": [
+    {
+      "url": "https://brainscope.gersteinlab.org/data/validation/crispr_validation_results.xlsx",
+      "file": "data/interim/sprint5a/brainscope/validation/crispr_validation_results.xlsx",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 9647,
+      "sha256": "29ccfa556f22cc75eb801a07226a69fb345ebd272a91322ee847a593b6de27c2"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/validation/starrseq_enhancers_merged.bed",
+      "file": "data/interim/sprint5a/brainscope/validation/starrseq_enhancers_merged.bed",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 194346,
+      "sha256": "b70caa3ebf4578b78c141f86a4296a251a2ceea363cb0bdd655d44bccf1ec1a4"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L5.6.NP.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L5.6.NP.txt",
+      "utc": "2026-09-24T08:39:13Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 171587,
+      "sha256": "4a40c34ba6a9f6c763cd5051071a263960ee3b3851231c5b988b05ecda771ac8"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L6.CT.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L6.CT.txt",
+      "utc": "2026-09-24T08:39:14Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 3856441,
+      "sha256": "59a1de30ddb28ce2f16c1456f1b3585d216fad69afbd74ba58a514df0640b997"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Astro.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Astro.txt",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 12252341,
+      "sha256": "20a0c284939d7c8da3f8ecc7293441c6e7c3889a2c7f0f9d6e93fd6d0447c927"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L6b.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L6b.txt",
+      "utc": "2026-09-24T08:39:40Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 793423,
+      "sha256": "bf7a664f133957dba7417d834dcfc1fe880edb1d8ee32ea8544a43e7339a0f2d"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Lamp5.Lhx6.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Lamp5.Lhx6.txt",
+      "utc": "2026-09-24T08:39:42Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 22085,
+      "sha256": "1f0f3e5de5a972d6616a6f7f12a0206a26fc95d10a4eded46871acc57d7503d1"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Lamp5.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Lamp5.txt",
+      "utc": "2026-09-24T08:39:43Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 5509328,
+      "sha256": "e763c5517e2509dba00e0339be92f2a9ce5b42d151e20db386cd6d2196bd4f98"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Micro.PVM.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Micro.PVM.txt",
+      "utc": "2026-09-24T08:39:53Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 1154933,
+      "sha256": "7fbe824a973feec34b700c7861e9954b504c1a3c8c63dd56a89f5e0f381bd07d"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/bcCRE/adult_bcCREs.bed",
+      "file": "data/interim/sprint5a/brainscope/bcCRE/adult_bcCREs.bed",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 14173345,
+      "sha256": "244ff6e03957f06c0f50b2cfcca914e45a310aa57d95750d456c4d0caa7c77d8"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.OPC.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.OPC.txt",
+      "utc": "2026-09-24T08:39:55Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 7144694,
+      "sha256": "dc91b52568094538b32eceec3cf102f37c0415fc2fd0f6dea30d13aa61e3e6dd"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.PC.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.PC.txt",
+      "utc": "2026-09-24T08:40:21Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 81825,
+      "sha256": "fc8feca6c164265be67b87b47aaa45ae6209a5987a4dfeec08c7f4b794e074b7"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Sst__Sst.Chodl.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Sst__Sst.Chodl.txt",
+      "utc": "2026-09-24T08:40:21Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 7770271,
+      "sha256": "c4a4cc409aafb325e1cd1836f8a528ed0a1fc302284d09e4039f8627e507891b"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Chandelier__Pvalb.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Chandelier__Pvalb.txt",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 20038100,
+      "sha256": "7e7f5d71c39b3c91b01b9b53c18a6bfa1ea3baacb8df98c4458142e5d71c504f"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L4.IT.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L4.IT.txt",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 24863018,
+      "sha256": "6ea88e98d795ac8d3c626a23f95b6dfac06dc116d16d4a67f439f3ee3e6155d7"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Vip.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Vip.txt",
+      "utc": "2026-09-24T08:40:27Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 12709594,
+      "sha256": "2d5a1e7dd04c18471ccb509a4f1d9cb9d5a1b25734ef8dfece19c49757446427"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L5.IT.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L5.IT.txt",
+      "utc": "2026-09-24T08:39:13Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 33312510,
+      "sha256": "8cc42a5863d9ff158481061dcce74026213768b34bf8818aebdcafe02b2f58a3"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.Oligo.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.Oligo.txt",
+      "utc": "2026-09-24T08:40:08Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 18940288,
+      "sha256": "df5b338230bdd27edc0bbcc5009ffea123182a8c31c121a9414077a6a2cbe7de"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L6.IT.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L6.IT.txt",
+      "utc": "2026-09-24T08:39:31Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 29721384,
+      "sha256": "145e9032daba0d675029311288af6a8358121adbc94059d50435f64edc5b5af8"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/conditional_qtls/conditional.L2.3.IT.txt",
+      "file": "data/interim/sprint5a/brainscope/conditional_qtls/conditional.L2.3.IT.txt",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 62378808,
+      "sha256": "4feb96eacf8a65b9b6a11a440ebcb162a734e27a3566de7acc5cd950936182d8"
+    },
+    {
+      "url": "https://brainscope.gersteinlab.org/data/meta_qtls/metaQTLs.txt",
+      "file": "data/interim/sprint5a/brainscope/meta_qtls/metaQTLs.txt",
+      "utc": "2026-09-24T08:39:12Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 207917584,
+      "sha256": "eb2c0515393ce0e8e5e3a4d88a5f28b0c5dc94404143b1760ad5ab1960bb4323"
+    }
+  ],
+  "auxiliary_downloads": {
+    "ucsc_liftover_chain": [
+      {
+        "url": "https://hgdownload.soe.ucsc.edu/goldenPath/hg38/liftOver/hg38ToHg19.over.chain.gz",
+        "file": "data/interim/sprint5a/liftover/hg38ToHg19.over.chain.gz",
+        "utc": "2026-09-24T09:48:05Z",
+        "status": "OK",
+        "http": "200",
+        "bytes": 1246411,
+        "sha256": "14a712e8e147d9fc8e9d87d51977b46f6f8ddb93efbe5d0843d86b6205f587b1"
+      }
+    ],
+    "note": "hg38->hg19 point liftover used to map brainSCOPE signal variants and query variants to 1000G EUR (GRCh37) PLINK IDs by position + allele set, because Ensembl REST overlap calls were timing out (>30 s per call, 2026-09-24 ~09:45 UTC). Validated: 1351/1354 query variants lift to their recorded GRCh37 position."
+  },
+  "post_reboot_reverification": {
+    "script": "pipelines/sprint5a/verify_agentA_downloads.py -> data/interim/sprint5a/agentA_reverify.json",
+    "result": {
+      "MATCH": 96
+    },
+    "note": "machine rebooted mid-run (~10:00 UTC); all completed downloads re-hashed; the interrupted devBrain Tri1 filter output was deleted and regenerated from the md5-verified full file; Tri2 was re-downloaded from scratch"
+  },
+  "blockers": [
+    {
+      "item": "full nominal scQTL statistics (all tested variant-gene pairs)",
+      "status": "NOT PUBLISHED anywhere public (portal, supplement, GitHub)",
+      "needed_for": "coloc.abf / coloc.susie",
+      "user_action": "request from the brainSCOPE authors, or apply for controlled genotypes (Synapse syn51111084 PsychENCODE Data Use Certificate; AD Knowledge Portal syn53479857 for ROSMAP) and re-run QTLtools",
+      "requires_PI_approval_or_secure_compute": true
+    }
+  ]
+}

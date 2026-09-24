@@ -1,0 +1,55 @@
+{
+ "decided_utc": "2026-09-24T12:23:47Z",
+ "primary_decision": "CONTINUE",
+ "precedence": [
+  "STOP_CURRENT_HYPOTHESIS",
+  "PIVOT",
+  "RETRY_IF_GATE_A_UNTESTABLE",
+  "CONTINUE",
+  "ESCALATE",
+  "RETRY"
+ ],
+ "evaluation": {
+  "STOP_CURRENT_HYPOTHESIS": false,
+  "PIVOT": {
+   "gate_a_beyond_noise": 0,
+   "gate_a_power_ok": false,
+   "gate_b_beyond_noise": 0,
+   "met": false
+  },
+  "RETRY_IF_GATE_A_UNTESTABLE": false,
+  "CONTINUE": {
+   "gate_a_direct_effect_sets": [
+    "GO_0045202"
+   ],
+   "gate_b_independent_support_sets": [
+    "SYNGO_synprocess"
+   ],
+   "gate_b_locus_binomial_P": 4.953377367132351e-10,
+   "met": true
+  }
+ },
+ "gate_a_summary": {
+  "N_eff_wf": 11257.411764705881,
+  "n_testable_loci": 146,
+  "n_concordant": 109,
+  "binomial_P": 9.90182838346704e-10,
+  "slope_beta_wf_on_beta_pop": 0.6890683409498615,
+  "spearman_rank_preservation": 0.4810043602873874,
+  "locus_classes": {
+   "CONCORDANT_UNDERPOWERED": 75,
+   "DIRECT_SUPPORTED": 34,
+   "DISCORDANT_WITHIN_NOISE": 28,
+   "NOT_TESTABLE": 13,
+   "DISCORDANT_BEYOND_NOISE": 9
+  },
+  "set_classes": {
+   "CONCORDANT_BUT_UNDERPOWERED": 4,
+   "INCONSISTENT": 1,
+   "DIRECT_EFFECT_SUPPORTED": 1
+  }
+ },
+ "caveat": "The qualifying Gate-A set (GO_0045202 synapse) has within-family P=0.018 (nominal; 6 sets tested; Bonferroni 0.0083 not met) with simulated power 7.5% \u2014 the set-level CONTINUE is fragile. The robust within-family result is locus-level: 109/146 lead alleles concordant (binomial P=1e-9), slope 0.69.",
+ "chemistry_gate": "CLOSED (safety is never auto-cleared; no gene meets all five Sprint-4 criteria \u2014 see Sprint 5A report)",
+ "note": "decide.py hard-codes the untestable branch; this script applies the same frozen rules literally"
+}

@@ -1,0 +1,726 @@
+{
+  "created_utc": "2026-09-24T10:28:54Z",
+  "scripts": [
+    "pipelines/sprint5a/gtex_v11_fetch.py",
+    "pipelines/sprint5a/gtex_v11_lookup.py"
+  ],
+  "source": "GTEx Analysis V11 (open access; GCS bucket gs://adult-gtex, objects created 2026-01-15; GENCODE v47; same donors/samples as V10). Tar members fetched by HTTP byte range (brain tissues only).",
+  "downloads": [
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/susie-qtl/GTEx_Analysis_v11_eQTL_SuSiE.tar",
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL_SuSiE.tar",
+      "utc": "2026-09-24T08:49:57Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 182558720,
+      "sha256": "089bfa6c19c17d13c326664b38d0db98c906ca79c3b5928ad5b6ba057ebd28e4"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/README_eQTL_v11.txt",
+      "file": "data/interim/sprint5a/gtex_v11/README_eQTL_v11.txt",
+      "utc": "2026-09-24T08:50:23Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 7182,
+      "sha256": "e93a884a924ec202a4b75c8ef56f26d4b0ec419f38ef3c957b1f8f78a722af83"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-gex/v11/rna-seq/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_median_tpm.gct.gz",
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_2025-08-22_v11_RNASeQCv2.4.3_gene_median_tpm.gct.gz",
+      "utc": "2026-09-24T08:50:24Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 10129906,
+      "sha256": "eb29994ed9175aa0a575aa78a2dc67a489241e11df8fc076ba8061aca2613196"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Amygdala.v11.eGenes.txt.gz",
+      "byte_range": [
+        20937728,
+        23800100
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Amygdala.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:46Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2862373,
+      "sha256": "6dbd034594f55ceb1842d2aa05820158da3f91a90979ac2d7435fe9bef125b54"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Anterior_cingulate_cortex_BA24.v11.eGenes.txt.gz",
+      "byte_range": [
+        23800832,
+        26759969
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Anterior_cingulate_cortex_BA24.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:47Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2959138,
+      "sha256": "69633df63c229502e20b7aa519346b19f4b3920417852c98aa2f0e290c99b2ad"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Caudate_basal_ganglia.v11.eGenes.txt.gz",
+      "byte_range": [
+        26760704,
+        29778108
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Caudate_basal_ganglia.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:48Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3017405,
+      "sha256": "c4c32c22df72f26101ec6f64b25eed3b1e6c770995b98a530feebedf0ed05917"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cerebellar_Hemisphere.v11.eGenes.txt.gz",
+      "byte_range": [
+        29778944,
+        32865890
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cerebellar_Hemisphere.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:49Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3086947,
+      "sha256": "2a62629b821419ac3583f537cd9ae9d4928b0c7e62bc938b67e3a1050685903d"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cerebellum.v11.eGenes.txt.gz",
+      "byte_range": [
+        32866816,
+        36022436
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cerebellum.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:50Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3155621,
+      "sha256": "d2b67cf7a575eba60f5070f2fd16bfc6a305e13b5b6b567cbf49f5a2c1d69041"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cortex.v11.eGenes.txt.gz",
+      "byte_range": [
+        36023296,
+        39079792
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cortex.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:51Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3056497,
+      "sha256": "42f5601565adb63edf56b11e4b65119411c18a5825ac1ad46d157c840ad24d08"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Frontal_Cortex_BA9.v11.eGenes.txt.gz",
+      "byte_range": [
+        39080448,
+        42108758
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Frontal_Cortex_BA9.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:52Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3028311,
+      "sha256": "d313de4f3edae03326376f1bcf96f40dc9e2d5dac5f32223d31b6b3ec8913cd5"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Hippocampus.v11.eGenes.txt.gz",
+      "byte_range": [
+        42109440,
+        45061861
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Hippocampus.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:53Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2952422,
+      "sha256": "fe7031765109e3c33e807637dad5692585693d8e07e69249f33ccab530d79b9f"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Hypothalamus.v11.eGenes.txt.gz",
+      "byte_range": [
+        45062656,
+        48122268
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Hypothalamus.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:54Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3059613,
+      "sha256": "bd8e6e9c686b906426e41a8ea752a4e5b94f675277a845066f8dba96c2f5513c"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.eGenes.txt.gz",
+      "byte_range": [
+        48122880,
+        51169164
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:55Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 3046285,
+      "sha256": "33c031b29bf119a96db5d6b3a52979a15a48c59da4e1e34c0efc59a59636c207"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Putamen_basal_ganglia.v11.eGenes.txt.gz",
+      "byte_range": [
+        51169792,
+        54057914
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Putamen_basal_ganglia.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:56Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2888123,
+      "sha256": "3a79dba60c8a474fada3ec1d3b5381bb377e082af0ba34785809be06477e739e"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Spinal_cord_cervical_c-1.v11.eGenes.txt.gz",
+      "byte_range": [
+        54058496,
+        57032892
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Spinal_cord_cervical_c-1.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:57Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2974397,
+      "sha256": "a7d2ddd7949e92c6638d01abba4ad0a6317f43362b3773ffea63b1e285e809c5"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Substantia_nigra.v11.eGenes.txt.gz",
+      "byte_range": [
+        57033728,
+        59924725
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Substantia_nigra.v11.eGenes.txt.gz",
+      "utc": "2026-09-24T08:50:58Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 2890998,
+      "sha256": "e28adefc23121ac8b91f366f6f5db5b8bd2073698e080095e9b860a098976f6b"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Amygdala.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        635368448,
+        655013026
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Amygdala.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:50:59Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 19644579,
+      "sha256": "5706dd5f3af4a8b1f44b87aa44aecebd0e72296d39b32e554d8533c172fdc963"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Anterior_cingulate_cortex_BA24.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        655013888,
+        688413071
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Anterior_cingulate_cortex_BA24.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:05Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 33399184,
+      "sha256": "8b2aeef377581b2cb47b72a51c3760258e72d8c6731f3c89587619e97b0547c4"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Caudate_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        688413696,
+        739838946
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Caudate_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:08Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 51425251,
+      "sha256": "b58139fd884b297bb6a6d33c6c2d269ebcb91545c361b87ca58f628ad2389a4f"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cerebellar_Hemisphere.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        739839488,
+        803718062
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cerebellar_Hemisphere.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:14Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 63878575,
+      "sha256": "1d5e9a7d8658585f5e136b488666a74580fd03651b65af1978c50d97899da334"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cerebellum.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        803718656,
+        866327213
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cerebellum.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:20Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 62608558,
+      "sha256": "6047c815aef6c623cbe15919475d4983d6600ca316539d6a034ca4e232a2a847"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Cortex.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        866328064,
+        915884472
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Cortex.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:27Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 49556409,
+      "sha256": "b156b10dc145a2cb7ef7ec83e9f0ae232f5f423ea3d0c58bf63c7adc7d060d47"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Frontal_Cortex_BA9.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        915885056,
+        964446057
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Frontal_Cortex_BA9.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:30Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 48561002,
+      "sha256": "0c7cb5c7cce9c48125256a7a304bab3ef8eef94e03e734efef1b78802099b149"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Hippocampus.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        964446720,
+        996541892
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Hippocampus.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:33Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 32095173,
+      "sha256": "28dba3f5cba55fe9be1286b0a11940d2e850812538dfa89ad492e3846c563e0a"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Hypothalamus.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        996542464,
+        1030522411
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Hypothalamus.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:36Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 33979948,
+      "sha256": "37292ef93cd5f70268a38ec7fd9543325a4a9f805268c8e940f55d892aeaffea"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        1030523392,
+        1080198619
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:40Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 49675228,
+      "sha256": "c2dd810abde296efee93c96add97ee7f5271e134202cbe048fe7a7eaad6c5b0e"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Putamen_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        1080199168,
+        1117802195
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Putamen_basal_ganglia.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:44Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 37603028,
+      "sha256": "b223f6abe3e5931b945432b94b542d32b1825b3a762455c027179dea10c587ba"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Spinal_cord_cervical_c-1.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        1117803008,
+        1146055133
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Spinal_cord_cervical_c-1.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:47Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 28252126,
+      "sha256": "cf2e40ad6e49123de59069f811f945d84c1e3db74e58e0b4e8742ea0ddf60295"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_eQTL.tar",
+      "member": "GTEx_Analysis_v11_eQTL/Brain_Substantia_nigra.v11.eQTLs.signif_pairs.parquet",
+      "byte_range": [
+        1146055680,
+        1165740267
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_eQTL/Brain_Substantia_nigra.v11.eQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:51:51Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 19684588,
+      "sha256": "32d070ab9691bc1b33510b9f95439ada5c8bfb94c9cbe49227f3be2c8f383dd1"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Amygdala.v11.sGenes.txt.gz",
+      "byte_range": [
+        11074560,
+        12664834
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Amygdala.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:21Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1590275,
+      "sha256": "adb598d5f774bcde319e03cdd4c1e6d0d6a4d00c70f008705f6eceefc643d47c"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Anterior_cingulate_cortex_BA24.v11.sGenes.txt.gz",
+      "byte_range": [
+        12665856,
+        14312962
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Anterior_cingulate_cortex_BA24.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:22Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1647107,
+      "sha256": "11ebdb09a5434bcc59b7ce6b86e71fdb363f5c253b2191686a71bc4a99a2e0bb"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Caudate_basal_ganglia.v11.sGenes.txt.gz",
+      "byte_range": [
+        14313984,
+        15987220
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Caudate_basal_ganglia.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:23Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1673237,
+      "sha256": "1ea007af7ae2f27505bfa9d9731d0ea150500575b6632355f708be81b408622d"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cerebellar_Hemisphere.v11.sGenes.txt.gz",
+      "byte_range": [
+        15988224,
+        17591019
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cerebellar_Hemisphere.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:24Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1602796,
+      "sha256": "74398994e9091787d0c919d209b8d8a85b42f690456995e5e19073cd91d7787f"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cerebellum.v11.sGenes.txt.gz",
+      "byte_range": [
+        17591808,
+        19176761
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cerebellum.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:25Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1584954,
+      "sha256": "dcc8d17b61b4773e079c39e2b33ae91857adc6600005db9fac3d97eac1ca3244"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cortex.v11.sGenes.txt.gz",
+      "byte_range": [
+        19177472,
+        20841869
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cortex.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:26Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1664398,
+      "sha256": "5461d3b75d232b789b73b0a4bf6b180511aa1f84b526c31ea1b6d788ba47a684"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Frontal_Cortex_BA9.v11.sGenes.txt.gz",
+      "byte_range": [
+        20842496,
+        22515399
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Frontal_Cortex_BA9.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:27Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1672904,
+      "sha256": "cb824089736b81213db638b51c667b185f2962ff5cfd98883ed618aaa62a5ac3"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Hippocampus.v11.sGenes.txt.gz",
+      "byte_range": [
+        22516224,
+        24134149
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Hippocampus.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:28Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1617926,
+      "sha256": "e8154524683a6c374198bd9e02f955ede7f16183a82f3a4b9108b65810349e69"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Hypothalamus.v11.sGenes.txt.gz",
+      "byte_range": [
+        24135168,
+        25839685
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Hypothalamus.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:29Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1704518,
+      "sha256": "d80fc3cbc4aa95ea80407f5ee798196f5a08e65f75f2681be3339fb64a2d1d40"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.sGenes.txt.gz",
+      "byte_range": [
+        25840640,
+        27512717
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:30Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1672078,
+      "sha256": "a1179a6d202421b754c5beeb96071823f5a7eba7de33c9ba060b7b705543461f"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Putamen_basal_ganglia.v11.sGenes.txt.gz",
+      "byte_range": [
+        27513344,
+        29122086
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Putamen_basal_ganglia.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:31Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1608743,
+      "sha256": "6527e4ac292547456e48c1ad2519a686356bd30e732c2a2483150240f93662a4"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Spinal_cord_cervical_c-1.v11.sGenes.txt.gz",
+      "byte_range": [
+        29123072,
+        30748213
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Spinal_cord_cervical_c-1.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:31Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1625142,
+      "sha256": "dd31531304d75c9d6f782aa8e1e7e932de3b853aad2ece6610d2d840b34931b7"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Substantia_nigra.v11.sGenes.txt.gz",
+      "byte_range": [
+        30749184,
+        32388272
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Substantia_nigra.v11.sGenes.txt.gz",
+      "utc": "2026-09-24T08:52:32Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 1639089,
+      "sha256": "ce616d98f1af29ab8b8c815dd5eff1dd95a9763b134950ef7ecfa270be316434"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Amygdala.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        475116544,
+        487744775
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Amygdala.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:33Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 12628232,
+      "sha256": "8e685d96cedfa08373a3e11955cc3ee28540f6ca5848f40cee6a83bbbbffdb5f"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Anterior_cingulate_cortex_BA24.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        487745536,
+        507933437
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Anterior_cingulate_cortex_BA24.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:35Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 20187902,
+      "sha256": "20f134dec7dacb120d296cf0fdf96869380681147b92598f3ab7ae61badf742e"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Caudate_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        507934208,
+        539049083
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Caudate_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:38Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 31114876,
+      "sha256": "4e9cf75086b9ae3d1c03aeccc3eede4891ad4fc5df67da2241cab2ff466ca85b"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cerebellar_Hemisphere.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        539049984,
+        582301161
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cerebellar_Hemisphere.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:40Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 43251178,
+      "sha256": "bf147e7e2633405b3c47a5919cb081358c30437bd2a5f39575e2ddc47bfa62bb"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cerebellum.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        582301696,
+        622554839
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cerebellum.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:44Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 40253144,
+      "sha256": "2e4668c579e464f451d2efe9d38032d9f680ceeca6a758650181de8892a82fd6"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Cortex.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        622555648,
+        651684458
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Cortex.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:48Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 29128811,
+      "sha256": "d2e5a433390895eccd2b72d63a181d8091de4c644c11d66c6b9ef3eff21ed248"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Frontal_Cortex_BA9.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        651685376,
+        679050623
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Frontal_Cortex_BA9.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:51Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 27365248,
+      "sha256": "b825f1e21ba4e84f44e080e958ca4db66b4fc439f0f3598fd3b73548e45808e0"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Hippocampus.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        679051264,
+        699589624
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Hippocampus.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:54Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 20538361,
+      "sha256": "b2dde0b33238dc9737fe27d926f3700eb5191975c32b967b397fdef52c94d7b3"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Hypothalamus.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        699590144,
+        723314701
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Hypothalamus.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:56Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 23724558,
+      "sha256": "93c4730a317338de8192958fc62b67b3367e0528baf127c365296a5e68a7c193"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        723315712,
+        753365343
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Nucleus_accumbens_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:52:58Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 30049632,
+      "sha256": "4d0245efadfa54d6c60fb4c9bd62422cf3c3681d0b182a5dcd7b059f115e39e0"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Putamen_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        753366016,
+        774481319
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Putamen_basal_ganglia.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:53:01Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 21115304,
+      "sha256": "c051e0cebebfd6d84b48c64eb0bf8681ad5b61161358c9447d4a1c266e36b4a0"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Spinal_cord_cervical_c-1.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        774481920,
+        793721354
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Spinal_cord_cervical_c-1.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:53:03Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 19239435,
+      "sha256": "e37a9e3ae843936567aa8b8fbd07ae3741565c19ff315f5d519acda6f44bedb2"
+    },
+    {
+      "url": "https://storage.googleapis.com/adult-gtex/bulk-qtl/v11/single-tissue-cis-qtl/GTEx_Analysis_v11_sQTL.tar",
+      "member": "GTEx_Analysis_v11_sQTL/Brain_Substantia_nigra.v11.sQTLs.signif_pairs.parquet",
+      "byte_range": [
+        793722368,
+        806829027
+      ],
+      "file": "data/interim/sprint5a/gtex_v11/GTEx_Analysis_v11_sQTL/Brain_Substantia_nigra.v11.sQTLs.signif_pairs.parquet",
+      "utc": "2026-09-24T08:53:05Z",
+      "status": "OK_TAR_MEMBER_BY_RANGE",
+      "bytes": 13106660,
+      "sha256": "8a289b282512b45065c8efae777ab62e5b6b1ba8f3287f71c2a4a7cfe8e2e6a0"
+    }
+  ],
+  "blockers": [
+    {
+      "item": "V11 all-pairs (nominal) eQTL/sQTL/apaQTL statistics",
+      "status": "REQUESTER-PAYS bucket gs://gtex-resources (per GTEx description.tsv)",
+      "user_action": "Google Cloud account with billing enabled (egress charges); not a controlled-access approval, but requires the user to create/attach billing - not done by agent",
+      "requires_PI_approval_or_secure_compute": false
+    },
+    {
+      "item": "individual-level V11 genotypes/expression",
+      "status": "CONTROLLED (dbGaP phs000424 / AnVIL)",
+      "requires_PI_approval_or_secure_compute": true
+    }
+  ]
+}

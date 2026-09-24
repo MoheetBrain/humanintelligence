@@ -1,0 +1,13 @@
+{
+ "resource": "HyPrColoc R package (Foley et al. 2021 Nat Commun; jrs95/hyprcoloc)",
+ "url": "https://github.com/jrs95/hyprcoloc/archive/refs/heads/master.tar.gz",
+ "commit": "0348bbdd977be731d82e4efda115a9bed63cd44f (2024-04-08, via https://api.github.com/repos/jrs95/hyprcoloc/commits/master)",
+ "downloaded_utc": "2026-09-24T08:52:06Z",
+ "bytes": 1057124,
+ "sha256": "c991026bb8ef84030539e762e29fa20965d147f3de029298087b329a753f53d2",
+ "package_version": "0.0.2",
+ "license": "GPL-3",
+ "install": "R CMD INSTALL --no-build-vignettes into conda env /opt/homebrew/Caskroom/miniforge/base/envs/hi-sprint4 (R 4.4.3)",
+ "local_patch": "pipelines/sprint5a/hyprcoloc_eigen_cast.patch — src/align1.cpp, align2.cpp, align12.cpp, regional2.cpp: RHO(i,j) indices wrapped in (int) casts. RcppEigen 0.3.4.0.2 (Eigen 3.4) resolves RHO(double,double) to an IndexedView and fails to compile; the cast restores scalar element access. No numerical logic changed. The package example (test.betas/test.ses) ran and returned 3 clusters as documented.",
+ "dependencies_added_to_env": "conda-forge: r-rmpfr 1.1.1, r-iterpc 0.4.2, r-pheatmap 1.0.13, r-rcppeigen 0.3.4.0.2, r-knitr, r-rmarkdown, r-rcolorbrewer. NOTE: an unpinned first mamba install upgraded r-base to 4.5.3; it was immediately reverted to r-base 4.4.3 with coloc 5.2.3 and susieR 0.14.2 pinned (verified by packageVersion)."
+}

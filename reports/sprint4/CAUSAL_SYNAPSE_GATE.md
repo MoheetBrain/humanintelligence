@@ -266,3 +266,54 @@ So Gate A can tell whether the 159 loci act *directly* (within families) or thro
 | Gate-A sign-test power, n = 9,997 | 100% | 100% |
 
 **Decision impact: none.** These values are descriptive expectations. No Sprint-4 gate, class or decision used them.
+
+---
+
+## Update U-S5A-1 (2026-09-24, Sprint 5A): Gate A run with the frozen analysis
+
+*The original RETRY text above is unchanged; it was correct when written, because Gate A was NOT_TESTABLE. This block records what happened once the data became available.*
+
+**How Gate A was run.**
+
+- The user supplied an OpenGWAS token. Both Howe 2022 VCFs (ieu-b-4837 and ieu-b-4838) were fetched, and the token was never stored.
+- The frozen `gate_a_within_family.py` was run unchanged except for three plumbing fixes: the OpenGWAS v4 metadata call, the `.syngo` path bug, and allele frequency from the 1000G EUR reference because the VCFs have no AF field.
+- The implementation note was recorded in `research/sprint4/protocol.md` **before** any within-family value was analysed.
+- The post-data calibration completed: 120 replicates at N_eff = 11,257.
+
+**Locus-level result (the part Gate A was powered for):**
+
+- **109 of 146 testable lead alleles are concordant within families.** Binomial P = 9.9e-10.
+- The slope of the within-family β on the population β is 0.69. Spearman rank preservation is 0.48.
+- Locus classes:
+
+  | Class | Loci |
+  |---|---|
+  | DIRECT_SUPPORTED | 34 |
+  | CONCORDANT_UNDERPOWERED | 75 |
+  | DISCORDANT_WITHIN_NOISE | 28 |
+  | DISCORDANT_BEYOND_NOISE | 9 |
+  | NOT_TESTABLE | 13 |
+
+- The stable-EB sensitivity analysis changes the class of 4 loci.
+- Full table: `within_family_locus_concordance.csv`.
+
+**Set-level result** (frozen classes, `within_family_synaptic_sets.csv`):
+
+| Set | Within-family P | Class |
+|---|---|---|
+| **GO_0045202 synapse** | 0.018 (simulated power 7.5%) | **DIRECT_EFFECT_SUPPORTED** |
+| 4 other sets | — | CONCORDANT_BUT_UNDERPOWERED |
+| GO_0099508 | — | INCONSISTENT (sign-discordant within noise) |
+
+**Frozen decision precedence re-applied** (`reports/sprint4/decision_gate_a_update.json`, produced by `pipelines/sprint5a/gate_a_decision.py`). `decide.py` hard-codes the untestable branch, so the rules were applied literally in a separate script:
+
+| Rule | Outcome |
+|---|---|
+| STOP | not met |
+| PIVOT | not met (0 sets beyond noise) |
+| RETRY_IF_UNTESTABLE | not met |
+| **CONTINUE** | **met**: a Gate-A direct-effect set, **plus** a Gate-B independent-support set, **plus** Gate-B locus binomial P = 5e-10 |
+
+**Caveat.** The qualifying set rests on one nominal P = 0.018 among 6 sets (Bonferroni 0.0083 is not met), with 7.5% power. The set-level CONTINUE is therefore fragile. The robust finding is at locus level: **the cognition loci act directly within families.**
+
+**Chemistry gate:** CLOSED. Safety is never auto-cleared, and no gene meets all five criteria.

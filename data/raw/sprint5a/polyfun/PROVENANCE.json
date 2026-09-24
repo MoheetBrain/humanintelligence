@@ -1,0 +1,43 @@
+{
+ "resource": "PolyFun precomputed per-SNP heritabilities (prior causal probabilities), approach 1",
+ "retrieved_via": "git clone https://github.com/omerwe/polyfun.git",
+ "commit": "8b17b4ec87fde11f8d216c049c08d1420cd25de6",
+ "retrieved_utc": "2026-09-24T08:39:55Z",
+ "licence": "MIT (LICENSE file in repository; GitHub API license key 'mit')",
+ "documentation": "https://github.com/omerwe/polyfun/wiki/1.-Computing-prior-causal-probabilities-with-PolyFun (wiki git clone https://github.com/omerwe/polyfun.wiki.git)",
+ "description": "Per-SNP heritabilities for ~19M imputed UK Biobank SNPs (MAF>0.1%, hg19) from a meta-analysis of 15 UK Biobank traits using the baseline-LF functional annotation model (Weissbrod et al. 2020 Nat Genet 52:1355). Proportional to prior causal probabilities. Not cognition-specific.",
+ "stored_at": "data/interim/sprint5a/tools/polyfun/ (gitignored)",
+ "access": "public, no account/token/terms",
+ "files": [
+  {
+   "file": "snpvar_meta.chr1_7.parquet",
+   "url": "https://raw.githubusercontent.com/omerwe/polyfun/8b17b4ec87fde11f8d216c049c08d1420cd25de6/snpvar_meta.chr1_7.parquet",
+   "bytes": 74142426,
+   "sha256": "cc19d9cab371851a56638ef209467bcf45f343a4ab4e03cefc4be613cc8fe7f1"
+  },
+  {
+   "file": "snpvar_meta.chr8_22.parquet",
+   "url": "https://raw.githubusercontent.com/omerwe/polyfun/8b17b4ec87fde11f8d216c049c08d1420cd25de6/snpvar_meta.chr8_22.parquet",
+   "bytes": 75417733,
+   "sha256": "89846a37263a6181a76a86bb5300777e101bb77eae6e087cdd7721ea4148e59c"
+  },
+  {
+   "file": "LICENSE",
+   "url": "https://raw.githubusercontent.com/omerwe/polyfun/8b17b4ec87fde11f8d216c049c08d1420cd25de6/LICENSE",
+   "bytes": 1071,
+   "sha256": "4cef61653cf0921b1bd4cf6d403ead940371e340e2e0970717eae54d85e33a7b"
+  },
+  {
+   "file": "extract_snpvar.py",
+   "url": "https://raw.githubusercontent.com/omerwe/polyfun/8b17b4ec87fde11f8d216c049c08d1420cd25de6/extract_snpvar.py",
+   "bytes": 5444,
+   "sha256": "b4e9289a5cdff552ff31355d8fd49fb536988afcae8f034968c5c4d9b3e32cb0"
+  },
+  {
+   "file": "finemapper.py",
+   "url": "https://raw.githubusercontent.com/omerwe/polyfun/8b17b4ec87fde11f8d216c049c08d1420cd25de6/finemapper.py",
+   "bytes": 64150,
+   "sha256": "0f3a0ec288bd0e1581d1ce700f878d9c416c70b253288882763c305a43484dae"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/pipelines/sprint5/build_evidence_graph.py:53: DtypeWarning: Columns (35: celltype_sign_disagreement) have mixed types. Specify dtype option on import or set low_memory=False.
+  return pd.read_parquet(path) if path.suffix == ".parquet" else pd.read_csv(path, **kw)
+stream
+V2G                  876
+ASSOCIATION          575
+ASSOCIATION_MATH      53
+RARE_CODING           50
+V2G_DEVELOPMENTAL     20
+DOSAGE_CNV            19
+LINEAGE                5
+QTL_COHORT             5
+v2g_class
+NOT_A_CLASS:FOCUS                    281
+QTL                                  269
+NOT_A_CLASS:L2G->POSITIONAL          117
+NOT_A_CLASS:SC_EQTL_TAG              113
+ENHANCER_LINK                         65
+RARE_CODING_SUBTHRESHOLD_OR_PROXY     38
+QTL_DEVELOPMENTAL                     20
+DOSAGE_CNV                            19
+CODING                                15
+RARE_CODING                           12
+NOT_A_CLASS:L2G->ENHANCER              6
+NOT_A_CLASS:L2G->CODING                5
+SEQUENCE_MODEL                         3
+NOT_A_CLASS:L2G->QTL                   2
+edge_type
+DERIVED_FROM         1613
+SAME_EQTL_WEIGHTS     562
+SHARES_DONORS         143
+AGGREGATES             62
+SHARES_COHORT          51

@@ -1,0 +1,94 @@
+{
+ "n_genes": 531,
+ "gene_class_counts": {
+  "LOCUS_HIGH_GENE_UNRESOLVED": 248,
+  "POSITIONAL_ONLY": 198,
+  "PANEL_ONLY_NO_LOCUS_DATA": 31,
+  "LIKELY_QTL_PASSENGER": 18,
+  "V2G_SUPPORTED_WEAK_LOCUS": 10,
+  "RARE_CODING_SUGGESTIVE_ONLY": 8,
+  "POSITIVE_DOSAGE_NOMINAL_ONLY": 7,
+  "CODING_CAUSAL_LOF_ONLY": 4,
+  "RARE_CODING_EA_PROXY_ONLY": 4,
+  "CAUSAL_GENE_MODERATE": 3
+ },
+ "direction_strata": {
+  "D5": 483,
+  "D4": 27,
+  "D3": 18,
+  "D2": 3
+ },
+ "perturbation_strata": {
+  "P5": 496,
+  "P4": 24,
+  "P3": 7,
+  "P2": 4
+ },
+ "pareto_layers_used_for_top20": 2,
+ "top20_n": 37,
+ "brainscope_donor_overlap_collapsed": true
+}
+ rank_E_research_priority  pareto_layer_E       gene                   gene_class                          classes locus_stratum direction_stratum perturbation_stratum
+                        1               1      SH2B1   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D3                   P5
+                        2               1       GNL3   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D3                   P5
+                        3               1       EXT1   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P4
+                        4               1     RHEBL1   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L2                D2                   P5
+                        5               1      DNPH1         CAUSAL_GENE_MODERATE                ENHANCER_LINK;QTL            L2                D3                   P5
+                        6               1    ANKRD12       CODING_CAUSAL_LOF_ONLY                      RARE_CODING           NaN                D5                   P2
+                        7               1    CACNA1A       CODING_CAUSAL_LOF_ONLY                      RARE_CODING           NaN                D5                   P2
+                        8               1      KDM5B       CODING_CAUSAL_LOF_ONLY                      RARE_CODING           NaN                D5                   P2
+                        9               1      RC3H2       CODING_CAUSAL_LOF_ONLY                      RARE_CODING           NaN                D5                   P2
+                       10               1      KMT2E   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L2                D3                   P4
+                       11               1        DCC   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L2                D3                   P4
+                       12               2    SLC4A10   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       13               2      EIF3C   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       14               2       TUFM   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       15               2   NFATC2IP   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       16               2        LAT   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       17               2 AC138894.1   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       18               2     NPIPB9         LIKELY_QTL_PASSENGER                              QTL            L1                D3                   P5
+                       19               2 AC133550.3   LOCUS_HIGH_GENE_UNRESOLVED                                             L1                D4                   P5
+                       20               2 AC061961.1   LOCUS_HIGH_GENE_UNRESOLVED                                             L1                D4                   P5
+                       21               2      NEGR1         LIKELY_QTL_PASSENGER ENHANCER_LINK;QTL;SEQUENCE_MODEL            L1                D3                   P5
+                       22               2    CWF19L1   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       23               2    BLOC1S2   LOCUS_HIGH_GENE_UNRESOLVED                              QTL            L1                D4                   P5
+                       24               2    FAM131A         CAUSAL_GENE_MODERATE                ENHANCER_LINK;QTL            L2                D4                   P5
+                       25               2      TTBK1         CAUSAL_GENE_MODERATE                ENHANCER_LINK;QTL            L2                D4                   P5
+                       26               2      RPS26     V2G_SUPPORTED_WEAK_LOCUS                ENHANCER_LINK;QTL L4_DISCORDANT                D2                   P5
+                       27               2    SLC39A8   LOCUS_HIGH_GENE_UNRESOLVED                           CODING            L2                D5                   P4
+                       28               2      NR1D2     V2G_SUPPORTED_WEAK_LOCUS                              QTL            L3                D3                   P5
+                       29               2      GOSR1     V2G_SUPPORTED_WEAK_LOCUS                              QTL            L3                D3                   P5
+                       30               2       NAGA         LIKELY_QTL_PASSENGER                              QTL L4_DISCORDANT                D3                   P4
+                       31               2       EDAR POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       32               2     SH3RF3 POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       33               2   SEPTIN10 POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       34               2     SOWAHC POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       35               2      ZNF92 POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       36               2      RIMS1 POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+                       37               2       CRB1 POSITIVE_DOSAGE_NOMINAL_ONLY                                            NaN                D5                   P3
+ rank_B_causal_gene       gene locus_id                 gene_class           classes  contested locus_stratum direction_stratum perturbation_stratum gene_class_leave_one_class_out
+                1.0    FAM131A    L8646       CAUSAL_GENE_MODERATE ENHANCER_LINK;QTL      False            L2                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                2.0      DNPH1   L55168       CAUSAL_GENE_MODERATE ENHANCER_LINK;QTL      False            L2                D3                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                3.0      TTBK1   L55168       CAUSAL_GENE_MODERATE ENHANCER_LINK;QTL      False            L2                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                4.0    SLC4A10    L1803 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                5.0       DPP4    L1803 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                6.0      EIF3C   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                7.0       TUFM   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                8.0      SH2B1   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D3                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+                9.0   NFATC2IP   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               10.0        LAT   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               11.0 AC138894.1   L51327 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               12.0      STAB1   L51460 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               13.0     NT5DC2   L51460 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               14.0      UQCC5   L51460 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               15.0       GNL3   L51460 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D3                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               16.0      AKAP6   L64067 LOCUS_HIGH_GENE_UNRESOLVED            CODING      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               17.0      NPAS3   L64067 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               18.0       EXT1    L2131 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P4     LOCUS_HIGH_GENE_UNRESOLVED
+               19.0     ERLIN1    L6319 LOCUS_HIGH_GENE_UNRESOLVED            CODING      False            L1                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               20.0    CWF19L1    L6319 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               21.0    BLOC1S2    L6319 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L1                D4                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               22.0    SLC39A8   L64116 LOCUS_HIGH_GENE_UNRESOLVED            CODING      False            L2                D5                   P4     LOCUS_HIGH_GENE_UNRESOLVED
+               23.0        DDN    L7009 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK       True            L2                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               24.0     RHEBL1    L7009 LOCUS_HIGH_GENE_UNRESOLVED               QTL      False            L2                D2                   P5     LOCUS_HIGH_GENE_UNRESOLVED
+               25.0       CUL9   L55168 LOCUS_HIGH_GENE_UNRESOLVED     ENHANCER_LINK       True            L2                D5                   P5     LOCUS_HIGH_GENE_UNRESOLVED

@@ -135,10 +135,29 @@ def main() -> int:
                .get("verdict", "PENDING")) if GENLANG_OVERLAP.exists() else "PENDING"
     sig["genlang_independence_verdict"] = verdict
     genlang_counts = str(verdict).upper().startswith("INDEPENDENT") and bg > 0
-    # --- independent total (G&C [+ GenLang if verdict INDEPENDENT]; within-family NOT_TESTABLE)
-    sig["log10BF_independent"] = sig.log10BF_gc.fillna(0) + (sig.log10BF_genlang.fillna(0) if genlang_counts else 0)
-    sig.loc[sig.log10BF_gc.isna() & ~(genlang_counts & okg), "log10BF_independent"] = np.nan
-    sig["independent_lineages_counted"] = "G&C" + (" + GenLang PIQ" if genlang_counts else "")
+    # --- within-family lineage (Sprint 5A only): frozen Gate-A locus output; slope by IVW over all testable
+    # loci before any locus is inspected (Sprint-5 rule for a new lineage); counts as replication (Sprint-5 rule)
+    wf_counts = False
+    sig["wf_aligned_z"], sig["log10BF_wf"], sig["wf_slope_ivw"] = np.nan, np.nan, np.nan
+    wff = C.S4_OUT / "within_family_locus_concordance.csv"
+    if C.S5A and wff.exists():
+        w = pd.read_csv(wff)
+        if "wf_aligned_z" in w.columns and (w.status == "TESTABLE").any():
+            wz = w[w.status == "TESTABLE"].drop_duplicates("lead_snp").set_index("lead_snp").wf_aligned_z
+            sig["wf_aligned_z"] = sig.lead_snp.map(wz)
+            okw = np.isfinite(sig.wf_aligned_z)
+            xw, yw = sig.davies_z_tweedie[okw].to_numpy(), sig.wf_aligned_z[okw].to_numpy()
+            bw = float((xw * yw).sum() / (xw * xw).sum())
+            sig["wf_slope_ivw"] = bw
+            sig["log10BF_wf"] = log10bf(bw, sig.davies_z_tweedie.to_numpy(), sig.wf_aligned_z.to_numpy())
+            wf_counts = bw > 0
+            sig["within_family"] = "TESTED (Howe 2022 ieu-b-4837; frozen Sprint-4 Gate A; UKB/GS siblings overlap Davies)"
+    # --- independent total (G&C [+ GenLang if INDEPENDENT] [+ within-family in Sprint 5A])
+    sig["log10BF_independent"] = (sig.log10BF_gc.fillna(0) + (sig.log10BF_genlang.fillna(0) if genlang_counts else 0)
+                                  + (sig.log10BF_wf.fillna(0) if wf_counts else 0))
+    has_any = sig.log10BF_gc.notna() | (genlang_counts & okg) | (wf_counts & np.isfinite(sig.wf_aligned_z))
+    sig.loc[~has_any, "log10BF_independent"] = np.nan
+    sig["independent_lineages_counted"] = "G&C" + (" + GenLang PIQ" if genlang_counts else "") + (" + within-family" if wf_counts else "")
     sig["within_family"] = "NOT_TESTABLE (OPENGWAS_JWT absent; Howe 2022 files absent)"
     sig["locus_stratum"] = sig.log10BF_independent.map(stratum)
     # --- rank + uncertainty
@@ -159,7 +178,8 @@ def main() -> int:
             "cognition_increasing_allele", "davies_z", "davies_z_tweedie", "gc_aligned_z", "log10BF_gc",
             "zabaneh_aligned_z", "zabaneh_status", "log10BF_zabaneh_sensitivity", "zabaneh_slope_ivw",
             "genlang_piq_aligned_z", "genlang_status", "log10BF_genlang", "genlang_slope_ivw", "genlang_slope_se",
-            "genlang_independence_verdict", "independent_lineages_counted", "log10BF_independent", "locus_stratum", "within_family", "gate_b_locus_class", "gate_b_FDR_primary"]
+            "genlang_independence_verdict", *(["wf_aligned_z", "log10BF_wf", "wf_slope_ivw"] if C.S5A else []),
+            "independent_lineages_counted", "log10BF_independent", "locus_stratum", "within_family", "gate_b_locus_class", "gate_b_FDR_primary"]
     out = sig[cols].sort_values("rank")
     out.to_csv(C.OUT / "locus_confidence_rank.csv", index=False, float_format="%.4g")
     print(out.locus_stratum.value_counts().to_dict(), "zabaneh slope", round(bz, 4), "n", int(ok.sum()))

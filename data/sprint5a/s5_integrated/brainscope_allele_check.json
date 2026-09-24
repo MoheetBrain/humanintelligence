@@ -1,0 +1,126 @@
+{
+  "created_utc": "2026-09-23T21:15:37Z",
+  "n_pairs_same_ref_alt": 108485,
+  "n_pairs_swapped_ref_alt": 0,
+  "sign_concordance_same_ref_alt": 0.999870949900908,
+  "n_unique_gene_variant": 5602,
+  "n_genes": 32,
+  "by_dataset": {
+    "CommonMind:DLPFC_naive": {
+      "n": 11685,
+      "concordance": 0.999828840393667
+    },
+    "GTEx:brain_amygdala": {
+      "n": 3765,
+      "concordance": 0.999468791500664
+    },
+    "GTEx:brain_anterior_cingulate_cortex": {
+      "n": 6426,
+      "concordance": 0.9996887643946467
+    },
+    "GTEx:brain_caudate": {
+      "n": 7529,
+      "concordance": 0.9997343604728384
+    },
+    "GTEx:brain_cerebellar_hemisphere": {
+      "n": 3997,
+      "concordance": 1.0
+    },
+    "GTEx:brain_cerebellum": {
+      "n": 9032,
+      "concordance": 1.0
+    },
+    "GTEx:brain_cortex": {
+      "n": 7965,
+      "concordance": 0.9997489014438167
+    },
+    "GTEx:brain_frontal_cortex": {
+      "n": 6442,
+      "concordance": 1.0
+    },
+    "GTEx:brain_hippocampus": {
+      "n": 5052,
+      "concordance": 1.0
+    },
+    "GTEx:brain_hypothalamus": {
+      "n": 5789,
+      "concordance": 1.0
+    },
+    "GTEx:brain_nucleus_accumbens": {
+      "n": 8378,
+      "concordance": 0.9997612795416567
+    },
+    "GTEx:brain_putamen": {
+      "n": 6117,
+      "concordance": 1.0
+    },
+    "GTEx:brain_spinal_cord": {
+      "n": 4325,
+      "concordance": 1.0
+    },
+    "GTEx:brain_substantia_nigra": {
+      "n": 2453,
+      "concordance": 1.0
+    },
+    "ROSMAP:brain_naive": {
+      "n": 19530,
+      "concordance": 0.9998975934459805
+    }
+  },
+  "by_cell_type": {
+    "Astro": {
+      "n": 7816,
+      "concordance": 1.0
+    },
+    "Chandelier__Pvalb": {
+      "n": 10806,
+      "concordance": 1.0
+    },
+    "L2.3.IT": {
+      "n": 21547,
+      "concordance": 0.9993502575764608
+    },
+    "L4.IT": {
+      "n": 6737,
+      "concordance": 1.0
+    },
+    "L5.IT": {
+      "n": 17543,
+      "concordance": 1.0
+    },
+    "L6.CT": {
+      "n": 754,
+      "concordance": 1.0
+    },
+    "L6.IT": {
+      "n": 15114,
+      "concordance": 1.0
+    },
+    "Lamp5": {
+      "n": 5029,
+      "concordance": 1.0
+    },
+    "Micro.PVM": {
+      "n": 450,
+      "concordance": 1.0
+    },
+    "OPC": {
+      "n": 1686,
+      "concordance": 1.0
+    },
+    "Oligo": {
+      "n": 5568,
+      "concordance": 1.0
+    },
+    "Sst__Sst.Chodl": {
+      "n": 4365,
+      "concordance": 1.0
+    },
+    "Vip": {
+      "n": 11070,
+      "concordance": 1.0
+    }
+  },
+  "bulk_filter": "eQTL Catalogue gene-level adult brain (CommonMind/ROSMAP/GTEx) pairs with p < 1e-6 from Sprint-4 locus extracts (data/interim/sprint4/eqtl); matching on gene symbol via data/sprint4/gate_c_query_genes.csv and hg38 chr:pos:REF:ALT",
+  "interpretation": "CONSISTENT_WITH_ALT_CODED_SLOPE"
+}

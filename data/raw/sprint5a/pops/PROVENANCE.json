@@ -1,0 +1,150 @@
+{
+ "resource": "PoPS (Polygenic Priority Score) v0.2 code + published full feature matrix",
+ "code": {
+  "retrieved_via": "git clone https://github.com/FinucaneLab/pops.git",
+  "commit": "76eb86cba10254490003c8f4dc7ff5ce492d3667",
+  "retrieved_utc": "2026-09-24T08:47Z",
+  "licence": "GPL-3.0 (GitHub API license key 'gpl-3.0')",
+  "files": [
+   {
+    "file": "pops.py",
+    "bytes": 53076,
+    "sha256": "35e5af04748d6477e47a8a99a941de086dab39bc829655218a4817242507e3fc"
+   },
+   {
+    "file": "munge_feature_directory.py",
+    "bytes": 3943,
+    "sha256": "3935b638693b4a72add556a1be9bc4e70d08e55305076a23f5cc08c2675c3102"
+   },
+   {
+    "file": "example/data/utils/gene_annot_jun10.txt",
+    "bytes": 965816,
+    "sha256": "940086e0781e9b244da76d27f02cc25dd45c957ee4415915cd1ced37b63d1e72"
+   },
+   {
+    "file": "example/data/utils/features_jul17_control.txt",
+    "bytes": 1941,
+    "sha256": "1d084ec64ab35879681000d07fe7aaf30cd10db8dd07ef82e18e99ae4722b8e7"
+   },
+   {
+    "file": "LICENSE",
+    "bytes": 35149,
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+   }
+  ]
+ },
+ "features": {
+  "file": "PoPS.features.txt.gz",
+  "url": "https://www.dropbox.com/scl/fo/ne7xhxkt4dwhvd52a59ub/AFKkJu7ACaun1uuE99kmTkc/data/PoPS.features.txt.gz?rlkey=ltdbcld1enyr1zefg1lfqm61i&dl=1",
+  "url_source": "README.md of FinucaneLab/pops @ 76eb86c ('To download the full set of feature files used to generate the results in the manuscript')",
+  "download_started_utc": "2026-09-24T08:41:51Z",
+  "download_completed_utc": "2026-09-24T08:50Z (file mtime 09:50 BST)",
+  "bytes": 7552217751,
+  "http_content_length": 7552217751,
+  "sha256": "507b4231cad3f637ba6f99d0cffeb4c8a856e7a920fec416a7a63106d603e1c2",
+  "stored_at": "data/interim/sprint5a/pops/PoPS.features.txt.gz (gitignored)",
+  "access": "public Dropbox shared link, no account/sign-in/terms",
+  "licence_note": "No separate licence file accompanies the feature matrix; the code repository is GPL-3.0. Features are derived from public datasets (GTEx, mouse/human single-cell atlases, pathways, PPI) per Weeks et al. 2023 Nat Genet 55:1267. Used for research only; not redistributed."
+ },
+ "paper": "Weeks EM et al. Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases. Nat Genet 2023;55:1267-1276 (medRxiv 2020.09.08.20190561)",
+ "derived_inputs": {
+  "magma_ensg": {
+   "script": "pipelines/sprint5a/pops_prep.py magma",
+   "source_raw": "data/interim/magma_replication/davies2018_10kb.genes.raw",
+   "source_raw_sha256": "c54bd649b883d39f7cdae793d11a456914d1855942539697bc3a6aea9d2871cd",
+   "source_out": "data/raw/magma_x01/2026-09-22/davies2018_10kb.genes.out",
+   "files": [
+    {
+     "file": "davies2018_10kb_ensg.genes.out",
+     "bytes": 1175331,
+     "sha256": "7bb682eb6db693aa09a5bc0a70621a9dca0f8629609e20473a245db841e35055"
+    },
+    {
+     "file": "davies2018_10kb_ensg.genes.raw",
+     "bytes": 10500462,
+     "sha256": "8f4ed16e0070b4889f3018aa27654a0f73479f9b873098cb8df5339a884f3f26"
+    }
+   ],
+   "counts": {
+    "magma_genes": 18418,
+    "unique_entrez_to_ensembl": 18154,
+    "in_pops_gene_annot": 17566,
+    "dropped_duplicate_ensembl": 6,
+    "kept": 17554,
+    "pops_gene_annot_genes": 18383
+   }
+  },
+  "features_munged": {
+   "script": "pipelines/sprint5a/pops_prep.py features",
+   "counts": {
+    "n_features": 57742,
+    "n_genes": 18383,
+    "rows_not_in_annot_skipped": 0,
+    "n_chunks": 12
+   },
+   "rows_sha256": "f6171c65362491d85c92226c3187d366a35f963a03c987fefe872cca44ce3750",
+   "check": "all 508 features of PoPS' bundled example matrix identical (max |d| 1.4e-14)"
+  }
+ },
+ "environments": {
+  "hi-pops": "python 3.9, numpy 1.21.6, pandas 1.3.5, scipy 1.7.3, scikit-learn 0.24.2, OpenBLAS 0.3.25 (chr1-5)",
+  "hi-pops-accel": "same package versions, Apple Accelerate BLAS/LAPACK (chr6-22 and chr11 rerun); PoPS example reproduced to 4.1e-15"
+ },
+ "run_record": [
+  "2026-09-24T09:01Z LOCO start, 3 parallel processes (OpenBLAS); chr1-3 complete",
+  "~09:55Z machine reboot killed all processes; chr1-3 validated (18,383 preds, 57,742 marginals) and kept",
+  "10:02Z restart capped at 1 process x 3 threads (coordinator: MAGMA calibration running); chr4-5 OpenBLAS",
+  "10:42Z switched to hi-pops-accel for chr6+ (same versions, faster BLAS)",
+  "~11:25Z coordinator stop terminated chr11 mid-fit; chr1-10 validated; run_pops.sh continued chr12-22; second pass recomputes chr11",
+  "12:39:52Z second run_pops.sh pass recomputed chr11 (hi-pops-accel, 3 threads); 12:45:01Z pass exited 0 and pops_collect.py wrote reports/sprint5a/pops_scores.csv",
+  "13:46Z chr1 OpenBLAS-vs-Accelerate cross-check attempted: NOT RUN \u2014 the command failed at argument parsing (zsh passed the 21 training chromosomes as one argument; PoPS assertion 'Invalid --project_out_covariates_chromosomes'), no PoPS computation happened; not retried because the coordinator asked to finish. Only evidence of BLAS equivalence: PoPS example reproduced to 4.8e-15 (OpenBLAS) and 4.1e-15 (Accelerate)."
+ ],
+ "completed_utc": "2026-09-24T12:45:01Z",
+ "outputs": {
+  "loco_dir": "data/interim/sprint5a/pops/loco/ (chr1-22 .preds/.coefs/.marginals; chr1-5 OpenBLAS, chr6-22 Accelerate)",
+  "loco_fits": "data/interim/sprint5a/pops/pops_loco_fits.csv (RidgeCV alpha 31622.78 in all 22 folds; best CV score -0.518 to -0.503; 12,858-14,367 of 57,742 features selected)",
+  "genomewide": "data/interim/sprint5a/pops/pops_loco_genomewide.tsv",
+  "report": {
+   "file": "reports/sprint5a/pops_scores.csv",
+   "bytes": 122044,
+   "sha256": "0cb7807741b844f3baf116513d7117fe5e607c756bcda01f02e8665bd4d2e0be",
+   "rows": 550,
+   "loci": 159,
+   "scored_rows": 520,
+   "unscored_rows": 30,
+   "unscored": [
+    "BOP1(L65265)",
+    "C17orf47(L284161)",
+    "CATSPERQ(L65265)",
+    "DHRS11(L79922)",
+    "GGNBP2(L79922)",
+    "H2AC14(L3123)",
+    "H2AC15(L3123)",
+    "H2AC16(L3123)",
+    "H2AC17(L3123)",
+    "H2AC4(L3123)",
+    "H2BC14(L3123)",
+    "H3C1(L3123)",
+    "H3C10(L3123)",
+    "H3C11(L3123)",
+    "H3C2(L3123)",
+    "H3C3(L3123)",
+    "H4C1(L3123)",
+    "H4C12(L3123)",
+    "H4C13(L3123)",
+    "MRM1(L79922)",
+    "MYO19(L79922)",
+    "PIGW(L79922)",
+    "PKD1L3(L83449)",
+    "SCRT1(L65265)",
+    "STIMATE-MUSTN1(L51460)",
+    "TBC1D29P(L84282)",
+    "TBC1D3H(L79922)",
+    "ZNHIT3(L79922)",
+    "ZSCAN26(L3123)",
+    "ZSCAN26(L64288)"
+   ]
+  }
+ },
+ "interpretation_rule": "PoPS is genome-wide feature-based gene prioritisation: NOT local causal evidence and NOT a variant-to-gene vote."
+}

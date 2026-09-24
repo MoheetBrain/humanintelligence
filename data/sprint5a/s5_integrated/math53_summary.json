@@ -1,0 +1,128 @@
+{
+ "created_utc": "2026-09-23T21:31:55Z",
+ "davies_n_found": 53,
+ "n_palindromic": 0,
+ "classes": {
+  "MATH_SPECIFIC_ORTHOGONAL": 23,
+  "MATH_PROXY_ONLY": 18,
+  "GENERAL_G_SHARED": 12
+ },
+ "null": {
+  "n_math_snps": 53,
+  "observed": {
+   "inside_locus_interval": 6,
+   "within_500kb_of_lead": 10,
+   "either": 11
+  },
+  "null_A_snp_fraction_unmatched": {
+   "definition": "fraction of all autosomal Davies-2018 SNPs (MAF>=0.01 by UKB FI1 EAF) falling in the category; expected = 53*fraction; one-sided binomial P",
+   "fraction": {
+    "inside": 0.024100144119923374,
+    "near_lead": 0.0441803930828936,
+    "either": 0.05296623824252767
+   },
+   "fraction_all_davies_snps_no_maf_filter": {
+    "inside": 0.024315685559012784,
+    "near_lead": 0.045806301899401464,
+    "either": 0.05421298818658975
+   },
+   "expected": {
+    "inside": 1.2773076383559387,
+    "near_lead": 2.341560833393361,
+    "either": 2.8072106268539665
+   },
+   "binom_p_one_sided": {
+    "inside": 0.001704466279002315,
+    "near_lead": 9.615841207976331e-05,
+    "either": 8.824727270442112e-05
+   }
+  },
+  "null_B_matched": {
+   "definition": "10000 random sets of 53 Davies SNPs, each drawn from the same MAF bin [0.01, 0.05, 0.1, 0.2, 0.3, 0.4]+ (UKB FI1 EAF) x gene-density quintile (NCBI37.3 genes overlapping +-500kb; edges [0.0, 1.0, 3.0, 6.0, 10.0, 72.0]) as the corresponding math SNP. LD-score matching NOT done (no LD-score reference in repo). Sampled SNPs are not LD-pruned against each other (conservative only in that independence of draws is assumed).",
+   "mean": {
+    "inside": 1.3616,
+    "near_lead": 2.611,
+    "either": 3.0967
+   },
+   "p95": {
+    "inside": 3.0,
+    "near_lead": 5.0,
+    "either": 6.0
+   },
+   "empirical_p_one_sided": {
+    "inside": 0.0025997400259974,
+    "near_lead": 0.00019998000199980003,
+    "either": 0.00029997000299970003
+   },
+   "fold_enrichment": {
+    "inside": 4.406580493537016,
+    "near_lead": 3.829950210647261,
+    "either": 3.5521684373688123
+   }
+  }
+ },
+ "sign_concordance_davies": [
+  {
+   "subset": "all_found",
+   "n": 53,
+   "n_positive": 17,
+   "binom_p_two_sided": 0.012660335802414213,
+   "mean_aligned_z": -1.229075471698113,
+   "median_aligned_z": -1.268
+  },
+  {
+   "subset": "non_palindromic",
+   "n": 53,
+   "n_positive": 17,
+   "binom_p_two_sided": 0.012660335802414213,
+   "mean_aligned_z": -1.229075471698113,
+   "median_aligned_z": -1.268
+  },
+  {
+   "subset": "davies_p<0.05",
+   "n": 27,
+   "n_positive": 6,
+   "binom_p_two_sided": 0.005924612283706665,
+   "mean_aligned_z": -2.139925925925926,
+   "median_aligned_z": -2.862
+  },
+  {
+   "subset": "davies_p<0.05/53",
+   "n": 13,
+   "n_positive": 2,
+   "binom_p_two_sided": 0.0224609375,
+   "mean_aligned_z": -3.2837692307692308,
+   "median_aligned_z": -3.805
+  },
+  {
+   "subset": "excluding_QSNP_SNP",
+   "n": 52,
+   "n_positive": 17,
+   "binom_p_two_sided": 0.017533235299084904,
+   "mean_aligned_z": -1.092480769230769,
+   "median_aligned_z": -1.221
+  }
+ ],
+ "ukb_fluid_item_arithmetic_lookup": {
+  "fi1_numeric_addition": {
+   "n": 52,
+   "n_positive": 27,
+   "binom_p_two_sided": 0.8898839652765371,
+   "mean_aligned_z": 0.15595749266602563,
+   "n_p_lt_0.05": 1,
+   "n_p_lt_0.05_and_positive": 1
+  },
+  "fi4_positional_arithmetic": {
+   "n": 52,
+   "n_positive": 24,
+   "binom_p_two_sided": 0.6778086391424605,
+   "mean_aligned_z": -0.08900666817959674,
+   "n_p_lt_0.05": 7,
+   "n_p_lt_0.05_and_positive": 2
+  }
+ },
+ "davies_bonferroni_count": 13,
+ "davies_gws_count": 2,
+ "davies_nominal_count": 27,
+ "corr_math_z_vs_davies_aligned_z_abs": null
+}

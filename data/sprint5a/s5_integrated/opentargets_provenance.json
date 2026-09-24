@@ -1,0 +1,56 @@
+{
+  "ot": {
+    "retrieved_utc": "2026-09-23T21:11:58Z",
+    "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+    "release_meta": {
+      "name": "Open Targets GraphQL & REST API Beta",
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "year": "26",
+        "month": "06",
+        "iteration": null
+      },
+      "dataPrefix": "platform2606"
+    },
+    "sprint3_release": "26.06 (API 26.6.3, retrieved 2026-09-22)",
+    "same_release_as_sprint3": true,
+    "variants_input": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/sprint5/query_variants_cognition.csv",
+    "n_rsid": 1573,
+    "n_variant_ids_tried": 2646,
+    "n_variants_found": 1264,
+    "raw_cache": "data/interim/sprint5/opentargets",
+    "raw_cache_sha256_concat": "57584e7d7362ddfe39ddc67248e1529472303f53b019ae5ffc22965b8d61ef42",
+    "query_fields": "id rsIds chromosome position referenceAllele alternateAllele\n  mostSevereConsequence { id label }\n  transcriptConsequences { target { id approvedSymbol } isEnsemblCanonical impact consequenceScore\n      aminoAcidChange lofteePrediction siftPrediction polyphenPrediction distanceFromTss\n      variantConsequences { id label } }\n  variantEffect { method assessment assessmentFlag score normalisedScore target { id approvedSymbol } }\n  enhancerToGenes(page: {index: 0, size: 500}) { count rows { target { id approvedSymbol } biosampleName\n      biosample { biosampleId } datasourceId intervalType score resourceScore { name value } distanceToTss start end studyId } }\n  credibleSets(page: {index: 0, size: 500}) { count rows {\n      studyLocusId studyType finemappingMethod confidence qtlGeneId isTransQtl pValueMantissa pValueExponent\n      beta zScore credibleSetlog10BF purityMinR2\n      variant { id }\n      study { id traitFromSource studyType projectId nSamples pubmedId cohorts\n              biosample { biosampleId biosampleName } target { id approvedSymbol } }\n      locus(variantIds: [$VID]) { rows { posteriorProbability is95CredibleSet is99CredibleSet beta variant { id } } }\n  } }"
+  },
+  "otmath": {
+    "retrieved_utc": "2026-09-23T21:32:08Z",
+    "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+    "release_meta": {
+      "name": "Open Targets GraphQL & REST API Beta",
+      "apiVersion": {
+        "x": "26",
+        "y": "6",
+        "z": "3"
+      },
+      "dataVersion": {
+        "year": "26",
+        "month": "06",
+        "iteration": null
+      },
+      "dataPrefix": "platform2606"
+    },
+    "sprint3_release": "26.06 (API 26.6.3, retrieved 2026-09-22)",
+    "same_release_as_sprint3": true,
+    "variants_input": "data/sprint5/math53_variants.csv",
+    "n_rsid": 53,
+    "n_variant_ids_tried": 88,
+    "n_variants_found": 46,
+    "raw_cache": "data/interim/sprint5/opentargets",
+    "raw_cache_sha256_concat": "c2bad671453936d74ff6a864332a2b4c1a2c6ced772a2d12ea021dde7adda112",
+    "query_fields": "id rsIds chromosome position referenceAllele alternateAllele\n  mostSevereConsequence { id label }\n  transcriptConsequences { target { id approvedSymbol } isEnsemblCanonical impact consequenceScore\n      aminoAcidChange lofteePrediction siftPrediction polyphenPrediction distanceFromTss\n      variantConsequences { id label } }\n  variantEffect { method assessment assessmentFlag score normalisedScore target { id approvedSymbol } }\n  enhancerToGenes(page: {index: 0, size: 500}) { count rows { target { id approvedSymbol } biosampleName\n      biosample { biosampleId } datasourceId intervalType score resourceScore { name value } distanceToTss start end studyId } }\n  credibleSets(page: {index: 0, size: 500}) { count rows {\n      studyLocusId studyType finemappingMethod confidence qtlGeneId isTransQtl pValueMantissa pValueExponent\n      beta zScore credibleSetlog10BF purityMinR2\n      variant { id }\n      study { id traitFromSource studyType projectId nSamples pubmedId cohorts\n              biosample { biosampleId biosampleName } target { id approvedSymbol } }\n      locus(variantIds: [$VID]) { rows { posteriorProbability is95CredibleSet is99CredibleSet beta variant { id } } }\n  } }"
+  }
+}

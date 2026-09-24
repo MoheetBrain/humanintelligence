@@ -1,0 +1,18 @@
+{
+  "n_math_snps": 53,
+  "n_math_nonpositional_genes": 29,
+  "n_cognition_candidate_genes": 58,
+  "overlap_genes": [
+    "SLC39A8"
+  ],
+  "overlap_detail": [
+    {
+      "rsid": "rs13107325",
+      "overlap_class": "MATH_PROXY_ONLY",
+      "g_direction_vs_davies": "INVERTED(math-up allele = g-down)",
+      "v2g_nonpositional_genes": "SLC39A8",
+      "in_cognition_locus": "L64116"
+    }
+  ],
+  "caveat": "math Gq is fixed orthogonal to g and partly built from UKB-containing CP/EA GWAS; 15 of 35 Sprint-4 fine-mapped loci already use 23andMe math credible sets -> gene overlap is not independent support"
+}

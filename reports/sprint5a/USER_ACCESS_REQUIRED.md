@@ -4,7 +4,7 @@
 
 **Already unlocked this sprint, thanks to you:**
 
-- **OpenGWAS JWT.** Within-family Gate A (Howe 2022, ieu-b-4837/4838) is now running.
+- **OpenGWAS JWT.** Within-family Gate A (Howe 2022, ieu-b-4837/4838) is now **complete**: 109 of 146 loci are concordant (P = 1e-9), and the frozen decision is CONTINUE.
 - **AlphaGenome API key.** Atlas predictions are done: 317 cognition variants and 53 math SNPs.
 - **Security note.** Neither credential was written to disk or committed. Both appeared in chat, so consider rotating them once the sprint closes.
 
@@ -17,6 +17,9 @@
 | 5 | **23andMe math-ability summary statistics** | Giannelis 2025 indicators (self-rated math ability; highest math class) | The 53 math SNPs are verified, but without per-SNP genome-wide statistics the quantitative-ability stream cannot be fine-mapped, colocalised or tested for local sharing with g | LAVA / local correlation between math and g; fine-mapping the math loci; separating real inversion from the partialling-out artefact | https://research.23andme.com/dataset-access/ | yes | **yes** (23andMe data-transfer agreement) | no | yes |
 | 6 | **Extreme-IQ case genotypes** (Duke TIP / Zabaneh 2018 cases) | EGA / by request to the authors (no public deposit found) | Extreme-tail genetics is currently sensitivity-only, because the controls are HRS, which sits inside Davies. Case genotypes with independent controls would give a clean positive-tail lineage. | Independent extreme-positive-cognition association; tail-continuity test | author request | yes | **yes** | usually | yes |
 | 7 | **AstraZeneca PheWAS portal** | UKB 450k exome PheWAS | PheWAS for the rare-coding genes (pleiotropy and safety profile) | Safety and pleiotropy columns of the dossiers | https://azphewas.com/ | terms acceptance | no | no | n/a (web) |
+| 8 | **Developing-brain splicing QTLs (Wen et al. 2024)** | Synapse syn50897018 | The eQTLs are open (Zenodo 12729266) and were used here. The sQTLs need a Synapse account and acceptance of terms. | Developmental splicing mechanisms at NT5DC2/GNL3, DNPH1 and RHEBL1 | https://www.synapse.org/ | yes | no (terms / data-use certificate) | no | yes |
+| 9 | **GTEx V11 all-pairs QTL statistics** | GTEx V11 (same donors as V10) | Only significant pairs and fine-mapping results were fetched. Full statistics would allow V11 colocalisation. It adds no new donors, so it cannot create a new independence unit. | V11 brain colocalisation (GENCODE 47) | Google Cloud requester-pays bucket | a billing account is needed (download costs are paid by you) | no | no | yes |
+| 10 | **Fujita 2024 ROSMAP single-nucleus eQTL summary statistics** | Synapse (AD Knowledge Portal) | Already partly represented through the SingleBrain meta-analysis. The per-cohort data would sharpen the cell-type calls. | Cell-type colocalisation within ROSMAP alone | https://adknowledgeportal.synapse.org/ | yes | data-use certificate | no | yes |
 
 **Not gated, but still not done** (recorded here so it is not confused with an access problem):
 

@@ -22,8 +22,11 @@ for extra in (REPO_ROOT / "src", REPO_ROOT / "scripts", REPO_ROOT / "pipelines" 
     if str(extra) not in sys.path:
         sys.path.insert(0, str(extra))
 
-OUT = REPO_ROOT / "reports" / "sprint5"
-DATA = REPO_ROOT / "data" / "sprint5"
+import os as _os
+# Sprint 5A reruns this frozen pipeline into its own directories (S5_OUT / S5_DATA); defaults = Sprint 5.
+OUT = Path(_os.environ.get("S5_OUT", REPO_ROOT / "reports" / "sprint5"))
+DATA = Path(_os.environ.get("S5_DATA", REPO_ROOT / "data" / "sprint5"))
+S5A = _os.environ.get("S5A_INTEGRATION") == "1"   # enables the Sprint-5A-only inputs (within-family, sc-eQTL coloc)
 RAW = REPO_ROOT / "data" / "raw" / "sprint5"
 WORK = REPO_ROOT / "data" / "interim" / "sprint5"
 RESEARCH = REPO_ROOT / "research" / "sprint5"

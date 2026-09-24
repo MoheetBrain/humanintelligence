@@ -55,7 +55,8 @@ def main() -> int:
     q = pd.read_csv(C.S4_DATA / "gate_c_query_genes.csv")
     gate_loci = set(q.locus_id)
     dev = pd.read_parquet(C.GT_DATA / "developmental_classification.parquet").drop_duplicates("gene_symbol").set_index("gene_symbol")
-    dirs = pd.read_csv(C.S4_OUT / "directionality_resolution.csv").set_index("gene")
+    d5a = C.REPO_ROOT / "reports/sprint5a/directionality_resolution_5a.csv"
+    dirs = pd.read_csv(d5a if (C.S5A and d5a.exists()) else C.S4_OUT / "directionality_resolution.csv").set_index("gene")
     rare = pd.read_csv(C.OUT / "rare_coding_evidence.csv")
     cnv = pd.read_csv(C.OUT / "cnv_positive_dosage.csv")
     sets = json.loads((C.DATA / "rare_coding_gene_sets.json").read_text())

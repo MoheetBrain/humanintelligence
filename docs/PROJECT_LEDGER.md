@@ -1254,3 +1254,73 @@ AlphaGenome/datasets/tools).
 - The earlier GenomicSEM fallback fit (a Heywood case) was discarded.
 
 **Next.** Finish Gate A, LAVA and the agent streams; then integration, shortlists, dossiers and the report.
+
+## 2026-09-24T~13:00Z — Sprint 5A complete (open-data exhaustion + causal cognition integration)
+
+**Branch:** `sprint-5a/open-data-exhaustion` · **Stage:** Sprint 5A complete.
+
+**Objective.** Finish every open computational layer, run Gate A with the frozen analysis, rerun the frozen Sprint-5 classifier on the integrated evidence, and deliver the shortlists, dossiers, the final report and the gated-data queue.
+
+**Files and systems changed.**
+
+- **`pipelines/sprint4/gate_a_within_family.py`:** POST `gwasinfo`; `.syngo` path; AF filled from the 1000G reference; EB sensitivity columns.
+- **`pipelines/sprint5/{common,locus_confidence,build_evidence_graph,classify_genes}.py`:** env-gated S5A hooks. With the hooks off, the Sprint-5 outputs are byte-identical.
+- **`pipelines/sprint5a/*`:** about 40 scripts covering:
+  - brainSCOPE, devBrain, GENCODE and GTEx V11;
+  - single-cell colocalisation and HyPrColoc;
+  - PolyFun and PoPS;
+  - the integrated rerun, compare, direction recount, variant table, convergence/shortlists, the Gate-A decision and tests.
+- **`reports/sprint4/`:** Gate-A outputs regenerated; `decision_gate_a_update.json`; update block U-S5A-1 in `CAUSAL_SYNAPSE_GATE.md`.
+- **`reports/sprint5a/`:** all layer outputs, `s5_integrated/`, shortlists A/B/C, 10 dossiers, `SPRINT5A_FINAL.md`, `USER_ACCESS_REQUIRED.md`.
+- **`data/sprint5a/`:** small derived data and provenance. **`data/raw/sprint5a/*/PROVENANCE.json`:** URL and sha256 for every large download (the files themselves stay in the gitignored `data/interim`).
+- **`research/sprint5a/`:** agent notes, dossier notes, research log.
+
+**Completed.**
+
+- **Gate A:** 109/146 loci concordant (P 9.9e-10; slope 0.69). The frozen precedence gives **CONTINUE**; the set level is fragile (synapse P 0.018 at 7.5% power).
+- **Integrated rerun:**
+  - L1 11 / L2 27 / L3 63 / L4 42 / NT 9;
+  - MODERATE: DNPH1, TTBK1 (tied) and FAM131A;
+  - KIFC2 and CYP2D6 drop because their loci fall to L4;
+  - SH2B1 is resolved on rows only; TUFM is unresolved (single cells conflict with bulk).
+- **Shortlists:** C is empty, not forced. brainSCOPE colocalisation is not testable.
+- **Other layers:** single-cell colocalisation, HyPrColoc, developmental timing, GTEx V11, Open Targets 26.06, AlphaGenome, LDSC/GenomicSEM, LAVA, PolyFun and PoPS are all complete.
+
+**Decisions and why.**
+
+- **`decide.py` was not rerun.** It hard-codes the untestable Gate-A branch and re-fetches. The frozen precedence was applied literally in `gate_a_decision.py` instead.
+- **The within-family columns are written only when S5A is on**, so Sprint 5 stays reproducible.
+- **Inverted math-proxy SNPs are labelled "not convergence".**
+- **PoPS and PolyFun are reported but never counted.**
+
+**Tests and verification actually executed.**
+
+- `PYTHONPATH=src .venv/bin/python -m pytest -q -m "not network"`: **961 passed**, 0 failed (95.8 s). It includes the Sprint-5A guards: no credentials in tracked files; brainSCOPE colocalisation never fabricated; AlphaGenome weighted only where measured data agree; single-cell data never create cohort units; shortlist C not forced; Sprint-5 outputs untouched; dossier cap.
+- `graph/validate_graph.py --strict`: PASS (0 errors, 0 warnings, 3 info).
+- `scripts/check_ownership.py`: all 191 paths owned as expected.
+- **Pre-commit scans:** no staged file over 5 MiB; no credential pattern outside the test's own literal strings; no personal email; no `.env`, `interim`, PDF or venv paths.
+
+**Results.** See `reports/sprint5a/SPRINT5A_FINAL.md` and `docs/PROJECT_STATUS.md`.
+
+**Failures and unresolved uncertainty.**
+
+- The reboot (~09:58Z) and one user-requested stop interrupted the jobs; all resumed from verified state.
+- **PoPS:** chr1–5 used OpenBLAS and chr6–22 Accelerate; the direct chr1 cross-check failed on a command-line error and was not rerun. 29 genes are unscored.
+- **PoPS within-locus rank is uninformative at 94/158 single-gene loci.** An earlier draft of the final report cited such ranks; it was corrected before this commit.
+- TTBK1 and FAM131A are fragile MODERATE calls.
+- Nine loci are discordant beyond noise within families.
+- The single-cell data share ROSMAP donors.
+- AlphaGenome disagrees with measured QTLs 19 times against 9 agreements.
+- TGFM, multi-ancestry fine-mapping and rare-variant burden were not run (access or data); cTWAS is not yet run (compute).
+
+**Effect on the project.**
+
+- This is the first within-family evidence: the loci act directly.
+- Gene assignment and direction remain the bottleneck, so the chemistry / intervention gate stays CLOSED.
+
+**Next.**
+
+- The user should rotate both credentials.
+- Obtain brainSCOPE full statistics (Synapse DUC), or the Tan 2025 family GWAS.
+- Run genome-wide cTWAS.
+- Separate DNPH1 from TTBK1.

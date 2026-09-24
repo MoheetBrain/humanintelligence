@@ -1,36 +1,57 @@
 # Project Status
 
-*Snapshot 2026-09-24 (UTC) — **Sprint 5A (open-data exhaustion + causal integration) IN PROGRESS.***
+*Snapshot 2026-09-24 (UTC): **Sprint 5A (open-data exhaustion + causal cognition integration) COMPLETE.***
 
-- **Branch.** `sprint-5a/open-data-exhaustion`.
-- **Protocol.** `e097067`, frozen before any Sprint-5A result.
-- **Interruption.** The machine rebooted at about 09:58Z. The killed jobs were resumed from their on-disk state:
-  - the Gate-A calibration (16 of 120 replicates had finished);
-  - LAVA;
-  - three research agents.
+- **Headline.** The loci act directly within families, but no causal gene has a resolved direction. Adult shortlist C is empty. The chemistry / intervention gate stays CLOSED.
+- **Branch.** `sprint-5a/open-data-exhaustion`, cut from `e88c2fb`.
+- **Protocol.** `e097067`, rules sha `1c1aa071…`, frozen before any Sprint-5A result.
+- **Evidence.** `reports/sprint5a/SPRINT5A_FINAL.md`; the gated-data queue is in `reports/sprint5a/USER_ACCESS_REQUIRED.md`.
 
-**Done so far:**
+***Sprint-5A headline results***
 
-- **Open Targets 26.06, re-verified live.** 979 cognition credible sets.
-  - The top L2G call is driven by distance or gene density in 755 sets, and by biological features in 224.
-  - 126k QTL colocalisations: eQTL, tuQTL, sQTL, single-cell eQTL and pQTL.
-- **AlphaGenome Atlas, run with the user's key.** The key was supplied through the environment only.
-  - 317 cognition variants and 53 math SNPs queried; 573 strong brain-expression predictions.
-  - Against measured human QTLs: 9 agree and 19 disagree (all 28 comparable pairs).
-- **Multivariable LDSC across 5 traits.**
-  - rg with Davies g: executive function 0.82; PIQ 0.68; extreme IQ 0.87; arithmetic 0.77.
-  - A common factor fits (CFI 0.99). Loadings: g 0.97, extreme IQ 0.88, arithmetic 0.79, executive function 0.79, PIQ 0.74.
-  - Significant trait-specific genetic variance for arithmetic (0.37) and PIQ (0.45); none for extreme IQ (0.22, P = 0.19).
-- **Phenotype model, canonical inputs and historical foundations** written up.
-- **USER_ACCESS_REQUIRED** drafted.
-
-**Running:**
-
-- Gate A: frozen within-family analysis, post-data calibration.
-- LAVA local genetic correlation.
-- brainSCOPE typed evidence, PsychENCODE developmental data and the GTEx V11 audit.
-- Single-cell eQTL colocalisation and multi-trait colocalisation.
-- PolyFun fine-mapping and PoPS.
+1. **Gate A (within-family; Howe 2022; N_eff 11,257; the user's OpenGWAS JWT, via the environment only)**
+   - **Loci:** 109 of 146 concordant (binomial P = 9.9e-10). Slope 0.69; Spearman 0.48.
+     - 34 DIRECT_SUPPORTED;
+     - 75 concordant but underpowered;
+     - 28 discordant within noise;
+     - 9 discordant beyond noise;
+     - 13 not testable.
+   - **Sets:**
+     - GO_0045202 (synapse) DIRECT_EFFECT_SUPPORTED (P = 0.018; power 7.5%, so fragile);
+     - 4 concordant but underpowered;
+     - 1 inconsistent within noise.
+   - **Decision:** the frozen Sprint-4 precedence, applied literally, gives **CONTINUE**. The earlier RETRY had been forced by Gate A being untestable. See `reports/sprint4/decision_gate_a_update.json` and block U-S5A-1 in `CAUSAL_SYNAPSE_GATE.md`.
+   - **Calibration:** 120 of 120 replicates, seeded, resumed after the reboot.
+2. **Locus confidence with the within-family lineage (the frozen Sprint-5 rule, now with a second counted lineage)**
+   - **Strata:** L1 11, L2 27, L3 63, L4 42, NT 9.
+   - **L1:** DPP4, ATXN2L, SFMBT1, NT5DC2, BTN2A1, AKAP6, KCNJ3, EXT1, SORT1/ATXN7L2, NEGR1, CPN1.
+   - **Movers:** the KIFC2 (8q24.3) and CYP2D6 (22q13.2) loci drop to L4; EXOC4 drops to L3.
+3. **Genes**
+   - **CAUSAL_GENE_MODERATE:** DNPH1 and TTBK1 (tied, 6p21.1, L2) and FAM131A (3q27.1, L2).
+   - **No CAUSAL_GENE_HIGH gene.**
+   - **8 of the 11 L1 loci have an unresolved gene.**
+   - **SH2B1 (16p11.2):** strong single-cell colocalisation in two resources, ↑, and a primary brainSCOPE signal in 9 cell types. Its direction is RESOLVED_ON_ROWS_ONLY because every source shares ROSMAP donors.
+   - **TUFM:** single-cell ↑ versus bulk ↓, so UNRESOLVED.
+4. **Direction:** no credible causal gene is at D1. RPS26, RHEBL1 and WBP2NL are unchanged. **Shortlist C is empty.** DNPH1, TTBK1 and FAM131A each meet 3 of 4 criteria (all lack D1).
+5. **brainSCOPE:** integrated fully. Colocalisation is conclusively not testable from public outputs.
+   - **Directions:** SH2B1 ↑ (9 cell types), RPS26 ↑, CYP2D6 ↑, WBP2NL ↓, DHRS11 ↓.
+   - **Separate signals:** the EXOC4 and NEGR1 cell-type eQTLs.
+   - **CRISPR table:** only NGEF, at the math locus rs72976151.
+6. **Single-cell eQTL colocalisation** (Bryois 2022; SingleBrain): 141 strong rows across 42 locus–gene pairs.
+   - **Multi-trait colocalisation (HyPrColoc):** cognition clusters with eQTLs for DCC 0.93, NEGR1 0.83 and KIFC2/ZFTRAF1/RECQL4 0.80.
+7. **Developmental timing** (Wen 2024, open eQTL):
+   - **Adult + developmental:** RHEBL1, CLCN2, DNPH1, EIF3C, NT5DC2.
+   - **Adult only:** DCC, TUFM, KIFC2, SH2B1, EXOC4, EXT1.
+   - **Fetal colocalisation:** GNL3 0.98.
+8. **GTEx V11:** of 21 directions, 18 agree, 3 are mixed, none flip.
+9. **Open Targets 26.06:** of 979 credible sets, 755 have a positional top L2G gene.
+10. **AlphaGenome:** 317 + 53 variants; 573 strong brain predictions. Against measured QTLs: 9 agree, 19 disagree. It is weighted only where measured data agree.
+11. **LDSC + Genomic SEM:** rg with g is 0.68–0.87. The common factor has CFI 0.99. Residual genetic variance: arithmetic 0.37, PIQ 0.45.
+12. **LAVA:** Bonferroni-significant local rg for EXT1↔executive function, DPP4↔PIQ and KCNJ3↔arithmetic.
+13. **PolyFun:** 5 variants reach PIP > 0.5 with the prior only. SLC39A8 A391T is robust without it.
+14. **PoPS** (LOCO, genome-wide; an orthogonal layer, never a vote): AKAP6 is #1 at 14q12 (99.5th percentile). SRF outranks TTBK1 and DNPH1 at 6p21.1; SLC4A10 outranks DPP4. The genome-wide top genes are synaptic and adhesion genes (PTPRD, NCAM1, CTNNA2).
+15. **Dossiers:** 10, capped. **Historical foundations:** with page citations.
+16. **Credentials:** the user's OpenGWAS JWT and AlphaGenome key were used via environment variables only and never written. A guard test scans the tracked files. Advise rotation.
 
 *Previous snapshot below (Sprint 5 complete).*
 
@@ -124,6 +145,8 @@ C1–C13 in `reports/GENE_TOURNAMENT_FINAL.md`).*
 
 ## Current Stage
 
+**Sprint 5A — complete.** Outputs are in `reports/sprint5a/`: the final report, USER_ACCESS_REQUIRED, the shortlists, the integrated Sprint-5 rerun and 10 dossiers. The research log is `research/sprint5a/research_log.md`.
+
 **Sprint 5 — complete.** Outputs are in `reports/sprint5/`: 27 required files plus 20 gene dossiers. The research log is `research/sprint5/research_log.md`.
 
 **Sprint 4 — complete (decision RETRY).** Outputs in `reports/sprint4/` (13 required files + summaries).
@@ -168,6 +191,8 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 "intelligence gene". All work is computational (`docs/COMPUTATIONAL_ONLY_POLICY.md`).
 
 ## Current Branch
+
+`sprint-5a/open-data-exhaustion` (Sprint 5A complete; cut from `e88c2fb`; protocol freeze `e097067`; checkpoint `173944d`). Not merged to main.
 
 `sprint-5/causal-cognition-gene-resolution` (Sprint 5 complete; from `e50eb4f`; protocol freeze `1a08f10`).
 
@@ -298,6 +323,19 @@ committed `PROVENANCE.json`.
 
 ## Verification and Test Results
 
+**Sprint 5A** (executed 2026-09-24):
+
+| Check | Command | Result |
+|---|---|---|
+| Full suite | `PYTHONPATH=src .venv/bin/python -m pytest -q -m "not network"` | **961 passed**, 0 failed (95.8 s) |
+| Sprint-5A guards | `pytest pipelines/sprint5a/test_sprint5a.py` (inside the full suite) | pass. They cover: the rules hash; no credentials; brainSCOPE colocalisation never fabricated; AlphaGenome weighted only where measured data agree; single cells create no new units; C not forced; inverted math not counted; Sprint 5 untouched; required outputs; dossier cap. |
+| Validator | `graph/validate_graph.py --strict` | PASS: 0 errors, 0 warnings, 3 info |
+| Ownership | `scripts/check_ownership.py` | all 191 paths owned as expected |
+| Sprint-5 reproducibility | integrated rerun with `S5A_INTEGRATION` unset | `git diff reports/sprint5 data/sprint5` is empty (guard test) |
+| Gate-A AF fill | `g1000_freq.py` reference-AF validation (Sprint-5A session) | max absolute difference 1.5e-8 |
+| Gate-A calibration | `gate_a_within_family.py analyse` | 120/120 replicates, seeded |
+| Pre-commit scans | size, credential and personal-data greps over every staged file | nothing over 5 MiB; no credentials; no personal data |
+
 **Sprint 5** (executed 2026-09-23; commands and results):
 
 | Check | Command | Result |
@@ -328,6 +366,20 @@ All executed 2026-09-22; none projected.
 | Offline identifier rebuild | `scripts/fetch_gene_identifiers.py --offline` | 31/31 resolved (fixed 2 graph-test failures on fresh clone) |
 
 ## Known Failures and Limitations
+
+**Sprint 5A**
+
+- **Gate A has weak set-level power.** Power is 2–12.5%, so the synapse-set DIRECT_EFFECT_SUPPORTED result (P = 0.018) is fragile. The locus-level result is robust.
+- **Nine loci are discordant beyond noise within families.** These include the regions of the KIFC2 and CYP2D6 calls, which fell to L4.
+- **All single-cell eQTL resources (Bryois, SingleBrain, brainSCOPE) share ROSMAP donors.** They can add rows but never a new cohort unit, so SH2B1's direction is resolved on rows only.
+- **brainSCOPE colocalisation is not testable.** Only significant pairs and conditional results are public.
+- **AlphaGenome disagrees with measured QTLs more often than it agrees.** It is used only where measured data agree.
+- **PolyFun's high PIPs depend on the priors.** Without them the PIPs are 0.07–0.29.
+- **Weak MODERATE calls.** TTBK1 rests on one row with no credible set. FAM131A's single-cell colocalisation does not replicate.
+- **Methods not run:** TGFM (dbGaP), multi-ancestry fine-mapping (no powered data), rare-variant burden (individual data). cTWAS is scheduled compute, not an access issue.
+- **Tooling fixes forced by environment breakage (disclosed):** the OpenGWAS v4 endpoint; the `.syngo` path; allele frequencies from 1000G because the VCFs lack AF; Zabaneh chrX SEs (Z taken from P); lavaan pinned to 0.6-19; the HyPrColoc Eigen patch.
+- **PoPS mixes two BLAS libraries.** chr1–5 used OpenBLAS and chr6–22 used Accelerate; both reproduce the PoPS example to about 1e-15, but the direct chr1 cross-check was not run. 94 of 158 scored loci have a single scored gene. NEGR1's near-certain variants under 1000G LD disappear under UK Biobank LD.
+- **`decide.py` cannot evaluate a testable Gate A.** The frozen precedence was applied in `gate_a_decision.py` instead.
 
 **Sprint 5**
 
@@ -372,6 +424,19 @@ All executed 2026-09-22; none projected.
 
 ## Current Blockers
 
+- **Sprint 5A** (full queue in `reports/sprint5a/USER_ACCESS_REQUIRED.md`):
+  - brainSCOPE full statistics (Synapse DUC);
+  - the Tan 2025 family GWAS (SSGAC);
+  - GTEx dbGaP (TGFM);
+  - UKB/AoU WGS;
+  - 23andMe math summary statistics;
+  - extreme-IQ case genotypes;
+  - Wen sQTL (Synapse);
+  - GTEx V11 all-pairs (requester-pays);
+  - Fujita 2024 (Synapse).
+
+  Gate A and AlphaGenome are now unblocked and done.
+
 - **Sprint 5:** OPENGWAS_JWT (Gate A); AlphaGenome API key; Synapse controlled access (brainSCOPE genotypes); dbGaP (TGFM); a 23andMe application (math summary statistics); SSGAC registration (Tan 2025 family GWAS). Nothing was requested and no account was created.
 
 * **No UKB-free, adequately powered cognition GWAS in open access** — blocks independent replication
@@ -382,6 +447,15 @@ All executed 2026-09-22; none projected.
 * No directed causal gene graph exists, so controllability analysis is not meaningful.
 
 ## Exact Next Actions
+
+**After Sprint 5A (now):**
+
+1. **User action:** rotate the OpenGWAS JWT and the AlphaGenome API key, since both appeared in chat.
+2. **User action (highest value):** obtain brainSCOPE full per-cell-type association statistics (Synapse DUC). Then run coloc.susie at 16p11.2 (SH2B1 vs TUFM), 14q12, 3p21.1, DCC, EXOC4 and SLC39A8. The fallback is SSGAC registration for the Tan 2025 family GWAS.
+3. **Computational:**
+   - run genome-wide cTWAS with PredictDB weights and 1000G LD, to test gene mediation at the 11 L1 loci without dbGaP;
+   - separate DNPH1 from TTBK1 at 6p21.1 with a conditional analysis.
+4. **Merge** the `sprint-3.1` → `sprint-5a` chain into `main` after review.
 
 **After Sprint 5 (now):**
 

@@ -1,0 +1,186 @@
+{
+  "created_utc": "2026-09-24T10:28:54Z",
+  "scripts": [
+    "pipelines/sprint5a/devbrain_fetch_small.py",
+    "pipelines/sprint5a/devbrain_parallel_fetch.py",
+    "pipelines/sprint5a/devbrain_timing.py"
+  ],
+  "source": "Wen C. et al. 'Cross-ancestry atlas of gene, isoform, and splicing regulation in the developing human brain', Science 384:eadh0829 (2024), PMID 38781368, PMC12147038. Zenodo record 12729266 ('devBrain_xQTL_sumstats_part1', CC-BY-4.0, published 2024-07-11), open, no login.",
+  "dataset_facts": {
+    "samples": "672 unique developing neocortex samples, 654 with genotype+RNA after QC, 4-39 PCW (Tri1 N=216, Tri2 N=433 across ancestries); EUR N=292, AMR 164, AFR 145, SEA 29, EA 24",
+    "trimester_eQTL": "EUR only: Tri1 (4-13 PCW) N=143, Tri2 (14-26 PCW) N=145; Tri3 N=4 not analysed",
+    "build": "hg19 / GRCh37 (variant .bim files, 'BP_hg19'); RNA aligned to GRCh37 with GENCODE v29lift37 (paper Methods); GitHub README states Salmon index GENCODE v33lift37",
+    "method": "FastQTL, 1 Mb cis window, covariates sex, age, 5 genotype PCs, HCP factors; eGene = beta-approx permutation q < 0.05",
+    "effect_allele": "A1 of Variants_for_<anc>_xQTLmapping_A1effect_A2other.hg19...bim.gz (README)",
+    "nominal_files": "FULL cis nominal statistics (all tested pairs; p up to 1.0 verified in the first 400 kB of each file) despite 'FDR_0.05' in the file names"
+  },
+  "downloads": [
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/README.md/content",
+      "file": "data/interim/sprint5a/psychencode_dev/README.md",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 3595,
+      "sha256": "c94d1bf0c281889a59c564ae5b28fe0926bd24b9f0d5c6edd9b28da51db524c2"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/Variants_README.txt/content",
+      "file": "data/interim/sprint5a/psychencode_dev/Variants_README.txt",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 362,
+      "sha256": "73f3ce73b4151f205f75b7cc4060bb4167b790a5aae6680ed708416e73cc0aa0"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_eQTL_AFR_permutation_25HCP_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/devBrain_eQTL_AFR_permutation_25HCP_FDR_0.05.txt.gz",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 1609123,
+      "sha256": "e4506db0e8d28b4dc396932ba89cc439269c9a7ee02327d8ddf2a43181b67fad"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_eQTL_AMR_permutation_15HCP_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/devBrain_eQTL_AMR_permutation_15HCP_FDR_0.05.txt.gz",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 1600629,
+      "sha256": "9012991b999c9aa8dbf867e6242be01a64307f5cbc94f74ebc4362309781cbbd"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_eQTL_ALL_permutation_90HC_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/devBrain_eQTL_ALL_permutation_90HC_FDR_0.05.txt.gz",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 1630420,
+      "sha256": "344c56e957fde7743f0bd3773345387968621da944ffe341285735e80ff9d602"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_eQTL_EUR_permutation_50HCP_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/devBrain_eQTL_EUR_permutation_50HCP_FDR_0.05.txt.gz",
+      "utc": "2026-09-24T08:45:20Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 1611783,
+      "sha256": "8e8088f7915a16d150bf03e8f1dc1c8577e94054bc6e9b2ea7fb32324a017b12"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_isoQTL_ALL_grouped_permutation_70HCP_FDR0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/devBrain_isoQTL_ALL_grouped_permutation_70HCP_FDR0.05.txt.gz",
+      "utc": "2026-09-24T08:45:23Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 2440297,
+      "sha256": "7dc3620f5b9e348a1246b4087548da0fa7e9086d1bb00c6952559f08e30bb9b6"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/trimester1_eQTL_EUR_permutation_FDR_0.05.txt/content",
+      "file": "data/interim/sprint5a/psychencode_dev/trimester1_eQTL_EUR_permutation_FDR_0.05.txt",
+      "utc": "2026-09-24T08:45:22Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 3902582,
+      "sha256": "56bb1fb114c78258290a54be641b39594b1a75c944b9c0afe270fab4fd673cc0"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/trimester2_eQTL_EUR_permutation_FDR_0.05.txt/content",
+      "file": "data/interim/sprint5a/psychencode_dev/trimester2_eQTL_EUR_permutation_FDR_0.05.txt",
+      "utc": "2026-09-24T08:45:23Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 3889371,
+      "sha256": "3153eb7d71b9001642381857211584960a5b8ad86f78b6fc7c891d8633e51838"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/Variants_for_EUR_xQTLmapping_A1effect_A2other.hg19.sorted.removeRel.bim.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/Variants_for_EUR_xQTLmapping_A1effect_A2other.hg19.sorted.removeRel.bim.gz",
+      "utc": "2026-09-24T08:45:24Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 57204665,
+      "sha256": "2dfc0a7a85f7b3d6b24c308b9f5b2f940a903933301a37f611faa852daf22ed4"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/Variants_for_ALL_xQTLmapping_A1effect_A2other.hg19.sorted.removeRel.bim.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/Variants_for_ALL_xQTLmapping_A1effect_A2other.hg19.sorted.removeRel.bim.gz",
+      "utc": "2026-09-24T08:45:28Z",
+      "status": "OK",
+      "http": "200",
+      "bytes": 75615720,
+      "sha256": "7f462ff934d36d4b781e06109a2aed9b8d8d5852e0280a30b081b5343358b6da"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/devBrain_eQTL_EUR_nominal_50HCP_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/filtered__devBrain_eQTL_EUR_nominal_50HCP_FDR_0.05.txt",
+      "utc": "2026-09-24T09:25:47Z",
+      "status": "OK_PARALLEL_RANGE_THEN_FILTERED",
+      "bytes": 2861655439,
+      "zenodo_md5": "98b20f8272c022996b9a59ed0b379bf0",
+      "md5_match": true,
+      "sha256": "e50b104821f16eff678caceb824de15a3bdf70728b38f862053fee1d27961e23",
+      "first_line_of_full_file": "pid\tsid\tdist\tnpval\tslope\tfdr",
+      "stored": "rows for 249 query Ensembl gene IDs only (858200 rows); full file deleted after hashing",
+      "filtered_sha256": "215aa19c89ee5ffc2c104582306f80c45686dfb80deb15c404001736ff142ebe"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/trimester1_eQTL_EUR_nominal_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/filtered__trimester1_eQTL_EUR_nominal_FDR_0.05.txt",
+      "utc": "2026-09-24T10:02:28Z",
+      "status": "OK_PARALLEL_RANGE_THEN_FILTERED",
+      "bytes": 1974655201,
+      "zenodo_md5": "8f79ab5ea475eb4aab07184f39fde01b",
+      "md5_match": true,
+      "sha256": "9d266325128d291ba21d670a3e98ff152f17430397066ed1bc55aeb3bad8517b",
+      "first_line_of_full_file": "ENSG00000258162 rs10778739 -999422 0.162878 -0.141528",
+      "stored": "rows for 249 query Ensembl gene IDs only (858200 rows); full file deleted after hashing",
+      "filtered_sha256": "eea5b1f92aad18bc28b8ff9090164e9d207924408e53e264ad21b5bd50f02ebc"
+    },
+    {
+      "url": "https://zenodo.org/api/records/12729266/files/trimester2_eQTL_EUR_nominal_FDR_0.05.txt.gz/content",
+      "file": "data/interim/sprint5a/psychencode_dev/filtered__trimester2_eQTL_EUR_nominal_FDR_0.05.txt",
+      "utc": "2026-09-24T10:07:18Z",
+      "status": "OK_PARALLEL_RANGE_THEN_FILTERED",
+      "bytes": 1940878521,
+      "zenodo_md5": "1e50232266c6198647aa59d695ff2fe5",
+      "md5_match": true,
+      "sha256": "33b473b9e613ddbe37bd8b55f3f98eba16f941df36e48a2f3672677c341e1010",
+      "first_line_of_full_file": "ENSG00000258162 rs10778739 -999422 0.981234 -0.00290665",
+      "stored": "rows for 249 query Ensembl gene IDs only (858200 rows); full file deleted after hashing",
+      "filtered_sha256": "51efca904d19b47b534808126f554b2f7cb7bd7048371dc6a6c2a9e884958332"
+    }
+  ],
+  "stored_policy": "Nominal files (2-4 GB each) were downloaded in parallel byte ranges, md5-verified against Zenodo, hashed (sha256), filtered to the 249 query Ensembl gene IDs, then deleted.",
+  "resources_reviewed_not_downloaded": [
+    {
+      "resource": "devBrain isoQTL nominal (ALL 16.2 GB, AFR 15.1 GB)",
+      "status": "OPEN (Zenodo)",
+      "reason": "size; gene-level eQTL answers the timing question; isoQTL grouped-permutation table downloaded"
+    },
+    {
+      "resource": "devBrain sQTL summary statistics",
+      "status": "NOT in Zenodo part 1; listed on Galaxy history usegalaxy.org/u/cindywen/h/devbrainsumstats and Synapse syn50897018 (sign-in required)",
+      "user_action": "Synapse: create account + accept terms (not done by agent); Galaxy public history not probed further"
+    },
+    {
+      "resource": "devBrainHub portal API (devbrainhub.gandallab.org/api/devmeta/{eqtl,isoqtl,sqtl}/extra/<gene>)",
+      "status": "OPEN, per-gene JSON (full cis table: beta, -log10 p, rsID, hg19 pos_ref_alt)",
+      "use": "not used for inference (analysis/ancestry set behind 'devmeta' undocumented); Zenodo files used"
+    },
+    {
+      "resource": "Synapse syn50897018 (PsychENCODE devBrain xQTL)",
+      "status": "CONTROLLED (Synapse sign-in)",
+      "user_action": "Synapse account + PsychENCODE data-use terms; PI approval may be required"
+    },
+    {
+      "resource": "BrainSpan / PsychENCODE Phase-I developmental (Li 2018) eQTLs",
+      "status": "not re-acquired",
+      "reason": "BrainSeq (prenatal-85 y) and Walker 2019 fetal already analysed in Sprint 5 via eQTL Catalogue r7"
+    }
+  ],
+  "independence_note": "Walker 2019 fetal neocortex (Sprint 5, eQTL Catalogue QTD) samples are a SUBSET of the devBrain meta-dataset; the two are not independent replications."
+}

@@ -1,0 +1,30 @@
+{
+  "conditional_full_files": {
+    "n_gene_celltype": 11661,
+    "median_fraction_of_cis_variants_listed": 0.030813475760065736,
+    "n_gene_celltype_with_all_cis_variants": 20,
+    "fraction_rows_fwd_or_bwd_significant": 1.0
+  },
+  "bayesian_scQTLs": {
+    "rows": 107849,
+    "unique_gene_snp_pairs": 8966,
+    "unique_genes": 4419,
+    "columns": [
+      "cellType",
+      "eGene",
+      "eSNP",
+      "posterior_mean_of_eff_size_beta",
+      "sd_of_post_mean"
+    ],
+    "has_pip_column": false,
+    "max_snps_per_gene": 12
+  },
+  "metaQTLs_analyses": {
+    "core_set_wo_LD_pruning": 1454253,
+    "Bayesian": 78191,
+    "Conditional": 27036,
+    "dynamic_eqtl": 19502,
+    "core_set_w_LD_pruning": 1827
+  },
+  "verdict": "NOT_TESTABLE: no brainSCOPE output contains per-variant statistics for all tested variants in a region; coloc.abf/coloc.susie would require the controlled genotypes (syn51111084) or author-provided nominal statistics."
+}

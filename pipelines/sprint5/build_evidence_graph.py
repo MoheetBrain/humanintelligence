@@ -186,6 +186,24 @@ def v2g_units(sym_locus: pd.DataFrame) -> None:
                      direction=r.get("direction"), independence_unit="QTL_COHORT:brainscope", reuses_gwas="Davies2018")
             edge(u, parent(r.get("locus_id")), "DERIVED_FROM")
             edge(u, "QTLCOHORT_brainscope", "DERIVED_FROM")
+    # Sprint 5A: single-cell brain eQTL colocalisation (PP.H4 >= 0.8) -> QTL class (collapses with bulk)
+    scf = C.REPO_ROOT / "reports/sprint5a/sc_eqtl_coloc.parquet"
+    if C.S5A and scf.exists():
+        sc = pd.read_parquet(scf)
+        pcol = "PP.H4" if "PP.H4" in sc.columns else next((c for c in sc.columns if "h4" in c.lower()), None)
+        gcol = next((c for c in ("gene", "gene_name", "symbol") if c in sc.columns), None)
+        ccol = next((c for c in ("cell_type", "celltype", "dataset_id") if c in sc.columns), None)
+        dcol = next((c for c in sc.columns if "direction" in c.lower()), None)
+        if pcol and gcol:
+            for i, r in enumerate(sc[sc[pcol] >= 0.8].to_dict("records")):
+                u = unit(f"SCQTL_{r.get('locus_id')}_{r.get(gcol)}_{r.get(ccol)}_{i}", stream="V2G", v2g_class="QTL",
+                         gene=r.get(gcol), locus_id=r.get("locus_id"), cohort="single-cell brain eQTL (Sprint 5A)",
+                         assay=f"sc-eQTL {r.get('source')} {r.get(ccol)}", method=f"{r.get('method')} PP.H4>=0.8",
+                         direction=("cognition allele -> HIGHER" if (r.get("qtl_effect_of_cognition_allele_at_top") or 0) > 0 else
+                                    "cognition allele -> LOWER" if (r.get("qtl_effect_of_cognition_allele_at_top") or 0) < 0 else None),
+                         independence_unit="QTL_COHORT:single_cell_brain", reuses_gwas="Davies2018")
+                edge(u, parent(r.get("locus_id")), "DERIVED_FROM")
+                edge(u, "QTLCOHORT_rosmap", "SHARES_DONORS", "single-cell brain eQTL cohorts overlap ROSMAP donors")
     # brainSCOPE lead-variant lookup (coloc NOT_TESTABLE: significant-only release). Recorded as tagging units,
     # never as a QTL-class vote; used for cell-type direction only.
     scd = read(C.OUT / "cell_specific_directionality.csv")
@@ -200,8 +218,21 @@ def v2g_units(sym_locus: pd.DataFrame) -> None:
             edge(u, parent(r["locus_id"]), "DERIVED_FROM")
             edge(u, "QTLCOHORT_brainscope", "DERIVED_FROM")
     # AlphaGenome
+    agv = C.REPO_ROOT / "reports/sprint5a/alphagenome_vs_observed.csv"
+    if C.S5A and agv.exists():
+        # Sprint-5A rule: SEQUENCE_MODEL counts only where a strong brain prediction AGREES with a measured human QTL
+        a = pd.read_csv(agv)
+        a = a[(a.comparator_tier == "PRIMARY_MEASURED") & (a.agreement == "AGREE")]
+        for (lid, g), x in a.groupby(["locus_id", "gene"]):
+            for l1 in str(lid).split(";"):
+                u = unit(f"AG_{l1}_{g}", stream="V2G", v2g_class="SEQUENCE_MODEL", gene=g, locus_id=l1,
+                         method="AlphaGenome Atlas 0.9.0 (|quantile|>=0.99 brain RNA) agreeing with measured QTL",
+                         assay="in-silico sequence model", direction=";".join(sorted(set(x.direction_cognition_allele))),
+                         value=float(x.max_abs_quantile.max()), independence_unit="MODEL:AlphaGenome",
+                         reuses_gwas="Davies2018 credible variants", notes=";".join(sorted(set(x.source)))[:200])
+                edge(u, parent(l1), "DERIVED_FROM")
     ag = read(C.OUT / "alphagenome_cognition_variants.parquet")
-    if ag is None or not len(ag) or ("status" in ag.columns and (ag.status.astype(str).str.startswith("NOT_TESTABLE")).all()):
+    if not C.S5A and (ag is None or not len(ag) or ("status" in ag.columns and (ag.status.astype(str).str.startswith("NOT_TESTABLE")).all())):
         unit("ALPHAGENOME_STREAM", stream="V2G", v2g_class="SEQUENCE_MODEL", status="NOT_TESTABLE",
              independence_unit="MODEL:AlphaGenome", notes="see data/sprint5/alphagenome_provenance.json")
 
