@@ -1,0 +1,152 @@
+{
+  "client": "alphagenome 0.9.0 (Atlas, precomputed)",
+  "status_cognition": {
+    "script": "pipelines/sprint5/alphagenome_query.py",
+    "started_utc": "2026-09-24T09:10:48Z",
+    "mode": "atlas",
+    "variants_csv": "data/sprint5a/alphagenome_query_cognition.csv",
+    "limit": null,
+    "alphagenome_client_version": "0.9.0",
+    "n_variant_alleles": 532,
+    "atlas_scorers_available": {
+      "AVI_SCORE": {
+        "is_signed": false,
+        "n_tracks": 1
+      },
+      "AVI_SCORE_FEATURE_IMPORTANCE": {
+        "is_signed": false,
+        "n_tracks": 18
+      },
+      "AVI_SCORE_MODEL_FEATURES": {
+        "is_signed": true,
+        "n_tracks": 18
+      },
+      "CHIP_HISTONE_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 1116
+      },
+      "ATAC_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 167
+      },
+      "CAGE_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 546
+      },
+      "CHIP_TF_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 1617
+      },
+      "DNASE_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 305
+      },
+      "PROCAP_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 12
+      },
+      "CHIP_HISTONE": {
+        "is_signed": true,
+        "n_tracks": 1116
+      },
+      "ATAC": {
+        "is_signed": true,
+        "n_tracks": 167
+      },
+      "CAGE": {
+        "is_signed": true,
+        "n_tracks": 546
+      },
+      "CHIP_TF": {
+        "is_signed": true,
+        "n_tracks": 1617
+      },
+      "DNASE": {
+        "is_signed": true,
+        "n_tracks": 305
+      },
+      "PROCAP": {
+        "is_signed": true,
+        "n_tracks": 12
+      },
+      "CONTACT_MAPS": {
+        "is_signed": false,
+        "n_tracks": 28
+      },
+      "SPLICE_SITES": {
+        "is_signed": false,
+        "n_tracks": 2
+      },
+      "SPLICE_SITE_USAGE": {
+        "is_signed": false,
+        "n_tracks": 367
+      },
+      "RNA_SEQ_ACTIVE": {
+        "is_signed": false,
+        "n_tracks": 371
+      },
+      "RNA_SEQ": {
+        "is_signed": true,
+        "n_tracks": 371
+      },
+      "POLYADENYLATION": {
+        "is_signed": false,
+        "n_tracks": 371
+      },
+      "SPLICE_JUNCTIONS": {
+        "is_signed": false,
+        "n_tracks": 367
+      }
+    },
+    "atlas_scorers_requested": [
+      "ATAC",
+      "ATAC_ACTIVE",
+      "AVI_SCORE",
+      "AVI_SCORE_FEATURE_IMPORTANCE",
+      "AVI_SCORE_MODEL_FEATURES",
+      "CAGE",
+      "CAGE_ACTIVE",
+      "CHIP_HISTONE",
+      "CHIP_HISTONE_ACTIVE",
+      "CHIP_TF",
+      "CHIP_TF_ACTIVE",
+      "CONTACT_MAPS",
+      "DNASE",
+      "DNASE_ACTIVE",
+      "POLYADENYLATION",
+      "PROCAP",
+      "PROCAP_ACTIVE",
+      "RNA_SEQ",
+      "RNA_SEQ_ACTIVE",
+      "SPLICE_JUNCTIONS",
+      "SPLICE_SITES",
+      "SPLICE_SITE_USAGE"
+    ],
+    "result": "OK",
+    "n_rows": 1681704,
+    "n_variants_with_scores": 532,
+    "n_genes": 4136,
+    "output": "data/interim/sprint5a/alphagenome_cognition_raw.parquet",
+    "finished_utc": "2026-09-24T09:13:53Z"
+  },
+  "api_key": "supplied by the user via environment variable only; never written to disk",
+  "variants_queried": {
+    "cognition": 317,
+    "math53": 53
+  },
+  "strong_threshold": 0.99,
+  "brain_tiers_used": [
+    "BRAIN",
+    "CORTEX"
+  ],
+  "n_strong_expression_pairs": 573,
+  "agreement_counts_primary_measured": {
+    "NO_OBSERVED_QTL_FOR_GENE": 534,
+    "DISAGREE": 19,
+    "AGREE": 9
+  },
+  "agreement_counts_secondary_ot": {
+    "DISAGREE": 57,
+    "AGREE": 34
+  }
+}

@@ -1,0 +1,14 @@
+dataset,phenotype_node,measure_type,n,ukb,in_project_as,counted_as_replication,notes
+Davies2018 open subset,GENERAL_COGNITION_g,objective ability (UKB verbal-numerical reasoning + cohort test batteries; PCA g),282014,Y,discovery,no (discovery),UKB+CHARGE+COGENT incl. HRS and BATS
+Genes & Cognition (Rahman 2026) TMA,EXECUTIVE_FUNCTION,objective ability (trail making A time; higher=worse),9932,N,replication lineage,YES,UKB-free by recruitment
+Genes & Cognition TMN/TMD,EXECUTIVE_FUNCTION,objective ability (trail making numeric / difference),9932,N,sensitivity,with TMA (same people),
+Howe2022 within-sibship ieu-b-4837,GENERAL_COGNITION_g (direct effect),objective ability (cohort cognitive tests),9997,Y (8061 siblings),within-family lineage,YES (frozen Sprint-4/5 rule; overlap caveat),direct genetic effect; robust to stratification/indirect effects
+Howe2022 population ieu-b-4838,GENERAL_COGNITION_g,objective ability,22593,Y,within-family comparator,no,same individuals as the sibling estimate
+GenLang PIQ (Eising 2022),GENERAL_COGNITION_g (nonverbal/performance IQ; childhood-young adult),objective ability,18722,N,sensitivity,no (BATS shared with Davies),ages ~5-26
+Zabaneh2018,EXTREME_POSITIVE_COGNITION,exceptional positive tail (Duke TIP top ~0.03%) vs population controls,9410,N,sensitivity,no (HRS controls inside Davies),case-control; restriction of range and small N
+UKB FI4 positional arithmetic (GCST90042729),QUANTITATIVE_MATHEMATICAL_REASONING,objective single item (fluid intelligence item 4),UKB,Y,sensitivity (math check),no (UKB),single-item ceiling/floor
+UKB FI1 numeric addition (GCST90042726),QUANTITATIVE_MATHEMATICAL_REASONING,objective single item,UKB,Y,sensitivity,no (UKB),
+Giannelis2025 Gq (53 SNPs),QUANTITATIVE_MATHEMATICAL_REASONING (proxy),self-report + course-taking (23andMe) in genomic SEM fixed orthogonal to g,23andMe ~430-565k,N (items) / Y (CP/EA anchors),math stream,no,summary statistics not public
+Chen2023 / Genebass rare coding,GENERAL_COGNITION_g + REACTION_TIME + EA_PROXY,objective ability (VNR/FI; RT) and education,~159k-394k,Y,rare-coding stream,no (UKB only),LoF burden
+Lee2018 EA / Wu2025 EA,EDUCATIONAL_ATTAINMENT (proxy),education,large,Y,proxy only,never,EA is a labelled proxy
+SMPY / Duke TIP (Lubinski & Benbow 2006),EXTREME_POSITIVE_COGNITION + QUANTITATIVE + SPATIAL + LEARNING_RATE,above-level objective tests at age 12-13; longitudinal outcomes,>5000,N,historical context only,no genetic data,phenotype-definition reference

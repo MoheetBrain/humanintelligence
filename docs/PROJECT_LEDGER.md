@@ -1204,3 +1204,53 @@ AlphaGenome/datasets/tools).
 - The parse check displayed 3 arbitrary chromosome-1 rows of each VCF; this is disclosed.
 
 **Next.** Gate-A results; integrate the agent streams.
+
+## 2026-09-24T~10:05Z — Sprint 5A checkpoint (after an unexpected reboot)
+
+**Branch:** `sprint-5a/open-data-exhaustion` · **Stage:** Sprint 5A in progress.
+
+**Objective.** Commit and push the finished Sprint-5A layers after a machine reboot killed every running job, and record the resume.
+
+**Files.**
+
+- `pipelines/sprint5a/`:
+  - `opentargets_credible_set_refresh.py`
+  - `alphagenome_summarise.py`
+  - `prep_ldsc_inputs.py`
+  - `genomicsem_lava.R`
+  - `build_canonical_inputs.py`
+- `reports/sprint5a/`:
+  - `opentargets_2606_refresh.parquet` and `opentargets_2606_colocs.parquet`
+  - `alphagenome_*`
+  - `ldsc_*`
+  - `genomicsem_commonfactor_*`
+  - `USER_ACCESS_REQUIRED.md`
+- `data/sprint5a/`: provenance, canonical inputs, phenotype datasets, AlphaGenome query lists, LAVA loci.
+- `research/sprint5a/phenotype_model.md`.
+
+**Completed.**
+
+- **Open Targets 26.06**, re-verified live. The first pull fetched only GWAS–GWAS colocalisations; it was refetched with QTL study types.
+- **AlphaGenome Atlas** queries, run with the user's key through the environment only; the key is never written.
+  - A chromosome "6.0" formatting bug was fixed before the rerun.
+  - 60 missing cognition alleles were filled from Davies (48 resolved).
+- **Zabaneh chrX SE mis-scaling found.** LDSC now uses Z = sign(log OR) × probit(P/2).
+- **GenomicSEM** needed lavaan 0.6-19; 0.7.2 breaks it.
+- **LDSC and common factor** results: see the status document.
+
+**Decisions.**
+
+- AlphaGenome direction calls get no weight unless measured data agree. The measured comparators are Sprint-4 bulk colocalisation, brainSCOPE and developmental colocalisation; Open Targets is a secondary comparator.
+- A factor GWAS is not run: the common factor is dominated by Davies (loading 0.97, N 282k), so it would reproduce Davies' loci.
+
+**Tests.** Not run for this checkpoint. The full suite runs at sprint end.
+
+**Failures / uncertainty.**
+
+- A reboot at about 09:58Z killed:
+  - the Gate-A calibration (16 of 120 replicates done; resumed, seeded, finished replicates skipped);
+  - LAVA (resumed);
+  - three agents (resumed from their transcripts).
+- The earlier GenomicSEM fallback fit (a Heywood case) was discarded.
+
+**Next.** Finish Gate A, LAVA and the agent streams; then integration, shortlists, dossiers and the report.

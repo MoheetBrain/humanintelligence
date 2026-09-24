@@ -1,0 +1,22 @@
+{
+  "retrieved_utc": "2026-09-24T09:00:25Z",
+  "endpoint": "https://api.platform.opentargets.org/api/v4/graphql",
+  "release_meta": {
+    "apiVersion": {
+      "x": "26",
+      "y": "6",
+      "z": "3"
+    },
+    "dataVersion": {
+      "year": "26",
+      "month": "06"
+    },
+    "dataPrefix": "platform2606"
+  },
+  "n_credible_sets": 979,
+  "n_l2g_rows": 2405,
+  "n_coloc_rows": 125927,
+  "raw_cache": "data/interim/sprint5a/ot_cs",
+  "raw_cache_sha256_concat": "3634c3af186169618c10a66b6f4d1eef57624c4159212fe397830e8a4fbee53d",
+  "query": "query Q($id: String!, $ci: Int!) { credibleSet(studyLocusId: $id) {\n  studyLocusId studyId finemappingMethod confidence credibleSetlog10BF purityMinR2\n  study { id traitFromSource nSamples pubmedId cohorts }\n  locus(page: {index: 0, size: 500}) { count rows { variant { id rsIds } posteriorProbability is95CredibleSet beta } }\n  l2GPredictions(page: {index: 0, size: 5}) { rows { score shapBaseValue target { id approvedSymbol }\n      features { name value shapValue } } }\n  colocalisation(studyTypes: [eqtl, sqtl, pqtl, sceqtl, scsqtl, tuqtl, sctuqtl, scpqtl], page: {index: $ci, size: 250}) { count rows { colocalisationMethod h3 h4 clpp betaRatioSignAverage\n      numberColocalisingVariants rightStudyType\n      otherStudyLocus { studyLocusId studyType isTransQtl qtlGeneId\n        study { id projectId studyType biosample { biosampleName } target { id approvedSymbol } } } } }\n} }"
+}

@@ -2,15 +2,35 @@
 
 *Snapshot 2026-09-24 (UTC) — **Sprint 5A (open-data exhaustion + causal integration) IN PROGRESS.***
 
-- **Branch.** `sprint-5a/open-data-exhaustion`, from `e88c2fb`.
-- **Protocol.** Frozen before any Sprint-5A result: `research/sprint5a/protocol.md`, sha256 1c1aa071….
-- **Gate A unlocked.** The user supplied an OpenGWAS token. Both Howe 2022 VCFs were fetched (ieu-b-4837 and ieu-b-4838, 140 MB each). The token is not stored anywhere in the repo.
-  - The frozen Sprint-4 analysis is running.
-  - An implementation note was recorded before any within-family value was read: AF comes from the 1000G EUR reference, because the VCFs have no AF field.
-  - Two plumbing fixes were made: the OpenGWAS v4 metadata call and the `.syngo` path bug.
-- **brainSCOPE audit.** It was used analytically for the first time in Sprint 5, as a lead-variant lookup. Before that it was only a cited resource in the Codex atlas.
-- **Historical foundations** (SMPY 2006; Ciba 1993) are written up in `research/sprint5a/historical_foundations.md`.
-- **Research agents running:** brainSCOPE typed evidence and PsychENCODE developmental data plus a GTEx V11 audit; single-cell eQTL and multi-trait colocalisation; PolyFun and PoPS.
+- **Branch.** `sprint-5a/open-data-exhaustion`.
+- **Protocol.** `e097067`, frozen before any Sprint-5A result.
+- **Interruption.** The machine rebooted at about 09:58Z. The killed jobs were resumed from their on-disk state:
+  - the Gate-A calibration (16 of 120 replicates had finished);
+  - LAVA;
+  - three research agents.
+
+**Done so far:**
+
+- **Open Targets 26.06, re-verified live.** 979 cognition credible sets.
+  - The top L2G call is driven by distance or gene density in 755 sets, and by biological features in 224.
+  - 126k QTL colocalisations: eQTL, tuQTL, sQTL, single-cell eQTL and pQTL.
+- **AlphaGenome Atlas, run with the user's key.** The key was supplied through the environment only.
+  - 317 cognition variants and 53 math SNPs queried; 573 strong brain-expression predictions.
+  - Against measured human QTLs: 9 agree and 19 disagree (all 28 comparable pairs).
+- **Multivariable LDSC across 5 traits.**
+  - rg with Davies g: executive function 0.82; PIQ 0.68; extreme IQ 0.87; arithmetic 0.77.
+  - A common factor fits (CFI 0.99). Loadings: g 0.97, extreme IQ 0.88, arithmetic 0.79, executive function 0.79, PIQ 0.74.
+  - Significant trait-specific genetic variance for arithmetic (0.37) and PIQ (0.45); none for extreme IQ (0.22, P = 0.19).
+- **Phenotype model, canonical inputs and historical foundations** written up.
+- **USER_ACCESS_REQUIRED** drafted.
+
+**Running:**
+
+- Gate A: frozen within-family analysis, post-data calibration.
+- LAVA local genetic correlation.
+- brainSCOPE typed evidence, PsychENCODE developmental data and the GTEx V11 audit.
+- Single-cell eQTL colocalisation and multi-trait colocalisation.
+- PolyFun fine-mapping and PoPS.
 
 *Previous snapshot below (Sprint 5 complete).*
 

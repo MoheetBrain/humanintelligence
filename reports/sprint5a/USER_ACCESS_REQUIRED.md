@@ -1,0 +1,24 @@
+# User access required: the gated-dataset queue
+
+*Sprint 5A · 2026-09-24. Everything openly scriptable was downloaded by the project itself. The list below covers only resources that need credentials, registration, controlled-access approval or acceptance of terms. It is ordered by expected information gain for the causal chain (variant → gene → cell → timing → direction).*
+
+**Already unlocked this sprint, thanks to you:**
+
+- **OpenGWAS JWT.** Within-family Gate A (Howe 2022, ieu-b-4837/4838) is now running.
+- **AlphaGenome API key.** Atlas predictions are done: 317 cognition variants and 53 math SNPs.
+- **Security note.** Neither credential was written to disk or committed. Both appeared in chat, so consider rotating them once the sprint closes.
+
+| # | Resource | Accession / dataset | Why it matters | What it unlocks | Access URL | Registration | PI approval | Secure cloud only | Summary export Claude could analyse later |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | **brainSCOPE genotypes / full cell-type association statistics** | Synapse syn51111084; AD Knowledge Portal syn53479857 (PsychENCODE Emani 2024) | Only significant pairs are public, so cell-type colocalisation is **not testable**. Full statistics would give real cell-type-resolved coloc at every locus. | Cell-type colocalisation (coloc.susie) and cell-type direction at 16p11.2, 14q12, 3p21.1, DCC, EXOC4, SLC39A8 | https://www.synapse.org/ and https://adknowledgeportal.synapse.org/ | yes (Synapse account) | **yes**: a data-use certificate signed by the institution | no (download after approval) | **yes**: per-cell-type nominal association statistics for our 36 windows (small) |
+| 2 | **Larger within-family cognition GWAS** | Tan et al. 2024/2025 family-GWAS cognition (SSGAC portal) | Gate A uses Howe 2022, with N_eff about 11k. A larger direct-effect GWAS is the strongest test that the loci act directly. | Locus-level direct effects with more power; direct-versus-population genetic correlation | https://thessgac.com/ (portal) | yes | no (terms of use) | no | yes: summary statistics |
+| 3 | **GTEx individual-level data (for TGFM, and full V10/V11 QTL)** | dbGaP phs000424 | TGFM gene–tissue fine-mapping needs in-sample eQTL genotypes. It is the formal test of gene-mediated versus non-mediated signal. | TGFM at the 36 loci; unbiased gene-tissue PIPs (FOCUS favours strong-eQTL genes) | https://dbgap.ncbi.nlm.nih.gov/ | yes (eRA Commons) | **yes** (dbGaP DAR) | AnVIL / Terra is typical | yes: TGFM gene-tissue PIPs |
+| 4 | **UK Biobank WGS/WES individual-level data** (or All of Us Researcher Workbench) | UKB application (RAP); All of Us Controlled Tier | Rare-variant gene burden with SAIGE-GENE+ / STAAR on cognition phenotypes, including the direction of rare **non-coding** and dosage variants at common loci | Rare–common convergence at the same genes, beyond the 4 exome-wide UKB genes; a within-UKB but different-variant-class test | https://www.ukbiobank.ac.uk/ ; https://www.researchallofus.org/ | yes | **yes** (application / institutional agreement) | **yes** (UKB RAP / AoU Workbench only) | yes: gene-level burden summary statistics |
+| 5 | **23andMe math-ability summary statistics** | Giannelis 2025 indicators (self-rated math ability; highest math class) | The 53 math SNPs are verified, but without per-SNP genome-wide statistics the quantitative-ability stream cannot be fine-mapped, colocalised or tested for local sharing with g | LAVA / local correlation between math and g; fine-mapping the math loci; separating real inversion from the partialling-out artefact | https://research.23andme.com/dataset-access/ | yes | **yes** (23andMe data-transfer agreement) | no | yes |
+| 6 | **Extreme-IQ case genotypes** (Duke TIP / Zabaneh 2018 cases) | EGA / by request to the authors (no public deposit found) | Extreme-tail genetics is currently sensitivity-only, because the controls are HRS, which sits inside Davies. Case genotypes with independent controls would give a clean positive-tail lineage. | Independent extreme-positive-cognition association; tail-continuity test | author request | yes | **yes** | usually | yes |
+| 7 | **AstraZeneca PheWAS portal** | UKB 450k exome PheWAS | PheWAS for the rare-coding genes (pleiotropy and safety profile) | Safety and pleiotropy columns of the dossiers | https://azphewas.com/ | terms acceptance | no | no | n/a (web) |
+
+**Not gated, but still not done** (recorded here so it is not confused with an access problem):
+
+- **Multi-ancestry fine-mapping** (MultiSuSiE, MESuSiE): there are no adequately powered non-European cognition summary statistics in open access. This is NOT_APPLICABLE and needs no access action.
+- **cTWAS genome-wide:** the data are public (PredictDB weights and 1000G LD), but the run is compute-heavy. It is scheduled work, not an access issue.
