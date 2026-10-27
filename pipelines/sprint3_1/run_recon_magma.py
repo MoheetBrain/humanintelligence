@@ -27,7 +27,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-MAGMA = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/"
+MAGMA = Path("data/external/x01/"
              "genetics_tools/bin/magma")
 GENES_RAW = REPO / "data" / "interim" / "magma_replication" / "davies2018_10kb.genes.raw"
 D31 = REPO / "data" / "sprint3_1"

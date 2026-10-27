@@ -44,7 +44,7 @@ if ("ZABANEH_XIQ" %in% traits) info[phenotype == "ZABANEH_XIQ", `:=`(cases = 123
 fwrite(info, paste0("lava_info_", tag, ".txt"), sep = "\t", na = "NA")
 ov <- cov2cor(I); dimnames(ov) <- list(traits, traits)
 ovf <- paste0("lava_overlap_", tag, ".txt"); write.table(round(ov, 5), ovf, quote = FALSE)
-REF <- "/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur"
+REF <- "data/external/x01/genetics_tools/reference/g1000_eur"
 inp <- process.input(input.info.file = paste0("lava_info_", tag, ".txt"), sample.overlap.file = ovf,
                      ref.prefix = REF, phenos = traits)
 res <- list(); uni <- list()

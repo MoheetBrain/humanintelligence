@@ -51,7 +51,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import brainscope_data as BD  # noqa: E402
 import common as C  # noqa: E402
 
-DAVIES = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/"
+DAVIES = Path("data/external/x01/inputs/"
               "davies2018_open_complete.txt")
 CANDIDATES = ("ATXN2L AKAP6 NT5DC2 EXT1 DCC EXOC4 KCNJ3 SLC39A8 CACNA1I PTPRT CLCN2 GOSR1 DHRS11 NEGR1 SYT1 MEF2C "
               "RPS26 RHEBL1 WBP2NL ERBB3 BSN CADM2 ADGRB2 KDM5B GIGYF1 ANKRD12 SLC8A1 RC3H2 CACNA1A BCAS3 PFKM "

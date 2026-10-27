@@ -11,7 +11,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 CHAIN = ROOT / "data/interim/sprint5a/liftover/hg38ToHg19.over.chain.gz"
-BIM = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/"
+BIM = Path("data/external/x01/genetics_tools/"
            "reference/g1000_eur.bim")
 COMP = {"A": "T", "T": "A", "C": "G", "G": "C"}
 

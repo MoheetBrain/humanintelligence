@@ -1,0 +1,246 @@
+{
+  "scanner": "Gitleaks 8.30.1",
+  "history_scope": "git log --all across all fetched branches and tags; no remote PR heads found",
+  "findings": [
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/MANIFEST.jsonl",
+      "StartLine": 1753,
+      "Commit": "04c70efe4eecadf41a0aee3beedf3d0dc2f9f868",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/MANIFEST.jsonl",
+      "StartLine": 1784,
+      "Commit": "04c70efe4eecadf41a0aee3beedf3d0dc2f9f868",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/gene_tournament/study_metadata.jsonl",
+      "StartLine": 202,
+      "Commit": "04c70efe4eecadf41a0aee3beedf3d0dc2f9f868",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/gene_tournament/study_metadata.jsonl",
+      "StartLine": 233,
+      "Commit": "04c70efe4eecadf41a0aee3beedf3d0dc2f9f868",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "atlases/comparative_v2/species_registry.yaml",
+      "StartLine": 206,
+      "Commit": "64b743880b89c22f6971b09bde3628728dc6abef",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "atlases/comparative_v2/species_registry.yaml",
+      "StartLine": 240,
+      "Commit": "64b743880b89c22f6971b09bde3628728dc6abef",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_roflumilast_ba20180e511c.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_HTR2A_2f784fd52c60.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_dopamine-receptor-1-agonist_f5368e9e2f36.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_5-HT2A-receptor_2355b51bc558.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_caffeine_0c98d2ce9e24.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_psilocybin_f1595d379d64.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_STEP-inhibitor_f996b9ee22e3.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_valproic-acid_08e24bc13a83.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_memantine_ec6bf85b7c85.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_osteocalcin_e31acff1a194.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_trichostatin-A_b8cc1a1ed04d.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/ctgov_v2/2026-09-18/search_integrated-stress-response_0d18d57afd67.json",
+      "StartLine": 2,
+      "Commit": "1d3fee856b6ece90c9927b1be970bd699c41d246",
+      "review": "PUBLIC_PAGINATION_CURSOR",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CKB_p0_aef7accf5950.json",
+      "StartLine": 496,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_SLC16A3_p0_02f98d1f39f2.json",
+      "StartLine": 228,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_SLC16A7_p0_0cd4524fd4e2.json",
+      "StartLine": 929,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CRTC1_p0_791c7a58fc4b.json",
+      "StartLine": 1140,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CRTC1_p0_791c7a58fc4b.json",
+      "StartLine": 2610,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CRTC1_p0_791c7a58fc4b.json",
+      "StartLine": 2716,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CRTC1_p0_791c7a58fc4b.json",
+      "StartLine": 2769,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_CRTC1_p0_791c7a58fc4b.json",
+      "StartLine": 3140,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_PDE4B_p1_0d75534a6316.json",
+      "StartLine": 2575,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_RGS14_p0_46ad4472a615.json",
+      "StartLine": 1242,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_RGS14_p0_46ad4472a615.json",
+      "StartLine": 1349,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    },
+    {
+      "RuleID": "generic-api-key",
+      "File": "data/raw/gwas_catalog/2026-09-17/pantrait_RGS14_p0_46ad4472a615.json",
+      "StartLine": 2386,
+      "Commit": "d2dbe1c4a22660f7ee97e48105d79596610e9eed",
+      "review": "PUBLIC_ACCESSION_IDENTIFIER",
+      "disposition": "FALSE_POSITIVE_NO_CREDENTIAL_VALUE_REPRODUCED"
+    }
+  ]
+}

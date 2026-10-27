@@ -73,8 +73,8 @@ def main() -> int:
            "chemistry_gate_reason": "no candidate meets criteria 1-4 together; criterion 6 (safety) is never auto-cleared",
            "adjudication_candidates": g[g.label != "NOT_A_CANDIDATE"].gene.tolist(),
            "gate_table": g.to_dict("records"), "success_conditions": success,
-           "gate_a_within_family": "NOT_TESTABLE (OPENGWAS_JWT absent; files absent)",
-           "alphagenome": "NOT_TESTABLE (API key)", "brainscope_coloc": "NOT_TESTABLE (significant-only release)"}
+           "gate_a_within_family": ("COMPLETED: see reports/sprint4/decision_gate_a_update.json" if C.S5A else "NOT_TESTABLE (historical Sprint 5 access boundary)"),
+           "alphagenome": ("EXCLUDED_UNRESOLVED_DIRECTION_AGGREGATION" if C.S5A else "NOT_TESTABLE (historical Sprint 5 access boundary)"), "brainscope_coloc": "NOT_TESTABLE (significant-only release)"}
     (C.OUT / "decision.json").write_text(json.dumps(dec, indent=2, default=str))
     print(g[["gene", "gene_class", "n_met", "label", "missing"]].to_string(index=False))
     print(json.dumps(success, indent=1, default=str))

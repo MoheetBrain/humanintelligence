@@ -77,7 +77,7 @@ def locus_direction_test() -> dict:
                                          "lead_davies_z", "lead_davies_p", "cognition_increasing_allele", "top_gene")}
                       for l in loci]).to_csv(LEADS_CSV, index=False)
     leads = pd.read_csv(LEADS_CSV)
-    davies = pd.read_csv("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/"
+    davies = pd.read_csv("data/external/x01/"
                          "inputs/davies2018_open_complete.txt", sep=r"\s+", usecols=["Zscore"]).Zscore.to_numpy()
     zab = pd.read_csv(REPO / "data/interim/sumstats/GCST005626_zabaneh_extremeIQ_b37.tsv.gz", sep="\t",
                       usecols=["variant_id", "effect_allele", "other_allele", "odds_ratio", "standard_error"])

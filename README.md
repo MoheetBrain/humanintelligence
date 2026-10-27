@@ -1,181 +1,70 @@
-# Intelligence Blueprint
+# Hamiltonian Labs — Human Cognition Genetics
 
-**A fully computational causal-control framework for adult human cognitive capacity.**
+**An open computational framework for investigating the genetic and molecular mechanisms of human cognitive capacity.**
 
-The scientific objective is to identify the **smallest set of adult-modifiable
-biological control parameters** that determine how much useful computation, learning,
-abstraction, working memory, transfer and durable knowledge a healthy adult human
-brain can achieve.
+Can human cognitive genetics identify plausible biological mechanisms that remain modifiable after neuronal maturation? This research programme follows published genetic associations through candidate genes, molecular regulation, brain cell types and developmental timing. The purpose is to identify testable hypotheses and the evidence still missing between inherited differences and an adult biological mechanism.
 
-This is **not** a nootropics list, and **not** a search for an "intelligence gene".
-It is an attempt to build the causal map, the evidence accounting, and the uncertainty
-model that would be needed before anyone could sensibly reason about cognitive
-capacity as a control problem.
+**No intelligence-enhancing intervention, IQ increase or cognitive-enhancement treatment has been demonstrated.** This is computational, hypothesis-generating research. The intervention gate remains closed.
 
----
+Maintained by **[MoheetBrain](https://github.com/MoheetBrain)**, **[Hamiltonian Labs](https://www.hamiltonianlabs.co/)**. Initial curated public release: **v0.1.0**, 27 October 2026; scientific execution snapshot: 24 September 2026.
 
-## 1. The computational-only constraint
+## Start here
 
-All work in this repository is computational. No wet-lab, in-vitro, ex-vivo, animal or
-human experiment is performed, planned, designed or recommended here — including
-self-experimentation. Existing experimental results are **ingested as evidence with
-provenance**; ingesting a result never implies endorsement of repeating or acting on
-it. No output contains a dose, route, regimen or protocol.
+| Question | Read |
+|---|---|
+| What was done? | [Methodology and implementation](METHODOLOGY.md) |
+| Which people, phenotypes and sources? | [Datasets, overlap and rights](DATASETS.md) |
+| What survives the audit? | [Results](RESULTS.md) and [release data index](data/release/README.md) |
+| What cannot be concluded? | [Limitations and corrections](LIMITATIONS.md) |
+| What can I reproduce? | [Reproducibility](REPRODUCIBILITY.md) |
+| Where is the earlier research? | [Research history](CHANGELOG.md), [Sprint 5A report](reports/sprint5a/SPRINT5A_FINAL.md), [foundational truth table](reports/project_truth_table.md) |
 
-The policy and the mechanisms that enforce it (closed action-type enum, red-team
-check, chemistry gate) are in [`docs/COMPUTATIONAL_ONLY_POLICY.md`](docs/COMPUTATIONAL_ONLY_POLICY.md).
+## Evidence at a glance
 
-Permitted work: computational analysis, data integration, causal inference, knowledge
-graph construction, structural bioinformatics, cheminformatics, virtual screening,
-molecular simulation, machine learning, statistical genetics, comparative genomics,
-and literature/evidence synthesis.
+| Stage | Verified committed result | Interpretation |
+|---|---|---|
+| Earlier genome-wide gene screen | 18,418 genes; 375 Bonferroni-significant genes in 159 LD-defined loci | Associated genes are correlated within loci; they are not 375 established causal genes. |
+| Within-family comparison | 109/146 testable lead alleles concordant; 13/159 untestable | Aggregate directional support; only 34 loci meet the historical direct-support class. Shared cohorts limit independence. |
+| Sprint 5A locus integration | 152 signals: 11 L1, 27 L2, 63 L3, 42 discordant, 9 untestable | A different denominator from the 159-locus screen. Locus labels are not causal-gene names. |
+| Gene adjudication | 531 assessment rows (including a FOCUS null-model placeholder); DNPH1, TTBK1 and FAM131A moderate; **0 high-confidence genes** | Competing assignments and limited molecular evidence remain. |
+| Adult candidate gate | **0 D1 gene directions; 0 qualifying adult candidates** | Adult expression or colocalisation alone is insufficient. |
 
-## 2. Architecture — three linked graph layers
+The public release excludes AlphaGenome sequence-model votes because the historical directional aggregation applied the raw-score sign twice. A regression-tested code correction and cached-evidence re-adjudication preserve the three moderate candidates and empty adult shortlist. **Historical AlphaGenome agreement counts are withdrawn; complete corrected predictions have not been reproduced.** See the [correction](docs/corrections/ALPHAGENOME_DIRECTION.md).
 
-**Layer 1 — Evidence graph (epistemology).**
-`Paper`, `Dataset`, `Experiment`, `ClinicalTrial`, `Claim`, `Replication`, `Audit`,
-`Species`, `Measurement`, related by `REPORTS`, `SUPPORTS`, `CONTRADICTED_BY`,
-`REPLICATED_BY`, `FAILED_TO_REPLICATE_BY`. Every substantive biological claim lives
-here first.
+## Data and populations
 
-**Layer 2 — Biological causal graph.**
-`Variant → Gene → Transcript → Protein → MolecularProcess → CellType → BrainRegion →
-Circuit → StateVariable → ComputationalPrimitive → CognitivePhenotype`.
+The primary discovery input is the **282,014-participant public subset** of Davies et al. general cognitive function (the full publication reports 300,486). Supporting sources include Savage intelligence (269,867), a Duke TIP exceptional-intelligence case-control GWAS (1,238 cases, 8,172 controls), Howe within-sibship estimates, Genes & Cognition executive function, GenLang performance IQ, UK Biobank arithmetic items and 53 published Giannelis mathematical-factor variants.
 
-**Layer 3 — Intervention graph.**
-`Compound`, `Drug`, `Biologic`, `RNAIntervention`, `GeneRegulation`,
-`MetabolicIntervention`, `Neurotechnology`, `Target`, `Mechanism`, `StateVariable`,
-`DesiredEffect`, `AdverseEffect`, related by `TARGETS`, `AGONISES`, `ANTAGONISES`,
-`POTENTIATES`, `NEGATIVELY_MODULATES`, `INHIBITS`, `UPREGULATES`, `DOWNREGULATES`,
-`CHANGES_STATE`, `INCREASES_RISK`, `DECREASES_RISK`.
+Most cognition discovery evidence concerns people of European ancestry. Hamiltonian Labs did not recruit or identify exceptional individuals. It analysed published summary resources. General cognition, executive function, performance IQ, mathematics self-report and educational attainment are distinct phenotypes. UKB, HRS and BATS overlap several GWAS; ROSMAP/CommonMind donors recur across molecular resources. These datasets cannot be added up as independent participants or replications. [Study definitions and citations](DATASETS.md).
 
-**Binding rule:** every edge in layers 2 and 3 is compiled from a claim that carries
-provenance. Edges without a claim exist only for identifier/ontology facts and are
-labelled `reference_data` or `ontology_axiom`. Binding to a target is never treated as
-efficacy.
+## Computational approach
 
-## 3. The dynamic state model
+The implemented work combines GWAS harmonisation, MAGMA gene/set tests, LD-aware loci, within-family comparisons, SuSiE/PolyFun sensitivity fine-mapping, bulk and single-cell brain eQTL colocalisation, FOCUS, developmental context, LDSC, Genomic SEM, LAVA, HyPrColoc, PoPS and rare-coding evidence. An evidence graph records shared inputs and separates association, gene attribution and direction. Frozen project protocols, dated corrections and negative findings are retained. These were repository protocol freezes, not an externally registered clinical or experimental study.
 
-Cognitive capacity is represented as a dynamical system, not a score:
+The early claim of uniquely presynaptic enrichment was corrected: broader neuronal/developmental covariates and annotation propagation matter. No common–rare convergence or replicated positive-dosage enhancement mechanism was established. Missing tests are labelled untestable rather than negative.
 
-```
-X(t+1) = F(X(t), U(t), E(t), Θ) + noise
-```
+## Inspect and reproduce
 
-`X` latent biological/cognitive state · `U` intervention · `E`
-experience/environment/task · `Θ` slower individual biological parameters.
-
-State domains (`state_model/`): **cognition · power · efficiency · plasticity ·
-workspace · consolidation · stability · safety**.
-
-Two rules apply to every state variable:
-
-* **Maximising is not assumed to be good.** Each variable carries a response-shape
-  field (`linear`, `threshold`, `inverted_u`, `u_shaped`, `state_dependent`,
-  `unknown`), defaulting to `unknown` until evidence says otherwise.
-* **Safety variables are constraints, not costs to be traded away.**
-
-## 4. Evidence principles
-
-1. **Provenance or silence.** A claim without a machine-verified source is not written.
-2. **Citations are verified, not remembered.** Every PMID/NCT/GCST/DOI is checked
-   against its registry, with the raw response snapshotted immutably and titles
-   matched by similarity. A fabricated identifier fails validation
-   (`scripts/fetch_source_metadata.py`).
-3. **Identifiers are fetched, never typed.** HGNC is the authority for gene
-   identifiers (`scripts/fetch_gene_identifiers.py`).
-4. **No fake precision.** Curated records may express only ordinal evidence levels.
-   Every number in a report comes from a named model under `models/`, labelled with its
-   calibration status. `0.85` never appears because it "feels right".
-5. **Six distinctions are required fields, not caveats:** association vs causation,
-   locus vs gene, development vs adulthood, rescue vs enhancement, animal memory vs
-   human intelligence, educational attainment vs intelligence.
-6. **Paper count is not evidence quality.** The ranking model is tested to be
-   invariant to duplicated evidence.
-7. **The red team can downgrade, never delete.** Provenance is append-only.
-8. **Unknown is a first-class value** that widens uncertainty rather than quietly
-   lowering a score.
-
-## 5. Execution model — a blackboard, not a swarm
-
-The Git repository is the shared blackboard. Agents never chat; they read and write
-structured artefacts in lanes they own, and the orchestrator enforces gates. Roles,
-ownership and gates: [`docs/BLACKBOARD_PROTOCOL.md`](docs/BLACKBOARD_PROTOCOL.md),
-[`docs/OWNERSHIP.yaml`](docs/OWNERSHIP.yaml),
-[`docs/AGENT_REGISTRY.yaml`](docs/AGENT_REGISTRY.yaml).
-
-## 6. First milestone — AlphaCognition v0.1
-
-Rank candidate adult-modifiable causal control points of cognition using human
-genetics plus mechanistic evidence, reporting for each target an explicit,
-**uncalibrated** uncertainty over six dimensions:
-
-`P(causal cognition relevance)` · `P(adult modifiability)` ·
-`P(supra-normal potential)` · `P(far transfer potential)` ·
-`P(safe controllable window)` · `P(human translation)`
-
-These are **subjective, model-derived and explicitly uncalibrated**. The deliverable is
-a ranked table with rank intervals and a red-team audit attached to every row —
-`reports/target_ranking_v0_1.csv`, marked PRELIMINARY.
-
-## 7. Repository layout
-
-```
-ontology/      node, edge, primitive and state-variable type system
-schemas/       JSON Schemas for every record type
-state_model/   state variables per domain + dynamics specification
-atlases/       per-domain evidence work: assessments, interventions, annotations
-evidence/      sources, claims, audits (the epistemic core)
-targets/       seed registry + per-target dossiers
-graph/         CLI entry points: build / validate / query / export
-models/        ranking, causal and uncertainty model specifications + code
-pipelines/     reproducible ingestion pipelines per domain
-src/blueprint/ the library behind the CLIs
-data/          raw (immutable snapshots) / interim / processed
-reports/       generated deliverables
-docs/          contracts, protocol, status, ledger, decisions
-tests/         validation, determinism and model-behaviour tests
-scripts/       provenance tooling and repository checks
-```
-
-## 8. Quickstart
+[Release tables](data/release/README.md) include the complete corrected gene evidence matrix, locus confidence, uncertainty, excluded evidence and an intentionally empty adult-candidate CSV. Historical Sprint 5 top-ten and “top-twenty” tables remain accessible with explicit status; the latter actually contains **25 entries** from two Pareto layers.
 
 ```bash
-make setup            # create .venv and install the project
-make hooks            # install the commit-continuity + validation git hooks
-make fetch-identifiers  # resolve seed gene identifiers from HGNC (network)
-make fetch-sources      # verify every cited source against its registry (network)
-make build            # validate records, build Parquet/DuckDB store, compile the graph
-make rank reports     # run the ranking model and generate reports/
-make test             # offline test suite
+git clone https://github.com/MoheetBrain/humanintelligence.git
+cd humanintelligence
+git checkout v0.1.0
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements-release-lock.txt
+.venv/bin/python -m pip install --no-deps -e .
+.venv/bin/python scripts/release/smoke.py
 ```
 
-Optional environment variables (never committed): `NCBI_API_KEY` (raises the NCBI rate
-limit), `ALPHAGENOME_API_KEY` (not used in Sprint 1).
+The smoke check is offline and does not download data. [Detailed reproduction](REPRODUCIBILITY.md) distinguishes output verification, cached-evidence re-adjudication and expensive/restricted upstream analyses. This release **does not claim an end-to-end independent reproduction**.
 
-## 9. Current status — Sprint 1 complete
+## Citation, contribution and rights
 
-Authoritative snapshot: [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). Chronological
-record: [`docs/PROJECT_LEDGER.md`](docs/PROJECT_LEDGER.md). Sprint summary:
-[`reports/sprint1_summary.md`](reports/sprint1_summary.md).
+Use [CITATION.cff](CITATION.cff) and cite the original datasets/methods. No project DOI has been issued; [Zenodo instructions](docs/ZENODO.md) describe the deposit boundary. This repository is not a peer-reviewed publication.
 
-| | |
-|---|---|
-| Validator | PASS, exit 0 — 0 errors, 0 warnings, 32 rules |
-| Tests | 832 passing |
-| Evidence | 182 sources (all verified), 293 claims, 400 evidence items, 30 audits |
-| Graph | 1284 nodes / 1703 edges across three layers |
-| Reports | interactive graph, ranked table (PRELIMINARY), red-team audit, integration narrative |
+[Contributions](CONTRIBUTING.md) are welcome on allele alignment, cohort independence, causal-gene alternatives, reproducibility and the AlphaGenome correction. Use GitHub issues for scientific questions and [private reporting](SECURITY.md) for sensitive discoveries.
 
-**The first milestone's result is negative.** 17 of 27 seed targets sit at level 0 for
-causal-gene attribution, nothing exceeds level 2, no target has QTL colocalisation
-supporting its gene assignment, and `tier_1_analyse_next` is **empty** — no target earns
-"analyse next" even at the optimistic end of its own rank interval. The human null on the
-most-studied brake target (α5-GABA-A) is replicated. Power is not demonstrably limiting
-in healthy adults, which weakens one factor of this project's own organising hypothesis
-(`THEORY.md` §1.4).
+Project-authored code is [MIT-licensed](LICENSE). Third-party resources retain their own terms; **some data and derivatives are noncommercial or otherwise restricted**. Read [DATA_LICENSE.md](DATA_LICENSE.md) before reuse. The code licence does not relicense those resources.
 
-Read `reports/target_ranking_v0_1.csv` as a prioritisation of **what to analyse next**,
-never as a claim that any target is promising, safe or effective. Every probability in it
-is an uncalibrated subjective prior, and the rank intervals — not the composite values —
-are the honest output.
+Programming, literature discovery, evidence curation and historical analyses used AI assistance. The release audit checked source records, tabular counts, code and automated tests, and re-ran the cached classification without suspect model votes. There has been no independent laboratory validation, external replication of the whole pipeline or comprehensive human expert review of every literature annotation. See [validation scope](reports/release/VALIDATION.md) and [security audit](docs/security/AUDIT.md).

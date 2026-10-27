@@ -34,7 +34,7 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "pipelines" / "gene_tournament"))
 import build_consensus as bc  # noqa: E402
 
-BFILE = "/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur"
+BFILE = "data/external/x01/genetics_tools/reference/g1000_eur"
 OUT = REPO / "reports" / "sprint3_1"
 GENES = ["NEGR1", "SYT1"]
 MIN_UNITS, MIN_AGREE, STRENGTH = 3, 0.8, 0.8   # frozen Sprint-3 rule, unchanged

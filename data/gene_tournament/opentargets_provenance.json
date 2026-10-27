@@ -6,7 +6,7 @@
   "api_name": "Open Targets GraphQL & REST API Beta",
   "run_started_utc": "2026-09-22T19:44:45.694251+00:00",
   "run_finished_utc": "2026-09-22T20:14:48.435083+00:00",
-  "input_file": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/gene_tournament/candidate_genes_for_annotation.csv",
+  "input_file": "/path/to/user/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/gene_tournament/candidate_genes_for_annotation.csv",
   "genes_in_input": 400,
   "genes_ok": 400,
   "genes_not_found": 0,
@@ -26,7 +26,7 @@
   "coloc_page_size": 250,
   "coloc_row_budget": 2500,
   "max_aliases": 20,
-  "raw_cache_dir": "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/opentargets_tournament/2026-09-22",
+  "raw_cache_dir": "/path/to/user/Documents/ChatGPT/HUMAN INTELLIGENCE \ud83e\udde0/data/raw/opentargets_tournament/2026-09-22",
   "queries": {
     "meta": "query Meta {\n  meta { name apiVersion { x y z } dataVersion { year month } }\n}",
     "gene_credible_sets": "query GeneCredibleSets($ensemblId: String!, $index: Int!, $size: Int!) {\n  target(ensemblId: $ensemblId) {\n    id\n    approvedSymbol\n    credibleSets(page: { index: $index, size: $size }) {\n      count\n      rows {\n        studyLocusId studyType finemappingMethod region chromosome position\n        beta zScore standardError pValueMantissa pValueExponent\n        effectAlleleFrequencyFromSource isTransQtl qtlGeneId confidence\n        credibleSetIndex\n        variant { id rsIds referenceAllele alternateAllele }\n        study {\n          id projectId studyType traitFromSource nSamples nCases pubmedId condition\n          biosample { biosampleId biosampleName }\n          target { id approvedSymbol }\n        }\n        l2GPredictions(page: { index: 0, size: 3 }) {\n          count\n          rows { score target { id approvedSymbol } }\n        }\n        colocalisation(page: { index: 0, size: 1 }) { count }\n      }\n    }\n  }\n}",

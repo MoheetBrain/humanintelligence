@@ -5,7 +5,7 @@ Session window: **2026-09-23 22:18 UTC – 2026-09-23 23:5x UTC** (first tool ti
 Scope respected: target characterisation and evidence appraisal only. No compound design, dosing, docking, gene-therapy or
 self-use content was produced. Existing drugs/probes are listed as facts in section 6 of each dossier and explicitly not
 recommended. No accounts, sign-ins or terms acceptances. No commits, pushes or branch changes. Files written: the six dossiers
-under `reports/sprint5/gene_dossiers/` and this file. `/Users/moheet/Documents/ChatGPT/intelligence-codex` was **not** touched
+under `reports/sprint5/gene_dossiers/` and this file. `/path/to/user/Documents/ChatGPT/intelligence-codex` was **not** touched
 (it is referenced read-only inside `pipelines/sprint5/brainscope_ld.py`; I did not read from it).
 
 ## Shared inputs read (all genes)

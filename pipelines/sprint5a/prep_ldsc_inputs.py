@@ -16,7 +16,7 @@ from scipy import stats
 R = Path(__file__).resolve().parents[2]
 OUT = R / "data/interim/sprint5a/ldsc/inputs"
 OUT.mkdir(parents=True, exist_ok=True)
-DAV = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/davies2018_open_complete.txt")
+DAV = Path("data/external/x01/inputs/davies2018_open_complete.txt")
 
 
 def write(name, df):

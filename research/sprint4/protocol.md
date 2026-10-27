@@ -226,3 +226,9 @@ The token was supplied by the user, and the data were fetched on 2026-09-24. At 
 - `Path.with_suffix` bug: the gene-set output path dropped ".syngo".
 
 **Disclosure.** While checking VCF parsing, the first 3 rows of each file were printed (chromosome 1, positions 49,298–86,028). None is a cognition locus lead SNP. No thresholds, sets, loci or classes changed.
+
+## Release privacy amendment — 2026-10-27
+
+Only the machine-specific path in the frozen JSON was made portable. No threshold, seed, set membership or decision rule changed. The original checksum above remains a historical record.
+
+FROZEN_JSON_SHA256: `41a12230981dbbe437382e1286486cb4cfcfcbba5266e3814c84ff5b4061213b`

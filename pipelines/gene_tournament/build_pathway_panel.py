@@ -40,9 +40,9 @@ OUT = REPO_ROOT / "reports" / "gene_tournament"
 SETS = REPO_ROOT / "data" / "gene_tournament" / "pathway_sets"
 WORK = REPO_ROOT / "data" / "interim" / "magma_sets"
 GENES_RAW = REPO_ROOT / "data" / "interim" / "magma_replication"
-MAGMA_BIN = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/"
+MAGMA_BIN = Path("/path/to/user/Documents/ChatGPT/intelligence-codex/research/"
                  "extreme_cognition/x01/genetics_tools/bin/magma")
-X01 = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/reports/astra/x01/"
+X01 = Path("/path/to/user/Documents/ChatGPT/intelligence-codex/reports/astra/x01/"
            "cell_enrichment_results.parquet")
 
 ANCHORS = {  # hypothesis -> (set id, note)

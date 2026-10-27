@@ -146,7 +146,10 @@ def test_no_educational_attainment_input():
 
 
 # ------------------------------------------------------------------ calibration reproducibility
+@pytest.mark.external_data
 def test_ld_noise_is_reproducible_and_ld_shaped():
+    if not all(Path(str(C.BFILE) + ext).exists() for ext in (".bed", ".bim", ".fam")):
+        pytest.skip("Requires externally acquired 1000 Genomes EUR PLINK reference; see REPRODUCIBILITY.md")
     import power_calibration as PC
     bim = LT.bim()
     sub = bim[(bim.chr == "22") & (bim.pos.between(20_000_000, 20_050_000))].head(60).copy()

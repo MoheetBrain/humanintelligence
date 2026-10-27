@@ -65,7 +65,7 @@ for extra in (REPO_ROOT / "src", REPO_ROOT / "scripts"):
 
 from _provenance import utc_date, utc_now  # noqa: E402
 
-CODEX_ROOT = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01")
+CODEX_ROOT = Path("data/external/x01")
 RAW = REPO_ROOT / "data" / "raw" / "magma_x01"
 OUT = REPO_ROOT / "data" / "gene_tournament"
 

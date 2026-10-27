@@ -1,3 +1,5 @@
+> **Historical research snapshot.** The current public interpretation and release corrections are in [RESULTS.md](../RESULTS.md). AlphaGenome directions/agreement counts in historical material are unresolved; the release evidence excludes them.
+
 # Project Status
 
 *Snapshot 2026-09-24 (UTC): **Sprint 5A (open-data exhaustion + causal cognition integration) COMPLETE.***
@@ -203,10 +205,10 @@ knowledge a healthy adult brain can achieve. Not a nootropics list, not a search
 merge Sprint 3.1 before its analyses. Neither is merged to main.
 
 Previously: `sprint-3/gene-tournament`, branched from `sprint-2/causal-bridge` (`daa7354`). Canonical clone:
-**`/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`** (remote
-`github.com/MoheetBrain/humanintelligence`). The earlier clone at `/Users/moheet/humanintelligence`
+**`<repository-root>`** (remote
+`github.com/MoheetBrain/humanintelligence`). The earlier clone at `/path/to/user/humanintelligence`
 no longer exists. A second, **Codex-owned** linked worktree exists at
-`/Users/moheet/Documents/ChatGPT/intelligence-codex` (branch `agent/codex-positive-genetics`,
+`/path/to/user/Documents/ChatGPT/intelligence-codex` (branch `agent/codex-positive-genetics`,
 local and never pushed); it was audited read-only and never modified.
 
 ## Current System Architecture

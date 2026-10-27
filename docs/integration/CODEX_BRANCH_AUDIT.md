@@ -6,12 +6,12 @@
 >
 > **The branch exists.** `agent/codex-positive-genetics` (commits `9be87c2`, `8e88623`; 764 files,
 > 736,637 lines) is a **local, never-pushed linked worktree** at
-> `/Users/moheet/Documents/ChatGPT/intelligence-codex`, registered in the canonical clone's
+> `/path/to/user/Documents/ChatGPT/intelligence-codex`, registered in the canonical clone's
 > `.git/worktrees` and visible to `git worktree list` from
-> `/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠`.
+> `<repository-root>`.
 >
 > **Why the search below missed it.** (1) It ran from a different clone
-> (`/Users/moheet/humanintelligence`, since removed) whose `.git` did not register this worktree;
+> (`/path/to/user/humanintelligence`, since removed) whose `.git` did not register this worktree;
 > (2) a linked worktree's `.git` is a *file*, not a directory; (3) the filesystem sweep was
 > depth-limited. The GitHub API check was correct — the branch was never pushed — and "not on
 > GitHub" was read as "does not exist".

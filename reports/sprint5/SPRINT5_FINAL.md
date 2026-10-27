@@ -1,3 +1,5 @@
+> **Historical research snapshot.** The current public interpretation and release corrections are in [RESULTS.md](../../RESULTS.md). AlphaGenome directions/agreement counts in historical material are unresolved; the release evidence excludes them.
+
 # Sprint 5 — Human cognition causal gene resolution
 
 *2026-09-23 · branch `sprint-5/causal-cognition-gene-resolution` (from `e50eb4f`) · protocol frozen at `1a08f10` before any new data stream, with 2 disclosed amendments (A1: residual labels; A2: a numerical-defect fix) · all computational · **chemistry / intervention gate CLOSED**.*

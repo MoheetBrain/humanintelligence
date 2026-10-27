@@ -29,7 +29,7 @@ def test_no_credentials_in_tracked_files():
         if p.suffix in (".parquet", ".xlsx") or not p.exists():
             continue
         txt = p.read_text(errors="ignore")
-        assert "AIzaSy" not in txt and "eyJhbGciOi" not in txt, f
+        assert not re.search(r"AI" + r"za[0-9A-Za-z_-]{35}|ey" + r"J[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}\.[A-Za-z0-9_-]{10,}", txt), f
 
 
 def test_brainscope_coloc_never_fabricated():

@@ -218,19 +218,13 @@ def v2g_units(sym_locus: pd.DataFrame) -> None:
             edge(u, parent(r["locus_id"]), "DERIVED_FROM")
             edge(u, "QTLCOHORT_brainscope", "DERIVED_FROM")
     # AlphaGenome
-    agv = C.REPO_ROOT / "reports/sprint5a/alphagenome_vs_observed.csv"
-    if C.S5A and agv.exists():
-        # Sprint-5A rule: SEQUENCE_MODEL counts only where a strong brain prediction AGREES with a measured human QTL
-        a = pd.read_csv(agv)
-        a = a[(a.comparator_tier == "PRIMARY_MEASURED") & (a.agreement == "AGREE")]
-        for (lid, g), x in a.groupby(["locus_id", "gene"]):
-            for l1 in str(lid).split(";"):
-                u = unit(f"AG_{l1}_{g}", stream="V2G", v2g_class="SEQUENCE_MODEL", gene=g, locus_id=l1,
-                         method="AlphaGenome Atlas 0.9.0 (|quantile|>=0.99 brain RNA) agreeing with measured QTL",
-                         assay="in-silico sequence model", direction=";".join(sorted(set(x.direction_cognition_allele))),
-                         value=float(x.max_abs_quantile.max()), independence_unit="MODEL:AlphaGenome",
-                         reuses_gwas="Davies2018 credible variants", notes=";".join(sorted(set(x.source)))[:200])
-                edge(u, parent(l1), "DERIVED_FROM")
+    if C.S5A:
+        # Release correction 2026-10-27: cached directional aggregation applied the
+        # raw score sign twice. Raw predictions are absent from Git; no model vote
+        # may be restored until the complete corrected summaries are validated.
+        unit("ALPHAGENOME_STREAM_EXCLUDED", stream="V2G", v2g_class="SEQUENCE_MODEL",
+             status="UNRESOLVED_DIRECTION_AGGREGATION", independence_unit="MODEL:AlphaGenome",
+             notes="See docs/corrections/ALPHAGENOME_DIRECTION.md; historical agreement counts withdrawn")
     ag = read(C.OUT / "alphagenome_cognition_variants.parquet")
     if not C.S5A and (ag is None or not len(ag) or ("status" in ag.columns and (ag.status.astype(str).str.startswith("NOT_TESTABLE")).all())):
         unit("ALPHAGENOME_STREAM", stream="V2G", v2g_class="SEQUENCE_MODEL", status="NOT_TESTABLE",

@@ -12,9 +12,9 @@ import json, sys, hashlib, datetime
 import numpy as np, pandas as pd
 from scipy import stats
 
-S = sys.argv[1] if len(sys.argv) > 1 else "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠/data/raw/sprint5/math"
-ROOT = "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠"
-DAVIES = "/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/davies2018_open_complete.txt"
+S = sys.argv[1] if len(sys.argv) > 1 else "<repository-root>/data/raw/sprint5/math"
+ROOT = "<repository-root>"
+DAVIES = "data/external/x01/inputs/davies2018_open_complete.txt"
 FI = {"fi1_numeric_addition": f"{ROOT}/data/interim/sumstats/GCST90042726_FI1_numeric_addition.tsv.gz",
       "fi4_positional_arithmetic": f"{ROOT}/data/interim/sumstats/GCST90042729_FI4_positional_arithmetic.tsv.gz"}
 RNG = np.random.default_rng(20260923)

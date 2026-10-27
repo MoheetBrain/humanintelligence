@@ -23,7 +23,7 @@ try:
 except ImportError:  # pragma: no cover
     from . import common as C  # type: ignore
 
-BFILE = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/"
+BFILE = Path("data/external/x01/genetics_tools/"
              "reference/g1000_eur")
 CACHE = C.WORK / "brainscope" / "ensembl_rsid_cache.json"
 

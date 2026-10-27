@@ -3,7 +3,7 @@
 # ============================== CORRECTION 2026-09-22 (Sprint 3) ==============================
 # The Sprint-2 conclusion recorded below -- "no branch, bundle, clone ... was found" -- was
 # WRONG. The Codex/Astra work exists as a LOCAL, UNPUSHED git worktree at
-#   /Users/moheet/Documents/ChatGPT/intelligence-codex   (branch agent/codex-positive-genetics,
+#   /path/to/user/Documents/ChatGPT/intelligence-codex   (branch agent/codex-positive-genetics,
 #   commits 9be87c2 and 8e88623, 764 files)
 # Its .git is a FILE (linked worktree), and the Sprint-2 sweep was also depth-limited, so it
 # was not found. A read-only Sprint-3 audit found X01 to be a real, executed MAGMA 1.10 analysis
@@ -58,7 +58,7 @@ delivery:
   mechanism: local_clone_path
   artefacts_present: true
   received_on: "2026-09-22"
-  repo: /Users/moheet/Documents/ChatGPT/intelligence-codex
+  repo: /path/to/user/Documents/ChatGPT/intelligence-codex
   branch: agent/codex-positive-genetics
   commit: 8e88623
   bundle_sha256: null
@@ -67,7 +67,7 @@ delivery:
     a depth-limited filesystem sweep, ~/.codex session index) concluded the branch did not
     exist. It exists as a local, never-pushed linked worktree registered in this repository's
     own .git/worktrees (visible to `git worktree list` from the canonical clone at
-    /Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE, which is where Sprint 3 runs). Audited
+    /path/to/user/Documents/ChatGPT/HUMAN INTELLIGENCE, which is where Sprint 3 runs). Audited
     read-only; nothing in it was modified.
 
 genome_build: GRCh37
@@ -83,7 +83,7 @@ inputs:
       Davies 2018 general cognitive function, OPEN subset (5 cohorts removed), N=282,014,
       Davies2018_OPEN_DATASET_summary_results.txt. sha256 recomputed in this repository on
       2026-09-22 and matches the producer's record. Too large to store (518 MB); checksum carried.
-    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/davies2018_open_complete.txt
+    path: data/external/x01/inputs/davies2018_open_complete.txt
     sha256: 01990c3e30661db518579d8f84dfddd7f79bc9b476e8a65b45d28c0489ca6573
     bytes: 518103030
     source_url: https://datashare.ed.ac.uk/server/api/core/bitstreams/def9f088-4454-4cdf-8e34-f9ce978baac0/content
@@ -93,7 +93,7 @@ inputs:
 
   - role: expression_reference_primary_1
     description: Siletti 2023 adult human brain (adult_human_20221007_Pool_Clean.agg.loom), per producer provenance; not re-checksummed here.
-    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/atlas_a
+    path: data/external/x01/atlas_a
     sha256: 98e60952faecbdefd9d3461fef9930b1f158be2c8dc3dd0d8887243d213ae129
     source_url: null
     source_id: null
@@ -109,7 +109,7 @@ inputs:
 
   - role: expression_reference_supplementary
     description: Tran 2021 nucleus accumbens snRNA-seq (SCE_NAc-n8_tran-etal.rda), per producer provenance; not re-checksummed here.
-    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/atlas_c
+    path: data/external/x01/atlas_c
     sha256: f16501918c30c33a6fc83ceac46aadaedad1102f6ceb1210dd64e74a29170b1b
     source_url: null
     source_id: null
@@ -117,7 +117,7 @@ inputs:
 
 outputs:
   - description: Per-cell-class MAGMA gene-property results (3,338 rows), read directly in the Sprint-3 audit.
-    path: /Users/moheet/Documents/ChatGPT/intelligence-codex/reports/astra/x01/cell_enrichment_results.parquet
+    path: /path/to/user/Documents/ChatGPT/intelligence-codex/reports/astra/x01/cell_enrichment_results.parquet
     sha256: db86fc3dc0fd1cbf4555af3c8f5cad75e6a047402395c39dbb2bd0bb9ef6cd64
     schema: null
   - description: Genome-wide MAGMA gene analysis (10 kb), copied into this repository and VERIFIED by independent re-run.

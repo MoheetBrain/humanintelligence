@@ -66,7 +66,7 @@ for extra in (REPO_ROOT / "src", REPO_ROOT / "scripts"):
         sys.path.insert(0, str(extra))
 from _provenance import utc_now  # noqa: E402
 
-MAGMA_BIN = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/"
+MAGMA_BIN = Path("/path/to/user/Documents/ChatGPT/intelligence-codex/research/"
                  "extreme_cognition/x01/genetics_tools/bin/magma")
 SETS_DIR = REPO_ROOT / "data" / "gene_tournament" / "pathway_sets"  # committed (2.3 MB)
 WORK = REPO_ROOT / "data" / "interim" / "magma_sets"

@@ -1,6 +1,6 @@
 import csv, json, hashlib, os, datetime, glob
 
-ROOT = "/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠"
+ROOT = "<repository-root>"
 RAW = f"{ROOT}/data/raw/sprint5/rare_coding"
 # DDG2P dump is kept local-only (licence); re-download URL + sha256 in data/raw/sprint5/rare_coding/PROVENANCE.json
 DDG2P = f"{ROOT}/data/interim/sprint5/literature_local_only/rare_coding__DDG2P_panel_DD_download.csv"

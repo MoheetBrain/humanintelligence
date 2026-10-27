@@ -43,7 +43,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[3]
-CODEX = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01")
+CODEX = Path("data/external/x01")
 DAVIES_INPUT = CODEX / "inputs" / "davies2018_open_complete.txt"
 DAVIES_SHA256 = "01990c3e30661db518579d8f84dfddd7f79bc9b476e8a65b45d28c0489ca6573"  # pipelines/sprint4/common.py
 DAVIES_N = 282014

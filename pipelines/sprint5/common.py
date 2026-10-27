@@ -16,6 +16,7 @@ import sys
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+import os
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 for extra in (REPO_ROOT / "src", REPO_ROOT / "scripts", REPO_ROOT / "pipelines" / "sprint4"):
@@ -41,7 +42,7 @@ GT_OUT = REPO_ROOT / "reports" / "gene_tournament"
 DAVIES_GENES_OUT = REPO_ROOT / "data" / "raw" / "magma_x01" / "2026-09-22" / "davies2018_10kb.genes.out"
 GENE_LOC = REPO_ROOT / "data" / "raw" / "magma_x01" / "2026-09-22" / "NCBI37.3.gene.loc"
 
-R_ENV = Path("/opt/homebrew/Caskroom/miniforge/base/envs/hi-sprint4")
+R_ENV = Path(os.environ.get("COGNITION_R_ENV", str(REPO_ROOT / "data/external/r-env")))
 RSCRIPT = R_ENV / "bin" / "Rscript"
 TABIX = R_ENV / "bin" / "tabix"
 

@@ -1,0 +1,783 @@
+{
+  "basis_commit": "49effbaa3bcde35f58bc770d0e122a57c05e526d",
+  "source": "reports/sprint5a/s5_integrated",
+  "reproduction_scope": "Cached gene classification and gates only; upstream analyses inherited",
+  "excluded_sequence_model_units": 3,
+  "affected_genes": [
+    "CYP2D6",
+    "GGNBP2",
+    "NEGR1"
+  ],
+  "gene_assessments": 531,
+  "moderate_genes": [
+    "DNPH1",
+    "FAM131A",
+    "TTBK1"
+  ],
+  "high_genes": 0,
+  "direction_D1": 0,
+  "adult_candidates": 0,
+  "changes": [
+    {
+      "gene": "CYP2D6",
+      "field": "classes",
+      "historical": "QTL;SEQUENCE_MODEL",
+      "release": "QTL"
+    },
+    {
+      "gene": "CYP2D6",
+      "field": "n_classes",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CYP2D6",
+      "field": "class_detail",
+      "historical": "{\"QTL\": 3, \"SEQUENCE_MODEL\": 1}",
+      "release": "{\"QTL\": 3}"
+    },
+    {
+      "gene": "CYP2D6",
+      "field": "rank_B_causal_gene",
+      "historical": "42",
+      "release": "48"
+    },
+    {
+      "gene": "CYP2D6",
+      "field": "gene_class_leave_one_class_out",
+      "historical": "V2G_SUPPORTED_WEAK_LOCUS",
+      "release": "POSITIONAL_ONLY"
+    },
+    {
+      "gene": "RPS26",
+      "field": "rank_B_causal_gene",
+      "historical": "43",
+      "release": "42"
+    },
+    {
+      "gene": "LINC02115",
+      "field": "rank_B_causal_gene",
+      "historical": "44",
+      "release": "43"
+    },
+    {
+      "gene": "NR1D2",
+      "field": "rank_B_causal_gene",
+      "historical": "45",
+      "release": "44"
+    },
+    {
+      "gene": "GOSR1",
+      "field": "rank_B_causal_gene",
+      "historical": "46",
+      "release": "45"
+    },
+    {
+      "gene": "FOXH1",
+      "field": "rank_B_causal_gene",
+      "historical": "47",
+      "release": "46"
+    },
+    {
+      "gene": "SEPTIN3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SEPTIN3",
+      "field": "rank_B_causal_gene",
+      "historical": "48",
+      "release": "47"
+    },
+    {
+      "gene": "NEGR1",
+      "field": "classes",
+      "historical": "ENHANCER_LINK;QTL;SEQUENCE_MODEL",
+      "release": "ENHANCER_LINK;QTL"
+    },
+    {
+      "gene": "NEGR1",
+      "field": "n_classes",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "NEGR1",
+      "field": "class_detail",
+      "historical": "{\"QTL\": 2, \"ENHANCER_LINK\": 3, \"SEQUENCE_MODEL\": 1}",
+      "release": "{\"QTL\": 2, \"ENHANCER_LINK\": 3}"
+    },
+    {
+      "gene": "GGNBP2",
+      "field": "classes",
+      "historical": "ENHANCER_LINK;QTL;SEQUENCE_MODEL",
+      "release": "ENHANCER_LINK;QTL"
+    },
+    {
+      "gene": "GGNBP2",
+      "field": "n_classes",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "GGNBP2",
+      "field": "class_detail",
+      "historical": "{\"QTL\": 2, \"ENHANCER_LINK\": 1, \"SEQUENCE_MODEL\": 1}",
+      "release": "{\"QTL\": 2, \"ENHANCER_LINK\": 1}"
+    },
+    {
+      "gene": "ZNHIT3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "MYO19",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "DHRS11",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "WBP2NL",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "NAGA",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "PHETA2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "NDUFA6",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SMIM45",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "NULL.MODEL",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "C1orf173",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CRYZ",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "FPGT",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "FPGT-TNNI3K",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "GDI2P2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "HHLA3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "LRRC53",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "LRRIQ3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "PTGER3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-17E13.2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RPL31P12",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TNNI3K",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TYW3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TBC1D3H",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "PIGW",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "MRM1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "AATF",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "ACACA",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "AP2B1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "C17orf50",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "C17orf78",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "C17orf96",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CCL3L1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CCL4L2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CISD3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CTB-75G16.3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "CWC25",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "DDX52",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "DUSP14",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "GPR179",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "LASP1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "LINC00672",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "LOC440434",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "MRPL45",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "PLXDC1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RDM1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-1094M14.8",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-1407O15.2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-47L3.1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-686D22.3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-686D22.7",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "RP11-690G19.3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "SLFN5",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "SRCIN1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "SYNRG",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TADA2A",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TAF15",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "TBC1D3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "3",
+      "release": "2"
+    },
+    {
+      "gene": "SREBF2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SHISA8",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TNFRSF13C",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CENPM",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SMDT1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TCF20",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "NFAM1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "A4GALT",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "ADSL",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "ARFGAP3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "BIK",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CCDC134",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CHADL",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CSDC2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CTA-250D10.23",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CYB5R3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "CYP2D8P1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "DESI1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "EP300",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "FAM109B",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "GRAP2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "L3MBTL2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "LINC00634",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "MCHR1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "MEI1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "MKL1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "NHP2L1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "OLA1P1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "PHF5A",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "PMM1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "POLDIP3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "POLR3H",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "RNU12",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "RP4-669P10.19",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "RPL4P6",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "RRP7A",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "RRP7B",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SCUBE1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SEPT3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SERHL2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SGSM3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SLC25A17",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "SLC25A5P1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TEF",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TNRC6B",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TOB2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "TTLL1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "UQCRFS1P1",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "XPNPEP3",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "ZC3H7B",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    },
+    {
+      "gene": "AC254562.2",
+      "field": "max_classes_other_gene_in_locus",
+      "historical": "2",
+      "release": "1"
+    }
+  ],
+  "input_sha256": {
+    "data/sprint5a/s5_integrated/evidence_units.parquet": "8d4fe70e9597e6a7b4f5a0f8c127aff309f0be1e03c500bba0ea63fe2b00325d",
+    "reports/sprint5a/s5_integrated/causal_gene_evidence_matrix.csv": "c13b4e28cb07f7d69b7005716386d4b2880da710c36f7dab45fd0e3448636ce8",
+    "research/sprint5/protocol_rules.json": "f8ad4b0a631264aea8d1a93b53373b95a5b09bd5e9ef310f79cea5ec8784b04c"
+  }
+}

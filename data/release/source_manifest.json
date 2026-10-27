@@ -1,0 +1,1145 @@
+{
+  "schema": "cognition-sources/1.0",
+  "release": "v0.1.0",
+  "research_snapshot": "2026-09-24",
+  "verification_date": "2026-10-27",
+  "scope": "Primary analytical resources plus foundational/reference resources. Catalogue candidates are separately enumerated; no claim that every searched study was analysed.",
+  "datasets": [
+    {
+      "id": "davies2018",
+      "name": "Davies general cognitive function",
+      "publication": {
+        "title": "Study of 300,486 individuals identifies 148 independent genetic loci influencing general cognitive function.",
+        "authors": "Davies G, Lam M, Harris SE, Trampush JW, Luciano M, Hill WD, Hagenaars SP, Ritchie SJ, Marioni RE, Fawns-Ritchie C, Liewald DCM, Okely JA, Ahola-Olli AV, Barnes CLK, Bertram L, Bis JC, Burdick KE, Christoforou A, DeRosse P, Djurovic S, Espeseth T, Giakoumaki S, Giddaluru S, Gustavson DE, Hayward C, Hofer E, Ikram MA, Karlsson R, Knowles E, Lahti J, Leber M, Li S, Mather KA, Melle I, Morris D, Oldmeadow C, Palviainen T, Payton A, Pazoki R, Petrovic K, Reynolds CA, Sargurupremraj M, Scholz M, Smith JA, Smith AV, Terzikhan N, Thalamuthu A, Trompet S, van der Lee SJ, Ware EB, Windham BG, Wright MJ, Yang J, Yu J, Ames D, Amin N, Amouyel P, Andreassen OA, Armstrong NJ, Assareh AA, Attia JR, Attix D, Avramopoulos D, Bennett DA, Böhmer AC, Boyle PA, Brodaty H, Campbell H, Cannon TD, Cirulli ET, Congdon E, Conley ED, Corley J, Cox SR, Dale AM, Dehghan A, Dick D, Dickinson D, Eriksson JG, Evangelou E, Faul JD, Ford I, Freimer NA, Gao H, Giegling I, Gillespie NA, Gordon SD, Gottesman RF, Griswold ME, Gudnason V, Harris TB, Hartmann AM, Hatzimanolis A, Heiss G, Holliday EG, Joshi PK, Kähönen M, Kardia SLR, Karlsson I, Kleineidam L, Knopman DS, Kochan NA, Konte B, Kwok JB, Le Hellard S, Lee T, Lehtimäki T, Li SC, Lill CM, Liu T, Koini M, London E, Longstreth WT, Lopez OL, Loukola A, Luck T, Lundervold AJ, Lundquist A, Lyytikäinen LP, Martin NG, Montgomery GW, Murray AD, Need AC, Noordam R, Nyberg L, Ollier W, Papenberg G, Pattie A, Polasek O, Poldrack RA, Psaty BM, Reppermund S, Riedel-Heller SG, Rose RJ, Rotter JI, Roussos P, Rovio SP, Saba Y, Sabb FW, Sachdev PS, Satizabal CL, Satizabal CL, Schmid M, Scott RJ, Scult MA, Simino J, Slagboom PE, Smyrnis N, Soumaré A, Stefanis NC, Stott DJ, Straub RE, Sundet K, Taylor AM, Taylor KD, Tzoulaki I, Tzourio C, Uitterlinden A, Vitart V, Voineskos AN, Kaprio J, Wagner M, Wagner H, Weinhold L, Wen KH, Widen E, Yang Q, Zhao W, Adams HHH, Arking DE, Bilder RM, Bitsios P, Boerwinkle E, Chiba-Falek O, Corvin A, De Jager PL, Debette S, Donohoe G, Elliott P, Fitzpatrick AL, Gill M, Glahn DC, Hägg S, Hansell NK, Hariri AR, Ikram MK, Jukema JW, Jukema JW, Vuoksimaa E, Keller MC, Kremen WS, Launer L, Lindenberger U, Palotie A, Pedersen NL, Pendleton N, Porteous DJ, Räikkönen K, Raitakari OT, Ramirez A, Reinvang I, Rudan I, Dan Rujescu, Schmidt R, Schmidt H, Schofield PW, Schofield PR, Starr JM, Steen VM, Trollor JN, Turner ST, Van Duijn CM, Villringer A, Weinberger DR, Weir DR, Wilson JF, Malhotra A, McIntosh AM, Gale CR, Seshadri S, Mosley TH, Bressler J, Lencz T, Deary IJ.",
+        "year": "2018",
+        "doi": "10.1038/s41467-018-04362-x",
+        "pmid": "29844566",
+        "pmcid": "PMC5974083",
+        "journal": "Nature communications"
+      },
+      "phenotype": "General cognitive factor from cohort batteries; UKB verbal-numerical reasoning",
+      "population": "European ancestry; 57 population-based cohorts; CHARGE, COGENT, UK Biobank; adults aged 16–102",
+      "sample_size": "282,014 in the public file analysed; 300,486 in full publication",
+      "selection": "Population cohorts; not selected for exceptional intelligence",
+      "files_obtained": "GRCh37 SNP summary statistics; MAGMA gene results and gene correlations",
+      "project_use": "Primary discovery, gene screen, LD loci, colocalisation and cross-trait analyses",
+      "scripts": [
+        "pipelines/gene_tournament/ingest_magma_gene_analysis.py",
+        "pipelines/sprint4/gate_c_coloc.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/direct_cognition_rank.csv",
+        "reports/sprint5a/s5_integrated/locus_confidence_rank.csv"
+      ],
+      "limitations": "HRS/BATS/UKB overlap other datasets; public subset differs from full article; association is not intervention effect",
+      "licence_and_redistribution": "Public subset CC-BY-4.0 per acquisition record; full restricted file is not redistributed",
+      "official_source": "https://doi.org/10.7488/ds/2558",
+      "provenance": [
+        "data/raw/magma_x01/2026-09-22/davies2018_open_complete.txt.provenance.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "savage2018",
+      "name": "Savage intelligence",
+      "publication": {
+        "title": "Genome-wide association meta-analysis in 269,867 individuals identifies new genetic and functional links to intelligence.",
+        "authors": "Savage JE, Jansen PR, Stringer S, Watanabe K, Bryois J, de Leeuw CA, Nagel M, Awasthi S, Barr PB, Coleman JRI, Grasby KL, Hammerschlag AR, Kaminski JA, Karlsson R, Krapohl E, Lam M, Nygaard M, Reynolds CA, Trampush JW, Young H, Zabaneh D, Hägg S, Hansell NK, Karlsson IK, Linnarsson S, Montgomery GW, Muñoz-Manchado AB, Quinlan EB, Schumann G, Skene NG, Webb BT, White T, Arking DE, Avramopoulos D, Bilder RM, Bitsios P, Burdick KE, Cannon TD, Chiba-Falek O, Christoforou A, Cirulli ET, Congdon E, Corvin A, Davies G, Deary IJ, DeRosse P, Dickinson D, Djurovic S, Donohoe G, Conley ED, Eriksson JG, Espeseth T, Freimer NA, Giakoumaki S, Giegling I, Gill M, Glahn DC, Hariri AR, Hatzimanolis A, Keller MC, Knowles E, Koltai D, Konte B, Lahti J, Le Hellard S, Lencz T, Liewald DC, London E, Lundervold AJ, Malhotra AK, Melle I, Morris D, Need AC, Ollier W, Palotie A, Payton A, Pendleton N, Poldrack RA, Räikkönen K, Reinvang I, Roussos P, Rujescu D, Sabb FW, Scult MA, Smeland OB, Smyrnis N, Starr JM, Steen VM, Stefanis NC, Straub RE, Sundet K, Tiemeier H, Voineskos AN, Weinberger DR, Widen E, Yu J, Abecasis G, Andreassen OA, Breen G, Christiansen L, Debrabant B, Dick DM, Heinz A, Hjerling-Leffler J, Ikram MA, Kendler KS, Martin NG, Medland SE, Pedersen NL, Plomin R, Polderman TJC, Ripke S, van der Sluis S, Sullivan PF, Vrieze SI, Wright MJ, Posthuma D.",
+        "year": "2018",
+        "doi": "10.1038/s41588-018-0152-6",
+        "pmid": "29942086",
+        "pmcid": "PMC6411041",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Intelligence, harmonised across cognitive tests",
+      "population": "European ancestry, including UKB and COGENT",
+      "sample_size": "269,867",
+      "selection": "Population cognitive cohorts, not an exceptional-only sample",
+      "files_obtained": "SNP summary statistics and MAGMA outputs",
+      "project_use": "Sensitivity, rank comparison and pathway replication",
+      "scripts": [
+        "pipelines/gene_tournament/ingest_magma_gene_analysis.py",
+        "pipelines/gene_tournament/build_gene_ranks.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/direct_cognition_rank.csv"
+      ],
+      "limitations": "Shares discovery cohorts with Davies; not independent replication",
+      "licence_and_redistribution": "Summary-statistic source terms; article licence is not automatically the data licence; no full source download bundled",
+      "official_source": "https://www.ebi.ac.uk/gwas/studies/GCST006250",
+      "provenance": [
+        "data/raw/magma_sprint3/2026-09-22/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "zabaneh2018",
+      "name": "Zabaneh exceptional intelligence",
+      "publication": {
+        "title": "A genome-wide association study for extremely high intelligence.",
+        "authors": "Zabaneh D, Krapohl E, Gaspar HA, Curtis C, Lee SH, Lee SH, Patel H, Newhouse S, Wu HM, Simpson MA, Putallaz M, Lubinski D, Plomin R, Breen G.",
+        "year": "2018",
+        "doi": "10.1038/mp.2017.121",
+        "pmid": "29731509",
+        "pmcid": "PMC5987166",
+        "journal": "Molecular psychiatry"
+      },
+      "phenotype": "Extreme positive cognitive ability, case-control",
+      "population": "US Duke TIP cases of European ancestry and population HRS controls",
+      "sample_size": "1,238 cases + 8,172 controls in analysed GWAS",
+      "selection": "Top 1% of TIP’s top ~3%: approximately top 0.03%; selected using SAT/ACT at age 12. Approximate mean IQ 170 is a study characterisation, not an individual measurement supplied to this project",
+      "files_obtained": "GCST005626 summary statistics; MAGMA and allele-harmonised comparisons",
+      "project_use": "Exceptional-tail continuity and sensitivity; LDSC/LAVA",
+      "scripts": [
+        "pipelines/sprint3_1/extreme_tail_reassessment.py",
+        "pipelines/sprint5a/prep_ldsc_inputs.py"
+      ],
+      "outputs": [
+        "reports/sprint3_1/extreme_tail_locus_direction.csv",
+        "reports/sprint5a/cross_phenotype_convergence.csv"
+      ],
+      "limitations": "HRS controls overlap Davies; ascertainment and range restriction; paper Methods gives 8,185 genotyped controls before final analysis versus 8,172 in abstract/analysis",
+      "licence_and_redistribution": "Article CC-BY-NC-SA-4.0; GCST summary files follow their repository terms; no article or individual genotypes bundled",
+      "official_source": "https://www.ebi.ac.uk/gwas/studies/GCST005626",
+      "provenance": [
+        "data/sprint5/extreme_iq_datasets.csv",
+        "data/raw/sprint5/extreme_iq/GCST005626_README.txt"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "howe2022",
+      "name": "Howe within-sibship cognition",
+      "publication": {
+        "title": "Within-sibship genome-wide association analyses decrease bias in estimates of direct genetic effects.",
+        "authors": "Howe LJ, Nivard MG, Morris TT, Hansen AF, Rasheed H, Cho Y, Chittoor G, Ahlskog R, Lind PA, Palviainen T, van der Zee MD, Cheesman R, Mangino M, Wang Y, Li S, Klaric L, Ratliff SM, Bielak LF, Nygaard M, Giannelis A, Willoughby EA, Reynolds CA, Balbona JV, Andreassen OA, Ask H, Baras A, Bauer CR, Boomsma DI, Campbell A, Campbell H, Chen Z, Christofidou P, Corfield E, Dahm CC, Dokuru DR, Evans LM, de Geus EJC, Giddaluru S, Gordon SD, Harden KP, Hill WD, Hughes A, Kerr SM, Kim Y, Kweon H, Latvala A, Lawlor DA, Li L, Lin K, Magnus P, Magnusson PKE, Mallard TT, Martikainen P, Mills MC, Njølstad PR, Overton JD, Pedersen NL, Porteous DJ, Reid J, Silventoinen K, Southey MC, Stoltenberg C, Tucker-Drob EM, Wright MJ, Social Science Genetic Association Consortium, Within Family Consortium, Hewitt JK, Keller MC, Stallings MC, Lee JJ, Christensen K, Kardia SLR, Peyser PA, Smith JA, Wilson JF, Hopper JL, Hägg S, Spector TD, Pingault JB, Plomin R, Havdahl A, Bartels M, Martin NG, Oskarsson S, Justice AE, Millwood IY, Hveem K, Naess Ø, Willer CJ, Åsvold BO, Koellinger PD, Kaprio J, Medland SE, Walters RG, Benjamin DJ, Turley P, Evans DM, Davey Smith G, Hayward C, Brumpton B, Hemani G, Davies NM.",
+        "year": "2022",
+        "doi": "10.1038/s41588-022-01062-7",
+        "pmid": "35534559",
+        "pmcid": "PMC9110300",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Within-sibship and population cognitive-ability effects",
+      "population": "Predominantly European family cohorts; includes UKB, Generation Scotland and twins",
+      "sample_size": "OpenGWAS sibling metadata N=9,997; population N=22,593; paper cognition N=27,638; project SE-derived effective N=11,257.411764705881",
+      "selection": "Family-based recruitment; not exceptional intelligence",
+      "files_obtained": "GWAS-VCF for ieu-b-4837 and ieu-b-4838 acquired externally using JWT; aggregate locus results committed",
+      "project_use": "Within-family direct-effect sensitivity; a counted design lineage under frozen rules",
+      "scripts": [
+        "pipelines/sprint4/gate_a_within_family.py",
+        "pipelines/sprint5a/gate_a_decision.py"
+      ],
+      "outputs": [
+        "reports/sprint4/within_family_locus_concordance.csv",
+        "reports/sprint4/decision_gate_a_update.json"
+      ],
+      "limitations": "Shared participants with discovery; the two counted lineages are not disjoint cohorts; 109/146 is not 109 significant loci",
+      "licence_and_redistribution": "OpenGWAS access terms and source study terms; credentials and full VCFs absent from release; reacquire through official access",
+      "official_source": "https://gwas.mrcieu.ac.uk/datasets/ieu-b-4837/",
+      "provenance": [
+        "data/sprint4/gate_a_access.json",
+        "data/raw/sprint4/opengwas_metadata/gwasinfo_ieu-b-4837_4838.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "genc",
+      "name": "Genes & Cognition executive function",
+      "publication": {
+        "title": "Genetic landscape of adult executive function reveals a cell-type-specific developmental origin.",
+        "authors": "Rahman MS, Frkatović-Hodžić A, van den Ameele J, Hill SM, Kingston N, Bradley JR, Tom BDM, Chinnery PF.",
+        "year": "2026",
+        "doi": "10.1038/s41467-026-71738-9",
+        "pmid": "42069759",
+        "pmcid": "PMC13342582"
+      },
+      "phenotype": "Trail-making time: TMA primary, TMN/TMD supporting; higher time is worse",
+      "population": "NIHR BioResource G&C; UKB-free recruitment; individual overlap unverified",
+      "sample_size": "9,932 in project replication",
+      "selection": "Volunteers assessed for cognition, not selected as exceptional individuals",
+      "files_obtained": "Open Zenodo GWAS summary files",
+      "project_use": "Main non-UKB replication; effect polarity reversed for better performance",
+      "scripts": [
+        "pipelines/sprint4/gate_b_genc.py"
+      ],
+      "outputs": [
+        "reports/sprint4/genc_independent_loci.csv"
+      ],
+      "limitations": "Executive function differs from general intelligence; TMA/TMN/TMD use the same people and count once",
+      "licence_and_redistribution": "Zenodo record terms; public summary statistics; no participant data",
+      "official_source": "https://doi.org/10.5281/zenodo.11066096",
+      "provenance": [
+        "data/sprint5/cohort_overlap_ledger.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "genlang",
+      "name": "GenLang performance IQ",
+      "publication": {
+        "title": "Genome-wide analyses of individual differences in quantitatively assessed reading- and language-related skills in up to 34,000 people.",
+        "authors": "Eising E, Mirza-Schreiber N, de Zeeuw EL, Wang CA, Truong DT, Allegrini AG, Shapland CY, Zhu G, Wigg KG, Gerritse ML, Molz B, Alagöz G, Gialluisi A, Abbondanza F, Rimfeld K, van Donkelaar M, Liao Z, Jansen PR, Andlauer TFM, Bates TC, Bernard M, Blokland K, Bonte M, Børglum AD, Bourgeron T, Brandeis D, Ceroni F, Csépe V, Dale PS, de Jong PF, DeFries JC, Démonet JF, Demontis D, Feng Y, Gordon SD, Guger SL, Hayiou-Thomas ME, Hernández-Cabrera JA, Hottenga JJ, Hulme C, Kere J, Kerr EN, Koomar T, Landerl K, Leonard GT, Lovett MW, Lyytinen H, Martin NG, Martinelli A, Maurer U, Michaelson JJ, Moll K, Monaco AP, Morgan AT, Nöthen MM, Pausova Z, Pennell CE, Pennington BF, Price KM, Rajagopal VM, Ramus F, Richer L, Simpson NH, Smith SD, Snowling MJ, Stein J, Strug LJ, Talcott JB, Tiemeier H, van der Schroeff MP, Verhoef E, Watkins KE, Wilkinson M, Wright MJ, Barr CL, Boomsma DI, Carreiras M, Franken MJ, Gruen JR, Luciano M, Müller-Myhsok B, Newbury DF, Olson RK, Paracchini S, Paus T, Plomin R, Reilly S, Schulte-Körne G, Tomblin JB, van Bergen E, Whitehouse AJO, Willcutt EG, St Pourcain B, Francks C, Fisher SE.",
+        "year": "2022",
+        "doi": "10.1073/pnas.2202764119",
+        "pmid": "35998220",
+        "pmcid": "PMC9436320",
+        "journal": "Proceedings of the National Academy of Sciences of the United States of America"
+      },
+      "phenotype": "Nonverbal/performance IQ, z-standardised within cohorts",
+      "population": "Childhood to young-adult cohorts, approximately ages 5–26; includes dyslexia-enriched cohorts; predominantly European",
+      "sample_size": "18,722 for performance IQ, not 34,000 (paper-wide maximum)",
+      "selection": "Developmental cohorts; no exceptional-IQ selection",
+      "files_obtained": "GCST90104472 GRCh37 full summary statistics (historically fetched after discovery search)",
+      "project_use": "Sensitivity replication and cross-trait modelling",
+      "scripts": [
+        "pipelines/sprint5/locus_confidence.py",
+        "pipelines/sprint5a/prep_ldsc_inputs.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/s5_integrated/locus_confidence_rank.csv"
+      ],
+      "limitations": "BATS contributes 1,414 (7.6%) and overlaps Davies; CLDRC/IBG overlap ambiguous; not counted independent",
+      "licence_and_redistribution": "CC0 in committed GWAS metadata; retain source citation",
+      "official_source": "https://www.ebi.ac.uk/gwas/studies/GCST90104472",
+      "provenance": [
+        "data/raw/sprint5/cognition_gwas_search/GCST90104472_README.txt",
+        "research/sprint5/genlang_overlap.md"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "ukb_arithmetic",
+      "name": "UK Biobank arithmetic items",
+      "publication": {
+        "title": "A generalized linear mixed model association tool for biobank-scale data.",
+        "authors": "Jiang L, Zheng Z, Fang H, Yang J.",
+        "year": "2021",
+        "doi": "10.1038/s41588-021-00954-4",
+        "pmid": "34737426"
+      },
+      "phenotype": "FI4 positional arithmetic GCST90042729; FI1 numeric addition GCST90042726",
+      "population": "UK Biobank, European-ancestry analysis; middle/older-aged volunteers",
+      "sample_size": "FI4 mean per-SNP N=114,552 (MAGMA provenance); FI1 per-item N not independently reconciled",
+      "selection": "Population biobank, not exceptional selection",
+      "files_obtained": "Item summary statistics, MAGMA gene tables and allele data",
+      "project_use": "Math sensitivity; FI4 LDSC, Genomic SEM and LAVA",
+      "scripts": [
+        "pipelines/gene_tournament/build_gene_ranks.py",
+        "pipelines/sprint5a/prep_ldsc_inputs.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/math_gene_rank.csv",
+        "reports/sprint5a/lava_bivariate_core5.csv"
+      ],
+      "limitations": "Objective single items are not comprehensive mathematics tests; ceiling/floor; UKB shared with Davies",
+      "licence_and_redistribution": "Accession-specific GWAS terms; no participant records",
+      "official_source": "https://www.ebi.ac.uk/gwas/studies/GCST90042729",
+      "provenance": [
+        "data/raw/magma_sprint3/2026-09-22/PROVENANCE.json",
+        "data/sprint5a/phenotype_datasets.csv"
+      ],
+      "verification": "Publication metadata verified through Europe PMC 2026-10-27; N from committed MAGMA provenance"
+    },
+    {
+      "id": "giannelis",
+      "name": "Giannelis mathematical factor",
+      "publication": {
+        "title": "A genetic common factor underlying self-reported math ability and highest math class taken.",
+        "authors": "Giannelis A, Willoughby EA, Edwards T, McGue M, Lee JJ.",
+        "year": "2025",
+        "doi": "10.1038/s41380-025-03237-0",
+        "pmid": "40975749",
+        "pmcid": "PMC12602337",
+        "journal": "Molecular psychiatry"
+      },
+      "phenotype": "Self-rated mathematics and highest mathematics class, genomic SEM Gq orthogonal to g",
+      "population": "23andMe questionnaires, with cognition/education anchors containing UKB; not exceptional IQ",
+      "sample_size": "Item sample sizes approximately 430,000–565,000; 53 published variants used",
+      "selection": "Volunteer questionnaire respondents",
+      "files_obtained": "Published 53-variant supplement; public code and supplementary tables, not full factor GWAS",
+      "project_use": "Variant mapping and descriptive math overlap",
+      "scripts": [
+        "pipelines/sprint5/math53_analysis.py",
+        "pipelines/sprint5a/convergence_and_shortlists.py"
+      ],
+      "outputs": [
+        "data/sprint5/math53_variants.csv",
+        "reports/sprint5/math53_gene_mapping.csv"
+      ],
+      "limitations": "Self-report/course-taking proxy; factor orthogonalisation explains inverted effects; no full Gq coloc possible",
+      "licence_and_redistribution": "Article/supplement CC-BY-4.0 per provenance; 23andMe GWAS requires application and is not bundled",
+      "official_source": "https://doi.org/10.1038/s41380-025-03237-0",
+      "provenance": [
+        "data/raw/sprint5/math/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "rare_coding",
+      "name": "Rare-coding cognition / Chen",
+      "publication": {
+        "title": "The impact of rare protein coding genetic variation on adult cognitive function.",
+        "authors": "Chen CY, Tian R, Ge T, Lam M, Sanchez-Andrade G, Singh T, Urpa L, Liu JZ, Sanderson M, Rowley C, Ironfield H, Fang T, Biogen Biobank Team, SUPER-Finland study, Northern Finland Intellectual Disability study, Daly M, Palotie A, Tsai EA, Huang H, Hurles ME, Gerety SS, Lencz T, Runz H.",
+        "year": "2023",
+        "doi": "10.1038/s41588-023-01398-8",
+        "pmid": "37231097",
+        "pmcid": "PMC10260403",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Verbal-numerical reasoning, reaction time; educational attainment separately labelled proxy",
+      "population": "UKB exome participants; Finnish replication at gene-set level",
+      "sample_size": "Trait-specific approximately 159,000–394,000; do not sum phenotypes",
+      "selection": "Population biobank; not exceptional selection",
+      "files_obtained": "Published burden tables and Genebass summaries",
+      "project_use": "Loss-of-function evidence and common–rare overlap null tests",
+      "scripts": [
+        "pipelines/sprint5/build_rare_coding_tables.py"
+      ],
+      "outputs": [
+        "reports/sprint5/rare_coding_evidence.csv",
+        "reports/sprint5/common_rare_convergence.csv"
+      ],
+      "limitations": "UKB-only gene-level evidence; loss does not show benefit from gain; RC3H2 small carrier count; CACNA1A threshold caveat",
+      "licence_and_redistribution": "Published summary results; no exome records or carrier identifiers; source-specific terms",
+      "official_source": "https://doi.org/10.1038/s41588-023-01398-8",
+      "provenance": [
+        "data/raw/sprint5/rare_coding/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "genebass",
+      "name": "Genebass",
+      "publication": {
+        "title": "Systematic single-variant and gene-based association testing of thousands of phenotypes in 394,841 UK Biobank exomes.",
+        "authors": "Karczewski KJ, Solomonson M, Chao KR, Goodrich JK, Tiao G, Lu W, Riley-Gillis BM, Tsai EA, Kim HI, Zheng X, Rahimov F, Esmaeeli S, Grundstad AJ, Reppell M, Waring J, Jacob H, Sexton D, Bronson PG, Chen X, Hu X, Goldstein JI, King D, Vittal C, Poterba T, Palmer DS, Churchhouse C, Howrigan DP, Zhou W, Watts NA, Nguyen K, Nguyen H, Mason C, Farnham C, Tolonen C, Gauthier LD, Gupta N, MacArthur DG, Rehm HL, Seed C, Philippakis AA, Daly MJ, Davis JW, Runz H, Miller MR, Neale BM.",
+        "year": "2022",
+        "doi": "10.1016/j.xgen.2022.100168",
+        "pmid": "36778668",
+        "pmcid": "PMC9903662",
+        "journal": "Cell genomics"
+      },
+      "phenotype": "Thousands of UKB phenotypes including cognition and education",
+      "population": "UK Biobank exome cohort",
+      "sample_size": "394,841 maximum; phenotype-specific N differs",
+      "selection": "Biobank",
+      "files_obtained": "Public association queries, curated burden summaries",
+      "project_use": "Rare-coding and dosage cross-checks",
+      "scripts": [
+        "pipelines/sprint5/build_rare_coding_tables.py"
+      ],
+      "outputs": [
+        "reports/sprint5/rare_coding_evidence.csv"
+      ],
+      "limitations": "Same UKB lineage as common variants, not an independent replication",
+      "licence_and_redistribution": "CC-BY-4.0 association results; no re-identification; per provenance",
+      "official_source": "https://genebass.org/",
+      "provenance": [
+        "data/raw/sprint5/rare_coding/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "codage",
+      "name": "Gene-dosage / CNV literature",
+      "publication": {
+        "title": "Effects of gene dosage on cognitive ability: A function-based association study across brain and non-brain processes.",
+        "authors": "Huguet G, Renne T, Poulain C, Dubuc A, Kumar K, Kazem S, Engchuan W, Shanta O, Douard E, Proulx C, Jean-Louis M, Saci Z, Mollon J, Schultz LM, Knowles EEM, Cox SR, Porteous D, Davies G, Redmond P, Harris SE, Schumann G, Dumas G, Labbe A, Pausova Z, Paus T, Scherer SW, Sebat J, Almasy L, Glahn DC, Jacquemont S.",
+        "year": "2024",
+        "doi": "10.1016/j.xgen.2024.100721",
+        "pmid": "39667348",
+        "pmcid": "PMC11701252",
+        "journal": "Cell genomics"
+      },
+      "phenotype": "Cognitive ability and CNV gene dosage",
+      "population": "Multi-cohort literature including UKB; cohort-specific details in source",
+      "sample_size": "No single pooled N used by release; published summary findings extracted",
+      "selection": "Varies by source; no Hamiltonian Labs participants",
+      "files_obtained": "Published CNV tables and literature annotations",
+      "project_use": "Evaluate positive-dosage claims; correct 2q12.3 overinterpretation",
+      "scripts": [
+        "pipelines/sprint5/build_rare_coding_tables.py"
+      ],
+      "outputs": [
+        "reports/sprint5/cnv_positive_dosage.csv"
+      ],
+      "limitations": "Nominal/unreplicated increases; no replicated positive-dosage target",
+      "licence_and_redistribution": "Full-text CC-BY-NC-ND-4.0 removed from release; bibliographic and factual result annotations retained",
+      "official_source": "https://doi.org/10.1016/j.xgen.2024.100721",
+      "provenance": [
+        "data/raw/sprint5/rare_coding/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "gtex",
+      "name": "GTEx adult expression and eQTL",
+      "publication": {
+        "title": "The GTEx Consortium atlas of genetic regulatory effects across human tissues.",
+        "authors": "GTEx Consortium.",
+        "year": "2020",
+        "doi": "10.1126/science.aaz1776",
+        "pmid": "32913098",
+        "pmcid": "PMC7737656",
+        "journal": "Science (New York, N.Y.)"
+      },
+      "phenotype": "Adult tissue expression and cis-eQTL; not cognition",
+      "population": "Adult postmortem donors; ancestry composition per release, not inferred from GWAS",
+      "sample_size": "V10/V11 tissue-specific N; not the v8 paper total; see dataset metadata",
+      "selection": "Tissue donors, not high-IQ selection",
+      "files_obtained": "Median TPM, regional eQTL statistics; V11 lookup and GENCODE ID map",
+      "project_use": "Adult brain context, bulk coloc and cross-version sensitivity",
+      "scripts": [
+        "pipelines/gene_tournament/build_developmental_classification.py",
+        "pipelines/sprint4/fetch_eqtl_catalogue.py",
+        "pipelines/sprint5a/gtex_v11_lookup.py"
+      ],
+      "outputs": [
+        "data/gene_tournament/developmental_classification.parquet",
+        "reports/sprint4/directionality_resolution.csv",
+        "reports/sprint5a/gtex_v11_gene_direction.csv"
+      ],
+      "limitations": "V10/V11 reuse donors; no new cohort independence; version differences and gene IDs; expression does not establish adult modifiability",
+      "licence_and_redistribution": "GTEx Portal licence; attribution required; this release is a historical snapshot, not current/most accurate portal data",
+      "official_source": "https://gtexportal.org/home/license",
+      "provenance": [
+        "data/raw/brain_expression/PROVENANCE.json",
+        "data/raw/sprint5a/gtex_v11/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "commonmind",
+      "name": "CommonMind",
+      "publication": {
+        "title": "CommonMind Consortium provides transcriptomic and epigenomic data for Schizophrenia and Bipolar Disorder.",
+        "authors": "Hoffman GE, Bendl J, Voloudakis G, Montgomery KS, Sloofman L, Wang YC, Shah HR, Hauberg ME, Johnson JS, Girdhar K, Song L, Fullard JF, Kramer R, Hahn CG, Gur R, Marenco S, Lipska BK, Lewis DA, Haroutunian V, Hemby S, Sullivan P, Akbarian S, Chess A, Buxbaum JD, Crawford GE, Domenici E, Devlin B, Sieberts SK, Peters MA, Roussos P.",
+        "year": "2019",
+        "doi": "10.1038/s41597-019-0183-6",
+        "pmid": "31551426"
+      },
+      "phenotype": "DLPFC bulk molecular QTL",
+      "population": "Postmortem psychiatric/control cohorts; study-specific ancestry",
+      "sample_size": "590 donors in eQTL Catalogue study inventory; individual assays differ",
+      "selection": "Brain donors, not cognition-selected",
+      "files_obtained": "Regional eQTL Catalogue summary statistics",
+      "project_use": "Adult bulk coloc and direction",
+      "scripts": [
+        "pipelines/sprint4/fetch_eqtl_catalogue.py",
+        "pipelines/sprint4/gate_c_coloc.py"
+      ],
+      "outputs": [
+        "reports/sprint4/directionality_resolution.csv"
+      ],
+      "limitations": "Overlaps brainSCOPE MSSM donors; disease and cell composition affect transferability",
+      "licence_and_redistribution": "eQTL Catalogue summary terms; underlying genotypes remain controlled",
+      "official_source": "https://www.ebi.ac.uk/eqtl/Studies/",
+      "provenance": [
+        "data/raw/sprint4/eqtl_catalogue/PROVENANCE.json",
+        "data/sprint4/eqtl_catalogue_brain_datasets.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "rosmap",
+      "name": "ROSMAP",
+      "publication": {
+        "title": "An xQTL map integrates the genetic architecture of the human brain's transcriptome and epigenome.",
+        "authors": "Ng B, White CC, Klein HU, Sieberts SK, McCabe C, Patrick E, Xu J, Yu L, Gaiteri C, Bennett DA, Mostafavi S, De Jager PL.",
+        "year": "2017",
+        "doi": "10.1038/nn.4632",
+        "pmid": "28869584",
+        "pmcid": "PMC5785926",
+        "journal": "Nature neuroscience"
+      },
+      "phenotype": "DLPFC expression and other molecular QTL",
+      "population": "Older postmortem Religious Orders Study / Memory and Aging Project donors",
+      "sample_size": "Assay-specific N in committed Catalogue metadata",
+      "selection": "Ageing/brain-donation cohorts, not exceptional intelligence",
+      "files_obtained": "Regional bulk QTL statistics; overlap lineage",
+      "project_use": "Bulk coloc and independent-unit accounting",
+      "scripts": [
+        "pipelines/sprint4/gate_c_coloc.py",
+        "pipelines/sprint5a/direction_recount.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/directionality_resolution_5a.csv"
+      ],
+      "limitations": "Donors recur in Bryois, SingleBrain and brainSCOPE; multiple rows are not multiple replications",
+      "licence_and_redistribution": "eQTL Catalogue summary terms; raw participant data controlled and excluded",
+      "official_source": "https://www.ebi.ac.uk/eqtl/Studies/",
+      "provenance": [
+        "data/raw/sprint4/eqtl_catalogue/metadata/dataset_metadata_r7.tsv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "eqtl_catalogue",
+      "name": "eQTL Catalogue: all selected bulk/developmental assays",
+      "publication": {
+        "title": "eQTL Catalogue: all selected bulk/developmental assays (versioned resource; no single study publication assigned)",
+        "authors": "eQTL Catalogue: all selected bulk/developmental assays",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Gene, transcript and splicing cis-QTL",
+      "population": "GTEx, CommonMind, ROSMAP, Braineac2, Young_2019; developmental/BrainSeq/iPSC kept distinct",
+      "sample_size": "648 regional adult-brain QTL files historically queried; not 648 independent cohorts",
+      "selection": "Tissue datasets; no cognitive participant recruitment",
+      "files_obtained": "R7 metadata, tabix regional summary statistics, QTD identifiers",
+      "project_use": "Harmonised adult QTL, fetal sensitivity, FOCUS inputs",
+      "scripts": [
+        "pipelines/sprint4/fetch_eqtl_catalogue.py",
+        "pipelines/sprint5/dev_qtl_coloc.py"
+      ],
+      "outputs": [
+        "reports/sprint4/directionality_resolution.csv",
+        "reports/sprint5/developmental_qtl_coloc.csv"
+      ],
+      "limitations": "Transcript-level and gene-level evidence differ; source-labelled duplicate cohorts collapsed; per-assay PMID and N in manifest",
+      "licence_and_redistribution": "Catalogue summary terms (source attribution); access-controlled underlying genotype/expression not bundled",
+      "official_source": "https://www.ebi.ac.uk/eqtl/Licence/",
+      "provenance": [
+        "data/raw/sprint4/eqtl_catalogue/PROVENANCE.json",
+        "data/sprint4/eqtl_catalogue_brain_datasets.csv"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "young",
+      "name": "Young microglial eQTL",
+      "publication": {
+        "title": "A map of transcriptional heterogeneity and regulatory variation in human microglia.",
+        "authors": "Young AMH, Kumasaka N, Calvert F, Hammond TR, Knights A, Panousis N, Park JS, Schwartzentruber J, Liu J, Kundu K, Segel M, Murphy NA, McMurran CE, Bulstrode H, Correia J, Budohoski KP, Joannides A, Guilfoyle MR, Trivedi R, Kirollos R, Morris R, Garnett MR, Timofeev I, Jalloh I, Holland K, Mannion R, Mair R, Watts C, Price SJ, Kirkpatrick PJ, Santarius T, Mountjoy E, Ghoussaini M, Soranzo N, Bayraktar OA, Stevens B, Hutchinson PJ, Franklin RJM, Gaffney DJ.",
+        "year": "2021",
+        "doi": "10.1038/s41588-021-00875-2",
+        "pmid": "34083789",
+        "pmcid": "PMC7610960"
+      },
+      "phenotype": "Microglial expression / eQTL",
+      "population": "Human surgical brain tissue donors; clinical ascertainment",
+      "sample_size": "104 in Catalogue",
+      "selection": "Clinical tissue, not cognitive extremes",
+      "files_obtained": "Regional QTL statistics under Catalogue label Young_2019 (published 2021)",
+      "project_use": "Adult cell-specific/bulk sensitivity",
+      "scripts": [
+        "pipelines/sprint4/fetch_eqtl_catalogue.py"
+      ],
+      "outputs": [
+        "reports/sprint4/directionality_resolution.csv"
+      ],
+      "limitations": "Study label year differs from final publication; clinical context; not a cognition GWAS",
+      "licence_and_redistribution": "Catalogue summary terms; participant data controlled",
+      "official_source": "https://doi.org/10.1038/s41588-021-00875-2",
+      "provenance": [
+        "data/sprint4/eqtl_catalogue_brain_datasets.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "brainscope",
+      "name": "PsychENCODE brainSCOPE",
+      "publication": {
+        "title": "Single-cell genomics and regulatory networks for 388 human brains.",
+        "authors": "Emani PS, Liu JJ, Clarke D, Jensen M, Warrell J, Gupta C, Meng R, Lee CY, Xu S, Dursun C, Lou S, Chen Y, Chu Z, Galeev T, Hwang A, Li Y, Ni P, Zhou X, PsychENCODE Consortium‡, Bakken TE, Bendl J, Bicks L, Chatterjee T, Cheng L, Cheng Y, Dai Y, Duan Z, Flaherty M, Fullard JF, Gancz M, Garrido-Martín D, Gaynor-Gillett S, Grundman J, Hawken N, Henry E, Hoffman GE, Huang A, Jiang Y, Jin T, Jorstad NL, Kawaguchi R, Khullar S, Liu J, Liu J, Liu S, Ma S, Margolis M, Mazariegos S, Moore J, Moran JR, Nguyen E, Phalke N, Pjanic M, Pratt H, Quintero D, Rajagopalan AS, Riesenmy TR, Shedd N, Shi M, Spector M, Terwilliger R, Travaglini KJ, Wamsley B, Wang G, Xia Y, Xiao S, Yang AC, Zheng S, Gandal MJ, Lee D, Lein ES, Roussos P, Sestan N, Weng Z, White KP, Won H, Girgenti MJ, Zhang J, Wang D, Geschwind D, Gerstein M, PsychENCODE Consortium.",
+        "year": "2024",
+        "doi": "10.1126/science.adi5199",
+        "pmid": "38781369",
+        "pmcid": "PMC11365579"
+      },
+      "phenotype": "Single-nucleus eQTL, regulatory elements, GRN and CRISPR annotations",
+      "population": "388 adult DLPFC donors, mixed clinical/control; multiple ancestries per source, project did not estimate ancestry effects",
+      "sample_size": "388 donors; 17 cell types; per-cell usable N in brainscope_datasets.csv",
+      "selection": "Postmortem donors, not exceptional cognitive performers",
+      "files_obtained": "Public significant/conditional QTL tables, candidate SNPs, bcCRE, CRISPR and GRN; no participant-level genotypes",
+      "project_use": "Cell-specific tagging, LD separation and full-statistic testability audit",
+      "scripts": [
+        "pipelines/sprint5/brainscope_lookup.py",
+        "pipelines/sprint5a/brainscope_typed_evidence.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/brainscope_typed_evidence.parquet",
+        "reports/sprint5a/brainscope_coloc_testability.json"
+      ],
+      "limitations": "Significant-only outputs cannot support new colocalisation; shared CommonMind/ROSMAP donors; GRN links are not enhancer votes",
+      "licence_and_redistribution": "Public portal derived summaries; no broad relicence; full association/participant resources require Synapse access; obtain source terms before reuse",
+      "official_source": "https://brainscope.gersteinlab.org/data/",
+      "provenance": [
+        "data/raw/sprint5a/brainscope/PROVENANCE.json",
+        "data/sprint5/brainscope_datasets.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "bryois",
+      "name": "Bryois single-cell eQTL",
+      "publication": {
+        "title": "Cell-type-specific cis-eQTLs in eight human brain cell types identify novel risk genes for psychiatric and neurological disorders.",
+        "authors": "Bryois J, Calini D, Macnair W, Foo L, Urich E, Ortmann W, Iglesias VA, Selvaraj S, Nutma E, Marzin M, Amor S, Williams A, Castelo-Branco G, Menon V, De Jager P, Malhotra D.",
+        "year": "2022",
+        "doi": "10.1038/s41593-022-01128-z",
+        "pmid": "35915177",
+        "pmcid": null,
+        "journal": "Nature neuroscience"
+      },
+      "phenotype": "Cell-type cis-eQTL in 8 cell types plus pseudo-bulk",
+      "population": "ROSMAP and Roche brain cohorts; AD/MS/control tissue; ancestry as source",
+      "sample_size": "192 donors in publication (196 preprint)",
+      "selection": "Brain donors, not high-IQ sample",
+      "files_obtained": "Full nominal statistics, SNP positions and alleles; selected chromosomes",
+      "project_use": "Single-cell coloc.abf/coloc.susie",
+      "scripts": [
+        "pipelines/sprint5a/fetch_sc_eqtl.py",
+        "pipelines/sprint5a/sc_eqtl_coloc.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/sc_eqtl_coloc.parquet"
+      ],
+      "limitations": "ROSMAP donor overlap; SE inferred from beta/p; disease/cell composition; exact overlap unresolved",
+      "licence_and_redistribution": "CC-BY-4.0 Zenodo 7276971",
+      "official_source": "https://doi.org/10.5281/zenodo.7276971",
+      "provenance": [
+        "data/raw/sprint5a/bryois2022/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "singlebrain",
+      "name": "SingleBrain meta-analysis",
+      "publication": {
+        "title": "SingleBrain: A Meta-Analysis of Single-Nucleus eQTLs Linking Genetic Risk to Brain Disorders",
+        "authors": "Jang B, Kailash B, Tokolyi A, Cuddleston WH, Ravi A, Jung S, Naito T, Kim B, Kim MS, Cho M, Park M, Rosen M, Blanchard J, Humphrey J, Knowles DA, Won H, Raj T.",
+        "year": "2025",
+        "doi": "10.1101/2025.03.06.25323424",
+        "pmid": "PPR986178",
+        "pmcid": null,
+        "journal": null
+      },
+      "phenotype": "Single-nucleus eQTL",
+      "population": "Meta-analysis of brain donors, including ROSMAP; not independently recruited by project",
+      "sample_size": "757 donors per historical provenance",
+      "selection": "Postmortem tissue",
+      "files_obtained": "Range-fetched full nominal QTL windows with byte-range hashes",
+      "project_use": "Single-cell coloc and HyPrColoc support",
+      "scripts": [
+        "pipelines/sprint5a/fetch_sc_eqtl.py",
+        "pipelines/sprint5a/sc_eqtl_coloc.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/sc_eqtl_coloc.parquet"
+      ],
+      "limitations": "Preprint version used; overlapping donors; not independent of Bryois/ROSMAP",
+      "licence_and_redistribution": "CC-BY-4.0 per Zenodo record/provenance",
+      "official_source": "https://doi.org/10.5281/zenodo.14908182",
+      "provenance": [
+        "data/raw/sprint5a/singlebrain/PROVENANCE.json",
+        "research/sprint5a/agentB_notes.md"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "devbrain",
+      "name": "Wen / devBrain developmental xQTL",
+      "publication": {
+        "title": "Cross-ancestry atlas of gene, isoform, and splicing regulation in the developing human brain.",
+        "authors": "Wen C, Margolis M, Dai R, Zhang P, Przytycki PF, Vo DD, Bhattacharya A, Matoba N, Tang M, Jiao C, Kim M, Tsai E, Hoh C, Aygün N, Walker RL, Chatzinakos C, Clarke D, Pratt H, PsychENCODE Consortium†, Peters MA, Gerstein M, Daskalakis NP, Weng Z, Jaffe AE, Kleinman JE, Hyde TM, Weinberger DR, Bray NJ, Sestan N, Geschwind DH, Roeder K, Gusev A, Pasaniuc B, Stein JL, Love MI, Pollard KS, Liu C, Gandal MJ, PsychENCODE Consortium.",
+        "year": "2024",
+        "doi": "10.1126/science.adh0829",
+        "pmid": "38781368",
+        "pmcid": "PMC12147038",
+        "journal": "Science (New York, N.Y.)"
+      },
+      "phenotype": "Fetal neocortical gene/isoform/splicing regulation",
+      "population": "Cross-ancestry cohort; project trimester eQTL uses European subset",
+      "sample_size": "672 unique samples; 654 genotype+RNA QC; EUR trimester 1 N=143, trimester 2 N=145",
+      "selection": "Developing brain tissue, 4–39 post-conception weeks overall",
+      "files_obtained": "Full nominal eQTL windows and effect-allele BIM mapping",
+      "project_use": "Timing and fetal colocalisation sensitivity",
+      "scripts": [
+        "pipelines/sprint5a/devbrain_fetch_small.py",
+        "pipelines/sprint5a/devbrain_timing.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/regulatory_timing.csv"
+      ],
+      "limitations": "Not adult manipulation evidence; ancestries not pooled indiscriminately; third trimester EUR N=4 unused",
+      "licence_and_redistribution": "CC-BY-4.0 Zenodo 12729266",
+      "official_source": "https://doi.org/10.5281/zenodo.12729266",
+      "provenance": [
+        "data/raw/sprint5a/psychencode_dev/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "brainspan",
+      "name": "BrainSpan developmental expression",
+      "publication": {
+        "title": "Spatio-temporal transcriptome of the human brain.",
+        "authors": "Kang HJ, Kawasawa YI, Cheng F, Zhu Y, Xu X, Li M, Sousa AM, Pletikos M, Meyer KA, Sedmak G, Guennel T, Shin Y, Johnson MB, Krsnik Z, Mayer S, Fertuzinhos S, Umlauf S, Lisgo SN, Vortmeyer A, Weinberger DR, Mane S, Hyde TM, Huttner A, Reimers M, Kleinman JE, Sestan N.",
+        "year": "2011",
+        "doi": "10.1038/nature10523",
+        "pmid": "22031440",
+        "pmcid": "PMC3566780",
+        "journal": "Nature"
+      },
+      "phenotype": "Expression across developmental age and brain region",
+      "population": "Human developing/adult postmortem brain; source-specific samples",
+      "sample_size": "Adult age window: 93 tissue samples from 6 donors; full release donor N not reconciled here",
+      "selection": "Tissue donors, not cognition-selected",
+      "files_obtained": "RPKM matrix and sample metadata acquired externally; gene-level derivative committed",
+      "project_use": "Developmental expression classification",
+      "scripts": [
+        "pipelines/gene_tournament/build_developmental_classification.py"
+      ],
+      "outputs": [
+        "data/gene_tournament/developmental_classification.parquet"
+      ],
+      "limitations": "RPKM/TPM cannot be numerically mixed; expression timing is not causal adult function; age-window averages weight samples rather than donors",
+      "licence_and_redistribution": "Allen Institute research/noncommercial terms; downstream BrainSpan columns retain restrictions; not CC-BY or MIT",
+      "official_source": "https://alleninstitute.org/legal/terms-of-use",
+      "provenance": [
+        "data/raw/brain_expression/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "opentargets",
+      "name": "Open Targets Genetics / Platform 26.06",
+      "publication": {
+        "title": "Open Targets Genetics / Platform 26.06 (versioned resource; no single study publication assigned)",
+        "authors": "Open Targets Genetics / Platform 26.06",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Credible sets, locus-to-gene features, molecular colocalisation",
+      "population": "Underlying heterogeneous GWAS and QTL studies; N/ancestry per study",
+      "sample_size": "979 cognition credible sets in refresh; 755 positional top L2G calls; counts are not people",
+      "selection": "Aggregated source studies",
+      "files_obtained": "API/Parquet credible sets, L2G/SHAP features, QTL joins",
+      "project_use": "Fine-mapping support and competing gene labels",
+      "scripts": [
+        "pipelines/gene_tournament/fetch_gwas_credible_sets.py",
+        "pipelines/sprint5a/opentargets_credible_set_refresh.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/opentargets_2606_refresh.parquet"
+      ],
+      "limitations": "Distance-driven L2G is not biological evidence; constituent datasets overlap project inputs",
+      "licence_and_redistribution": "Open Targets/source terms retained; no blanket relicensing of upstream study data",
+      "official_source": "https://platform.opentargets.org/",
+      "provenance": [
+        "data/sprint5a/opentargets_2606_provenance.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "alphagenome",
+      "name": "AlphaGenome Atlas 0.9.0",
+      "publication": {
+        "title": "AlphaGenome Atlas 0.9.0 (versioned resource; no single study publication assigned)",
+        "authors": "AlphaGenome Atlas 0.9.0",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "In-silico predicted regulatory effects, not measured human phenotypes",
+      "population": "Model trained on molecular data; no project participant sample",
+      "sample_size": "317 cognition variants + 53 math variants; 532 variant-allele queries for cognition",
+      "selection": "Variant selection from credible sets",
+      "files_obtained": "Cached prediction summaries; raw 1,681,704 prediction rows not committed",
+      "project_use": "Historical regulatory support; excluded from release gene voting after sign defect",
+      "scripts": [
+        "pipelines/sprint5/alphagenome_query.py",
+        "pipelines/sprint5a/alphagenome_summarise.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/alphagenome_variant_predictions.parquet",
+        "data/release/correction_changes.csv"
+      ],
+      "limitations": "Signed aggregation defect; gene-only comparator joins also insufficient to validate variant-specific direction; no end-to-end corrected rerun",
+      "licence_and_redistribution": "Service/noncommercial terms in historical protocol; no new predictions or API access; historical files carry source terms and unresolved status",
+      "official_source": "https://www.alphagenomedocs.com/",
+      "provenance": [
+        "data/sprint5a/alphagenome_provenance.json",
+        "docs/corrections/ALPHAGENOME_DIRECTION.md"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "polyfun",
+      "name": "PolyFun functional priors",
+      "publication": {
+        "title": "Functionally informed fine-mapping and polygenic localization of complex trait heritability.",
+        "authors": "Weissbrod O, Hormozdiari F, Benner C, Cui R, Ulirsch J, Gazal S, Schoech AP, van de Geijn B, Reshef Y, Márquez-Luna C, O'Connor L, Pirinen M, Finucane HK, Price AL.",
+        "year": "2020",
+        "doi": "10.1038/s41588-020-00735-5",
+        "pmid": "33199916",
+        "pmcid": "PMC7710571",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Functional annotations and SNP priors",
+      "population": "Published UKB-based prior/reference resources; not independent cognition subjects",
+      "sample_size": "Five variants cross PIP 0.5 only under priors",
+      "selection": "Reference model",
+      "files_obtained": "Published approach-1 priors; SuSiE inputs",
+      "project_use": "Sensitivity fine-mapping",
+      "scripts": [
+        "pipelines/sprint5a/polyfun_susie.py",
+        "pipelines/sprint5a/polyfun_susie.R"
+      ],
+      "outputs": [
+        "reports/sprint5a/functional_finemapping_summary.csv"
+      ],
+      "limitations": "Prior-only PIP support never counted as primary coding evidence",
+      "licence_and_redistribution": "MIT repository per audited provenance; data-specific terms still apply",
+      "official_source": "https://github.com/omerwe/polyfun",
+      "provenance": [
+        "data/raw/sprint5a/polyfun/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "pops",
+      "name": "PoPS feature matrix",
+      "publication": {
+        "title": "Leveraging polygenic enrichments of gene features to predict genes underlying complex traits and diseases.",
+        "authors": "Weeks EM, Ulirsch JC, Cheng NY, Trippe BL, Fine RS, Miao J, Patwardhan TA, Kanai M, Nasser J, Fulco CP, Tashman KC, Aguet F, Li T, Ordovas-Montanes J, Smillie CS, Biton M, Shalek AK, Ananthakrishnan AN, Xavier RJ, Regev A, Gupta RM, Lage K, Ardlie KG, Hirschhorn JN, Lander ES, Engreitz JM, Finucane HK.",
+        "year": "2023",
+        "doi": "10.1038/s41588-023-01443-6",
+        "pmid": "37443254",
+        "pmcid": "PMC10836580",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Polygenic gene features and expression/pathway annotations",
+      "population": "Reference annotations, not a new participant cohort",
+      "sample_size": "57,742 features; 550 genes in 159 target loci; 158 loci scored",
+      "selection": "Reference features",
+      "files_obtained": "Feature matrices acquired externally; LOCO scores committed",
+      "project_use": "Orthogonal gene-priority sensitivity, never a V2G vote",
+      "scripts": [
+        "pipelines/sprint5a/pops_prep.py",
+        "pipelines/sprint5a/run_pops.sh",
+        "pipelines/sprint5a/pops_collect.py"
+      ],
+      "outputs": [
+        "reports/sprint5a/pops_scores.csv"
+      ],
+      "limitations": "94/158 loci have one scored gene; rankings there uninformative; reuses Davies MAGMA",
+      "licence_and_redistribution": "External code GPL-3.0; matrix has no separate licence established, not redistributed; project-authored wrappers MIT",
+      "official_source": "https://github.com/FinucaneLab/pops",
+      "provenance": [
+        "data/raw/sprint5a/pops/PROVENANCE.json",
+        "research/sprint5a/agentC_notes.md"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "ld_reference",
+      "name": "1000 Genomes EUR / UKB LD / LDetect",
+      "publication": {
+        "title": "1000 Genomes EUR / UKB LD / LDetect (versioned resource; no single study publication assigned)",
+        "authors": "1000 Genomes EUR / UKB LD / LDetect",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Linkage disequilibrium reference",
+      "population": "European reference samples; mismatch to every GWAS cohort possible",
+      "sample_size": "Reference-specific N; not study N",
+      "selection": "Reference panels",
+      "files_obtained": "External PLINK reference and UKB LD matrices; LDetect block intervals committed",
+      "project_use": "LD loci, SuSiE, LAVA and sensitivity",
+      "scripts": [
+        "pipelines/sprint4/loci_tools.py",
+        "pipelines/sprint5a/ukb_ld_sensitivity.py"
+      ],
+      "outputs": [
+        "data/gene_tournament/ld_loci.parquet",
+        "reports/sprint5a/functional_finemapping_summary.csv"
+      ],
+      "limitations": "LD mismatches and numerical regularisation; no participant PLINK genotype files distributed",
+      "licence_and_redistribution": "Download reference panels under their terms; only block intervals and derived statistics bundled",
+      "official_source": "https://www.internationalgenome.org/",
+      "provenance": [
+        "data/raw/sprint5a/ukb_ld/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "gwas_catalog",
+      "name": "GWAS Catalog cognition discovery inventory",
+      "publication": {
+        "title": "GWAS Catalog cognition discovery inventory (versioned resource; no single study publication assigned)",
+        "authors": "GWAS Catalog cognition discovery inventory",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "22 cognition-related trait channels; EA, ageing and MTAG separated",
+      "population": "Heterogeneous source populations; ancestry strings per study",
+      "sample_size": "419 study metadata records in tournament; 834-study later search inventory",
+      "selection": "Published studies; some clinical/ageing or proxy only",
+      "files_obtained": "Study metadata JSONL and association API snapshots",
+      "project_use": "Study classification, strict independent units and candidate source discovery",
+      "scripts": [
+        "pipelines/gene_tournament/classify_studies.py",
+        "pipelines/gene_tournament/fetch_study_metadata.py"
+      ],
+      "outputs": [
+        "data/gene_tournament/study_metadata.jsonl",
+        "reports/gene_tournament/cognitive_breadth.csv"
+      ],
+      "limitations": "Being found by search does not mean a full GWAS was analysed; incomplete metadata and cohort overlap",
+      "licence_and_redistribution": "Catalog metadata EBI terms; summary statistics accession-specific CC0/legacy terms; dates and original studies retained",
+      "official_source": "https://www.ebi.ac.uk/gwas/docs/faq/",
+      "provenance": [
+        "data/raw/MANIFEST.jsonl",
+        "data/gene_tournament/study_metadata.jsonl",
+        "data/sprint5/cohort_overlap_ledger.csv"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "ea_proxy",
+      "name": "Educational-attainment proxy channel",
+      "publication": {
+        "title": "Gene discovery and polygenic prediction from a genome-wide association study of educational attainment in 1.1 million individuals.",
+        "authors": "Lee JJ, Wedow R, Okbay A, Kong E, Maghzian O, Zacher M, Nguyen-Viet TA, Bowers P, Sidorenko J, Karlsson Linnér R, Fontana MA, Kundu T, Lee C, Li H, Li R, Royer R, Timshel PN, Walters RK, Willoughby EA, Yengo L, 23andMe Research Team, COGENT (Cognitive Genomics Consortium), Social Science Genetic Association Consortium, Alver M, Bao Y, Clark DW, Day FR, Furlotte NA, Joshi PK, Kemper KE, Kleinman A, Langenberg C, Mägi R, Trampush JW, Verma SS, Wu Y, Lam M, Zhao JH, Zheng Z, Boardman JD, Campbell H, Freese J, Harris KM, Hayward C, Herd P, Kumari M, Lencz T, Luan J, Malhotra AK, Metspalu A, Milani L, Ong KK, Perry JRB, Porteous DJ, Ritchie MD, Smart MC, Smith BH, Tung JY, Wareham NJ, Wilson JF, Beauchamp JP, Conley DC, Esko T, Lehrer SF, Magnusson PKE, Oskarsson S, Pers TH, Robinson MR, Thom K, Watson C, Chabris CF, Meyer MN, Laibson DI, Yang J, Johannesson M, Koellinger PD, Turley P, Visscher PM, Benjamin DJ, Cesarini D.",
+        "year": "2018",
+        "doi": "10.1038/s41588-018-0147-3",
+        "pmid": "30038396",
+        "pmcid": "PMC6393768",
+        "journal": "Nature genetics"
+      },
+      "phenotype": "Education; distinct cognitive-performance sub-study where labelled",
+      "population": "UKB/COGENT/23andMe and other cohorts depending phenotype",
+      "sample_size": "1.1 million is paper-wide EA, not project cognition sample",
+      "selection": "Population/consumer genetics cohorts",
+      "files_obtained": "Catalog association annotations; no controlled 23andMe summary files",
+      "project_use": "Proxy-only evidence channel, excluded from direct cognition vote",
+      "scripts": [
+        "pipelines/gene_tournament/classify_studies.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/math_gene_rank.csv"
+      ],
+      "limitations": "Education is socially mediated and not intelligence; discovery overlap",
+      "licence_and_redistribution": "Study-specific source terms; controlled files absent",
+      "official_source": "https://doi.org/10.1038/s41588-018-0147-3",
+      "provenance": [
+        "data/gene_tournament/study_metadata.jsonl",
+        "data/sprint5a/phenotype_datasets.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    },
+    {
+      "id": "pathways",
+      "name": "Gene Ontology / Reactome / SynGO / HPA",
+      "publication": {
+        "title": "Gene Ontology / Reactome / SynGO / HPA (versioned resource; no single study publication assigned)",
+        "authors": "Gene Ontology / Reactome / SynGO / HPA",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Pathway, synaptic and cell-expression annotations",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Competitive gene-set analysis and covariate conditioning",
+      "scripts": [
+        "pipelines/gene_tournament/run_pathway_enrichment.py",
+        "pipelines/sprint3_1/run_recon_magma.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/pathway_enrichment.csv",
+        "reports/sprint3_1/SYNAPTIC_RECON_REPORT.md"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "GO/Reactome/SynGO/HPA retain individual attribution/licence terms in provenance; no blanket data licence",
+      "official_source": "https://www.syngoportal.org/",
+      "provenance": [
+        "data/raw/pathway_annotations/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "identifiers",
+      "name": "HGNC / Ensembl / NCBI taxonomy / GENCODE",
+      "publication": {
+        "title": "HGNC / Ensembl / NCBI taxonomy / GENCODE (versioned resource; no single study publication assigned)",
+        "authors": "HGNC / Ensembl / NCBI taxonomy / GENCODE",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Gene IDs, gene models, orthology and species taxonomy",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Stable identifiers and cross-species mapping",
+      "scripts": [
+        "scripts/fetch_gene_identifiers.py",
+        "pipelines/sprint5a/gencode_id_map.py"
+      ],
+      "outputs": [
+        "data/raw/magma_x01/2026-09-22/gene_id_map.tsv"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "Resource-specific reuse/attribution terms; no participant data",
+      "official_source": "https://www.genenames.org/",
+      "provenance": [
+        "data/raw/MANIFEST.jsonl",
+        "data/raw/sprint5a/gencode/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "safety",
+      "name": "ClinGen / gnomAD / Gene2Phenotype",
+      "publication": {
+        "title": "ClinGen / gnomAD / Gene2Phenotype (versioned resource; no single study publication assigned)",
+        "authors": "ClinGen / gnomAD / Gene2Phenotype",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Dosage sensitivity, loss-of-function constraint and disease annotations",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Safety/constraint context only; not proof of safe gain",
+      "scripts": [
+        "pipelines/sprint5/build_rare_coding_tables.py"
+      ],
+      "outputs": [
+        "reports/sprint5/rare_coding_evidence.csv"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "Resource terms retained; DDG2P dump and participant genotypes not bundled",
+      "official_source": "https://search.clinicalgenome.org/kb/gene-dosage",
+      "provenance": [
+        "data/raw/sprint5/rare_coding/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "string",
+      "name": "STRING interactions",
+      "publication": {
+        "title": "STRING interactions (versioned resource; no single study publication assigned)",
+        "authors": "STRING interactions",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Protein functional associations",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Gene-module construction",
+      "scripts": [
+        "pipelines/gene_tournament/build_modules.py"
+      ],
+      "outputs": [
+        "reports/gene_tournament/biological_modules.csv"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "Source-specific terms; scores indicate functional association, not causal interaction",
+      "official_source": "https://string-db.org/",
+      "provenance": [
+        "data/raw/string/2026-09-22/PROVENANCE.json"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "foundational",
+      "name": "PubMed / ClinicalTrials.gov / ChEMBL / Open Targets target annotations",
+      "publication": {
+        "title": "PubMed / ClinicalTrials.gov / ChEMBL / Open Targets target annotations (versioned resource; no single study publication assigned)",
+        "authors": "PubMed / ClinicalTrials.gov / ChEMBL / Open Targets target annotations",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Published mechanistic, intervention, comparative and registry evidence",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Foundational atlases, null/negative evidence and pharmacology gates",
+      "scripts": [
+        "scripts/fetch_source_metadata.py",
+        "pipelines/integration/fetch_target_annotations.py"
+      ],
+      "outputs": [
+        "reports/project_truth_table.md",
+        "reports/red_team_audit_v0_1.md"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "Bibliographic facts/registry summaries and curated annotations; third-party source terms; unnecessary contact details removed",
+      "official_source": "https://clinicaltrials.gov/",
+      "provenance": [
+        "data/raw/MANIFEST.jsonl"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "historical",
+      "name": "SMPY / Duke TIP and Ciba 1993 volume",
+      "publication": {
+        "title": "SMPY / Duke TIP and Ciba 1993 volume (versioned resource; no single study publication assigned)",
+        "authors": "SMPY / Duke TIP and Ciba 1993 volume",
+        "year": null,
+        "doi": null
+      },
+      "phenotype": "Historical psychometrics and phenotype definition",
+      "population": "Not a new human cognitive cohort",
+      "sample_size": "Not applicable; any original-study N stays attached to its source",
+      "selection": "Reference/curated literature",
+      "files_obtained": "Public annotations or source metadata; per-file acquisition records",
+      "project_use": "Motivation and restriction-of-range context, not genetic evidence",
+      "scripts": [
+        "research/sprint5a/historical_foundations.md"
+      ],
+      "outputs": [
+        "research/sprint5a/phenotype_model.md"
+      ],
+      "limitations": "Do not count related databases as independent evidence. Full citation-level source records remain in atlases and provenance.",
+      "licence_and_redistribution": "Copyrighted literature not bundled; page citations only",
+      "official_source": "https://doi.org/10.1111/j.1745-6916.2006.00019.x",
+      "provenance": [
+        "research/sprint5a/historical_foundations.md"
+      ],
+      "verification": "Repository provenance and official resource; no missing bibliographic or population details inferred"
+    },
+    {
+      "id": "braineac2",
+      "name": "Braineac2",
+      "publication": {
+        "title": "Regulatory sites for splicing in human basal ganglia are enriched for disease-relevant information.",
+        "authors": "Guelfi S, D'Sa K, Botía JA, Vandrovcova J, Reynolds RH, Zhang D, Trabzuni D, Collado-Torres L, Thomason A, Quijada Leyton P, Gagliano Taliun SA, Nalls MA, International Parkinson’s Disease Genomics Consortium (IPDGC), UK Brain Expression Consortium (UKBEC), Small KS, Smith C, Ramasamy A, Hardy J, Weale ME, Ryten M.",
+        "year": "2020",
+        "doi": "10.1038/s41467-020-14483-x",
+        "pmid": "32098967"
+      },
+      "phenotype": "Expression/splicing QTL in putamen and substantia nigra",
+      "population": "Human basal ganglia postmortem tissue; ancestry per source",
+      "sample_size": "Catalogue assay-specific N; 167 tissue samples / 110 donors in current study inventory (older release notes differ)",
+      "selection": "Brain donors, not cognition-selected",
+      "files_obtained": "Regional eQTL Catalogue summary statistics",
+      "project_use": "Adult bulk coloc and direction",
+      "scripts": [
+        "pipelines/sprint4/fetch_eqtl_catalogue.py",
+        "pipelines/sprint4/gate_c_coloc.py"
+      ],
+      "outputs": [
+        "reports/sprint4/directionality_resolution.csv"
+      ],
+      "limitations": "Brain region and assay matter; eQTL Catalogue versions give differing donor inventories; use exact QTD metadata",
+      "licence_and_redistribution": "eQTL Catalogue summary terms; underlying genotypes remain controlled",
+      "official_source": "https://www.ebi.ac.uk/eqtl/Studies/",
+      "provenance": [
+        "data/raw/sprint4/eqtl_catalogue/PROVENANCE.json",
+        "data/sprint4/eqtl_catalogue_brain_datasets.csv"
+      ],
+      "verification": "Repository provenance; publication metadata verified through Europe PMC 2026-10-27"
+    }
+  ]
+}

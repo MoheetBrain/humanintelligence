@@ -1,3 +1,5 @@
+> **Historical research snapshot.** The current public interpretation and release corrections are in [RESULTS.md](../../RESULTS.md). AlphaGenome directions/agreement counts in historical material are unresolved; the release evidence excludes them.
+
 # Sprint 5A — Open-data exhaustion and causal cognition integration
 
 *2026-09-24 · branch `sprint-5a/open-data-exhaustion` (from `e88c2fb`). The integration rules were frozen at `e097067` before any Sprint-5A result, and the frozen Sprint-5 rules were rerun unchanged on the new inputs. All work is computational. **The chemistry / intervention gate is CLOSED.***

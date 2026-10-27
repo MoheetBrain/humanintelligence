@@ -11,7 +11,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-REF = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/genetics_tools/reference/g1000_eur")
+REF = Path("data/external/x01/genetics_tools/reference/g1000_eur")
 OUT = Path(__file__).resolve().parents[2] / "data/interim/sprint5a/g1000_eur_a1freq.parquet"
 
 

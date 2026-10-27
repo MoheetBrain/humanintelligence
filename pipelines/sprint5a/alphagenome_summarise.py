@@ -33,8 +33,9 @@ BRAIN_RX = re.compile(r"brain|cortex|gyrus|caudate|neur|astrocyte|hippoc|cerebel
 
 
 def cog_sign(row) -> float:
+    """The stored direction is already oriented; do not multiply by raw_score again."""
     d = row.direction_for_cognition_increasing_allele
-    return 1.0 if d == "UP" else -1.0 if d == "DOWN" else np.nan
+    return 1.0 if d == "UP" else -1.0 if d == "DOWN" else 0.0 if d == "ZERO" else np.nan
 
 
 def summarise(raw: pd.DataFrame, label: str, allele_map: dict | None = None) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -59,16 +60,16 @@ def summarise(raw: pd.DataFrame, label: str, allele_map: dict | None = None) -> 
     rna = brain[brain.scorer == "RNA_SEQ"].dropna(subset=["gene_name"])
     for (rsid, gene), g in rna.groupby(["rsid", "gene_name"]):
         top = g.loc[g.abs_q.idxmax()]
-        signs = np.sign(g.raw_score) * g.cog_sign
+        signs = g.cog_sign
         strong = g[g.abs_q >= STRONG]
         rows.append({"set": label, "rsid": rsid, "gene": gene, "modality": "EXPRESSION_RNA_SEQ",
                      "max_abs_quantile": float(top.abs_q), "n_brain_tracks": int(len(g)),
                      "n_strong_tracks": int(len(strong)), "strong": bool(len(strong)),
                      "top_track": f"{top.biosample_name} | {top.assay}",
-                     "direction_cognition_allele": ("UP" if np.nansum(np.sign(strong.raw_score) * strong.cog_sign) > 0 else
-                                                    "DOWN" if np.nansum(np.sign(strong.raw_score) * strong.cog_sign) < 0 else
-                                                    ("UP" if top.raw_score * top.cog_sign > 0 else "DOWN" if top.raw_score * top.cog_sign < 0 else "NA")),
-                     "sign_consistency_strong": float(np.nanmean(np.sign(strong.raw_score) * strong.cog_sign > 0)) if len(strong) else np.nan,
+                     "direction_cognition_allele": ("UP" if np.nansum(strong.cog_sign) > 0 else
+                                                    "DOWN" if np.nansum(strong.cog_sign) < 0 else
+                                                    ("UP" if top.cog_sign > 0 else "DOWN" if top.cog_sign < 0 else "NA")),
+                     "sign_consistency_strong": float(np.nanmean(strong.cog_sign > 0)) if len(strong) else np.nan,
                      "median_sign_all_tracks": float(np.nanmedian(signs)) if len(signs) else np.nan})
     for mod, scorers in (("SPLICING", ["SPLICE_JUNCTIONS", "SPLICE_SITE_USAGE", "SPLICE_SITES"]),):
         sp = brain[brain.scorer.isin(scorers)].dropna(subset=["gene_name"])
@@ -86,7 +87,7 @@ def summarise(raw: pd.DataFrame, label: str, allele_map: dict | None = None) -> 
                          "n_brain_tracks": int(len(g)), "n_strong_tracks": int((g.abs_q >= STRONG).sum()),
                          "strong": bool((g.abs_q >= STRONG).any()),
                          "top_track": f"{top.biosample_name} | {top.assay} {'' if pd.isna(top.histone_mark) else top.histone_mark}{'' if pd.isna(top.transcription_factor) else top.transcription_factor}",
-                         "direction_cognition_allele": ("NA" if pd.isna(top.cog_sign) else "UP" if top.raw_score * top.cog_sign > 0 else "DOWN" if top.raw_score * top.cog_sign < 0 else "NA")})
+                         "direction_cognition_allele": ("NA" if pd.isna(top.cog_sign) else "UP" if top.cog_sign > 0 else "DOWN" if top.cog_sign < 0 else "NA")})
     pred = pd.DataFrame(rows)
     avi = raw[raw.scorer == "AVI_SCORE"].groupby("rsid").agg(avi_raw=("raw_score", "max"), avi_quantile=("quantile_score", "max"))
     fi = raw[raw.scorer == "AVI_SCORE_FEATURE_IMPORTANCE"]

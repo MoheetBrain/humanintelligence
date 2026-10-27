@@ -45,7 +45,7 @@ RAW_ANN = REPO / "data" / "raw" / "pathway_annotations" / "2026-09-22"
 SETS = REPO / "data" / "gene_tournament" / "pathway_sets"
 GENES_RAW = REPO / "data" / "interim" / "magma_replication" / "davies2018_10kb.genes.raw"
 GENE_MAP = REPO / "data" / "raw" / "magma_x01" / "2026-09-22" / "gene_id_map.tsv"
-SILETTI = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/"
+SILETTI = Path("data/external/x01/"
                "atlas_a/gene_expression_supercluster.parquet")
 OUT = REPO / "data" / "sprint3_1"
 

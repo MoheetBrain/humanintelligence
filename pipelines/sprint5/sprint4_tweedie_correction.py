@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import common as C  # noqa: E402
 import eb_shrink as EB  # noqa: E402
 
-DAVIES = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/davies2018_open_complete.txt")
+DAVIES = Path("data/external/x01/inputs/davies2018_open_complete.txt")
 
 
 def kde_tweedie(z_all, z_eval):

@@ -14,13 +14,14 @@ import json
 import re
 import sys
 from pathlib import Path
+import os
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 for extra in (REPO_ROOT / "src", REPO_ROOT / "scripts"):
     if str(extra) not in sys.path:
         sys.path.insert(0, str(extra))
 
-CODEX = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01")
+CODEX = Path(os.environ.get("COGNITION_X01_ROOT", str(REPO_ROOT / "data/external/x01")))
 TOOLS = CODEX / "genetics_tools"
 MAGMA_BIN = TOOLS / "bin" / "magma"
 REF = TOOLS / "reference"
@@ -45,7 +46,7 @@ DATA = REPO_ROOT / "data" / "sprint4"
 RAW = REPO_ROOT / "data" / "raw" / "sprint4"
 WORK = REPO_ROOT / "data" / "interim" / "sprint4"
 
-R_ENV = Path("/opt/homebrew/Caskroom/miniforge/base/envs/hi-sprint4")
+R_ENV = Path(os.environ.get("COGNITION_R_ENV", str(REPO_ROOT / "data/external/r-env")))
 RSCRIPT = R_ENV / "bin" / "Rscript"
 TABIX = R_ENV / "bin" / "tabix"
 

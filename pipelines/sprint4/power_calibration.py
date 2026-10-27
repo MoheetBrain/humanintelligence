@@ -39,8 +39,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-REPO = Path("/Users/moheet/Documents/ChatGPT/HUMAN INTELLIGENCE 🧠")
-CODEX = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01")
+REPO = Path("<repository-root>")
+CODEX = Path("data/external/x01")
 MAGMA = CODEX / "genetics_tools/bin/magma"
 REF = CODEX / "genetics_tools/reference"
 BFILE = REF / "g1000_eur"

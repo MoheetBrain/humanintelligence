@@ -49,7 +49,7 @@ DEV = ROOT / "data/interim/sprint5a/psychencode_dev"
 OUT = ROOT / "reports/sprint5a"
 WORK = ROOT / "data/interim/sprint5a/devbrain_coloc"
 RSCRIPT = Path("/opt/homebrew/Caskroom/miniforge/base/envs/hi-sprint4/bin/Rscript")
-DAVIES = Path("/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/inputs/"
+DAVIES = Path("data/external/x01/inputs/"
               "davies2018_open_complete.txt")
 DAVIES_N = 282014
 PRI = {"p1": 1e-4, "p2": 1e-4, "p12": 5e-6}
@@ -148,7 +148,7 @@ def main() -> None:
     tmp.write_text("\n".join(f"{c}\t{p}" for c, p in zip(bim.chr, bim.pos37)) + "\n")
     g1k = subprocess.run(["awk", "BEGIN{FS=\"\\t\"} NR==FNR{w[$1\":\"$2]=1; next} (($1\":\"$4) in w)"
                           "{print $1\"\\t\"$4\"\\t\"$2\"\\t\"$5\"\\t\"$6}", str(tmp),
-                          "/Users/moheet/Documents/ChatGPT/intelligence-codex/research/extreme_cognition/x01/"
+                          "data/external/x01/"
                           "genetics_tools/reference/g1000_eur.bim"], capture_output=True, text=True, check=True).stdout
     gpos = {}
     for line in g1k.splitlines():

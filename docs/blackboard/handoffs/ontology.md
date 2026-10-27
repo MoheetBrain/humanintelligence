@@ -18,7 +18,7 @@ Both are complete and verified; §7 below has the Phase-2 numbers.
 
 ```
 $ .venv/bin/python graph/validate_graph.py --strict
-repository: /Users/moheet/humanintelligence
+repository: /path/to/user/humanintelligence
 records:    182 sources, 293 claims, 400 evidence items, 27 targets, 129 assessments, 30 audits
 ontology:   101 state variables, 125 definitional edges, 36 intervention entities, 43 annotations
 registry:   27 seed targets, 289 locked claim ids, 11 sources registered by more than one agent
