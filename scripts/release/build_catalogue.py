@@ -121,7 +121,7 @@ def main():
             dictionary.append(dict(table='data/release/'+n,column=col,dtype=str(df[col].dtype),missing=int(df[col].isna().sum()),description=desc,definition_source='METHODOLOGY.md; research/sprint5/protocol_rules.json; pipelines/sprint5/classify_genes.py'))
     with (D/'data_dictionary.csv').open('w',newline='') as f:
         w=csv.DictWriter(f,lineterminator="\n",fieldnames=list(dictionary[0]));w.writeheader();w.writerows(dictionary)
-    (D/'README.md').write_text('''# Public research data — v0.1.0
+    (D/'README.md').write_text('''# Public research data — v0.1.1
 
 These are hypotheses and evidence records, not enhancement targets. The corrected release excludes unresolved AlphaGenome sequence-model votes. Exact original scientific values are preserved where unchanged; the complete original files remain in historical directories.
 

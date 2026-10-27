@@ -6,7 +6,7 @@ Can human cognitive genetics identify plausible biological mechanisms that remai
 
 **No intelligence-enhancing intervention, IQ increase or cognitive-enhancement treatment has been demonstrated.** This is computational, hypothesis-generating research. The intervention gate remains closed.
 
-Maintained by **[MoheetBrain](https://github.com/MoheetBrain)**, **[Hamiltonian Labs](https://www.hamiltonianlabs.co/)**. Initial curated public release: **v0.1.0**, 27 October 2026; scientific execution snapshot: 24 September 2026.
+Maintained by **[MoheetBrain](https://github.com/MoheetBrain)**, **[Hamiltonian Labs](https://www.hamiltonianlabs.co/)**. Curated public release: **v0.1.1**, 27 October 2026; scientific execution snapshot: 24 September 2026.
 
 ## Start here
 
@@ -50,7 +50,7 @@ The early claim of uniquely presynaptic enrichment was corrected: broader neuron
 ```bash
 git clone https://github.com/MoheetBrain/humanintelligence.git
 cd humanintelligence
-git checkout v0.1.0
+git checkout v0.1.1
 python3.12 -m venv .venv
 .venv/bin/python -m pip install -r requirements-release-lock.txt
 .venv/bin/python -m pip install --no-deps -e .

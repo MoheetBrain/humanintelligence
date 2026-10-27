@@ -1,4 +1,4 @@
-# Public research data — v0.1.0
+# Public research data — v0.1.1
 
 These are hypotheses and evidence records, not enhancement targets. The corrected release excludes unresolved AlphaGenome sequence-model votes. Exact original scientific values are preserved where unchanged; the complete original files remain in historical directories.
 

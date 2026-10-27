@@ -1,4 +1,4 @@
-# Results — v0.1.0
+# Results — v0.1.1
 
 The authoritative scientific snapshot is Sprint 5A commit `49effbaa3bcde35f58bc770d0e122a57c05e526d` (24 September 2026), with the 27 October release corrections described below. Earlier sprints are historical. Results are statistical hypotheses, not demonstrations of cognitive enhancement.
 

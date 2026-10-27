@@ -1,5 +1,9 @@
 # Research and release history
 
+## v0.1.1 — 27 October 2026
+
+Packaging-only correction: use the unmodified standard MIT text in LICENSE so GitHub can detect it. Code/data scope remains in DATA_LICENSE.md and README; no scientific data, code grant or third-party terms change. Original v0.1.0 tag and release are preserved. Release metadata and manifests refreshed.
+
 ## v0.1.0 — 27 October 2026
 
 Initial curated public release from completed Sprint 5A (`49effba`), preserving the full research chain. Added scientific landing page, methods, dataset/source inventory, current/historical data navigation, data dictionary, scoped licensing, citation/contribution/security files, smoke validation, dependency lock and X draft.
